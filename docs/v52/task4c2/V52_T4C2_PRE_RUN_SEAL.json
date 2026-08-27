@@ -15,7 +15,12 @@
     "aggregate_sha256": "1b68897ad12a21bd532166c560746108e61888e94975028067df1829a98a1f01",
     "pre_run_seal_sha256": "25d87806e92ef1c2aed9f3fa8acad6313f927432ee197161245fdd536e26afac"
   },
-  "exact_methods": ["FLOAT96_UNCENTERED", "FLOAT96_CENTERED", "SIGN96_CENTERED", "ITQ96_CENTERED"],
+  "exact_methods": [
+    "FLOAT96_UNCENTERED",
+    "FLOAT96_CENTERED",
+    "SIGN96_CENTERED",
+    "ITQ96_CENTERED"
+  ],
   "FLOAT96_CENTERED_definition": {
     "archive": "Y96 frozen normalized 96D; mu96=archive mean; C96=Y96-mu96",
     "query": "qC96=QY96-mu96",
@@ -30,20 +35,49 @@
   },
   "decision_variable": "G = SIGN96_CENTERED Fractional R@3 - FLOAT96_CENTERED Fractional R@3, percentage points",
   "decision_bands": {
-    "CASE_A": {"condition": "abs(G)<=1.0 pp", "verdict": "[CENTERING EXPLAINS SIGN96 ADVANTAGE]"},
-    "CASE_B": {"condition": "1.0<G<5.0 pp", "verdict": "[MIXED — CENTERING EXPLAINS PART, SIGN/HAMMING RETAINS RESIDUAL]"},
-    "CASE_C": {"condition": "G>=5.0 pp", "verdict": "[LEAD — SIGN/HAMMING ADVANTAGE SURVIVES CENTERED FLOAT CONTROL]"},
-    "CASE_D": {"condition": "G<-1.0 pp", "verdict": "[FALSIFIED — CENTERED FLOAT DOMINATES SIGN]"}
+    "CASE_A": {
+      "condition": "abs(G)<=1.0 pp",
+      "verdict": "[CENTERING EXPLAINS SIGN96 ADVANTAGE]"
+    },
+    "CASE_B": {
+      "condition": "1.0<G<5.0 pp",
+      "verdict": "[MIXED — CENTERING EXPLAINS PART, SIGN/HAMMING RETAINS RESIDUAL]"
+    },
+    "CASE_C": {
+      "condition": "G>=5.0 pp",
+      "verdict": "[LEAD — SIGN/HAMMING ADVANTAGE SURVIVES CENTERED FLOAT CONTROL]"
+    },
+    "CASE_D": {
+      "condition": "G<-1.0 pp",
+      "verdict": "[FALSIFIED — CENTERED FLOAT DOMINATES SIGN]"
+    }
   },
   "cohort_rule": "question_id not ending _abs",
   "primary_n": 470,
-  "metrics": ["Fractional Evidence Recall@3", "ANY Evidence Recall@3", "ALL Evidence Recall@3"],
+  "metrics": [
+    "Fractional Evidence Recall@3",
+    "ANY Evidence Recall@3",
+    "ALL Evidence Recall@3"
+  ],
   "svd_random_state": 5204,
-  "itq_seeds": [101, 202, 303, 404, 505],
+  "itq_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
   "nuisance_trials": 20,
   "top_k": 3,
   "tie_rule_binary": "integer Hamming primary; frozen independent priority secondary using stable_archive_seed(lexical_ordinal,trial) then rng(seed+99)",
   "tie_rule_float": "descending float64 cosine primary; same frozen independent priority only for exact ties",
   "inference": "fixed-benchmark paired estimand only; no population p-values/CIs/superiority/equivalence/non-inferiority",
-  "package_versions": {"python": "3.13.5", "numpy": "2.3.5", "pandas": "2.2.3", "scipy": "1.17.0", "sklearn": "1.8.0", "platform": "Linux-6.18.35-x86_64-with-glibc2.41"}
+  "package_versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "sklearn": "1.8.0",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41"
+  }
 }

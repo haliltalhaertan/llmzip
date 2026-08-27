@@ -1,0 +1,3 @@
+gold_stratum,n_questions,sign_minus_centered_float_fractional_r3_pp,centered_minus_uncentered_float_fractional_r3_pp,sign_minus_centered_float_any_r3_pp,centered_minus_uncentered_float_any_r3_pp,sign_minus_centered_float_all_r3_pp,centered_minus_uncentered_float_all_r3_pp
+one-gold,174,9.913793103448276,0.0,9.913793103448276,0.0,9.913793103448276,0.0
+multi-gold,296,10.110923423423424,0.23648648648648646,10.10135135135135,0.33783783783783783,9.628378378378379,-0.33783783783783783

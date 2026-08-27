@@ -1,0 +1,10 @@
+check,observed,expected,status
+dataset_sha256,d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442,d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442,PASS
+dataset_bytes,277383467,277383467,PASS
+primary_questions,470,470,PASS
+trial_rows,47000,47000,PASS
+duplicate_id_assert,PASS,PASS,PASS
+task4c1_reproduction,9/9 PASS,9/9 PASS,PASS
+same_input_max_abs_diff,0.0,<=1e-12,PASS
+centered_cosine_finite,1,1,PASS
+centered_vector_norms_positive,0.7638506076463739,>0,PASS

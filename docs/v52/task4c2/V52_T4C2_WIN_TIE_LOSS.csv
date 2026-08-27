@@ -1,0 +1,3 @@
+comparison,win_count,tie_count,loss_count,mean_win_magnitude_pp,mean_loss_magnitude_pp,median_paired_gap_pp
+SIGN96_CENTERED vs FLOAT96_CENTERED,122,304,44,57.70765027322404,52.7840909090909,0.0
+FLOAT96_CENTERED vs FLOAT96_UNCENTERED,7,458,5,50.476190476190474,56.666666666666664,0.0

@@ -1,0 +1,11 @@
+check,derived_evidence,status,blocking
+v1.fit_input_payload archive-text-only,args=['memories']; memory_text=True,PASS,0
+v1.fit_archive_representation archive-only,args=['memory_texts'],PASS,0
+v1.fit_itq matrix-only,"args=['V', 'n_iter', 'seed']",PASS,0
+v2 preserves v1 representation functions,v2 aliases frozen v1 fit functions,PASS,0
+session_position identity-only,position enters memory_id; memory_text is date+role+content,PASS,0
+duplicate-ID hardening exact assertion,exact required assertion in evaluate_item,PASS,0
+all archive fits precede query transform,archive_offset=1031; itq_offset=1962; query_offset=2196,PASS,0
+no gold/evidence/type in fitting calls,AST call-argument scan,PASS,0
+no forbidden rescue retrieval method,evaluate_item source token scan; bad=[],PASS,0
+FLOAT96_CENTERED exact centered cosine path,"cosine_centered(C_float,qC_float)",PASS,0

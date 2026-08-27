@@ -1,0 +1,91 @@
+==================================================
+HEAD RESEARCHER HANDOFF
+==================================================
+TASK:
+V52 Task 4C2 — Centering / Sign-Geometry Diagnostic
+VERDICT:
+[LEAD — SIGN/HAMMING ADVANTAGE SURVIVES CENTERED FLOAT CONTROL]
+AUDIT/INPUT STATUS:
+PASS — frozen hashes, cohort, no-leakage static audit, Task4C1 reproduction, same-input proof all passed.
+FLOAT96_UNCENTERED:
+ANY = 61.063830%
+ALL = 28.936170%
+Fractional = 44.010638%
+FLOAT96_CENTERED:
+ANY = 61.276596%
+ALL = 28.723404%
+Fractional = 44.159574%
+SIGN96_CENTERED:
+ANY = 71.308511%
+ALL = 38.457447%
+Fractional = 54.197518%
+ITQ96_CENTERED:
+ANY = 54.276596%
+ALL = 22.672340%
+Fractional = 37.614113%
+CENTERING EFFECT:
+Fc - F0 = +0.148936 pp
+SIGN RESIDUAL:
+S - Fc = +10.037943 pp
+ITQ VS CENTERED FLOAT:
+I - Fc = -6.545461 pp
+SIGN VS ITQ:
+S - I = +16.583404 pp
+SAME INPUT PROOF:
+PASS; max absolute difference = 0.000e+00
+BIT BALANCE:
+method=ITQ96_CENTERED, itq_seed=101, mean_occupancy=0.5000872080890247, min_occupancy=0.49676605960121933, max_occupancy=0.5036268490453615, dead_constant_bit_count=0, mean_abs_deviation_from_0_5=0.0009995873019985064; method=ITQ96_CENTERED, itq_seed=202, mean_occupancy=0.5001772046780596, min_occupancy=0.4961702201151956, max_occupancy=0.5042960890477794, dead_constant_bit_count=0, mean_abs_deviation_from_0_5=0.0011879010042917745; method=ITQ96_CENTERED, itq_seed=303, mean_occupancy=0.5002072035410712, min_occupancy=0.4971848743124099, max_occupancy=0.5041190642729463, dead_constant_bit_count=0, mean_abs_deviation_from_0_5=0.0010322397376003537; method=ITQ96_CENTERED, itq_seed=404, mean_occupancy=0.4998151944106226, min_occupancy=0.495289413918465, max_occupancy=0.5027762665906755, dead_constant_bit_count=0, mean_abs_deviation_from_0_5=0.0010352081408368803; method=ITQ96_CENTERED, itq_seed=505, mean_occupancy=0.4999438701933456, min_occupancy=0.4965588110843415, max_occupancy=0.5027201367840212, dead_constant_bit_count=0, mean_abs_deviation_from_0_5=0.0010963302620254488; method=ITQ96_CENTERED_SEED_AVERAGE, itq_seed=MEAN, mean_occupancy=0.5000461361824248, min_occupancy=0.4982763831679663, max_occupancy=0.5014973705344421, dead_constant_bit_count=0, mean_abs_deviation_from_0_5=0.000471139564605414; method=SIGN96_CENTERED, itq_seed=nan, mean_occupancy=0.4954398130157826, min_occupancy=0.4493320553008126, max_occupancy=0.4996114090308541, dead_constant_bit_count=0, mean_abs_deviation_from_0_5=0.004560186984217451
+COLLISIONS:
+method=ITQ96_CENTERED, itq_seed=101.0, unique_document_code_fraction=0.8940229239534612, duplicate_code_fraction=0.10597707604653882, largest_collision_bucket=23, query_exact_code_match_fraction=9.584265266716177e-05; method=ITQ96_CENTERED, itq_seed=202.0, unique_document_code_fraction=0.894136569527668, duplicate_code_fraction=0.10586343047233207, largest_collision_bucket=23, query_exact_code_match_fraction=0.00010006832390028847; method=ITQ96_CENTERED, itq_seed=303.0, unique_document_code_fraction=0.8945338694926356, duplicate_code_fraction=0.10546613050736446, largest_collision_bucket=23, query_exact_code_match_fraction=8.777514549998345e-05; method=ITQ96_CENTERED, itq_seed=404.0, unique_document_code_fraction=0.8941717522461569, duplicate_code_fraction=0.1058282477538431, largest_collision_bucket=23, query_exact_code_match_fraction=9.571151711063436e-05; method=ITQ96_CENTERED, itq_seed=505.0, unique_document_code_fraction=0.8936974068810942, duplicate_code_fraction=0.10630259311890576, largest_collision_bucket=23, query_exact_code_match_fraction=0.0001075940311417111; method=SIGN96_CENTERED, itq_seed=nan, unique_document_code_fraction=0.995505393516143, duplicate_code_fraction=0.004494606483857035, largest_collision_bucket=17, query_exact_code_match_fraction=0.0
+TIES:
+method=ITQ96_CENTERED, itq_seed=101.0, candidates_at_min_distance=1.4148936170212767, candidates_at_top3_boundary_distance=2.095744680851064, top3_boundary_tie=0.41914893617021276; method=ITQ96_CENTERED, itq_seed=202.0, candidates_at_min_distance=1.4617021276595745, candidates_at_top3_boundary_distance=2.0638297872340425, top3_boundary_tie=0.3851063829787234; method=ITQ96_CENTERED, itq_seed=303.0, candidates_at_min_distance=1.4872340425531916, candidates_at_top3_boundary_distance=2.029787234042553, top3_boundary_tie=0.37872340425531914; method=ITQ96_CENTERED, itq_seed=404.0, candidates_at_min_distance=1.4446808510638298, candidates_at_top3_boundary_distance=2.076595744680851, top3_boundary_tie=0.38085106382978723; method=ITQ96_CENTERED, itq_seed=505.0, candidates_at_min_distance=1.4446808510638298, candidates_at_top3_boundary_distance=2.0638297872340425, top3_boundary_tie=0.3723404255319149; method=SIGN96_CENTERED, itq_seed=nan, candidates_at_min_distance=1.1531914893617021, candidates_at_top3_boundary_distance=1.5276595744680852, top3_boundary_tie=0.23404255319148937
+DISTANCE GEOMETRY:
+See V52_T4C2_distance_geometry.csv (Hamming and cosine gold/non-gold separation).
+RANK GEOMETRY:
+itq_seed=101, spearman_sign_hamming_vs_itq_hamming=0.1744615709477553, spearman_median=0.1755969908008234; itq_seed=202, spearman_sign_hamming_vs_itq_hamming=0.16722532509139926, spearman_median=0.164555003289655; itq_seed=303, spearman_sign_hamming_vs_itq_hamming=0.1715935135283775, spearman_median=0.16384227456040626; itq_seed=404, spearman_sign_hamming_vs_itq_hamming=0.16988841009943492, spearman_median=0.16998832180770446; itq_seed=505, spearman_sign_hamming_vs_itq_hamming=0.17922676944708407, spearman_median=0.1746549527905415
+SIGN VS CENTERED FLOAT W/T/L:
+122/304/44; mean win=57.707650 pp; mean loss=52.784091 pp; median gap=+0.000000 pp
+CENTERING W/T/L:
+7/458/5; mean win=50.476190 pp; mean loss=56.666667 pp; median gap=+0.000000 pp
+QUESTION TYPES:
+See V52_T4C2_question_type.csv
+GOLD:
+See V52_T4C2_gold_cardinality.csv
+ARCHIVE SIZE:
+See V52_T4C2_archive_size.csv
+REUSE:
+See V52_T4C2_reuse.csv
+TASK 4C1 REPRODUCTION:
+PASS — 9/9 aggregate metric checks.
+DATASET SHA:
+d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442
+ADAPTER V1 SHA:
+0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722
+DUPLICATE-ID ASSERT:
+PASS
+PRE-RUN SEAL:
+19883841cf4b2ff02df21dca56bfc1f8612ba13f03c6eeb93150c5f6ad3468a3
+POST-RUN SCRIPT HASH MATCH:
+YES
+FALSIFICATION:
+The apparent SIGN advantage was challenged by the exact centered continuous control. Frozen decision bands were applied to observed G without retuning.
+IMPORTANT CAVEATS:
+Fixed benchmark only; 470 questions form one shared-session connected component; no population inference; no LoCoMo run; no rescue method run.
+FILES / DRIVE FOLDER:
+V52_TASK_4C2_CENTERING_GEOMETRY
+RECOMMENDED NEXT QUESTION:
+Use the binary-geometry diagnostics to determine whether the residual gap, if any, is associated with threshold-induced neighborhood reordering rather than mean-centering alone.
+==================================================
+
+NE DENEDİK?
+Aynı 96 boyutlu temsili hiç değiştirmeden yalnız iki geometriyi ayırdık: önce arşiv ortalamasını çıkarıp sürekli cosine araması yaptık, sonra aynı centered girdiyi SIGN/Hamming ve frozen ITQ ile karşılaştırdık.
+CENTERING NE KADARINI AÇIKLADI?
+FLOAT96_CENTERED - FLOAT96_UNCENTERED Fractional R@3 = +0.148936 puan.
+SIGN/HAMMING'İN KENDİ AVANTAJI KALDI MI?
+SIGN96_CENTERED - FLOAT96_CENTERED = +10.037943 puan; frozen karar bandı sonucu [LEAD — SIGN/HAMMING ADVANTAGE SURVIVES CENTERED FLOAT CONTROL].
+ITQ NEDEN GERİDE GÖRÜNÜYOR?
+Bu task ITQ'nun nedenini nedensel olarak kanıtlamıyor; aynı centered girdiden sonra learned rotation + threshold ile oluşan Hamming komşuluklarının SIGN'dan ne kadar farklılaştığını distance/rank diagnostics ile ölçüyor.
+BU SONUÇ GERÇEKTEN YENİ BİR ARAŞTIRMA DALI MI, YOKSA REPRESENTATION PREPROCESSING ETKİSİ Mİ?
+Karar G ve centering etkisine göre ayrıştırıldı; centering tek başına açıklıyorsa yeni SIGN mekanizması iddiası zayıflar, residual büyük kalıyorsa geometri mekanizması ayrıca incelenebilir.
+BAŞ ARAŞTIRMACININ SONRAKİ KARARI NE OLMALI?
+Önce bu frozen 4C2 paketini audit ettirmek; ancak audit sonrası residual geometri mekanizmasını tek teknik hipotez olarak test etmek. LoCoMo veya 4C3 bu compute sohbetinde başlatılmamalı.
