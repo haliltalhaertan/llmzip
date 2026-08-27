@@ -20,15 +20,14 @@ This repository already contains the independent Task 4C1 audit under `audit_v52
 
 ## Repository map
 
-- `docs/v51/` — V51 master checkpoint and protocol material.
-- `docs/v52/` — V52 compute reports, protocol patches, novelty/prior-art notes, and Task 4C2 handoff.
-- `code/` — frozen/recovered experimental scripts that are safe to keep in Git.
-- `prompts/` — head-researcher / compute / audit handoff prompts.
-- `literature/` — project-specific literature reviews and novelty guards.
-- `recovery/` — File Library / Drive recovery and external-context records.
+- `docs/v51/` — V51 master checkpoint and protocol history, including the V1–V50 research narrative.
+- `docs/v52/` — V52 protocol patches, compute reports, frozen seals/manifests, and current status documents.
+- `prompts/` — prompt lineage and exact current audit prompt; canonical Drive links are preserved for prompts whose full exact bytes remain in Drive/File Library.
+- `literature/` — project-specific deep literature reviews and novelty guards.
+- `recovery/` — File Library / Drive recovery and provenance records.
 - `audit_v52_t4c1/` — independent Task 4C1 adversarial audit already committed by the auditor.
-- `PROJECT_DOCUMENTATION_MANIFEST.md` — inventory of the documentation snapshot and Drive provenance.
-- `DATASETS_AND_LARGE_ARTIFACTS.md` — large datasets/raw tables/packages intentionally kept outside Git.
+- `PROJECT_DOCUMENTATION_MANIFEST.md` — documentation inventory and Drive provenance.
+- `DATASETS_AND_LARGE_ARTIFACTS.md` — canonical locations for datasets, raw tables, ZIP bundles, and binary artifacts intentionally kept outside ordinary Git text history.
 
 ## Research discipline
 
@@ -45,4 +44,4 @@ LongMemEval cleaned-S:
 - bytes: `277383467`
 - canonical primary cohort: 470 non-`_abs` questions.
 
-The dataset and raw large artifacts are not committed to Git; see `DATASETS_AND_LARGE_ARTIFACTS.md`.
+The dataset and heavy raw artifacts are not committed as normal Git files; their exact Drive locations and frozen hashes are recorded in `DATASETS_AND_LARGE_ARTIFACTS.md` and the task manifests.
