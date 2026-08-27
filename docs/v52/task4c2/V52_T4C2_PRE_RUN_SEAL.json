@@ -1,0 +1,49 @@
+{
+  "task": "V52 Task 4C2 — Centering / Sign-Geometry Diagnostic",
+  "status": "SEALED_BEFORE_ANY_NEW_FLOAT96_CENTERED_PERFORMANCE",
+  "NO_NEW_CENTERED_PERFORMANCE_OBSERVED_BEFORE_SEAL": true,
+  "created_at_utc": "2026-08-26T21:47:55.521484+00:00",
+  "script_sha256": "3bb1126090ab619c061d10d0f1a5c20db1372c5e2cd66b5158905a65f460061b",
+  "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+  "dataset_byte_size": 277383467,
+  "adapter_v1_sha256": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+  "adapter_v2_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+  "task4c1_source_binding": {
+    "script_sha256": "54930bd66e666d8485b51a5a77d8f1b77b46769520b4e5c59526262e017e8573",
+    "trial_sha256": "0695dc066d328816ead5f38d0d1ab6b4cbf5360aadaf26682f274e5bfc9e1f72",
+    "qlevel_sha256": "df499d1069599c73dd3abc6b3d59a63a0e72c4b8143b0a9d896b1dc38e2be579",
+    "aggregate_sha256": "1b68897ad12a21bd532166c560746108e61888e94975028067df1829a98a1f01",
+    "pre_run_seal_sha256": "25d87806e92ef1c2aed9f3fa8acad6313f927432ee197161245fdd536e26afac"
+  },
+  "exact_methods": ["FLOAT96_UNCENTERED", "FLOAT96_CENTERED", "SIGN96_CENTERED", "ITQ96_CENTERED"],
+  "FLOAT96_CENTERED_definition": {
+    "archive": "Y96 frozen normalized 96D; mu96=archive mean; C96=Y96-mu96",
+    "query": "qC96=QY96-mu96",
+    "ranking": "global exact cosine similarity(qC96,C96)",
+    "extra_svd": false,
+    "refit": false,
+    "whitening": false,
+    "second_centering": false,
+    "learned_metric": false,
+    "shortlist": false,
+    "reranker": false
+  },
+  "decision_variable": "G = SIGN96_CENTERED Fractional R@3 - FLOAT96_CENTERED Fractional R@3, percentage points",
+  "decision_bands": {
+    "CASE_A": {"condition": "abs(G)<=1.0 pp", "verdict": "[CENTERING EXPLAINS SIGN96 ADVANTAGE]"},
+    "CASE_B": {"condition": "1.0<G<5.0 pp", "verdict": "[MIXED — CENTERING EXPLAINS PART, SIGN/HAMMING RETAINS RESIDUAL]"},
+    "CASE_C": {"condition": "G>=5.0 pp", "verdict": "[LEAD — SIGN/HAMMING ADVANTAGE SURVIVES CENTERED FLOAT CONTROL]"},
+    "CASE_D": {"condition": "G<-1.0 pp", "verdict": "[FALSIFIED — CENTERED FLOAT DOMINATES SIGN]"}
+  },
+  "cohort_rule": "question_id not ending _abs",
+  "primary_n": 470,
+  "metrics": ["Fractional Evidence Recall@3", "ANY Evidence Recall@3", "ALL Evidence Recall@3"],
+  "svd_random_state": 5204,
+  "itq_seeds": [101, 202, 303, 404, 505],
+  "nuisance_trials": 20,
+  "top_k": 3,
+  "tie_rule_binary": "integer Hamming primary; frozen independent priority secondary using stable_archive_seed(lexical_ordinal,trial) then rng(seed+99)",
+  "tie_rule_float": "descending float64 cosine primary; same frozen independent priority only for exact ties",
+  "inference": "fixed-benchmark paired estimand only; no population p-values/CIs/superiority/equivalence/non-inferiority",
+  "package_versions": {"python": "3.13.5", "numpy": "2.3.5", "pandas": "2.2.3", "scipy": "1.17.0", "sklearn": "1.8.0", "platform": "Linux-6.18.35-x86_64-with-glibc2.41"}
+}
