@@ -2,9 +2,9 @@
 
 Snapshot date: 2026-08-27
 
-This index enumerates the documentation-oriented snapshot assembled from the canonical Google Drive project archive. Large raw datasets and large raw trial tables are intentionally excluded from Git and are indexed separately.
+This index records the documentation-oriented snapshot assembled from the canonical Google Drive project archive and the material that has been migrated into this GitHub repository. Large raw datasets, multi-megabyte raw trial tables, compressed benchmark packages, and packed binary-code payloads are intentionally kept in Drive and indexed separately.
 
-The complete documentation snapshot is committed as `archives/LLMZIP_PROJECT_DOCUMENTATION_SNAPSHOT_2026-08-27.zip`. It contains 104 files including the V51 master checkpoint, V1–V50 compact summaries, frozen/recovered scripts, V52 Task 2/3/4C1/4C2 reports and manifests, current compute/audit prompts, literature review, and recovery records.
+A 104-file documentation snapshot was assembled from the Drive archive during migration. The repository exposes the load-bearing/current documents directly for review, while the historical exact-byte archive and heavy artifacts remain linked through the canonical Drive folders below. This avoids replacing provenance-sensitive files with reconstructed or truncated copies.
 
 ## Canonical Drive archive
 
@@ -16,53 +16,57 @@ The complete documentation snapshot is committed as `archives/LLMZIP_PROJECT_DOC
 - V51 checkpoint: https://drive.google.com/drive/folders/1Dldksm1BERKDqNXUzLVrlNmLHBN5SvEy
 - V52 Task 2 raw external audit: https://drive.google.com/drive/folders/1PGUdYDf8b4YsV50QC_U5NOiYgPpUKUjx
 
-## Snapshot inventory by area
+## GitHub documents migrated directly
+
+### Project-level
+- `README.md`
+- `docs/PROJECT_STATUS_2026-08-27.md`
+- `PROJECT_DOCUMENTATION_MANIFEST.md`
+- `DATASETS_AND_LARGE_ARTIFACTS.md`
 
 ### V51
-- `LLM_MEMORY_RESEARCH_MASTER_CHECKPOINT_V51.md`
-- `NEW_CHAT_START_PROMPT_V51.md`
-- `LLM_MEMORY_RESEARCH_FILE_MANIFEST_V51.csv`
-- `v51_protocol_manifest.json`
-- `v51_full_locomo_benchmark.py`
-- `v51_full_locomo_benchmark_patched_v2.py`
-- `v51_full_locomo_benchmark_patched_v4.py`
-- compact JSON/CSV summaries covering the V1–V50 experimental history.
+- `docs/v51/LLM_MEMORY_RESEARCH_MASTER_CHECKPOINT_V51.md` — the full V1–V50 research narrative and V51 transition checkpoint.
 
-### V52 Task 2
-- compute report, frozen protocol, shortlist-scaling script
-- compact external-audit handoff/readme, frontier, bootstrap, decomposition, and code-audit extracts.
+The canonical V51 Drive archive additionally contains `NEW_CHAT_START_PROMPT_V51.md`, the V51 file manifest, protocol manifest, scripts, and compact JSON/CSV summaries of the historical experiments.
 
 ### V52 Task 3
-- `V52_T3A1_PROTOCOL_PATCH.md`.
+- `docs/v52/task3/V52_T3A1_PROTOCOL_PATCH.md`
 
 ### V52 Task 4C1
-- prior-art/novelty audit
-- blocked-run SHA trail.
 - independent Task 4C1 audit already lives in `audit_v52_t4c1/`.
+- the canonical Drive archive contains Task 4C1 prior-art/novelty material, blocked-run SHA trail, preregistration/method-spec artifacts where exact bytes are available.
 
 ### V52 Task 4C2
-- compute report and Head Researcher handoff
-- pre-run seal and post-run manifest
-- input checks, Task4C1 reproduction, aggregate and W/T/L tables
-- archive-size, gold-cardinality, question-type, reuse strata
-- bit-balance, collision, tie, feature, distance, and rank-geometry diagnostics
-- same-input proof and leakage/sanity checks
-- sealed compute script.
+- `docs/v52/task4c2/V52_T4C2_COMPUTE_REPORT.md`
+- `docs/v52/task4c2/V52_T4C2_PRE_RUN_SEAL.json`
+- `docs/v52/task4c2/V52_T4C2_POST_RUN_MANIFEST.json`
+- exact/current audit prompt under `prompts/`.
 
-Large raw `trial_results.csv`, `question_level.csv`, packed binary-code ZIPs, and the 277 MB benchmark dataset remain in Drive and are indexed in `DATASETS_AND_LARGE_ARTIFACTS.md`.
+The canonical Task 4C2 Drive folder additionally contains the raw trial table, question-level table, same-input proof, bit-balance/collision/tie/distance/rank diagnostics, strata tables, sealed source, packed binary-code bundle, and complete output ZIP. Hashes for these outputs are frozen in `V52_T4C2_POST_RUN_MANIFEST.json`.
 
 ### Prompts
-- current 4C2 takeover prompt
-- current 4C2 resume prompt
-- Task 4C2 independent adversarial audit prompt
-- historical V52 Task 2 audit prompt
-- prompt master index.
+- `prompts/PROMPT_ARCHIVE_MASTER_INDEX_2026-08-27.md`
+- `prompts/V52_TASK_4C2_INDEPENDENT_ADVERSARIAL_AUDIT_PROMPT_2026-08-27.md`
+- canonical Drive links in the prompt index preserve the exact current takeover/resume prompts and historical prompt lineage.
 
 ### Literature / recovery
-- deep binary-geometry literature review (2026-08-27)
-- File Library synchronization status
-- external LLM core context/audit record.
+- `literature/V52_T4C2_DEEP_LITERATURE_REVIEW_BINARY_GEOMETRY_2026-08-27.md`
+- `recovery/FILE_LIBRARY_SYNC_STATUS_2026-08-25.md`
+
+## Heavy artifacts deliberately not duplicated into ordinary Git history
+
+- canonical `longmemeval_s_cleaned.json` (277,383,467 bytes)
+- compressed dataset RAR
+- Task 4C2 raw trial/question tables and binary geometry ZIP
+- Task 2 multi-megabyte raw tables
+- V51/V52 ZIP handoff and audit bundles.
+
+Their exact Drive URLs and canonical hashes are recorded in `DATASETS_AND_LARGE_ARTIFACTS.md`, frozen manifests, and audit records.
+
+## Provenance rule
+
+A partial File Library snippet is never promoted into a replacement file with the canonical filename. Exact-byte artifacts are migrated only when their full bytes are available; otherwise the repository records the canonical Drive/File Library source and expected hash. This is necessary because same-name, hash-different reconstructions would corrupt the audit trail.
 
 ## Scope rule
 
-Git is the canonical review surface for text documentation, code, prompts, manifests and compact diagnostics. Google Drive remains the canonical byte store for benchmark inputs and heavy raw artifacts. Frozen SHA256 values should be used for chain-of-custody verification rather than assuming that same-named files are identical.
+GitHub is the review surface for the research narrative, current checkpoints, prompts, audit records, literature guards, seals/manifests, and directly reviewable documentation. Google Drive remains the canonical byte store for benchmark inputs and heavy/raw artifacts. Frozen SHA256 values are the chain-of-custody authority.
