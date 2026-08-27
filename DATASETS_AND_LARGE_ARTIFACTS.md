@@ -72,3 +72,31 @@ will force the same verdict on every future audit until they are committed.
 ## Policy
 
 Git is the canonical review surface for text documentation, code, prompts, manifests and compact diagnostics. Google Drive remains the canonical byte store for large benchmark inputs and heavy raw artifacts. Hashes in frozen manifests/seals should be used for chain-of-custody validation rather than assuming a same-named file is identical.
+
+## Adapter recovery — search log (2026-08-27)
+
+The frozen adapters were searched for by an independent auditor. Result: **not yet
+materializable as raw bytes.** Checked and confirmed absent:
+
+- Drive title search `longmemeval` — only the dataset `.json` / `.rar`
+- Drive title search `adapter` — only unrelated `engine_adapter.py`, `adapters.py`, `adapter.py`
+- Drive fullText search `fit_itq` — only 4C1/4C2 output ZIPs and a LoCoMo script
+- `V52_T1_COMPUTE_INPUT_BUNDLE.zip` (35 files) — no adapter
+- `LLM_MEMORY_RESEARCH_FULL_ARCHIVE_V51.zip` — no adapter
+- `V52_T4C1_FINAL_CANONICAL_PACKAGE_20260826.zip` — no adapter
+- `V52_T4C1_CHECKPOINT_042_FINAL_...zip` — no adapter
+- `EXTERNAL_LLM_HANDOFF_BUNDLE.zip` — **NOT CHECKED**, Drive connector session expired
+
+`recovery/FILE_LIBRARY_SYNC_STATUS_2026-08-25.md` already records both adapters under
+*"Relevant File Library artifacts found, but raw bytes are not exposed by File Library
+search"* — visible and searchable, but the connector returns references/snippets rather
+than a downloadable byte stream. That remains the status.
+
+Do **not** reconstruct them from snippets. A reconstructed adapter would not hash to the
+pinned SHA256 and would silently invalidate the seals of Tasks 4B, 4C1 and 4C2.
+
+Next actions, in order of preference:
+1. check `EXTERNAL_LLM_HANDOFF_BUNDLE.zip` (the one unchecked bundle);
+2. export the raw bytes from the File Library by any route that preserves them and
+   upload to the Drive research master folder;
+3. verify with `python3 tools/verify_frozen_artifacts.py` and commit under `adapters/`.

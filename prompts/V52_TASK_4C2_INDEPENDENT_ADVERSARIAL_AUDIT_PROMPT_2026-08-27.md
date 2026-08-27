@@ -1,4 +1,8 @@
 # V52 TASK 4C2 — INDEPENDENT ADVERSARIAL AUDIT
+
+MANDATORY FIRST STEP — CHAIN OF CUSTODY
+Before interpreting any result, verify every committed frozen artifact byte-for-byte against the corresponding manifest SHA256. Treat any mismatch as a packaging/chain-of-custody defect until the canonical Drive copy is independently checked.
+Run: `python3 tools/verify_frozen_artifacts.py` (exit 1 on any mismatch). See `CHAIN_OF_CUSTODY.md`.
 # ZERO TRUST / MECHANISM AUDIT
 
 ROLE
