@@ -1,6 +1,6 @@
 # Datasets and Large Artifacts
 
-These files are part of the research record but are intentionally not duplicated as ordinary Git text files because they are raw datasets, large trial tables, compressed packages, or binary diagnostic payloads.
+Large datasets, raw trial tables, compressed packages, and binary diagnostic payloads remain in Google Drive. Git is the canonical review surface for code, prompts, accepted audits, governance, compact diagnostics, and provenance metadata.
 
 ## Canonical LongMemEval input
 
@@ -10,50 +10,65 @@ These files are part of the research record but are intentionally not duplicated
 - `longmemeval_s_cleaned.rar` — 53,574,473 bytes
   - Drive: https://drive.google.com/file/d/14nY-deHuK5wBPzQfJFyZB_Z-7X35Ywky/view
 
+## Frozen LongMemEval adapters — RECOVERED / IN GIT
+
+The former adapter provenance gap is closed. Exact-byte source files are committed under `adapters/`:
+
+- `adapters/longmemeval_v52_adapter.py`
+  - SHA256: `0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722`
+- `adapters/longmemeval_v52_adapter_v2.py`
+  - SHA256: `643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218`
+
+The independent Task 4C2 audit verified the ITQ orientation and archive-only fitting path after recovery.
+
 ## V52 Task 4C2
 
-All **compact** 4C2 artifacts are now committed under `docs/v52/task4c2/` and each one
-hashes byte-exactly to its entry in `V52_T4C2_POST_RUN_MANIFEST.json` (22/25 verified,
-0 mismatches). A GitHub-only auditor can therefore run the full 4C2 mechanism audit —
-sealed script, seal, manifest, leakage audit, same-input status, bit balance, collisions,
-ties, distance/rank geometry, strata, W/T/L — without touching Drive.
+Compact 4C2 artifacts are committed under `docs/v52/task4c2/`.
 
-Still Drive-only (too heavy for ordinary Git text history):
+Drive-only heavy artifacts:
 
-- `V52_T4C2_trial_results.csv` — raw 4C2 trial table (5,371,479 bytes)
+- `V52_T4C2_trial_results.csv` — 5,371,479 bytes
   - SHA256: `c6d58cdd6c4bfad63801a2adaec41e82a449d7dde109f02e797edfde2663d64e`
   - Drive: https://drive.google.com/file/d/1g8_vCbmA63aDOQVZvIDmxpD6leJ6TjES/view
-- `V52_T4C2_BINARY_GEOMETRY.zip` — packed binary-code / geometry payload (13,012,706 bytes)
+- `V52_T4C2_BINARY_GEOMETRY.zip` — 13,012,706 bytes
   - SHA256: `40026fe6e773c20b284e926efda6e5e72f9193b5a4c98710687e1a162913c96d`
   - Drive: https://drive.google.com/file/d/1ggaSk2TyhVVNil7UOk2Dai2UDcgIZY9r/view
-
-Pending (compact, **should** be committed — not yet in Git):
-
-- `V52_T4C2_same_input_proof.csv` — 22,378 bytes, per-question same-input proof
+- `V52_T4C2_same_input_proof.csv` — 22,378 bytes, compact but still Drive-only
   - SHA256: `16a6c4a66be6f5cb4ac81157588c9e735cb1b31d122e83c68f14fbf77dd57e57`
   - Drive: https://drive.google.com/file/d/1mH_w-RkgtPcfPHG6qnFfx8g35zPBuMTL/view
-  - Its conclusion (max abs diff = 0.0 across all 470 questions) is already captured in
-    the committed `V52_T4C2_sanity_checks.csv` and `V52_T4C2_HEAD_RESEARCHER_HANDOFF.txt`.
 
-Full bundles and the canonical final folder:
+Canonical 4C2 final folder:
+https://drive.google.com/drive/folders/1rXeSGN0__wXTYVzvJy1wVulTY0gFTUaP
 
-- `V52_T4C2_ALL_OUTPUTS.zip`
-  - Drive: https://drive.google.com/file/d/1axb1ZQpo7bdN92blVl3eHWe3nME1mwlR/view
-- canonical final artifact folder:
-  - https://drive.google.com/drive/folders/1rXeSGN0__wXTYVzvJy1wVulTY0gFTUaP
-- Task 4C2 audit-package copy:
-  - https://drive.google.com/file/d/1XkcdVYZTOzDXxq1RMDbnVT46_biGBGxa/view
+## V52 Task 4C3 — accepted numerical checkpoint
 
-## Missing frozen adapters — OPEN GAP
+Canonical Drive result folder:
+https://drive.google.com/drive/folders/1ABFEBsp7KfNxtIRkdaqU-6ImTFbsXAnv
 
-`longmemeval_v52_adapter.py` and `longmemeval_v52_adapter_v2.py` are pinned by SHA256 in
-both the 4C1 and 4C2 seals but are in **neither** Git nor Drive under a discoverable name.
-They are small text files. Their absence is what forced the independent Task 4C1 audit to
-return NOT VERIFIABLE for archive-only fitting and for the ITQ encode orientation, and it
-will force the same verdict on every future audit until they are committed.
+Accepted independent audit is in Git under `audit_v52_t4c3/` and was merged to `main` through PR #1 with verdict `PASS WITH CONDITIONS`.
 
-- `longmemeval_v52_adapter.py` SHA256: `0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722`
-- `longmemeval_v52_adapter_v2.py` SHA256: `643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218`
+Frozen chain anchors:
+
+- `V52_T4C3_PRE_RUN_SEAL.json`
+  - SHA256: `c7cf7aa028a80464561dcc020e54a50c029935382463110bd1df0b8ae50f4a97`
+  - Drive: https://drive.google.com/file/d/1aTBPjXnxl4XUJIYs6QlGgpWDPx0bZwAO/view
+- `v52_t4c3_coordinate_axis_probe.py`
+  - SHA256: `8dce37b1611ba6257570beea559630208f67ffb93697015e95656858a3c7d996`
+  - Drive: https://drive.google.com/file/d/1Mvd54Y3LjSbZClrADOHHvVBDifses74o/view
+- `V52_T4C3_POST_RUN_MANIFEST.json`
+  - SHA256: `7bfeae589ffdf86012c04eec02017918cae92c3fa20a699c8d342f4baa39c00c`
+  - Drive: https://drive.google.com/file/d/1DXvUT_bfks2gKlOaTZJqkfOVKi7nCMvU/view
+
+Heavy Task 4C3 artifacts include:
+
+- `V52_T4C3_trial_results.csv` — 21,723,081 bytes
+  - Drive: https://drive.google.com/file/d/1dHAZ1wV9kem7BM87OwpW86BS6GAj3Fx3/view
+- `V52_T4C3_rotated_heterogeneity.csv` — 78,405,429 bytes
+  - Drive: https://drive.google.com/file/d/1sMbkfQvdH2yX3uKREb-gM37nIYh_83ko/view
+- `V52_T4C3_ALL_OUTPUTS.zip` — 24,756,509 bytes
+  - Drive: https://drive.google.com/file/d/1KoDZx0h88JMUfJsAgd_rUtAyeS5_3ESm/view
+
+The independent audit re-hashed the 26 manifest-declared files in the output archive: 26/26 matched, 0 mismatches. Remaining audit condition: the full 277 MB dataset was not independently re-downloaded/re-hashed in that audit environment, although the sealed runtime input gate reports the pinned dataset hash matched.
 
 ## V52 Task 2
 
@@ -66,37 +81,9 @@ will force the same verdict on every future audit until they are committed.
 
 - `LLM_MEMORY_RESEARCH_FULL_ARCHIVE_V51.zip`
   - Drive: https://drive.google.com/file/d/1hkaGKHcaq9nspssi8cH-3eKRM2sVbe84/view
-- `V52_T1_COMPUTE_INPUT_BUNDLE.zip`, `locomo-audit-main.zip`, `EXTERNAL_LLM_HANDOFF_BUNDLE.zip`
-  - recovery folder: https://drive.google.com/drive/folders/1jaM44E1bxVVIzh7OI6mJJO_K3E564Z7v
+- recovery folder:
+  - https://drive.google.com/drive/folders/1jaM44E1bxVVIzh7OI6mJJO_K3E564Z7v
 
 ## Policy
 
-Git is the canonical review surface for text documentation, code, prompts, manifests and compact diagnostics. Google Drive remains the canonical byte store for large benchmark inputs and heavy raw artifacts. Hashes in frozen manifests/seals should be used for chain-of-custody validation rather than assuming a same-named file is identical.
-
-## Adapter recovery — search log (2026-08-27)
-
-The frozen adapters were searched for by an independent auditor. Result: **not yet
-materializable as raw bytes.** Checked and confirmed absent:
-
-- Drive title search `longmemeval` — only the dataset `.json` / `.rar`
-- Drive title search `adapter` — only unrelated `engine_adapter.py`, `adapters.py`, `adapter.py`
-- Drive fullText search `fit_itq` — only 4C1/4C2 output ZIPs and a LoCoMo script
-- `V52_T1_COMPUTE_INPUT_BUNDLE.zip` (35 files) — no adapter
-- `LLM_MEMORY_RESEARCH_FULL_ARCHIVE_V51.zip` — no adapter
-- `V52_T4C1_FINAL_CANONICAL_PACKAGE_20260826.zip` — no adapter
-- `V52_T4C1_CHECKPOINT_042_FINAL_...zip` — no adapter
-- `EXTERNAL_LLM_HANDOFF_BUNDLE.zip` — **NOT CHECKED**, Drive connector session expired
-
-`recovery/FILE_LIBRARY_SYNC_STATUS_2026-08-25.md` already records both adapters under
-*"Relevant File Library artifacts found, but raw bytes are not exposed by File Library
-search"* — visible and searchable, but the connector returns references/snippets rather
-than a downloadable byte stream. That remains the status.
-
-Do **not** reconstruct them from snippets. A reconstructed adapter would not hash to the
-pinned SHA256 and would silently invalidate the seals of Tasks 4B, 4C1 and 4C2.
-
-Next actions, in order of preference:
-1. check `EXTERNAL_LLM_HANDOFF_BUNDLE.zip` (the one unchecked bundle);
-2. export the raw bytes from the File Library by any route that preserves them and
-   upload to the Drive research master folder;
-3. verify with `python3 tools/verify_frozen_artifacts.py` and commit under `adapters/`.
+Never reconstruct a frozen artifact from snippets or paraphrase. A same-named file is not canonical unless its bytes match the pinned SHA256. When a frozen artifact is moved from Drive to Git, preserve bytes exactly; do not re-serialize or normalize line endings.
