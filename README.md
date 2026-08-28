@@ -4,30 +4,42 @@ Research archive for compact long-term memory retrieval for LLM/agent systems.
 
 The project studies whether a memory system can keep a very small active routing representation while preserving evidence retrieval, exact provenance, and an auditable path back to the raw archive.
 
-## Current research state — 2026-08-27
+## Current research state — 2026-08-28
 
 The project has progressed from V1 synthetic routing experiments through V51 full-LoCoMo preparation and V52 LongMemEval validation.
 
-Current load-bearing result under independent-audit workflow:
+Current accepted state under the independent-audit workflow:
 
-- V52 Task 4C1: the same-family ITQ compression frontier below 96 bits failed on LongMemEval; 96 bits remained the smallest width within the frozen 0.5/1.0/2.0 pp tolerance bands.
-- SIMPLE_SIGN96 produced a large retrieval lead over ITQ96, creating a new geometry question.
-- V52 Task 4C2 added an exact centered continuous control. Centering changed Fractional Evidence R@3 by only +0.148936 pp, while SIGN96 remained +10.037943 pp above centered FLOAT96.
-- Task 4C2 compute verdict: `[LEAD — SIGN/HAMMING ADVANTAGE SURVIVES CENTERED FLOAT CONTROL]`.
-- Task 4C2 remains pending independent adversarial audit before checkpoint freeze.
+- V52 Task 4C1: the same-family ITQ compression frontier below 96 bits failed on LongMemEval; 96 bits remained the smallest width inside the frozen 0.5/1.0/2.0 pp tolerance bands.
+- V52 Task 4C2: centering explains essentially none of the SIGN96-vs-FLOAT96 lead. Independent audit: `PASS WITH CONDITIONS`; Task 4C2 numerical checkpoint frozen.
+- V52 Task 4C3: data-independent orthogonal coordinate mixing preserves centered continuous geometry to numerical precision but materially hurts zero-threshold SIGN/Hamming evidence retrieval on the frozen 470-question LongMemEval benchmark.
+  - Native SIGN96 Fractional Evidence Recall@3: `54.197517730496%`
+  - Full-Haar96 mean: `38.271666666667%`
+  - `D96 = -15.925851063830 pp`
+  - all five preregistered Haar96 seeds below native
+  - signed-permutation control exact PASS
+  - continuous orthogonal invariance max deviation `1.1102230246251565e-15`
+- Independent Task 4C3 audit: `PASS WITH CONDITIONS`; accepted into `main` via PR #1.
+- `[FROZEN — TASK 4C3 NUMERICAL CHECKPOINT]`
+- `[ESTABLISHED ON FROZEN LONGMEMEVAL — NATIVE AXIS-STRUCTURE EFFECT]`
+- `[NOT ESTABLISHED — VARIANCE-HETEROGENEITY CAUSAL MEDIATOR]`
+- `[NOT ESTABLISHED — CROSS-BENCHMARK GENERALIZATION]`
 
-This repository already contains the independent Task 4C1 audit under `audit_v52_t4c1/`.
+Task 4C3 stop rule is active: no Task 4C4, LoCoMo, larger-scale benchmark, or rescue experiment is launched from this audit without a separate Head Researcher decision and new preregistration.
 
 ## Repository map
 
 - `docs/v51/` — V51 master checkpoint and protocol history, including the V1–V50 research narrative.
-- `docs/v52/` — V52 protocol patches, compute reports, frozen seals/manifests, and current status documents.
-- `prompts/` — prompt lineage and exact current audit prompt; canonical Drive links are preserved for prompts whose full exact bytes remain in Drive/File Library.
+- `docs/v52/` — V52 protocol patches, accepted checkpoints, compute reports, frozen seals/manifests, and current status documents.
+- `audit_v52_t4c1/` — independent Task 4C1 adversarial audit.
+- `audit_v52_t4c2/` — independent Task 4C2 adversarial audit.
+- `audit_v52_t4c3/` — accepted independent Task 4C3 audit, reproduction script, and hash verification log.
+- `adapters/` — exact-byte frozen LongMemEval v1/v2 adapters with pinned SHA256 values.
+- `prompts/` — prompt lineage and audit/compute prompts.
 - `literature/` — project-specific deep literature reviews and novelty guards.
 - `recovery/` — File Library / Drive recovery and provenance records.
-- `audit_v52_t4c1/` — independent Task 4C1 adversarial audit already committed by the auditor.
-- `PROJECT_DOCUMENTATION_MANIFEST.md` — documentation inventory and Drive provenance.
-- `DATASETS_AND_LARGE_ARTIFACTS.md` — canonical locations for datasets, raw tables, ZIP bundles, and binary artifacts intentionally kept outside ordinary Git text history.
+- `CHAIN_OF_CUSTODY.md` — zero-trust byte-preservation and audit governance rules.
+- `DATASETS_AND_LARGE_ARTIFACTS.md` — canonical locations for datasets, raw tables, ZIP bundles, and heavy artifacts kept in Drive.
 
 ## Research discipline
 
