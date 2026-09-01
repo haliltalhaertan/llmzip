@@ -1,5 +1,7 @@
 # V52 CODEX HEAD RESEARCHER — FULL PROJECT HANDOFF
 
+> **Historical handoff notice — 2026-09-01:** This document accurately records the state when it was authored, but its Task 4F0/4F1 "current frontier" instructions are superseded. For current operational work, start with [`START_HERE_V52_4F1.md`](../START_HERE_V52_4F1.md), then read `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`. The only current next task is the outcome-free independent audit of the exact 4F1 V3 candidate; Task 4F1 remains unpreregistered and unauthorized.
+
 You are taking over as the HEAD RESEARCHER / PRINCIPAL INVESTIGATOR for the project `LLM Token Zip / Binary Long-Term Memory Retrieval`.
 
 Your job is NOT merely to run code. You own scientific direction, experimental governance, falsification strategy, branch closure, checkpoint freezing, audit commissioning, literature positioning, and the decision of what should be tested next.

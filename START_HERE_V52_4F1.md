@@ -4,7 +4,7 @@ This is the single operational entry point for a new Head Researcher, Compute Ex
 
 ## Exact starting point
 
-- **Repository state:** canonical branch `main`, at release tag `v52-4f1-v3-audit-handoff-2026-09-01`; use that tagged commit or a descendant explicitly reviewed by the Head Researcher.
+- **Repository state:** canonical branch `main`, at release tag `v52-4f1-v3-audit-handoff-2026-09-01-r2`; use that tagged commit or a descendant explicitly reviewed by the Head Researcher.
 - **Current task:** independently audit the exact V3 execution candidate. This is code/integrity audit only; it is not a Task 4F1 preregistration, execution, or result-interpretation task.
 - **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
