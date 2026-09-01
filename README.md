@@ -2,6 +2,8 @@
 
 Research archive for compact long-term memory retrieval for LLM/agent systems.
 
+**New researcher or LLM? Start with [`START_HERE_V52_4F1.md`](START_HERE_V52_4F1.md).** It binds the current branch, exact next task, source order, external corpus requirement and the hard no-outcome boundary for Task 4F1.
+
 The project studies whether a memory system can keep a very small active routing representation while preserving evidence retrieval, exact provenance, and an auditable path back to the raw archive.
 
 ## Current research state — 2026-09-01
