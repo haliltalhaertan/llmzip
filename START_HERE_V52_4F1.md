@@ -1,14 +1,14 @@
-# Start Here — V52 Task 4F1 V3 independent-audit handoff
+# Start Here — V52 Task 4F1 V4 independent-audit handoff
 
 This is the single operational entry point for a new Head Researcher, Compute Expert, or independent auditor resuming the V52 BEAM work.
 
 ## Exact starting point
 
-- **Repository state:** canonical branch `main`, at release tag `v52-4f1-v3-audit-blocked-2026-09-01`; use that tagged commit or a descendant explicitly reviewed by the Head Researcher.
-- **Current task:** Head Researcher decision on the BLOCKED V3 independent audit (see `audit/v52-t4f1-v3-independent-2026-09-01` at `a590f629`). The V3 audit is complete; do not re-run it as if pending.
+- **Repository state:** canonical branch `main`. Tag pushes are refused by the current environment, so the pushed anchor is branch `state/v52-4f1-v3-audit-blocked-2026-09-01`; use the current `main` head or a descendant explicitly reviewed by the Head Researcher.
+- **Current task:** cold-start independent audit of the exact **V4** candidate. The V3 audit is complete and BLOCKED; V4 remediates its finding. Do not re-run the V3 audit as if pending, and do not audit V4 if you are the agent that prepared it.
 - **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
-- **Executable audit instructions:** `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V3_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md`.
+- **Executable audit instructions:** `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md`.
 
 Read those files in that order. Historical V1/V2 audit reports are evidence, not instructions to execute their candidates.
 
@@ -20,10 +20,15 @@ Read those files in that order. Historical V1/V2 audit reports are evidence, not
 | 4F1 V1 audit | Preserved, but unusable for sealing because of disclosed auditor-side outcome-capable execution |
 | 4F1 V2 audit | `BLOCKED`; synthetic B1/B2/B3 integrity defects reproduced |
 | 4F1 V3 candidate | `BLOCKED` by cold-start independent audit 2026-09-01: B1/B2/B3 repaired, but the pinned 100K::12 canary is not reproducible from the declared environment lock |
+| 4F1 V4 candidate | `PREPARED_NOT_INDEPENDENTLY_AUDITED`; remediates the V3 Gate 3 defect; preflight passes on all six tested BLAS dispatches |
 | Task 4F1 preregistration / run | **Blocked** |
 | Retrieval-quality outcome access | **Forbidden** |
 
-The cold-start outcome-free V3 audit is complete and returned `BLOCKED — DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1`. Gates G1, G2, G4, G5, G6, G7, G8, fail-closed authorization and leakage statics all passed; B1, B2 and B3 are correctly repaired. Gate 3 blocks: the pinned `100K::12` representation canary does not reproduce in a fully lock-conformant environment because its bit-exact float digests depend on BLAS/LAPACK kernel dispatch, which the dependency lock does not pin. The next action is a Head Researcher remediation decision, not another V3 audit.
+The cold-start outcome-free V3 audit returned `BLOCKED`. B1, B2 and B3 were confirmed repaired, but Gate 3 blocked: the pinned `100K::12` canary bound bit-exact float digests that depend on BLAS/LAPACK kernel dispatch.
+
+The Head Researcher accepted remediation option 2, and the V4 candidate now binds sign codes (the quantities that actually drive Hamming retrieval) plus a sign-stability margin, and records BLAS provenance without gating on it. V4 `--mode preflight` passes on all six tested kernel dispatches, where V3 passed on none, and the B1/B2/B3 synthetic regression is 29/29.
+
+The only next technical action is a cold-start independent audit of the exact V4 bytes, performed by an agent that did not prepare them. A passing audit would permit only a later Head Researcher sealing decision; it does not authorize a preregistration or run.
 
 ## Non-negotiable boundary
 
@@ -31,14 +36,17 @@ Do **not** invoke `--mode run` or `--mode finalize`. Do **not** call `run_archiv
 
 If any real retrieval-quality computation occurs, stop. Record only containment facts; do not interpret the outcome.
 
-## Exact V3 objects to audit
+## Exact V4 objects to audit
 
-- Candidate: `task4f1_execution_candidate_v3_2026_09_01/`
+- Candidate: `task4f1_execution_candidate_v4_2026_09_01/`
+  - runner SHA256: `f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8`
+  - payload inventory SHA256: `fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e`
+  - candidate seal SHA256: `1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9`
+- Implementer-side, outcome-free evidence: `task4f1_execution_candidate_v4_preflight_2026_09_01/`
+  - evidence manifest SHA256: `4f78b5c8b184ad0ecfbbf444ffddbbcd076c6b78fa65c4b0d76696259f1c930f`
+- Superseded but preserved: `task4f1_execution_candidate_v3_2026_09_01/`
   - runner SHA256: `0c1c1cc2bcf23296f0559daa98d936ed605fd7068ef376aa26bed69f6e66b07c`
-  - payload inventory SHA256: `c7b53e55aff9206be8f70779bb781813e2c177120db1a4fb2826dde699df4199`
-  - candidate seal SHA256: `9d35192ecc20fbe0a01254278857f656027b71e1f04947267c67e4d379a868de`
-- Implementer-side, outcome-free evidence: `task4f1_execution_candidate_v3_preflight_2026_09_01/`
-  - evidence manifest SHA256: `ccb0b815d5d8f251e136b8f4e8e2a04d6368f3cb5bab3d84fc467c206ccba2e9`
+  - BLOCKED audit: branch `audit/v52-t4f1-v3-independent-2026-09-01` at `a590f629`
 - Triggering V2 blocked audit: `audit_v52_t4f1_execution_candidate_v2_independent_audit_2026_09_01/`
   - audit manifest SHA256: `9942a531647b95d3ded7ca069a13ca70f51ab51868ad6835321e59601ba05395`
 - Sealed 4F0 restricted cohort: `audit_v52_t4f0_restricted_refreeze_2026_08_31/`

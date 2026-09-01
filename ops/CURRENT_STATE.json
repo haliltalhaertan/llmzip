@@ -1,8 +1,8 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V4_REMEDIATION_IN_PROGRESS",
-  "issued_at_utc": "2026-09-01T14:00:00Z",
-  "state_release_tag": "PENDING_STAGE_CLOSE",
+  "state_id": "V52_4F1_V4_INDEPENDENT_AUDIT_PENDING",
+  "issued_at_utc": "2026-09-01T15:00:00Z",
+  "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
     "handoff_tag": "v52-4f1-v3-continuity-2026-09-01",
@@ -17,18 +17,19 @@
     "docs/CONTINUITY_LEDGER.md",
     "docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md",
     "CHAIN_OF_CUSTODY.md",
-    "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V3_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md"
+    "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md"
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Prepare Task 4F1 V4 execution candidate remediating the Gate 3 reproducibility defect",
-    "next_single_action": "Empirically establish which representation quantities are stable across BLAS kernel dispatch, then build the V4 candidate namespace and produce implementer-side outcome-free preflight evidence. Do not seal, preregister or run Task 4F1, and do not self-audit V4.",
+    "current_task": "Cold-start independent audit of the exact Task 4F1 V4 candidate",
+    "next_single_action": "A separate cold-start auditor, not the agent that prepared V4, creates an isolated audit namespace and executes only prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
-    "v3_independent_audit": "BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1",
-    "head_researcher_decision_2026_09_01": "Remediation option 2 accepted: remove bit-exact float digests as a load-bearing gate and replace them with dispatch-stable quantities plus a tolerance-based invariance check. V3 stays sealed and unmodified."
+    "v3_independent_audit": "BLOCKED (superseded by V4; V3 preserved unmodified)",
+    "head_researcher_decision_2026_09_01": "Remediation option 2 accepted: remove bit-exact float digests as a load-bearing gate and replace them with dispatch-stable quantities plus a tolerance-based invariance check. V3 stays sealed and unmodified.",
+    "v4_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
   },
   "anchors": {
     "v3_runner": {
@@ -54,6 +55,22 @@
     "sealed_4f0_cohort": {
       "path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
       "sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    "v4_runner": {
+      "path": "task4f1_execution_candidate_v4_2026_09_01/v52_t4f1_beam_retrieval.py",
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    "v4_payload_inventory": {
+      "path": "task4f1_execution_candidate_v4_2026_09_01/PAYLOAD_HASHES.json",
+      "sha256": "fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e"
+    },
+    "v4_candidate_seal": {
+      "path": "task4f1_execution_candidate_v4_2026_09_01/CANDIDATE_EXECUTION_SEAL.json",
+      "sha256": "1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9"
+    },
+    "v4_preflight_manifest": {
+      "path": "task4f1_execution_candidate_v4_preflight_2026_09_01/PREFLIGHT_HASHES.json",
+      "sha256": "4f78b5c8b184ad0ecfbbf444ffddbbcd076c6b78fa65c4b0d76696259f1c930f"
     }
   },
   "required_external_inputs": {
@@ -76,52 +93,25 @@
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action"
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-005",
+  "ledger_entry": "L-006",
   "last_completed_stage": {
-    "stage": "V52_4F1_V3_COLD_START_INDEPENDENT_AUDIT",
-    "audit_branch": "audit/v52-t4f1-v3-independent-2026-09-01",
-    "audit_commit": "a590f629",
-    "audit_namespace": "audit_v52_t4f1_execution_candidate_v3_independent_audit_2026_09_01/",
-    "verdict": "BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1",
-    "gates": {
-      "G1": "PASS",
-      "G2": "PASS",
-      "G3": "BLOCKED",
-      "G4": "PASS",
-      "G5": "PASS",
-      "G6": "PASS",
-      "G7": "PASS",
-      "G8": "PASS",
-      "D2_authorization": "PASS",
-      "leakage_statics": "PASS"
+    "stage": "V52_4F1_V4_CANDIDATE_PREPARATION",
+    "branch": "impl/v52-t4f1-v4-2026-09-01",
+    "commit": "809059b",
+    "status": "PASS",
+    "validation": {
+      "v4_preflight_pass_dispatches": 6,
+      "distinct_sign_digests": 1,
+      "distinct_raw_float_digests": 4,
+      "b1_b2_b3_regression": "29/29",
+      "v3_to_v4_change_isolation": "canary, two helpers, env provenance and schema literals only"
     },
-    "blocking_reason": "Pinned 100K::12 representation canary digests are not reproducible in a fully lock-conformant environment; they vary with BLAS/LAPACK kernel dispatch (4 distinct digests across 6 OPENBLAS_CORETYPE settings, none matching the pinned value) while verify_environment() passes in all of them.",
-    "boundary": {
-      "cli_mode_run": 0,
-      "cli_mode_finalize": 0,
-      "hmac_key_env_set": 0,
-      "valid_authorization_constructed": false,
-      "real_retrieval_ranking": false,
-      "retrieval_quality_computed_read_reported": [
-        false,
-        false,
-        false
-      ],
-      "candidate_bytes_modified": false
-    }
+    "independent_audit_required": true
   },
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
     "commit": "531d41bacc3da1670c07b4ea269d4ac34e8624e2",
     "reason": "This environment refuses all pushes to refs/tags (HTTP 403 for annotated and lightweight tags alike) while branch pushes succeed. A branch anchor was pushed so the closed state is still recoverable from GitHub alone. The annotated tag exists locally at the same commit and should be pushed by an operator with tag-push rights."
-  },
-  "stage_in_progress": {
-    "stage": "V52_4F1_V4_CANDIDATE_PREPARATION",
-    "actor_role": "Implementer (isolated worktree/branch)",
-    "branch": "impl/v52-t4f1-v4-2026-09-01",
-    "new_namespace": "task4f1_execution_candidate_v4_2026_09_01/",
-    "status": "IN_PROGRESS",
-    "independent_audit_required": true
   }
 }

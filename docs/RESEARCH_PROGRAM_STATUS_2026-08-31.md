@@ -18,6 +18,7 @@ This document is the current operational research ledger. It distinguishes accep
 - `[TASK 4F1 EXECUTION IMPLEMENTATION PREPARED — INDEPENDENT CODE AUDIT PENDING]`
 - `[TASK 4F1 V2 INDEPENDENT AUDIT BLOCKED — B1/B2/B3 FINALIZATION INTEGRITY DEFECTS]`
 - `[TASK 4F1 V3 INDEPENDENT AUDIT BLOCKED — CANARY NOT REPRODUCIBLE FROM DECLARED ENVIRONMENT LOCK]`
+- `[TASK 4F1 V4 CANDIDATE PREPARED — DISPATCH-STABLE CANARY; FRESH INDEPENDENT AUDIT PENDING]`
 
 ## Accepted scientific evidence
 
@@ -109,3 +110,30 @@ Before opening or merging further research work:
 7. P1 — recover `V52_T4C2_same_input_proof.csv` only from its canonical byte source and accept it only if SHA256 equals `16a6c4a66be6f5cb4ac81157588c9e735cb1b31d122e83c68f14fbf77dd57e57`.
 8. P1 — independently materialize and hash the four currently external Task 4C3/dataset pins when resources permit.
 9. P2 — defer mediator studies, alternate representations and production claims to separately justified branches.
+
+## 2026-09-01 — Task 4F1 V4 remediation
+
+The Head Researcher accepted remediation option 2 from the V3 audit. V4 is a new
+candidate namespace; V3 and every sealed artifact are preserved byte-for-byte.
+
+V4 changes only the canary and environment provenance. The canary now binds sign-code
+digests, `sha256(packbits(centered >= 0))`, which are the quantities that actually drive
+Hamming retrieval, instead of raw float bytes. It adds `CANARY_SIGN_MARGIN = 1e-9`, which
+fails closed if the representation ever drifts close enough to zero for a sign code to
+flip between conformant environments. `verify_environment` additionally records the
+BLAS/LAPACK build and coretype as provenance without gating on it.
+
+Measured on the pinned `100K::12` archive across six kernel dispatches: raw float digests
+gave four distinct values, sign-code digests gave exactly one, the maximum cross-dispatch
+absolute difference was 1.202e-13 against a minimum absolute value of 4.089e-07, a margin
+of roughly 3.4e6, with none of the 37,632 entries inside the noise band. V4
+`--mode preflight` passes on all six dispatches, where V3 passed on none. The B1/B2/B3
+synthetic regression is 29/29 against V4, and V3-to-V4 change isolation is confined to the
+canary, two new helpers, environment provenance and schema literals.
+
+This is implementer evidence, not independent sign-off. V4 is
+`PREPARED_NOT_INDEPENDENTLY_AUDITED` and the agent that prepared it cannot audit it. The
+next gate is a cold-start independent audit of the exact V4 bytes under
+`prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md`. Even
+a passing audit permits only a sealing decision; Task 4F1 preregistration and run remain
+blocked.

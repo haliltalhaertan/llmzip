@@ -103,3 +103,19 @@ next_single_action: Run the dispatch-stability study, then build and validate th
 handoff_payload: branch impl/v52-t4f1-v4-2026-09-01; new candidate namespace; dispatch-stability evidence; preflight evidence; hashes.
 role_constraint: This agent implements V4 and therefore CANNOT audit it. Per docs/CONTINUITY_PROTOCOL.md the Head Researcher cannot call its own implementation work an independent audit. V4 requires a separate cold-start independent audit before any sealing decision, and Task 4F1 remains BLOCKED for preregistration and run regardless of that audit's outcome.
 ```
+
+### L-006
+
+```text
+timestamp_utc: 2026-09-01T15:00:00Z
+actor_role: Implementer (isolated worktree/branch), state closed by Head Researcher / Continuity Lead
+predecessor_commit_or_tag: L-005 / c56c705
+scope: Prepare the Task 4F1 V4 execution candidate remediating the V3 Gate 3 reproducibility defect, under Head Researcher remediation option 2. V3, V2, V1, their seals and manifests, the sealed 4F0 namespace and the pinned corpus were not modified.
+changed_or_created_paths: task4f1_execution_candidate_v4_2026_09_01/; task4f1_execution_candidate_v4_preflight_2026_09_01/; prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md; ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md; START_HERE_V52_4F1.md; docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md
+verification: Dispatch-stability study on the pinned 100K::12 archive across SkylakeX, Haswell, Nehalem, Sandybridge, Zen and Barcelona. Raw float digests gave 4 distinct values; sign-code digests gave exactly 1. Max cross-dispatch absolute difference 1.202e-13 against a minimum absolute value of 4.089e-07 (archive) and 7.036e-04 (query), a margin of roughly 3.4e6, with 0 of 37,632 entries inside the noise band. V4 --mode preflight PASSES on all six dispatches, where V3 passed on none. B1/B2/B3 synthetic regression 29/29 preserved against V4. V3-to-V4 change isolation confirmed at AST level: only the canary body, the sign_code_sha256 and describe_numerical_backend helpers, the canary constants, verify_environment provenance and schema version literals differ; every other function including the whole numerical core is unchanged. Candidate package preflight PASS with recursive closure and fail-closed authorization.
+outcome_boundary: 0 CLI --mode run; 0 CLI --mode finalize; 0 HMAC key environment sets; no valid authorization constructed; no real retrieval ranking; retrieval quality computed/read/reported = false/false/false; no V3 or earlier candidate bytes modified. All B1/B2/B3 exercises used auditor/implementer-authored synthetic fixtures, never real BEAM data. The V4 canary remains representation-only: no ranking, no probing questions, no gold.
+status: PASS
+next_single_action: A separate cold-start independent auditor executes only prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md against the exact V4 bytes.
+handoff_payload: branch impl/v52-t4f1-v4-2026-09-01 at 809059b, merged to main; V4 runner f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8; inventory fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e; seal 1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9; preflight manifest 4f78b5c8b184ad0ecfbbf444ffddbbcd076c6b78fa65c4b0d76696259f1c930f.
+role_constraint: The agent that prepared V4 CANNOT audit it. Per docs/CONTINUITY_PROTOCOL.md an independent auditor must be cold-start and must not treat any other agent's chat, narrative or claimed verdict as evidence. The V4 preflight package is implementer evidence, not independent sign-off, and its dispatch-stability claims must be independently re-derived. A passing V4 audit would permit only a Head Researcher sealing decision; Task 4F1 preregistration and run remain separately BLOCKED.
+```
