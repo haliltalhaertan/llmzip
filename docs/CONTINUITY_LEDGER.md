@@ -87,3 +87,19 @@ status: PASS
 next_single_action: Unchanged from L-003 - Head Researcher decides the Gate 3 remediation direction. An operator with tag-push rights should additionally publish the annotated tag v52-4f1-v3-audit-blocked-2026-09-01 at 531d41b.
 handoff_payload: main at 531d41b; pushed branch anchor state/v52-4f1-v3-audit-blocked-2026-09-01; audit package at audit/v52-t4f1-v3-independent-2026-09-01 a590f629.
 ```
+
+### L-005
+
+```text
+timestamp_utc: 2026-09-01T14:00:00Z
+actor_role: Head Researcher decision recorded by Continuity Lead; execution by Implementer role in an isolated worktree/branch
+predecessor_commit_or_tag: L-004 / 18a7356 (pushed anchor branch state/v52-4f1-v3-audit-blocked-2026-09-01)
+scope: Act on the BLOCKED V3 audit. Head Researcher accepted remediation option 2 from the V3 audit report: stop treating bit-exact float digests as a load-bearing gate and replace them with quantities that are stable across BLAS/LAPACK kernel dispatch, plus a tolerance-based invariance check. Prepare a NEW Task 4F1 V4 execution candidate namespace. V3, V2, V1, their seals and manifests, the sealed 4F0 namespace and the pinned corpus remain read-only and unmodified.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md; then task4f1_execution_candidate_v4_2026_09_01/ and its preflight evidence on branch impl/v52-t4f1-v4-2026-09-01
+verification: Before any V4 design is fixed, empirically determine which representation quantities are invariant across OPENBLAS_CORETYPE dispatch on the pinned 100K::12 archive. The V4 canary is acceptable only if its declared expectations reproduce identically across every tested dispatch.
+outcome_boundary: No --mode run, no --mode finalize, no run_archives/evaluate_archive/finalize_results on real BEAM data, no V52_T4F1_AUTH_HMAC_KEY_HEX, no valid authorization or HMAC construction, no real retrieval top-3 IDs, distances, metrics or arm outcomes. The V4 canary must remain representation-only: no ranking of any query against the archive and no gold access.
+status: IN_PROGRESS
+next_single_action: Run the dispatch-stability study, then build and validate the V4 candidate and its implementer-side preflight evidence.
+handoff_payload: branch impl/v52-t4f1-v4-2026-09-01; new candidate namespace; dispatch-stability evidence; preflight evidence; hashes.
+role_constraint: This agent implements V4 and therefore CANNOT audit it. Per docs/CONTINUITY_PROTOCOL.md the Head Researcher cannot call its own implementation work an independent audit. V4 requires a separate cold-start independent audit before any sealing decision, and Task 4F1 remains BLOCKED for preregistration and run regardless of that audit's outcome.
+```

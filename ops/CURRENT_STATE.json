@@ -1,12 +1,13 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V3_INDEPENDENT_AUDIT_BLOCKED",
-  "issued_at_utc": "2026-09-01T13:00:00Z",
-  "state_release_tag": "v52-4f1-v3-audit-blocked-2026-09-01 (LOCAL ONLY - tag push refused by environment)",
+  "state_id": "V52_4F1_V4_REMEDIATION_IN_PROGRESS",
+  "issued_at_utc": "2026-09-01T14:00:00Z",
+  "state_release_tag": "PENDING_STAGE_CLOSE",
   "predecessor_anchor": {
     "canonical_branch": "main",
     "handoff_tag": "v52-4f1-v3-continuity-2026-09-01",
-    "commit": "6c5459cd63443e5b58adb1b7e3391745368ffafd",
+    "pushed_state_anchor_branch": "state/v52-4f1-v3-audit-blocked-2026-09-01",
+    "commit": "18a7356e3c78b5bd829b004a0fed26675a4a5615",
     "prior_handoff_tag": "v52-4f1-v3-audit-handoff-2026-09-01-r2",
     "default_branch_setting": "PENDING_REPOSITORY_OWNER_CONFIRMATION"
   },
@@ -20,13 +21,14 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Head Researcher decision on the BLOCKED V3 independent audit",
-    "next_single_action": "Head Researcher decides between tightening the environment lock to bind BLAS/CPU kernel dispatch and replacing bit-exact float canary digests with dispatch-stable quantities; then a new V4 candidate must be prepared and independently re-audited. Do not seal, preregister or run Task 4F1.",
+    "current_task": "Prepare Task 4F1 V4 execution candidate remediating the Gate 3 reproducibility defect",
+    "next_single_action": "Empirically establish which representation quantities are stable across BLAS kernel dispatch, then build the V4 candidate namespace and produce implementer-side outcome-free preflight evidence. Do not seal, preregister or run Task 4F1, and do not self-audit V4.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
-    "v3_independent_audit": "BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1"
+    "v3_independent_audit": "BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1",
+    "head_researcher_decision_2026_09_01": "Remediation option 2 accepted: remove bit-exact float digests as a load-bearing gate and replace them with dispatch-stable quantities plus a tolerance-based invariance check. V3 stays sealed and unmodified."
   },
   "anchors": {
     "v3_runner": {
@@ -74,7 +76,7 @@
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action"
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-004",
+  "ledger_entry": "L-005",
   "last_completed_stage": {
     "stage": "V52_4F1_V3_COLD_START_INDEPENDENT_AUDIT",
     "audit_branch": "audit/v52-t4f1-v3-independent-2026-09-01",
@@ -113,5 +115,13 @@
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
     "commit": "531d41bacc3da1670c07b4ea269d4ac34e8624e2",
     "reason": "This environment refuses all pushes to refs/tags (HTTP 403 for annotated and lightweight tags alike) while branch pushes succeed. A branch anchor was pushed so the closed state is still recoverable from GitHub alone. The annotated tag exists locally at the same commit and should be pushed by an operator with tag-push rights."
+  },
+  "stage_in_progress": {
+    "stage": "V52_4F1_V4_CANDIDATE_PREPARATION",
+    "actor_role": "Implementer (isolated worktree/branch)",
+    "branch": "impl/v52-t4f1-v4-2026-09-01",
+    "new_namespace": "task4f1_execution_candidate_v4_2026_09_01/",
+    "status": "IN_PROGRESS",
+    "independent_audit_required": true
   }
 }
