@@ -17,7 +17,7 @@ This document is the current operational research ledger. It distinguishes accep
 - `[TASK 4F0 RESTRICTED-COHORT PROTOCOL SEALED — 22/22 INDEPENDENT GATES PASS]`
 - `[TASK 4F1 EXECUTION IMPLEMENTATION PREPARED — INDEPENDENT CODE AUDIT PENDING]`
 - `[TASK 4F1 V2 INDEPENDENT AUDIT BLOCKED — B1/B2/B3 FINALIZATION INTEGRITY DEFECTS]`
-- `[TASK 4F1 V3 CANDIDATE PREPARED — FRESH OUTCOME-FREE INDEPENDENT AUDIT PENDING]`
+- `[TASK 4F1 V3 INDEPENDENT AUDIT BLOCKED — CANARY NOT REPRODUCIBLE FROM DECLARED ENVIRONMENT LOCK]`
 
 ## Accepted scientific evidence
 
@@ -77,7 +77,15 @@ The V1 execution-code audit supplied useful technical checks but disclosed Incid
 
 The subsequent clean V2 audit was `BLOCKED — DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1`. Its synthetic-only tests reproduced three load-bearing defects: derived finalization CSV overwrite when no manifest exists; acceptance of stored metrics not recomputed from frozen gold; and acceptance of Native/signed-control top-three divergence when metrics remain equal.
 
-V3 preserves V2 and its audit unchanged, adds exclusive no-replace derived-output commits, exact frozen-gold metric recomputation, and exact Native/signed-control ID-plus-distance validation. V3 passed outcome-free implementer preflight and synthetic B1–B3 regressions only. It remains unsealed, unpreregistered and unauthorized until a new cold-start audit of its exact bytes returns an uncontaminated PASS.
+V3 preserves V2 and its audit unchanged, adds exclusive no-replace derived-output commits, exact frozen-gold metric recomputation, and exact Native/signed-control ID-plus-distance validation. V3 passed outcome-free implementer preflight and synthetic B1–B3 regressions only.
+
+The cold-start independent audit of the exact V3 bytes completed on 2026-09-01 with verdict `BLOCKED — DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1` (branch `audit/v52-t4f1-v3-independent-2026-09-01`, commit `a590f629`).
+
+The audit confirms the three V2 blockers are genuinely repaired: B1 destinations and temp paths block before any byte changes with exclusive `os.link` commit; B2 recomputes metrics exactly from frozen gold; B3 requires exact Native/signed-control top-three IDs and distances. Gates G1, G2, G4, G5, G6, G7 and G8 passed, including a 29/29 negative-control matrix and a 9/9 substitution and bypass hunt, with fail-closed authorization and clean leakage statics.
+
+Gate 3 blocks. In an environment satisfying the declared lock exactly, the pinned `100K::12` representation canary fails, so the candidate cannot pass its own `--mode preflight`. Corpus provenance and structure are correct and the code is locally deterministic, but the bit-exact float digests differ from the sealed values. Varying only `OPENBLAS_CORETYPE` while holding code, data and all locked versions constant produced four distinct archive digests across six dispatches, none matching the pinned digest, while `verify_environment()` accepted every variant. `TruncatedSVD` with the randomized solver depends on BLAS/LAPACK kernels, and the lock pins package versions and thread counts but not the BLAS build or CPU microarchitecture dispatch. A load-bearing reproducibility gate is therefore machine-bound rather than lock-bound, and the sealed digests cannot be independently reproduced from the sealed artifacts alone.
+
+Remediation is a Head Researcher decision: either bind the BLAS/LAPACK build and effective CPU kernel dispatch in the lock and in `verify_environment()`, or replace bit-exact float digests as a load-bearing gate with dispatch-stable quantities such as sign codes and integer Hamming distances plus a tolerance-based invariance check. Either way the canary expectations must be re-derived, re-sealed and independently re-audited on the exact new bytes.
 
 ## Operational governance defect
 

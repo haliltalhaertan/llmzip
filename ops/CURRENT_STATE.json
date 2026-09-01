@@ -1,12 +1,12 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V3_INDEPENDENT_AUDIT_IN_PROGRESS",
-  "issued_at_utc": "2026-09-01T11:00:00Z",
-  "state_release_tag": "PENDING_STAGE_CLOSE",
+  "state_id": "V52_4F1_V3_INDEPENDENT_AUDIT_BLOCKED",
+  "issued_at_utc": "2026-09-01T13:00:00Z",
+  "state_release_tag": "v52-4f1-v3-audit-blocked-2026-09-01",
   "predecessor_anchor": {
     "canonical_branch": "main",
     "handoff_tag": "v52-4f1-v3-continuity-2026-09-01",
-    "commit": "40db3c56a17bbe01cabcdf8c581673854f73253d",
+    "commit": "6c5459cd63443e5b58adb1b7e3391745368ffafd",
     "prior_handoff_tag": "v52-4f1-v3-audit-handoff-2026-09-01-r2",
     "default_branch_setting": "PENDING_REPOSITORY_OWNER_CONFIRMATION"
   },
@@ -20,12 +20,13 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Cold-start independent audit of exact Task 4F1 V3 candidate",
-    "next_single_action": "Provision the locked Python 3.12.13 environment and pinned BEAM corpus, then run only the outcome-free V3 audit gates in the isolated auditor worktree/branch; no run/finalize.",
+    "current_task": "Head Researcher decision on the BLOCKED V3 independent audit",
+    "next_single_action": "Head Researcher decides between tightening the environment lock to bind BLAS/CPU kernel dispatch and replacing bit-exact float canary digests with dispatch-stable quantities; then a new V4 candidate must be prepared and independently re-audited. Do not seal, preregister or run Task 4F1.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
-    "retrieval_quality_outcome_access": "FORBIDDEN"
+    "retrieval_quality_outcome_access": "FORBIDDEN",
+    "v3_independent_audit": "BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1"
   },
   "anchors": {
     "v3_runner": {
@@ -73,12 +74,38 @@
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action"
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-002",
-  "stage_in_progress": {
-    "stage": "V3_INDEPENDENT_AUDIT_STAGE_A_PROVISIONING",
-    "actor_role": "Independent auditor (isolated worktree/branch), claimed by Head Researcher",
-    "auditor_branch": "audit/v52-t4f1-v3-independent-2026-09-01",
+  "ledger_entry": "L-003",
+  "last_completed_stage": {
+    "stage": "V52_4F1_V3_COLD_START_INDEPENDENT_AUDIT",
+    "audit_branch": "audit/v52-t4f1-v3-independent-2026-09-01",
+    "audit_commit": "a590f629",
     "audit_namespace": "audit_v52_t4f1_execution_candidate_v3_independent_audit_2026_09_01/",
-    "status": "IN_PROGRESS"
+    "verdict": "BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1",
+    "gates": {
+      "G1": "PASS",
+      "G2": "PASS",
+      "G3": "BLOCKED",
+      "G4": "PASS",
+      "G5": "PASS",
+      "G6": "PASS",
+      "G7": "PASS",
+      "G8": "PASS",
+      "D2_authorization": "PASS",
+      "leakage_statics": "PASS"
+    },
+    "blocking_reason": "Pinned 100K::12 representation canary digests are not reproducible in a fully lock-conformant environment; they vary with BLAS/LAPACK kernel dispatch (4 distinct digests across 6 OPENBLAS_CORETYPE settings, none matching the pinned value) while verify_environment() passes in all of them.",
+    "boundary": {
+      "cli_mode_run": 0,
+      "cli_mode_finalize": 0,
+      "hmac_key_env_set": 0,
+      "valid_authorization_constructed": false,
+      "real_retrieval_ranking": false,
+      "retrieval_quality_computed_read_reported": [
+        false,
+        false,
+        false
+      ],
+      "candidate_bytes_modified": false
+    }
   }
 }

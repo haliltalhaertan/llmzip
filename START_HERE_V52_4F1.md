@@ -4,8 +4,8 @@ This is the single operational entry point for a new Head Researcher, Compute Ex
 
 ## Exact starting point
 
-- **Repository state:** canonical branch `main`, at release tag `v52-4f1-v3-audit-handoff-2026-09-01-r2`; use that tagged commit or a descendant explicitly reviewed by the Head Researcher.
-- **Current task:** independently audit the exact V3 execution candidate. This is code/integrity audit only; it is not a Task 4F1 preregistration, execution, or result-interpretation task.
+- **Repository state:** canonical branch `main`, at release tag `v52-4f1-v3-audit-blocked-2026-09-01`; use that tagged commit or a descendant explicitly reviewed by the Head Researcher.
+- **Current task:** Head Researcher decision on the BLOCKED V3 independent audit (see `audit/v52-t4f1-v3-independent-2026-09-01` at `a590f629`). The V3 audit is complete; do not re-run it as if pending.
 - **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
 - **Executable audit instructions:** `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V3_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md`.
@@ -19,11 +19,11 @@ Read those files in that order. Historical V1/V2 audit reports are evidence, not
 | Task 4F0 restricted cohort | Sealed: 1,712 questions across 96 archives |
 | 4F1 V1 audit | Preserved, but unusable for sealing because of disclosed auditor-side outcome-capable execution |
 | 4F1 V2 audit | `BLOCKED`; synthetic B1/B2/B3 integrity defects reproduced |
-| 4F1 V3 candidate | Prepared and preflighted; independent audit pending |
+| 4F1 V3 candidate | `BLOCKED` by cold-start independent audit 2026-09-01: B1/B2/B3 repaired, but the pinned 100K::12 canary is not reproducible from the declared environment lock |
 | Task 4F1 preregistration / run | **Blocked** |
 | Retrieval-quality outcome access | **Forbidden** |
 
-The only next technical action is a cold-start, outcome-free audit of V3. A passing audit may permit a later Head Researcher sealing decision; it does not authorize a preregistration or run.
+The cold-start outcome-free V3 audit is complete and returned `BLOCKED — DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1`. Gates G1, G2, G4, G5, G6, G7, G8, fail-closed authorization and leakage statics all passed; B1, B2 and B3 are correctly repaired. Gate 3 blocks: the pinned `100K::12` representation canary does not reproduce in a fully lock-conformant environment because its bit-exact float digests depend on BLAS/LAPACK kernel dispatch, which the dependency lock does not pin. The next action is a Head Researcher remediation decision, not another V3 audit.
 
 ## Non-negotiable boundary
 
