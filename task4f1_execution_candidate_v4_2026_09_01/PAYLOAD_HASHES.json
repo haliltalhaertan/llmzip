@@ -1,0 +1,38 @@
+{
+  "closure": "RECURSIVE_ALL_FILES_EXCLUDING_INVENTORY_AND_SEAL",
+  "file_count_excluding_inventory_and_seal": 6,
+  "files": [
+    {
+      "bytes": 4147,
+      "name": "candidate_package_preflight.py",
+      "sha256": "e0cde9802931851d28aea5f745cedea3e02ad731ad79981230c4fe92fe96630a"
+    },
+    {
+      "bytes": 330,
+      "name": "DEPENDENCY_LOCK.txt",
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "bytes": 10574,
+      "name": "EXECUTION_SPEC.md",
+      "sha256": "de1d3689f113607c1a7d5425c5795c03faeeeae74e7a4bb75953a57c9691f748"
+    },
+    {
+      "bytes": 3669,
+      "name": "README.md",
+      "sha256": "4a7250508e8636328de53dfc5a334dec24d850cf1603160942b1b94078fcf4d6"
+    },
+    {
+      "bytes": 909,
+      "name": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "sha256": "c8f94a8da79dde959cbb54d173e3e87b096832f0a0bbe0e6c806589b091a720f"
+    },
+    {
+      "bytes": 61860,
+      "name": "v52_t4f1_beam_retrieval.py",
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    }
+  ],
+  "schema": "V52_T4F1_EXECUTION_CANDIDATE_PAYLOADS_V4",
+  "status": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+}

@@ -1,0 +1,67 @@
+{
+  "distinct_archive_sign_digests": 1,
+  "distinct_query_sign_digests": 1,
+  "float_representation_stability": {
+    "dispatches": [
+      "SkylakeX",
+      "Haswell",
+      "Nehalem",
+      "Sandybridge",
+      "Zen",
+      "Barcelona"
+    ],
+    "entries_within_noise": 0,
+    "max_cross_dispatch_abs_diff": 1.201816424156732e-13,
+    "min_abs_value_archive": 4.088828967405535e-07,
+    "min_abs_value_query": 0.0007035806775919399,
+    "safety_margin_ratio": 3402207.596118108,
+    "sign_codes_identical_archive": true,
+    "sign_codes_identical_query": true,
+    "total_entries": 37632
+  },
+  "purpose": "Evidence that the V4 canary expectations are invariant across BLAS/LAPACK kernel dispatch, which is the defect that BLOCKED V3.",
+  "schema": "V52_T4F1_V4_DISPATCH_STABILITY_V1",
+  "v3_behaviour_for_contrast": {
+    "distinct_raw_float_digests": 4,
+    "preflight_pass_count": 0
+  },
+  "v4_preflight_pass_count": 6,
+  "v4_preflight_per_dispatch": {
+    "Barcelona": {
+      "archive_sign_margin": 4.0888290363575407e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "preflight_status": "PASS",
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    "Haswell": {
+      "archive_sign_margin": 4.088828996234471e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "preflight_status": "PASS",
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    "Nehalem": {
+      "archive_sign_margin": 4.0888290363575407e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "preflight_status": "PASS",
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    "Sandybridge": {
+      "archive_sign_margin": 4.0888289939424675e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "preflight_status": "PASS",
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    "SkylakeX": {
+      "archive_sign_margin": 4.088828967405535e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "preflight_status": "PASS",
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    "Zen": {
+      "archive_sign_margin": 4.088828996234471e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "preflight_status": "PASS",
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    }
+  }
+}

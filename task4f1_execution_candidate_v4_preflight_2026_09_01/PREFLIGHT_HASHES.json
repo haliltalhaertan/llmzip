@@ -1,0 +1,49 @@
+{
+  "bound_candidate": {
+    "execution_seal_sha256": "1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9",
+    "implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "namespace": "task4f1_execution_candidate_v4_2026_09_01",
+    "payload_inventory_sha256": "fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e"
+  },
+  "files": [
+    {
+      "bytes": 4989,
+      "name": "B1_B2_B3_REGRESSION.json",
+      "sha256": "7c1610485023c14d58b110f2888acdced9c95a12de9a983c0094c9f72a45e16b"
+    },
+    {
+      "bytes": 2775,
+      "name": "DISPATCH_STABILITY.json",
+      "sha256": "b1480c5c7ff78665e7c7ef2562111eb4089a8ff86af88b6881e6321b869b7fdf"
+    },
+    {
+      "bytes": 3890,
+      "name": "IMPLEMENTATION_PREFLIGHT.json",
+      "sha256": "3e170ee95a5f29e135d3d354b16eac51ec8f3576b554bb2200231be1dfa4c029"
+    },
+    {
+      "bytes": 1548,
+      "name": "V3_TO_V4_CHANGE_ISOLATION.json",
+      "sha256": "1255a81ba78d53e96935bd03c738094aaee10c4fa3b7bca7958459cf38c49564"
+    }
+  ],
+  "independent_audit_required": true,
+  "outcome_boundary": {
+    "cli_mode_finalize_invocations": 0,
+    "cli_mode_run_invocations": 0,
+    "finalize_results_called_on_real_beam_data": false,
+    "hmac_key_env_set_count": 0,
+    "real_retrieval_ranking_performed": false,
+    "retrieval_quality_computed_read_reported": [
+      false,
+      false,
+      false
+    ],
+    "v3_or_earlier_candidate_bytes_modified": false,
+    "valid_authorization_constructed": false
+  },
+  "prepared_at_utc": "2026-09-01T14:45:00Z",
+  "schema": "V52_T4F1_V4_PREFLIGHT_HASHES_V1",
+  "self_audit_prohibited": "Prepared by the implementer role; a separate cold-start independent audit of these exact bytes is required before any sealing decision.",
+  "status": "IMPLEMENTER_EVIDENCE_NOT_INDEPENDENT_SIGNOFF"
+}
