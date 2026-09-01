@@ -119,3 +119,22 @@ next_single_action: A separate cold-start independent auditor executes only prom
 handoff_payload: branch impl/v52-t4f1-v4-2026-09-01 at 809059b, merged to main; V4 runner f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8; inventory fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e; seal 1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9; preflight manifest 4f78b5c8b184ad0ecfbbf444ffddbbcd076c6b78fa65c4b0d76696259f1c930f.
 role_constraint: The agent that prepared V4 CANNOT audit it. Per docs/CONTINUITY_PROTOCOL.md an independent auditor must be cold-start and must not treat any other agent's chat, narrative or claimed verdict as evidence. The V4 preflight package is implementer evidence, not independent sign-off, and its dispatch-stability claims must be independently re-derived. A passing V4 audit would permit only a Head Researcher sealing decision; Task 4F1 preregistration and run remain separately BLOCKED.
 ```
+
+### L-007
+
+```text
+timestamp_utc: 2026-09-01T16:00:00Z
+actor_role: Head Researcher / Continuity Lead
+predecessor_commit_or_tag: L-006 / 8700098
+scope: Record the Head Researcher custody decision requested by the V4 independent auditor, and narrowly authorize persistence of its audit package. No verdict is accepted and nothing is sealed by this entry.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+decision: The V4 audit package is to be persisted on a NEW branch audit/v52-t4f1-v4-independent-2026-09-01. This follows CHAIN_OF_CUSTODY rule 2 and the V3 precedent (audit/v52-t4f1-v3-independent-2026-09-01 at a590f629). Committing audit output to main is refused: main is canonical ACCEPTED state, and landing an unreviewed audit there would conflate "produced" with "accepted". Leaving it uncommitted is refused: the auditor container is ephemeral and the evidence would be destroyed.
+authorization: The V4 audit prompt forbids the auditor from committing or pushing. The Head Researcher, as the owner of that prompt and of this decision, narrowly releases that constraint for one purpose only: pushing the audit namespace to the named audit/... branch. The auditor must not modify any tracked file, must not commit to main, must not merge, and must not open a pull request. The constraint exists to stop an auditor mutating sealed artifacts or self-accepting into canonical state, not to destroy evidence; a fresh audit/... branch touching no tracked file serves that purpose intact.
+hashes_file_ruling: INDEPENDENT_V4_EXECUTION_AUDIT_HASHES.json must NOT be rewritten to embed its own commit SHA. A file cannot hash the commit that contains it, and a second commit would break its self-verification. The commit SHA is recorded in this ledger instead, exactly as L-003 recorded the V3 audit commit.
+verification: In the Head Researcher container the namespace audit_v52_t4f1_execution_candidate_v4_independent_audit_2026_09_01/ is ABSENT and no V4 audit branch exists on the remote; the package is unreachable and unverified here. Independent arithmetic cross-check of the relayed figures reconciles: 37,728 = 37,632 archive entries + 96 query entries; 4.0888e-07 / 1e-9 = 408.88x the required margin; 4.0888e-07 / 1.2018e-13 = 3.402e6x the measured noise. These agree with the L-006 preparation measurements, but agreement of relayed numbers is not acceptance.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN. No --mode run, no --mode finalize, no HMAC key, no valid authorization.
+status: IN_PROGRESS
+next_single_action: Auditor pushes the package to audit/v52-t4f1-v4-independent-2026-09-01; the Head Researcher then re-derives its hashes and boundary declarations independently before any acceptance or sealing entry is written.
+role_separation_note: This V4 audit was performed by a different agent from the one that prepared V4, which closes the dual-role weakness disclosed in L-003. That strengthens the audit's standing once its artifacts are actually verifiable.
+environment_warning: Tag pushes are refused in this project environment with HTTP 403 for annotated and lightweight tags alike, while branch pushes succeed. If the auditor's push of a tag fails, that is environmental and not a repository-integrity event; the branch is the anchor.
+```

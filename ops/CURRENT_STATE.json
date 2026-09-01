@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_V4_INDEPENDENT_AUDIT_PENDING",
-  "issued_at_utc": "2026-09-01T15:00:00Z",
+  "issued_at_utc": "2026-09-01T16:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,14 +22,15 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Cold-start independent audit of the exact Task 4F1 V4 candidate",
-    "next_single_action": "A separate cold-start auditor, not the agent that prepared V4, creates an isolated audit namespace and executes only prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md",
+    "next_single_action": "The V4 auditor pushes its uncommitted audit package to the new branch audit/v52-t4f1-v4-independent-2026-09-01 (that branch only; no main commit, no merge, no PR). The Head Researcher then independently hash-verifies the pushed package before recording any acceptance. The chat-relayed PASS is not yet evidence and V4 is not sealed.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
     "v3_independent_audit": "BLOCKED (superseded by V4; V3 preserved unmodified)",
     "head_researcher_decision_2026_09_01": "Remediation option 2 accepted: remove bit-exact float digests as a load-bearing gate and replace them with dispatch-stable quantities plus a tolerance-based invariance check. V3 stays sealed and unmodified.",
-    "v4_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    "v4_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+    "v4_independent_audit": "VERDICT RELAYED AS PASS BUT NOT YET VERIFIABLE: the audit package exists only in the auditor container and is not pushed. Not accepted, not sealed."
   },
   "anchors": {
     "v3_runner": {
@@ -93,7 +94,7 @@
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action"
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-006",
+  "ledger_entry": "L-007",
   "last_completed_stage": {
     "stage": "V52_4F1_V4_CANDIDATE_PREPARATION",
     "branch": "impl/v52-t4f1-v4-2026-09-01",
