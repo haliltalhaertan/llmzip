@@ -23,6 +23,7 @@ A 104-file documentation snapshot was assembled from the Drive archive during mi
 
 ### Project-level
 - `START_HERE_V52_4F1.md` — single operational handoff for a cold-start researcher/LLM; defines the current V3 independent-audit task, byte anchors, required external corpus, safety boundary and completion condition.
+- `ops/CURRENT_STATE.json`, `docs/CONTINUITY_PROTOCOL.md`, `docs/CONTINUITY_LEDGER.md`, and `tools/verify_continuity_state.py` — crash-safe, hash-checked operational state and append-only multi-agent handoff controls.
 - `README.md`
 - `docs/PROJECT_STATUS_2026-08-27.md`
 - `docs/PROJECT_STATUS_2026-08-28.md`
