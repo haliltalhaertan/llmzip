@@ -1,12 +1,13 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V3_INDEPENDENT_AUDIT_PENDING",
-  "issued_at_utc": "2026-09-01T00:00:00Z",
-  "state_release_tag": "v52-4f1-v3-continuity-2026-09-01",
+  "state_id": "V52_4F1_V3_INDEPENDENT_AUDIT_IN_PROGRESS",
+  "issued_at_utc": "2026-09-01T11:00:00Z",
+  "state_release_tag": "PENDING_STAGE_CLOSE",
   "predecessor_anchor": {
     "canonical_branch": "main",
-    "handoff_tag": "v52-4f1-v3-audit-handoff-2026-09-01-r2",
-    "commit": "e1b5731d9c7f38bdb686290736e86ef212fe27ff",
+    "handoff_tag": "v52-4f1-v3-continuity-2026-09-01",
+    "commit": "40db3c56a17bbe01cabcdf8c581673854f73253d",
+    "prior_handoff_tag": "v52-4f1-v3-audit-handoff-2026-09-01-r2",
     "default_branch_setting": "PENDING_REPOSITORY_OWNER_CONFIRMATION"
   },
   "authority_order": [
@@ -20,7 +21,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Cold-start independent audit of exact Task 4F1 V3 candidate",
-    "next_single_action": "Create an isolated audit namespace and execute only the outcome-free V3 audit prompt",
+    "next_single_action": "Provision the locked Python 3.12.13 environment and pinned BEAM corpus, then run only the outcome-free V3 audit gates in the isolated auditor worktree/branch; no run/finalize.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -72,5 +73,12 @@
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action"
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-001"
+  "ledger_entry": "L-002",
+  "stage_in_progress": {
+    "stage": "V3_INDEPENDENT_AUDIT_STAGE_A_PROVISIONING",
+    "actor_role": "Independent auditor (isolated worktree/branch), claimed by Head Researcher",
+    "auditor_branch": "audit/v52-t4f1-v3-independent-2026-09-01",
+    "audit_namespace": "audit_v52_t4f1_execution_candidate_v3_independent_audit_2026_09_01/",
+    "status": "IN_PROGRESS"
+  }
 }
