@@ -72,3 +72,18 @@ handoff_payload: audit branch audit/v52-t4f1-v3-independent-2026-09-01 at a590f6
 blocking_finding: Gate 3. The pinned 100K::12 representation canary does not reproduce in a fully lock-conformant environment. Structure is correct (392 units; 392x96 and 1x96 shapes) and the code is locally deterministic across three repeat runs, but the bit-exact float digests differ from the sealed values. Holding code, data and all locked versions constant and varying only OPENBLAS_CORETYPE produced four distinct archive digests across six dispatches, none equal to the pinned digest, while the candidate's own verify_environment() accepted every variant. The dependency lock pins package versions and thread counts but not the BLAS/LAPACK build or CPU microarchitecture dispatch that determine those bits, so a load-bearing gate is machine-bound rather than lock-bound.
 governance_note: The V3 audit prompt forbids the auditor from committing or pushing, so audit outputs were produced without commit inside the auditor namespace and then carried by the Head Researcher role onto an audit/... branch per CHAIN_OF_CUSTODY rule 2. That package has NOT been merged into main; merging requires an explicit Head Researcher acceptance decision. Disclosure: in this session one agent held both the Head Researcher/Continuity Lead and independent-auditor roles. The auditor did not implement V3 (a prior agent did) and accepted no prior chat, narrative or claimed verdict as evidence, re-deriving every declared hash and behaviour independently; a successor may nevertheless commission a second independent audit of these same bytes if stricter role separation is required.
 ```
+
+### L-004
+
+```text
+timestamp_utc: 2026-09-01T13:20:00Z
+actor_role: Head Researcher / Continuity Lead
+predecessor_commit_or_tag: L-003 / 531d41b
+scope: Record the anchor substitution for the L-003 closed state. No research state, verdict, gate result or artifact changes.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+verification: git push of refs/tags/v52-4f1-v3-audit-blocked-2026-09-01 was refused with HTTP 403; a lightweight test tag to the same commit was refused identically, while branch pushes to main, audit/... and state/... all succeeded. Branch anchor state/v52-4f1-v3-audit-blocked-2026-09-01 pushed at 531d41bacc3da1670c07b4ea269d4ac34e8624e2.
+outcome_boundary: Unchanged. No run/finalize, authorization, HMAC key or retrieval outcome access.
+status: PASS
+next_single_action: Unchanged from L-003 - Head Researcher decides the Gate 3 remediation direction. An operator with tag-push rights should additionally publish the annotated tag v52-4f1-v3-audit-blocked-2026-09-01 at 531d41b.
+handoff_payload: main at 531d41b; pushed branch anchor state/v52-4f1-v3-audit-blocked-2026-09-01; audit package at audit/v52-t4f1-v3-independent-2026-09-01 a590f629.
+```

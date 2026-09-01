@@ -2,7 +2,7 @@
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_V3_INDEPENDENT_AUDIT_BLOCKED",
   "issued_at_utc": "2026-09-01T13:00:00Z",
-  "state_release_tag": "v52-4f1-v3-audit-blocked-2026-09-01",
+  "state_release_tag": "v52-4f1-v3-audit-blocked-2026-09-01 (LOCAL ONLY - tag push refused by environment)",
   "predecessor_anchor": {
     "canonical_branch": "main",
     "handoff_tag": "v52-4f1-v3-continuity-2026-09-01",
@@ -74,7 +74,7 @@
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action"
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-003",
+  "ledger_entry": "L-004",
   "last_completed_stage": {
     "stage": "V52_4F1_V3_COLD_START_INDEPENDENT_AUDIT",
     "audit_branch": "audit/v52-t4f1-v3-independent-2026-09-01",
@@ -107,5 +107,11 @@
       ],
       "candidate_bytes_modified": false
     }
+  },
+  "pushed_state_anchor": {
+    "type": "branch",
+    "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
+    "commit": "531d41bacc3da1670c07b4ea269d4ac34e8624e2",
+    "reason": "This environment refuses all pushes to refs/tags (HTTP 403 for annotated and lightweight tags alike) while branch pushes succeed. A branch anchor was pushed so the closed state is still recoverable from GitHub alone. The annotated tag exists locally at the same commit and should be pushed by an operator with tag-push rights."
   }
 }
