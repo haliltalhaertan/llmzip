@@ -1,0 +1,55 @@
+{
+  "added": [
+    "describe_numerical_backend",
+    "sign_code_sha256"
+  ],
+  "changed": [
+    "describe_numerical_backend",
+    "evaluate_archive",
+    "finalize_results",
+    "preflight",
+    "real_archive_canary",
+    "sign_code_sha256",
+    "verify_environment",
+    "verify_execution_seal",
+    "verify_existing_archive"
+  ],
+  "constant_diffs": {
+    "AUTH_SCHEMA": {
+      "v3": "'V52_T4F1_RUN_AUTHORIZATION_V3'",
+      "v4": "'V52_T4F1_RUN_AUTHORIZATION_V4'"
+    },
+    "CANARY_SIGN_MARGIN": {
+      "v3": null,
+      "v4": "1e-09"
+    },
+    "EXPECTED_REAL_CANARY_ARCHIVE_SHA256": {
+      "v3": "'25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025'",
+      "v4": null
+    },
+    "EXPECTED_REAL_CANARY_ARCHIVE_SIGN_SHA256": {
+      "v3": null,
+      "v4": "'7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5'"
+    },
+    "EXPECTED_REAL_CANARY_QUERY_SHA256": {
+      "v3": "'e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869'",
+      "v4": null
+    },
+    "EXPECTED_REAL_CANARY_QUERY_SIGN_SHA256": {
+      "v3": null,
+      "v4": "'5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b'"
+    }
+  },
+  "core_changed": [
+    "evaluate_archive",
+    "finalize_results",
+    "verify_existing_archive"
+  ],
+  "core_changed_schema_literal_only": [
+    "evaluate_archive",
+    "verify_existing_archive"
+  ],
+  "removed": [],
+  "v3_sha256": "0c1c1cc2bcf23296f0559daa98d936ed605fd7068ef376aa26bed69f6e66b07c",
+  "v4_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+}

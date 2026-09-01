@@ -1,0 +1,212 @@
+{
+  "failed": 0,
+  "note": "Synthetic-only regression that the audited V3 B1/B2/B3 repairs survive unchanged in V4.",
+  "passed": 29,
+  "results": [
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "pre-existing destination V52_T4F1_question_seed_level.csv"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "pre-existing destination V52_T4F1_question_level.csv"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "pre-existing destination V52_T4F1_aggregate.csv"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "pre-existing destination V52_T4F1_POST_RUN_MANIFEST.json"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "pre-existing temp V52_T4F1_question_seed_level.csv.tmp"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "pre-existing temp V52_T4F1_question_level.csv.tmp"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "pre-existing temp V52_T4F1_aggregate.csv.tmp"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "pre-existing temp V52_T4F1_POST_RUN_MANIFEST.json.tmp"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "partial/crash-left derived set"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G4",
+      "pass": true,
+      "test": "rerun after successful finalization"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "changed retrieved IDs, stored metrics unchanged"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "changed stored metric fractional_source_evidence_recall_at_3, IDs unchanged"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "changed stored metric any_at_3, IDs unchanged"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "changed stored metric all_at_3, IDs unchanged"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "malformed metric fractional_source_evidence_recall_at_3=nan"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "malformed metric fractional_source_evidence_recall_at_3=inf"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "malformed metric fractional_source_evidence_recall_at_3=2.0"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "malformed metric any_at_3=0.5"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "duplicate IDs"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "non-string ID"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "noncanonical ID '007'"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "boolean ID"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "malformed ID 'abc'"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G5",
+      "pass": true,
+      "test": "gold cardinality inconsistency"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G6",
+      "pass": true,
+      "test": "signed control top3 ID membership divergence"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G6",
+      "pass": true,
+      "test": "signed control top3 ID ORDER divergence (metrics equal)"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G6",
+      "pass": true,
+      "test": "signed control DISTANCE divergence (IDs+metrics equal)"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G6",
+      "pass": true,
+      "test": "missing native seed/trial cell"
+    },
+    {
+      "blocked": true,
+      "expected_block": true,
+      "gate": "G6",
+      "pass": true,
+      "test": "duplicate result cell"
+    }
+  ],
+  "schema": "V52_T4F1_V4_B1_B2_B3_REGRESSION_V1",
+  "total": 29
+}
