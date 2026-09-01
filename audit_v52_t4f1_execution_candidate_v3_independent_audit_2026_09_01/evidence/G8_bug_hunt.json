@@ -1,0 +1,80 @@
+{
+  "gate": "G8",
+  "passed": 8,
+  "results": [
+    {
+      "blocked": true,
+      "detail": "RuntimeError: [BLOCKED - DUPLICATE RESULT CELL] ('SQ1', 'HAAR96_SIGN', '43001', 8)",
+      "expected_block": true,
+      "pass": true,
+      "severity": "",
+      "test": "duplicate cell at constant row count"
+    },
+    {
+      "blocked": true,
+      "detail": "RuntimeError: [BLOCKED - REFUSE DERIVED OUTPUT OVERWRITE] V52_T4F1_question_level.csv | racer_bytes_preserved=True",
+      "expected_block": true,
+      "pass": true,
+      "severity": "exclusive-commit",
+      "test": "TOCTOU: destination created after upfront check"
+    },
+    {
+      "blocked": true,
+      "detail": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_aggregate.csv'] | target_intact=True",
+      "expected_block": true,
+      "pass": true,
+      "severity": "path-alias",
+      "test": "symlinked destination (points outside namespace)"
+    },
+    {
+      "blocked": true,
+      "detail": "RuntimeError: [BLOCKED - REFUSE DERIVED OUTPUT OVERWRITE] V52_T4F1_aggregate.csv",
+      "expected_block": true,
+      "pass": true,
+      "severity": "path-alias",
+      "test": "dangling-symlink destination"
+    },
+    {
+      "blocked": true,
+      "detail": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::901",
+      "expected_block": true,
+      "pass": true,
+      "severity": "stale-checkpoint",
+      "test": "stale V2-schema archive checkpoint"
+    },
+    {
+      "blocked": true,
+      "detail": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::901",
+      "expected_block": true,
+      "pass": true,
+      "severity": "provenance",
+      "test": "checkpoint provenance substitution (D3)"
+    },
+    {
+      "blocked": false,
+      "detail": "NO ERROR",
+      "expected_block": true,
+      "pass": false,
+      "severity": "tamper",
+      "test": "checkpoint CSV mutated after meta stamp"
+    },
+    {
+      "blocked": true,
+      "detail": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::901",
+      "expected_block": true,
+      "pass": true,
+      "severity": "substitution",
+      "test": "cross-archive question mixing"
+    },
+    {
+      "blocked": true,
+      "detail": "RuntimeError: [BLOCKED - REFUSE ARCHIVE OVERWRITE] 100K::901",
+      "expected_block": true,
+      "pass": true,
+      "severity": "B1-class residual",
+      "test": "archive checkpoint re-write blocked"
+    }
+  ],
+  "synthetic_only": true,
+  "total": 9
+}

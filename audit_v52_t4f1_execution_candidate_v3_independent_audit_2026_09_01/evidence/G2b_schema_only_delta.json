@@ -1,0 +1,16 @@
+{
+  "evaluate_archive": {
+    "identical_after_schema_normalization": true,
+    "raw_delta_lines": [
+      "-        \"schema\": \"V52_T4F1_ARCHIVE_RESULT_META_V2\",",
+      "+        \"schema\": \"V52_T4F1_ARCHIVE_RESULT_META_V3\","
+    ]
+  },
+  "verify_existing_archive": {
+    "identical_after_schema_normalization": true,
+    "raw_delta_lines": [
+      "-        metadata.get(\"schema\") != \"V52_T4F1_ARCHIVE_RESULT_META_V2\"",
+      "+        metadata.get(\"schema\") != \"V52_T4F1_ARCHIVE_RESULT_META_V3\""
+    ]
+  }
+}

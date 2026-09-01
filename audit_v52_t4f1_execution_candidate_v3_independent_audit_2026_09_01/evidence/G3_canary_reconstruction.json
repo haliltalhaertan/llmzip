@@ -1,0 +1,23 @@
+{
+  "archive_digest": "fae4b3c0bcc1c8dbb74a9b6867fab814ee39ed9c50fc85af56fb6bb03a8d013d",
+  "archive_digest_match": false,
+  "archive_units": 392,
+  "centered96_shape": [
+    392,
+    96
+  ],
+  "corpus_blob_sha1_matches_pinned_manifest": true,
+  "expected_archive_digest": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+  "expected_query_digest": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+  "expected_units": 392,
+  "gate": "G3",
+  "gold_loaded": false,
+  "metrics_computed": false,
+  "query_digest": "7969039d6d20eaa5deb56294d2b5d750b21c6a2b3f07525281e8b08b4a0780dc",
+  "query_digest_match": false,
+  "query_shape": [
+    1,
+    96
+  ],
+  "ranking_performed": false
+}

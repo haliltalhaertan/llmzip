@@ -1,0 +1,43 @@
+{
+  "added_functions": [
+    "write_json_no_replace"
+  ],
+  "all_changed_functions": [
+    "evaluate_archive",
+    "finalize_results",
+    "preflight",
+    "verify_execution_seal",
+    "verify_existing_archive",
+    "write_csv",
+    "write_json_no_replace"
+  ],
+  "auditor_note": "Initial conservative classifier flagged evaluate_archive and verify_existing_archive; token-level proof shows the sole delta is the _META_V2 -> _META_V3 schema literal. No numerical, seed, threshold, tie-priority, trial-generation, metric or aggregation change. The bump additionally causes V3 to reject stale V2-schema archive checkpoints, which is a defensive improvement.",
+  "constants_unchanged_except_schema": true,
+  "core_functions_changed": [
+    "evaluate_archive"
+  ],
+  "gate": "G2",
+  "module_constant_diffs": {
+    "AUTH_SCHEMA": {
+      "v2": "'V52_T4F1_RUN_AUTHORIZATION_V2'",
+      "v3": "'V52_T4F1_RUN_AUTHORIZATION_V3'"
+    }
+  },
+  "numerical_core_unchanged": true,
+  "only_permitted_functions_changed": true,
+  "permitted_changed": [
+    "write_csv",
+    "finalize_results",
+    "verify_execution_seal",
+    "preflight"
+  ],
+  "removed_functions": [],
+  "schema_only_functions": [
+    "evaluate_archive",
+    "verify_existing_archive"
+  ],
+  "schema_only_proof": "AST-identical after normalizing the ARCHIVE_RESULT_META schema version literal (see G2b)",
+  "v2_sha256": "c50dfa7130918b8183c51edf68f5e2baac21a419f0d29bf2ec930f9de38e6139",
+  "v3_sha256": "0c1c1cc2bcf23296f0559daa98d936ed605fd7068ef376aa26bed69f6e66b07c",
+  "verdict": "PASS"
+}

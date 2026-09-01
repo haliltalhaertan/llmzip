@@ -1,0 +1,89 @@
+{
+  "anchor_checks": {
+    "CANDIDATE_EXECUTION_SEAL.json": {
+      "expected_bytes": 6598,
+      "expected_sha256": "9d35192ecc20fbe0a01254278857f656027b71e1f04947267c67e4d379a868de",
+      "match": true,
+      "observed_bytes": 6598,
+      "observed_sha256": "9d35192ecc20fbe0a01254278857f656027b71e1f04947267c67e4d379a868de"
+    },
+    "PAYLOAD_HASHES.json": {
+      "expected_bytes": 1180,
+      "expected_sha256": "c7b53e55aff9206be8f70779bb781813e2c177120db1a4fb2826dde699df4199",
+      "match": true,
+      "observed_bytes": 1180,
+      "observed_sha256": "c7b53e55aff9206be8f70779bb781813e2c177120db1a4fb2826dde699df4199"
+    },
+    "v52_t4f1_beam_retrieval.py": {
+      "expected_bytes": 59110,
+      "expected_sha256": "0c1c1cc2bcf23296f0559daa98d936ed605fd7068ef376aa26bed69f6e66b07c",
+      "match": true,
+      "observed_bytes": 59110,
+      "observed_sha256": "0c1c1cc2bcf23296f0559daa98d936ed605fd7068ef376aa26bed69f6e66b07c"
+    }
+  },
+  "candidate": "/home/user/audit-wt/task4f1_execution_candidate_v3_2026_09_01",
+  "candidate_pycache_after": [],
+  "candidate_unchanged_after_tests": true,
+  "files": {
+    "CANDIDATE_EXECUTION_SEAL.json": {
+      "bytes": 6598,
+      "sha256": "9d35192ecc20fbe0a01254278857f656027b71e1f04947267c67e4d379a868de"
+    },
+    "DEPENDENCY_LOCK.txt": {
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    "EXECUTION_SPEC.md": {
+      "bytes": 9707,
+      "sha256": "ebdb5a1520a6effe9f2cba339f3863c0edabf95bc2500f33f93c6daed1e976bb"
+    },
+    "PAYLOAD_HASHES.json": {
+      "bytes": 1180,
+      "sha256": "c7b53e55aff9206be8f70779bb781813e2c177120db1a4fb2826dde699df4199"
+    },
+    "README.md": {
+      "bytes": 1869,
+      "sha256": "f72228c5c7dc2db40cbbcdcdbbc530975d568f0f737f94a6c2f664317abf88db"
+    },
+    "RUN_AUTHORIZATION_TEMPLATE.json": {
+      "bytes": 909,
+      "sha256": "c8f94a8da79dde959cbb54d173e3e87b096832f0a0bbe0e6c806589b091a720f"
+    },
+    "candidate_package_preflight.py": {
+      "bytes": 4147,
+      "sha256": "730d60c599de378657248027659daeb2978918885af39bd09953471af4cc3f89"
+    },
+    "v52_t4f1_beam_retrieval.py": {
+      "bytes": 59110,
+      "sha256": "0c1c1cc2bcf23296f0559daa98d936ed605fd7068ef376aa26bed69f6e66b07c"
+    }
+  },
+  "gate": "G1",
+  "inventory_binding_ok": true,
+  "key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+  "manifest_payload_match": true,
+  "nested_dirs": [],
+  "nested_reject_exit": 1,
+  "nested_reject_msg": [
+    "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'nested/unbound.txt', 'v52_t4f1_beam_retrieval.py']"
+  ],
+  "nested_rejected": true,
+  "package_preflight_exit": 0,
+  "package_preflight_stdout": [
+    "PASS: recursive payload closure, fail-closed HMAC authorization, script binding, and archive-fit AST boundary",
+    "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  ],
+  "payload_closure_exact": true,
+  "pycache": [],
+  "recursive_file_count": 8,
+  "seal_authorization": {
+    "independent_execution_code_audit": "PENDING",
+    "retrieval_quality_outcome_access": "FORBIDDEN",
+    "task_4f1_preregistration": "BLOCKED",
+    "task_4f1_run": "BLOCKED"
+  },
+  "seal_schema": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V3",
+  "seal_status": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+  "verdict": "PASS"
+}

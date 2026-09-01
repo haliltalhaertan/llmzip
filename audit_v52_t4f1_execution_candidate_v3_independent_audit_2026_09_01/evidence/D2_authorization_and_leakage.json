@@ -1,0 +1,34 @@
+{
+  "authorization_tests": [
+    {
+      "blocked": true,
+      "error": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_candidate_seal_sha256\": {\"expected\": \"9d35192ecc20fbe0a01254278857f656027b71e1f04947267c67e4d379a868de\", \"observed\": \"REPLACE_ONLY_AFTER",
+      "test": "shipped RUN_AUTHORIZATION_TEMPLATE.json (invalid fixture)"
+    },
+    {
+      "blocked": true,
+      "error": "RuntimeError: [BLOCKED - HEAD RESEARCHER AUTHORITY KEY NOT SEALED]",
+      "test": "structurally complete but unsigned authorization"
+    }
+  ],
+  "canary_computes_metrics": false,
+  "canary_direct_calls": [
+    "RuntimeError",
+    "array_sha256",
+    "fit_archive_representation",
+    "len",
+    "list",
+    "load_archive",
+    "transform_queries"
+  ],
+  "canary_loads_questions": false,
+  "canary_ranks": false,
+  "fit_archive_representation_args": [
+    "memory_texts"
+  ],
+  "forbidden_tokens_in_fit": [],
+  "hmac_env_present": false,
+  "sealed_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+  "valid_authorization_constructed": false,
+  "verdict": "PASS"
+}

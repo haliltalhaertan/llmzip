@@ -1,0 +1,333 @@
+{
+  "failed": [],
+  "gates": [
+    "G4",
+    "G5",
+    "G6",
+    "G7"
+  ],
+  "passed": 29,
+  "results": [
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_seed_level.csv']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "B1 destination blocks before any byte changed",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "pre-existing destination V52_T4F1_question_seed_level.csv"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_level.csv']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "B1 destination blocks before any byte changed",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "pre-existing destination V52_T4F1_question_level.csv"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_aggregate.csv']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "B1 destination blocks before any byte changed",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "pre-existing destination V52_T4F1_aggregate.csv"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_POST_RUN_MANIFEST.json']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "B1 destination blocks before any byte changed",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "pre-existing destination V52_T4F1_POST_RUN_MANIFEST.json"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_seed_level.csv.tmp']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "B1 temp path blocks",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "pre-existing temp V52_T4F1_question_seed_level.csv.tmp"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_level.csv.tmp']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "B1 temp path blocks",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "pre-existing temp V52_T4F1_question_level.csv.tmp"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_aggregate.csv.tmp']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "B1 temp path blocks",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "pre-existing temp V52_T4F1_aggregate.csv.tmp"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_POST_RUN_MANIFEST.json.tmp']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "B1 temp path blocks",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "pre-existing temp V52_T4F1_POST_RUN_MANIFEST.json.tmp"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_level.csv', 'V52_T4F1_question_seed_level.csv']",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "must block, not repair or replace",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "partial/crash-left derived set"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_POST_RUN_MANIFEST.json', 'V52_T4F1_aggregate.csv', 'V52_T4F1_question_level.csv', 'V52_T4F1_question_seed_level.c",
+      "expected_block": true,
+      "gate": "G4",
+      "note": "outputs byte-identical after blocked rerun",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "rerun after successful finalization"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BUG - TRIAL-VARYING TOP3 OR DISTANCE UNDER FIXED PRIORITY] SQ1 HAAR96_SIGN 43001",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "changed retrieved IDs, stored metrics unchanged"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "changed stored metric fractional_source_evidence_recall_at_3, IDs unchanged"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "changed stored metric any_at_3, IDs unchanged"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - METRIC GOLD RECOMPUTATION MISMATCH] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "changed stored metric all_at_3, IDs unchanged"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "malformed metric fractional_source_evidence_recall_at_3=nan"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "malformed metric fractional_source_evidence_recall_at_3=inf"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "malformed metric fractional_source_evidence_recall_at_3=2.0"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "malformed metric any_at_3=0.5"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "duplicate IDs"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "non-string ID"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - TOP3 OR GOLD ID SEMANTICS] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "noncanonical ID '007'"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "boolean ID"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - TOP3 OR GOLD ID CANONICALIZATION] ('SQ1', 'HAAR96_SIGN', '43001', 0)",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "malformed ID 'abc'"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - QUESTION METADATA RESULT MISMATCH] SQ1",
+      "expected_block": true,
+      "gate": "G5",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "gold cardinality inconsistency"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BUG - SIGNED CONTROL EXACT TOP3 OR DISTANCE MISMATCH] SQ1 seed=43003 trial=5",
+      "expected_block": true,
+      "gate": "G6",
+      "note": "metrics recomputed consistent -> must still block",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "signed control top3 ID membership divergence"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BUG - SIGNED CONTROL EXACT TOP3 OR DISTANCE MISMATCH] SQ1 seed=43003 trial=5",
+      "expected_block": true,
+      "gate": "G6",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "signed control top3 ID ORDER divergence (metrics equal)"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BUG - SIGNED CONTROL EXACT TOP3 OR DISTANCE MISMATCH] SQ1 seed=43003 trial=5",
+      "expected_block": true,
+      "gate": "G6",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "signed control DISTANCE divergence (IDs+metrics equal)"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - FULL TRIAL ROW COUNT] 1279 != 1280",
+      "expected_block": true,
+      "gate": "G6",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "missing native seed/trial cell"
+    },
+    {
+      "blocked": true,
+      "derived_outputs_created": [],
+      "error": "RuntimeError: [BLOCKED - FULL TRIAL ROW COUNT] 1281 != 1280",
+      "expected_block": true,
+      "gate": "G6",
+      "note": "",
+      "pass": true,
+      "sentinels_intact": true,
+      "test": "duplicate result cell"
+    }
+  ],
+  "synthetic_only": true,
+  "total": 29
+}

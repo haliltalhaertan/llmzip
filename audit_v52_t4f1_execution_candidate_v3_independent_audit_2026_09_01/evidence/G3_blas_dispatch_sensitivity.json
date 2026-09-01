@@ -1,0 +1,24 @@
+{
+  "any_match_pinned": false,
+  "candidate_verify_environment_passed_in_all_variants": true,
+  "distinct_digest_count": 4,
+  "expected_pinned_archive_digest": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+  "finding": "pinned canary digests are BLAS-kernel-dispatch dependent",
+  "gate": "G3",
+  "method": "identical code/data/locked versions; only OPENBLAS_CORETYPE varied",
+  "observed": {
+    "Barcelona": "fef061e52a404a6f5b167be7ec2142a054a701a10d24eafdee7044a0dc228c49",
+    "Haswell": "5ded9fdd1b5be72710b4841ea029c64b2ab0c96d9cc43e01fba866d35028f571",
+    "Nehalem": "fef061e52a404a6f5b167be7ec2142a054a701a10d24eafdee7044a0dc228c49",
+    "Sandybridge": "ec3c5f448f70123e01259c06505e5a3cf1d8b0345de2e04e446ff7be05d99abb",
+    "SkylakeX(default_on_this_host)": "fae4b3c0bcc1c8dbb74a9b6867fab814ee39ed9c50fc85af56fb6bb03a8d013d",
+    "Zen": "5ded9fdd1b5be72710b4841ea029c64b2ab0c96d9cc43e01fba866d35028f571"
+  },
+  "outcome_boundary": {
+    "gold_loaded": false,
+    "metrics_computed": false,
+    "ranking_performed": false
+  },
+  "root_cause": "TruncatedSVD(randomized) -> BLAS/LAPACK kernels; DEPENDENCY_LOCK pins only python/numpy/scipy/sklearn/psutil versions and 5 thread vars, not BLAS build or CPU microarchitecture dispatch",
+  "verdict": "BLOCKED"
+}

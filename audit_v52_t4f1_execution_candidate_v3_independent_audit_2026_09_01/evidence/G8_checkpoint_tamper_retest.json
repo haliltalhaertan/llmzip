@@ -1,0 +1,10 @@
+{
+  "blocked": true,
+  "error": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::901",
+  "gate": "G8",
+  "mutation_applied": true,
+  "note": "first attempt used a byte pattern that never matched the CSV-quoted JSON, so nothing was mutated; corrected here",
+  "post_mutation_sha256": "6ef18ae4540d7e91f69c73ada7b1ace96ceed71898bd2ffbaa50de17a7afdf8e",
+  "sha256_changed": true,
+  "stamped_sha256": "e6f5a677a1c1a2b43f770d19770e68592544dcbfb291df97a0a0ec561f01af25"
+}

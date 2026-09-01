@@ -1,0 +1,43 @@
+{
+  "blas_build_dependencies": [
+    {
+      "blas": {
+        "detection method": "pkgconfig",
+        "name": "scipy-openblas",
+        "version": "0.3.30"
+      }
+    },
+    {
+      "lapack": {
+        "detection method": "pkgconfig",
+        "name": "scipy-openblas",
+        "version": "0.3.30"
+      }
+    }
+  ],
+  "cpu_simd": "fma sse4_2 avx2 avx512f",
+  "digests_match_pinned": false,
+  "environment_lock_fields_NOT_pinned": [
+    "BLAS/LAPACK implementation and version",
+    "CPU microarchitecture / SIMD dispatch",
+    "OS libm"
+  ],
+  "environment_lock_fields_checked_by_candidate": [
+    "python",
+    "numpy",
+    "scipy",
+    "scikit_learn",
+    "psutil",
+    "5 thread env vars"
+  ],
+  "expected_archive_digest": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+  "expected_query_digest": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+  "gate": "G3",
+  "gold_loaded": false,
+  "locally_deterministic": true,
+  "metrics_computed": false,
+  "observed_archive_digest": "fae4b3c0bcc1c8dbb74a9b6867fab814ee39ed9c50fc85af56fb6bb03a8d013d",
+  "observed_query_digest": "7969039d6d20eaa5deb56294d2b5d750b21c6a2b3f07525281e8b08b4a0780dc",
+  "ranking_performed": false,
+  "repeat_runs": 3
+}

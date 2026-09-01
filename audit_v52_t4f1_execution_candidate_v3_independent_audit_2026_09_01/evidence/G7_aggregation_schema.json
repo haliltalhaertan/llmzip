@@ -1,0 +1,20 @@
+{
+  "aggregate_methods": [
+    "NATIVE_SIGN96",
+    "SIGNED_PERM_CONTROL96",
+    "HAAR96_SIGN",
+    "ITQ96_CENTERED"
+  ],
+  "aggregate_rows": 4,
+  "clean_finalization": "SUCCESS",
+  "expected_question_level_rows": 16,
+  "expected_question_seed_rows": 64,
+  "gate": "G7",
+  "manifest_schema": "V52_T4F1_POST_RUN_MANIFEST_V3",
+  "question_level_rows": 16,
+  "question_seed_rows": 64,
+  "synthetic_only": true,
+  "tmp_files_left": [],
+  "trial_rows_per_question": 320,
+  "verdict": "PASS"
+}
