@@ -1,0 +1,227 @@
+{
+  "cohort_checks": {
+    "rows": 2000,
+    "eligible": 1712,
+    "eligible_unique_ids": 1712,
+    "rows_unique_ids": 2000,
+    "eligible_all_exact": true,
+    "eligible_none_abstention": true,
+    "eligible_none_excluded_archive": true,
+    "eligible_all_gold_gt0": true,
+    "excluded_archive_rows": [
+      "1M::26",
+      "1M::33",
+      "1M::34",
+      "1M::5"
+    ],
+    "cardinality_gt3": 587,
+    "structurally_impossible_all3": 587,
+    "schema_has_no_answer_or_rubric_columns": true,
+    "eligibility_reason_counts": {
+      "EXCLUDE_ABSTENTION_NO_POSITIVE_EVIDENCE": 192,
+      "ELIGIBLE_EXACT_SOURCE_IDS_UNIQUE_ARCHIVE": 1712,
+      "EXCLUDE_SOURCE_AMBIGUOUS_OR_MISSING": 14,
+      "EXCLUDE_COARSE_SOURCE": 1,
+      "EXCLUDE_ARCHIVE_DUPLICATE_DIVERGENT_MESSAGE_IDS": 80,
+      "EXCLUDE_MALFORMED_CONTRADICTORY": 1
+    },
+    "cardinality_distribution_matches_summary": true,
+    "composition_rows_sum": 1712,
+    "composition_matches_summary": true,
+    "gold_ids_vs_count_mismatches": 0
+  },
+  "corpus_identity": {
+    "raw_blob_files": 7,
+    "corpus_files": 4,
+    "corpus_files_all_byte_identical_to_pinned_raw_blobs": true,
+    "corpus_files_missing_in_raw": [],
+    "corpus_files_differing_from_raw": []
+  },
+  "recomputed_vs_csv": {
+    "questions_recomputed": 2000,
+    "matched": 1928,
+    "mismatch_count": 72,
+    "mismatch_examples": [
+      {
+        "qid": "1M::5::contradiction_resolution::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 6
+      },
+      {
+        "qid": "1M::5::contradiction_resolution::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 1
+      },
+      {
+        "qid": "1M::5::event_ordering::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 32
+      },
+      {
+        "qid": "1M::5::event_ordering::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 15
+      },
+      {
+        "qid": "1M::5::information_extraction::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 1
+      },
+      {
+        "qid": "1M::5::information_extraction::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 2
+      },
+      {
+        "qid": "1M::5::instruction_following::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 1
+      },
+      {
+        "qid": "1M::5::instruction_following::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 1
+      },
+      {
+        "qid": "1M::5::knowledge_update::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 2
+      },
+      {
+        "qid": "1M::5::knowledge_update::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 3
+      },
+      {
+        "qid": "1M::5::multi_session_reasoning::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 3
+      },
+      {
+        "qid": "1M::5::multi_session_reasoning::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 13
+      },
+      {
+        "qid": "1M::5::preference_following::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 2
+      },
+      {
+        "qid": "1M::5::preference_following::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 4
+      },
+      {
+        "qid": "1M::5::summarization::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 5
+      },
+      {
+        "qid": "1M::5::summarization::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 6
+      },
+      {
+        "qid": "1M::5::temporal_reasoning::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 2
+      },
+      {
+        "qid": "1M::5::temporal_reasoning::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 2
+      },
+      {
+        "qid": "1M::26::contradiction_resolution::1",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "rec_cat": "SOURCE_AMBIGUOUS_OR_MISSING",
+        "csv_gold_n": "0",
+        "rec_gold_n": 4
+      },
+      {
+        "qid": "1M::26::contradiction_resolution::2",
+        "csv_elig": "False",
+        "rec_elig": false,
+        "csv_cat": "EXACT_SOURCE_IDS",
+        "rec_cat": "EXACT_SOURCE_IDS",
+        "csv_gold_n": "0",
+        "rec_gold_n": 6
+      }
+    ]
+  }
+}

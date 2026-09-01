@@ -1,0 +1,737 @@
+{
+  "dimension": 96,
+  "failing_boolean_flags": [],
+  "gate10_metrics": {
+    "all_at_3_zero_whenever_gold_exceeds_3": true,
+    "all_cases_pass": true,
+    "cases": [
+      {
+        "all": 0,
+        "any": 0,
+        "case": "zero_hits",
+        "expected": [
+          0.0,
+          0,
+          0
+        ],
+        "fractional": 0.0,
+        "gold_size": 2,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 1,
+        "any": 1,
+        "case": "single_gold_hit",
+        "expected": [
+          1.0,
+          1,
+          1
+        ],
+        "fractional": 1.0,
+        "gold_size": 1,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 0,
+        "any": 0,
+        "case": "single_gold_miss",
+        "expected": [
+          0.0,
+          0,
+          0
+        ],
+        "fractional": 0.0,
+        "gold_size": 1,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 0,
+        "any": 1,
+        "case": "partial_multi_gold_1_of_2",
+        "expected": [
+          0.5,
+          1,
+          0
+        ],
+        "fractional": 0.5,
+        "gold_size": 2,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 0,
+        "any": 1,
+        "case": "partial_multi_gold_2_of_3",
+        "expected": [
+          0.6666666666666666,
+          1,
+          0
+        ],
+        "fractional": 0.6666666666666666,
+        "gold_size": 3,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 1,
+        "any": 1,
+        "case": "complete_gold_3_of_3",
+        "expected": [
+          1.0,
+          1,
+          1
+        ],
+        "fractional": 1.0,
+        "gold_size": 3,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 1,
+        "any": 1,
+        "case": "complete_gold_2_of_2",
+        "expected": [
+          1.0,
+          1,
+          1
+        ],
+        "fractional": 1.0,
+        "gold_size": 2,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 0,
+        "any": 1,
+        "case": "structural_zero_4_gold",
+        "expected": [
+          0.75,
+          1,
+          0
+        ],
+        "fractional": 0.75,
+        "gold_size": 4,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 0,
+        "any": 1,
+        "case": "structural_zero_96_gold",
+        "expected": [
+          0.03125,
+          1,
+          0
+        ],
+        "fractional": 0.03125,
+        "gold_size": 96,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "all": 0,
+        "any": 0,
+        "case": "structural_zero_4_gold_no_hit",
+        "expected": [
+          0.0,
+          0,
+          0
+        ],
+        "fractional": 0.0,
+        "gold_size": 4,
+        "pass": true,
+        "retrieved": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ],
+    "duplicates_cannot_inflate": true,
+    "fractional_denominator_is_gold_size": true,
+    "retrieved_are_raw_message_ids": true,
+    "retrieved_are_unique": true,
+    "retrieved_count_is_3": true,
+    "top_k_constant_is_3": true
+  },
+  "gate7_exact_zero_edge_case": {
+    "exact_zero_breaks_signed_invariance_when_flipped": false,
+    "negative_zero_ge_zero_is_true": true,
+    "note": "an exact 0.0 coordinate under a -1 sign does not flip its bit; the candidate's hard per-question control raises and blocks rather than silently emitting a corrupted control arm",
+    "runtime_hard_control_exists": true
+  },
+  "gate7_haar": {
+    "all_pass": true,
+    "per_seed": {
+      "43001": {
+        "dot_preserved_within_tol": true,
+        "dot_products_invariant_under_repeated_orthogonal_map": true,
+        "double_application_changes_binary_codes": true,
+        "inconsistent_transpose_would_break": true,
+        "matches_declared_gaussian_qr_diagsign": true,
+        "max_abs_doc_norm_diff": 3.552713678800501e-15,
+        "max_abs_dot_diff": 3.1530333899354446e-14,
+        "max_abs_query_norm_diff": 1.7763568394002505e-15,
+        "norms_preserved_within_tol": true,
+        "not_row_axis_correction": true,
+        "not_transposed": true,
+        "not_uncorrected_q": true,
+        "orthogonal_within_tol": true,
+        "orthogonality_error": 1.1102230246251565e-15,
+        "rotation_common_to_archive_and_query": true
+      },
+      "43002": {
+        "dot_preserved_within_tol": true,
+        "dot_products_invariant_under_repeated_orthogonal_map": true,
+        "double_application_changes_binary_codes": true,
+        "inconsistent_transpose_would_break": true,
+        "matches_declared_gaussian_qr_diagsign": true,
+        "max_abs_doc_norm_diff": 3.552713678800501e-15,
+        "max_abs_dot_diff": 3.552713678800501e-14,
+        "max_abs_query_norm_diff": 1.7763568394002505e-15,
+        "norms_preserved_within_tol": true,
+        "not_row_axis_correction": true,
+        "not_transposed": true,
+        "not_uncorrected_q": true,
+        "orthogonal_within_tol": true,
+        "orthogonality_error": 1.1102230246251565e-15,
+        "rotation_common_to_archive_and_query": true
+      },
+      "43003": {
+        "dot_preserved_within_tol": true,
+        "dot_products_invariant_under_repeated_orthogonal_map": true,
+        "double_application_changes_binary_codes": true,
+        "inconsistent_transpose_would_break": true,
+        "matches_declared_gaussian_qr_diagsign": true,
+        "max_abs_doc_norm_diff": 1.7763568394002505e-15,
+        "max_abs_dot_diff": 3.552713678800501e-14,
+        "max_abs_query_norm_diff": 1.7763568394002505e-15,
+        "norms_preserved_within_tol": true,
+        "not_row_axis_correction": true,
+        "not_transposed": true,
+        "not_uncorrected_q": true,
+        "orthogonal_within_tol": true,
+        "orthogonality_error": 8.881784197001252e-16,
+        "rotation_common_to_archive_and_query": true
+      },
+      "43004": {
+        "dot_preserved_within_tol": true,
+        "dot_products_invariant_under_repeated_orthogonal_map": true,
+        "double_application_changes_binary_codes": true,
+        "inconsistent_transpose_would_break": true,
+        "matches_declared_gaussian_qr_diagsign": true,
+        "max_abs_doc_norm_diff": 3.552713678800501e-15,
+        "max_abs_dot_diff": 3.222422328974517e-14,
+        "max_abs_query_norm_diff": 1.7763568394002505e-15,
+        "norms_preserved_within_tol": true,
+        "not_row_axis_correction": true,
+        "not_transposed": true,
+        "not_uncorrected_q": true,
+        "orthogonal_within_tol": true,
+        "orthogonality_error": 9.992007221626409e-16,
+        "rotation_common_to_archive_and_query": true
+      },
+      "43005": {
+        "dot_preserved_within_tol": true,
+        "dot_products_invariant_under_repeated_orthogonal_map": true,
+        "double_application_changes_binary_codes": true,
+        "inconsistent_transpose_would_break": true,
+        "matches_declared_gaussian_qr_diagsign": true,
+        "max_abs_doc_norm_diff": 3.552713678800501e-15,
+        "max_abs_dot_diff": 3.9968028886505635e-14,
+        "max_abs_query_norm_diff": 1.7763568394002505e-15,
+        "norms_preserved_within_tol": true,
+        "not_row_axis_correction": true,
+        "not_transposed": true,
+        "not_uncorrected_q": true,
+        "orthogonal_within_tol": true,
+        "orthogonality_error": 8.881784197001252e-16,
+        "rotation_common_to_archive_and_query": true
+      }
+    },
+    "seeds": [
+      43001,
+      43002,
+      43003,
+      43004,
+      43005
+    ],
+    "seeds_are_43001_to_43005": true
+  },
+  "gate7_native": {
+    "centering_is_load_bearing": true,
+    "docs_are_threshold_ge_zero_on_supplied_centered_matrix": true,
+    "exact_zero_maps_to_true": true,
+    "source_line_native_docs": [
+      "native_docs = centered_archive >= 0"
+    ],
+    "strict_gt_zero_would_differ_on_exact_zero": true
+  },
+  "gate7_signed_permutation": {
+    "all_seeds_declared_order": true,
+    "all_seeds_exactly_invariant": true,
+    "per_seed": {
+      "43001": {
+        "all_queries_exactly_invariant": true,
+        "declared_operation_order_reproduced": true,
+        "per_query": [
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          }
+        ],
+        "permutation_is_a_permutation": true,
+        "signs_are_plus_minus_one": true
+      },
+      "43002": {
+        "all_queries_exactly_invariant": true,
+        "declared_operation_order_reproduced": true,
+        "per_query": [
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          }
+        ],
+        "permutation_is_a_permutation": true,
+        "signs_are_plus_minus_one": true
+      },
+      "43003": {
+        "all_queries_exactly_invariant": true,
+        "declared_operation_order_reproduced": true,
+        "per_query": [
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          }
+        ],
+        "permutation_is_a_permutation": true,
+        "signs_are_plus_minus_one": true
+      },
+      "43004": {
+        "all_queries_exactly_invariant": true,
+        "declared_operation_order_reproduced": true,
+        "per_query": [
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          }
+        ],
+        "permutation_is_a_permutation": true,
+        "signs_are_plus_minus_one": true
+      },
+      "43005": {
+        "all_queries_exactly_invariant": true,
+        "declared_operation_order_reproduced": true,
+        "per_query": [
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          },
+          {
+            "distances_equal": true,
+            "full_ranking_equal": true,
+            "tie_sets_equal": true,
+            "top3_equal": true,
+            "top3_set_equal": true
+          }
+        ],
+        "permutation_is_a_permutation": true,
+        "signs_are_plus_minus_one": true
+      }
+    },
+    "seeds": [
+      43001,
+      43002,
+      43003,
+      43004,
+      43005
+    ],
+    "seeds_are_43001_to_43005": true,
+    "transform_common_to_archive_and_query": true
+  },
+  "gate8_itq": {
+    "all_seeds_byte_identical_to_canonical": true,
+    "all_seeds_differ_from_short_fit": true,
+    "all_seeds_orthogonal": true,
+    "common_rotation_archive_and_query": true,
+    "declared_descriptive_only_in_seal": true,
+    "different_archive_gives_different_rotation": true,
+    "fit_depends_only_on_archive": true,
+    "fit_ignores_queries_entirely": true,
+    "iterations_constant_is_100": true,
+    "itq_default_iteration_argument_is_100": true,
+    "itq_loop_bound_is_the_iterations_parameter": true,
+    "per_seed": {
+      "101": {
+        "byte_identical_to_canonical_4c2": true,
+        "converged_before_iteration_99": true,
+        "differs_from_3_iteration_fit": true,
+        "differs_from_covariance_transposed": true,
+        "differs_from_procrustes_transposed": true,
+        "differs_from_strict_gt_threshold_variant": true,
+        "max_abs_difference_vs_canonical": 0.0,
+        "orthogonal": true
+      },
+      "202": {
+        "byte_identical_to_canonical_4c2": true,
+        "converged_before_iteration_99": true,
+        "differs_from_3_iteration_fit": true,
+        "differs_from_covariance_transposed": true,
+        "differs_from_procrustes_transposed": true,
+        "differs_from_strict_gt_threshold_variant": true,
+        "max_abs_difference_vs_canonical": 0.0,
+        "orthogonal": true
+      },
+      "303": {
+        "byte_identical_to_canonical_4c2": true,
+        "converged_before_iteration_99": true,
+        "differs_from_3_iteration_fit": true,
+        "differs_from_covariance_transposed": true,
+        "differs_from_procrustes_transposed": true,
+        "differs_from_strict_gt_threshold_variant": true,
+        "max_abs_difference_vs_canonical": 0.0,
+        "orthogonal": true
+      },
+      "404": {
+        "byte_identical_to_canonical_4c2": true,
+        "converged_before_iteration_99": true,
+        "differs_from_3_iteration_fit": true,
+        "differs_from_covariance_transposed": true,
+        "differs_from_procrustes_transposed": true,
+        "differs_from_strict_gt_threshold_variant": true,
+        "max_abs_difference_vs_canonical": 0.0,
+        "orthogonal": true
+      },
+      "505": {
+        "byte_identical_to_canonical_4c2": true,
+        "converged_before_iteration_99": true,
+        "differs_from_3_iteration_fit": true,
+        "differs_from_covariance_transposed": true,
+        "differs_from_procrustes_transposed": true,
+        "differs_from_strict_gt_threshold_variant": true,
+        "max_abs_difference_vs_canonical": 0.0,
+        "orthogonal": true
+      }
+    },
+    "run_path_uses_default_100_iterations": true,
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "seeds_are_101_202_303_404_505": true
+  },
+  "gate9_tie_and_trials": {
+    "canonical_raw_id_int": true,
+    "canonical_raw_id_rejects_bool": true,
+    "canonical_raw_id_rejects_float": true,
+    "canonical_raw_id_rejects_nondigit_str": true,
+    "canonical_raw_id_str_digits": true,
+    "every_non_trial_field_constant_across_trials": true,
+    "hi_dtype_uint64": true,
+    "lexsort_precedence_is_distance_then_hi_then_lo_then_index": true,
+    "lexsort_precedence_observed": [
+      3,
+      4,
+      2,
+      1,
+      0
+    ],
+    "lo_dtype_uint64": true,
+    "memory_key_is_tier_conv_decimal_id": true,
+    "memory_key_serialization": "1M::26::451",
+    "non_trial_field_distinct_counts": {
+      "ability": 1,
+      "all_at_3": 1,
+      "any_at_3": 1,
+      "archive_units": 1,
+      "audit_question_id": 1,
+      "conversation_id": 1,
+      "fractional_source_evidence_recall_at_3": 1,
+      "gold_count": 1,
+      "method": 1,
+      "retrieved_top3_ids": 1,
+      "seed": 1,
+      "tier": 1,
+      "top3_distances": 1
+    },
+    "nuisance_trials_are_0_to_19": true,
+    "prefix_constant": "V52_T4F0_TIE_PRIORITY_V1",
+    "prefix_is_sealed_value": true,
+    "priority_arrays_signature_has_no_trial": true,
+    "priority_bytes_match_sealed_formula": true,
+    "priority_independent_of_gold_or_source_order": true,
+    "rank_hamming_signature_has_no_trial": true,
+    "tie_priority_signature_has_no_trial_parameter": true,
+    "trial_row_count_is_20": true,
+    "trials_present_are_0_to_19": true,
+    "uint128_hi_lo_split_reproduces_128bit_order": true,
+    "wrong_variant_detail": {
+      "last16_bytes_differs": true,
+      "little_endian_differs": true,
+      "no_separator": true
+    },
+    "wrong_variants_all_differ": true
+  },
+  "schema": "V52_T4F1_SYNTHETIC_METHOD_EQUIVALENCE_V1",
+  "status": "PASS"
+}

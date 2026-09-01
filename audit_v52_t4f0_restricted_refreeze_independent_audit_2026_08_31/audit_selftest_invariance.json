@@ -1,0 +1,155 @@
+{
+  "audit": "V52 T4F0 restricted-refreeze independent audit",
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.3.2",
+    "scipy": "1.16.1",
+    "sklearn": "1.7.1",
+    "psutil": "7.0.0",
+    "lock_match": true,
+    "thread_vars": "OMP/MKL/OPENBLAS/NUMEXPR=1; PYTHONHASHSEED=0"
+  },
+  "raw_corpus_self_test": {
+    "100K::12": {
+      "tier": "100K",
+      "conversation": "12",
+      "archive_units": 392,
+      "malformed_records": 0,
+      "mixed_shape": [
+        392,
+        96
+      ],
+      "expected_shape": [
+        392,
+        96
+      ],
+      "query_shape": [
+        1,
+        96
+      ],
+      "rank": 96,
+      "finite": true,
+      "nan_inf_count": 0,
+      "repeat_max_abs_archive_diff": 0.0,
+      "repeat_max_abs_query_diff": 0.0,
+      "repeat_archive_digest_run1": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+      "repeat_archive_digest_run2": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+      "repeat_query_digest_run1": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+      "repeat_query_digest_run2": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+      "digests_identical": true,
+      "status": "PASS",
+      "retrieval_quality_computed": false
+    },
+    "500K::12": {
+      "tier": "500K",
+      "conversation": "12",
+      "archive_units": 1120,
+      "malformed_records": 0,
+      "mixed_shape": [
+        1120,
+        96
+      ],
+      "expected_shape": [
+        1120,
+        96
+      ],
+      "query_shape": [
+        1,
+        96
+      ],
+      "rank": 96,
+      "finite": true,
+      "nan_inf_count": 0,
+      "repeat_max_abs_archive_diff": 0.0,
+      "repeat_max_abs_query_diff": 0.0,
+      "repeat_archive_digest_run1": "785cad633f63b1cff31c255fd4d187a2341a9b4cb2d689c747a86758910526f4",
+      "repeat_archive_digest_run2": "785cad633f63b1cff31c255fd4d187a2341a9b4cb2d689c747a86758910526f4",
+      "repeat_query_digest_run1": "5fec818ebc78b03e972a1596edcf9b02adad0a147fd928eb747c61d4c80f1e4a",
+      "repeat_query_digest_run2": "5fec818ebc78b03e972a1596edcf9b02adad0a147fd928eb747c61d4c80f1e4a",
+      "digests_identical": true,
+      "status": "PASS",
+      "retrieval_quality_computed": false
+    },
+    "1M::12": {
+      "tier": "1M",
+      "conversation": "12",
+      "archive_units": 2214,
+      "malformed_records": 0,
+      "mixed_shape": [
+        2214,
+        96
+      ],
+      "expected_shape": [
+        2214,
+        96
+      ],
+      "query_shape": [
+        1,
+        96
+      ],
+      "rank": 96,
+      "finite": true,
+      "nan_inf_count": 0,
+      "repeat_max_abs_archive_diff": 0.0,
+      "repeat_max_abs_query_diff": 0.0,
+      "repeat_archive_digest_run1": "2cff67dc57b2da7b39a1718f843932cdd913479112482ada3a0339c5d924e0f1",
+      "repeat_archive_digest_run2": "2cff67dc57b2da7b39a1718f843932cdd913479112482ada3a0339c5d924e0f1",
+      "repeat_query_digest_run1": "c1a07b9e35e37617d5b2b2d12208a7ff9cc33b279b337eade5ed15a4b7306a88",
+      "repeat_query_digest_run2": "c1a07b9e35e37617d5b2b2d12208a7ff9cc33b279b337eade5ed15a4b7306a88",
+      "digests_identical": true,
+      "status": "PASS",
+      "retrieval_quality_computed": false
+    },
+    "10M::1": {
+      "tier": "10M",
+      "conversation": "1",
+      "archive_units": 19895,
+      "malformed_records": 0,
+      "mixed_shape": [
+        19895,
+        96
+      ],
+      "expected_shape": [
+        19895,
+        96
+      ],
+      "query_shape": [
+        1,
+        96
+      ],
+      "rank": 96,
+      "finite": true,
+      "nan_inf_count": 0,
+      "repeat_max_abs_archive_diff": 0.0,
+      "repeat_max_abs_query_diff": 0.0,
+      "repeat_archive_digest_run1": "a5884b2d7cc7da1a96a1f883269891c629c2c3d5527cf8f6e5ab52c7ef17e285",
+      "repeat_archive_digest_run2": "a5884b2d7cc7da1a96a1f883269891c629c2c3d5527cf8f6e5ab52c7ef17e285",
+      "repeat_query_digest_run1": "a0ef7b095252c566f9553ed3d8f5f4c18dc15166b152e59bad2c608073598059",
+      "repeat_query_digest_run2": "a0ef7b095252c566f9553ed3d8f5f4c18dc15166b152e59bad2c608073598059",
+      "digests_identical": true,
+      "status": "PASS",
+      "retrieval_quality_computed": false
+    }
+  },
+  "signed_permutation_control": {
+    "method": "SIGNED_PERM_CONTROL96 (synthetic, pre-outcome inputs only)",
+    "hamming_exact_invariant": true,
+    "ranking_invariant_with_tie_priority": true,
+    "tie_sets_invariant": true,
+    "priority_deterministic": true,
+    "priority_independent_of_source_order": true,
+    "priority_independent_of_archive_row_order": true,
+    "status": "PASS"
+  },
+  "centered_continuous_invariance": {
+    "method": "centered continuous orthogonal invariance (real 100K/12 C96 + Haar seed 43001)",
+    "max_abs_dot_diff": 4.163336342344337e-16,
+    "max_abs_norm_diff": 3.3306690738754696e-16,
+    "max_abs_gram_diff": 1.3322676295501878e-15,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "retrieval_quality_computed": false
+  },
+  "gold_or_answer_inputs_used": false,
+  "retrieval_quality_computed": false
+}

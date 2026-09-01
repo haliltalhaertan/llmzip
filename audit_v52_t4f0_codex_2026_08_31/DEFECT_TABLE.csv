@@ -1,0 +1,8 @@
+defect_id,status,scope,evidence,quantified_effect,required_action
+D01,CONFIRMED,"1M archives 5;26;33;34","Raw message IDs repeat with divergent content; pinned resume code resets id counter",1720 duplicate keys; 198 ambiguous source IDs; 41 affected questions,"Exclude all four archives or obtain authoritative upstream relabeling"
+D02,CONFIRMED,Full intended evidence cohort,"Public records include ambiguous/missing; coarse; and malformed annotations",57 non-exact non-abstention records,"Freeze explicit restricted cohort"
+D03,CONFIRMED,Manifest prompt provenance,"Claimed task_prompt_sha256 cannot be reproduced from available prompt representations",Exact original prompt byte identity unresolved,"Preserve exact prompt bytes and recompute chain before refreeze"
+D04,QUALIFICATION,ALL@3 estimand,"Gold cardinality exceeds k for a substantial subset",587 of 1712 primary questions structurally zero,"Freeze current definition or preregister a different estimand before outcomes"
+D05,REFUTED,Representation family,"Real largest-clean-archive fits pass rank; finite; dimension; and bitwise A/B repeatability",0 observed representation failures,"Pin audited environment and hashes"
+D06,REFUTED,Public materialization,"All 205 selected pinned files downloaded and verified",0 missing selected files,"Retain materialization manifests"
+

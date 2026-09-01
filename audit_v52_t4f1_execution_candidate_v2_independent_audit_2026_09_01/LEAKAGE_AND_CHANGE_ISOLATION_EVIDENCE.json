@@ -1,0 +1,57 @@
+{
+  "allowed_v2_change_functions": [
+    "evaluate_archive",
+    "finalize_results",
+    "main",
+    "preflight",
+    "run_archives",
+    "verify_execution_seal",
+    "verify_existing_archive",
+    "verify_run_authorization"
+  ],
+  "checks": {
+    "authorization_before_corpus_and_output": true,
+    "canary_does_not_rank_or_metric": true,
+    "canary_opens_no_question_file": true,
+    "changed_functions": [
+      "evaluate_archive",
+      "finalize_results",
+      "main",
+      "preflight",
+      "run_archives",
+      "verify_execution_seal",
+      "verify_existing_archive",
+      "verify_run_authorization"
+    ],
+    "finalize_authorization_before_corpus": true,
+    "fit_accepts_only_memory_texts": true,
+    "fit_call_archive_text_only": true,
+    "fit_forbidden_token_hits": [],
+    "itq_archive_only": true,
+    "numeric_function_ast_unchanged": true,
+    "outcome_print_call_count": 0,
+    "tie_signature_archive_and_memory_only": true,
+    "tie_source_has_no_trial_or_outcome": true,
+    "unexpected_changed_functions": []
+  },
+  "numerical_function_equality": {
+    "append_trial_rows": true,
+    "array_sha256": true,
+    "fit_archive_representation": true,
+    "fit_itq": true,
+    "haar_rotation": true,
+    "load_archive": true,
+    "metrics_at_3": true,
+    "priority_arrays": true,
+    "question_payload": true,
+    "rank_hamming": true,
+    "real_archive_canary": true,
+    "signed_permutation": true,
+    "synthetic_preflight": true,
+    "tie_priority": true,
+    "transform_queries": true
+  },
+  "schema": "V52_T4F1_INDEPENDENT_V2_STATIC_LEAKAGE_EVIDENCE_V1",
+  "status": "PASS",
+  "v2_change_isolation_pass": true
+}

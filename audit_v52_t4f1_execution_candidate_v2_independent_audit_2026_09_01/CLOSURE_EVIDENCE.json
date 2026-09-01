@@ -1,0 +1,125 @@
+{
+  "anchor_checks": {
+    "beam_manifest": true,
+    "candidate_seal": true,
+    "cohort": true,
+    "dependency": true,
+    "eligible_structure": true,
+    "excluded_archives": true,
+    "inventory": true,
+    "parent_commit": true,
+    "pending_key_commitment": true,
+    "preflight_inventory": true,
+    "preflight_report": true,
+    "protocol": true,
+    "restricted_seal": true,
+    "runner": true,
+    "status": true
+  },
+  "candidate_recursive_file_count": 8,
+  "candidate_recursive_files": [
+    "CANDIDATE_EXECUTION_SEAL.json",
+    "DEPENDENCY_LOCK.txt",
+    "EXECUTION_SPEC.md",
+    "PAYLOAD_HASHES.json",
+    "README.md",
+    "RUN_AUTHORIZATION_TEMPLATE.json",
+    "candidate_package_preflight.py",
+    "v52_t4f1_beam_retrieval.py"
+  ],
+  "expected_recursive_files": [
+    "CANDIDATE_EXECUTION_SEAL.json",
+    "DEPENDENCY_LOCK.txt",
+    "EXECUTION_SPEC.md",
+    "PAYLOAD_HASHES.json",
+    "README.md",
+    "RUN_AUTHORIZATION_TEMPLATE.json",
+    "candidate_package_preflight.py",
+    "v52_t4f1_beam_retrieval.py"
+  ],
+  "nested_unbound_fixture_rejected": true,
+  "no_nested_files": true,
+  "no_pycache": true,
+  "package_preflight_pass": true,
+  "payload_checks": [
+    {
+      "bytes": 330,
+      "declared_match": true,
+      "name": "DEPENDENCY_LOCK.txt",
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "bytes": 8948,
+      "declared_match": true,
+      "name": "EXECUTION_SPEC.md",
+      "sha256": "50cc7f68a3b2a589da34c06688a1db63cc33515a6fe09438b9bd62f4aa99dbc8"
+    },
+    {
+      "bytes": 1606,
+      "declared_match": true,
+      "name": "README.md",
+      "sha256": "e38ef4ebd1fdb160ce7290cb1b88e3292106fb73a8d5f51291a274f02b286497"
+    },
+    {
+      "bytes": 909,
+      "declared_match": true,
+      "name": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "sha256": "dc91b87f0b9187b2f8f4ef06e07cf868005d1560b3149039ad2f65826ef39ad4"
+    },
+    {
+      "bytes": 4147,
+      "declared_match": true,
+      "name": "candidate_package_preflight.py",
+      "sha256": "442d335ea5d494c81b1b8c05c66668b4f320123b138d0aa934f0fb1b28383940"
+    },
+    {
+      "bytes": 56142,
+      "declared_match": true,
+      "name": "v52_t4f1_beam_retrieval.py",
+      "sha256": "c50dfa7130918b8183c51edf68f5e2baac21a419f0d29bf2ec930f9de38e6139"
+    }
+  ],
+  "preparation_inventory_checks": [
+    {
+      "bytes": 23,
+      "declared_match": true,
+      "name": "checkpoint_fixture/archives/100K__synthetic.csv",
+      "sha256": "c2cd187ca67a8df69ebab0ad2c2369cb020e151f328509db67728dd3d87debf9"
+    },
+    {
+      "bytes": 1137,
+      "declared_match": true,
+      "name": "checkpoint_fixture/archives/100K__synthetic.meta.json",
+      "sha256": "5c2644dda7aa056c95a495708cc940259d8567cdf73bb0bfd1b287c729715ef6"
+    },
+    {
+      "bytes": 3564,
+      "declared_match": true,
+      "name": "IMPLEMENTATION_PREFLIGHT.json",
+      "sha256": "92618cf3acd3108534f7723126413f7d4664d85970eef7d05bbdc7aa7e2fee5c"
+    },
+    {
+      "bytes": 885,
+      "declared_match": true,
+      "name": "NEGATIVE_STRUCTURALLY_COMPLETE_AUTH.json",
+      "sha256": "54b399676d9a94b2661f0bb56792eab182e40681a7c2fb846853a9a157aeaaf9"
+    },
+    {
+      "bytes": 4759,
+      "declared_match": true,
+      "name": "PREFLIGHT_REPORT.md",
+      "sha256": "c5111d61f9bf388f62bf0332d51212ac744f66fd889e5d2e1e5e2d3a95d71091"
+    },
+    {
+      "bytes": 1318,
+      "declared_match": true,
+      "name": "verify_checkpoint_provenance.py",
+      "sha256": "d7e571cddc661a36cd339ce5ff9ab8956ba9ec37c63669a24af38aabe1de4be8"
+    }
+  ],
+  "recursive_exact_set_match": true,
+  "schema": "V52_T4F1_INDEPENDENT_V2_CLOSURE_EVIDENCE_V1",
+  "seal_implementation_binding": true,
+  "seal_inventory_binding": true,
+  "status": "PASS"
+}

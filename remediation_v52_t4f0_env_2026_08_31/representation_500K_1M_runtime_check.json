@@ -1,0 +1,259 @@
+{
+  "task": "V52 TASK 4F0 - REAL BEAM REPRESENTATION TRANSFER AUDIT",
+  "method": {
+    "memory_text": "role + ': ' + content",
+    "word_tfidf": {
+      "lowercase": true,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "stop_words": "english",
+      "sublinear_tf": true
+    },
+    "char_tfidf": {
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "sublinear_tf": true
+    },
+    "latent_svd": {
+      "n_components": 32,
+      "random_state": 5101
+    },
+    "mixed_svd": {
+      "n_components": 96,
+      "random_state": 5204
+    },
+    "l2_normalize": true,
+    "archive_mean_center": true,
+    "query_fit_rule": "transform only after archive fit"
+  },
+  "environment": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.3.2",
+    "scipy": "1.16.1",
+    "scikit_learn": "1.7.1",
+    "psutil": "7.0.0",
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "scientific_native_vs_haar_outcome_inspected": false,
+  "tiers": {
+    "500K": {
+      "status": "PASS",
+      "tier": "500K",
+      "conversation_id": "12",
+      "chat_path": "remediation_v52_t4f0_env_2026_08_31/corpus/chats/500K/12/chat.json",
+      "load_seconds": 0.01838959997985512,
+      "repeat_1": {
+        "archive_units": 1120,
+        "word_shape": [
+          1120,
+          76741
+        ],
+        "word_nnz": 261767,
+        "char_shape": [
+          1120,
+          55573
+        ],
+        "char_nnz": 1836227,
+        "latent_shape": [
+          1120,
+          32
+        ],
+        "source_block_shape": [
+          1120,
+          132346
+        ],
+        "source_block_nnz": 2133834,
+        "mixed_shape": [
+          1120,
+          96
+        ],
+        "query_shape": [
+          1,
+          96
+        ],
+        "mixed_rank": 96,
+        "finite_no_nan_inf": true,
+        "centered96_sha256": "785cad633f63b1cff31c255fd4d187a2341a9b4cb2d689c747a86758910526f4",
+        "query_centered96_sha256": "845daec9e46f0504f0a9b92c7a66b370f81b22299eddc880a449d2041dff2757",
+        "peak_rss_bytes": 553000960,
+        "total_seconds": 11.34589480003342,
+        "stage_seconds": {
+          "word_tfidf_fit_transform": 0.3143059000140056,
+          "word_l2_normalize": 0.001340600079856813,
+          "char_tfidf_fit_transform": 1.491565499920398,
+          "char_l2_normalize": 0.007845700019970536,
+          "latent32_fit_transform": 0.5037930000107735,
+          "latent32_l2_normalize": 0.0003978000022470951,
+          "source_block_hstack": 0.02181940001901239,
+          "mixed96_fit_transform": 8.884991599945351,
+          "mixed96_l2_normalize": 0.0015831999480724335
+        }
+      },
+      "repeat_2": {
+        "archive_units": 1120,
+        "word_shape": [
+          1120,
+          76741
+        ],
+        "word_nnz": 261767,
+        "char_shape": [
+          1120,
+          55573
+        ],
+        "char_nnz": 1836227,
+        "latent_shape": [
+          1120,
+          32
+        ],
+        "source_block_shape": [
+          1120,
+          132346
+        ],
+        "source_block_nnz": 2133834,
+        "mixed_shape": [
+          1120,
+          96
+        ],
+        "query_shape": [
+          1,
+          96
+        ],
+        "mixed_rank": 96,
+        "finite_no_nan_inf": true,
+        "centered96_sha256": "785cad633f63b1cff31c255fd4d187a2341a9b4cb2d689c747a86758910526f4",
+        "query_centered96_sha256": "845daec9e46f0504f0a9b92c7a66b370f81b22299eddc880a449d2041dff2757",
+        "peak_rss_bytes": 554729472,
+        "total_seconds": 19.734974800026976,
+        "stage_seconds": {
+          "word_tfidf_fit_transform": 0.634521699976176,
+          "word_l2_normalize": 0.0019675000803545117,
+          "char_tfidf_fit_transform": 2.9209592000115663,
+          "char_l2_normalize": 0.028474299935624003,
+          "latent32_fit_transform": 1.1842788000358269,
+          "latent32_l2_normalize": 0.0013132001040503383,
+          "source_block_hstack": 0.040355500066652894,
+          "mixed96_fit_transform": 14.851471600006334,
+          "mixed96_l2_normalize": 0.0006985000800341368
+        }
+      },
+      "repeatability_max_abs_archive_diff": 0.0,
+      "repeatability_max_abs_query_diff": 0.0,
+      "retrieval_quality_computed": false
+    },
+    "1M": {
+      "status": "PASS",
+      "tier": "1M",
+      "conversation_id": "12",
+      "chat_path": "remediation_v52_t4f0_env_2026_08_31/corpus/chats/1M/12/chat.json",
+      "load_seconds": 0.04198089998681098,
+      "repeat_1": {
+        "archive_units": 2214,
+        "word_shape": [
+          2214,
+          164413
+        ],
+        "word_nnz": 564196,
+        "char_shape": [
+          2214,
+          69755
+        ],
+        "char_nnz": 3879392,
+        "latent_shape": [
+          2214,
+          32
+        ],
+        "source_block_shape": [
+          2214,
+          234200
+        ],
+        "source_block_nnz": 4514436,
+        "mixed_shape": [
+          2214,
+          96
+        ],
+        "query_shape": [
+          1,
+          96
+        ],
+        "mixed_rank": 96,
+        "finite_no_nan_inf": true,
+        "centered96_sha256": "2cff67dc57b2da7b39a1718f843932cdd913479112482ada3a0339c5d924e0f1",
+        "query_centered96_sha256": "1fff8b7ad91c1ae9411fda178c36972e84c299bd643bb31fa408ad17acfb8064",
+        "peak_rss_bytes": 923496448,
+        "total_seconds": 20.073682100046426,
+        "stage_seconds": {
+          "word_tfidf_fit_transform": 0.9935230000410229,
+          "word_l2_normalize": 0.002903799992054701,
+          "char_tfidf_fit_transform": 4.446589899947867,
+          "char_l2_normalize": 0.029180900077335536,
+          "latent32_fit_transform": 2.0266929999925196,
+          "latent32_l2_normalize": 0.0006443000165745616,
+          "source_block_hstack": 0.04441420000512153,
+          "mixed96_fit_transform": 12.421821799944155,
+          "mixed96_l2_normalize": 0.0032134000211954117
+        }
+      },
+      "repeat_2": {
+        "archive_units": 2214,
+        "word_shape": [
+          2214,
+          164413
+        ],
+        "word_nnz": 564196,
+        "char_shape": [
+          2214,
+          69755
+        ],
+        "char_nnz": 3879392,
+        "latent_shape": [
+          2214,
+          32
+        ],
+        "source_block_shape": [
+          2214,
+          234200
+        ],
+        "source_block_nnz": 4514436,
+        "mixed_shape": [
+          2214,
+          96
+        ],
+        "query_shape": [
+          1,
+          96
+        ],
+        "mixed_rank": 96,
+        "finite_no_nan_inf": true,
+        "centered96_sha256": "2cff67dc57b2da7b39a1718f843932cdd913479112482ada3a0339c5d924e0f1",
+        "query_centered96_sha256": "1fff8b7ad91c1ae9411fda178c36972e84c299bd643bb31fa408ad17acfb8064",
+        "peak_rss_bytes": 925773824,
+        "total_seconds": 18.35637900000438,
+        "stage_seconds": {
+          "word_tfidf_fit_transform": 1.0069385999813676,
+          "word_l2_normalize": 0.003507800051011145,
+          "char_tfidf_fit_transform": 3.9747591000050306,
+          "char_l2_normalize": 0.021761400043033063,
+          "latent32_fit_transform": 1.4749786000465974,
+          "latent32_l2_normalize": 0.0006967000663280487,
+          "source_block_hstack": 0.04478640004526824,
+          "mixed96_fit_transform": 11.690425800043158,
+          "mixed96_l2_normalize": 0.0015795999206602573
+        }
+      },
+      "repeatability_max_abs_archive_diff": 0.0,
+      "repeatability_max_abs_query_diff": 0.0,
+      "retrieval_quality_computed": false
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "duplicate_conversations": [
+    "1M::26",
+    "1M::33",
+    "1M::34",
+    "1M::5"
+  ],
+  "duplicate_message_id_values": 1720,
+  "duplicate_occurrences_beyond_first": 1720,
+  "identical_duplicate_id_values": 0,
+  "divergent_duplicate_id_values": 1720,
+  "max_occurrences_for_one_id": 2,
+  "affected_source_questions": 41,
+  "affected_source_questions_all_duplicate_payloads_identical": 0,
+  "nonexact_question_category_counts": {
+    "SOURCE_AMBIGUOUS_OR_MISSING": 55,
+    "COARSE_SOURCE": 1,
+    "MALFORMED_CONTRADICTORY": 1
+  },
+  "retrieval_quality_computed": false
+}

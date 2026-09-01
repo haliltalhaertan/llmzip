@@ -1,0 +1,13 @@
+{
+  "authorization": "PASS",
+  "checkpoint_required_controls": "PASS",
+  "checkpoint_sealing_status": "BLOCKED",
+  "closure": "PASS",
+  "forbidden_invocation_counts": {
+    "hmac_env_set": 0,
+    "mode_finalize": 0,
+    "mode_run": 0
+  },
+  "leakage_and_change_isolation": "PASS",
+  "methods": "PASS"
+}

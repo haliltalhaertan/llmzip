@@ -1,0 +1,58 @@
+{
+  "archive": "100K::12",
+  "cache_argument": "fit_archive_representation takes exactly one argument, the ordered archive memory-text list, so its output is a pure function of the archive.  Reusing one fit across the questions of that archive is therefore identical to refitting per question, which is verified numerically above; and because the model is a local of evaluate_archive with no module-level cache, a model cannot be reached from a different conversation.",
+  "candidate": {
+    "archive_sha256": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+    "matches_sealed_archive_anchor": true,
+    "matches_sealed_query_anchor": true,
+    "memory_key_sample": "100K::12::0",
+    "memory_keys_well_formed": true,
+    "query_sha256": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+    "raw_ids_unique": true,
+    "texts_role_prefixed": true,
+    "units": 392
+  },
+  "equivalence": {
+    "cached_fit_equals_per_query_refit": true,
+    "cached_query_row_matches_single_query": true,
+    "centered_columns_sum_to_zero": true,
+    "different_archive_gives_different_model": true,
+    "different_archive_has_different_unit_count": true,
+    "independent_archive_equals_candidate_archive": true,
+    "independent_ids_equal_candidate_ids": true,
+    "independent_query_equals_candidate_query": true,
+    "independent_texts_equal_candidate_texts": true,
+    "mean_is_archive_mean_of_y96": true,
+    "repeat_fit_byte_identical": true,
+    "repeat_query_byte_identical": true
+  },
+  "failing_flags": [],
+  "gold_labels_loaded": false,
+  "independent": {
+    "all_finite": true,
+    "archive_sha256": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+    "archive_shape": [
+      392,
+      96
+    ],
+    "archive_shape_is_392x96": true,
+    "matches_sealed_archive_anchor": true,
+    "matches_sealed_query_anchor": true,
+    "query_sha256": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+    "query_shape": [
+      1,
+      96
+    ],
+    "query_shape_is_1x96": true,
+    "rank_is_96": true,
+    "rank_of_y96": 96,
+    "units": 392,
+    "units_is_392": true
+  },
+  "probing_questions_file_opened": false,
+  "query_is_fixed_invented_canary_string": true,
+  "ranking_performed": false,
+  "retrieval_quality_computed": false,
+  "schema": "V52_T4F1_REPRESENTATION_EQUIVALENCE_V1",
+  "status": "PASS"
+}

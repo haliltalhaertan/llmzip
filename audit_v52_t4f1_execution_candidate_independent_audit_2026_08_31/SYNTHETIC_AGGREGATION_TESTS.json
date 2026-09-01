@@ -1,0 +1,186 @@
+{
+  "all_cases_pass": true,
+  "all_constant_flags": true,
+  "all_gate11_flags": true,
+  "all_gate13_flags": true,
+  "cases": [
+    {
+      "case": "verified_checkpoint_accepted",
+      "error": null,
+      "expected_block": false,
+      "pass": true,
+      "raised": false
+    },
+    {
+      "case": "refuse_overwrite_existing_archive",
+      "error": "RuntimeError: [BLOCKED - REFUSE ARCHIVE OVERWRITE] T0::c0",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "csv_without_meta_blocks",
+      "error": "RuntimeError: [BLOCKED - INCOMPLETE ARCHIVE CHECKPOINT] T1::c1",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "meta_without_csv_blocks",
+      "error": "RuntimeError: [BLOCKED - INCOMPLETE ARCHIVE CHECKPOINT] T1::c1",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "meta_row_count_tamper_blocks",
+      "error": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] T2::c2",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "csv_byte_tamper_blocks_via_sha256",
+      "error": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] T0::c0",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "question_count_mismatch_blocks",
+      "error": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] T0::c0",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "absent_checkpoint_returns_false",
+      "error": null,
+      "expected_block": false,
+      "pass": true,
+      "raised": false
+    },
+    {
+      "case": "finalize_accepts_complete_synthetic_table",
+      "error": null,
+      "expected_block": false,
+      "pass": true,
+      "raised": false
+    },
+    {
+      "case": "finalize_blocks_when_an_archive_is_absent",
+      "error": "RuntimeError: [BLOCKED - MISSING ARCHIVE RESULT] T2::c2",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_blocks_duplicate_cell",
+      "error": "RuntimeError: [BLOCKED - DUPLICATE RESULT CELL] ('T0::c0::ab::1', 'NATIVE_SIGN96', '', 1)",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_blocks_missing_trial",
+      "error": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] T0::c0",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_blocks_unknown_seed",
+      "error": "RuntimeError: [BLOCKED - METHOD OR SEED RESULT] T0::c0::ab::1 HAAR96_SIGN 99999",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_blocks_when_control_differs_from_native",
+      "error": "RuntimeError: [BUG - SIGNED CONTROL METRIC MISMATCH] T0::c0::ab::1",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_blocks_trial_varying_top3",
+      "error": "RuntimeError: [BUG - TRIAL-VARYING TOP3 UNDER FIXED PRIORITY] T0::c0::ab::1 NATIVE_SIGN96 ",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_blocks_inconsistent_any_vs_fractional",
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('T0::c0::ab::1', 'ITQ96_CENTERED', '101', 0)",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_blocks_all_at_3_when_gold_exceeds_3",
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('T0::c0::ab::1', 'NATIVE_SIGN96', '', 0)",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_blocks_unknown_question_id",
+      "error": "RuntimeError: [BLOCKED - UNKNOWN QUESTION RESULT] T0::c0::ab::999",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    },
+    {
+      "case": "finalize_accepts_first_run",
+      "error": null,
+      "expected_block": false,
+      "pass": true,
+      "raised": false
+    },
+    {
+      "case": "finalize_refuses_second_finalization",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE]",
+      "expected_block": true,
+      "pass": true,
+      "raised": true
+    }
+  ],
+  "gate11_checkpoint": {
+    "atomic_write_used_os_replace": true,
+    "csv_and_meta_paired": true,
+    "no_tmp_files_left": true,
+    "path_has_no_traversal": true,
+    "safe_id_replaces_colons": true,
+    "temp_suffix_is_dot_tmp": true
+  },
+  "gate13_aggregation": {
+    "aggregate_row_count_is_4": true,
+    "denominator_column_equals_question_count": true,
+    "equal_question_weight_not_archive_weight": true,
+    "independent_recomputation_matches": true,
+    "manifest_binds_script_and_seal": true,
+    "manifest_console_outcomes_emitted_false": true,
+    "manifest_interpretation_authorized_false": true,
+    "manifest_lists_per_archive_evidence": true,
+    "manifest_status": "COMPLETE_PENDING_INDEPENDENT_RESULT_AUDIT",
+    "native_equals_signed_control_aggregate": true,
+    "question_level_rows_is_eligible_times_4": true,
+    "question_seed_rows_is_16_per_question": true
+  },
+  "production_constants": {
+    "EXPECTED_ARCHIVES": 96,
+    "EXPECTED_ARCHIVES_is_96": true,
+    "EXPECTED_ELIGIBLE": 1712,
+    "EXPECTED_ELIGIBLE_is_1712": true,
+    "EXPECTED_TOTAL_ROWS_is_2000": true,
+    "TOP_K_is_3": true,
+    "aggregate_denominator_is_expected_eligible": true,
+    "console_outcomes_emitted_false_literal": true,
+    "expected_rows_per_question_is_320": true,
+    "interpretation_authorized_false_literal": true,
+    "no_archive_size_weighting": true,
+    "no_seed_weighting": true
+  },
+  "schema": "V52_T4F1_SYNTHETIC_AGGREGATION_TESTS_V1",
+  "status": "PASS"
+}

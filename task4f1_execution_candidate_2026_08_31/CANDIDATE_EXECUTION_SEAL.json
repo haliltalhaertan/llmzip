@@ -1,0 +1,97 @@
+{
+  "schema": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V1",
+  "task": "V52 Task 4F1 - BEAM Restricted-Cohort Axis Probe",
+  "prepared_at_utc": "2026-08-31T18:23:27Z",
+  "status": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+  "authorization": {
+    "task_4f1_preregistration": "BLOCKED",
+    "task_4f1_run": "BLOCKED",
+    "retrieval_quality_outcome_access": "FORBIDDEN",
+    "independent_execution_code_audit": "PENDING"
+  },
+  "parent_llmzip_commit": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+  "pinned_beam_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+  "pinned_beam_tree_manifest": {
+    "path": "../audit_v52_t4f0_codex_2026_08_31/pinned_tree_manifest.json",
+    "sha256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+    "selected_files": 205
+  },
+  "sealed_task4f0_boundary": {
+    "namespace": "../audit_v52_t4f0_restricted_refreeze_2026_08_31",
+    "final_seal_sha256": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c",
+    "protocol_sha256": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1",
+    "cohort_sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+    "eligible_questions": 1712,
+    "archive_count": 96,
+    "excluded_archives": [
+      "1M::5",
+      "1M::26",
+      "1M::33",
+      "1M::34"
+    ]
+  },
+  "implementation": {
+    "path": "v52_t4f1_beam_retrieval.py",
+    "bytes": 52673,
+    "sha256": "28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428",
+    "modes": [
+      "preflight",
+      "run",
+      "finalize"
+    ],
+    "run_requires_external_authorization": true,
+    "partial_outcomes_printed_to_console": false
+  },
+  "execution_interpretations": {
+    "memory_key_utf8": "tier + '::' + conversation_id + '::' + decimal_raw_message_id",
+    "archive_fit_cache": "one exact query-independent fit per archive, reused for questions in that archive",
+    "signed_permutation_seeds": [
+      43001,
+      43002,
+      43003,
+      43004,
+      43005
+    ],
+    "haar_qr_correction": "Q columns multiplied by sign(diag(R)); exact zero replaced by +1",
+    "itq_iterations": 100,
+    "itq_fit_payload": "centered archive C96 only",
+    "tie_priority_trial_dependency": "none",
+    "nuisance_trials": "trial 0..19 are identical deterministic replication rows under the single sealed priority",
+    "threshold": ">= 0",
+    "aggregation": "trials within question-method-seed; seeds within question-method; equal question weighting"
+  },
+  "arms": {
+    "native": "NATIVE_SIGN96",
+    "signed_permutation_control": "SIGNED_PERM_CONTROL96 seeds=43001,43002,43003,43004,43005",
+    "haar": "HAAR96_SIGN seeds=43001,43002,43003,43004,43005",
+    "itq": "ITQ96_CENTERED descriptive-only seeds=101,202,303,404,505 iterations=100"
+  },
+  "environment": {
+    "lock_path": "DEPENDENCY_LOCK.txt",
+    "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "single_process_single_worker": true
+  },
+  "payload_inventory": {
+    "path": "PAYLOAD_HASHES.json",
+    "bytes": 1115,
+    "sha256": "278dbf80d6388a7dcd2605791283442615d5a951b2ef1e1ce1b6c92b4dd392b7",
+    "file_count_excluding_inventory_and_seal": 6
+  },
+  "required_independent_gates": {
+    "payload_byte_closure": "PENDING",
+    "static_leakage_audit": "PENDING",
+    "runtime_fit_payload_canary": "PENDING",
+    "corpus_blob_identity": "PENDING",
+    "cohort_and_gold_join": "PENDING",
+    "representation_equivalence": "PENDING",
+    "signed_permutation_exact_invariance": "PENDING",
+    "haar_continuous_invariance": "PENDING",
+    "itq_orientation_and_query_exclusion": "PENDING",
+    "tie_and_trial_semantics": "PENDING",
+    "checkpoint_resume_and_no_overwrite": "PENDING",
+    "authorization_guard_negative_tests": "PENDING",
+    "output_schema_and_aggregation": "PENDING",
+    "independent_signoff": "PENDING"
+  },
+  "stop_rule": "No Task 4F1 run, metric access, or preregistration before independent code audit. After outcome access, no cohort, occurrence, seed, trial, threshold, centering, dimension, tie priority, metric, denominator, arm, rotation, ITQ, cache, or aggregation change."
+}

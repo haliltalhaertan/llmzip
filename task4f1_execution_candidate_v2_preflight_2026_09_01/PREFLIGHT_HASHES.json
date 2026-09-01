@@ -1,0 +1,49 @@
+{
+  "schema": "V52_T4F1_V2_PREPARATION_EVIDENCE_HASHES_V1",
+  "date_utc": "2026-09-01",
+  "status": "PASS_READY_FOR_FRESH_INDEPENDENT_AUDIT_NOT_AUTHORIZED",
+  "candidate_anchors": {
+    "implementation_sha256": "c50dfa7130918b8183c51edf68f5e2baac21a419f0d29bf2ec930f9de38e6139",
+    "payload_inventory_sha256": "9d7429893f50a729e4471684580660461e944e599c43df24172b2c4d1d66e22d",
+    "candidate_execution_seal_sha256": "4cc6313649da9ca4b10e64610a8ff40173c1ccacd663dda9fadabcdf059b996c"
+  },
+  "outcome_boundary": {
+    "retrieval_quality_computed": false,
+    "retrieval_quality_read": false,
+    "valid_production_authorization_constructed": false,
+    "task_4f1_run_authorized": false
+  },
+  "files": [
+    {
+      "name": "checkpoint_fixture/archives/100K__synthetic.csv",
+      "bytes": 23,
+      "sha256": "c2cd187ca67a8df69ebab0ad2c2369cb020e151f328509db67728dd3d87debf9"
+    },
+    {
+      "name": "checkpoint_fixture/archives/100K__synthetic.meta.json",
+      "bytes": 1137,
+      "sha256": "5c2644dda7aa056c95a495708cc940259d8567cdf73bb0bfd1b287c729715ef6"
+    },
+    {
+      "name": "IMPLEMENTATION_PREFLIGHT.json",
+      "bytes": 3564,
+      "sha256": "92618cf3acd3108534f7723126413f7d4664d85970eef7d05bbdc7aa7e2fee5c"
+    },
+    {
+      "name": "NEGATIVE_STRUCTURALLY_COMPLETE_AUTH.json",
+      "bytes": 885,
+      "sha256": "54b399676d9a94b2661f0bb56792eab182e40681a7c2fb846853a9a157aeaaf9"
+    },
+    {
+      "name": "PREFLIGHT_REPORT.md",
+      "bytes": 4759,
+      "sha256": "c5111d61f9bf388f62bf0332d51212ac744f66fd889e5d2e1e5e2d3a95d71091"
+    },
+    {
+      "name": "verify_checkpoint_provenance.py",
+      "bytes": 1318,
+      "sha256": "d7e571cddc661a36cd339ce5ff9ab8956ba9ec37c63669a24af38aabe1de4be8"
+    }
+  ],
+  "self_reference_note": "this manifest intentionally excludes itself"
+}

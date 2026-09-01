@@ -1,0 +1,59 @@
+{
+  "active_bug_hunt_findings": [
+    {
+      "id": "B1",
+      "observed": true,
+      "sealing_blocker": true,
+      "severity": "BLOCKING",
+      "title": "Derived finalization CSVs can be silently overwritten when the post-run manifest is absent"
+    },
+    {
+      "id": "B2",
+      "observed": true,
+      "sealing_blocker": true,
+      "severity": "BLOCKING",
+      "title": "Finalizer accepts metric values not recomputed from frozen gold and retrieved IDs"
+    },
+    {
+      "id": "B3",
+      "observed": true,
+      "sealing_blocker": true,
+      "severity": "BLOCKING",
+      "title": "Finalizer accepts Native/signed-control top-three divergence when aggregate metrics remain equal"
+    },
+    {
+      "id": "R1",
+      "observed": true,
+      "sealing_blocker": false,
+      "severity": "NON_BLOCKING_DEFENSE_IN_DEPTH",
+      "title": "Path bindings use basename by declared protocol and concurrent external mutation remains a TOCTOU assumption"
+    }
+  ],
+  "archive_overwrite_blocked": true,
+  "checkpoint_csv_hash_mismatch_blocked": true,
+  "each_changed_provenance_hash_blocked": {
+    "cohort_sha256": true,
+    "execution_candidate_seal_sha256": true,
+    "run_authorization_sha256": true,
+    "script_sha256": true
+  },
+  "equal_question_weighting_code_path_exercised": true,
+  "final_manifest_repeats_provenance": true,
+  "future_preregistration_must_state_replication_not_independent_samples": true,
+  "incomplete_checkpoint_blocked": true,
+  "matching_provenance_accepted": true,
+  "post_run_manifest_overwrite_blocked": true,
+  "required_controls_status": "PASS",
+  "schema": "V52_T4F1_INDEPENDENT_V2_CHECKPOINT_AGGREGATION_EVIDENCE_V1",
+  "sealing_status": "BLOCKED",
+  "stale_v1_checkpoint_blocked": true,
+  "synthetic_aggregation_structure": {
+    "aggregate_rows": 4,
+    "question_denominator": 1,
+    "question_rows": 4,
+    "question_seed_rows": 16,
+    "trial_rows": 320
+  },
+  "synthetic_only": true,
+  "trial_rows_are_deterministic_replication_identities": true
+}

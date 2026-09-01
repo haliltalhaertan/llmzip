@@ -1,0 +1,6 @@
+# Local, machine-specific V52 remediation runtime and copied corpus.
+/remediation_v52_t4f0_env_2026_08_31/Include/
+/remediation_v52_t4f0_env_2026_08_31/Lib/
+/remediation_v52_t4f0_env_2026_08_31/Scripts/
+/remediation_v52_t4f0_env_2026_08_31/corpus/
+/remediation_v52_t4f0_env_2026_08_31/pyvenv.cfg

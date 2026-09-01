@@ -1,0 +1,173 @@
+{
+  "task": "V52 TASK 4F0 - CODEX INDEPENDENT AUDIT",
+  "generated_at_utc": "2026-08-31T12:28:44.9152612Z",
+  "scientific_native_vs_haar_outcome_inspected": false,
+  "file_count_excluding_self": 33,
+  "files": [
+    {
+      "name": "analyze_beam_anomalies.py",
+      "bytes": 7810,
+      "sha256": "69568f637610fdda984ab6aa4804068cbb50532e2ba811695c80e476339a8693"
+    },
+    {
+      "name": "anomaly_summary.json",
+      "bytes": 596,
+      "sha256": "cbc1ff00c13497fac50a7f4151e1ee5d0f12bfcc16c58374f10275b691854dbe"
+    },
+    {
+      "name": "audit_beam_corpus.py",
+      "bytes": 19185,
+      "sha256": "6ebf263f2c8f898cc5ad4854ada6803aced27263d7166ebe6867ec7a17070338"
+    },
+    {
+      "name": "audit_representation_transfer.py",
+      "bytes": 11074,
+      "sha256": "f96a3fa9dbc3c3a6a2a0e5dbd474c355cb2809496b18b8b4597e9e375442f14a"
+    },
+    {
+      "name": "conversation_inventory.csv",
+      "bytes": 26074,
+      "sha256": "5273ad3669fbabd66ee35ef4f7e69520475bed437f6c1a2e6fc142617981d71b"
+    },
+    {
+      "name": "corpus_audit_summary.json",
+      "bytes": 60104,
+      "sha256": "0ea7324190ac859d60c969f97da4b365a9e3f1e07f3b78a3e49822fd4698bcfa"
+    },
+    {
+      "name": "DEFECT_TABLE.csv",
+      "bytes": 1335,
+      "sha256": "2d784be006a7040dc796719122bde976d84dda4b96cbe38344179ab8bab0130f"
+    },
+    {
+      "name": "derive_estimand_cohort.py",
+      "bytes": 5103,
+      "sha256": "67ff9ed5190d7d637f4411247e176f1b25a02efff5e97e42f25ebeef54eb0b19"
+    },
+    {
+      "name": "duplicate_message_ids.csv",
+      "bytes": 549275,
+      "sha256": "85b7a475cb2140c124a2453d65a4bda462d7fd26aafdca633fd68c6defb27685"
+    },
+    {
+      "name": "estimand_primary_cohort.csv",
+      "bytes": 316561,
+      "sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "name": "estimand_summary.json",
+      "bytes": 3775,
+      "sha256": "c6ce602a7148dec8aed67d81a7ec14e85ce20a493b1eb8ec09e356a2aa1fe5db"
+    },
+    {
+      "name": "EXECUTIVE_VERDICT.txt",
+      "bytes": 1387,
+      "sha256": "7ba6c3d62e8beafd239f14252efec22649b529521faeace2433edcc354e90fa5"
+    },
+    {
+      "name": "global_raw_id_collisions.csv",
+      "bytes": 5544744,
+      "sha256": "839300d3298709730532e740bf78aa8644ae7eaf506fb01ff0a69be925748321"
+    },
+    {
+      "name": "LEAKAGE_AUDIT.csv",
+      "bytes": 525,
+      "sha256": "ee0187dca0a7c4f5a3c1a585c95c65dfc1ccfa9214a97dc398d90da55e670524"
+    },
+    {
+      "name": "materialization_hash_log.json",
+      "bytes": 55760,
+      "sha256": "5be73445ee3727b2c4c39450f98602f4c9b48a6b920cb622c0fa552a00b89dff"
+    },
+    {
+      "name": "materialize_pinned_beam.py",
+      "bytes": 5654,
+      "sha256": "6fd4fcb793729666f30382300cd79d54b98e6adb120a3800fd7d099f460bf1b9"
+    },
+    {
+      "name": "PACKAGE_README.md",
+      "bytes": 1131,
+      "sha256": "4a6c2b30c78d010818bdc3055caba7467b1d70b27663b79854cf41440f7a74e1"
+    },
+    {
+      "name": "pinned_tree_manifest.json",
+      "bytes": 33336,
+      "sha256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318"
+    },
+    {
+      "name": "question_annotation_anomalies.csv",
+      "bytes": 27359,
+      "sha256": "d30e89653ef61b64b1d10a2efeea79454ec939efe5bade58dc48236ab48dab94"
+    },
+    {
+      "name": "question_census.csv",
+      "bytes": 223938,
+      "sha256": "43010451a5cde119804008522f78c0fcdd27f4e5b155f55ecc380f39643f5c6c"
+    },
+    {
+      "name": "question_taxonomy_counts.csv",
+      "bytes": 2591,
+      "sha256": "c8f74cc0f1ee74a7e46226434a4b44b1d733fe42525df469da60cc6aaa26c67a"
+    },
+    {
+      "name": "REPRESENTATION_REPEATABILITY.csv",
+      "bytes": 1251,
+      "sha256": "370d9c176f186c42703ee9b80c1c351f00e4867652770d81b804f6d04d3688a8"
+    },
+    {
+      "name": "representation_100K_A.json",
+      "bytes": 3147,
+      "sha256": "57bcf7ab28b5947c7f8044388c2ede8b0e73ed7fbabf7fa03a941802737f7b33"
+    },
+    {
+      "name": "representation_100K_B.json",
+      "bytes": 3146,
+      "sha256": "772bb4c2abc3496059711058b8e88d728749d5cabec740d63eecb432cfcfea13"
+    },
+    {
+      "name": "representation_10M_A.json",
+      "bytes": 3157,
+      "sha256": "720aad371c63d123a8620426197a9cac00b9b1c737b976e257384a3fc52d0876"
+    },
+    {
+      "name": "representation_10M_B.json",
+      "bytes": 3154,
+      "sha256": "43a4a4cfaae5a8f94562918c91b495f6c97e38cc708cdfc61cd9c0497ec53d26"
+    },
+    {
+      "name": "representation_1M_A.json",
+      "bytes": 3142,
+      "sha256": "8e637340c67c55a5c8b6342fa3b41e4eaa18d7de322c4c543afabfe1a773d757"
+    },
+    {
+      "name": "representation_1M_B.json",
+      "bytes": 3144,
+      "sha256": "a5152283a8e7f19aca4b8d22f7f82ce72e859a6a95379a09b9b8375682be4397"
+    },
+    {
+      "name": "representation_500K_A.json",
+      "bytes": 3150,
+      "sha256": "d989371b7b9140565e5af24f775c816ffbda90a8abf4c9905f9b37765e27b829"
+    },
+    {
+      "name": "representation_500K_B.json",
+      "bytes": 3150,
+      "sha256": "e3e7804408e5ad114f1c5a158243e2574b4bd3c2546f0b9ba07841d5dd86c574"
+    },
+    {
+      "name": "SCALE_FEASIBILITY.csv",
+      "bytes": 676,
+      "sha256": "dbb30bf2d0d2ad7ddb552105be311624fc9fdada038ea387fcac7e22dc19e920"
+    },
+    {
+      "name": "source_id_join.csv",
+      "bytes": 390217,
+      "sha256": "535684fd21d8d877366bfabd8d80847bfac2557310b8a7283c2fe60531212d41"
+    },
+    {
+      "name": "V52_T4F0_CODEX_INDEPENDENT_AUDIT_REPORT.md",
+      "bytes": 15680,
+      "sha256": "2cb451614309603c76b60b1114b2082e6db8db2828d032c343c9cbffa48ef2c1"
+    }
+  ]
+}

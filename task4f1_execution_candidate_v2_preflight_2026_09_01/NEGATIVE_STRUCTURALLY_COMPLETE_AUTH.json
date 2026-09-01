@@ -1,0 +1,14 @@
+{
+  "schema": "V52_T4F1_RUN_AUTHORIZATION_V2",
+  "status": "AUTHORIZED_FOR_TASK_4F1_EXECUTION",
+  "retrieval_quality_outcome_access": "AUTHORIZED",
+  "execution_script_sha256": "c50dfa7130918b8183c51edf68f5e2baac21a419f0d29bf2ec930f9de38e6139",
+  "execution_candidate_seal_sha256": "4cc6313649da9ca4b10e64610a8ff40173c1ccacd663dda9fadabcdf059b996c",
+  "cohort_sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+  "required_archive_count": 96,
+  "output_namespace_basename": "NEGATIVE_STRUCTURAL_MUST_NOT_EXIST",
+  "preregistration_seal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "authorization_id": "V52-T4F1-NEGATIVE-TEST-ONLY",
+  "authorization_nonce": "1111111111111111111111111111111111111111111111111111111111111111",
+  "authorization_hmac_sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+}

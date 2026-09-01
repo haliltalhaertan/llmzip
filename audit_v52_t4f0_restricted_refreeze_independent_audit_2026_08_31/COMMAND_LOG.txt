@@ -1,0 +1,82 @@
+V52 TASK 4F0 RESTRICTED-REFREEZE INDEPENDENT AUDIT — COMMAND LOG
+Auditor: cold-start independent audit session, 2026-08-31
+Working root: C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip
+Audit output: audit_v52_t4f0_restricted_refreeze_independent_audit_2026_08_31\
+
+C1. Repository state
+  $ git -c safe.directory=<root> -C <root> rev-parse HEAD; branch --show-current; log --oneline -3; status --short
+  HEAD      : d3c7aa09c9553cd5ac100e668923abab602e4257   (== seal.parent_llmzip_commit)
+  branch    : codex/research-lead-takeover-2026-08-31
+  log       : d3c7aa0 (audit prompt) <- fe0816e (4F0 freeze) <- 599b9e7 (4E0)
+  status    : dirty worktree (user-supplied docs/prompts/audit namespaces untracked) — recorded, not repaired
+
+C2. Candidate namespace inventory
+  $ Get-ChildItem audit_v52_t4f0_restricted_refreeze_2026_08_31
+  11 files: CANDIDATE_SEAL.json, PAYLOAD_HASHES.json, REFREEZE_PROTOCOL.md, estimand_primary_cohort.csv,
+  estimand_summary.json, excluded_archives.txt, tier_ability_composition.csv, gold_cardinality_distribution.csv,
+  DEPENDENCY_LOCK.txt, v52_t4f0_restricted_preflight.py, README.md  → no unbound payload
+
+C3. Unbound-payload check
+  $ (size+SHA256 of all candidate files) vs PAYLOAD_HASHES.json + seal bindings
+  result: 9/9 payloads OK; PAYLOAD_HASHES.json == 01298be2… (seal binding) OK; only seal itself is self-unbound (by design)
+
+C4. Preflight (bundled runtime, as instructed)
+  & 'C:\Users\MDP\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' `
+      audit_v52_t4f0_restricted_refreeze_2026_08_31\v52_t4f0_restricted_preflight.py
+  output: PASS: exact audit inventory, local payload closure, restricted cohort, exclusion rule, and no-outcome declarations verified
+          BLOCKED: independent sign-off and raw-corpus representation self-tests are still required
+  exit: 0
+  accepted inventory check: AUDIT_OUTPUT_HASHES.json SHA256 == 3b3bb1a25cd9c8b7a56e1c29afbe8b3589f0c5c5f4705c000b7625da6f64fa65
+
+C5. Independent payload re-hash
+  $ Get-FileHash -Algorithm SHA256 (10 declared files + README.md)
+  REFREEZE_PROTOCOL.md            f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1  OK
+  estimand_primary_cohort.csv     9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a  OK
+  estimand_summary.json           c6ce602a7148dec8aed67d81a7ec14e85ce20a493b1eb8ec09e356a2aa1fe5db  OK
+  excluded_archives.txt           a169f2fd37c8e1abf93f756f43db8484fec2149e9fd09405df837a0137485b31  OK
+  tier_ability_composition.csv    80c2169aba17ae16a2347bef630480299ccab8f89fe0af027a81f9f76e54a8a2  OK
+  gold_cardinality_distribution   4bf79a4b11ab7b5ce3d80cb374ea6cab4495a018f4846df2315a82504a7a67ec  OK
+  DEPENDENCY_LOCK.txt             86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e  OK
+  v52_t4f0_restricted_preflight  185140ff85cdc6f099449c222d964676e65168276217a9f80ea007543f72ba7d  OK
+  PAYLOAD_HASHES.json             01298be2f88bbf9a57e3c60659483bc2cda37565cf2e2c4bebab97ab22f74b5d  OK
+  README.md                       8b305eff0ad3954d1d88f8eec83487313f81843f69abbc786628f4dece4bf5bf  OK (bound in inventory)
+
+C6. Pinned BEAM bytes
+  $ git -C <pinned clone> rev-parse HEAD; rev-parse 3e120355…:chats/{100K,500K,1M,10M}
+  HEAD == 3e12035532eb85768f1a7cd779832b650c4b2ef9
+  tier trees: 100K a4c80e00… / 500K 4cb01a40… / 1M ec11c8c9… / 10M 7023fb01…  (== original V52_T4F0_INPUT_MANIFEST.json)
+  $ cmd /c git cat-file blob <rev>:<path> > raw extraction (4 self-test archives + 3 tier-max)
+  $ SHA256(raw extraction) vs SHA256(remediation corpus copies)
+  chats/100K/12/chat.json : RAW==REMEDIATION ; 500K/12 : RAW==REMEDIATION ; 1M/12 : RAW==REMEDIATION ; 10M/1 : RAW==REMEDIATION
+  note: remediation corpus holds raw LF bytes; a working-tree clone with core.autocrlf=true yields CRLF — raw blobs are canonical
+
+C7. Cohort + corpus verification (01_cohort_corpus_verify.py; locked venv python 3.12.13)
+  cohort_checks: rows=2000; eligible=1712; all exact/non-abstention/no-excluded-archive/gold>0; 587 cardinality>3 =
+  587 structural-zero flags; reason census 192/80/1/1/14; distribution+composition match summary; gold-vs-count 0 mismatches
+  corpus_identity: 4/4 corpus files byte-identical to pinned raw blobs
+  recomputed_vs_csv: eligibility+category 2000/2000 matched; gold sets 1928/1928 defined rows matched;
+  72 remainder = answerable rows of excluded archives with deliberately zeroed gold payload (protocol-consistent)
+
+C8. Raw-corpus self-test + invariance gates (02_selftest_invariance.py; locked venv; raw bytes)
+  env assert: python 3.12.13 / numpy 2.3.2 / scipy 1.16.1 / sklearn 1.7.1 / psutil 7.0.0 → lock_match True
+  [selftest] 100K/12: PASS units=392 rank=96 digests_identical=True
+  [selftest] 500K/12: PASS units=1120 rank=96 digests_identical=True
+  [selftest] 1M/12 : PASS units=2214 rank=96 digests_identical=True
+  [selftest] 10M/1 : PASS units=19895 rank=96 digests_identical=True
+  [signed-perm] PASS (Hamming exact invariant; tie sets invariant; ranking with SHA256 tie priority invariant)
+  [invariance] PASS max_dot_diff=4.163e-16 (<=1e-12), norms and gram within tolerance
+  OVERALL: PASS   (full console: selftest_console_log.txt; machine-readable: audit_selftest_invariance.json)
+
+C9. Static leakage AST (03_leakage_ast.py)
+  v52_t4f0_restricted_preflight.py: forbidden_identifiers=[] forbidden_fitting_ranking_calls=[] → PASS
+  (audit_leakage_ast.json)
+
+C10. Superseded prior attempt hashes (files replaced by this audit; nothing outside this folder modified)
+  INDEPENDENT_AUDIT_REPORT.md     a29fa358cd353604c3d1de12f7c39b0e7255213acb0015039e24935d0fd9e54f
+  INDEPENDENT_AUDIT_HASHES.json   c715ef18f7ddb9e6084edfb1f892192af6d883f85902b1614e05c72e6e99b33f
+  GATE_TABLE.csv                  ffa5382a834817989f0c4c548ee102d1048921c54c7598a7bcae2ca8c6590b9c
+  COMMAND_LOG.txt                 6c11d7acfa71b7f70cb75c7f4db311a29f52897680305af349e6858a44e6d627
+  BLOCKING_EVIDENCE.md            72d9c17b14f605fed487d0caf836e65f0111197b2d25898171bee5b9666ef48f
+
+NO retrieval-quality outcome, Native/Haar value, ANY@3/ALL@3/R@3 result, answer, rubric or evaluator output was
+computed or accessed at any point. Candidate namespace untouched. Frozen 4C3/4D/4F0 artifacts untouched.

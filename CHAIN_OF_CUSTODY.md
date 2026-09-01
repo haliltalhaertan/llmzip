@@ -56,6 +56,28 @@ Frozen anchors:
 
 The independent audit re-hashed all 26 manifest-declared Task 4C3 outputs contained in the canonical output archive: **26/26 matched, 0 mismatches**. The dataset itself was not independently re-downloaded and re-hashed in that audit environment; this remains a provenance condition, not an observed mismatch.
 
+## Task 4F0 independent audit chain — accepted with conditions
+
+The complete compact audit package is under `audit_v52_t4f0_codex_2026_08_31/`. It contains 34 files: 33 payload files plus `AUDIT_OUTPUT_HASHES.json`.
+
+- audit hash inventory SHA256: `3b3bb1a25cd9c8b7a56e1c29afbe8b3589f0c5c5f4705c000b7625da6f64fa65`
+- restricted cohort SHA256: `9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a`
+- audit report SHA256: `2cb451614309603c76b60b1114b2082e6db8db2828d032c343c9cbffa48ef2c1`
+- manifest verification: `33/33`, mismatch `0`
+- independent deterministic rerun: `11/11` corpus, anomaly and estimand outputs matched byte-for-byte
+- scientific Native-vs-Haar retrieval outcome inspected: `NO`
+
+This acceptance does not freeze Task 4F1. The exact prompt-byte chain, restricted-cohort identity, metric formulas, environment and future compute script must be sealed in a separate 4F0 refreeze first.
+
+The preparation-only record for that next gate is
+`docs/v52/task4f0/TASK4F0_REFREEZE_PREPARATION_LOG_2026-08-31.md`. It is not a seal and does not authorize outcome-bearing computation.
+
+The superseding restricted-refreeze independent audit is recorded under
+`audit_v52_t4f0_restricted_refreeze_independent_audit_2026_08_31/` and passed
+22/22 gates. The Head Researcher sealed the 1,712-question restricted-cohort
+protocol. Task 4F1 remains `BLOCKED` pending a separately byte-bound 4F1
+implementation, and independent sign-off.
+
 ## Repairing a mismatch
 
 Never repair by regenerating, reformatting or re-exporting a frozen file. Fetch the canonical byte source, confirm its hash independently, restore those exact bytes, and record the incident.

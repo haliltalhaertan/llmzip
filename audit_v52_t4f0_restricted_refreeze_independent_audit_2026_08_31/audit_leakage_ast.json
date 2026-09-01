@@ -1,0 +1,29 @@
+{
+  "scope": "candidate namespace *.py (static AST only)",
+  "files_scanned": [
+    "v52_t4f0_restricted_preflight.py"
+  ],
+  "rows": [
+    {
+      "file": "v52_t4f0_restricted_preflight.py",
+      "sha256": "185140ff85cdc6f099449c222d964676e65168276217a9f80ea007543f72ba7d",
+      "forbidden_identifiers": [],
+      "forbidden_fitting_ranking_calls": [],
+      "verdict": "PASS"
+    }
+  ],
+  "notes": {
+    "cohort_fields_used_by_preflight": [
+      "primary_evidence_cohort_eligible",
+      "tier",
+      "conversation_id",
+      "ability",
+      "audit_category",
+      "gold_source_unit_count",
+      "audit_question_id"
+    ],
+    "field_note": "audit_category/ability are official classification metadata used for cohort membership only; no answer/rubric/evaluator/source-payload text is read",
+    "fitting_code_in_candidate": "none — candidate contains the no-outcome preflight only"
+  },
+  "overall": "PASS"
+}

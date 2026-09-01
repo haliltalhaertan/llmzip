@@ -1,0 +1,66 @@
+﻿{
+    "schema":  "V52_T4F0_RESTRICTED_REFREEZE_INDEPENDENT_AUDIT_HASHES_V1",
+    "audited_at_utc":  "2026-08-31T17:54:54Z",
+    "verdict":  "PASS WITH CONDITIONS - CANDIDATE MAY BE SEALED BY HEAD RESEARCHER",
+    "retrieval_quality_computed":  false,
+    "candidate_namespace_modified":  false,
+    "independent_signoff":  "RECORDED",
+    "files":  [
+                  {
+                      "name":  "INDEPENDENT_AUDIT_REPORT.md",
+                      "bytes":  9378,
+                      "sha256":  "0a9fbbe72015f8e7b8439fcd0f188375e1fbab0a1772d685050801e192681790"
+                  },
+                  {
+                      "name":  "GATE_TABLE.csv",
+                      "bytes":  3144,
+                      "sha256":  "671dc01adb3cb215c2d4ca4e7c97b37d2f2c66bc6e98babd8044573dfff1dc86"
+                  },
+                  {
+                      "name":  "COMMAND_LOG.txt",
+                      "bytes":  6249,
+                      "sha256":  "b3d444b67614194c8eb3bbb7c1436650261111b54bbf2b1367d855915e196366"
+                  },
+                  {
+                      "name":  "BLOCKING_EVIDENCE.md",
+                      "bytes":  722,
+                      "sha256":  "b2fbc78d6816cc038db81903427c1c715fbedb74b7d4b25bd0839621ff95ebbe"
+                  },
+                  {
+                      "name":  "01_cohort_corpus_verify.py",
+                      "bytes":  10024,
+                      "sha256":  "8ee867c35cec84855c2443731fc32a1af8ec4aa26c943e0bf3025272aac3f7cd"
+                  },
+                  {
+                      "name":  "02_selftest_invariance.py",
+                      "bytes":  8762,
+                      "sha256":  "f35c32f0e534c5b18dec75460bd2f4537aba14bae67c80235d079ace624229ae"
+                  },
+                  {
+                      "name":  "03_leakage_ast.py",
+                      "bytes":  2483,
+                      "sha256":  "5e17081e360670a268b14d6e54ccee43075ea25bd4af983f0c3832118505ca8c"
+                  },
+                  {
+                      "name":  "audit_cohort_corpus_verify.json",
+                      "bytes":  6810,
+                      "sha256":  "492295abb30aba94c3837db052051eef81432cf371a18a89e9041b7855acca38"
+                  },
+                  {
+                      "name":  "audit_selftest_invariance.json",
+                      "bytes":  5171,
+                      "sha256":  "f4d811408025312804c4dc277ac797f8159ab2b2453462a7689bce70339aa131"
+                  },
+                  {
+                      "name":  "audit_leakage_ast.json",
+                      "bytes":  948,
+                      "sha256":  "33e9f1543a553a4fb8cb5d64a886f4d669a65a9cf9a0b8d10f901a2a7fe37271"
+                  },
+                  {
+                      "name":  "selftest_console_log.txt",
+                      "bytes":  942,
+                      "sha256":  "68ddcb3c68f702628a543859ad064b66980a3eaf63d49b65a1e46d50c2666dc6"
+                  }
+              ],
+    "self_hash_note":  "this manifest does not include its own hash"
+}

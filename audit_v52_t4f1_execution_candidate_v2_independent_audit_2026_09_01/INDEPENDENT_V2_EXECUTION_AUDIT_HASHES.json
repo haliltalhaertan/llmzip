@@ -1,0 +1,85 @@
+{
+  "audit_date": "2026-09-01",
+  "candidate_anchors": {
+    "authorization_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+    "candidate_execution_seal_bytes": 6186,
+    "candidate_execution_seal_sha256": "4cc6313649da9ca4b10e64610a8ff40173c1ccacd663dda9fadabcdf059b996c",
+    "candidate_status": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+    "implementation_bytes": 56142,
+    "implementation_sha256": "c50dfa7130918b8183c51edf68f5e2baac21a419f0d29bf2ec930f9de38e6139",
+    "payload_inventory_bytes": 1180,
+    "payload_inventory_sha256": "9d7429893f50a729e4471684580660461e944e599c43df24172b2c4d1d66e22d"
+  },
+  "file_count_excluding_self": 11,
+  "files": [
+    {
+      "bytes": 1927,
+      "name": "AUTHORIZATION_CONTROL_EVIDENCE.json",
+      "sha256": "9ef4627feec0f4a59a715681e652e93de556cb6b4c3a069e1748e1d9f67ff4e7"
+    },
+    {
+      "bytes": 1999,
+      "name": "CHECKPOINT_AGGREGATION_EVIDENCE.json",
+      "sha256": "8a3e0fd4677eada3e46aea3025a61a297685eed48a2e62f711a855e46d4baf23"
+    },
+    {
+      "bytes": 3738,
+      "name": "CLOSURE_EVIDENCE.json",
+      "sha256": "36f35e3b31f7ae30b81bf8074984535d30afdd2f18fda60500741f0d056fb755"
+    },
+    {
+      "bytes": 4593,
+      "name": "COMMAND_LOG.txt",
+      "sha256": "a877da5c8f6539bfc7d3b78c23be88c5841ed4e1d904e272cd5be48105fca712"
+    },
+    {
+      "bytes": 2431,
+      "name": "GATE_TABLE.csv",
+      "sha256": "b45c195891e4ffd7bfffceb699d007b78520d21a91ddf6ee99e1eee8d00dec8f"
+    },
+    {
+      "bytes": 303,
+      "name": "HARNESS_SUMMARY.json",
+      "sha256": "e916072b213dcbac17456ef817fae70f475351c8b431c37b530d2bd17e94819d"
+    },
+    {
+      "bytes": 3759,
+      "name": "INDEPENDENT_RERUN_PREFLIGHT.json",
+      "sha256": "f142d1aaf62dc12e08cc13924af37e61f9bffd505a32a7886d31733d5a07666a"
+    },
+    {
+      "bytes": 43574,
+      "name": "independent_v2_audit_harness.py",
+      "sha256": "7bec0266fbf1a4362975b3849fb61fd4aec240040f3ffea04720fe4a12dc21ed"
+    },
+    {
+      "bytes": 11140,
+      "name": "INDEPENDENT_V2_EXECUTION_AUDIT_REPORT.md",
+      "sha256": "ead07e74a3571c69562e48f4b5a56916a00fb2634c81443a36def5dd095180ea"
+    },
+    {
+      "bytes": 1641,
+      "name": "LEAKAGE_AND_CHANGE_ISOLATION_EVIDENCE.json",
+      "sha256": "8b8c8b946f5ebe5c2d40569915758cf1e3f68d6520e8a6aade8c185161b9263f"
+    },
+    {
+      "bytes": 2366,
+      "name": "METHOD_EQUIVALENCE_EVIDENCE.json",
+      "sha256": "5c11a7e75009537c06dd0553dcefafc01f761b88f9de1fa4b3944f54fdc1589f"
+    }
+  ],
+  "outcome_boundary": {
+    "candidate_bytes_modified": false,
+    "hmac_key_environment_variable_set_count": 0,
+    "mode_finalize_invocation_count": 0,
+    "mode_run_invocation_count": 0,
+    "real_retrieval_ranking_performed": false,
+    "retrieval_quality_computed": false,
+    "retrieval_quality_read": false,
+    "retrieval_quality_reported": false,
+    "valid_production_authorization_constructed": false
+  },
+  "schema": "V52_T4F1_INDEPENDENT_V2_EXECUTION_AUDIT_HASHES_V1",
+  "self_reference_note": "This manifest hashes every recursive audit output except itself.",
+  "verdict": "BLOCKED — DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1"
+}

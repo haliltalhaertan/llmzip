@@ -1,0 +1,474 @@
+{
+  "all_cases_pass": true,
+  "case_count": 27,
+  "cases": [
+    {
+      "block_reason": "RuntimeError: [BLOCKED - ENVIRONMENT LOCK MISMATCH] {\"thread_environment\": {\"OMP_NUM_THREADS\": {\"expected\": \"1\", \"observed\": \"4\"}}, \"versions\": {}}",
+      "blocked": true,
+      "case": "env_omp_threads_wrong",
+      "env_override": {
+        "OMP_NUM_THREADS": "4"
+      },
+      "exit_code": 1,
+      "gate": "2",
+      "mentions_environment_lock": true,
+      "outcome_value_in_output": false,
+      "pass": true,
+      "preflight_output_written": false,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "RuntimeError: [BLOCKED - ENVIRONMENT LOCK MISMATCH] {\"thread_environment\": {\"MKL_NUM_THREADS\": {\"expected\": \"1\", \"observed\": null}}, \"versions\": {}}",
+      "blocked": true,
+      "case": "env_mkl_threads_missing",
+      "env_override": {
+        "MKL_NUM_THREADS": null
+      },
+      "exit_code": 1,
+      "gate": "2",
+      "mentions_environment_lock": true,
+      "outcome_value_in_output": false,
+      "pass": true,
+      "preflight_output_written": false,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "RuntimeError: [BLOCKED - ENVIRONMENT LOCK MISMATCH] {\"thread_environment\": {\"PYTHONHASHSEED\": {\"expected\": \"0\", \"observed\": \"1\"}}, \"versions\": {}}",
+      "blocked": true,
+      "case": "env_pythonhashseed_wrong",
+      "env_override": {
+        "PYTHONHASHSEED": "1"
+      },
+      "exit_code": 1,
+      "gate": "2",
+      "mentions_environment_lock": true,
+      "outcome_value_in_output": false,
+      "pass": true,
+      "preflight_output_written": false,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "RuntimeError: [BLOCKED - ENVIRONMENT LOCK MISMATCH] {\"thread_environment\": {\"OPENBLAS_NUM_THREADS\": {\"expected\": \"1\", \"observed\": \"8\"}}, \"versions\": {}}",
+      "blocked": true,
+      "case": "env_openblas_threads_wrong",
+      "env_override": {
+        "OPENBLAS_NUM_THREADS": "8"
+      },
+      "exit_code": 1,
+      "gate": "2",
+      "mentions_environment_lock": true,
+      "outcome_value_in_output": false,
+      "pass": true,
+      "preflight_output_written": false,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "RuntimeError: [BLOCKED - ENVIRONMENT LOCK MISMATCH] {\"thread_environment\": {\"NUMEXPR_NUM_THREADS\": {\"expected\": \"1\", \"observed\": \"2\"}}, \"versions\": {}}",
+      "blocked": true,
+      "case": "env_numexpr_threads_wrong",
+      "env_override": {
+        "NUMEXPR_NUM_THREADS": "2"
+      },
+      "exit_code": 1,
+      "gate": "2",
+      "mentions_environment_lock": true,
+      "outcome_value_in_output": false,
+      "pass": true,
+      "preflight_output_written": false,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "ModuleNotFoundError: No module named 'scipy'",
+      "blocked": true,
+      "case": "env_wrong_interpreter_3_14",
+      "exit_code": 1,
+      "gate": "2",
+      "interpreter": "C:\\Users\\MDP\\AppData\\Local\\Microsoft\\WindowsApps\\python.EXE",
+      "outcome_value_in_output": false,
+      "pass": true,
+      "preflight_output_written": false,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - RUN AUTHORIZATION FILE MISSING]",
+      "blocked": true,
+      "case": "auth_missing_file",
+      "defective_fields": [
+        "file_absent"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_candidate_seal_sha256\": {\"expected\": \"a1277e4665936ea691505a2d386c1d6a4824c2ebc5e5e56d6a94aba1f58876cd\", \"observed\": \"REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT\"}, \"execution_script_sha256\": {\"expected\": \"28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428\", \"observed\": \"REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT\"}, \"output_namespace",
+      "blocked": true,
+      "case": "auth_supplied_template",
+      "defective_fields": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "output_namespace_basename"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_script_sha256\": {\"expected\": \"28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428\", \"observed\": \"0000000000000000000000000000000000000000000000000000000000000000\"}}",
+      "blocked": true,
+      "case": "auth_wrong_script_hash",
+      "defective_fields": [
+        "execution_script_sha256"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_candidate_seal_sha256\": {\"expected\": \"a1277e4665936ea691505a2d386c1d6a4824c2ebc5e5e56d6a94aba1f58876cd\", \"observed\": \"1111111111111111111111111111111111111111111111111111111111111111\"}}",
+      "blocked": true,
+      "case": "auth_wrong_seal_hash",
+      "defective_fields": [
+        "execution_candidate_seal_sha256"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"cohort_sha256\": {\"expected\": \"9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a\", \"observed\": \"2222222222222222222222222222222222222222222222222222222222222222\"}}",
+      "blocked": true,
+      "case": "auth_wrong_cohort_hash",
+      "defective_fields": [
+        "cohort_sha256"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"output_namespace_basename\": {\"expected\": \"neg_namespace\", \"observed\": \"a_different_namespace\"}}",
+      "blocked": true,
+      "case": "auth_wrong_output_namespace",
+      "defective_fields": [
+        "output_namespace_basename"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"required_archive_count\": {\"expected\": 96, \"observed\": 95}}",
+      "blocked": true,
+      "case": "auth_wrong_required_archive_count",
+      "defective_fields": [
+        "required_archive_count"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"FORBIDDEN\"}}",
+      "blocked": true,
+      "case": "auth_forbidden_outcome_access",
+      "defective_fields": [
+        "retrieval_quality_outcome_access"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"schema\": {\"expected\": \"V52_T4F1_RUN_AUTHORIZATION_V1\", \"observed\": \"V52_T4F1_RUN_AUTHORIZATION_V2\"}}",
+      "blocked": true,
+      "case": "auth_wrong_schema",
+      "defective_fields": [
+        "schema"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"status\": {\"expected\": \"AUTHORIZED_FOR_TASK_4F1_EXECUTION\", \"observed\": \"NOT_AUTHORIZED\"}}",
+      "blocked": true,
+      "case": "auth_status_not_authorized",
+      "defective_fields": [
+        "status"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "AttributeError: 'str' object has no attribute 'get'",
+      "blocked": true,
+      "case": "auth_json_scalar_not_object",
+      "defective_fields": [
+        "unparseable_or_non_object"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)",
+      "blocked": true,
+      "case": "auth_truly_malformed_json",
+      "defective_fields": [
+        "unparseable_or_non_object"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"cohort_sha256\": {\"expected\": \"9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a\", \"observed\": null}, \"execution_candidate_seal_sha256\": {\"expected\": \"a1277e4665936ea691505a2d386c1d6a4824c2ebc5e5e56d6a94aba1f58876cd\", \"observed\": null}, \"execution_script_sha256\": {\"expected\": \"28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74",
+      "blocked": true,
+      "case": "auth_empty_object",
+      "defective_fields": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "cohort_sha256",
+        "required_archive_count",
+        "output_namespace_basename"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_script_sha256\": {\"expected\": \"28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428\", \"observed\": \"3333333333333333333333333333333333333333333333333333333333333333\"}}",
+      "blocked": true,
+      "case": "bypass_finalize_with_defective_auth",
+      "defective_fields": [
+        "execution_script_sha256"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "finalize",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_script_sha256\": {\"expected\": \"28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428\", \"observed\": \"4444444444444444444444444444444444444444444444444444444444444444\"}}",
+      "blocked": true,
+      "case": "bypass_archive_selection_with_defective_auth",
+      "defective_fields": [
+        "execution_script_sha256"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_script_sha256\": {\"expected\": \"28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428\", \"observed\": \"5555555555555555555555555555555555555555555555555555555555555555\"}}",
+      "blocked": true,
+      "case": "bypass_resume_with_defective_auth",
+      "defective_fields": [
+        "execution_script_sha256"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "any_result_file_written": false,
+      "archives_subdir_created": false,
+      "block_reason": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"cohort_sha256\": {\"expected\": \"9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a\", \"observed\": \"6666666666666666666666666666666666666666666666666666666666666666\"}}",
+      "blocked": true,
+      "case": "bypass_invalid_archive_id_with_defective_auth",
+      "defective_fields": [
+        "cohort_sha256"
+      ],
+      "exit_code": 1,
+      "gate": "12",
+      "mode": "run",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "v52_t4f1_beam_retrieval.py: error: preflight forbids run/finalize arguments",
+      "blocked": true,
+      "case": "preflight_rejects_run_arguments",
+      "exit_code": 2,
+      "gate": "12",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "v52_t4f1_beam_retrieval.py: error: preflight forbids run/finalize arguments",
+      "blocked": true,
+      "case": "preflight_rejects_resume_flag",
+      "exit_code": 2,
+      "gate": "12",
+      "outcome_value_in_output": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "v52_t4f1_beam_retrieval.py: error: finalize forbids --archive and --resume",
+      "blocked": true,
+      "case": "finalize_rejects_resume_flag",
+      "exit_code": 2,
+      "gate": "12",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    },
+    {
+      "block_reason": "v52_t4f1_beam_retrieval.py: error: --authorization and --output-dir are required for run/finalize",
+      "blocked": true,
+      "case": "run_without_authorization_argument",
+      "exit_code": 2,
+      "gate": "12",
+      "outcome_value_in_output": false,
+      "output_dir_created": false,
+      "pass": true,
+      "stdout_tail": ""
+    }
+  ],
+  "files_left_in_temp_workdir": [
+    "neg_archive_auth.json",
+    "neg_badarch_auth.json",
+    "neg_cohort_auth.json",
+    "neg_count_auth.json",
+    "neg_empty_auth.json",
+    "neg_fin_args_auth.json",
+    "neg_finalize_auth.json",
+    "neg_malformed_auth.json",
+    "neg_namespace_auth.json",
+    "neg_outcome_auth.json",
+    "neg_resume_auth.json",
+    "neg_scalar_auth.json",
+    "neg_schema_auth.json",
+    "neg_script_auth.json",
+    "neg_seal_auth.json",
+    "neg_status_auth.json",
+    "neg_template_auth.json"
+  ],
+  "no_archive_result_artifact_produced": true,
+  "no_outcome_value_in_any_console_output": true,
+  "no_output_directory_ever_created": true,
+  "no_preflight_output_under_bad_env": true,
+  "no_result_file_ever_written": true,
+  "safety_invariant": "every payload passed assert_defective(); no valid V52_T4F1_RUN_AUTHORIZATION_V1 was constructed",
+  "schema": "V52_T4F1_ENV_AND_AUTHORIZATION_NEGATIVE_TESTS_V1",
+  "template_defect_report": {
+    "defective_fields_vs_runner_requirements": [
+      "schema",
+      "status",
+      "retrieval_quality_outcome_access",
+      "execution_script_sha256",
+      "execution_candidate_seal_sha256",
+      "output_namespace_basename"
+    ],
+    "template_can_never_authorize": true
+  }
+}

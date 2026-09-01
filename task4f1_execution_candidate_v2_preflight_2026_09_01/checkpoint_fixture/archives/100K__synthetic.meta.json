@@ -1,0 +1,26 @@
+{
+  "schema": "V52_T4F1_ARCHIVE_RESULT_META_V2",
+  "archive_id": "100K::synthetic",
+  "eligible_questions": 1,
+  "archive_units": 128,
+  "trial_rows": 320,
+  "signed_control_question_seed_checks": 5,
+  "continuous_max_abs_dot_diff": 0.0,
+  "continuous_max_abs_norm_diff": 0.0,
+  "centered_archive_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "centered_queries_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "peak_rss_bytes_at_completion": 0,
+  "elapsed_seconds": 0.0,
+  "outcomes_printed_to_console": false,
+  "provenance": {
+    "script_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "cohort_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "run_authorization_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+    "execution_candidate_seal_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+  },
+  "trial_csv": {
+    "name": "100K__synthetic.csv",
+    "bytes": 23,
+    "sha256": "c2cd187ca67a8df69ebab0ad2c2369cb020e151f328509db67728dd3d87debf9"
+  }
+}

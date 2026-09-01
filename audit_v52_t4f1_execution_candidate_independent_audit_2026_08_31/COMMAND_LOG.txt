@@ -1,0 +1,263 @@
+V52 TASK 4F1 EXECUTION-CANDIDATE COLD-START INDEPENDENT AUDIT - COMMAND LOG
+Auditor: cold-start independent implementation auditor, 2026-08-31
+Repository root: C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip
+Pinned corpus:   C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\BEAM_pinned_3e12035532eb85768f1a7cd779832b650c4b2ef9
+Audit output:    audit_v52_t4f1_execution_candidate_independent_audit_2026_08_31\
+Locked runtime:  remediation_v52_t4f0_env_2026_08_31\Scripts\python.exe
+                 (Python 3.12.13; numpy 2.3.2; scipy 1.16.1; scikit-learn 1.7.1; psutil 7.0.0)
+Thread policy for every audit invocation:
+                 OMP/MKL/OPENBLAS/NUMEXPR_NUM_THREADS=1, PYTHONHASHSEED=0, one process, one worker
+
+
+C1. Repository state
+  $ git rev-parse HEAD              -> d3c7aa09c9553cd5ac100e668923abab602e4257   (== expected)
+  $ git rev-parse --abbrev-ref HEAD -> codex/research-lead-takeover-2026-08-31      (== expected)
+  $ git status --porcelain
+      M CHAIN_OF_CUSTODY.md, DATASETS_AND_LARGE_ARTIFACTS.md,
+        PROJECT_DOCUMENTATION_MANIFEST.md, README.md
+      ?? audit_v52_t4f0_codex_2026_08_31/, audit_v52_t4f0_restricted_refreeze_2026_08_31/,
+         audit_v52_t4f0_restricted_refreeze_independent_audit_2026_08_31/,
+         docs/DRIVE_MASTER_ROOT_INVENTORY_2026-08-31.md,
+         docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md, docs/v52/task4f0/,
+         prompts/V52_TASK_4F0_*.md, prompts/V52_TASK_4F1_*.md,
+         remediation_v52_t4f0_env_2026_08_31/,
+         task4f1_execution_candidate_2026_08_31/,
+         task4f1_execution_candidate_preflight_2026_08_31/
+  RESULT: dirty worktree RECORDED, NOT REPAIRED (as instructed).
+  Note: the repository is owned by another local principal
+  (TALHAERTAN\CodexSandboxOffline).  `git config --global --add safe.directory <root>`
+  was required to read git state.  This changes only this auditor's global git config;
+  no repository byte was touched.
+
+C2. Candidate namespace inventory + independent re-hash
+  $ find task4f1_execution_candidate_2026_08_31 -type f | xargs sha256sum
+      CANDIDATE_EXECUTION_SEAL.json      a1277e4665936ea691505a2d386c1d6a4824c2ebc5e5e56d6a94aba1f58876cd  OK (anchor)
+      PAYLOAD_HASHES.json                278dbf80d6388a7dcd2605791283442615d5a951b2ef1e1ce1b6c92b4dd392b7  OK (anchor)
+      v52_t4f1_beam_retrieval.py         28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428  OK (anchor, 52673 bytes)
+      DEPENDENCY_LOCK.txt                86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e  OK (anchor)
+      EXECUTION_SPEC.md                  d7a74dca526fcd1f7363deaa8d334842e43b539dc4859a4d96867d1dc5471311  OK (inventory)
+      README.md                          b0030f29ab37d2bc5fbe60b06e8035eeec519b509debd289a8ce2ad387aec6ea  OK (inventory)
+      RUN_AUTHORIZATION_TEMPLATE.json    df581d47668f435682435f6fd908e6d9319f77aeee2ce17a2d67ee19b5ea73cd  OK (inventory)
+      candidate_package_preflight.py     b6b162d6eba08bb218c9c465a134a7316831f5b1eb69f76f190edc42d6b597cf  OK (inventory)
+      __pycache__/v52_t4f1_beam_retrieval.cpython-312.pyc
+                                         0dca302e7faa4ff805747892daba9eb6df6e8fde778e0a11b844d79e4e443dac  *** UNBOUND ***
+  RESULT: 6/6 declared payloads match byte-for-byte; one unbound compiled artifact present (defect D1).
+
+C3. Upstream anchor re-hash
+      audit_v52_t4f0_restricted_refreeze_2026_08_31/CANDIDATE_SEAL.json
+                                         596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c  OK
+      .../REFREEZE_PROTOCOL.md           f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1  OK
+      .../estimand_primary_cohort.csv    9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a  OK
+      audit_v52_t4f0_codex_2026_08_31/pinned_tree_manifest.json
+                                         650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318  OK
+      task4f1_execution_candidate_preflight_2026_08_31/IMPLEMENTATION_PREFLIGHT.json
+                                         138f291ee53a70c0c4f37d4797e683acd1db77d5f362db676b5517e0d8f91f49  OK
+
+C4. Gates 1 / 3 / 4 - scripts/01_closure_corpus_cohort.py
+  $ <locked python> scripts/01_closure_corpus_cohort.py
+      gate1_namespace_byte_closure  -> FAIL on `no_unbound_payload` only (defect D1); all other flags PASS
+      gate3_corpus_blob_identity    -> PASS  (192/192 git blob SHA1 + size reconstructed from raw bytes)
+      gate4_cohort                  -> PASS  (2000 rows, 1712 eligible, 96 archives, exclusions absent)
+      gate4b_gold_join_and_index    -> PASS  (unique raw IDs in all 96; every gold ID joins exactly once;
+                                              all 1712 question indices resolve)
+  evidence: audit_closure_corpus_cohort.json
+  observed: gold cardinality > 3 for 587 eligible questions (== sealed 4F0 structural-zero count);
+            archive units min 188 / max 23716; 100K::12 == 392 units; no archive below the MIXED96 precondition.
+
+C5. Gates 2 / 12 - scripts/02_env_and_authorization_negatives.py
+  $ <locked python> scripts/02_env_and_authorization_negatives.py
+      27/27 cases BLOCKED.  no output directory was ever created; no archive CSV/meta was ever written;
+      no metric value appeared in any console stream.
+      Gate 2 (6 cases): OMP=4, MKL unset, PYTHONHASHSEED=1, OPENBLAS=8, NUMEXPR=2 all raise
+        [BLOCKED - ENVIRONMENT LOCK MISMATCH] before any fit; wrong interpreter (3.14, no scipy) aborts at import.
+      Gate 12 (21 cases): missing file; shipped template; wrong script hash; wrong seal hash; wrong cohort hash;
+        wrong output namespace; wrong archive count (95); FORBIDDEN outcome access; wrong schema; NOT_AUTHORIZED
+        status; empty object; JSON scalar; malformed JSON; finalize / --archive / --resume / invalid archive id
+        bypass attempts with defective authorizations; argparse guards.
+  SAFETY: this script routes every payload through assert_defective(), which recomputes the runner's exact
+          required-field set and REFUSES to write any file that would satisfy it.  No valid
+          V52_T4F1_RUN_AUTHORIZATION_V1 exists in this audit.
+  evidence: AUTHORIZATION_NEGATIVE_TESTS.json
+
+C6. Gate 5 - scripts/03_static_runtime_leakage.py
+  $ <locked python> -B scripts/03_static_runtime_leakage.py       -> status: PASS
+      Import-only harness: candidate bytes copied to the audit namespace, re-hashed to the sealed anchor,
+      imported with bytecode writing disabled.  The candidate namespace was never written to.
+      Static: fit_archive_representation(memory_texts) is single-argument; no answer/ideal/rubric/grade/
+      evaluator/judge/difficulty/source-order token anywhere; the only module-level containers are
+      ENVIRONMENT_LOCK and THREAD_LOCK, never mutated, never subscript-assigned; no lru_cache/memoisation.
+      Runtime (2 wholly synthetic archives, invented texts/IDs/questions/gold): exactly one fit per archive;
+      fit received only role-prefixed str lists; the synthetic query marker never reached a fit and appeared
+      only in transform_queries; ITQ received exactly a centered C96 produced by a fit (shapes 150x96, 140x96,
+      5 seeds each); priority_arrays received the full canonical key list, hash-identical to an independently
+      recomputed key list; metrics_at_3 was first called only after the first ranking; 320 rows/question.
+  evidence: STATIC_RUNTIME_LEAKAGE_AUDIT.json
+
+C7. Gate 6 (candidate's own preflight mode)
+  $ <locked python> task4f1_execution_candidate_2026_08_31/v52_t4f1_beam_retrieval.py --mode preflight \
+      --corpus-root ../BEAM_pinned_3e120355... --beam-manifest audit_v52_t4f0_codex_2026_08_31/pinned_tree_manifest.json \
+      --cohort .../estimand_primary_cohort.csv --restricted-seal .../CANDIDATE_SEAL.json \
+      --protocol .../REFREEZE_PROTOCOL.md --dependency-lock .../DEPENDENCY_LOCK.txt \
+      --execution-seal .../CANDIDATE_EXECUTION_SEAL.json --preflight-output <audit>/INDEPENDENT_RERUN_PREFLIGHT.json
+      exit 0
+      stdout: "PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates"
+              "BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization"
+      Flattened key-by-key comparison against the preparation evidence
+      task4f1_execution_candidate_preflight_2026_08_31/IMPLEMENTATION_PREFLIGHT.json:
+      66 keys vs 66 keys, ZERO differences -> the preparation preflight is exactly reproducible.
+
+C8. Gate 6 (independent reimplementation) - scripts/06_representation_equivalence.py
+  $ <locked python> -B scripts/06_representation_equivalence.py   -> status: PASS
+      The representation was re-implemented directly from the sealed 4F0 spec (not by calling the candidate)
+      and run on raw 100K/12/chat.json bytes with the fixed invented canary string.
+      units 392; archive shape 392x96; query shape 1x96; rank(y96) == 96; all finite.
+      archive SHA256 25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025  == sealed anchor
+      query   SHA256 e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869  == sealed anchor
+      Independent output == candidate output byte-for-byte (texts, ids, archive matrix, query matrix).
+      Repeat fit and repeat transform byte-identical.  One cached fit reused for 3 queries == refitting per
+      query (np.array_equal).  A different conversation (500K::12) yields a different model and unit count.
+      probing_questions.json was never opened; no gold; no ranking; no metric.
+
+C9. Gates 7 / 8 / 9 / 10 - scripts/04_method_equivalence.py
+  $ <locked python> -B scripts/04_method_equivalence.py           -> status: PASS
+      Gate 7 Native: threshold >= 0 on centered coordinates; exact zero maps to True; centering load-bearing.
+      Gate 7 signed permutation: seeds 43001-43005; default_rng(seed).permutation(96) THEN
+        choice([-1.,+1.], size=96) reproduced exactly, and the swapped order does NOT reproduce it;
+        for all 5 seeds x 7 synthetic queries: distances, tie sets, full rankings and top-three sets all
+        equal Native exactly.
+      Gate 7 Haar: seeds 43001-43005; rotation == Q * sign(diag(R)) with zero -> +1, and differs from the
+        row-axis variant, the uncorrected Q and the transpose; orthogonality <= 1e-12; dot products and both
+        norm vectors preserved <= 1e-12; an inconsistent transpose provably breaks preservation; double
+        application changes the binary codes.
+      Gate 8 ITQ: byte-identical (SHA256 of the raw buffer) to a verbatim transcription of the canonical
+        audited adapters/longmemeval_v52_adapter.py::fit_itq for all five seeds 101/202/303/404/505;
+        default_rng init, SVD orthogonal factor, B = +1 where V@R >= 0, C = B.T @ V, R = Vt.T @ U.T;
+        differs from the covariance-transposed and Procrustes-transposed variants; orthogonal; archive-only.
+      Gate 9 tie: tie_priority == uint128_be(SHA256(b"V52_T4F0_TIE_PRIORITY_V1" + b"\0" + archive_id +
+        b"\0" + memory_key)[:16]) on all probes; the no-separator, little-endian and last-16-byte variants all
+        differ; the (hi,lo) uint64 split reproduces the true 128-bit order over 500 keys; lexsort precedence
+        verified by construction to be distance -> priority_hi -> priority_lo -> canonical index;
+        memory key == "tier::conversation_id::decimal_raw_message_id"; tie_priority/priority_arrays/rank_hamming
+        signatures contain no trial; trials 0..19 emitted with every non-trial field constant.
+      Gate 10 metrics: 10 synthetic-ID cases incl. zero hits, partial multi-gold (1/2, 2/3), complete gold,
+        4-gold and 96-gold structural zero, and 4-gold no-hit; duplicates cannot inflate; top-k exactly 3;
+        retrieved values are raw message IDs; ALL@3 == 0 whenever |G| > 3.
+  evidence: SYNTHETIC_METHOD_EQUIVALENCE.json
+
+C10. Gates 11 / 13 - scripts/05_checkpoint_and_aggregation.py
+  $ <locked python> -B scripts/05_checkpoint_and_aggregation.py   -> status: PASS (20/20 cases)
+      Gate 11: os.replace atomic writes; no .tmp residue; paired CSV+meta required; CSV byte tamper caught by
+        the meta-bound SHA256; meta row-count tamper caught; question-count mismatch caught; CSV-without-meta
+        and meta-without-CSV both block; absent checkpoint returns False; overwrite refused; safe_id replaces
+        "::" with "__" so no path traversal is constructible from an archive id.
+      Gate 13: on wholly synthetic tables - 320 rows/question (Native 20, signed 5x20, Haar 5x20, ITQ 5x20);
+        complete and unique (question, method, seed, trial) cells; trial collapse then seed collapse then equal
+        question weight; independent recomputation of every aggregate matched to < 1e-12; Native == signed
+        control aggregate; missing archive, duplicate cell, missing trial, unknown seed, unknown question,
+        trial-varying top-3, inconsistent ANY-vs-fractional, and ALL@3=1 with |G|>3 each BLOCK rather than
+        silently aggregate; second finalization refused; manifest carries interpretation_authorized=false and
+        console_outcomes_emitted=false and prints no metric value.
+      Production constants asserted separately: EXPECTED_ELIGIBLE == 1712, EXPECTED_ARCHIVES == 96,
+        EXPECTED_TOTAL_ROWS == 2000, TOP_K == 3, aggregate denominator is EXPECTED_ELIGIBLE, no weighting term.
+  evidence: SYNTHETIC_AGGREGATION_TESTS.json
+
+C11. Gate 14 lineage checks (targeted, outcome-free)
+      $ grep audit_question_id audit_v52_t4f0_codex_2026_08_31/audit_beam_corpus.py
+          audit_question_id = f"{tier}::{conversation_id}::{ability}::{index + 1}"   (index = enumerate(questions))
+        The candidate inverts this exactly: index = int(parts[3]) - 1 into questions[ability].
+        -> "wrong BEAM question indexing" ruled out.
+      $ grep -n "print(" v52_t4f1_beam_retrieval.py
+          6 call sites; all emit status text or counts (rows=, questions=); none emits a metric value.
+      $ cat task4f1_execution_candidate_2026_08_31/candidate_package_preflight.py
+          closure check uses {path.name for path in ROOT.iterdir() if path.is_file()} - top level, files only,
+          so the __pycache__ directory is invisible to it (root cause of defect D1).
+      Sealed-spec cross-read: REFREEZE_PROTOCOL.md tie formula, memory key, memory text, 20 nuisance trials and
+        "seeds and trials are not independent statistical units"; CANDIDATE_SEAL.json representation/arms/metrics
+        blocks - all match the implementation.
+
+
+=============================================================================
+SUPERSEDED ATTEMPT A1 - AUDITOR PROTOCOL BREACH, FULL DISCLOSURE
+=============================================================================
+What happened
+  The FIRST version of scripts/02_env_and_authorization_negatives.py contained a design error by this
+  auditor.  Three cases named "auth_bypass_via_finalize", "auth_bypass_via_archive_selection" and
+  "auth_bypass_via_resume" were intended to probe bypass paths, but the payload builder filled every bound
+  field with its CORRECT value (real script SHA256, real seal SHA256, real cohort SHA256, archive count 96,
+  and an output_namespace_basename equal to that case's own output directory name).  Those three payloads
+  were therefore VALID V52_T4F1_RUN_AUTHORIZATION_V1 files, which the hard no-outcome boundary forbids
+  constructing.  The script was launched as a background job.
+
+Consequence
+  - "auth_bypass_via_finalize" passed authorization and then blocked at
+    [BLOCKED - MISSING ARCHIVE RESULT]; no archive was computed.
+  - "auth_bypass_via_archive_selection" ran --mode run --archive 100K::12 and produced one real archive
+    result.
+  - "auth_bypass_via_resume" ran --mode run over the full archive list and produced results for 26 archives
+    (100K::1-20 and 10M::1-6) before termination.
+
+Containment
+  - The breach was detected by this auditor while the job was still running, on noticing a python process
+    holding ~662 MB.  All python processes were terminated immediately (taskkill /F /IM python.exe).
+  - Every artifact was written under a system temporary directory
+    (%TEMP%\t4f1_negatives_eo_poz74\, the same directory Git Bash exposes as /tmp), never inside the
+    repository.  The directory was enumerated by FILE NAME ONLY and then deleted with rm -rf.
+  - NO retrieval-quality value was read, printed, summarised, or carried into any audit artifact.  The
+    runner prints no metric values by design, and the harness captured only the final stdout line
+    (START/COMPLETE with row counts) and block reasons.  The partial run's JSON report was never written
+    because the process was killed first.
+  - The candidate namespace was re-hashed after the incident and is byte-identical to its pre-audit state,
+    including the pre-existing .pyc (see C2).  git status shows no new repository file other than this
+    audit namespace.
+  - No candidate byte was changed at any point, before or after the incident.
+
+Disposition
+  - The script was rewritten from scratch with a hard assert_defective() invariant that recomputes the
+    runner's required-field set and raises WouldAuthorize rather than emit any payload the runner would
+    accept.  The rewritten suite (C5) is the evidence of record; the original is superseded and is NOT
+    included in the outputs.
+  - One incidental structural observation is recorded but expressly NOT relied upon anywhere in this audit:
+    the partial run proceeded through 26 archives without triggering the signed-permutation or Haar hard
+    controls.  This is an integrity observation, not a retrieval-quality value; it is not treated as
+    evidence for any gate, and no gate verdict depends on it.
+  - Material audit finding produced by the incident: defect D2.  Minting a valid run authorization requires
+    no source modification and no secret - every bound field is computable from files the operator already
+    holds.  The guard reliably prevents ACCIDENTAL execution; it does not prevent UNAUTHORIZED execution.
+
+=============================================================================
+SUPERSEDED PROBE REVISIONS (auditor-side, no boundary impact)
+=============================================================================
+A2. scripts/03 first run reported three FAIL flags, all artefacts of this auditor's own check design:
+      - "no_module_level_mutable_cache" flagged ENVIRONMENT_LOCK and THREAD_LOCK, which are read-only
+        version/thread constants; replaced with a mutation check (subscript assignment / mutating method
+        calls) plus an allow-list.
+      - "meta_outcomes_printed_to_console" recorded the raw metadata value (False) instead of asserting it
+        is False; replaced with an identity assertion over both synthetic archives.
+      - "priority_keys_never_contain_gold" was vacuous: a gold ID is by definition an archive message ID, so
+        the memory keys always contain it.  Replaced with the load-bearing invariant - priority_arrays
+        receives the archive's FULL canonical key list, hash-identical to an independently recomputed list,
+        and tie_priority is a pure function of (archive_id, memory_key).
+      No candidate byte was changed; only auditor probes were corrected.
+
+A3. scripts/04 first run reported two FAIL flags, both mathematically wrong probes by this auditor:
+      - "double_application_would_break" asserted that applying the Haar rotation twice changes dot
+        products.  It does not: an orthogonal map preserves inner products under any number of applications.
+        Replaced with the correct probe (double application changes the BINARY CODES) plus an explicit
+        record that dot products are invariant under repeated application.
+      - "exactly_100_iterations" compared a 100-iteration fit against a 99-iteration fit; ITQ has converged
+        well before iteration 99, so the two are identical and the probe cannot separate them.  Replaced
+        with a 3-iteration comparison, a static binding of the loop bound to the `iterations` parameter, an
+        assertion that the default argument is 100, and an assertion that the run path calls
+        fit_itq(centered_archive, seed) with no iteration override.
+      No candidate byte was changed; only auditor probes were corrected.
+
+=============================================================================
+NOT EXECUTED (hard no-outcome boundary honoured)
+=============================================================================
+  - No authorized `--mode run` and no authorized `--mode finalize` was performed.
+  - No valid V52_T4F1_RUN_AUTHORIZATION_V1 exists in this audit namespace, and none was left on disk.
+  - No Native / Haar / ITQ retrieval-quality metric was computed, read or reported.
+  - No real probing question was ranked against its archive.
+  - No answer, ideal answer, rubric or evaluator output was opened.
+  - No gold or source ID was used as a fitting, rotation, threshold, tie, seed or cohort-selection input.
+  - No candidate byte was modified at any point.

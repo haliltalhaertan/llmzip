@@ -1,0 +1,155 @@
+{
+  "task": "V52 TASK 4F0 - REAL BEAM REPRESENTATION TRANSFER AUDIT",
+  "method": {
+    "memory_text": "role + ': ' + content",
+    "word_tfidf": {
+      "lowercase": true,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "stop_words": "english",
+      "sublinear_tf": true
+    },
+    "char_tfidf": {
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "sublinear_tf": true
+    },
+    "latent_svd": {
+      "n_components": 32,
+      "random_state": 5101
+    },
+    "mixed_svd": {
+      "n_components": 96,
+      "random_state": 5204
+    },
+    "l2_normalize": true,
+    "archive_mean_center": true,
+    "query_fit_rule": "transform only after archive fit"
+  },
+  "environment": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.3.2",
+    "scipy": "1.16.1",
+    "scikit_learn": "1.7.1",
+    "psutil": "7.0.0",
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "scientific_native_vs_haar_outcome_inspected": false,
+  "tiers": {
+    "10M": {
+      "status": "PASS",
+      "tier": "10M",
+      "conversation_id": "1",
+      "chat_path": "remediation_v52_t4f0_env_2026_08_31/corpus/chats/10M/1/chat.json",
+      "load_seconds": 0.2287399999331683,
+      "repeat_1": {
+        "archive_units": 19895,
+        "word_shape": [
+          19895,
+          884141
+        ],
+        "word_nnz": 5107336,
+        "char_shape": [
+          19895,
+          522318
+        ],
+        "char_nnz": 36473516,
+        "latent_shape": [
+          19895,
+          32
+        ],
+        "source_block_shape": [
+          19895,
+          1406491
+        ],
+        "source_block_nnz": 42217492,
+        "mixed_shape": [
+          19895,
+          96
+        ],
+        "query_shape": [
+          1,
+          96
+        ],
+        "mixed_rank": 96,
+        "finite_no_nan_inf": true,
+        "centered96_sha256": "a5884b2d7cc7da1a96a1f883269891c629c2c3d5527cf8f6e5ab52c7ef17e285",
+        "query_centered96_sha256": "28e635dbae4ff14dc3eedd8d4f46a967f635e2736696d9e279edbda73b7c1b04",
+        "peak_rss_bytes": 5323866112,
+        "total_seconds": 170.9837070000358,
+        "stage_seconds": {
+          "word_tfidf_fit_transform": 8.496001000050455,
+          "word_l2_normalize": 0.02636189991608262,
+          "char_tfidf_fit_transform": 39.781458399957046,
+          "char_l2_normalize": 0.19263959990348667,
+          "latent32_fit_transform": 11.49861249991227,
+          "latent32_l2_normalize": 0.004232799983583391,
+          "source_block_hstack": 0.4681911999359727,
+          "mixed96_fit_transform": 109.8137278999202,
+          "mixed96_l2_normalize": 0.007540500024333596
+        }
+      },
+      "repeat_2": {
+        "archive_units": 19895,
+        "word_shape": [
+          19895,
+          884141
+        ],
+        "word_nnz": 5107336,
+        "char_shape": [
+          19895,
+          522318
+        ],
+        "char_nnz": 36473516,
+        "latent_shape": [
+          19895,
+          32
+        ],
+        "source_block_shape": [
+          19895,
+          1406491
+        ],
+        "source_block_nnz": 42217492,
+        "mixed_shape": [
+          19895,
+          96
+        ],
+        "query_shape": [
+          1,
+          96
+        ],
+        "mixed_rank": 96,
+        "finite_no_nan_inf": true,
+        "centered96_sha256": "a5884b2d7cc7da1a96a1f883269891c629c2c3d5527cf8f6e5ab52c7ef17e285",
+        "query_centered96_sha256": "28e635dbae4ff14dc3eedd8d4f46a967f635e2736696d9e279edbda73b7c1b04",
+        "peak_rss_bytes": 5339504640,
+        "total_seconds": 164.66922659997363,
+        "stage_seconds": {
+          "word_tfidf_fit_transform": 8.274990899953991,
+          "word_l2_normalize": 0.025895100086927414,
+          "char_tfidf_fit_transform": 40.2305680999998,
+          "char_l2_normalize": 0.16480499994941056,
+          "latent32_fit_transform": 11.113850299967453,
+          "latent32_l2_normalize": 0.003047300036996603,
+          "source_block_hstack": 0.3571144000161439,
+          "mixed96_fit_transform": 103.66443169990089,
+          "mixed96_l2_normalize": 0.04437290003988892
+        }
+      },
+      "repeatability_max_abs_archive_diff": 0.0,
+      "repeatability_max_abs_query_diff": 0.0,
+      "retrieval_quality_computed": false
+    }
+  }
+}

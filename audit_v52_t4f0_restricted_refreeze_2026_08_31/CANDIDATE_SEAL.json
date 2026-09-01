@@ -1,0 +1,153 @@
+{
+  "schema": "V52_T4F0_RESTRICTED_REFREEZE_SEAL_V1",
+  "task": "V52 Task 4F0 - Restricted-Cohort Refreeze",
+  "date": "2026-08-31",
+  "status": "INDEPENDENTLY_AUDITED_RESTRICTED_COHORT_SEALED",
+  "authorization": {
+    "task_4f1_preregistration": "BLOCKED_PENDING_BYTE_BOUND_EXECUTION_IMPLEMENTATION_AND_AUDIT",
+    "task_4f1_run": "BLOCKED",
+    "retrieval_quality_outcome_access": "FORBIDDEN",
+    "independent_audit_signoff": "RECORDED"
+  },
+  "head_researcher_decision": {
+    "decided_at_utc": "2026-08-31T17:59:54Z",
+    "decision": "SEAL_RESTRICTED_COHORT_PROTOCOL_ONLY",
+    "decision_owner": "Head Researcher / Codex",
+    "scope": "The 1712-question cohort, exclusions, representation specification, metrics, dependency lock, tie priority, arms, seeds, and stop rule are sealed. No Task 4F1 execution implementation is bound or authorized.",
+    "pre_decision_candidate_seal_sha256": "ccefe9264e63b2f1d02eb485fa37c474a80e50e484d9d06dfdf8e4557383f076"
+  },
+  "independent_audit": {
+    "namespace": "../audit_v52_t4f0_restricted_refreeze_independent_audit_2026_08_31",
+    "verdict": "PASS WITH CONDITIONS - CANDIDATE MAY BE SEALED BY HEAD RESEARCHER",
+    "signoff": "RECORDED",
+    "gate_count": 22,
+    "gate_failures": 0,
+    "retrieval_quality_computed": false,
+    "report": {
+      "path": "INDEPENDENT_AUDIT_REPORT.md",
+      "bytes": 9378,
+      "sha256": "0a9fbbe72015f8e7b8439fcd0f188375e1fbab0a1772d685050801e192681790"
+    },
+    "inventory": {
+      "path": "INDEPENDENT_AUDIT_HASHES.json",
+      "bytes": 3110,
+      "sha256": "b7f951419c0f56da432ebd9b50d7ddf447d818d43ab1879e10b2311d8de0563c"
+    }
+  },
+  "parent_llmzip_commit": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+  "pinned_beam_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+  "prompt": {
+    "path": "REFREEZE_PROTOCOL.md",
+    "bytes": 6321,
+    "sha256": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1"
+  },
+  "accepted_audit_package": {
+    "path": "../audit_v52_t4f0_codex_2026_08_31",
+    "inventory": "AUDIT_OUTPUT_HASHES.json",
+    "inventory_sha256": "3b3bb1a25cd9c8b7a56e1c29afbe8b3589f0c5c5f4705c000b7625da6f64fa65",
+    "payload_count_including_inventory": 34,
+    "canonical_payload_set_sha256": "49fcfe013e045333947c66f932309ed2ce05f4654496d6dda353a334676db9fa",
+    "scientific_native_vs_haar_outcome_inspected": false
+  },
+  "cohort": {
+    "path": "estimand_primary_cohort.csv",
+    "bytes": 316561,
+    "sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+    "total_question_records": 2000,
+    "eligible_questions": 1712,
+    "denominator": 1712,
+    "excluded_archives": [
+      "1M::26",
+      "1M::33",
+      "1M::34",
+      "1M::5"
+    ],
+    "gold_gt_3_structural_zero_questions": 587
+  },
+  "bound_tables": {
+    "tier_ability_composition": {
+      "path": "tier_ability_composition.csv",
+      "sha256": "80c2169aba17ae16a2347bef630480299ccab8f89fe0af027a81f9f76e54a8a2"
+    },
+    "gold_cardinality_distribution": {
+      "path": "gold_cardinality_distribution.csv",
+      "sha256": "4bf79a4b11ab7b5ce3d80cb374ea6cab4495a018f4846df2315a82504a7a67ec"
+    },
+    "summary": {
+      "path": "estimand_summary.json",
+      "sha256": "c6ce602a7148dec8aed67d81a7ec14e85ce20a493b1eb8ec09e356a2aa1fe5db"
+    },
+    "excluded_archives": {
+      "path": "excluded_archives.txt",
+      "sha256": "a169f2fd37c8e1abf93f756f43db8484fec2149e9fd09405df837a0137485b31"
+    }
+  },
+  "representation": {
+    "memory_key": "BEAM_MESSAGE_ID_V1=(tier,conversation_id,raw_message_id)",
+    "memory_text": "role + ': ' + content",
+    "word_tfidf": "lowercase; word ngrams 1-2; English stop words; sublinear TF",
+    "char_tfidf": "char_wb; ngrams 3-5; sublinear TF",
+    "latent_block": {
+      "components": 32,
+      "random_state": 5101,
+      "l2_normalized": true
+    },
+    "mixed_block": {
+      "components": 96,
+      "random_state": 5204,
+      "l2_normalized": true,
+      "archive_mean_centering": true
+    },
+    "query_fit": "forbidden",
+    "cross_question_fit": "forbidden"
+  },
+  "arms": {
+    "native": "NATIVE_SIGN96",
+    "signed_permutation_control": "SIGNED_PERM_CONTROL96",
+    "haar": "HAAR96_SIGN seeds=43001,43002,43003,43004,43005",
+    "itq": "ITQ96_CENTERED descriptive only; seeds=101,202,303,404,505",
+    "nuisance_trials_per_question_arm": 20
+  },
+  "metrics": {
+    "fractional_source_evidence_recall_at_3": "|R3 intersect G| / |G|",
+    "any_at_3": "1 iff R3 intersect G is non-empty, else 0",
+    "all_at_3": "1 iff G subset R3, else 0",
+    "aggregation": "arithmetic mean over 1712 eligible questions",
+    "structural_zero_rule": "retain zero for every eligible question with >3 gold units",
+    "gold_or_source_order_tie_break": "forbidden"
+  },
+  "tie_priority": {
+    "algorithm": "uint128_be(SHA256(prefix_ascii_utf8 + separator_0x00 + archive_id_utf8 + separator_0x00 + memory_key_utf8)[:16])",
+    "prefix_ascii": "V52_T4F0_TIE_PRIORITY_V1",
+    "separator_byte": 0,
+    "rank": "ascending Hamming distance, then ascending priority, then canonical archive order",
+    "label_independent": true
+  },
+  "environment": {
+    "lock": "DEPENDENCY_LOCK.txt",
+    "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "thread_controls": "OMP/MKL/OPENBLAS/NUMEXPR=1; one process; one worker",
+    "python_hash_seed": 0
+  },
+  "preflight": {
+    "path": "v52_t4f0_restricted_preflight.py",
+    "sha256": "185140ff85cdc6f099449c222d964676e65168276217a9f80ea007543f72ba7d",
+    "purpose": "package/cohort verification only; no corpus fit, ranking, or retrieval metric"
+  },
+  "payload_inventory": {
+    "path": "PAYLOAD_HASHES.json",
+    "sha256": "01298be2f88bbf9a57e3c60659483bc2cda37565cf2e2c4bebab97ab22f74b5d",
+    "file_count_excluding_inventory": 9
+  },
+  "gates": {
+    "byte_bindings": "PASS_INDEPENDENTLY_VERIFIED",
+    "cohort_semantics": "PASS_INDEPENDENTLY_VERIFIED",
+    "raw_corpus_self_test": "PASS_INDEPENDENTLY_VERIFIED",
+    "finite_dimension_checks": "PASS_INDEPENDENTLY_VERIFIED",
+    "static_runtime_leakage_audit": "PASS_FOR_CANDIDATE_PREFLIGHT_ONLY",
+    "invariance_checks": "PASS_INDEPENDENTLY_VERIFIED",
+    "independent_signoff": "RECORDED",
+    "future_4f1_execution_implementation_binding": "REQUIRED_BEFORE_PREREGISTRATION"
+  },
+  "stop_rule": "No post-outcome cohort repair, occurrence choice, seed/threshold/centering/dimension/tie/metric/denominator change, extra rotation, tuning, metric substitution, or archive expansion."
+}

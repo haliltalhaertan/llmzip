@@ -1,0 +1,6 @@
+tier,corpus_units,code_bytes_exact,measured_archive,measured_units,time_A_seconds,time_B_seconds,peak_A_bytes,peak_B_bytes,status,bottleneck
+100K,5732,68784,12,392,3.600242,3.398766,375070720,372965376,PASS,"mixed96 randomized SVD compute; char_wb sparse storage"
+500K,38058,456696,32,1424,13.448570,17.003108,785649664,786702336,PASS,"mixed96 randomized SVD compute; char_wb sparse storage"
+1M,74630,895560,25,3008,31.327856,28.604890,1133256704,1136205824,"PASS on restricted clean archives","mixed96 randomized SVD compute; char_wb sparse storage"
+10M,208696,2504352,10,23716,179.768000,271.995000,4690042880,4671946752,PASS,"char_wb RAM/nnz; mixed96 stable compute time"
+

@@ -1,0 +1,23 @@
+gate_id,gate,verdict,evidence
+G01,repo_parent_commit_binding,PASS,git HEAD d3c7aa09c9553cd5ac100e668923abab602e4257 == seal.parent_llmzip_commit (C1)
+G02,pinned_beam_commit_binding,PASS,checkout HEAD 3e12035532eb85768f1a7cd779832b650c4b2ef9 + 4 tier tree blobs == original V52_T4F0_INPUT_MANIFEST.json pins (C7)
+G03,preflight_execution,PASS,exit 0; PASS line + expected pending-BLOCKED line (C4)
+G04,payload_byte_bindings,PASS,9/9 payload SHA256+size match PAYLOAD_HASHES.json and seal bindings (C5)
+G05,no_unbound_payloads,PASS,candidate namespace holds exactly the 11 declared files (C3)
+G06,accepted_audit_inventory_binding,PASS,AUDIT_OUTPUT_HASHES.json SHA256 == 3b3bb1a25cd9c8b7a56e1c29afbe8b3589f0c5c5f4705c000b7625da6f64fa65; 33 payloads verified (C4/C5)
+G07,candidate_seal_status,PASS,status == PREPARED_NOT_INDEPENDENTLY_SEALED; unchanged by audit
+G08,cohort_row_counts,PASS,2000 rows; 1712 eligible; unique ids (01_cohort_corpus_verify.json cohort_checks)
+G09,cohort_eligibility_semantics,PASS,all eligible EXACT_SOURCE_IDS + non-abstention + no excluded archive + gold>0 (G08 evidence)
+G10,exclusion_rule,PASS,excluded archives exactly 1M::5/26/33/34; reason census 192/80/1/1/14 (G08 evidence)
+G11,gold_cardinality_and_structural_zero,PASS,587 eligible with >3 gold; all flagged all_at_3_structurally_possible=False; distribution matches summary (G08 evidence)
+G12,cohort_independent_recomputation,PASS,"eligibility+category 2000/2000 from raw pinned corpus; gold sets match 1928/1928 defined rows; 72 excluded-archive rows carry zeroed gold payload by protocol design"
+G13,corpus_access_and_byte_identity,PASS,pinned bytes materializable; remediation copies of 4 self-test chat.json byte-identical to raw git blobs (C6)
+G14,environment_dependency_lock,PASS,audit venv python 3.12.13 / numpy 2.3.2 / scipy 1.16.1 / sklearn 1.7.1 / psutil 7.0.0 + single-thread vars (02_selftest_invariance.py env assert)
+G15,raw_corpus_representation_self_test,PASS,"4/4 archives (100K/12, 500K/12, 1M/12, 10M/1): N x 96, rank 96, finite, repeat max-abs-diff 0.0, repeat SHA256 digests identical (audit_selftest_invariance.json)"
+G16,signed_permutation_control,PASS,Hamming exactly invariant; tie sets invariant; ranking with tie priority invariant (synthetic pre-outcome inputs)
+G17,centered_continuous_invariance,PASS,max |Δdot| 4.16e-16 <= 1e-12; norms and gram within tolerance (Haar seed 43001 on real 100K/12 C96)
+G18,tie_priority_label_independence,PASS,SHA256 uint128-be priority deterministic; no gold/source/outcome input; invariant to archive row and source-list order
+G19,static_leakage_audit,PASS,AST: no forbidden identifiers or fitting/ranking calls in candidate code; cohort CSV schema has no answer/rubric/outcome columns (audit_leakage_ast.json)
+G20,memory_key_and_no_occurrence_selection,PASS,protocol preserves BEAM_MESSAGE_ID_V1; divergent duplicates hard-excluded; occurrence-qualified key deferred to separate data-repair task
+G21,stop_rule_present,PASS,protocol §Stop rule + seal.stop_rule forbid all post-outcome change classes
+G22,independent_signoff,PASS,this report + INDEPENDENT_AUDIT_HASHES.json; candidate untouched

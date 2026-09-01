@@ -1,0 +1,55 @@
+V52 Task 4F1 V2 cold-start independent audit command log
+Audit date: 2026-09-01
+Safety harness: every subprocess command was rejected before launch if its joined argv contained a forbidden mode; the HMAC environment variable was also rejected.
+
+--mode run invocation count: 0
+--mode finalize invocation count: 0
+V52_T4F1_AUTH_HMAC_KEY_HEX set count: 0
+valid production authorization constructed: false
+real retrieval ranking performed: false
+retrieval-quality computed/read/reported: false/false/false
+candidate bytes modified: false
+
+COMMAND 1
+argv_json: ["C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\remediation_v52_t4f0_env_2026_08_31\\Scripts\\python.exe", "-B", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\task4f1_execution_candidate_v2_2026_09_01\\candidate_package_preflight.py"]
+cwd: C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip
+returncode: 0
+stdout:
+PASS: recursive payload closure, fail-closed HMAC authorization, script binding, and archive-fit AST boundary
+BLOCKED: independent execution-code audit and Head Researcher authorization are still required
+stderr:
+
+
+COMMAND 2
+argv_json: ["C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\remediation_v52_t4f0_env_2026_08_31\\Scripts\\python.exe", "-B", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\audit_v52_t4f1_execution_candidate_v2_independent_audit_2026_09_01\\nested_closure_dq49ugta\\candidate\\candidate_package_preflight.py"]
+cwd: C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip
+returncode: 1
+stdout:
+
+stderr:
+Traceback (most recent call last):
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip\audit_v52_t4f1_execution_candidate_v2_independent_audit_2026_09_01\nested_closure_dq49ugta\candidate\candidate_package_preflight.py", line 81, in <module>
+    main()
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip\audit_v52_t4f1_execution_candidate_v2_independent_audit_2026_09_01\nested_closure_dq49ugta\candidate\candidate_package_preflight.py", line 44, in main
+    raise RuntimeError(f"payload closure mismatch declared={sorted(declared)} actual={sorted(actual)}")
+RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'nested/UNBOUND.txt', 'v52_t4f1_beam_retrieval.py']
+
+COMMAND 3
+argv_json: ["git", "rev-parse", "HEAD"]
+cwd: C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip
+returncode: 0
+stdout:
+d3c7aa09c9553cd5ac100e668923abab602e4257
+stderr:
+
+
+COMMAND 4
+argv_json: ["C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\remediation_v52_t4f0_env_2026_08_31\\Scripts\\python.exe", "-B", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\task4f1_execution_candidate_v2_2026_09_01\\v52_t4f1_beam_retrieval.py", "--mode", "preflight", "--corpus-root", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\BEAM_pinned_3e12035532eb85768f1a7cd779832b650c4b2ef9", "--beam-manifest", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\audit_v52_t4f0_codex_2026_08_31\\pinned_tree_manifest.json", "--cohort", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\audit_v52_t4f0_restricted_refreeze_2026_08_31\\estimand_primary_cohort.csv", "--restricted-seal", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\audit_v52_t4f0_restricted_refreeze_2026_08_31\\CANDIDATE_SEAL.json", "--protocol", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\audit_v52_t4f0_restricted_refreeze_2026_08_31\\REFREEZE_PROTOCOL.md", "--dependency-lock", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\task4f1_execution_candidate_v2_2026_09_01\\DEPENDENCY_LOCK.txt", "--execution-seal", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\task4f1_execution_candidate_v2_2026_09_01\\CANDIDATE_EXECUTION_SEAL.json", "--preflight-output", "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\audit_v52_t4f1_execution_candidate_v2_independent_audit_2026_09_01\\INDEPENDENT_RERUN_PREFLIGHT.json"]
+cwd: C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip
+returncode: 0
+stdout:
+PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates
+BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization
+stderr:
+
+

@@ -1,0 +1,53 @@
+{
+  "schema": "V52_T4F1_V3_PREPARATION_EVIDENCE_HASHES_V1",
+  "date_utc": "2026-09-01",
+  "status": "PASS_READY_FOR_FRESH_INDEPENDENT_AUDIT_NOT_AUTHORIZED",
+  "candidate_anchors": {
+    "implementation_sha256": "0c1c1cc2bcf23296f0559daa98d936ed605fd7068ef376aa26bed69f6e66b07c",
+    "payload_inventory_sha256": "c7b53e55aff9206be8f70779bb781813e2c177120db1a4fb2826dde699df4199",
+    "candidate_execution_seal_sha256": "9d35192ecc20fbe0a01254278857f656027b71e1f04947267c67e4d379a868de"
+  },
+  "triggering_audit_manifest_sha256": "9942a531647b95d3ded7ca069a13ca70f51ab51868ad6835321e59601ba05395",
+  "outcome_boundary": {
+    "retrieval_quality_computed": false,
+    "retrieval_quality_read": false,
+    "valid_production_authorization_constructed": false,
+    "cli_mode_run_invocation_count": 0,
+    "cli_mode_finalize_invocation_count": 0,
+    "hmac_key_environment_variable_set_count": 0,
+    "task_4f1_run_authorized": false
+  },
+  "files": [
+    {
+      "name": "B1_B2_B3_REGRESSION.json",
+      "bytes": 562,
+      "sha256": "1dcbd6c2723a9924810bd8065989265071ab44b85ea40de709df000444f63b10"
+    },
+    {
+      "name": "IMPLEMENTATION_PREFLIGHT.json",
+      "bytes": 3564,
+      "sha256": "93b2168b4dc4949b9d2469e9eda86b2b24baac847cc2247f2e84ce5c1e55f666"
+    },
+    {
+      "name": "NEGATIVE_STRUCTURALLY_COMPLETE_AUTH.json",
+      "bytes": 891,
+      "sha256": "ef40de47c9c73cc8cb534c539a7d591f506135abf2c7a45465f63eadd9269a42"
+    },
+    {
+      "name": "negative_authorization_direct.py",
+      "bytes": 1469,
+      "sha256": "9b11282e8498a61ed0e079fa7b078082ea74092bc012ee446d31d4256c757693"
+    },
+    {
+      "name": "PREFLIGHT_REPORT.md",
+      "bytes": 4778,
+      "sha256": "988c03d41f598e0fd1e18245bf2e4c0b6aa75b4c92e781974ca221b6f28c9268"
+    },
+    {
+      "name": "regression_b1_b2_b3.py",
+      "bytes": 7997,
+      "sha256": "a7cebb675218d6a567e369094e5849d842f0b5949b59b373a0d85ad4a8888a9d"
+    }
+  ],
+  "self_reference_note": "this manifest intentionally excludes itself"
+}

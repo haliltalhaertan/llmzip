@@ -1,0 +1,766 @@
+{
+  "all_runtime_flags_pass": true,
+  "all_static_flags_pass": true,
+  "module_sha256_matches_sealed_anchor": true,
+  "module_sha256_under_audit": "28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428",
+  "runtime": {
+    "archive_order_is_load_bearing": true,
+    "archives_evaluated": [
+      "100K::synthA",
+      "500K::synthB"
+    ],
+    "cached_fit_equals_per_question_refit": true,
+    "cross_archive_no_shared_fit": true,
+    "distinct_fit_payload_hashes": true,
+    "exactly_one_fit_per_archive": true,
+    "fit_arity_always_one": true,
+    "fit_call_count": 2,
+    "fit_never_saw_gold_id": true,
+    "fit_never_saw_query_marker": true,
+    "fit_payloads": [
+      {
+        "all_elements_are_str": true,
+        "all_have_role_prefix": true,
+        "contains_any_gold_id": false,
+        "contains_synthetic_query_marker": false,
+        "first_text_prefix": "user: syntheti",
+        "fn": "fit_archive_representation",
+        "payload_sha256": "404570095b5c8ad0707d3c8bdd01488ca605e31b19c18a7c02ee8ebe00a7a56f",
+        "seq": 1
+      },
+      {
+        "all_elements_are_str": true,
+        "all_have_role_prefix": true,
+        "contains_any_gold_id": false,
+        "contains_synthetic_query_marker": false,
+        "first_text_prefix": "user: syntheti",
+        "fn": "fit_archive_representation",
+        "payload_sha256": "85576487b03792019f66191282ea0b80c51a74a7a4a55c79361022f3f5aa0b92",
+        "seq": 147
+      }
+    ],
+    "fit_received_only_str_lists": true,
+    "fit_texts_all_role_prefixed": true,
+    "gold_reaches_only_metrics_at_3": true,
+    "itq_call_count": 10,
+    "itq_distinct_payloads_equals_archive_count": true,
+    "itq_payload_is_exactly_a_centered_archive_C96": true,
+    "itq_payload_shape_is_units_by_96": true,
+    "itq_payload_shapes": [
+      [
+        140,
+        96
+      ],
+      [
+        150,
+        96
+      ]
+    ],
+    "itq_receives_ndarray_only": true,
+    "itq_seeds_observed": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "meta_a_centered_archive_sha256": "0f65370da2feeae4f4af7729975ed8778c8a1c51591673f6095f0826bd9f9da1",
+    "meta_archive_digests_differ": true,
+    "meta_b_centered_archive_sha256": "4715230bcd83302d0f05346cf1307cfd9093c40fefa48236de1a441339bcba09",
+    "meta_declares_outcomes_not_printed": true,
+    "metrics_first_call_after_first_ranking": true,
+    "priority_archive_ids": [
+      "100K::synthA",
+      "500K::synthB"
+    ],
+    "priority_is_pure_function_of_archive_id_and_key": true,
+    "priority_key_payload_independent_of_gold": true,
+    "priority_receives_full_canonical_key_list": true,
+    "query_marker_only_in_transform": true,
+    "rank_hamming_call_count": 112,
+    "refit_byte_identical": true,
+    "row_count_archive_a": 1280,
+    "row_count_archive_a_expected": 1280,
+    "row_count_archive_a_ok": true,
+    "row_count_archive_b_ok": true,
+    "signed_control_checks_a": 20,
+    "signed_control_checks_a_expected": 20,
+    "synthetic_only": true,
+    "transform_always_after_fit": true,
+    "transform_call_count": 2
+  },
+  "schema": "V52_T4F1_STATIC_RUNTIME_LEAKAGE_AUDIT_V1",
+  "static": {
+    "caching_decorators": [],
+    "callsites_into_sinks": [
+      {
+        "args": [
+          "retrieved",
+          "gold"
+        ],
+        "callee": "metrics_at_3",
+        "caller": "append_trial_rows",
+        "kwargs": {},
+        "line": 500
+      },
+      {
+        "args": [
+          "corpus_root / chat_relative",
+          "tier",
+          "conversation_id"
+        ],
+        "callee": "load_archive",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 535
+      },
+      {
+        "args": [
+          "memory_texts"
+        ],
+        "callee": "fit_archive_representation",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 548
+      },
+      {
+        "args": [
+          "model",
+          "queries"
+        ],
+        "callee": "transform_queries",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 550
+      },
+      {
+        "args": [
+          "archive_id",
+          "memory_keys"
+        ],
+        "callee": "priority_arrays",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 551
+      },
+      {
+        "args": [
+          "memory_texts"
+        ],
+        "callee": "fit_archive_representation",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 716
+      },
+      {
+        "args": [
+          "model",
+          "['synthetic topic query', 'another group query']"
+        ],
+        "callee": "transform_queries",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 717
+      },
+      {
+        "args": [
+          "archive_id",
+          "memory_keys"
+        ],
+        "callee": "priority_arrays",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 720
+      },
+      {
+        "args": [
+          "native_docs",
+          "native_query",
+          "priority_hi",
+          "priority_lo"
+        ],
+        "callee": "rank_hamming",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 723
+      },
+      {
+        "args": [
+          "['1', '2', '3']",
+          "{'1', '2', '3', '4'}"
+        ],
+        "callee": "metrics_at_3",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 742
+      },
+      {
+        "args": [
+          "corpus_root / 'chats' / '100K' / '12' / 'chat.json'",
+          "'100K'",
+          "'12'"
+        ],
+        "callee": "load_archive",
+        "caller": "real_archive_canary",
+        "kwargs": {},
+        "line": 783
+      },
+      {
+        "args": [
+          "memory_texts"
+        ],
+        "callee": "fit_archive_representation",
+        "caller": "real_archive_canary",
+        "kwargs": {},
+        "line": 788
+      },
+      {
+        "args": [
+          "model",
+          "[REAL_CANARY_QUERY]"
+        ],
+        "callee": "transform_queries",
+        "caller": "real_archive_canary",
+        "kwargs": {},
+        "line": 789
+      },
+      {
+        "args": [
+          "archive_id",
+          "key"
+        ],
+        "callee": "tie_priority",
+        "caller": "priority_arrays",
+        "kwargs": {},
+        "line": 431
+      },
+      {
+        "args": [
+          "row",
+          "questions"
+        ],
+        "callee": "question_payload",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 541
+      },
+      {
+        "args": [
+          "native_docs",
+          "native_queries[index]",
+          "priority_hi",
+          "priority_lo"
+        ],
+        "callee": "rank_hamming",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 559
+      },
+      {
+        "args": [
+          "rows",
+          "cohort_row",
+          "'NATIVE_SIGN96'",
+          "None",
+          "len(raw_ids)",
+          "raw_ids",
+          "ranking",
+          "distances",
+          "gold_sets[index]"
+        ],
+        "callee": "append_trial_rows",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 562
+      },
+      {
+        "args": [
+          "seed"
+        ],
+        "callee": "signed_permutation",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 568
+      },
+      {
+        "args": [
+          "seed"
+        ],
+        "callee": "haar_rotation",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 593
+      },
+      {
+        "args": [
+          "centered_archive",
+          "seed"
+        ],
+        "callee": "fit_itq",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 626
+      },
+      {
+        "args": [
+          "seed"
+        ],
+        "callee": "signed_permutation",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 726
+      },
+      {
+        "args": [
+          "docs",
+          "query",
+          "priority_hi",
+          "priority_lo"
+        ],
+        "callee": "rank_hamming",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 729
+      },
+      {
+        "args": [
+          "seed"
+        ],
+        "callee": "haar_rotation",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 733
+      },
+      {
+        "args": [
+          "model.centered96",
+          "seed"
+        ],
+        "callee": "fit_itq",
+        "caller": "synthetic_preflight",
+        "kwargs": {},
+        "line": 740
+      },
+      {
+        "args": [
+          "signed_docs",
+          "signed_queries[index]",
+          "priority_hi",
+          "priority_lo"
+        ],
+        "callee": "rank_hamming",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 572
+      },
+      {
+        "args": [
+          "rows",
+          "cohort_row",
+          "'SIGNED_PERM_CONTROL96'",
+          "seed",
+          "len(raw_ids)",
+          "raw_ids",
+          "ranking",
+          "distances",
+          "gold_sets[index]"
+        ],
+        "callee": "append_trial_rows",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 578
+      },
+      {
+        "args": [
+          "rotated_docs",
+          "rotated_queries[index]",
+          "priority_hi",
+          "priority_lo"
+        ],
+        "callee": "rank_hamming",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 612
+      },
+      {
+        "args": [
+          "rows",
+          "cohort_row",
+          "'HAAR96_SIGN'",
+          "seed",
+          "len(raw_ids)",
+          "raw_ids",
+          "ranking",
+          "distances",
+          "gold_sets[index]"
+        ],
+        "callee": "append_trial_rows",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 613
+      },
+      {
+        "args": [
+          "itq_docs",
+          "itq_queries[index]",
+          "priority_hi",
+          "priority_lo"
+        ],
+        "callee": "rank_hamming",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 630
+      },
+      {
+        "args": [
+          "rows",
+          "cohort_row",
+          "'ITQ96_CENTERED'",
+          "seed",
+          "len(raw_ids)",
+          "raw_ids",
+          "ranking",
+          "distances",
+          "gold_sets[index]"
+        ],
+        "callee": "append_trial_rows",
+        "caller": "evaluate_archive",
+        "kwargs": {},
+        "line": 631
+      }
+    ],
+    "fit_archive_representation_external_names": [
+      "ArchiveRepresentation",
+      "LATENT_DIM",
+      "LATENT_SEED",
+      "MIXED_DIM",
+      "MIXED_SEED",
+      "RuntimeError",
+      "TfidfVectorizer",
+      "TruncatedSVD",
+      "int",
+      "len",
+      "list",
+      "min",
+      "normalize",
+      "np",
+      "sparse",
+      "str"
+    ],
+    "fit_archive_representation_only_param_is_memory_texts": true,
+    "fit_archive_representation_parameters": [
+      "memory_texts"
+    ],
+    "fit_archive_representation_reads_no_query_or_gold": true,
+    "fit_itq_first_parameter_is_centered_archive": true,
+    "fit_itq_parameters": [
+      "centered_archive",
+      "seed",
+      "iterations"
+    ],
+    "forbidden_token_hits": {
+      "label": [
+        [
+          150,
+          "def verify_bound_file(path: Path, expected_sha256: str, label: str) -> dict[str, Any]:"
+        ],
+        [
+          152,
+          "raise RuntimeError(f\"[BLOCKED - MISSING BOUND FILE] {label}: {path}\")"
+        ],
+        [
+          155,
+          "raise RuntimeError(f\"[BLOCKED - HASH MISMATCH] {label}: {observed} != {expected_sha256}\")"
+        ],
+        [
+          371,
+          "\"\"\"Fit only on ordered archive memory text; no query or label is accepted.\"\"\""
+        ],
+        [
+          763,
+          "\"gold_labels_loaded_by_synthetic_preflight\": False,"
+        ],
+        [
+          782,
+          "\"\"\"Exercise the exact representation on raw 100K/12 bytes without labels.\"\"\""
+        ],
+        [
+          802,
+          "\"gold_labels_loaded\": False,"
+        ]
+      ]
+    },
+    "module_level_assignments": [
+      {
+        "mutable": false,
+        "name": "TASK",
+        "value_expr": "'V52 Task 4F1 - BEAM Restricted-Cohort Axis Probe'"
+      },
+      {
+        "mutable": false,
+        "name": "SCRIPT_NAME",
+        "value_expr": "'v52_t4f1_beam_retrieval.py'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_PARENT_COMMIT",
+        "value_expr": "'d3c7aa09c9553cd5ac100e668923abab602e4257'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_BEAM_COMMIT",
+        "value_expr": "'3e12035532eb85768f1a7cd779832b650c4b2ef9'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_COHORT_SHA256",
+        "value_expr": "'9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_RESTRICTED_SEAL_SHA256",
+        "value_expr": "'596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_PROTOCOL_SHA256",
+        "value_expr": "'f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_DEPENDENCY_LOCK_SHA256",
+        "value_expr": "'86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_BEAM_MANIFEST_SHA256",
+        "value_expr": "'650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_TOTAL_ROWS",
+        "value_expr": "2000"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_ELIGIBLE",
+        "value_expr": "1712"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_ARCHIVES",
+        "value_expr": "96"
+      },
+      {
+        "mutable": false,
+        "name": "EXCLUDED_ARCHIVES",
+        "value_expr": "frozenset({'1M::5', '1M::26', '1M::33', '1M::34'})"
+      },
+      {
+        "mutable": false,
+        "name": "TIERS",
+        "value_expr": "('100K', '500K', '1M', '10M')"
+      },
+      {
+        "mutable": false,
+        "name": "LATENT_DIM",
+        "value_expr": "32"
+      },
+      {
+        "mutable": false,
+        "name": "LATENT_SEED",
+        "value_expr": "5101"
+      },
+      {
+        "mutable": false,
+        "name": "MIXED_DIM",
+        "value_expr": "96"
+      },
+      {
+        "mutable": false,
+        "name": "MIXED_SEED",
+        "value_expr": "5204"
+      },
+      {
+        "mutable": false,
+        "name": "TOP_K",
+        "value_expr": "3"
+      },
+      {
+        "mutable": false,
+        "name": "HAAR_SEEDS",
+        "value_expr": "(43001, 43002, 43003, 43004, 43005)"
+      },
+      {
+        "mutable": false,
+        "name": "SIGNED_PERM_SEEDS",
+        "value_expr": "HAAR_SEEDS"
+      },
+      {
+        "mutable": false,
+        "name": "ITQ_SEEDS",
+        "value_expr": "(101, 202, 303, 404, 505)"
+      },
+      {
+        "mutable": false,
+        "name": "ITQ_ITERATIONS",
+        "value_expr": "100"
+      },
+      {
+        "mutable": false,
+        "name": "NUISANCE_TRIALS",
+        "value_expr": "tuple(range(20))"
+      },
+      {
+        "mutable": false,
+        "name": "INVARIANCE_TOLERANCE",
+        "value_expr": "1e-12"
+      },
+      {
+        "mutable": false,
+        "name": "TIE_PREFIX",
+        "value_expr": "b'V52_T4F0_TIE_PRIORITY_V1'"
+      },
+      {
+        "mutable": false,
+        "name": "REAL_CANARY_QUERY",
+        "value_expr": "'Which project phase mentioned module 7 and a deadline?'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_REAL_CANARY_ARCHIVE_SHA256",
+        "value_expr": "'25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025'"
+      },
+      {
+        "mutable": false,
+        "name": "EXPECTED_REAL_CANARY_QUERY_SHA256",
+        "value_expr": "'e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869'"
+      },
+      {
+        "mutable": true,
+        "name": "ENVIRONMENT_LOCK",
+        "value_expr": "{'python': '3.12.13', 'numpy': '2.3.2', 'scipy': '1.16.1', 'scikit_learn': '1.7.1', 'psutil': '7.0.0'}"
+      },
+      {
+        "mutable": true,
+        "name": "THREAD_LOCK",
+        "value_expr": "{'OMP_NUM_THREADS': '1', 'MKL_NUM_THREADS': '1', 'OPENBLAS_NUM_THREADS': '1', 'NUMEXPR_NUM_THREADS': '1', 'PYTHONHASHSEE"
+      },
+      {
+        "mutable": false,
+        "name": "TRIAL_FIELDS",
+        "value_expr": "('audit_question_id', 'tier', 'conversation_id', 'ability', 'method', 'seed', 'trial', 'archive_units', 'gold_count', 'r"
+      }
+    ],
+    "module_level_container_constants": [
+      {
+        "mutable": true,
+        "name": "ENVIRONMENT_LOCK",
+        "value_expr": "{'python': '3.12.13', 'numpy': '2.3.2', 'scipy': '1.16.1', 'scikit_learn': '1.7.1', 'psutil': '7.0.0'}"
+      },
+      {
+        "mutable": true,
+        "name": "THREAD_LOCK",
+        "value_expr": "{'OMP_NUM_THREADS': '1', 'MKL_NUM_THREADS': '1', 'OPENBLAS_NUM_THREADS': '1', 'NUMEXPR_NUM_THREADS': '1', 'PYTHONHASHSEE"
+      }
+    ],
+    "module_level_containers_are_never_mutated": true,
+    "no_answer_rubric_evaluator_difficulty_tokens": true,
+    "no_lru_cache_or_memoization": true,
+    "no_module_level_mutable_cache": true,
+    "svd_and_mean_callsites": [
+      {
+        "args": [
+          "memory_texts"
+        ],
+        "caller": "fit_archive_representation",
+        "kwargs": {},
+        "line": 385,
+        "method": "fit_transform",
+        "receiver": "word_vectorizer"
+      },
+      {
+        "args": [
+          "memory_texts"
+        ],
+        "caller": "fit_archive_representation",
+        "kwargs": {},
+        "line": 386,
+        "method": "fit_transform",
+        "receiver": "char_vectorizer"
+      },
+      {
+        "args": [
+          "x_word"
+        ],
+        "caller": "fit_archive_representation",
+        "kwargs": {},
+        "line": 390,
+        "method": "fit_transform",
+        "receiver": "latent_svd"
+      },
+      {
+        "args": [
+          "source"
+        ],
+        "caller": "fit_archive_representation",
+        "kwargs": {},
+        "line": 395,
+        "method": "fit_transform",
+        "receiver": "mixed_svd"
+      },
+      {
+        "args": [],
+        "caller": "fit_archive_representation",
+        "kwargs": {
+          "axis": "0",
+          "keepdims": "True"
+        },
+        "line": 396,
+        "method": "mean",
+        "receiver": "y96"
+      },
+      {
+        "args": [
+          "query_texts"
+        ],
+        "caller": "transform_queries",
+        "kwargs": {},
+        "line": 414,
+        "method": "transform",
+        "receiver": "model.word_vectorizer"
+      },
+      {
+        "args": [
+          "query_texts"
+        ],
+        "caller": "transform_queries",
+        "kwargs": {},
+        "line": 415,
+        "method": "transform",
+        "receiver": "model.char_vectorizer"
+      },
+      {
+        "args": [
+          "q_word"
+        ],
+        "caller": "transform_queries",
+        "kwargs": {},
+        "line": 416,
+        "method": "transform",
+        "receiver": "model.latent_svd"
+      },
+      {
+        "args": [
+          "q_source"
+        ],
+        "caller": "transform_queries",
+        "kwargs": {},
+        "line": 418,
+        "method": "transform",
+        "receiver": "model.mixed_svd"
+      }
+    ]
+  },
+  "status": "PASS"
+}

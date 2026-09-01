@@ -1,0 +1,109 @@
+{
+  "task": "V52 TASK 4F0 - REAL BEAM REPRESENTATION TRANSFER AUDIT",
+  "method": {
+    "memory_text": "role + ': ' + content",
+    "word_tfidf": {
+      "lowercase": true,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "stop_words": "english",
+      "sublinear_tf": true
+    },
+    "char_tfidf": {
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "sublinear_tf": true
+    },
+    "latent_svd": {
+      "n_components": 32,
+      "random_state": 5101
+    },
+    "mixed_svd": {
+      "n_components": 96,
+      "random_state": 5204
+    },
+    "l2_normalize": true,
+    "archive_mean_center": true,
+    "query_fit_rule": "transform only after archive fit"
+  },
+  "environment": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.3.2",
+    "scipy": "1.16.1",
+    "scikit_learn": "1.7.1",
+    "psutil": "7.0.0",
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "scientific_native_vs_haar_outcome_inspected": false,
+  "tiers": {
+    "10M": {
+      "status": "PASS",
+      "tier": "10M",
+      "conversation_id": "10",
+      "chat_path": "work/audit_v52_t4f0_codex_2026_08_31/beam_materialized/corpus/chats/10M/10/chat.json",
+      "load_seconds": 0.2477127000456676,
+      "repeat_1": {
+        "archive_units": 23716,
+        "word_shape": [
+          23716,
+          953939
+        ],
+        "word_nnz": 5521349,
+        "char_shape": [
+          23716,
+          183615
+        ],
+        "char_nnz": 37270009,
+        "latent_shape": [
+          23716,
+          32
+        ],
+        "source_block_shape": [
+          23716,
+          1137586
+        ],
+        "source_block_nnz": 43550270,
+        "mixed_shape": [
+          23716,
+          96
+        ],
+        "query_shape": [
+          1,
+          96
+        ],
+        "mixed_rank": 96,
+        "finite_no_nan_inf": true,
+        "centered96_sha256": "b0d157898ba1ca5362a85bcb969c296fdb6f1ae733a800744fd2b4f0006f2734",
+        "query_centered96_sha256": "978d0f4dbd7822fdd0343e46e514a3d35b8c6ed017c3f54c6a88e93930ea6b68",
+        "peak_rss_bytes": 4671946752,
+        "total_seconds": 271.99517899996135,
+        "stage_seconds": {
+          "word_tfidf_fit_transform": 21.072167599922977,
+          "word_l2_normalize": 0.12461240007542074,
+          "char_tfidf_fit_transform": 113.15733719989657,
+          "char_l2_normalize": 0.5636379999341443,
+          "latent32_fit_transform": 33.32727300003171,
+          "latent32_l2_normalize": 0.014876200002618134,
+          "source_block_hstack": 0.5218962000217289,
+          "mixed96_fit_transform": 102.40743669995572,
+          "mixed96_l2_normalize": 0.013337999931536615
+        }
+      },
+      "repeat_2": null,
+      "repeatability_max_abs_archive_diff": null,
+      "repeatability_max_abs_query_diff": null,
+      "retrieval_quality_computed": false
+    }
+  }
+}

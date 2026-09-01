@@ -1,0 +1,26 @@
+{
+  "governance_scope": "Byte-bound governance control; it does not protect against an attacker who can replace both the audited script and accepted seal outside the evidence chain.",
+  "hmac_environment_variable_set_count": 0,
+  "negative_fixture_direct_call_block": "[BLOCKED - HEAD RESEARCHER AUTHORITY KEY NOT SEALED]",
+  "schema": "V52_T4F1_INDEPENDENT_V2_AUTHORIZATION_EVIDENCE_V1",
+  "static_checks": {
+    "archive_count_binding": true,
+    "candidate_fail_closed_pending_commitment": true,
+    "candidate_seal_binding": true,
+    "canonical_json_hmac_sha256": true,
+    "cohort_binding": true,
+    "constant_time_compare": true,
+    "exact_closed_document_field_set": true,
+    "exact_signed_field_tuple": true,
+    "hmac_environment_absent": true,
+    "key_32_bytes": true,
+    "key_commitment_checked": true,
+    "output_basename_binding": true,
+    "preflight_does_not_read_key": true,
+    "preregistration_and_id_nonce_signed": true,
+    "script_binding": true
+  },
+  "status": "PASS",
+  "template_direct_call_block": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_candidate_seal_sha256\": {\"expected\": \"4cc6313649da9ca4b10e64610a8ff40173c1ccacd663dda9fadabcdf059b996c\", \"observed\": \"REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT\"}, \"execution_script_sha256\": {\"expected\": \"c50dfa7130918b8183c51edf68f5e2baac21a419f0d29bf2ec930f9de38e6139\", \"observed\": \"REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT\"}, \"output_namespace_basename\": {\"expected\": \"template-output\", \"observed\": \"REPLACE_ONLY_AFTER_PREREGISTRATION\"}, \"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"FORBIDDEN\"}, \"schema\": {\"expected\": \"V52_T4F1_RUN_AUTHORIZATION_V2\", \"observed\": \"V52_T4F1_RUN_AUTHORIZATION_V2_TEMPLATE_ONLY\"}, \"status\": {\"expected\": \"AUTHORIZED_FOR_TASK_4F1_EXECUTION\", \"observed\": \"NOT_AUTHORIZED\"}}",
+  "valid_production_authorization_constructed": false
+}

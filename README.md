@@ -4,7 +4,7 @@ Research archive for compact long-term memory retrieval for LLM/agent systems.
 
 The project studies whether a memory system can keep a very small active routing representation while preserving evidence retrieval, exact provenance, and an auditable path back to the raw archive.
 
-## Current research state — 2026-08-28
+## Current research state — 2026-09-01
 
 The project has progressed from V1 synthetic routing experiments through V51 full-LoCoMo preparation and V52 LongMemEval validation.
 
@@ -23,9 +23,23 @@ Current accepted state under the independent-audit workflow:
 - `[FROZEN — TASK 4C3 NUMERICAL CHECKPOINT]`
 - `[ESTABLISHED ON FROZEN LONGMEMEVAL — NATIVE AXIS-STRUCTURE EFFECT]`
 - `[NOT ESTABLISHED — VARIANCE-HETEROGENEITY CAUSAL MEDIATOR]`
-- `[NOT ESTABLISHED — CROSS-BENCHMARK GENERALIZATION]`
+- V52 Task 4D independently replicated the directional native-axis effect on frozen LoCoMo:
+  - Native SIGN96 Fractional Evidence Recall@3: `23.654714666441%`
+  - Full-Haar96 mean: `13.770827054136%`
+  - `D_LoCoMo = -9.883887612305 pp`
+  - independent audit: `PASS WITH CONDITIONS`; numerical checkpoint frozen.
+- `[CROSS-BENCHMARK REPLICATION ESTABLISHED — LONGMEMEVAL + LOCOMO]`
+- V52 Task 4E0 LongMemEval-V2: blocked because the frozen representation and evidence estimand do not transfer faithfully from public data. This is not a negative scientific result.
+- V52 Task 4F0 BEAM feasibility audit: `PASS WITH CONDITIONS — ORIGINAL BLOCKED VERDICT CORRECT BUT RESOLVABLE`.
+  - 100 conversations, 2,000 questions and 327,116 raw message units materialized.
+  - four 1M archives contain 1,720 divergent duplicate message keys.
+  - an outcome-independent restricted cohort of 1,712 evidence-identifiable questions is available.
+  - representation transfer and 100K/500K/1M/10M scale feasibility pass on clean archives.
+  - no Native-vs-Haar retrieval outcome was inspected.
 
-Task 4C3 stop rule is active: no Task 4C4, LoCoMo, larger-scale benchmark, or rescue experiment is launched from this audit without a separate Head Researcher decision and new preregistration.
+Head Researcher decision: accept the superseding Task 4F0 restricted-refreeze audit and seal the exact 1,712-question cohort/protocol boundary. Task 4F1 remains blocked until its outcome-bearing fitting/ranking implementation is separately byte-bound and independently audited. See `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
+
+Task 4F1 implementation governance update: the V1 audit was contaminated by an auditor-side accidental outcome-capable execution; V2 then received an outcome-free `BLOCKED` verdict for three synthetic finalization/checkpoint defects. V3 repairs those defects and has passed only implementer-side outcome-free preflight and synthetic regressions. A fresh cold-start V3 audit is still required; no Task 4F1 result has been accessed.
 
 ## Repository map
 
@@ -34,6 +48,7 @@ Task 4C3 stop rule is active: no Task 4C4, LoCoMo, larger-scale benchmark, or re
 - `audit_v52_t4c1/` — independent Task 4C1 adversarial audit.
 - `audit_v52_t4c2/` — independent Task 4C2 adversarial audit.
 - `audit_v52_t4c3/` — accepted independent Task 4C3 audit, reproduction script, and hash verification log.
+- `audit_v52_t4f0_codex_2026_08_31/` — complete Task 4F0 independent audit package, compact evidence tables, scripts and hash inventory; the 804 MB materialized BEAM corpus is intentionally excluded.
 - `adapters/` — exact-byte frozen LongMemEval v1/v2 adapters with pinned SHA256 values.
 - `prompts/` — prompt lineage and audit/compute prompts.
 - `literature/` — project-specific deep literature reviews and novelty guards.

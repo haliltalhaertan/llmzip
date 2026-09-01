@@ -1,0 +1,13 @@
+V52 Task 4F0 restricted-cohort refreeze candidate
+Python==3.12.13
+numpy==2.3.2
+scipy==1.16.1
+scikit-learn==1.7.1
+psutil==7.0.0
+OMP_NUM_THREADS=1
+MKL_NUM_THREADS=1
+OPENBLAS_NUM_THREADS=1
+NUMEXPR_NUM_THREADS=1
+PYTHONHASHSEED=0
+UTF-8 source/data decoding required
+Thread policy: one process; one worker; no implicit BLAS parallelism

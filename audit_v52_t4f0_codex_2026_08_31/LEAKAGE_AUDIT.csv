@@ -1,0 +1,7 @@
+gate,status,evidence
+Archive fit inputs,PASS,"Only raw message role and content supplied"
+Query timing,PASS,"Neutral canary transformed only after archive fit"
+Gold/source leakage,PASS,"Question; answer; rubric; type; source IDs; source labels excluded from fitting"
+Outcome access,PASS,"No ranking; Native transform; Haar transform; top-k retrieval; or retrieval metric executed"
+Environment control,PASS_WITH_CONDITION,"Audit pinned Python/package versions and single-thread variables; future refreeze must preserve them"
+

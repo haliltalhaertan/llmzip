@@ -1,0 +1,169 @@
+{
+  "audit_outputs": [
+    {
+      "bytes": 9520,
+      "name": "audit_closure_corpus_cohort.json",
+      "sha256": "9d30af3521c26f0bd2a83bbc83bdd8b193657e0b850d31bc20d0bb169d6d1692"
+    },
+    {
+      "bytes": 17629,
+      "name": "AUTHORIZATION_NEGATIVE_TESTS.json",
+      "sha256": "935ba219799b54e5a46a167dc7ccb4dadd32a2f2797b1579eb66991eab313ad2"
+    },
+    {
+      "bytes": 21105,
+      "name": "COMMAND_LOG.txt",
+      "sha256": "a5268232332defed3f517de49d80f5c49bb81f91856a9251fdd9eadf06407fed"
+    },
+    {
+      "bytes": 7551,
+      "name": "GATE_TABLE.csv",
+      "sha256": "8fffd85a645f68d6120bafcdf5c3a44355bbd9e8e486ea84ea90fdfb5dee3b17"
+    },
+    {
+      "bytes": 25122,
+      "name": "INDEPENDENT_EXECUTION_AUDIT_REPORT.md",
+      "sha256": "ab7211b0921f826ae3f23e2d76540f948b8283bce89c6b655ee84ee909b7d77c"
+    },
+    {
+      "bytes": 3561,
+      "name": "INDEPENDENT_RERUN_PREFLIGHT.json",
+      "sha256": "138f291ee53a70c0c4f37d4797e683acd1db77d5f362db676b5517e0d8f91f49"
+    },
+    {
+      "bytes": 2430,
+      "name": "REPRESENTATION_EQUIVALENCE.json",
+      "sha256": "21b9f535ad633a05f8f7c27b447430fb55032ccbe38dec7e04681ea99953537d"
+    },
+    {
+      "bytes": 16177,
+      "name": "scripts/01_closure_corpus_cohort.py",
+      "sha256": "0c33538a39c233f812818a7a392260ae2d624338e3acf23a572b4694405c083e"
+    },
+    {
+      "bytes": 12159,
+      "name": "scripts/02_env_and_authorization_negatives.py",
+      "sha256": "4c70bcd57eb1142272d2c383be00bb7cda7fcd8fd881fcf045729f5dc4f4477a"
+    },
+    {
+      "bytes": 20531,
+      "name": "scripts/03_static_runtime_leakage.py",
+      "sha256": "fde2bc5821e082ed2b113d9fde54fd7815173bdaed0f0fbe2f2c9e7e4725a3eb"
+    },
+    {
+      "bytes": 22025,
+      "name": "scripts/04_method_equivalence.py",
+      "sha256": "3be7a0465ed1ba8325439a480bdaf2bb507d96a10c1a027188d097b5357fa049"
+    },
+    {
+      "bytes": 18245,
+      "name": "scripts/05_checkpoint_and_aggregation.py",
+      "sha256": "a09d03ab9a38fa0a28aac48bee64e8056723b1c7af73ab76613df6eb2dfe9e1e"
+    },
+    {
+      "bytes": 9024,
+      "name": "scripts/06_representation_equivalence.py",
+      "sha256": "e208c76d1d0e539712717b44ea48809a301d6c8cf6e7cb197bbbd55a6e0a00e8"
+    },
+    {
+      "bytes": 20238,
+      "name": "STATIC_RUNTIME_LEAKAGE_AUDIT.json",
+      "sha256": "045cd3464a2210464cdf644c54e6b871dedacf5d27a642f05a3ee6200545d08c"
+    },
+    {
+      "bytes": 6003,
+      "name": "SYNTHETIC_AGGREGATION_TESTS.json",
+      "sha256": "90b40479962695a934d70272f935b2cb52b989162f8a266deb08139ae5274afd"
+    },
+    {
+      "bytes": 22294,
+      "name": "SYNTHETIC_METHOD_EQUIVALENCE.json",
+      "sha256": "9194300ccacf96ff5fb82b28aa6c061e6da2ae69752a017a138691779b05d2d8"
+    }
+  ],
+  "audited_subject": {
+    "bytes": 52673,
+    "path": "../task4f1_execution_candidate_2026_08_31/v52_t4f1_beam_retrieval.py",
+    "sha256": "28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428"
+  },
+  "branch": "codex/research-lead-takeover-2026-08-31",
+  "canary_digests_independently_reproduced": {
+    "archive_100K_12": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+    "query_fixed_canary": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869"
+  },
+  "candidate_namespace_independently_rehashed": {
+    "CANDIDATE_EXECUTION_SEAL.json": "a1277e4665936ea691505a2d386c1d6a4824c2ebc5e5e56d6a94aba1f58876cd",
+    "DEPENDENCY_LOCK.txt": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "EXECUTION_SPEC.md": "d7a74dca526fcd1f7363deaa8d334842e43b539dc4859a4d96867d1dc5471311",
+    "PAYLOAD_HASHES.json": "278dbf80d6388a7dcd2605791283442615d5a951b2ef1e1ce1b6c92b4dd392b7",
+    "README.md": "b0030f29ab37d2bc5fbe60b06e8035eeec519b509debd289a8ce2ad387aec6ea",
+    "RUN_AUTHORIZATION_TEMPLATE.json": "df581d47668f435682435f6fd908e6d9319f77aeee2ce17a2d67ee19b5ea73cd",
+    "__pycache__/v52_t4f1_beam_retrieval.cpython-312.pyc": "0dca302e7faa4ff805747892daba9eb6df6e8fde778e0a11b844d79e4e443dac",
+    "candidate_package_preflight.py": "b6b162d6eba08bb218c9c465a134a7316831f5b1eb69f76f190edc42d6b597cf",
+    "v52_t4f1_beam_retrieval.py": "28735991a3d54144ec1268693e233f2fc45278049f8df7fb177d74b852bf5428"
+  },
+  "conditions": [
+    "D1 unbound __pycache__ payload + non-recursive closure check",
+    "D2 run authorization is a non-cryptographic interlock",
+    "D3 archive checkpoints carry no script/cohort/authorization provenance",
+    "C4 state trial-row replication semantics in the 4F1 preregistration",
+    "run-time: verify 1e-12 Haar tolerance and memory on the first large archive"
+  ],
+  "date_utc": "2026-08-31",
+  "gate_verdicts": {
+    "10_metrics_and_structural_zero": "PASS",
+    "11_checkpoint_resume_safety": "PASS",
+    "12_authorization_guard": "PASS WITH CONDITION (D2)",
+    "13_row_schema_and_aggregation": "PASS",
+    "14_active_bug_hunt": "PASS - no defect in the listed failure modes",
+    "1_namespace_byte_closure": "PASS WITH CONDITION (D1)",
+    "2_environment_enforcement": "PASS",
+    "3_corpus_byte_identity": "PASS (192/192)",
+    "4_cohort_and_gold_join": "PASS (2000/1712/96)",
+    "5_static_runtime_leakage": "PASS",
+    "6_representation_equivalence": "PASS",
+    "7_binary_arms_and_invariance": "PASS",
+    "8_itq_implementation": "PASS",
+    "9_tie_and_nuisance_semantics": "PASS (literal trial reading judged faithful and non-misleading)"
+  },
+  "no_outcome_boundary": {
+    "answers_ideal_answers_rubrics_or_evaluator_output_opened": false,
+    "auditor_protocol_breach_disclosed": "Incident A1 - see COMMAND_LOG.txt and report section 7",
+    "candidate_bytes_modified": false,
+    "candidate_seal_modified": false,
+    "real_questions_ranked_for_analysis": false,
+    "retrieval_quality_computed": false,
+    "retrieval_quality_read_or_reported": false,
+    "valid_run_authorization_constructed_in_final_evidence": false,
+    "valid_run_authorization_present_on_disk": false
+  },
+  "parent_llmzip_commit": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+  "pinned_beam_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+  "runtime": {
+    "PYTHONHASHSEED": "0",
+    "numpy": "2.3.2",
+    "processes": 1,
+    "psutil": "7.0.0",
+    "python": "3.12.13",
+    "scikit_learn": "1.7.1",
+    "scipy": "1.16.1",
+    "threads": "OMP/MKL/OPENBLAS/NUMEXPR=1",
+    "workers": 1
+  },
+  "schema": "V52_T4F1_INDEPENDENT_EXECUTION_AUDIT_HASHES_V1",
+  "self_reference_note": "this manifest hashes every audit output except itself",
+  "task": "V52 Task 4F1 - execution candidate cold-start independent audit",
+  "unbound_payload_defect_D1": [
+    "__pycache__/v52_t4f1_beam_retrieval.cpython-312.pyc"
+  ],
+  "upstream_anchors_verified": {
+    "accepted_pinned_tree_manifest": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+    "dependency_lock": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "preparation_preflight_evidence": "138f291ee53a70c0c4f37d4797e683acd1db77d5f362db676b5517e0d8f91f49",
+    "restricted_protocol": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1",
+    "sealed_cohort": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+    "sealed_task4f0_final_seal": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c"
+  },
+  "verdict": "PASS WITH CONDITIONS - EXECUTION CANDIDATE MAY BE SEALED BY HEAD RESEARCHER; TASK 4F1 STILL NOT AUTHORIZED",
+  "worktree": "dirty - recorded, not repaired"
+}

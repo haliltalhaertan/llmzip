@@ -70,6 +70,19 @@ Heavy Task 4C3 artifacts include:
 
 The independent audit re-hashed the 26 manifest-declared files in the output archive: 26/26 matched, 0 mismatches. Remaining audit condition: the full 277 MB dataset was not independently re-downloaded/re-hashed in that audit environment, although the sealed runtime input gate reports the pinned dataset hash matched.
 
+## V52 Task 4F0 — BEAM feasibility audit
+
+- upstream repository: `https://github.com/mohammadtavakoli78/BEAM`
+- pinned upstream commit: `3e12035532eb85768f1a7cd779832b650c4b2ef9`
+- materialized pinned corpus: 205 files, 804,231,963 verified bytes
+- corpus payload: intentionally not committed to this repository
+- compact audit package: `audit_v52_t4f0_codex_2026_08_31/`
+- materialization provenance: `pinned_tree_manifest.json` and `materialization_hash_log.json`
+- accepted restricted primary cohort: 1,712 questions, pending exact-byte 4F0 refreeze
+- excluded defective archives: `1M::5`, `1M::26`, `1M::33`, `1M::34`
+
+The public BEAM corpus remains the byte source. Git stores the audit scripts, compact inventories, evidence joins, cohort table, representation-repeatability records and hashes. No Task 4F1 retrieval-quality output exists in the accepted package.
+
 ## V52 Task 2
 
 - `V52_T2_question_level.csv` — ~23.9 MB raw question-level table

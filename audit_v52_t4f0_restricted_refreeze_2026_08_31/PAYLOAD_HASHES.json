@@ -1,0 +1,52 @@
+{
+  "schema": "V52_T4F0_RESTRICTED_REFREEZE_PAYLOADS_V1",
+  "status": "PREPARED_NOT_INDEPENDENTLY_SEALED",
+  "file_count_excluding_inventory": 9,
+  "files": [
+    {
+      "name": "DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "name": "estimand_primary_cohort.csv",
+      "bytes": 316561,
+      "sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "name": "estimand_summary.json",
+      "bytes": 3775,
+      "sha256": "c6ce602a7148dec8aed67d81a7ec14e85ce20a493b1eb8ec09e356a2aa1fe5db"
+    },
+    {
+      "name": "excluded_archives.txt",
+      "bytes": 27,
+      "sha256": "a169f2fd37c8e1abf93f756f43db8484fec2149e9fd09405df837a0137485b31"
+    },
+    {
+      "name": "gold_cardinality_distribution.csv",
+      "bytes": 1186,
+      "sha256": "4bf79a4b11ab7b5ce3d80cb374ea6cab4495a018f4846df2315a82504a7a67ec"
+    },
+    {
+      "name": "README.md",
+      "bytes": 1199,
+      "sha256": "8b305eff0ad3954d1d88f8eec83487313f81843f69abbc786628f4dece4bf5bf"
+    },
+    {
+      "name": "REFREEZE_PROTOCOL.md",
+      "bytes": 6321,
+      "sha256": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1"
+    },
+    {
+      "name": "tier_ability_composition.csv",
+      "bytes": 1272,
+      "sha256": "80c2169aba17ae16a2347bef630480299ccab8f89fe0af027a81f9f76e54a8a2"
+    },
+    {
+      "name": "v52_t4f0_restricted_preflight.py",
+      "bytes": 6319,
+      "sha256": "185140ff85cdc6f099449c222d964676e65168276217a9f80ea007543f72ba7d"
+    }
+  ]
+}
