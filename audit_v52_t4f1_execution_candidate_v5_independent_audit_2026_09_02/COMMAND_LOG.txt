@@ -1134,3 +1134,85 @@ LAUNCHED {"utc": "2026-09-02T20:31:47Z", "cwd": "/home/user/llmzip", "argv": ["/
 }
 --- stderr ---
 
+LAUNCHED {"utc": "2026-09-02T20:32:34Z", "cwd": "/home/user/llmzip", "argv": ["/opt/venv_t4f1/bin/python", "-B", "task4f1_execution_candidate_v5_2026_09_02/v52_t4f1_beam_retrieval.py", "--mode", "preflight", "--corpus-root", "/home/user/beam_pinned", "--beam-manifest", "audit_v52_t4f0_codex_2026_08_31/pinned_tree_manifest.json", "--cohort", "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv", "--restricted-seal", "audit_v52_t4f0_restricted_refreeze_2026_08_31/CANDIDATE_SEAL.json", "--protocol", "audit_v52_t4f0_restricted_refreeze_2026_08_31/REFREEZE_PROTOCOL.md", "--dependency-lock", "task4f1_execution_candidate_v5_2026_09_02/DEPENDENCY_LOCK.txt", "--execution-seal", "task4f1_execution_candidate_v5_2026_09_02/CANDIDATE_EXECUTION_SEAL.json", "--preflight-output", "/home/user/llmzip/audit_v52_t4f1_execution_candidate_v5_independent_audit_2026_09_02/evidence/cli_preflight/auditor_cli_preflight.json"], "returncode": 0}
+--- stdout ---
+PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates
+BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization
+--- stderr ---
+
+LAUNCHED {"utc": "2026-09-02T20:34:06Z", "cwd": "/home/user/llmzip", "argv": ["/opt/venv_t4f1/bin/python", "-B", "/home/user/llmzip/audit_v52_t4f1_execution_candidate_v5_independent_audit_2026_09_02/evidence/g7_authorization_failclosed.py", "/home/user/llmzip/task4f1_execution_candidate_v5_2026_09_02", "/home/user/llmzip/audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv", "/tmp/claude-0/-home-user-llmzip/539cda0f-4605-5508-93fd-ee4a2f3eaf21/scratchpad/authfix"], "returncode": 1}
+--- stdout ---
+--- stderr ---
+Traceback (most recent call last):
+  File "/home/user/llmzip/audit_v52_t4f1_execution_candidate_v5_independent_audit_2026_09_02/evidence/g7_authorization_failclosed.py", line 24, in <module>
+    spec.loader.exec_module(mod)          # module import only; __name__ != "__main__"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/user/llmzip/task4f1_execution_candidate_v5_2026_09_02/v52_t4f1_beam_retrieval.py", line 451, in <module>
+    @dataclass
+     ^^^^^^^^^
+  File "/opt/py31213/lib/python3.12/dataclasses.py", line 1275, in dataclass
+    return wrap(cls)
+           ^^^^^^^^^
+  File "/opt/py31213/lib/python3.12/dataclasses.py", line 1265, in wrap
+    return _process_class(cls, init, repr, eq, order, unsafe_hash,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/py31213/lib/python3.12/dataclasses.py", line 983, in _process_class
+    and _is_type(type, cls, dataclasses, dataclasses.KW_ONLY,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/py31213/lib/python3.12/dataclasses.py", line 749, in _is_type
+    ns = sys.modules.get(cls.__module__).__dict__
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?
+
+LAUNCHED {"utc": "2026-09-02T20:34:16Z", "cwd": "/home/user/llmzip", "argv": ["/opt/venv_t4f1/bin/python", "-B", "/home/user/llmzip/audit_v52_t4f1_execution_candidate_v5_independent_audit_2026_09_02/evidence/g7_authorization_failclosed.py", "/home/user/llmzip/task4f1_execution_candidate_v5_2026_09_02", "/home/user/llmzip/audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv", "/tmp/claude-0/-home-user-llmzip/539cda0f-4605-5508-93fd-ee4a2f3eaf21/scratchpad/authfix"], "returncode": 0}
+--- stdout ---
+{
+  "hmac_key_environment_variable": "V52_T4F1_AUTH_HMAC_KEY_HEX",
+  "hmac_env_set_at_any_point": false,
+  "valid_production_authorization_constructed": false,
+  "seal_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+  "entry_points_called": [
+    "verify_run_authorization"
+  ],
+  "entry_points_never_called": [
+    "run_archives",
+    "evaluate_archive",
+    "finalize_results"
+  ],
+  "fixtures": [
+    {
+      "fixture": "in-package RUN_AUTHORIZATION_TEMPLATE.json (inert, unsigned)",
+      "outcome": "REFUSED",
+      "message": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_candidate_seal_sha256\": {\"expected\": \"e8f2f9e87a46d96fbec744e6bd5b0ca494755a023aeb592d206762da0d1a40cc\", \"observed\": \"REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT\"}, \"execution_script_sha256\": {\"expected\": \"f96cba2c1f10a5f873e9f6cfa395dbce5432a",
+      "output_directory_created": false,
+      "hmac_env_present_during_call": false
+    },
+    {
+      "fixture": "synthetic authorization, all fields, NO signature field",
+      "outcome": "REFUSED",
+      "message": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"output_namespace_basename\": {\"expected\": \"f_nosig\", \"observed\": \"synthetic_audit_fixture_never_run\"}, \"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"GRANTED\"}}",
+      "output_directory_created": false,
+      "hmac_env_present_during_call": false
+    },
+    {
+      "fixture": "synthetic authorization with an arbitrary invalid HMAC",
+      "outcome": "REFUSED",
+      "message": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"output_namespace_basename\": {\"expected\": \"f_badsig\", \"observed\": \"synthetic_audit_fixture_never_run\"}, \"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"GRANTED\"}}",
+      "output_directory_created": false,
+      "hmac_env_present_during_call": false
+    },
+    {
+      "fixture": "synthetic authorization carrying the superseded V3 schema label",
+      "outcome": "REFUSED",
+      "message": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"output_namespace_basename\": {\"expected\": \"f_v3schema\", \"observed\": \"synthetic_audit_fixture_never_run\"}, \"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"GRANTED\"}, \"schema\": {\"expected\": \"V52_T4F1_RUN_AUTHORIZATION_V4\"",
+      "output_directory_created": false,
+      "hmac_env_present_during_call": false
+    }
+  ],
+  "all_fixtures_refused": true,
+  "no_output_directory_created": true
+}
+--- stderr ---
+

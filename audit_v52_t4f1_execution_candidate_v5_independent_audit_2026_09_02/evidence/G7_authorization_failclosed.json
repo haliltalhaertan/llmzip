@@ -1,0 +1,46 @@
+{
+  "hmac_key_environment_variable": "V52_T4F1_AUTH_HMAC_KEY_HEX",
+  "hmac_env_set_at_any_point": false,
+  "valid_production_authorization_constructed": false,
+  "seal_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+  "entry_points_called": [
+    "verify_run_authorization"
+  ],
+  "entry_points_never_called": [
+    "run_archives",
+    "evaluate_archive",
+    "finalize_results"
+  ],
+  "fixtures": [
+    {
+      "fixture": "in-package RUN_AUTHORIZATION_TEMPLATE.json (inert, unsigned)",
+      "outcome": "REFUSED",
+      "message": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_candidate_seal_sha256\": {\"expected\": \"e8f2f9e87a46d96fbec744e6bd5b0ca494755a023aeb592d206762da0d1a40cc\", \"observed\": \"REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT\"}, \"execution_script_sha256\": {\"expected\": \"f96cba2c1f10a5f873e9f6cfa395dbce5432a",
+      "output_directory_created": false,
+      "hmac_env_present_during_call": false
+    },
+    {
+      "fixture": "synthetic authorization, all fields, NO signature field",
+      "outcome": "REFUSED",
+      "message": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"output_namespace_basename\": {\"expected\": \"f_nosig\", \"observed\": \"synthetic_audit_fixture_never_run\"}, \"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"GRANTED\"}}",
+      "output_directory_created": false,
+      "hmac_env_present_during_call": false
+    },
+    {
+      "fixture": "synthetic authorization with an arbitrary invalid HMAC",
+      "outcome": "REFUSED",
+      "message": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"output_namespace_basename\": {\"expected\": \"f_badsig\", \"observed\": \"synthetic_audit_fixture_never_run\"}, \"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"GRANTED\"}}",
+      "output_directory_created": false,
+      "hmac_env_present_during_call": false
+    },
+    {
+      "fixture": "synthetic authorization carrying the superseded V3 schema label",
+      "outcome": "REFUSED",
+      "message": "RuntimeError: [BLOCKED - INVALID RUN AUTHORIZATION] {\"output_namespace_basename\": {\"expected\": \"f_v3schema\", \"observed\": \"synthetic_audit_fixture_never_run\"}, \"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"GRANTED\"}, \"schema\": {\"expected\": \"V52_T4F1_RUN_AUTHORIZATION_V4\"",
+      "output_directory_created": false,
+      "hmac_env_present_during_call": false
+    }
+  ],
+  "all_fixtures_refused": true,
+  "no_output_directory_created": true
+}

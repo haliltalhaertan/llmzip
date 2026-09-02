@@ -1,0 +1,122 @@
+{
+  "task4f1_execution_candidate_v4_2026_09_01": {
+    "dir_count": 0,
+    "dirs": [],
+    "file_count": 8,
+    "files": [
+      {
+        "depth": 0,
+        "path": "CANDIDATE_EXECUTION_SEAL.json",
+        "sha256": "1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9",
+        "size": 8572
+      },
+      {
+        "depth": 0,
+        "path": "DEPENDENCY_LOCK.txt",
+        "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+        "size": 330
+      },
+      {
+        "depth": 0,
+        "path": "EXECUTION_SPEC.md",
+        "sha256": "de1d3689f113607c1a7d5425c5795c03faeeeae74e7a4bb75953a57c9691f748",
+        "size": 10574
+      },
+      {
+        "depth": 0,
+        "path": "PAYLOAD_HASHES.json",
+        "sha256": "fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e",
+        "size": 1181
+      },
+      {
+        "depth": 0,
+        "path": "README.md",
+        "sha256": "4a7250508e8636328de53dfc5a334dec24d850cf1603160942b1b94078fcf4d6",
+        "size": 3669
+      },
+      {
+        "depth": 0,
+        "path": "RUN_AUTHORIZATION_TEMPLATE.json",
+        "sha256": "c8f94a8da79dde959cbb54d173e3e87b096832f0a0bbe0e6c806589b091a720f",
+        "size": 909
+      },
+      {
+        "depth": 0,
+        "path": "candidate_package_preflight.py",
+        "sha256": "e0cde9802931851d28aea5f745cedea3e02ad731ad79981230c4fe92fe96630a",
+        "size": 4147
+      },
+      {
+        "depth": 0,
+        "path": "v52_t4f1_beam_retrieval.py",
+        "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+        "size": 61860
+      }
+    ],
+    "non_regular": [],
+    "root": "/home/user/llmzip/task4f1_execution_candidate_v4_2026_09_01"
+  },
+  "task4f1_execution_candidate_v5_2026_09_02": {
+    "dir_count": 0,
+    "dirs": [],
+    "file_count": 9,
+    "files": [
+      {
+        "depth": 0,
+        "path": "CANDIDATE_EXECUTION_SEAL.json",
+        "sha256": "e8f2f9e87a46d96fbec744e6bd5b0ca494755a023aeb592d206762da0d1a40cc",
+        "size": 9515
+      },
+      {
+        "depth": 0,
+        "path": "DEPENDENCY_LOCK.txt",
+        "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+        "size": 330
+      },
+      {
+        "depth": 0,
+        "path": "EXECUTION_SPEC.md",
+        "sha256": "e649476303207fd59d2135500f63cec3b69b2950e63c447ef8c197ddbe9b54a4",
+        "size": 12078
+      },
+      {
+        "depth": 0,
+        "path": "NORMATIVE_SOURCE_MAP.json",
+        "sha256": "d64b865c200f3857659cf3da021e934d5b69e01770b3c549a50e0a35dc697002",
+        "size": 11084
+      },
+      {
+        "depth": 0,
+        "path": "PAYLOAD_HASHES.json",
+        "sha256": "171acc06bdc8d791518f95bf7679ad91bd7f67c42f7ede7b7195a62597731b4e",
+        "size": 1343
+      },
+      {
+        "depth": 0,
+        "path": "README.md",
+        "sha256": "334745497dc35ff2cb4f9f7ae719360410cf93cac9e5a4f28db2351b671f77fa",
+        "size": 5564
+      },
+      {
+        "depth": 0,
+        "path": "RUN_AUTHORIZATION_TEMPLATE.json",
+        "sha256": "df1e9f8a53199ad82cc04b680893581dc1976db3a449e7b801ad495e9ebf79e9",
+        "size": 1139
+      },
+      {
+        "depth": 0,
+        "path": "candidate_package_preflight.py",
+        "sha256": "0b0a57f838c9437233f90f8870dcf0998bab6612af6b736ba84cb11594e1bd94",
+        "size": 9818
+      },
+      {
+        "depth": 0,
+        "path": "v52_t4f1_beam_retrieval.py",
+        "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+        "size": 61860
+      }
+    ],
+    "non_regular": [],
+    "root": "/home/user/llmzip/task4f1_execution_candidate_v5_2026_09_02"
+  }
+}

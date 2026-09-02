@@ -1,0 +1,316 @@
+{
+  "audit_branch": "audit/v52-t4f1-v5-independent-2026-09-02",
+  "audit_date_utc": "2026-09-02",
+  "audit_namespace": "audit_v52_t4f1_execution_candidate_v5_independent_audit_2026_09_02",
+  "audited_candidate": {
+    "all_six_prompt_declared_hashes_matched": true,
+    "authorization_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+    "bytes_modified_by_this_audit": false,
+    "dependency_lock_sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "execution_seal_sha256": "e8f2f9e87a46d96fbec744e6bd5b0ca494755a023aeb592d206762da0d1a40cc",
+    "execution_spec_sha256": "e649476303207fd59d2135500f63cec3b69b2950e63c447ef8c197ddbe9b54a4",
+    "implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "namespace": "task4f1_execution_candidate_v5_2026_09_02",
+    "nested_files": 0,
+    "normative_source_map_sha256": "d64b865c200f3857659cf3da021e934d5b69e01770b3c549a50e0a35dc697002",
+    "package_preflight_sha256": "0b0a57f838c9437233f90f8870dcf0998bab6612af6b736ba84cb11594e1bd94",
+    "payload_inventory_sha256": "171acc06bdc8d791518f95bf7679ad91bd7f67c42f7ede7b7195a62597731b4e",
+    "pycache_entries": 0,
+    "readme_sha256": "334745497dc35ff2cb4f9f7ae719360410cf93cac9e5a4f28db2351b671f77fa",
+    "recursive_file_count": 9,
+    "run_authorization_template_sha256": "df1e9f8a53199ad82cc04b680893581dc1976db3a449e7b801ad495e9ebf79e9",
+    "status_at_audit_submission": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+  },
+  "audited_repository_commit": "4244485c5aa874130026d44cd20104118361c9a7",
+  "audited_repository_commit_descendant_checked": {
+    "commit": "c44495f6fc365ee1957e8029c42fc6fd45d0b0bd",
+    "files_changed_vs_audited_commit": [
+      "docs/CONTINUITY_LEDGER.md",
+      "ops/CURRENT_STATE.json"
+    ],
+    "v5_candidate_namespace_byte_identical_at_both": true
+  },
+  "blocking_findings": [
+    "G3_8_MISSING_CONCEPTS: methods/arm identifiers and tie priority undeclared; five load-bearing runner anchors (BEAM tree manifest, 4F0 final seal, restricted protocol, parent commit, TIE_PREFIX) have no declared concept",
+    "G3_3_UNLABELLED_SECOND_NORMATIVE_SOURCES: 19 repetitions of declared authoritative values in bound payloads that are neither the authoritative path nor a declared mirror",
+    "G4_ATTESTATION_AUTHORITY_UNRESOLVED: declared sole authority holds no V5 record, is not a resolvable path, and contradicts the bound seal on V4's withdrawal",
+    "G7_GATE_DOES_NOT_ESTABLISH_ITS_CLAIM: literal scan defeated by line splitting and casing; vacuous on an emptied registry or a dropped concept; a new contradictory normative source is not detected; acceptance re-enters the seal under an alias field"
+  ],
+  "delta_route": {
+    "change_set_is_genuinely_declarative": true,
+    "delta_route_justification_note": "Preconditions 1-5 were established from the bytes, so delta scoping was correct. Precondition 6 fails on substance, which is why the verdict is BLOCKED rather than an expansion to full cold-start scope.",
+    "delta_route_justified": true,
+    "numerical_semantic_drift": false,
+    "precondition_1_runner_byte_identity": "PASS",
+    "precondition_2_runner_ast_equality": "PASS",
+    "precondition_3_inputs_and_estimand_anchors_unchanged": "PASS",
+    "precondition_4_v4_audit_package_authentic": "PASS",
+    "precondition_5_changes_declarative_only": "PASS",
+    "precondition_6_single_source_gate_passes": "FAIL"
+  },
+  "environment": {
+    "bytecode_disabled": "-B and PYTHONDONTWRITEBYTECODE=1",
+    "numerical_backend_observed": "scipy-openblas 0.3.30; OPENBLAS_CORETYPE unset",
+    "numpy": "2.3.2",
+    "psutil": "7.0.0",
+    "python": "3.12.13",
+    "python_built_from_source": true,
+    "python_source_tarball_sha256": "0816c4761c97ecdb3f50a3924de0a93fd78cb63ee8e6c04201ddfaedca500b0b",
+    "scikit_learn": "1.7.1",
+    "scipy": "1.16.1",
+    "single_thread_controls": [
+      "OMP_NUM_THREADS=1",
+      "MKL_NUM_THREADS=1",
+      "OPENBLAS_NUM_THREADS=1",
+      "NUMEXPR_NUM_THREADS=1",
+      "PYTHONHASHSEED=0"
+    ]
+  },
+  "files": {
+    "COMMAND_LOG.txt": {
+      "bytes": 52688,
+      "sha256": "e6b0f6c64a97a03cd90f87afdfebe1db7b7d9fa0e685f056b1ef6778c056f6b1"
+    },
+    "GATE_TABLE.csv": {
+      "bytes": 6805,
+      "sha256": "b19faba0bcfd6ae325281dfe1650c2b98e173e3153ceabcaee6ba8dcc929ada6"
+    },
+    "INDEPENDENT_V5_EXECUTION_AUDIT_REPORT.md": {
+      "bytes": 29646,
+      "sha256": "6d91db25dd3f8e446766d8009e6a9b153137beba8f87892efe01b350e1b6bc92"
+    },
+    "evidence/G1_candidate_bytes_after_audit.json": {
+      "bytes": 3636,
+      "sha256": "cbeb5aac22bd38d92fbbba61630d4141b805035c4a3e23f52acff6c3626547bd"
+    },
+    "evidence/G1_recursive_closure.json": {
+      "bytes": 3636,
+      "sha256": "cbeb5aac22bd38d92fbbba61630d4141b805035c4a3e23f52acff6c3626547bd"
+    },
+    "evidence/G2_checker_diff.txt": {
+      "bytes": 8035,
+      "sha256": "e8ea3a2a2578823dff1bcb1b9c0bf448a4144101fee9722d811d3109df97f1e1"
+    },
+    "evidence/G2_v4_to_v5_change_isolation.json": {
+      "bytes": 5097,
+      "sha256": "9d5226c28014af50b695e96e7f22c953ee96d8a5489303c40873c1aa85d8fa1d"
+    },
+    "evidence/G3_cohort_anchor_verification.json": {
+      "bytes": 771,
+      "sha256": "4a25a6f79270bf749d669aaa837ff8aaac5e07739cabfdc8ab1041c00c6fbecf"
+    },
+    "evidence/G3_corpus_manifest_verification.json": {
+      "bytes": 594,
+      "sha256": "4433a37aa77b8d27e80a3a9576e25f140adc72e8e59ec958f2a142f67ca3be85"
+    },
+    "evidence/G3_repetition_census.json": {
+      "bytes": 81899,
+      "sha256": "a24c90ae3b00de4535a95b33489e67b05b9ac6a4d9f5d775bfd246a9fd8eca49"
+    },
+    "evidence/G3_single_source_rederivation.json": {
+      "bytes": 16264,
+      "sha256": "645d39bc9f8b11f02a0cfb11895339dde75deb12aacecca5b326bf6950d260cc"
+    },
+    "evidence/G4_status_and_attestation.json": {
+      "bytes": 3722,
+      "sha256": "d7f3342d75a65fbd90735ee8a3dcfd0d6f0180d827238c64c17051c1dcb2f4f7"
+    },
+    "evidence/G5_fixture_experiments.json": {
+      "bytes": 7322,
+      "sha256": "f0cbf0f791da51ee82f0cad2360cedf1e9b54e0ba14b9b3fa012101c315951da"
+    },
+    "evidence/G5_fixture_stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evidence/G6_v4_audit_manifest_verification.json": {
+      "bytes": 2253,
+      "sha256": "6a4ef4db3e67f2ec81d0d31a8c98906539d8b6f9e76ba0074d5e968698b088a5"
+    },
+    "evidence/G7_authorization_failclosed.json": {
+      "bytes": 2558,
+      "sha256": "077fb530a279f2a9fc7ae6e23e7828e8be121d2c4880f9e10122118549a28099"
+    },
+    "evidence/OUTCOME_BOUNDARY_TALLY.json": {
+      "bytes": 1008,
+      "sha256": "f0837db6265ea75d7515ce9553a5ef1a0e14821b6e99e8867bcff713114a948f"
+    },
+    "evidence/boundary_tally.py": {
+      "bytes": 1996,
+      "sha256": "a909b6dfac4412d4a14006050d55f06458e6f447f679937fcf508f9ebed15dd9"
+    },
+    "evidence/build_hashes.py": {
+      "bytes": 11450,
+      "sha256": "6bd015a1bf96d22b6fcda10494f0f473768c45b911000c2ce94f1751a7005f18"
+    },
+    "evidence/cli_preflight/auditor_cli_preflight.json": {
+      "bytes": 3858,
+      "sha256": "ed430708e5c42e14303f296c5970dad755256ec7715e81bd1946e3f5bba876fc"
+    },
+    "evidence/enumerate_closure.py": {
+      "bytes": 1338,
+      "sha256": "0b168dd41a990e30f8bf798117add8f42c7dde9342f2cf2cfde17967b61a2674"
+    },
+    "evidence/fixture_experiments.py": {
+      "bytes": 14706,
+      "sha256": "970d34638ad3af8329c66c4c2d1183183ce2a4844d975acf4a7513bea82a2630"
+    },
+    "evidence/g2_ast_compare.py": {
+      "bytes": 5049,
+      "sha256": "7a0554161b1ed8319440e53f570d2f64d4adb57575d976884a86d35979907f63"
+    },
+    "evidence/g3_cohort_anchor_verify.py": {
+      "bytes": 1881,
+      "sha256": "54c7ddb71d0a12fa9405bff17f18a5ffb62994503711eee5a0ceb51123b93abe"
+    },
+    "evidence/g3_corpus_manifest_verify.py": {
+      "bytes": 2089,
+      "sha256": "7d2cc39fee613cdfda2a64f1d3c47e465ba41cfc8a034cc397f3638e2184ce64"
+    },
+    "evidence/g3_repetition_census.py": {
+      "bytes": 3088,
+      "sha256": "184d1a1d3bd2a16878e701b7506817cfbb83c51afe7e73342344b374832be7d2"
+    },
+    "evidence/g3_single_source_rederivation.py": {
+      "bytes": 11254,
+      "sha256": "82ff08d46e675e28da22db2a892aa03b542613e9ee898344dc411d3aaac60e43"
+    },
+    "evidence/g4_attestation_precedence.py": {
+      "bytes": 4423,
+      "sha256": "d8db0f55cfc77676f2f38d2fd0d1d204c8790b03f8ae5f7ed2a40d02772accdc"
+    },
+    "evidence/g6_verify_v4_audit_manifest.py": {
+      "bytes": 2486,
+      "sha256": "24a56ca7f9bcf8693f9308c071d8b324da9f120d01c8da66cb5e5ea92a1094fd"
+    },
+    "evidence/g7_authorization_failclosed.py": {
+      "bytes": 4369,
+      "sha256": "2615309acfd440f3e0fb96b419534be570430e97671fd1552bef8bd2726aa1ab"
+    },
+    "evidence/guarded_run.py": {
+      "bytes": 3140,
+      "sha256": "947cedb4c9b0431ad5c5640ab352b18b3fc876f25f4e68306ccbe645057861f1"
+    },
+    "evidence/verify_hashes.py": {
+      "bytes": 1810,
+      "sha256": "b03296797abef9514a692e4b10cef0018e64560810269fa388824647c04566fc"
+    }
+  },
+  "gate6_citation_boundary": {
+    "cited_from_v4_audit_not_rederived_here": [
+      "B1_no_replace_finalization_and_crash_temp",
+      "B2_exact_gold_metric_recomputation",
+      "B3_native_signed_exact_top3_and_distance",
+      "output_schema_and_aggregation",
+      "static_leakage_audit"
+    ],
+    "rederived_independently_here": [
+      "recursive_byte_closure",
+      "v4_to_v5_change_isolation",
+      "runner_byte_identity",
+      "single_source_gate_claim",
+      "status_and_attestation_semantics",
+      "authorization_fail_closed",
+      "canary_sign_digests_on_real_beam_data",
+      "pinned_corpus_tree_manifest",
+      "cohort_anchor",
+      "package_preflight_fixtures"
+    ]
+  },
+  "gate_results": {
+    "gate1_recursive_byte_closure_and_bindings": "PASS",
+    "gate2_v4_to_v5_declarative_change_isolation": "PASS",
+    "gate3_item_3_2_one_source_per_concept": "PASS",
+    "gate3_item_3_3_all_repetitions_typed": "FAIL",
+    "gate3_item_3_4_no_surviving_deprecated_literal": "PASS",
+    "gate3_item_3_5_registry_exemption_exact": "PASS",
+    "gate3_item_3_6_cc01_removed_one_canary_definition": "PASS",
+    "gate3_item_3_7_gate_blocks_reintroduced_cc01": "PARTIAL",
+    "gate3_item_3_8_coverage_not_under_declared": "FAIL",
+    "gate3_single_source_normative_gate": "FAIL",
+    "gate4_status_and_attestation_semantics": "FAIL",
+    "gate5_package_preflight_behaviour": "PARTIAL",
+    "gate6_preserved_implementation_gates": "PASS_BY_CITATION_PLUS_OWN_REDERIVATION",
+    "gate7_active_bug_hunt": "SEVEN_DEFECTS"
+  },
+  "implementer_evidence_read_only": {
+    "declarative_change_evidence_sha256": "80dbab381988b501513040f4e95fde4af76a13cdf42f34e5a73aa7b35bfa80cb",
+    "implementation_preflight_sha256": "ed430708e5c42e14303f296c5970dad755256ec7715e81bd1946e3f5bba876fc",
+    "namespace": "task4f1_execution_candidate_v5_preflight_2026_09_02",
+    "preflight_hashes_sha256": "b6fb9cfd4e7517857072ff939a39022d5185e161a9ac0c57319b931a6f316b0f",
+    "read_for_coverage_only": true,
+    "single_source_gate_fixtures_sha256": "909ce3769ce3ae318b5541a4c051f469bde32f11872ad3dced085f0a93e0e0f4",
+    "used_as_evidence": false
+  },
+  "instruction_set": {
+    "path": "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V5_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-02.md",
+    "sha256": "a9d95906ca04aba83d812d80e4906fab181ff31d12bdd8c122385b7e0270e0bb"
+  },
+  "non_blocking_observations": [
+    "README.md title still reads 'Execution Implementation Candidate V4' inside V5",
+    "canary README mirror locator points at the V5 change summary but the restatement sits in the V4-versus-V3 section",
+    "seal stop_rule requires a fresh independent 'V4' audit inside a V5 package",
+    "byte-identical runner reads seal['status'], which V5 removed, so its preflight provenance emits execution_seal_status: null",
+    "gate prints '5 typed mirrors equal' against 13 declared mirrors"
+  ],
+  "outcome_boundary": {
+    "candidate_bytes_modified": false,
+    "cli_mode_finalize_count": 0,
+    "cli_mode_preflight_count": 1,
+    "cli_mode_run_count": 0,
+    "commands_refused_before_launch": 6,
+    "evaluate_archive_called_on_real_beam_data": false,
+    "finalize_results_called_on_real_beam_data": false,
+    "guarded_launches": 13,
+    "harness": "evidence/guarded_run.py",
+    "hmac_key_env_set_count": 0,
+    "real_retrieval_ranking_performed": false,
+    "retrieval_quality_computed": false,
+    "retrieval_quality_read": false,
+    "retrieval_quality_reported": false,
+    "run_archives_called_on_real_beam_data": false,
+    "seals_or_authorization_fields_modified": false,
+    "v1_v2_v3_v4_or_sealed_4f0_namespaces_modified": false,
+    "valid_production_authorization_constructed": false
+  },
+  "preserved_read_only": {
+    "accepted_v4_runner_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "cochair_approval_commit": "4bd32782c4148d15a632fb822dae8cab358892c6",
+    "cochair_review_commit": "776c45f333b262754aa0020e8043db54942d1bea",
+    "detached_v4_acceptance_sha256": "f04eecd5f1b9e81aa2bb90830d3c678deb9dcf80adc335130e54314ac5f6c547",
+    "v4_audit_branch": "audit/v52-t4f1-v4-independent-2026-09-01",
+    "v4_audit_commit": "641568d8b78af97eb69c9dc4e0434e7b6564a26c",
+    "v4_audit_hashes_sha256": "8dcb2fb8b23980fd3fe0e65a25834e1af259bdef855ed577ae40ab4a43ee4387",
+    "v4_audit_manifest_authentic": true,
+    "v4_audit_manifest_entries_verified": "30/30",
+    "v4_candidate_bytes_modified_by_this_audit": false,
+    "v4_candidate_recursive_file_count": 8,
+    "v4_candidate_seal_sha256": "1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9"
+  },
+  "recursive_output_count": 32,
+  "role": "cold-start independent implementation auditor",
+  "schema": "V52_T4F1_V5_INDEPENDENT_DELTA_AUDIT_HASHES_V1",
+  "self_excluded_file": "INDEPENDENT_V5_EXECUTION_AUDIT_HASHES.json",
+  "upstream_anchors_independently_verified": {
+    "all_independently_verified": true,
+    "beam_pinned_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+    "beam_selected_blobs_verified": "205/205",
+    "beam_selected_total_bytes": 804231963,
+    "beam_tree_manifest_sha256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+    "cohort_archives": 96,
+    "cohort_eligible_rows": 1712,
+    "cohort_excluded_archives": [
+      "1M::5",
+      "1M::26",
+      "1M::33",
+      "1M::34"
+    ],
+    "cohort_total_rows": 2000,
+    "dependency_lock_sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "llmzip_parent_commit": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+    "restricted_cohort_sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+    "restricted_protocol_sha256": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1",
+    "sealed_4f0_final_seal_sha256": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c"
+  },
+  "verdict": "BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1"
+}
