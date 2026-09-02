@@ -1,0 +1,28 @@
+{
+  "cohort_path": "/home/user/llmzip/audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+  "cohort_sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+  "columns": [
+    "audit_question_id",
+    "tier",
+    "conversation_id",
+    "ability",
+    "audit_category",
+    "primary_evidence_cohort_eligible",
+    "eligibility_reason",
+    "gold_source_unit_count",
+    "all_at_3_structurally_possible",
+    "gold_source_ids"
+  ],
+  "eligibility_column": "primary_evidence_cohort_eligible",
+  "total_rows": 2000,
+  "eligible_rows": 1712,
+  "archives_over_eligible_rows": 96,
+  "archives_over_all_rows": 100,
+  "excluded_archives": [
+    "1M::26",
+    "1M::33",
+    "1M::34",
+    "1M::5"
+  ],
+  "matches_declared_anchor": true
+}

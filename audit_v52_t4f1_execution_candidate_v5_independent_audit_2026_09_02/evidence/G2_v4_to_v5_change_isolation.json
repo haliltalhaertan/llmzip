@@ -1,0 +1,112 @@
+{
+  "byte_differs": [
+    "CANDIDATE_EXECUTION_SEAL.json",
+    "EXECUTION_SPEC.md",
+    "PAYLOAD_HASHES.json",
+    "README.md",
+    "RUN_AUTHORIZATION_TEMPLATE.json",
+    "candidate_package_preflight.py"
+  ],
+  "byte_identical": [
+    "DEPENDENCY_LOCK.txt",
+    "v52_t4f1_beam_retrieval.py"
+  ],
+  "only_in_v4": [],
+  "only_in_v5": [
+    "NORMATIVE_SOURCE_MAP.json"
+  ],
+  "package_checker": {
+    "ast_identical_docstrings_stripped": false,
+    "constants_changed": {},
+    "constants_only_in_v4": {},
+    "constants_only_in_v5": {
+      "V4_ACCEPTED_RUNNER_SHA256": "'f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8'"
+    },
+    "definitions_changed": [
+      "main"
+    ],
+    "definitions_only_in_v4": [],
+    "definitions_only_in_v5": [
+      "single_source_gate"
+    ],
+    "definitions_unchanged": [
+      "sha256"
+    ],
+    "imported_by_runner": false,
+    "v4_sha256": "e0cde9802931851d28aea5f745cedea3e02ad731ad79981230c4fe92fe96630a",
+    "v5_sha256": "0b0a57f838c9437233f90f8870dcf0998bab6612af6b736ba84cb11594e1bd94"
+  },
+  "runner": {
+    "ast_identical_docstrings_stripped": true,
+    "byte_identical": true,
+    "imports_package_checker": false,
+    "v4_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "v5_imports": [
+      "__future__",
+      "argparse",
+      "collections",
+      "csv",
+      "dataclasses",
+      "hashlib",
+      "hmac",
+      "json",
+      "numpy",
+      "os",
+      "pathlib",
+      "platform",
+      "psutil",
+      "scipy",
+      "sklearn",
+      "sklearn.decomposition",
+      "sklearn.feature_extraction.text",
+      "sklearn.preprocessing",
+      "sys",
+      "time",
+      "typing"
+    ],
+    "v5_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+  },
+  "runner_definition_count": 45,
+  "runner_definition_digests_identical": true,
+  "runner_module_constants": {
+    "AUTH_HMAC_ENV": "'V52_T4F1_AUTH_HMAC_KEY_HEX'",
+    "AUTH_SCHEMA": "'V52_T4F1_RUN_AUTHORIZATION_V4'",
+    "AUTH_SIGNED_FIELDS": "('schema', 'status', 'retrieval_quality_outcome_access', 'execution_script_sha256', 'execution_candidate_seal_sha256', 'cohort_sha256', 'required_archive_count', 'output_namespace_basename', 'preregistration_seal_sha256', 'authorization_id', 'authorization_nonce')",
+    "CANARY_SIGN_MARGIN": "1e-09",
+    "ENVIRONMENT_LOCK": "{'python': '3.12.13', 'numpy': '2.3.2', 'scipy': '1.16.1', 'scikit_learn': '1.7.1', 'psutil': '7.0.0'}",
+    "EXCLUDED_ARCHIVES": "<non-literal>:Call(func=Name(id='frozenset', ctx=Load()), args=[Set(elts=[Constant(value='1M::5'), Constant(value='1M::26'), Constant(value='1M::33'), Constant(value='1M::34')])], keywords=[])",
+    "EXPECTED_ARCHIVES": "96",
+    "EXPECTED_BEAM_COMMIT": "'3e12035532eb85768f1a7cd779832b650c4b2ef9'",
+    "EXPECTED_BEAM_MANIFEST_SHA256": "'650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318'",
+    "EXPECTED_COHORT_SHA256": "'9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a'",
+    "EXPECTED_DEPENDENCY_LOCK_SHA256": "'86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e'",
+    "EXPECTED_ELIGIBLE": "1712",
+    "EXPECTED_PARENT_COMMIT": "'d3c7aa09c9553cd5ac100e668923abab602e4257'",
+    "EXPECTED_PROTOCOL_SHA256": "'f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1'",
+    "EXPECTED_REAL_CANARY_ARCHIVE_SIGN_SHA256": "'7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5'",
+    "EXPECTED_REAL_CANARY_QUERY_SIGN_SHA256": "'5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b'",
+    "EXPECTED_RESTRICTED_SEAL_SHA256": "'596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c'",
+    "EXPECTED_TOTAL_ROWS": "2000",
+    "HAAR_SEEDS": "(43001, 43002, 43003, 43004, 43005)",
+    "INVARIANCE_TOLERANCE": "1e-12",
+    "ITQ_ITERATIONS": "100",
+    "ITQ_SEEDS": "(101, 202, 303, 404, 505)",
+    "LATENT_DIM": "32",
+    "LATENT_SEED": "5101",
+    "MIXED_DIM": "96",
+    "MIXED_SEED": "5204",
+    "NUISANCE_TRIALS": "<non-literal>:Call(func=Name(id='tuple', ctx=Load()), args=[Call(func=Name(id='range', ctx=Load()), args=[Constant(value=20)], keywords=[])], keywords=[])",
+    "REAL_CANARY_QUERY": "'Which project phase mentioned module 7 and a deadline?'",
+    "SCRIPT_NAME": "'v52_t4f1_beam_retrieval.py'",
+    "SIGNED_PERM_SEEDS": "<non-literal>:Name(id='HAAR_SEEDS', ctx=Load())",
+    "TASK": "'V52 Task 4F1 - BEAM Restricted-Cohort Axis Probe'",
+    "THREAD_LOCK": "{'OMP_NUM_THREADS': '1', 'MKL_NUM_THREADS': '1', 'OPENBLAS_NUM_THREADS': '1', 'NUMEXPR_NUM_THREADS': '1', 'PYTHONHASHSEED': '0'}",
+    "TIERS": "('100K', '500K', '1M', '10M')",
+    "TIE_PREFIX": "b'V52_T4F0_TIE_PRIORITY_V1'",
+    "TOP_K": "3",
+    "TRIAL_FIELDS": "('audit_question_id', 'tier', 'conversation_id', 'ability', 'method', 'seed', 'trial', 'archive_units', 'gold_count', 'retrieved_top3_ids', 'top3_distances', 'fractional_source_evidence_recall_at_3', 'any_at_3', 'all_at_3')"
+  },
+  "runner_module_constants_identical": true,
+  "v4_namespace": "task4f1_execution_candidate_v4_2026_09_01",
+  "v5_namespace": "task4f1_execution_candidate_v5_2026_09_02"
+}

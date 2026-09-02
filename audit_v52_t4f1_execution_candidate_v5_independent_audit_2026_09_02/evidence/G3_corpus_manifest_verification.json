@@ -1,0 +1,14 @@
+{
+  "manifest_path": "/home/user/llmzip/audit_v52_t4f0_codex_2026_08_31/pinned_tree_manifest.json",
+  "manifest_sha256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+  "declared_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+  "declared_repository": "mohammadtavakoli78/BEAM",
+  "declared_selected_blob_count": 205,
+  "declared_selected_total_bytes": 804231963,
+  "observed_total_bytes": 804231963,
+  "blob_id_and_size_match": 205,
+  "size_mismatch": [],
+  "blob_id_mismatch": [],
+  "absent_from_materialized_corpus": [],
+  "corpus_matches_pinned_manifest": true
+}
