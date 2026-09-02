@@ -176,3 +176,21 @@ status: BLOCKED
 next_single_action: Build the V5 candidate namespace correcting CC-01 and the stale V3 text, keeping the execution runner byte-identical to the accepted V4 runner, and write the V5 independent-audit prompt including a mandatory cross-payload semantic-consistency gate.
 open_item_for_cochair: The co-chair review was relayed in chat and is NOT yet a pushed artifact, so it cannot be hash-bound. The same standard applied to the V4 auditor and to the Continuity Lead applies here: the review must be pushed to a co-chair branch so this ledger entry can cite its exact commit and file SHA256. Until then this entry cites the decision content only.
 ```
+
+### L-010
+
+```text
+timestamp_utc: 2026-09-02T16:00:00Z
+actor_role: Continuity Lead (sole writer), acting under co-chair approval
+predecessor_commit_or_tag: L-009 / cae73045097eb062c4cdc636af92b350b97a95ae
+scope: Correct the stale open item in L-009, bind both co-chair review artifacts by commit and file hash, and claim the V5 declarative remediation stage. V1-V4 candidates, preflight packages, seals, manifests, audits and acceptance records remain byte-for-byte untouched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md; then task4f1_execution_candidate_v5_2026_09_02/ and the V5 audit prompt on branch impl/v52-t4f1-v5-2026-09-02
+correction_of_L009: L-009 recorded that the co-chair review was relayed in chat and not pushed. That was wrong. The review was already on GitHub; the Continuity Lead had simply not fetched the review branch before asserting it. L-009 is append-only and is NOT edited; the record is corrected here. Both artifacts are now fetched and independently hash-verified: branch codex/review-v52-t4f1-cochair-2026-09-02; REQUEST CHANGES at commit 776c45f333b262754aa0020e8043db54942d1bea with docs/v52/task4f1/V4_COCHAIR_REVIEW_2026-09-02.md at SHA256 1c85eb06831db742a3c0ab8018c56ea7eb47d60f560afb68fc4a1f457fd3af55; APPROVAL at commit 4bd32782c4148d15a632fb822dae8cab358892c6 with docs/v52/task4f1/V5_REMEDIATION_COCHAIR_APPROVAL_2026-09-02.md at SHA256 33124cb22f057641c8878e34a7b545ac98da5f0092a98a816a49d3e2f7c435d4. Both recomputed from the fetched blobs and matched exactly.
+cochair_authorization: APPROVED - PREPARE V5 DECLARATIVE REMEDIATION ONLY. This authorizes V5 preparation and its independent delta audit. It does not authorize preregistration, run, finalize, HMAC-key construction or any outcome access.
+binding_constraint: The V5 retrieval runner must be byte-identical to the accepted V4 runner at SHA256 f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8. If it differs, or any execution-affecting semantic change is found, the delta route stops and V5 needs a full cold-start audit scope plus a new co-chair review.
+schema_versioning_note: Because the runner is byte-identical, every schema literal it verifies stays at its V4 value (V52_T4F1_RUN_AUTHORIZATION_V4, V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4, V52_T4F1_ARCHIVE_RESULT_META_V4, V52_T4F1_POST_RUN_MANIFEST_V4, V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4). V5 is therefore a PACKAGE version, not a schema version. Relabelling those literals to V5 would either change the runner, breaking the binding constraint, or make the payload fail closed against the runner it ships with. The normative-source map must state this explicitly so no successor "fixes" it.
+outcome_boundary: Unchanged. No --mode run, no --mode finalize, no V52_T4F1_AUTH_HMAC_KEY_HEX, no valid authorization, no real ranking, no retrieval-quality outcome computed, read or reported.
+status: IN_PROGRESS
+next_single_action: Build V5 with the byte-identical runner, the corrected declarative payloads, the machine-readable normative-source map and the single-source preflight gate, then write the V5 delta-audit prompt.
+handoff_payload: branch impl/v52-t4f1-v5-2026-09-02; V5 namespace; normative source map; preflight evidence; V5 audit prompt.
+```

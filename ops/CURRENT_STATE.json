@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V5_REMEDIATION_REQUIRED_COCHAIR_REQUEST_CHANGES",
-  "issued_at_utc": "2026-09-02T15:00:00Z",
+  "state_id": "V52_4F1_V5_PREPARATION_IN_PROGRESS",
+  "issued_at_utc": "2026-09-02T16:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Prepare the V5 remediation of CC-01 and the V5 independent-audit prompt",
-    "next_single_action": "Build the V5 candidate namespace correcting CC-01 and the stale V3 text, keeping the runner byte-identical to the accepted V4 runner, and write the V5 independent-audit prompt with a mandatory cross-payload semantic consistency gate. Do not preregister or run Task 4F1.",
+    "next_single_action": "Build the V5 candidate namespace with the retrieval runner byte-identical to the accepted V4 runner f96cba2c, correct CC-01 and the stale V3 text, add a machine-readable normative-source map and the single-source preflight gate, then write the V5 delta-audit prompt. No preregistration, no run.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -100,7 +100,7 @@
     "co_chair": "Codex acts as approval/veto reviewer and writes only review artifacts on a separate branch. A load-bearing transition closes only on explicit co-chair approval; REQUEST CHANGES keeps it blocked."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-009",
+  "ledger_entry": "L-010",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -115,10 +115,23 @@
     }
   },
   "cochair_review": {
-    "decision": "REQUEST CHANGES",
-    "date_utc": "2026-09-02",
-    "reviewed_state": "a5ee73fa2df29683a8a68fcb2f17461a607cc011",
-    "blocking_finding": "CC-01 contradictory canary specification in bound EXECUTION_SPEC.md (de1d3689f113607c1a7d5425c5795c03faeeeae74e7a4bb75953a57c9691f748)",
-    "artifact_status": "RELAYED IN CHAT; NOT YET PUSHED. Must be pushed to a co-chair branch to be hash-bound."
+    "decision_1": "REQUEST CHANGES (CC-01)",
+    "commit_1": "776c45f333b262754aa0020e8043db54942d1bea",
+    "file_1": "docs/v52/task4f1/V4_COCHAIR_REVIEW_2026-09-02.md",
+    "file_1_sha256": "1c85eb06831db742a3c0ab8018c56ea7eb47d60f560afb68fc4a1f457fd3af55",
+    "decision_2": "APPROVED - PREPARE V5 DECLARATIVE REMEDIATION ONLY",
+    "commit_2": "4bd32782c4148d15a632fb822dae8cab358892c6",
+    "file_2": "docs/v52/task4f1/V5_REMEDIATION_COCHAIR_APPROVAL_2026-09-02.md",
+    "file_2_sha256": "33124cb22f057641c8878e34a7b545ac98da5f0092a98a816a49d3e2f7c435d4",
+    "branch": "codex/review-v52-t4f1-cochair-2026-09-02",
+    "artifact_status": "PUSHED AND HASH-VERIFIED by the Continuity Lead (corrects the stale L-009 note)"
+  },
+  "stage_in_progress": {
+    "stage": "V52_4F1_V5_DECLARATIVE_REMEDIATION",
+    "branch": "impl/v52-t4f1-v5-2026-09-02",
+    "new_namespace": "task4f1_execution_candidate_v5_2026_09_02/",
+    "status": "IN_PROGRESS",
+    "runner_must_equal": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "independent_delta_audit_required": true
   }
 }
