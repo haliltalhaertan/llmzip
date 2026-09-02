@@ -1,0 +1,76 @@
+{
+  "total": 10,
+  "passed": 10,
+  "results": [
+    {
+      "case": "baseline unmodified V5",
+      "expected_block": false,
+      "blocked": false,
+      "pass": true,
+      "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    },
+    {
+      "case": "CC-01 reintroduced: V3 raw-float digest in bound prose",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'EXECUTION_SPEC.md', 'line': 150, 'literal': '25089a0776"
+    },
+    {
+      "case": "stale V3 authorization schema label returns",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'RUN_AUTHORIZATION_TEMPLATE.json', 'line': 2, 'literal':"
+    },
+    {
+      "case": "typed mirror disagrees (signed_fields truncated)",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - MIRROR DISAGREES] authorization signed fields"
+    },
+    {
+      "case": "fail-closed commitment replaced by a real hash",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: candidate must remain fail-closed before preregistration"
+    },
+    {
+      "case": "seal claims post-audit acceptance state",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - SEAL CLAIMS POST-AUDIT STATE]"
+    },
+    {
+      "case": "runner no longer byte-identical to accepted V4",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - RUNNER NOT BYTE-IDENTICAL TO ACCEPTED V4] acf698b1e82c176632b0bf2ea9ac241d25141d9f28c22b8cd9e5d"
+    },
+    {
+      "case": "duplicate normative concept (two sources)",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - DUPLICATE NORMATIVE CONCEPT] candidate_schema_version"
+    },
+    {
+      "case": "untyped mirror (no locator)",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - UNTYPED MIRROR] candidate_schema_version"
+    },
+    {
+      "case": "nested unbound file",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE_MAP.json'"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "bound_candidate": {
+    "execution_seal_sha256": "e8f2f9e87a46d96fbec744e6bd5b0ca494755a023aeb592d206762da0d1a40cc",
+    "implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "namespace": "task4f1_execution_candidate_v5_2026_09_02",
+    "normative_source_map_sha256": "d64b865c200f3857659cf3da021e934d5b69e01770b3c549a50e0a35dc697002",
+    "payload_inventory_sha256": "171acc06bdc8d791518f95bf7679ad91bd7f67c42f7ede7b7195a62597731b4e"
+  },
+  "cochair_authorization": {
+    "approval_commit": "4bd32782c4148d15a632fb822dae8cab358892c6",
+    "branch": "codex/review-v52-t4f1-cochair-2026-09-02",
+    "review_commit": "776c45f333b262754aa0020e8043db54942d1bea"
+  },
+  "files": [
+    {
+      "bytes": 3858,
+      "name": "IMPLEMENTATION_PREFLIGHT.json",
+      "sha256": "ed430708e5c42e14303f296c5970dad755256ec7715e81bd1946e3f5bba876fc"
+    },
+    {
+      "bytes": 2580,
+      "name": "SINGLE_SOURCE_GATE_FIXTURES.json",
+      "sha256": "909ce3769ce3ae318b5541a4c051f469bde32f11872ad3dced085f0a93e0e0f4"
+    },
+    {
+      "bytes": 2773,
+      "name": "V4_TO_V5_DECLARATIVE_CHANGE.json",
+      "sha256": "80dbab381988b501513040f4e95fde4af76a13cdf42f34e5a73aa7b35bfa80cb"
+    }
+  ],
+  "independent_delta_audit_required": true,
+  "outcome_boundary": {
+    "cli_mode_finalize_invocations": 0,
+    "cli_mode_run_invocations": 0,
+    "hmac_key_env_set_count": 0,
+    "real_retrieval_ranking_performed": false,
+    "retrieval_quality_computed_read_reported": [
+      false,
+      false,
+      false
+    ],
+    "v1_v2_v3_v4_or_audit_namespaces_modified": false,
+    "valid_authorization_constructed": false
+  },
+  "prepared_at_utc": "2026-09-02T17:00:00Z",
+  "schema": "V52_T4F1_V5_PREFLIGHT_HASHES_V1",
+  "self_audit_prohibited": "Prepared by the Continuity Lead; a different cold-start auditor must derive the declarative classification from the bytes.",
+  "status": "IMPLEMENTER_EVIDENCE_NOT_INDEPENDENT_SIGNOFF"
+}

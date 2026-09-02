@@ -1,0 +1,43 @@
+{
+  "closure": "RECURSIVE_ALL_FILES_EXCLUDING_INVENTORY_AND_SEAL",
+  "file_count_excluding_inventory_and_seal": 7,
+  "files": [
+    {
+      "bytes": 330,
+      "name": "DEPENDENCY_LOCK.txt",
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "bytes": 12078,
+      "name": "EXECUTION_SPEC.md",
+      "sha256": "e649476303207fd59d2135500f63cec3b69b2950e63c447ef8c197ddbe9b54a4"
+    },
+    {
+      "bytes": 11084,
+      "name": "NORMATIVE_SOURCE_MAP.json",
+      "sha256": "d64b865c200f3857659cf3da021e934d5b69e01770b3c549a50e0a35dc697002"
+    },
+    {
+      "bytes": 5564,
+      "name": "README.md",
+      "sha256": "334745497dc35ff2cb4f9f7ae719360410cf93cac9e5a4f28db2351b671f77fa"
+    },
+    {
+      "bytes": 1139,
+      "name": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "sha256": "df1e9f8a53199ad82cc04b680893581dc1976db3a449e7b801ad495e9ebf79e9"
+    },
+    {
+      "bytes": 9818,
+      "name": "candidate_package_preflight.py",
+      "sha256": "0b0a57f838c9437233f90f8870dcf0998bab6612af6b736ba84cb11594e1bd94"
+    },
+    {
+      "bytes": 61860,
+      "name": "v52_t4f1_beam_retrieval.py",
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    }
+  ],
+  "schema": "V52_T4F1_EXECUTION_CANDIDATE_PAYLOADS_V4",
+  "status": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+}
