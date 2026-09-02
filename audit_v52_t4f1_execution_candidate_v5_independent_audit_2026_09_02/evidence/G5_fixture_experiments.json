@@ -1,0 +1,169 @@
+{
+  "source_namespace": "/home/user/llmzip/task4f1_execution_candidate_v5_2026_09_02",
+  "source_unchanged": true,
+  "source_file_count": 9,
+  "experiments": [
+    {
+      "id": "F0",
+      "description": "untouched copy of the V5 package",
+      "expected": "PASS",
+      "returncode": 0,
+      "blocked": false,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    },
+    {
+      "id": "F1",
+      "description": "nested unbound file added under nested/",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE_MAP.json', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE_MAP.json', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'ne"
+    },
+    {
+      "id": "F1b",
+      "description": "unbound top-level file added",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE_MAP.json', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE_MAP.json', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'UNBOUND.txt', 'candidate_package_pre"
+    },
+    {
+      "id": "F1c",
+      "description": "generated __pycache__ bytecode present",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE_MAP.json', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE_MAP.json', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', '__pycache__/v52_t4f1_beam_retrieval."
+    },
+    {
+      "id": "F1d",
+      "description": "one bound payload mutated without updating PAYLOAD_HASHES.json",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: payload mismatch EXECUTION_SPEC.md"
+    },
+    {
+      "id": "F2",
+      "description": "runner byte-changed with inventory+seal consistently updated",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: [BLOCKED - RUNNER NOT BYTE-IDENTICAL TO ACCEPTED V4] 9cba6d6294e38892d34735886ab83d60c2ddaa5f30b1384c05bf3526dd5c682d"
+    },
+    {
+      "id": "F3",
+      "description": "CC-01 reintroduced verbatim: second normative canary with V3 raw-float digests",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'EXECUTION_SPEC.md', 'line': 153, 'literal': '25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025'}, {'file': 'EXECUTION_SPEC.md', 'line': 155, 'literal': 'e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869'}]"
+    },
+    {
+      "id": "F3b",
+      "description": "CC-01 reintroduced with each V3 digest wrapped across two prose lines",
+      "expected": "BLOCK",
+      "returncode": 0,
+      "blocked": false,
+      "verdict": "UNEXPECTED",
+      "message_tail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    },
+    {
+      "id": "F3c",
+      "description": "CC-01 reintroduced with the V3 digests in uppercase hex",
+      "expected": "BLOCK",
+      "returncode": 0,
+      "blocked": false,
+      "verdict": "UNEXPECTED",
+      "message_tail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    },
+    {
+      "id": "F4",
+      "description": "seal adds status = ACCEPTED_BY_HEAD_RESEARCHER_AND_CO_CHAIR",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: [BLOCKED - SEAL CLAIMS POST-AUDIT STATE]"
+    },
+    {
+      "id": "F4b",
+      "description": "status_at_audit_submission edited to INDEPENDENTLY_AUDITED_AND_ACCEPTED",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: candidate submission status must remain prepared"
+    },
+    {
+      "id": "F4c",
+      "description": "seal carries acceptance under new field names current_acceptance_state / independent_audit_result",
+      "expected": "BLOCK",
+      "returncode": 0,
+      "blocked": false,
+      "verdict": "UNEXPECTED",
+      "message_tail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    },
+    {
+      "id": "F5",
+      "description": "seal key commitment replaced by a concrete 64-hex value (fail-closed removed)",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: candidate must remain fail-closed before preregistration"
+    },
+    {
+      "id": "F6",
+      "description": "deprecated-literal registry emptied AND CC-01 raw-float canary re-added",
+      "expected": "BLOCK",
+      "returncode": 0,
+      "blocked": false,
+      "verdict": "UNEXPECTED",
+      "message_tail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    },
+    {
+      "id": "F7",
+      "description": "canary_algorithm_and_digests concept deleted from the source map",
+      "expected": "BLOCK",
+      "returncode": 0,
+      "blocked": false,
+      "verdict": "UNEXPECTED",
+      "message_tail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    },
+    {
+      "id": "F8",
+      "description": "typed mirror seal.authorization_control.signed_fields drops a signed field",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: [BLOCKED - MIRROR DISAGREES] authorization signed fields"
+    },
+    {
+      "id": "F9",
+      "description": "canary concept declared twice with a second authoritative path",
+      "expected": "BLOCK",
+      "returncode": 1,
+      "blocked": true,
+      "verdict": "AS_EXPECTED",
+      "message_tail": "RuntimeError: [BLOCKED - DUPLICATE NORMATIVE CONCEPT] canary_algorithm_and_digests"
+    },
+    {
+      "id": "F10",
+      "description": "a NEW second normative statement contradicting aggregation_rule added to EXECUTION_SPEC.md",
+      "expected": "BLOCK",
+      "returncode": 0,
+      "blocked": false,
+      "verdict": "UNEXPECTED",
+      "message_tail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    }
+  ]
+}

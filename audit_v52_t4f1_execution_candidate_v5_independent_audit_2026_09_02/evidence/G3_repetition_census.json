@@ -1,0 +1,2966 @@
+{
+  "all_occurrences": [
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "candidate_schema_version",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "candidate_package_preflight.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        113
+      ],
+      "token": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_schema_version",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "candidate_package_preflight.py"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        132
+      ],
+      "token": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_schema_version",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "candidate_package_preflight.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        38,
+        50
+      ],
+      "token": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "candidate_schema_version",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "candidate_package_preflight.py"
+      ],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        128
+      ],
+      "token": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "candidate_schema_version",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "candidate_package_preflight.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        213
+      ],
+      "token": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_schema_version",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        76,
+        132
+      ],
+      "token": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_schema_version",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        62
+      ],
+      "token": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_schema_version",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        2,
+        14
+      ],
+      "token": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_schema_version",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        76
+      ],
+      "token": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "archive_result_meta_schema",
+      "declared_mirrors": [],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        133
+      ],
+      "token": "V52_T4F1_ARCHIVE_RESULT_META_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "archive_result_meta_schema",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        69
+      ],
+      "token": "V52_T4F1_ARCHIVE_RESULT_META_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "archive_result_meta_schema",
+      "declared_mirrors": [],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        748,
+        803
+      ],
+      "token": "V52_T4F1_ARCHIVE_RESULT_META_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "post_run_manifest_schema",
+      "declared_mirrors": [],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        133
+      ],
+      "token": "V52_T4F1_POST_RUN_MANIFEST_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "post_run_manifest_schema",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        76
+      ],
+      "token": "V52_T4F1_POST_RUN_MANIFEST_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "post_run_manifest_schema",
+      "declared_mirrors": [],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        1185
+      ],
+      "token": "V52_T4F1_POST_RUN_MANIFEST_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "implementation_preflight_schema",
+      "declared_mirrors": [],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        134
+      ],
+      "token": "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "implementation_preflight_schema",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        83
+      ],
+      "token": "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "implementation_preflight_schema",
+      "declared_mirrors": [],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        1215
+      ],
+      "token": "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "AUTHORITATIVE",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        129
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        91
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "PAYLOAD_HASHES.json",
+      "lines": [
+        42
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "README.md",
+      "lines": [
+        17,
+        53,
+        87
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        130
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "docs/v52/task4f1/ detached attestation",
+      "class": "UNTYPED_REPETITION",
+      "concept": "post_audit_acceptance_state",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        99
+      ],
+      "token": "NOT_YET_ACCEPTED_FOR_V5"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "class": "TYPED_MIRROR",
+      "concept": "v4_to_v5_runner_identity",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "PAYLOAD_HASHES.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        78,
+        142
+      ],
+      "token": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "class": "AUTHORITATIVE",
+      "concept": "v4_to_v5_runner_identity",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "PAYLOAD_HASHES.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        116
+      ],
+      "token": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "class": "TYPED_MIRROR",
+      "concept": "v4_to_v5_runner_identity",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "PAYLOAD_HASHES.json"
+      ],
+      "file": "PAYLOAD_HASHES.json",
+      "lines": [
+        38
+      ],
+      "token": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "v4_to_v5_runner_identity",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "PAYLOAD_HASHES.json"
+      ],
+      "file": "README.md",
+      "lines": [
+        79
+      ],
+      "token": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "v4_to_v5_runner_identity",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "PAYLOAD_HASHES.json"
+      ],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        21
+      ],
+      "token": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "class": "AUTHORITATIVE",
+      "concept": "canary_algorithm_and_digests",
+      "declared_mirrors": [
+        "README.md",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        117
+      ],
+      "token": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "class": "UNTYPED_REPETITION",
+      "concept": "canary_algorithm_and_digests",
+      "declared_mirrors": [
+        "README.md",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        143
+      ],
+      "token": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "class": "TYPED_MIRROR",
+      "concept": "canary_algorithm_and_digests",
+      "declared_mirrors": [
+        "README.md",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        71
+      ],
+      "token": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "class": "AUTHORITATIVE",
+      "concept": "canary_algorithm_and_digests",
+      "declared_mirrors": [
+        "README.md",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        115
+      ],
+      "token": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "class": "UNTYPED_REPETITION",
+      "concept": "canary_algorithm_and_digests",
+      "declared_mirrors": [
+        "README.md",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        137
+      ],
+      "token": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "class": "TYPED_MIRROR",
+      "concept": "canary_algorithm_and_digests",
+      "declared_mirrors": [
+        "README.md",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        70
+      ],
+      "token": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        117
+      ],
+      "token": "1712"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        164,
+        251
+      ],
+      "token": "1712"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "TYPED_MIRROR",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        46
+      ],
+      "token": "1712"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        120
+      ],
+      "token": "1M::26"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        167
+      ],
+      "token": "1M::26"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "TYPED_MIRROR",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        48
+      ],
+      "token": "1M::26"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        121
+      ],
+      "token": "1M::33"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        168
+      ],
+      "token": "1M::33"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "TYPED_MIRROR",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        48
+      ],
+      "token": "1M::33"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        122
+      ],
+      "token": "1M::34"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        169
+      ],
+      "token": "1M::34"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "TYPED_MIRROR",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        48
+      ],
+      "token": "1M::34"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        119
+      ],
+      "token": "1M::5"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        166
+      ],
+      "token": "1M::5"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "TYPED_MIRROR",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        48
+      ],
+      "token": "1M::5"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        172
+      ],
+      "token": "2000"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "TYPED_MIRROR",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        45
+      ],
+      "token": "2000"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        116
+      ],
+      "token": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        16
+      ],
+      "token": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        171
+      ],
+      "token": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "TYPED_MIRROR",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        7
+      ],
+      "token": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "TYPED_MIRROR",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        39
+      ],
+      "token": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        54
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        19
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        180
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "PAYLOAD_HASHES.json",
+      "lines": [
+        8
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        42
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "upstream_corpus_anchor",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        87
+      ],
+      "token": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "upstream_corpus_anchor",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        15
+      ],
+      "token": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "upstream_corpus_anchor",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        192
+      ],
+      "token": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "upstream_corpus_anchor",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        38
+      ],
+      "token": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        66
+      ],
+      "token": "43001"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        50,
+        52
+      ],
+      "token": "43001"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        206
+      ],
+      "token": "43001"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        56
+      ],
+      "token": "43001"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        67
+      ],
+      "token": "43002"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        50,
+        52
+      ],
+      "token": "43002"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        207
+      ],
+      "token": "43002"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        56
+      ],
+      "token": "43002"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        68
+      ],
+      "token": "43003"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        50,
+        52
+      ],
+      "token": "43003"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        208
+      ],
+      "token": "43003"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        56
+      ],
+      "token": "43003"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        69
+      ],
+      "token": "43004"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        50,
+        52
+      ],
+      "token": "43004"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        209
+      ],
+      "token": "43004"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        56
+      ],
+      "token": "43004"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        70
+      ],
+      "token": "43005"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        50,
+        52
+      ],
+      "token": "43005"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        210
+      ],
+      "token": "43005"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        56
+      ],
+      "token": "43005"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        40
+      ],
+      "token": "5101"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        222
+      ],
+      "token": "5101"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        52
+      ],
+      "token": "5101"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        40
+      ],
+      "token": "5204"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        224
+      ],
+      "token": "5204"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        54
+      ],
+      "token": "5204"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "aggregation_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        251
+      ],
+      "token": "320 trial rows per eligible question; 16 question-seed rows; 4 question-method rows; 4 aggregate rows; equal question weighting over the fixed 1712 denominator; trials are deterministic replication identities, never independent statistical units"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_commitment_state",
+      "declared_mirrors": [
+        "candidate_package_preflight.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        17
+      ],
+      "token": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_commitment_state",
+      "declared_mirrors": [
+        "candidate_package_preflight.py"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        89
+      ],
+      "token": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_commitment_state",
+      "declared_mirrors": [
+        "candidate_package_preflight.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        263
+      ],
+      "token": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_commitment_state",
+      "declared_mirrors": [
+        "candidate_package_preflight.py"
+      ],
+      "file": "README.md",
+      "lines": [
+        17
+      ],
+      "token": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_commitment_state",
+      "declared_mirrors": [
+        "candidate_package_preflight.py"
+      ],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        172
+      ],
+      "token": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        31
+      ],
+      "token": "authorization_id"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        285
+      ],
+      "token": "authorization_id"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        11
+      ],
+      "token": "authorization_id"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        87,
+        267,
+        268
+      ],
+      "token": "authorization_id"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        32
+      ],
+      "token": "authorization_nonce"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        286
+      ],
+      "token": "authorization_nonce"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        12
+      ],
+      "token": "authorization_nonce"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        88,
+        263
+      ],
+      "token": "authorization_nonce"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        27,
+        116
+      ],
+      "token": "cohort_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        93
+      ],
+      "token": "cohort_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        158,
+        281
+      ],
+      "token": "cohort_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        7
+      ],
+      "token": "cohort_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        83,
+        249,
+        1254,
+        1334
+      ],
+      "token": "cohort_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        26
+      ],
+      "token": "execution_candidate_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        93
+      ],
+      "token": "execution_candidate_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        280
+      ],
+      "token": "execution_candidate_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        6
+      ],
+      "token": "execution_candidate_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        82,
+        248,
+        1256,
+        1336
+      ],
+      "token": "execution_candidate_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        25
+      ],
+      "token": "execution_script_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        279
+      ],
+      "token": "execution_script_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        5
+      ],
+      "token": "execution_script_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        81,
+        247
+      ],
+      "token": "execution_script_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        29
+      ],
+      "token": "output_namespace_basename"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        283
+      ],
+      "token": "output_namespace_basename"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        9
+      ],
+      "token": "output_namespace_basename"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        85,
+        251
+      ],
+      "token": "output_namespace_basename"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        30
+      ],
+      "token": "preregistration_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        284
+      ],
+      "token": "preregistration_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        10
+      ],
+      "token": "preregistration_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        86,
+        263
+      ],
+      "token": "preregistration_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        28
+      ],
+      "token": "required_archive_count"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        158,
+        282
+      ],
+      "token": "required_archive_count"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        8
+      ],
+      "token": "required_archive_count"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        84,
+        250
+      ],
+      "token": "required_archive_count"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "TYPED_MIRROR",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        10,
+        24
+      ],
+      "token": "retrieval_quality_outcome_access"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        278,
+        304
+      ],
+      "token": "retrieval_quality_outcome_access"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        4
+      ],
+      "token": "retrieval_quality_outcome_access"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        135,
+        176
+      ],
+      "token": "retrieval_quality_outcome_access"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "AUTHORITATIVE",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        80,
+        246
+      ],
+      "token": "retrieval_quality_outcome_access"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "AUTHORITATIVE",
+      "concept": "outcome_boundary_and_stop_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md",
+        "README.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        10,
+        20
+      ],
+      "token": "FORBIDDEN"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "outcome_boundary_and_stop_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md",
+        "README.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        304
+      ],
+      "token": "FORBIDDEN"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "TYPED_MIRROR",
+      "concept": "outcome_boundary_and_stop_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md",
+        "README.md"
+      ],
+      "file": "README.md",
+      "lines": [
+        23
+      ],
+      "token": "FORBIDDEN"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "outcome_boundary_and_stop_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md",
+        "README.md"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        4
+      ],
+      "token": "FORBIDDEN"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "outcome_boundary_and_stop_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md",
+        "README.md"
+      ],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        135,
+        176
+      ],
+      "token": "FORBIDDEN"
+    }
+  ],
+  "bound_payload_count": 9,
+  "bound_payloads": [
+    "CANDIDATE_EXECUTION_SEAL.json",
+    "DEPENDENCY_LOCK.txt",
+    "EXECUTION_SPEC.md",
+    "NORMATIVE_SOURCE_MAP.json",
+    "PAYLOAD_HASHES.json",
+    "README.md",
+    "RUN_AUTHORIZATION_TEMPLATE.json",
+    "candidate_package_preflight.py",
+    "v52_t4f1_beam_retrieval.py"
+  ],
+  "concepts_declared": 18,
+  "occurrences_examined": 142,
+  "untyped_repetition_count": 80,
+  "untyped_repetitions": [
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_schema_version",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "candidate_package_preflight.py"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        132
+      ],
+      "token": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_schema_version",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "candidate_package_preflight.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        38,
+        50
+      ],
+      "token": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_schema_version",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        76,
+        132
+      ],
+      "token": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_schema_version",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        62
+      ],
+      "token": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "archive_result_meta_schema",
+      "declared_mirrors": [],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        133
+      ],
+      "token": "V52_T4F1_ARCHIVE_RESULT_META_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "archive_result_meta_schema",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        69
+      ],
+      "token": "V52_T4F1_ARCHIVE_RESULT_META_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "post_run_manifest_schema",
+      "declared_mirrors": [],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        133
+      ],
+      "token": "V52_T4F1_POST_RUN_MANIFEST_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "post_run_manifest_schema",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        76
+      ],
+      "token": "V52_T4F1_POST_RUN_MANIFEST_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "implementation_preflight_schema",
+      "declared_mirrors": [],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        134
+      ],
+      "token": "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "implementation_preflight_schema",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        83
+      ],
+      "token": "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        91
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "PAYLOAD_HASHES.json",
+      "lines": [
+        42
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "README.md",
+      "lines": [
+        17,
+        53,
+        87
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "candidate_submission_status",
+      "declared_mirrors": [],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        130
+      ],
+      "token": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "docs/v52/task4f1/ detached attestation",
+      "class": "UNTYPED_REPETITION",
+      "concept": "post_audit_acceptance_state",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        99
+      ],
+      "token": "NOT_YET_ACCEPTED_FOR_V5"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "v4_to_v5_runner_identity",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "PAYLOAD_HASHES.json"
+      ],
+      "file": "README.md",
+      "lines": [
+        79
+      ],
+      "token": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "v4_to_v5_runner_identity",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "PAYLOAD_HASHES.json"
+      ],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        21
+      ],
+      "token": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "class": "UNTYPED_REPETITION",
+      "concept": "canary_algorithm_and_digests",
+      "declared_mirrors": [
+        "README.md",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        143
+      ],
+      "token": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "class": "UNTYPED_REPETITION",
+      "concept": "canary_algorithm_and_digests",
+      "declared_mirrors": [
+        "README.md",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        137
+      ],
+      "token": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        117
+      ],
+      "token": "1712"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        164,
+        251
+      ],
+      "token": "1712"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        120
+      ],
+      "token": "1M::26"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        167
+      ],
+      "token": "1M::26"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        121
+      ],
+      "token": "1M::33"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        168
+      ],
+      "token": "1M::33"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        122
+      ],
+      "token": "1M::34"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        169
+      ],
+      "token": "1M::34"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        119
+      ],
+      "token": "1M::5"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        166
+      ],
+      "token": "1M::5"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        172
+      ],
+      "token": "2000"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        116
+      ],
+      "token": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        16
+      ],
+      "token": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "class": "UNTYPED_REPETITION",
+      "concept": "cohort_anchor",
+      "declared_mirrors": [
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        171
+      ],
+      "token": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        54
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        19
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        180
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "PAYLOAD_HASHES.json",
+      "lines": [
+        8
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "class": "UNTYPED_REPETITION",
+      "concept": "dependency_lock",
+      "declared_mirrors": [],
+      "file": "v52_t4f1_beam_retrieval.py",
+      "lines": [
+        42
+      ],
+      "token": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "upstream_corpus_anchor",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        87
+      ],
+      "token": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "upstream_corpus_anchor",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        192
+      ],
+      "token": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        66
+      ],
+      "token": "43001"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        206
+      ],
+      "token": "43001"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        67
+      ],
+      "token": "43002"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        207
+      ],
+      "token": "43002"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        68
+      ],
+      "token": "43003"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        208
+      ],
+      "token": "43003"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        69
+      ],
+      "token": "43004"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        209
+      ],
+      "token": "43004"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "lines": [
+        3,
+        6,
+        70
+      ],
+      "token": "43005"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        210
+      ],
+      "token": "43005"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        222
+      ],
+      "token": "5101"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "methods_seeds_trials_topk_priority",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        224
+      ],
+      "token": "5204"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "aggregation_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        251
+      ],
+      "token": "320 trial rows per eligible question; 16 question-seed rows; 4 question-method rows; 4 aggregate rows; equal question weighting over the fixed 1712 denominator; trials are deterministic replication identities, never independent statistical units"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_commitment_state",
+      "declared_mirrors": [
+        "candidate_package_preflight.py"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        89
+      ],
+      "token": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_commitment_state",
+      "declared_mirrors": [
+        "candidate_package_preflight.py"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        263
+      ],
+      "token": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_commitment_state",
+      "declared_mirrors": [
+        "candidate_package_preflight.py"
+      ],
+      "file": "README.md",
+      "lines": [
+        17
+      ],
+      "token": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        285
+      ],
+      "token": "authorization_id"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        11
+      ],
+      "token": "authorization_id"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        286
+      ],
+      "token": "authorization_nonce"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        12
+      ],
+      "token": "authorization_nonce"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        93
+      ],
+      "token": "cohort_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        158,
+        281
+      ],
+      "token": "cohort_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        7
+      ],
+      "token": "cohort_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "EXECUTION_SPEC.md",
+      "lines": [
+        93
+      ],
+      "token": "execution_candidate_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        280
+      ],
+      "token": "execution_candidate_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        6
+      ],
+      "token": "execution_candidate_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        279
+      ],
+      "token": "execution_script_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        5
+      ],
+      "token": "execution_script_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        283
+      ],
+      "token": "output_namespace_basename"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        9
+      ],
+      "token": "output_namespace_basename"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        284
+      ],
+      "token": "preregistration_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        10
+      ],
+      "token": "preregistration_seal_sha256"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        158,
+        282
+      ],
+      "token": "required_archive_count"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        8
+      ],
+      "token": "required_archive_count"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        278,
+        304
+      ],
+      "token": "retrieval_quality_outcome_access"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        4
+      ],
+      "token": "retrieval_quality_outcome_access"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "class": "UNTYPED_REPETITION",
+      "concept": "authorization_signed_fields",
+      "declared_mirrors": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        135,
+        176
+      ],
+      "token": "retrieval_quality_outcome_access"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "outcome_boundary_and_stop_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md",
+        "README.md"
+      ],
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "lines": [
+        304
+      ],
+      "token": "FORBIDDEN"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "outcome_boundary_and_stop_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md",
+        "README.md"
+      ],
+      "file": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "lines": [
+        4
+      ],
+      "token": "FORBIDDEN"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "class": "UNTYPED_REPETITION",
+      "concept": "outcome_boundary_and_stop_rule",
+      "declared_mirrors": [
+        "EXECUTION_SPEC.md",
+        "README.md"
+      ],
+      "file": "candidate_package_preflight.py",
+      "lines": [
+        135,
+        176
+      ],
+      "token": "FORBIDDEN"
+    }
+  ]
+}
