@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_V5_INDEPENDENT_DELTA_AUDIT_PENDING",
-  "issued_at_utc": "2026-09-02T17:30:00Z",
+  "issued_at_utc": "2026-09-02T18:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Cold-start independent delta audit of the exact Task 4F1 V5 package",
-    "next_single_action": "A cold-start auditor that did not prepare V5 executes only prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V5_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-02.md, deriving the declarative classification from the bytes rather than importing it. Then the Head Researcher and co-chair jointly decide on sealing. Do not preregister or run Task 4F1.",
+    "next_single_action": "Commission a cold-start delta auditor that did not prepare V5 (authorized by 4bd32782). Hold the V5 sealing decision until a co-chair is available to ratify it. Do not preregister or run Task 4F1.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -121,7 +121,7 @@
     "co_chair": "Codex acts as approval/veto reviewer and writes only review artifacts on a separate branch. A load-bearing transition closes only on explicit co-chair approval; REQUEST CHANGES keeps it blocked."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-011",
+  "ledger_entry": "L-012",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -145,6 +145,12 @@
     "file_2": "docs/v52/task4f1/V5_REMEDIATION_COCHAIR_APPROVAL_2026-09-02.md",
     "file_2_sha256": "33124cb22f057641c8878e34a7b545ac98da5f0092a98a816a49d3e2f7c435d4",
     "branch": "codex/review-v52-t4f1-cochair-2026-09-02",
-    "artifact_status": "PUSHED AND HASH-VERIFIED by the Continuity Lead (corrects the stale L-009 note)"
+    "artifact_status": "PUSHED AND HASH-VERIFIED by the Continuity Lead (corrects the stale L-009 note)",
+    "availability": "UNAVAILABLE as of 2026-09-02: the co-chair (Codex) has exhausted its usage limit. The approval at 4bd32782 remains in force and already covers \"V5 preparation followed by a different cold-start auditor\", so commissioning the delta audit needs no new approval. Sealing V5 does need the co-chair and is therefore held.",
+    "unratified_items": [
+      "V5 scope as delivered, including the schema-literal decision described below.",
+      "The V5 delta-audit prompt as written.",
+      "DEVIATION: the co-chair asked for an authorization template matching \"the V5 authorization schema\". The template instead declares V52_T4F1_RUN_AUTHORIZATION_V4, because the byte-identical runner verifies that literal and a \"V5\" label would make the payload fail closed against its own runner. Flagged, not hidden; requires ratification before sealing."
+    ]
   }
 }

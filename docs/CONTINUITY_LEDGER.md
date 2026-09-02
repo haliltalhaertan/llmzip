@@ -212,3 +212,20 @@ next_single_action: A cold-start auditor that did not prepare V5 executes only p
 handoff_payload: branch impl/v52-t4f1-v5-2026-09-02 at dc17f2c, merged to main; V5 runner f96cba2c (identical to accepted V4); inventory, seal, source map and preflight manifest hashes bound in ops/CURRENT_STATE.json anchors.
 role_constraint: The Continuity Lead prepared V5 and cannot audit it. The delta-audit prompt instructs the auditor to treat the implementer package as an untrusted hypothesis, to re-derive the single-source gate rather than accept its output, and to state explicitly which conclusions rest on citing the V4 audit versus its own re-derivation. Any sealing decision requires both the Head Researcher and the co-chair; Task 4F1 preregistration and run remain separately BLOCKED.
 ```
+
+### L-012
+
+```text
+timestamp_utc: 2026-09-02T18:00:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-011 / 2ad3c65
+scope: Record that the co-chair is unavailable, and separate what remains authorized from what is now held. No candidate, seal, manifest, audit or corpus byte is touched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+situation: The co-chair (Codex) exhausted its usage limit on 2026-09-02 and cannot review further for now.
+still_authorized: The standing co-chair approval at commit 4bd32782c4148d15a632fb822dae8cab358892c6 states that "the next permitted stage is V5 preparation followed by a different cold-start auditor". Commissioning the V5 independent delta audit therefore needs no new approval and may proceed. The auditor need not be the same system as the co-chair; it must simply be cold-start and must not have prepared V5.
+now_held: Sealing V5 requires both the Head Researcher and the co-chair per L-011 and cannot proceed while the co-chair is unavailable. The Continuity Lead must NOT self-seal. Self-sealing is precisely the role concentration that produced the withdrawn L-008 seal and the CC-01 defect that survived it, and repeating it would discard the correction the co-chair review bought.
+unratified_items: Two questions put to the co-chair are unanswered and must be ratified before any sealing decision. (1) The V5 scope as delivered. (2) The V5 delta-audit prompt as written. A third item is a declared deviation rather than a question: the co-chair asked for an authorization template matching "the V5 authorization schema", but the template declares V52_T4F1_RUN_AUTHORIZATION_V4 because the byte-identical runner verifies that literal and a "V5" label would make the payload fail closed against its own runner. The deviation is recorded openly in the seal, the normative source map and EXECUTION_SPEC.md, and the delta auditor will evaluate it independently, which is a useful check on the Continuity Lead's judgement rather than a substitute for ratification.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN. No --mode run, no --mode finalize, no HMAC key, no valid authorization.
+status: PASS
+next_single_action: Commission a cold-start delta auditor that did not prepare V5, then hold the sealing decision until a co-chair can ratify it.
+```
