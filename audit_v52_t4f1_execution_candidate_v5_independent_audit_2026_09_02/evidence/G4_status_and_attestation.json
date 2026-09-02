@@ -1,0 +1,76 @@
+{
+  "acceptance_authority_is_a_bound_payload": false,
+  "acceptance_authority_is_a_resolvable_file_path": false,
+  "attestation_directory": "docs/v52/task4f1",
+  "attestation_directory_exists": true,
+  "attestation_files": {
+    "docs/v52/task4f1/V4_HEAD_RESEARCHER_ACCEPTANCE_2026-09-02.json": {
+      "authoritative_status": "SEALED_BY_HEAD_RESEARCHER_2026-09-02",
+      "decision": "AUDIT ACCEPTED; V4 IMPLEMENTATION SEALED BY HEAD RESEARCHER",
+      "mentions_v5": false,
+      "mentions_withdrawal": false,
+      "schema": "V52_T4F1_V4_HEAD_RESEARCHER_ACCEPTANCE_V1",
+      "sealed_namespace": "task4f1_execution_candidate_v4_2026_09_01",
+      "sha256": "f04eecd5f1b9e81aa2bb90830d3c678deb9dcf80adc335130e54314ac5f6c547"
+    }
+  },
+  "bound_seal_and_declared_authority_disagree_on_v4": true,
+  "map_acceptance_concept": {
+    "authoritative_path": "docs/v52/task4f1/ detached attestation",
+    "locator": "decision field of the hash-bound acceptance record",
+    "value": "NOT_YET_ACCEPTED_FOR_V5"
+  },
+  "map_submission_concept": {
+    "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+    "locator": "status_at_audit_submission",
+    "value": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+  },
+  "precedence_rules": [
+    "The authoritative path/locator named here wins over any other statement in any bound payload.",
+    "A derived mirror never creates a requirement; it only restates one and must compare equal.",
+    "CANDIDATE_EXECUTION_SEAL.json is authoritative ONLY for status_at_audit_submission; the detached attestation under docs/v52/task4f1/ is authoritative for post-audit acceptance state.",
+    "Deprecated literals must not appear as a requirement in any bound payload, in code or in prose."
+  ],
+  "seal_declares_required_gates_all_pending": [
+    "PENDING"
+  ],
+  "seal_has_bare_status_field": false,
+  "seal_status_at_audit_submission": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+  "seal_status_semantics": "This field is the immutable historical fact of what was handed to the auditor. It is never edited to express acceptance. Post-audit acceptance state lives solely in the detached hash-bound attestation under docs/v52/task4f1/, which is authoritative for current state.",
+  "seal_stop_rule": "No Task 4F1 run, finalize, valid authorization construction, metric access, sealing, or preregistration before a fresh outcome-free independent V4 audit. After outcome access, no cohort, occurrence, seed, trial, threshold, centering, dimension, tie priority, metric, denominator, arm, rotation, ITQ, cache, checkpoint, authorization, validation, finalization, or aggregation change.",
+  "seal_stop_rule_names_wrong_audit_generation": true,
+  "seal_top_level_keys": [
+    "arms",
+    "authorization",
+    "authorization_control",
+    "dispatch_stability_evidence",
+    "environment",
+    "execution_interpretations",
+    "implementation",
+    "package_version_note",
+    "parent_llmzip_commit",
+    "payload_inventory",
+    "pinned_beam_commit",
+    "pinned_beam_tree_manifest",
+    "prepared_at_utc",
+    "required_independent_gates",
+    "schema",
+    "sealed_task4f0_boundary",
+    "self_audit_prohibited",
+    "status_at_audit_submission",
+    "status_semantics",
+    "stop_rule",
+    "supersedes",
+    "supersedes_candidate",
+    "task",
+    "triggering_audit",
+    "triggering_review",
+    "v4_change_scope",
+    "v5_remediation"
+  ],
+  "v4_disposition_in_bound_seal": "PRESERVED_UNMODIFIED; audit evidence valid, package seal withdrawn by co-chair CC-01",
+  "v4_status_at_declared_authority": "SEALED_BY_HEAD_RESEARCHER_2026-09-02",
+  "v4_withdrawal_recorded_at_declared_authority": false,
+  "v5_acceptance_state_has_no_record_at_declared_authority": true,
+  "v5_attestation_records_present": []
+}

@@ -444,3 +444,693 @@ LAUNCHED {"utc": "2026-09-02T20:29:06Z", "cwd": "/home/user/llmzip", "argv": ["/
 }
 --- stderr ---
 
+LAUNCHED {"utc": "2026-09-02T20:30:53Z", "cwd": "/home/user/llmzip", "argv": ["/opt/py31213/bin/python3", "-B", "/home/user/llmzip/audit_v52_t4f1_execution_candidate_v5_independent_audit_2026_09_02/evidence/g3_single_source_rederivation.py", "/home/user/llmzip/task4f1_execution_candidate_v5_2026_09_02"], "returncode": 0}
+--- stdout ---
+{
+  "bound_payload_count": 9,
+  "bound_payloads": [
+    "CANDIDATE_EXECUTION_SEAL.json",
+    "DEPENDENCY_LOCK.txt",
+    "EXECUTION_SPEC.md",
+    "NORMATIVE_SOURCE_MAP.json",
+    "PAYLOAD_HASHES.json",
+    "README.md",
+    "RUN_AUTHORIZATION_TEMPLATE.json",
+    "candidate_package_preflight.py",
+    "v52_t4f1_beam_retrieval.py"
+  ],
+  "gate_3_overall_pass": false,
+  "item_3_2": {
+    "authoritative_paths_outside_bound_closure": [
+      "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "docs/v52/task4f1/ detached attestation"
+    ],
+    "concept_count": 18,
+    "concepts": [
+      "candidate_schema_version",
+      "authorization_schema_version",
+      "archive_result_meta_schema",
+      "post_run_manifest_schema",
+      "implementation_preflight_schema",
+      "candidate_submission_status",
+      "post_audit_acceptance_state",
+      "v4_to_v5_runner_identity",
+      "canary_algorithm_and_digests",
+      "cohort_anchor",
+      "dependency_lock",
+      "upstream_corpus_anchor",
+      "methods_seeds_trials_topk_priority",
+      "metrics_and_structural_zero_rule",
+      "aggregation_rule",
+      "authorization_commitment_state",
+      "authorization_signed_fields",
+      "outcome_boundary_and_stop_rule"
+    ],
+    "concepts_without_single_source": [],
+    "duplicate_concepts": [],
+    "mirrors_missing_path_or_locator": [],
+    "pass": true
+  },
+  "item_3_3": {
+    "curated_literals_examined": 14,
+    "detail": [
+      {
+        "authoritative_path": "v52_t4f1_beam_retrieval.py",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "candidate_schema_version",
+        "declared_mirrors": [
+          "CANDIDATE_EXECUTION_SEAL.json",
+          "candidate_package_preflight.py"
+        ],
+        "file": "EXECUTION_SPEC.md",
+        "lines": [
+          132
+        ],
+        "literal": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+      },
+      {
+        "authoritative_path": "v52_t4f1_beam_retrieval.py",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "authorization_schema_version",
+        "declared_mirrors": [
+          "RUN_AUTHORIZATION_TEMPLATE.json"
+        ],
+        "file": "EXECUTION_SPEC.md",
+        "lines": [
+          76,
+          132
+        ],
+        "literal": "V52_T4F1_RUN_AUTHORIZATION_V4"
+      },
+      {
+        "authoritative_path": "v52_t4f1_beam_retrieval.py",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "archive_result_meta_schema",
+        "declared_mirrors": [],
+        "file": "EXECUTION_SPEC.md",
+        "lines": [
+          133
+        ],
+        "literal": "V52_T4F1_ARCHIVE_RESULT_META_V4"
+      },
+      {
+        "authoritative_path": "v52_t4f1_beam_retrieval.py",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "post_run_manifest_schema",
+        "declared_mirrors": [],
+        "file": "EXECUTION_SPEC.md",
+        "lines": [
+          133
+        ],
+        "literal": "V52_T4F1_POST_RUN_MANIFEST_V4"
+      },
+      {
+        "authoritative_path": "v52_t4f1_beam_retrieval.py",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "implementation_preflight_schema",
+        "declared_mirrors": [],
+        "file": "EXECUTION_SPEC.md",
+        "lines": [
+          134
+        ],
+        "literal": "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+      },
+      {
+        "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+        "classification": "STRUCTURAL_INVENTORY_ENTRY",
+        "concept": "candidate_submission_status",
+        "declared_mirrors": [],
+        "file": "PAYLOAD_HASHES.json",
+        "lines": [
+          42
+        ],
+        "literal": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+      },
+      {
+        "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "candidate_submission_status",
+        "declared_mirrors": [],
+        "file": "README.md",
+        "lines": [
+          17,
+          53,
+          87
+        ],
+        "literal": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+      },
+      {
+        "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "candidate_submission_status",
+        "declared_mirrors": [],
+        "file": "candidate_package_preflight.py",
+        "lines": [
+          130
+        ],
+        "literal": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+      },
+      {
+        "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "v4_to_v5_runner_identity",
+        "declared_mirrors": [
+          "CANDIDATE_EXECUTION_SEAL.json",
+          "PAYLOAD_HASHES.json"
+        ],
+        "file": "README.md",
+        "lines": [
+          79
+        ],
+        "literal": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+      },
+      {
+        "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "v4_to_v5_runner_identity",
+        "declared_mirrors": [
+          "CANDIDATE_EXECUTION_SEAL.json",
+          "PAYLOAD_HASHES.json"
+        ],
+        "file": "candidate_package_preflight.py",
+        "lines": [
+          21
+        ],
+        "literal": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+      },
+      {
+        "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "cohort_anchor",
+        "declared_mirrors": [
+          "RUN_AUTHORIZATION_TEMPLATE.json",
+          "v52_t4f1_beam_retrieval.py"
+        ],
+        "file": "CANDIDATE_EXECUTION_SEAL.json",
+        "lines": [
+          116
+        ],
+        "literal": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+      },
+      {
+        "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "cohort_anchor",
+        "declared_mirrors": [
+          "RUN_AUTHORIZATION_TEMPLATE.json",
+          "v52_t4f1_beam_retrieval.py"
+        ],
+        "file": "EXECUTION_SPEC.md",
+        "lines": [
+          16
+        ],
+        "literal": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+      },
+      {
+        "authoritative_path": "DEPENDENCY_LOCK.txt",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "dependency_lock",
+        "declared_mirrors": [],
+        "file": "CANDIDATE_EXECUTION_SEAL.json",
+        "lines": [
+          54
+        ],
+        "literal": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+      },
+      {
+        "authoritative_path": "DEPENDENCY_LOCK.txt",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "dependency_lock",
+        "declared_mirrors": [],
+        "file": "EXECUTION_SPEC.md",
+        "lines": [
+          19
+        ],
+        "literal": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+      },
+      {
+        "authoritative_path": "DEPENDENCY_LOCK.txt",
+        "classification": "STRUCTURAL_INVENTORY_ENTRY",
+        "concept": "dependency_lock",
+        "declared_mirrors": [],
+        "file": "PAYLOAD_HASHES.json",
+        "lines": [
+          8
+        ],
+        "literal": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+      },
+      {
+        "authoritative_path": "DEPENDENCY_LOCK.txt",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "dependency_lock",
+        "declared_mirrors": [],
+        "file": "v52_t4f1_beam_retrieval.py",
+        "lines": [
+          42
+        ],
+        "literal": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+      },
+      {
+        "authoritative_path": "v52_t4f1_beam_retrieval.py",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "upstream_corpus_anchor",
+        "declared_mirrors": [
+          "EXECUTION_SPEC.md"
+        ],
+        "file": "CANDIDATE_EXECUTION_SEAL.json",
+        "lines": [
+          87
+        ],
+        "literal": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+      },
+      {
+        "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "authorization_commitment_state",
+        "declared_mirrors": [
+          "candidate_package_preflight.py"
+        ],
+        "file": "EXECUTION_SPEC.md",
+        "lines": [
+          89
+        ],
+        "literal": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+      },
+      {
+        "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "authorization_commitment_state",
+        "declared_mirrors": [
+          "candidate_package_preflight.py"
+        ],
+        "file": "README.md",
+        "lines": [
+          17
+        ],
+        "literal": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+      },
+      {
+        "authoritative_path": "v52_t4f1_beam_retrieval.py",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "methods_seeds_trials_topk_priority",
+        "declared_mirrors": [
+          "EXECUTION_SPEC.md"
+        ],
+        "file": "CANDIDATE_EXECUTION_SEAL.json",
+        "lines": [
+          3,
+          6,
+          66
+        ],
+        "literal": "43001"
+      },
+      {
+        "authoritative_path": "v52_t4f1_beam_retrieval.py",
+        "classification": "UNTYPED_NORMATIVE_REPETITION",
+        "concept": "methods_seeds_trials_topk_priority",
+        "declared_mirrors": [
+          "EXECUTION_SPEC.md"
+        ],
+        "file": "CANDIDATE_EXECUTION_SEAL.json",
+        "lines": [
+          3,
+          6,
+          70
+        ],
+        "literal": "43005"
+      }
+    ],
+    "pass": false,
+    "untyped_normative_repetitions": 19,
+    "untyped_repetitions_total": 21
+  },
+  "item_3_4": {
+    "deprecated_literal_count": 6,
+    "deprecated_literals": [
+      "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+      "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+      "V52_T4F1_RUN_AUTHORIZATION_V3",
+      "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V3",
+      "V52_T4F1_ARCHIVE_RESULT_META_V3",
+      "V52_T4F1_POST_RUN_MANIFEST_V3"
+    ],
+    "pass": true,
+    "survivors_case_and_whitespace_insensitive": [],
+    "survivors_exact_substring": []
+  },
+  "item_3_5": {
+    "exemption_mechanism": "whole-file re-serialisation of the map minus deprecated_literals",
+    "exemption_widenable_by_line_trick": false,
+    "line_level_heuristic_used": false,
+    "literal_planted_elsewhere_in_map_is_still_detected": true,
+    "pass": true
+  },
+  "item_3_6": {
+    "canary_heading_count": 1,
+    "canary_headings": [
+      "## Canary specification (NORMATIVE \u2014 sole source)"
+    ],
+    "canary_sign_digests_present": [
+      "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5"
+    ],
+    "exactly_one_normative_canary_definition": true,
+    "normative_canary_definition_sections": [
+      "## Canary specification (NORMATIVE \u2014 sole source)"
+    ],
+    "pass": true,
+    "sixty_four_hex_literals_in_spec": [
+      "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c",
+      "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+      "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+      "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+      "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1"
+    ],
+    "v3_raw_float_digests_present": []
+  },
+  "item_3_8": {
+    "load_bearing_runner_anchors_with_no_declared_concept": {
+      "EXPECTED_BEAM_MANIFEST_SHA256": {
+        "appears_in_bound_payloads": [
+          "CANDIDATE_EXECUTION_SEAL.json",
+          "EXECUTION_SPEC.md",
+          "v52_t4f1_beam_retrieval.py"
+        ],
+        "value": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318"
+      },
+      "EXPECTED_PARENT_COMMIT": {
+        "appears_in_bound_payloads": [
+          "CANDIDATE_EXECUTION_SEAL.json",
+          "EXECUTION_SPEC.md",
+          "v52_t4f1_beam_retrieval.py"
+        ],
+        "value": "d3c7aa09c9553cd5ac100e668923abab602e4257"
+      },
+      "EXPECTED_PROTOCOL_SHA256": {
+        "appears_in_bound_payloads": [
+          "CANDIDATE_EXECUTION_SEAL.json",
+          "EXECUTION_SPEC.md",
+          "v52_t4f1_beam_retrieval.py"
+        ],
+        "value": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1"
+      },
+      "EXPECTED_RESTRICTED_SEAL_SHA256": {
+        "appears_in_bound_payloads": [
+          "CANDIDATE_EXECUTION_SEAL.json",
+          "EXECUTION_SPEC.md",
+          "v52_t4f1_beam_retrieval.py"
+        ],
+        "value": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c"
+      },
+      "TIE_PREFIX": {
+        "appears_in_bound_payloads": [
+          "EXECUTION_SPEC.md",
+          "v52_t4f1_beam_retrieval.py"
+        ],
+        "value": "V52_T4F0_TIE_PRIORITY_V1"
+      }
+    },
+    "pass": false,
+    "required_categories_undeclared": [
+      "methods (arm identifiers)",
+      "tie priority"
+    ],
+    "required_coverage": {
+      "aggregation": {
+        "declared": true,
+        "mapped_concepts": [
+          "aggregation_rule"
+        ]
+      },
+      "authorization commitment": {
+        "declared": true,
+        "mapped_concepts": [
+          "authorization_commitment_state"
+        ]
+      },
+      "canary algorithm, digests and margin": {
+        "declared": true,
+        "mapped_concepts": [
+          "canary_algorithm_and_digests"
+        ]
+      },
+      "cohort anchors": {
+        "declared": true,
+        "mapped_concepts": [
+          "cohort_anchor"
+        ]
+      },
+      "corpus anchors": {
+        "declared": true,
+        "mapped_concepts": [
+          "upstream_corpus_anchor"
+        ]
+      },
+      "dependency anchor": {
+        "declared": true,
+        "mapped_concepts": [
+          "dependency_lock"
+        ]
+      },
+      "methods (arm identifiers)": {
+        "declared": false,
+        "mapped_concepts": []
+      },
+      "metrics": {
+        "declared": true,
+        "mapped_concepts": [
+          "metrics_and_structural_zero_rule"
+        ]
+      },
+      "outcome boundary and stop rules": {
+        "declared": true,
+        "mapped_concepts": [
+          "outcome_boundary_and_stop_rule"
+        ]
+      },
+      "runner identity": {
+        "declared": true,
+        "mapped_concepts": [
+          "v4_to_v5_runner_identity"
+        ]
+      },
+      "schema versions": {
+        "declared": true,
+        "mapped_concepts": [
+          "candidate_schema_version",
+          "authorization_schema_version",
+          "archive_result_meta_schema",
+          "post_run_manifest_schema",
+          "implementation_preflight_schema"
+        ]
+      },
+      "seeds": {
+        "declared": true,
+        "mapped_concepts": [
+          "methods_seeds_trials_topk_priority"
+        ]
+      },
+      "signed fields": {
+        "declared": true,
+        "mapped_concepts": [
+          "authorization_signed_fields"
+        ]
+      },
+      "structural-zero rule": {
+        "declared": true,
+        "mapped_concepts": [
+          "metrics_and_structural_zero_rule"
+        ]
+      },
+      "submission/attestation precedence": {
+        "declared": true,
+        "mapped_concepts": [
+          "candidate_submission_status",
+          "post_audit_acceptance_state"
+        ]
+      },
+      "tie priority": {
+        "declared": false,
+        "mapped_concepts": []
+      },
+      "top-k": {
+        "declared": true,
+        "mapped_concepts": [
+          "methods_seeds_trials_topk_priority"
+        ]
+      },
+      "trials": {
+        "declared": true,
+        "mapped_concepts": [
+          "methods_seeds_trials_topk_priority"
+        ]
+      }
+    }
+  }
+}
+--- stderr ---
+
+LAUNCHED {"utc": "2026-09-02T20:31:32Z", "cwd": "/home/user/llmzip", "argv": ["/opt/py31213/bin/python3", "-B", "/home/user/llmzip/audit_v52_t4f1_execution_candidate_v5_independent_audit_2026_09_02/evidence/g4_attestation_precedence.py", "/home/user/llmzip/task4f1_execution_candidate_v5_2026_09_02", "/home/user/llmzip"], "returncode": 0}
+--- stdout ---
+{
+  "acceptance_authority_is_a_bound_payload": false,
+  "acceptance_authority_is_a_resolvable_file_path": false,
+  "attestation_directory": "docs/v52/task4f1",
+  "attestation_directory_exists": true,
+  "attestation_files": {
+    "docs/v52/task4f1/V4_HEAD_RESEARCHER_ACCEPTANCE_2026-09-02.json": {
+      "authoritative_status": "SEALED_BY_HEAD_RESEARCHER_2026-09-02",
+      "decision": "AUDIT ACCEPTED; V4 IMPLEMENTATION SEALED BY HEAD RESEARCHER",
+      "mentions_v5": true,
+      "mentions_withdrawal": false,
+      "schema": "V52_T4F1_V4_HEAD_RESEARCHER_ACCEPTANCE_V1",
+      "sealed_namespace": "task4f1_execution_candidate_v4_2026_09_01",
+      "sha256": "f04eecd5f1b9e81aa2bb90830d3c678deb9dcf80adc335130e54314ac5f6c547"
+    }
+  },
+  "bound_seal_and_declared_authority_disagree_on_v4": true,
+  "map_acceptance_concept": {
+    "authoritative_path": "docs/v52/task4f1/ detached attestation",
+    "locator": "decision field of the hash-bound acceptance record",
+    "value": "NOT_YET_ACCEPTED_FOR_V5"
+  },
+  "map_submission_concept": {
+    "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+    "locator": "status_at_audit_submission",
+    "value": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+  },
+  "precedence_rules": [
+    "The authoritative path/locator named here wins over any other statement in any bound payload.",
+    "A derived mirror never creates a requirement; it only restates one and must compare equal.",
+    "CANDIDATE_EXECUTION_SEAL.json is authoritative ONLY for status_at_audit_submission; the detached attestation under docs/v52/task4f1/ is authoritative for post-audit acceptance state.",
+    "Deprecated literals must not appear as a requirement in any bound payload, in code or in prose."
+  ],
+  "seal_declares_required_gates_all_pending": [
+    "PENDING"
+  ],
+  "seal_has_bare_status_field": false,
+  "seal_status_at_audit_submission": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+  "seal_status_semantics": "This field is the immutable historical fact of what was handed to the auditor. It is never edited to express acceptance. Post-audit acceptance state lives solely in the detached hash-bound attestation under docs/v52/task4f1/, which is authoritative for current state.",
+  "seal_stop_rule": "No Task 4F1 run, finalize, valid authorization construction, metric access, sealing, or preregistration before a fresh outcome-free independent V4 audit. After outcome access, no cohort, occurrence, seed, trial, threshold, centering, dimension, tie priority, metric, denominator, arm, rotation, ITQ, cache, checkpoint, authorization, validation, finalization, or aggregation change.",
+  "seal_stop_rule_names_wrong_audit_generation": true,
+  "seal_top_level_keys": [
+    "arms",
+    "authorization",
+    "authorization_control",
+    "dispatch_stability_evidence",
+    "environment",
+    "execution_interpretations",
+    "implementation",
+    "package_version_note",
+    "parent_llmzip_commit",
+    "payload_inventory",
+    "pinned_beam_commit",
+    "pinned_beam_tree_manifest",
+    "prepared_at_utc",
+    "required_independent_gates",
+    "schema",
+    "sealed_task4f0_boundary",
+    "self_audit_prohibited",
+    "status_at_audit_submission",
+    "status_semantics",
+    "stop_rule",
+    "supersedes",
+    "supersedes_candidate",
+    "task",
+    "triggering_audit",
+    "triggering_review",
+    "v4_change_scope",
+    "v5_remediation"
+  ],
+  "v4_disposition_in_bound_seal": "PRESERVED_UNMODIFIED; audit evidence valid, package seal withdrawn by co-chair CC-01",
+  "v4_status_at_declared_authority": "SEALED_BY_HEAD_RESEARCHER_2026-09-02",
+  "v4_withdrawal_recorded_at_declared_authority": false,
+  "v5_acceptance_state_has_no_record_at_declared_authority": false,
+  "v5_attestation_records_present": [
+    "docs/v52/task4f1/V4_HEAD_RESEARCHER_ACCEPTANCE_2026-09-02.json"
+  ]
+}
+--- stderr ---
+
+LAUNCHED {"utc": "2026-09-02T20:31:47Z", "cwd": "/home/user/llmzip", "argv": ["/opt/py31213/bin/python3", "-B", "/home/user/llmzip/audit_v52_t4f1_execution_candidate_v5_independent_audit_2026_09_02/evidence/g4_attestation_precedence.py", "/home/user/llmzip/task4f1_execution_candidate_v5_2026_09_02", "/home/user/llmzip"], "returncode": 0}
+--- stdout ---
+{
+  "acceptance_authority_is_a_bound_payload": false,
+  "acceptance_authority_is_a_resolvable_file_path": false,
+  "attestation_directory": "docs/v52/task4f1",
+  "attestation_directory_exists": true,
+  "attestation_files": {
+    "docs/v52/task4f1/V4_HEAD_RESEARCHER_ACCEPTANCE_2026-09-02.json": {
+      "authoritative_status": "SEALED_BY_HEAD_RESEARCHER_2026-09-02",
+      "decision": "AUDIT ACCEPTED; V4 IMPLEMENTATION SEALED BY HEAD RESEARCHER",
+      "mentions_v5": false,
+      "mentions_withdrawal": false,
+      "schema": "V52_T4F1_V4_HEAD_RESEARCHER_ACCEPTANCE_V1",
+      "sealed_namespace": "task4f1_execution_candidate_v4_2026_09_01",
+      "sha256": "f04eecd5f1b9e81aa2bb90830d3c678deb9dcf80adc335130e54314ac5f6c547"
+    }
+  },
+  "bound_seal_and_declared_authority_disagree_on_v4": true,
+  "map_acceptance_concept": {
+    "authoritative_path": "docs/v52/task4f1/ detached attestation",
+    "locator": "decision field of the hash-bound acceptance record",
+    "value": "NOT_YET_ACCEPTED_FOR_V5"
+  },
+  "map_submission_concept": {
+    "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+    "locator": "status_at_audit_submission",
+    "value": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+  },
+  "precedence_rules": [
+    "The authoritative path/locator named here wins over any other statement in any bound payload.",
+    "A derived mirror never creates a requirement; it only restates one and must compare equal.",
+    "CANDIDATE_EXECUTION_SEAL.json is authoritative ONLY for status_at_audit_submission; the detached attestation under docs/v52/task4f1/ is authoritative for post-audit acceptance state.",
+    "Deprecated literals must not appear as a requirement in any bound payload, in code or in prose."
+  ],
+  "seal_declares_required_gates_all_pending": [
+    "PENDING"
+  ],
+  "seal_has_bare_status_field": false,
+  "seal_status_at_audit_submission": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+  "seal_status_semantics": "This field is the immutable historical fact of what was handed to the auditor. It is never edited to express acceptance. Post-audit acceptance state lives solely in the detached hash-bound attestation under docs/v52/task4f1/, which is authoritative for current state.",
+  "seal_stop_rule": "No Task 4F1 run, finalize, valid authorization construction, metric access, sealing, or preregistration before a fresh outcome-free independent V4 audit. After outcome access, no cohort, occurrence, seed, trial, threshold, centering, dimension, tie priority, metric, denominator, arm, rotation, ITQ, cache, checkpoint, authorization, validation, finalization, or aggregation change.",
+  "seal_stop_rule_names_wrong_audit_generation": true,
+  "seal_top_level_keys": [
+    "arms",
+    "authorization",
+    "authorization_control",
+    "dispatch_stability_evidence",
+    "environment",
+    "execution_interpretations",
+    "implementation",
+    "package_version_note",
+    "parent_llmzip_commit",
+    "payload_inventory",
+    "pinned_beam_commit",
+    "pinned_beam_tree_manifest",
+    "prepared_at_utc",
+    "required_independent_gates",
+    "schema",
+    "sealed_task4f0_boundary",
+    "self_audit_prohibited",
+    "status_at_audit_submission",
+    "status_semantics",
+    "stop_rule",
+    "supersedes",
+    "supersedes_candidate",
+    "task",
+    "triggering_audit",
+    "triggering_review",
+    "v4_change_scope",
+    "v5_remediation"
+  ],
+  "v4_disposition_in_bound_seal": "PRESERVED_UNMODIFIED; audit evidence valid, package seal withdrawn by co-chair CC-01",
+  "v4_status_at_declared_authority": "SEALED_BY_HEAD_RESEARCHER_2026-09-02",
+  "v4_withdrawal_recorded_at_declared_authority": false,
+  "v5_acceptance_state_has_no_record_at_declared_authority": true,
+  "v5_attestation_records_present": []
+}
+--- stderr ---
+
