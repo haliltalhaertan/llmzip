@@ -18,7 +18,8 @@ This document is the current operational research ledger. It distinguishes accep
 - `[TASK 4F1 EXECUTION IMPLEMENTATION PREPARED — INDEPENDENT CODE AUDIT PENDING]`
 - `[TASK 4F1 V2 INDEPENDENT AUDIT BLOCKED — B1/B2/B3 FINALIZATION INTEGRITY DEFECTS]`
 - `[TASK 4F1 V3 INDEPENDENT AUDIT BLOCKED — CANARY NOT REPRODUCIBLE FROM DECLARED ENVIRONMENT LOCK]`
-- `[TASK 4F1 V4 CANDIDATE PREPARED — DISPATCH-STABLE CANARY; FRESH INDEPENDENT AUDIT PENDING]`
+- `[TASK 4F1 V4 INDEPENDENT AUDIT ACCEPTED — 9/9 GATES PASS; IMPLEMENTATION SEALED]`
+- `[TASK 4F1 PREREGISTRATION DECISION PENDING — STILL NOT AUTHORIZED TO RUN]`
 
 ## Accepted scientific evidence
 
@@ -137,3 +138,37 @@ next gate is a cold-start independent audit of the exact V4 bytes under
 `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md`. Even
 a passing audit permits only a sealing decision; Task 4F1 preregistration and run remain
 blocked.
+
+## 2026-09-02 — Task 4F1 V4 audit accepted; implementation sealed
+
+A cold-start independent auditor, a different agent from the one that prepared V4 and
+importing no V3 conclusions, audited the exact V4 bytes and returned
+`PASS — V4 EXECUTION CANDIDATE MAY BE SEALED BY HEAD RESEARCHER; TASK 4F1 STILL NOT
+PREREGISTERED OR AUTHORIZED`, with all nine gates passing.
+
+The Head Researcher independently verified the pushed package rather than accepting the
+relayed verdict. The audit commit matches its declared SHA and its parent is the exact
+tree audited; `main` was untouched; the diff is 31 additions confined to the audit
+namespace. The hashes file matches its declared digest and self-verifies 30/30 with
+complete two-way coverage, and it binds the real V4 bytes. The command log shows 16
+launches, six of them `--mode preflight`, zero carrying `--mode run` or `--mode
+finalize`, and three harness rejections logged before any launch. Gate 3's raw evidence
+holds six independent reconstructions giving one sign digest against four raw float
+digests, and those per-dispatch float digests reproduce the earlier V3 measurements
+exactly. A cohort path difference between auditor and implementer resolved to
+byte-identical files at the sealed anchor.
+
+The audit is accepted and the V4 implementation is sealed as of 2026-09-02. The seal is
+recorded in `docs/v52/task4f1/V4_HEAD_RESEARCHER_ACCEPTANCE_2026-09-02.json` and ledger
+L-008 rather than by editing the candidate, because changing
+`CANDIDATE_EXECUTION_SEAL.json` would break the binding the audit established.
+
+Four non-blocking observations were dispositioned: two stale V3 strings accepted as
+documented conditions, since correcting cosmetic text would change the payload inventory
+and seal and force a re-audit; the canary's `>=` versus `>` scope limit accepted as
+structurally bounded by the sign margin; and the POSIX hard-link dependency of the
+commit path accepted as a binding preregistration condition.
+
+This seals the implementation only. Task 4F1 preregistration and run remain blocked and
+retrieval-quality outcome access remains forbidden. Whether to preregister is a separate
+Head Researcher decision.

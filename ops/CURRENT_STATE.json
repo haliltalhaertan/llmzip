@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V4_INDEPENDENT_AUDIT_PENDING",
-  "issued_at_utc": "2026-09-01T16:00:00Z",
+  "state_id": "V52_4F1_V4_SEALED_PREREGISTRATION_DECISION_PENDING",
+  "issued_at_utc": "2026-09-02T13:30:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -21,16 +21,16 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Cold-start independent audit of the exact Task 4F1 V4 candidate",
-    "next_single_action": "The V4 auditor pushes its uncommitted audit package to the new branch audit/v52-t4f1-v4-independent-2026-09-01 (that branch only; no main commit, no merge, no PR). The Head Researcher then independently hash-verifies the pushed package before recording any acceptance. The chat-relayed PASS is not yet evidence and V4 is not sealed.",
+    "current_task": "Head Researcher decision on whether to preregister Task 4F1",
+    "next_single_action": "Head Researcher decides whether to preregister Task 4F1. This is a separate decision that a passing audit does not grant. Preregistration must bind the POSIX hard-link condition and construct a fresh V4-schema authorization. Until then no run, no finalize, no HMAC key, no outcome access.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
     "v3_independent_audit": "BLOCKED (superseded by V4; V3 preserved unmodified)",
     "head_researcher_decision_2026_09_01": "Remediation option 2 accepted: remove bit-exact float digests as a load-bearing gate and replace them with dispatch-stable quantities plus a tolerance-based invariance check. V3 stays sealed and unmodified.",
-    "v4_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
-    "v4_independent_audit": "VERDICT RELAYED AS PASS BUT NOT YET VERIFIABLE: the audit package exists only in the auditor container and is not pushed. Not accepted, not sealed."
+    "v4_candidate": "SEALED_BY_HEAD_RESEARCHER_2026-09-02 (candidate bytes unmodified; seal recorded externally)",
+    "v4_independent_audit": "ACCEPTED — PASS, independently hash-verified by the Head Researcher"
   },
   "anchors": {
     "v3_runner": {
@@ -72,6 +72,10 @@
     "v4_preflight_manifest": {
       "path": "task4f1_execution_candidate_v4_preflight_2026_09_01/PREFLIGHT_HASHES.json",
       "sha256": "4f78b5c8b184ad0ecfbbf444ffddbbcd076c6b78fa65c4b0d76696259f1c930f"
+    },
+    "v4_hr_acceptance": {
+      "path": "docs/v52/task4f1/V4_HEAD_RESEARCHER_ACCEPTANCE_2026-09-02.json",
+      "sha256": "f04eecd5f1b9e81aa2bb90830d3c678deb9dcf80adc335130e54314ac5f6c547"
     }
   },
   "required_external_inputs": {
@@ -94,25 +98,18 @@
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action"
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-007",
-  "last_completed_stage": {
-    "stage": "V52_4F1_V4_CANDIDATE_PREPARATION",
-    "branch": "impl/v52-t4f1-v4-2026-09-01",
-    "commit": "809059b",
-    "status": "PASS",
-    "validation": {
-      "v4_preflight_pass_dispatches": 6,
-      "distinct_sign_digests": 1,
-      "distinct_raw_float_digests": 4,
-      "b1_b2_b3_regression": "29/29",
-      "v3_to_v4_change_isolation": "canary, two helpers, env provenance and schema literals only"
-    },
-    "independent_audit_required": true
-  },
+  "ledger_entry": "L-008",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
     "commit": "531d41bacc3da1670c07b4ea269d4ac34e8624e2",
     "reason": "This environment refuses all pushes to refs/tags (HTTP 403 for annotated and lightweight tags alike) while branch pushes succeed. A branch anchor was pushed so the closed state is still recoverable from GitHub alone. The annotated tag exists locally at the same commit and should be pushed by an operator with tag-push rights."
+  },
+  "accepted_audits": {
+    "v4": {
+      "branch": "audit/v52-t4f1-v4-independent-2026-09-01",
+      "commit": "641568d8b78af97eb69c9dc4e0434e7b6564a26c",
+      "hashes_file_sha256": "8dcb2fb8b23980fd3fe0e65a25834e1af259bdef855ed577ae40ab4a43ee4387"
+    }
   }
 }

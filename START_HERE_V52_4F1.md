@@ -1,11 +1,11 @@
-# Start Here — V52 Task 4F1 V4 independent-audit handoff
+# Start Here — V52 Task 4F1 preregistration-decision handoff
 
 This is the single operational entry point for a new Head Researcher, Compute Expert, or independent auditor resuming the V52 BEAM work.
 
 ## Exact starting point
 
 - **Repository state:** canonical branch `main`. Tag pushes are refused by the current environment, so the pushed anchor is branch `state/v52-4f1-v3-audit-blocked-2026-09-01`; use the current `main` head or a descendant explicitly reviewed by the Head Researcher.
-- **Current task:** cold-start independent audit of the exact **V4** candidate. The V3 audit is complete and BLOCKED; V4 remediates its finding. Do not re-run the V3 audit as if pending, and do not audit V4 if you are the agent that prepared it.
+- **Current task:** Head Researcher decision on whether to preregister Task 4F1. The V4 audit is complete, PASS, independently hash-verified and accepted; V4 is sealed. Do not re-run the V3 or V4 audits as if pending.
 - **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
 - **Executable audit instructions:** `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md`.
@@ -20,15 +20,17 @@ Read those files in that order. Historical V1/V2 audit reports are evidence, not
 | 4F1 V1 audit | Preserved, but unusable for sealing because of disclosed auditor-side outcome-capable execution |
 | 4F1 V2 audit | `BLOCKED`; synthetic B1/B2/B3 integrity defects reproduced |
 | 4F1 V3 candidate | `BLOCKED` by cold-start independent audit 2026-09-01: B1/B2/B3 repaired, but the pinned 100K::12 canary is not reproducible from the declared environment lock |
-| 4F1 V4 candidate | `PREPARED_NOT_INDEPENDENTLY_AUDITED`; remediates the V3 Gate 3 defect; preflight passes on all six tested BLAS dispatches |
+| 4F1 V4 candidate | **`SEALED_BY_HEAD_RESEARCHER_2026-09-02`**; independent audit PASS on all nine gates, hash-verified and accepted (`audit/v52-t4f1-v4-independent-2026-09-01` at `641568d8`) |
 | Task 4F1 preregistration / run | **Blocked** |
 | Retrieval-quality outcome access | **Forbidden** |
 
-The cold-start outcome-free V3 audit returned `BLOCKED`. B1, B2 and B3 were confirmed repaired, but Gate 3 blocked: the pinned `100K::12` canary bound bit-exact float digests that depend on BLAS/LAPACK kernel dispatch.
+The V3 audit returned `BLOCKED` on Gate 3: the canary bound bit-exact float digests that depend on BLAS kernel dispatch. V4 remediated this by binding sign codes plus a sign-stability margin.
 
-The Head Researcher accepted remediation option 2, and the V4 candidate now binds sign codes (the quantities that actually drive Hamming retrieval) plus a sign-stability margin, and records BLAS provenance without gating on it. V4 `--mode preflight` passes on all six tested kernel dispatches, where V3 passed on none, and the B1/B2/B3 synthetic regression is 29/29.
+A separate cold-start auditor then audited the exact V4 bytes and returned `PASS` on all nine gates. The Head Researcher independently re-derived the package hashes, confirmed the audit binds the real V4 bytes, confirmed 0 forbidden launches against 16 logged, and accepted it. **V4 is sealed.**
 
-The only next technical action is a cold-start independent audit of the exact V4 bytes, performed by an agent that did not prepare them. A passing audit would permit only a later Head Researcher sealing decision; it does not authorize a preregistration or run.
+**The seal is recorded externally.** `CANDIDATE_EXECUTION_SEAL.json` still reads `PREPARED_NOT_INDEPENDENTLY_AUDITED` on purpose: editing it would change its SHA256 and break the binding the audit established. The authoritative status lives in `docs/v52/task4f1/V4_HEAD_RESEARCHER_ACCEPTANCE_2026-09-02.json` and ledger entry L-008. Treat the acceptance record, not the in-file string, as authoritative.
+
+The next action is a Head Researcher decision on whether to preregister Task 4F1. A passing audit does not grant that. Preregistration must bind the POSIX hard-link condition and construct a fresh V4-schema authorization; `--mode run`, `--mode finalize`, HMAC key construction and outcome access all remain forbidden until then.
 
 ## Non-negotiable boundary
 

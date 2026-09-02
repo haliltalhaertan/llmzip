@@ -1,0 +1,87 @@
+{
+  "accepted_audit": {
+    "branch": "audit/v52-t4f1-v4-independent-2026-09-01",
+    "commit": "641568d8b78af97eb69c9dc4e0434e7b6564a26c",
+    "gate_results": {
+      "authorization_fail_closed": "PASS",
+      "gate1_closure": "PASS",
+      "gate2_change_isolation": "PASS",
+      "gate3_dispatch_stability": "PASS",
+      "gate4_b1": "PASS",
+      "gate5_b2": "PASS",
+      "gate6_b3": "PASS",
+      "gate7_aggregation": "PASS",
+      "gate8_bug_hunt": "PASS"
+    },
+    "hashes_file": "INDEPENDENT_V4_EXECUTION_AUDIT_HASHES.json",
+    "hashes_file_sha256": "8dcb2fb8b23980fd3fe0e65a25834e1af259bdef855ed577ae40ab4a43ee4387",
+    "parent_commit": "8700098d4b89a45229abf5634086bffe3a6df9a7",
+    "verdict": "PASS - V4 EXECUTION CANDIDATE MAY BE SEALED BY HEAD RESEARCHER; TASK 4F1 STILL NOT PREREGISTERED OR AUTHORIZED"
+  },
+  "byte_preservation": "The V4 candidate is NOT modified by this acceptance. Editing CANDIDATE_EXECUTION_SEAL.json to flip its status would change its SHA256 and break the binding the independent audit established, so the seal is recorded externally here and in the continuity ledger instead.",
+  "decided_at_utc": "2026-09-02T13:30:00Z",
+  "decision": "AUDIT ACCEPTED; V4 IMPLEMENTATION SEALED BY HEAD RESEARCHER",
+  "head_researcher_independent_verification": {
+    "audit_binds_real_v4_bytes": true,
+    "cohort_path_difference_resolved": "The auditor loaded the cohort from audit_v52_t4f0_codex_2026_08_31/ while the implementer used audit_v52_t4f0_restricted_refreeze_2026_08_31/. Both files are byte-identical at SHA256 9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a, equal to the sealed cohort anchor, so this is a path difference and not a cohort difference.",
+    "command_log_forbidden_mode_launches": 0,
+    "command_log_launches_total": 16,
+    "command_log_preflight_launches": 6,
+    "command_log_rejected_before_launch": 3,
+    "commit_sha_matches_declared": true,
+    "diff_vs_parent": "31 files, all additions, all inside the audit namespace, 0 deletions",
+    "forbidden_artifacts_staged": 0,
+    "g3_raw_evidence": {
+      "candidate_preflight_outputs": 6,
+      "corroborates_head_researcher_v3_measurements": true,
+      "distinct_raw_float_digests": 4,
+      "distinct_sign_digests": 1,
+      "independent_reconstructions": 6
+    },
+    "hashes_file_sha256_matches_declared": true,
+    "hashes_self_verification": "30/30 declared entries match on disk; 0 mismatch; 0 missing",
+    "hmac_env_never_set": true,
+    "main_untouched_at_8abca21": true,
+    "parent_is_audited_tree_8700098": true,
+    "reverse_coverage": "every file on disk except the hashes file is declared; 0 undeclared"
+  },
+  "non_blocking_observations_disposition": [
+    {
+      "disposition": "ACCEPTED AS DOCUMENTED CONDITION",
+      "observation": "Stale V3 strings in candidate_package_preflight.py docstring",
+      "reason": "Non-functional text. Editing it would change PAYLOAD_HASHES.json and the execution seal, invalidating the accepted audit and forcing a full re-audit. Disproportionate to a cosmetic string."
+    },
+    {
+      "disposition": "ACCEPTED AS DOCUMENTED CONDITION",
+      "observation": "Stale V3 strings in RUN_AUTHORIZATION_TEMPLATE.json",
+      "reason": "Same byte-preservation reason. The template remains inert: status NOT_AUTHORIZED and no signature. Any real authorization is built fresh at preregistration and must satisfy AUTH_SCHEMA V52_T4F1_RUN_AUTHORIZATION_V4."
+    },
+    {
+      "disposition": "ACCEPTED; STRUCTURALLY BOUNDED",
+      "observation": "The canary cannot distinguish >= from > because no representation entry is exactly zero",
+      "reason": "CANARY_SIGN_MARGIN requires min|value| > 1e-9, so an exactly-zero entry fails the margin guard before the >= / > distinction could matter. The scope limit is real but cannot become load-bearing without the gate failing first."
+    },
+    {
+      "disposition": "ACCEPTED AS A PREREGISTRATION CONDITION",
+      "observation": "The os.link exclusive-commit path is POSIX-dependent",
+      "reason": "The locked environment is Linux. Carried forward as a binding condition: any future Task 4F1 run must execute on a POSIX filesystem supporting hard links, and the preregistration must state this. A non-POSIX target would need a re-audited commit path."
+    }
+  ],
+  "schema": "V52_T4F1_V4_HEAD_RESEARCHER_ACCEPTANCE_V1",
+  "scope_limit": "This seals the implementation only. Task 4F1 preregistration and run remain BLOCKED and retrieval-quality outcome access remains FORBIDDEN. Those are separate Head Researcher decisions.",
+  "sealed_candidate": {
+    "authoritative_status": "SEALED_BY_HEAD_RESEARCHER_2026-09-02",
+    "authorization_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+    "execution_seal_sha256": "1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9",
+    "implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "in_file_status_string_unchanged": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+    "namespace": "task4f1_execution_candidate_v4_2026_09_01",
+    "payload_inventory_sha256": "fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e",
+    "recursive_file_count": 8
+  },
+  "still_blocked": {
+    "retrieval_quality_outcome_access": "FORBIDDEN",
+    "task_4f1_preregistration": "BLOCKED",
+    "task_4f1_run": "BLOCKED"
+  }
+}
