@@ -18,7 +18,8 @@ This document is the current operational research ledger. It distinguishes accep
 - `[TASK 4F1 EXECUTION IMPLEMENTATION PREPARED — INDEPENDENT CODE AUDIT PENDING]`
 - `[TASK 4F1 V2 INDEPENDENT AUDIT BLOCKED — B1/B2/B3 FINALIZATION INTEGRITY DEFECTS]`
 - `[TASK 4F1 V3 INDEPENDENT AUDIT BLOCKED — CANARY NOT REPRODUCIBLE FROM DECLARED ENVIRONMENT LOCK]`
-- `[TASK 4F1 V4 INDEPENDENT AUDIT ACCEPTED — 9/9 GATES PASS; IMPLEMENTATION SEALED]`
+- `[TASK 4F1 V4 AUDIT EVIDENCE ACCEPTED — 9/9 GATES; PACKAGE SEAL WITHDRAWN BY CO-CHAIR CC-01]`
+- `[TASK 4F1 V5 REMEDIATION REQUIRED — CONTRADICTORY BOUND CANARY SPECIFICATION]`
 - `[TASK 4F1 PREREGISTRATION DECISION PENDING — STILL NOT AUTHORIZED TO RUN]`
 
 ## Accepted scientific evidence
@@ -172,3 +173,42 @@ commit path accepted as a binding preregistration condition.
 This seals the implementation only. Task 4F1 preregistration and run remain blocked and
 retrieval-quality outcome access remains forbidden. Whether to preregister is a separate
 Head Researcher decision.
+
+## 2026-09-02 — Co-chair review: V4 seal withdrawn, V5 required
+
+The research co-chair reviewed the L-008 acceptance and returned `REQUEST CHANGES`. The V4
+independent-audit evidence is accepted as authentic, hash-consistent and valid for its nine
+implementation gates. The conclusion that the whole V4 execution package may stand sealed is
+not co-signed.
+
+Blocking finding CC-01: `EXECUTION_SPEC.md`, bound in `PAYLOAD_HASHES.json`, contains two
+mutually exclusive normative canary definitions. Line 44 requires the raw array digests to
+reproduce the superseded V3 values, while lines 110-112 require the V4 sign-code digests.
+Only the latter is implemented and audited, and the V3 requirement is unsatisfiable on
+conformant hardware — that is exactly why V3 was superseded. The Continuity Lead reproduced
+the contradiction directly and accepts it as its own error: V4's spec was produced by a
+blanket label substitution plus an appended section, which added the correct specification
+without deleting the superseded one. The V4 audit prompt scoped its change-isolation gate to
+runner source and AST, so no gate examined bound prose for contradictions.
+
+A V5 candidate is required. Its execution runner must be byte-identical to the accepted V4
+runner so the change set is purely declarative, allowing a delta-scoped audit; any executable
+change forces a full cold-start audit. V5 must also correct the stale V3 docstring and
+authorization-template text, separate "status at audit submission" from the detached
+authoritative acceptance record, and its audit prompt must add a mandatory cross-payload
+semantic-consistency gate covering canary digests, schema names, authorization status, cohort
+anchors and precedence.
+
+Scientific route: option B. Before preregistration the outcome-free justification for the
+restricted cohort and the exact tier-stratified estimands are frozen. The primary interest is
+a scale-stratified heterogeneity profile over the four tiers, whose frozen composition was
+independently recomputed and confirmed: 100K 355 questions across 20 archives with 3.08 mean
+gold units and 96 structural ALL@3 zeros; 500K 629/35/4.26/168; 1M 553/31/8.59/253; 10M
+175/10/7.47/70. Because the tiers are neither paired nor randomized and their gold cardinality
+varies from 3.08 to 8.59, any ordered trend is an association across fixed benchmark strata
+and must never be reported as a causal effect of context length or as a degradation law.
+ALL@3 is reported under its structural-zero rule but is not the main scale claim.
+
+Governance: the Continuity Lead remains sole writer of the state file and the ledger; the
+co-chair writes only review artifacts on a separate branch and holds approval and veto. Task
+4F1 remains blocked for preregistration and execution.

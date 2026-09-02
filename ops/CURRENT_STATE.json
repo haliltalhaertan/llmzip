@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V4_SEALED_PREREGISTRATION_DECISION_PENDING",
-  "issued_at_utc": "2026-09-02T13:30:00Z",
+  "state_id": "V52_4F1_V5_REMEDIATION_REQUIRED_COCHAIR_REQUEST_CHANGES",
+  "issued_at_utc": "2026-09-02T15:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -21,16 +21,17 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Head Researcher decision on whether to preregister Task 4F1",
-    "next_single_action": "Head Researcher decides whether to preregister Task 4F1. This is a separate decision that a passing audit does not grant. Preregistration must bind the POSIX hard-link condition and construct a fresh V4-schema authorization. Until then no run, no finalize, no HMAC key, no outcome access.",
+    "current_task": "Prepare the V5 remediation of CC-01 and the V5 independent-audit prompt",
+    "next_single_action": "Build the V5 candidate namespace correcting CC-01 and the stale V3 text, keeping the runner byte-identical to the accepted V4 runner, and write the V5 independent-audit prompt with a mandatory cross-payload semantic consistency gate. Do not preregister or run Task 4F1.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
     "v3_independent_audit": "BLOCKED (superseded by V4; V3 preserved unmodified)",
     "head_researcher_decision_2026_09_01": "Remediation option 2 accepted: remove bit-exact float digests as a load-bearing gate and replace them with dispatch-stable quantities plus a tolerance-based invariance check. V3 stays sealed and unmodified.",
-    "v4_candidate": "SEALED_BY_HEAD_RESEARCHER_2026-09-02 (candidate bytes unmodified; seal recorded externally)",
-    "v4_independent_audit": "ACCEPTED — PASS, independently hash-verified by the Head Researcher"
+    "v4_candidate": "NOT CO-SIGNED AS A SEALED PACKAGE. Co-chair REQUEST CHANGES 2026-09-02: blocking finding CC-01, a contradictory canary specification inside the bound EXECUTION_SPEC.md. The L-008 seal is withdrawn as a final package seal.",
+    "v4_independent_audit": "EVIDENCE ACCEPTED (9/9 implementation gates); authentic and hash-consistent",
+    "scientific_route": "OPTION B — freeze the outcome-free scientific justification and the tier-stratified estimands before preregistration"
   },
   "anchors": {
     "v3_runner": {
@@ -92,13 +93,14 @@
     "Do not modify sealed payloads, candidates, manifests, pinned corpus or historical audit namespaces."
   ],
   "concurrency": {
-    "state_writer": "One Head Researcher agent only",
+    "state_writer": "Continuity Lead only (sole writer; agreed with co-chair 2026-09-02)",
     "worker_isolation": "Each worker uses a separate clone/worktree, branch and output namespace",
     "independent_auditor": "Must be cold-start and must not treat any other agent's chat or narrative as audit evidence",
-    "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action"
+    "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action",
+    "co_chair": "Codex acts as approval/veto reviewer and writes only review artifacts on a separate branch. A load-bearing transition closes only on explicit co-chair approval; REQUEST CHANGES keeps it blocked."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-008",
+  "ledger_entry": "L-009",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -111,5 +113,12 @@
       "commit": "641568d8b78af97eb69c9dc4e0434e7b6564a26c",
       "hashes_file_sha256": "8dcb2fb8b23980fd3fe0e65a25834e1af259bdef855ed577ae40ab4a43ee4387"
     }
+  },
+  "cochair_review": {
+    "decision": "REQUEST CHANGES",
+    "date_utc": "2026-09-02",
+    "reviewed_state": "a5ee73fa2df29683a8a68fcb2f17461a607cc011",
+    "blocking_finding": "CC-01 contradictory canary specification in bound EXECUTION_SPEC.md (de1d3689f113607c1a7d5425c5795c03faeeeae74e7a4bb75953a57c9691f748)",
+    "artifact_status": "RELAYED IN CHAT; NOT YET PUSHED. Must be pushed to a co-chair branch to be hash-bound."
   }
 }

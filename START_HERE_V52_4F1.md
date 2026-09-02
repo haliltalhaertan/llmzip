@@ -5,7 +5,7 @@ This is the single operational entry point for a new Head Researcher, Compute Ex
 ## Exact starting point
 
 - **Repository state:** canonical branch `main`. Tag pushes are refused by the current environment, so the pushed anchor is branch `state/v52-4f1-v3-audit-blocked-2026-09-01`; use the current `main` head or a descendant explicitly reviewed by the Head Researcher.
-- **Current task:** Head Researcher decision on whether to preregister Task 4F1. The V4 audit is complete, PASS, independently hash-verified and accepted; V4 is sealed. Do not re-run the V3 or V4 audits as if pending.
+- **Current task:** build the V5 candidate remediating co-chair blocking finding CC-01, then have it independently audited. The V4 audit evidence stands, but the V4 package is NOT co-signed as sealed.
 - **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
 - **Executable audit instructions:** `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md`.
@@ -20,17 +20,18 @@ Read those files in that order. Historical V1/V2 audit reports are evidence, not
 | 4F1 V1 audit | Preserved, but unusable for sealing because of disclosed auditor-side outcome-capable execution |
 | 4F1 V2 audit | `BLOCKED`; synthetic B1/B2/B3 integrity defects reproduced |
 | 4F1 V3 candidate | `BLOCKED` by cold-start independent audit 2026-09-01: B1/B2/B3 repaired, but the pinned 100K::12 canary is not reproducible from the declared environment lock |
-| 4F1 V4 candidate | **`SEALED_BY_HEAD_RESEARCHER_2026-09-02`**; independent audit PASS on all nine gates, hash-verified and accepted (`audit/v52-t4f1-v4-independent-2026-09-01` at `641568d8`) |
+| 4F1 V4 candidate | Audit evidence accepted (9/9 implementation gates, `641568d8`), but **seal WITHDRAWN**: co-chair REQUEST CHANGES on blocking finding CC-01 |
+| 4F1 V5 candidate | Required; must correct CC-01 and stale V3 text with the runner byte-identical to V4 |
 | Task 4F1 preregistration / run | **Blocked** |
 | Retrieval-quality outcome access | **Forbidden** |
 
-The V3 audit returned `BLOCKED` on Gate 3: the canary bound bit-exact float digests that depend on BLAS kernel dispatch. V4 remediated this by binding sign codes plus a sign-stability margin.
+The V3 audit blocked on Gate 3 (BLAS-dispatch-dependent float digests). V4 remediated that by binding sign codes plus a stability margin, and a separate cold-start auditor returned `PASS` on all nine implementation gates.
 
-A separate cold-start auditor then audited the exact V4 bytes and returned `PASS` on all nine gates. The Head Researcher independently re-derived the package hashes, confirmed the audit binds the real V4 bytes, confirmed 0 forbidden launches against 16 logged, and accepted it. **V4 is sealed.**
+**That seal has since been withdrawn.** The co-chair review of 2026-09-02 returned `REQUEST CHANGES` on blocking finding **CC-01**: the bound `EXECUTION_SPEC.md` carries two mutually exclusive normative canary definitions — line 44 still demands the superseded V3 raw-float digests, while lines 110-112 demand the V4 sign-code digests. Only the latter is implemented and audited, and the former is unsatisfiable on conformant hardware. The Continuity Lead independently reproduced this and accepts it as its own authoring error: V4's spec was updated by a blanket label substitution plus an appended section, which never removed the superseded text. The audit's Gate 2 was scoped to runner source and AST, so no gate looked for contradictions across bound prose.
 
-**The seal is recorded externally.** `CANDIDATE_EXECUTION_SEAL.json` still reads `PREPARED_NOT_INDEPENDENTLY_AUDITED` on purpose: editing it would change its SHA256 and break the binding the audit established. The authoritative status lives in `docs/v52/task4f1/V4_HEAD_RESEARCHER_ACCEPTANCE_2026-09-02.json` and ledger entry L-008. Treat the acceptance record, not the in-file string, as authoritative.
+The V4 audit evidence remains valid for what it covered. The package is not sealed.
 
-The next action is a Head Researcher decision on whether to preregister Task 4F1. A passing audit does not grant that. Preregistration must bind the POSIX hard-link condition and construct a fresh V4-schema authorization; `--mode run`, `--mode finalize`, HMAC key construction and outcome access all remain forbidden until then.
+Next: a V5 candidate correcting CC-01 and the stale V3 text, with the execution runner byte-identical to the accepted V4 runner so the change set stays declarative, plus a V5 audit prompt carrying a mandatory cross-payload semantic-consistency gate. Scientific route is option B: freeze the outcome-free justification and the tier-stratified estimands before any preregistration. Task 4F1 stays BLOCKED for preregistration and run.
 
 ## Non-negotiable boundary
 
