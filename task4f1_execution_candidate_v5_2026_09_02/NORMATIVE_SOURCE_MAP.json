@@ -1,0 +1,319 @@
+{
+  "deprecated_literals": [
+    {
+      "literal": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded V3 raw-float archive canary digest; BLAS-dispatch dependent"
+    },
+    {
+      "literal": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded V3 raw-float query canary digest; BLAS-dispatch dependent"
+    },
+    {
+      "literal": "V52_T4F1_RUN_AUTHORIZATION_V3",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded authorization schema label"
+    },
+    {
+      "literal": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V3",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded seal schema label"
+    },
+    {
+      "literal": "V52_T4F1_ARCHIVE_RESULT_META_V3",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded checkpoint schema label"
+    },
+    {
+      "literal": "V52_T4F1_POST_RUN_MANIFEST_V3",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded manifest schema label"
+    }
+  ],
+  "fields": [
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "candidate_schema_version",
+      "locator": "verify_execution_seal() literal V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4",
+      "mirrors": [
+        {
+          "locator": "schema",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "seal schema check",
+          "path": "candidate_package_preflight.py"
+        }
+      ],
+      "note": "V5 is a package version, not a schema version; the runner is byte-identical to V4 so its literals stay V4.",
+      "value": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "authorization_schema_version",
+      "locator": "AUTH_SCHEMA",
+      "mirrors": [
+        {
+          "locator": "note (prose reference only; schema field is a template-only label)",
+          "path": "RUN_AUTHORIZATION_TEMPLATE.json"
+        }
+      ],
+      "value": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "archive_result_meta_schema",
+      "locator": "evaluate_archive metadata schema literal",
+      "mirrors": [],
+      "value": "V52_T4F1_ARCHIVE_RESULT_META_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "post_run_manifest_schema",
+      "locator": "finalize_results manifest schema literal",
+      "mirrors": [],
+      "value": "V52_T4F1_POST_RUN_MANIFEST_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "implementation_preflight_schema",
+      "locator": "preflight report schema literal",
+      "mirrors": [],
+      "value": "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "concept": "candidate_submission_status",
+      "locator": "status_at_audit_submission",
+      "mirrors": [],
+      "note": "Immutable historical fact. Never edited after the package is handed to an auditor.",
+      "value": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "docs/v52/task4f1/ detached attestation",
+      "concept": "post_audit_acceptance_state",
+      "locator": "decision field of the hash-bound acceptance record",
+      "mirrors": [],
+      "note": "Sole authority for current state. The candidate seal must never be edited to express this.",
+      "value": "NOT_YET_ACCEPTED_FOR_V5"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "concept": "v4_to_v5_runner_identity",
+      "locator": "this field",
+      "mirrors": [
+        {
+          "locator": "implementation.sha256",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "files[v52_t4f1_beam_retrieval.py].sha256",
+          "path": "PAYLOAD_HASHES.json"
+        }
+      ],
+      "note": "The V5 runner must equal the accepted V4 runner exactly. Inequality stops the delta-audit route.",
+      "value": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "concept": "canary_algorithm_and_digests",
+      "locator": "section 'Canary specification (NORMATIVE \u2014 sole source)'",
+      "mirrors": [
+        {
+          "locator": "EXPECTED_REAL_CANARY_ARCHIVE_SIGN_SHA256 / EXPECTED_REAL_CANARY_QUERY_SIGN_SHA256 / CANARY_SIGN_MARGIN",
+          "path": "v52_t4f1_beam_retrieval.py"
+        },
+        {
+          "locator": "V5 change summary",
+          "path": "README.md"
+        }
+      ],
+      "value": {
+        "archive_shape": [
+          392,
+          96
+        ],
+        "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+        "archive_units": 392,
+        "query_shape": [
+          1,
+          96
+        ],
+        "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+        "sign_margin": 1e-09,
+        "threshold": ">= 0"
+      }
+    },
+    {
+      "authoritative_path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "concept": "cohort_anchor",
+      "locator": "file bytes",
+      "mirrors": [
+        {
+          "locator": "EXPECTED_COHORT_SHA256 / EXPECTED_ELIGIBLE / EXPECTED_ARCHIVES / EXCLUDED_ARCHIVES",
+          "path": "v52_t4f1_beam_retrieval.py"
+        },
+        {
+          "locator": "cohort_sha256 / required_archive_count",
+          "path": "RUN_AUTHORIZATION_TEMPLATE.json"
+        }
+      ],
+      "value": {
+        "archive_count": 96,
+        "eligible_questions": 1712,
+        "excluded_archives": [
+          "1M::5",
+          "1M::26",
+          "1M::33",
+          "1M::34"
+        ],
+        "sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+        "total_rows": 2000
+      }
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "concept": "dependency_lock",
+      "locator": "file bytes",
+      "mirrors": [],
+      "value": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "upstream_corpus_anchor",
+      "locator": "EXPECTED_BEAM_COMMIT",
+      "mirrors": [
+        {
+          "locator": "corpus provenance prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "value": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "methods_seeds_trials_topk_priority",
+      "locator": "module constants HAAR_SEEDS / SIGNED_PERM_SEEDS / ITQ_SEEDS / NUISANCE_TRIALS / TOP_K / TIE_PREFIX / LATENT_DIM / LATENT_SEED / MIXED_DIM / MIXED_SEED / ITQ_ITERATIONS / INVARIANCE_TOLERANCE",
+      "mirrors": [
+        {
+          "locator": "Arms section",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "value": {
+        "haar_seeds": [
+          43001,
+          43002,
+          43003,
+          43004,
+          43005
+        ],
+        "invariance_tolerance": 1e-12,
+        "itq_iterations": 100,
+        "itq_seeds": [
+          101,
+          202,
+          303,
+          404,
+          505
+        ],
+        "latent_dim": 32,
+        "latent_seed": 5101,
+        "mixed_dim": 96,
+        "mixed_seed": 5204,
+        "top_k": 3,
+        "trials": 20
+      }
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "metrics_and_structural_zero_rule",
+      "locator": "metrics_at_3()",
+      "mirrors": [
+        {
+          "locator": "metrics prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "value": "Fractional Source Evidence Recall@3 = |retrieved\u2229gold|/|gold|; ANY@3 = 1 if intersection non-empty; ALL@3 = 1 iff gold \u2286 retrieved, hence a structural zero whenever |gold| > 3"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "aggregation_rule",
+      "locator": "finalize_results() aggregation",
+      "mirrors": [
+        {
+          "locator": "aggregation prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "value": "320 trial rows per eligible question; 16 question-seed rows; 4 question-method rows; 4 aggregate rows; equal question weighting over the fixed 1712 denominator; trials are deterministic replication identities, never independent statistical units"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "concept": "authorization_commitment_state",
+      "locator": "authorization_control.key_commitment_sha256",
+      "mirrors": [
+        {
+          "locator": "fail-closed commitment check",
+          "path": "candidate_package_preflight.py"
+        }
+      ],
+      "value": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "authorization_signed_fields",
+      "locator": "AUTH_SIGNED_FIELDS",
+      "mirrors": [
+        {
+          "locator": "authorization_control.signed_fields",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        }
+      ],
+      "value": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "cohort_sha256",
+        "required_archive_count",
+        "output_namespace_basename",
+        "preregistration_seal_sha256",
+        "authorization_id",
+        "authorization_nonce"
+      ]
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "concept": "outcome_boundary_and_stop_rule",
+      "locator": "authorization + stop_rule",
+      "mirrors": [
+        {
+          "locator": "status paragraph",
+          "path": "README.md"
+        },
+        {
+          "locator": "stop rule prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "value": {
+        "retrieval_quality_outcome_access": "FORBIDDEN",
+        "task_4f1_preregistration": "BLOCKED",
+        "task_4f1_run": "BLOCKED"
+      }
+    }
+  ],
+  "package": "task4f1_execution_candidate_v5_2026_09_02",
+  "precedence_rules": [
+    "The authoritative path/locator named here wins over any other statement in any bound payload.",
+    "A derived mirror never creates a requirement; it only restates one and must compare equal.",
+    "CANDIDATE_EXECUTION_SEAL.json is authoritative ONLY for status_at_audit_submission; the detached attestation under docs/v52/task4f1/ is authoritative for post-audit acceptance state.",
+    "Deprecated literals must not appear as a requirement in any bound payload, in code or in prose."
+  ],
+  "purpose": "One enumerated normative source per load-bearing concept. Every repetition elsewhere is a typed derived mirror that must equal the authoritative value. An unlabelled second normative source is a gate failure.",
+  "schema": "V52_T4F1_NORMATIVE_SOURCE_MAP_V1"
+}

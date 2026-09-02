@@ -1,0 +1,15 @@
+{
+  "schema": "V52_T4F1_RUN_AUTHORIZATION_V4_TEMPLATE_ONLY",
+  "status": "NOT_AUTHORIZED",
+  "retrieval_quality_outcome_access": "FORBIDDEN",
+  "execution_script_sha256": "REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT",
+  "execution_candidate_seal_sha256": "REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT",
+  "cohort_sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+  "required_archive_count": 96,
+  "output_namespace_basename": "REPLACE_ONLY_AFTER_PREREGISTRATION",
+  "preregistration_seal_sha256": "REPLACE_ONLY_AFTER_PREREGISTRATION",
+  "authorization_id": "REPLACE_ONLY_AFTER_PREREGISTRATION",
+  "authorization_nonce": "REPLACE_ONLY_AFTER_PREREGISTRATION",
+  "authorization_hmac_sha256": "NOT_PRESENT_TEMPLATE_CANNOT_AUTHORIZE",
+  "note": "This template cannot authorize execution. A real authorization must declare schema V52_T4F1_RUN_AUTHORIZATION_V4 (the value the byte-identical V5 runner verifies; V5 is a package version, not a schema version) and requires an accepted seal key commitment plus a Head Researcher HMAC over the exact canonical signed fields. This file is inert: status NOT_AUTHORIZED and no signature."
+}
