@@ -1,0 +1,314 @@
+{
+  "Barcelona": {
+    "backend": {
+      "blas": {
+        "blas": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        },
+        "lapack": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        }
+      },
+      "openblas_coretype_env": "Barcelona",
+      "platform_machine": "x86_64"
+    },
+    "beam_files_checked": 192,
+    "canary": {
+      "archive_id": "100K::12",
+      "archive_shape": [
+        392,
+        96
+      ],
+      "archive_sign_margin": 4.0888290363575407e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "archive_units": 392,
+      "expected_archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "expected_query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "gold_labels_loaded": false,
+      "query_shape": [
+        1,
+        96
+      ],
+      "query_sign_margin": 0.0007035806775919399,
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "question_file_opened": false,
+      "required_sign_margin": 1e-09,
+      "retrieval_quality_computed": false,
+      "status": "PASS"
+    },
+    "cohort": {
+      "archive_count": 96,
+      "eligible_rows": 1712,
+      "total_rows": 2000
+    },
+    "rc": 0,
+    "status": "PASS",
+    "stderr_tail": "",
+    "stdout": [
+      "PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates",
+      "BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization"
+    ]
+  },
+  "Haswell": {
+    "backend": {
+      "blas": {
+        "blas": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        },
+        "lapack": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        }
+      },
+      "openblas_coretype_env": "Haswell",
+      "platform_machine": "x86_64"
+    },
+    "beam_files_checked": 192,
+    "canary": {
+      "archive_id": "100K::12",
+      "archive_shape": [
+        392,
+        96
+      ],
+      "archive_sign_margin": 4.088828996234471e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "archive_units": 392,
+      "expected_archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "expected_query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "gold_labels_loaded": false,
+      "query_shape": [
+        1,
+        96
+      ],
+      "query_sign_margin": 0.0007035806775920225,
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "question_file_opened": false,
+      "required_sign_margin": 1e-09,
+      "retrieval_quality_computed": false,
+      "status": "PASS"
+    },
+    "cohort": {
+      "archive_count": 96,
+      "eligible_rows": 1712,
+      "total_rows": 2000
+    },
+    "rc": 0,
+    "status": "PASS",
+    "stderr_tail": "",
+    "stdout": [
+      "PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates",
+      "BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization"
+    ]
+  },
+  "Nehalem": {
+    "backend": {
+      "blas": {
+        "blas": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        },
+        "lapack": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        }
+      },
+      "openblas_coretype_env": "Nehalem",
+      "platform_machine": "x86_64"
+    },
+    "beam_files_checked": 192,
+    "canary": {
+      "archive_id": "100K::12",
+      "archive_shape": [
+        392,
+        96
+      ],
+      "archive_sign_margin": 4.0888290363575407e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "archive_units": 392,
+      "expected_archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "expected_query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "gold_labels_loaded": false,
+      "query_shape": [
+        1,
+        96
+      ],
+      "query_sign_margin": 0.0007035806775919399,
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "question_file_opened": false,
+      "required_sign_margin": 1e-09,
+      "retrieval_quality_computed": false,
+      "status": "PASS"
+    },
+    "cohort": {
+      "archive_count": 96,
+      "eligible_rows": 1712,
+      "total_rows": 2000
+    },
+    "rc": 0,
+    "status": "PASS",
+    "stderr_tail": "",
+    "stdout": [
+      "PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates",
+      "BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization"
+    ]
+  },
+  "Sandybridge": {
+    "backend": {
+      "blas": {
+        "blas": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        },
+        "lapack": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        }
+      },
+      "openblas_coretype_env": "Sandybridge",
+      "platform_machine": "x86_64"
+    },
+    "beam_files_checked": 192,
+    "canary": {
+      "archive_id": "100K::12",
+      "archive_shape": [
+        392,
+        96
+      ],
+      "archive_sign_margin": 4.0888289939424675e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "archive_units": 392,
+      "expected_archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "expected_query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "gold_labels_loaded": false,
+      "query_shape": [
+        1,
+        96
+      ],
+      "query_sign_margin": 0.0007035806775936935,
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "question_file_opened": false,
+      "required_sign_margin": 1e-09,
+      "retrieval_quality_computed": false,
+      "status": "PASS"
+    },
+    "cohort": {
+      "archive_count": 96,
+      "eligible_rows": 1712,
+      "total_rows": 2000
+    },
+    "rc": 0,
+    "status": "PASS",
+    "stderr_tail": "",
+    "stdout": [
+      "PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates",
+      "BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization"
+    ]
+  },
+  "SkylakeX": {
+    "backend": {
+      "blas": {
+        "blas": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        },
+        "lapack": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        }
+      },
+      "openblas_coretype_env": "SkylakeX",
+      "platform_machine": "x86_64"
+    },
+    "beam_files_checked": 192,
+    "canary": {
+      "archive_id": "100K::12",
+      "archive_shape": [
+        392,
+        96
+      ],
+      "archive_sign_margin": 4.088828967405535e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "archive_units": 392,
+      "expected_archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "expected_query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "gold_labels_loaded": false,
+      "query_shape": [
+        1,
+        96
+      ],
+      "query_sign_margin": 0.0007035806775938162,
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "question_file_opened": false,
+      "required_sign_margin": 1e-09,
+      "retrieval_quality_computed": false,
+      "status": "PASS"
+    },
+    "cohort": {
+      "archive_count": 96,
+      "eligible_rows": 1712,
+      "total_rows": 2000
+    },
+    "rc": 0,
+    "status": "PASS",
+    "stderr_tail": "",
+    "stdout": [
+      "PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates",
+      "BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization"
+    ]
+  },
+  "Zen": {
+    "backend": {
+      "blas": {
+        "blas": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        },
+        "lapack": {
+          "name": "scipy-openblas",
+          "version": "0.3.30"
+        }
+      },
+      "openblas_coretype_env": "Zen",
+      "platform_machine": "x86_64"
+    },
+    "beam_files_checked": 192,
+    "canary": {
+      "archive_id": "100K::12",
+      "archive_shape": [
+        392,
+        96
+      ],
+      "archive_sign_margin": 4.088828996234471e-07,
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "archive_units": 392,
+      "expected_archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "expected_query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "gold_labels_loaded": false,
+      "query_shape": [
+        1,
+        96
+      ],
+      "query_sign_margin": 0.0007035806775920225,
+      "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "question_file_opened": false,
+      "required_sign_margin": 1e-09,
+      "retrieval_quality_computed": false,
+      "status": "PASS"
+    },
+    "cohort": {
+      "archive_count": 96,
+      "eligible_rows": 1712,
+      "total_rows": 2000
+    },
+    "rc": 0,
+    "status": "PASS",
+    "stderr_tail": "",
+    "stdout": [
+      "PASS: byte bindings, environment, corpus identity, cohort structure, and synthetic execution gates",
+      "BLOCKED: Task 4F1 run still requires independent implementation audit and Head Researcher authorization"
+    ]
+  }
+}

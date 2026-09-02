@@ -1,0 +1,18 @@
+{
+  "backend_degraded_output": {
+    "blas": "unavailable: RuntimeError",
+    "openblas_coretype_env": null,
+    "platform_machine": "x86_64"
+  },
+  "backend_introspection_failure_raises": false,
+  "canary_archive_units": 392,
+  "canary_reports_gold_labels_loaded": false,
+  "canary_reports_question_file_opened": false,
+  "canary_reports_retrieval_quality_computed": false,
+  "canary_status": "PASS",
+  "corpus_files_opened_during_canary": [
+    "/tmp/claude-0/-home-user-llmzip/9e7e3196-7276-5fa2-aa97-b2b85efd75bc/scratchpad/beam_pinned/chats/100K/12/chat.json"
+  ],
+  "csv_or_cohort_files_opened": [],
+  "probing_question_files_opened": []
+}

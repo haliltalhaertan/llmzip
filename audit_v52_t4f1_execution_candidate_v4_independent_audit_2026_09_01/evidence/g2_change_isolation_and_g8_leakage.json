@@ -1,0 +1,123 @@
+{
+  "gate2": {
+    "changes_outside_permitted_surface": [],
+    "constants_added": [
+      "CANARY_SIGN_MARGIN",
+      "EXPECTED_REAL_CANARY_ARCHIVE_SIGN_SHA256",
+      "EXPECTED_REAL_CANARY_QUERY_SIGN_SHA256"
+    ],
+    "constants_changed": [
+      "AUTH_SCHEMA"
+    ],
+    "constants_removed": [
+      "EXPECTED_REAL_CANARY_ARCHIVE_SHA256",
+      "EXPECTED_REAL_CANARY_QUERY_SHA256"
+    ],
+    "functions_added": [
+      "describe_numerical_backend",
+      "sign_code_sha256"
+    ],
+    "functions_changed_beyond_schema_literal": [
+      "real_archive_canary",
+      "verify_environment"
+    ],
+    "functions_changed_schema_literal_only": [
+      "evaluate_archive",
+      "finalize_results",
+      "preflight",
+      "verify_execution_seal",
+      "verify_existing_archive"
+    ],
+    "functions_identical_count": 36,
+    "functions_removed": [],
+    "numerical_core_all_identical": false,
+    "numerical_core_ast_status": {
+      "ArchiveRepresentation": "IDENTICAL",
+      "append_trial_rows": "IDENTICAL",
+      "archive_relative_paths": "IDENTICAL",
+      "array_sha256": "IDENTICAL",
+      "canonical_memory_key": "IDENTICAL",
+      "canonical_raw_id": "IDENTICAL",
+      "evaluate_archive": "SCHEMA_LITERAL_ONLY",
+      "fit_archive_representation": "IDENTICAL",
+      "fit_itq": "IDENTICAL",
+      "git_blob_sha1": "IDENTICAL",
+      "haar_rotation": "IDENTICAL",
+      "iter_messages": "IDENTICAL",
+      "load_and_verify_cohort": "IDENTICAL",
+      "load_archive": "IDENTICAL",
+      "load_questions": "IDENTICAL",
+      "metrics_at_3": "IDENTICAL",
+      "priority_arrays": "IDENTICAL",
+      "question_payload": "IDENTICAL",
+      "rank_hamming": "IDENTICAL",
+      "signed_permutation": "IDENTICAL",
+      "synthetic_preflight": "IDENTICAL",
+      "tie_priority": "IDENTICAL",
+      "transform_queries": "IDENTICAL",
+      "verify_beam_checkout": "IDENTICAL",
+      "verify_run_authorization": "IDENTICAL"
+    },
+    "numerical_core_constant_status": {
+      "AUTH_HMAC_ENV": "IDENTICAL",
+      "AUTH_SIGNED_FIELDS": "IDENTICAL",
+      "ENVIRONMENT_LOCK": "IDENTICAL",
+      "EXCLUDED_ARCHIVES": "IDENTICAL",
+      "EXPECTED_ARCHIVES": "IDENTICAL",
+      "EXPECTED_BEAM_COMMIT": "IDENTICAL",
+      "EXPECTED_BEAM_MANIFEST_SHA256": "IDENTICAL",
+      "EXPECTED_COHORT_SHA256": "IDENTICAL",
+      "EXPECTED_DEPENDENCY_LOCK_SHA256": "IDENTICAL",
+      "EXPECTED_ELIGIBLE": "IDENTICAL",
+      "EXPECTED_PARENT_COMMIT": "IDENTICAL",
+      "EXPECTED_PROTOCOL_SHA256": "IDENTICAL",
+      "EXPECTED_RESTRICTED_SEAL_SHA256": "IDENTICAL",
+      "EXPECTED_TOTAL_ROWS": "IDENTICAL",
+      "HAAR_SEEDS": "IDENTICAL",
+      "INVARIANCE_TOLERANCE": "IDENTICAL",
+      "ITQ_ITERATIONS": "IDENTICAL",
+      "ITQ_SEEDS": "IDENTICAL",
+      "LATENT_DIM": "IDENTICAL",
+      "LATENT_SEED": "IDENTICAL",
+      "MIXED_DIM": "IDENTICAL",
+      "MIXED_SEED": "IDENTICAL",
+      "NUISANCE_TRIALS": "IDENTICAL",
+      "REAL_CANARY_QUERY": "IDENTICAL",
+      "SIGNED_PERM_SEEDS": "IDENTICAL",
+      "THREAD_LOCK": "IDENTICAL",
+      "TIERS": "IDENTICAL",
+      "TIE_PREFIX": "IDENTICAL",
+      "TOP_K": "IDENTICAL",
+      "TRIAL_FIELDS": "IDENTICAL"
+    }
+  },
+  "gate3_canary_static": {
+    "canary_clean": true,
+    "canary_transitive_call_graph": [
+      "ArchiveRepresentation",
+      "canonical_memory_key",
+      "canonical_raw_id",
+      "fit_archive_representation",
+      "iter_messages",
+      "load_archive",
+      "real_archive_canary",
+      "sign_code_sha256",
+      "transform_queries"
+    ],
+    "forbidden_calls_reachable_from_canary": []
+  },
+  "gate8_leakage": {
+    "AUTH_HMAC_ENV_read_in_functions": [
+      "verify_run_authorization"
+    ],
+    "all_environ_get_keys": [
+      "<name:AUTH_HMAC_ENV>",
+      "<name:name>",
+      "OPENBLAS_CORETYPE"
+    ],
+    "backend_reads_only_coretype": true,
+    "describe_numerical_backend_env_keys": [
+      "OPENBLAS_CORETYPE"
+    ]
+  }
+}

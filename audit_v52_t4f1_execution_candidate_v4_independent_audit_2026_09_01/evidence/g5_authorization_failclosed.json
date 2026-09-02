@@ -1,0 +1,62 @@
+{
+  "any_authorization_accepted": false,
+  "hmac_env_present_during_tests": false,
+  "real_seal_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+  "results": [
+    {
+      "accepted": false,
+      "case": "real_seal_pending_commitment_no_key",
+      "error": "[BLOCKED - HEAD RESEARCHER AUTHORITY KEY NOT SEALED]"
+    },
+    {
+      "accepted": false,
+      "case": "template_file_as_authorization",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_candidate_seal_sha256\": {\"expected\": \"1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9\", \"observed\": \"REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT\"}, \"execution_s"
+    },
+    {
+      "accepted": false,
+      "case": "v3_schema_replay",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"schema\": {\"expected\": \"V52_T4F1_RUN_AUTHORIZATION_V4\", \"observed\": \"V52_T4F1_RUN_AUTHORIZATION_V3\"}}"
+    },
+    {
+      "accepted": false,
+      "case": "status_not_authorized",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"status\": {\"expected\": \"AUTHORIZED_FOR_TASK_4F1_EXECUTION\", \"observed\": \"NOT_AUTHORIZED\"}}"
+    },
+    {
+      "accepted": false,
+      "case": "extra_field",
+      "error": "[BLOCKED - AUTHORIZATION FIELD SET]"
+    },
+    {
+      "accepted": false,
+      "case": "missing_nonce",
+      "error": "[BLOCKED - AUTHORIZATION FIELD SET]"
+    },
+    {
+      "accepted": false,
+      "case": "nonhex_nonce",
+      "error": "[BLOCKED - INVALID AUTHORIZATION AUTHORIZATION_NONCE]"
+    },
+    {
+      "accepted": false,
+      "case": "bad_authorization_id_prefix",
+      "error": "[BLOCKED - INVALID AUTHORIZATION ID]"
+    },
+    {
+      "accepted": false,
+      "case": "partial_archive_count",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"required_archive_count\": {\"expected\": 96, \"observed\": 92}}"
+    },
+    {
+      "accepted": false,
+      "case": "wrong_script_hash",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"execution_script_sha256\": {\"expected\": \"f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8\", \"observed\": \"000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "accepted": false,
+      "case": "temp_seal_valid_commitment_env_absent",
+      "error": "[BLOCKED - HEAD RESEARCHER AUTHORITY KEY MISSING]"
+    }
+  ]
+}

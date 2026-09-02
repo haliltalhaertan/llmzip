@@ -1,0 +1,21 @@
+{
+  "archive_min_abs": 4.0888289939424675e-07,
+  "archive_raw_float_sha256": "ec3c5f448f70123e01259c06505e5a3cf1d8b0345de2e04e446ff7be05d99abb",
+  "archive_shape": [
+    392,
+    96
+  ],
+  "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+  "archive_units": 392,
+  "blas": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64",
+  "coretype": "Sandybridge",
+  "mixed96_rank": 96,
+  "numpy": "2.3.2",
+  "query_min_abs": 0.0007035806775936935,
+  "query_raw_float_sha256": "dad736df1ab088017c72400a246d637ff230897071100aeff794e46d598257a9",
+  "query_shape": [
+    1,
+    96
+  ],
+  "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+}

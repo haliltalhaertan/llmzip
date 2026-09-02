@@ -1,0 +1,83 @@
+{
+  "audit_date_utc": "2026-09-01",
+  "audit_role": "cold-start independent implementation auditor",
+  "bound_files_located_and_hash_verified": {
+    "restricted_cohort": "audit_v52_t4f0_codex_2026_08_31/estimand_primary_cohort.csv",
+    "restricted_protocol": "audit_v52_t4f0_restricted_refreeze_2026_08_31/REFREEZE_PROTOCOL.md",
+    "restricted_seal": "audit_v52_t4f0_restricted_refreeze_2026_08_31/CANDIDATE_SEAL.json"
+  },
+  "cohort_structure_independently_recomputed": {
+    "archive_count": 96,
+    "eligible_rows": 1712,
+    "excluded_archives": [
+      "1M::5",
+      "1M::26",
+      "1M::33",
+      "1M::34"
+    ],
+    "total_rows": 2000
+  },
+  "corpus_materialization": {
+    "bytes": 779151469,
+    "canary_blob": {
+      "bytes": 964208,
+      "git_blob_sha1": "bbabe6fcf7290e34636fe5e25c748ebefbdbbcfa",
+      "path": "chats/100K/12/chat.json",
+      "verified": true
+    },
+    "files_materialized": 192,
+    "manifest_path": "audit_v52_t4f0_codex_2026_08_31/pinned_tree_manifest.json",
+    "manifest_sha256_verified": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+    "pinned_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+    "repository": "mohammadtavakoli78/BEAM",
+    "verification": "every byte verified against the git blob SHA1 and size recorded in the accepted pinned-tree manifest before use"
+  },
+  "environment_reproduced": {
+    "blas": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64",
+    "bytecode_controls": [
+      "-B",
+      "PYTHONDONTWRITEBYTECODE=1"
+    ],
+    "dependency_lock_sha256_verified": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "numpy": "2.3.2",
+    "package_provenance": "exact pinned versions installed from PyPI",
+    "psutil": "7.0.0",
+    "python": "3.12.13",
+    "python_provenance": "CPython 3.12.13 built from the official python.org source tarball; the container shipped 3.12.3 and no prebuilt 3.12.13 was available from uv's index",
+    "scikit_learn": "1.7.1",
+    "scipy": "1.16.1",
+    "thread_controls": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONHASHSEED": "0"
+    }
+  },
+  "outcome_boundary": {
+    "candidate_bytes_modified": false,
+    "cli_mode_finalize_count": 0,
+    "cli_mode_run_count": 0,
+    "hmac_key_env_set_count": 0,
+    "real_retrieval_ranking_performed": false,
+    "reconstruction_scope": "independent reconstruction stops at the centered 96-d representation and the single canary query transform; no ranking, no gold, no metric",
+    "retrieval_quality_computed": false,
+    "retrieval_quality_read": false,
+    "retrieval_quality_reported": false,
+    "valid_production_authorization_constructed": false
+  },
+  "posture": "Every implementer claim treated as a hypothesis and independently re-derived. The V3 audit's conclusions were not imported; its Gate 3 finding was independently reproduced.",
+  "schema": "V52_T4F1_V4_INDEPENDENT_AUDIT_METHOD_V1",
+  "subprocess_harness": {
+    "also_refuses": "any launch with V52_T4F1_AUTH_HMAC_KEY_HEX present in the environment",
+    "path": "scripts/guard.py",
+    "rejects_before_launch": [
+      "--mode run",
+      "--mode finalize",
+      "--mode=run",
+      "--mode=finalize",
+      "split --mode run/finalize forms"
+    ],
+    "self_test": "three forbidden forms rejected before launch; recorded in COMMAND_LOG.txt"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "h1_all_perturbations_detected": true,
+  "h1_baseline_reproduces_sealed_canary": true,
+  "h1_representation_change_detection": {
+    "baseline": {
+      "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "matches_sealed_canary": true,
+      "min_abs": 4.088828967405535e-07
+    },
+    "char_ngram_3_4": {
+      "archive_sign_sha256": "4a465db24db58c8703ef5aa5afcde71a7353d148cc3a8c1ed40c00cedf8b7f40",
+      "matches_sealed_canary": false,
+      "min_abs": 5.421080472503906e-06
+    },
+    "latent_dim_33": {
+      "archive_sign_sha256": "4f9290df0cf7dfdfcde4466c1006673981f59052a6566deb976c64003a24a63c",
+      "matches_sealed_canary": false,
+      "min_abs": 8.618440700686723e-07
+    },
+    "latent_seed_5102": {
+      "archive_sign_sha256": "b2a0518bc414510921d4a4a6bd8a25f7a0e4ca22cb7ca449eaf2a213a9bebf85",
+      "matches_sealed_canary": false,
+      "min_abs": 2.137519263047203e-06
+    },
+    "mixed_seed_5205": {
+      "archive_sign_sha256": "db72bde2affaae9db3838939e2073a0f3904f79925b758dddb99798208c22c4b",
+      "matches_sealed_canary": false,
+      "min_abs": 5.031293472811007e-07
+    },
+    "stop_words_none": {
+      "archive_sign_sha256": "51e11d7cfbd6d5bad3226841b0556f447787c7f9d69e8e9f971e6bb1eaab610b",
+      "matches_sealed_canary": false,
+      "min_abs": 1.0657277608354995e-07
+    },
+    "sublinear_tf_off": {
+      "archive_sign_sha256": "9ed3fc69e1614aadf1e293f0a21fe81879f90b1ba977ddbb93d0e6510f149f6a",
+      "matches_sealed_canary": false,
+      "min_abs": 9.018439284265553e-07
+    },
+    "word_ngram_1_1": {
+      "archive_sign_sha256": "0475accf84a90c4531ac0f68117c4f8a30f092087c5698b9af212cb7edac1f37",
+      "matches_sealed_canary": false,
+      "min_abs": 6.512525002123665e-07
+    }
+  },
+  "h2_degenerate_representation": {
+    "constant_matrix_clears_margin": true,
+    "constant_matrix_matches_sealed_canary": false,
+    "constant_matrix_min_abs": 0.5,
+    "constant_matrix_sign_digest": "27045903359a5af06931ea152b46cccf9b9b9e96a4a9ce2a027de7470a1cc1b0",
+    "degenerate_archive_refused_by_fit": "[BLOCKED - LATENT32 PRECONDITION] (200, 5)",
+    "margin_alone_is_not_the_gate": true
+  },
+  "h3_secret_leakage": {
+    "AUTH_HMAC_ENV_read_sites": [
+      "verify_run_authorization"
+    ],
+    "output_sinks_called_inside_verify_run_authorization": [],
+    "secret_appears_in_return_value": false,
+    "secret_referenced_in_output_writers": {
+      "atomic_write_bytes": false,
+      "describe_numerical_backend": false,
+      "finalize_results": false,
+      "preflight": false,
+      "run_archives": false,
+      "verify_environment": false,
+      "write_csv": false,
+      "write_json": false,
+      "write_json_no_replace": false
+    }
+  },
+  "h4_checkpoint_substitution": [
+    {
+      "accepted": true,
+      "case": "valid_v4_checkpoint",
+      "error": null
+    },
+    {
+      "accepted": false,
+      "case": "v3_schema_checkpoint_replay",
+      "error": "[BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::a1"
+    },
+    {
+      "accepted": false,
+      "case": "checkpoint_bound_to_other_script",
+      "error": "[BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::a1"
+    },
+    {
+      "accepted": false,
+      "case": "checkpoint_claiming_console_outcomes",
+      "error": "[BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::a1"
+    },
+    {
+      "accepted": false,
+      "case": "checkpoint_exceeding_invariance_tolerance",
+      "error": "[BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::a1"
+    },
+    {
+      "accepted": false,
+      "case": "checkpoint_wrong_trial_row_count",
+      "error": "[BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::a1"
+    },
+    {
+      "accepted": false,
+      "case": "valid_checkpoint_verified_under_other_provenance",
+      "error": "[BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::a1"
+    }
+  ],
+  "h4_only_exact_v4_checkpoint_accepted": true
+}

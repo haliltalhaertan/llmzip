@@ -1,0 +1,217 @@
+{
+  "derivation": "independent reimplementation from the audited specification; the candidate module was not imported for the reconstruction",
+  "dispatches_tested": [
+    "SkylakeX",
+    "Haswell",
+    "Nehalem",
+    "Sandybridge",
+    "Zen",
+    "Barcelona"
+  ],
+  "gate3_pass": true,
+  "implementer_claims_independently_confirmed": true,
+  "schema": "V52_T4F1_V4_INDEPENDENT_DISPATCH_STABILITY_V1",
+  "step1_representation_reconstructed": {
+    "archive_shape": {
+      "Barcelona": [
+        392,
+        96
+      ],
+      "Haswell": [
+        392,
+        96
+      ],
+      "Nehalem": [
+        392,
+        96
+      ],
+      "Sandybridge": [
+        392,
+        96
+      ],
+      "SkylakeX": [
+        392,
+        96
+      ],
+      "Zen": [
+        392,
+        96
+      ]
+    },
+    "archive_units": {
+      "Barcelona": 392,
+      "Haswell": 392,
+      "Nehalem": 392,
+      "Sandybridge": 392,
+      "SkylakeX": 392,
+      "Zen": 392
+    },
+    "expected": {
+      "archive_shape": [
+        392,
+        96
+      ],
+      "archive_units": 392,
+      "query_shape": [
+        1,
+        96
+      ]
+    },
+    "mixed96_rank": {
+      "Barcelona": 96,
+      "Haswell": 96,
+      "Nehalem": 96,
+      "Sandybridge": 96,
+      "SkylakeX": 96,
+      "Zen": 96
+    },
+    "pass": true,
+    "query_shape": {
+      "Barcelona": [
+        1,
+        96
+      ],
+      "Haswell": [
+        1,
+        96
+      ],
+      "Nehalem": [
+        1,
+        96
+      ],
+      "Sandybridge": [
+        1,
+        96
+      ],
+      "SkylakeX": [
+        1,
+        96
+      ],
+      "Zen": [
+        1,
+        96
+      ]
+    }
+  },
+  "step2_archive_blob_verified_against_pinned_manifest": {
+    "bytes": 964208,
+    "git_blob_sha1": "bbabe6fcf7290e34636fe5e25c748ebefbdbbcfa",
+    "manifest_sha256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+    "pass": true,
+    "path": "chats/100K/12/chat.json"
+  },
+  "step3_sign_digests_vs_declared": {
+    "declared_archive_sign": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+    "declared_query_sign": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+    "independent_archive_sign": {
+      "Barcelona": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "Haswell": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "Nehalem": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "Sandybridge": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "SkylakeX": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "Zen": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5"
+    },
+    "independent_query_sign": {
+      "Barcelona": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "Haswell": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "Nehalem": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "Sandybridge": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "SkylakeX": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "Zen": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    "pass": true
+  },
+  "step4_cross_dispatch_invariance": {
+    "candidate_canary_status": {
+      "Barcelona": "PASS",
+      "Haswell": "PASS",
+      "Nehalem": "PASS",
+      "Sandybridge": "PASS",
+      "SkylakeX": "PASS",
+      "Zen": "PASS"
+    },
+    "candidate_preflight_pass_count": 6,
+    "candidate_preflight_status": {
+      "Barcelona": "PASS",
+      "Haswell": "PASS",
+      "Nehalem": "PASS",
+      "Sandybridge": "PASS",
+      "SkylakeX": "PASS",
+      "Zen": "PASS"
+    },
+    "distinct_archive_sign_digests": 1,
+    "distinct_query_sign_digests": 1,
+    "pass": true
+  },
+  "step5_gate_is_non_vacuous": {
+    "distinct_raw_float_digests": 4,
+    "interpretation": "raw float bytes genuinely vary with kernel dispatch, so the sign-code invariance is a real property and not a vacuous pass",
+    "pass": true,
+    "raw_float_digest_groups": {
+      "5ded9fdd1b5be72710b4841ea029c64b2ab0c96d9cc43e01fba866d35028f571": [
+        "Haswell",
+        "Zen"
+      ],
+      "ec3c5f448f70123e01259c06505e5a3cf1d8b0345de2e04e446ff7be05d99abb": [
+        "Sandybridge"
+      ],
+      "fae4b3c0bcc1c8dbb74a9b6867fab814ee39ed9c50fc85af56fb6bb03a8d013d": [
+        "SkylakeX"
+      ],
+      "fef061e52a404a6f5b167be7ec2142a054a701a10d24eafdee7044a0dc228c49": [
+        "Nehalem",
+        "Barcelona"
+      ]
+    }
+  },
+  "step6_sign_stability_margin": {
+    "CANARY_SIGN_MARGIN": 1e-09,
+    "entries_inside_numerical_noise_band": 0,
+    "max_cross_dispatch_abs_diff": 1.201816424156732e-13,
+    "min_abs_over_observed_noise": 3402207.596118108,
+    "min_abs_over_required_margin": 408.88289674055346,
+    "min_abs_representation_value": 4.088828967405535e-07,
+    "pass": true,
+    "required_margin_over_observed_noise": 8320.738341562117,
+    "total_entries": 37728
+  },
+  "step7_canary_is_outcome_free": {
+    "forbidden_calls_reachable": [],
+    "observed_cohort_or_csv_files_opened": [],
+    "observed_corpus_files_opened": [
+      "/tmp/claude-0/-home-user-llmzip/9e7e3196-7276-5fa2-aa97-b2b85efd75bc/scratchpad/beam_pinned/chats/100K/12/chat.json"
+    ],
+    "observed_probing_question_files_opened": [],
+    "pass": true,
+    "static_transitive_call_graph": [
+      "ArchiveRepresentation",
+      "canonical_memory_key",
+      "canonical_raw_id",
+      "fit_archive_representation",
+      "iter_messages",
+      "load_archive",
+      "real_archive_canary",
+      "sign_code_sha256",
+      "transform_queries"
+    ]
+  },
+  "step8_backend_provenance": {
+    "degraded_output_under_forced_failure": {
+      "blas": "unavailable: RuntimeError",
+      "openblas_coretype_env": null,
+      "platform_machine": "x86_64"
+    },
+    "environment_keys_read": [
+      "OPENBLAS_CORETYPE"
+    ],
+    "gates_the_run": false,
+    "introspection_failure_is_caught": true,
+    "pass": true,
+    "records": [
+      "openblas_coretype_env",
+      "platform_machine",
+      "blas/lapack name and version"
+    ],
+    "records_any_secret": false
+  }
+}

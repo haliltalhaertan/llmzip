@@ -1,0 +1,206 @@
+{
+  "CANARY_SIGN_MARGIN": 1e-09,
+  "archive_max_cross_dispatch_abs_diff": 1.201816424156732e-13,
+  "archive_min_abs_value": 4.088828967405535e-07,
+  "coretypes": [
+    "SkylakeX",
+    "Haswell",
+    "Nehalem",
+    "Sandybridge",
+    "Zen",
+    "Barcelona"
+  ],
+  "entries_inside_numerical_noise_band": 0,
+  "max_cross_dispatch_abs_diff_overall": 1.201816424156732e-13,
+  "min_abs_over_observed_noise_ratio": 3402207.596118108,
+  "min_abs_over_required_margin_ratio": 408.88289674055346,
+  "min_abs_value_overall": 4.088828967405535e-07,
+  "pairwise": [
+    {
+      "archive_max_abs_diff": 9.001133172148457e-14,
+      "pair": [
+        "SkylakeX",
+        "Haswell"
+      ],
+      "query_max_abs_diff": 3.661307368396649e-14
+    },
+    {
+      "archive_max_abs_diff": 9.975874293299825e-14,
+      "pair": [
+        "SkylakeX",
+        "Nehalem"
+      ],
+      "query_max_abs_diff": 6.766809335090329e-14
+    },
+    {
+      "archive_max_abs_diff": 1.1225742557741114e-13,
+      "pair": [
+        "SkylakeX",
+        "Sandybridge"
+      ],
+      "query_max_abs_diff": 2.8199664825478976e-14
+    },
+    {
+      "archive_max_abs_diff": 9.001133172148457e-14,
+      "pair": [
+        "SkylakeX",
+        "Zen"
+      ],
+      "query_max_abs_diff": 3.661307368396649e-14
+    },
+    {
+      "archive_max_abs_diff": 9.975874293299825e-14,
+      "pair": [
+        "SkylakeX",
+        "Barcelona"
+      ],
+      "query_max_abs_diff": 6.766809335090329e-14
+    },
+    {
+      "archive_max_abs_diff": 1.201816424156732e-13,
+      "pair": [
+        "Haswell",
+        "Nehalem"
+      ],
+      "query_max_abs_diff": 9.639511411307922e-14
+    },
+    {
+      "archive_max_abs_diff": 1.1110556918936254e-13,
+      "pair": [
+        "Haswell",
+        "Sandybridge"
+      ],
+      "query_max_abs_diff": 5.69266855876549e-14
+    },
+    {
+      "archive_max_abs_diff": 0.0,
+      "pair": [
+        "Haswell",
+        "Zen"
+      ],
+      "query_max_abs_diff": 0.0
+    },
+    {
+      "archive_max_abs_diff": 1.201816424156732e-13,
+      "pair": [
+        "Haswell",
+        "Barcelona"
+      ],
+      "query_max_abs_diff": 9.639511411307922e-14
+    },
+    {
+      "archive_max_abs_diff": 1.051103648563867e-13,
+      "pair": [
+        "Nehalem",
+        "Sandybridge"
+      ],
+      "query_max_abs_diff": 3.9468428525424315e-14
+    },
+    {
+      "archive_max_abs_diff": 1.201816424156732e-13,
+      "pair": [
+        "Nehalem",
+        "Zen"
+      ],
+      "query_max_abs_diff": 9.639511411307922e-14
+    },
+    {
+      "archive_max_abs_diff": 0.0,
+      "pair": [
+        "Nehalem",
+        "Barcelona"
+      ],
+      "query_max_abs_diff": 0.0
+    },
+    {
+      "archive_max_abs_diff": 1.1110556918936254e-13,
+      "pair": [
+        "Sandybridge",
+        "Zen"
+      ],
+      "query_max_abs_diff": 5.69266855876549e-14
+    },
+    {
+      "archive_max_abs_diff": 1.051103648563867e-13,
+      "pair": [
+        "Sandybridge",
+        "Barcelona"
+      ],
+      "query_max_abs_diff": 3.9468428525424315e-14
+    },
+    {
+      "archive_max_abs_diff": 1.201816424156732e-13,
+      "pair": [
+        "Zen",
+        "Barcelona"
+      ],
+      "query_max_abs_diff": 9.639511411307922e-14
+    }
+  ],
+  "query_max_cross_dispatch_abs_diff": 9.639511411307922e-14,
+  "query_min_abs_value": 0.0007035806775919399,
+  "required_margin_exceeded": true,
+  "shapes_per_coretype": {
+    "Barcelona": [
+      [
+        392,
+        96
+      ],
+      [
+        1,
+        96
+      ]
+    ],
+    "Haswell": [
+      [
+        392,
+        96
+      ],
+      [
+        1,
+        96
+      ]
+    ],
+    "Nehalem": [
+      [
+        392,
+        96
+      ],
+      [
+        1,
+        96
+      ]
+    ],
+    "Sandybridge": [
+      [
+        392,
+        96
+      ],
+      [
+        1,
+        96
+      ]
+    ],
+    "SkylakeX": [
+      [
+        392,
+        96
+      ],
+      [
+        1,
+        96
+      ]
+    ],
+    "Zen": [
+      [
+        392,
+        96
+      ],
+      [
+        1,
+        96
+      ]
+    ]
+  },
+  "sign_codes_identical_across_all_dispatches": true
+}

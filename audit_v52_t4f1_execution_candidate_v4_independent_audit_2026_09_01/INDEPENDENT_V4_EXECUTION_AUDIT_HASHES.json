@@ -1,0 +1,254 @@
+{
+  "audit_date_utc": "2026-09-01",
+  "audit_namespace": "audit_v52_t4f1_execution_candidate_v4_independent_audit_2026_09_01",
+  "audited_candidate": {
+    "authorization_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+    "bytes_modified_by_this_audit": false,
+    "dependency_lock_sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "execution_seal_sha256": "1bf740f573fc74c6e8aa6e23a3f07a5bcc97a10d1fa7e6e7358560e1598f06e9",
+    "execution_spec_sha256": "de1d3689f113607c1a7d5425c5795c03faeeeae74e7a4bb75953a57c9691f748",
+    "implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "namespace": "task4f1_execution_candidate_v4_2026_09_01",
+    "package_preflight_sha256": "e0cde9802931851d28aea5f745cedea3e02ad731ad79981230c4fe92fe96630a",
+    "payload_inventory_sha256": "fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e",
+    "readme_sha256": "4a7250508e8636328de53dfc5a334dec24d850cf1603160942b1b94078fcf4d6",
+    "recursive_file_count": 8,
+    "run_authorization_template_sha256": "c8f94a8da79dde959cbb54d173e3e87b096832f0a0bbe0e6c806589b091a720f",
+    "status": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+  },
+  "canary_anchors_independently_reproduced": {
+    "canary_sign_margin": 1e-09,
+    "dispatches_confirmed": [
+      "SkylakeX",
+      "Haswell",
+      "Nehalem",
+      "Sandybridge",
+      "Zen",
+      "Barcelona"
+    ],
+    "distinct_raw_float_digests": 4,
+    "distinct_sign_digests": 1,
+    "entries_inside_noise_band": 0,
+    "expected_real_canary_archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+    "expected_real_canary_query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+    "max_cross_dispatch_abs_diff": 1.201816424156732e-13,
+    "min_abs_representation_value": 4.088828967405535e-07
+  },
+  "files": [
+    {
+      "bytes": 16135,
+      "name": "COMMAND_LOG.txt",
+      "sha256": "23e1e3fef6a445fe303e1de9287c60a092a6639702bfe415ac3e0fa6454df370"
+    },
+    {
+      "bytes": 4739,
+      "name": "GATE_TABLE.csv",
+      "sha256": "a61506489c4a25629b161d14580b38d26d8301c02449418313690d704875aeb0"
+    },
+    {
+      "bytes": 16787,
+      "name": "INDEPENDENT_V4_EXECUTION_AUDIT_REPORT.md",
+      "sha256": "5d8ab2917d9782dbece2bba2bb1f57ca880e0f641a94739c89b3981ab3cf24c2"
+    },
+    {
+      "bytes": 1052,
+      "name": "evidence/candidate_bytes_before.txt",
+      "sha256": "5c2e5296c8bcc7a9c1a71bb40cb8f6fed438dc3587f3f2b30274ad5483067ef9"
+    },
+    {
+      "bytes": 2186,
+      "name": "evidence/g1_recursive_byte_closure.json",
+      "sha256": "ff7f6136484aeb1d065196131e2217e30cd69c5620f47b060781c42397cbe860"
+    },
+    {
+      "bytes": 3890,
+      "name": "evidence/g2_change_isolation_and_g8_leakage.json",
+      "sha256": "e94829132737faf3bc417eda495f0afe7672fcd64f4b141f3f97bf31f4afee1f"
+    },
+    {
+      "bytes": 646,
+      "name": "evidence/g3_canary_file_access.json",
+      "sha256": "4b3523c58e16eb502c98dafb7a1119221d91e3e3f43cef1556a9c77e4c04a385"
+    },
+    {
+      "bytes": 3951,
+      "name": "evidence/g3_dispatch/candidate_preflight_Barcelona.json",
+      "sha256": "4f3ca1ccb2c96811ae4d65bd465b1b7f6f4db2c97ce6605817fba7fc475fc9c2"
+    },
+    {
+      "bytes": 3949,
+      "name": "evidence/g3_dispatch/candidate_preflight_Haswell.json",
+      "sha256": "f57c9a37a323150806d2d90913fae6bb6d83595da9c069004a51be9ed2c02c9e"
+    },
+    {
+      "bytes": 3949,
+      "name": "evidence/g3_dispatch/candidate_preflight_Nehalem.json",
+      "sha256": "ca7dc3f91bd31521713c1ad7b8a5605a880c4a8a9b577ff894a466c82bf2b911"
+    },
+    {
+      "bytes": 3954,
+      "name": "evidence/g3_dispatch/candidate_preflight_Sandybridge.json",
+      "sha256": "a9a5b70dce87d2068c4efb3c5447a8b5469d7826eaac035a90c015112d411108"
+    },
+    {
+      "bytes": 3950,
+      "name": "evidence/g3_dispatch/candidate_preflight_SkylakeX.json",
+      "sha256": "af8603c5f3d44676ebfc58220bdf147faaab97a9e4acb8c4a044a459e86cd051"
+    },
+    {
+      "bytes": 3945,
+      "name": "evidence/g3_dispatch/candidate_preflight_Zen.json",
+      "sha256": "5018fcbfab9484082e8ab72d0e626599bc71d0e9cfafbf7f96eeb8d5f66c5892"
+    },
+    {
+      "bytes": 731,
+      "name": "evidence/g3_dispatch/independent_Barcelona.json",
+      "sha256": "477aae02081c62b248cc253b8ccddf176fc11ad9de86ff07b6402caffe2a208f"
+    },
+    {
+      "bytes": 728,
+      "name": "evidence/g3_dispatch/independent_Haswell.json",
+      "sha256": "afc421e2d3e1b372484d46abaea0b0cae9c7cbbdb3c62b3d37c515353d345953"
+    },
+    {
+      "bytes": 729,
+      "name": "evidence/g3_dispatch/independent_Nehalem.json",
+      "sha256": "a6db8905e581b349253223f59f3d636c6e71801f26fb0a0d8fb92c292beecd21"
+    },
+    {
+      "bytes": 733,
+      "name": "evidence/g3_dispatch/independent_Sandybridge.json",
+      "sha256": "d8d3a9eb57937f2939d36fc2db0deea684309a706f219dd4661d62e50d492e9a"
+    },
+    {
+      "bytes": 729,
+      "name": "evidence/g3_dispatch/independent_SkylakeX.json",
+      "sha256": "d596bb173d711ae12079b6f8f72133cee935fbcc1dcfb02ff7772cd22c517ae2"
+    },
+    {
+      "bytes": 724,
+      "name": "evidence/g3_dispatch/independent_Zen.json",
+      "sha256": "beb22195d770054c5c0cf9686530b46952cd96ccd68e08203549723cd25378b9"
+    },
+    {
+      "bytes": 9887,
+      "name": "evidence/g3_dispatch_preflight_summary.json",
+      "sha256": "908f2713b72ed8b184d5c3411b5b550daee300e37c5e915175c976e2f88b0871"
+    },
+    {
+      "bytes": 6196,
+      "name": "evidence/g3_dispatch_stability.json",
+      "sha256": "82db8e6ca33bac513af036dd3d6307184e9ef4d43f8e31f3fb67383b70930328"
+    },
+    {
+      "bytes": 4027,
+      "name": "evidence/g3_sign_margin.json",
+      "sha256": "bbac7967802ecaca43748fdd77d48802cb39578cd1fefeed9458f33affde4924"
+    },
+    {
+      "bytes": 13622,
+      "name": "evidence/g4567_b1_b2_b3_aggregation.json",
+      "sha256": "adcefcc6c22df01215544b152a129c230f61bcb7814919d024410048ecc6d49e"
+    },
+    {
+      "bytes": 2343,
+      "name": "evidence/g5_authorization_failclosed.json",
+      "sha256": "eb0bbdfdad3c316e47c237322f61883724627ae77de8ae5c1f115f76ffd2cd88"
+    },
+    {
+      "bytes": 3862,
+      "name": "evidence/g8_active_bug_hunt.json",
+      "sha256": "a094d47d44890518c1e4b50059dad9c88fe43df29e8ff1a7cfdee4728aa60d86"
+    },
+    {
+      "bytes": 3441,
+      "name": "evidence/method_and_environment.json",
+      "sha256": "7209128575cc3972e15be393c23b7dbba521c0cfcbe84523fc45231db7781191"
+    },
+    {
+      "bytes": 8018,
+      "name": "scripts/g2_g8_ast_analysis.py",
+      "sha256": "fa0f784d96f60221a25b456be331b2dd0eb3b7c5b2357fe818242fac98f1f832"
+    },
+    {
+      "bytes": 4143,
+      "name": "scripts/g3_independent_reconstruct.py",
+      "sha256": "2c0ca858c67531c024cffe89a563c82bb81afe6e43101893612a4cbcc108cef8"
+    },
+    {
+      "bytes": 13809,
+      "name": "scripts/g4567_synthetic_finalization.py",
+      "sha256": "7c011e7b6845594e42365c05820c608af6429b9ebc291546d2c4eecb41a340b1"
+    },
+    {
+      "bytes": 2362,
+      "name": "scripts/guard.py",
+      "sha256": "a8c59214ecea512a3a93014125ca74060bb6957497b94719cab859a6c53d63b7"
+    }
+  ],
+  "gate_results": {
+    "authorization_fail_closed": "PASS",
+    "gate1_closure": "PASS",
+    "gate2_change_isolation": "PASS",
+    "gate3_dispatch_stability": "PASS",
+    "gate4_b1": "PASS",
+    "gate5_b2": "PASS",
+    "gate6_b3": "PASS",
+    "gate7_aggregation": "PASS",
+    "gate8_bug_hunt": "PASS"
+  },
+  "implementer_evidence": {
+    "all_declared_payloads_verified": true,
+    "namespace": "task4f1_execution_candidate_v4_preflight_2026_09_01",
+    "preflight_hashes_sha256": "4f78b5c8b184ad0ecfbbf444ffddbbcd076c6b78fa65c4b0d76696259f1c930f",
+    "treated_as": "hypotheses independently re-derived, not accepted"
+  },
+  "outcome_boundary": {
+    "candidate_bytes_modified": false,
+    "cli_mode_finalize_count": 0,
+    "cli_mode_run_count": 0,
+    "evaluate_archive_called_on_real_beam_data": false,
+    "finalize_results_called_on_real_beam_data": false,
+    "hmac_key_env_set_count": 0,
+    "real_retrieval_ranking_performed": false,
+    "retrieval_quality_computed": false,
+    "retrieval_quality_read": false,
+    "retrieval_quality_reported": false,
+    "run_archives_called_on_real_beam_data": false,
+    "seals_or_authorization_fields_modified": false,
+    "v1_v2_v3_or_sealed_4f0_namespaces_modified": false,
+    "valid_production_authorization_constructed": false
+  },
+  "recursive_output_count": 30,
+  "role": "cold-start independent implementation auditor",
+  "schema": "V52_T4F1_V4_INDEPENDENT_EXECUTION_AUDIT_HASHES_V1",
+  "self_excluded_file": "INDEPENDENT_V4_EXECUTION_AUDIT_HASHES.json",
+  "superseded_read_only": {
+    "v3_blocked_audit_branch": "audit/v52-t4f1-v3-independent-2026-09-01",
+    "v3_blocked_audit_commit": "a590f623a2b9b6c211068692d60f0e515e7166c0",
+    "v3_conclusions_imported": false,
+    "v3_runner_sha256": "0c1c1cc2bcf23296f0559daa98d936ed605fd7068ef376aa26bed69f6e66b07c"
+  },
+  "upstream_anchors": {
+    "all_independently_verified": true,
+    "beam_pinned_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+    "beam_tree_manifest_sha256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+    "cohort_structure": {
+      "archives": 96,
+      "eligible_rows": 1712,
+      "excluded_archives": [
+        "1M::5",
+        "1M::26",
+        "1M::33",
+        "1M::34"
+      ],
+      "total_rows": 2000
+    },
+    "dependency_lock_sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "llmzip_parent_commit": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+    "restricted_cohort_sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+    "restricted_protocol_sha256": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1",
+    "sealed_4f0_seal_sha256": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c"
+  },
+  "verdict": "PASS - V4 EXECUTION CANDIDATE MAY BE SEALED BY HEAD RESEARCHER; TASK 4F1 STILL NOT PREREGISTERED OR AUTHORIZED"
+}

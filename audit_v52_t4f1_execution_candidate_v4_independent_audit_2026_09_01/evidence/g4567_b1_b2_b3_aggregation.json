@@ -1,0 +1,396 @@
+{
+  "all_expectations_met": true,
+  "cases": [
+    {
+      "blocked": false,
+      "case": "clean_finalization",
+      "error": null,
+      "matches_expectation": true,
+      "outputs": {
+        "aggregate_denominators": [
+          "3"
+        ],
+        "aggregate_fractional": {
+          "HAAR96_SIGN": 0.8333333333333334,
+          "ITQ96_CENTERED": 0.8333333333333334,
+          "NATIVE_SIGN96": 0.8333333333333334,
+          "SIGNED_PERM_CONTROL96": 0.8333333333333334
+        },
+        "aggregate_matches_equal_question_weighting": true,
+        "aggregate_methods": [
+          "HAAR96_SIGN",
+          "ITQ96_CENTERED",
+          "NATIVE_SIGN96",
+          "SIGNED_PERM_CONTROL96"
+        ],
+        "aggregate_rows": 4,
+        "distances_sorted_everywhere": true,
+        "expected_aggregate_rows": 4,
+        "expected_question_rows": 12,
+        "expected_question_seed_rows": 48,
+        "independently_recomputed_equal_weight_fractional": 0.8333333333333334,
+        "manifest_archive_count": 2,
+        "manifest_console_outcomes_emitted": false,
+        "manifest_interpretation_authorized": false,
+        "manifest_question_denominator": 3,
+        "manifest_schema": "V52_T4F1_POST_RUN_MANIFEST_V4",
+        "manifest_trial_rows": 960,
+        "native_equals_signed_control_aggregate": true,
+        "question_rows": 12,
+        "question_seed_rows": 48
+      },
+      "produced": [
+        "V52_T4F1_POST_RUN_MANIFEST.json",
+        "V52_T4F1_aggregate.csv",
+        "V52_T4F1_question_level.csv",
+        "V52_T4F1_question_seed_level.csv"
+      ],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "preexisting_V52_T4F1_question_seed_level.csv",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_seed_level.csv']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_question_seed_level.csv"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "preexisting_tmp_V52_T4F1_question_seed_level.csv",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_seed_level.csv.tmp']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_question_seed_level.csv.tmp"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "preexisting_V52_T4F1_question_level.csv",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_level.csv']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_question_level.csv"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "preexisting_tmp_V52_T4F1_question_level.csv",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_question_level.csv.tmp']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_question_level.csv.tmp"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "preexisting_V52_T4F1_aggregate.csv",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_aggregate.csv']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_aggregate.csv"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "preexisting_tmp_V52_T4F1_aggregate.csv",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_aggregate.csv.tmp']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_aggregate.csv.tmp"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "preexisting_V52_T4F1_POST_RUN_MANIFEST.json",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_POST_RUN_MANIFEST.json']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_POST_RUN_MANIFEST.json"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "preexisting_tmp_V52_T4F1_POST_RUN_MANIFEST.json",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_POST_RUN_MANIFEST.json.tmp']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_POST_RUN_MANIFEST.json.tmp"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "partial_derived_set_only_aggregate",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_aggregate.csv']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_aggregate.csv"
+      ],
+      "sentinels_intact": true
+    },
+    {
+      "blocked": true,
+      "case": "rerun_after_success",
+      "error": "RuntimeError: [BLOCKED - REFUSE FINALIZATION OVERWRITE] ['V52_T4F1_POST_RUN_MANIFEST.json', 'V52_T4F1_aggregate.csv', 'V52_T4F1_question_level.csv', 'V52_T4F1_question_seed_level.csv']",
+      "matches_expectation": true,
+      "produced": [
+        "V52_T4F1_POST_RUN_MANIFEST.json",
+        "V52_T4F1_aggregate.csv",
+        "V52_T4F1_question_level.csv",
+        "V52_T4F1_question_seed_level.csv"
+      ],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_metric_tamper",
+      "error": "RuntimeError: [BLOCKED - METRIC GOLD RECOMPUTATION MISMATCH] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_any_tamper",
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_all_true_to_false",
+      "error": "RuntimeError: [BLOCKED - METRIC GOLD RECOMPUTATION MISMATCH] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_all_structural_zero_to_one",
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('100K::a1::single-session-user::2', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_frac_true_to_wrong",
+      "error": "RuntimeError: [BLOCKED - METRIC GOLD RECOMPUTATION MISMATCH] ('100K::a1::single-session-user::2', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_ids_changed",
+      "error": "RuntimeError: [BUG - SIGNED CONTROL EXACT TOP3 OR DISTANCE MISMATCH] 100K::a1::single-session-user::1 seed=43001 trial=0",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_reorder",
+      "error": "RuntimeError: [BUG - SIGNED CONTROL EXACT TOP3 OR DISTANCE MISMATCH] 100K::a1::single-session-user::1 seed=43001 trial=0",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_dup_ids",
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_nonstring_id",
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_noncanonical",
+      "error": "RuntimeError: [BLOCKED - TOP3 OR GOLD ID SEMANTICS] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_bool_id",
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_nan_metric",
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_inf_metric",
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_oor_metric",
+      "error": "RuntimeError: [BLOCKED - METRIC RESULT SEMANTICS] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_gold_count",
+      "error": "RuntimeError: [BLOCKED - QUESTION METADATA RESULT MISMATCH] 100K::a1::single-session-user::1",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_unsorted_dist",
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_neg_dist",
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_big_dist",
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_bool_dist",
+      "error": "RuntimeError: [BLOCKED - TOP3 RESULT SCHEMA] ('100K::a1::single-session-user::1', 'NATIVE_SIGN96', '', 0)",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_bad_method",
+      "error": "RuntimeError: [BLOCKED - METHOD OR SEED RESULT] 100K::a1::single-session-user::1 MYSTERY96 ",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_bad_seed",
+      "error": "RuntimeError: [BLOCKED - METHOD OR SEED RESULT] 100K::a1::single-session-user::1 HAAR96_SIGN 99999",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_bad_trial",
+      "error": "RuntimeError: [BLOCKED - TRIAL ID RESULT] 100K::a1::single-session-user::1 NATIVE_SIGN96 77",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_unknown_q",
+      "error": "RuntimeError: [BLOCKED - ARCHIVE CHECKPOINT MISMATCH] 100K::a1",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_meta_mismatch",
+      "error": "RuntimeError: [BLOCKED - QUESTION METADATA RESULT MISMATCH] 100K::a1::single-session-user::1",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_drop_cell",
+      "error": "RuntimeError: [BLOCKED - FULL TRIAL ROW COUNT] 959 != 960",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_dup_cell",
+      "error": "RuntimeError: [BLOCKED - FULL TRIAL ROW COUNT] 961 != 960",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_signed_divergent_ids",
+      "error": "RuntimeError: [BUG - SIGNED CONTROL EXACT TOP3 OR DISTANCE MISMATCH] 100K::a1::single-session-user::1 seed=43001 trial=0",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_signed_divergent_dist",
+      "error": "RuntimeError: [BUG - SIGNED CONTROL EXACT TOP3 OR DISTANCE MISMATCH] 100K::a1::single-session-user::1 seed=43001 trial=0",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    },
+    {
+      "blocked": true,
+      "case": "m_trial_varying",
+      "error": "RuntimeError: [BUG - TRIAL-VARYING TOP3 OR DISTANCE UNDER FIXED PRIORITY] 100K::a1::single-session-user::1 HAAR96_SIGN 43001",
+      "matches_expectation": true,
+      "produced": [],
+      "sentinels_intact": null
+    }
+  ],
+  "commit_exclusivity": {
+    "destination_sentinel_intact": true,
+    "os_link_refuses_existing_destination": true
+  },
+  "synthetic_scale": {
+    "archives": 2,
+    "eligible_questions": 3,
+    "note": "scale constants reduced for guard-logic testing; real-scale constants verified unchanged by Gate 2 AST comparison",
+    "trial_rows_per_question": 320
+  }
+}

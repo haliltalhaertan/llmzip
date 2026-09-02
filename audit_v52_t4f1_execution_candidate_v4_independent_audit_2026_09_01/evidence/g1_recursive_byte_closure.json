@@ -1,0 +1,54 @@
+{
+  "declared_payload_count": 6,
+  "hash_or_size_mismatches": [],
+  "missing_declared_files": [],
+  "nested_directories": [],
+  "payload_inventory_binding": {
+    "match": true,
+    "observed_PAYLOAD_HASHES_sha256": "fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e",
+    "seal_declared_inventory_sha256": "fe1de9c7160191f7a001ecadb928057411cc7b560a3f8f8a9130c6d3ceb1ba5e"
+  },
+  "pycache_present": false,
+  "real_candidate_unchanged_after_all_tests": true,
+  "real_package_preflight": {
+    "rc": 0,
+    "stdout": [
+      "PASS: recursive payload closure, fail-closed HMAC authorization, script binding, and archive-fit AST boundary",
+      "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    ]
+  },
+  "recursive_file_count": 8,
+  "recursive_files": [
+    "CANDIDATE_EXECUTION_SEAL.json",
+    "DEPENDENCY_LOCK.txt",
+    "EXECUTION_SPEC.md",
+    "PAYLOAD_HASHES.json",
+    "README.md",
+    "RUN_AUTHORIZATION_TEMPLATE.json",
+    "candidate_package_preflight.py",
+    "v52_t4f1_beam_retrieval.py"
+  ],
+  "seal_implementation_binding": {
+    "match": true,
+    "observed_runner_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "seal_declared_implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+  },
+  "seal_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+  "seal_status": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+  "temp_copy_mutated_bound_byte": {
+    "error": "RuntimeError: payload mismatch README.md",
+    "rc": 1,
+    "rejected": true
+  },
+  "temp_copy_nested_unbound_file": {
+    "error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.",
+    "rc": 1,
+    "rejected": true
+  },
+  "temp_copy_pycache": {
+    "error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.",
+    "rc": 1,
+    "rejected": true
+  },
+  "unbound_files": []
+}
