@@ -5,10 +5,10 @@ This is the single operational entry point for a new Head Researcher, Compute Ex
 ## Exact starting point
 
 - **Repository state:** canonical branch `main`. Tag pushes are refused by the current environment, so the pushed anchor is branch `state/v52-4f1-v3-audit-blocked-2026-09-01`; use the current `main` head or a descendant explicitly reviewed by the Head Researcher.
-- **Current task:** build the V5 candidate remediating co-chair blocking finding CC-01, then have it independently audited. The V4 audit evidence stands, but the V4 package is NOT co-signed as sealed.
+- **Current task:** cold-start independent **delta** audit of the exact V5 package. V5 is prepared; do not re-run the V3 or V4 audits, and do not audit V5 if you prepared it.
 - **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
-- **Executable audit instructions:** `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V4_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md`.
+- **Executable audit instructions:** `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V5_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-02.md`.
 
 Read those files in that order. Historical V1/V2 audit reports are evidence, not instructions to execute their candidates.
 
@@ -21,17 +21,19 @@ Read those files in that order. Historical V1/V2 audit reports are evidence, not
 | 4F1 V2 audit | `BLOCKED`; synthetic B1/B2/B3 integrity defects reproduced |
 | 4F1 V3 candidate | `BLOCKED` by cold-start independent audit 2026-09-01: B1/B2/B3 repaired, but the pinned 100K::12 canary is not reproducible from the declared environment lock |
 | 4F1 V4 candidate | Audit evidence accepted (9/9 implementation gates, `641568d8`), but **seal WITHDRAWN**: co-chair REQUEST CHANGES on blocking finding CC-01 |
-| 4F1 V5 candidate | Required; must correct CC-01 and stale V3 text with the runner byte-identical to V4 |
+| 4F1 V5 candidate | `PREPARED_NOT_INDEPENDENTLY_AUDITED`; CC-01 corrected, single-source gate installed, runner byte-identical to the accepted V4 runner |
 | Task 4F1 preregistration / run | **Blocked** |
 | Retrieval-quality outcome access | **Forbidden** |
 
-The V3 audit blocked on Gate 3 (BLAS-dispatch-dependent float digests). V4 remediated that by binding sign codes plus a stability margin, and a separate cold-start auditor returned `PASS` on all nine implementation gates.
+The V3 audit blocked on Gate 3 (BLAS-dispatch-dependent float digests). V4 fixed that by binding sign codes, and its independent audit passed all nine implementation gates — but the co-chair review then found **CC-01**: the bound `EXECUTION_SPEC.md` carried two mutually exclusive normative canary definitions. V4's package seal was withdrawn. That defect was the Continuity Lead's, introduced by a blanket label substitution that added the correct specification without removing the superseded one.
 
-**That seal has since been withdrawn.** The co-chair review of 2026-09-02 returned `REQUEST CHANGES` on blocking finding **CC-01**: the bound `EXECUTION_SPEC.md` carries two mutually exclusive normative canary definitions — line 44 still demands the superseded V3 raw-float digests, while lines 110-112 demand the V4 sign-code digests. Only the latter is implemented and audited, and the former is unsatisfiable on conformant hardware. The Continuity Lead independently reproduced this and accepts it as its own authoring error: V4's spec was updated by a blanket label substitution plus an appended section, which never removed the superseded text. The audit's Gate 2 was scoped to runner source and AST, so no gate looked for contradictions across bound prose.
+V5 is the approved **declarative** remediation. Its retrieval runner is byte-identical to the accepted V4 runner (`f96cba2c`), so no execution behaviour changes and a delta-scoped audit is available. V5 adds `NORMATIVE_SOURCE_MAP.json` (18 load-bearing concepts, one authoritative source each, every repetition typed as a derived mirror) and a single-source preflight gate whose claim is not "no contradiction found" but: one source per concept, mirrors typed and equal, zero surviving deprecated literals anywhere in the bound closure, prose included.
 
-The V4 audit evidence remains valid for what it covered. The package is not sealed.
+**V5 is a package version, not a schema version.** Because the runner is byte-identical, every schema literal it verifies stays at its V4 value. Relabelling them would break byte-identity or make the payload fail closed against its own runner — do not "fix" them.
 
-Next: a V5 candidate correcting CC-01 and the stale V3 text, with the execution runner byte-identical to the accepted V4 runner so the change set stays declarative, plus a V5 audit prompt carrying a mandatory cross-payload semantic-consistency gate. Scientific route is option B: freeze the outcome-free justification and the tier-stratified estimands before any preregistration. Task 4F1 stays BLOCKED for preregistration and run.
+Post-audit acceptance never re-enters a candidate: the seal records `status_at_audit_submission` only, and a detached hash-bound attestation under `docs/v52/task4f1/` is the sole authority for current state.
+
+Next: a cold-start auditor that did not prepare V5 runs the delta-audit prompt and must derive the declarative classification from the bytes. Sealing then needs both the Head Researcher and the co-chair. Task 4F1 stays BLOCKED for preregistration and run; the scientific route is option B, with tier-stratified estimands frozen before any preregistration.
 
 ## Non-negotiable boundary
 

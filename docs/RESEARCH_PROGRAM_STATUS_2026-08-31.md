@@ -19,7 +19,7 @@ This document is the current operational research ledger. It distinguishes accep
 - `[TASK 4F1 V2 INDEPENDENT AUDIT BLOCKED — B1/B2/B3 FINALIZATION INTEGRITY DEFECTS]`
 - `[TASK 4F1 V3 INDEPENDENT AUDIT BLOCKED — CANARY NOT REPRODUCIBLE FROM DECLARED ENVIRONMENT LOCK]`
 - `[TASK 4F1 V4 AUDIT EVIDENCE ACCEPTED — 9/9 GATES; PACKAGE SEAL WITHDRAWN BY CO-CHAIR CC-01]`
-- `[TASK 4F1 V5 REMEDIATION REQUIRED — CONTRADICTORY BOUND CANARY SPECIFICATION]`
+- `[TASK 4F1 V5 PREPARED — DECLARATIVE CC-01 REMEDIATION; INDEPENDENT DELTA AUDIT PENDING]`
 - `[TASK 4F1 PREREGISTRATION DECISION PENDING — STILL NOT AUTHORIZED TO RUN]`
 
 ## Accepted scientific evidence
@@ -212,3 +212,30 @@ ALL@3 is reported under its structural-zero rule but is not the main scale claim
 Governance: the Continuity Lead remains sole writer of the state file and the ledger; the
 co-chair writes only review artifacts on a separate branch and holds approval and veto. Task
 4F1 remains blocked for preregistration and execution.
+
+## 2026-09-02 — Task 4F1 V5 prepared (declarative CC-01 remediation)
+
+Under the co-chair approval at `4bd32782`, V5 was prepared as a purely declarative remediation
+of CC-01. The retrieval runner is byte-identical to the accepted V4 runner `f96cba2c` and its
+AST is equal with docstrings stripped, so no representation, method, seed, threshold, priority,
+metric, aggregation, checkpoint, finalization or authorization behaviour changes. The only
+executable delta is the out-of-band package checker, which the runner never imports.
+
+`EXECUTION_SPEC.md` now carries exactly one normative canary section and both superseded V3
+raw-float digests are enumerated as deprecated literals. `NORMATIVE_SOURCE_MAP.json` enumerates
+18 load-bearing concepts with one authoritative source each and types every repetition as a
+derived mirror. The preflight gate proves one source per concept, equal typed mirrors, zero
+surviving deprecated literals across the whole bound closure including prose, and runner
+byte-identity. Ten negative fixtures block, including a direct reintroduction of CC-01.
+
+Two design decisions are recorded so they are not later "corrected". First, V5 is a package
+version rather than a schema version: because the runner is byte-identical, the schema literals
+it verifies stay at V4, and the authorization template names the schema the shipped runner
+actually verifies. Second, the deprecated-literal scan exempts only the registry block that
+declares a literal, by re-serialising the map without it rather than by any line-level
+heuristic — the first attempt used such a heuristic and failed against the map itself.
+
+This is implementer evidence, not independent sign-off. A cold-start delta audit is required and
+must derive the declarative classification from the bytes. Sealing requires both the Head
+Researcher and the co-chair. Task 4F1 remains blocked for preregistration and execution, and the
+scientific route remains option B with tier-stratified estimands frozen beforehand.
