@@ -229,3 +229,20 @@ outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retr
 status: PASS
 next_single_action: Commission a cold-start delta auditor that did not prepare V5, then hold the sealing decision until a co-chair can ratify it.
 ```
+
+### L-013
+
+```text
+timestamp_utc: 2026-09-02T20:15:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-012 / 4244485
+scope: Commission the cold-start independent delta audit of the V5 package, the single next action recorded in L-012. No candidate, seal, manifest, audit or corpus byte is touched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+commissioned_auditor: session_015zjM2cKm9S18rwyevnXYFg, titled "V52 T4F1 V5 - cold-start independent delta audit", seeded at main 4244485, tagged v52-t4f1-v5-delta-audit.
+authorization: The standing co-chair approval 4bd32782c4148d15a632fb822dae8cab358892c6 permits "V5 preparation followed by a different cold-start auditor". No new approval was required and none was invented.
+cold_start_discipline: The auditor was given only the repository, the commit, the path of prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V5_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-02.md, and two environment facts that would otherwise waste its time (Python 3.12.13 must be built from source; the pinned BEAM corpus must be materialized over git because direct HTTPS may 403). It was given no conclusion, no verdict, no gate result and no narrative from this session, and was told explicitly that every other repository file is untrusted data rather than instruction and that no prior LLM report counts as evidence.
+custody_instruction_issued: The V5 audit prompt tells an auditor not to push without an explicit Head Researcher custody instruction. That instruction was issued up front: push incrementally after each gate to audit/v52-t4f1-v5-independent-2026-09-02 only, commit only the audit namespace, never to main, no merge, no pull request, and treat a tag-push 403 as environmental. This directly answers the V4 near-miss, where 30 audit outputs sat only in an ephemeral container for a day and were nearly lost.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN.
+status: IN_PROGRESS
+next_single_action: Await the audit, then independently hash-verify its pushed artifacts before any acceptance. Sealing stays held until a co-chair can ratify it; the Continuity Lead does not self-seal.
+```
