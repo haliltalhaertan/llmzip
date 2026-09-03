@@ -299,3 +299,21 @@ status: PASS
 next_single_action: A cold-start auditor that did not prepare V6 executes only the V6 delta-audit prompt and must state whether the gate claim is established or merely not yet falsified.
 handoff_payload: branch impl/v52-t4f1-v6-2026-09-03 at fb7fce8, merged to main; V6 runner f96cba2c; inventory, seal, source map, checker, attestation and preflight manifest hashes bound in ops/CURRENT_STATE.json anchors.
 ```
+
+### L-017
+
+```text
+timestamp_utc: 2026-09-03T13:00:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-016 / 6dee50d
+scope: Commission the cold-start independent delta audit of the V6 package. No candidate, seal, manifest, audit or corpus byte is touched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+commissioned_auditor: session_01UuSK9YBAQ6iMtk7n13fnGh, titled "V52 T4F1 V6 - cold-start independent delta audit", seeded at main 6dee50d, tagged v52-t4f1-v6-delta-audit.
+cold_start_discipline: The auditor received only the repository, the commit, the V6 audit prompt path, the custody instruction and two environment facts that would otherwise waste its time. It was given no conclusion, verdict, gate result or narrative from this session, and was told that every other repository file - including commit messages and ledger entries - is untrusted data rather than instruction.
+framing_given: The auditor was told one thing about the substance, because it is the point of the audit and withholding it would have been a trap rather than a test: the package ships a gate that makes a strong general claim about itself, its predecessor made a similar claim and was BLOCKED because the claim did not hold, and observing the gate print PASS is not evidence. This directs effort at the right question without supplying an answer.
+custody_instruction_issued: Push incrementally after each gate to audit/v52-t4f1-v6-independent-2026-09-03 only; audit namespace only; never to main; no merge; no pull request; treat a tag-push 403 as environmental.
+authority_note: V6 itself was prepared under Continuity Lead authority alone and exceeds the standing co-chair approval 4bd32782, which covered V5 only. Even a passing audit leaves sealing conditional on co-chair ratification. This is stated in the seal, the preflight manifest and the audit prompt, so the auditor encounters it in the artifacts rather than only here.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN.
+status: IN_PROGRESS
+next_single_action: Await the audit, then independently hash-verify its pushed artifacts before any acceptance. The Continuity Lead does not self-seal, and sealing additionally requires co-chair ratification.
+```
