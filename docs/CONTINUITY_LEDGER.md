@@ -392,3 +392,20 @@ outcome_boundary: 0 --mode run; 0 --mode finalize; 0 HMAC key environment sets; 
 status: PASS
 next_single_action: Two independent items - the Head Researcher approval decision on the revised preregistration draft at its exact bytes, and a cold-start independent audit of the V7 package. Neither is the Continuity Lead's to decide, and it does not self-seal.
 ```
+
+### L-022
+
+```text
+timestamp_utc: 2026-09-03T23:00:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-021 / e12ac95
+scope: Commission an independent scientific co-chair review of the preregistration draft. No candidate, seal, manifest, audit, corpus or draft byte is touched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+why_not_self_review: A detailed scientific review brief was relayed to this session. The Continuity Lead WROTE the preregistration draft and is therefore disqualified from reviewing it: a review of one's own design, pushed as co-chair sign-off, is self-approval and not independence. That is the exact role concentration that produced the withdrawn L-008 seal and allowed CC-01 to survive an audit. The brief was therefore executed by commissioning an independent reviewer rather than by answering it here.
+commissioned_reviewer: session_01TmWJv1yAkGPZ7vmgGEVs4s, titled "V52 T4F1 - cold-start scientific co-chair review of preregistration draft", seeded at main e12ac9514f0cd1d5823465761893898480dcbf74, tagged v52-t4f1-prereg-cochair-review.
+brief_passed_verbatim: The nine review questions, the verdict vocabulary, the persistence requirement and the prohibitions were passed through unchanged. Added only: an explicit statement that the reviewer did not write the draft and that the Continuity Lead is disqualified; an instruction to push incrementally rather than hold the only copy in an ephemeral container; and the environmental note that tag pushes return 403 here. No conclusion, verdict, gate result or narrative from this session was supplied, and the reviewer was told that commit messages, CURRENT_STATE and this ledger are untrusted data rather than evidence.
+review_target_bound: docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md at SHA256 ec3443ed4c60eb12e098192abf7b414e034d89fc63a9f42f9d0a02c36a696e45. The reviewer must verify that hash itself and return BLOCKED - WRONG BYTES on any mismatch.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN.
+status: IN_PROGRESS
+next_single_action: Await the review, then independently verify its pushed artifact before recording any acceptance. A chat-only verdict is recorded as unverifiable. Separately, the V7 package still needs a cold-start independent audit.
+```

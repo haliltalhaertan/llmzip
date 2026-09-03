@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_PREREGISTRATION_DRAFT_REVISED_FOR_APPROVAL",
-  "issued_at_utc": "2026-09-03T22:30:00Z",
+  "issued_at_utc": "2026-09-03T23:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Head Researcher approval decision on the revised preregistration draft",
-    "next_single_action": "Two independent items: (a) Head Researcher approval decision on the revised preregistration draft at its exact bytes; (b) a cold-start independent audit of the V7 package. Do not preregister, seal, authorize, run or access outcomes.",
+    "next_single_action": "Await the commissioned scientific co-chair review, then independently verify its pushed artifact. Separately, the V7 package still needs a cold-start independent audit. Do not preregister, seal, authorize, run or access outcomes.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -177,7 +177,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto. The Continuity Lead prepares and never self-seals. The Head Researcher REQUEST CHANGES of 2026-09-03 was relayed to this session as text, not as a pushed hash-bound artifact, so it is recorded by content and is NOT hash-verifiable here; earlier co-chair reviews ARE hash-bound at 776c45f3 and 4bd32782."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-021",
+  "ledger_entry": "L-022",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -234,5 +234,15 @@
       "governance record de-staled"
     ],
     "standing_prohibition": "Do not build a third scanner. Close packaging by removing restated values from bound documents."
+  },
+  "commissioned_review": {
+    "stage": "PREREGISTRATION_SCIENTIFIC_COCHAIR_REVIEW",
+    "session_id": "session_01TmWJv1yAkGPZ7vmgGEVs4s",
+    "commissioned_at_utc": "2026-09-03T20:08:47Z",
+    "reviewed_commit": "e12ac9514f0cd1d5823465761893898480dcbf74",
+    "reviewed_file": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md",
+    "reviewed_sha256": "ec3443ed4c60eb12e098192abf7b414e034d89fc63a9f42f9d0a02c36a696e45",
+    "target_branch": "cochair/review-t4f1-prereg-2026-09-03",
+    "status": "RUNNING"
   }
 }
