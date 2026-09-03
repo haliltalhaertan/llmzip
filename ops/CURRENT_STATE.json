@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_PREREGISTRATION_DRAFT_REVISED_FOR_APPROVAL",
-  "issued_at_utc": "2026-09-03T23:45:00Z",
+  "issued_at_utc": "2026-09-04T00:15:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -35,7 +35,8 @@
     "v5_candidate": "BLOCKED by independent delta audit 2026-09-03. CC-01 itself is repaired and the V4-to-V5 change set is genuinely declarative, but the single-source mechanism that is the reason V5 exists does not establish its own claim.",
     "v6_candidate": "BLOCKED by independent delta audit 2026-09-03. 31 evasions succeeded against the inverted-burden gate; the Continuity Lead independently reproduced 9 of 9 it tested.",
     "v7_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED (bound payload reduced to 4 functional files; no narrative document bound)",
-    "packaging": "CLOSED BY SURFACE REDUCTION pending independent audit; no scanner exists in the package"
+    "packaging": "CLOSED BY SURFACE REDUCTION pending independent audit; no scanner exists in the package",
+    "v7_preseal_documentation_condition": "SATISFIED 2026-09-04; awaiting independent confirmation"
   },
   "anchors": {
     "v3_runner": {
@@ -173,11 +174,11 @@
     "worker_isolation": "Each worker uses a separate clone/worktree, branch and output namespace",
     "independent_auditor": "Must be cold-start and must not treat any other agent's chat or narrative as audit evidence",
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action",
-    "co_chair": "HISTORICAL: Codex acted as approval/veto co-chair on 2026-09-02 and issued the CC-01 REQUEST CHANGES and the V5 approval, both pushed and hash-verified on branch codex/review-v52-t4f1-cochair-2026-09-02. Its stated unavailability of 2026-09-02 is superseded: a Head Researcher decision arrived on 2026-09-03. Which agent currently holds the co-chair seat is NOT established from any artifact this session can verify, so no current occupant is asserted here.",
-    "reviewing_authority": "Head Researcher holds final approval and veto. The Continuity Lead prepares and never self-seals. The Head Researcher REQUEST CHANGES of 2026-09-03 was relayed to this session as text, not as a pushed hash-bound artifact, so it is recorded by content and is NOT hash-verifiable here; earlier co-chair reviews ARE hash-bound at 776c45f3 and 4bd32782."
+    "co_chair": "ESTABLISHED 2026-09-03: Claude holds the current co-chair seat. Historical Codex co-chair decisions remain valid governance artifacts, hash-bound at 776c45f3 and 4bd32782. Independence is SESSION-SPECIFIC: a Claude session that prepared an artifact cannot independently audit or co-chair-review that same artifact.",
+    "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-023",
+  "ledger_entry": "L-024",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -241,5 +242,15 @@
     "reviewed_sha256": "ec3443ed4c60eb12e098192abf7b414e034d89fc63a9f42f9d0a02c36a696e45",
     "target_branch": "cochair/review-t4f1-prereg-2026-09-03",
     "status": "RUNNING"
+  },
+  "head_researcher_ratification_2026_09_03": {
+    "branch": "hr/ratify-v7-governance-2026-09-03",
+    "commit": "6f1de9eb1dfb8557e4ebc3fa2a1130214c6b228b",
+    "file": "docs/v52/task4f1/V7_HEAD_RESEARCHER_GOVERNANCE_RATIFICATION_2026-09-03.md",
+    "file_sha256": "e2cc9a8b207be7b21d2b8759a1a2c6c86186522c7102f0d39313172530ebbc41",
+    "independently_verified": true,
+    "v7_packaging_direction": "RATIFIED IN PRINCIPLE, with a pre-seal documentation condition (now satisfied)",
+    "authorization_template_schema": "RATIFIED — V52_T4F1_RUN_AUTHORIZATION_V4 is correct while the runner is byte-identical to the accepted V4 runner; package and authorization-schema versions are separate domains",
+    "cochair_seat": "ESTABLISHED — Claude, effective 2026-09-03"
   }
 }
