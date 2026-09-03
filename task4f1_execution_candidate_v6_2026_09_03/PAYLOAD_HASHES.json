@@ -1,0 +1,43 @@
+{
+  "closure": "RECURSIVE_ALL_FILES_EXCLUDING_INVENTORY_AND_SEAL",
+  "file_count_excluding_inventory_and_seal": 7,
+  "files": [
+    {
+      "bytes": 330,
+      "name": "DEPENDENCY_LOCK.txt",
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "bytes": 12078,
+      "name": "EXECUTION_SPEC.md",
+      "sha256": "e649476303207fd59d2135500f63cec3b69b2950e63c447ef8c197ddbe9b54a4"
+    },
+    {
+      "bytes": 21497,
+      "name": "NORMATIVE_SOURCE_MAP.json",
+      "sha256": "2795ff176df7e465955ed407ef66514c425ccf255b831cea5d71421136df5924"
+    },
+    {
+      "bytes": 6898,
+      "name": "README.md",
+      "sha256": "4fd489a9e23ff953ffed9e7f2e28cfded57ecc9e52e6bdb76b0fb948e40077ba"
+    },
+    {
+      "bytes": 1139,
+      "name": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "sha256": "df1e9f8a53199ad82cc04b680893581dc1976db3a449e7b801ad495e9ebf79e9"
+    },
+    {
+      "bytes": 14574,
+      "name": "candidate_package_preflight.py",
+      "sha256": "97978dda6dbd35fc12109d51cc0cb0a83bda929f2e268da0a7ef085d3953796a"
+    },
+    {
+      "bytes": 61860,
+      "name": "v52_t4f1_beam_retrieval.py",
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    }
+  ],
+  "schema": "V52_T4F1_EXECUTION_CANDIDATE_PAYLOADS_V4",
+  "status_note": "Inventory carries no status field. Submission status lives only in CANDIDATE_EXECUTION_SEAL.json; acceptance state lives only in the detached attestation."
+}
