@@ -1,0 +1,624 @@
+{
+  "deprecated_literals": [
+    {
+      "literal": "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded V3 raw-float archive canary digest; BLAS-dispatch dependent"
+    },
+    {
+      "literal": "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded V3 raw-float query canary digest; BLAS-dispatch dependent"
+    },
+    {
+      "literal": "V52_T4F1_RUN_AUTHORIZATION_V3",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded authorization schema label"
+    },
+    {
+      "literal": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V3",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded seal schema label"
+    },
+    {
+      "literal": "V52_T4F1_ARCHIVE_RESULT_META_V3",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded checkpoint schema label"
+    },
+    {
+      "literal": "V52_T4F1_POST_RUN_MANIFEST_V3",
+      "must_not_appear_as_requirement": true,
+      "reason": "superseded manifest schema label"
+    }
+  ],
+  "fields": [
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "candidate_schema_version",
+      "locator": "verify_execution_seal() literal",
+      "mirrors": [
+        {
+          "locator": "schema",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "seal schema check",
+          "path": "candidate_package_preflight.py"
+        },
+        {
+          "locator": "schema versioning section",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "note": "V6 is a package version, not a schema version: the runner is byte-identical to the accepted V4 runner, so its literals stay at V4.",
+      "scannable_literals": [
+        "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+      ],
+      "value": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "authorization_schema_version",
+      "locator": "AUTH_SCHEMA",
+      "mirrors": [
+        {
+          "locator": "schema label and note",
+          "path": "RUN_AUTHORIZATION_TEMPLATE.json"
+        },
+        {
+          "locator": "authorization prose and schema versioning section",
+          "path": "EXECUTION_SPEC.md"
+        },
+        {
+          "locator": "authorization_control context",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        }
+      ],
+      "scannable_literals": [
+        "V52_T4F1_RUN_AUTHORIZATION_V4"
+      ],
+      "value": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "archive_result_meta_schema",
+      "locator": "evaluate_archive metadata literal",
+      "mirrors": [
+        {
+          "locator": "schema versioning section",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "V52_T4F1_ARCHIVE_RESULT_META_V4"
+      ],
+      "value": "V52_T4F1_ARCHIVE_RESULT_META_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "post_run_manifest_schema",
+      "locator": "finalize_results manifest literal",
+      "mirrors": [
+        {
+          "locator": "schema versioning section",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "V52_T4F1_POST_RUN_MANIFEST_V4"
+      ],
+      "value": "V52_T4F1_POST_RUN_MANIFEST_V4"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "implementation_preflight_schema",
+      "locator": "preflight report literal",
+      "mirrors": [
+        {
+          "locator": "schema versioning section",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+      ],
+      "value": "V52_T4F1_IMPLEMENTATION_PREFLIGHT_V4"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "concept": "candidate_submission_status",
+      "locator": "status_at_audit_submission",
+      "mirrors": [
+        {
+          "locator": "submission status check",
+          "path": "candidate_package_preflight.py"
+        },
+        {
+          "locator": "status paragraph",
+          "path": "README.md"
+        }
+      ],
+      "note": "Immutable historical fact. Never edited to express acceptance. PAYLOAD_HASHES.json must carry no status field.",
+      "scannable_literals": [],
+      "value": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "authoritative_path": "docs/v52/task4f1/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json",
+      "concept": "post_audit_acceptance_state",
+      "locator": "acceptance_state",
+      "mirrors": [],
+      "note": "Resolvable file path outside the candidate. Sole authority for current state; the seal never expresses it.",
+      "scannable_literals": [],
+      "value": "NOT_YET_ACCEPTED_FOR_V6"
+    },
+    {
+      "authoritative_path": "NORMATIVE_SOURCE_MAP.json",
+      "concept": "v4_to_v6_runner_identity",
+      "locator": "this field",
+      "mirrors": [
+        {
+          "locator": "implementation.sha256",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "files runner entry",
+          "path": "PAYLOAD_HASHES.json"
+        },
+        {
+          "locator": "V4_ACCEPTED_RUNNER_SHA256",
+          "path": "candidate_package_preflight.py"
+        },
+        {
+          "locator": "V6 change summary",
+          "path": "README.md"
+        }
+      ],
+      "scannable_literals": [
+        "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+      ],
+      "value": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "authoritative_path": "EXECUTION_SPEC.md",
+      "concept": "canary_algorithm_and_digests",
+      "locator": "section 'Canary specification (NORMATIVE \u2014 sole source)'",
+      "mirrors": [
+        {
+          "locator": "EXPECTED_REAL_CANARY_*_SIGN_SHA256 and CANARY_SIGN_MARGIN",
+          "path": "v52_t4f1_beam_retrieval.py"
+        },
+        {
+          "locator": "V6 change summary",
+          "path": "README.md"
+        }
+      ],
+      "scannable_literals": [
+        "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+        "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+      ],
+      "value": {
+        "archive_shape": [
+          392,
+          96
+        ],
+        "archive_sign_sha256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+        "archive_units": 392,
+        "query_shape": [
+          1,
+          96
+        ],
+        "query_sign_sha256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+        "sign_margin": 1e-09,
+        "threshold": ">= 0"
+      }
+    },
+    {
+      "authoritative_path": "EXTERNAL:audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "concept": "cohort_anchor",
+      "locator": "file bytes",
+      "mirrors": [
+        {
+          "locator": "EXPECTED_COHORT_SHA256 / EXPECTED_ELIGIBLE / EXPECTED_ARCHIVES / EXCLUDED_ARCHIVES",
+          "path": "v52_t4f1_beam_retrieval.py"
+        },
+        {
+          "locator": "cohort_sha256 / required_archive_count",
+          "path": "RUN_AUTHORIZATION_TEMPLATE.json"
+        },
+        {
+          "locator": "sealed_task4f0_boundary",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "exact input bindings",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+      ],
+      "value": {
+        "archive_count": 96,
+        "eligible_questions": 1712,
+        "excluded_archives": [
+          "1M::5",
+          "1M::26",
+          "1M::33",
+          "1M::34"
+        ],
+        "sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+        "total_rows": 2000
+      }
+    },
+    {
+      "authoritative_path": "DEPENDENCY_LOCK.txt",
+      "concept": "dependency_lock",
+      "locator": "file bytes",
+      "mirrors": [
+        {
+          "locator": "EXPECTED_DEPENDENCY_LOCK_SHA256",
+          "path": "v52_t4f1_beam_retrieval.py"
+        },
+        {
+          "locator": "environment block",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "environment prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+      ],
+      "value": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "upstream_corpus_commit",
+      "locator": "EXPECTED_BEAM_COMMIT",
+      "mirrors": [
+        {
+          "locator": "pinned_beam_commit",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "corpus provenance prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+      ],
+      "value": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "upstream_tree_manifest_anchor",
+      "locator": "EXPECTED_BEAM_MANIFEST_SHA256",
+      "mirrors": [
+        {
+          "locator": "pinned_beam_tree_manifest",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "corpus provenance prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "note": "Separately load-bearing: the package itself states that commit identity alone is insufficient.",
+      "scannable_literals": [
+        "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318"
+      ],
+      "value": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "restricted_seal_anchor",
+      "locator": "EXPECTED_RESTRICTED_SEAL_SHA256",
+      "mirrors": [
+        {
+          "locator": "sealed_task4f0_boundary",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "exact input bindings",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c"
+      ],
+      "value": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "restricted_protocol_anchor",
+      "locator": "EXPECTED_PROTOCOL_SHA256",
+      "mirrors": [
+        {
+          "locator": "sealed_task4f0_boundary",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "exact input bindings",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1"
+      ],
+      "value": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "parent_commit_anchor",
+      "locator": "EXPECTED_PARENT_COMMIT",
+      "mirrors": [
+        {
+          "locator": "parent_llmzip_commit",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        },
+        {
+          "locator": "provenance prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [
+        "d3c7aa09c9553cd5ac100e668923abab602e4257"
+      ],
+      "value": "d3c7aa09c9553cd5ac100e668923abab602e4257"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "tie_priority",
+      "locator": "TIE_PREFIX and tie_priority()",
+      "mirrors": [
+        {
+          "locator": "Tie and trial interpretation section",
+          "path": "EXECUTION_SPEC.md"
+        },
+        {
+          "locator": "execution_interpretations",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        }
+      ],
+      "scannable_literals": [
+        "V52_T4F0_TIE_PRIORITY_V1"
+      ],
+      "value": {
+        "formula": "priority = int.from_bytes(sha256(TIE_PREFIX + archive_id.encode() + b'::' + memory_key.encode()).digest()[:8],'big'); ties broken by ascending priority, split into hi/lo arrays",
+        "prefix": "V52_T4F0_TIE_PRIORITY_V1"
+      }
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "arm_identifiers",
+      "locator": "valid_seeds keys in finalize_results",
+      "mirrors": [
+        {
+          "locator": "Arms section",
+          "path": "EXECUTION_SPEC.md"
+        },
+        {
+          "locator": "arms block",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        }
+      ],
+      "note": "Validated at finalization, therefore load-bearing.",
+      "scannable_literals": [],
+      "value": [
+        "NATIVE_SIGN96",
+        "SIGNED_PERM_CONTROL96",
+        "HAAR96_SIGN",
+        "ITQ96_CENTERED"
+      ]
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "methods_seeds_trials_topk",
+      "locator": "module constants HAAR_SEEDS / SIGNED_PERM_SEEDS / ITQ_SEEDS / NUISANCE_TRIALS / TOP_K / LATENT_DIM / LATENT_SEED / MIXED_DIM / MIXED_SEED / ITQ_ITERATIONS / INVARIANCE_TOLERANCE",
+      "mirrors": [
+        {
+          "locator": "Arms section",
+          "path": "EXECUTION_SPEC.md"
+        },
+        {
+          "locator": "arms and execution_interpretations blocks",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        }
+      ],
+      "scannable_literals": [],
+      "value": {
+        "haar_seeds": [
+          43001,
+          43002,
+          43003,
+          43004,
+          43005
+        ],
+        "invariance_tolerance": 1e-12,
+        "itq_iterations": 100,
+        "itq_seeds": [
+          101,
+          202,
+          303,
+          404,
+          505
+        ],
+        "latent_dim": 32,
+        "latent_seed": 5101,
+        "mixed_dim": 96,
+        "mixed_seed": 5204,
+        "top_k": 3,
+        "trials": 20
+      }
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "metrics_and_structural_zero_rule",
+      "locator": "metrics_at_3()",
+      "mirrors": [
+        {
+          "locator": "metrics prose",
+          "path": "EXECUTION_SPEC.md"
+        },
+        {
+          "locator": "execution_interpretations",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        }
+      ],
+      "scannable_literals": [],
+      "value": "Fractional Source Evidence Recall@3 = |retrieved\u2229gold|/|gold|; ANY@3 = 1 if the intersection is non-empty; ALL@3 = 1 iff gold \u2286 retrieved, hence a structural zero whenever |gold| > 3"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "aggregation_rule",
+      "locator": "finalize_results() aggregation",
+      "mirrors": [
+        {
+          "locator": "aggregation prose",
+          "path": "EXECUTION_SPEC.md"
+        },
+        {
+          "locator": "execution_interpretations",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        }
+      ],
+      "scannable_literals": [],
+      "value": "320 trial rows per eligible question; 16 question-seed rows; 4 question-method rows; 4 aggregate rows; equal question weighting over the fixed 1712 denominator; trials are deterministic replication identities, never independent statistical units"
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "concept": "authorization_commitment_state",
+      "locator": "authorization_control.key_commitment_sha256",
+      "mirrors": [
+        {
+          "locator": "fail-closed commitment check",
+          "path": "candidate_package_preflight.py"
+        },
+        {
+          "locator": "authorization prose",
+          "path": "EXECUTION_SPEC.md"
+        },
+        {
+          "locator": "status paragraph",
+          "path": "README.md"
+        }
+      ],
+      "scannable_literals": [],
+      "value": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+    },
+    {
+      "authoritative_path": "v52_t4f1_beam_retrieval.py",
+      "concept": "authorization_signed_fields",
+      "locator": "AUTH_SIGNED_FIELDS",
+      "mirrors": [
+        {
+          "locator": "authorization_control.signed_fields",
+          "path": "CANDIDATE_EXECUTION_SEAL.json"
+        }
+      ],
+      "scannable_literals": [],
+      "value": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "cohort_sha256",
+        "required_archive_count",
+        "output_namespace_basename",
+        "preregistration_seal_sha256",
+        "authorization_id",
+        "authorization_nonce"
+      ]
+    },
+    {
+      "authoritative_path": "CANDIDATE_EXECUTION_SEAL.json",
+      "concept": "outcome_boundary_and_stop_rule",
+      "locator": "authorization and stop_rule",
+      "mirrors": [
+        {
+          "locator": "status paragraph",
+          "path": "README.md"
+        },
+        {
+          "locator": "stop rule prose",
+          "path": "EXECUTION_SPEC.md"
+        }
+      ],
+      "scannable_literals": [],
+      "value": {
+        "retrieval_quality_outcome_access": "FORBIDDEN",
+        "task_4f1_preregistration": "BLOCKED",
+        "task_4f1_run": "BLOCKED"
+      }
+    }
+  ],
+  "gate_claim": "Every load-bearing concept has one enumerated normative source; every occurrence of its value elsewhere is a declared typed mirror; no superseded literal survives anywhere; and no value-shaped token exists in the closure that no concept claims. Matching runs on normalised text (whitespace removed, case folded) so line wrapping and uppercase hex cannot hide a literal. Tokens that are not normative values are not silently ignored: each exempt class is declared here with its files, its key-path or allowlist scope, and a rationale, so an auditor can see exactly what the sweep chose not to hold to account and why.",
+  "non_normative_token_classes": [
+    {
+      "class": "inventory_self_hashes",
+      "files": [
+        "PAYLOAD_HASHES.json"
+      ],
+      "json_key_prefixes": [
+        "files[]"
+      ],
+      "rationale": "The inventory's own file digests are computed from the package, not asserted about anything else. They are self-describing and permitted only inside PAYLOAD_HASHES.json; scoping by key path means a normative literal placed anywhere else in this file is still caught."
+    },
+    {
+      "class": "historical_provenance",
+      "files": [
+        "CANDIDATE_EXECUTION_SEAL.json"
+      ],
+      "json_key_prefixes": [
+        "supersedes_candidate",
+        "triggering_audit",
+        "triggering_review",
+        "payload_inventory"
+      ],
+      "rationale": "References to past artifacts - superseded candidates, the audits and co-chair reviews that produced this one, and the inventory binding. They record what happened; they impose no requirement on this package. Scoped to these key paths only."
+    },
+    {
+      "class": "artifact_identifiers",
+      "files": [
+        "v52_t4f1_beam_retrieval.py",
+        "candidate_package_preflight.py",
+        "PAYLOAD_HASHES.json",
+        "NORMATIVE_SOURCE_MAP.json",
+        "CANDIDATE_EXECUTION_SEAL.json",
+        "EXECUTION_SPEC.md",
+        "README.md",
+        "RUN_AUTHORIZATION_TEMPLATE.json"
+      ],
+      "rationale": "File names, derived-output names, the environment-variable name and container/schema wrapper labels. These are identifiers, not load-bearing values. Every one is enumerated: an identifier not on this list fails.",
+      "token_allowlist": [
+        "v52_t4f1_beam_retrieval",
+        "v52_t4f1_aggregate",
+        "v52_t4f1_question_level",
+        "v52_t4f1_question_seed_level",
+        "v52_t4f1_post_run_manifest",
+        "v52_t4f1_auth_hmac_key_hex",
+        "v52_t4f1_execution_candidate_payloads_v4",
+        "v52_t4f1_normative_source_map_v2",
+        "v52_t4f1_run_authorization_v4_template_only",
+        "v52_t4f1_detached_acceptance_attestation_v1",
+        "v52_t4f0_codex_2026_08_31",
+        "v52_t4f0_restricted_refreeze_2026_08_31"
+      ]
+    }
+  ],
+  "package": "task4f1_execution_candidate_v6_2026_09_03",
+  "precedence_rules": [
+    "The authoritative path/locator named here wins over any other statement in any bound payload.",
+    "A derived mirror never creates a requirement; it only restates one.",
+    "CANDIDATE_EXECUTION_SEAL.json is authoritative ONLY for status_at_audit_submission; the detached attestation is the sole authority for post-audit acceptance state.",
+    "PAYLOAD_HASHES.json must carry no status field.",
+    "Deprecated literals must not appear as a requirement in any bound payload, in code or in prose.",
+    "An EXTERNAL: prefix marks an authoritative source that lies outside the candidate namespace and is verified by the runner rather than by the package gate."
+  ],
+  "purpose": "One enumerated normative source per load-bearing concept. The gate does not check a hand-written mirror list; it sweeps the bound closure for value-shaped tokens and requires every discovered token to be attributed to a concept and found only at that concept's authoritative path or a declared mirror.",
+  "schema": "V52_T4F1_NORMATIVE_SOURCE_MAP_V2"
+}

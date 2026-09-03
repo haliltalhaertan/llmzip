@@ -1,0 +1,17 @@
+{
+  "acceptance_state": "NOT_YET_ACCEPTED_FOR_V6",
+  "authority": "This detached record is the SOLE authority for post-audit acceptance state. The candidate seal records only status_at_audit_submission and must never be edited to express acceptance.",
+  "candidate_namespace": "task4f1_execution_candidate_v6_2026_09_03",
+  "requires": [
+    "independent cold-start audit of the exact V6 bytes",
+    "Head Researcher acceptance",
+    "co-chair ratification"
+  ],
+  "schema": "V52_T4F1_DETACHED_ACCEPTANCE_ATTESTATION_V1",
+  "task_4f1": {
+    "preregistration": "BLOCKED",
+    "retrieval_quality_outcome_access": "FORBIDDEN",
+    "run": "BLOCKED"
+  },
+  "updated_at_utc": "2026-09-03T11:30:00Z"
+}

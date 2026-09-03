@@ -1,0 +1,51 @@
+{
+  "answers_blocked_audit": {
+    "branch": "audit/v52-t4f1-v5-independent-2026-09-02",
+    "commit": "6243ba6d9fe1c3d059d78369d8fed3534d7921d0",
+    "verdict": "BLOCKED"
+  },
+  "authority": "Prepared under Continuity Lead authority alone; EXCEEDS standing approval 4bd32782; requires co-chair ratification before sealing.",
+  "bound_candidate": {
+    "detached_attestation_sha256": "3eed58e1a6fbd6754cdc6582209010cc2d2db08a84004f4ca55a45281cc4919a",
+    "execution_seal_sha256": "ac85bbf04dd3f8502763432a9b51d7b0c92b06349fcd755fc1072af78710ebf3",
+    "implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "namespace": "task4f1_execution_candidate_v6_2026_09_03",
+    "normative_source_map_sha256": "2795ff176df7e465955ed407ef66514c425ccf255b831cea5d71421136df5924",
+    "payload_inventory_sha256": "794322114c44d14de352b3decc6d80c795a9706eeaa77419d0f30200c0beabab"
+  },
+  "files": [
+    {
+      "bytes": 3858,
+      "name": "IMPLEMENTATION_PREFLIGHT.json",
+      "sha256": "3e1e1afcb7d40df409d54605db37e2843c95dc04064d075f66cc23189c32fe2d"
+    },
+    {
+      "bytes": 3387,
+      "name": "INVERTED_BURDEN_GATE_FIXTURES.json",
+      "sha256": "5ce07f0f17a9b2ad0ef7d50c894b5723a739b55f7adbcc1de127e9ea6d30c267"
+    },
+    {
+      "bytes": 2828,
+      "name": "V5_TO_V6_DECLARATIVE_CHANGE.json",
+      "sha256": "49f7b3a812d0b1bd2cba36deb9a43eac5a508d01ea8565770fd0b65e58a450b8"
+    }
+  ],
+  "independent_audit_required": true,
+  "outcome_boundary": {
+    "cli_mode_finalize_invocations": 0,
+    "cli_mode_run_invocations": 0,
+    "hmac_key_env_set_count": 0,
+    "real_retrieval_ranking_performed": false,
+    "retrieval_quality_computed_read_reported": [
+      false,
+      false,
+      false
+    ],
+    "v1_v5_or_audit_namespaces_modified": false,
+    "valid_authorization_constructed": false
+  },
+  "prepared_at_utc": "2026-09-03T12:00:00Z",
+  "schema": "V52_T4F1_V6_PREFLIGHT_HASHES_V1",
+  "self_audit_prohibited": "Prepared by the Continuity Lead; a different cold-start auditor must derive the classification from the bytes.",
+  "status": "IMPLEMENTER_EVIDENCE_NOT_INDEPENDENT_SIGNOFF"
+}

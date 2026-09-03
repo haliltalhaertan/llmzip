@@ -1,0 +1,97 @@
+{
+  "total": 13,
+  "passed": 13,
+  "results": [
+    {
+      "case": "baseline unmodified V6",
+      "expected_block": false,
+      "blocked": false,
+      "pass": true,
+      "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+    },
+    {
+      "case": "F3  CC-01 verbatim",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'EXECUTION_SPEC.md', 'literal': '25089a07760a0"
+    },
+    {
+      "case": "F3b CC-01 sat\u0131r kayd\u0131rma (V5 KA\u00c7IRDI)",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'EXECUTION_SPEC.md', 'literal': '25089a07760a0"
+    },
+    {
+      "case": "F3c CC-01 b\u00fcy\u00fck harf hex (V5 KA\u00c7IRDI)",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'EXECUTION_SPEC.md', 'literal': '25089a07760a0"
+    },
+    {
+      "case": "beyan edilmemi\u015f tekrar (yetkili de\u011fer yeni yerde)",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - UNDECLARED REPETITION] [{'file': 'README.md', 'token': '9b70e16fc1d16ebff78bbcd321f67"
+    },
+    {
+      "case": "hi\u00e7bir kavram\u0131n sahiplenmedi\u011fi yeni hash",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'EXECUTION_SPEC.md', 'token': 'abababababa"
+    },
+    {
+      "case": "envanterde ikinci status alan\u0131 geri gelir",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: payload inventory binding mismatch"
+    },
+    {
+      "case": "\u00e7\u00f6z\u00fclemeyen authoritative_path",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - UNRESOLVABLE DECLARED PATH] post_audit_acceptance_state -> docs/v52/task4f1/ detached"
+    },
+    {
+      "case": "attestation dosyas\u0131 yok",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - UNRESOLVABLE DECLARED PATH] post_audit_acceptance_state -> docs/v52/task4f1/V6_ACCEPT"
+    },
+    {
+      "case": "attestation kabul iddia eder",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - ATTESTATION DISAGREES WITH DECLARED STATE]"
+    },
+    {
+      "case": "seal post-audit durum iddia eder",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - SEAL CLAIMS POST-AUDIT STATE]"
+    },
+    {
+      "case": "runner de\u011fi\u015fti",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: [BLOCKED - RUNNER NOT BYTE-IDENTICAL TO ACCEPTED V4] f3fc58ce2fa57811ffc07d5fe66686a1182f3701cfb"
+    },
+    {
+      "case": "nested unbound dosya",
+      "expected_block": true,
+      "blocked": true,
+      "pass": true,
+      "detail": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE"
+    }
+  ]
+}
