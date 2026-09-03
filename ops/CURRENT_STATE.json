@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V6_INDEPENDENT_AUDIT_BLOCKED_APPROACH_UNDER_REVIEW",
-  "issued_at_utc": "2026-09-03T18:00:00Z",
+  "state_id": "V52_4F1_PREREGISTRATION_DRAFT_FOR_REVIEW",
+  "issued_at_utc": "2026-09-03T19:30:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -21,8 +21,8 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Cold-start independent delta audit of the exact Task 4F1 V6 package",
-    "next_single_action": "Head Researcher and co-chair decide the APPROACH, not another patch: shrink the bound surface so normative values appear exactly once by construction, rather than building a third scanner to police restatements. Do not seal, preregister or run Task 4F1.",
+    "current_task": "Head Researcher and co-chair review of the outcome-free Task 4F1 preregistration draft",
+    "next_single_action": "Review docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md. Separately decide how to close the packaging question (remove restated values from bound documents rather than build a third scanner). Do not preregister or run Task 4F1.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -127,6 +127,10 @@
     "v6_preflight_manifest": {
       "path": "task4f1_execution_candidate_v6_preflight_2026_09_03/PREFLIGHT_HASHES.json",
       "sha256": "4f6abc15917ea5d8ae7d06f69c7b223234d9a8123b0a1713bd1ec0dac63b73ad"
+    },
+    "preregistration_draft": {
+      "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md",
+      "sha256": "b534667ddd2be31c7999bcc3bf9b48706fadb8c093562639cb3b2059b9737279"
     }
   },
   "required_external_inputs": {
@@ -150,7 +154,7 @@
     "co_chair": "Codex acts as approval/veto reviewer and writes only review artifacts on a separate branch. A load-bearing transition closes only on explicit co-chair approval; REQUEST CHANGES keeps it blocked."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-018",
+  "ledger_entry": "L-019",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",

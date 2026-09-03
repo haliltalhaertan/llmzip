@@ -337,3 +337,21 @@ outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retr
 status: BLOCKED
 next_single_action: The Head Researcher and co-chair decide the approach rather than approving another patch. The Continuity Lead does not self-seal and will not build a third scanner without that decision.
 ```
+
+### L-019
+
+```text
+timestamp_utc: 2026-09-03T19:30:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-018 / 1f7bbfc
+scope: Write the outcome-free Task 4F1 preregistration draft, returning the programme to its scientific object after three rounds spent on packaging. No candidate, seal, manifest, audit or corpus byte is touched. Nothing is preregistered or sealed.
+changed_or_created_paths: docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md (SHA256 b534667ddd2be31c7999bcc3bf9b48706fadb8c093562639cb3b2059b9737279); ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+proportionality: A single ledger entry rather than a claim/close pair. This stage writes a draft that seals nothing and authorizes nothing, so the full stage ceremony would have been overhead rather than protection. That judgement is recorded so a successor sees it was deliberate.
+outcome_free_confirmation: The draft contains no BEAM retrieval-quality result. Every figure is either a structural fact recomputed from the sealed cohort or a previously accepted LongMemEval/LoCoMo number. Scanned for outcome leakage before commit.
+substantive_findings: Two composition facts were measured rather than assumed. First, ability composition is balanced within every tier (100K 36-40, 500K 69-70, 1M 58-62, 10M 16-20), so ability is NOT a cross-tier confounder; this resolves a concern the co-chair raised. Second, gold cardinality is NOT balanced, and because Fractional Recall@3 is capped at min(1, 3/|gold|) the mean achievable ceiling differs by tier: 0.867 at 100K, 0.836 at 500K, 0.721 at 1M, 0.776 at 10M. That ceiling profile is NON-MONOTONIC in tier, which is analytically useful and is fixed now: an observed monotone trend across tiers cannot be explained by the ceiling, whereas a non-monotone one plausibly can.
+design_decisions_prespecified: Primary family is four tier-specific question-weighted contrasts of Native minus the five-seed Haar mean on Fractional Recall@3, sign convention positive means Native better, mapping the accepted LongMemEval and LoCoMo results to +15.926 pp and +9.884 pp. A ceiling-normalised companion is mandatory because the achievable range differs by tier. ALL@3 is reported but excluded from cross-tier scale claims because gold cardinality drives it. The signed-permutation control is invalidating rather than supportive. No population inference, no p-values and no multiplicity correction, because the cohort is a fixed benchmark and no null-hypothesis test is performed; the absence is stated so it is not mistaken for an omission. The twenty nuisance trials are integrity checks, never a variance source. Any ordered pattern across tiers is an association across fixed strata and must never be reported as a causal effect of context length or as a degradation law.
+honest_prior_recorded: The draft states before any outcome is visible that if all four tiers return the same direction and similar magnitude, the marginal value over the two existing benchmarks is modest and must be reported as modest. This is written down so a flat result cannot later be inflated, and so the informative outcomes (a changing profile, or a failure at some tier) are named in advance.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN.
+status: PASS
+next_single_action: Head Researcher and co-chair review the draft. The packaging question is separate and should be closed by removing restated values from bound documents rather than by a third automated scanner.
+```
