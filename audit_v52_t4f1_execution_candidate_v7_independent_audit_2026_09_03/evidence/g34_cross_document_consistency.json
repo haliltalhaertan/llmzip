@@ -1,0 +1,417 @@
+{
+  "contradiction_count": 0,
+  "contradictions": [],
+  "documents": {
+    "ops_state": {
+      "bound_in_v7_payload": false,
+      "bytes": 15580,
+      "hash_covered_anywhere": false,
+      "present": true,
+      "says_non_normative_in_body": false,
+      "sha256": "d0eaa930ab2a2f8553c0303eaafade641abe014e652cf59ac88f1618e64490ce",
+      "stated": {
+        "expected_eligible": {
+          "agrees": true,
+          "authoritative_value": 1712,
+          "stated_value": 1712
+        }
+      }
+    },
+    "prereg_draft": {
+      "bound_in_v7_payload": false,
+      "bytes": 12157,
+      "hash_covered_anywhere": false,
+      "present": true,
+      "says_non_normative_in_body": false,
+      "sha256": "ec3443ed4c60eb12e098192abf7b414e034d89fc63a9f42f9d0a02c36a696e45",
+      "stated": {
+        "haar_seed_first": {
+          "agrees": true,
+          "authoritative_value": 43001,
+          "stated_value": 43001
+        }
+      }
+    },
+    "unbound_readme": {
+      "bound_in_v7_payload": false,
+      "bytes": 7731,
+      "hash_covered_anywhere": false,
+      "present": true,
+      "says_non_normative_in_body": false,
+      "sha256": "24e558cf4b5077be84db6c40771e1cf13411eadee3a83299d24de52f826d1fff",
+      "stated": {}
+    },
+    "unbound_spec": {
+      "bound_in_v7_payload": false,
+      "bytes": 12621,
+      "hash_covered_anywhere": false,
+      "present": true,
+      "says_non_normative_in_body": false,
+      "sha256": "1206fc02b70cfa5ef78c5a091e4cd52e3d2dbcf213cd5c3aa62e861893591436",
+      "stated": {
+        "expected_archives": {
+          "agrees": true,
+          "authoritative_value": 96,
+          "stated_value": 96
+        },
+        "expected_eligible": {
+          "agrees": true,
+          "authoritative_value": 1712,
+          "stated_value": 1712
+        },
+        "haar_seed_first": {
+          "agrees": true,
+          "authoritative_value": 43001,
+          "stated_value": 43001
+        },
+        "invariance_tol": {
+          "agrees": true,
+          "authoritative_value": 1e-12,
+          "stated_value": 1e-12
+        },
+        "itq_iterations": {
+          "agrees": true,
+          "authoritative_value": 100,
+          "stated_value": 100
+        },
+        "latent_seed": {
+          "agrees": true,
+          "authoritative_value": 5101,
+          "stated_value": 5101
+        },
+        "mixed_dim": {
+          "agrees": true,
+          "authoritative_value": 96,
+          "stated_value": 96
+        },
+        "mixed_seed": {
+          "agrees": true,
+          "authoritative_value": 5204,
+          "stated_value": 5204
+        },
+        "nuisance_trial_count": {
+          "agrees": true,
+          "authoritative_value": 20,
+          "stated_value": 20
+        },
+        "nuisance_trial_max_index": {
+          "agrees": true,
+          "authoritative_value": 19,
+          "stated_value": 19
+        }
+      }
+    },
+    "v7_checker": {
+      "bound_in_v7_payload": true,
+      "bytes": 7344,
+      "hash_covered_anywhere": true,
+      "present": true,
+      "says_non_normative_in_body": true,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699",
+      "stated": {}
+    },
+    "v7_lock": {
+      "bound_in_v7_payload": true,
+      "bytes": 330,
+      "hash_covered_anywhere": true,
+      "present": true,
+      "says_non_normative_in_body": false,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+      "stated": {}
+    },
+    "v7_seal": {
+      "bound_in_v7_payload": false,
+      "bytes": 4472,
+      "hash_covered_anywhere": true,
+      "present": true,
+      "says_non_normative_in_body": true,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61",
+      "stated": {}
+    },
+    "v7_template": {
+      "bound_in_v7_payload": true,
+      "bytes": 1056,
+      "hash_covered_anywhere": true,
+      "present": true,
+      "says_non_normative_in_body": false,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca",
+      "stated": {}
+    }
+  },
+  "restatement_count": 12,
+  "restatements": [
+    {
+      "agrees": true,
+      "authoritative": 5101,
+      "concept": "latent_seed",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 5101
+    },
+    {
+      "agrees": true,
+      "authoritative": 5204,
+      "concept": "mixed_seed",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 5204
+    },
+    {
+      "agrees": true,
+      "authoritative": 43001,
+      "concept": "haar_seed_first",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 43001
+    },
+    {
+      "agrees": true,
+      "authoritative": 100,
+      "concept": "itq_iterations",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 100
+    },
+    {
+      "agrees": true,
+      "authoritative": 19,
+      "concept": "nuisance_trial_max_index",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 19
+    },
+    {
+      "agrees": true,
+      "authoritative": 20,
+      "concept": "nuisance_trial_count",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 20
+    },
+    {
+      "agrees": true,
+      "authoritative": 96,
+      "concept": "expected_archives",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 96
+    },
+    {
+      "agrees": true,
+      "authoritative": 1712,
+      "concept": "expected_eligible",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 1712
+    },
+    {
+      "agrees": true,
+      "authoritative": 1e-12,
+      "concept": "invariance_tol",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 1e-12
+    },
+    {
+      "agrees": true,
+      "authoritative": 96,
+      "concept": "mixed_dim",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 96
+    },
+    {
+      "agrees": true,
+      "authoritative": 43001,
+      "concept": "haar_seed_first",
+      "document": "prereg_draft",
+      "hash_covered": false,
+      "stated": 43001
+    },
+    {
+      "agrees": true,
+      "authoritative": 1712,
+      "concept": "expected_eligible",
+      "document": "ops_state",
+      "hash_covered": false,
+      "stated": 1712
+    }
+  ],
+  "restatements_in_uncovered_documents": [
+    {
+      "agrees": true,
+      "authoritative": 5101,
+      "concept": "latent_seed",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 5101
+    },
+    {
+      "agrees": true,
+      "authoritative": 5204,
+      "concept": "mixed_seed",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 5204
+    },
+    {
+      "agrees": true,
+      "authoritative": 43001,
+      "concept": "haar_seed_first",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 43001
+    },
+    {
+      "agrees": true,
+      "authoritative": 100,
+      "concept": "itq_iterations",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 100
+    },
+    {
+      "agrees": true,
+      "authoritative": 19,
+      "concept": "nuisance_trial_max_index",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 19
+    },
+    {
+      "agrees": true,
+      "authoritative": 20,
+      "concept": "nuisance_trial_count",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 20
+    },
+    {
+      "agrees": true,
+      "authoritative": 96,
+      "concept": "expected_archives",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 96
+    },
+    {
+      "agrees": true,
+      "authoritative": 1712,
+      "concept": "expected_eligible",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 1712
+    },
+    {
+      "agrees": true,
+      "authoritative": 1e-12,
+      "concept": "invariance_tol",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 1e-12
+    },
+    {
+      "agrees": true,
+      "authoritative": 96,
+      "concept": "mixed_dim",
+      "document": "unbound_spec",
+      "hash_covered": false,
+      "stated": 96
+    },
+    {
+      "agrees": true,
+      "authoritative": 43001,
+      "concept": "haar_seed_first",
+      "document": "prereg_draft",
+      "hash_covered": false,
+      "stated": 43001
+    },
+    {
+      "agrees": true,
+      "authoritative": 1712,
+      "concept": "expected_eligible",
+      "document": "ops_state",
+      "hash_covered": false,
+      "stated": 1712
+    }
+  ],
+  "runner_constants": {
+    "AUTH_HMAC_ENV": "V52_T4F1_AUTH_HMAC_KEY_HEX",
+    "AUTH_SCHEMA": "V52_T4F1_RUN_AUTHORIZATION_V4",
+    "AUTH_SIGNED_FIELDS": [
+      "authorization_id",
+      "authorization_nonce",
+      "cohort_sha256",
+      "execution_candidate_seal_sha256",
+      "execution_script_sha256",
+      "output_namespace_basename",
+      "preregistration_seal_sha256",
+      "required_archive_count",
+      "retrieval_quality_outcome_access",
+      "schema",
+      "status"
+    ],
+    "CANARY_SIGN_MARGIN": 1e-09,
+    "EXPECTED_ARCHIVES": 96,
+    "EXPECTED_BEAM_COMMIT": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+    "EXPECTED_BEAM_MANIFEST_SHA256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+    "EXPECTED_COHORT_SHA256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+    "EXPECTED_DEPENDENCY_LOCK_SHA256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "EXPECTED_ELIGIBLE": 1712,
+    "EXPECTED_PARENT_COMMIT": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+    "EXPECTED_PROTOCOL_SHA256": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1",
+    "EXPECTED_REAL_CANARY_ARCHIVE_SIGN_SHA256": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+    "EXPECTED_REAL_CANARY_QUERY_SIGN_SHA256": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+    "EXPECTED_RESTRICTED_SEAL_SHA256": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c",
+    "EXPECTED_TOTAL_ROWS": 2000,
+    "HAAR_SEEDS": [
+      43001,
+      43002,
+      43003,
+      43004,
+      43005
+    ],
+    "INVARIANCE_TOLERANCE": 1e-12,
+    "ITQ_ITERATIONS": 100,
+    "ITQ_SEEDS": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "LATENT_DIM": 32,
+    "LATENT_SEED": 5101,
+    "MIXED_DIM": 96,
+    "MIXED_SEED": 5204,
+    "NUISANCE_TRIALS_N": 20,
+    "REAL_CANARY_QUERY": "Which project phase mentioned module 7 and a deadline?",
+    "SCRIPT_NAME": "v52_t4f1_beam_retrieval.py",
+    "TASK": "V52 Task 4F1 - BEAM Restricted-Cohort Axis Probe",
+    "TIERS": [
+      "100K",
+      "10M",
+      "1M",
+      "500K"
+    ],
+    "TIE_PREFIX": "V52_T4F0_TIE_PRIORITY_V1",
+    "TOP_K": 3,
+    "TRIAL_FIELDS": [
+      "ability",
+      "all_at_3",
+      "any_at_3",
+      "archive_units",
+      "audit_question_id",
+      "conversation_id",
+      "fractional_source_evidence_recall_at_3",
+      "gold_count",
+      "method",
+      "retrieved_top3_ids",
+      "seed",
+      "tier",
+      "top3_distances",
+      "trial"
+    ]
+  },
+  "uncovered_restatement_count": 12
+}

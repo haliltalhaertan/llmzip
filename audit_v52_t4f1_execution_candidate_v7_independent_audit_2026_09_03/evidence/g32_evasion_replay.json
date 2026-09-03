@@ -1,0 +1,576 @@
+{
+  "deprecated_literal_used": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+  "results": [
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "line_wrapping",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "line_wrapping",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "line_wrapping",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "line_wrapping",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "line_wrapping",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "uppercase_hex",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "uppercase_hex",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "uppercase_hex",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "uppercase_hex",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "uppercase_hex",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "hex_adjacent_words",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "hex_adjacent_words",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "hex_adjacent_words",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "hex_adjacent_words",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "hex_adjacent_words",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "zero_width",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "zero_width",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "zero_width",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "zero_width",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "zero_width",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "markup_interleave",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "markup_interleave",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "markup_interleave",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "markup_interleave",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "markup_interleave",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "base64_reencode",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "base64_reencode",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "base64_reencode",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "base64_reencode",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "base64_reencode",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "decimal_reencode",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "decimal_reencode",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "decimal_reencode",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "decimal_reencode",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "decimal_reencode",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "split_json_keys",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "split_json_keys",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "split_json_keys",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "split_json_keys",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "split_json_keys",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt'",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "non_utf8",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": false,
+      "site": "a_readded_narrative_file"
+    },
+    {
+      "checker_error": "RuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['EXECUTION_SPEC.md'] missing=[]",
+      "checker_returncode": 1,
+      "detail": "narrative file re-added to the package carrying the evasion payload",
+      "evasion_class": "non_utf8",
+      "mechanism": "BLOCKED_BY_SET_EQUALITY",
+      "resealed": true,
+      "site": "a_readded_narrative_file_resealed"
+    },
+    {
+      "checker_error": "RuntimeError: payload mismatch DEPENDENCY_LOCK.txt",
+      "checker_returncode": 1,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "non_utf8",
+      "mechanism": "BLOCKED_BY_HASH",
+      "resealed": false,
+      "site": "b_bound_functional_file"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "non_utf8",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "non_utf8",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    }
+  ],
+  "survivor_count": 18,
+  "survivors": [
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "line_wrapping",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "line_wrapping",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "uppercase_hex",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "uppercase_hex",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "hex_adjacent_words",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "hex_adjacent_words",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "zero_width",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "zero_width",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "markup_interleave",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "markup_interleave",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "base64_reencode",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "base64_reencode",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "decimal_reencode",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "decimal_reencode",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "split_json_keys",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "split_json_keys",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload appended to a BOUND functional file",
+      "evasion_class": "non_utf8",
+      "mechanism": "SURVIVES",
+      "resealed": true,
+      "site": "b_bound_functional_file_resealed"
+    },
+    {
+      "checker_error": "",
+      "checker_returncode": 0,
+      "detail": "evasion payload placed in the UNBOUND seal (excluded from the inventory)",
+      "evasion_class": "non_utf8",
+      "mechanism": "SURVIVES",
+      "resealed": false,
+      "site": "c_unbound_seal"
+    }
+  ],
+  "trial_count": 45
+}

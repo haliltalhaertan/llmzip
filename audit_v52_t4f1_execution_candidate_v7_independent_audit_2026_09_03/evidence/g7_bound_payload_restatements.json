@@ -1,0 +1,303 @@
+{
+  "claim_under_test": "The bound payload contains only functional files: the runner, the dependency lock, the inert authorization template and this checker. No narrative document is bound, so no bound document can state a requirement, so there is nothing to restate and nothing to reconcile. The property is a set equality over file names, established structurally rather than by scanning prose.",
+  "dependency_lock_first_line": "V52 Task 4F0 restricted-cohort refreeze candidate",
+  "dependency_lock_task_label_matches_runner_task": false,
+  "disagreement_count": 0,
+  "disagreements": [],
+  "pairs_reconciled_by_nothing": [
+    "env_version::python",
+    "env_version::numpy",
+    "env_version::scipy",
+    "env_version::scikit_learn",
+    "env_version::psutil",
+    "thread_control::OMP_NUM_THREADS",
+    "thread_control::MKL_NUM_THREADS",
+    "thread_control::OPENBLAS_NUM_THREADS",
+    "thread_control::NUMEXPR_NUM_THREADS",
+    "thread_control::PYTHONHASHSEED",
+    "accepted_runner_sha256",
+    "dependency_lock_sha256",
+    "auth_signed_fields"
+  ],
+  "pairs_with_both_sites_bound": 17,
+  "restatement_pairs": 21,
+  "restatements": [
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "env_version::python",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner ENVIRONMENT_LOCK",
+      "value_a": "3.12.13",
+      "value_b": "3.12.13"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "env_version::numpy",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner ENVIRONMENT_LOCK",
+      "value_a": "2.3.2",
+      "value_b": "2.3.2"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "env_version::scipy",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner ENVIRONMENT_LOCK",
+      "value_a": "1.16.1",
+      "value_b": "1.16.1"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "env_version::scikit_learn",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner ENVIRONMENT_LOCK",
+      "value_a": "1.7.1",
+      "value_b": "1.7.1"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "env_version::psutil",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner ENVIRONMENT_LOCK",
+      "value_a": "7.0.0",
+      "value_b": "7.0.0"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "thread_control::OMP_NUM_THREADS",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner THREAD_LOCK",
+      "value_a": "1",
+      "value_b": "1"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "thread_control::MKL_NUM_THREADS",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner THREAD_LOCK",
+      "value_a": "1",
+      "value_b": "1"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "thread_control::OPENBLAS_NUM_THREADS",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner THREAD_LOCK",
+      "value_a": "1",
+      "value_b": "1"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "thread_control::NUMEXPR_NUM_THREADS",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner THREAD_LOCK",
+      "value_a": "1",
+      "value_b": "1"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "thread_control::PYTHONHASHSEED",
+      "reconciled_by": "NOTHING - the runner only digests the lock; it never parses it",
+      "site_a": "DEPENDENCY_LOCK.txt",
+      "site_b": "runner THREAD_LOCK",
+      "value_a": "0",
+      "value_b": "0"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "required_archive_count",
+      "reconciled_by": "runner verify_run_authorization compares the authorization field to EXPECTED_ARCHIVES",
+      "site_a": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "site_b": "runner EXPECTED_ARCHIVES",
+      "value_a": 96,
+      "value_b": 96
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "accepted_runner_sha256",
+      "reconciled_by": "checker line 57 compares them",
+      "site_a": "candidate_package_preflight.py",
+      "site_b": "actual runner bytes",
+      "value_a": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+      "value_b": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": false,
+      "concept": "accepted_runner_sha256",
+      "reconciled_by": "NOTHING inside the package - the seal is unbound and its digest is not checked here",
+      "site_a": "CANDIDATE_EXECUTION_SEAL.json implementation.sha256",
+      "site_b": "actual runner bytes",
+      "value_a": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+      "value_b": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "dependency_lock_sha256",
+      "reconciled_by": "runner verify_bound_file at --mode preflight/run/finalize",
+      "site_a": "runner EXPECTED_DEPENDENCY_LOCK_SHA256",
+      "site_b": "actual lock bytes",
+      "value_a": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+      "value_b": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": false,
+      "concept": "dependency_lock_sha256",
+      "reconciled_by": "NOTHING inside the package",
+      "site_a": "CANDIDATE_EXECUTION_SEAL.json environment.sha256",
+      "site_b": "actual lock bytes",
+      "value_a": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+      "value_b": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "auth_hmac_env_name",
+      "reconciled_by": "checker line 120 compares seal to its own copy",
+      "site_a": "candidate_package_preflight.py",
+      "site_b": "runner AUTH_HMAC_ENV",
+      "value_a": "V52_T4F1_AUTH_HMAC_KEY_HEX",
+      "value_b": "V52_T4F1_AUTH_HMAC_KEY_HEX"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": false,
+      "concept": "auth_hmac_env_name",
+      "reconciled_by": "checker line 120",
+      "site_a": "CANDIDATE_EXECUTION_SEAL.json authorization_control",
+      "site_b": "runner AUTH_HMAC_ENV",
+      "value_a": "V52_T4F1_AUTH_HMAC_KEY_HEX",
+      "value_b": "V52_T4F1_AUTH_HMAC_KEY_HEX"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": false,
+      "concept": "auth_signed_fields",
+      "reconciled_by": "NOTHING - the checker never compares these",
+      "site_a": "CANDIDATE_EXECUTION_SEAL.json signed_fields",
+      "site_b": "runner AUTH_SIGNED_FIELDS",
+      "value_a": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "cohort_sha256",
+        "required_archive_count",
+        "output_namespace_basename",
+        "preregistration_seal_sha256",
+        "authorization_id",
+        "authorization_nonce"
+      ],
+      "value_b": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "cohort_sha256",
+        "required_archive_count",
+        "output_namespace_basename",
+        "preregistration_seal_sha256",
+        "authorization_id",
+        "authorization_nonce"
+      ]
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "seal_schema",
+      "reconciled_by": "checker line 78",
+      "site_a": "candidate_package_preflight.py",
+      "site_b": "CANDIDATE_EXECUTION_SEAL.json schema",
+      "value_a": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4",
+      "value_b": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "submission_status",
+      "reconciled_by": "checker lines 61 and 80",
+      "site_a": "candidate_package_preflight.py",
+      "site_b": "CANDIDATE_EXECUTION_SEAL.json",
+      "value_a": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+      "value_b": "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+    },
+    {
+      "agrees": true,
+      "both_sites_bound": true,
+      "concept": "bound_payload_name_set",
+      "reconciled_by": "checker line 49 set equality",
+      "site_a": "candidate_package_preflight.py EXPECTED_BOUND_PAYLOAD",
+      "site_b": "PAYLOAD_HASHES.json files[].name",
+      "value_a": [
+        "DEPENDENCY_LOCK.txt",
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "candidate_package_preflight.py",
+        "v52_t4f1_beam_retrieval.py"
+      ],
+      "value_b": [
+        "DEPENDENCY_LOCK.txt",
+        "RUN_AUTHORIZATION_TEMPLATE.json",
+        "candidate_package_preflight.py",
+        "v52_t4f1_beam_retrieval.py"
+      ]
+    }
+  ],
+  "runner_TASK": "V52 Task 4F1 - BEAM Restricted-Cohort Axis Probe",
+  "stale_version_labels_in_shipped_package": [
+    {
+      "field": "package_version_note",
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "mentions": "V4",
+      "text": "V6 is a package version, not a schema version. The runner is byte-identical to the accepted V4 runner, so every schema literal it verifies remains at its V4 value."
+    },
+    {
+      "field": "package_version_note",
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "mentions": "V6",
+      "text": "V6 is a package version, not a schema version. The runner is byte-identical to the accepted V4 runner, so every schema literal it verifies remains at its V4 value."
+    },
+    {
+      "field": "self_audit_prohibited",
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "mentions": "V5",
+      "text": "V5 was prepared by the Continuity Lead and cannot be audited by it. A different cold-start auditor must derive the declarative classification from the bytes, not import it."
+    },
+    {
+      "field": "stop_rule",
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "mentions": "V4",
+      "text": "No Task 4F1 run, finalize, valid authorization construction, metric access, sealing, or preregistration before a fresh outcome-free independent V4 audit. After outcome access, no cohort, occurrence, seed, trial, threshol"
+    }
+  ],
+  "template_non_placeholder_values": {
+    "required_archive_count": 96,
+    "retrieval_quality_outcome_access": "FORBIDDEN",
+    "schema": "V52_T4F1_RUN_AUTHORIZATION_V4_TEMPLATE_ONLY"
+  },
+  "template_note_claims_every_value_is_placeholder": true
+}

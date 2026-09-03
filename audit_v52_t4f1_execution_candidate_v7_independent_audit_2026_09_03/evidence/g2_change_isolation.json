@@ -1,0 +1,59 @@
+{
+  "auth_template_identical_v6_v7": false,
+  "checker_ast_identical_v6_v7": false,
+  "checker_sha256": {
+    "v6": "97978dda6dbd35fc12109d51cc0cb0a83bda929f2e268da0a7ef085d3953796a",
+    "v7": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+  },
+  "dependency_lock_identical_v4_v6_v7": true,
+  "executable_files_v7": [
+    "candidate_package_preflight.py",
+    "v52_t4f1_beam_retrieval.py"
+  ],
+  "files_added_v6_to_v7": [],
+  "files_removed_v6_to_v7": [
+    "EXECUTION_SPEC.md",
+    "NORMATIVE_SOURCE_MAP.json",
+    "README.md"
+  ],
+  "non_runner_payload_deltas_v6_to_v7": {
+    "DEPENDENCY_LOCK.txt": "identical",
+    "RUN_AUTHORIZATION_TEMPLATE.json": "CHANGED",
+    "candidate_package_preflight.py": "CHANGED"
+  },
+  "runner_ast_identical_v4_v7": true,
+  "runner_byte_identical_v4_v7": true,
+  "runner_byte_identical_v6_v7": true,
+  "runner_constant_count": 36,
+  "runner_imports": [
+    "__future__",
+    "argparse",
+    "collections",
+    "csv",
+    "dataclasses",
+    "hashlib",
+    "hmac",
+    "json",
+    "numpy",
+    "os",
+    "pathlib",
+    "platform",
+    "psutil",
+    "scipy",
+    "sklearn",
+    "sklearn.decomposition",
+    "sklearn.feature_extraction.text",
+    "sklearn.preprocessing",
+    "sys",
+    "time",
+    "typing"
+  ],
+  "runner_imports_checker": false,
+  "runner_mentions_checker_in_source": false,
+  "runner_module_constants_v4_equals_v7": true,
+  "runner_sha256": {
+    "v4": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "v6": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "v7": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "all_attempts_blocked": true,
+  "attempts": [
+    {
+      "blocked": true,
+      "case": "shipped_inert_template",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"cohort_sha256\": {\"expected\": \"9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a\", \"observed\": \"REPLACE_WITH_COHORT_SHA256_AT_PREREGISTRATION\"}, \""
+    },
+    {
+      "blocked": true,
+      "case": "fields_correct_but_unsigned",
+      "error": "[BLOCKED - HEAD RESEARCHER AUTHORITY KEY NOT SEALED]"
+    },
+    {
+      "blocked": true,
+      "case": "wrong_archive_count",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"required_archive_count\": {\"expected\": 96, \"observed\": 95}}"
+    },
+    {
+      "blocked": true,
+      "case": "wrong_schema",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"schema\": {\"expected\": \"V52_T4F1_RUN_AUTHORIZATION_V4\", \"observed\": \"V52_T4F1_RUN_AUTHORIZATION_V5\"}}"
+    },
+    {
+      "blocked": true,
+      "case": "outcome_access_forbidden",
+      "error": "[BLOCKED - INVALID RUN AUTHORIZATION] {\"retrieval_quality_outcome_access\": {\"expected\": \"AUTHORIZED\", \"observed\": \"FORBIDDEN\"}}"
+    },
+    {
+      "blocked": true,
+      "case": "extra_field",
+      "error": "[BLOCKED - AUTHORIZATION FIELD SET]"
+    },
+    {
+      "blocked": true,
+      "case": "missing_field",
+      "error": "[BLOCKED - AUTHORIZATION FIELD SET]"
+    },
+    {
+      "blocked": true,
+      "case": "bad_nonce_format",
+      "error": "[BLOCKED - INVALID AUTHORIZATION AUTHORIZATION_NONCE]"
+    },
+    {
+      "blocked": true,
+      "case": "bad_authorization_id",
+      "error": "[BLOCKED - INVALID AUTHORIZATION ID]"
+    }
+  ],
+  "authorization_values_compared_not_trusted": true,
+  "commitment_is_64_hex": false,
+  "compared_against": [
+    "AUTH_SCHEMA",
+    "EXPECTED_ARCHIVES",
+    "sha256_file(script)",
+    "sha256_file(seal)",
+    "sha256_file(cohort)",
+    "output_dir.name"
+  ],
+  "fail_closed_reason": "key_commitment_sha256 is the literal PENDING_HEAD_RESEARCHER_PREREGISTRATION, not 64 hex, so the commitment check raises BEFORE the HMAC key environment variable is consulted; no key value can unlock this candidate.",
+  "hmac_env_set_during_audit": false,
+  "runner_reads_authorization_template": false,
+  "seal_key_commitment": "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+}
