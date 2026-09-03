@@ -1,0 +1,413 @@
+{
+  "concepts": [
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "candidate_schema_version",
+      "mirrors_declared": 3,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "v52_t4f1_execution_candidate_seal_v4"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "authorization_schema_version",
+      "mirrors_declared": 3,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "v52_t4f1_run_authorization_v4"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "archive_result_meta_schema",
+      "mirrors_declared": 1,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "v52_t4f1_archive_result_meta_v4"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "post_run_manifest_schema",
+      "mirrors_declared": 1,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "v52_t4f1_post_run_manifest_v4"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "implementation_preflight_schema",
+      "mirrors_declared": 1,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "v52_t4f1_implementation_preflight_v4"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 1,
+      "atoms_token_shaped": 0,
+      "concept": "candidate_submission_status",
+      "mirrors_declared": 2,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "PREPARED_NOT_INDEPENDENTLY_AUDITED"
+      ],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 1,
+      "atoms_token_shaped": 0,
+      "concept": "post_audit_acceptance_state",
+      "mirrors_declared": 0,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "NOT_YET_ACCEPTED_FOR_V6"
+      ],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "v4_to_v6_runner_identity",
+      "mirrors_declared": 4,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 7,
+      "atoms_token_shaped": 2,
+      "concept": "canary_algorithm_and_digests",
+      "mirrors_declared": 2,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 2,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+        "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5"
+      ],
+      "unenforceable_atoms": [
+        "392",
+        "96",
+        "392",
+        "1",
+        "96",
+        "1e-09",
+        ">= 0"
+      ],
+      "value_atoms": 9
+    },
+    {
+      "atoms_NOT_token_shaped": 7,
+      "atoms_token_shaped": 1,
+      "concept": "cohort_anchor",
+      "mirrors_declared": 4,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+      ],
+      "unenforceable_atoms": [
+        "96",
+        "1712",
+        "1M::5",
+        "1M::26",
+        "1M::33",
+        "1M::34",
+        "2000"
+      ],
+      "value_atoms": 8
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "dependency_lock",
+      "mirrors_declared": 3,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "upstream_corpus_commit",
+      "mirrors_declared": 2,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "upstream_tree_manifest_anchor",
+      "mirrors_declared": 2,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "restricted_seal_anchor",
+      "mirrors_declared": 2,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "restricted_protocol_anchor",
+      "mirrors_declared": 2,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 0,
+      "atoms_token_shaped": 1,
+      "concept": "parent_commit_anchor",
+      "mirrors_declared": 2,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "d3c7aa09c9553cd5ac100e668923abab602e4257"
+      ],
+      "unenforceable_atoms": [],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 1,
+      "atoms_token_shaped": 1,
+      "concept": "tie_priority",
+      "mirrors_declared": 2,
+      "policed_by_sweep": true,
+      "scannable_literals_declared": 1,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [
+        "v52_t4f0_tie_priority_v1"
+      ],
+      "unenforceable_atoms": [
+        "priority = int.from_bytes(sha256(TIE_PREFIX + archive_id.enc"
+      ],
+      "value_atoms": 2
+    },
+    {
+      "atoms_NOT_token_shaped": 4,
+      "atoms_token_shaped": 0,
+      "concept": "arm_identifiers",
+      "mirrors_declared": 2,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "NATIVE_SIGN96",
+        "SIGNED_PERM_CONTROL96",
+        "HAAR96_SIGN",
+        "ITQ96_CENTERED"
+      ],
+      "value_atoms": 4
+    },
+    {
+      "atoms_NOT_token_shaped": 18,
+      "atoms_token_shaped": 0,
+      "concept": "methods_seeds_trials_topk",
+      "mirrors_declared": 2,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "43001",
+        "43002",
+        "43003",
+        "43004",
+        "43005",
+        "1e-12",
+        "100",
+        "101",
+        "202",
+        "303",
+        "404",
+        "505",
+        "32",
+        "5101",
+        "96",
+        "5204",
+        "3",
+        "20"
+      ],
+      "value_atoms": 18
+    },
+    {
+      "atoms_NOT_token_shaped": 1,
+      "atoms_token_shaped": 0,
+      "concept": "metrics_and_structural_zero_rule",
+      "mirrors_declared": 2,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "Fractional Source Evidence Recall@3 = |retrieved\u2229gold|/|gold"
+      ],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 1,
+      "atoms_token_shaped": 0,
+      "concept": "aggregation_rule",
+      "mirrors_declared": 2,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "320 trial rows per eligible question; 16 question-seed rows;"
+      ],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 1,
+      "atoms_token_shaped": 0,
+      "concept": "authorization_commitment_state",
+      "mirrors_declared": 3,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "PENDING_HEAD_RESEARCHER_PREREGISTRATION"
+      ],
+      "value_atoms": 1
+    },
+    {
+      "atoms_NOT_token_shaped": 11,
+      "atoms_token_shaped": 0,
+      "concept": "authorization_signed_fields",
+      "mirrors_declared": 1,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "cohort_sha256",
+        "required_archive_count",
+        "output_namespace_basename",
+        "preregistration_seal_sha256",
+        "authorization_id",
+        "authorization_nonce"
+      ],
+      "value_atoms": 11
+    },
+    {
+      "atoms_NOT_token_shaped": 3,
+      "atoms_token_shaped": 0,
+      "concept": "outcome_boundary_and_stop_rule",
+      "mirrors_declared": 2,
+      "policed_by_sweep": false,
+      "scannable_literals_declared": 0,
+      "shaped_atoms_MISSING_from_scannable_literals": [],
+      "shaped_atoms_covered_by_sweep": [],
+      "unenforceable_atoms": [
+        "FORBIDDEN",
+        "BLOCKED",
+        "BLOCKED"
+      ],
+      "value_atoms": 3
+    }
+  ],
+  "summary": {
+    "concepts_NOT_policed_by_sweep": 9,
+    "concepts_policed_by_sweep": 15,
+    "concepts_total": 24,
+    "gate_verifies_declared_mirror_actually_contains_value": false,
+    "gate_verifies_scannable_literals_match_declared_value": false,
+    "shaped_atoms_missing_from_scannable_literals": [],
+    "unpoliced_concepts": [
+      "candidate_submission_status",
+      "post_audit_acceptance_state",
+      "arm_identifiers",
+      "methods_seeds_trials_topk",
+      "metrics_and_structural_zero_rule",
+      "aggregation_rule",
+      "authorization_commitment_state",
+      "authorization_signed_fields",
+      "outcome_boundary_and_stop_rule"
+    ],
+    "value_atoms_outside_every_token_shape": 56,
+    "value_atoms_token_shaped": 16,
+    "value_atoms_total": 72
+  }
+}

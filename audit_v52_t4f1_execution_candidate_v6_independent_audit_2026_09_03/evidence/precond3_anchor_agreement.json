@@ -1,0 +1,254 @@
+{
+  "agreements": 29,
+  "checks": [
+    {
+      "actual_in_runner": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+      "agrees": true,
+      "check": "upstream_corpus_commit",
+      "declared_in_map": "3e12035532eb85768f1a7cd779832b650c4b2ef9"
+    },
+    {
+      "actual_in_runner": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+      "agrees": true,
+      "check": "upstream_tree_manifest_anchor",
+      "declared_in_map": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318"
+    },
+    {
+      "actual_in_runner": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+      "agrees": true,
+      "check": "parent_commit_anchor",
+      "declared_in_map": "d3c7aa09c9553cd5ac100e668923abab602e4257"
+    },
+    {
+      "actual_in_runner": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c",
+      "agrees": true,
+      "check": "restricted_seal_anchor",
+      "declared_in_map": "596c8056342e75110a940ee838cb080e9cd830f269aca0d1d87a0c4d482f859c"
+    },
+    {
+      "actual_in_runner": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1",
+      "agrees": true,
+      "check": "restricted_protocol_anchor",
+      "declared_in_map": "f75e6c93adc33b9db19be7c58240c7a0b38e3082a4f5b79ef67aad7c66493cf1"
+    },
+    {
+      "actual_in_runner": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+      "agrees": true,
+      "check": "dependency_lock",
+      "declared_in_map": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "actual_in_runner": "V52_T4F1_RUN_AUTHORIZATION_V4",
+      "agrees": true,
+      "check": "authorization_schema_version",
+      "declared_in_map": "V52_T4F1_RUN_AUTHORIZATION_V4"
+    },
+    {
+      "actual_in_runner": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "cohort_sha256",
+        "required_archive_count",
+        "output_namespace_basename",
+        "preregistration_seal_sha256",
+        "authorization_id",
+        "authorization_nonce"
+      ],
+      "agrees": true,
+      "check": "authorization_signed_fields",
+      "declared_in_map": [
+        "schema",
+        "status",
+        "retrieval_quality_outcome_access",
+        "execution_script_sha256",
+        "execution_candidate_seal_sha256",
+        "cohort_sha256",
+        "required_archive_count",
+        "output_namespace_basename",
+        "preregistration_seal_sha256",
+        "authorization_id",
+        "authorization_nonce"
+      ]
+    },
+    {
+      "actual_in_runner": "V52_T4F0_TIE_PRIORITY_V1",
+      "agrees": true,
+      "check": "tie_priority.prefix",
+      "declared_in_map": "V52_T4F0_TIE_PRIORITY_V1"
+    },
+    {
+      "actual_in_runner": 2000,
+      "agrees": true,
+      "check": "cohort.total_rows",
+      "declared_in_map": 2000
+    },
+    {
+      "actual_in_runner": 1712,
+      "agrees": true,
+      "check": "cohort.eligible_questions",
+      "declared_in_map": 1712
+    },
+    {
+      "actual_in_runner": 96,
+      "agrees": true,
+      "check": "cohort.archive_count",
+      "declared_in_map": 96
+    },
+    {
+      "actual_in_runner": [
+        "1M::26",
+        "1M::33",
+        "1M::34",
+        "1M::5"
+      ],
+      "agrees": true,
+      "check": "cohort.excluded_archives",
+      "declared_in_map": [
+        "1M::26",
+        "1M::33",
+        "1M::34",
+        "1M::5"
+      ]
+    },
+    {
+      "actual_in_runner": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+      "agrees": true,
+      "check": "cohort.sha256",
+      "declared_in_map": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a"
+    },
+    {
+      "actual_in_runner": [
+        43001,
+        43002,
+        43003,
+        43004,
+        43005
+      ],
+      "agrees": true,
+      "check": "methods.haar_seeds",
+      "declared_in_map": [
+        43001,
+        43002,
+        43003,
+        43004,
+        43005
+      ]
+    },
+    {
+      "actual_in_runner": [
+        101,
+        202,
+        303,
+        404,
+        505
+      ],
+      "agrees": true,
+      "check": "methods.itq_seeds",
+      "declared_in_map": [
+        101,
+        202,
+        303,
+        404,
+        505
+      ]
+    },
+    {
+      "actual_in_runner": 100,
+      "agrees": true,
+      "check": "methods.itq_iterations",
+      "declared_in_map": 100
+    },
+    {
+      "actual_in_runner": 3,
+      "agrees": true,
+      "check": "methods.top_k",
+      "declared_in_map": 3
+    },
+    {
+      "actual_in_runner": 20,
+      "agrees": true,
+      "check": "methods.trials",
+      "declared_in_map": 20
+    },
+    {
+      "actual_in_runner": 32,
+      "agrees": true,
+      "check": "methods.latent_dim",
+      "declared_in_map": 32
+    },
+    {
+      "actual_in_runner": 5101,
+      "agrees": true,
+      "check": "methods.latent_seed",
+      "declared_in_map": 5101
+    },
+    {
+      "actual_in_runner": 96,
+      "agrees": true,
+      "check": "methods.mixed_dim",
+      "declared_in_map": 96
+    },
+    {
+      "actual_in_runner": 5204,
+      "agrees": true,
+      "check": "methods.mixed_seed",
+      "declared_in_map": 5204
+    },
+    {
+      "actual_in_runner": 1e-12,
+      "agrees": true,
+      "check": "methods.invariance_tolerance",
+      "declared_in_map": 1e-12
+    },
+    {
+      "actual_in_runner": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5",
+      "agrees": true,
+      "check": "canary.archive_sign_sha256",
+      "declared_in_map": "7365b6c4ba7753ee5431f89816c3151a2618f475415024d8932c839609ded5b5"
+    },
+    {
+      "actual_in_runner": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b",
+      "agrees": true,
+      "check": "canary.query_sign_sha256",
+      "declared_in_map": "5e40a5d1f0d33bf16c4005ed8aa172464dd1fb205da983f5373c9940f4ccad2b"
+    },
+    {
+      "actual_in_runner": 1e-09,
+      "agrees": true,
+      "check": "canary.sign_margin",
+      "declared_in_map": 1e-09
+    },
+    {
+      "actual_in_runner": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+      "agrees": false,
+      "check": "seal.pinned_beam_commit mirror",
+      "declared_in_map": null
+    },
+    {
+      "actual_in_runner": 1712,
+      "agrees": true,
+      "check": "seal.cohort eligible mirror",
+      "declared_in_map": 1712
+    },
+    {
+      "actual_in_runner": [
+        "HAAR96_SIGN",
+        "ITQ96_CENTERED",
+        "NATIVE_SIGN96",
+        "SIGNED_PERM_CONTROL96"
+      ],
+      "agrees": true,
+      "check": "arm_identifiers all present in runner",
+      "declared_in_map": [
+        "HAAR96_SIGN",
+        "ITQ96_CENTERED",
+        "NATIVE_SIGN96",
+        "SIGNED_PERM_CONTROL96"
+      ]
+    }
+  ],
+  "total": 30
+}

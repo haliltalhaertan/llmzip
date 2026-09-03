@@ -1,0 +1,51 @@
+[
+  {
+    "probe": "G1 POSITIVE CONTROL: unmodified V6 copy passes",
+    "blocked": false,
+    "expected_block": false,
+    "gate_behaved_as_required": true,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "G2 declared mirror emptied of its value (cohort digest deleted from spec)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "G3 phantom mirror declared on a file that never held the value",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "G4 hex concept removes itself from the sweep (scannable_literals emptied)",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'CANDIDATE_EXECUTION_SEAL.json', 'token': '9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a'}, {'file': 'EXECUTION_SPEC.md', 'token': '9b70e16fc1d16ebff78bb"
+  },
+  {
+    "probe": "G5 concept 'value' drifts while scannable_literals stays correct",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "G6 gate_claim prose inflated (self-description not verified)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "G7 historical_provenance class widened to cover EXECUTION_SPEC.md",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  }
+]

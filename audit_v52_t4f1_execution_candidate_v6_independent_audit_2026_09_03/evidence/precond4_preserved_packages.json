@@ -1,0 +1,57 @@
+{
+  "candidate_namespaces_unmodified_working_tree": true,
+  "cochair_approval": {
+    "commit_present": true,
+    "subject": "review(v52): approve declarative V5 remediation"
+  },
+  "cochair_review": {
+    "commit_present": true,
+    "subject": "review(v52): request V5 before Task 4F1 preregistration"
+  },
+  "v4_audit": {
+    "commit_present": true,
+    "commit_subject": "audit(v52): V4 Task 4F1 execution candidate \u2014 cold-start independent audit package"
+  },
+  "v5_audit": {
+    "commit_present": true,
+    "commit_subject": "audit(v52-t4f1-v5): final report, gate table and hash manifest - verdict BLOCKED",
+    "manifest_matches_declared": true,
+    "manifest_sha256": "0b7879e366d58f68022bc12826e820a23e7c2a1f4bf29c456fea70f7faf4af81"
+  },
+  "v5_audit_manifest_self_consistency": {
+    "entries_checked": 32,
+    "manifest_top_keys": [
+      "audit_branch",
+      "audit_date_utc",
+      "audit_namespace",
+      "audited_candidate",
+      "audited_repository_commit",
+      "audited_repository_commit_descendant_checked",
+      "blocking_findings",
+      "delta_route",
+      "environment",
+      "files",
+      "gate6_citation_boundary",
+      "gate_results",
+      "implementer_evidence_read_only",
+      "instruction_set",
+      "non_blocking_observations",
+      "outcome_boundary",
+      "preserved_read_only",
+      "recursive_output_count",
+      "role",
+      "schema",
+      "self_excluded_file",
+      "upstream_anchors_independently_verified",
+      "verdict"
+    ],
+    "mismatched": 0,
+    "mismatches": [],
+    "verified": 32
+  },
+  "v6_implementer_preflight": {
+    "matches_declared": true,
+    "path_exists": true,
+    "sha256": "4f6abc15917ea5d8ae7d06f69c7b223234d9a8123b0a1713bd1ec0dac63b73ad"
+  }
+}

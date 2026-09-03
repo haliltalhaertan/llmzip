@@ -1,0 +1,14 @@
+{
+  "corpus_matches_pinned_manifest": true,
+  "declared_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+  "manifest_path": "audit_v52_t4f0_codex_2026_08_31/pinned_tree_manifest.json",
+  "manifest_sha256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+  "manifest_sha256_matches_declared_anchor": true,
+  "materialized_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+  "selected_blob_count_declared": 205,
+  "selected_blobs_mismatched": [],
+  "selected_blobs_missing": [],
+  "selected_blobs_verified": 205,
+  "selected_total_bytes_declared": 804231963,
+  "selected_total_bytes_observed": 804231963
+}
