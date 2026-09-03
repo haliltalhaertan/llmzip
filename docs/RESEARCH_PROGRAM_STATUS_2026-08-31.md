@@ -19,7 +19,8 @@ This document is the current operational research ledger. It distinguishes accep
 - `[TASK 4F1 V2 INDEPENDENT AUDIT BLOCKED — B1/B2/B3 FINALIZATION INTEGRITY DEFECTS]`
 - `[TASK 4F1 V3 INDEPENDENT AUDIT BLOCKED — CANARY NOT REPRODUCIBLE FROM DECLARED ENVIRONMENT LOCK]`
 - `[TASK 4F1 V4 AUDIT EVIDENCE ACCEPTED — 9/9 GATES; PACKAGE SEAL WITHDRAWN BY CO-CHAIR CC-01]`
-- `[TASK 4F1 V5 PREPARED — DECLARATIVE CC-01 REMEDIATION; INDEPENDENT DELTA AUDIT PENDING]`
+- `[TASK 4F1 V5 INDEPENDENT AUDIT BLOCKED — SINGLE-SOURCE GATE DID NOT ESTABLISH ITS CLAIM]`
+- `[TASK 4F1 V6 PREPARED — INVERTED-BURDEN SWEEP; INDEPENDENT DELTA AUDIT PENDING]`
 - `[TASK 4F1 PREREGISTRATION DECISION PENDING — STILL NOT AUTHORIZED TO RUN]`
 
 ## Accepted scientific evidence
@@ -239,3 +240,33 @@ This is implementer evidence, not independent sign-off. A cold-start delta audit
 must derive the declarative classification from the bytes. Sealing requires both the Head
 Researcher and the co-chair. Task 4F1 remains blocked for preregistration and execution, and the
 scientific route remains option B with tier-stratified estimands frozen beforehand.
+
+## 2026-09-03 — V5 blocked, V6 prepared on an inverted burden
+
+The V5 delta audit confirmed CC-01 was repaired and the change set was declarative, but returned
+BLOCKED: the single-source gate did not establish its own claim. It trusted a hand-written mirror
+list, so it could verify only what its author declared, and it matched raw text line by line, so
+the same digest wrapped across two lines or written in uppercase defeated it. The Continuity Lead
+reproduced every blocking finding against its own package before accepting the verdict.
+
+V6 inverts the burden. The gate sweeps every bound payload for value-shaped tokens and requires
+each discovered token to be attributed to a declared concept and found only where that concept
+permits. Matching runs on normalised text. Concepts rose from 18 to 24, adding the BEAM tree
+manifest, restricted seal, restricted protocol and parent-commit anchors, tie priority and the arm
+identifiers. The duplicate status field is removed and the attestation is a resolvable file holding
+a real record.
+
+Building the sweep made it audit its author: it caught a 64-hex digest matching as its own 40-hex
+prefix, and a stale duplicate supersedes block in the seal still pointing at V3, which was deleted
+rather than exempted. Genuinely non-normative tokens were not silently ignored — each exempt class
+is declared with its scope and rationale.
+
+One limit is stated rather than glossed: the sweep tracks 64-hex, 40-hex and V52_ identifier
+shapes, so short load-bearing values such as 1712, 96, 392, the seeds and the tolerances are
+outside its reach and remain covered only by declared concepts and the runner's constants. The
+audit prompt asks the auditor to judge whether the claim survives that gap.
+
+The runner has been byte-identical to the accepted V4 runner since V5, so no execution behaviour
+changed. V6 was prepared under Continuity Lead authority alone while the co-chair is unavailable,
+exceeding the standing approval; sealing remains conditional on co-chair ratification. Task 4F1
+remains blocked for preregistration and execution.

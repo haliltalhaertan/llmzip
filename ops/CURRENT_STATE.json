@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V6_PREPARATION_IN_PROGRESS",
-  "issued_at_utc": "2026-09-03T11:00:00Z",
+  "state_id": "V52_4F1_V6_INDEPENDENT_DELTA_AUDIT_PENDING",
+  "issued_at_utc": "2026-09-03T12:30:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -17,12 +17,12 @@
     "docs/CONTINUITY_LEDGER.md",
     "docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md",
     "CHAIN_OF_CUSTODY.md",
-    "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V5_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-02.md"
+    "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V6_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-03.md"
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Prepare V6 with an inverted-burden single-source gate",
-    "next_single_action": "Build V6 with the runner byte-identical to f96cba2c and a gate that sweeps the bound closure for value-shaped tokens and requires every one to be attributed to a declared concept and location, matching on normalised text. Then an independent audit. Do not seal, preregister or run.",
+    "current_task": "Cold-start independent delta audit of the exact Task 4F1 V6 package",
+    "next_single_action": "A cold-start auditor that did not prepare V6 executes only prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V6_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-03.md and must state whether the gate claim is established or merely not yet falsified. Sealing additionally requires co-chair ratification. Do not preregister or run Task 4F1.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -32,7 +32,8 @@
     "v4_candidate": "NOT CO-SIGNED AS A SEALED PACKAGE. Co-chair REQUEST CHANGES 2026-09-02: blocking finding CC-01, a contradictory canary specification inside the bound EXECUTION_SPEC.md. The L-008 seal is withdrawn as a final package seal.",
     "v4_independent_audit": "EVIDENCE ACCEPTED (9/9 implementation gates); authentic and hash-consistent",
     "scientific_route": "OPTION B — freeze the outcome-free scientific justification and the tier-stratified estimands before preregistration",
-    "v5_candidate": "BLOCKED by independent delta audit 2026-09-03. CC-01 itself is repaired and the V4-to-V5 change set is genuinely declarative, but the single-source mechanism that is the reason V5 exists does not establish its own claim."
+    "v5_candidate": "BLOCKED by independent delta audit 2026-09-03. CC-01 itself is repaired and the V4-to-V5 change set is genuinely declarative, but the single-source mechanism that is the reason V5 exists does not establish its own claim.",
+    "v6_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED (inverted-burden gate; prepared under Continuity Lead authority alone)"
   },
   "anchors": {
     "v3_runner": {
@@ -98,6 +99,34 @@
     "v5_preflight_manifest": {
       "path": "task4f1_execution_candidate_v5_preflight_2026_09_02/PREFLIGHT_HASHES.json",
       "sha256": "b6fb9cfd4e7517857072ff939a39022d5185e161a9ac0c57319b931a6f316b0f"
+    },
+    "v6_runner": {
+      "path": "task4f1_execution_candidate_v6_2026_09_03/v52_t4f1_beam_retrieval.py",
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    "v6_payload_inventory": {
+      "path": "task4f1_execution_candidate_v6_2026_09_03/PAYLOAD_HASHES.json",
+      "sha256": "794322114c44d14de352b3decc6d80c795a9706eeaa77419d0f30200c0beabab"
+    },
+    "v6_candidate_seal": {
+      "path": "task4f1_execution_candidate_v6_2026_09_03/CANDIDATE_EXECUTION_SEAL.json",
+      "sha256": "ac85bbf04dd3f8502763432a9b51d7b0c92b06349fcd755fc1072af78710ebf3"
+    },
+    "v6_normative_source_map": {
+      "path": "task4f1_execution_candidate_v6_2026_09_03/NORMATIVE_SOURCE_MAP.json",
+      "sha256": "2795ff176df7e465955ed407ef66514c425ccf255b831cea5d71421136df5924"
+    },
+    "v6_package_preflight": {
+      "path": "task4f1_execution_candidate_v6_2026_09_03/candidate_package_preflight.py",
+      "sha256": "97978dda6dbd35fc12109d51cc0cb0a83bda929f2e268da0a7ef085d3953796a"
+    },
+    "v6_detached_attestation": {
+      "path": "docs/v52/task4f1/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json",
+      "sha256": "3eed58e1a6fbd6754cdc6582209010cc2d2db08a84004f4ca55a45281cc4919a"
+    },
+    "v6_preflight_manifest": {
+      "path": "task4f1_execution_candidate_v6_preflight_2026_09_03/PREFLIGHT_HASHES.json",
+      "sha256": "4f6abc15917ea5d8ae7d06f69c7b223234d9a8123b0a1713bd1ec0dac63b73ad"
     }
   },
   "required_external_inputs": {
@@ -121,7 +150,7 @@
     "co_chair": "Codex acts as approval/veto reviewer and writes only review artifacts on a separate branch. A load-bearing transition closes only on explicit co-chair approval; REQUEST CHANGES keeps it blocked."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-015",
+  "ledger_entry": "L-016",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -152,27 +181,5 @@
       "The V5 delta-audit prompt as written.",
       "DEVIATION: the co-chair asked for an authorization template matching \"the V5 authorization schema\". The template instead declares V52_T4F1_RUN_AUTHORIZATION_V4, because the byte-identical runner verifies that literal and a \"V5\" label would make the payload fail closed against its own runner. Flagged, not hidden; requires ratification before sealing."
     ]
-  },
-  "commissioned_audit": {
-    "stage": "V5_INDEPENDENT_DELTA_AUDIT",
-    "session_id": "session_015zjM2cKm9S18rwyevnXYFg",
-    "title": "V52 T4F1 V5 — cold-start independent delta audit",
-    "commissioned_at_utc": "2026-09-02T20:14:44Z",
-    "audited_commit": "4244485",
-    "target_branch": "audit/v52-t4f1-v5-independent-2026-09-02",
-    "authorized_by": "standing co-chair approval 4bd32782c4148d15a632fb822dae8cab358892c6",
-    "custody_instruction": "incremental push required after each gate; audit namespace only; no main commit, no merge, no PR",
-    "status": "COMPLETE — BLOCKED",
-    "branch": "audit/v52-t4f1-v5-independent-2026-09-02",
-    "commit": "6243ba6d9fe1c3d059d78369d8fed3534d7921d0",
-    "hashes_file_sha256": "0b7879e366d58f68022bc12826e820a23e7c2a1f4bf29c456fea70f7faf4af81"
-  },
-  "stage_in_progress": {
-    "stage": "V52_4F1_V6_INVERTED_BURDEN_REMEDIATION",
-    "branch": "impl/v52-t4f1-v6-2026-09-03",
-    "new_namespace": "task4f1_execution_candidate_v6_2026_09_03/",
-    "status": "IN_PROGRESS",
-    "runner_must_equal": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
-    "authority": "PREPARED UNDER CONTINUITY LEAD AUTHORITY; EXCEEDS STANDING APPROVAL 4bd32782; REQUIRES CO-CHAIR RATIFICATION BEFORE ANY SEALING"
   }
 }

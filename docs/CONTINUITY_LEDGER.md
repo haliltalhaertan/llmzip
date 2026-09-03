@@ -281,3 +281,21 @@ outcome_boundary: Unchanged. No --mode run, no --mode finalize, no HMAC key, no 
 status: IN_PROGRESS
 next_single_action: Build V6, prove the gate blocks the exact two variants that defeated V5, then commission an independent audit.
 ```
+
+### L-016
+
+```text
+timestamp_utc: 2026-09-03T12:30:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-015 / 2bc0a98
+scope: Close the V6 inverted-burden remediation stage and hand off to a cold-start delta auditor. V1-V5 candidates, preflight packages, seals, manifests, audits and acceptance records remain byte-for-byte untouched.
+changed_or_created_paths: task4f1_execution_candidate_v6_2026_09_03/; task4f1_execution_candidate_v6_preflight_2026_09_03/; docs/v52/task4f1/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json; prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V6_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-03.md; ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md; START_HERE_V52_4F1.md; docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md
+verification: The V6 runner is byte-identical to the accepted V4 runner f96cba2c and AST-equal with docstrings stripped; DEPENDENCY_LOCK.txt is unchanged. Only five declarative payloads differ from V5, and the sole executable delta is the out-of-band package checker the runner never imports. Candidate --mode preflight returns PASS. The gate passes with 24 concepts, 9 payloads swept, 16 tracked literals, 0 unattributed tokens, 0 undeclared repetitions and 0 surviving deprecated literals. Thirteen negative fixtures all block, including the two that defeated V5 - the same V3 digest wrapped across two lines, and in uppercase hex - plus an undeclared repetition of an authoritative value in a new file, an unattributed new hash, a returning duplicate status field, an unresolvable attestation path, a missing attestation, an attestation claiming acceptance, a seal claiming post-audit state, a modified runner and a nested unbound file.
+gate_caught_own_defects: Building the sweep made it audit its author. It found that a 64-hex digest was also matching as its own 40-hex prefix, fixed with lookarounds; and that the seal carried a stale duplicate supersedes block still pointing at V3 alongside the current supersedes_candidate, which was deleted rather than exempted. Where self-describing inventory hashes, historical provenance and file names are genuinely not normative values, they were not silently ignored and the regex was not loosened: each is declared in the map as a typed exempt class, scoped by JSON key path or an enumerated allowlist, with a rationale an auditor can attack.
+honest_limit: The sweep tracks 64-hex, 40-hex and V52_ identifier shapes. Short load-bearing values such as 1712, 96, 392, the seeds, thresholds and tolerances are NOT token-shaped and are therefore outside its reach; they remain covered only by declared concepts and by the runner's own constants. The V6 audit prompt names this gap explicitly and asks the auditor to judge whether the gate's claim survives it or overstates itself. The claim should not be read as stronger than the sweep's token shapes allow.
+authority: V6 was prepared under Continuity Lead authority alone and EXCEEDS the standing co-chair approval 4bd32782, which covered V5 only. This is recorded in the seal, the preflight manifest and the audit prompt. Even a passing audit leaves sealing conditional on co-chair ratification.
+outcome_boundary: 0 --mode run; 0 --mode finalize; 0 HMAC key environment sets; no valid authorization; no real retrieval ranking; retrieval quality computed/read/reported all false; no V1-V5 candidate, seal, manifest, audit or acceptance record modified; no pinned corpus byte touched.
+status: PASS
+next_single_action: A cold-start auditor that did not prepare V6 executes only the V6 delta-audit prompt and must state whether the gate claim is established or merely not yet falsified.
+handoff_payload: branch impl/v52-t4f1-v6-2026-09-03 at fb7fce8, merged to main; V6 runner f96cba2c; inventory, seal, source map, checker, attestation and preflight manifest hashes bound in ops/CURRENT_STATE.json anchors.
+```
