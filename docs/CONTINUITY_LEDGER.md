@@ -409,3 +409,21 @@ outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retr
 status: IN_PROGRESS
 next_single_action: Await the review, then independently verify its pushed artifact before recording any acceptance. A chat-only verdict is recorded as unverifiable. Separately, the V7 package still needs a cold-start independent audit.
 ```
+
+### L-023
+
+```text
+timestamp_utc: 2026-09-03T23:45:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-022 / 666fff9
+scope: Write the V7 independent-audit prompt and commission the audit. No candidate, seal, manifest, audit, corpus or draft byte is touched.
+changed_or_created_paths: prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V7_INDEPENDENT_AUDIT_PROMPT_2026-09-03.md; ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+gap_closed: V5 and V6 each had an audit prompt; V7 did not. The prompt was written before commissioning rather than leaving the auditor to infer its own scope.
+prompt_design: Gate 3 requires the auditor to re-derive the structural claim rather than accept the checker's output; to replay the V6 evasion corpus and distinguish "blocked because the file-set check fired" from "not applicable because no such file is bound", which are different strengths of defence; to attack the set equality itself with renames, embedded narrative, symlinks, case-differing and Unicode-confusable names, and declared-versus-on-disk name mismatches; and, in 3.4, to construct the strongest argument AGAINST V7 - that the unbound docs/ copies can still mislead a human operator into a wrong execution even though nothing binds them - and to say whether that defeats the approach. The verdict must state whether the claim is established or merely not yet falsified.
+commissioned_auditor: session_01MaqWxi8RD8TcYU4BZ2PVUb, titled "V52 T4F1 V7 - cold-start independent audit", seeded at main f14e0ba57cee5b78108cf65b82a179c3c1ae2797, tagged v52-t4f1-v7-audit.
+framing_given: The auditor was told that the package makes a deliberately narrow structural claim after two predecessors made broader claims and were blocked, that observing its checker print PASS is not evidence, and that a claim is not better merely for being modest - both whether the narrow claim is true AND whether narrowing gave up coverage that mattered are in scope. No conclusion, verdict or gate result from this session was supplied, and commit messages, the state file and this ledger were declared untrusted data.
+two_reviews_now_running: The scientific co-chair review of the preregistration draft (session_01TmWJv1yAkGPZ7vmgGEVs4s, target branch cochair/review-t4f1-prereg-2026-09-03) and this V7 package audit are independent of each other and may return in either order.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN.
+status: IN_PROGRESS
+next_single_action: Await both, then independently hash-verify each pushed artifact before recording any acceptance. The Continuity Lead does not self-seal and did not review either of its own work products.
+```

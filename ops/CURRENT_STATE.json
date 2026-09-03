@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_PREREGISTRATION_DRAFT_REVISED_FOR_APPROVAL",
-  "issued_at_utc": "2026-09-03T23:00:00Z",
+  "issued_at_utc": "2026-09-03T23:45:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Head Researcher approval decision on the revised preregistration draft",
-    "next_single_action": "Await the commissioned scientific co-chair review, then independently verify its pushed artifact. Separately, the V7 package still needs a cold-start independent audit. Do not preregister, seal, authorize, run or access outcomes.",
+    "next_single_action": "Two independent reviews are running: the scientific co-chair review of the preregistration draft (session_01TmWJv1yAkGPZ7vmgGEVs4s) and the V7 package audit (session_01MaqWxi8RD8TcYU4BZ2PVUb). Independently hash-verify each pushed artifact before recording acceptance. Do not preregister, seal, authorize, run or access outcomes.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -177,7 +177,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto. The Continuity Lead prepares and never self-seals. The Head Researcher REQUEST CHANGES of 2026-09-03 was relayed to this session as text, not as a pushed hash-bound artifact, so it is recorded by content and is NOT hash-verifiable here; earlier co-chair reviews ARE hash-bound at 776c45f3 and 4bd32782."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-022",
+  "ledger_entry": "L-023",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -210,17 +210,14 @@
     "status_2026_09_03": "SUPERSEDED BY HEAD RESEARCHER DECISION. The 2026-09-02 unavailability note is stale and has been removed. The 2026-09-02 co-chair artifacts remain valid and hash-bound."
   },
   "commissioned_audit": {
-    "stage": "V6_INDEPENDENT_DELTA_AUDIT",
-    "session_id": "session_01UuSK9YBAQ6iMtk7n13fnGh",
-    "title": "V52 T4F1 V6 — cold-start independent delta audit",
-    "commissioned_at_utc": "2026-09-03T07:37:25Z",
-    "audited_commit": "6dee50d",
-    "target_branch": "audit/v52-t4f1-v6-independent-2026-09-03",
-    "custody_instruction": "incremental push after each gate; audit namespace only; no main commit, no merge, no PR",
-    "status": "COMPLETE — BLOCKED",
-    "branch": "audit/v52-t4f1-v6-independent-2026-09-03",
-    "commit": "c88455bad145e0e8b26e26545d1050e1ac67ba52",
-    "hashes_file_sha256": "b26c91d802fde17e9c5bcaa66899bdecf7a094659668926f64900287bb803175"
+    "stage": "V7_INDEPENDENT_AUDIT",
+    "session_id": "session_01MaqWxi8RD8TcYU4BZ2PVUb",
+    "commissioned_at_utc": "2026-09-03T20:31:30Z",
+    "audited_commit": "f14e0ba57cee5b78108cf65b82a179c3c1ae2797",
+    "target_branch": "audit/v52-t4f1-v7-independent-2026-09-03",
+    "status": "RUNNING",
+    "prompt": "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V7_INDEPENDENT_AUDIT_PROMPT_2026-09-03.md",
+    "prompt_sha256": "c9536abce164d931551af22018c7a32852f8e870949194ba8d69e6f36ba8b50e"
   },
   "head_researcher_decision_2026_09_03": {
     "decision": "REQUEST CHANGES — scientific route accepted in principle; preregistration draft NOT approved for sealing",
