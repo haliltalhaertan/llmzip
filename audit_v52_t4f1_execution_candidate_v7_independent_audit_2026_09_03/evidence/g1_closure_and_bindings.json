@@ -1,0 +1,45 @@
+{
+  "all_six_match_prompt_anchors": true,
+  "declared_equals_actual_payload": true,
+  "dependency_lock_actual_sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+  "environment_lock_sha256_in_runner": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+  "inventory_actual_sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90",
+  "manifest_closure_field": "RECURSIVE_ALL_FILES_EXCLUDING_INVENTORY_AND_SEAL",
+  "manifest_declares_n_files": 4,
+  "nested_directories": [],
+  "on_disk": {
+    "CANDIDATE_EXECUTION_SEAL.json": {
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    "DEPENDENCY_LOCK.txt": {
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    "PAYLOAD_HASHES.json": {
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    "RUN_AUTHORIZATION_TEMPLATE.json": {
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    "candidate_package_preflight.py": {
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    "v52_t4f1_beam_retrieval.py": {
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    }
+  },
+  "pycache_present": false,
+  "recursive_file_count": 6,
+  "seal_binds_implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+  "seal_binds_inventory_sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90",
+  "seal_implementation_binding_holds": true,
+  "seal_inventory_binding_holds": true,
+  "seal_own_hash_is_bound_by_package": false,
+  "seal_own_hash_note": "The seal is excluded from the inventory by design; nothing INSIDE the package verifies the seal's own digest. The chain roots in the externally published seal hash 18e85f5e..., which this audit verified out-of-band against the governing prompt.",
+  "symlinks": []
+}
