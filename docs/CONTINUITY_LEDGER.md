@@ -265,3 +265,19 @@ outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retr
 status: BLOCKED
 next_single_action: Decide, with the co-chair when available, whether to prepare V6 on the inverted-burden design. Preparing V6 exceeds the standing approval 4bd32782, which covered V5 preparation and its audit only.
 ```
+
+### L-015
+
+```text
+timestamp_utc: 2026-09-03T11:00:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-014 / 294ec13
+scope: Claim the V6 remediation stage answering the BLOCKED V5 delta audit. V1-V5 candidates, preflight packages, seals, manifests, audits and acceptance records remain byte-for-byte untouched; V6 is a new namespace.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md; then task4f1_execution_candidate_v6_2026_09_03/ and the V6 audit prompt on branch impl/v52-t4f1-v6-2026-09-03
+authority_disclosure: This EXCEEDS the standing co-chair approval 4bd32782, which covered V5 preparation and its audit only. The co-chair is unavailable. V6 is prepared under Continuity Lead authority alone and is explicitly marked as requiring co-chair ratification before any sealing decision. Preparing it commits nothing irreversible: nothing is sealed, and V6 must itself pass an independent audit.
+design_change: V5 failed because its gate trusted a hand-written mirror list and compared raw text per line, so it could only verify what its author declared and any reformatting defeated it. V6 inverts the burden. The gate sweeps every bound payload for value-shaped tokens (64-hex, 40-hex and V52_ identifiers), and every token it discovers must be attributed to a declared concept AND found only at that concept's authoritative path or a declared mirror. An unattributed token fails as a missing concept; an attributed token in an undeclared location fails as an unlabelled second normative source. Matching runs on normalised text with whitespace removed and case folded, so line wrapping and uppercase hex cannot hide a literal.
+also_fixed: The duplicate status field in PAYLOAD_HASHES.json is removed; the attestation authoritative path becomes a real resolvable file with an actual V6 record; the five runner-enforced constants and tie priority gain declared concepts.
+outcome_boundary: Unchanged. No --mode run, no --mode finalize, no HMAC key, no valid authorization, no real ranking, no retrieval-quality outcome computed, read or reported.
+status: IN_PROGRESS
+next_single_action: Build V6, prove the gate blocks the exact two variants that defeated V5, then commission an independent audit.
+```
