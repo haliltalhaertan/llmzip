@@ -1,0 +1,107 @@
+[
+  {
+    "probe": "A1 novel 64-hex preceded by a word ending in a hex char ('probe')",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "A2 novel 64-hex followed by a word starting with a hex char ('and')",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "A3 LIVE cohort digest relocated to README.md, hidden by hex-adjacent prose",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "B1 deprecated literal split by a ZERO WIDTH SPACE",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "B2 deprecated literal with Cyrillic look-alike characters",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'README.md', 'token': '8af2f02b284e1217807af4d0270acbb58f580025'}]"
+  },
+  {
+    "probe": "B3 deprecated literal interleaved with HTML comment markup",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "B4 deprecated literal re-encoded as base64",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "B5 deprecated literal re-encoded as a decimal integer",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "B6 deprecated literal split across two JSON keys",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "B7 deprecated literal inside a bound but non-UTF-8 payload",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "B8 deprecated + novel literal inside the DETACHED ATTESTATION (outside closure)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "C1 novel digest smuggled into PAYLOAD_HASHES files[] (non-digest key)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "C2 novel digest under key 'supersedes_candidate_addendum' (startswith widening)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "C3 novel digest under payload_inventory.smuggled (exempt subtree)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "C4 sealed-4F0 namespace identifier SWAPPED (restricted_refreeze -> codex)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  }
+]

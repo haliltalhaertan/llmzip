@@ -1,0 +1,72 @@
+[
+  {
+    "probe": "3.1a novel 64-hex planted in README.md",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'README.md', 'token': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab'}]"
+  },
+  {
+    "probe": "3.1b novel 40-hex planted in EXECUTION_SPEC.md",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'EXECUTION_SPEC.md', 'token': 'cccccccccccccccccccccccccccccccccccccccd'}]"
+  },
+  {
+    "probe": "3.1c novel v52_t4f identifier planted in README.md",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'README.md', 'token': 'v52_t4f9_fabricated_identifier'}]"
+  },
+  {
+    "probe": "3.1d novel 64-hex planted in a JSON value",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'RUN_AUTHORIZATION_TEMPLATE.json', 'token': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab'}]"
+  },
+  {
+    "probe": "3.1e novel 64-hex in a NEW file added to the closure",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "3.1f live cohort digest relocated to README.md (undeclared repetition)",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNDECLARED REPETITION] [{'file': 'README.md', 'token': '9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a', 'concept': 'cohort_anchor'}]"
+  },
+  {
+    "probe": "3.2a V5 escape: deprecated literal WRAPPED across two lines",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'README.md', 'literal': '25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025'}]"
+  },
+  {
+    "probe": "3.2b V5 escape: deprecated literal in UPPERCASE",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'README.md', 'literal': '25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025'}]"
+  },
+  {
+    "probe": "3.2c V5 escape combined: wrapped AND uppercase",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - DEPRECATED LITERAL SURVIVES] [{'file': 'README.md', 'literal': '25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025'}]"
+  },
+  {
+    "probe": "3.2d live cohort digest wrapped+uppercase at a non-permitted path",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNDECLARED REPETITION] [{'file': 'README.md', 'token': '9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a', 'concept': 'cohort_anchor'}]"
+  }
+]

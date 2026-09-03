@@ -1,0 +1,76 @@
+{
+  "gate1_nested_unbound_file_rejected": true,
+  "gate1_no_pycache": true,
+  "gate1_real_candidate_byte_identical_after": true,
+  "gate1_recursive_file_count": 9,
+  "gate1_rejection_message": "RuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'EXECUTION_SPEC.md', 'NORMATIVE_SOURCE_MAP.json', 'README.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.p",
+  "gate2_changed_executable_files": [
+    "candidate_package_preflight.py"
+  ],
+  "gate2_checker_imports": [
+    "__future__",
+    "ast",
+    "hashlib",
+    "json",
+    "pathlib",
+    "re"
+  ],
+  "gate2_runner_ast_equal_docstrings_stripped_v4_v6": true,
+  "gate2_runner_ast_equal_docstrings_stripped_v5_v6": true,
+  "gate2_runner_bytes_identical_v4_v5_v6": true,
+  "gate2_runner_imports": [
+    "__future__",
+    "argparse",
+    "collections",
+    "csv",
+    "dataclasses",
+    "hashlib",
+    "hmac",
+    "json",
+    "numpy",
+    "os",
+    "pathlib",
+    "platform",
+    "psutil",
+    "scipy",
+    "sklearn",
+    "sklearn.decomposition",
+    "sklearn.feature_extraction.text",
+    "sklearn.preprocessing",
+    "sys",
+    "time",
+    "typing"
+  ],
+  "gate2_runner_imports_checker": false,
+  "gate2_runner_mentions_checker_textually": false,
+  "gate2_runner_sha_v4": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+  "gate2_runner_sha_v5": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+  "gate2_runner_sha_v6": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+  "gate2_v5_to_v6_changed_files": [
+    {
+      "file": "CANDIDATE_EXECUTION_SEAL.json",
+      "v5": "e8f2f9e87a46d96fbec744e6bd5b0ca494755a023aeb592d206762da0d1a40cc",
+      "v6": "ac85bbf04dd3f8502763432a9b51d7b0c92b06349fcd755fc1072af78710ebf3"
+    },
+    {
+      "file": "NORMATIVE_SOURCE_MAP.json",
+      "v5": "d64b865c200f3857659cf3da021e934d5b69e01770b3c549a50e0a35dc697002",
+      "v6": "2795ff176df7e465955ed407ef66514c425ccf255b831cea5d71421136df5924"
+    },
+    {
+      "file": "PAYLOAD_HASHES.json",
+      "v5": "171acc06bdc8d791518f95bf7679ad91bd7f67c42f7ede7b7195a62597731b4e",
+      "v6": "794322114c44d14de352b3decc6d80c795a9706eeaa77419d0f30200c0beabab"
+    },
+    {
+      "file": "README.md",
+      "v5": "334745497dc35ff2cb4f9f7ae719360410cf93cac9e5a4f28db2351b671f77fa",
+      "v6": "4fd489a9e23ff953ffed9e7f2e28cfded57ecc9e52e6bdb76b0fb948e40077ba"
+    },
+    {
+      "file": "candidate_package_preflight.py",
+      "v5": "0b0a57f838c9437233f90f8870dcf0998bab6612af6b736ba84cb11594e1bd94",
+      "v6": "97978dda6dbd35fc12109d51cc0cb0a83bda929f2e268da0a7ef085d3953796a"
+    }
+  ]
+}

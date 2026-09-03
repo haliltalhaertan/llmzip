@@ -1,0 +1,142 @@
+[
+  {
+    "probe": "D1 estimand denominator eligible_questions 1712 -> 1713 (seal)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "D2 excluded archive 1M::5 -> 1M::7 (seal)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "D3 arm identifier NATIVE_SIGN96 -> NATIVE_SIGN97 (spec)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "D4 Haar seed 43001 -> 43011 (spec)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "D5 invariance tolerance 1e-12 -> 1e-10 (spec)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "D6 latent seed 5101 -> 5102 (spec)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "D7 canary threshold '>= 0' -> '> 0' (spec)",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "E1 duplicate normative concept declared twice",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - DUPLICATE NORMATIVE CONCEPT] candidate_schema_version"
+  },
+  {
+    "probe": "E2 concept pointing at a non-existent path",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNRESOLVABLE DECLARED PATH] candidate_schema_version -> NO_SUCH_FILE.md"
+  },
+  {
+    "probe": "E3 concept with no locator (no single source)",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - CONCEPT WITHOUT SINGLE SOURCE] candidate_schema_version"
+  },
+  {
+    "probe": "E4 VACUITY: fields list emptied entirely",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'CANDIDATE_EXECUTION_SEAL.json', 'token': '3e12035532eb85768f1a7cd779832b650c4b2ef9'}, {'file': 'CANDIDATE_EXECUTION_SEAL.json', 'token': '596c8056342e75110a940ee838cb080e9"
+  },
+  {
+    "probe": "E5 a new blanket exempt class silently excuses everything",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "E6 declaration-site: unattributed digest added to map PROSE (must be swept)",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNATTRIBUTED LOAD-BEARING TOKEN] [{'file': 'NORMATIVE_SOURCE_MAP.json', 'token': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab'}]"
+  },
+  {
+    "probe": "E7 declaration-site: unattributed digest hidden inside the fields block",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "E8 deprecated literal disarmed via must_not_appear_as_requirement=false",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  },
+  {
+    "probe": "F1 attestation file removed",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - UNRESOLVABLE DECLARED PATH] post_audit_acceptance_state -> docs/v52/task4f1/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json"
+  },
+  {
+    "probe": "F2 attestation disagrees with declared acceptance state",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - ATTESTATION DISAGREES WITH DECLARED STATE]"
+  },
+  {
+    "probe": "F3 seal claims a post-audit state via a second status field",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - SEAL CLAIMS POST-AUDIT STATE]"
+  },
+  {
+    "probe": "F4 inventory carries a status field",
+    "blocked": true,
+    "expected_block": true,
+    "gate_behaved_as_required": true,
+    "detail": "RuntimeError: [BLOCKED - INVENTORY CARRIES A SECOND STATUS FIELD]"
+  },
+  {
+    "probe": "F5 attestation redirected to a file INSIDE the candidate namespace",
+    "blocked": false,
+    "expected_block": true,
+    "gate_behaved_as_required": false,
+    "detail": "BLOCKED: independent execution-code audit and Head Researcher authorization are still required"
+  }
+]

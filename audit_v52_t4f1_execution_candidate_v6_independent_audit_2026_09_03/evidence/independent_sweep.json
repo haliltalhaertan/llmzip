@@ -1,0 +1,56 @@
+{
+  "files": {
+    "CANDIDATE_EXECUTION_SEAL.json": {
+      "actually_present": 20,
+      "gate_sees": 20,
+      "invisible_to_gate": []
+    },
+    "DEPENDENCY_LOCK.txt": {
+      "actually_present": 0,
+      "gate_sees": 0,
+      "invisible_to_gate": []
+    },
+    "EXECUTION_SPEC.md": {
+      "actually_present": 16,
+      "gate_sees": 16,
+      "invisible_to_gate": []
+    },
+    "NORMATIVE_SOURCE_MAP.json": {
+      "actually_present": 12,
+      "gate_sees": 12,
+      "invisible_to_gate": []
+    },
+    "PAYLOAD_HASHES.json": {
+      "actually_present": 9,
+      "gate_sees": 9,
+      "invisible_to_gate": []
+    },
+    "README.md": {
+      "actually_present": 1,
+      "gate_sees": 1,
+      "invisible_to_gate": []
+    },
+    "RUN_AUTHORIZATION_TEMPLATE.json": {
+      "actually_present": 3,
+      "gate_sees": 3,
+      "invisible_to_gate": []
+    },
+    "candidate_package_preflight.py": {
+      "actually_present": 4,
+      "gate_sees": 4,
+      "invisible_to_gate": []
+    },
+    "v52_t4f1_beam_retrieval.py": {
+      "actually_present": 21,
+      "gate_sees": 21,
+      "invisible_to_gate": []
+    }
+  },
+  "invisible_tokens": [],
+  "summary": {
+    "bound_payloads": 9,
+    "invisible_and_at_non_permitted_path": 0,
+    "invisible_and_unattributed": 0,
+    "tokens_invisible_to_gate": 0
+  }
+}

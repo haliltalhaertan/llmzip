@@ -1,0 +1,5 @@
+2026-09-03T07:42:04.943366+00:00 REFUSED [forbidden mode substring '--mode run'] /opt/py31213/bin/python3 fake.py --mode run
+2026-09-03T07:42:04.972225+00:00 REFUSED [forbidden mode substring '--mode finalize'] /opt/py31213/bin/python3 fake.py --mode finalize
+2026-09-03T07:42:05.001575+00:00 REFUSED [forbidden mode substring '--mode=run'] /opt/py31213/bin/python3 fake.py --mode=run
+2026-09-03T07:42:05.042707+00:00 LAUNCH rc=0 cwd=None /opt/py31213/bin/python3 -c 'print('"'"'preflight-shaped command allowed'"'"')'
+2026-09-03T07:42:18.725452+00:00 LAUNCH rc=0 cwd=None /opt/py31213/bin/python3 -B task4f1_execution_candidate_v6_2026_09_03/candidate_package_preflight.py
