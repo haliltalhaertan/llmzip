@@ -1,0 +1,36 @@
+{
+  "assessment": "All 13 implementer cases assert behaviours the gate implements, each written in a token-visible position. The suite is confirmatory, not adversarial: it does not probe a single boundary of the mechanism it certifies.",
+  "boundary_classes_the_implementer_suite_does_NOT_probe": [
+    "value-shaped token adjacent to hex-suffixed/hex-prefixed prose (the normalise/lookaround defect)",
+    "zero-width or format-character insertion inside a literal",
+    "non-whitespace markup interleaved inside a literal",
+    "base64 or decimal re-encoding of a superseded literal",
+    "a literal split across two JSON keys",
+    "a bound payload that is not valid UTF-8 (silently skipped by the sweep)",
+    "content placed in the detached attestation, which lies outside the closure",
+    "exempt-class key-prefix widening via startswith matching",
+    "exempt-class file-list widening, and a newly declared blanket exempt class",
+    "deprecated literal disarmed via must_not_appear_as_requirement=false",
+    "drift of load-bearing values outside the three token shapes (seeds, arms, tolerances, counts)",
+    "a declared mirror that does not contain the value, or a phantom mirror",
+    "redirection of the attestation path into the candidate namespace"
+  ],
+  "case_labels": [
+    "baseline unmodified V6",
+    "F3  CC-01 verbatim",
+    "F3b CC-01 sat\u0131r kayd\u0131rma (V5 KA\u00c7IRDI)",
+    "F3c CC-01 b\u00fcy\u00fck harf hex (V5 KA\u00c7IRDI)",
+    "beyan edilmemi\u015f tekrar (yetkili de\u011fer yeni yerde)",
+    "hi\u00e7bir kavram\u0131n sahiplenmedi\u011fi yeni hash",
+    "envanterde ikinci status alan\u0131 geri gelir",
+    "\u00e7\u00f6z\u00fclemeyen authoritative_path",
+    "attestation dosyas\u0131 yok",
+    "attestation kabul iddia eder",
+    "seal post-audit durum iddia eder",
+    "runner de\u011fi\u015fti",
+    "nested unbound dosya"
+  ],
+  "implementer_cases": 13,
+  "implementer_cases_passed": 13,
+  "note": "Read for COVERAGE ASSESSMENT ONLY. Not used as evidence for any conclusion."
+}

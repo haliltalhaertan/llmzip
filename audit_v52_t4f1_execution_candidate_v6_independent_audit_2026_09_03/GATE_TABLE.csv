@@ -1,0 +1,83 @@
+gate,check,result,evidence
+G1,"recursive enumeration: exactly 9 files, no nesting, no __pycache__",PASS,evidence/gate1_gate2.json
+G1,all six declared package anchors match recomputed SHA256,PASS,evidence/OUTCOME_BOUNDARY_TALLY.json
+G1,inventory/seal/source-map bindings verified,PASS,evidence/gate1_gate2.json
+G1,nested unbound file rejected in temporary copy,PASS,evidence/gate1_gate2.json
+G1,real candidate byte-identical after all probing,PASS,evidence/OUTCOME_BOUNDARY_TALLY.json
+G2,runner byte-identical across V4/V5/V6,PASS,evidence/gate1_gate2.json
+G2,runner AST equal to V4 with docstrings stripped,PASS,evidence/gate1_gate2.json
+G2,only executable delta is candidate_package_preflight.py,PASS,evidence/gate1_gate2.json
+G2,runner never imports or references the checker,PASS,evidence/gate1_gate2.json
+G2,no change to fitting/ranking/seeds/thresholds/metrics/aggregation/authorization,PASS,evidence/precond3_anchor_agreement.json
+G3,3.1a novel 64-hex planted in README.md,PASS,evidence/probe_batch1.json
+G3,3.1b novel 40-hex planted in EXECUTION_SPEC.md,PASS,evidence/probe_batch1.json
+G3,3.1c novel v52_t4f identifier planted in README.md,PASS,evidence/probe_batch1.json
+G3,3.1d novel 64-hex planted in a JSON value,PASS,evidence/probe_batch1.json
+G3,3.1e novel 64-hex in a NEW file added to the closure,FAIL - EVASION SUCCEEDED,evidence/probe_batch1.json
+G3,3.1f live cohort digest relocated to README.md (undeclared repetition),PASS,evidence/probe_batch1.json
+G3,3.2a V5 escape: deprecated literal WRAPPED across two lines,PASS,evidence/probe_batch1.json
+G3,3.2b V5 escape: deprecated literal in UPPERCASE,PASS,evidence/probe_batch1.json
+G3,3.2c V5 escape combined: wrapped AND uppercase,PASS,evidence/probe_batch1.json
+G3,3.2d live cohort digest wrapped+uppercase at a non-permitted path,PASS,evidence/probe_batch1.json
+G3,A1 novel 64-hex preceded by a word ending in a hex char ('probe'),FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,A2 novel 64-hex followed by a word starting with a hex char ('and'),FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,"A3 LIVE cohort digest relocated to README.md, hidden by hex-adjacent prose",FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,B1 deprecated literal split by a ZERO WIDTH SPACE,FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,B2 deprecated literal with Cyrillic look-alike characters,PASS,evidence/probe_batch2.json
+G3,B3 deprecated literal interleaved with HTML comment markup,FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,B4 deprecated literal re-encoded as base64,FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,B5 deprecated literal re-encoded as a decimal integer,FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,B6 deprecated literal split across two JSON keys,FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,B7 deprecated literal inside a bound but non-UTF-8 payload,FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,B8 deprecated + novel literal inside the DETACHED ATTESTATION (outside closure),FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,C1 novel digest smuggled into PAYLOAD_HASHES files[] (non-digest key),FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,C2 novel digest under key 'supersedes_candidate_addendum' (startswith widening),FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,C3 novel digest under payload_inventory.smuggled (exempt subtree),FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3,C4 sealed-4F0 namespace identifier SWAPPED (restricted_refreeze -> codex),FAIL - EVASION SUCCEEDED,evidence/probe_batch2.json
+G3/G4/G7,D1 estimand denominator eligible_questions 1712 -> 1713 (seal),FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,D2 excluded archive 1M::5 -> 1M::7 (seal),FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,D3 arm identifier NATIVE_SIGN96 -> NATIVE_SIGN97 (spec),FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,D4 Haar seed 43001 -> 43011 (spec),FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,D5 invariance tolerance 1e-12 -> 1e-10 (spec),FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,D6 latent seed 5101 -> 5102 (spec),FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,D7 canary threshold '>= 0' -> '> 0' (spec),FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,E1 duplicate normative concept declared twice,PASS,evidence/probe_batch3.json
+G3/G4/G7,E2 concept pointing at a non-existent path,PASS,evidence/probe_batch3.json
+G3/G4/G7,E3 concept with no locator (no single source),PASS,evidence/probe_batch3.json
+G3/G4/G7,E4 VACUITY: fields list emptied entirely,PASS,evidence/probe_batch3.json
+G3/G4/G7,E5 a new blanket exempt class silently excuses everything,FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,E6 declaration-site: unattributed digest added to map PROSE (must be swept),PASS,evidence/probe_batch3.json
+G3/G4/G7,E7 declaration-site: unattributed digest hidden inside the fields block,FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,E8 deprecated literal disarmed via must_not_appear_as_requirement=false,FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G3/G4/G7,F1 attestation file removed,PASS,evidence/probe_batch3.json
+G3/G4/G7,F2 attestation disagrees with declared acceptance state,PASS,evidence/probe_batch3.json
+G3/G4/G7,F3 seal claims a post-audit state via a second status field,PASS,evidence/probe_batch3.json
+G3/G4/G7,F4 inventory carries a status field,PASS,evidence/probe_batch3.json
+G3/G4/G7,F5 attestation redirected to a file INSIDE the candidate namespace,FAIL - EVASION SUCCEEDED,evidence/probe_batch3.json
+G5/G7,G1 POSITIVE CONTROL: unmodified V6 copy passes,PASS,evidence/probe_batch4.json
+G5/G7,G2 declared mirror emptied of its value (cohort digest deleted from spec),FAIL - EVASION SUCCEEDED,evidence/probe_batch4.json
+G5/G7,G3 phantom mirror declared on a file that never held the value,FAIL - EVASION SUCCEEDED,evidence/probe_batch4.json
+G5/G7,G4 hex concept removes itself from the sweep (scannable_literals emptied),PASS,evidence/probe_batch4.json
+G5/G7,G5 concept 'value' drifts while scannable_literals stays correct,FAIL - EVASION SUCCEEDED,evidence/probe_batch4.json
+G5/G7,G6 gate_claim prose inflated (self-description not verified),FAIL - EVASION SUCCEEDED,evidence/probe_batch4.json
+G5/G7,G7 historical_provenance class widened to cover EXECUTION_SPEC.md,FAIL - EVASION SUCCEEDED,evidence/probe_batch4.json
+G3,concepts policed by the sweep,15 of 24,evidence/gate3_coverage_analysis.json
+G3,declared value atoms outside every token shape,56 of 72,evidence/gate3_coverage_analysis.json
+G3,gate verifies scannable_literals match declared value,FAIL - NOT VERIFIED,evidence/gate3_coverage_analysis.json
+G3,gate verifies a declared mirror actually contains the value,FAIL - NOT VERIFIED,evidence/gate3_coverage_analysis.json
+G3,no deprecated literal survives (independent robust search),PASS,evidence/gate3_missing_concepts.json
+G3,"load-bearing runner constants with no concept (REAL_CANARY_QUERY, TIERS)",FAIL - MISSING CONCEPTS,evidence/gate3_missing_concepts.json
+G3,independent sweep of shipped bytes: tokens invisible to the gate,0 (shipped bytes clean),evidence/independent_sweep.json
+G4,seal records submission status only,PASS,evidence/probe_batch3.json
+G4,inventory carries no status field,PASS,evidence/probe_batch3.json
+G4,attestation path resolves to a real record,PASS,evidence/probe_batch3.json
+G4,gate blocks missing / disagreeing attestation,PASS,evidence/probe_batch3.json
+G4,attestation bytes bound by any package hash,FAIL - NOT BOUND,evidence/gate4_attestation.json
+G4,attestation cannot be redirected inside the candidate,FAIL - REDIRECTION UNDETECTED,evidence/probe_batch3.json
+G5,positive control: unmodified copy passes,PASS,evidence/probe_batch4.json
+G5,negative fixtures of auditor construction,36 probes run,evidence/probe_batch*.json
+G5,"implementer fixtures (read for coverage only): 13 cases, all confirmatory",OBSERVED,evidence/gate5_implementer_fixture_coverage.json
+G6,"B1/B2/B3, aggregation, authorization, leakage on byte-identical runner",CITED FROM V4 AUDIT,evidence/precond4_preserved_packages.json
+G6,V4/V5 audit packages authentic; V5 manifest 32/32 self-consistent,PASS,evidence/precond4_preserved_packages.json
+PRE,"upstream BEAM corpus re-derived: 205/205 blobs, commit match",PASS,evidence/pinned_corpus_verification.json
+PRE,declarative payloads agree with runner constants (30/30),PASS,evidence/precond3_anchor_agreement.json

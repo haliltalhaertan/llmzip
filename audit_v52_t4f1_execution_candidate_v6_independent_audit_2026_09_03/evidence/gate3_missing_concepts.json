@@ -1,0 +1,71 @@
+{
+  "deprecated_literals_checked": [
+    "25089a07760a08d816f9ae0c8af2f02b284e1217807af4d0270acbb58f580025",
+    "e422490a26d0934f31b06f808391d545e50282642af8997a24cb1d4e94fab869",
+    "V52_T4F1_RUN_AUTHORIZATION_V3",
+    "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V3",
+    "V52_T4F1_ARCHIVE_RESULT_META_V3",
+    "V52_T4F1_POST_RUN_MANIFEST_V3"
+  ],
+  "deprecated_survivors_robust_search": [],
+  "no_deprecated_literal_survives_in_shipped_bytes": true,
+  "runner_constants_not_named_or_valued_anywhere_in_map": [
+    "TASK",
+    "EXCLUDED_ARCHIVES",
+    "TIERS",
+    "REAL_CANARY_QUERY",
+    "AUTH_HMAC_ENV",
+    "ENVIRONMENT_LOCK",
+    "TRIAL_FIELDS"
+  ],
+  "runner_constants_total": 36,
+  "scope_including_detached_attestation": [
+    "CANDIDATE_EXECUTION_SEAL.json",
+    "DEPENDENCY_LOCK.txt",
+    "EXECUTION_SPEC.md",
+    "NORMATIVE_SOURCE_MAP.json",
+    "PAYLOAD_HASHES.json",
+    "README.md",
+    "RUN_AUTHORIZATION_TEMPLATE.json",
+    "candidate_package_preflight.py",
+    "v52_t4f1_beam_retrieval.py",
+    "docs/v52/task4f1/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json"
+  ],
+  "undeclared_constant_detail": [
+    {
+      "constant": "TASK",
+      "named_or_valued_in_map": false,
+      "source": "\"V52 Task 4F1 - BEAM Restricted-Cohort Axis Probe\""
+    },
+    {
+      "constant": "EXCLUDED_ARCHIVES",
+      "named_or_valued_in_map": false,
+      "source": "frozenset({\"1M::5\", \"1M::26\", \"1M::33\", \"1M::34\"})"
+    },
+    {
+      "constant": "TIERS",
+      "named_or_valued_in_map": false,
+      "source": "(\"100K\", \"500K\", \"1M\", \"10M\")"
+    },
+    {
+      "constant": "REAL_CANARY_QUERY",
+      "named_or_valued_in_map": false,
+      "source": "\"Which project phase mentioned module 7 and a deadline?\""
+    },
+    {
+      "constant": "AUTH_HMAC_ENV",
+      "named_or_valued_in_map": false,
+      "source": "\"V52_T4F1_AUTH_HMAC_KEY_HEX\""
+    },
+    {
+      "constant": "ENVIRONMENT_LOCK",
+      "named_or_valued_in_map": false,
+      "source": "{\n    \"python\": \"3.12.13\",\n    \"numpy\": \"2.3.2\",\n    \"scipy\": \"1.16.1\",\n    \"scikit_learn\""
+    },
+    {
+      "constant": "TRIAL_FIELDS",
+      "named_or_valued_in_map": false,
+      "source": "(\n    \"audit_question_id\",\n    \"tier\",\n    \"conversation_id\",\n    \"ability\",\n    \"method\","
+    }
+  ]
+}

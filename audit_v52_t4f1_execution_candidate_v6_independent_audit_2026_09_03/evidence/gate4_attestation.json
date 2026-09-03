@@ -1,0 +1,14 @@
+{
+  "attestation_in_payload_closure": false,
+  "attestation_path_declared": "docs/v52/task4f1/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json",
+  "attestation_resolves_to_real_file": true,
+  "attestation_sha256": "3eed58e1a6fbd6754cdc6582209010cc2d2db08a84004f4ca55a45281cc4919a",
+  "attestation_sha256_appears_anywhere_in_candidate_bytes": false,
+  "attestation_sha256_matches_prompt_anchor": true,
+  "attestation_swept_for_deprecated_literals_by_gate": false,
+  "attestation_swept_for_tokens_by_gate": false,
+  "consequence": "The sole authority for post-audit acceptance state is an unbound external file. Its bytes are not hashed by the candidate, not covered by the closure, and not swept. Any content may be added to it, and the declared path may be redirected to a file inside the candidate namespace (probe F5), without the gate objecting.",
+  "inventory_carries_no_status_field": true,
+  "only_property_gate_checks": "record['acceptance_state'] == field['value']",
+  "seal_records_submission_status_only": true
+}

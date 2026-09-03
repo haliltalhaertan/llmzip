@@ -1,0 +1,28 @@
+{
+  "beam_corpus_modified": false,
+  "candidate_all_declared_anchors_match": true,
+  "candidate_bytes_modified": false,
+  "candidate_recursive_file_count": 9,
+  "cli_mode_finalize_invocations": 0,
+  "cli_mode_preflight_invocations": 0,
+  "cli_mode_run_invocations": 0,
+  "commands_launched_via_harness": 2,
+  "commands_refused_before_launch": 3,
+  "detached_attestation_sha256": "3eed58e1a6fbd6754cdc6582209010cc2d2db08a84004f4ca55a45281cc4919a",
+  "hmac_key_env_name_ever_assigned_in_audit_scripts": false,
+  "hmac_key_env_set_count": 0,
+  "no_tracked_file_modified": true,
+  "real_retrieval_ranking_performed": false,
+  "refused_commands": [
+    "[forbidden mode substring '--mode run'] /opt/py31213/bin/python3 fake.py --mode run",
+    "[forbidden mode substring '--mode finalize'] /opt/py31213/bin/python3 fake.py --mode finalize",
+    "[forbidden mode substring '--mode=run'] /opt/py31213/bin/python3 fake.py --mode=run"
+  ],
+  "retrieval_quality_computed": false,
+  "retrieval_quality_read": false,
+  "retrieval_quality_reported": false,
+  "runner_cli_invoked_in_any_mode": false,
+  "sealed_4f0_namespace_modified": false,
+  "valid_production_authorization_constructed": false,
+  "working_tree_entries_outside_audit_namespace": []
+}

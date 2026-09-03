@@ -1,0 +1,247 @@
+{
+  "audit_branch": "audit/v52-t4f1-v6-independent-2026-09-03",
+  "audit_date_utc": "2026-09-03",
+  "audit_namespace": "audit_v52_t4f1_execution_candidate_v6_independent_audit_2026_09_03",
+  "audited_candidate_anchors": {
+    "CANDIDATE_EXECUTION_SEAL.json": "ac85bbf04dd3f8502763432a9b51d7b0c92b06349fcd755fc1072af78710ebf3",
+    "EXECUTION_SPEC.md": "e649476303207fd59d2135500f63cec3b69b2950e63c447ef8c197ddbe9b54a4",
+    "NORMATIVE_SOURCE_MAP.json": "2795ff176df7e465955ed407ef66514c425ccf255b831cea5d71421136df5924",
+    "PAYLOAD_HASHES.json": "794322114c44d14de352b3decc6d80c795a9706eeaa77419d0f30200c0beabab",
+    "candidate_package_preflight.py": "97978dda6dbd35fc12109d51cc0cb0a83bda929f2e268da0a7ef085d3953796a",
+    "detached_attestation_sha256": "3eed58e1a6fbd6754cdc6582209010cc2d2db08a84004f4ca55a45281cc4919a",
+    "implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "namespace": "task4f1_execution_candidate_v6_2026_09_03",
+    "recursive_file_count": 9
+  },
+  "audited_repository_commit": "6dee50da1452869e6049c109100f3c3fb5abb0fb",
+  "authority_note": "V6 was prepared under Continuity Lead authority alone and exceeds the standing co-chair approval 4bd32782, which covered V5 only.",
+  "blocking_findings": [
+    "All three exempt classes are wider than their declared rationales (C1, C2, C3, C4)",
+    "Missing load-bearing concepts: REAL_CANARY_QUERY and TIERS",
+    "Gate claim not established: normalisation destroys pattern boundaries (A1-A3); eight further evasion classes survive (B1, B3-B8); five concepts covering the numerical core are unenforced (D1-D7)",
+    "Detached attestation is byte-unbound, unswept, and its path is redirectable into the candidate (B8, F5)"
+  ],
+  "delta_route_justified": true,
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "numpy": "2.3.2",
+    "psutil": "7.0.0",
+    "python": "3.12.13 (built from python.org source tarball)",
+    "scikit-learn": "1.7.1",
+    "scipy": "1.16.1",
+    "single_thread_controls": true
+  },
+  "files": {
+    "COMMAND_LOG.txt": {
+      "bytes": 674,
+      "sha256": "aa829a7ede7c5e3bc18a90761c06bca07ace8b1be452e61bb54cf90ba352b5ce"
+    },
+    "GATE_TABLE.csv": {
+      "bytes": 8610,
+      "sha256": "b9afd19f62b09d987a9a0f2e2f988a2192fb7dfebf8a49a04888e169f1fefb79"
+    },
+    "INDEPENDENT_V6_EXECUTION_AUDIT_REPORT.md": {
+      "bytes": 26570,
+      "sha256": "9f11e38bb4c87ffcd698941be054bba7c1652b2dcbcf154495ca48e1eae01999"
+    },
+    "evidence/OUTCOME_BOUNDARY_TALLY.json": {
+      "bytes": 1239,
+      "sha256": "1064c74bf897af6b8567d6d94ad94cabe0b11dcdb102b41af1ab9c09da9b4c75"
+    },
+    "evidence/boundary_tally.py": {
+      "bytes": 4102,
+      "sha256": "7a1159c0005c2f0d86ae3a9be054e56228d2fca248dccd3603de5742cb314248"
+    },
+    "evidence/build_hashes.py": {
+      "bytes": 5416,
+      "sha256": "c15202db69e4a45e7e29017945d4e529ebced71c0ecf8e9a9f2bf43ce7f363b4"
+    },
+    "evidence/gate1_gate2.json": {
+      "bytes": 2619,
+      "sha256": "8c8ec3db0aea3af5692fa41bcdba1bc4d57692c376bfe01c9b2a3ad930e7b1bf"
+    },
+    "evidence/gate1_gate2.py": {
+      "bytes": 3971,
+      "sha256": "ba9a4a84bb47f262948488971bec024e60e9e103d7cf5d39839ef945011e7502"
+    },
+    "evidence/gate3_coverage_analysis.json": {
+      "bytes": 12484,
+      "sha256": "ef7fa14e1423f831e7b13c378333f48b100052d99c1a2695ed1075cf758df3dc"
+    },
+    "evidence/gate3_coverage_analysis.py": {
+      "bytes": 3305,
+      "sha256": "e52443272bd3d02342d01cf4e164564bc97b3162cf0489b30231fdecd7c20815"
+    },
+    "evidence/gate3_missing_concepts.json": {
+      "bytes": 2294,
+      "sha256": "95dbad6ac208c74f253dace3be657b5b3ce0648dbe3f353a088ddd172f02aa6a"
+    },
+    "evidence/gate3_missing_concepts.py": {
+      "bytes": 3704,
+      "sha256": "57a453bc442ef9c84ad8bd258f68f9a3004da15da28cd3cefceacba6e82eb201"
+    },
+    "evidence/gate4_attestation.json": {
+      "bytes": 1016,
+      "sha256": "ba1c65027be2d7410cad6fb254420b1b10a8dc37fa8b8a7c13558570896c6749"
+    },
+    "evidence/gate5_implementer_fixture_coverage.json": {
+      "bytes": 2028,
+      "sha256": "41991ec711b9c4279e46c17b13d00d66a356b1351c9bc022dfaffdca811ba959"
+    },
+    "evidence/gate_observed_output.txt": {
+      "bytes": 462,
+      "sha256": "a8db8e8c9830acb39ba96bccf987b27ced955c3c447819185cef1c1ca17e201a"
+    },
+    "evidence/independent_sweep.json": {
+      "bytes": 1303,
+      "sha256": "551cf9370eeadd527fd2e78cf3de4f7bc5f06fda3d64c3fbe127757847381f9d"
+    },
+    "evidence/independent_sweep.py": {
+      "bytes": 3886,
+      "sha256": "9d12519137bbb193b1dc484480353758054711af53ac1e1de96ee26fcb480838"
+    },
+    "evidence/normalisation_defect.json": {
+      "bytes": 6830,
+      "sha256": "ff894dbf1aac3e49ced4e1c21253180ab041effca0b316c1ff64e68fd96c4e04"
+    },
+    "evidence/normalisation_defect.py": {
+      "bytes": 1856,
+      "sha256": "236c492bc8a3ad210780e1f4741328bf4546e0c68a7c30190c0b758930fcab41"
+    },
+    "evidence/pinned_corpus_verification.json": {
+      "bytes": 631,
+      "sha256": "b765d99dde829ab17b55d904cee8491edcbad857ed4d3fb375883317e9123fce"
+    },
+    "evidence/precond3_anchor_agreement.json": {
+      "bytes": 6706,
+      "sha256": "aa783f067551cf55c6ad38fef74e2d8626ba95969f839837d5742f06f33d2c1c"
+    },
+    "evidence/precond3_anchor_agreement.py": {
+      "bytes": 5658,
+      "sha256": "53e5de126be4d610b023f22dc39db33f0638ce21ba16f24222e7b75d608fc940"
+    },
+    "evidence/precond4_preserved_packages.json": {
+      "bytes": 1733,
+      "sha256": "3cf670b9ce6fe47e7b9ece94677edade873d3dae2672b920bc64aeeb3adcd732"
+    },
+    "evidence/precond4_preserved_packages.py": {
+      "bytes": 4296,
+      "sha256": "608516f4fed44fc836924e649f469b2667e46fa3ec2a3b320cc5b31df1857435"
+    },
+    "evidence/probe_batch1.json": {
+      "bytes": 3337,
+      "sha256": "2e92a76ccdffb57926872ea7498ef758331a5a47af75d2426dab55e4020267af"
+    },
+    "evidence/probe_batch1.py": {
+      "bytes": 2895,
+      "sha256": "2c651df3b109ea2a89671aacec863c8266e00bfdeb970819522efb2bd728724d"
+    },
+    "evidence/probe_batch2.json": {
+      "bytes": 4367,
+      "sha256": "bed64de795f6fbab80208a4c05b8ef16f00296715dba1c4c7fd43e64225c28f3"
+    },
+    "evidence/probe_batch2.py": {
+      "bytes": 4512,
+      "sha256": "7767d61f1e32c549be1b44dff26f7626eb242714b53343e3a5967f1d8aeb2bb1"
+    },
+    "evidence/probe_batch3.json": {
+      "bytes": 5656,
+      "sha256": "e55d29adb474751ecd313f53615d377c9adfabfec3bf3c68a444b539bbe96ec5"
+    },
+    "evidence/probe_batch3.py": {
+      "bytes": 6016,
+      "sha256": "02afb3d0bb17d7c3495507867c874474e316bf4e37ec0a865e23dabf219ef3ee"
+    },
+    "evidence/probe_batch4.json": {
+      "bytes": 2172,
+      "sha256": "9717f6e0bc96a1f6b2cf63971dde35467a72657e70bbac94826ef27968cf24e8"
+    },
+    "evidence/probe_batch4.py": {
+      "bytes": 3159,
+      "sha256": "9ec141dd2ece8d55aab2124468d41c9932239654bba3f17e8bb1b488d33e3fb3"
+    },
+    "evidence/probe_rig.py": {
+      "bytes": 2956,
+      "sha256": "5deb6ef7ee80fa4f3a3447a7ceee8527e93f8e36ef51aee4e33b16a61cf5e23f"
+    },
+    "evidence/safe_exec.py": {
+      "bytes": 2276,
+      "sha256": "c92ee4215321ab8e28214ecbc1d61387c764f783c361d13c002f91221b32192f"
+    },
+    "evidence/verify_hashes.py": {
+      "bytes": 1208,
+      "sha256": "ab415eff9b75e8424967501d11b0c3a0aba9fda6b1ea8aab7110f9c17dfeb713"
+    },
+    "evidence/verify_pinned_corpus.py": {
+      "bytes": 2432,
+      "sha256": "82a85902f31cc3eaf9427815037642a74fe071fa511b93efaa2f277f0f22786a"
+    }
+  },
+  "gate6_citation_boundary": [
+    "B1/B2/B3 implementation gates",
+    "aggregation correctness",
+    "authorization verifier behaviour beyond statically checked fail-closed constants",
+    "leakage analysis of the retrieval path"
+  ],
+  "gate_claim_status": "NOT ESTABLISHED; not yet falsified on the V6 bytes as shipped",
+  "implementer_evidence_read_only": {
+    "PREFLIGHT_HASHES.json": "4f6abc15917ea5d8ae7d06f69c7b223234d9a8123b0a1713bd1ec0dac63b73ad",
+    "namespace": "task4f1_execution_candidate_v6_preflight_2026_09_03",
+    "use": "coverage assessment only; not evidence for any conclusion"
+  },
+  "instruction_set": "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V6_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-03.md",
+  "non_blocking_observations": [
+    "No superseded literal survives in the shipped bytes under an independent robust search: 0 survivors",
+    "No numerical-semantic drift in the shipped bytes: 30/30 declared values match the runner constants",
+    "Independent sweep of shipped bytes: 0 tokens invisible to the gate",
+    "Runner byte-identical and AST-identical to the accepted V4 runner"
+  ],
+  "outcome_boundary": {
+    "beam_corpus_modified": false,
+    "candidate_all_declared_anchors_match": true,
+    "candidate_bytes_modified": false,
+    "candidate_recursive_file_count": 9,
+    "cli_mode_finalize_invocations": 0,
+    "cli_mode_preflight_invocations": 0,
+    "cli_mode_run_invocations": 0,
+    "commands_launched_via_harness": 2,
+    "commands_refused_before_launch": 3,
+    "detached_attestation_sha256": "3eed58e1a6fbd6754cdc6582209010cc2d2db08a84004f4ca55a45281cc4919a",
+    "hmac_key_env_name_ever_assigned_in_audit_scripts": false,
+    "hmac_key_env_set_count": 0,
+    "no_tracked_file_modified": true,
+    "real_retrieval_ranking_performed": false,
+    "refused_commands": [
+      "[forbidden mode substring '--mode run'] /opt/py31213/bin/python3 fake.py --mode run",
+      "[forbidden mode substring '--mode finalize'] /opt/py31213/bin/python3 fake.py --mode finalize",
+      "[forbidden mode substring '--mode=run'] /opt/py31213/bin/python3 fake.py --mode=run"
+    ],
+    "retrieval_quality_computed": false,
+    "retrieval_quality_read": false,
+    "retrieval_quality_reported": false,
+    "runner_cli_invoked_in_any_mode": false,
+    "sealed_4f0_namespace_modified": false,
+    "valid_production_authorization_constructed": false,
+    "working_tree_entries_outside_audit_namespace": []
+  },
+  "preserved_read_only": {
+    "accepted_v4_runner_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "cochair_approval_commit": "4bd32782c4148d15a632fb822dae8cab358892c6",
+    "cochair_review_commit": "776c45f333b262754aa0020e8043db54942d1bea",
+    "v4_audit_commit": "641568d8b78af97eb69c9dc4e0434e7b6564a26c",
+    "v5_audit_commit": "6243ba6d9fe1c3d059d78369d8fed3534d7921d0",
+    "v5_audit_manifest_sha256": "0b7879e366d58f68022bc12826e820a23e7c2a1f4bf29c456fea70f7faf4af81"
+  },
+  "recursive_output_count": 36,
+  "role": "cold-start independent implementation auditor",
+  "schema": "V52_T4F1_V6_INDEPENDENT_DELTA_AUDIT_HASHES_V1",
+  "self_excluded_file": "INDEPENDENT_V6_EXECUTION_AUDIT_HASHES.json",
+  "upstream_anchors_independently_verified": {
+    "beam_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+    "beam_selected_blobs_verified": "205/205",
+    "beam_tree_manifest_sha256": "650cc145b853314411b1f4a9b762e6f64b33132f74f93cbb0638490319d8d318",
+    "cohort_sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+    "cohort_shape": "2000 rows / 1712 eligible / 96 archives; excludes 1M::5, 1M::26, 1M::33, 1M::34"
+  },
+  "verdict": "BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1"
+}

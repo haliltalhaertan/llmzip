@@ -1,0 +1,254 @@
+{
+  "cases": [
+    {
+      "next_char_after_normalise": "",
+      "prefix": "digest ",
+      "prev_char_after_normalise": "t",
+      "suffix": "\n",
+      "token_seen_by_gate": true
+    },
+    {
+      "next_char_after_normalise": "a",
+      "prefix": "digest ",
+      "prev_char_after_normalise": "t",
+      "suffix": " and the rest\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "f",
+      "prefix": "digest ",
+      "prev_char_after_normalise": "t",
+      "suffix": " for the cohort\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "i",
+      "prefix": "digest ",
+      "prev_char_after_normalise": "t",
+      "suffix": " is pinned\n",
+      "token_seen_by_gate": true
+    },
+    {
+      "next_char_after_normalise": "(",
+      "prefix": "digest ",
+      "prev_char_after_normalise": "t",
+      "suffix": " (pinned)\n",
+      "token_seen_by_gate": true
+    },
+    {
+      "next_char_after_normalise": "",
+      "prefix": "probe ",
+      "prev_char_after_normalise": "e",
+      "suffix": "\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "a",
+      "prefix": "probe ",
+      "prev_char_after_normalise": "e",
+      "suffix": " and the rest\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "f",
+      "prefix": "probe ",
+      "prev_char_after_normalise": "e",
+      "suffix": " for the cohort\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "i",
+      "prefix": "probe ",
+      "prev_char_after_normalise": "e",
+      "suffix": " is pinned\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "(",
+      "prefix": "probe ",
+      "prev_char_after_normalise": "e",
+      "suffix": " (pinned)\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "",
+      "prefix": "V4 ",
+      "prev_char_after_normalise": "4",
+      "suffix": "\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "a",
+      "prefix": "V4 ",
+      "prev_char_after_normalise": "4",
+      "suffix": " and the rest\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "f",
+      "prefix": "V4 ",
+      "prev_char_after_normalise": "4",
+      "suffix": " for the cohort\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "i",
+      "prefix": "V4 ",
+      "prev_char_after_normalise": "4",
+      "suffix": " is pinned\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "(",
+      "prefix": "V4 ",
+      "prev_char_after_normalise": "4",
+      "suffix": " (pinned)\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "",
+      "prefix": "the ",
+      "prev_char_after_normalise": "e",
+      "suffix": "\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "a",
+      "prefix": "the ",
+      "prev_char_after_normalise": "e",
+      "suffix": " and the rest\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "f",
+      "prefix": "the ",
+      "prev_char_after_normalise": "e",
+      "suffix": " for the cohort\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "i",
+      "prefix": "the ",
+      "prev_char_after_normalise": "e",
+      "suffix": " is pinned\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "(",
+      "prefix": "the ",
+      "prev_char_after_normalise": "e",
+      "suffix": " (pinned)\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "",
+      "prefix": "sha256 ",
+      "prev_char_after_normalise": "6",
+      "suffix": "\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "a",
+      "prefix": "sha256 ",
+      "prev_char_after_normalise": "6",
+      "suffix": " and the rest\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "f",
+      "prefix": "sha256 ",
+      "prev_char_after_normalise": "6",
+      "suffix": " for the cohort\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "i",
+      "prefix": "sha256 ",
+      "prev_char_after_normalise": "6",
+      "suffix": " is pinned\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "(",
+      "prefix": "sha256 ",
+      "prev_char_after_normalise": "6",
+      "suffix": " (pinned)\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "",
+      "prefix": "canary ",
+      "prev_char_after_normalise": "y",
+      "suffix": "\n",
+      "token_seen_by_gate": true
+    },
+    {
+      "next_char_after_normalise": "a",
+      "prefix": "canary ",
+      "prev_char_after_normalise": "y",
+      "suffix": " and the rest\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "f",
+      "prefix": "canary ",
+      "prev_char_after_normalise": "y",
+      "suffix": " for the cohort\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "i",
+      "prefix": "canary ",
+      "prev_char_after_normalise": "y",
+      "suffix": " is pinned\n",
+      "token_seen_by_gate": true
+    },
+    {
+      "next_char_after_normalise": "(",
+      "prefix": "canary ",
+      "prev_char_after_normalise": "y",
+      "suffix": " (pinned)\n",
+      "token_seen_by_gate": true
+    },
+    {
+      "next_char_after_normalise": "",
+      "prefix": "is ",
+      "prev_char_after_normalise": "s",
+      "suffix": "\n",
+      "token_seen_by_gate": true
+    },
+    {
+      "next_char_after_normalise": "a",
+      "prefix": "is ",
+      "prev_char_after_normalise": "s",
+      "suffix": " and the rest\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "f",
+      "prefix": "is ",
+      "prev_char_after_normalise": "s",
+      "suffix": " for the cohort\n",
+      "token_seen_by_gate": false
+    },
+    {
+      "next_char_after_normalise": "i",
+      "prefix": "is ",
+      "prev_char_after_normalise": "s",
+      "suffix": " is pinned\n",
+      "token_seen_by_gate": true
+    },
+    {
+      "next_char_after_normalise": "(",
+      "prefix": "is ",
+      "prev_char_after_normalise": "s",
+      "suffix": " (pinned)\n",
+      "token_seen_by_gate": true
+    }
+  ],
+  "cases_tested": 35,
+  "cases_where_token_is_invisible": 26,
+  "explanation": "normalise() deletes the whitespace that the lookarounds rely on to establish token boundaries; the adjacent word's character then suppresses the match. No error is raised and payloads_swept is unaffected.",
+  "invisible_fraction": 0.743,
+  "token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+}
