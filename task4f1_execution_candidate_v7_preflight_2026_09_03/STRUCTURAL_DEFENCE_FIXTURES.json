@@ -1,0 +1,64 @@
+{
+  "results": [
+    {
+      "case": "baseline V7",
+      "blocked": false,
+      "pass": true
+    },
+    {
+      "case": "CC-01 sat\u0131r kayd\u0131rma",
+      "blocked": false,
+      "pass": false
+    },
+    {
+      "case": "CC-01 b\u00fcy\u00fck harf hex",
+      "blocked": false,
+      "pass": false
+    },
+    {
+      "case": "A2 hex-biti\u015fik kelime",
+      "blocked": false,
+      "pass": false
+    },
+    {
+      "case": "A3 canl\u0131 cohort digest'i README'ye",
+      "blocked": false,
+      "pass": false
+    },
+    {
+      "case": "B1 zero-width space",
+      "blocked": false,
+      "pass": false
+    },
+    {
+      "case": "B3 HTML yorum araya sokma",
+      "blocked": false,
+      "pass": false
+    },
+    {
+      "case": "B7 UTF-8 olmayan payload",
+      "blocked": true,
+      "pass": true
+    },
+    {
+      "case": "C2 seal'e post-audit alan s\u0131zd\u0131rma",
+      "blocked": false,
+      "pass": true
+    },
+    {
+      "case": "F5/E-s\u0131n\u0131f\u0131: seal kabul durumu iddia eder",
+      "blocked": true,
+      "pass": true
+    },
+    {
+      "case": "runner de\u011fi\u015fti",
+      "blocked": true,
+      "pass": true
+    },
+    {
+      "case": "nested unbound dosya",
+      "blocked": true,
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "answers_blocked_audit": {
+    "branch": "audit/v52-t4f1-v6-independent-2026-09-03",
+    "commit": "c88455bad145e0e8b26e26545d1050e1ac67ba52",
+    "verdict": "BLOCKED"
+  },
+  "bound_candidate": {
+    "execution_seal_sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61",
+    "implementation_sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+    "namespace": "task4f1_execution_candidate_v7_2026_09_03",
+    "package_preflight_sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699",
+    "payload_inventory_sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+  },
+  "files": [
+    {
+      "bytes": 3858,
+      "name": "IMPLEMENTATION_PREFLIGHT.json",
+      "sha256": "7782450b27e78f4390385f5eb0b9bcdbefd755e563b3b2cc3bf5cce836e800be"
+    },
+    {
+      "bytes": 1259,
+      "name": "STRUCTURAL_DEFENCE_FIXTURES.json",
+      "sha256": "be719e36b6f692253e2f227126e03c7ab9dfa9e564165e8080995af1e7e9932c"
+    },
+    {
+      "bytes": 3059,
+      "name": "V6_TO_V7_SURFACE_REDUCTION.json",
+      "sha256": "a7ab01dad93a417aa7372be01ed765b136a10813a1c316eb4306615972c69335"
+    }
+  ],
+  "head_researcher_instruction": "Close packaging by eliminating duplicated/restated normative values and reducing the claim to what is actually bound; do not build another generalized scanner.",
+  "independent_audit_required": true,
+  "outcome_boundary": {
+    "cli_mode_finalize_invocations": 0,
+    "cli_mode_run_invocations": 0,
+    "hmac_key_env_set_count": 0,
+    "real_retrieval_ranking_performed": false,
+    "retrieval_quality_computed_read_reported": [
+      false,
+      false,
+      false
+    ],
+    "v1_v6_or_audit_namespaces_modified": false,
+    "valid_authorization_constructed": false
+  },
+  "prepared_at_utc": "2026-09-03T22:00:00Z",
+  "schema": "V52_T4F1_V7_PREFLIGHT_HASHES_V1",
+  "status": "IMPLEMENTER_EVIDENCE_NOT_INDEPENDENT_SIGNOFF"
+}
