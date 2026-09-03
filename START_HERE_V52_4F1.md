@@ -5,10 +5,11 @@ This is the single operational entry point for a new Head Researcher, Compute Ex
 ## Exact starting point
 
 - **Repository state:** canonical branch `main`. Tag pushes are refused by the current environment, so the pushed anchor is branch `state/v52-4f1-v3-audit-blocked-2026-09-01`; use the current `main` head or a descendant explicitly reviewed by the Head Researcher.
-- **Current task:** cold-start independent **delta** audit of the exact V6 package. Do not re-run earlier audits, and do not audit V6 if you prepared it.
+- **Current task:** Head Researcher and co-chair review of the outcome-free Task 4F1 preregistration draft. The V6 audit is COMPLETE and returned BLOCKED; do not re-run it.
 - **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
-- **Executable audit instructions:** `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V6_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-03.md`.
+- **Preregistration draft under review:** `docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md`.
+- **Audit prompts** under `prompts/` are historical records of completed audits, not pending work.
 
 Read those files in that order. Historical V1/V2 audit reports are evidence, not instructions to execute their candidates.
 
@@ -22,19 +23,19 @@ Read those files in that order. Historical V1/V2 audit reports are evidence, not
 | 4F1 V3 candidate | `BLOCKED` by cold-start independent audit 2026-09-01: B1/B2/B3 repaired, but the pinned 100K::12 canary is not reproducible from the declared environment lock |
 | 4F1 V4 candidate | Audit evidence accepted (9/9 implementation gates, `641568d8`), but **seal WITHDRAWN**: co-chair REQUEST CHANGES on blocking finding CC-01 |
 | 4F1 V5 candidate | `BLOCKED` by independent delta audit: the single-source gate did not establish its own claim |
-| 4F1 V6 candidate | `PREPARED_NOT_INDEPENDENTLY_AUDITED`; inverted-burden sweep, 24 concepts, runner byte-identical to the accepted V4 runner |
+| 4F1 V6 candidate | `BLOCKED` by independent delta audit 2026-09-03: 31 evasions succeeded against the inverted-burden gate |
+| Packaging approach | Scanner strategy ABANDONED by Head Researcher decision. Close by removing restated values from bound documents |
+| Preregistration draft | Written, outcome-free, under Head Researcher review; NOT approved for sealing |
 | Task 4F1 preregistration / run | **Blocked** |
 | Retrieval-quality outcome access | **Forbidden** |
 
-V3 blocked on BLAS-dispatch-dependent float digests. V4 fixed that and passed nine implementation gates, but the co-chair found **CC-01**: two mutually exclusive normative canary definitions in one bound file, so V4's seal was withdrawn. V5 corrected CC-01 and added a single-source gate — and was **BLOCKED**, because that gate did not establish its own claim: it trusted a hand-written mirror list, so it verified only what its author declared, and it matched raw text per line, so the same digest wrapped across two lines or written in uppercase slipped past it.
+V3 blocked on BLAS-dispatch-dependent float digests. V4 fixed that and passed nine implementation gates, but the co-chair found CC-01: two mutually exclusive normative canary definitions in one bound file, so V4's seal was withdrawn. V5 corrected CC-01 and added a single-source gate — **BLOCKED**, the gate did not establish its own claim. V6 inverted the gate's burden — **BLOCKED**, 31 evasions succeeded, including ones that disarm the gate by editing its own configuration.
 
-**V6 inverts the burden.** The gate sweeps every bound payload for value-shaped tokens and holds each discovered token to account: unattributed means a missing concept, attributed-but-out-of-place means an unlabelled second normative source. Matching runs on normalised text. Concepts went from 18 to 24, the duplicate status field is gone, and the attestation is a real resolvable file. Thirteen fixtures block, including the two that defeated V5.
+**The scanner strategy is abandoned by Head Researcher decision.** Two general contradiction-detectors were built and both were comprehensively defeated; a third is not authorized and must not be built. The packaging question is closed instead by **removing duplicated and restated normative values from bound documents** and reducing the package's claim to what is actually bound. This still blocks execution, but it no longer blocks preregistration design.
 
-**Read the claim at its true strength.** The sweep tracks 64-hex, 40-hex and `V52_*` shapes. Short values — `1712`, `96`, `392`, seeds, thresholds, tolerances — are not token-shaped and lie outside its reach; they are covered only by declared concepts and the runner's own constants. The audit prompt asks the auditor to judge whether the claim survives that gap.
+**The runner has been byte-identical and audit-confirmed since V4** (`f96cba2c`). B1, B2 and B3 were established repaired by the V4 audit, and nothing since has touched execution behaviour. Everything blocked since then has concerned documentation inside the candidate package, not execution correctness.
 
-The runner has been byte-identical to the accepted V4 runner `f96cba2c` since V5, so no execution behaviour has changed across these remediations.
-
-**V6 was prepared under Continuity Lead authority alone** and exceeds the standing co-chair approval, which covered V5 only. Even a passing audit leaves sealing conditional on co-chair ratification. Task 4F1 stays BLOCKED for preregistration and run; the scientific route is option B.
+**Current work is the science.** An outcome-free preregistration draft exists at `docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md`, under Head Researcher review with REQUEST CHANGES issued and addressed. It is not approved, not sealed. Task 4F1 stays BLOCKED for preregistration and run, and retrieval-quality outcome access stays FORBIDDEN.
 
 ## Non-negotiable boundary
 

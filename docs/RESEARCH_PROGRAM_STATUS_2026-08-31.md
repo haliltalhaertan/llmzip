@@ -20,7 +20,8 @@ This document is the current operational research ledger. It distinguishes accep
 - `[TASK 4F1 V3 INDEPENDENT AUDIT BLOCKED — CANARY NOT REPRODUCIBLE FROM DECLARED ENVIRONMENT LOCK]`
 - `[TASK 4F1 V4 AUDIT EVIDENCE ACCEPTED — 9/9 GATES; PACKAGE SEAL WITHDRAWN BY CO-CHAIR CC-01]`
 - `[TASK 4F1 V5 INDEPENDENT AUDIT BLOCKED — SINGLE-SOURCE GATE DID NOT ESTABLISH ITS CLAIM]`
-- `[TASK 4F1 V6 PREPARED — INVERTED-BURDEN SWEEP; INDEPENDENT DELTA AUDIT PENDING]`
+- `[TASK 4F1 V6 INDEPENDENT AUDIT BLOCKED — 31 EVASIONS; SCANNER STRATEGY ABANDONED]`
+- `[TASK 4F1 PREREGISTRATION DRAFT WRITTEN — OUTCOME-FREE; UNDER HEAD RESEARCHER REVIEW; NOT SEALED]`
 - `[TASK 4F1 PREREGISTRATION DECISION PENDING — STILL NOT AUTHORIZED TO RUN]`
 
 ## Accepted scientific evidence
@@ -270,3 +271,39 @@ The runner has been byte-identical to the accepted V4 runner since V5, so no exe
 changed. V6 was prepared under Continuity Lead authority alone while the co-chair is unavailable,
 exceeding the standing approval; sealing remains conditional on co-chair ratification. Task 4F1
 remains blocked for preregistration and execution.
+
+## 2026-09-03 — V6 blocked, scanner strategy abandoned, preregistration drafted
+
+The V6 delta audit returned BLOCKED with 31 successful evasions against the inverted-burden gate.
+The Continuity Lead re-tested nine against its own package and all nine escaped, including a
+digest hidden by a hex-adjacent word, a zero-width space, a non-UTF-8 payload, the detached
+attestation lying outside the swept closure, a key that widened the prefix rule, a blanket exempt
+class appended to the map, the deprecated flag cleared, and the estimand denominator moved from
+1712 to 1713.
+
+Three defects are fatal to the approach rather than to the implementation: the gate's configuration
+lives inside the package it audits, so the subject can disarm its own auditor; scanning arbitrary
+prose for arbitrary re-encodings is an unwinnable arms race; and the estimand-critical values are
+short, so they are not token-shaped and lie outside any such sweep by construction.
+
+**Head Researcher decision: the scanner strategy is abandoned.** No third scanner is authorized.
+The packaging question is closed by eliminating duplicated and restated normative values from bound
+documents and reducing the package's claim to what is actually bound. Packaging still blocks
+execution but no longer blocks preregistration design.
+
+The runner has been byte-identical and audit-confirmed since V4; B1, B2 and B3 were established
+repaired then, and nothing since has touched execution behaviour.
+
+An outcome-free preregistration draft now exists. Its measured structural findings: marginal
+ability composition is near-balanced within every tier, supporting only the narrow claim that no
+obvious marginal ability-composition imbalance explains tier differences; and gold cardinality is
+not balanced, so the Fractional Recall@3 ceiling of `min(1, 3/|gold|)` averages 0.867, 0.836, 0.721
+and 0.776 across tiers. That ceiling profile is non-monotonic, which means it does not mechanically
+impose a monotone ordering on the tier contrasts — a weaker statement than the draft first made,
+corrected on Head Researcher instruction. Raw and ceiling-normalised contrasts must be interpreted
+jointly.
+
+The draft pre-specifies four tier contrasts against a **finite mean over exactly five preregistered
+Haar seeds**, with no inference to the full Haar-rotation distribution, and an exhaustive
+mutually-exclusive outcome partition gated first on integrity. The draft is under Head Researcher
+review and is NOT approved for sealing. Task 4F1 remains blocked for preregistration and execution.

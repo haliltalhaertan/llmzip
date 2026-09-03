@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_PREREGISTRATION_DRAFT_FOR_REVIEW",
-  "issued_at_utc": "2026-09-03T19:30:00Z",
+  "state_id": "V52_4F1_PREREGISTRATION_DRAFT_REVISED_FOR_APPROVAL",
+  "issued_at_utc": "2026-09-03T21:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -21,8 +21,8 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Head Researcher and co-chair review of the outcome-free Task 4F1 preregistration draft",
-    "next_single_action": "Review docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md. Separately decide how to close the packaging question (remove restated values from bound documents rather than build a third scanner). Do not preregister or run Task 4F1.",
+    "current_task": "Head Researcher approval decision on the revised preregistration draft",
+    "next_single_action": "Head Researcher approves or rejects the revised draft on its exact bytes. Separately, close packaging by removing duplicated normative values from bound documents; no third scanner. Do not preregister, seal, authorize, run or access outcomes.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -130,7 +130,7 @@
     },
     "preregistration_draft": {
       "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md",
-      "sha256": "b534667ddd2be31c7999bcc3bf9b48706fadb8c093562639cb3b2059b9737279"
+      "sha256": "ec3443ed4c60eb12e098192abf7b414e034d89fc63a9f42f9d0a02c36a696e45"
     }
   },
   "required_external_inputs": {
@@ -147,14 +147,15 @@
     "Do not modify sealed payloads, candidates, manifests, pinned corpus or historical audit namespaces."
   ],
   "concurrency": {
-    "state_writer": "Continuity Lead only (sole writer; agreed with co-chair 2026-09-02)",
+    "state_writer": "Continuity Lead only (sole writer)",
     "worker_isolation": "Each worker uses a separate clone/worktree, branch and output namespace",
     "independent_auditor": "Must be cold-start and must not treat any other agent's chat or narrative as audit evidence",
     "handoff_payload": "Commit/tag, CURRENT_STATE verification result, ledger entry, output paths, hashes, commands, status and explicit next action",
-    "co_chair": "Codex acts as approval/veto reviewer and writes only review artifacts on a separate branch. A load-bearing transition closes only on explicit co-chair approval; REQUEST CHANGES keeps it blocked."
+    "co_chair": "HISTORICAL: Codex acted as approval/veto co-chair on 2026-09-02 and issued the CC-01 REQUEST CHANGES and the V5 approval, both pushed and hash-verified on branch codex/review-v52-t4f1-cochair-2026-09-02. Its stated unavailability of 2026-09-02 is superseded: a Head Researcher decision arrived on 2026-09-03. Which agent currently holds the co-chair seat is NOT established from any artifact this session can verify, so no current occupant is asserted here.",
+    "reviewing_authority": "Head Researcher holds final approval and veto. The Continuity Lead prepares and never self-seals. The Head Researcher REQUEST CHANGES of 2026-09-03 was relayed to this session as text, not as a pushed hash-bound artifact, so it is recorded by content and is NOT hash-verifiable here; earlier co-chair reviews ARE hash-bound at 776c45f3 and 4bd32782."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-019",
+  "ledger_entry": "L-020",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -179,12 +180,12 @@
     "file_2_sha256": "33124cb22f057641c8878e34a7b545ac98da5f0092a98a816a49d3e2f7c435d4",
     "branch": "codex/review-v52-t4f1-cochair-2026-09-02",
     "artifact_status": "PUSHED AND HASH-VERIFIED by the Continuity Lead (corrects the stale L-009 note)",
-    "availability": "UNAVAILABLE as of 2026-09-02: the co-chair (Codex) has exhausted its usage limit. The approval at 4bd32782 remains in force and already covers \"V5 preparation followed by a different cold-start auditor\", so commissioning the delta audit needs no new approval. Sealing V5 does need the co-chair and is therefore held.",
     "unratified_items": [
-      "V5 scope as delivered, including the schema-literal decision described below.",
-      "The V5 delta-audit prompt as written.",
-      "DEVIATION: the co-chair asked for an authorization template matching \"the V5 authorization schema\". The template instead declares V52_T4F1_RUN_AUTHORIZATION_V4, because the byte-identical runner verifies that literal and a \"V5\" label would make the payload fail closed against its own runner. Flagged, not hidden; requires ratification before sealing."
-    ]
+      "V5 scope as delivered (moot: V5 is BLOCKED).",
+      "The V6 delta-audit prompt as written (moot: the audit is complete and BLOCKED).",
+      "The authorization-template schema deviation (V52_T4F1_RUN_AUTHORIZATION_V4 rather than a \"V5\" label), which remains live and must be ratified before any sealing."
+    ],
+    "status_2026_09_03": "SUPERSEDED BY HEAD RESEARCHER DECISION. The 2026-09-02 unavailability note is stale and has been removed. The 2026-09-02 co-chair artifacts remain valid and hash-bound."
   },
   "commissioned_audit": {
     "stage": "V6_INDEPENDENT_DELTA_AUDIT",
@@ -198,5 +199,18 @@
     "branch": "audit/v52-t4f1-v6-independent-2026-09-03",
     "commit": "c88455bad145e0e8b26e26545d1050e1ac67ba52",
     "hashes_file_sha256": "b26c91d802fde17e9c5bcaa66899bdecf7a094659668926f64900287bb803175"
+  },
+  "head_researcher_decision_2026_09_03": {
+    "decision": "REQUEST CHANGES — scientific route accepted in principle; preregistration draft NOT approved for sealing",
+    "relayed_as": "chat text; not a pushed hash-bound artifact",
+    "items": [
+      "§6 outcome categories made mutually exclusive and integrity-gated",
+      "ceiling argument weakened to \"does not mechanically impose a monotone ordering\"; joint interpretation required",
+      "ability claim narrowed to marginal near-balance; ability-stratified reporting stays mandatory",
+      "Haar comparator defined as a finite mean over exactly five preregistered seeds, no distributional inference",
+      "entry-point documents realigned with current state",
+      "governance record de-staled"
+    ],
+    "standing_prohibition": "Do not build a third scanner. Close packaging by removing restated values from bound documents."
   }
 }

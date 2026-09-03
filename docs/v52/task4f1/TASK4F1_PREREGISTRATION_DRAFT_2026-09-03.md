@@ -55,11 +55,16 @@ All denominators are frozen before outcome access. Recomputed and confirmed:
 
 Excluded archives, exactly: `1M::5`, `1M::26`, `1M::33`, `1M::34`.
 
-### 2.1 Ability composition is balanced — measured, not assumed
+### 2.1 Marginal ability composition is near-balanced
 
 Within every tier the nine abilities are near-uniformly represented (100K min 36 max 40; 500K
-69/70; 1M 58/62; 10M 16/20). Ability composition is therefore **not** a cross-tier confounder.
-This was raised as a concern and is here resolved by measurement rather than by assertion.
+69/70; 1M 58/62; 10M 16/20).
+
+The claim this supports is narrow and is stated at exactly its strength: **no obvious marginal
+ability-composition imbalance explains tier differences**. It does not establish that ability is
+not a confounder. Marginal balance says nothing about the joint distribution — ability could still
+covary with gold cardinality or archive length inside a tier. Ability-stratified reporting
+therefore remains **mandatory**, not optional, and is not discharged by this measurement.
 
 ### 2.2 Gold cardinality is NOT balanced, and this caps the metric
 
@@ -79,9 +84,14 @@ Two consequences, both pre-specified here:
 1. The contrast is **paired within a question**, so the ceiling constrains both arms identically
    and does not bias the sign. But it does compress the achievable *magnitude*: a tier with a
    lower ceiling has less room for any difference to appear.
-2. The ceiling profile is **non-monotonic in tier** (1M is lower than 10M). That is analytically
-   useful: an observed *monotone* trend across tiers cannot be explained by the ceiling profile,
-   whereas a *non-monotone* one plausibly can. This asymmetry is fixed now, before outcomes.
+2. The ceiling profile is **non-monotonic in tier** (1M is lower than 10M). The correct and
+   limited statement is: the ceiling profile **does not mechanically impose a monotone ordering**
+   on the tier contrasts. That is weaker than saying a monotone observed profile cannot be
+   explained by the ceiling — the ceiling may still contribute through interaction with archive
+   length, gold structure or other unmeasured composition, and no measurement here excludes that.
+   Accordingly, `D_t` and `D_t^norm` must be **interpreted jointly**: neither alone settles whether
+   an observed profile reflects retrieval behaviour or achievable range. A conclusion supported by
+   only one of the two is not reported as supported.
 
 ---
 
@@ -98,6 +108,14 @@ D_t = mean_i [ FracRecall@3( Native SIGN96 )_i  −  mean over 5 Haar seeds Frac
 Positive means Native better. Denominators are the frozen 355 / 629 / 553 / 175.
 
 There are four primary quantities. There is no single headline number.
+
+**The comparator is a finite mean over exactly five preregistered seeds.** `HAAR96_SIGN` is
+evaluated at seeds `43001, 43002, 43003, 43004, 43005` and at no others. The estimand is the mean
+over those five, treated as a **fixed, enumerated comparator** — not as an estimate of, and not as
+an inference to, the full Haar-rotation distribution. No claim about "Haar rotations in general"
+follows from this task. The five per-seed aggregates and their min–max spread are **sensitivity
+diagnostics** on that fixed comparator, not a sampling distribution and not a basis for interval
+estimation. The same restriction applies to the five ITQ seeds.
 
 ### 3.2 Ceiling-normalised companion
 
@@ -165,18 +183,33 @@ and by ability, so composition cannot be mistaken for scale.
 
 ## 6. Pre-specified outcomes
 
-Fixed before any outcome access:
+Fixed before any outcome access. **Integrity is resolved first, and the remaining three categories
+form an exhaustive, mutually exclusive partition** over the four tier contrasts.
 
-| Outcome | Definition |
+**Step 1 — integrity gate.**
+
+| Category | Definition |
 | --- | --- |
-| **Full replication** | `D_t > 0` at all four tiers, negative control exact |
-| **Partial replication** | `D_t > 0` at some tiers, not all — reported as heterogeneity, no rescue analysis |
-| **Disconfirmation** | `D_t ≤ 0` at any tier — reported as such, no re-analysis |
-| **Invalidation** | negative control diverges, trials vary, or any integrity gate blocks |
+| **Invalidation** | The signed-permutation control diverges from Native in top-three IDs, order or distances; or results vary across the twenty nuisance trials; or any integrity gate blocks |
 
-No threshold of "practical significance" is pre-specified, and none may be introduced afterwards.
+If invalidation occurs, **no replication category is assigned** and no contrast is interpreted.
 
----
+**Step 2 — only if integrity holds**, exactly one of:
+
+| Category | Definition |
+| --- | --- |
+| **Full replication** | `D_t > 0` at all four tiers |
+| **Heterogeneous (partial) replication** | at least one `D_t > 0` **and** at least one `D_t ≤ 0` |
+| **No replication** | `D_t ≤ 0` at all four tiers |
+
+These three are exhaustive and non-overlapping by construction.
+
+A tier with `D_t ≤ 0` may additionally be described as a **tier-local direction reversal**. That is
+a per-tier descriptor attached to the tier, not a competing global verdict, and it never overrides
+the single global category assigned above.
+
+No rescue analysis follows any category. No threshold of "practical significance" is pre-specified,
+and none may be introduced afterwards.
 
 ## 7. Stop rule (binding after outcome access)
 
