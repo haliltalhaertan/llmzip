@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_V6_INDEPENDENT_DELTA_AUDIT_PENDING",
-  "issued_at_utc": "2026-09-03T13:00:00Z",
+  "state_id": "V52_4F1_V6_INDEPENDENT_AUDIT_BLOCKED_APPROACH_UNDER_REVIEW",
+  "issued_at_utc": "2026-09-03T18:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Cold-start independent delta audit of the exact Task 4F1 V6 package",
-    "next_single_action": "Await the commissioned V6 delta audit, then independently hash-verify its pushed artifacts. Sealing additionally requires co-chair ratification. Do not preregister or run Task 4F1.",
+    "next_single_action": "Head Researcher and co-chair decide the APPROACH, not another patch: shrink the bound surface so normative values appear exactly once by construction, rather than building a third scanner to police restatements. Do not seal, preregister or run Task 4F1.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -33,7 +33,7 @@
     "v4_independent_audit": "EVIDENCE ACCEPTED (9/9 implementation gates); authentic and hash-consistent",
     "scientific_route": "OPTION B — freeze the outcome-free scientific justification and the tier-stratified estimands before preregistration",
     "v5_candidate": "BLOCKED by independent delta audit 2026-09-03. CC-01 itself is repaired and the V4-to-V5 change set is genuinely declarative, but the single-source mechanism that is the reason V5 exists does not establish its own claim.",
-    "v6_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED (inverted-burden gate; prepared under Continuity Lead authority alone)"
+    "v6_candidate": "BLOCKED by independent delta audit 2026-09-03. 31 evasions succeeded against the inverted-burden gate; the Continuity Lead independently reproduced 9 of 9 it tested."
   },
   "anchors": {
     "v3_runner": {
@@ -150,7 +150,7 @@
     "co_chair": "Codex acts as approval/veto reviewer and writes only review artifacts on a separate branch. A load-bearing transition closes only on explicit co-chair approval; REQUEST CHANGES keeps it blocked."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-017",
+  "ledger_entry": "L-018",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -190,6 +190,9 @@
     "audited_commit": "6dee50d",
     "target_branch": "audit/v52-t4f1-v6-independent-2026-09-03",
     "custody_instruction": "incremental push after each gate; audit namespace only; no main commit, no merge, no PR",
-    "status": "RUNNING"
+    "status": "COMPLETE — BLOCKED",
+    "branch": "audit/v52-t4f1-v6-independent-2026-09-03",
+    "commit": "c88455bad145e0e8b26e26545d1050e1ac67ba52",
+    "hashes_file_sha256": "b26c91d802fde17e9c5bcaa66899bdecf7a094659668926f64900287bb803175"
   }
 }
