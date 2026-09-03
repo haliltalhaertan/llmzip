@@ -246,3 +246,22 @@ outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retr
 status: IN_PROGRESS
 next_single_action: Await the audit, then independently hash-verify its pushed artifacts before any acceptance. Sealing stays held until a co-chair can ratify it; the Continuity Lead does not self-seal.
 ```
+
+### L-014
+
+```text
+timestamp_utc: 2026-09-03T10:00:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-013 / c44495f
+scope: Accept the commissioned V5 independent delta audit and record its BLOCKED verdict against the Continuity Lead's own V5 mechanism. No candidate, seal, manifest, audit or corpus byte is touched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md; START_HERE_V52_4F1.md; docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md
+audit_anchor: branch audit/v52-t4f1-v5-independent-2026-09-02 at commit 6243ba6d9fe1c3d059d78369d8fed3534d7921d0, hashes file INDEPENDENT_V5_EXECUTION_AUDIT_HASHES.json at SHA256 0b7879e366d58f68022bc12826e820a23e7c2a1f4bf29c456fea70f7faf4af81.
+verdict: BLOCKED - DO NOT SEAL / DO NOT PREREGISTER / DO NOT RUN TASK 4F1.
+package_verification: The hashes file self-verifies 32/32 with 0 mismatch and 0 missing, and reverse coverage shows 0 undeclared files. It binds the real V5 runner f96cba2c. The boundary tally is clean: 13 guarded launches, 1 permitted --mode preflight, 0 run, 0 finalize, 0 HMAC environment sets, 6 forbidden forms refused before launch, no candidate or sealed namespace modified. The auditor pushed incrementally across four commits, so the V4 near-miss did not repeat.
+findings_independently_reproduced: The Continuity Lead re-tested the blocking findings against its own package rather than accepting them. All confirmed. (1) The deprecated-literal scan is defeated by two trivial mechanical variants: the same V3 digest wrapped across two prose lines, and the same digest in uppercase hex. Both reintroduce CC-01 and the gate PASSES. (2) PAYLOAD_HASHES.json carries its own status field valued PREPARED_NOT_INDEPENDENTLY_AUDITED - a second status-shaped field in a second JSON, which is structurally the shape of CC-01 itself. (3) The map names "docs/v52/task4f1/ detached attestation" as the authoritative path for post_audit_acceptance_state, which is not a resolvable file path, and that directory holds only the V4 acceptance record with no V5 record at all, so the declared sole authority is empty for V5. (4) Five constants the runner actually enforces have no declared concept: EXPECTED_BEAM_MANIFEST_SHA256, EXPECTED_RESTRICTED_SEAL_SHA256, EXPECTED_PROTOCOL_SHA256, EXPECTED_PARENT_COMMIT and TIE_PREFIX. Tie priority has no concept of its own.
+accountability: These are the Continuity Lead's defects. CC-01 was repaired, but V5's answer to CC-01 was a general mechanism, and the mechanism does not hold. Its root error is structural rather than clerical: the gate trusted a hand-written mirror list, so it could only ever verify what its author remembered to declare, and it compared raw text per line, so any reformatting defeated it. A gate that depends on its author's memory and formatting cannot support the claim "no superseded load-bearing literal survives anywhere".
+correct_v6_direction: The burden must be inverted. The gate should DISCOVER every occurrence of every authoritative value across the bound closure and require each discovered occurrence to be declared, failing on any undeclared one, instead of checking a list the author wrote. Text must be normalised before matching, at minimum case-folded with whitespace and line breaks collapsed, so wrapping or casing cannot hide a literal. Missing concepts must be added, the attestation path must be a real resolvable path with an actual V5 record, and the duplicate status field must be removed.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN. Nothing is sealed.
+status: BLOCKED
+next_single_action: Decide, with the co-chair when available, whether to prepare V6 on the inverted-burden design. Preparing V6 exceeds the standing approval 4bd32782, which covered V5 preparation and its audit only.
+```
