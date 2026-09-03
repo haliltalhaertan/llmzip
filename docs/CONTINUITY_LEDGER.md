@@ -375,3 +375,20 @@ outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retr
 status: PASS
 next_single_action: Head Researcher approves or rejects the revised draft on its exact bytes. Packaging is separately closed by removing duplicated normative values from bound documents; no third scanner is authorized or will be built.
 ```
+
+### L-021
+
+```text
+timestamp_utc: 2026-09-03T22:30:00Z
+actor_role: Continuity Lead (sole writer), on explicit Head Researcher instruction
+predecessor_commit_or_tag: L-020 / 6ed812f
+scope: Close the packaging question by reducing the bound surface rather than by scanning. V1-V6 candidates, preflight packages, seals and all audits remain byte-for-byte untouched; V7 is a new namespace.
+changed_or_created_paths: task4f1_execution_candidate_v7_2026_09_03/; task4f1_execution_candidate_v7_preflight_2026_09_03/; docs/v52/task4f1/V7_EXECUTION_SPEC_NON_NORMATIVE.md; docs/v52/task4f1/V7_CANDIDATE_README_NON_NORMATIVE.md; ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+what_changed: The bound payload falls from seven files to four - the runner, the dependency lock, the inert authorization template and the checker. EXECUTION_SPEC.md and README.md are no longer bound at all; they move to docs/ and are labelled non-normative. NORMATIVE_SOURCE_MAP.json and the sweep are deleted and the checker falls from 293 to 161 lines. The seal is trimmed to what it binds and asserts nothing about post-audit acceptance, which now lives only in the state file and this ledger, outside anything the package can redirect. The runner is byte-identical to the audited V4 runner and no execution behaviour changes.
+the_claim_now: A set equality over bound file names. The payload contains only functional files, so no bound document can state a requirement, so there is nothing restated and nothing to reconcile. This is established structurally; no text is scanned.
+self_caught_relapse: The first V7 attempt kept the prohibition but enforced it with a regex over prose. Its own fixtures showed it inherited exactly the evasions that defeated V5 and V6 - line wrapping, uppercase hex, hex-adjacent words, zero-width characters, markup interleaving - failing six of twelve. That attempt was discarded rather than patched, because patching a prose matcher is the mistake the last two rounds already proved. The lesson is recorded plainly: any pattern over prose loses; the fix is to bind no prose.
+fixtures: After the change, eleven of eleven block. Every evasion class from both prior audits is now caught structurally by the file-set check when a narrative document is re-bound, rather than textually. Also blocked: a seal claiming acceptance state, a status field in the inventory, a modified runner, a removed functional file, a nested unbound file and a replaced fail-closed commitment.
+outcome_boundary: 0 --mode run; 0 --mode finalize; 0 HMAC key environment sets; no valid authorization; no real retrieval ranking; retrieval quality computed/read/reported all false; no V1-V6 candidate, seal, manifest or audit modified; no pinned corpus byte touched.
+status: PASS
+next_single_action: Two independent items - the Head Researcher approval decision on the revised preregistration draft at its exact bytes, and a cold-start independent audit of the V7 package. Neither is the Continuity Lead's to decide, and it does not self-seal.
+```
