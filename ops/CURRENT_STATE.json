@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-04T12:35:00Z",
+  "issued_at_utc": "2026-09-04T13:20:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Report the hardened verifier and its 30 negative controls against unchanged Seal V3 for independent checking. Then execution track only: await the V7 independent audit report and hash-verify it when it lands. Do NOT authorize, run or finalize Task 4F1; outcome access remains FORBIDDEN.",
+    "next_single_action": "Report the identity-layer and semantic-layer controls against unchanged Seal V3 for the final independent check. Then execution track only: await the V7 independent audit report and hash-verify it when it lands. Do NOT authorize, run or finalize Task 4F1; outcome access remains FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-037",
+  "ledger_entry": "L-038",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -383,7 +383,7 @@
     "builder": "tools/build_preregistration_seal_v3.py (every value derived from bytes; binding 8 extracted from the HR re-review artifact)",
     "verifier": "tools/verify_preregistration_seal.py",
     "verifier_result": "PREREGISTRATION_SEAL: PASS",
-    "verifier_tests": "tools/test_verify_preregistration_seal.py - 30/30 negative controls, including both historical seal defects and the binding-8 metadata escapes",
+    "verifier_tests": "tools/test_verify_preregistration_seal.py - 38/38 controls across an identity layer and a semantic layer",
     "binding_8_fragment_sha256": "13451be1dd8d05b41521faf64ffd3f7e45a8079edf5baf031986c22ca9778bed",
     "supersedes": [
       "Seal V2 9ed480f4 (BLOCKED)",
@@ -393,7 +393,9 @@
     "authorizes_execution": false,
     "seal_bytes_unchanged_by_this_stage": true,
     "verifier_hardening_2026_09_04": "exact nested field set for implementation_condition_source; branch/commit/path cross-checked against binding 4; declared extraction_rule must contain the marker the verifier applies; not_a_scientific_amendment must be exactly true; remaining descriptive fields pinned by SHA256",
-    "residual_wording_note": "Seal V3's sentence calls its binding-8 text fields 'extracted from source bytes'; four descriptive fields and the nested 'what' are pinned by digest rather than extracted. Nothing in binding 8 is unchecked, but that word is loose. Recorded rather than corrected, because Seal V3's bytes must not change."
+    "residual_wording_note": "Seal V3's sentence calls its binding-8 text fields 'extracted from source bytes'; four descriptive fields and the nested 'what' are pinned by digest rather than extracted. Nothing in binding 8 is unchecked, but that word is loose. Recorded rather than corrected, because Seal V3's bytes must not change.",
+    "identity_check": "verify_identity requires the seal file to hash to the pinned constant e906c6d2, a sidecar to exist, the sidecar to name TASK4F1_PREREGISTRATION_SEAL_V3_2026-09-04.json exactly, and to declare that same digest",
+    "verifier_hardening_2026_09_04_second_pass": "F1 seal self-identity layer added; F2 section 6 rule now an exact paragraph equality rather than substring membership; F3 extraction_rule pinned by digest"
   },
   "preregistration_seal_v1": {
     "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json",
@@ -488,6 +490,24 @@
       "not_a_scientific_amendment could be flipped to false",
       "no_restated_wording could be rewritten",
       "nested source branch could be repointed"
+    ],
+    "repair": "verifier and test layer only; Seal V3 bytes unchanged and re-verified PASS"
+  },
+  "head_researcher_seal_v3_self_identity_review_2026_09_04": {
+    "branch": "hr/prereg-seal-v3-self-identity-review-2026-09-04",
+    "decision_commit": "64e3f8eb493e6093bdb7547f0459570154d36dfe",
+    "sidecar_commit": "e73eb463888dfeaeec983e960a02074c48d1dfe5 (added by the Continuity Lead; adds only the sidecar)",
+    "merge_base_with_main": "df9b0f59b898d77673e4d577c0e21465bddada1d",
+    "file": "docs/v52/task4f1/T4F1_PREREG_SEAL_V3_SELF_IDENTITY_REVIEW_2026-09-04.md",
+    "git_blob_object": "0a646f8220610c424babab1d42b2082d0352808e (identical before and after the sidecar commit)",
+    "file_sha256_computed_independently": "aa6a7df2592ec930523ec01f4223b8dc41e3961e1fff28b07e184aea1ff29b1e",
+    "sidecar_present": true,
+    "independently_verified": true,
+    "verdict": "Seal V3 content ACCEPTED and unchanged; no Seal V4; three verifier repairs F1, F2, F3 required",
+    "findings_reproduced": [
+      "F1 a structurally valid seal with a changed seal_id passed",
+      "F2 a strict true substring of the section 6 paragraph passed",
+      "F3 a reworded extraction_rule that kept the marker passed"
     ],
     "repair": "verifier and test layer only; Seal V3 bytes unchanged and re-verified PASS"
   }

@@ -3,6 +3,9 @@
 
 Every binding is re-derived from source bytes rather than read back from the seal's own claims:
 
+  * identity       before anything is read out of the seal, the file itself must hash to the pinned
+                   accepted Seal V3 digest AND carry a sidecar that names the accepted filename and
+                   declares that same digest - the verifier establishes which seal it is checking;
   * bindings 1-3   digests, and the draft's byte size, recomputed from the working tree;
   * binding 2      the cohort structure is RECOMPUTED from the sealed CSV and compared field by
                    field, and the tier set is required to be exactly {100K, 500K, 1M, 10M};
@@ -33,6 +36,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SEAL_PATH = ROOT / "docs" / "v52" / "task4f1" / "TASK4F1_PREREGISTRATION_SEAL_V3_2026-09-04.json"
 IMPL_NOTE_MARKER = "Implementation note, not a defect in this preregistration:"
+RULE_MARKER = "**Sign-boundary arithmetic.**"
+# The accepted Seal V3 identity. Pinned here so the verifier establishes WHICH seal it is checking
+# before it checks anything inside it; the sidecar is cross-checked but is never the sole authority.
+ACCEPTED_SEAL_SHA256 = "e906c6d2b68b103c6c21906cbdf44acba10e31b7e5e17ffd2c7d1bbfb7a95cf4"
+ACCEPTED_SEAL_FILENAME = "TASK4F1_PREREGISTRATION_SEAL_V3_2026-09-04.json"
 BINDING_8_FIELDS = frozenset({
     "type", "implementation_condition_source", "implementation_condition_verbatim",
     "implementation_condition_sha256", "preregistered_rule_source", "source_section_sha256",
@@ -52,6 +60,7 @@ BINDING_8_PINNED_SHA256 = {
 }
 BINDING_8_SOURCE_PINNED_SHA256 = {
     "what": "674fc0c6f5cef2f1450355ad4f768f6850fedbff78b75b248bc45b4b3e050ec5",
+    "extraction_rule": "900ef76ce074270f5e2e64aa220dca174971459df111940f35b55420501d6515",
 }
 TIER_ORDER = ["100K", "500K", "1M", "10M"]
 
@@ -77,12 +86,17 @@ def sha256_blob(commit: str, path: str) -> str | None:
     return None if data is None else sha256_bytes(data)
 
 
-def implementation_note(hr_text: str) -> str | None:
-    """The authoritative A2 implementation-note paragraph, re-extracted from the HR re-review bytes."""
-    for para in hr_text.split("\n\n"):
-        if para.lstrip().startswith(IMPL_NOTE_MARKER):
+def paragraph_starting(text: str, marker: str) -> str | None:
+    """The single paragraph of `text` that begins with `marker`, verbatim."""
+    for para in text.split("\n\n"):
+        if para.lstrip().startswith(marker):
             return para.strip()
     return None
+
+
+def implementation_note(hr_text: str) -> str | None:
+    """The authoritative A2 implementation-note paragraph, re-extracted from the HR re-review bytes."""
+    return paragraph_starting(hr_text, IMPL_NOTE_MARKER)
 
 
 def section(text: str, number: int) -> str:
@@ -126,8 +140,41 @@ def recompute_cohort(path: Path) -> dict:
     }
 
 
-def main() -> int:
-    seal = json.loads(SEAL_PATH.read_text(encoding="utf-8"))
+def verify_identity(seal_path: Path) -> list[str]:
+    """Establish WHICH seal this is, before trusting anything written inside it.
+
+    All four must hold: the file hashes to the accepted Seal V3 digest; a sidecar exists beside it;
+    the sidecar names exactly the accepted filename; and the sidecar declares that same digest. The
+    pinned constant is the authority - the sidecar is a mutable file and is cross-checked, never
+    trusted alone.
+    """
+    fail: list[str] = []
+    if not seal_path.is_file():
+        return [f"identity: seal file is missing at {seal_path}"]
+
+    actual = sha256_file(seal_path)
+    if actual != ACCEPTED_SEAL_SHA256:
+        fail.append(f"identity: this is not the accepted Seal V3 - file hashes to {actual}, "
+                    f"accepted is {ACCEPTED_SEAL_SHA256}")
+
+    sidecar = seal_path.with_suffix(seal_path.suffix + ".sha256")
+    if not sidecar.is_file():
+        fail.append(f"identity: the seal sidecar {sidecar.name} is missing")
+        return fail
+    parts = sidecar.read_text(encoding="utf-8").split()
+    if len(parts) != 2:
+        fail.append("identity: the seal sidecar is not a single '<digest>  <filename>' line")
+        return fail
+    declared_digest, declared_name = parts
+    if declared_name != ACCEPTED_SEAL_FILENAME:
+        fail.append(f"identity: the sidecar names {declared_name!r}, expected {ACCEPTED_SEAL_FILENAME!r}")
+    if declared_digest != ACCEPTED_SEAL_SHA256:
+        fail.append(f"identity: the sidecar declares {declared_digest}, expected {ACCEPTED_SEAL_SHA256}")
+    return fail
+
+
+def verify_semantics(seal: dict) -> list[str]:
+    """Check what the seal binds. Assumes identity has already been established."""
     b = seal["bindings"]
     fail: list[str] = []
 
@@ -214,8 +261,12 @@ def main() -> int:
             fail.append("8 exact-rational condition: not_a_scientific_amendment must be true")
         if sha256_bytes(s6.encode("utf-8")) != b8.get("source_section_sha256"):
             fail.append("8 exact-rational condition: section 6 of the draft does not match the sealed section digest")
-        if b8.get("preregistered_rule_verbatim", "\x00").strip() not in s6:
-            fail.append("8 exact-rational condition: the preregistered rule is not present verbatim in section 6")
+        authoritative_rule = paragraph_starting(s6, RULE_MARKER)
+        if authoritative_rule is None:
+            fail.append("8 exact-rational condition: the sign-boundary paragraph is absent from section 6")
+        elif b8.get("preregistered_rule_verbatim") != authoritative_rule:
+            fail.append("8 exact-rational condition: the bound preregistered rule is not the complete "
+                        "section 6 paragraph (substring or altered text is not enough)")
 
         # The pre-run implementation condition is re-extracted from its authoritative HR bytes.
         src8 = b8.get("implementation_condition_source", {})
@@ -264,7 +315,6 @@ def main() -> int:
         fail.append("V7 is bound as a prerequisite; the sealing direction forbids this")
 
     # --- every superseded seal must stay byte-unchanged -------------------------------------
-    sup = seal["supersedes"]
     for key, label in (("supersedes", "Seal V2"), ("also_superseded", "Seal V1")):
         entry = seal[key]
         path = ROOT / entry["seal"]
@@ -278,12 +328,22 @@ def main() -> int:
         if value not in (0, False):
             fail.append(f"outcome boundary violated: {key}={value}")
 
+    return fail
+
+
+def main() -> int:
+    identity = verify_identity(SEAL_PATH)
+    seal = json.loads(SEAL_PATH.read_text(encoding="utf-8")) if SEAL_PATH.is_file() else {}
+    fail = identity + (verify_semantics(seal) if seal else [])
     if fail:
         print("PREREGISTRATION_SEAL: BLOCKED")
         for f in fail:
             print(f"- {f}")
         return 1
+    b = seal["bindings"]
+    sup = seal["supersedes"]
     print("PREREGISTRATION_SEAL: PASS")
+    print(f"identity=sha256 {ACCEPTED_SEAL_SHA256} (pinned constant and sidecar agree)")
     print(f"seal_id={seal['seal_id']}")
     print(f"approved_draft_sha256={b['1_approved_preregistration_draft']['sha256']}")
     print(f"tiers={seal['cohort_structure_recomputed']['tiers_in_order']} "
