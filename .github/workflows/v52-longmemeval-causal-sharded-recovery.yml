@@ -46,13 +46,53 @@ jobs:
           test "$(stat -c%s /tmp/longmemeval_s_cleaned.json)" = "277383467"
           echo 'd6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442  /tmp/longmemeval_s_cleaned.json' | sha256sum -c -
       - name: Run exact deterministic shard
+        env:
+          SHARD_INDEX: ${{ matrix.shard }}
+          NUM_SHARDS: '5'
+        shell: bash
         run: |
-          python research/v52/longmemeval_causal_shard.py \
-            --dataset /tmp/longmemeval_s_cleaned.json \
-            --shard-index ${{ matrix.shard }} \
-            --num-shards 5 \
-            --workers 2 \
-            --shard-out /tmp/shard_${{ matrix.shard }}.pkl
+          python - <<'PY'
+          import importlib.util, json, os, pickle
+          from pathlib import Path
+
+          runner_path=Path('research/v52/longmemeval_spectral_band_haar_causal.py').resolve()
+          spec=importlib.util.spec_from_file_location('lm_causal_runner_serial', runner_path)
+          if spec is None or spec.loader is None:
+              raise RuntimeError('cannot import causal runner')
+          r=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(r)
+
+          dataset=Path('/tmp/longmemeval_s_cleaned.json')
+          if dataset.stat().st_size != r.DATASET_BYTES:
+              raise RuntimeError('dataset byte mismatch')
+          if r.sha256_file(dataset) != r.DATASET_SHA256:
+              raise RuntimeError('dataset sha mismatch')
+          if r.sha256_file(r.A1_PATH) != r.A1_SHA256 or r.sha256_file(r.A2_PATH) != r.A2_SHA256:
+              raise RuntimeError('adapter identity mismatch')
+
+          data=json.loads(dataset.read_text(encoding='utf-8'))
+          prim=[x for x in data if not str(x['question_id']).endswith('_abs')]
+          if len(data) != 500 or len(prim) != r.EXPECTED_PRIMARY:
+              raise RuntimeError('cohort mismatch')
+          allq=sorted(str(x['question_id']) for x in data)
+          lex={q:i for i,q in enumerate(allq)}
+          shard=int(os.environ['SHARD_INDEX']); n=int(os.environ['NUM_SHARDS'])
+          chosen=[x for i,x in enumerate(prim) if i % n == shard]
+          tforms={s:r.transforms(s) for s in r.CAUSAL_SEEDS}
+          for seed,dd in tforms.items():
+              for method,R in dd.items():
+                  err=float(abs(R.T@R - __import__('numpy').eye(96)).max())
+                  if err > r.TOL:
+                      raise RuntimeError(f'orthogonality failure {seed} {method} {err}')
+          results=[r.evaluate_one((x,lex[str(x['question_id'])],tforms)) for x in chosen]
+          qids=[z['qid'] for z in results]
+          if len(qids) != len(set(qids)) or len(qids) != len(chosen):
+              raise RuntimeError('shard qid integrity failure')
+          payload={'shard_index':shard,'num_shards':n,'count':len(results),'qids':qids,'results':results}
+          out=Path(f'/tmp/shard_{shard}.pkl')
+          out.write_bytes(pickle.dumps(payload,protocol=pickle.HIGHEST_PROTOCOL))
+          print(json.dumps({'shard':shard,'count':len(results),'max_norm':max(z['max_norm'] for z in results),'max_dot':max(z['max_dot'] for z in results)}))
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: v52-longmemeval-causal-shard-${{ matrix.shard }}
