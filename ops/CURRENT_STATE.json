@@ -526,7 +526,11 @@
     "audited_commit": "7799502bc3a157f874b4b1aa76f803ec2bf6432f",
     "target_branch": "audit/v52-head-tail-causal-independent-2026-09-04",
     "gates": "G1-G11",
-    "status": "PROMPT_WRITTEN - COMMISSIONING"
+    "status": "RUNNING",
+    "session_id": "session_012qb1U9mpamxq2t2a6tvquX",
+    "commissioned_at_utc": "2026-09-04T19:48:40Z",
+    "seeded_cold_at_commit": "7799502bc3a157f874b4b1aa76f803ec2bf6432f",
+    "health_check_required": "Check the auditor session status directly, not only its branch. The V7 auditor (session_01MaqWxi8RD8TcYU4BZ2PVUb) died on a usage limit at 2026-09-03T20:55Z and its silence was reported as 'still running' for ~16 hours. A stalled branch is not evidence of work in progress."
   },
   "head_researcher_sequencing_decision_2026_09_04": {
     "decision": "Independent cold-start audit FIRST; boundary localization (16/80, 24/72, 32/64, 48/48, 64/32) only on a passing audit, under a separate preregistration",
