@@ -1,0 +1,36 @@
+{
+  "status": "PREREGISTERED_HEAD_TAIL_CAUSAL_RESULT",
+  "benchmark": "LoCoMo",
+  "prereg_git_blob": "0d34207be55a75194b585789c7139cbc8aeb264d",
+  "base_runner_git_blob": "7c4140252fb7f846d617189925cdf534515743f4",
+  "identity": {
+    "dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "audit_manifest_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06",
+    "valid_questions": 1535
+  },
+  "controls": {
+    "native_reproduction": 0.23654714666441054,
+    "frozen_native": 0.23654714666441054,
+    "absolute_reproduction_error": 0.0,
+    "signed_permutation_exact_pass": true,
+    "continuous_norm_max_abs_error": 4.440892098500626e-16,
+    "continuous_dot_max_abs_error": 1.6653345369377348e-15
+  },
+  "primary": {
+    "native_R3": 0.23654714666441054,
+    "frozen_full_haar_R3": 0.13770827054136,
+    "head_tail_haar_mean_R3": 0.22592744129014436,
+    "L_full": 0.09883887612305053,
+    "L_2": 0.01061970537426618,
+    "rho_2": 0.10744461886682183,
+    "regime": "[HEAD-TAIL TWO-SUBSPACE SUFFICIENCY LEAD]",
+    "seed_R3": {
+      "56001": 0.24319099434005997,
+      "56002": 0.21927062124820315,
+      "56003": 0.219372442432703,
+      "56004": 0.22784642362989693,
+      "56005": 0.21995672479985867
+    }
+  },
+  "interpretation_ceiling": "Fixed-benchmark preregistered causal-intervention evidence; no population-level generalization."
+}
