@@ -1,0 +1,143 @@
+{
+  "status": "PREREGISTERED_BOUNDARY_LOCALIZATION_RESULT",
+  "benchmark": "LoCoMo",
+  "prereg_git_blob": "b8acebedd49497a62ec637beabbcef6720460d15",
+  "post_audit_addendum_git_blob": "456b3b51f49a0238cd936bc3f639988fb0d673af",
+  "base_git_blob": "7c4140252fb7f846d617189925cdf534515743f4",
+  "identity": {
+    "dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "audit_manifest_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06",
+    "valid_questions": 1535,
+    "boundaries": [
+      16,
+      24,
+      32,
+      48,
+      64
+    ],
+    "rotation_seeds": [
+      58001,
+      58002,
+      58003,
+      58004,
+      58005,
+      58006,
+      58007,
+      58008,
+      58009,
+      58010
+    ],
+    "partition_seeds": [
+      68001,
+      68002,
+      68003,
+      68004,
+      68005,
+      68006,
+      68007,
+      68008,
+      68009,
+      68010
+    ]
+  },
+  "controls": {
+    "native_reproduction": 0.23654714666441054,
+    "frozen_native": 0.23654714666441054,
+    "absolute_reproduction_error": 0.0,
+    "signed_permutation_exact_pass": true,
+    "continuous_norm_max_abs_error": 5.551115123125783e-16,
+    "continuous_dot_max_abs_error": 1.9984014443252818e-15,
+    "partition_checks_pass": true,
+    "matched_q32_q64_max_abs_error": 0.0,
+    "per_question_expected_rows": 92100,
+    "per_question_actual_rows": 92100
+  },
+  "primary": {
+    "native_R3": 0.23654714666441054,
+    "frozen_full_haar_R3": 0.13770827054136,
+    "L_full": 0.09883887612305053,
+    "arm_stats": {
+      "B16": {
+        "mean_R3": 0.15519899065242523,
+        "rho": 0.8230380514516377,
+        "sample_sd_R3": 0.0036809007871637885,
+        "se_R3": 0.001164003032854425,
+        "sample_sd_rho": 0.03724142697233028,
+        "se_rho": 0.011776773254739217,
+        "rho_min": 0.7485007277919439,
+        "rho_max": 0.8685065477228708,
+        "sign_inverting_rotation_seeds": []
+      },
+      "B24": {
+        "mean_R3": 0.18448294256306808,
+        "rho": 0.5267583580829528,
+        "sample_sd_R3": 0.006341998638269868,
+        "se_R3": 0.0020055160614619086,
+        "sample_sd_rho": 0.06416502177113315,
+        "se_rho": 0.020290761491107204,
+        "rho_min": 0.41697865571559073,
+        "rho_max": 0.640820563676217,
+        "sign_inverting_rotation_seeds": []
+      },
+      "B32": {
+        "mean_R3": 0.2284032180572201,
+        "rho": 0.08239600576853544,
+        "sample_sd_R3": 0.0057225116641198585,
+        "se_R3": 0.0018096170795499204,
+        "sample_sd_rho": 0.05789737690861191,
+        "se_rho": 0.0183087581580452,
+        "rho_min": 0.00901882870002086,
+        "rho_max": 0.20716539230105543,
+        "sign_inverting_rotation_seeds": []
+      },
+      "B48": {
+        "mean_R3": 0.20655573984998207,
+        "rho": 0.3034373516862974,
+        "sample_sd_R3": 0.004674546718529362,
+        "se_R3": 0.0014782214659418804,
+        "sample_sd_rho": 0.04729461626728467,
+        "se_rho": 0.014955870846827033,
+        "rho_min": 0.21367058962844096,
+        "rho_max": 0.3808584359519138,
+        "sign_inverting_rotation_seeds": []
+      },
+      "B64": {
+        "mean_R3": 0.18407845600162565,
+        "rho": 0.5308507413364699,
+        "sample_sd_R3": 0.007135480265926329,
+        "se_R3": 0.0022564369839511156,
+        "sample_sd_rho": 0.07219305344025699,
+        "se_rho": 0.022829448011346662,
+        "rho_min": 0.45259363694283383,
+        "rho_max": 0.6619564879918329,
+        "sign_inverting_rotation_seeds": []
+      },
+      "RANDOM32": {
+        "mean_R3": 0.14391712843920665,
+        "rho": 0.9371820265325876,
+        "sample_sd_R3": 0.004293366737303476,
+        "se_R3": 0.0013576817720284784,
+        "sample_sd_rho": 0.04343803678988014,
+        "se_rho": 0.013736313334221014,
+        "rho_min": 0.8699136787066576,
+        "rho_max": 0.9864983090530085,
+        "sign_inverting_rotation_seeds": []
+      }
+    },
+    "S_dataset": [
+      32
+    ],
+    "P1_rho32_pass": true,
+    "rho32": 0.08239600576853544,
+    "rho_random32": 0.9371820265325876,
+    "Delta32": 0.8547860207640522,
+    "P2": "SPECTRAL_POSITION_CONFIRMED"
+  },
+  "artifacts": {
+    "per_question_file": "locomo_boundary_per_question.csv.gz",
+    "per_question_sha256": "87e7ae969403b0bb06efcd726d317fb08427cce7c29f221dd0e520ff8722fd1b",
+    "partitions_file": "locomo_boundary_random_partitions.json",
+    "partitions_sha256": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791"
+  },
+  "interpretation_ceiling": "Fixed-grid fixed-dataset causal localization under one shared pipeline; no universal or globally optimal-boundary claim."
+}
