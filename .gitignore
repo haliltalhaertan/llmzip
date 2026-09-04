@@ -4,3 +4,7 @@
 /remediation_v52_t4f0_env_2026_08_31/Scripts/
 /remediation_v52_t4f0_env_2026_08_31/corpus/
 /remediation_v52_t4f0_env_2026_08_31/pyvenv.cfg
+
+# Never commit bytecode caches (the project runs with -B / PYTHONDONTWRITEBYTECODE=1)
+__pycache__/
+*.pyc
