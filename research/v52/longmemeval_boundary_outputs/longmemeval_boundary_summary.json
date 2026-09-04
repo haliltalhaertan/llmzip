@@ -1,0 +1,148 @@
+{
+  "status": "PREREGISTERED_BOUNDARY_LOCALIZATION_RESULT",
+  "execution": "DETERMINISTIC_SHARDED_SEMANTICS_INVARIANT",
+  "benchmark": "LongMemEval",
+  "prereg_git_blob": "b8acebedd49497a62ec637beabbcef6720460d15",
+  "post_audit_addendum_git_blob": "456b3b51f49a0238cd936bc3f639988fb0d673af",
+  "base_git_blob": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+  "identity": {
+    "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "dataset_bytes": 277383467,
+    "adapter_v1_sha256": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+    "adapter_v2_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+    "primary_questions": 470,
+    "boundaries": [
+      16,
+      24,
+      32,
+      48,
+      64
+    ],
+    "rotation_seeds": [
+      58001,
+      58002,
+      58003,
+      58004,
+      58005,
+      58006,
+      58007,
+      58008,
+      58009,
+      58010
+    ],
+    "partition_seeds": [
+      68001,
+      68002,
+      68003,
+      68004,
+      68005,
+      68006,
+      68007,
+      68008,
+      68009,
+      68010
+    ],
+    "shards": 10
+  },
+  "controls": {
+    "native_reproduction": 0.5419751773049645,
+    "frozen_native": 0.5419751773049646,
+    "absolute_reproduction_error": 1.1102230246251565e-16,
+    "signed_permutation_exact_pass": true,
+    "continuous_norm_max_abs_error": 6.661338147750939e-16,
+    "continuous_dot_max_abs_error": 9.992007221626409e-16,
+    "partition_checks_pass": true,
+    "matched_q32_q64_max_abs_error": 0.0,
+    "per_question_expected_rows": 28200,
+    "per_question_actual_rows": 28200
+  },
+  "primary": {
+    "native_R3": 0.5419751773049645,
+    "frozen_full_haar_R3": 0.38271666666667,
+    "L_full": 0.1592585106382945,
+    "arm_stats": {
+      "B16": {
+        "mean_R3": 0.41379751773049644,
+        "rho": 0.8048402503624009,
+        "sample_sd_R3": 0.010233588659072887,
+        "se_R3": 0.0032361448799938667,
+        "sample_sd_rho": 0.06425771921423563,
+        "se_rho": 0.020320074996454975,
+        "rho_min": 0.6930388836563208,
+        "rho_max": 0.9221369422567987,
+        "sign_inverting_rotation_seeds": []
+      },
+      "B24": {
+        "mean_R3": 0.4501624113475177,
+        "rho": 0.5765014729163863,
+        "sample_sd_R3": 0.01049241668093906,
+        "se_R3": 0.003317993487131164,
+        "sample_sd_rho": 0.06588292606081993,
+        "se_rho": 0.020834010526865596,
+        "rho_min": 0.47694434981263906,
+        "rho_max": 0.6773300022934439,
+        "sign_inverting_rotation_seeds": []
+      },
+      "B32": {
+        "mean_R3": 0.5161939716312056,
+        "rho": 0.16188275006735897,
+        "sample_sd_R3": 0.009985400987165835,
+        "se_R3": 0.0031576610469537802,
+        "sample_sd_rho": 0.06269932418145319,
+        "se_rho": 0.019827267216666444,
+        "rho_min": 0.06584147723603931,
+        "rho_max": 0.2665054585857831,
+        "sign_inverting_rotation_seeds": []
+      },
+      "B48": {
+        "mean_R3": 0.5110994680851063,
+        "rho": 0.19387164363217363,
+        "sample_sd_R3": 0.008237140669008302,
+        "se_R3": 0.002604812592126937,
+        "sample_sd_rho": 0.05172182407077992,
+        "se_rho": 0.01635587688021865,
+        "rho_min": 0.1324400089955913,
+        "rho_max": 0.30208702119085257,
+        "sign_inverting_rotation_seeds": []
+      },
+      "B64": {
+        "mean_R3": 0.4846398936170213,
+        "rho": 0.36001393870976345,
+        "sample_sd_R3": 0.015132490574639935,
+        "se_R3": 0.004785313688689242,
+        "sample_sd_rho": 0.09501841072097311,
+        "se_rho": 0.030047459752763687,
+        "rho_min": 0.19303777034083436,
+        "rho_max": 0.4759868985034911,
+        "sign_inverting_rotation_seeds": []
+      },
+      "RANDOM32": {
+        "mean_R3": 0.3841627659574468,
+        "rho": 0.9909197989797783,
+        "sample_sd_R3": 0.011552489395515859,
+        "se_R3": 0.0036532179134771904,
+        "sample_sd_rho": 0.07253922788310949,
+        "se_rho": 0.022938917982062032,
+        "rho_min": 0.8799534188805125,
+        "rho_max": 1.0917060223687576,
+        "sign_inverting_rotation_seeds": []
+      }
+    },
+    "S_dataset": [
+      32,
+      48
+    ],
+    "P1_rho32_pass": true,
+    "rho32": 0.16188275006735897,
+    "rho_random32": 0.9909197989797783,
+    "Delta32": 0.8290370489124194,
+    "P2": "SPECTRAL_POSITION_CONFIRMED"
+  },
+  "artifacts": {
+    "per_question_file": "longmemeval_boundary_per_question.csv.gz",
+    "per_question_sha256": "e73576039cb1c9b76ceb4b440148b90f3caa044ca082585d1a0f4d23ac08eaba",
+    "partitions_file": "longmemeval_boundary_random_partitions.json",
+    "partitions_sha256": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791"
+  },
+  "interpretation_ceiling": "Fixed-grid fixed-dataset causal localization under one shared pipeline; no independent-replication, universal, or globally optimal-boundary claim."
+}
