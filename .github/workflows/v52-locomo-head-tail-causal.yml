@@ -1,0 +1,62 @@
+name: V52 LoCoMo head-tail two-subspace causal
+
+on:
+  push:
+    branches:
+      - research/v52-sign-mechanism-locomo-2026-09-04
+    paths:
+      - .github/workflows/v52-locomo-head-tail-causal.yml
+      - research/v52/locomo_head_tail_two_subspace_causal.py
+
+permissions:
+  contents: write
+
+jobs:
+  causal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify preregistration and frozen source blobs
+        shell: bash
+        run: |
+          test "$(git hash-object research/v52/V52_CAUSAL_HEAD_TAIL_TWO_SUBSPACE_HAAR_PREREG_2026-09-04.md)" = "0d34207be55a75194b585789c7139cbc8aeb264d"
+          test "$(git hash-object research/v52/locomo_spectral_band_haar_causal.py)" = "7c4140252fb7f846d617189925cdf534515743f4"
+          test "$(git hash-object research/v52/locomo_sign_mechanism_replication.py)" = "6700454915176854a55b0b5cf6ffe922a22e35f2"
+          test "$(git hash-object research/v52/locomo_head_tail_two_subspace_causal.py)" = "cb16d4136c6280875b7c5875ffd89f9fc01cb810"
+          python -m py_compile research/v52/locomo_head_tail_two_subspace_causal.py
+      - name: Install frozen-compatible numerical stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scipy==1.17.0' 'scikit-learn==1.8.0'
+      - name: Run preregistered LoCoMo head-tail intervention
+        run: |
+          python research/v52/locomo_head_tail_two_subspace_causal.py --out /tmp/locomo_head_tail_outputs
+          rm -rf /tmp/locomo_head_tail_outputs/source_bytes
+          python -m pip freeze > /tmp/locomo_head_tail_outputs/environment.txt
+      - name: Upload immutable result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: v52-locomo-head-tail-causal-results
+          path: /tmp/locomo_head_tail_outputs
+          if-no-files-found: error
+          retention-days: 30
+      - name: Persist outputs on research branch
+        shell: bash
+        run: |
+          git config user.name 'V52 Research Runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git fetch origin "${GITHUB_REF_NAME}"
+          git rebase "origin/${GITHUB_REF_NAME}"
+          mkdir -p research/v52/locomo_head_tail_outputs
+          cp -a /tmp/locomo_head_tail_outputs/. research/v52/locomo_head_tail_outputs/
+          git add research/v52/locomo_head_tail_outputs
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(v52): persist preregistered LoCoMo head-tail causal package'
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi
