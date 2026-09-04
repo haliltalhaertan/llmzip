@@ -5,7 +5,9 @@ Seal V1 shipped a wrong tier vocabulary under a green PASS because the verifier 
 metadata it claimed to establish; Seal V2 then carried a hand-restated pre-run implementation
 condition that no check read, so an inverted condition would also have passed green. A verifier that
 only ever passes proves nothing, so this file mutates the sealed facts one at a time and requires the
-verifier to BLOCK on each. The first two tests are those two historical defects themselves.
+verifier to BLOCK on each. The first two tests are those two historical defects themselves, and the
+binding-8 metadata cases come from a third review finding: the field-set check closed only the
+top-level names, leaving descriptive and nested fields unguarded.
 
 Mutations are written to a temporary file; the real seal is never modified. Reads only, imports no
 candidate, touches no outcome.
@@ -67,6 +69,31 @@ def mutations(base: dict) -> list[tuple[str, dict]]:
         lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
         ["implementation_condition_source"].__setitem__(
             "path", "docs/v52/task4f1/COCHAIR_EXACT_BYTE_APPROVAL_T4F1_PREREG_2026-09-04.md"))
+    add("binding 8 owner changed",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        .__setitem__("owner", "scientific track"))
+    add("binding 8 type changed",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        .__setitem__("type", "OPTIONAL SUGGESTION"))
+    add("binding 8 not_a_scientific_amendment flipped",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        .__setitem__("not_a_scientific_amendment", False))
+    add("binding 8 no_restated_wording rewritten",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        .__setitem__("no_restated_wording", "nothing here is checked"))
+    add("nested extraction_rule changed",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        ["implementation_condition_source"].__setitem__("extraction_rule", "any paragraph you like"))
+    add("nested source branch changed",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        ["implementation_condition_source"].__setitem__("branch", "some/other-branch"))
+    add("nested source 'what' rewritten",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        ["implementation_condition_source"].__setitem__("what", "an unrelated document"))
+    add("unexpected nested source field inserted",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        ["implementation_condition_source"].__setitem__(
+            "override", "classify D_t from a rounded aggregate"))
     add("unverified free-text field smuggled into binding 8",
         lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
         .__setitem__("condition", "Before any run authorization, classify D_t from a rounded aggregate."))

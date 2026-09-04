@@ -38,6 +38,21 @@ BINDING_8_FIELDS = frozenset({
     "implementation_condition_sha256", "preregistered_rule_source", "source_section_sha256",
     "preregistered_rule_verbatim", "owner", "not_a_scientific_amendment", "no_restated_wording",
 })
+BINDING_8_SOURCE_FIELDS = frozenset({
+    "what", "branch", "commit", "path", "artifact_sha256", "extraction_rule",
+})
+# Descriptive binding-8 metadata carries no value that can be re-derived from another artifact, so
+# it is pinned here by digest instead. Pinning the digest rather than the prose keeps the schema
+# short and still makes any edit - a flipped "owner", a reworded claim - a BLOCKED.
+BINDING_8_PINNED_SHA256 = {
+    "type": "99abc8cd71e8112ed23c9ab7740ce0f8757b5607214cc7faa3673a3115d9e1f6",
+    "owner": "8e5c51ad33dd035668a2d90a89df736f72ef3534f9e63a3f7c5e6d7007b7f604",
+    "no_restated_wording": "0470e3134fd1437af00c2b5d254208b50e56256f9b152f8faf314ff81ef8a762",
+    "preregistered_rule_source": "b43590c8a4ffffe5a210fe912c42ee53803f0a160a3dd3d58b9bfccfbc056367",
+}
+BINDING_8_SOURCE_PINNED_SHA256 = {
+    "what": "674fc0c6f5cef2f1450355ad4f768f6850fedbff78b75b248bc45b4b3e050ec5",
+}
 TIER_ORDER = ["100K", "500K", "1M", "10M"]
 
 
@@ -191,6 +206,12 @@ def main() -> int:
             fail.append(f"8 exact-rational condition: field set is not the verified set "
                         f"(unexpected {unexpected}, missing {missing}); an unverified field here is the "
                         f"escape that blocked Seal V2")
+        for field, expected in BINDING_8_PINNED_SHA256.items():
+            value = b8.get(field)
+            if not isinstance(value, str) or sha256_bytes(value.encode("utf-8")) != expected:
+                fail.append(f"8 exact-rational condition: pinned metadata field {field!r} was altered")
+        if b8.get("not_a_scientific_amendment") is not True:
+            fail.append("8 exact-rational condition: not_a_scientific_amendment must be true")
         if sha256_bytes(s6.encode("utf-8")) != b8.get("source_section_sha256"):
             fail.append("8 exact-rational condition: section 6 of the draft does not match the sealed section digest")
         if b8.get("preregistered_rule_verbatim", "\x00").strip() not in s6:
@@ -198,7 +219,27 @@ def main() -> int:
 
         # The pre-run implementation condition is re-extracted from its authoritative HR bytes.
         src8 = b8.get("implementation_condition_source", {})
-        if src8.get("artifact_sha256") != b["4_head_researcher_rereview_decision"]["sha256"]:
+        if set(src8) != set(BINDING_8_SOURCE_FIELDS):
+            unexpected = sorted(set(src8) - BINDING_8_SOURCE_FIELDS)
+            missing = sorted(BINDING_8_SOURCE_FIELDS - set(src8))
+            fail.append(f"8 exact-rational condition: source field set is not the verified set "
+                        f"(unexpected {unexpected}, missing {missing})")
+        for field, expected in BINDING_8_SOURCE_PINNED_SHA256.items():
+            value = src8.get(field)
+            if not isinstance(value, str) or sha256_bytes(value.encode("utf-8")) != expected:
+                fail.append(f"8 exact-rational condition: pinned source field {field!r} was altered")
+        # The source location is not restated: it must be the same branch, commit and path as the
+        # approval bound at binding 4.
+        b4 = b["4_head_researcher_rereview_decision"]
+        for field in ("branch", "commit", "path"):
+            if src8.get(field) != b4[field]:
+                fail.append(f"8 exact-rational condition: source {field} does not match the HR re-review "
+                            f"decision bound at binding 4")
+        # The declared extraction rule must be the rule this verifier actually applies.
+        if repr(IMPL_NOTE_MARKER) not in str(src8.get("extraction_rule", "")):
+            fail.append("8 exact-rational condition: the declared extraction rule is not the marker the "
+                        "verifier applies")
+        if src8.get("artifact_sha256") != b4["sha256"]:
             fail.append("8 exact-rational condition: source artifact digest does not match the HR re-review decision")
         hr = blob(src8.get("commit", ""), src8.get("path", ""))
         if hr is None:
