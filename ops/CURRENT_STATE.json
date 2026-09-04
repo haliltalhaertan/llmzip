@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_PREREGISTRATION_DRAFT_AMENDED_AFTER_SCIENTIFIC_REVIEW",
-  "issued_at_utc": "2026-09-04T01:05:00Z",
+  "issued_at_utc": "2026-09-04T01:35:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Head Researcher approval decision on the amended preregistration draft",
-    "next_single_action": "Return the amended draft to the reviewing authority for a re-review decision, and await the V7 independent audit report. Do not preregister, seal, authorize, run or access outcomes.",
+    "next_single_action": "Deliver prompts/V52_TASK_4F1_PREREG_AMENDED_REREVIEW_REQUEST_2026-09-04.md to the reviewing authority and await the re-review decision. Independently hash-verify whatever comes back before recording it, and hash-verify the V7 audit report when it lands. Do not preregister, seal, authorize, run or access outcomes.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -179,7 +179,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-025",
+  "ledger_entry": "L-026",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -262,5 +262,16 @@
     "v7_packaging_direction": "RATIFIED IN PRINCIPLE, with a pre-seal documentation condition (now satisfied)",
     "authorization_template_schema": "RATIFIED — V52_T4F1_RUN_AUTHORIZATION_V4 is correct while the runner is byte-identical to the accepted V4 runner; package and authorization-schema versions are separate domains",
     "cochair_seat": "ESTABLISHED — Claude, effective 2026-09-03"
+  },
+  "rereview_request": {
+    "stage": "PREREGISTRATION_REREVIEW_DECISION_REQUEST",
+    "path": "prompts/V52_TASK_4F1_PREREG_AMENDED_REREVIEW_REQUEST_2026-09-04.md",
+    "sha256": "b1cd5982c03e601033caa59fcfbc8cc1c69457406eda18f22fe320a7c81dcdc8",
+    "issued_at_utc": "2026-09-04T01:35:00Z",
+    "addressed_to": "Head Researcher / reviewing authority",
+    "draft_under_review_sha256": "5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44",
+    "requested_reply_branch": "hr/rereview-t4f1-prereg-2026-09-04",
+    "status": "ISSUED - AWAITING DECISION",
+    "standing_verdict": "REQUEST CHANGES (2026-09-03) STANDS until re-review"
   }
 }

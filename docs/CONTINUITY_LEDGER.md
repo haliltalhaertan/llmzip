@@ -466,3 +466,23 @@ outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retr
 status: PASS
 next_single_action: Return the amended draft to the reviewing authority for a re-review decision, and independently hash-verify the V7 audit report when it lands.
 ```
+
+### L-026
+
+```text
+timestamp_utc: 2026-09-04T01:35:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-025 / c0133fc
+scope: Write and record the re-review decision request for the amended preregistration draft. No draft byte, candidate, seal, manifest or audit namespace is touched; this entry adds one prompt file and this record.
+changed_or_created_paths: prompts/V52_TASK_4F1_PREREG_AMENDED_REREVIEW_REQUEST_2026-09-04.md; docs/CONTINUITY_LEDGER.md; ops/CURRENT_STATE.json
+prompt_sha256: b1cd5982c03e601033caa59fcfbc8cc1c69457406eda18f22fe320a7c81dcdc8
+why_written: L-025 applied the six amendments but the Continuity Lead prepared them and does not clear its own work, so the REQUEST CHANGES verdict still stands. The amended draft has to go back to the reviewing authority as an explicit decision request rather than sitting in an ambiguous state where "amendments applied" could be mistaken for "approved".
+request_design: The request is self-contained and hash-bound so the reviewing authority never has to trust the chat relay. It carries the repo, branch and commit c0133fc, the amended draft digest 5e618981, the pre-amendment digest ec3443ed, the review artifact anchors at ecbf765 / 6493000b, the exact diff command with its hunk and line counts, and the verification command whose PASS is the gate. It states each amendment A1 to A6 with the section it lives in so each can be checked against the file rather than accepted from the summary. It records openly what the Continuity Lead did and did not verify, including that it did not clear its own amendments.
+decision_scope_bounded: The request asks for exactly one decision - approve for sealing, approve with conditions, or request changes - and states explicitly that approving the preregistration is NOT authorization to run Task 4F1 and that a run decision is separate and not being requested. It also states that the preregistration decision does not depend on the V7 packaging audit and that approving it would not unblock execution, so the two tracks cannot be conflated into an implied go.
+outcome_discipline_carried_into_the_request: The request forbids the reviewing authority from including any retrieval ID, distance, metric value or arm outcome in its reply, and states that needing one is itself the finding. It contains no outcome value of its own.
+reply_format_requested: A pushed hash-bound artifact on branch hr/rereview-t4f1-prereg-2026-09-04 with a .sha256 sidecar, stating the commit and draft digest actually reviewed, the verdict, a per-amendment adequacy judgement for A1 to A6, any remaining defect with its section, and an explicit no-outcome confirmation. A chat-only reply is accepted but is declared in advance to be recorded as unverifiable, which is the weaker record.
+context_disclosed_not_decided: The V7 audit is disclosed as still running at 16dc613 with Gates 1 to 7 evidence pushed and no report, gate table or hash manifest, and is explicitly marked as no recorded result. The two owner-only P0 items - the GitHub default branch still pointing at claude/itq-frontier-audit-wfrz6a, and the refs/tags push refusal - are disclosed as out of scope unless escalation is wanted.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN. Nothing sealed. The REQUEST CHANGES verdict of 2026-09-03 stands.
+status: PASS
+next_single_action: Deliver the request to the reviewing authority and await the re-review decision; independently hash-verify whatever comes back before recording it, and hash-verify the V7 audit report when it lands.
+```
