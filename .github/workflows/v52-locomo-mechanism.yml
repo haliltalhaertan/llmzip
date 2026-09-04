@@ -1,0 +1,65 @@
+name: V52 LoCoMo mechanism replication
+
+on:
+  push:
+    branches:
+      - research/v52-sign-mechanism-locomo-2026-09-04
+    paths:
+      - .github/workflows/v52-locomo-mechanism.yml
+      - research/v52/locomo_sign_mechanism_replication.py.gz.b64
+
+permissions:
+  contents: write
+
+jobs:
+  mechanism:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Decode and verify analysis source
+        shell: bash
+        run: |
+          base64 -d research/v52/locomo_sign_mechanism_replication.py.gz.b64 | gzip -dc > /tmp/locomo_sign_mechanism_replication.py
+          echo 'a6ecee02e5d6a8735a922ec2d5f0a024b3c024e0cdf03b336e16e4357f20e74b  /tmp/locomo_sign_mechanism_replication.py' | sha256sum -c -
+          python -m py_compile /tmp/locomo_sign_mechanism_replication.py
+
+      - name: Install frozen-compatible numerical stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scipy==1.17.0' 'scikit-learn==1.8.0'
+
+      - name: Run post-hoc LoCoMo mechanism diagnostics
+        run: |
+          python /tmp/locomo_sign_mechanism_replication.py --out /tmp/locomo_mechanism_outputs
+          rm -rf /tmp/locomo_mechanism_outputs/source_bytes
+          python -m pip freeze > /tmp/locomo_mechanism_outputs/environment.txt
+
+      - name: Persist readable source and checkpoint on research branch
+        shell: bash
+        run: |
+          mkdir -p research/v52/locomo_mechanism_outputs
+          cp /tmp/locomo_sign_mechanism_replication.py research/v52/locomo_sign_mechanism_replication.py
+          cp -a /tmp/locomo_mechanism_outputs/. research/v52/locomo_mechanism_outputs/
+          git config user.name 'V52 Research Runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add research/v52/locomo_sign_mechanism_replication.py research/v52/locomo_mechanism_outputs
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(v52): record LoCoMo spectrum and hard-negative mechanism diagnostics'
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
+
+      - name: Upload mechanism result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: v52-locomo-mechanism-results
+          path: /tmp/locomo_mechanism_outputs
+          if-no-files-found: error
+          retention-days: 30
