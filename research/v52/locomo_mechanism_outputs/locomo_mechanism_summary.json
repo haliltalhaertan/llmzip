@@ -1,0 +1,141 @@
+{
+  "absolute_reproduction_error": 0.0,
+  "band_summary": [
+    {
+      "band": "High32",
+      "bits": 32,
+      "duplicate_fraction_doc_weighted": 0.0034002040122407284,
+      "fractional_R3": 0.08595274495149952,
+      "gold_minus_nongold_same_sign_advantage": 0.08796716212738445,
+      "mean_abs_bit_correlation_doc_weighted": 0.03801959103652697,
+      "mean_coordinate_variance_doc_weighted": 0.020949748899398928,
+      "mean_svd_explained_variance_doc_weighted": 0.036641551674845826,
+      "pair_count": 1433817.0,
+      "pairwise_gold_vs_nongold_discrimination": 0.7269477206644921,
+      "unique_code_fraction_doc_weighted": 0.9965997959877593
+    },
+    {
+      "band": "Mid32",
+      "bits": 32,
+      "duplicate_fraction_doc_weighted": 0.0005100306018361078,
+      "fractional_R3": 0.11170843808849175,
+      "gold_minus_nongold_same_sign_advantage": 0.08751681264066474,
+      "mean_abs_bit_correlation_doc_weighted": 0.027958198895157053,
+      "mean_coordinate_variance_doc_weighted": 0.003876780195875901,
+      "mean_svd_explained_variance_doc_weighted": 0.0068732966659901815,
+      "pair_count": 1433817.0,
+      "pairwise_gold_vs_nongold_discrimination": 0.7221360884966491,
+      "unique_code_fraction_doc_weighted": 0.9994899693981639
+    },
+    {
+      "band": "Low32",
+      "bits": 32,
+      "duplicate_fraction_doc_weighted": 0.000680040802448145,
+      "fractional_R3": 0.14046110006533458,
+      "gold_minus_nongold_same_sign_advantage": 0.0805020140296844,
+      "mean_abs_bit_correlation_doc_weighted": 0.026697273641921346,
+      "mean_coordinate_variance_doc_weighted": 0.002971527771039225,
+      "mean_svd_explained_variance_doc_weighted": 0.005152911239961196,
+      "pair_count": 1433817.0,
+      "pairwise_gold_vs_nongold_discrimination": 0.6993465693320696,
+      "unique_code_fraction_doc_weighted": 0.9993199591975519
+    },
+    {
+      "band": "HighMid64",
+      "bits": 64,
+      "duplicate_fraction_doc_weighted": 0.0005100306018361078,
+      "fractional_R3": 0.16634495697400467,
+      "gold_minus_nongold_same_sign_advantage": NaN,
+      "mean_abs_bit_correlation_doc_weighted": 0.031012296794827903,
+      "mean_coordinate_variance_doc_weighted": 0.012413264547637413,
+      "mean_svd_explained_variance_doc_weighted": 0.021757424170418007,
+      "pair_count": NaN,
+      "pairwise_gold_vs_nongold_discrimination": NaN,
+      "unique_code_fraction_doc_weighted": 0.9994899693981639
+    },
+    {
+      "band": "HighLow64",
+      "bits": 64,
+      "duplicate_fraction_doc_weighted": 0.0005100306018361078,
+      "fractional_R3": 0.1862041471015412,
+      "gold_minus_nongold_same_sign_advantage": NaN,
+      "mean_abs_bit_correlation_doc_weighted": 0.02975480046103752,
+      "mean_coordinate_variance_doc_weighted": 0.011960638335219076,
+      "mean_svd_explained_variance_doc_weighted": 0.020897231457403513,
+      "pair_count": NaN,
+      "pairwise_gold_vs_nongold_discrimination": NaN,
+      "unique_code_fraction_doc_weighted": 0.9994899693981639
+    },
+    {
+      "band": "MidLow64",
+      "bits": 64,
+      "duplicate_fraction_doc_weighted": 0.0005100306018361078,
+      "fractional_R3": 0.21767206264600403,
+      "gold_minus_nongold_same_sign_advantage": NaN,
+      "mean_abs_bit_correlation_doc_weighted": 0.026921030556357684,
+      "mean_coordinate_variance_doc_weighted": 0.0034241539834575624,
+      "mean_svd_explained_variance_doc_weighted": 0.00601310395297569,
+      "pair_count": NaN,
+      "pairwise_gold_vs_nongold_discrimination": NaN,
+      "unique_code_fraction_doc_weighted": 0.9994899693981639
+    },
+    {
+      "band": "Full96",
+      "bits": 96,
+      "duplicate_fraction_doc_weighted": 0.0005100306018361078,
+      "fractional_R3": 0.23654714666441054,
+      "gold_minus_nongold_same_sign_advantage": 0.08532866293257786,
+      "mean_abs_bit_correlation_doc_weighted": 0.028686937310731034,
+      "mean_coordinate_variance_doc_weighted": 0.009266018955438016,
+      "mean_svd_explained_variance_doc_weighted": 0.0162225865269324,
+      "pair_count": 1433817.0,
+      "pairwise_gold_vs_nongold_discrimination": 0.7934331926598722,
+      "unique_code_fraction_doc_weighted": 0.9994899693981639
+    }
+  ],
+  "decision_features": {
+    "coarse_fine_signature": true
+  },
+  "frozen_native_fractional_R3": 0.23654714666441054,
+  "frozen_native_reproduction_pass": true,
+  "hard_negative_margins": {
+    "centered_cosine_fractional_R3": 0.16826334541318252,
+    "centered_cosine_positive_margin_question_fraction": 0.11074918566775244,
+    "native_sign_positive_margin_question_fraction": 0.14006514657980457,
+    "on_sign_beats_cosine_mean_cosine_margin": -0.23740048455964569,
+    "on_sign_beats_cosine_mean_sign_margin_bits": -0.7004608294930875,
+    "sign_beats_cosine_question_count": 217
+  },
+  "hard_negative_rescue": {
+    "high_correct_to_full_degrade": 0.1040658844856644,
+    "high_wrong_or_tie_to_full_rescue": 0.5139557915018897,
+    "high_wrong_or_tie_to_highlow_rescue": 0.4012494975286268,
+    "high_wrong_or_tie_to_highmid_rescue": 0.41454842701196276,
+    "highmid_wrong_or_tie_to_full_rescue": 0.29998916440449847,
+    "raw_counts": {
+      "high_correct": 988518,
+      "high_correct_full_not_correct": 102871,
+      "high_not_correct": 445299,
+      "high_not_correct_full_correct": 228864,
+      "high_not_correct_hl_correct": 178676,
+      "high_not_correct_hm_correct": 184598,
+      "hm_not_correct": 350696,
+      "hm_not_correct_full_correct": 105205
+    }
+  },
+  "identity": {
+    "audit_correction_count": 156,
+    "audit_file_count": 20,
+    "audit_manifest_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06",
+    "dataset_bytes": 2805274,
+    "dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "frozen_script_sha256": "3f7f091fadc88dfcc1f68f38d6df10607d05d1e416d048fe776929a9a7b185a7",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "native_full96_fractional_R3_recomputed": 0.23654714666441054,
+  "scientific_interpretation_ceiling": "Fixed-benchmark exploratory mechanism evidence only; no population significance or causal proof.",
+  "status": "POST_HOC_EXPLORATORY_MECHANISM_DIAGNOSTIC",
+  "valid_questions": 1535,
+  "verdict": "[CROSS-BENCHMARK MECHANISM REPLICATION LEAD]"
+}
