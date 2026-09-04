@@ -1,0 +1,65 @@
+name: V52 LongMemEval causal spectral-band Haar
+
+on:
+  push:
+    branches:
+      - research/v52-sign-mechanism-locomo-2026-09-04
+    paths:
+      - .github/workflows/v52-longmemeval-causal-band-haar.yml
+      - research/v52/longmemeval_spectral_band_haar_causal.py
+
+permissions:
+  contents: write
+
+jobs:
+  causal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Verify frozen preregistration and adapters
+        shell: bash
+        run: |
+          test "$(git hash-object research/v52/V52_CAUSAL_SPECTRAL_BAND_HAAR_PREREG_2026-09-04.md)" = "02aa91a12b4052bbb2f0a6617167c8851e4f71f7"
+          echo '0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722  adapters/longmemeval_v52_adapter.py' | sha256sum -c -
+          echo '643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218  adapters/longmemeval_v52_adapter_v2.py' | sha256sum -c -
+          python -m py_compile research/v52/longmemeval_spectral_band_haar_causal.py
+
+      - name: Install frozen-compatible numerical stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scipy==1.17.0' 'scikit-learn==1.8.0'
+
+      - name: Run preregistered LongMemEval causal intervention
+        run: |
+          python research/v52/longmemeval_spectral_band_haar_causal.py --out /tmp/longmemeval_causal_outputs --workers 2
+          rm -rf /tmp/longmemeval_causal_outputs/source_bytes
+          python -m pip freeze > /tmp/longmemeval_causal_outputs/environment.txt
+
+      - name: Persist causal outputs on research branch
+        shell: bash
+        run: |
+          mkdir -p research/v52/longmemeval_causal_outputs
+          cp -a /tmp/longmemeval_causal_outputs/. research/v52/longmemeval_causal_outputs/
+          git config user.name 'V52 Research Runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add research/v52/longmemeval_causal_outputs
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(v52): record preregistered LongMemEval spectral-band causal result'
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
+
+      - name: Upload causal result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: v52-longmemeval-causal-band-haar-results
+          path: /tmp/longmemeval_causal_outputs
+          if-no-files-found: error
+          retention-days: 30
