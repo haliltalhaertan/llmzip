@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_PREREGISTRATION_DRAFT_REVISED_FOR_APPROVAL",
-  "issued_at_utc": "2026-09-04T00:15:00Z",
+  "state_id": "V52_4F1_PREREGISTRATION_DRAFT_AMENDED_AFTER_SCIENTIFIC_REVIEW",
+  "issued_at_utc": "2026-09-04T01:05:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -21,8 +21,8 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Head Researcher approval decision on the revised preregistration draft",
-    "next_single_action": "Two independent reviews are running: the scientific co-chair review of the preregistration draft (session_01TmWJv1yAkGPZ7vmgGEVs4s) and the V7 package audit (session_01MaqWxi8RD8TcYU4BZ2PVUb). Independently hash-verify each pushed artifact before recording acceptance. Do not preregister, seal, authorize, run or access outcomes.",
+    "current_task": "Head Researcher approval decision on the amended preregistration draft",
+    "next_single_action": "Return the amended draft to the reviewing authority for a re-review decision, and await the V7 independent audit report. Do not preregister, seal, authorize, run or access outcomes.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -36,7 +36,8 @@
     "v6_candidate": "BLOCKED by independent delta audit 2026-09-03. 31 evasions succeeded against the inverted-burden gate; the Continuity Lead independently reproduced 9 of 9 it tested.",
     "v7_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED (bound payload reduced to 4 functional files; no narrative document bound)",
     "packaging": "CLOSED BY SURFACE REDUCTION pending independent audit; no scanner exists in the package",
-    "v7_preseal_documentation_condition": "SATISFIED 2026-09-04; awaiting independent confirmation"
+    "v7_preseal_documentation_condition": "SATISFIED 2026-09-04; awaiting independent confirmation",
+    "preregistration_draft_status": "AMENDED 2026-09-04 in response to the independent scientific co-chair review. The review verdict REQUEST CHANGES STANDS until the reviewing authority re-reviews the amended text; the Continuity Lead prepared these amendments and does not clear its own work."
   },
   "anchors": {
     "v3_runner": {
@@ -133,7 +134,7 @@
     },
     "preregistration_draft": {
       "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md",
-      "sha256": "ec3443ed4c60eb12e098192abf7b414e034d89fc63a9f42f9d0a02c36a696e45"
+      "sha256": "5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44"
     },
     "v7_runner": {
       "path": "task4f1_execution_candidate_v7_2026_09_03/v52_t4f1_beam_retrieval.py",
@@ -178,7 +179,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-024",
+  "ledger_entry": "L-025",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -216,7 +217,7 @@
     "commissioned_at_utc": "2026-09-03T20:31:30Z",
     "audited_commit": "f14e0ba57cee5b78108cf65b82a179c3c1ae2797",
     "target_branch": "audit/v52-t4f1-v7-independent-2026-09-03",
-    "status": "RUNNING",
+    "status": "RUNNING (Gates 1-7 evidence pushed at 16dc61313acd0e9086c852eccb9100023898fd27; no report, gate table or hash manifest yet)",
     "prompt": "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V7_INDEPENDENT_AUDIT_PROMPT_2026-09-03.md",
     "prompt_sha256": "c9536abce164d931551af22018c7a32852f8e870949194ba8d69e6f36ba8b50e"
   },
@@ -241,7 +242,16 @@
     "reviewed_file": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md",
     "reviewed_sha256": "ec3443ed4c60eb12e098192abf7b414e034d89fc63a9f42f9d0a02c36a696e45",
     "target_branch": "cochair/review-t4f1-prereg-2026-09-03",
-    "status": "RUNNING"
+    "status": "COMPLETE",
+    "result_branch": "cochair/review-t4f1-prereg-2026-09-03",
+    "result_commit": "ecbf765e7f0ef06ae903d5aba6d2e9a835cdf3c2",
+    "result_file": "docs/v52/task4f1/COCHAIR_SCIENTIFIC_REVIEW_T4F1_PREREG_2026-09-03.md",
+    "result_file_sha256": "6493000b205126bc7826536d03b9b97fb9f92fd84c5387c1461fbb07b447a970",
+    "independently_verified": true,
+    "verdict": "REQUEST CHANGES - SCIENTIFIC PREREGISTRATION DESIGN NOT YET ACCEPTED",
+    "run_recommendation_q8": "GO, bounded",
+    "outcome_free_confirmation_q9": "Draft confirmed outcome-free by the reviewer",
+    "amendments_applied": "A1-A6 applied 2026-09-04; draft SHA256 moves ec3443ed -> 5e618981"
   },
   "head_researcher_ratification_2026_09_03": {
     "branch": "hr/ratify-v7-governance-2026-09-03",

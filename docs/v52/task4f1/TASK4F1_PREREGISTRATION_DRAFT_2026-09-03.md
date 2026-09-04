@@ -89,9 +89,10 @@ Two consequences, both pre-specified here:
    on the tier contrasts. That is weaker than saying a monotone observed profile cannot be
    explained by the ceiling — the ceiling may still contribute through interaction with archive
    length, gold structure or other unmeasured composition, and no measurement here excludes that.
-   Accordingly, `D_t` and `D_t^norm` must be **interpreted jointly**: neither alone settles whether
-   an observed profile reflects retrieval behaviour or achievable range. A conclusion supported by
-   only one of the two is not reported as supported.
+   Accordingly the cross-tier comparability instrument is the **ceiling-free stratified contrast**
+   of §3.2, not a normalised scalar. The §6 global category is assigned from `D_t` alone.
+   Discordance between `D_t`, the stratified contrasts and `D_t^norm` is reported as a labelled
+   sensitivity flag accompanying the category; it never silently overrides or vetoes it.
 
 ---
 
@@ -117,14 +118,33 @@ follows from this task. The five per-seed aggregates and their min–max spread 
 diagnostics** on that fixed comparator, not a sampling distribution and not a basis for interval
 estimation. The same restriction applies to the five ITQ seeds.
 
-### 3.2 Ceiling-normalised companion
+### 3.2 Cross-tier comparability: ceiling-free stratified contrasts
+
+The **primary** cross-tier comparability instrument is `D_t` restricted to the stratum where the
+metric carries no compression at all:
+
+```
+D_t^(|gold| ≤ 3) = the §3.1 contrast computed only over questions with |gold| ≤ 3
+```
+
+That stratum has ceiling exactly 1.000, so it is directly comparable across tiers with no
+normalisation and no reweighting. Its frozen denominators are **259 / 461 / 300 / 105**.
+
+`D_t` is additionally reported within the remaining mandated strata (`4–6`, `7+`), giving a
+composition-matched view of the profile without any rescaling.
+
+**Declared sensitivity statistic.** `D_t^norm` is retained but demoted:
 
 ```
 D_t^norm = mean_i [ ( Native_i − mean_Haar_i ) / min(1, 3/|gold_i|) ]
 ```
 
-Reported alongside `D_t` for every tier. Pre-specified because §2.2 shows the achievable range
-differs across tiers; without it, a smaller raw contrast at 1M is uninterpretable.
+It is **not** a rescaling of `D_t` and **not** a cross-tier comparability device. Dividing by the
+ceiling is algebraically a `|gold|`-weighted mean with weights `w_i = max(1, |gold_i|/3)`, so it
+upweights high-`|gold|` questions — and those weights are distributed differently in each tier
+(mean `|gold|` runs 3.08 / 4.26 / 8.59 / 7.47). It therefore answers a different question from
+`D_t` rather than a corrected version of the same one. It is reported as a declared sensitivity
+statistic only.
 
 ### 3.3 Supportive and descriptive
 
@@ -132,8 +152,12 @@ differs across tiers; without it, a smaller raw contrast at 1M is uninterpretabl
 - **ALL@3**: reported per tier with structural zeros retained, and **excluded from all cross-tier
   scale claims**, because gold cardinality drives it directly (§2.2).
 - **Win / tie / loss profile** per tier: the count of questions where Native exceeds, equals, or
-  falls below the Haar mean. This is the established house method and is descriptive of the fixed
-  benchmark, not an inference.
+  falls below the Haar mean. Descriptive of the fixed benchmark, not an inference. It carries the
+  **same cross-tier bar as ALL@3**: raw W/T/L counts and tie rates are **not** compared across
+  tiers, because tie structure is driven by `|gold|` composition, which differs (share of
+  `|gold| = 1` is 29.0% at 100K against 17.9% at 1M). Where a cross-tier reading is intended,
+  W/T/L is reported **within gold-cardinality strata**. `W / (W + L)` is additionally reported as
+  the tie-excluded paired-effect summary.
 - **ITQ96_CENTERED**: reported, descriptive only, no claim attached.
 
 ### 3.4 Negative control — invalidating, not supportive
@@ -154,11 +178,19 @@ LongMemEval and LoCoMo numbers in §1. It is **secondary**: the tier profile is 
 - **No population inference, no p-values, no confidence intervals over questions.** The cohort is
   a fixed benchmark, not a random sample from a population. The research programme has explicitly
   not established population-level generalization, and this task does not attempt it.
-- **The only genuine stochastic element is seed choice.** Report the five per-seed Haar aggregates
-  and their min–max spread at each tier, so seed sensitivity is visible.
+- **The five seeds are constitutive of the comparator's definition, not a sample from it.** The
+  per-seed aggregates and their min–max spread at each tier are reported to show how sensitive the
+  fixed comparator is to *which* rotations were enumerated. They license no claim about
+  unenumerated rotations and are not a sampling distribution.
 - **The 20 nuisance trials are deterministic replication identities.** They must be byte-identical
   across trials. They are an integrity check and are **never** treated as a variance source or as
   independent statistical units. Any trial-varying result invalidates the run.
+- **One descriptive stability statistic is pre-specified**, so it can neither be introduced later
+  as a rescue nor omitted as inconvenient: the **leave-one-archive-out min–max range** for each
+  `D_t`, computed over that tier's archives (20 / 35 / 31 / 10), reported alongside the per-seed
+  min–max. It is a descriptive sensitivity of a fixed statistic to its own enumerated composition.
+  It is **not** a confidence interval, **not** a standard error, and carries **no** coverage or
+  population semantics.
 - **No multiplicity correction is applied**, because no null-hypothesis tests are performed. Stated
   explicitly so that its absence is not later read as an oversight.
 
@@ -204,9 +236,14 @@ If invalidation occurs, **no replication category is assigned** and no contrast 
 
 These three are exhaustive and non-overlapping by construction.
 
-A tier with `D_t ≤ 0` may additionally be described as a **tier-local direction reversal**. That is
-a per-tier descriptor attached to the tier, not a competing global verdict, and it never overrides
-the single global category assigned above.
+**Sign-boundary arithmetic.** `D_t` is computed in exact rational arithmetic — every value is a
+rational with denominator dividing `5 · n_t · lcm_i(|gold_i|)` — so `D_t > 0`, `D_t = 0` and
+`D_t < 0` are exactly decidable with no tolerance and no threshold. This is a numerical-representation
+rule fixed before outcome access; it is not a practical-significance threshold and must not be read
+as one.
+
+Per-tier descriptors, subordinate to the single global category and never overriding it:
+`D_t < 0` is a **tier-local direction reversal**; `D_t = 0` is a **tier-local null**.
 
 No rescue analysis follows any category. No threshold of "practical significance" is pre-specified,
 and none may be introduced afterwards.

@@ -35,7 +35,7 @@ V3 blocked on BLAS-dispatch-dependent float digests. V4 fixed that and passed ni
 
 **The runner has been byte-identical and audit-confirmed since V4** (`f96cba2c`). B1, B2 and B3 were established repaired by the V4 audit, and nothing since has touched execution behaviour. Everything blocked since then has concerned documentation inside the candidate package, not execution correctness.
 
-**Current work is the science.** An outcome-free preregistration draft exists at `docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md`, under Head Researcher review with REQUEST CHANGES issued and addressed. It is not approved, not sealed. Task 4F1 stays BLOCKED for preregistration and run, and retrieval-quality outcome access stays FORBIDDEN.
+**Current work is the science.** An outcome-free preregistration draft exists at `docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md` (SHA256 `5e618981...`). An independent scientific co-chair review returned **REQUEST CHANGES** with a bounded GO recommendation (`cochair/review-t4f1-prereg-2026-09-03` @ `ecbf765`); its six required amendments A1-A6 are applied, but the REQUEST CHANGES verdict STANDS until the reviewing authority re-reviews the amended text. It is not approved, not sealed. Task 4F1 stays BLOCKED for preregistration and run, and retrieval-quality outcome access stays FORBIDDEN.
 
 ## Non-negotiable boundary
 
