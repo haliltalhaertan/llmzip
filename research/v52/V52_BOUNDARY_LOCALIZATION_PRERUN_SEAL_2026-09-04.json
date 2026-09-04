@@ -1,0 +1,50 @@
+{
+  "status": "PRERUN_SEALED_NO_OUTCOME_ACCESS",
+  "date": "2026-09-04",
+  "repository": "haliltalhaertan/llmzip",
+  "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+  "package_head_before_seal": "6648d462ec616cd56cb3f6fe1bcb00164a8d9326",
+  "trigger_path": "research/v52/TRIGGER_BOUNDARY_LOCALIZATION_2026-09-04.txt",
+  "trigger_must_not_exist_before_this_seal": true,
+  "task4f1_execution_touched": false,
+  "outcome_access_before_seal": false,
+  "preregistration": {
+    "path": "research/v52/V52_CAUSAL_HEAD_TAIL_BOUNDARY_LOCALIZATION_PREREG_2026-09-04.md",
+    "git_blob_sha1": "b8acebedd49497a62ec637beabbcef6720460d15",
+    "drive_file_id": "1hE_-z6qIn3g-zX0jLAClwoQeHbsZDeVuQ83SyO17sI0"
+  },
+  "post_audit_addendum": {
+    "path": "research/v52/V52_HEAD_TAIL_POST_AUDIT_INTERPRETATION_ADDENDUM_2026-09-04.md",
+    "git_blob_sha1": "456b3b51f49a0238cd936bc3f639988fb0d673af",
+    "drive_file_id": "13hV2Ubw4Dgfi2TBO5MuNEtpLIJXJ0NuDXga-BmC94z8"
+  },
+  "locomo_runner": {
+    "path": "research/v52/locomo_boundary_localization.py",
+    "git_blob_sha1": "0e66431449ad48b5f24049e0c05d65c917d8b893"
+  },
+  "longmemeval_runner": {
+    "path": "research/v52/longmemeval_boundary_localization_shard.py",
+    "git_blob_sha1": "26c1fe89ca025747b47f3fa6daf80326a8864747"
+  },
+  "locomo_workflow": {
+    "path": ".github/workflows/v52-locomo-boundary-localization.yml",
+    "git_blob_sha1": "1de6c8abad80976c51843592801b53b18a998541"
+  },
+  "longmemeval_workflow": {
+    "path": ".github/workflows/v52-longmemeval-boundary-localization.yml",
+    "git_blob_sha1": "128987f7402a71160981f8f0cd28677e6c931710"
+  },
+  "locomo_base": {
+    "path": "research/v52/locomo_spectral_band_haar_causal.py",
+    "git_blob_sha1": "7c4140252fb7f846d617189925cdf534515743f4"
+  },
+  "longmemeval_base": {
+    "path": "research/v52/longmemeval_spectral_band_haar_causal.py",
+    "git_blob_sha1": "79dd4a5ec462102da5d82530088a4b7e89bef437"
+  },
+  "frozen_boundary_grid": [16, 24, 32, 48, 64],
+  "frozen_rotation_seeds": [58001,58002,58003,58004,58005,58006,58007,58008,58009,58010],
+  "frozen_partition_seeds": [68001,68002,68003,68004,68005,68006,68007,68008,68009,68010],
+  "drive_backup_required_before_trigger": true,
+  "interpretation": "This seal binds the exact preregistration, audit narrowing, runners, workflows, and frozen bases before any boundary-localization outcome trigger. It does not authorize or touch Task 4F1."
+}
