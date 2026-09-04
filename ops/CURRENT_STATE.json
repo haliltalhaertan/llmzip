@@ -334,6 +334,9 @@
     "review_target_sha256": "5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44",
     "target_branch": "cochair/exact-byte-approval-t4f1-prereg-2026-09-04",
     "scope": "A1-A6 discharge on the exact bytes; new-inconsistency check; outcome-freeness. V7 package audit NOT reopened.",
-    "status": "PROMPT_WRITTEN - COMMISSIONING"
+    "status": "RUNNING",
+    "session_id": "session_01FpcKgJVXPPLgLgAtCat8HV",
+    "commissioned_at_utc": "2026-09-04T06:49:35Z",
+    "seeded_at_commit": "c0133fce9b755d13d9be3016e8e06f493d6b275b"
   }
 }
