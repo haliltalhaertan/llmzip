@@ -1,0 +1,126 @@
+name: V52 LongMemEval causal sharded recovery
+
+on:
+  push:
+    branches:
+      - research/v52-sign-mechanism-locomo-2026-09-04
+    paths:
+      - .github/workflows/v52-longmemeval-causal-sharded-recovery.yml
+      - research/v52/longmemeval_causal_shard.py
+      - research/v52/longmemeval_spectral_band_haar_causal.py
+      - research/v52/V52_CAUSAL_SPECTRAL_BAND_HAAR_PREREG_2026-09-04.md
+
+permissions:
+  contents: write
+
+jobs:
+  shard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify frozen preregistration and adapters
+        shell: bash
+        run: |
+          test "$(git hash-object research/v52/V52_CAUSAL_SPECTRAL_BAND_HAAR_PREREG_2026-09-04.md)" = "02aa91a12b4052bbb2f0a6617167c8851e4f71f7"
+          echo '0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722  adapters/longmemeval_v52_adapter.py' | sha256sum -c -
+          echo '643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218  adapters/longmemeval_v52_adapter_v2.py' | sha256sum -c -
+          python -m py_compile research/v52/longmemeval_spectral_band_haar_causal.py research/v52/longmemeval_causal_shard.py
+      - name: Install frozen-compatible numerical stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scipy==1.17.0' 'scikit-learn==1.8.0'
+      - name: Download and verify frozen LongMemEval dataset
+        shell: bash
+        run: |
+          curl -L --fail --retry 5 --retry-delay 2 -o /tmp/longmemeval_s_cleaned.json 'https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/resolve/main/longmemeval_s_cleaned.json'
+          test "$(stat -c%s /tmp/longmemeval_s_cleaned.json)" = "277383467"
+          echo 'd6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442  /tmp/longmemeval_s_cleaned.json' | sha256sum -c -
+      - name: Run exact deterministic shard
+        run: |
+          python research/v52/longmemeval_causal_shard.py \
+            --dataset /tmp/longmemeval_s_cleaned.json \
+            --shard-index ${{ matrix.shard }} \
+            --num-shards 5 \
+            --workers 2 \
+            --shard-out /tmp/shard_${{ matrix.shard }}.pkl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v52-longmemeval-causal-shard-${{ matrix.shard }}
+          path: /tmp/shard_${{ matrix.shard }}.pkl
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: shard
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install frozen-compatible numerical stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scipy==1.17.0' 'scikit-learn==1.8.0'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v52-longmemeval-causal-shard-*
+          path: /tmp/shards
+          merge-multiple: true
+      - name: Aggregate and enforce exact-equivalence gates
+        shell: bash
+        run: |
+          python research/v52/longmemeval_causal_shard.py --aggregate-dir /tmp/shards --out /tmp/final
+          python - <<'PY'
+          import json, math
+          got=json.load(open('/tmp/final/longmemeval_causal_summary.json'))
+          exp={
+            'native_R3':0.5419751773049645,
+            'frozen_full_haar_R3':0.38271666666667,
+            'within_band_haar_mean_R3':0.5192287234042553,
+            'L_full':0.1592585106382945,
+            'L_band':0.022746453900709174,
+            'rho':0.14282724238436822,
+          }
+          for k,v in exp.items():
+            x=float(got['primary'][k])
+            if not math.isclose(x,v,rel_tol=0.0,abs_tol=1e-12):
+              raise SystemExit(f'exact-equivalence failure {k}: {x} vs {v}')
+          if got['primary']['regime'] != '[SPECTRAL-SUBSPACE PRESERVATION LEAD]':
+            raise SystemExit('regime mismatch')
+          print('EXACT_EQUIVALENCE_GATE PASS')
+          PY
+          python -m pip freeze > /tmp/final/environment.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v52-longmemeval-causal-sharded-final
+          path: /tmp/final
+          if-no-files-found: error
+          retention-days: 30
+      - name: Persist authoritative sharded outputs
+        shell: bash
+        run: |
+          git config user.name 'V52 Research Runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git fetch origin "${GITHUB_REF_NAME}"
+          git rebase "origin/${GITHUB_REF_NAME}"
+          mkdir -p research/v52/longmemeval_causal_outputs
+          cp -a /tmp/final/. research/v52/longmemeval_causal_outputs/
+          git add research/v52/longmemeval_causal_outputs
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(v52): persist exact sharded LongMemEval causal package'
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi
