@@ -569,3 +569,23 @@ commissioned_reviewer: session_01FpcKgJVXPPLgLgAtCat8HV, titled "V52 T4F1 - exac
 status: IN_PROGRESS
 next_single_action: Await the pushed co-chair artifact, independently hash-verify it against its sidecar, and on a verified APPROVE prepare and apply the scientific preregistration seal immediately with the eight directed bindings, without waiting for V7.
 ```
+
+### L-031
+
+```text
+timestamp_utc: 2026-09-04T08:55:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-030 / 2b49fab
+scope: Upgrade the L-029 binding of the Head Researcher sealing direction from commit-id-only to sidecar-confirmed, after the missing .sha256 sidecar was pushed. No draft byte, candidate, seal, manifest, pinned corpus or audit namespace is touched. Nothing is sealed by this entry.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+finding_that_prompted_this: L-029 recorded honestly that the sealing direction carried no .sha256 sidecar, so its binding rested on the commit id alone and no second independent declaration of the digest existed to cross-check against. The reviewing authority accepted the finding and pushed the sidecar without touching the artifact.
+sidecar_addition_verified: Branch hr/prereg-sealing-direction-2026-09-04 now heads at 85735795e7235d9de2a62e6cdd63dd44b87e230d. Diffed against the original direction commit 33fa4a27ac1a06392454eba66039d8649870dbb0, that commit adds exactly one file - the sidecar - and modifies nothing else.
+artifact_provably_unmodified: The direction file's git blob object id is 4de13c36c64ef2b511cca57fea3dbdf7565aa471 at BOTH 33fa4a27 and 85735795. Identical object ids mean the artifact bytes are the same object, not merely a file that hashes the same, so the claim that the sidecar was added without modifying the artifact is confirmed structurally rather than taken on assertion.
+digest_confirmed_non_circularly: The digest was recomputed from the fetched bytes at both commits and is 90769898d3af3b32f018180978f9589b1e9d0a8973df3ea33687aed0121e520a in both cases. The pushed sidecar declares the same value. This is a genuine two-party confirmation rather than a circular one: the Continuity Lead measured and recorded 90769898 in L-029 BEFORE the sidecar existed, so the sidecar agrees with a measurement that was already committed, not the other way round. File size 5,630 bytes.
+binding_upgraded: The sealing direction is now recorded at the same binding strength as the 2026-09-04 re-review decision - pushed artifact, digest recomputed from the fetched blob, matched against an independently committed .sha256 sidecar. The L-029 weaker-binding note stands as the historical record of what was true at that time and is not rewritten; this entry supersedes it going forward.
+cochair_branch_not_yet_present: The commissioned exact-byte co-chair target branch cochair/exact-byte-approval-t4f1-prereg-2026-09-04 does not yet exist on the remote; a direct ls-remote for it returns nothing. There is therefore NO co-chair verdict, and none is assumed, inferred or anticipated. The V7 audit branch is unchanged at 16dc61313acd0e9086c852eccb9100023898fd27, still with no report, gate table, hash manifest or verdict.
+sequence_reaffirmed: Unchanged and explicitly reconfirmed by the reviewing authority. Await the cold-start exact-byte co-chair artifact; on arrival independently verify its branch, commit, reviewed draft SHA256, review-file SHA256 and sidecar; if and only if it returns APPROVE on draft SHA256 5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44, prepare and apply the scientific preregistration seal immediately; do not wait for V7 to seal the science; do not authorize or run Task 4F1. No further scientific-design decision is required from the reviewing authority unless the co-chair returns REQUEST CHANGES or identifies a new inconsistency.
+outcome_boundary: Unchanged. Task 4F1 preregistration UNSEALED and BLOCKED, run BLOCKED, retrieval-quality outcome access FORBIDDEN. Nothing sealed. No outcome read, computed or inferred.
+status: PASS
+next_single_action: Await the pushed co-chair artifact on cochair/exact-byte-approval-t4f1-prereg-2026-09-04 and hash-verify it against its sidecar before acting on it.
+```
