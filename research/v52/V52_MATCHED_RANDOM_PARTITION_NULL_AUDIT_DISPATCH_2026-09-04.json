@@ -1,0 +1,49 @@
+{
+  "status": "AUDIT_PENDING_LOAD_BEARING_RESULT",
+  "date": "2026-09-04",
+  "repository": "haliltalhaertan/llmzip",
+  "audit_target_commit": "410bcf59e29c64096bfb988d6d95e89658f50f6e",
+  "primary_claim": "[CROSS-BENCHMARK SPECTRAL POSITION CAUSAL LEAD]",
+  "benchmark_regime": "[SPECTRAL POSITION LOAD-BEARING LEAD]",
+  "exact_audit_prompt": {
+    "path": "research/v52/V52_MATCHED_RANDOM_PARTITION_NULL_COLD_START_AUDIT_PROMPT_2026-09-04.md",
+    "commit": "cab2950da1f1ce14963d52bd4964841d3c0a45af",
+    "git_blob_sha1": "8a3a2bd08249362258437e65607520ecd79e0a39",
+    "drive_navigation_mirror_id": "1l7rE9TPn15Ob6yP9a7A9Vfcqi83IcDnu61n8Tp9A-pI"
+  },
+  "provenance_manifest": {
+    "path": "research/v52/V52_MATCHED_RANDOM_PARTITION_NULL_PROVENANCE_MANIFEST_2026-09-04.json",
+    "commit": "410bcf59e29c64096bfb988d6d95e89658f50f6e",
+    "git_blob_sha1": "aeebcf1263afeccb96f63313a40752b2d1eb1b8b",
+    "drive_navigation_mirror_id": "1jPagpqOQQmlhcSnmKMNJzLinyYQbcXg0jhctHllXUMw"
+  },
+  "checkpoint": {
+    "path": "research/v52/CROSS_BENCHMARK_MATCHED_RANDOM_PARTITION_NULL_CHECKPOINT_2026-09-04.md",
+    "commit": "88af8656e758a190170eaf6f13482396ab1252ef",
+    "git_blob_sha1": "60031b16b1440e8c5e6c59b84ce35104c912db88",
+    "drive_navigation_mirror_id": "1__c-LIzdI9SsKxkyiQmvzix1NA4SDC5hFX8EWuZ4ZJs"
+  },
+  "immutable_result_artifacts": {
+    "locomo": {
+      "actions_run_id": 33907122988,
+      "artifact_id": 9949936324,
+      "artifact_digest": "sha256:5b306f7874fe5bd441a3fb045bc776de8e538fb0507dff8fe4317180d26bd1e3",
+      "drive_id": "19zuaMJeF32BAdG7dSKOmovjGzhSmvzT7"
+    },
+    "longmemeval": {
+      "actions_run_id": 33907122993,
+      "aggregate_job_id": 101135639725,
+      "artifact_id": 9950032044,
+      "artifact_digest": "sha256:87069e0f6dfe2f47833518ef8bf719b1bb692f7c71c3664e3c6cca808cee124e",
+      "drive_id": "1YHi5QT1cX4T_qXHzaXRtxNUw5m5DP7R4"
+    }
+  },
+  "required_audit_output": [
+    "[VALID — LOAD-BEARING CROSS-BENCHMARK CAUSAL LEAD]",
+    "[VALID WITH CAVEATS — LOAD-BEARING LEAD SURVIVES]",
+    "[FAIL — LOAD-BEARING CLAIM INVALID]",
+    "[INCONCLUSIVE — REQUIRED EVIDENCE MISSING]"
+  ],
+  "research_stop_rule": "Do not begin boundary localization until the cold-start independent audit returns a verdict permitting continuation.",
+  "task4f1": "OUT_OF_SCOPE_BLOCKED_NO_OUTCOME_ACCESS"
+}
