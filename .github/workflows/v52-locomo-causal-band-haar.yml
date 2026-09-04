@@ -1,3 +1,4 @@
+# Outcome-neutral trigger commit after workflow registration.
 name: V52 LoCoMo causal spectral-band Haar
 
 on:
