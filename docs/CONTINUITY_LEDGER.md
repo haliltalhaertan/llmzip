@@ -740,3 +740,23 @@ outcome_boundary: Task 4F1 scientific preregistration SEALED at Seal V3, unchang
 status: PASS
 next_single_action: Report the identity-layer and semantic-layer controls against unchanged Seal V3 for the final independent check. Then execution track only: await the V7 audit report and hash-verify it when it lands. Do not authorize, run or finalize Task 4F1.
 ```
+
+### L-039
+
+```text
+timestamp_utc: 2026-09-04T15:10:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-038 / c540136
+scope: Record the Head Researcher sequencing decision and write the cold-start independent audit prompt for the Head32/Tail64 causal result. No seal, draft, cohort, runner, approval or research artifact is touched; this entry adds one prompt file and this record.
+changed_or_created_paths: prompts/V52_HEAD_TAIL_CAUSAL_INDEPENDENT_AUDIT_PROMPT_2026-09-04.md; ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+prompt_sha256: a312ef675d16ee9dbbbddb463aad9794fd3fd5ff8a56813e76d7462f3a660528
+head_researcher_decision: The Head32/Tail64 cross-benchmark causal result has reached a load-bearing threshold. Sequence is fixed: an independent cold-start audit closes FIRST, and only on a passing audit does a separate preregistration open for boundary localization at 16/80, 24/72, 32/64, 48/48 and 64/32. No new experiment in this line begins before the audit returns.
+continuity_lead_recommendation_overruled_and_recorded: This session's 2026-09-04 status report recommended a matched-size random 32/64 partition null control as the next experiment, on the ground that it can falsify the lead whereas boundary localization presumes it. The Head Researcher chose audit-then-localization. The decision is accepted and executed. The scientific point is not discarded: it is carried into the audit as gate G7, phrased as a question about what the executed design distinguishes, with no conclusion of this session's supplied to the auditor.
+prompt_design: The target is bound to commit 7799502bc3a157f874b4b1aa76f803ec2bf6432f and to per-artifact git blob ids, SHA-256s and byte counts rather than to a branch name, with an explicit warning that the repository default branch does not point at main. Eleven gates: preregistration-before-outcome established structurally rather than from timestamps; frozen parameters compared against the executed source; source and cohort identity; re-derivation of the primary numbers from the RAW per-question CSVs rather than from the summary JSONs, plus an end-to-end re-run of at least one benchmark, with NOT ESTABLISHED required if inputs are unobtainable; mechanical derivation of the verdict from the frozen bands; statistical honesty of a five-draw mean, separating whether the verdict is seed-robust from whether the magnitude is as precise as presented; whether the design distinguishes spectral position from generic block structure; whether sharding changes semantics; leakage and what cross-benchmark is entitled to mean given shared code; provenance reachability; and a required strongest-argument-against.
+no_conclusions_supplied: The auditor is given no verdict, gate result, rho value or finding from this session. Commit messages, the ledger, ops/CURRENT_STATE.json, the checkpoint prose and the provenance manifest are declared to it as claims to be tested rather than evidence. The verdict vocabulary requires it to distinguish established from not-yet-falsified.
+scope_boundary_stated_to_auditor: LoCoMo and LongMemEval are in scope; BEAM and Task 4F1 are not. The full hard-stop set is restated, the auditor is told it audits and does not edit, and a generalized prose scanner is forbidden.
+outcome_boundary: Unchanged. Task 4F1 preregistration SEALED at Seal V3; Task 4F1 run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. No Task 4F1 outcome was accessed in preparing this. The V7 execution package remains BLOCKED and its commissioned auditor remains dead at 16dc613.
+open_debt_unchanged: The program audit's blocking finding B1 against this session's seal verifier remains open - verify_semantics does not check non-digest assertions outside binding 8, and this session reproduced seven escapes including task_4f1_run set to ALLOWED. It is queued behind the Head Researcher's chosen sequence, not closed.
+status: IN_PROGRESS
+next_single_action: Commission the cold-start Head/Tail audit, then await its pushed artifact and independently hash-verify it before any boundary-localization preregistration is opened.
+```
