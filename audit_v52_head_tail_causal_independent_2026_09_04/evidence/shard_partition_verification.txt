@@ -1,0 +1,8 @@
+total items       : 500
+primary (non _abs): 470
+unique qids       : 500
+shard sizes       : {0: 94, 1: 94, 2: 94, 3: 94, 4: 94} sum 470
+exhaustive        : True
+disjoint          : True
+lex ordinal range : 0 - 499 over all 500 ids
+lex depends on qid only, not on shard membership: True by construction (runner line 76)

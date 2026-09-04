@@ -1,0 +1,40 @@
+{
+  "status": "PREREGISTERED_HEAD_TAIL_CAUSAL_RESULT",
+  "execution": "SHARDED_EXACT",
+  "benchmark": "LongMemEval",
+  "prereg_git_blob": "0d34207be55a75194b585789c7139cbc8aeb264d",
+  "base_runner_git_blob": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+  "identity": {
+    "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "dataset_bytes": 277383467,
+    "adapter_v1_sha256": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+    "adapter_v2_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+    "primary_questions": 470,
+    "shards": 5
+  },
+  "controls": {
+    "native_reproduction": 0.5419751773049646,
+    "frozen_native": 0.5419751773049646,
+    "absolute_reproduction_error": 0.0,
+    "signed_permutation_exact_pass": true,
+    "continuous_norm_max_abs_error": 5.551115123125783e-16,
+    "continuous_dot_max_abs_error": 7.771561172376096e-16
+  },
+  "primary": {
+    "native_R3": 0.5419751773049646,
+    "frozen_full_haar_R3": 0.38271666666667,
+    "head_tail_haar_mean_R3": 0.5170209219858156,
+    "L_full": 0.1592585106382946,
+    "L_2": 0.024954255319148966,
+    "rho_2": 0.15669024668844653,
+    "regime": "[HEAD-TAIL TWO-SUBSPACE SUFFICIENCY LEAD]",
+    "seed_R3": {
+      "56001": 0.5106400709219857,
+      "56002": 0.5131560283687944,
+      "56003": 0.5095053191489362,
+      "56004": 0.5302712765957447,
+      "56005": 0.521531914893617
+    }
+  },
+  "interpretation_ceiling": "Fixed-benchmark preregistered causal-intervention evidence; no population-level generalization."
+}

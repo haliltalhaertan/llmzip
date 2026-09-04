@@ -1,0 +1,35 @@
+# Auditor re-run of committed LoCoMo runner vs committed outputs
+# runner: research/v52/locomo_head_tail_two_subspace_causal.py (blob cb16d4136c6280875b7c5875ffd89f9fc01cb810)
+# auditor env: Python 3.11.15, numpy 2.3.5, pandas 2.2.3, scikit-learn 1.8.0, scipy 1.17.0
+# CI env (workflow): Python 3.13, same pinned package versions
+
+DIFFERS   locomo_head_tail_summary.json
+    committed sha256 71c45b615a4073c5eeeb9c38e0d4dca3c984e34989ba4f3b12d27df279cc2f8f
+    auditor   sha256 8d67e6b8947a933471094585a2d2c5be7cabd489c0a297347e20f5012f010219
+IDENTICAL locomo_head_tail_seed_results.csv
+    committed sha256 0a7abc65130bfeac998e9e8906e3937e70257c660e5c97b2fdbf1d2be6a1b6dd
+    auditor   sha256 0a7abc65130bfeac998e9e8906e3937e70257c660e5c97b2fdbf1d2be6a1b6dd
+IDENTICAL locomo_head_tail_subset_r3.csv
+    committed sha256 a93480b9f3d09739ae96cc9540272f0c99adbecdc55ff5c921b14ae281690fbd
+    auditor   sha256 a93480b9f3d09739ae96cc9540272f0c99adbecdc55ff5c921b14ae281690fbd
+IDENTICAL locomo_head_tail_pairwise.csv
+    committed sha256 9dec3c8dc9f4a0ffbd8444cb16fd6bd83f5f813c51e391e537e287dfdc952b95
+    auditor   sha256 9dec3c8dc9f4a0ffbd8444cb16fd6bd83f5f813c51e391e537e287dfdc952b95
+IDENTICAL locomo_head_tail_hard_negative_rescue.csv
+    committed sha256 1065c3897d3e628423952de68a6f535e80b0da33047d148c63ea96b792f1108a
+    auditor   sha256 1065c3897d3e628423952de68a6f535e80b0da33047d148c63ea96b792f1108a
+DIFFERS   LOCOMO_HEAD_TAIL_CAUSAL_CHECKPOINT.md
+    committed sha256 ef4b80b85f172addbc421fa873c8e9349e3b4ec8b224ab6ae8937965fcfd9d57
+    auditor   sha256 24736d2e29f7aa3e21bb4f504bd4626afd5f01afa7fdac135da56d5654ba3114
+
+## Diffs
+--- locomo_head_tail_summary.json
+17c17
+<     "continuous_dot_max_abs_error": 1.6653345369377348e-15
+---
+>     "continuous_dot_max_abs_error": 1.5543122344752192e-15
+--- LOCOMO_HEAD_TAIL_CAUSAL_CHECKPOINT.md
+15c15
+< Continuous dot max abs error: 1.665e-15
+---
+> Continuous dot max abs error: 1.554e-15

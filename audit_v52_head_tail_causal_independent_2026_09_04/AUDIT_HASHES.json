@@ -1,0 +1,333 @@
+{
+  "audit": "V52 Head32/Tail64 causal result \u2014 cold-start independent audit",
+  "audit_branch": "audit/v52-head-tail-causal-independent-2026-09-04",
+  "date": "2026-09-04",
+  "all_values_measured_by_auditor": true,
+  "governing_prompt": {
+    "path": "prompts/V52_HEAD_TAIL_CAUSAL_INDEPENDENT_AUDIT_PROMPT_2026-09-04.md",
+    "ref": "origin/main",
+    "measured_sha256": "a312ef675d16ee9dbbbddb463aad9794fd3fd5ff8a56813e76d7462f3a660528",
+    "declared_sha256": "a312ef675d16ee9dbbbddb463aad9794fd3fd5ff8a56813e76d7462f3a660528"
+  },
+  "audit_target": {
+    "repo": "haliltalhaertan/llmzip",
+    "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+    "commit": "7799502bc3a157f874b4b1aa76f803ec2bf6432f",
+    "tree": "1a76eacd063331cef4498595956cf7b311151799",
+    "branch_head_at_audit_time": "eb8a44263575fb2fae9b58ed4d5f52f6b7c67abc",
+    "target_is_ancestor_of_branch_head": true
+  },
+  "target_artifacts": {
+    "research/v52/V52_CAUSAL_HEAD_TAIL_TWO_SUBSPACE_HAAR_PREREG_2026-09-04.md": {
+      "git_blob_sha1": "0d34207be55a75194b585789c7139cbc8aeb264d",
+      "sha256": "6830c91b01d5df1a87b1a76f25b0101049b47c292c6ea867f48988998aa5ff05",
+      "bytes": 6624
+    },
+    "research/v52/V52_CAUSAL_SPECTRAL_BAND_HAAR_PREREG_2026-09-04.md": {
+      "git_blob_sha1": "02aa91a12b4052bbb2f0a6617167c8851e4f71f7",
+      "sha256": "596bb8bcfa4c6aa16957c92a210931cd0171a25da9c48bb7ac0c2ed9a32e84ca",
+      "bytes": 7002
+    },
+    "research/v52/CROSS_BENCHMARK_HEAD_TAIL_CAUSAL_CHECKPOINT_2026-09-04.md": {
+      "git_blob_sha1": "9923c5284c04dd9b2acb345dcb7f0c92e4584b06",
+      "sha256": "9cc773d9153c3dbb6431044e4123c026a15aa6000a7796060590f8e18bc2b9c3",
+      "bytes": 5190
+    },
+    "research/v52/V52_HEAD_TAIL_CAUSAL_PROVENANCE_MANIFEST_2026-09-04.json": {
+      "git_blob_sha1": "7247fed42fde8b0981e7412772e709d8b6228bc2",
+      "sha256": "fbeb07f40ca912baf946b2939de56038972b04c4b471d7fa0f569dcf136961c3",
+      "bytes": 3247
+    },
+    "research/v52/locomo_head_tail_two_subspace_causal.py": {
+      "git_blob_sha1": "cb16d4136c6280875b7c5875ffd89f9fc01cb810",
+      "sha256": "835669586c5f96e24f54dba7a85ebad4ff4dc6f417d169dac01cbca58af080d5",
+      "bytes": 9044
+    },
+    "research/v52/longmemeval_head_tail_shard.py": {
+      "git_blob_sha1": "184a8a4bbb7d991c875ee1dcb92aa85b5e718074",
+      "sha256": "548a8f8824fa5054e5191068cf404f91a35f9f09ef794be842825169e0328706",
+      "bytes": 10076
+    },
+    "research/v52/locomo_spectral_band_haar_causal.py": {
+      "git_blob_sha1": "7c4140252fb7f846d617189925cdf534515743f4",
+      "sha256": "58b28c4ed0a62896710ae5ebd1c07574c29b6b5bb424de6c1bfac206ea903a15",
+      "bytes": 15923
+    },
+    "research/v52/longmemeval_spectral_band_haar_causal.py": {
+      "git_blob_sha1": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+      "sha256": "2e6601331779aab3d8bcd48c435fa0bb96124f3d14819a1945e125f9a72ca62c",
+      "bytes": 15989
+    },
+    "research/v52/locomo_sign_mechanism_replication.py": {
+      "git_blob_sha1": "6700454915176854a55b0b5cf6ffe922a22e35f2",
+      "sha256": "a6ecee02e5d6a8735a922ec2d5f0a024b3c024e0cdf03b336e16e4357f20e74b",
+      "bytes": 25033
+    },
+    "adapters/longmemeval_v52_adapter.py": {
+      "git_blob_sha1": "16c1349336e143d27d9cac68198cbb50a1e6340b",
+      "sha256": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+      "bytes": 23084
+    },
+    "adapters/longmemeval_v52_adapter_v2.py": {
+      "git_blob_sha1": "aa0b6f956a9bbc7f27778760c2c6fc708ae72ba1",
+      "sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+      "bytes": 17158
+    },
+    "research/v52/locomo_head_tail_outputs/locomo_head_tail_summary.json": {
+      "git_blob_sha1": "228f756447e70c73f40b6074a44f13acabdabc08",
+      "sha256": "71c45b615a4073c5eeeb9c38e0d4dca3c984e34989ba4f3b12d27df279cc2f8f",
+      "bytes": 1405
+    },
+    "research/v52/locomo_head_tail_outputs/locomo_head_tail_seed_results.csv": {
+      "git_blob_sha1": "1ffbce1237cf0b31afaf322840a3432a6c7696d7",
+      "sha256": "0a7abc65130bfeac998e9e8906e3937e70257c660e5c97b2fdbf1d2be6a1b6dd",
+      "bytes": 271
+    },
+    "research/v52/locomo_head_tail_outputs/locomo_head_tail_subset_r3.csv": {
+      "git_blob_sha1": "d12d33d3f9706101b85dfe1568af4d5a5711b39a",
+      "sha256": "a93480b9f3d09739ae96cc9540272f0c99adbecdc55ff5c921b14ae281690fbd",
+      "bytes": 513
+    },
+    "research/v52/locomo_head_tail_outputs/locomo_head_tail_pairwise.csv": {
+      "git_blob_sha1": "6db25951b480a0baf6b7489b1c8c99860618ae4b",
+      "sha256": "9dec3c8dc9f4a0ffbd8444cb16fd6bd83f5f813c51e391e537e287dfdc952b95",
+      "bytes": 1528
+    },
+    "research/v52/locomo_head_tail_outputs/locomo_head_tail_hard_negative_rescue.csv": {
+      "git_blob_sha1": "dc0d9357978f1549acb25d71c7f1b0a3f807885f",
+      "sha256": "1065c3897d3e628423952de68a6f535e80b0da33047d148c63ea96b792f1108a",
+      "bytes": 406
+    },
+    "research/v52/locomo_head_tail_outputs/environment.txt": {
+      "git_blob_sha1": "16575487908a63e668e4a240c60b39a5c6538dae",
+      "sha256": "4be970e8092ac4931737abfd515e9ac811436821906c67e6ed6bfad8d5108c3a",
+      "bytes": 190
+    },
+    "research/v52/longmemeval_head_tail_outputs/longmemeval_head_tail_summary.json": {
+      "git_blob_sha1": "86b3718a9af1d6f86a0a3478ad0b83bf6dd0caf8",
+      "sha256": "691fa4cd2e6bdcebac17bbc58efde9e6ddcba7a5ca705e1344293e09316e1255",
+      "bytes": 1572
+    },
+    "research/v52/longmemeval_head_tail_outputs/longmemeval_head_tail_seed_results.csv": {
+      "git_blob_sha1": "a8a7084e3c2e744aab5b4df72652b7d02d89f3e1",
+      "sha256": "141103f3e965f817236a7bb73ff0c907d1397c0adfbb39221ca25fe95cd6b33d",
+      "bytes": 265
+    },
+    "research/v52/longmemeval_head_tail_outputs/longmemeval_head_tail_subset_r3.csv": {
+      "git_blob_sha1": "d4d85b60da915af59d89b622a82826af7fc83f41",
+      "sha256": "a47b08091ef778da7add44c32a131209a6f9fbfee67cafdbc7a63f0cbd66d1dc",
+      "bytes": 509
+    },
+    "research/v52/longmemeval_head_tail_outputs/longmemeval_head_tail_pairwise.csv": {
+      "git_blob_sha1": "caff17df7c2d1d79339f784af6ba15eaa721c60f",
+      "sha256": "f9523b059a034611b5bf02323147fe26350c8eee91d04d5f5579bef39972be07",
+      "bytes": 1300
+    },
+    "research/v52/longmemeval_head_tail_outputs/longmemeval_head_tail_hard_negative_rescue.csv": {
+      "git_blob_sha1": "bace96c4bd455d9baf601760147b35a263ff426e",
+      "sha256": "189e7a2b319847f88dc63e54c15c624205540a56243ab79fe79ee35e39b15760",
+      "bytes": 331
+    },
+    "research/v52/longmemeval_head_tail_outputs/environment.txt": {
+      "git_blob_sha1": "16575487908a63e668e4a240c60b39a5c6538dae",
+      "sha256": "4be970e8092ac4931737abfd515e9ac811436821906c67e6ed6bfad8d5108c3a",
+      "bytes": 190
+    }
+  },
+  "frozen_inputs_downloaded_and_verified_by_auditor": {
+    "locomo_dataset": {
+      "url": "https://raw.githubusercontent.com/snap-research/locomo/main/data/locomo10.json",
+      "measured_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+      "measured_bytes": 2805274,
+      "matches_declared": true
+    },
+    "locomo_audit_manifest": {
+      "measured_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06",
+      "recomputed_from": "20 audit files re-downloaded and re-canonicalised by the auditor",
+      "matches_declared": true
+    },
+    "longmemeval_dataset": {
+      "url": "https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/resolve/main/longmemeval_s_cleaned.json",
+      "measured_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+      "measured_bytes": 277383467,
+      "matches_declared": true
+    }
+  },
+  "ci_provenance_verified_via_github_api": {
+    "locomo_run": {
+      "id": 33884713242,
+      "run_number": 1,
+      "run_attempt": 1,
+      "conclusion": "success",
+      "artifact_id": 9941357062,
+      "artifact_digest": "sha256:c8518840ee0afdd4547e65d35553b337df3053e2c68735e8a40d4b1171b89b2b",
+      "expires": "2026-10-04"
+    },
+    "longmemeval_run": {
+      "id": 33884860024,
+      "run_number": 1,
+      "run_attempt": 1,
+      "conclusion": "success",
+      "shard_artifacts": 5,
+      "artifact_id": 9941639442,
+      "artifact_digest": "sha256:073aa74930afb6fae32cecc269e76f7ca6aaeb3afee3d248a725a8d23d7f4961",
+      "expires": "2026-10-04"
+    },
+    "total_runs_on_branch": 11,
+    "head_tail_failed_or_rerun_executions": 0
+  },
+  "auditor_environment": {
+    "python": "3.11.15",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.0",
+    "note": "CI used Python 3.13 with the same pinned packages; results reproduced across both"
+  },
+  "verdict": "AUDIT PASS WITH CAVEATS",
+  "reproduction_results": {
+    "locomo_end_to_end": {
+      "method": "committed runner re-executed on independently downloaded frozen inputs",
+      "primary_numbers_reproduced_bit_for_bit": true,
+      "byte_identical_output_files": [
+        "locomo_head_tail_seed_results.csv",
+        "locomo_head_tail_subset_r3.csv",
+        "locomo_head_tail_pairwise.csv",
+        "locomo_head_tail_hard_negative_rescue.csv"
+      ],
+      "differences": [
+        {
+          "field": "continuous_dot_max_abs_error",
+          "committed": 1.6653345369377348e-15,
+          "auditor": 1.5543122344752192e-15,
+          "kind": "BLAS roundoff control diagnostic",
+          "tolerance": 1e-12
+        }
+      ],
+      "rho_2_committed": 0.10744461886682183,
+      "rho_2_auditor": 0.10744461886682183
+    },
+    "longmemeval_end_to_end": {
+      "method": "committed shard runner, 5 shards + aggregate, independently downloaded frozen dataset",
+      "shard_counts": [
+        94,
+        94,
+        94,
+        94,
+        94
+      ],
+      "primary_numbers_reproduced_bit_for_bit": true,
+      "byte_identical_output_files": [
+        "longmemeval_head_tail_seed_results.csv",
+        "longmemeval_head_tail_subset_r3.csv",
+        "longmemeval_head_tail_hard_negative_rescue.csv"
+      ],
+      "differences": [
+        {
+          "field": "continuous_dot_max_abs_error",
+          "committed": 6.661338147750939e-16,
+          "auditor": 7.771561172376096e-16,
+          "kind": "BLAS roundoff control diagnostic",
+          "tolerance": 1e-12
+        },
+        {
+          "field": "gold_minus_nongold_same_sign_advantage",
+          "rows": 2,
+          "magnitude": 3e-17,
+          "kind": "secondary pairwise diagnostic, float summation order"
+        }
+      ],
+      "rho_2_committed": 0.15669024668844653,
+      "rho_2_auditor": 0.15669024668844653
+    }
+  },
+  "auditor_g7_control": {
+    "benchmark": "LoCoMo",
+    "note": "auditor-supplied, NOT preregistered by the researcher",
+    "HEAD32_TAIL64_HAAR": {
+      "mean_R3": 0.22592744129014436,
+      "rho_2": 0.10744461886682183,
+      "advantage_retained_pct": 89.3
+    },
+    "RANDPART_32_64_HAAR": {
+      "mean_R3": 0.14276241798269007,
+      "rho_2": 0.9488647823652118,
+      "advantage_retained_pct": 5.1
+    },
+    "separation_factor": 8.83,
+    "conclusion": "a matched random 32/64 block-diagonal Haar does NOT preserve the advantage; spectral position is load-bearing"
+  },
+  "g6_dispersion": {
+    "locomo": {
+      "rho_2": 0.10744461886682183,
+      "sem_rho_2": 0.04662,
+      "per_seed_rho_2_min": -0.067219,
+      "per_seed_rho_2_max": 0.174795,
+      "seed_inverting_sign_of_L2": 56001,
+      "sd_from_0_25_boundary": 3.06,
+      "all_seeds_inside_band": true
+    },
+    "longmemeval": {
+      "rho_2": 0.15669024668844653,
+      "sem_rho_2": 0.024643,
+      "per_seed_rho_2_min": 0.07349,
+      "per_seed_rho_2_max": 0.203881,
+      "seed_inverting_sign_of_L2": null,
+      "sd_from_0_25_boundary": 3.79,
+      "all_seeds_inside_band": true
+    }
+  },
+  "gate_results": {
+    "G1": "PASS",
+    "G2": "PASS",
+    "G3": "PASS",
+    "G4": "PASS",
+    "G5": "PASS",
+    "G6": "PASS on verdict / FAIL on reported precision",
+    "G7": "PASS via auditor-supplied control",
+    "G8": "PASS on semantics / NOT ESTABLISHED on the word EXACT",
+    "G9": "PASS with caveat on 'cross-benchmark'",
+    "G10": "PASS",
+    "G11": "COMPLETED - case weakens, does not defeat"
+  },
+  "outcome_boundary": {
+    "task4f1_mode_run_invocations": 0,
+    "task4f1_mode_finalize_invocations": 0,
+    "run_archives_evaluate_archive_finalize_results_called": false,
+    "V52_T4F1_AUTH_HMAC_KEY_HEX_set_or_inspected": false,
+    "beam_retrieval_performed": false,
+    "task4f1_outcome_seen_computed_written_or_interpreted": false,
+    "sealed_or_audited_artifacts_modified": false,
+    "generalized_prose_scanner_built": false
+  },
+  "audit_package_file_sha256": {
+    "AUDIT_REPORT.md": "e804936ed59ab1005d2087d171969a2d19fd437f498d29ad00b24543d1094851",
+    "GATE_TABLE.md": "9486d87a6f265aa19189ac366963ec972ac6c88f8d5db21988545bce9fea53e0",
+    "evidence/ci_provenance_verified.md": "ab87978a49d6a71d3280471e2444564b039eb7779ad37c5ef21c3ce7e5fb205b",
+    "evidence/digest_verification.txt": "a077aa35f3748d72565df521347679db840ab15dcc46ef89e4a834ee1e5e2b76",
+    "evidence/g7_random_partition_control.json": "1e7fae88effea7ca4a2c55953b2a77156093247aa13183b01beea4580d8d3b99",
+    "evidence/locomo_end_to_end_rerun_diff.txt": "0eb34055cc62396195f9d6ca120d8a640ea60535f0496b63d53e06a71fbccace",
+    "evidence/locomo_rerun_outputs/LOCOMO_HEAD_TAIL_CAUSAL_CHECKPOINT.md": "24736d2e29f7aa3e21bb4f504bd4626afd5f01afa7fdac135da56d5654ba3114",
+    "evidence/locomo_rerun_outputs/locomo_head_tail_hard_negative_rescue.csv": "1065c3897d3e628423952de68a6f535e80b0da33047d148c63ea96b792f1108a",
+    "evidence/locomo_rerun_outputs/locomo_head_tail_pairwise.csv": "9dec3c8dc9f4a0ffbd8444cb16fd6bd83f5f813c51e391e537e287dfdc952b95",
+    "evidence/locomo_rerun_outputs/locomo_head_tail_seed_results.csv": "0a7abc65130bfeac998e9e8906e3937e70257c660e5c97b2fdbf1d2be6a1b6dd",
+    "evidence/locomo_rerun_outputs/locomo_head_tail_subset_r3.csv": "a93480b9f3d09739ae96cc9540272f0c99adbecdc55ff5c921b14ae281690fbd",
+    "evidence/locomo_rerun_outputs/locomo_head_tail_summary.json": "8d67e6b8947a933471094585a2d2c5be7cabd489c0a297347e20f5012f010219",
+    "evidence/longmemeval_end_to_end_rerun_diff.txt": "3014535bc587fbff65a55fda4f1dc4c2c8b128c7354853a30a30d70c7608cc73",
+    "evidence/longmemeval_rerun_outputs/LONGMEMEVAL_HEAD_TAIL_CAUSAL_CHECKPOINT.md": "28d14deb3227bc2265d7d446bd46536d59d4f377b88fb2ca75853496b37c9bf6",
+    "evidence/longmemeval_rerun_outputs/longmemeval_head_tail_hard_negative_rescue.csv": "189e7a2b319847f88dc63e54c15c624205540a56243ab79fe79ee35e39b15760",
+    "evidence/longmemeval_rerun_outputs/longmemeval_head_tail_pairwise.csv": "8fc5e03f5d59396fbb65c40bf877057fb56761d65fd78557d03598f2ed285ae7",
+    "evidence/longmemeval_rerun_outputs/longmemeval_head_tail_seed_results.csv": "141103f3e965f817236a7bb73ff0c907d1397c0adfbb39221ca25fe95cd6b33d",
+    "evidence/longmemeval_rerun_outputs/longmemeval_head_tail_subset_r3.csv": "a47b08091ef778da7add44c32a131209a6f9fbfee67cafdbc7a63f0cbd66d1dc",
+    "evidence/longmemeval_rerun_outputs/longmemeval_head_tail_summary.json": "1bcd4a529cfbcaac954d5b2e4ad908884cf6b52a7e084b92f4f80a6ef8c8aa24",
+    "evidence/rederivation_from_raw_csvs.txt": "205d381108b82040240b6cdfaeb7cc1973f0cb8fd3f64b7cc6dbe3ca464dd716",
+    "evidence/shard_order_independence.txt": "82e743bcb8d8d0b24c8f311ee9453f992fc0023732eb24a818a2492478b4c0ed",
+    "evidence/shard_partition_verification.txt": "2358cfa675f389b14f69b10585b5cbbbe61e51c988cad5f48f8a74b90b94ee98",
+    "scripts/auditor_random_partition_control.py": "eb1394809079709f309dc43d302f77e4a131884beb3a3a49738f3952f7e979b7",
+    "scripts/build_audit_hashes.py": "e569141ae64f07b47472a39a109ccd92ba72672dc732862c6c4bfdff8471d627",
+    "scripts/rederive_primary_from_raw.py": "34cfbdfaecbe694b1edf95ad14cd10cf276d9e181df46c3ed036763f2c14a3dc",
+    "scripts/shard_order_independence.py": "302e6cae6266b451cbb16d5ab44d915ec036d9ca3a56b47e440b4a7d59eedf2d",
+    "scripts/verify_shard_partition.py": "ee961440f6019ab38bb3bfb3a75119831122744c359db1a303a0c139c70c74ee",
+    "scripts/verify_target_digests.sh": "6a817a4f791ad2878ffd7ce87290083fb890ef07645700b456388980af729fb7"
+  }
+}

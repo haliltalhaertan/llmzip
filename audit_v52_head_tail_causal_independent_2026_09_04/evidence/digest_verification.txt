@@ -1,0 +1,20 @@
+== git blob ids at 7799502bc3a157f874b4b1aa76f803ec2bf6432f ==
+MATCH    prereg (head/tail)
+MATCH    prereg (spectral band)
+MATCH    LoCoMo summary
+MATCH    LongMemEval summary
+MATCH    cross-benchmark checkpoint
+MATCH    LoCoMo runner
+MATCH    LongMemEval shard runner
+MATCH    LoCoMo base module
+MATCH    LongMemEval base module
+== SHA-256 of file contents at 7799502bc3a157f874b4b1aa76f803ec2bf6432f ==
+MATCH    prereg sha256
+MATCH    checkpoint sha256
+MATCH    adapter v1 sha256
+MATCH    adapter v2 sha256
+== byte counts ==
+MATCH    prereg bytes
+MATCH    checkpoint bytes
+== governing audit prompt on origin/main ==
+MATCH    audit prompt sha256

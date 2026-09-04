@@ -1,0 +1,36 @@
+===== LoCoMo =====
+  seeds: [56001, 56002, 56003, 56004, 56005] == preregistered 56001..56005: True
+  seed 56001: seed_results=0.24319099434005997  summaryJSON=0.24319099434005997  match=True  | subset_r3.Full96=0.24319099434006  maxdiff=2.776e-17
+  seed 56002: seed_results=0.21927062124820315  summaryJSON=0.21927062124820315  match=True  | subset_r3.Full96=0.21927062124820315  maxdiff=0.000e+00
+  seed 56003: seed_results=0.219372442432703  summaryJSON=0.219372442432703  match=True  | subset_r3.Full96=0.219372442432703  maxdiff=0.000e+00
+  seed 56004: seed_results=0.22784642362989693  summaryJSON=0.22784642362989693  match=True  | subset_r3.Full96=0.22784642362989696  maxdiff=2.776e-17
+  seed 56005: seed_results=0.21995672479985867  summaryJSON=0.21995672479985867  match=True  | subset_r3.Full96=0.2199567247998587  maxdiff=2.776e-17
+  REBUILT mean(seed R@3) = 0.22592744129014436   declared 0.22592744129014436  match=True
+  REBUILT L_full = 0.09883887612305053  declared 0.09883887612305053  match=True
+  REBUILT L_2    = 0.01061970537426618  declared 0.01061970537426618  match=True
+  REBUILT rho_2  = 0.10744461886682183  declared 0.10744461886682183  match=True
+  REBUILT regime = [HEAD-TAIL TWO-SUBSPACE SUFFICIENCY LEAD]  declared [HEAD-TAIL TWO-SUBSPACE SUFFICIENCY LEAD]  match=True
+  G6 per-seed rho_2: min=-0.067219 max=0.174795 range=0.242014
+  G6 per-seed R@3 sd=0.0103034  sem=0.00460784
+  G6 sem(rho_2)=0.046620 -> rho_2 = 0.1074 +/- 0.0466 (1 s.e.); 95% CI ~ [-0.0220, 0.2369] (t, 4 d.f.)
+  G6 seeds inverting the sign of L_2 (intervention beat native): [56001]
+  G6 distance of rho_2 from the 0.25 boundary: 3.06 s.e.
+  G6 all individual seeds inside the <=0.25 band: True
+===== LongMemEval =====
+  seeds: [56001, 56002, 56003, 56004, 56005] == preregistered 56001..56005: True
+  seed 56001: seed_results=0.5106400709219857  summaryJSON=0.5106400709219857  match=True  | subset_r3.Full96=0.5106400709219857  maxdiff=0.000e+00
+  seed 56002: seed_results=0.5131560283687944  summaryJSON=0.5131560283687944  match=True  | subset_r3.Full96=0.5131560283687944  maxdiff=0.000e+00
+  seed 56003: seed_results=0.5095053191489362  summaryJSON=0.5095053191489362  match=True  | subset_r3.Full96=0.5095053191489362  maxdiff=0.000e+00
+  seed 56004: seed_results=0.5302712765957447  summaryJSON=0.5302712765957447  match=True  | subset_r3.Full96=0.5302712765957447  maxdiff=0.000e+00
+  seed 56005: seed_results=0.521531914893617  summaryJSON=0.521531914893617  match=True  | subset_r3.Full96=0.521531914893617  maxdiff=0.000e+00
+  REBUILT mean(seed R@3) = 0.5170209219858156   declared 0.5170209219858156  match=True
+  REBUILT L_full = 0.1592585106382946  declared 0.1592585106382946  match=True
+  REBUILT L_2    = 0.024954255319148966  declared 0.024954255319148966  match=True
+  REBUILT rho_2  = 0.15669024668844653  declared 0.15669024668844653  match=True
+  REBUILT regime = [HEAD-TAIL TWO-SUBSPACE SUFFICIENCY LEAD]  declared [HEAD-TAIL TWO-SUBSPACE SUFFICIENCY LEAD]  match=True
+  G6 per-seed rho_2: min=0.073490 max=0.203881 range=0.130392
+  G6 per-seed R@3 sd=0.00877579  sem=0.00392465
+  G6 sem(rho_2)=0.024643 -> rho_2 = 0.1567 +/- 0.0246 (1 s.e.); 95% CI ~ [0.0883, 0.2251] (t, 4 d.f.)
+  G6 seeds inverting the sign of L_2 (intervention beat native): []
+  G6 distance of rho_2 from the 0.25 boundary: 3.79 s.e.
+  G6 all individual seeds inside the <=0.25 band: True

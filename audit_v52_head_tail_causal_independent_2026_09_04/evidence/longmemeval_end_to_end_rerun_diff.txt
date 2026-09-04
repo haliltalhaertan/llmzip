@@ -1,0 +1,66 @@
+# Auditor re-run of committed LongMemEval shard runner vs committed outputs
+# runner: research/v52/longmemeval_head_tail_shard.py (blob 184a8a4bbb7d991c875ee1dcb92aa85b5e718074)
+# executed as 5 shards + aggregate, exactly as the committed workflow does
+# dataset: independently downloaded, sha256 d6f21ea9...c3a442, 277383467 bytes (verified by the runner itself)
+# auditor env: Python 3.11.15 / numpy 2.3.5 / pandas 2.2.3 / scikit-learn 1.8.0 / scipy 1.17.0
+# CI env: Python 3.13, same pinned packages
+
+## Shard execution (auditor)
+  shard 0: {"shard": 0, "count": 94, "max_norm": 5.551115123125783e-16, "max_dot": 6.661338147750939e-16}
+  shard 1: {"shard": 1, "count": 94, "max_norm": 4.440892098500626e-16, "max_dot": 6.661338147750939e-16}
+  shard 2: {"shard": 2, "count": 94, "max_norm": 5.551115123125783e-16, "max_dot": 6.661338147750939e-16}
+  shard 3: {"shard": 3, "count": 94, "max_norm": 5.551115123125783e-16, "max_dot": 7.771561172376096e-16}
+  shard 4: {"shard": 4, "count": 94, "max_norm": 5.551115123125783e-16, "max_dot": 6.661338147750939e-16}
+  -> 5 shards x 94 questions = 470, disjoint and exhaustive
+
+## File comparison
+DIFFERS   longmemeval_head_tail_summary.json
+    committed sha256 691fa4cd2e6bdcebac17bbc58efde9e6ddcba7a5ca705e1344293e09316e1255
+    auditor   sha256 1bcd4a529cfbcaac954d5b2e4ad908884cf6b52a7e084b92f4f80a6ef8c8aa24
+IDENTICAL longmemeval_head_tail_seed_results.csv
+    committed sha256 141103f3e965f817236a7bb73ff0c907d1397c0adfbb39221ca25fe95cd6b33d
+    auditor   sha256 141103f3e965f817236a7bb73ff0c907d1397c0adfbb39221ca25fe95cd6b33d
+IDENTICAL longmemeval_head_tail_subset_r3.csv
+    committed sha256 a47b08091ef778da7add44c32a131209a6f9fbfee67cafdbc7a63f0cbd66d1dc
+    auditor   sha256 a47b08091ef778da7add44c32a131209a6f9fbfee67cafdbc7a63f0cbd66d1dc
+DIFFERS   longmemeval_head_tail_pairwise.csv
+    committed sha256 f9523b059a034611b5bf02323147fe26350c8eee91d04d5f5579bef39972be07
+    auditor   sha256 8fc5e03f5d59396fbb65c40bf877057fb56761d65fd78557d03598f2ed285ae7
+IDENTICAL longmemeval_head_tail_hard_negative_rescue.csv
+    committed sha256 189e7a2b319847f88dc63e54c15c624205540a56243ab79fe79ee35e39b15760
+    auditor   sha256 189e7a2b319847f88dc63e54c15c624205540a56243ab79fe79ee35e39b15760
+DIFFERS   LONGMEMEVAL_HEAD_TAIL_CAUSAL_CHECKPOINT.md
+    committed sha256 7003b3ee052acc142c731397c91d181c0b956cb2879de68f41713cdc5bd2a57b
+    auditor   sha256 28d14deb3227bc2265d7d446bd46536d59d4f377b88fb2ca75853496b37c9bf6
+
+## Diffs (complete)
+--- longmemeval_head_tail_summary.json
+21c21
+<     "continuous_dot_max_abs_error": 6.661338147750939e-16
+---
+>     "continuous_dot_max_abs_error": 7.771561172376096e-16
+--- longmemeval_head_tail_pairwise.csv
+7c7
+< 56002,Full96,432441,0.9399420961472201,0.19138347774609715,0.01092172111340044
+---
+> 56002,Full96,432441,0.9399420961472201,0.19138347774609718,0.01092172111340044
+10c10
+< 56003,Full96,432441,0.9310102418595831,0.18905953355486643,0.012140384468632715
+---
+> 56003,Full96,432441,0.9310102418595831,0.1890595335548664,0.012140384468632715
+--- LONGMEMEVAL_HEAD_TAIL_CAUSAL_CHECKPOINT.md
+15c15
+< Continuous dot max abs error: 6.661e-16
+---
+> Continuous dot max abs error: 7.772e-16
+
+## Assessment
+All PRIMARY quantities reproduced bit-for-bit: native_R3, head_tail_haar_mean_R3, L_full,
+L_2, rho_2 = 0.15669024668844653, the regime string, and all five per-seed R@3 values.
+seed_results.csv, subset_r3.csv and hard_negative_rescue.csv are byte-identical.
+The only differences anywhere are:
+  (a) continuous_dot_max_abs_error, a BLAS-dependent roundoff CONTROL diagnostic
+      (6.661e-16 committed vs 7.772e-16 auditor; both ~4 orders below the 1e-12 tolerance);
+  (b) two of fifteen rows of the secondary pairwise diagnostic differ in the last ULP of
+      gold_minus_nongold_same_sign_advantage (~3e-17), i.e. float summation order.
+Neither is a primary quantity and neither can move rho_2 or the band verdict.
