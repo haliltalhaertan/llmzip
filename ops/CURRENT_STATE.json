@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_PREREGISTRATION_APPROVED_FOR_SEALING_NOT_YET_SEALED",
-  "issued_at_utc": "2026-09-04T07:40:00Z",
+  "state_id": "V52_4F1_PREREG_APPROVED_AWAITING_EXACT_BYTE_COCHAIR_SIGNOFF",
+  "issued_at_utc": "2026-09-04T08:20:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -21,8 +21,8 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Prepare the Task 4F1 preregistration seal (approved, not yet sealed)",
-    "next_single_action": "Deliver prompts/V52_TASK_4F1_STATUS_REPORT_2026-09-04.md and await direction on sealing (prepare now, defer until the V7 audit reports, or shape differently). Do not seal, authorize, run, finalize or access outcomes without it.",
+    "current_task": "Obtain an exact-byte co-chair sign-off on the amended preregistration, then seal",
+    "next_single_action": "Commission a cold-start, session-independent co-chair re-review bound to commit c0133fc and draft SHA256 5e618981, scoped to whether A1-A6 are adequately discharged on those exact bytes and whether any new scientific inconsistency was introduced; the V7 package audit is not reopened. On its verified APPROVE, prepare and apply the scientific seal immediately without waiting for V7. Do not run, finalize, authorize or access outcomes.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -37,7 +37,7 @@
     "v7_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED (bound payload reduced to 4 functional files; no narrative document bound)",
     "packaging": "CLOSED BY SURFACE REDUCTION pending independent audit; no scanner exists in the package",
     "v7_preseal_documentation_condition": "SATISFIED 2026-09-04; awaiting independent confirmation",
-    "preregistration_draft_status": "APPROVED FOR SEALING 2026-09-04 by the Head Researcher, for draft SHA256 5e618981 only. The 2026-09-03 REQUEST CHANGES is discharged. The draft is NOT yet sealed; preregistration therefore remains BLOCKED until a seal is prepared and bound."
+    "preregistration_draft_status": "APPROVED BY HEAD RESEARCHER 2026-09-04 for draft SHA256 5e618981. NOT SEALED. Sealing is deferred by Head Researcher direction 2026-09-04 until a session-independent co-chair APPROVE artifact on the exact amended bytes is pushed and hash-verified. This is a sequencing decision, not a scientific reversal."
   },
   "anchors": {
     "v3_runner": {
@@ -179,7 +179,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-028",
+  "ledger_entry": "L-030",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -298,5 +298,42 @@
     "addressed_to": "Head Researcher / reviewing authority",
     "decision_requested": "none; two open asks named - sealing timing, and the two owner-only P0 items",
     "status": "ISSUED"
+  },
+  "head_researcher_sealing_direction_2026_09_04": {
+    "branch": "hr/prereg-sealing-direction-2026-09-04",
+    "commit": "33fa4a27ac1a06392454eba66039d8649870dbb0",
+    "merge_base_with_main": "53b70e56025a371f11bf969731ab4318ba3013eb",
+    "file": "docs/v52/task4f1/T4F1_PREREG_SEALING_DIRECTION_2026-09-04.md",
+    "file_sha256_measured_by_continuity_lead": "90769898d3af3b32f018180978f9589b1e9d0a8973df3ea33687aed0121e520a",
+    "sidecar_present": false,
+    "binding_strength": "commit id named in advance and matched; NO .sha256 sidecar, so no second independent declaration of the digest exists",
+    "branch_adds_only": "the direction file; no candidate, seal, manifest or draft byte touched",
+    "decision": "DO NOT SEAL YET - obtain exact-byte co-chair sign-off first, then seal immediately without waiting for V7",
+    "nature": "sequencing decision, not a scientific reversal; the 2026-09-04 approval of 5e618981 remains valid",
+    "grounds_confirmed_against_the_bytes": "the draft's own header and section 9 both require Head Researcher AND co-chair approval; the existing co-chair artifact targeted predecessor bytes ec3443ed and returned REQUEST CHANGES",
+    "cochair_scope": "only whether A1-A6 are adequately discharged on the exact amended bytes and whether any new scientific inconsistency was introduced; must not reopen the V7 package audit",
+    "independence_constraint": "the Continuity Lead session that prepared the amendments must not supply the sign-off",
+    "seal_bindings_required": [
+      "approved draft SHA256 5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44",
+      "sealed 4F0 cohort SHA256 9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+      "accepted runner SHA256 f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+      "Head Researcher re-review decision SHA256 8795abc7b58b3bae8f2333ba630f95642e9d2e653a31478d221ceb9d71272f3f",
+      "exact-byte co-chair approval SHA256 (pending)",
+      "Head Researcher governance ratification of the V4 authorization schema while the runner stays byte-identical to V4",
+      "the four section 8 binding execution conditions of the approved draft",
+      "the exact-rational D_t sign-classification implementation condition"
+    ],
+    "v7_binding_prohibited": "a V7 verdict or accepted-package seal must NOT be a prerequisite inside the scientific seal; provenance-only inclusion of an already existing artifact is the sole exception",
+    "outcome_free_confirmed": true
+  },
+  "commissioned_cochair_exact_byte_review": {
+    "stage": "PREREGISTRATION_EXACT_BYTE_COCHAIR_REREVIEW",
+    "prompt": "prompts/V52_TASK_4F1_EXACT_BYTE_COCHAIR_REREVIEW_PROMPT_2026-09-04.md",
+    "prompt_sha256": "7e048be7c3728db70bbe771ebf4d01fd073d774a4fc2dd2c1df29be7565a27fd",
+    "review_target_commit": "c0133fce9b755d13d9be3016e8e06f493d6b275b",
+    "review_target_sha256": "5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44",
+    "target_branch": "cochair/exact-byte-approval-t4f1-prereg-2026-09-04",
+    "scope": "A1-A6 discharge on the exact bytes; new-inconsistency check; outcome-freeness. V7 package audit NOT reopened.",
+    "status": "PROMPT_WRITTEN - COMMISSIONING"
   }
 }
