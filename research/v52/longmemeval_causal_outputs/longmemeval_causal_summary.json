@@ -1,0 +1,47 @@
+{
+  "status": "PREREGISTERED_CAUSAL_INTERVENTION_RESULT_RECOVERED_FROM_ACTIONS_LOG",
+  "benchmark": "LongMemEval",
+  "prereg_git_blob": "02aa91a12b4052bbb2f0a6617167c8851e4f71f7",
+  "actions_run_id": 33864691367,
+  "actions_job_id": 100996750402,
+  "compute_step_conclusion": "success",
+  "persist_step_conclusion": "failure_non_fast_forward_only",
+  "identity": {
+    "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "dataset_bytes": 277383467,
+    "adapter_v1_sha256": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+    "adapter_v2_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+    "primary_questions": 470
+  },
+  "controls": {
+    "native_reproduction": 0.5419751773049645,
+    "frozen_native": 0.5419751773049646,
+    "absolute_reproduction_error": 1.1102230246251565e-16,
+    "signed_permutation_exact_pass": true,
+    "continuous_norm_max_abs_error": 5.551115123125783e-16,
+    "continuous_dot_max_abs_error": 8.881784197001252e-16
+  },
+  "primary": {
+    "native_R3": 0.5419751773049645,
+    "frozen_full_haar_R3": 0.38271666666667,
+    "within_band_haar_mean_R3": 0.5192287234042553,
+    "L_full": 0.1592585106382945,
+    "L_band": 0.022746453900709174,
+    "rho": 0.14282724238436822,
+    "regime": "[SPECTRAL-SUBSPACE PRESERVATION LEAD]",
+    "seed_R3": {
+      "55001": 0.5301950354609929,
+      "55002": 0.5144609929078013,
+      "55003": 0.5152553191489362,
+      "55004": 0.5178049645390072,
+      "55005": 0.518427304964539
+    }
+  },
+  "secondary_arm_means": {
+    "HAAR_HIGH_MID64": 0.4923985815602837,
+    "HAAR_HIGH_LOW64": 0.4509716312056738,
+    "HAAR_MID_LOW64": 0.513854255319149
+  },
+  "interpretation_ceiling": "Fixed-benchmark preregistered causal-intervention evidence; no population-level generalization.",
+  "recovery_note": "Exact JSON was emitted by the successful compute step. The subsequent git push was rejected only because the remote research branch advanced concurrently. This file records that stdout result verbatim in numeric content; full artifact equivalence remains scheduled for an exact sharded rerun."
+}
