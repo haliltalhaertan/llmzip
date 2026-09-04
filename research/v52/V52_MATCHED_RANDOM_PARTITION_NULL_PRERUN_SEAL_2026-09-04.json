@@ -1,0 +1,48 @@
+{
+  "status": "PRERUN_SEALED_NO_OUTCOME_ACCESS",
+  "date": "2026-09-04",
+  "repository": "haliltalhaertan/llmzip",
+  "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+  "seal_base_commit_before_seal": "483336a306b7228695bab86d011d22eaec39ee58",
+  "task4f1_execution_touched": false,
+  "outcome_access_before_seal": false,
+  "preregistration": {
+    "path": "research/v52/V52_MATCHED_RANDOM_PARTITION_NULL_PREREG_2026-09-04.md",
+    "git_blob_sha1": "2d6a14f254399327f59db1958a0b5c0dfb9ea8e0",
+    "drive_native_doc_id": "16cpNlMnVmehI6faMfvmicK280SKWHheA7bfAom7Ub_g",
+    "drive_copy_created_before_outcome": true
+  },
+  "locomo_runner": {
+    "path": "research/v52/locomo_matched_random_partition_null.py",
+    "git_blob_sha1": "ebf76908c73bbf266c04f6ae05537a03e70c7526"
+  },
+  "longmemeval_runner": {
+    "path": "research/v52/longmemeval_matched_random_partition_null_shard.py",
+    "git_blob_sha1": "277c06e8be87fa1c3322b829b780b1375f7ca0c4"
+  },
+  "locomo_workflow": {
+    "path": ".github/workflows/v52-locomo-matched-random-partition-null.yml",
+    "git_blob_sha1": "f5673def52076905b56c9991a41e78e89b4f22ad"
+  },
+  "longmemeval_workflow": {
+    "path": ".github/workflows/v52-longmemeval-matched-random-partition-null.yml",
+    "git_blob_sha1": "e8c0d91ec70e0d2ca0973fcc5ae4b7ed4989f054"
+  },
+  "frozen_base_sources": {
+    "locomo_spectral_runner_git_blob_sha1": "7c4140252fb7f846d617189925cdf534515743f4",
+    "longmemeval_spectral_runner_git_blob_sha1": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+    "longmemeval_dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "locomo_dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "locomo_audit_manifest_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06"
+  },
+  "frozen_seed_panel": [57001, 57002, 57003, 57004, 57005, 57006, 57007, 57008, 57009, 57010],
+  "primary_decision_rule": {
+    "replication_failure": "rho_spec > 0.25",
+    "generic_block_structure_spectral_falsified": "rho_spec <= 0.25 and Delta <= 0.05",
+    "spectral_position_load_bearing": "rho_spec <= 0.25 and Delta >= 0.25",
+    "mixed": "rho_spec <= 0.25 and 0.05 < Delta < 0.25"
+  },
+  "trigger_path": "research/v52/TRIGGER_MATCHED_RANDOM_PARTITION_NULL_2026-09-04.txt",
+  "trigger_file_present_at_sealing": false,
+  "interpretation_ceiling": "Fixed-benchmark preregistered matched random-partition null control only."
+}
