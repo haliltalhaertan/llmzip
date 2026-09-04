@@ -2,9 +2,10 @@
 """Negative controls for tools/verify_preregistration_seal.py.
 
 Seal V1 shipped a wrong tier vocabulary under a green PASS because the verifier never tested the
-metadata it claimed to establish. A verifier that only ever passes proves nothing, so this file
-mutates the sealed facts one at a time and requires the verifier to BLOCK on each. Test 1 is the
-historical V1 defect itself.
+metadata it claimed to establish; Seal V2 then carried a hand-restated pre-run implementation
+condition that no check read, so an inverted condition would also have passed green. A verifier that
+only ever passes proves nothing, so this file mutates the sealed facts one at a time and requires the
+verifier to BLOCK on each. The first two tests are those two historical defects themselves.
 
 Mutations are written to a temporary file; the real seal is never modified. Reads only, imports no
 candidate, touches no outcome.
@@ -49,6 +50,26 @@ def mutations(base: dict) -> list[tuple[str, dict]]:
             cs[field] = dict(zip(wrong, list(cs[field].values())))
 
     add("V1 defect: 500K dropped, 5M invented", shift_tiers)
+    def invert_condition(seal):  # the historical Seal V2 defect, in its most dangerous form
+        seal["bindings"]["8_exact_rational_sign_classification_condition"][
+            "implementation_condition_verbatim"] = (
+            "Implementation note, not a defect in this preregistration: before any run authorization, "
+            "classify D_t from a rounded floating-point aggregate.")
+
+    add("V2 defect: implementation condition inverted", invert_condition)
+    add("implementation-condition fragment digest wrong",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        .__setitem__("implementation_condition_sha256", "3" * 64))
+    add("implementation-condition source commit unavailable",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        ["implementation_condition_source"].__setitem__("commit", "0" * 40))
+    add("implementation-condition source path wrong",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        ["implementation_condition_source"].__setitem__(
+            "path", "docs/v52/task4f1/COCHAIR_EXACT_BYTE_APPROVAL_T4F1_PREREG_2026-09-04.md"))
+    add("unverified free-text field smuggled into binding 8",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        .__setitem__("condition", "Before any run authorization, classify D_t from a rounded aggregate."))
     add("one question count off by one",
         lambda s: s["cohort_structure_recomputed"]["question_counts"].__setitem__("500K", 628))
     add("one archive count wrong",
@@ -66,9 +87,9 @@ def mutations(base: dict) -> list[tuple[str, dict]]:
         lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"].__setitem__(
             "preregistered_rule_verbatim",
             "**Sign-boundary arithmetic.** `D_t` is computed in floating point with a small tolerance."))
-    add("binding 8 origin artifact swapped",
-        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]["origin_artifact"]
-        .__setitem__("sha256", "0" * 64))
+    add("binding 8 source artifact swapped",
+        lambda s: s["bindings"]["8_exact_rational_sign_classification_condition"]
+        ["implementation_condition_source"].__setitem__("artifact_sha256", "0" * 64))
     add("V7 bound as a prerequisite",
         lambda s: s["provenance_not_prerequisites"]["v7_execution_package_audit"]
         .__setitem__("bound_as_prerequisite", True))
@@ -78,8 +99,10 @@ def mutations(base: dict) -> list[tuple[str, dict]]:
         lambda s: s["bindings"]["4_head_researcher_rereview_decision"].__setitem__("commit", "0" * 40))
     add("outcome boundary weakened",
         lambda s: s["outcome_boundary_declaration"].__setitem__("mode_run_invocations", 1))
-    add("superseded Seal V1 modified",
+    add("superseded Seal V2 modified",
         lambda s: s["supersedes"].__setitem__("sha256", "2" * 64))
+    add("superseded Seal V1 modified",
+        lambda s: s["also_superseded"].__setitem__("sha256", "4" * 64))
     add("approved draft byte size wrong",
         lambda s: s["bindings"]["1_approved_preregistration_draft"].__setitem__("bytes", 14687))
     return out

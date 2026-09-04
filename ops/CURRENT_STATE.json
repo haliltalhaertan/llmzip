@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_SEAL_V2_BLOCKED_BINDING8_REPAIR_IN_PROGRESS",
-  "issued_at_utc": "2026-09-04T11:30:00Z",
+  "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
+  "issued_at_utc": "2026-09-04T11:55:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,9 +22,9 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Prepare a narrow additive Seal V3: extract the binding 8 implementation condition verbatim from the Head Researcher re-review bytes at commit 19d9cbb, bind it by its own fragment digest, have the verifier re-extract and compare it, and add negative controls for an inverted condition, a wrong fragment digest and an unavailable/wrong source. Preserve Seal V1 and Seal V2 unchanged. No generalized scanner. Do not touch the execution path.",
+    "next_single_action": "Report Seal V3 for independent verification. Then execution track only: await the V7 independent audit report and hash-verify it when it lands. The pre-run exact-rational D_t sign-classification condition must be discharged on that track before any run authorization. Do NOT authorize, run or finalize Task 4F1; outcome access remains FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
-    "task_4f1_preregistration": "NOT SEALED - Seal V2 BLOCKED by Head Researcher Binding-8 defect decision 2026-09-04; sealing gate narrowly reopened for the Binding-8 repair",
+    "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
     "v3_independent_audit": "BLOCKED (superseded by V4; V3 preserved unmodified)",
@@ -37,7 +37,7 @@
     "v7_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED (bound payload reduced to 4 functional files; no narrative document bound)",
     "packaging": "CLOSED BY SURFACE REDUCTION pending independent audit; no scanner exists in the package",
     "v7_preseal_documentation_condition": "SATISFIED 2026-09-04; awaiting independent confirmation",
-    "preregistration_draft_status": "SEALED at Seal V2. Approved by the Head Researcher (8795abc7) and by an independent exact-byte co-chair (3aaa90bf). Any scientific-content change produces new bytes, voids the seal for those bytes, and requires BOTH approvals again. Seal-metadata repair required no scientific re-review because no scientific byte changed."
+    "preregistration_draft_status": "SEALED at Seal V3. Approved by the Head Researcher (8795abc7) and by an independent exact-byte co-chair (3aaa90bf). Any scientific-content change produces new bytes, voids the seal for those bytes, and requires BOTH approvals again. Seal-metadata repairs required no scientific re-review because no scientific byte changed."
   },
   "anchors": {
     "v3_runner": {
@@ -163,6 +163,10 @@
     "preregistration_seal_v2_blocked_preserved": {
       "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V2_2026-09-04.json",
       "sha256": "9ed480f4dcb0fe6151ad239c3e05174ce443a81ea84aed8e2777cb9baa04e39d"
+    },
+    "preregistration_seal_v3": {
+      "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V3_2026-09-04.json",
+      "sha256": "e906c6d2b68b103c6c21906cbdf44acba10e31b7e5e17ffd2c7d1bbfb7a95cf4"
     }
   },
   "required_external_inputs": {
@@ -187,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-035",
+  "ledger_entry": "L-036",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -372,8 +376,21 @@
     ]
   },
   "preregistration_seal": {
-    "status": "BLOCKED",
-    "note": "V1 and V2 both blocked; see preregistration_seal_v1 and preregistration_seal_v2"
+    "current": "V3",
+    "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V3_2026-09-04.json",
+    "sha256": "e906c6d2b68b103c6c21906cbdf44acba10e31b7e5e17ffd2c7d1bbfb7a95cf4",
+    "sidecar": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V3_2026-09-04.json.sha256",
+    "builder": "tools/build_preregistration_seal_v3.py (every value derived from bytes; binding 8 extracted from the HR re-review artifact)",
+    "verifier": "tools/verify_preregistration_seal.py",
+    "verifier_result": "PREREGISTRATION_SEAL: PASS",
+    "verifier_tests": "tools/test_verify_preregistration_seal.py - 22/22 negative controls, including both historical defects and the smuggled-field variant",
+    "binding_8_fragment_sha256": "13451be1dd8d05b41521faf64ffd3f7e45a8079edf5baf031986c22ca9778bed",
+    "supersedes": [
+      "Seal V2 9ed480f4 (BLOCKED)",
+      "Seal V1 c9e06195 (BLOCKED)"
+    ],
+    "v7_bound_as_prerequisite": false,
+    "authorizes_execution": false
   },
   "preregistration_seal_v1": {
     "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json",
