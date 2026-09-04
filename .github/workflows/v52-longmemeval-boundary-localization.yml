@@ -1,0 +1,143 @@
+name: V52 LongMemEval Head/Tail boundary localization
+
+on:
+  push:
+    branches:
+      - research/v52-sign-mechanism-locomo-2026-09-04
+    paths:
+      - research/v52/TRIGGER_BOUNDARY_LOCALIZATION_2026-09-04.txt
+
+permissions:
+  contents: write
+
+jobs:
+  shard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify trigger, pre-run seal, and exact blobs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          trigger=Path('research/v52/TRIGGER_BOUNDARY_LOCALIZATION_2026-09-04.txt').read_text().strip()
+          if not trigger.startswith('seal_git_blob='):
+              raise SystemExit('invalid trigger')
+          expected=trigger.split('=',1)[1]
+          seal_path=Path('research/v52/V52_BOUNDARY_LOCALIZATION_PRERUN_SEAL_2026-09-04.json')
+          got=subprocess.check_output(['git','hash-object',str(seal_path)], text=True).strip()
+          if got != expected:
+              raise SystemExit(f'seal blob mismatch {got} != {expected}')
+          seal=json.loads(seal_path.read_text())
+          if seal.get('status') != 'PRERUN_SEALED_NO_OUTCOME_ACCESS':
+              raise SystemExit('seal status mismatch')
+          for key in ['preregistration','post_audit_addendum','locomo_runner','longmemeval_runner','locomo_workflow','longmemeval_workflow','locomo_base','longmemeval_base']:
+              ent=seal[key]
+              actual=subprocess.check_output(['git','hash-object',ent['path']], text=True).strip()
+              if actual != ent['git_blob_sha1']:
+                  raise SystemExit(f'blob mismatch {key}')
+          print('BOUNDARY_LOCALIZATION_PRERUN_GATE PASS')
+          PY
+          python -m py_compile research/v52/longmemeval_boundary_localization_shard.py
+      - name: Install frozen-compatible numerical stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scipy==1.17.0' 'scikit-learn==1.8.0'
+      - name: Download and verify frozen LongMemEval dataset
+        shell: bash
+        run: |
+          curl -L --fail --retry 5 --retry-delay 2 -o /tmp/longmemeval_s_cleaned.json 'https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/resolve/main/longmemeval_s_cleaned.json'
+          test "$(stat -c%s /tmp/longmemeval_s_cleaned.json)" = "277383467"
+          echo 'd6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442  /tmp/longmemeval_s_cleaned.json' | sha256sum -c -
+      - name: Run deterministic localization shard
+        run: |
+          python research/v52/longmemeval_boundary_localization_shard.py shard \
+            --dataset /tmp/longmemeval_s_cleaned.json \
+            --shard-index ${{ matrix.shard }} \
+            --num-shards 10 \
+            --out /tmp/shard_${{ matrix.shard }}.pkl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v52-longmemeval-boundary-shard-${{ matrix.shard }}
+          path: /tmp/shard_${{ matrix.shard }}.pkl
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate:
+    needs: shard
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify trigger, pre-run seal, and exact blobs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          trigger=Path('research/v52/TRIGGER_BOUNDARY_LOCALIZATION_2026-09-04.txt').read_text().strip()
+          expected=trigger.split('=',1)[1]
+          seal_path=Path('research/v52/V52_BOUNDARY_LOCALIZATION_PRERUN_SEAL_2026-09-04.json')
+          got=subprocess.check_output(['git','hash-object',str(seal_path)], text=True).strip()
+          if got != expected:
+              raise SystemExit('seal blob mismatch')
+          seal=json.loads(seal_path.read_text())
+          for key in ['preregistration','post_audit_addendum','locomo_runner','longmemeval_runner','locomo_workflow','longmemeval_workflow','locomo_base','longmemeval_base']:
+              ent=seal[key]
+              actual=subprocess.check_output(['git','hash-object',ent['path']], text=True).strip()
+              if actual != ent['git_blob_sha1']:
+                  raise SystemExit(f'blob mismatch {key}')
+          print('BOUNDARY_LOCALIZATION_PRERUN_GATE PASS')
+          PY
+      - name: Install frozen-compatible numerical stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scipy==1.17.0' 'scikit-learn==1.8.0'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v52-longmemeval-boundary-shard-*
+          path: /tmp/shards
+          merge-multiple: true
+      - name: Aggregate preregistered localization result
+        run: |
+          python research/v52/longmemeval_boundary_localization_shard.py aggregate \
+            --shard-dir /tmp/shards \
+            --out /tmp/longmemeval_boundary_outputs
+          python -m pip freeze > /tmp/longmemeval_boundary_outputs/environment.txt
+      - name: Upload immutable final artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: v52-longmemeval-boundary-localization-final
+          path: /tmp/longmemeval_boundary_outputs
+          if-no-files-found: error
+          retention-days: 30
+      - name: Persist authoritative result package
+        shell: bash
+        run: |
+          git config user.name 'V52 Research Runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git fetch origin "${GITHUB_REF_NAME}"
+          git rebase "origin/${GITHUB_REF_NAME}"
+          mkdir -p research/v52/longmemeval_boundary_outputs
+          cp -a /tmp/longmemeval_boundary_outputs/. research/v52/longmemeval_boundary_outputs/
+          git add research/v52/longmemeval_boundary_outputs
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(v52): persist preregistered LongMemEval boundary localization result'
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi
