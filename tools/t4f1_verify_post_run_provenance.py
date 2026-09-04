@@ -7,7 +7,8 @@ authorization, and a PRE-RUN Head Researcher authorization-release attestation.
 
 Crucially, it never reads V52_T4F1_AUTH_HMAC_KEY_HEX. The HMAC secret remains in Head Researcher
 custody. The HMAC is verified before the run by a separate pre-run release tool; this gate requires
-that release attestation and binds it to the exact authorization SHA used by the runner manifest.
+that release attestation and binds it to both the exact authorization SHA used by the runner manifest
+and the exact analysis-bundle manifest frozen before outcome access.
 """
 
 from __future__ import annotations
@@ -48,6 +49,7 @@ AUTH_RELEASE_FIELDS = {
     "cohort_sha256",
     "preregistration_seal_sha256",
     "run_authorization_sha256",
+    "analysis_bundle_manifest_sha256",
     "output_namespace_basename",
     "authorization_id",
     "authorization_nonce",
@@ -90,6 +92,28 @@ def load_json(path: Path, label: str) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise RuntimeError(f"[BLOCKED - NON-OBJECT {label}] {path}")
     return value
+
+
+def verify_analysis_bundle_manifest(path: Path) -> tuple[dict[str, Any], str]:
+    manifest = load_json(path, "EXACT ANALYSIS BUNDLE MANIFEST")
+    if manifest.get("schema") != "V52_T4F1_EXACT_ANALYSIS_BUNDLE_MANIFEST_V1":
+        raise RuntimeError("[BLOCKED - ANALYSIS BUNDLE MANIFEST SCHEMA]")
+    if manifest.get("status") != "FROZEN_BEFORE_OUTCOME_ACCESS":
+        raise RuntimeError("[BLOCKED - ANALYSIS BUNDLE MANIFEST STATUS]")
+    if manifest.get("retrieval_quality_outcome_accessed_at_freeze") is not False:
+        raise RuntimeError("[BLOCKED - ANALYSIS BUNDLE FREEZE OUTCOME BOUNDARY]")
+    files = manifest.get("files")
+    if not isinstance(files, dict) or not files:
+        raise RuntimeError("[BLOCKED - ANALYSIS BUNDLE FILE MAP]")
+    for rel, item in files.items():
+        if not isinstance(rel, str) or not isinstance(item, dict) or set(item) != {"bytes", "sha256"}:
+            raise RuntimeError("[BLOCKED - ANALYSIS BUNDLE FILE ENTRY]")
+        target = Path(__file__).resolve().parents[1] / rel
+        if not target.is_file():
+            raise RuntimeError(f"[BLOCKED - ANALYSIS BUNDLE FILE MISSING] {rel}")
+        if target.stat().st_size != item["bytes"] or sha256_file(target) != item["sha256"]:
+            raise RuntimeError(f"[BLOCKED - ANALYSIS BUNDLE FILE HASH] {rel}")
+    return manifest, sha256_file(path)
 
 
 def verify_execution_seal_public(path: Path) -> tuple[dict[str, Any], str, str]:
@@ -156,9 +180,10 @@ def verify_authorization_release(
     execution_seal_sha256: str,
     cohort_sha256: str,
     prereg_sha256: str,
+    analysis_bundle_manifest_sha256: str,
     output_dir: Path,
 ) -> tuple[dict[str, Any], str]:
-    """Bind the public authorization to the HR's pre-run HMAC verification without exposing key."""
+    """Bind the public authorization to HR pre-run HMAC verification and frozen analyzer bytes."""
     release = load_json(path, "AUTHORIZATION RELEASE ATTESTATION")
     if set(release) != AUTH_RELEASE_FIELDS:
         raise RuntimeError("[BLOCKED - AUTHORIZATION RELEASE FIELD SET]")
@@ -170,6 +195,7 @@ def verify_authorization_release(
         "cohort_sha256": cohort_sha256,
         "preregistration_seal_sha256": prereg_sha256,
         "run_authorization_sha256": authorization_sha256,
+        "analysis_bundle_manifest_sha256": analysis_bundle_manifest_sha256,
         "output_namespace_basename": output_dir.name,
         "authorization_id": authorization["authorization_id"],
         "authorization_nonce": authorization["authorization_nonce"],
@@ -262,6 +288,7 @@ def verify(
     execution_seal_path: Path,
     authorization_path: Path,
     authorization_release_path: Path,
+    analysis_bundle_manifest_path: Path,
     results_dir: Path,
 ) -> dict[str, Any]:
     cohort_sha = sha256_file(cohort_path) if cohort_path.is_file() else ""
@@ -270,6 +297,7 @@ def verify(
     prereg_sha = sha256_file(prereg_seal_path) if prereg_seal_path.is_file() else ""
     if prereg_sha != EXPECTED_PREREG_SEAL_SHA256:
         raise RuntimeError("[BLOCKED - PREREGISTRATION SEAL SHA256]")
+    _, analysis_bundle_sha = verify_analysis_bundle_manifest(analysis_bundle_manifest_path)
     _, execution_seal_sha, _ = verify_execution_seal_public(execution_seal_path)
     authorization, authorization_sha = verify_authorization_public(
         authorization_path, execution_seal_sha, cohort_sha, results_dir
@@ -281,6 +309,7 @@ def verify(
         execution_seal_sha,
         cohort_sha,
         prereg_sha,
+        analysis_bundle_sha,
         results_dir,
     )
     _, manifest_sha = verify_post_run_manifest(
@@ -294,6 +323,7 @@ def verify(
         "execution_candidate_seal_sha256": execution_seal_sha,
         "run_authorization_sha256": authorization_sha,
         "authorization_release_attestation_sha256": release_sha,
+        "analysis_bundle_manifest_sha256": analysis_bundle_sha,
         "post_run_manifest_sha256": manifest_sha,
         "hmac_secret_read_by_this_gate": False,
         "hmac_verified_pre_run_by_head_researcher": True,
@@ -308,6 +338,7 @@ def main() -> int:
     parser.add_argument("--execution-seal", type=Path, required=True)
     parser.add_argument("--authorization", type=Path, required=True)
     parser.add_argument("--authorization-release", type=Path, required=True)
+    parser.add_argument("--analysis-bundle-manifest", type=Path, required=True)
     parser.add_argument("--results-dir", type=Path, required=True)
     args = parser.parse_args()
     report = verify(
@@ -316,6 +347,7 @@ def main() -> int:
         args.execution_seal,
         args.authorization,
         args.authorization_release,
+        args.analysis_bundle_manifest,
         args.results_dir,
     )
     print("T4F1_POST_RUN_PROVENANCE: PASS")
