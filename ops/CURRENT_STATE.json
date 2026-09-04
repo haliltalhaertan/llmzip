@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-04T20:40:00Z",
+  "issued_at_utc": "2026-09-04T21:30:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Report the verified Head/Tail audit to the Head Researcher for the boundary-localization decision. Do NOT preregister or run the localization experiment without an explicit decision. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Deliver the literature-scan prompt and await its pushed artifact for independent hash verification. The boundary-localization decision remains a separate Head Researcher call. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-040",
+  "ledger_entry": "L-041",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -553,5 +553,14 @@
     "relayed_as": "chat text",
     "continuity_lead_recommendation": "a matched-size random 32/64 partition null control before localization, because it can falsify the lead",
     "disposition": "OVERRULED AND ACCEPTED; the scientific point is carried into the audit as gate G7 as a question, not as a conclusion"
+  },
+  "literature_scan": {
+    "prompt": "prompts/V52_SIGN_MECHANISM_LITERATURE_SCAN_PROMPT_2026-09-04.md",
+    "prompt_sha256": "9eaefd512428c05250a7747c95ba65a81c26d6252ab76a4080908e1eb1c092ee",
+    "target_branch": "research/v52-sign-mechanism-literature-scan-2026-09-04",
+    "claims_to_test": "C1-C9; the load-bearing negatives are C2, C3 and C9",
+    "status": "PROMPT_WRITTEN - NOT YET COMMISSIONED",
+    "gates_nothing": "the scan does not gate the boundary-localization decision",
+    "open_version_discrepancy": "arXiv 2605.17524 served two different contents with different Theorem 2 statements and corollary numbering; nothing from that paper may be quoted in a project artifact until one version is pinned"
   }
 }

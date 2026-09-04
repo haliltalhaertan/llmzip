@@ -784,3 +784,24 @@ open_debt_unchanged: The program audit's blocking finding B1 against this sessio
 status: PASS
 next_single_action: Report the verified audit to the Head Researcher for the boundary-localization decision. The four required narrowings are owed by the research track before the localization checkpoint cites these numbers. Do not preregister or run the localization experiment without an explicit decision.
 ```
+
+### L-041
+
+```text
+timestamp_utc: 2026-09-04T21:30:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-040 / 33f58dd
+scope: Write and record the systematic literature-scan prompt for the SIGN96 mechanism result. No experiment is proposed for execution, no research artifact is touched, no seal or candidate byte changes.
+changed_or_created_paths: prompts/V52_SIGN_MECHANISM_LITERATURE_SCAN_PROMPT_2026-09-04.md; ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+prompt_sha256: 9eaefd512428c05250a7747c95ba65a81c26d6252ab76a4080908e1eb1c092ee
+why_written: Two exploratory scans were run in chat and neither was persisted. Their findings materially changed how the Head/Tail result should be worded, so leaving them in chat was a continuity defect: a later session reading GitHub alone would not know that the headline "rotation hurts" claim is already published theory. This prompt turns the scan into a commissioned, reproducible task with a pushed artifact.
+findings_recorded_as_claims_not_facts: The prior scans surfaced nine claims, C1 to C9, and the prompt hands them to the scanner as hypotheses to confirm or refute rather than as results. The two load-bearing negatives are called out as such: that Xiao 2026 arXiv 2605.17524 considers only full Haar rotation and never partial, block-diagonal or selective rotation (C2), and that QuIVer arXiv 2605.02171 uses no rotation at all and performs no principal-component or variance-band analysis (C3). The core novelty claim, C9, is that no published work uses subspace-restricted rotation as a causal ablation to localize where a retrieval representation's advantage lives. The prompt states that refuting C2, C3 or C9 is the most valuable outcome available, because it would shrink what this program may claim.
+version_discrepancy_flagged_for_resolution: Two different contents were served for arXiv 2605.17524 - a PDF whose Theorem 2 reads "Rotation uniformizes coordinate variances" and an HTML v1 with a different title whose Theorem 2 reads "Weak correlations accumulate", with different corollary numbering. The prompt requires one version to be pinned before anything from that paper may be quoted in a project artifact. Nothing from it is quoted in any committed artifact yet.
+calibration_against_a_wrong_reading: The prompt states explicitly that the leading block alone is weak - Head32-only R@3 about 0.083 against Tail64-only about 0.215 on LoCoMo - so the scanner does not search on the assumption that the head carries the information. That reading was implied in an earlier chat summary by this session and is not supported by the project's own diagnostics.
+method_discipline_required: A search-engine summary is declared not to be evidence, and an abstract is declared insufficient for any claim about what a paper does NOT do. The scanner must record identifier, version, date, venue and the depth actually read for every source, must log every query so a negative can be attacked, must distinguish established from not falsified, and is warned that a summarizer asked a leading question tends to answer yes - a failure this session experienced directly.
+prior_art_distinction_mandated: The report must separate prior art for the CONSTRUCTION - building codes block-wise, as R2PCAH and OPQ eigenvalue allocation do - from prior art for the ABLATION USE, which is what this program claims. Conflating them would either overstate or understate the position.
+prohibitions_carried: No Task 4F1 run, finalize, authorization, HMAC key or outcome access. No modification of any sealed artifact, candidate, manifest, corpus, audit namespace, or of the mechanism research branch. No experiments executed. No paywall circumvention - access must be requested legitimately or the failure recorded.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. The Head/Tail audit stands at AUDIT PASS WITH CAVEATS and the boundary-localization gate remains open but undecided. The V7 execution package remains BLOCKED at 16dc613.
+status: PASS
+next_single_action: Deliver the literature-scan prompt to whoever will run it, and await its pushed artifact for independent hash verification. The scan does not gate the boundary-localization decision, which remains a separate Head Researcher call.
+```
