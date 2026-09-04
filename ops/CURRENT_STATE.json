@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-04T21:30:00Z",
+  "issued_at_utc": "2026-09-04T21:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Deliver the literature-scan prompt and await its pushed artifact for independent hash verification. The boundary-localization decision remains a separate Head Researcher call. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the pushed boundary-localization audit artifact and independently hash-verify it against its sidecar. No new mechanism experiment before it closes. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-041",
+  "ledger_entry": "L-042",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -513,11 +513,19 @@
   },
   "mechanism_research_track": {
     "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
-    "head": "7799502bc3a157f874b4b1aa76f803ec2bf6432f",
+    "head": "1a33ef0d1a2715257920201f7a3db8ab4677a007",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
-    "status": "AUDIT PASS WITH CAVEATS 2026-09-04, independently verified. Boundary-localization gate is OPEN but not automatic: a separate Head Researcher decision and a separate preregistration are required, and four narrowings are owed.",
-    "benchmarks_in_scope": "LoCoMo and LongMemEval only; BEAM/Task 4F1 is a separate track and remains BLOCKED"
+    "status": "AUDIT PENDING - stop rule in force: no finer scan, knee search or new mechanism experiment before the audit closes",
+    "benchmarks_in_scope": "LoCoMo and LongMemEval only; BEAM/Task 4F1 is a separate track and remains BLOCKED",
+    "stages": [
+      "spectral-band causal",
+      "head/tail causal (AUDIT PASS WITH CAVEATS)",
+      "matched random-partition null (AUDIT PENDING, dispatch record exists, NO auditor branch)",
+      "boundary localization (AUDIT PENDING, auditor commissioned)"
+    ],
+    "boundary_localization_result": "S_LoCoMo={32}, S_LongMemEval={32,48}, S_common={32}; labels [PC32-LOCALIZED SUFFICIENCY LEAD - ON TESTED GRID] AND [BOUNDARY-SET HETEROGENEITY PRESENT], which must always be reported together",
+    "independently_reconstructed_by_continuity_lead": true
   },
   "commissioned_head_tail_audit": {
     "stage": "HEAD_TAIL_CAUSAL_INDEPENDENT_AUDIT",
@@ -562,5 +570,20 @@
     "status": "PROMPT_WRITTEN - NOT YET COMMISSIONED",
     "gates_nothing": "the scan does not gate the boundary-localization decision",
     "open_version_discrepancy": "arXiv 2605.17524 served two different contents with different Theorem 2 statements and corollary numbering; nothing from that paper may be quoted in a project artifact until one version is pinned"
-  }
+  },
+  "commissioned_boundary_localization_audit": {
+    "stage": "BOUNDARY_LOCALIZATION_INDEPENDENT_AUDIT",
+    "handoff_branch": "handoff/v52-boundary-localization-audit-2026-09-04",
+    "handoff_commit": "6f7ca6438168faa79ac714711f131bff1d95b1d9",
+    "handoff_path": "research/v52/V52_BOUNDARY_LOCALIZATION_COLD_START_AUDIT_HANDOFF_2026-09-04.md",
+    "handoff_sha256": "a14e29e1557e4aece9a215fa9c92ae1b3b6a02469584876686a70df2eedd0822",
+    "handoff_drive_navigation_mirror": "1W_p5GRbYfiM7XdO_YJibZed56yslXraY (verified; NOT a byte-exact backup)",
+    "audited_commit": "1a33ef0d1a2715257920201f7a3db8ab4677a007",
+    "target_branch": "audit/v52-boundary-localization-independent-2026-09-04",
+    "session_id": "session_01RaVv81ReZoTMFmMnx8aPwk",
+    "gates": "A-S",
+    "status": "RUNNING",
+    "health_check_required": "poll the auditor session status directly; a silent branch is not evidence of work in progress"
+  },
+  "drive_backup_fidelity_note": "Boundary-localization documents are stored on Drive as CONVERTED Google Docs and cannot be hash-verified against their git blobs; result zips remain byte-exact. Earlier stages used unconverted text/markdown. Describe these as content backups, not hash-bound backups."
 }
