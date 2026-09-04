@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""Cryptographic/provenance gate for authorized Task 4F1 post-run analysis.
+"""Secret-free post-run provenance gate for Task 4F1 independent result audit.
 
-This module parses no retrieval ranking or metric value. It verifies only file identities, the
-runner-produced post-run manifest, the production execution seal, and the HMAC-signed run
-authorization. It is designed to run immediately before the exact-rational outcome analyzer.
+This module parses no retrieval ranking or metric value. It verifies file identities, the
+runner-produced post-run manifest, the public fields of the production execution seal and run
+authorization, and a PRE-RUN Head Researcher authorization-release attestation.
 
-The HMAC secret is read only from V52_T4F1_AUTH_HMAC_KEY_HEX and is never printed or persisted.
+Crucially, it never reads V52_T4F1_AUTH_HMAC_KEY_HEX. The HMAC secret remains in Head Researcher
+custody. The HMAC is verified before the run by a separate pre-run release tool; this gate requires
+that release attestation and binds it to the exact authorization SHA used by the runner manifest.
 """
 
 from __future__ import annotations
 
 import argparse
 import hashlib
-import hmac
 import json
-import os
 from pathlib import Path
 from typing import Any
 
@@ -39,6 +39,22 @@ AUTH_SIGNED_FIELDS = (
     "authorization_id",
     "authorization_nonce",
 )
+AUTH_RELEASE_SCHEMA = "V52_T4F1_RUN_AUTHORIZATION_RELEASE_ATTESTATION_V1"
+AUTH_RELEASE_FIELDS = {
+    "schema",
+    "status",
+    "runner_sha256",
+    "execution_candidate_seal_sha256",
+    "cohort_sha256",
+    "preregistration_seal_sha256",
+    "run_authorization_sha256",
+    "output_namespace_basename",
+    "authorization_id",
+    "authorization_nonce",
+    "hmac_verified_by_head_researcher",
+    "hmac_key_disclosed_or_persisted",
+    "single_use",
+}
 EXPECTED_MANIFEST_OUTPUTS = {
     "V52_T4F1_question_seed_level.csv",
     "V52_T4F1_question_level.csv",
@@ -60,7 +76,7 @@ def canonical_json_bytes(value: Any) -> bytes:
 
 def require_hex64(value: Any, label: str) -> str:
     if not isinstance(value, str) or len(value) != 64 or any(ch not in "0123456789abcdef" for ch in value):
-        raise RuntimeError(f"[BLOCKED - INVALID {label}]" )
+        raise RuntimeError(f"[BLOCKED - INVALID {label}]")
     return value
 
 
@@ -76,7 +92,8 @@ def load_json(path: Path, label: str) -> dict[str, Any]:
     return value
 
 
-def verify_execution_seal(path: Path) -> tuple[dict[str, Any], str, bytes]:
+def verify_execution_seal_public(path: Path) -> tuple[dict[str, Any], str, str]:
+    """Verify non-secret execution-seal semantics; return the key commitment but never a key."""
     seal = load_json(path, "EXECUTION SEAL")
     if seal.get("schema") != "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4":
         raise RuntimeError("[BLOCKED - EXECUTION SEAL SCHEMA]")
@@ -92,25 +109,16 @@ def verify_execution_seal(path: Path) -> tuple[dict[str, Any], str, bytes]:
     ):
         raise RuntimeError("[BLOCKED - EXECUTION SEAL AUTH CONTROL]")
     commitment = require_hex64(control.get("key_commitment_sha256"), "KEY COMMITMENT")
-    secret_hex = os.environ.get(AUTH_HMAC_ENV)
-    if secret_hex is None:
-        raise RuntimeError("[BLOCKED - HEAD RESEARCHER AUTHORITY KEY MISSING]")
-    try:
-        secret = bytes.fromhex(secret_hex)
-    except ValueError as exc:
-        raise RuntimeError("[BLOCKED - HEAD RESEARCHER AUTHORITY KEY FORMAT]") from exc
-    if len(secret) != 32 or hashlib.sha256(secret).hexdigest() != commitment:
-        raise RuntimeError("[BLOCKED - HEAD RESEARCHER AUTHORITY KEY MISMATCH]")
-    return seal, sha256_file(path), secret
+    return seal, sha256_file(path), commitment
 
 
-def verify_authorization(
+def verify_authorization_public(
     path: Path,
     execution_seal_sha256: str,
     cohort_sha256: str,
     output_dir: Path,
-    secret: bytes,
 ) -> tuple[dict[str, Any], str]:
+    """Verify all public authorization bindings; HMAC correctness is attested pre-run by HR."""
     authorization = load_json(path, "RUN AUTHORIZATION")
     exact_keys = set(AUTH_SIGNED_FIELDS) | {"authorization_hmac_sha256"}
     if set(authorization) != exact_keys:
@@ -134,15 +142,49 @@ def verify_authorization(
     if mismatches:
         raise RuntimeError("[BLOCKED - AUTHORIZATION BINDING] " + json.dumps(mismatches, sort_keys=True))
     require_hex64(authorization.get("authorization_nonce"), "AUTHORIZATION NONCE")
+    require_hex64(authorization.get("authorization_hmac_sha256"), "AUTHORIZATION HMAC")
     auth_id = authorization.get("authorization_id")
     if not isinstance(auth_id, str) or not auth_id.startswith("V52-T4F1-"):
         raise RuntimeError("[BLOCKED - AUTHORIZATION ID]")
-    signed_payload = {field: authorization[field] for field in AUTH_SIGNED_FIELDS}
-    expected_hmac = hmac.new(secret, canonical_json_bytes(signed_payload), hashlib.sha256).hexdigest()
-    observed_hmac = authorization.get("authorization_hmac_sha256")
-    if not isinstance(observed_hmac, str) or not hmac.compare_digest(observed_hmac, expected_hmac):
-        raise RuntimeError("[BLOCKED - AUTHORIZATION HMAC]")
     return authorization, sha256_file(path)
+
+
+def verify_authorization_release(
+    path: Path,
+    authorization: dict[str, Any],
+    authorization_sha256: str,
+    execution_seal_sha256: str,
+    cohort_sha256: str,
+    prereg_sha256: str,
+    output_dir: Path,
+) -> tuple[dict[str, Any], str]:
+    """Bind the public authorization to the HR's pre-run HMAC verification without exposing key."""
+    release = load_json(path, "AUTHORIZATION RELEASE ATTESTATION")
+    if set(release) != AUTH_RELEASE_FIELDS:
+        raise RuntimeError("[BLOCKED - AUTHORIZATION RELEASE FIELD SET]")
+    expected = {
+        "schema": AUTH_RELEASE_SCHEMA,
+        "status": "AUTHORIZATION_VERIFIED_AND_RELEASED_FOR_SINGLE_USE",
+        "runner_sha256": ACCEPTED_RUNNER_SHA256,
+        "execution_candidate_seal_sha256": execution_seal_sha256,
+        "cohort_sha256": cohort_sha256,
+        "preregistration_seal_sha256": prereg_sha256,
+        "run_authorization_sha256": authorization_sha256,
+        "output_namespace_basename": output_dir.name,
+        "authorization_id": authorization["authorization_id"],
+        "authorization_nonce": authorization["authorization_nonce"],
+        "hmac_verified_by_head_researcher": True,
+        "hmac_key_disclosed_or_persisted": False,
+        "single_use": True,
+    }
+    mismatches = {
+        key: {"expected": value, "observed": release.get(key)}
+        for key, value in expected.items()
+        if release.get(key) != value
+    }
+    if mismatches:
+        raise RuntimeError("[BLOCKED - AUTHORIZATION RELEASE BINDING] " + json.dumps(mismatches, sort_keys=True))
+    return release, sha256_file(path)
 
 
 def verify_post_run_manifest(
@@ -202,8 +244,12 @@ def verify_post_run_manifest(
             raise RuntimeError("[BLOCKED - POST-RUN OUTPUT MANIFEST SCHEMA]")
         name = item["name"]
         names.add(name)
-        path = results_dir / name
-        if not path.is_file() or path.stat().st_size != item["bytes"] or sha256_file(path) != item["sha256"]:
+        output_path = results_dir / name
+        if (
+            not output_path.is_file()
+            or output_path.stat().st_size != item["bytes"]
+            or sha256_file(output_path) != item["sha256"]
+        ):
             raise RuntimeError(f"[BLOCKED - POST-RUN OUTPUT HASH] {name}")
     if names != EXPECTED_MANIFEST_OUTPUTS:
         raise RuntimeError(f"[BLOCKED - POST-RUN OUTPUT NAMES] {sorted(names)}")
@@ -215,6 +261,7 @@ def verify(
     prereg_seal_path: Path,
     execution_seal_path: Path,
     authorization_path: Path,
+    authorization_release_path: Path,
     results_dir: Path,
 ) -> dict[str, Any]:
     cohort_sha = sha256_file(cohort_path) if cohort_path.is_file() else ""
@@ -223,9 +270,18 @@ def verify(
     prereg_sha = sha256_file(prereg_seal_path) if prereg_seal_path.is_file() else ""
     if prereg_sha != EXPECTED_PREREG_SEAL_SHA256:
         raise RuntimeError("[BLOCKED - PREREGISTRATION SEAL SHA256]")
-    _, execution_seal_sha, secret = verify_execution_seal(execution_seal_path)
-    _, authorization_sha = verify_authorization(
-        authorization_path, execution_seal_sha, cohort_sha, results_dir, secret
+    _, execution_seal_sha, _ = verify_execution_seal_public(execution_seal_path)
+    authorization, authorization_sha = verify_authorization_public(
+        authorization_path, execution_seal_sha, cohort_sha, results_dir
+    )
+    _, release_sha = verify_authorization_release(
+        authorization_release_path,
+        authorization,
+        authorization_sha,
+        execution_seal_sha,
+        cohort_sha,
+        prereg_sha,
+        results_dir,
     )
     _, manifest_sha = verify_post_run_manifest(
         results_dir, authorization_sha, execution_seal_sha, cohort_sha
@@ -237,8 +293,10 @@ def verify(
         "preregistration_seal_sha256": prereg_sha,
         "execution_candidate_seal_sha256": execution_seal_sha,
         "run_authorization_sha256": authorization_sha,
+        "authorization_release_attestation_sha256": release_sha,
         "post_run_manifest_sha256": manifest_sha,
-        "hmac_verified": True,
+        "hmac_secret_read_by_this_gate": False,
+        "hmac_verified_pre_run_by_head_researcher": True,
         "retrieval_quality_values_parsed_by_this_gate": False,
     }
 
@@ -249,10 +307,16 @@ def main() -> int:
     parser.add_argument("--prereg-seal", type=Path, required=True)
     parser.add_argument("--execution-seal", type=Path, required=True)
     parser.add_argument("--authorization", type=Path, required=True)
+    parser.add_argument("--authorization-release", type=Path, required=True)
     parser.add_argument("--results-dir", type=Path, required=True)
     args = parser.parse_args()
     report = verify(
-        args.cohort, args.prereg_seal, args.execution_seal, args.authorization, args.results_dir
+        args.cohort,
+        args.prereg_seal,
+        args.execution_seal,
+        args.authorization,
+        args.authorization_release,
+        args.results_dir,
     )
     print("T4F1_POST_RUN_PROVENANCE: PASS")
     for key, value in report.items():
