@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-04T15:10:00Z",
+  "issued_at_utc": "2026-09-04T20:40:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Commission the cold-start Head/Tail causal audit, then independently hash-verify its pushed artifact before any boundary-localization preregistration is opened. Do NOT start a new mechanism experiment before the audit returns. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Report the verified Head/Tail audit to the Head Researcher for the boundary-localization decision. Do NOT preregister or run the localization experiment without an explicit decision. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-039",
+  "ledger_entry": "L-040",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -516,7 +516,7 @@
     "head": "7799502bc3a157f874b4b1aa76f803ec2bf6432f",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
-    "status": "LOAD-BEARING THRESHOLD REACHED - INDEPENDENT AUDIT REQUIRED BEFORE ANY FURTHER EXPERIMENT",
+    "status": "AUDIT PASS WITH CAVEATS 2026-09-04, independently verified. Boundary-localization gate is OPEN but not automatic: a separate Head Researcher decision and a separate preregistration are required, and four narrowings are owed.",
     "benchmarks_in_scope": "LoCoMo and LongMemEval only; BEAM/Task 4F1 is a separate track and remains BLOCKED"
   },
   "commissioned_head_tail_audit": {
@@ -526,11 +526,27 @@
     "audited_commit": "7799502bc3a157f874b4b1aa76f803ec2bf6432f",
     "target_branch": "audit/v52-head-tail-causal-independent-2026-09-04",
     "gates": "G1-G11",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "session_id": "session_012qb1U9mpamxq2t2a6tvquX",
     "commissioned_at_utc": "2026-09-04T19:48:40Z",
     "seeded_cold_at_commit": "7799502bc3a157f874b4b1aa76f803ec2bf6432f",
-    "health_check_required": "Check the auditor session status directly, not only its branch. The V7 auditor (session_01MaqWxi8RD8TcYU4BZ2PVUb) died on a usage limit at 2026-09-03T20:55Z and its silence was reported as 'still running' for ~16 hours. A stalled branch is not evidence of work in progress."
+    "health_check_required": "Check the auditor session status directly, not only its branch. The V7 auditor (session_01MaqWxi8RD8TcYU4BZ2PVUb) died on a usage limit at 2026-09-03T20:55Z and its silence was reported as 'still running' for ~16 hours. A stalled branch is not evidence of work in progress.",
+    "result_branch": "audit/v52-head-tail-causal-independent-2026-09-04",
+    "result_commit": "f939db0238f1c348c37851aeda9958700bb06d53",
+    "report_sha256": "e804936ed59ab1005d2087d171969a2d19fd437f498d29ad00b24543d1094851",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "verdict": "AUDIT PASS WITH CAVEATS",
+    "branch_adds_only": "paths under audit_v52_head_tail_causal_independent_2026_09_04/; no research, seal, candidate or main-track byte touched",
+    "decisive_finding": "auditor-supplied matched-size RANDOM 32/64 partition control on LoCoMo: rho_2 = 0.9488647823652118 against the Head32/Tail64 arm's 0.10744461886682183, Delta = 0.8414. The 'any 32/64 block structure suffices' confound is REJECTED on LoCoMo; NOT run on LongMemEval.",
+    "reproduction": "committed LoCoMo runner re-executed end-to-end on a different interpreter; four result CSVs reproduce BIT-IDENTICALLY by SHA-256",
+    "required_narrowings": [
+      "report rho_2 as 0.107 +/- 0.047 (LoCoMo) and 0.157 +/- 0.025 (LongMemEval), five draws, denominator error excluded",
+      "disclose that LoCoMo seed 56001 inverts the sign of L_2 (per-seed rho_2 = -0.0672)",
+      "qualify 'cross-benchmark' as two frozen datasets under one shared pipeline, not independent replication",
+      "replace the SHARDED_EXACT label: shard-invariant semantics are demonstrable, bit-level exactness is not shown"
+    ],
+    "narrowings_owed_by": "research track (research/v52-sign-mechanism-locomo-2026-09-04), not this session"
   },
   "head_researcher_sequencing_decision_2026_09_04": {
     "decision": "Independent cold-start audit FIRST; boundary localization (16/80, 24/72, 32/64, 48/48, 64/32) only on a passing audit, under a separate preregistration",
