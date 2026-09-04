@@ -1,0 +1,89 @@
+{
+  "status": "BOUNDARY_LOCALIZATION_RESULT_DOUBLE_BACKUP_AUDIT_PENDING",
+  "date": "2026-09-04",
+  "repository": "haliltalhaertan/llmzip",
+  "research_branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+  "checkpoint_commit": "5e5ccb356d3285387a52eb0140d321556effac76",
+  "task4f1_execution_touched": false,
+  "preregistration": {
+    "path": "research/v52/V52_CAUSAL_HEAD_TAIL_BOUNDARY_LOCALIZATION_PREREG_2026-09-04.md",
+    "git_blob_sha1": "b8acebedd49497a62ec637beabbcef6720460d15",
+    "drive_file_id": "1hE_-z6qIn3g-zX0jLAClwoQeHbsZDeVuQ83SyO17sI0"
+  },
+  "post_audit_addendum": {
+    "path": "research/v52/V52_HEAD_TAIL_POST_AUDIT_INTERPRETATION_ADDENDUM_2026-09-04.md",
+    "git_blob_sha1": "456b3b51f49a0238cd936bc3f639988fb0d673af",
+    "drive_file_id": "13hV2Ubw4Dgfi2TBO5MuNEtpLIJXJ0NuDXga-BmC94z8"
+  },
+  "prerun_seal": {
+    "path": "research/v52/V52_BOUNDARY_LOCALIZATION_PRERUN_SEAL_2026-09-04.json",
+    "git_blob_sha1": "cd3ad221ed66816a7b36c1edc746016ca73f9188",
+    "drive_file_id": "1z-WSwgCgB_HKoO6F8t6fxfKh6KBol-4pSMzcLrqyiLs"
+  },
+  "trigger": {
+    "path": "research/v52/TRIGGER_BOUNDARY_LOCALIZATION_2026-09-04.txt",
+    "git_blob_sha1": "a4ff477ec2b843c15668e9fba304fb2703e1a6b7",
+    "commit": "2edeef4a99cba20c94f3ec1c42c3da229f9d2452",
+    "bound_seal_git_blob": "cd3ad221ed66816a7b36c1edc746016ca73f9188"
+  },
+  "frozen_package": {
+    "locomo_runner_git_blob": "0e66431449ad48b5f24049e0c05d65c917d8b893",
+    "longmemeval_runner_git_blob": "26c1fe89ca025747b47f3fa6daf80326a8864747",
+    "locomo_workflow_git_blob": "1de6c8abad80976c51843592801b53b18a998541",
+    "longmemeval_workflow_git_blob": "128987f7402a71160981f8f0cd28677e6c931710",
+    "locomo_base_git_blob": "7c4140252fb7f846d617189925cdf534515743f4",
+    "longmemeval_base_git_blob": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+    "boundaries": [16,24,32,48,64],
+    "rotation_seeds": [58001,58002,58003,58004,58005,58006,58007,58008,58009,58010],
+    "partition_seeds": [68001,68002,68003,68004,68005,68006,68007,68008,68009,68010]
+  },
+  "locomo": {
+    "actions_run_id": 33916946302,
+    "artifact_id": 9953521863,
+    "artifact_digest": "sha256:da4e7a47d8b5491e956914a2216d187ea9ded49972eaa97a5d8e00b126e7cced",
+    "drive_artifact_file_id": "1suAZoTuYsaah_oWf1fB9vPxQ2KPg92tr",
+    "summary_path": "research/v52/locomo_boundary_outputs/locomo_boundary_summary.json",
+    "summary_git_blob_sha1": "89c30a2a58fd638809477ded0d41b996f051c0f1",
+    "seed_results_git_blob_sha1": "f9e572328df0da3df7bf7068d7f6fe0c579957a3",
+    "per_question_sha256": "87e7ae969403b0bb06efcd726d317fb08427cce7c29f221dd0e520ff8722fd1b",
+    "partition_file_sha256": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791",
+    "S_dataset": [32],
+    "rho32_approx": 0.082,
+    "rho_random32_approx": 0.937,
+    "Delta32_approx": 0.855,
+    "P1": "PASS",
+    "P2": "SPECTRAL_POSITION_CONFIRMED",
+    "controls_pass": true
+  },
+  "longmemeval": {
+    "actions_run_id": 33916946226,
+    "shards": 10,
+    "artifact_id": 9953631412,
+    "artifact_digest": "sha256:810aff5d4cb5e5c6b2851873555967b9fbbf4867e810bdf3eaf04cad455c66d1",
+    "drive_artifact_file_id": "1qLSdVsbUb8Eo5D8YgmGdkk3gx0w_vufQ",
+    "summary_path": "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_summary.json",
+    "summary_git_blob_sha1": "2d6e3a4b5f5bfdfd2b3b93bbc068a4fcc685b954",
+    "seed_results_git_blob_sha1": "481287b2509bd38e0c70aafc0a25fb241e05d06d",
+    "per_question_sha256": "e73576039cb1c9b76ceb4b440148b90f3caa044ca082585d1a0f4d23ac08eaba",
+    "partition_file_sha256": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791",
+    "S_dataset": [32,48],
+    "rho32_approx": 0.162,
+    "rho48_approx": 0.194,
+    "rho_random32_approx": 0.991,
+    "Delta32_approx": 0.829,
+    "P1": "PASS",
+    "P2": "SPECTRAL_POSITION_CONFIRMED",
+    "controls_pass": true
+  },
+  "cross_dataset": {
+    "S_common": [32],
+    "primary_verdict": "[PC32-LOCALIZED SUFFICIENCY LEAD — ON TESTED GRID]",
+    "mandatory_flag": "[BOUNDARY-SET HETEROGENEITY PRESENT]",
+    "checkpoint_path": "research/v52/CROSS_DATASET_HEAD_TAIL_BOUNDARY_LOCALIZATION_CHECKPOINT_2026-09-04.md",
+    "checkpoint_git_blob_sha1": "b5a8ed6542c78cde14f608b9b23b51eb6e34b917",
+    "drive_checkpoint_file_id": "1Rhq_GyLmUgLorvoTOyx38U4pfaReJGs8zwYpG6IVGEw"
+  },
+  "audit_state": "AUDIT_PENDING",
+  "stop_rule": "No finer boundary scan, adaptive localization, knee search, or new mechanism experiment before independent audit.",
+  "interpretation_ceiling": "Fixed-grid causal sufficiency lead across two frozen datasets under one shared pipeline; dataset heterogeneity present; no global optimum, necessity, universal theorem, or Task 4F1 claim."
+}
