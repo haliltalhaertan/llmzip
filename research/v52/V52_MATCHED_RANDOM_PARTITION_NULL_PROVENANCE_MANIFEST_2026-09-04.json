@@ -1,0 +1,131 @@
+{
+  "status": "CROSS_BENCHMARK_LOAD_BEARING_LEAD_AUDIT_REQUIRED",
+  "date": "2026-09-04",
+  "repository": "haliltalhaertan/llmzip",
+  "research_branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+  "task4f1_touched": false,
+  "task4f1_outcome_access": false,
+  "canonical_main_observed_before_run": "c54013611fb6bbda6187d7dfc0b60ae1126e9cef",
+  "preregistration": {
+    "path": "research/v52/V52_MATCHED_RANDOM_PARTITION_NULL_PREREG_2026-09-04.md",
+    "commit": "483e5eb172a54531c51e35ef18ab47d54bd94e8c",
+    "git_blob_sha1": "2d6a14f254399327f59db1958a0b5c0dfb9ea8e0",
+    "drive_native_doc_id": "16cpNlMnVmehI6faMfvmicK280SKWHheA7bfAom7Ub_g",
+    "created_before_outcome": true
+  },
+  "runners": {
+    "locomo": {
+      "path": "research/v52/locomo_matched_random_partition_null.py",
+      "commit": "e5486166ecb5c17082dae4d36b1c1df605faec72",
+      "git_blob_sha1": "ebf76908c73bbf266c04f6ae05537a03e70c7526",
+      "frozen_base_git_blob_sha1": "7c4140252fb7f846d617189925cdf534515743f4"
+    },
+    "longmemeval": {
+      "path": "research/v52/longmemeval_matched_random_partition_null_shard.py",
+      "commit": "fb1390e47c29fb52acca875a663841befae16fc1",
+      "git_blob_sha1": "277c06e8be87fa1c3322b829b780b1375f7ca0c4",
+      "frozen_base_git_blob_sha1": "79dd4a5ec462102da5d82530088a4b7e89bef437"
+    }
+  },
+  "workflows": {
+    "locomo": {
+      "path": ".github/workflows/v52-locomo-matched-random-partition-null.yml",
+      "commit": "4d6b00c0f276e0c63ce588b399ecbafdc4848315",
+      "git_blob_sha1": "f5673def52076905b56c9991a41e78e89b4f22ad"
+    },
+    "longmemeval": {
+      "path": ".github/workflows/v52-longmemeval-matched-random-partition-null.yml",
+      "commit": "483336a306b7228695bab86d011d22eaec39ee58",
+      "git_blob_sha1": "e8c0d91ec70e0d2ca0973fcc5ae4b7ed4989f054"
+    }
+  },
+  "pre_run_seal": {
+    "path": "research/v52/V52_MATCHED_RANDOM_PARTITION_NULL_PRERUN_SEAL_2026-09-04.json",
+    "commit": "fbe8500e7dd674ddbe03d098e3b4f9f1401960c3",
+    "git_blob_sha1": "df309826982504c5ea0ff3917d67cf2da632bac4",
+    "drive_native_doc_id": "14PJunDnAshUvXBf5uA1T5UCFlA5Xkfa1rYa6Gg4bXIg",
+    "trigger_absent_when_sealed": true,
+    "status": "PRERUN_SEALED_NO_OUTCOME_ACCESS"
+  },
+  "trigger": {
+    "path": "research/v52/TRIGGER_MATCHED_RANDOM_PARTITION_NULL_2026-09-04.txt",
+    "commit": "9fd60f60f3ecb407f9a0547853d88e487dabd05b"
+  },
+  "frozen_design": {
+    "seed_panel": [57001,57002,57003,57004,57005,57006,57007,57008,57009,57010],
+    "random_partition": "S=sort(default_rng(seed).permutation(96)[:32]); T=complement",
+    "rotation_rng": "default_rng(1000000 + seed); Q32 first; Q64 second",
+    "paired_matrix_rule": "same numeric Q32 and Q64 used in spectral and matched-random arms for each seed",
+    "spectral_arm": "Head32 indices 0..31 and Tail64 indices 32..95",
+    "random_arm": "S32 versus its 64-coordinate complement",
+    "replication_gate": "rho_spec <= 0.25",
+    "generic_block_spectral_falsified": "Delta <= 0.05 after replication gate",
+    "spectral_position_load_bearing": "Delta >= 0.25 after replication gate",
+    "mixed": "0.05 < Delta < 0.25 after replication gate"
+  },
+  "source_identity": {
+    "locomo_dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "locomo_audit_manifest_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06",
+    "locomo_valid_questions": 1535,
+    "longmemeval_dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "longmemeval_dataset_bytes": 277383467,
+    "longmemeval_adapter_v1_sha256": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+    "longmemeval_adapter_v2_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+    "longmemeval_primary_questions": 470
+  },
+  "locomo_result": {
+    "summary_path": "research/v52/locomo_random_partition_outputs/locomo_random_partition_summary.json",
+    "summary_git_blob_sha1": "205c2b72e87eec6e441604120ab1bf50e65ff4e5",
+    "actions_run_id": 33907122988,
+    "actions_job_id": 101134570493,
+    "artifact_id": 9949936324,
+    "artifact_digest": "sha256:5b306f7874fe5bd441a3fb045bc776de8e538fb0507dff8fe4317180d26bd1e3",
+    "drive_artifact_id": "19zuaMJeF32BAdG7dSKOmovjGzhSmvzT7",
+    "native_R3": 0.23654714666441054,
+    "frozen_full_haar_R3": 0.13770827054136,
+    "spectral_mean_R3": 0.2301279412463207,
+    "random_mean_R3": 0.14298280722884044,
+    "rho_spec": 0.06494615954655526,
+    "rho_rand": 0.9466349993608402,
+    "Delta": 0.8816888398142849,
+    "Delta_sample_sd": 0.12128537114222615,
+    "Delta_min": 0.613784339009036,
+    "Delta_max": 1.0465011549547585,
+    "native_reproduction_error": 0.0,
+    "regime": "[SPECTRAL POSITION LOAD-BEARING LEAD]"
+  },
+  "longmemeval_result": {
+    "summary_path": "research/v52/longmemeval_random_partition_outputs/longmemeval_random_partition_summary.json",
+    "summary_git_blob_sha1": "999f6f16c56d96b074b4968ca8d33fec95a82a95",
+    "execution": "SHARDED_EXACT",
+    "shards": 10,
+    "actions_run_id": 33907122993,
+    "aggregate_job_id": 101135639725,
+    "artifact_id": 9950032044,
+    "artifact_digest": "sha256:87069e0f6dfe2f47833518ef8bf719b1bb692f7c71c3664e3c6cca808cee124e",
+    "drive_artifact_id": "1YHi5QT1cX4T_qXHzaXRtxNUw5m5DP7R4",
+    "native_R3": 0.5419751773049646,
+    "frozen_full_haar_R3": 0.38271666666667,
+    "spectral_mean_R3": 0.5148030141843971,
+    "random_mean_R3": 0.38202482269503546,
+    "rho_spec": 0.1706167099746428,
+    "rho_rand": 1.0043441569864096,
+    "Delta": 0.8337274470117668,
+    "Delta_sample_sd": 0.09614763309727813,
+    "Delta_min": 0.6893760757410925,
+    "Delta_max": 0.9759768786642199,
+    "native_reproduction_error": 0.0,
+    "regime": "[SPECTRAL POSITION LOAD-BEARING LEAD]"
+  },
+  "cross_benchmark": {
+    "verdict": "[CROSS-BENCHMARK SPECTRAL POSITION CAUSAL LEAD]",
+    "audit_decision": "[AUDIT NOW — LOAD-BEARING RESULT]",
+    "checkpoint_path": "research/v52/CROSS_BENCHMARK_MATCHED_RANDOM_PARTITION_NULL_CHECKPOINT_2026-09-04.md",
+    "checkpoint_commit": "88af8656e758a190170eaf6f13482396ab1252ef",
+    "checkpoint_git_blob_sha1": "60031b16b1440e8c5e6c59b84ce35104c912db88",
+    "drive_checkpoint_id": "1__c-LIzdI9SsKxkyiQmvzix1NA4SDC5hFX8EWuZ4ZJs",
+    "interpretation": "Spectral coordinate position is materially more protective than a matched-size arbitrary 32/64 block partition on both frozen benchmarks; coordinate 32 is not yet established as uniquely optimal or necessary."
+  },
+  "ci_persisted_output_base_before_checkpoint": "7903848604f5b2f1ed2b9ca1ff16896c12afad0f",
+  "next_action": "Cold-start independent audit before any boundary-localization experiment."
+}
