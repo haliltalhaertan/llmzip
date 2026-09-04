@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_PREREGISTRATION_APPROVED_FOR_SEALING_NOT_YET_SEALED",
-  "issued_at_utc": "2026-09-04T07:10:00Z",
+  "issued_at_utc": "2026-09-04T07:40:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Prepare the Task 4F1 preregistration seal (approved, not yet sealed)",
-    "next_single_action": "Prepare the preregistration seal binding draft SHA256 5e618981, sealed 4F0 cohort anchor 9b70e16f and decision anchor 8795abc7, as its own stage with its own IN_PROGRESS ledger entry. Do not run, finalize, authorize or access outcomes.",
+    "next_single_action": "Deliver prompts/V52_TASK_4F1_STATUS_REPORT_2026-09-04.md and await direction on sealing (prepare now, defer until the V7 audit reports, or shape differently). Do not seal, authorize, run, finalize or access outcomes without it.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "BLOCKED",
     "task_4f1_run": "BLOCKED",
@@ -179,7 +179,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-027",
+  "ledger_entry": "L-028",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -290,5 +290,13 @@
     "carried_forward_condition_a2": "Before any run authorization the outcome-analysis implementation must honour the exact-rational sign rule rather than classify the sign from a rounded or floating aggregate. Execution/authorization gate, not a draft defect.",
     "explicitly_does_not_authorize": "Task 4F1 execution; acceptance of the V7 execution-package audit; retrieval-quality outcome access; any HMAC key or authorization",
     "outcome_free_confirmed": true
+  },
+  "status_report": {
+    "path": "prompts/V52_TASK_4F1_STATUS_REPORT_2026-09-04.md",
+    "sha256": "b1d7f2a4fb465c3357e1cfcf824394f1d9e5437b7e024990e340d9c30deb8513",
+    "issued_at_utc": "2026-09-04T07:40:00Z",
+    "addressed_to": "Head Researcher / reviewing authority",
+    "decision_requested": "none; two open asks named - sealing timing, and the two owner-only P0 items",
+    "status": "ISSUED"
   }
 }

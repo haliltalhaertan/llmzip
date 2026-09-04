@@ -507,3 +507,23 @@ outcome_boundary: Task 4F1 preregistration remains UNSEALED and therefore BLOCKE
 status: PASS
 next_single_action: Prepare the preregistration seal binding draft SHA256 5e618981, the sealed 4F0 cohort anchor 9b70e16f and the decision anchor 8795abc7, as its own stage with its own IN_PROGRESS entry. Do not run, finalize, authorize or access outcomes.
 ```
+
+### L-028
+
+```text
+timestamp_utc: 2026-09-04T07:40:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-027 / 5f2c5b2
+scope: Write and record the status report to the reviewing authority. No draft byte, candidate, seal, manifest, pinned corpus or audit namespace is touched; this entry adds one prompt file and this record.
+changed_or_created_paths: prompts/V52_TASK_4F1_STATUS_REPORT_2026-09-04.md; docs/CONTINUITY_LEDGER.md; ops/CURRENT_STATE.json
+report_sha256: b1d7f2a4fb465c3357e1cfcf824394f1d9e5437b7e024990e340d9c30deb8513
+why_written: The approval of 2026-09-04 changes the project's posture and is the kind of moment where "approved" quietly becomes "done" in a later reader's memory. The report exists to state plainly that the design is approved and the seal is NOT applied, so preregistration is still BLOCKED, and to hand the reviewing authority the anchors to check that for itself.
+report_design: Self-contained and hash-bound so nothing has to be taken on relay: repo, branch, commit 5f2c5b2, the verification command whose PASS is the gate, and the anchors for the approved draft, the decision, the scientific review, the sealed cohort, the ledger entries and both state anchor branches. It warns explicitly that the repository default branch still points at claude/itq-frontier-audit-wfrz6a and that main must be fetched by name.
+what_it_reports: A state table separating preregistration design APPROVED from preregistration seal NOT APPLIED, with run BLOCKED and outcome access FORBIDDEN; the verification actually performed on the decision artifact rather than the verdict alone; the A2 implementation note carried forward onto the execution gate; and the unchanged V7 audit position at 16dc613 with no recorded result.
+asks_bounded: The report requests no decision. It names exactly two open asks - whether to prepare the seal now, defer it until the V7 audit reports, or shape it differently, and the two owner-only P0 items that cannot be fixed from this session, the default-branch setting and the refs/tags push refusal.
+track_separation_restated: The report states that sealing the science does not shorten the packaging track and that a passing package audit would not by itself authorize a run, so neither track can be read as implying the other.
+boundary_declaration_included: The report carries its own zero-count boundary declaration for the reporting period and contains no retrieval-quality outcome.
+outcome_boundary: Unchanged. Task 4F1 preregistration BLOCKED because unsealed, run BLOCKED, retrieval-quality outcome access FORBIDDEN. Nothing sealed by this entry.
+status: PASS
+next_single_action: Deliver the status report and await direction on sealing. Do not seal, authorize, run, finalize or access outcomes without it.
+```
