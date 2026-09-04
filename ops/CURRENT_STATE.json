@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED",
-  "issued_at_utc": "2026-09-04T09:30:00Z",
+  "state_id": "V52_4F1_SEAL_V1_BLOCKED_METADATA_REPAIR_IN_PROGRESS",
+  "issued_at_utc": "2026-09-04T10:05:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,9 +22,9 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Execution track: await the V7 independent audit report and hash-verify it when it lands. Do NOT authorize, run or finalize Task 4F1; no production authorization exists and outcome access remains FORBIDDEN. The pre-run exact-rational D_t sign-classification condition must be discharged on the execution track before any run authorization.",
+    "next_single_action": "Prepare an additive Seal V2 superseding V1, with a strengthened verifier that recomputes the cohort structure from the sealed CSV, asserts the exact tier set {100K, 500K, 1M, 10M}, and checks bindings 7 and 8 against their authoritative source bytes. Preserve V1 unchanged. No new generalized scanner. Do not touch the execution path.",
     "completion_decision_owner": "Head Researcher",
-    "task_4f1_preregistration": "SEALED 2026-09-04 at draft SHA256 5e618981; seal SHA256 c9e06195",
+    "task_4f1_preregistration": "NOT SEALED - Seal V1 BLOCKED by Head Researcher defect decision 2026-09-04; sealing gate narrowly reopened for seal-metadata repair",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
     "v3_independent_audit": "BLOCKED (superseded by V4; V3 preserved unmodified)",
@@ -37,7 +37,7 @@
     "v7_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED (bound payload reduced to 4 functional files; no narrative document bound)",
     "packaging": "CLOSED BY SURFACE REDUCTION pending independent audit; no scanner exists in the package",
     "v7_preseal_documentation_condition": "SATISFIED 2026-09-04; awaiting independent confirmation",
-    "preregistration_draft_status": "SEALED. Approved by the Head Researcher (8795abc7) and by an independent exact-byte co-chair (3aaa90bf, APPROVE WITH NOTES, unconditional). Any scientific-content change now produces new bytes, voids the seal for those bytes, and requires a fresh Head Researcher approval AND a fresh exact-byte co-chair approval."
+    "preregistration_draft_status": "VALID AND FROZEN at SHA256 5e618981. Both scientific approvals remain VALID. No scientific content is changing and no fresh scientific review is required."
   },
   "anchors": {
     "v3_runner": {
@@ -156,7 +156,7 @@
       "path": "task4f1_execution_candidate_v7_preflight_2026_09_03/PREFLIGHT_HASHES.json",
       "sha256": "70a37f8f50e1e64799c08d3f893d8a50d0e41136fd121d7595a20984b2836439"
     },
-    "preregistration_seal": {
+    "preregistration_seal_v1_defective_preserved": {
       "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json",
       "sha256": "c9e061951c44d89f9c62af94ee78b37a860fd52081fb0c38d38360511218891b"
     }
@@ -183,7 +183,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-032",
+  "ledger_entry": "L-033",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -368,13 +368,63 @@
     ]
   },
   "preregistration_seal": {
+    "status": "BLOCKED",
+    "note": "see preregistration_seal_v1 below"
+  },
+  "preregistration_seal_v1": {
     "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json",
     "sha256": "c9e061951c44d89f9c62af94ee78b37a860fd52081fb0c38d38360511218891b",
-    "sidecar": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json.sha256",
-    "verifier": "tools/verify_preregistration_seal.py",
-    "verifier_result": "PREREGISTRATION_SEAL: PASS - all eight bindings re-derived from bytes",
-    "sealed_at_utc": "2026-09-04T09:30:00Z",
-    "v7_bound_as_prerequisite": false,
-    "authorizes_execution": false
+    "status": "BLOCKED AS A SEAL ARTIFACT - preserved byte-unchanged as a historical defective artifact",
+    "defect_d1": "binding 2 tier labels wrong: recorded 100K/1M/5M/10M; the cohort and the approved draft define 100K/500K/1M/10M. 500K missing, nonexistent 5M introduced, 500K and 1M counts shifted onto wrong labels.",
+    "defect_d2": "the verifier never recomputed those dictionaries from the cohort CSV, so PASS did not test them",
+    "defect_d3": "binding 7 checked only by list length; binding 8 only by non-emptiness. The L-032 claim that every binding was re-derived from bytes is retracted.",
+    "authored_by": "this session; the finding was reproduced from bytes before being accepted"
+  },
+  "head_researcher_seal_v1_defect_decision_2026_09_04": {
+    "branch": "hr/prereg-seal-v1-defect-2026-09-04",
+    "commit": "c867ea123a3ee7fba19a78ca59312601aac9fbc4",
+    "merge_base_with_main": "d95ab8ec4d3b6018b188598fb9f1577caeac40d1",
+    "file": "docs/v52/task4f1/T4F1_PREREG_SEAL_V1_DEFECT_DECISION_2026-09-04.md",
+    "file_sha256": "d9fae3f6bcb151d6819aeb11224cde901356d667990fb5083b03f6460786aae9",
+    "independently_verified": true,
+    "sidecar_agrees": true,
+    "verdict": "SEAL V1 BLOCKED / SUPERSEDED REQUIRED; scientific bytes and both approvals remain VALID",
+    "fresh_scientific_review_required": false
+  },
+  "cohort_structure_recomputed_2026_09_04": {
+    "source": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv (sha256 9b70e16f)",
+    "tiers_in_order": [
+      "100K",
+      "500K",
+      "1M",
+      "10M"
+    ],
+    "question_counts": {
+      "100K": 355,
+      "500K": 629,
+      "1M": 553,
+      "10M": 175
+    },
+    "archive_counts": {
+      "100K": 20,
+      "500K": 35,
+      "1M": 31,
+      "10M": 10
+    },
+    "zero_compression_counts_gold_le_3": {
+      "100K": 259,
+      "500K": 461,
+      "1M": 300,
+      "10M": 105
+    },
+    "eligible_questions": 1712,
+    "eligible_archives": 96,
+    "excluded_archives": [
+      "1M::5",
+      "1M::26",
+      "1M::33",
+      "1M::34"
+    ],
+    "archive_identity": "tier::conversation_id; conversation_id is not unique across tiers"
   }
 }
