@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_PREREG_APPROVED_AWAITING_EXACT_BYTE_COCHAIR_SIGNOFF",
-  "issued_at_utc": "2026-09-04T08:55:00Z",
+  "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED",
+  "issued_at_utc": "2026-09-04T09:30:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -21,10 +21,10 @@
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
-    "current_task": "Obtain an exact-byte co-chair sign-off on the amended preregistration, then seal",
-    "next_single_action": "Await the pushed co-chair artifact on cochair/exact-byte-approval-t4f1-prereg-2026-09-04. On arrival independently verify its branch, commit, reviewed draft SHA256, review-file SHA256 and sidecar. If and only if it returns APPROVE on draft SHA256 5e618981, prepare and apply the scientific preregistration seal immediately with the eight directed bindings. Do not wait for V7. Do not authorize or run Task 4F1; outcome access remains FORBIDDEN.",
+    "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
+    "next_single_action": "Execution track: await the V7 independent audit report and hash-verify it when it lands. Do NOT authorize, run or finalize Task 4F1; no production authorization exists and outcome access remains FORBIDDEN. The pre-run exact-rational D_t sign-classification condition must be discharged on the execution track before any run authorization.",
     "completion_decision_owner": "Head Researcher",
-    "task_4f1_preregistration": "BLOCKED",
+    "task_4f1_preregistration": "SEALED 2026-09-04 at draft SHA256 5e618981; seal SHA256 c9e06195",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
     "v3_independent_audit": "BLOCKED (superseded by V4; V3 preserved unmodified)",
@@ -37,7 +37,7 @@
     "v7_candidate": "PREPARED_NOT_INDEPENDENTLY_AUDITED (bound payload reduced to 4 functional files; no narrative document bound)",
     "packaging": "CLOSED BY SURFACE REDUCTION pending independent audit; no scanner exists in the package",
     "v7_preseal_documentation_condition": "SATISFIED 2026-09-04; awaiting independent confirmation",
-    "preregistration_draft_status": "APPROVED BY HEAD RESEARCHER 2026-09-04 for draft SHA256 5e618981. NOT SEALED. Sealing is deferred by Head Researcher direction 2026-09-04 until a session-independent co-chair APPROVE artifact on the exact amended bytes is pushed and hash-verified. This is a sequencing decision, not a scientific reversal."
+    "preregistration_draft_status": "SEALED. Approved by the Head Researcher (8795abc7) and by an independent exact-byte co-chair (3aaa90bf, APPROVE WITH NOTES, unconditional). Any scientific-content change now produces new bytes, voids the seal for those bytes, and requires a fresh Head Researcher approval AND a fresh exact-byte co-chair approval."
   },
   "anchors": {
     "v3_runner": {
@@ -155,6 +155,10 @@
     "v7_preflight_manifest": {
       "path": "task4f1_execution_candidate_v7_preflight_2026_09_03/PREFLIGHT_HASHES.json",
       "sha256": "70a37f8f50e1e64799c08d3f893d8a50d0e41136fd121d7595a20984b2836439"
+    },
+    "preregistration_seal": {
+      "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json",
+      "sha256": "c9e061951c44d89f9c62af94ee78b37a860fd52081fb0c38d38360511218891b"
     }
   },
   "required_external_inputs": {
@@ -179,7 +183,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-031",
+  "ledger_entry": "L-032",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -338,11 +342,39 @@
     "review_target_sha256": "5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44",
     "target_branch": "cochair/exact-byte-approval-t4f1-prereg-2026-09-04",
     "scope": "A1-A6 discharge on the exact bytes; new-inconsistency check; outcome-freeness. V7 package audit NOT reopened.",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "session_id": "session_01FpcKgJVXPPLgLgAtCat8HV",
     "commissioned_at_utc": "2026-09-04T06:49:35Z",
     "seeded_at_commit": "c0133fce9b755d13d9be3016e8e06f493d6b275b",
-    "remote_branch_present": false,
-    "verdict": "NONE - no artifact pushed yet; none assumed or anticipated"
+    "remote_branch_present": true,
+    "verdict": "APPROVE WITH NOTES (unconditional)"
+  },
+  "cochair_exact_byte_approval_2026_09_04": {
+    "branch": "cochair/exact-byte-approval-t4f1-prereg-2026-09-04",
+    "commit": "5299cc12d899a918504110b4faf1734713f607cc",
+    "merge_base_with_main": "c0133fce9b755d13d9be3016e8e06f493d6b275b",
+    "path": "docs/v52/task4f1/COCHAIR_EXACT_BYTE_APPROVAL_T4F1_PREREG_2026-09-04.md",
+    "sha256": "3aaa90bf2714afa662548c32bba0ae165c4f6a4d84f2af84f1a2659fa25abdca",
+    "independently_verified": true,
+    "sidecar_agrees": true,
+    "verdict": "APPROVE WITH NOTES - unconditional; none of the four notes requires an amendment or new bytes",
+    "reviewed_draft_sha256": "5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44",
+    "branch_adds_only": "the review file and its .sha256 sidecar; approved draft, candidate and cohort untouched",
+    "notes": [
+      "N1 ceiling compression removed, residual within-stratum composition differences remain and the draft nowhere claims otherwise",
+      "N2 the leave-one-archive-out statistic is scoped to D_t as A4 specified",
+      "N3 the exact-rational rule is a property of the estimand; whether the implementation realises it belongs to the execution track",
+      "N4 a missing cross-reference, stylistic only"
+    ]
+  },
+  "preregistration_seal": {
+    "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json",
+    "sha256": "c9e061951c44d89f9c62af94ee78b37a860fd52081fb0c38d38360511218891b",
+    "sidecar": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json.sha256",
+    "verifier": "tools/verify_preregistration_seal.py",
+    "verifier_result": "PREREGISTRATION_SEAL: PASS - all eight bindings re-derived from bytes",
+    "sealed_at_utc": "2026-09-04T09:30:00Z",
+    "v7_bound_as_prerequisite": false,
+    "authorizes_execution": false
   }
 }

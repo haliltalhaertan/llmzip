@@ -5,7 +5,7 @@ This is the single operational entry point for a new Head Researcher, Compute Ex
 ## Exact starting point
 
 - **Repository state:** canonical branch `main`. Tag pushes are refused by the current environment, so the pushed anchor is branch `state/v52-4f1-v3-audit-blocked-2026-09-01`; use the current `main` head or a descendant explicitly reviewed by the Head Researcher.
-- **Current task:** Head Researcher and co-chair review of the outcome-free Task 4F1 preregistration draft. The V6 audit is COMPLETE and returned BLOCKED; do not re-run it.
+- **Current task:** Execution track only. The scientific preregistration is SEALED as of 2026-09-04; the science track is closed. The V6 audit is COMPLETE and returned BLOCKED; do not re-run it.
 - **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
 - **Preregistration draft under review:** `docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md`.
@@ -26,7 +26,8 @@ Read those files in that order. Historical V1/V2 audit reports are evidence, not
 | 4F1 V6 candidate | `BLOCKED` by independent delta audit 2026-09-03: 31 evasions succeeded against the inverted-burden gate |
 | Packaging approach | Scanner strategy ABANDONED by Head Researcher decision. Close by removing restated values from bound documents |
 | Preregistration draft | Written, outcome-free, under Head Researcher review; NOT approved for sealing |
-| Task 4F1 preregistration / run | **Blocked** |
+| Task 4F1 scientific preregistration | **SEALED** 2026-09-04 |
+| Task 4F1 run | **Blocked** |
 | Retrieval-quality outcome access | **Forbidden** |
 
 V3 blocked on BLAS-dispatch-dependent float digests. V4 fixed that and passed nine implementation gates, but the co-chair found CC-01: two mutually exclusive normative canary definitions in one bound file, so V4's seal was withdrawn. V5 corrected CC-01 and added a single-source gate — **BLOCKED**, the gate did not establish its own claim. V6 inverted the gate's burden — **BLOCKED**, 31 evasions succeeded, including ones that disarm the gate by editing its own configuration.
@@ -35,7 +36,7 @@ V3 blocked on BLAS-dispatch-dependent float digests. V4 fixed that and passed ni
 
 **The runner has been byte-identical and audit-confirmed since V4** (`f96cba2c`). B1, B2 and B3 were established repaired by the V4 audit, and nothing since has touched execution behaviour. Everything blocked since then has concerned documentation inside the candidate package, not execution correctness.
 
-**Current work is the science.** An outcome-free preregistration draft exists at `docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md` (SHA256 `5e618981...`). An independent scientific co-chair review returned **REQUEST CHANGES** with a bounded GO recommendation (`cochair/review-t4f1-prereg-2026-09-03` @ `ecbf765`); its six required amendments A1-A6 were applied, and the Head Researcher re-review of 2026-09-04 (`hr/rereview-t4f1-prereg-2026-09-04` @ `19d9cbb`) returned **APPROVED FOR SEALING** for that exact draft digest, discharging the REQUEST CHANGES. **The draft is approved but NOT yet sealed**, so preregistration stays BLOCKED until a seal is prepared and bound. The approval authorizes sealing only - it is not a run authorization, does not accept the V7 execution-package audit, and does not permit outcome access. It is not approved, not sealed. Task 4F1 stays BLOCKED for preregistration and run, and retrieval-quality outcome access stays FORBIDDEN.
+**The scientific preregistration is SEALED** (2026-09-04). The sealed artifact is `docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json` (SHA256 `c9e06195…`, with a `.sha256` sidecar); verify it with `python -B tools/verify_preregistration_seal.py`, which re-derives all eight bindings from bytes. It binds the approved draft `5e618981…`, approved by the Head Researcher (`hr/rereview-t4f1-prereg-2026-09-04` @ `19d9cbb`) and by an independent exact-byte co-chair (`cochair/exact-byte-approval-t4f1-prereg-2026-09-04` @ `5299cc1`, `APPROVE WITH NOTES`, unconditional). **Sealing is not a run authorization.** Task 4F1 run stays BLOCKED, no production authorization exists, and retrieval-quality outcome access stays FORBIDDEN. Any scientific-content change now produces new bytes and needs both approvals again. The remaining blocker is the execution track: the V7 package audit, plus the pre-run exact-rational `D_t` sign-classification condition.
 
 ## Non-negotiable boundary
 
@@ -80,4 +81,4 @@ Use Python 3.12.13, NumPy 2.3.2, SciPy 1.16.1, scikit-learn 1.7.1, and psutil 7.
 
 ## Completion condition for this handoff
 
-A resuming LLM has completed the immediate task only when it has produced a fresh, independently hash-bound V3 audit package with either a clean `PASS — V3 EXECUTION CANDIDATE MAY BE SEALED BY HEAD RESEARCHER; TASK 4F1 STILL NOT PREREGISTERED OR AUTHORIZED` verdict or the prompt's `BLOCKED` verdict. Any other state remains incomplete.
+**Stale as written — the V3 audit closed long ago and the science track is now sealed.** The current completion condition is on the **execution track only**: the V7 execution-package audit must return an independently hash-bound verdict, and the pre-run exact-rational `D_t` sign-classification condition must be discharged, before any run authorization may even be considered. Sealing the preregistration completed the science track and authorized nothing else. Do not seal again, do not authorize, do not run or finalize, and do not access outcomes.

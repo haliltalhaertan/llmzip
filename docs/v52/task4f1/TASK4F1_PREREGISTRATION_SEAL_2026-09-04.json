@@ -1,0 +1,145 @@
+{
+  "schema": "V52_T4F1_SCIENTIFIC_PREREGISTRATION_SEAL_V1",
+  "seal_id": "V52_TASK_4F1_SCIENTIFIC_PREREGISTRATION_SEAL_2026-09-04",
+  "sealed_at_utc": "2026-09-04T09:30:00Z",
+  "sealed_by": "Continuity Lead, under Head Researcher sealing direction 2026-09-04",
+  "nature": "ADDITIVE AND HASH-BOUND. This seal binds bytes by digest and rewrites nothing. The approved preregistration draft is not modified by sealing.",
+
+  "what_this_seal_does": [
+    "Freezes the scientific preregistration of V52 Task 4F1 at the exact approved bytes named below.",
+    "Records the two approvals the draft's own header and section 9 require: Head Researcher and scientific co-chair.",
+    "Fixes the estimands, the decision rule, the outcome partition, the interpretation boundary and the binding execution conditions before any outcome is visible."
+  ],
+  "what_this_seal_does_not_do": [
+    "It does NOT authorize Task 4F1 execution.",
+    "It does NOT constitute or imply a production run authorization; none exists.",
+    "It creates and implies NO HMAC key. V52_T4F1_AUTH_HMAC_KEY_HEX is not set by this seal.",
+    "It does NOT permit retrieval-quality outcome access, which remains FORBIDDEN.",
+    "It takes NO position on the V7 execution-package audit, which is a separate track with its own auditor.",
+    "It does NOT accept, prejudge or depend on any V7 verdict. No V7 result is bound as a prerequisite."
+  ],
+
+  "bindings": {
+    "1_approved_preregistration_draft": {
+      "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md",
+      "sha256": "5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44",
+      "bytes": 14688,
+      "commit": "c0133fce9b755d13d9be3016e8e06f493d6b275b",
+      "predecessor_bytes_superseded": "ec3443ed4c60eb12e098192abf7b414e034d89fc63a9f42f9d0a02c36a696e45"
+    },
+    "2_sealed_4f0_restricted_cohort": {
+      "path": "audit_v52_t4f0_restricted_refreeze_2026_08_31/estimand_primary_cohort.csv",
+      "sha256": "9b70e16fc1d16ebff78bbcd321f67ab53a4384746114088621c274300812519a",
+      "cohort": "1712 eligible questions across 96 archives",
+      "excluded_archives": ["1M::5", "1M::26", "1M::33", "1M::34"],
+      "tier_denominators": {"100K": 355, "1M": 629, "5M": 553, "10M": 175},
+      "ceiling_free_stratum_denominators": {"100K": 259, "1M": 461, "5M": 300, "10M": 105},
+      "archive_counts": {"100K": 20, "1M": 35, "5M": 31, "10M": 10}
+    },
+    "3_accepted_runner": {
+      "path_in_current_candidate": "task4f1_execution_candidate_v7_2026_09_03/v52_t4f1_beam_retrieval.py",
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8",
+      "note": "Byte-identical to the runner accepted at V4 and carried unchanged through V5, V6 and V7. Verified identical at task4f1_execution_candidate_v4_2026_09_01/v52_t4f1_beam_retrieval.py."
+    },
+    "4_head_researcher_rereview_decision": {
+      "branch": "hr/rereview-t4f1-prereg-2026-09-04",
+      "commit": "19d9cbbfcbc48f80dc63ac179f2aa67e7eed490d",
+      "path": "docs/v52/task4f1/T4F1_PREREG_REREVIEW_DECISION_2026-09-04.md",
+      "sha256": "8795abc7b58b3bae8f2333ba630f95642e9d2e653a31478d221ceb9d71272f3f",
+      "verdict": "APPROVED FOR SEALING - SCIENTIFIC PREREGISTRATION DESIGN ACCEPTED"
+    },
+    "5_exact_byte_cochair_approval": {
+      "branch": "cochair/exact-byte-approval-t4f1-prereg-2026-09-04",
+      "commit": "5299cc12d899a918504110b4faf1734713f607cc",
+      "path": "docs/v52/task4f1/COCHAIR_EXACT_BYTE_APPROVAL_T4F1_PREREG_2026-09-04.md",
+      "sha256": "3aaa90bf2714afa662548c32bba0ae165c4f6a4d84f2af84f1a2659fa25abdca",
+      "verdict": "APPROVE WITH NOTES",
+      "unconditional": true,
+      "artifact_states": "A1-A6 all adequately discharged; no new scientific inconsistency; draft outcome-free; none of the four notes requires an amendment or new bytes; the approval closes the co-chair condition for these exact bytes",
+      "reviewer_independence": "cold start, session-independent; did not author the amendments or any prior artifact in this chain"
+    },
+    "6_head_researcher_authorization_schema_ratification": {
+      "branch": "hr/ratify-v7-governance-2026-09-03",
+      "commit": "6f1de9eb1dfb8557e4ebc3fa2a1130214c6b228b",
+      "path": "docs/v52/task4f1/V7_HEAD_RESEARCHER_GOVERNANCE_RATIFICATION_2026-09-03.md",
+      "sha256": "e2cc9a8b207be7b21d2b8759a1a2c6c86186522c7102f0d39313172530ebbc41",
+      "ratifies": "V52_T4F1_RUN_AUTHORIZATION_V4 is the correct authorization schema while the runner remains byte-identical to the accepted V4 runner. Package version and authorization-schema version are separate version domains.",
+      "note": "This file exists only on its own branch and is not present on main. It is bound here by branch, commit and digest, all independently verified."
+    },
+    "7_binding_execution_conditions": {
+      "source": "section 8 of the approved preregistration draft, lines 259-269",
+      "all_four_must_be_bound": true,
+      "conditions": [
+        "POSIX filesystem with hard-link support. The exclusive-commit path uses os.link; a non-POSIX target would need a re-audited commit path.",
+        "Fresh authorization declaring schema V52_T4F1_RUN_AUTHORIZATION_V4, the schema the byte-identical runner verifies. A prior authorization cannot be replayed.",
+        "HMAC key custody. Never stored in the repository, any audit package, any log or any output. Single-use, held by the Head Researcher.",
+        "Trial-row reporting condition bound explicitly, as the candidate seal requires."
+      ]
+    },
+    "8_exact_rational_sign_classification_condition": {
+      "type": "PRE-RUN IMPLEMENTATION CONDITION on the execution/authorization gate",
+      "condition": "Before any run authorization, the outcome-analysis implementation must honour the preregistered exact-rational sign rule for D_t rather than classify the sign from a rounded or floating-point aggregate.",
+      "preregistered_rule": "D_t is computed in exact rational arithmetic; every value is a rational with denominator dividing 5 * n_t * lcm_i(|gold_i|), so D_t > 0, D_t = 0 and D_t < 0 are exactly decidable with no tolerance and no threshold. This is a numerical-representation rule fixed before outcome access; it is not a practical-significance threshold.",
+      "origin": "Head Researcher re-review decision 2026-09-04, recorded there as an implementation note and expressly not a defect in the preregistration.",
+      "owner": "execution/authorization track",
+      "cochair_position": "The exact-byte co-chair review recorded this as note N3 and took no position on the execution package."
+    }
+  },
+
+  "provenance_not_prerequisites": {
+    "note": "Recorded for traceability only. Nothing in this block is a condition on this seal.",
+    "first_cochair_scientific_review": {
+      "branch": "cochair/review-t4f1-prereg-2026-09-03",
+      "commit": "ecbf765e7f0ef06ae903d5aba6d2e9a835cdf3c2",
+      "path": "docs/v52/task4f1/COCHAIR_SCIENTIFIC_REVIEW_T4F1_PREREG_2026-09-03.md",
+      "sha256": "6493000b205126bc7826536d03b9b97fb9f92fd84c5387c1461fbb07b447a970",
+      "verdict_on_predecessor_bytes": "REQUEST CHANGES; source of amendments A1-A6; Q8 stop/go GO, bounded"
+    },
+    "head_researcher_sealing_direction": {
+      "branch": "hr/prereg-sealing-direction-2026-09-04",
+      "direction_commit": "33fa4a27ac1a06392454eba66039d8649870dbb0",
+      "sidecar_commit": "85735795e7235d9de2a62e6cdd63dd44b87e230d",
+      "path": "docs/v52/task4f1/T4F1_PREREG_SEALING_DIRECTION_2026-09-04.md",
+      "sha256": "90769898d3af3b32f018180978f9589b1e9d0a8973df3ea33687aed0121e520a"
+    },
+    "v7_execution_package_audit": {
+      "branch": "audit/v52-t4f1-v7-independent-2026-09-03",
+      "head_at_sealing": "16dc61313acd0e9086c852eccb9100023898fd27",
+      "status_at_sealing": "RUNNING - gate evidence pushed, no report, gate table, hash manifest or verdict",
+      "bound_as_prerequisite": false,
+      "reason": "The Head Researcher sealing direction forbids making the scientific seal contingent on an execution-track result that was not part of the scientific design approval."
+    }
+  },
+
+  "estimand_freeze_summary": {
+    "note": "Non-normative summary. The approved draft at binding 1 is the sole normative source; where this summary and the draft disagree, the draft governs.",
+    "primary_family": "Four tier-specific contrasts D_t on denominators 355 / 629 / 553 / 175; no single headline number",
+    "primary_cross_tier_instrument": "Ceiling-free stratified contrast D_t restricted to |gold| <= 3, denominators 259 / 461 / 300 / 105",
+    "demoted": "D_t^norm is a declared sensitivity statistic only; it assigns no category and vetoes nothing",
+    "global_category_input": "D_t alone",
+    "comparator": "Finite mean over exactly five enumerated Haar seeds 43001-43005, constitutive of the comparator's definition, not a sample from a distribution",
+    "inference_prohibited": "No population inference, no p-values, no confidence intervals over questions"
+  },
+
+  "amendment_rule": "Any change to the scientific content of the approved draft produces new bytes and voids this seal for those bytes. It requires a fresh Head Researcher approval and a fresh exact-byte co-chair approval before a new seal may be issued. Purely additive sealing metadata must not rewrite the approved draft.",
+
+  "task_state_at_sealing": {
+    "task_4f1_scientific_preregistration": "SEALED",
+    "task_4f1_execution_package": "NOT SETTLED - V7 audit running, no recorded result",
+    "task_4f1_run": "BLOCKED",
+    "production_authorization": "NONE EXISTS",
+    "retrieval_quality_outcome_access": "FORBIDDEN"
+  },
+
+  "outcome_boundary_declaration": {
+    "mode_run_invocations": 0,
+    "mode_finalize_invocations": 0,
+    "run_archives_evaluate_archive_finalize_results_calls": 0,
+    "valid_production_authorization_constructed": false,
+    "hmac_key_set_or_inspected": false,
+    "real_beam_retrieval_performed": false,
+    "retrieval_quality_outcome_computed_read_or_reported": false,
+    "sealed_payload_candidate_manifest_or_corpus_modified": false,
+    "approved_draft_modified_by_sealing": false
+  }
+}
