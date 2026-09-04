@@ -1,0 +1,27 @@
+{
+  "authorization": {
+    "task_4f1_run": "BLOCKED"
+  },
+  "authorization_control": {
+    "key_commitment_sha256": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+    "key_environment_variable": "V52_T4F1_AUTH_HMAC_KEY_HEX",
+    "scheme": "HMAC-SHA256",
+    "signed_fields": [
+      "schema",
+      "status",
+      "retrieval_quality_outcome_access",
+      "execution_script_sha256",
+      "execution_candidate_seal_sha256",
+      "cohort_sha256",
+      "required_archive_count",
+      "output_namespace_basename",
+      "preregistration_seal_sha256",
+      "authorization_id",
+      "authorization_nonce"
+    ]
+  },
+  "implementation": {
+    "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+  },
+  "schema": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4"
+}
