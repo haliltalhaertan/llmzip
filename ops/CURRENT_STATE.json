@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V2",
-  "issued_at_utc": "2026-09-04T10:55:00Z",
+  "state_id": "V52_4F1_SEAL_V2_BLOCKED_BINDING8_REPAIR_IN_PROGRESS",
+  "issued_at_utc": "2026-09-04T11:30:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,9 +22,9 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Report Seal V2 for independent verification. Then execution track only: await the V7 independent audit report and hash-verify it when it lands. The pre-run exact-rational D_t sign-classification condition must be discharged on that track before any run authorization. Do NOT authorize, run or finalize Task 4F1; outcome access remains FORBIDDEN.",
+    "next_single_action": "Prepare a narrow additive Seal V3: extract the binding 8 implementation condition verbatim from the Head Researcher re-review bytes at commit 19d9cbb, bind it by its own fragment digest, have the verifier re-extract and compare it, and add negative controls for an inverted condition, a wrong fragment digest and an unavailable/wrong source. Preserve Seal V1 and Seal V2 unchanged. No generalized scanner. Do not touch the execution path.",
     "completion_decision_owner": "Head Researcher",
-    "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V2 (9ed480f4), draft SHA256 5e618981. Seal V1 (c9e06195) BLOCKED and superseded, preserved byte-unchanged.",
+    "task_4f1_preregistration": "NOT SEALED - Seal V2 BLOCKED by Head Researcher Binding-8 defect decision 2026-09-04; sealing gate narrowly reopened for the Binding-8 repair",
     "task_4f1_run": "BLOCKED",
     "retrieval_quality_outcome_access": "FORBIDDEN",
     "v3_independent_audit": "BLOCKED (superseded by V4; V3 preserved unmodified)",
@@ -160,7 +160,7 @@
       "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json",
       "sha256": "c9e061951c44d89f9c62af94ee78b37a860fd52081fb0c38d38360511218891b"
     },
-    "preregistration_seal_v2": {
+    "preregistration_seal_v2_blocked_preserved": {
       "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V2_2026-09-04.json",
       "sha256": "9ed480f4dcb0fe6151ad239c3e05174ce443a81ea84aed8e2777cb9baa04e39d"
     }
@@ -187,7 +187,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-034",
+  "ledger_entry": "L-035",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -372,17 +372,8 @@
     ]
   },
   "preregistration_seal": {
-    "current": "V2",
-    "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V2_2026-09-04.json",
-    "sha256": "9ed480f4dcb0fe6151ad239c3e05174ce443a81ea84aed8e2777cb9baa04e39d",
-    "sidecar": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V2_2026-09-04.json.sha256",
-    "builder": "tools/build_preregistration_seal_v2.py (derives every value from bytes; nothing transcribed)",
-    "verifier": "tools/verify_preregistration_seal.py",
-    "verifier_result": "PREREGISTRATION_SEAL: PASS",
-    "verifier_tests": "tools/test_verify_preregistration_seal.py - 16/16 negative controls behaved correctly, including the historical V1 defect",
-    "supersedes": "Seal V1 c9e06195, BLOCKED, preserved byte-unchanged and protected by a verifier check",
-    "v7_bound_as_prerequisite": false,
-    "authorizes_execution": false
+    "status": "BLOCKED",
+    "note": "V1 and V2 both blocked; see preregistration_seal_v1 and preregistration_seal_v2"
   },
   "preregistration_seal_v1": {
     "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_2026-09-04.json",
@@ -439,5 +430,26 @@
       "1M::34"
     ],
     "archive_identity": "tier::conversation_id; conversation_id is not unique across tiers"
+  },
+  "preregistration_seal_v2": {
+    "path": "docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V2_2026-09-04.json",
+    "sha256": "9ed480f4dcb0fe6151ad239c3e05174ce443a81ea84aed8e2777cb9baa04e39d",
+    "status": "BLOCKED AS A COMPLETE SEAL ARTIFACT - preserved byte-unchanged as a historical partial repair",
+    "repairs_that_stand": "tier set, cohort recomputation, binding 7 exact equality, section digests, fail-closed approval commits, V1 preservation, negative controls, V7 provenance-only, zero outcome boundary",
+    "defect_d1": "binding 8 condition field is a hand-restated paraphrase of the authoritative HR text, not a byte-derived value",
+    "defect_d2": "the builder hard-coded that string instead of extracting it",
+    "defect_d3": "the verifier never reads b8['condition'], so an inverted condition permitting rounded floating classification passes green - reproduced by execution",
+    "authored_by": "this session; the escape was executed on a temporary copy before the finding was accepted"
+  },
+  "head_researcher_seal_v2_binding8_defect_decision_2026_09_04": {
+    "branch": "hr/prereg-seal-v2-binding8-defect-2026-09-04",
+    "commit": "b0a8225e9151f53df8a13398e269afab3719dd55",
+    "merge_base_with_main": "1b2323dc90918dd3318bc70b1c8993abc6bbb938",
+    "file": "docs/v52/task4f1/T4F1_PREREG_SEAL_V2_BINDING8_DEFECT_DECISION_2026-09-04.md",
+    "file_sha256": "85c6a353c242e4ac1f6060cdb8748ae9a91ce9526d61d9a10f9a8507f712ee6b",
+    "independently_verified": true,
+    "sidecar_agrees": true,
+    "verdict": "SEAL V2 BLOCKED AS A COMPLETE SEAL ARTIFACT; narrow V3 supersession required; scientific design not reopened",
+    "fresh_scientific_review_required": false
   }
 }

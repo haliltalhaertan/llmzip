@@ -654,3 +654,22 @@ outcome_boundary: Task 4F1 scientific preregistration SEALED at Seal V2. Executi
 status: PASS
 next_single_action: Report Seal V2 for independent verification. Then execution track only: await the V7 audit report and hash-verify it when it lands. Do not authorize, run or finalize Task 4F1.
 ```
+
+### L-035
+
+```text
+timestamp_utc: 2026-09-04T11:30:00Z
+actor_role: Continuity Lead (sole writer)
+predecessor_commit_or_tag: L-034 / 1b2323d
+scope: Record the Head Researcher Seal V2 Binding-8 defect decision and mark Seal V2 BLOCKED. The approved draft, cohort, runner, both scientific approvals and Seal V1 with its sidecar are untouched. Seal V2 and its sidecar are preserved unchanged as historical artifacts.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+decision_verified: Branch hr/prereg-seal-v2-binding8-defect-2026-09-04, commit b0a8225e9151f53df8a13398e269afab3719dd55, file docs/v52/task4f1/T4F1_PREREG_SEAL_V2_BINDING8_DEFECT_DECISION_2026-09-04.md at SHA256 85c6a353c242e4ac1f6060cdb8748ae9a91ce9526d61d9a10f9a8507f712ee6b, recomputed from the fetched blob and matched against its committed .sha256 sidecar. Its merge base with main is 1b2323dc, the Seal V2 state it reviewed; it adds exactly two files and modifies nothing else.
+defect_reproduced_not_accepted: The finding is against this session's own work and was executed before being accepted. The exact mutation the decision names was applied to a temporary copy of Seal V2 - condition set to "Before any run authorization, classify D_t from a rounded floating-point aggregate." with every other field untouched - and the current verifier returned PREREGISTRATION_SEAL: PASS. The inverted requirement escaped. D3 is confirmed by execution, not by reading.
+d1_and_d2_confirmed: The authoritative text in the Head Researcher re-review artifact at commit 19d9cbb reads "before any run authorization, the outcome-analysis implementation must honor this exact-rational rule rather than classify the sign from a rounded or floating aggregate." Seal V2's condition field says "must honour the preregistered exact-rational sign rule for D_t rather than classify the sign from a rounded or floating-point aggregate". Faithful in meaning, but hand-restated: honor became honour, this exact-rational rule became the preregistered exact-rational sign rule for D_t, floating aggregate became floating-point aggregate. The builder hard-coded that string rather than extracting it, so the claim that every sealed value is byte-derived was still too strong for binding 8, exactly as D2 states.
+same_error_class_as_v1: This is the V1 transcription defect surviving in the one field V2 did not convert to derivation. V1 was caught because a wrong label was visible; this one was invisible because the paraphrase was faithful. That is the more dangerous version: a field nobody checks stays correct only for as long as nobody edits it, and an inverted safety condition would have read as green.
+what_v2_repaired_stands: The decision accepts ten specific V2 repairs and explicitly does not reopen them - cohort digest normativity, the exact tier set, field-by-field structural recomputation, binding 7 exact list equality with its section digest, binding 8's section 6 rule extraction, fail-closed behaviour on unfetched approval commits, V1 preservation, the negative-control suite, V7 remaining provenance-only, and the all-zero outcome boundary. Those are not touched by the repair.
+what_remains_valid: Approved preregistration bytes 5e618981 VALID AND FROZEN. Head Researcher scientific approval 8795abc7 VALID. Exact-byte co-chair approval 3aaa90bf VALID. Sealed cohort 9b70e16f and accepted runner f96cba2c unchanged. No scientific content changes, so no fresh scientific review is required.
+outcome_boundary: Task 4F1 scientific preregistration NOT sealed - the sealing gate is narrowly reopened for the Binding-8 repair only. Run BLOCKED. Production authorization NONE. Retrieval-quality outcome access FORBIDDEN. The V7 audit is unchanged at 16dc613, unprejudged, and no execution-path work is undertaken while this defect is open.
+status: IN_PROGRESS
+next_single_action: Prepare a narrow additive Seal V3 whose binding 8 implementation condition is extracted verbatim from the Head Researcher re-review bytes at commit 19d9cbb and bound by its own fragment digest, with a verifier that re-extracts and compares it, and negative controls for the three named attacks. Preserve V1 and V2 unchanged. No generalized scanner.
+```
