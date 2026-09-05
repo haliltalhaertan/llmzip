@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-05T09:00:00Z",
+  "issued_at_utc": "2026-09-05T09:45:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher decision on the coordinate-scale direction. If taken up it needs its own preregistration with the scale rule, degenerate-coordinate handling, arms, seeds, paired estimand, threshold, sampling unit and stopping rule frozen before any run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Put the coordinate-scale DRAFT to the Head Researcher for argument, starting with its four open design questions. Freeze nothing until they are answered. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-045",
+  "ledger_entry": "L-046",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -631,5 +631,18 @@
     "C1": "revise",
     "C9": "stands only as a search-qualified narrow claim"
   },
-  "proposed_next_direction": "coordinate-scale participation test: for positive diagonal D, sign(xD)=sign(x), so a positive archive-derived rescaling preserves the native sign code exactly while changing sign(xDQ). Decisive comparison is an INTERACTION - does rescaling help full mixing more than within-block mixing under paired queries and fixed rotations. DIRECTION ONLY: not preregistered, not sealed, not authorized; no seeds, workflow or trigger exist."
+  "proposed_next_direction": "coordinate-scale participation test: for positive diagonal D, sign(xD)=sign(x), so a positive archive-derived rescaling preserves the native sign code exactly while changing sign(xDQ). Decisive comparison is an INTERACTION - does rescaling help full mixing more than within-block mixing under paired queries and fixed rotations. DIRECTION ONLY: not preregistered, not sealed, not authorized; no seeds, workflow or trigger exist.",
+  "coordinate_scale_draft": {
+    "status": "DRAFT - NOT PREREGISTERED, NOT SEALED, NOT AUTHORIZED",
+    "branch": "draft/v52-coordinate-scale-prereg-2026-09-05",
+    "commit": "d815627ce8280ab7d263c97471a21cd6243efd65",
+    "path": "drafts/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_DRAFT_2026-09-05.md",
+    "sha256": "3c5f1ce7047da3782fbd1d9e1e1632194aec17546fadc87302245e3190b2ba8f",
+    "not_on_research_branch": true,
+    "primary_estimand": "interaction I = delta_full - delta_block; a reduction in the native-vs-full gap alone is ruled insufficient",
+    "identity_check": "SCALED_NATIVE must be BIT-IDENTICAL to NATIVE or the run aborts",
+    "closes_as_by_product": "FULLHAAR_FRESH gives the Full-Haar reference its own seed panel",
+    "open_design_questions": 4
+  },
+  "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes."
 }
