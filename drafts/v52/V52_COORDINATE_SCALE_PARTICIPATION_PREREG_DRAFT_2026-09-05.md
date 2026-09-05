@@ -1,15 +1,19 @@
 # V52 — Coordinate-Scale Participation in Cross-Band Mixing Damage: PREREGISTRATION DRAFT
 
-Status: **`[DRAFT v2 — NOT PREREGISTERED, NOT SEALED, NOT AUTHORIZED]`**
-Revision: v2, 2026-09-05, after a synthetic design pilot found the v1 primary estimand confounded. See `drafts/v52/pilot/PILOT_FINDINGS.md`.
+Status: **`[CANDIDATE PREREGISTRATION v3 — COMPLETE, AWAITING AUTHORIZATION. NOT SEALED, NOT TRIGGERED]`**
+Revision history: v1 drafted; v2 after a synthetic pilot found the v1 primary estimand confounded;
+v3 after pilot 04 resolved the last three open design questions. Every value below is now decided.
+Nothing is sealed and nothing is authorized: the remaining steps are a Head Researcher decision, a
+pre-run seal, and a trigger. See `drafts/v52/pilot/PILOT_FINDINGS.md` for the evidence behind the
+choices.
 Date: 2026-09-05
 Author: Continuity Lead / co-chair, at Head Researcher direction to continue.
 Branch: `draft/v52-coordinate-scale-prereg-2026-09-05` (deliberately **not** the research branch)
 
-Nothing here is frozen. No seeds are registered, no runner exists, no workflow exists, no trigger
-exists, no seal exists. This document is written **to be argued with** before any decision. If the
-Head Researcher takes it up, the values marked *proposed* become frozen at that moment and not
-before.
+No runner exists, no workflow exists, no trigger exists, no seal exists. Every design value is now
+**decided and stated**, so this document is complete enough to be sealed as written — but it is not
+sealed, and freezing happens only on an explicit Head Researcher authorization, not by this document
+existing. Where a choice was resolved by measurement rather than preference, the evidence is cited.
 
 ---
 
@@ -67,14 +71,21 @@ sharding.
 
 ## 5. The scale rule `D` — the part most likely to be wrong, so it is fixed first
 
-*Proposed:*
+**Resolved** (pilot 04):
 
 - `σ_i` is the standard deviation of coordinate `i` computed **on the exact centered archive
   representation actually used downstream** (`C = Y − mu`), per archive, from **archive content
   only**. It is **not** the raw SVD singular value and must not be assumed equal to it.
-- `d_i = 1 / σ_i` when `σ_i >= ε`, and `d_i = 1` otherwise, with `ε` proposed as `1e-12`.
-- The count of coordinates falling back to `d_i = 1` is **recorded per archive** and reported. If any
-  archive has more than a proposed `4` of 96 degenerate coordinates, that archive is flagged in the
+- `d_i = 1 / σ_i` when `σ_i >= ε`, and `d_i = 1` otherwise, with `ε = 1e-12`.
+  **Why `1/σ` and not the gentler `σ^(-1/2)`:** pilot 04 showed `1/σ` drives `frac` to ≈1.00
+  regardless of heterogeneity, so the experiment can actually discriminate; `σ^(-1/2)` yields
+  0.46–0.82 drifting with heterogeneity, which would land in a "partial" band by construction and
+  answer nothing. The gentler rule is not the more cautious choice, it is the less informative one.
+  **Why per-archive and not global:** per-archive matches the archive-local SVD and is tighter; a
+  global `σ` overshoots on the block arm (1.096) and flips the sign of `I_frac` between settings.
+- The count of coordinates falling back to `d_i = 1` is **recorded per archive** and reported. Pilot
+  04 stress-tested 12 of 96 degenerate coordinates and the fallback behaved correctly with the
+  identity intact. If any archive has more than `4` of 96 degenerate coordinates, that archive is flagged in the
   output — flagged, not dropped.
 - `D` is computed **before** and independently of any query, and **never** from query labels,
   retrieval outcomes, or gold sets. This is a hard constraint, not a preference.
@@ -119,7 +130,7 @@ frac_block = ( R@3(SCALED_BLOCK32)  - R@3(BLOCK32_FRESH)  ) / ( R@3(NATIVE) - R@
 quantity, reported **per arm**. Both denominators are measured **inside this experiment** - they are
 not inherited - and must be reported with their per-seed dispersion.
 
-*Proposed* bands on the seed-panel mean, applied per arm:
+**Resolved** bands on the seed-panel mean, applied per arm:
 
 - `frac >= 0.70` -> relative coordinate scale accounts for most of that arm's damage
 - `frac <= 0.20` -> it accounts for little of it
@@ -142,7 +153,7 @@ A reduction in the native-versus-full gap alone remains explicitly insufficient 
 - Report a **question-level paired bootstrap** on `I` — and state in the same breath that it
   resamples questions and does **not** cluster by conversation or archive, so it is a sensitivity
   analysis and not a population interval.
-- *Proposed:* additionally report a **conversation-clustered** bootstrap, since LoCoMo questions are
+- **Required:** additionally report a **conversation-clustered** bootstrap, since LoCoMo questions are
   nested within conversations. This is the correction the last stage could not make after the fact.
 - Report `CV(σ)` before and after rescaling, per archive, as a declared diagnostic. It is a
   descriptive statistic, **not** a decision input.
@@ -185,27 +196,33 @@ After outcome access: no alternate scale rule, no learned `D`, no alternate `ε`
 replacement seeds, no additional arms, no threshold movement, no boundary variation, no reranking.
 A different scale rule is a different, separately preregistered experiment.
 
-## 12. Proposed seeds and stopping rule
+## 12. Seeds and stopping rule
 
-*Proposed:* rotation seeds `59001..59010`, used identically for the full-Haar and block arms and
+**Resolved:** rotation seeds `59001..59010`, used identically for the full-Haar and block arms and
 their scaled partners. Ten seeds, once, per dataset. No replacement seeds after outcome access.
 
-*Proposed sampling unit:* the question, with conversation-clustered resampling reported alongside.
+**Fresh seeds, not the audited `58001..58010`** (pilot 04, Q3): reusing the audited panel would
+invite the objection that a panel already known to show the effect was chosen, and fresh seeds cost
+nothing. The boundary stage already showed a fresh panel reproduces the shape.
 
-## 13. Open questions this draft does not settle — argue with these first
+**Sampling unit:** the question, with conversation-clustered resampling reported alongside.
 
-1. **Is inverse-σ the right `D`?** It is the isotropising choice and the one the literature
-   prescribes, which makes it the sharpest test of that literature. A softer choice (`σ^-1/2`) would
-   be gentler but less decisive. This should be settled before freezing, not after.
-2. **Per-archive or global `σ`?** Proposed per-archive, matching the archive-local SVD. A global rule
-   is defensible and would answer a slightly different question.
-3. **Should `BLOCK32_FRESH` use fresh seeds or reuse `58001..58010`?** Fresh is proposed, to avoid
-   any appearance of selecting a favourable panel; reuse would give tighter pairing with the audited
-   stage. Trade-off, not an obvious call.
-4. ~~**Is `I` best measured in percentage points or as a ratio?**~~ **SETTLED by the synthetic
-   pilot, against this draft's original preference.** Percentage points are confounded by a floor
-   effect; the fraction scale is required. The denominator objection stands but is now a conscious
-   trade, because these denominators are measured inside the experiment rather than inherited.
+## 13. The four design questions, and how each was resolved
+
+All four are now settled. Three by measurement, one by argument — and one of them was settled
+**against** this document's own earlier preference, which is recorded rather than quietly dropped.
+
+1. **Choice of `D`** — `1/σ`, resolved by pilot 04. Decisive where `σ^(-1/2)` is not.
+2. **Scope of `σ`** — per-archive, resolved by pilot 04. Global overshoots and flips `I_frac`.
+3. **Block-arm seeds** — fresh `59001..59010`, resolved by argument: reuse invites a
+   panel-selection objection and buys almost nothing.
+4. **Percentage points or fraction** — the fraction scale, resolved by the earlier pilot **against**
+   this draft's original stated preference for percentage points, which were shown to be confounded
+   by a floor effect.
+
+What remains genuinely open is **not** a design question: it is where the real archives sit on the
+`CV(σ)` axis. That cannot be computed from repository bytes, and it is why `CV(σ)` before and after
+rescaling is a mandatory declared diagnostic in §8.
 
 ---
 
