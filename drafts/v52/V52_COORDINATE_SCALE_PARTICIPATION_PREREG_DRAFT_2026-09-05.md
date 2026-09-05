@@ -1,6 +1,7 @@
 # V52 — Coordinate-Scale Participation in Cross-Band Mixing Damage: PREREGISTRATION DRAFT
 
-Status: **`[DRAFT — NOT PREREGISTERED, NOT SEALED, NOT AUTHORIZED]`**
+Status: **`[DRAFT v2 — NOT PREREGISTERED, NOT SEALED, NOT AUTHORIZED]`**
+Revision: v2, 2026-09-05, after a synthetic design pilot found the v1 primary estimand confounded. See `drafts/v52/pilot/PILOT_FINDINGS.md`.
 Date: 2026-09-05
 Author: Continuity Lead / co-chair, at Head Researcher direction to continue.
 Branch: `draft/v52-coordinate-scale-prereg-2026-09-05` (deliberately **not** the research branch)
@@ -100,33 +101,40 @@ this research line has never had: every published `rho` divides by an inherited 
 sampling uncertainty is quantified nowhere. This experiment closes that gap as a by-product, and the
 resulting dispersion must be reported whether or not the primary result is interesting.
 
-## 7. Primary estimand — an interaction, not a difference
+## 7. Primary estimand — REVISED after the synthetic pilot
+
+> **Changed 2026-09-05.** The first version made the percentage-point interaction primary. A
+> synthetic pilot (`drafts/v52/pilot/`) showed that estimand is confounded by a floor effect: both
+> arms recovered about 100% of their own loss, so the pp interaction was driven by full mixing simply
+> having more loss available. The revision below is that pilot's consequence.
 
 For each dataset independently, per rotation seed, paired at the question level:
 
 ```
-Δ_full  = R@3( SCALED_FULLHAAR ) − R@3( FULLHAAR_FRESH )
-Δ_block = R@3( SCALED_BLOCK32 )  − R@3( BLOCK32_FRESH )
-
-I = Δ_full − Δ_block
+frac_full  = ( R@3(SCALED_FULLHAAR) - R@3(FULLHAAR_FRESH) ) / ( R@3(NATIVE) - R@3(FULLHAAR_FRESH) )
+frac_block = ( R@3(SCALED_BLOCK32)  - R@3(BLOCK32_FRESH)  ) / ( R@3(NATIVE) - R@3(BLOCK32_FRESH)  )
 ```
 
-`I` is the primary quantity. **A reduction in the native-versus-full gap alone is explicitly not
-sufficient evidence** — that was the reviewer's point and it is adopted as a rule here, because
-rescaling could plausibly improve every rotated arm without saying anything about the band structure.
+`frac_arm` is the share of that arm's **own** loss that rescaling recovers. It is the primary
+quantity, reported **per arm**. Both denominators are measured **inside this experiment** - they are
+not inherited - and must be reported with their per-seed dispersion.
 
-*Proposed* decision bands on the seed-panel mean of `I`, in percentage points of fractional R@3:
+*Proposed* bands on the seed-panel mean, applied per arm:
 
-- `I >= +3.0 pp` → `[SCALE PARTICIPATION SUPPORTED]` — rescaling recovers substantially more of the
-  loss under full mixing than under block mixing.
-- `I <= +0.5 pp` → `[SCALE PARTICIPATION NOT SUPPORTED BY THIS INTERVENTION]`.
-- otherwise → `[INDETERMINATE SCALE PARTICIPATION]`.
+- `frac >= 0.70` -> relative coordinate scale accounts for most of that arm's damage
+- `frac <= 0.20` -> it accounts for little of it
+- otherwise -> partial
 
-Cross-dataset rule: same regime on both → report it jointly; different regimes →
-`[HETEROGENEOUS — NO JOINT SCALE CLAIM]`.
+The bands must admit `frac > 1`: the pilot showed rescaling can **overshoot** native at low
+heterogeneity, so 1 is not a ceiling and "recovery" is not the right word for such a case.
 
-These bands are engineering thresholds on a fixed benchmark pair, not hypothesis tests, and they must
-be frozen before any outcome is seen.
+**Secondary:** the interaction on the fraction scale, `I_frac = frac_full - frac_block`. It is
+secondary precisely because the pilot showed it nearly vanishes once the floor effect is removed.
+
+**Descriptive only, barred from carrying any verdict:** the percentage-point quantities
+`delta_full`, `delta_block` and their difference.
+
+A reduction in the native-versus-full gap alone remains explicitly insufficient evidence.
 
 ## 8. Uncertainty — the lesson from the last stage, applied in advance
 
@@ -194,9 +202,10 @@ their scaled partners. Ten seeds, once, per dataset. No replacement seeds after 
 3. **Should `BLOCK32_FRESH` use fresh seeds or reuse `58001..58010`?** Fresh is proposed, to avoid
    any appearance of selecting a favourable panel; reuse would give tighter pairing with the audited
    stage. Trade-off, not an obvious call.
-4. **Is `I` best measured in percentage points or as a ratio?** Percentage points are proposed
-   because the ratio would reintroduce a denominator, and denominators are precisely what has caused
-   trouble in this line.
+4. ~~**Is `I` best measured in percentage points or as a ratio?**~~ **SETTLED by the synthetic
+   pilot, against this draft's original preference.** Percentage points are confounded by a floor
+   effect; the fraction scale is required. The denominator objection stands but is now a conscious
+   trade, because these denominators are measured inside the experiment rather than inherited.
 
 ---
 
