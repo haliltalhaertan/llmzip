@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-05T07:10:00Z",
+  "issued_at_utc": "2026-09-05T08:20:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Report the verified audit and its binding narrowing for the next-experiment decision. The research track owes an additive post-audit addendum. Do not start a new mechanism experiment without an explicit decision. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Hand the five wording corrections and the two literature corrections to the research track for its additive post-audit addendum, then await the Head Researcher decision on the coordinate-scale direction. Do not preregister or run it. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-043",
+  "ledger_entry": "L-044",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -597,5 +597,29 @@
     "binding_narrowing": "report the LOCALIZATION half as a lead conditional on the ten-seed panel and the inherited denominator, not as an established property of the grid; the POSITION-DEPENDENCE half needs no hedge",
     "caveat_reproduced_by_continuity_lead": "own paired question bootstrap on LoCoMo B48, B=2000: P(rho<=0.25)=0.166, sd=0.0551, 95% [0.194,0.407]; auditor reported ~0.21 and SE 0.063-0.088. Same conclusion, slightly more pessimistic."
   },
-  "drive_backup_fidelity_note": "Boundary-localization documents are stored on Drive as CONVERTED Google Docs and cannot be hash-verified against their git blobs; result zips remain byte-exact. Earlier stages used unconverted text/markdown. Describe these as content backups, not hash-bound backups."
+  "drive_backup_fidelity_note": "Boundary-localization documents are stored on Drive as CONVERTED Google Docs and cannot be hash-verified against their git blobs; result zips remain byte-exact. Earlier stages used unconverted text/markdown. Describe these as content backups, not hash-bound backups.",
+  "peer_review_of_boundary_audit": {
+    "branch": "codex/v52-mechanism-next-step-2026-09-05",
+    "commit": "b795aaac980826970dab4b52883bc7931d44f27a",
+    "path": "reviews/v52/mechanism_next_step_2026_09_05/REVIEW.md",
+    "base": "45e6ddea247fdb8614715a717bea8015283178d0 (L-042); synchronized to L-043 in its top commit",
+    "scope_verified": "five files, all under reviews/v52/; canonical state, ledger, research and 4F1 paths untouched",
+    "nature": "review OF an audit, not a cold-start audit; not a canonical acceptance, preregistration, stop-rule release or authorization",
+    "disposition": "BYTE RECEIPT AND PERSISTED-RESULT RECONSTRUCTION PASS; ACCEPTANCE RECOMMENDED WITH INTERPRETATION CORRECTIONS",
+    "figures_reproduced_here": "direct contrast B32 minus RANDOM32 = 8.448609 pp (LoCoMo), 13.203121 pp (LongMemEval) - exact match"
+  },
+  "binding_wording_corrections_2026_09_05": [
+    "S_common={32} is a deterministic descriptive fact on the frozen panel; the ~73% is a bootstrap FREQUENCY under stated assumptions, not a probability that the claim is true. L-043's 'about a 73% event' wording is withdrawn.",
+    "Both bootstraps, the auditor's and this session's 0.166, resample questions i.i.d. with no clustering by conversation/archive, no seed resampling and no denominator propagation; LoCoMo questions are nested, so those intervals are likely too NARROW. They are sensitivity analyses, not certified sampling intervals, and are not claimed to be numerically equivalent to each other.",
+    "Bound integrity phrasing: 'no undisclosed execution was found in the inspected records', never 'no result could have existed'.",
+    "Block membership is the manipulated factor, not an identified mediator; the two datasets share one pipeline and are not independent replications.",
+    "Say 'the 32/64 SPLIT satisfies the sufficiency rule on the frozen panel on both datasets'; never '32 alone suffices' - B32 uses all 96 coordinates. The flagged phrase is in the AUDITOR's Turkish summary, verified there."
+  ],
+  "literature_claim_status": {
+    "C8": "REFUTED - Hippocampus (MLSys 2026) uses binary signatures for memory retrieval on LoCoMo and LongMemEval; the earlier empty-intersection claim is withdrawn",
+    "C2": "NARROWED - Xiao arXiv 2605.17524v2 carries shuffle and synthetic correlated-block probes not seen in the earlier reading",
+    "C1": "revise",
+    "C9": "stands only as a search-qualified narrow claim"
+  },
+  "proposed_next_direction": "coordinate-scale participation test: for positive diagonal D, sign(xD)=sign(x), so a positive archive-derived rescaling preserves the native sign code exactly while changing sign(xDQ). Decisive comparison is an INTERACTION - does rescaling help full mixing more than within-block mixing under paired queries and fixed rotations. DIRECTION ONLY: not preregistered, not sealed, not authorized; no seeds, workflow or trigger exist."
 }
