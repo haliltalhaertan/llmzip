@@ -1,0 +1,15 @@
+# Receipt command record — 2026-09-05
+
+Scope: read current remote state, verify pinned audit evidence and persisted mechanism aggregates, publish a separate review branch. No raw-corpus fitting/ranking and no Task 4F1 execution/outcome access.
+
+1. Read the user-supplied co-researcher note and relevant memory guidance. Memory was used only for orientation; current state was checked against Git.
+2. Existing checkout: `work/llmzip`, clean, branch `codex/review-v52-t4f1-cochair-2026-09-02`, HEAD `4bd32782c4148d15a632fb822dae8cab358892c6`.
+3. `git ls-remote --symref origin HEAD refs/heads/*`: initial sandbox network attempt failed to connect; approved elevated read succeeded. Main `45e6ddea247fdb8614715a717bea8015283178d0`, research `1a33ef0d1a2715257920201f7a3db8ab4677a007`, boundary audit `27f50f44490b419921b1d634f11006529b290a6f`. No literature-scan branch was returned in that snapshot. Default HEAD points to `claude/itq-frontier-audit-wfrz6a`.
+4. `git fetch origin main research/v52-sign-mechanism-locomo-2026-09-04 audit/v52-boundary-localization-independent-2026-09-04`: succeeded. The audit object is accessible by exact SHA; no assumption was made that a remote-tracking ref had been created for it.
+5. Created isolated worktree `work/llmzip_mechanism_next_step` and branch `codex/v52-mechanism-next-step-2026-09-05` from exact main above, with `core.autocrlf=false`.
+6. Read current state, entry point, continuity protocol, program status, chain of custody and latest ledger entries. Read pinned audit report, gate table, manifest, report sidecar, paired-bootstrap source, research preregistration and relevant runner source. These sources were read, not imported/executed.
+7. Bare `python` failed because the WindowsApps alias was inaccessible. Located the bundled interpreter using workspace dependency discovery. `python -B tools/verify_continuity_state.py` using that explicit interpreter: exit 0, `CONTINUITY_STATE: PASS`. This verifier checks declared anchors, not full semantic consistency of stale prose.
+8. Created this review's stdlib-only `verify_evidence.py` with apply_patch. Execution using the bundled interpreter: exit 0, PASS; 20/20 target identity records, report sidecar match, 21/21 audit additions inventoried, 120/120 seed means reconstructed from per-question values within 1e-12. Detailed values are in VERIFICATION.json. No bootstrap or new intervention run was performed.
+9. Publication validation: the first staged hash check passed 4/4, but diff checking flagged CRLF in the newly generated JSON. Explicit LF generation was added to this review's script and its own outputs regenerated; no historical evidence was reformatted. Recheck whitespace and staged payload hashes before publishing only this review namespace on the separate review branch. Canonical state/ledger and all frozen target/audit files remain unchanged.
+
+Reproduction commands and scope limits are in REVIEW.md. Git commits record the final publication bytes; no recursive self-hash is attempted.

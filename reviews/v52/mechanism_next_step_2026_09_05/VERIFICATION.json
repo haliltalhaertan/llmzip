@@ -1,0 +1,264 @@
+{
+  "status": "PASS",
+  "scope": "Pinned-byte receipt and persisted-result reconstruction, not cold-start audit or raw retrieval reproduction",
+  "main": "45e6ddea247fdb8614715a717bea8015283178d0",
+  "target": "1a33ef0d1a2715257920201f7a3db8ab4677a007",
+  "audit": "27f50f44490b419921b1d634f11006529b290a6f",
+  "audit_report_sha256": "80f6a3aa0da5e9e81442c486cb35f11c3bf91a4384840f8cb53ff2d2d90965f3",
+  "verified_target_files": {
+    "research/v52/V52_CAUSAL_HEAD_TAIL_BOUNDARY_LOCALIZATION_PREREG_2026-09-04.md": {
+      "sha256": "f5eb1483b58b6f061669ab0be1149f82e7960e6109f3b641d61955250814c96c",
+      "bytes": 17643,
+      "git_blob": "b8acebedd49497a62ec637beabbcef6720460d15"
+    },
+    "research/v52/V52_BOUNDARY_LOCALIZATION_PRERUN_SEAL_2026-09-04.json": {
+      "sha256": "0e555af16297c6da533bd71517e12cbe2e9a0532bb211280c0417c23a6660e4c",
+      "bytes": 2419,
+      "git_blob": "cd3ad221ed66816a7b36c1edc746016ca73f9188"
+    },
+    "research/v52/V52_HEAD_TAIL_POST_AUDIT_INTERPRETATION_ADDENDUM_2026-09-04.md": {
+      "sha256": "117bc3f61f19899da097282d00a48313efd64dfb4d2eedf02d32f8b3c11f5723",
+      "bytes": 6200,
+      "git_blob": "456b3b51f49a0238cd936bc3f639988fb0d673af"
+    },
+    "research/v52/locomo_boundary_localization.py": {
+      "sha256": "2d849d32c3274fe3a4ba372245b4d4b32dc9c7520110e42df4024235e6eedb1a",
+      "bytes": 11270,
+      "git_blob": "0e66431449ad48b5f24049e0c05d65c917d8b893"
+    },
+    "research/v52/longmemeval_boundary_localization_shard.py": {
+      "sha256": "a72eca94926f1e470aea53fa22cb8a81e5c20cfdeac553910fb43abaa57aeb08",
+      "bytes": 14454,
+      "git_blob": "26c1fe89ca025747b47f3fa6daf80326a8864747"
+    },
+    ".github/workflows/v52-locomo-boundary-localization.yml": {
+      "sha256": "c4005d79a3191cb94c8fe77d1207b8668d35fcb80414607491edd507d2174ceb",
+      "bytes": 3494,
+      "git_blob": "1de6c8abad80976c51843592801b53b18a998541"
+    },
+    ".github/workflows/v52-longmemeval-boundary-localization.yml": {
+      "sha256": "52c4fd1f8b479e375cc2da669384574abe5cf926e3b1e254fa38f5d0e9a3f083",
+      "bytes": 6453,
+      "git_blob": "128987f7402a71160981f8f0cd28677e6c931710"
+    },
+    "research/v52/locomo_boundary_outputs/locomo_boundary_summary.json": {
+      "sha256": "5d25ed4f31bdc27e050cfd60b31687bbb384cfa4de3c72338f5c012548809761",
+      "bytes": 4624,
+      "git_blob": "89c30a2a58fd638809477ded0d41b996f051c0f1"
+    },
+    "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_summary.json": {
+      "sha256": "b6139c0137159e29a734237792e816d901f822d9030dac7e5a04b8b9fef018db",
+      "bytes": 4883,
+      "git_blob": "2d6e3a4b5f5bfdfd2b3b93bbc068a4fcc685b954"
+    },
+    "research/v52/CROSS_DATASET_HEAD_TAIL_BOUNDARY_LOCALIZATION_CHECKPOINT_2026-09-04.md": {
+      "sha256": "43d6deedca0209953e262ce7bcc7cc10f93bc4ebf1af31eb2c39c50b8900575e",
+      "bytes": 10738,
+      "git_blob": "b5a8ed6542c78cde14f608b9b23b51eb6e34b917"
+    },
+    "research/v52/V52_BOUNDARY_LOCALIZATION_PROVENANCE_MANIFEST_2026-09-04.json": {
+      "sha256": "06964e21ff6196446f3a50c4e5da36347abff0b7aa8d8c780572fec75ed5ac3b",
+      "bytes": 4704,
+      "git_blob": "2751b51aea4ce43fbe08ac3ddfbafdc534d56dd0"
+    },
+    "research/v52/TRIGGER_BOUNDARY_LOCALIZATION_2026-09-04.txt": {
+      "sha256": "7ee34f28a063083e2cc29c4029f57f2a4cbb21f836f0117a4d1555fb5f927246",
+      "bytes": 55,
+      "git_blob": "a4ff477ec2b843c15668e9fba304fb2703e1a6b7"
+    },
+    "research/v52/locomo_boundary_outputs/locomo_boundary_per_question.csv.gz": {
+      "sha256": "87e7ae969403b0bb06efcd726d317fb08427cce7c29f221dd0e520ff8722fd1b",
+      "bytes": 299128,
+      "git_blob": "a38eec31695977f36d19ae0d6a89773d61e05773"
+    },
+    "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_per_question.csv.gz": {
+      "sha256": "e73576039cb1c9b76ceb4b440148b90f3caa044ca082585d1a0f4d23ac08eaba",
+      "bytes": 106198,
+      "git_blob": "74b897b7b97065dc5c2c5b9ab396b1dd0e1c68ce"
+    },
+    "research/v52/locomo_boundary_outputs/locomo_boundary_random_partitions.json": {
+      "sha256": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791",
+      "bytes": 10532,
+      "git_blob": "9bcda0c13a1b3bb850925b3cd8def1007a37e2d0"
+    },
+    "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_random_partitions.json": {
+      "sha256": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791",
+      "bytes": 10532,
+      "git_blob": "9bcda0c13a1b3bb850925b3cd8def1007a37e2d0"
+    },
+    "research/v52/locomo_boundary_outputs/locomo_boundary_seed_results.csv": {
+      "sha256": "0289d5a075ee9535ad44b7de444671f854b4e9b34daa522b88204df3a0c49f3a",
+      "bytes": 3271,
+      "git_blob": "f9e572328df0da3df7bf7068d7f6fe0c579957a3"
+    },
+    "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_seed_results.csv": {
+      "sha256": "9fec715e8bb43bee072eba36646ccc31a8488da0f75bb2326d6c35123de4633d",
+      "bytes": 3244,
+      "git_blob": "481287b2509bd38e0c70aafc0a25fb241e05d06d"
+    },
+    "research/v52/locomo_spectral_band_haar_causal.py": {
+      "sha256": "58b28c4ed0a62896710ae5ebd1c07574c29b6b5bb424de6c1bfac206ea903a15",
+      "bytes": 15923,
+      "git_blob": "7c4140252fb7f846d617189925cdf534515743f4"
+    },
+    "research/v52/longmemeval_spectral_band_haar_causal.py": {
+      "sha256": "2e6601331779aab3d8bcd48c435fa0bb96124f3d14819a1945e125f9a72ca62c",
+      "bytes": 15989,
+      "git_blob": "79dd4a5ec462102da5d82530088a4b7e89bef437"
+    }
+  },
+  "pinned_audit_file_inventory": {
+    "audit_v52_boundary_localization_independent_2026_09_04/AUDIT_HASHES.json": {
+      "sha256": "ee297e887e64c0a8897874727cd40c69419820be92057458e35e0b1957217c8e",
+      "bytes": 7263
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/AUDIT_REPORT.md": {
+      "sha256": "80f6a3aa0da5e9e81442c486cb35f11c3bf91a4384840f8cb53ff2d2d90965f3",
+      "bytes": 23025
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/AUDIT_REPORT.md.sha256": {
+      "sha256": "c47adfb9b46abf6c07a4c8a5cf38f9e2f637dfd15742ee59ce70d5b705c5c88a",
+      "bytes": 82
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/GATE_TABLE.md": {
+      "sha256": "2d9d29874ed4fddc9eee41f064181b841b1b768b4bc8be8f2af54e268ce00f14",
+      "bytes": 12371
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/actions_run_history.json": {
+      "sha256": "e6d1c1851885df17be9601e8bbf4a7adf7ba26e4e11f7811154b2c5bc5c97d3c",
+      "bytes": 1293
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/checkpoint_table_check.json": {
+      "sha256": "0fba20844b3ae364c3bf09cc166b3c88339d3a9c4bc41527a9a9a51d730f3f78",
+      "bytes": 66
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/declared_vs_reconstructed.json": {
+      "sha256": "5c8226f0775dbd34595beef7979ebe5dc20747e53d6ef6e7cfdb9d4242597416",
+      "bytes": 5347
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/gate_s_adversarial.json": {
+      "sha256": "be96f47730106326a7206b83a7f9921b96060f38e84c8715202d2e21deeb8c1e",
+      "bytes": 10049
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/gate_s_bootstrap_paired.json": {
+      "sha256": "0319c7809ec9d9dc7e993efad45eee7c643458c274cea98760566787032901f7",
+      "bytes": 3313
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/matched_arm_strict.json": {
+      "sha256": "9dfc9bd19455559afb8eb21c3102772bbc43f6da9a060e4789980d6de7791feb",
+      "bytes": 2925
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/reconstruction.json": {
+      "sha256": "403a0ba229ce4357ad969722b52d89ede48c545fc53683eb7cebd5aee8c85688",
+      "bytes": 33078
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/shard_invariance.json": {
+      "sha256": "8e872f822d0766843da3b19ca527de2d7bb6347c5824ede47856cefd186d2076",
+      "bytes": 395
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/evidence/transforms_and_partitions.json": {
+      "sha256": "8bc164e1a16901f7ae7cd91197214148cac82764236e7962a1127c981fa42683",
+      "bytes": 6128
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/scripts/compare_to_declared.py": {
+      "sha256": "4b9b4cddb1f357becf693dab6499821a48effc56672bc622ad47d89b49f3b59e",
+      "bytes": 3127
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/scripts/gate_s_adversarial.py": {
+      "sha256": "5456109476046daa57877da4ab4c5e0c5e9669ddf49e25eb298ca0dcdc587824",
+      "bytes": 5442
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/scripts/gate_s_bootstrap_paired.py": {
+      "sha256": "03ea22acefa127bbcb5d2ce18121f9282136145c488adc8195e5f383eba536e2",
+      "bytes": 4143
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/scripts/reconstruct_from_per_question.py": {
+      "sha256": "89ca6dcddd4418b4acb4b1bd1d14dab52adb5235c75d3d6999c6d1d072c8cb6a",
+      "bytes": 7812
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/scripts/verify_checkpoint_tables.py": {
+      "sha256": "e3690f98dc96fea04dba6f8002e5514e4c214b6e776d06694f3ce0dcd602385e",
+      "bytes": 1868
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/scripts/verify_matched_arm_strict.py": {
+      "sha256": "9ee086e9d32910aaaa6833ef27d4c83e936b5b852f6c5eb3feb60292372988c8",
+      "bytes": 2804
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/scripts/verify_shard_invariance.py": {
+      "sha256": "d69468170b0f1fe3c1271a1426bd40abc1a8f4dc60321909c4dfcc83801046e5",
+      "bytes": 2073
+    },
+    "audit_v52_boundary_localization_independent_2026_09_04/scripts/verify_transforms_and_partitions.py": {
+      "sha256": "021617036355573af8b9f2bf5b671b7b869b34e522c0d7b5198d905e51970e7a",
+      "bytes": 4419
+    }
+  },
+  "audit_inventory_scope": "Original AUDIT_HASHES.json covers target files; this review additionally hashes all audit additions",
+  "datasets": {
+    "LoCoMo": {
+      "questions": 1535,
+      "rows": 92100,
+      "csv_fields": [
+        "dataset",
+        "question_id",
+        "arm",
+        "rotation_seed",
+        "partition_seed",
+        "fractional_R3",
+        "native_fractional_R3",
+        "tie_identity"
+      ],
+      "native": 0.2365471466644105,
+      "max_seed_R3_error": 5.551115123125783e-17,
+      "rho": {
+        "B16": 0.8230380514516377,
+        "B24": 0.5267583580829525,
+        "B32": 0.08239600576853488,
+        "B48": 0.3034373516862974,
+        "B64": 0.5308507413364697,
+        "RANDOM32": 0.9371820265325871
+      },
+      "sufficient_boundaries": [
+        32
+      ],
+      "delta32": 0.8547860207640522,
+      "direct_B32_minus_RANDOM32_R3": 0.08448608961801346
+    },
+    "LongMemEval": {
+      "questions": 470,
+      "rows": 28200,
+      "csv_fields": [
+        "dataset",
+        "question_id",
+        "arm",
+        "rotation_seed",
+        "partition_seed",
+        "fractional_R3",
+        "native_fractional_R3",
+        "tie_identity"
+      ],
+      "native": 0.5419751773049646,
+      "max_seed_R3_error": 1.1102230246251565e-16,
+      "rho": {
+        "B16": 0.804840250362401,
+        "B24": 0.5765014729163865,
+        "B32": 0.16188275006735886,
+        "B48": 0.1938716436321735,
+        "B64": 0.3600139387097642,
+        "RANDOM32": 0.9909197989797783
+      },
+      "sufficient_boundaries": [
+        32,
+        48
+      ],
+      "delta32": 0.8290370489124195,
+      "direct_B32_minus_RANDOM32_R3": 0.13203120567375887
+    }
+  },
+  "S_common": [
+    32
+  ],
+  "new_retrieval_runs": 0,
+  "Task4F1_outcome_access": false,
+  "canonical_state_changed": false
+}

@@ -1,0 +1,20 @@
+{
+  "files": {
+    "COMMAND_LOG.md": {
+      "sha256": "40f482636717a003df7664911188328d1ff65cba5a12b413ae4391843cd56d0d",
+      "bytes": 3014
+    },
+    "REVIEW.md": {
+      "sha256": "8449198bffd551073136e80ca595418da92442193e85dc44729e223e63ea9d81",
+      "bytes": 11515
+    },
+    "VERIFICATION.json": {
+      "sha256": "e721c2259ed1b86cb2673e528604f2ff7557501418fece34253ddb775bb02f9e",
+      "bytes": 11654
+    },
+    "verify_evidence.py": {
+      "sha256": "a8f4c0d54891d510a4b071bb0472b8ee24e11e51b2fe5b7900b4a539e55a0371",
+      "bytes": 6676
+    }
+  }
+}
