@@ -1,0 +1,27 @@
+{
+  "locomo": {
+    "A_partition_derivation": "PASS",
+    "B_per_seed_arithmetic": "PASS",
+    "C_aggregates_and_dispersion": "PASS",
+    "D_seed_csv_vs_summary_json": "PASS",
+    "E_manifest_vs_summary": "PASS",
+    "n_seeds": 10,
+    "not_checkable_from_bytes": [
+      "per-seed spectral_R3 and random_R3 (no per-question output committed)",
+      "frozen_full_haar_R3 (inherited denominator, sampling uncertainty unquantified)"
+    ]
+  },
+  "longmemeval": {
+    "A_partition_derivation": "PASS",
+    "B_per_seed_arithmetic": "PASS",
+    "C_aggregates_and_dispersion": "PASS",
+    "D_seed_csv_vs_summary_json": "PASS",
+    "E_manifest_vs_summary": "PASS",
+    "n_seeds": 10,
+    "not_checkable_from_bytes": [
+      "per-seed spectral_R3 and random_R3 (no per-question output committed)",
+      "frozen_full_haar_R3 (inherited denominator, sampling uncertainty unquantified)"
+    ]
+  },
+  "_scope": "Internal consistency of committed bytes only. This is NOT an independent audit and cannot detect an error upstream of the seed-level retrieval numbers."
+}

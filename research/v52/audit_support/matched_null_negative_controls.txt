@@ -1,0 +1,46 @@
+
+locomo:
+  ok   baseline A -> clean
+  ok   baseline B -> clean
+  ok   baseline C -> clean
+  ok   baseline E -> clean
+  ok   locomo A/swapped-index  ->  caught: seed 57001: S32 does not match the declared rule
+  ok   locomo A/trivial-leading-32  ->  caught: seed 57001: S32 does not match the declared rule
+  ok   locomo A/overlapping-partition  ->  caught: seed 57001: T64 does not match the declared rule
+  ok   locomo A/wrong-size  ->  caught: seed 57001: S32 does not match the declared rule
+  ok   locomo B/Delta-perturbed-1e-9  ->  caught: seed 57001 Delta: declared 0.8308316304425446, recomputed 0.8308316294425446
+  ok   locomo B/rho-arms-swapped  ->  caught: seed 57001 rho_spec: declared 0.9552648081373036, recomputed 0.12443317869475903
+  ok   locomo B/denominator-shifted  ->  caught: seed 57001 rho_spec: declared 0.12443317869475903, recomputed 0.1261913525632196
+  ok   locomo C/headline-Delta-perturbed  ->  caught: Delta: declared 0.8816888408142849, recomputed 0.881688839814285
+  ok   locomo C/sample-sd-replaced-by-population-sd  ->  caught: dispersion.Delta.sample_sd: declared 0.11506140590048772, recomputed 0.12128537114222615
+  ok   locomo C/min-replaced-by-max  ->  caught: dispersion.Delta.min: declared 1.0465011549547585, recomputed 0.613784339009036
+  ok   locomo C/one-seed-dropped  ->  caught: spectral_mean_R3: declared 0.2301279412463207, recomputed 0.23062496056641857
+  ok   locomo D/csv-value-perturbed  ->  caught: seed 57001 spectral_R3: csv 0.22424831212980184, summary 0.22424831112980184
+  ok   locomo D/csv-row-missing  ->  caught: row count 9 does not match summary 10
+  ok   locomo E/manifest-Delta-drift  ->  caught: locomo_result.Delta: manifest 0.8816888408142849, summary 0.8816888398142849
+  ok   locomo E/manifest-regime-relabelled  ->  caught: locomo_result.regime: manifest '[NO EFFECT]', summary '[SPECTRAL POSITION LOAD-BEARING LEAD]'
+  ok   locomo E/manifest-reproduction-error  ->  caught: locomo_result.native_reproduction_error disagrees with the summary controls block
+
+longmemeval:
+  ok   baseline A -> clean
+  ok   baseline B -> clean
+  ok   baseline C -> clean
+  ok   baseline E -> clean
+  ok   longmemeval A/swapped-index  ->  caught: seed 57001: S32 does not match the declared rule
+  ok   longmemeval A/trivial-leading-32  ->  caught: seed 57001: S32 does not match the declared rule
+  ok   longmemeval A/overlapping-partition  ->  caught: seed 57001: T64 does not match the declared rule
+  ok   longmemeval A/wrong-size  ->  caught: seed 57001: S32 does not match the declared rule
+  ok   longmemeval B/Delta-perturbed-1e-9  ->  caught: seed 57001 Delta: declared 0.9759768796642199, recomputed 0.9759768786642199
+  ok   longmemeval B/rho-arms-swapped  ->  caught: seed 57001 rho_spec: declared 1.0888893342151018, recomputed 0.11291245555088188
+  ok   longmemeval B/denominator-shifted  ->  caught: seed 57001 rho_spec: declared 0.11291245555088188, recomputed 0.11569268491192185
+  ok   longmemeval C/headline-Delta-perturbed  ->  caught: Delta: declared 0.8337274480117668, recomputed 0.833727447011767
+  ok   longmemeval C/sample-sd-replaced-by-population-sd  ->  caught: dispersion.Delta.sample_sd: declared 0.09121365366647655, recomputed 0.09614763309727813
+  ok   longmemeval C/min-replaced-by-max  ->  caught: dispersion.Delta.min: declared 0.9759768786642199, recomputed 0.6893760757410925
+  ok   longmemeval C/one-seed-dropped  ->  caught: spectral_mean_R3: declared 0.5148030141843971, recomputed 0.5141615445232466
+  ok   longmemeval D/csv-value-perturbed  ->  caught: seed 57001 spectral_R3: csv 0.5239929088014185, summary 0.5239929078014185
+  ok   longmemeval D/csv-row-missing  ->  caught: row count 9 does not match summary 10
+  ok   longmemeval E/manifest-Delta-drift  ->  caught: longmemeval_result.Delta: manifest 0.8337274480117668, summary 0.8337274470117668
+  ok   longmemeval E/manifest-regime-relabelled  ->  caught: longmemeval_result.regime: manifest '[NO EFFECT]', summary '[SPECTRAL POSITION LOAD-BEARING LEAD]'
+  ok   longmemeval E/manifest-reproduction-error  ->  caught: longmemeval_result.native_reproduction_error disagrees with the summary controls block
+
+32/32 negative controls caught their mutation
