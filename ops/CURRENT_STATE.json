@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-04T21:00:00Z",
+  "issued_at_utc": "2026-09-05T07:10:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the pushed boundary-localization audit artifact and independently hash-verify it against its sidecar. No new mechanism experiment before it closes. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Report the verified audit and its binding narrowing for the next-experiment decision. The research track owes an additive post-audit addendum. Do not start a new mechanism experiment without an explicit decision. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-042",
+  "ledger_entry": "L-043",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -516,7 +516,7 @@
     "head": "1a33ef0d1a2715257920201f7a3db8ab4677a007",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
-    "status": "AUDIT PENDING - stop rule in force: no finer scan, knee search or new mechanism experiment before the audit closes",
+    "status": "AUDIT PASS WITH CAVEATS 2026-09-05, independently verified. Stop rule discharged; next experiment is a separate Head Researcher decision.",
     "benchmarks_in_scope": "LoCoMo and LongMemEval only; BEAM/Task 4F1 is a separate track and remains BLOCKED",
     "stages": [
       "spectral-band causal",
@@ -525,7 +525,10 @@
       "boundary localization (AUDIT PENDING, auditor commissioned)"
     ],
     "boundary_localization_result": "S_LoCoMo={32}, S_LongMemEval={32,48}, S_common={32}; labels [PC32-LOCALIZED SUFFICIENCY LEAD - ON TESTED GRID] AND [BOUNDARY-SET HETEROGENEITY PRESENT], which must always be reported together",
-    "independently_reconstructed_by_continuity_lead": true
+    "independently_reconstructed_by_continuity_lead": true,
+    "established": "the effect depends on WHICH coordinates form the leading block, not merely on 32/64 block structure (both datasets, fresh seeds)",
+    "conditional": "that 32 is the UNIQUE sufficient boundary on the tested grid - about a 73% event, resting on the single LoCoMo B48 exclusion at rho 0.303",
+    "owed_by_research_track": "an additive post-audit interpretation addendum on the research branch, before any next preregistration cites the localization half"
   },
   "commissioned_head_tail_audit": {
     "stage": "HEAD_TAIL_CAUSAL_INDEPENDENT_AUDIT",
@@ -582,8 +585,17 @@
     "target_branch": "audit/v52-boundary-localization-independent-2026-09-04",
     "session_id": "session_01RaVv81ReZoTMFmMnx8aPwk",
     "gates": "A-S",
-    "status": "RUNNING",
-    "health_check_required": "poll the auditor session status directly; a silent branch is not evidence of work in progress"
+    "status": "COMPLETE",
+    "health_check_required": "poll the auditor session status directly; a silent branch is not evidence of work in progress",
+    "result_branch": "audit/v52-boundary-localization-independent-2026-09-04",
+    "result_commit": "27f50f44490b419921b1d634f11006529b290a6f",
+    "report_sha256": "80f6a3aa0da5e9e81442c486cb35f11c3bf91a4384840f8cb53ff2d2d90965f3",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "verdict": "AUDIT PASS WITH CAVEATS; gates A-R all PASS as ESTABLISHED; S completed - weakens, does not defeat",
+    "branch_adds_only": "21 files, all under audit_v52_boundary_localization_independent_2026_09_04/",
+    "binding_narrowing": "report the LOCALIZATION half as a lead conditional on the ten-seed panel and the inherited denominator, not as an established property of the grid; the POSITION-DEPENDENCE half needs no hedge",
+    "caveat_reproduced_by_continuity_lead": "own paired question bootstrap on LoCoMo B48, B=2000: P(rho<=0.25)=0.166, sd=0.0551, 95% [0.194,0.407]; auditor reported ~0.21 and SE 0.063-0.088. Same conclusion, slightly more pessimistic."
   },
   "drive_backup_fidelity_note": "Boundary-localization documents are stored on Drive as CONVERTED Google Docs and cannot be hash-verified against their git blobs; result zips remain byte-exact. Earlier stages used unconverted text/markdown. Describe these as content backups, not hash-bound backups."
 }
