@@ -1,0 +1,13 @@
+{
+  "n_primary_questions": 470,
+  "lex_values_unique": true,
+  "lex_min": 0,
+  "lex_max": 498,
+  "lex_strictly_increasing_in_sorted_qid_order": true,
+  "lex_range_consistent_with_500_item_global_sort": true,
+  "n_lex_slots_unused": 30,
+  "nuisance_constant_20": true,
+  "tie_seed_formula_constant": true,
+  "max_lex_exceeds_max_shard_size": true,
+  "no_shard_column_in_per_question_file": true
+}

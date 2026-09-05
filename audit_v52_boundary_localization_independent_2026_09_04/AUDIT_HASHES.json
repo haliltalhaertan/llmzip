@@ -1,0 +1,138 @@
+{
+  "audited_commit": "1a33ef0d1a2715257920201f7a3db8ab4677a007",
+  "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+  "measured_by": "independent cold-start auditor",
+  "files": {
+    "research/v52/V52_CAUSAL_HEAD_TAIL_BOUNDARY_LOCALIZATION_PREREG_2026-09-04.md": {
+      "git_blob_sha1_measured": "b8acebedd49497a62ec637beabbcef6720460d15",
+      "sha256_measured": "f5eb1483b58b6f061669ab0be1149f82e7960e6109f3b641d61955250814c96c",
+      "bytes": 17643,
+      "git_blob_declared": "b8acebedd49497a62ec637beabbcef6720460d15",
+      "blob_match": true
+    },
+    "research/v52/V52_BOUNDARY_LOCALIZATION_PRERUN_SEAL_2026-09-04.json": {
+      "git_blob_sha1_measured": "cd3ad221ed66816a7b36c1edc746016ca73f9188",
+      "sha256_measured": "0e555af16297c6da533bd71517e12cbe2e9a0532bb211280c0417c23a6660e4c",
+      "bytes": 2419,
+      "git_blob_declared": "cd3ad221ed66816a7b36c1edc746016ca73f9188",
+      "blob_match": true
+    },
+    "research/v52/V52_HEAD_TAIL_POST_AUDIT_INTERPRETATION_ADDENDUM_2026-09-04.md": {
+      "git_blob_sha1_measured": "456b3b51f49a0238cd936bc3f639988fb0d673af",
+      "sha256_measured": "117bc3f61f19899da097282d00a48313efd64dfb4d2eedf02d32f8b3c11f5723",
+      "bytes": 6200,
+      "git_blob_declared": "456b3b51f49a0238cd936bc3f639988fb0d673af",
+      "blob_match": true
+    },
+    "research/v52/locomo_boundary_localization.py": {
+      "git_blob_sha1_measured": "0e66431449ad48b5f24049e0c05d65c917d8b893",
+      "sha256_measured": "2d849d32c3274fe3a4ba372245b4d4b32dc9c7520110e42df4024235e6eedb1a",
+      "bytes": 11270,
+      "git_blob_declared": "0e66431449ad48b5f24049e0c05d65c917d8b893",
+      "blob_match": true
+    },
+    "research/v52/longmemeval_boundary_localization_shard.py": {
+      "git_blob_sha1_measured": "26c1fe89ca025747b47f3fa6daf80326a8864747",
+      "sha256_measured": "a72eca94926f1e470aea53fa22cb8a81e5c20cfdeac553910fb43abaa57aeb08",
+      "bytes": 14454,
+      "git_blob_declared": "26c1fe89ca025747b47f3fa6daf80326a8864747",
+      "blob_match": true
+    },
+    ".github/workflows/v52-locomo-boundary-localization.yml": {
+      "git_blob_sha1_measured": "1de6c8abad80976c51843592801b53b18a998541",
+      "sha256_measured": "c4005d79a3191cb94c8fe77d1207b8668d35fcb80414607491edd507d2174ceb",
+      "bytes": 3494,
+      "git_blob_declared": "1de6c8abad80976c51843592801b53b18a998541",
+      "blob_match": true
+    },
+    ".github/workflows/v52-longmemeval-boundary-localization.yml": {
+      "git_blob_sha1_measured": "128987f7402a71160981f8f0cd28677e6c931710",
+      "sha256_measured": "52c4fd1f8b479e375cc2da669384574abe5cf926e3b1e254fa38f5d0e9a3f083",
+      "bytes": 6453,
+      "git_blob_declared": "128987f7402a71160981f8f0cd28677e6c931710",
+      "blob_match": true
+    },
+    "research/v52/locomo_boundary_outputs/locomo_boundary_summary.json": {
+      "git_blob_sha1_measured": "89c30a2a58fd638809477ded0d41b996f051c0f1",
+      "sha256_measured": "5d25ed4f31bdc27e050cfd60b31687bbb384cfa4de3c72338f5c012548809761",
+      "bytes": 4624,
+      "git_blob_declared": "89c30a2a58fd638809477ded0d41b996f051c0f1",
+      "blob_match": true
+    },
+    "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_summary.json": {
+      "git_blob_sha1_measured": "2d6e3a4b5f5bfdfd2b3b93bbc068a4fcc685b954",
+      "sha256_measured": "b6139c0137159e29a734237792e816d901f822d9030dac7e5a04b8b9fef018db",
+      "bytes": 4883,
+      "git_blob_declared": "2d6e3a4b5f5bfdfd2b3b93bbc068a4fcc685b954",
+      "blob_match": true
+    },
+    "research/v52/CROSS_DATASET_HEAD_TAIL_BOUNDARY_LOCALIZATION_CHECKPOINT_2026-09-04.md": {
+      "git_blob_sha1_measured": "b5a8ed6542c78cde14f608b9b23b51eb6e34b917",
+      "sha256_measured": "43d6deedca0209953e262ce7bcc7cc10f93bc4ebf1af31eb2c39c50b8900575e",
+      "bytes": 10738,
+      "git_blob_declared": "b5a8ed6542c78cde14f608b9b23b51eb6e34b917",
+      "blob_match": true
+    },
+    "research/v52/V52_BOUNDARY_LOCALIZATION_PROVENANCE_MANIFEST_2026-09-04.json": {
+      "git_blob_sha1_measured": "2751b51aea4ce43fbe08ac3ddfbafdc534d56dd0",
+      "sha256_measured": "06964e21ff6196446f3a50c4e5da36347abff0b7aa8d8c780572fec75ed5ac3b",
+      "bytes": 4704,
+      "git_blob_declared": "2751b51aea4ce43fbe08ac3ddfbafdc534d56dd0",
+      "blob_match": true
+    },
+    "research/v52/TRIGGER_BOUNDARY_LOCALIZATION_2026-09-04.txt": {
+      "git_blob_sha1_measured": "a4ff477ec2b843c15668e9fba304fb2703e1a6b7",
+      "sha256_measured": "7ee34f28a063083e2cc29c4029f57f2a4cbb21f836f0117a4d1555fb5f927246",
+      "bytes": 55
+    },
+    "research/v52/locomo_boundary_outputs/locomo_boundary_per_question.csv.gz": {
+      "git_blob_sha1_measured": "a38eec31695977f36d19ae0d6a89773d61e05773",
+      "sha256_measured": "87e7ae969403b0bb06efcd726d317fb08427cce7c29f221dd0e520ff8722fd1b",
+      "bytes": 299128,
+      "sha256_declared": "87e7ae969403b0bb06efcd726d317fb08427cce7c29f221dd0e520ff8722fd1b",
+      "sha256_match": true
+    },
+    "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_per_question.csv.gz": {
+      "git_blob_sha1_measured": "74b897b7b97065dc5c2c5b9ab396b1dd0e1c68ce",
+      "sha256_measured": "e73576039cb1c9b76ceb4b440148b90f3caa044ca082585d1a0f4d23ac08eaba",
+      "bytes": 106198,
+      "sha256_declared": "e73576039cb1c9b76ceb4b440148b90f3caa044ca082585d1a0f4d23ac08eaba",
+      "sha256_match": true
+    },
+    "research/v52/locomo_boundary_outputs/locomo_boundary_random_partitions.json": {
+      "git_blob_sha1_measured": "9bcda0c13a1b3bb850925b3cd8def1007a37e2d0",
+      "sha256_measured": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791",
+      "bytes": 10532,
+      "sha256_declared": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791",
+      "sha256_match": true
+    },
+    "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_random_partitions.json": {
+      "git_blob_sha1_measured": "9bcda0c13a1b3bb850925b3cd8def1007a37e2d0",
+      "sha256_measured": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791",
+      "bytes": 10532,
+      "sha256_declared": "232ffa300d832188ad0fc1fdb5fcd38d6ae7745922d5e8350080d845ed5bb791",
+      "sha256_match": true
+    },
+    "research/v52/locomo_boundary_outputs/locomo_boundary_seed_results.csv": {
+      "git_blob_sha1_measured": "f9e572328df0da3df7bf7068d7f6fe0c579957a3",
+      "sha256_measured": "0289d5a075ee9535ad44b7de444671f854b4e9b34daa522b88204df3a0c49f3a",
+      "bytes": 3271
+    },
+    "research/v52/longmemeval_boundary_outputs/longmemeval_boundary_seed_results.csv": {
+      "git_blob_sha1_measured": "481287b2509bd38e0c70aafc0a25fb241e05d06d",
+      "sha256_measured": "9fec715e8bb43bee072eba36646ccc31a8488da0f75bb2326d6c35123de4633d",
+      "bytes": 3244
+    },
+    "research/v52/locomo_spectral_band_haar_causal.py": {
+      "git_blob_sha1_measured": "7c4140252fb7f846d617189925cdf534515743f4",
+      "sha256_measured": "58b28c4ed0a62896710ae5ebd1c07574c29b6b5bb424de6c1bfac206ea903a15",
+      "bytes": 15923
+    },
+    "research/v52/longmemeval_spectral_band_haar_causal.py": {
+      "git_blob_sha1_measured": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+      "sha256_measured": "2e6601331779aab3d8bcd48c435fa0bb96124f3d14819a1945e125f9a72ca62c",
+      "bytes": 15989
+    }
+  },
+  "all_declared_identities_match": true
+}

@@ -1,0 +1,96 @@
+{
+  "58001": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 1.7763568394002505e-15,
+    "differs_from_spectral_B32": 0.8671012062757828,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 10
+  },
+  "58002": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 8.881784197001252e-16,
+    "differs_from_spectral_B32": 0.6869361469785895,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 6
+  },
+  "58003": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 1.3322676295501878e-15,
+    "differs_from_spectral_B32": 0.6672044947109124,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 14
+  },
+  "58004": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 8.881784197001252e-16,
+    "differs_from_spectral_B32": 0.7939481740246129,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 12
+  },
+  "58005": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 9.992007221626409e-16,
+    "differs_from_spectral_B32": 0.9002634344800877,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 9
+  },
+  "58006": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 7.771561172376096e-16,
+    "differs_from_spectral_B32": 0.711152800732092,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 11
+  },
+  "58007": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 1.1102230246251565e-15,
+    "differs_from_spectral_B32": 0.748959811310476,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 13
+  },
+  "58008": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 1.1102230246251565e-15,
+    "differs_from_spectral_B32": 0.7127065592469688,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 13
+  },
+  "58009": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 1.1102230246251565e-15,
+    "differs_from_spectral_B32": 0.7730433750466874,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 9
+  },
+  "58010": {
+    "block32_err": 0.0,
+    "block64_err": 0.0,
+    "outside_blocks_max": 0.0,
+    "orthogonality_err": 9.992007221626409e-16,
+    "differs_from_spectral_B32": 0.6807467772261286,
+    "partition_is_trivially_leading32": false,
+    "n_S32_in_leading32": 13
+  },
+  "_worst_block_placement_error": 0.0,
+  "_worst_orthogonality": 1.7763568394002505e-15,
+  "_min_difference_from_spectral_arm": 0.6672044947109124,
+  "_any_trivial_partition": false
+}

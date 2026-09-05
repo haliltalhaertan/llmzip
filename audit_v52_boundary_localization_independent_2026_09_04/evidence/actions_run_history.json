@@ -1,0 +1,28 @@
+{
+  "_note": "Retrieved by the independent auditor from the GitHub Actions API for haliltalhaertan/llmzip. Establishes Gate D from execution history rather than by inference from workflow triggers alone.",
+  "v52-locomo-boundary-localization.yml": {
+    "total_count": 1,
+    "run_id": 33916946302,
+    "run_number": 1,
+    "run_attempt": 1,
+    "event": "push",
+    "head_sha": "2edeef4a99cba20c94f3ec1c42c3da229f9d2452",
+    "conclusion": "success",
+    "matches_checkpoint_declared_run_id": true
+  },
+  "v52-longmemeval-boundary-localization.yml": {
+    "total_count": 1,
+    "run_id": 33916946226,
+    "run_number": 1,
+    "run_attempt": 1,
+    "event": "push",
+    "head_sha": "2edeef4a99cba20c94f3ec1c42c3da229f9d2452",
+    "conclusion": "success",
+    "matches_checkpoint_declared_run_id": true,
+    "jobs_total": 11,
+    "jobs": "shard(0..9) + aggregate; every job run_attempt=1, conclusion=success",
+    "all_jobs_run_attempt_1": true,
+    "prerun_gate_step_succeeded_in_every_job": true
+  },
+  "auditor_conclusion": "Exactly one run per workflow, one attempt per job, both triggered by push on the trigger commit. No re-dispatch, no re-run, no partial shard retry. Neither workflow declares workflow_dispatch, repository_dispatch or schedule, so no manual re-trigger path exists."
+}
