@@ -6,6 +6,8 @@ Disposition: **BYTE RECEIPT AND PERSISTED-RESULT RECONSTRUCTION PASS; ACCEPTANCE
 
 This is a review of an independent audit, not another cold-start audit. The reviewer has seen the research discussion. It is not a canonical acceptance, preregistration, stop-rule release or execution authorization.
 
+**Publication-time synchronization:** while this receipt was being published, the Continuity Lead advanced main to `722db7980ab80166f957de8c4d549ea694eb4021` (L-043), recorded this same audit as COMPLETE / PASS WITH CAVEATS, and discharged the audit-wait stop. The remaining next action is the additive interpretation addendum and a separate next-experiment decision. The L-042 status below is the pinned starting snapshot, not the current audit status. The bootstrap wording corrections in this review also apply to L-043's new 'about a 73% event' wording. No state files were modified by this reviewer. L-043 additionally reports a different bootstrap frequency (0.166 with 2,000 samples versus the auditor's 0.2103 with 20,000); that new calculation was not reproduced here and is not accepted as numerical equivalence.
+
 ## Exact handoff
 
 - Canonical main examined: `45e6ddea247fdb8614715a717bea8015283178d0` (L-042).
@@ -74,7 +76,7 @@ Before authorizing that work: freeze the scale rule, handling of degenerate coor
 
 ## Next action and reproduction
 
-The sole state writer should consume this pinned receipt, record acceptance plus the interpretation addendum, and explicitly decide the stop-rule disposition. The older random-partition stage remains a separate unaudited historical stage; the boundary stage's matched random arms provide current evidence without retroactively auditing the older stage. No automatic new auditor, run or canonical-state rewrite is requested.
+Acceptance and the audit-wait stop disposition are now recorded by the sole state writer in L-043. The next bounded action is the additive interpretation addendum incorporating the corrections above, then a separate decision on the proposed coordinate-scale question. The older random-partition stage remains a separate unaudited historical stage; the boundary stage's matched random arms provide current evidence without retroactively auditing the older stage. No automatic new auditor, run or canonical-state rewrite is requested.
 
 Reproduce from this review branch with Python 3 using:
 

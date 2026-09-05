@@ -1,20 +1,20 @@
 {
   "files": {
     "COMMAND_LOG.md": {
-      "sha256": "40f482636717a003df7664911188328d1ff65cba5a12b413ae4391843cd56d0d",
-      "bytes": 3014
+      "sha256": "a32980e294d3b5fab2cda29ecb579b810f04eeac268b31c9d62b1b8b281e8b82",
+      "bytes": 3760
     },
     "REVIEW.md": {
-      "sha256": "8449198bffd551073136e80ca595418da92442193e85dc44729e223e63ea9d81",
-      "bytes": 11515
+      "sha256": "01609c2004ab9e088e09ae71d8dc5f1364fabbd045a41dfa57f9562526f8bd6a",
+      "bytes": 12448
     },
     "VERIFICATION.json": {
-      "sha256": "e721c2259ed1b86cb2673e528604f2ff7557501418fece34253ddb775bb02f9e",
-      "bytes": 11654
+      "sha256": "eee5be7a8e40355f9a2da8630113235fc3aff19e40cb794ab5deca6beff09437",
+      "bytes": 12115
     },
     "verify_evidence.py": {
-      "sha256": "a8f4c0d54891d510a4b071bb0472b8ee24e11e51b2fe5b7900b4a539e55a0371",
-      "bytes": 6676
+      "sha256": "174efed09a6e28de9a478f88e269e6a884787ed5b263b3b6ccd76cd72938f181",
+      "bytes": 7330
     }
   }
 }

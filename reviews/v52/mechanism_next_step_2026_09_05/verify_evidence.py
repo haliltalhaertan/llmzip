@@ -16,6 +16,7 @@ import subprocess
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 MAIN = "45e6ddea247fdb8614715a717bea8015283178d0"
+LATEST_MAIN = "722db7980ab80166f957de8c4d549ea694eb4021"
 TARGET = "1a33ef0d1a2715257920201f7a3db8ab4677a007"
 AUDIT = "27f50f44490b419921b1d634f11006529b290a6f"
 NS = "audit_v52_boundary_localization_independent_2026_09_04/"
@@ -40,6 +41,11 @@ def require(condition, message):
 
 def verify():
     state = json.loads(blob(MAIN, "ops/CURRENT_STATE.json"))
+    latest_bytes = blob(LATEST_MAIN, "ops/CURRENT_STATE.json")
+    latest = json.loads(latest_bytes)
+    require(latest["commissioned_boundary_localization_audit"]["result_commit"] == AUDIT, "accepted audit drift")
+    require(latest["task_state"]["task_4f1_run"] == "BLOCKED", "latest run state drift")
+    require(latest["task_state"]["retrieval_quality_outcome_access"] == "FORBIDDEN", "latest outcome state drift")
     require(state["task_state"]["task_4f1_run"] == "BLOCKED", "run state drift")
     require(state["task_state"]["retrieval_quality_outcome_access"] == "FORBIDDEN", "outcome state drift")
     require(git("rev-parse", AUDIT + "^").decode().strip() == TARGET, "audit parent drift")
@@ -104,7 +110,9 @@ def verify():
                           "direct_B32_minus_RANDOM32_R3": statistics.mean(means["B32", s] - means["RANDOM32", s] for s in seeds)}
     common = sorted(set(datasets["LoCoMo"]["sufficient_boundaries"]) & set(datasets["LongMemEval"]["sufficient_boundaries"]))
     return {"status": "PASS", "scope": "Pinned-byte receipt and persisted-result reconstruction, not cold-start audit or raw retrieval reproduction",
-            "main": MAIN, "target": TARGET, "audit": AUDIT, "audit_report_sha256": sidecar,
+            "main": MAIN, "latest_main_at_publication": LATEST_MAIN,
+            "latest_state_sha256": digest(latest_bytes), "latest_next_action": latest["task_state"]["next_single_action"],
+            "target": TARGET, "audit": AUDIT, "audit_report_sha256": sidecar,
             "verified_target_files": measured, "pinned_audit_file_inventory": audit_files,
             "audit_inventory_scope": "Original AUDIT_HASHES.json covers target files; this review additionally hashes all audit additions",
             "datasets": datasets, "S_common": common, "new_retrieval_runs": 0,
