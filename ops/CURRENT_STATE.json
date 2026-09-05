@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-05T08:20:00Z",
+  "issued_at_utc": "2026-09-05T09:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Hand the five wording corrections and the two literature corrections to the research track for its additive post-audit addendum, then await the Head Researcher decision on the coordinate-scale direction. Do not preregister or run it. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher decision on the coordinate-scale direction. If taken up it needs its own preregistration with the scale rule, degenerate-coordinate handling, arms, seeds, paired estimand, threshold, sampling unit and stopping rule frozen before any run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-044",
+  "ledger_entry": "L-045",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -513,7 +513,7 @@
   },
   "mechanism_research_track": {
     "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
-    "head": "1a33ef0d1a2715257920201f7a3db8ab4677a007",
+    "head": "39bbfec1f0084cae96c431c410d11994db16464e",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
     "status": "AUDIT PASS WITH CAVEATS 2026-09-05, independently verified. Stop rule discharged; next experiment is a separate Head Researcher decision.",
@@ -528,7 +528,17 @@
     "independently_reconstructed_by_continuity_lead": true,
     "established": "the effect depends on WHICH coordinates form the leading block, not merely on 32/64 block structure (both datasets, fresh seeds)",
     "conditional": "that 32 is the UNIQUE sufficient boundary on the tested grid - about a 73% event, resting on the single LoCoMo B48 exclusion at rho 0.303",
-    "owed_by_research_track": "an additive post-audit interpretation addendum on the research branch, before any next preregistration cites the localization half"
+    "owed_by_research_track": "DISCHARGED 2026-09-05 - the additive post-audit interpretation addendum is committed",
+    "audited_commit": "1a33ef0d1a2715257920201f7a3db8ab4677a007 (remains an ancestor; audited bytes unchanged)",
+    "post_audit_addendum": {
+      "path": "research/v52/V52_BOUNDARY_LOCALIZATION_POST_AUDIT_INTERPRETATION_ADDENDUM_2026-09-05.md",
+      "sha256": "9c5d39f44b73075937abc466a3a21bf0beaa274ee9d6a68823b44a2299bed0db",
+      "commit": "39bbfec1f0084cae96c431c410d11994db16464e",
+      "sidecar_agrees": true,
+      "additive_proof": "diffed against 1a33ef0 it adds exactly the addendum and its sidecar; all frozen artifacts byte-unchanged",
+      "drive_navigation_mirror": "1Wt_I_5jvCcJCMHy0FOCcSMruN1vXy2q7 (verified; NOT byte-exact)",
+      "binds": "the five narrowings A-E plus four carried-forward open items"
+    }
   },
   "commissioned_head_tail_audit": {
     "stage": "HEAD_TAIL_CAUSAL_INDEPENDENT_AUDIT",
