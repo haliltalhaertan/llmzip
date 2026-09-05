@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-05T11:15:00Z",
+  "issued_at_utc": "2026-09-05T12:10:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher authorization is the only remaining gate for the coordinate-scale experiment. Nothing is built, sealed or triggered before it. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher authorization remains the only gate. On authorization: settle the invariance-check scope, write the LongMemEval sharded runner, install runner and workflow, seal pre-run, trigger once. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-048",
+  "ledger_entry": "L-049",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -635,7 +635,7 @@
   "coordinate_scale_draft": {
     "status": "CANDIDATE PREREGISTRATION v3 - COMPLETE, AWAITING AUTHORIZATION. NOT SEALED, NOT TRIGGERED.",
     "branch": "draft/v52-coordinate-scale-prereg-2026-09-05",
-    "commit": "20ed5fc1ee36b97e609a7b64641f090464479cdb",
+    "commit": "c044d469f4c7c14b09f21fddb5fbaff123538030",
     "path": "drafts/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_DRAFT_2026-09-05.md",
     "sha256": "de6672119010bf561179014748e21836bff5c0ebf6efa10379213c59de5203fe",
     "not_on_research_branch": true,
@@ -659,7 +659,19 @@
       "block_seeds": "fresh 59001..59010 (reuse invites a panel-selection objection)",
       "scale_of_estimand": "fraction, not percentage points (pp confounded by a floor effect)"
     },
-    "remaining_gate": "Head Researcher authorization only. On authorization: build runners and workflows, seal pre-run, trigger once, persist per-question records for every arm."
+    "remaining_gate": "Head Researcher authorization only. On authorization: build runners and workflows, seal pre-run, trigger once, persist per-question records for every arm.",
+    "implementation": {
+      "runner": "drafts/v52/pending_runners/locomo_coordinate_scale.py (LoCoMo only; LongMemEval deliberately deferred)",
+      "workflow": "drafts/v52/pending_workflows/v52-locomo-coordinate-scale.yml",
+      "non_triggerable": "verified: no installed copy under .github/workflows/ anywhere on the branch; GitHub cannot execute it where it sits",
+      "self_test": "drafts/v52/pending_runners/test_coordinate_scale_pure_functions.py - 23/23 pass on synthetic data",
+      "aborts_not_assumptions": "SCALED_NATIVE must be bit-identical to NATIVE; norm/dot invariance asserted WITHIN a representation and its own rotation only",
+      "not_validated": "anything requiring the corpus; the full pipeline has never been executed",
+      "stated_risks": [
+        "invariance check is O(n^2) in archive rows; if it dominates, narrow the check as earlier stages did - do NOT loosen TOL",
+        "synthetic dot error 1.1e-13 vs TOL 1e-12, less headroom than the audited stages' ~1e-15; a trip is information, not licence to raise TOL"
+      ]
+    }
   },
   "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes."
 }
