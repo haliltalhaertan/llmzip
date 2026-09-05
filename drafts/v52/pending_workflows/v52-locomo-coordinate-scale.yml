@@ -1,0 +1,42 @@
+# PENDING — NOT INSTALLED. This file is not under .github/workflows/ and therefore cannot execute.
+# Installing it is part of what an authorization authorizes.
+name: v52-locomo-coordinate-scale
+
+on:
+  push:
+    branches: [research/v52-sign-mechanism-locomo-2026-09-05-scale]
+    paths: ['research/v52/TRIGGER_COORDINATE_SCALE_2026-09-05.txt']
+
+# No workflow_dispatch, no repository_dispatch, no schedule: the only trigger route is a push that
+# creates the named trigger file. That file does not exist.
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        run: pip install numpy==2.3.2 scipy==1.16.1 scikit-learn==1.7.1 pandas psutil==7.0.0
+      - name: Pre-run gate — the seal must exist and match before anything is computed
+        run: python -B research/v52/verify_coordinate_scale_prerun_seal.py
+      - name: Self-test the runner's pure functions
+        run: python -B research/v52/test_coordinate_scale_pure_functions.py
+      - name: Execute
+        run: python -B research/v52/locomo_coordinate_scale.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v52-locomo-coordinate-scale
+          path: research/v52/locomo_scale_outputs
+      - name: Persist results
+        run: |
+          git config user.name "V52 Research Runner"
+          git config user.email "runner@users.noreply.github.com"
+          git add research/v52/locomo_scale_outputs
+          git commit -m "research(v52): persist preregistered LoCoMo coordinate-scale result"
+          git push origin HEAD:"${GITHUB_REF_NAME}"
