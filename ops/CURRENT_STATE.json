@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-05T10:30:00Z",
+  "issued_at_utc": "2026-09-05T11:15:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Put draft v2 and the pilot findings to the Head Researcher with the three remaining open design questions. Freeze nothing until they are answered. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher authorization is the only remaining gate for the coordinate-scale experiment. Nothing is built, sealed or triggered before it. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-047",
+  "ledger_entry": "L-048",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -633,26 +633,33 @@
   },
   "proposed_next_direction": "coordinate-scale participation test: for positive diagonal D, sign(xD)=sign(x), so a positive archive-derived rescaling preserves the native sign code exactly while changing sign(xDQ). Decisive comparison is an INTERACTION - does rescaling help full mixing more than within-block mixing under paired queries and fixed rotations. DIRECTION ONLY: not preregistered, not sealed, not authorized; no seeds, workflow or trigger exist.",
   "coordinate_scale_draft": {
-    "status": "DRAFT v2 - NOT PREREGISTERED, NOT SEALED, NOT AUTHORIZED",
+    "status": "CANDIDATE PREREGISTRATION v3 - COMPLETE, AWAITING AUTHORIZATION. NOT SEALED, NOT TRIGGERED.",
     "branch": "draft/v52-coordinate-scale-prereg-2026-09-05",
-    "commit": "2b743b149701bc09e9b48bbcabca2fc2d43e88b5",
+    "commit": "20ed5fc1ee36b97e609a7b64641f090464479cdb",
     "path": "drafts/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_DRAFT_2026-09-05.md",
-    "sha256": "d5860a550b94d886795b736879eea1a460c9d2f95fcc85f103e1ca9457070b42",
+    "sha256": "de6672119010bf561179014748e21836bff5c0ebf6efa10379213c59de5203fe",
     "not_on_research_branch": true,
     "primary_estimand": "REVISED after the pilot: frac_full and frac_block, the share of each arm's OWN loss recovered by rescaling, reported per arm; the interaction survives only on the fraction scale as secondary; percentage-point quantities are descriptive and barred from carrying the verdict",
     "identity_check": "SCALED_NATIVE must be BIT-IDENTICAL to NATIVE or the run aborts",
     "closes_as_by_product": "FULLHAAR_FRESH gives the Full-Haar reference its own seed panel",
-    "open_design_questions": "3 remaining (choice of D; per-archive vs global sigma; fresh vs reused block seeds); question 4 settled empirically by the pilot",
+    "open_design_questions": "0 - all four resolved; three by measurement, one by argument, one of them against this document's own earlier preference",
     "pilot": {
       "findings": "drafts/v52/pilot/PILOT_FINDINGS.md",
-      "sha256": "019df72e02a972081f111fba33577aa8734aab9ac171578ef2d1783beb695a04",
+      "sha256": "54aee88c7cb71d6fcd2bf6cb17ff6960ef9f428231f561d081a5bb4bdf1de20d",
       "nature": "synthetic only - no corpus read, no benchmark outcome computed, no Task 4F1 contact",
       "result_1": "sign(xD)=sign(x) exact in float64; SCALED_NATIVE identical to NATIVE; zero degenerate coords at eps 1e-12",
       "result_2": "the qualitative shape of the real finding reproduces as CV(sigma) rises",
       "result_3": "THE DRAFT'S OWN v1 PRIMARY ESTIMAND WAS CONFOUNDED by a floor effect: pp interaction +13 to +22 pp while frac_full ~ frac_block ~ 1.00",
       "result_4": "rescaling can overshoot native (frac up to 1.407), so bands must admit frac > 1",
       "does_not_establish": "where the real archives sit on the CV(sigma) axis - not computable from repository bytes; the model also has no inter-coordinate correlation structure"
-    }
+    },
+    "resolutions": {
+      "D": "1/sigma (decisive; sigma^-0.5 is indecisive by construction)",
+      "sigma_scope": "per-archive (global overshoots and flips the sign of I_frac)",
+      "block_seeds": "fresh 59001..59010 (reuse invites a panel-selection objection)",
+      "scale_of_estimand": "fraction, not percentage points (pp confounded by a floor effect)"
+    },
+    "remaining_gate": "Head Researcher authorization only. On authorization: build runners and workflows, seal pre-run, trigger once, persist per-question records for every arm."
   },
   "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes."
 }
