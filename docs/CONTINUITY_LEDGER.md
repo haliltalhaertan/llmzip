@@ -1032,3 +1032,20 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: Head Researcher authorization remains the only gate. On authorization: settle the invariance-check scope, write the LongMemEval sharded runner, install runner and workflow, seal pre-run, trigger once.
 ```
+
+### L-052
+
+```text
+timestamp_utc: 2026-09-06T10:05:00Z
+actor_role: Continuity Lead / co-chair (sole writer on main)
+predecessor_commit_or_tag: L-051 / 1598cde
+scope: Write a session-takeover prompt so a fresh Continuity Lead session can resume without inheriting chat memory. Documentation only. No experiment, no corpus, no outcome.
+changed_or_created_paths: prompts/V52_CONTINUITY_LEAD_SESSION_TAKEOVER_2026-09-06.md with its sha256 sidecar; docs/CONTINUITY_LEDGER.md; ops/CURRENT_STATE.json
+why_a_prompt_rather_than_a_summary: A summary invites the next session to treat it as evidence. This prompt states in its own first section that the repository is authoritative and that every factual claim inside it must be re-verified against bytes before being acted on, and it ends by requiring the successor to rev-parse each anchor and report mismatches BEFORE doing anything else.
+every_embedded_claim_was_verified_before_writing_it_down: main HEAD 1598cde; research branch 25e29e0; draft branch c044d46; seal V3 e906c6d2; approved draft bytes de667211; literature-scan prompt 9eaefd51; ledger entry count 51 matching L-001 through L-051; and the installed-workflow count for the coordinate-scale experiment returning 0 on main.
+what_the_prompt_carries_forward_that_a_summary_would_lose: the seven absolute prohibitions and that only a hash-bound pushed authorization can relax them; the stop rule; the additive-correction rule; that the two boundary-localization labels must always travel together; the direction of rho against the denominator, which a previous session got backwards; the two required labels on any citation of the matched-null stage; that the LongMemEval standard error must NOT be transferred to LoCoMo; the two pre-recorded runner risks and that neither licenses loosening TOL; and that a verifier is not evidence until shown to fail.
+it_also_carries_the_distinction_that_took_longest_to_establish: two open items are closed in the sense that they were PROVEN unclosable from repository bytes, and the prompt says so explicitly so the successor does not re-open them as merely unfinished work.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. The prompt instructs the successor not to begin any experiment and not to touch Task 4F1.
+status: PASS
+next_single_action: Head Researcher authorization remains the only gate. On authorization: settle the invariance-check scope, write the LongMemEval sharded runner, install runner and workflow, seal pre-run, trigger once.
+```
