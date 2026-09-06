@@ -1,0 +1,155 @@
+{
+  "locomo": {
+    "native_R3": 0.23654714666441054,
+    "denominator_in_use": 0.13770827054136,
+    "denominator_dispersion": "NOT MEASURABLE - no per-seed source is committed",
+    "arms": {
+      "B16": {
+        "rho": 0.8230380514516377,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": -0.08884547738353069,
+        "required_shift": -0.2265537479248907,
+        "required_shift_pct_of_denominator": -164.517168819462,
+        "direction": "lost only if the true denominator is LOWER than recorded"
+      },
+      "B24": {
+        "rho": 0.5267583580829528,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": 0.02829033025904068,
+        "required_shift": -0.10941794028231933,
+        "required_shift_pct_of_denominator": -79.45633174548959,
+        "direction": "lost only if the true denominator is LOWER than recorded"
+      },
+      "B32": {
+        "rho": 0.08239600576853544,
+        "verdict": "SUFFICIENT (rho <= 0.25)",
+        "denominator_at_which_verdict_flips": 0.20397143223564881,
+        "required_shift": 0.06626316169428881,
+        "required_shift_pct_of_denominator": 48.11850547087293,
+        "direction": "lost only if the true denominator is HIGHER than recorded"
+      },
+      "B48": {
+        "rho": 0.3034373516862974,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": 0.11658151940669667,
+        "required_shift": -0.021126751134663335,
+        "required_shift_pct_of_denominator": -15.34167196466099,
+        "direction": "lost only if the true denominator is LOWER than recorded"
+      },
+      "B64": {
+        "rho": 0.5308507413364699,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": 0.02667238401327096,
+        "required_shift": -0.11103588652808905,
+        "required_shift_pct_of_denominator": -80.63124029630447,
+        "direction": "lost only if the true denominator is LOWER than recorded"
+      },
+      "RANDOM32": {
+        "rho": 0.9371820265325876,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": -0.13397292623640503,
+        "required_shift": -0.27168119677776503,
+        "required_shift_pct_of_denominator": -197.28749457801587,
+        "direction": "lost only if the true denominator is LOWER than recorded"
+      }
+    },
+    "tightest_verdict": "B48",
+    "tightest_required_shift_pct": -15.34167196466099
+  },
+  "longmemeval": {
+    "native_R3": 0.5419751773049645,
+    "denominator_in_use": 0.38271666666667,
+    "denominator_dispersion": {
+      "source": "audit_v52_t4c3/AUDIT_REPORT.md (independent audit, accepted 2026-08-28)",
+      "source_sha256": "8f6b31050c6e211b7c34ba8214405cff91251d33bd590be97c996ce17f2be238",
+      "rotation_seeds": [
+        43001,
+        43002,
+        43003,
+        43004,
+        43005
+      ],
+      "n": 5,
+      "mean_of_published_seed_values": 0.38271666660000003,
+      "denominator_in_use": 0.38271666666667,
+      "agreement_with_denominator_in_use": 6.666994734061404e-11,
+      "agreement_note": "the residual is the rounding of the audit report's nine published decimal places, not a disagreement about the value",
+      "sample_sd": 0.014935802685146212,
+      "standard_error": 0.0066794940205021636,
+      "relative_standard_error_pct": 1.7452843326217877,
+      "seed_envelope": [
+        0.36139539,
+        0.401278369
+      ],
+      "t_interval_95": [
+        0.364174391199086,
+        0.40125894200091405
+      ]
+    },
+    "arms": {
+      "B16": {
+        "rho": 0.8048402503624009,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": 0.02926453900709236,
+        "required_shift": -0.3534521276595776,
+        "required_shift_pct_of_denominator": -92.35347149577352,
+        "direction": "lost only if the true denominator is LOWER than recorded",
+        "required_shift_in_standard_errors": 52.91600330424506,
+        "flip_inside_95_interval": false
+      },
+      "B24": {
+        "rho": 0.5765014729163863,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": 0.17472411347517747,
+        "required_shift": -0.2079925531914925,
+        "required_shift_pct_of_denominator": -54.34635366236748,
+        "direction": "lost only if the true denominator is LOWER than recorded",
+        "required_shift_in_standard_errors": 31.138968393874787,
+        "flip_inside_95_interval": false
+      },
+      "B32": {
+        "rho": 0.16188275006735897,
+        "verdict": "SUFFICIENT (rho <= 0.25)",
+        "denominator_at_which_verdict_flips": 0.43885035460992905,
+        "required_shift": 0.05613368794325907,
+        "required_shift_pct_of_denominator": 14.667165773616317,
+        "direction": "lost only if the true denominator is HIGHER than recorded",
+        "required_shift_in_standard_errors": 8.40388325387541,
+        "flip_inside_95_interval": false
+      },
+      "B48": {
+        "rho": 0.19387164363217363,
+        "verdict": "SUFFICIENT (rho <= 0.25)",
+        "denominator_at_which_verdict_flips": 0.41847234042553183,
+        "required_shift": 0.03575567375886185,
+        "required_shift_pct_of_denominator": 9.34259646183727,
+        "direction": "lost only if the true denominator is HIGHER than recorded",
+        "required_shift_in_standard_errors": 5.353051241473189,
+        "flip_inside_95_interval": false
+      },
+      "B64": {
+        "rho": 0.36001393870976345,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": 0.3126340425531918,
+        "required_shift": -0.07008262411347815,
+        "required_shift_pct_of_denominator": -18.31188192661522,
+        "direction": "lost only if the true denominator is LOWER than recorded",
+        "required_shift_in_standard_errors": 10.492205532090491,
+        "flip_inside_95_interval": false
+      },
+      "RANDOM32": {
+        "rho": 0.9909197989797783,
+        "verdict": "not sufficient",
+        "denominator_at_which_verdict_flips": -0.0892744680851062,
+        "required_shift": -0.4719911347517762,
+        "required_shift_pct_of_denominator": -123.3265169407583,
+        "direction": "lost only if the true denominator is LOWER than recorded",
+        "required_shift_in_standard_errors": 70.66270787922525,
+        "flip_inside_95_interval": false
+      }
+    },
+    "tightest_verdict": "B48",
+    "tightest_required_shift_pct": 9.34259646183727
+  },
+  "_scope": "Arithmetic on committed declared numbers and on one independently audited artifact. No corpus was read, no seed was drawn, no retrieval was computed. This does not measure the LoCoMo denominator's dispersion and does not transfer the LongMemEval figure to it."
+}

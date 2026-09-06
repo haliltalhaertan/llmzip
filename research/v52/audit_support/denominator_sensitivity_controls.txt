@@ -1,0 +1,54 @@
+round trip: the breakdown denominator must put rho exactly on the gate
+  ok   locomo/B16 round-trips to the gate
+  ok   locomo/B24 round-trips to the gate
+  ok   locomo/B32 round-trips to the gate
+  ok   locomo/B48 round-trips to the gate
+  ok   locomo/B64 round-trips to the gate
+  ok   locomo/RANDOM32 round-trips to the gate
+  ok   longmemeval/B16 round-trips to the gate
+  ok   longmemeval/B24 round-trips to the gate
+  ok   longmemeval/B32 round-trips to the gate
+  ok   longmemeval/B48 round-trips to the gate
+  ok   longmemeval/B64 round-trips to the gate
+  ok   longmemeval/RANDOM32 round-trips to the gate
+
+declared rho must be reproducible from the declared inputs
+  ok   locomo/B16 declared rho reproduces
+  ok   locomo/B24 declared rho reproduces
+  ok   locomo/B32 declared rho reproduces
+  ok   locomo/B48 declared rho reproduces
+  ok   locomo/B64 declared rho reproduces
+  ok   locomo/RANDOM32 declared rho reproduces
+  ok   longmemeval/B16 declared rho reproduces
+  ok   longmemeval/B24 declared rho reproduces
+  ok   longmemeval/B32 declared rho reproduces
+  ok   longmemeval/B48 declared rho reproduces
+  ok   longmemeval/B64 declared rho reproduces
+  ok   longmemeval/RANDOM32 declared rho reproduces
+
+direction: rho must rise as the denominator rises toward native
+  ok   locomo rho rises when the denominator is raised
+  ok   locomo rho falls when the denominator is lowered
+  ok   locomo the reported direction label matches that behaviour
+  ok   longmemeval rho rises when the denominator is raised
+  ok   longmemeval rho falls when the denominator is lowered
+  ok   longmemeval the reported direction label matches that behaviour
+
+negative controls: a wrong breakdown point must NOT round-trip
+  ok   perturbed breakdown point is rejected
+  ok   breakdown point computed against the wrong arm is rejected
+  ok   breakdown point computed against a different gate is rejected
+
+transcribed audited seed values
+  ok   five seeds, 43001..43005
+  ok   their mean is the denominator in use to within report rounding
+  ok   a single altered seed would break that agreement
+  ok   sd and se are consistent with each other
+  ok   the envelope brackets every seed value
+  ok   the 95% interval is wider than the standard error and narrower than the seed envelope
+
+no LoCoMo dispersion may be reported
+  ok   LoCoMo dispersion is declared not measurable
+  ok   no LoCoMo arm carries a standard-error figure
+
+41/41 controls passed
