@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-05T12:10:00Z",
+  "issued_at_utc": "2026-09-05T13:05:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-049",
+  "ledger_entry": "L-050",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -513,7 +513,7 @@
   },
   "mechanism_research_track": {
     "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
-    "head": "39bbfec1f0084cae96c431c410d11994db16464e",
+    "head": "36320517bd7ebd6d361202093aca512a08153e44",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
     "status": "AUDIT PASS WITH CAVEATS 2026-09-05, independently verified. Stop rule discharged; next experiment is a separate Head Researcher decision.",
@@ -521,7 +521,7 @@
     "stages": [
       "spectral-band causal",
       "head/tail causal (AUDIT PASS WITH CAVEATS)",
-      "matched random-partition null (AUDIT PENDING, dispatch record exists, NO auditor branch)",
+      "matched random-partition null (NOT INDEPENDENTLY AUDITABLE - no per-question output was committed; internal consistency verified from bytes 2026-09-05, see matched_null_stage_auditability)",
       "boundary localization (AUDIT PENDING, auditor commissioned)"
     ],
     "boundary_localization_result": "S_LoCoMo={32}, S_LongMemEval={32,48}, S_common={32}; labels [PC32-LOCALIZED SUFFICIENCY LEAD - ON TESTED GRID] AND [BOUNDARY-SET HETEROGENEITY PRESENT], which must always be reported together",
@@ -538,6 +538,29 @@
       "additive_proof": "diffed against 1a33ef0 it adds exactly the addendum and its sidecar; all frozen artifacts byte-unchanged",
       "drive_navigation_mirror": "1Wt_I_5jvCcJCMHy0FOCcSMruN1vXy2q7 (verified; NOT byte-exact)",
       "binds": "the five narrowings A-E plus four carried-forward open items"
+    },
+    "matched_null_stage_auditability": {
+      "stage_commit": "410bcf59e29c64096bfb988d6d95e89658f50f6e",
+      "finding": "NOT a missing reviewer - a missing artifact. No per-question output was committed for this stage on ANY of the 57 remote branches, so its per-seed spectral_R3 and random_R3 are declarations that cannot be reconstructed by any party without re-running against the pinned corpora. The boundary-localization stage that WAS audited does commit per-question output for both benchmarks.",
+      "supersedes_wording": "the earlier open item 'dispatch record exists but NO auditor branch', which remains true but is not the binding constraint",
+      "verified_from_bytes": "partition derivation from the declared RNG rule; per-seed rho and Delta arithmetic; headline means, L_full and all dispersion fields; seed CSV against summary JSON; provenance manifest against both summaries. All five PASS on both benchmarks, tolerance 1e-12, ten seeds each.",
+      "verifier": "research/v52/audit_support/verify_matched_null_from_bytes.py",
+      "negative_controls": "research/v52/audit_support/test_verify_matched_null_from_bytes.py - 32/32 mutations caught, baselines clean",
+      "is_this_an_audit": "NO. Performed by the writer, not an independent party, and by construction cannot detect an error upstream of the seed-level numbers.",
+      "addendum": {
+        "path": "research/v52/V52_MATCHED_NULL_STAGE_AUDITABILITY_ADDENDUM_2026-09-05.md",
+        "sha256": "21dd847c610fd40e5bc3a82993e4df9a87b36057c30061d894668b54f4fcebc8",
+        "commit": "36320517bd7ebd6d361202093aca512a08153e44",
+        "sidecar_agrees": true,
+        "additive": true
+      },
+      "required_labels_on_any_citation": [
+        "[MATCHED-NULL STAGE - SEED-LEVEL DECLARATIONS, NOT INDEPENDENTLY RECONSTRUCTIBLE]",
+        "[INTERNAL CONSISTENCY VERIFIED FROM BYTES; UPSTREAM RETRIEVAL LAYER UNVERIFIED]"
+      ],
+      "consequence": "On its LongMemEval side the [CROSS-BENCHMARK SPECTRAL POSITION CAUSAL LEAD] rests on an unreconstructible layer. Cite the independently audited boundary-localization stage instead where it covers the same ground.",
+      "remedy_known_not_proposed": "commit per-question output, or re-run the stage. Both are experiments requiring Head Researcher authorization and neither is proposed here.",
+      "no_number_retracted": true
     }
   },
   "commissioned_head_tail_audit": {
