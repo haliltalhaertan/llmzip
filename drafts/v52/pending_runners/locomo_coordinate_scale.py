@@ -4,6 +4,11 @@ Deliberately NOT placed at research/v52/ and its workflow is NOT under .github/w
 cannot be picked up or triggered. On authorization it moves into the sealed package unchanged.
 
 Design values are frozen by the candidate preregistration; every constant below is quoted from it.
+
+Revision 2026-09-07 (pre-authorization, disclosed here and in README_PENDING.md): the rotation
+invariance check no longer builds the full archive Gram matrix X X^T. It compares query-to-archive
+dot products and row norms exactly as the audited boundary-localization stage does. This is the
+narrowing that L-049 recorded in advance as the correct fix for the check's cost; TOL is unchanged.
 """
 from __future__ import annotations
 
@@ -68,13 +73,27 @@ def check_identity(C: np.ndarray, QC: np.ndarray, D: np.ndarray) -> None:
         raise RuntimeError("IDENTITY VIOLATION: sign(xD) != sign(x); the design premise fails, aborting")
 
 
-def check_rotation_invariance(X: np.ndarray, R: np.ndarray) -> tuple[float, float]:
+def check_rotation_invariance(X: np.ndarray, XQ: np.ndarray, R: np.ndarray) -> tuple[float, float]:
     """Norm/dot equality is asserted WITHIN a representation and its own rotation, never between
-    the original and the rescaled representation, where it is not expected to hold."""
-    Xr = X @ R
-    n = float(np.max(np.abs(np.linalg.norm(Xr, axis=1) - np.linalg.norm(X, axis=1))))
-    d = float(np.max(np.abs(Xr @ Xr.T - X @ X.T)))
+    the original and the rescaled representation, where it is not expected to hold.
+
+    Scope: archive row norms, query row norms, and the query-to-archive dot products XQ X^T - the
+    same quantities the audited boundary-localization stage checked. The full Gram matrix X X^T is
+    deliberately NOT built (quadratic in archive rows; see module docstring).
+    """
+    Xr, XQr = X @ R, XQ @ R
+    n = max(float(np.max(np.abs(np.linalg.norm(Xr, axis=1) - np.linalg.norm(X, axis=1)))),
+            float(np.max(np.abs(np.linalg.norm(XQr, axis=1) - np.linalg.norm(XQ, axis=1)))))
+    d = float(np.max(np.abs(XQr @ Xr.T - XQ @ X.T)))
     return n, d
+
+
+def seed_dispersion(values: list[float]) -> dict:
+    """Per-seed dispersion of a quantity measured inside this experiment (prereg section 8)."""
+    x = np.asarray(values, dtype=float)
+    return {"per_seed": [float(v) for v in x], "mean": float(x.mean()),
+            "sample_sd": float(x.std(ddof=1)), "se": float(x.std(ddof=1) / np.sqrt(len(x))),
+            "min": float(x.min()), "max": float(x.max())}
 
 
 def frac(native: float, unscaled: float, scaled: float) -> float:
@@ -125,9 +144,13 @@ def run(out: Path) -> None:
 
     for ci, rep in enumerate(reps):
         C, QC = rep["C"], rep["QC"]
+        if not (np.all(np.isfinite(C)) and np.all(np.isfinite(QC))):
+            raise RuntimeError("non-finite value in the centered representation; aborting, not repairing")
         D, n_degen, cv_before = scale_matrix(C)
         check_identity(C, QC, D)
         Cs, QCs = C @ D, QC @ D
+        if not (np.all(np.isfinite(Cs)) and np.all(np.isfinite(QCs))):
+            raise RuntimeError("non-finite value in the rescaled representation C D; aborting, not repairing")
         sigma_after = Cs.std(axis=0)
         cv_after = float(sigma_after.std() / sigma_after.mean())
         diagnostics.append({"archive_ordinal": ci, "degenerate_coords": n_degen,
@@ -148,7 +171,7 @@ def run(out: Path) -> None:
                                   ("SCALED_FULLHAAR", Cs, QCs, fulls[s]),
                                   ("BLOCK32_FRESH", C, QC, blocks[s]),
                                   ("SCALED_BLOCK32", Cs, QCs, blocks[s])):
-                n, d = check_rotation_invariance(X, R)
+                n, d = check_rotation_invariance(X, XQ, R)
                 max_norm, max_dot = max(max_norm, n), max(max_dot, d)
                 _, _, dist = base.signs_and_dist(X @ R, XQ @ R)
                 cache[(s, arm)] = dist
@@ -216,6 +239,9 @@ def run(out: Path) -> None:
             "arm_means": means,
             "denominator_full": means["NATIVE"] - means["FULLHAAR_FRESH"],
             "denominator_block": means["NATIVE"] - means["BLOCK32_FRESH"],
+            "denominator_full_dispersion": seed_dispersion([means["NATIVE"] - arm_seed[("FULLHAAR_FRESH", s)] for s in ROTATION_SEEDS]),
+            "denominator_block_dispersion": seed_dispersion([means["NATIVE"] - arm_seed[("BLOCK32_FRESH", s)] for s in ROTATION_SEEDS]),
+            "fullhaar_fresh_R3_dispersion": seed_dispersion([arm_seed[("FULLHAAR_FRESH", s)] for s in ROTATION_SEEDS]),
             "frac_full": frac_full, "frac_block": frac_block,
             "frac_full_band": band(frac_full), "frac_block_band": band(frac_block),
             "frac_full_per_seed": per_seed_frac["full"], "frac_block_per_seed": per_seed_frac["block"],
@@ -234,4 +260,7 @@ def run(out: Path) -> None:
 
 
 if __name__ == "__main__":
-    run(Path(__file__).resolve().parents[0] / "locomo_scale_outputs")
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", type=Path, required=True)
+    run(ap.parse_args().out)
