@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-05T13:05:00Z",
+  "issued_at_utc": "2026-09-06T09:20:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -191,7 +191,7 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
-  "ledger_entry": "L-050",
+  "ledger_entry": "L-051",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -513,7 +513,7 @@
   },
   "mechanism_research_track": {
     "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
-    "head": "36320517bd7ebd6d361202093aca512a08153e44",
+    "head": "25e29e07feeebd9cc9609bc33a4bae5e3f9443cd",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
     "status": "AUDIT PASS WITH CAVEATS 2026-09-05, independently verified. Stop rule discharged; next experiment is a separate Head Researcher decision.",
@@ -561,6 +561,37 @@
       "consequence": "On its LongMemEval side the [CROSS-BENCHMARK SPECTRAL POSITION CAUSAL LEAD] rests on an unreconstructible layer. Cite the independently audited boundary-localization stage instead where it covers the same ground.",
       "remedy_known_not_proposed": "commit per-question output, or re-run the stage. Both are experiments requiring Head Researcher authorization and neither is proposed here.",
       "no_number_retracted": true
+    },
+    "full_haar_denominator_sensitivity": {
+      "longmemeval": "DISCHARGED 2026-09-06. The denominator IS traceable: audit_v52_t4c3/AUDIT_REPORT.md on main (sha256 8f6b31050c6e211b7c34ba8214405cff91251d33bd590be97c996ce17f2be238), the accepted independent Task 4C3 audit, publishes the five per-seed full-Haar values for rotation seeds 43001-43005 whose mean is the denominator in use, agreeing to 6.7e-11.",
+      "longmemeval_dispersion": {
+        "n": 5,
+        "sample_sd": 0.014935802685146212,
+        "standard_error": 0.0066794940205021636,
+        "relative_standard_error_pct": 1.745,
+        "seed_envelope": [0.361395390, 0.401278369],
+        "t_interval_95": [0.364174391, 0.401258942]
+      },
+      "longmemeval_verdict": "No LongMemEval verdict is threatened. Every arm's 0.25-gate breakdown point lies OUTSIDE the 95 percent interval; the tightest, B48, needs a 5.4 standard-error excursion.",
+      "locomo": "STILL OPEN AND UNMEASURABLE FROM BYTES. No per-seed source is committed anywhere. The LongMemEval standard error is deliberately NOT transferred to it; only the consequence is bounded.",
+      "locomo_breakdown_points_pct_of_denominator": {
+        "B32_sufficiency": 48.12,
+        "B48_exclusion": -15.34,
+        "B24": -79.46,
+        "B64": -80.63,
+        "B16": -164.52,
+        "RANDOM32": -197.29
+      },
+      "convergence": "The Gate S bootstrap and this denominator analysis, which shares no method with it, flag the SAME single fragile item: the LoCoMo B48 exclusion on which the uniqueness of S_common={32} rests. The established finding is untouched; the uniqueness of 32 is conditional by two independent lines rather than one.",
+      "tooling_error_disclosed": "The first version of the analysis had the direction of the effect backwards. Its own directional control caught it before publication; only direction labels changed. 41/41 controls pass.",
+      "remedy_known_not_proposed": "re-run the frozen full-Haar arm on LoCoMo over a seed panel and commit the per-seed values, as Task 4C3 did for LongMemEval. An experiment requiring authorization; not proposed.",
+      "addendum": {
+        "path": "research/v52/V52_FULL_HAAR_DENOMINATOR_SENSITIVITY_ADDENDUM_2026-09-06.md",
+        "sha256": "9d6f844e3200c36ebf313c0cb64111be9911da2865de03774d55b3e9e8a6ea85",
+        "commit": "25e29e07feeebd9cc9609bc33a4bae5e3f9443cd",
+        "sidecar_agrees": true,
+        "additive": true
+      }
     }
   },
   "commissioned_head_tail_audit": {
