@@ -1,0 +1,21 @@
+{
+  "schema": "SCIENTIFIC_SYNTHESIS_PAYLOAD_V1",
+  "excludes": "self",
+  "files": [
+    {
+      "path": "reviews/v52/scientific_synthesis_2026_09_07/EVIDENCE_LOCK.json",
+      "sha256": "be9a411b7cc6df4700083a232c611399da1bfd0e904fb083b54769082f2d41b6",
+      "bytes": 3667
+    },
+    {
+      "path": "reviews/v52/scientific_synthesis_2026_09_07/SCIENTIFIC_ASSESSMENT.md",
+      "sha256": "305160e498f7b4d90dbb5920a773fce4602d76841b8d33258402393b6d9c6ec3",
+      "bytes": 6860
+    },
+    {
+      "path": "reviews/v52/scientific_synthesis_2026_09_07/verify_evidence.py",
+      "sha256": "e69815f412ebe8c409948652994ab581af2074e42a3a10bf8d2cc2ddc40985cb",
+      "bytes": 3815
+    }
+  ]
+}
