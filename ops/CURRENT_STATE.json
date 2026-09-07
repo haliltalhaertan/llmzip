@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T12:36:00Z",
+  "issued_at_utc": "2026-09-07T12:45:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher decision on the two remaining items: (a) whether and by whom the coordinate-scale independent audit and the literature scan are re-commissioned, given that this session is not independent of the stage; (b) whether the Task 4F1 execution track resumes with the V8 and exact-rational audits. Separately D11 (Drive backup) needs an operator with Drive access and the GitHub default branch is an owner-only setting. No new experiment is proposed or authorized. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher decision on two independent items: (a) commission the prepared narrow closure audit (prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md), in a session that did not write the acceptance record, and say whether this session may launch it or whether an external operator should; (b) rule on the next research question - take up the coordinate-membership proposal, prefer the encoder-generalisation alternative, or neither. Task 4F1 stays on hold; no run/finalize/HMAC/outcome authority. D11 Drive backup needs an operator with Drive access; the GitHub default branch is owner-only.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-059",
+  "ledger_entry": "L-060",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -869,7 +869,10 @@
       "evidence_b_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
       "pin_verified": "equals A2_SHA256 in research/v52/longmemeval_spectral_band_haar_causal.py (blob 79dd4a5ec462102da5d82530088a4b7e89bef437) - proves it is the adapter the pipeline executes"
     },
-    "consequence_decided": "The standard component-cluster bootstrap for LongMemEval is REMOVED from the outstanding-work list as ill-posed. An alternative dependency-aware inference design for a single connected component is SEPARATE and NOT YET AUTHORIZED work."
+    "consequence_decided": "The standard component-cluster bootstrap for LongMemEval is REMOVED from the outstanding-work list as ill-posed. An alternative dependency-aware inference design for a single connected component is SEPARATE and NOT YET AUTHORIZED work.",
+    "evidence_standing": "PROVENANCE VERIFIED, NOT RECOMPUTED HERE - figures inherited from Task 3A.1",
+    "required_citation_label": "[LONGMEMEVAL SINGLE-COMPONENT FINDING - INHERITED FROM TASK 3A.1; PROVENANCE VERIFIED, NOT RECOMPUTED HERE]",
+    "independent_recomputation": "NOT PROPOSED AND NOT AUTHORIZED - would be a separate corpus-reading task requiring its own decision"
   },
   "head_researcher_acceptance_decision_2026_09_07": {
     "document": "docs/v52/V52_COORDINATE_SCALE_ACCEPTANCE_DECISION_2026-09-07.md",
@@ -893,6 +896,33 @@
       "scope": "presentational correction only; does not re-derive or reopen the accepted conclusion"
     },
     "frozen_files_edited": false,
-    "register_rows_left_stale_deliberately": "the deviation register at research 0c9916bd still shows D1 and D2 as OPEN; superseded by sections 2 and 3 of this decision and left unedited because corrections are additive"
+    "register_rows_left_stale_deliberately": "the deviation register at research 0c9916bd still shows D1 and D2 as OPEN; superseded by sections 2 and 3 of this decision and left unedited because corrections are additive",
+    "clarification_note": {
+      "path": "docs/v52/V52_ACCEPTANCE_DECISION_CLARIFICATION_2026-09-07.md",
+      "sha256": "52a37695e34b693f668e2fc36b4425b6aab22919912cca871de8271dffe42aae",
+      "constraint_1_wording": "CHECKED, NO CHANGE MADE. Scan of the acceptance decision, deviation register, result checkpoint and ledger L-057..L-059 for falsify/refute/disprove/reject/defeat/debunk and Turkish equivalents returned two matches, neither about the mechanism claim (register D6 negative-control samples; L-057 quoted verifier output). The claim appears only as 'Not accepted', 'limits any comparative mechanism inference', 'NOT ACCEPTED' and 'NOT ESTABLISHED', beside the recorded non-implication that this does not mean there is no mechanism.",
+      "constraint_2_provenance_vs_recomputation": "SEPARATED IN WRITING. Verified in this stage: file existence at named blobs/hashes, the decisive sentence, and the adapter sha256 equalling the A2_SHA256 pin. NOT done in this stage: the corpus was not read, the session-sharing graph was not rebuilt, components were not recounted, the '1 component / 470 of 470' figures were not re-derived. Those figures are INHERITED from Task 3A.1."
+    }
+  },
+  "commissioned_acceptance_closure_audit": {
+    "stage": "ACCEPTANCE_CLOSURE_NARROW_AUDIT",
+    "prompt": "prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md",
+    "prompt_sha256": "c6a0da6a3076793b5b3cc0b0d0796b3fe30a1a21644e539c3b4f9a0bd1649faf",
+    "target_branch": "audit/v52-acceptance-closure-2026-09-07",
+    "gates": "C1-C8",
+    "scope": "acceptance document; A/B justification; section 7/9 deviation; source bindings incl. provenance-vs-recomputation; current-state consistency. Nothing else.",
+    "explicitly_out_of_scope": "re-running any experiment, bootstrap or the LoCoMo reproduction; reading any corpus; recomputing the LongMemEval dependency graph; any Task 4F1 action; a broad literature scan; reopening the accepted conclusion",
+    "status": "PROMPT PREPARED - NOT COMMISSIONED, NO AGENT LAUNCHED. Head Researcher decides whether this session may launch it; this session wrote the record under audit and cannot be its auditor.",
+    "auditor_instruction_of_note": "hash raw Git blobs, not checked-out files - two earlier auditor sessions reported mismatches most likely caused by Windows CRLF checkout and neither confirmed it before being stopped"
+  },
+  "next_question_proposal_2026_09_07": {
+    "path": "docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md",
+    "sha256": "c0828c5debf64d6a1d39e67dc6ecb9b57fff6746cb327ad1e794df3db47466bb",
+    "status": "PROPOSAL ONLY - NOT A PREREGISTRATION, NOT SEALED, NOT AUTHORIZED; no seeds drawn, no runner or workflow written",
+    "question": "After coordinate scales are equalised, does the spectral 32/64 split still beat a matched-size random split?",
+    "why_it_avoids_the_last_defect": "the primary quantity is a DIFFERENCE between arms 8.448609 pp (LoCoMo) and 13.203121 pp (LongMemEval) apart with non-overlapping per-seed rho ranges, not a ratio over a near-zero block loss; both figures re-derived from the committed boundary summaries at research 0c9916bd",
+    "fixes_two_known_defects_prospectively": "the estimand is defined per seed then averaged, applying the A ruling in the text before anything runs; and the interpretation licence is attached to the primary quantity with frozen numeric bands, which sections 7 and 9 failed to do",
+    "expected_information_gain": "gap survives rescaling -> scale is NOT the channel behind the membership effect, separating two damage channels and pointing positively at correlation structure / subspace alignment; gap collapses -> one channel plausibly explains both, unifying them but WEAKENING the independence of the audited membership finding; anything between narrows the share on a scale that cannot be floor-confounded",
+    "declared_alternative_not_proposed_first": "a different-encoder replication. The largest standing threat is an effect specific to one representation - both benchmarks share a single TF-IDF/SVD pipeline, so cross-benchmark agreement is not independent methodological replication. It is the higher-value experiment but needs a new frozen pipeline and adapters and reuses no validated control."
   }
 }
