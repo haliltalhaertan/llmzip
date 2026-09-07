@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T19:03:00Z",
+  "issued_at_utc": "2026-09-07T19:19:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the commissioned DELTA CLOSURE CHECK of candidate v3, scoped to the three acceptance criteria NEW-1, NEW-2 and NEW-3 ONLY; the earlier research and the independently closed first-round findings F-1..F-12 are explicitly OUT OF SCOPE and must not be re-audited. Hash-verify its pushed report against its sidecar before recording any verdict. Do not seal, do not write the corpus-bound runner, and do not run anything: closing the core does not authorize the experiment. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's decision on whether to authorize preparation of the CORPUS-BOUND RUNNER. The computation core is now independently closed on every finding raised against it, but closing the core does NOT authorize the experiment and preparing a runner is a separate grant. If it is given, the first obligations are N-2, N-3, N-4, a rerun on the PINNED research stack, and the four out-of-scope items O-1, O-2, W-1 and W-2 - in a NEW versioned candidate namespace, leaving v3 byte-unchanged. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-070",
+  "ledger_entry": "L-071",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1200,7 +1200,7 @@
     "readme_sha256": "eb35b0e7a7d895a8062cfc51179748a5a34eca3cd699457a3a721efbad228448",
     "governing_documents_sha256": "6b8747180c3e577bdb27971e4eb259c5852fe28c25803dc8bdf8f2c63d0c8768",
     "mutation_probes_sha256": "a5631f76cd264f986dca44881d80c81962e1d7b453f25679cc3e348c1865f5ea",
-    "status": "IMPLEMENTATION PREPARATION - NOT INDEPENDENTLY REVIEWED; the preparer may not call it reviewed",
+    "status": "COMPUTATION CORE INDEPENDENTLY CLOSED on all findings raised against it (CLOSURE PASS at aa0ee8a9b1468ceaf7fa6dc3acab17acc8423ae9). NOT authorized to run on real data. The corpus-bound runner is still not written and preparing it is a separate grant.",
     "round_scope": "findings-limited to NEW-1, NEW-2 and NEW-3. Not a new design, not a new feature, not a general audit round.",
     "NEW_1_closed_by": "conformance now recomputes ALL SEVEN published fields of aggregate against the independent reference - three scalars, three per-seed vectors elementwise, and n_question_slots - at the module's existing TOL, which binding section 6 fixes at an ABSOLUTE 1e-12. Bitwise equality is deliberately NOT demanded and would be an unjustified new condition; measured agreement is max|diff| = 3.55e-15 per vector. Negative controls assert a perturbed scalar and one perturbed per-seed element are both rejected. The schema check is kept for its different job: a NEW key.",
     "NEW_2_closed_by": "the vacuous `or True` is replaced by a comparison against a CV recomputed in the test from the fixture archive, paired with a control asserting it rejects a wrong value. A machine AST sweep of the suite reports any check whose condition is a boolean expression ending in a literal True; it reports none and carries a control proving it detects that shape. SCOPE: that ONE shape only; no claim of comprehensive test soundness is made.",
@@ -1214,5 +1214,33 @@
     "earlier_versions_preserved": "v1 core 707e166c80d9231d089341a804e0acdd8845781fec7560821c67b3f6d0731a00 and v2 core 60141d05f2285d268a88d98344770c8cb5d166168a6fa29371a1ea330db0a1e1 are byte-unchanged; commit dcb568d0a6c33154c1568500325ad457b4d6f455 adds 8 files and touches nothing outside drafts/v52/membership_impl_v3_2026_09_07/",
     "runner_obligations_carried_forward": "unchanged by this round: N-2 preregister the bootstrap seed; N-3 emit the LongMemEval inheritance tag and prevent cluster-bootstrapping LongMemEval; N-4 apply the identical D to the query with nothing estimated from it. F-12 remains deliberately not acted on.",
     "not_validated": "anything requiring a corpus; the corpus-bound runner is NOT written; tests ran on this machine's Python and NumPy, not the pinned research stack"
+  },
+  "membership_impl_v3_closure_check_2026_09_07": {
+    "branch": "audit/v52-membership-v3-closure-2026-09-07",
+    "commit": "aa0ee8a9b1468ceaf7fa6dc3acab17acc8423ae9",
+    "parent": "3279b28c991095f9339fd22d1d99782a4582b613",
+    "report_sha256": "aad45ff8fb6b88bda9a53b1182666ef0229a0ad2f1ff7d8baa0bf1bcca35b29a",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "14 files, all under audit_v52_membership_v3_closure_2026_09_07/; zero outside",
+    "verdict": "CLOSURE PASS - all three acceptance criteria met; no defect blocking closure",
+    "scope": "NEW-1, NEW-2 and NEW-3 ONLY. The research, design, preregistration, statistics, the LoCoMo/LongMemEval evidence, the acceptance record and the first-round findings F-1..F-12 were explicitly NOT re-audited.",
+    "criteria": {
+      "NEW-1": "CLOSED. The checker wrote its OWN mutant harness rather than accepting the preparer's list. All four R-equivalents died by name on the elementwise conformance checks (R1 1.70e+02, R2 1.71e+02, R3 8.77e+00, R6 via np.divide 1.70e+02), and FIVE further unanticipated mutants died too - per-seed vectors swapped, reversed, rounded to 1e-6, n_question_slots as distinct questions, and an off-by-one - each of which leaves every published SCALAR exactly correct. Reference independence confirmed MECHANICALLY: the AST of reference_quantities touches no attribute of the core module and imports no NumPy. Tolerance confirmed as an absolute 1e-12 from binding section 6, with no bit-level equality demanded.",
+      "NEW-2": "CLOSED. The 123456.0 mutant died by TWO independent named failures. An adversarial combined mutation - neutering the replacement check with `or (1 == 1)`, a shape the sweep provably cannot see - still died, so the kill does not rest on one check. The checker's own seven-shape sweep finds nothing in v3 and, as a POSITIVE CONTROL, finds the original defect at line 132 of the v2 suite. All 28 expect_violation calls assert a non-empty needle.",
+      "NEW-3": "CLOSED. build_clusters([], 0) raises the named DesignViolation AT THE GUARD, not from a deeper frame. Negative counts, empty labels with a positive count, a positive count with non-empty labels and the public cluster_bootstrap path all give named violations."
+    },
+    "independent_verification_of_the_preparers_record": "every specific claim examined reproduced line for line - seven fields, reference independence, 3.55e-15 agreement, 99 checks ALL PASS, 22 probes with 21 killed and one survivor. Nothing in the namespace claims that any wrong computation is necessarily caught. v1 core 707e166c @ a6d70ff6 and v2 core 60141d05 @ 8179ce31 verified unchanged as raw blobs; both audit namespaces byte-unchanged; both prior audit tips still at 712412a5 and 68819424; dcb568d0 touches exactly 8 paths, all inside its own namespace; all four normative hashes and both audit report hashes in GOVERNING_DOCUMENTS.md resolve at their stated commits and again on main.",
+    "false_alarm_diagnosed_not_reported": "`git diff main dcb568d0` shows document DELETIONS only because the v3 branch is parented on 16019724, which predates those documents. The commit touches nothing outside its namespace.",
+    "out_of_scope_items": {
+      "O-1": "build_clusters(None, 0) and build_clusters(3, 0) leak a TypeError from `labels = list(cluster_of_question)` at core line 389, one line ABOVE the NEW-3 guard. Argument-TYPE axis, not a NEW-3 count or label boundary; NEW-3 is closed regardless. Optional improvement, explicitly not a blocker.",
+      "O-2": "NEW-4 still open: empty, whitespace-only, \"nan\" and \"None\" strings accepted as ordinary cluster labels.",
+      "W-1": "stale v2 version labels in the v3 test docstring header and probe script, including a Supersedes line naming the v1 test. Every HASH those lines state is correct and no technical claim is false.",
+      "W-2": "the README describes the self-sweep as flagging a literal True at the END of a boolean expression where the code flags one in ANY position - the code is stronger than the words."
+    },
+    "why_not_fixed_in_v3": "editing the candidate after it was audited would change the very blob hashes the closure report binds, decoupling the audited artifact from the record. Recorded additively and carried into the next authorized round.",
+    "optional_improvements_recorded_as_optional": "a conformance fixture with a REPEATED index so n_question_slots is exercised through the conformance path itself; expect_violation catching BaseException and reporting the actual type; broadening the self-sweep beyond the one named shape. The checker states these add assurance and that nothing the criteria require is missing.",
+    "limits_of_the_verdict_as_stated_by_the_checker": "CLOSURE PASS means those three findings are closed, verified by construction. It does NOT mean the core is correct. Across 12 checker mutants and 22 preparer probes, demonstrated coverage is of those variants only; no suite here is shown to be sound. One class is by design not detected: a perturbation of a published value below the absolute 1e-12 tolerance.",
+    "obligation_not_discharged": "both the candidate suite and this check ran on ordinary desktop Python and NumPy - the checker on CPython 3.14.3 with NumPy 2.5.2 - NOT the pinned research stack. A rerun on the pinned stack remains outstanding and belongs to the runner stage."
   }
 }
