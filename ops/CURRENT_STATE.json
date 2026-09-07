@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T00:40:00Z",
+  "issued_at_utc": "2026-09-07T07:10:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher authorization remains the only gate. On authorization: install both runners and both workflows into their working locations, write the pre-run seal binding every listed blob, push the trigger file once. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the two triggered coordinate-scale workflow runs on the research branch (LoCoMo single job; LongMemEval 10 shards + aggregate). Do NOT re-trigger under any failure; a failed run is recorded, not repaired. When both result packages are persisted, hash-verify them, record the preregistered verdict bands as computed, and commission a cold-start independent audit before any citation. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-053",
+  "ledger_entry": "L-054",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -518,7 +518,7 @@
   },
   "mechanism_research_track": {
     "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
-    "head": "25e29e07feeebd9cc9609bc33a4bae5e3f9443cd",
+    "head": "680b10b8a3ef3dd55a5a05fe47f6fb5fa6d931d0",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
     "status": "AUDIT PASS WITH CAVEATS 2026-09-05, independently verified. Stop rule discharged; next experiment is a separate Head Researcher decision.",
@@ -527,7 +527,8 @@
       "spectral-band causal",
       "head/tail causal (AUDIT PASS WITH CAVEATS)",
       "matched random-partition null (NOT INDEPENDENTLY AUDITABLE - no per-question output was committed; internal consistency verified from bytes 2026-09-05, see matched_null_stage_auditability)",
-      "boundary localization (AUDIT PENDING, auditor commissioned)"
+      "boundary localization (AUDIT PENDING, auditor commissioned)",
+      "coordinate-scale participation (TRIGGERED 2026-09-07, results pending)"
     ],
     "boundary_localization_result": "S_LoCoMo={32}, S_LongMemEval={32,48}, S_common={32}; labels [PC32-LOCALIZED SUFFICIENCY LEAD - ON TESTED GRID] AND [BOUNDARY-SET HETEROGENEITY PRESENT], which must always be reported together",
     "independently_reconstructed_by_continuity_lead": true,
@@ -692,7 +693,7 @@
   },
   "proposed_next_direction": "coordinate-scale participation test: for positive diagonal D, sign(xD)=sign(x), so a positive archive-derived rescaling preserves the native sign code exactly while changing sign(xDQ). Decisive comparison is an INTERACTION - does rescaling help full mixing more than within-block mixing under paired queries and fixed rotations. DIRECTION ONLY: not preregistered, not sealed, not authorized; no seeds, workflow or trigger exist.",
   "coordinate_scale_draft": {
-    "status": "CANDIDATE PREREGISTRATION v3 - COMPLETE, AWAITING AUTHORIZATION. NOT SEALED, NOT TRIGGERED.",
+    "status": "AUTHORIZED, INSTALLED, SEALED AND TRIGGERED ONCE on 2026-09-07 (07:06Z). Results pending. NO RE-TRIGGER.",
     "branch": "draft/v52-coordinate-scale-prereg-2026-09-05",
     "commit": "bdc0db75ef8760319878e5ef07512ddddd53283c",
     "path": "drafts/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_DRAFT_2026-09-05.md",
@@ -718,7 +719,7 @@
       "block_seeds": "fresh 59001..59010 (reuse invites a panel-selection objection)",
       "scale_of_estimand": "fraction, not percentage points (pp confounded by a floor effect)"
     },
-    "remaining_gate": "Head Researcher authorization only. Runners, tests and workflows for BOTH benchmarks exist and are self-tested; on authorization: install, seal pre-run, trigger once, persist per-question records for every arm.",
+    "remaining_gate": "none before results; after results: hash verification, verdict-band recording, cold-start independent audit before citation",
     "implementation": {
       "status": "COMPLETE FOR BOTH BENCHMARKS - NON-TRIGGERABLE (revision 2026-09-07 at bdc0db7; preregistration document byte-unchanged at de667211)",
       "locomo_runner": "drafts/v52/pending_runners/locomo_coordinate_scale.py (git blob 13896ad9)",
@@ -733,7 +734,28 @@
       "not_validated": "anything requiring the corpus; neither pipeline has been executed end to end; local self-tests ran on Python 3.14 / numpy 2.5, not the pinned stack",
       "stale_text_in_draft": "the preregistration header still says 'No runner exists, no workflow exists'; left byte-unchanged because the document is under Head Researcher review; the pre-run seal binds whatever version is authorized",
       "stated_risks": "RESOLVED - see invariance_check_scope"
+    },
+    "execution": {
+      "research_branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+      "install_commit": "59ae1b53d3c4e524621d87a08b396f72a8332816 (byte-identical copies of the draft blobs; prereg and pilot copied verbatim to research/v52/)",
+      "seal_commit": "2a070062337c2e572bf0c14825525a76698073bd",
+      "seal_path": "research/v52/V52_COORDINATE_SCALE_PRERUN_SEAL_2026-09-05.json",
+      "seal_git_blob": "52605626a403bc385cc6e1f0e3fe43970099d76c",
+      "trigger_commit": "680b10b8a3ef3dd55a5a05fe47f6fb5fa6d931d0",
+      "trigger_path": "research/v52/TRIGGER_COORDINATE_SCALE_2026-09-05.txt",
+      "gate_simulated_locally": "COORDINATE_SCALE_PRERUN_GATE PASS against the committed seal before the trigger was pushed",
+      "drive_backup": "NOT PERFORMED (no Drive access from this session); disclosed in the seal; owed after the stage closes",
+      "expected_outputs": [
+        "research/v52/locomo_scale_outputs/",
+        "research/v52/longmemeval_scale_outputs/"
+      ]
     }
   },
-  "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes."
+  "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes.",
+  "head_researcher_authorization_2026_09_07": {
+    "decision": "AUTHORIZED - coordinate-scale participation experiment on LoCoMo and LongMemEval, as preregistered at draft bdc0db75 (document sha256 de667211)",
+    "relayed_as": "chat text ('yetki sende devam et'); not a pushed hash-bound artifact",
+    "acted_on_by": "Continuity Lead, same session, per next_single_action of L-053",
+    "scope": "mechanism research track only; nothing about Task 4F1"
+  }
 }

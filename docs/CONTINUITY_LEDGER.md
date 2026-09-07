@@ -1070,3 +1070,21 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: Head Researcher authorization remains the only gate. On authorization: install both runners and both workflows into their working locations, write the pre-run seal binding every listed blob, push the trigger file once.
 ```
+
+### L-054
+
+```text
+timestamp_utc: 2026-09-07T07:10:00Z
+actor_role: Continuity Lead / co-chair (sole writer on main)
+predecessor_commit_or_tag: L-053 / 9743737
+scope: Act on the Head Researcher's authorization of the coordinate-scale participation experiment: install the sealed-candidate files into their working locations on the research branch, write the pre-run seal, push the single trigger. Mechanism track only. No Task 4F1 contact.
+authorization_as_received: Chat text from the Head Researcher (repository owner), 2026-09-07: "yetki sende devam et". Recorded here and in ops/CURRENT_STATE.json as relayed_as chat text, NOT a pushed hash-bound artifact, consistent with how the head-tail and boundary-localization mechanism decisions were recorded. The Task 4F1 prohibitions are untouched by it and were not exercised.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md; and on research/v52-sign-mechanism-locomo-2026-09-04 only: research/v52/{locomo_coordinate_scale.py, test_coordinate_scale_pure_functions.py, longmemeval_coordinate_scale_shard.py, test_longmemeval_coordinate_scale_shard.py, V52_COORDINATE_SCALE_PARTICIPATION_PREREG_2026-09-05.md, V52_COORDINATE_SCALE_PILOT_FINDINGS_2026-09-05.md, V52_COORDINATE_SCALE_PRERUN_SEAL_2026-09-05.json, TRIGGER_COORDINATE_SCALE_2026-09-05.txt}; .github/workflows/{v52-locomo-coordinate-scale.yml, v52-longmemeval-coordinate-scale.yml}
+three_commits_in_the_audited_order: install 59ae1b53 (no trigger; every runner/test/workflow blob asserted identical to the draft at bdc0db75; prereg sha256 de667211 and pilot 54aee88c copied verbatim; both self-tests re-run in the installed location, ALL PASS); seal 2a070062 (V52_COORDINATE_SCALE_PRERUN_SEAL_2026-09-05.json binds ten files by git blob at package head 59ae1b53, records package_head_before_seal, the frozen arms, seeds 59001..59010, scale rule, estimand, bands and controls; the workflow gate was simulated locally against the committed seal and passed BEFORE the trigger); trigger 680b10b8 (TRIGGER_COORDINATE_SCALE_2026-09-05.txt = seal_git_blob=52605626, pushed once at 2026-09-07T07:06:19Z).
+what_the_trigger_starts: v52-locomo-coordinate-scale (one job, 120 min timeout) and v52-longmemeval-coordinate-scale (10 deterministic shards, 150 min each, then aggregate). Both re-verify the seal and every bound blob before computing, run the self-tests, and persist results to research/v52/locomo_scale_outputs and research/v52/longmemeval_scale_outputs on the research branch.
+no_re_trigger_rule: If either run fails for any reason - gate, self-test, native reproduction, invariance, identity abort, timeout - the failure is recorded as the result of this trigger and a NEW Head Researcher decision is required before any second trigger. This session will not push a second trigger.
+drive_backup_not_performed: The boundary-localization seal required a Drive backup before its trigger. This session has no Google Drive access; the seal states drive_backup_required_before_trigger false with the reason, and the backup is owed after the stage closes. It is not described as done.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. No BEAM corpus read; no Task 4F1 artifact, payload, candidate, manifest or audit namespace touched. LoCoMo/LongMemEval outcomes for THIS mechanism stage will be read by the Continuity Lead when persisted, as in prior mechanism stages; they are not Task 4F1 outcomes.
+status: IN_PROGRESS
+next_single_action: Await both workflow runs; on persistence, hash-verify the result packages, record the preregistered frac bands as computed, commission a cold-start independent audit before any citation. Do not re-trigger.
+```
