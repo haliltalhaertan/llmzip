@@ -1,0 +1,128 @@
+[
+ {
+  "area": "conformance",
+  "probe": "checks whose name says CONFORMANCE",
+  "outcome": "LIST",
+  "detail": "['\"CONFORMANCE: G_bar matches an independent reference\"', '\"CONFORMANCE: G_bar_scaled matches an independent reference\"', '\"CONFORMANCE: Delta_bar matches an independent reference\"', '\"CONFORMANCE: the output schema is exactly the closed expected set\"', '\"CONFORMANCE check can FAIL (perturbed reference is rejected)\"']"
+ },
+ {
+  "area": "conformance",
+  "probe": "any CONFORMANCE check covering a per_seed_* vector",
+  "outcome": "NONE",
+  "detail": "[]"
+ },
+ {
+  "area": "conformance",
+  "probe": "reference_quantities returns",
+  "outcome": "INFO",
+  "detail": "return G, GS, D"
+ },
+ {
+  "area": "conformance",
+  "probe": "published schema keys",
+  "outcome": "INFO",
+  "detail": "['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'n_question_slots', 'per_seed_Delta_pp', 'per_seed_G_pp', 'per_seed_G_scaled_pp']"
+ },
+ {
+  "area": "mutation",
+  "probe": "R1: per_seed_Delta_pp becomes Delta/G (a genuine forbidden ratio, existing key)",
+  "outcome": "SURVIVED",
+  "detail": "exit=0 expect=should be killed fails=[]"
+ },
+ {
+  "area": "mutation",
+  "probe": "R2: per_seed_G_scaled_pp becomes G_scaled/G (a ratio, existing key)",
+  "outcome": "SURVIVED",
+  "detail": "exit=0 expect=should be killed fails=[]"
+ },
+ {
+  "area": "mutation",
+  "probe": "R3: per_seed_G_pp scaled by an arbitrary factor 1.5 (not even a ratio)",
+  "outcome": "SURVIVED",
+  "detail": "exit=0 expect=should be killed fails=[]"
+ },
+ {
+  "area": "mutation",
+  "probe": "R4 CONTROL: Delta_bar_pp itself becomes Delta/G (a scalar the conformance test does cover)",
+  "outcome": "KILLED",
+  "detail": "exit=1 expect=must be killed (negative control for the conformance test) fails=['FAIL  CONFORMANCE: Delta_bar matches an independent reference', 'FAIL  Delta_bar is the paired change (3.0 - 8.0 -> -5.0 pp)']"
+ },
+ {
+  "area": "mutation",
+  "probe": "R5: the ratio stored in the _percentiles note text (a string channel)",
+  "outcome": "SURVIVED",
+  "detail": "exit=0 expect=bootstrap output has no closed schema fails=[]"
+ },
+ {
+  "area": "AST",
+  "probe": "divisions currently in the core (band asserted is 0 < n <= 12)",
+  "outcome": "INFO",
+  "detail": "2"
+ },
+ {
+  "area": "AST",
+  "probe": "spare capacity: divisions that can be ADDED before the band trips",
+  "outcome": "INFO",
+  "detail": "10 more Div nodes pass the check"
+ },
+ {
+  "area": "mutation",
+  "probe": "R6: add a forbidden ratio using np.divide (not an ast.Div node) under an existing key",
+  "outcome": "SURVIVED",
+  "detail": "exit=0 expect=np.divide is invisible to the Div-node count fails=[]"
+ },
+ {
+  "area": "vacuous",
+  "probe": "test L132-133 source",
+  "outcome": "INFO",
+  "detail": "check(\"F-1: cv_sigma_before is a CV too\", abs(diag[\"cv_sigma_before\"] - float(Cdeg.std(axis=0, ddof=0).std(ddof=0) / Cdeg.std(axis=0, ddof=0).mean())) > 0 | or True)"
+ },
+ {
+  "area": "vacuous",
+  "probe": "with cv_sigma_before hard-coded to 123456.0, the 'cv_sigma_before is a CV too' check",
+  "outcome": "STILL PASSES",
+  "detail": "['ok    F-1: cv_sigma_before is a CV too']"
+ },
+ {
+  "area": "vacuous",
+  "probe": "does the suite as a whole still catch the broken cv_sigma_before?",
+  "outcome": "KILLED",
+  "detail": "exit=1 fails=['FAIL  F-1: a zero-mean sigma gives NaN, explicitly and with no epsilon added']"
+ },
+ {
+  "area": "F-1",
+  "probe": "numeric constants inside _cv",
+  "outcome": "INFO",
+  "detail": "[0.0, 0]"
+ },
+ {
+  "area": "F-1",
+  "probe": "division expressions inside _cv",
+  "outcome": "INFO",
+  "detail": "['values.std(ddof=0) / mean']"
+ },
+ {
+  "area": "F-1",
+  "probe": "no epsilon added to the CV denominator",
+  "outcome": "REVIEW",
+  "detail": "[0.0, 0] ['values.std(ddof=0) / mean']"
+ },
+ {
+  "area": "F-1",
+  "probe": "NEGATIVE CONTROL: the same structural check applied to an eps-added variant",
+  "outcome": "PASS(differs)",
+  "detail": ""
+ },
+ {
+  "area": "F-2",
+  "probe": "build_clusters([], 0) raises a NON-DesignViolation",
+  "outcome": "RAW-EXC",
+  "detail": "ValueError: need at least one array to concatenate"
+ },
+ {
+  "area": "F-2",
+  "probe": "two DIFFERENT IntEnum labels with the same integer value are MERGED",
+  "outcome": "MERGED",
+  "detail": "n_clusters=1 sizes={'1': 10}"
+ }
+]

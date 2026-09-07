@@ -1,0 +1,40 @@
+python 3.14.3 numpy 2.5.2
+
+--- F-1 coefficient of variation ---
+[F-1] PASS      cv_sigma_after == spread/mean of post sigma (recomputed independently)   2.930810050475307e-16
+[F-1] PASS      cv_sigma_before == spread/mean of pre sigma (recomputed independently)   2.0070957607395075
+[F-1] FAIL(control passed) NEGATIVE CONTROL: sd_sigma_after is NOT the CV (assertion must fail)   sd=2.930810050475307e-16 cv=2.930810050475307e-16
+[F-1] PASS      sd_sigma_after equals the v1-reported quantity (SD of post sigma)   2.930810050475307e-16
+[F-1] PASS      zero-mean sigma -> NaN (not 0, not inf, no epsilon)   before=nan after=nan
+[F-1] FAIL      no epsilon literal inside _cv body   ''
+[F-1] PASS      on the reviewer's 20-dead-coordinate fixture cv and sd genuinely differ   cv=0.512989 sd=0.406116
+
+--- F-2 cluster label validation (break attempts) ---
+[F-2] ACCEPTED  numpy int64 array as the whole label vector   ([0, 1, 2, 3], {0: array([0, 1, 2]), 1: array([3, 4, 5]), 2: array([6, 7, 8]), 3: array([9])}, {'n_clusters': 4, 'cluster_sizes': {'0': 3, '1': 3, '2': 3, '3': 1}, 'quest
+[F-2] ACCEPTED  numpy int32 scalars   ([0, 1, 2, 3], {0: array([0, 1, 2]), 1: array([3, 4, 5]), 2: array([6, 7, 8]), 3: array([9])}, {'n_clusters': 4, 'cluster_sizes': {'0': 3, '1': 3, '2': 3, '3': 1}, 'quest
+[F-2] ACCEPTED  numpy uint8 scalars   ([0, 1, 2, 3], {0: array([0, 1, 2]), 1: array([3, 4, 5]), 2: array([6, 7, 8]), 3: array([9])}, {'n_clusters': 4, 'cluster_sizes': {'0': 3, '1': 3, '2': 3, '3': 1}, 'quest
+[F-2] ACCEPTED  numpy str_ scalars   (['c0', 'c1', 'c2', 'c3'], {'c0': array([0, 1, 2]), 'c1': array([3, 4, 5]), 'c2': array([6, 7, 8]), 'c3': array([9])}, {'n_clusters': 4, 'cluster_sizes': {'c0': 3, 'c1': 
+[F-2] REJECTED  numpy float64 array of whole numbers (1.0, 2.0)   DesignViolation: cluster label at position 0 has unsupported type float64; labels must be all strings or all integers
+[F-2] REJECTED  python floats 1.0/2.0   DesignViolation: cluster label at position 0 has unsupported type float; labels must be all strings or all integers
+[F-2] REJECTED  np.float64 NaN   DesignViolation: cluster label at position 0 is NaN
+[F-2] REJECTED  python float nan   DesignViolation: cluster label at position 0 is NaN
+[F-2] REJECTED  None   DesignViolation: cluster label at position 0 is missing (None)
+[F-2] REJECTED  np.nan mixed among ints   DesignViolation: cluster label at position 2 is NaN
+[F-2] ACCEPTED* EMPTY STRING label   (['', 'B'], {'': array([0, 1, 2]), 'B': array([3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'': 3, 'B': 7}, 'questions_covered_at_construction': 10, 'quest
+[F-2] ACCEPTED* whitespace-only label   (['  ', 'B'], {'  ': array([0, 1, 2]), 'B': array([3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'  ': 3, 'B': 7}, 'questions_covered_at_construction': 10, 
+[F-2] ACCEPTED* the literal string 'nan'   (['nan', 'B'], {'nan': array([0, 1, 2]), 'B': array([3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'nan': 3, 'B': 7}, 'questions_covered_at_construction': 1
+[F-2] ACCEPTED* the literal string 'None'   (['None', 'B'], {'None': array([0, 1, 2]), 'B': array([3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'None': 3, 'B': 7}, 'questions_covered_at_construction'
+Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\work\adv_closure.py", line 92, in <module>
+    probe("F-2", "unicode look-alikes: latin 'a' vs cyrillic '\\u0430'", bc(["a"] * 5 + ["\u0430"] * 5), "?")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\work\adv_closure.py", line 29, in probe
+    rec(area, name, "ACCEPTED" if want == "accept" else "ACCEPTED*", repr(v)[:200])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\work\adv_closure.py", line 17, in rec
+    print(f"[{area}] {outcome:<9} {name}   {str(detail)[:170]}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\AppData\Local\Python\pythoncore-3.14-64\Lib\encodings\cp1254.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0430' in position 78: character maps to <undefined>

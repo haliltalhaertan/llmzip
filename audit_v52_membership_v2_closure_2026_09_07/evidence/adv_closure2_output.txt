@@ -1,0 +1,36 @@
+python 3.14.3 numpy 2.5.2
+
+--- per-seed vectors vs the independent reference ---
+[conformance] LIST      checks whose name says CONFORMANCE   ['"CONFORMANCE: G_bar matches an independent reference"', '"CONFORMANCE: G_bar_scaled matches an independent reference"', '"CONFORMANCE: Delta_bar matches an independent reference"', '"CONFORMANCE: the output schema is exactly the
+[conformance] NONE      any CONFORMANCE check covering a per_seed_* vector   []
+[conformance] INFO      reference_quantities returns   return G, GS, D
+[conformance] INFO      published schema keys   ['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'n_question_slots', 'per_seed_Delta_pp', 'per_seed_G_pp', 'per_seed_G_scaled_pp']
+
+--- ratios smuggled into existing, permitted key names ---
+[mutation] SURVIVED  R1: per_seed_Delta_pp becomes Delta/G (a genuine forbidden ratio, existing key)   exit=0 expect=should be killed fails=[]
+[mutation] SURVIVED  R2: per_seed_G_scaled_pp becomes G_scaled/G (a ratio, existing key)   exit=0 expect=should be killed fails=[]
+[mutation] SURVIVED  R3: per_seed_G_pp scaled by an arbitrary factor 1.5 (not even a ratio)   exit=0 expect=should be killed fails=[]
+[mutation] KILLED    R4 CONTROL: Delta_bar_pp itself becomes Delta/G (a scalar the conformance test does cover)   exit=1 expect=must be killed (negative control for the conformance test) fails=['FAIL  CONFORMANCE: Delta_bar matches an independent reference', 'FAIL  Delta_bar is the paired change (3.0 - 8.0 -> -5.0 pp)']
+[mutation] SURVIVED  R5: the ratio stored in the _percentiles note text (a string channel)   exit=0 expect=bootstrap output has no closed schema fails=[]
+
+--- the AST division check is a COUNT BAND, not an enumeration ---
+[AST] INFO      divisions currently in the core (band asserted is 0 < n <= 12)   2
+[AST] INFO      spare capacity: divisions that can be ADDED before the band trips   10 more Div nodes pass the check
+[mutation] SURVIVED  R6: add a forbidden ratio using np.divide (not an ast.Div node) under an existing key   exit=0 expect=np.divide is invisible to the Div-node count fails=[]
+
+--- vacuous check introduced by v2 ---
+[vacuous] INFO      test L132-133 source   check("F-1: cv_sigma_before is a CV too", abs(diag["cv_sigma_before"] - float(Cdeg.std(axis=0, ddof=0).std(ddof=0) / Cdeg.std(axis=0, ddof=0).mean())) > 0 | or True)
+[vacuous] STILL PASSES with cv_sigma_before hard-coded to 123456.0, the 'cv_sigma_before is a CV too' check   ['ok    F-1: cv_sigma_before is a CV too']
+[vacuous] KILLED    does the suite as a whole still catch the broken cv_sigma_before?   exit=1 fails=['FAIL  F-1: a zero-mean sigma gives NaN, explicitly and with no epsilon added']
+
+--- _cv: no epsilon, checked structurally ---
+[F-1] INFO      numeric constants inside _cv   [0.0, 0]
+[F-1] INFO      division expressions inside _cv   ['values.std(ddof=0) / mean']
+[F-1] REVIEW    no epsilon added to the CV denominator   [0.0, 0] ['values.std(ddof=0) / mean']
+[F-1] PASS(differs) NEGATIVE CONTROL: the same structural check applied to an eps-added variant   
+
+--- degenerate cluster inputs ---
+[F-2] RAW-EXC   build_clusters([], 0) raises a NON-DesignViolation   ValueError: need at least one array to concatenate
+[F-2] MERGED    two DIFFERENT IntEnum labels with the same integer value are MERGED   n_clusters=1 sizes={'1': 10}
+
+rows=21

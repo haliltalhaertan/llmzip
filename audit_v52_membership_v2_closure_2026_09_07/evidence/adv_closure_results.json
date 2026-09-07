@@ -1,0 +1,374 @@
+[
+ {
+  "area": "F-1",
+  "probe": "cv_sigma_after == spread/mean of post sigma (recomputed independently)",
+  "outcome": "PASS",
+  "detail": "2.930810050475307e-16"
+ },
+ {
+  "area": "F-1",
+  "probe": "cv_sigma_before == spread/mean of pre sigma (recomputed independently)",
+  "outcome": "PASS",
+  "detail": "2.0070957607395075"
+ },
+ {
+  "area": "F-1",
+  "probe": "NEGATIVE CONTROL: sd_sigma_after is NOT the CV (assertion must fail)",
+  "outcome": "FAIL(control passed)",
+  "detail": "sd=2.930810050475307e-16 cv=2.930810050475307e-16"
+ },
+ {
+  "area": "F-1",
+  "probe": "sd_sigma_after equals the v1-reported quantity (SD of post sigma)",
+  "outcome": "PASS",
+  "detail": "2.930810050475307e-16"
+ },
+ {
+  "area": "F-1",
+  "probe": "zero-mean sigma -> NaN (not 0, not inf, no epsilon)",
+  "outcome": "PASS",
+  "detail": "before=nan after=nan"
+ },
+ {
+  "area": "F-1",
+  "probe": "no epsilon literal inside _cv body",
+  "outcome": "FAIL",
+  "detail": "''"
+ },
+ {
+  "area": "F-1",
+  "probe": "on the reviewer's 20-dead-coordinate fixture cv and sd genuinely differ",
+  "outcome": "PASS",
+  "detail": "cv=0.512989 sd=0.406116"
+ },
+ {
+  "area": "F-2",
+  "probe": "numpy int64 array as the whole label vector",
+  "outcome": "ACCEPTED",
+  "detail": "([0, 1, 2, 3], {0: array([0, 1, 2]), 1: array([3, 4, 5]), 2: array([6, 7, 8]), 3: array([9])}, {'n_clusters': 4, 'cluster_sizes': {'0': 3, '1': 3, '2': 3, '3': 1}, 'questions_covered_at_construction':"
+ },
+ {
+  "area": "F-2",
+  "probe": "numpy int32 scalars",
+  "outcome": "ACCEPTED",
+  "detail": "([0, 1, 2, 3], {0: array([0, 1, 2]), 1: array([3, 4, 5]), 2: array([6, 7, 8]), 3: array([9])}, {'n_clusters': 4, 'cluster_sizes': {'0': 3, '1': 3, '2': 3, '3': 1}, 'questions_covered_at_construction':"
+ },
+ {
+  "area": "F-2",
+  "probe": "numpy uint8 scalars",
+  "outcome": "ACCEPTED",
+  "detail": "([0, 1, 2, 3], {0: array([0, 1, 2]), 1: array([3, 4, 5]), 2: array([6, 7, 8]), 3: array([9])}, {'n_clusters': 4, 'cluster_sizes': {'0': 3, '1': 3, '2': 3, '3': 1}, 'questions_covered_at_construction':"
+ },
+ {
+  "area": "F-2",
+  "probe": "numpy str_ scalars",
+  "outcome": "ACCEPTED",
+  "detail": "(['c0', 'c1', 'c2', 'c3'], {'c0': array([0, 1, 2]), 'c1': array([3, 4, 5]), 'c2': array([6, 7, 8]), 'c3': array([9])}, {'n_clusters': 4, 'cluster_sizes': {'c0': 3, 'c1': 3, 'c2': 3, 'c3': 1}, 'questio"
+ },
+ {
+  "area": "F-2",
+  "probe": "numpy float64 array of whole numbers (1.0, 2.0)",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type float64; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "python floats 1.0/2.0",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type float; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "np.float64 NaN",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 is NaN"
+ },
+ {
+  "area": "F-2",
+  "probe": "python float nan",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 is NaN"
+ },
+ {
+  "area": "F-2",
+  "probe": "None",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 is missing (None)"
+ },
+ {
+  "area": "F-2",
+  "probe": "np.nan mixed among ints",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 2 is NaN"
+ },
+ {
+  "area": "F-2",
+  "probe": "EMPTY STRING label",
+  "outcome": "ACCEPTED*",
+  "detail": "(['', 'B'], {'': array([0, 1, 2]), 'B': array([3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'': 3, 'B': 7}, 'questions_covered_at_construction': 10, 'questions_lost_to_invalid_labels': "
+ },
+ {
+  "area": "F-2",
+  "probe": "whitespace-only label",
+  "outcome": "ACCEPTED*",
+  "detail": "(['  ', 'B'], {'  ': array([0, 1, 2]), 'B': array([3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'  ': 3, 'B': 7}, 'questions_covered_at_construction': 10, 'questions_lost_to_invalid_lab"
+ },
+ {
+  "area": "F-2",
+  "probe": "the literal string 'nan'",
+  "outcome": "ACCEPTED*",
+  "detail": "(['nan', 'B'], {'nan': array([0, 1, 2]), 'B': array([3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'nan': 3, 'B': 7}, 'questions_covered_at_construction': 10, 'questions_lost_to_invalid_"
+ },
+ {
+  "area": "F-2",
+  "probe": "the literal string 'None'",
+  "outcome": "ACCEPTED*",
+  "detail": "(['None', 'B'], {'None': array([0, 1, 2]), 'B': array([3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'None': 3, 'B': 7}, 'questions_covered_at_construction': 10, 'questions_lost_to_inval"
+ },
+ {
+  "area": "F-2",
+  "probe": "unicode look-alikes: latin 'a' vs cyrillic '\\u0430'",
+  "outcome": "ACCEPTED*",
+  "detail": "(['a', '\u0430'], {'a': array([0, 1, 2, 3, 4]), '\u0430': array([5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'a': 5, '\u0430': 5}, 'questions_covered_at_construction': 10, 'questions_lost_to_invalid_labels"
+ },
+ {
+  "area": "F-2",
+  "probe": "NFC/NFD look-alikes: 'e\\u0301' vs '\\u00e9'",
+  "outcome": "ACCEPTED*",
+  "detail": "(['e\u0301', '\u00e9'], {'e\u0301': array([0, 1, 2, 3, 4]), '\u00e9': array([5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'e\u0301': 5, '\u00e9': 5}, 'questions_covered_at_construction': 10, 'questions_lost_to_invalid_lab"
+ },
+ {
+  "area": "F-2",
+  "probe": "very large python ints (2**200)",
+  "outcome": "ACCEPTED",
+  "detail": "([1606938044258990275541962092341162602522202993782792835301376, 1606938044258990275541962092341162602522202993782792835301377], {1606938044258990275541962092341162602522202993782792835301376: array(["
+ },
+ {
+  "area": "F-2",
+  "probe": "np.int64 max",
+  "outcome": "ACCEPTED",
+  "detail": "([9223372036854775807, 9223372036854775806], {9223372036854775807: array([0, 1, 2, 3, 4]), 9223372036854775806: array([5, 6, 7, 8, 9])}, {'n_clusters': 2, 'cluster_sizes': {'9223372036854775807': 5, '"
+ },
+ {
+  "area": "F-2",
+  "probe": "a SINGLE cluster",
+  "outcome": "ACCEPTED",
+  "detail": "(['only'], {'only': array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])}, {'n_clusters': 1, 'cluster_sizes': {'only': 10}, 'questions_covered_at_construction': 10, 'questions_lost_to_invalid_labels': 0})"
+ },
+ {
+  "area": "F-2",
+  "probe": "one cluster PER QUESTION",
+  "outcome": "ACCEPTED",
+  "detail": "(['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9'], {'q0': array([0]), 'q1': array([1]), 'q2': array([2]), 'q3': array([3]), 'q4': array([4]), 'q5': array([5]), 'q6': array([6]), 'q7': arra"
+ },
+ {
+  "area": "F-2",
+  "probe": "bool True",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 is a bool, which is not a supported label type"
+ },
+ {
+  "area": "F-2",
+  "probe": "np.bool_ True",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type bool; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "tuple label",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type tuple; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "bytes label",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type bytes; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "list label (unhashable)",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type list; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "0-d numpy array label",
+  "outcome": "REJECTED*",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type ndarray; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "1-element numpy array label",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type ndarray; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "length mismatch (9 labels, 10 questions)",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster labels do not cover the questions one to one: 9 labels, 10 questions"
+ },
+ {
+  "area": "F-2",
+  "probe": "length mismatch (11 labels, 10 questions)",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster labels do not cover the questions one to one: 11 labels, 10 questions"
+ },
+ {
+  "area": "F-2",
+  "probe": "empty label list, 0 questions",
+  "outcome": "RAW-EXC",
+  "detail": "ValueError: need at least one array to concatenate"
+ },
+ {
+  "area": "F-2",
+  "probe": "generator of labels",
+  "outcome": "ACCEPTED",
+  "detail": "(['c0', 'c1', 'c2', 'c3'], {'c0': array([0, 1, 2]), 'c1': array([3, 4, 5]), 'c2': array([6, 7, 8]), 'c3': array([9])}, {'n_clusters': 4, 'cluster_sizes': {'c0': 3, 'c1': 3, 'c2': 3, 'c3': 1}, 'questio"
+ },
+ {
+  "area": "F-2",
+  "probe": "decimal.Decimal labels",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: cluster label at position 0 has unsupported type Decimal; labels must be all strings or all integers"
+ },
+ {
+  "area": "F-2",
+  "probe": "enum.IntEnum labels (an Integral subclass)",
+  "outcome": "ACCEPTED*",
+  "detail": "([1, 2], {1: array([0, 2, 4, 6, 8]), 2: array([1, 3, 5, 7, 9])}, {'n_clusters': 2, 'cluster_sizes': {'1': 5, '2': 5}, 'questions_covered_at_construction': 10, 'questions_lost_to_invalid_labels': 0})"
+ },
+ {
+  "area": "F-2",
+  "probe": "NEGATIVE CONTROL: v1 silently ACCEPTS the mixed-type label vector",
+  "outcome": "PASS(control reproduces the v1 defect)",
+  "detail": "n_clusters=2"
+ },
+ {
+  "area": "F-2",
+  "probe": "NEGATIVE CONTROL: v1 NaN label",
+  "outcome": "raised DesignViolation",
+  "detail": "empty question selection"
+ },
+ {
+  "area": "F-2",
+  "probe": "300 random label vectors: every question in exactly one cluster",
+  "outcome": "PASS",
+  "detail": "0 violations"
+ },
+ {
+  "area": "F-2",
+  "probe": "'clusters not drawn' is reported and distinct from loss",
+  "outcome": "PASS",
+  "detail": "not_drawn=0.870"
+ },
+ {
+  "area": "M16",
+  "probe": "partition/coverage guard reachable through the public API on valid labels",
+  "outcome": "NOT REACHED",
+  "detail": "[]"
+ },
+ {
+  "area": "M16",
+  "probe": "AST: exactly one members[k].append(i) site, inside the single enumerate loop",
+  "outcome": "PASS",
+  "detail": "1 append sites"
+ },
+ {
+  "area": "M16",
+  "probe": "key-collapsing Integral subclass: coverage still holds?",
+  "outcome": "ACCEPTED",
+  "detail": "n_clusters=1 covered=10"
+ },
+ {
+  "area": "assurance",
+  "probe": "a genuine Delta/G ratio added under the unanticipated key 'q77x' DIES",
+  "outcome": "KILLED",
+  "detail": "exit=1; [\"FAIL  CONFORMANCE: the output schema is exactly the closed expected set   ['q77x']\", \"FAIL  AST: aggregate's literal return keys equal the declared schema   ['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'n_question_slots', 'per_seed_Delta_pp', 'per_seed_G_pp', 'per_seed_G_scaled_pp', 'q7"
+ },
+ {
+  "area": "assurance",
+  "probe": "a ratio hidden INSIDE an existing key's value (per_seed_Delta becomes Delta/G)",
+  "outcome": "SURVIVED",
+  "detail": "exit=0; []"
+ },
+ {
+  "area": "assurance",
+  "probe": "NEGATIVE CONTROL: the unmutated copy passes",
+  "outcome": "PASS",
+  "detail": "exit=0"
+ },
+ {
+  "area": "vacuous",
+  "probe": "check(...) calls whose condition is unconditionally true",
+  "outcome": "FOUND",
+  "detail": "[(101, 'literal True: \"an explicit argument opens the gate\"'), (132, '\"F-1: cv_sigma_before is a CV too\"'), (150, 'literal True: \"sign(xD)=sign(x) holds bit-identically for archive and query\"'), (170, 'literal True: \"matched-Q control passes on identical blocks\"'), (189, 'literal True: \"a complete r"
+ },
+ {
+  "area": "regression",
+  "probe": "G_bar and Delta_bar match a from-scratch reference",
+  "outcome": "PASS",
+  "detail": "-4.199239910"
+ },
+ {
+  "area": "regression",
+  "probe": "output schema is exactly AGGREGATE_KEYS",
+  "outcome": "PASS",
+  "detail": "[]"
+ },
+ {
+  "area": "regression",
+  "probe": "question_bootstrap is deterministic in the seed",
+  "outcome": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "regression",
+  "probe": "cluster_bootstrap is deterministic in the seed",
+  "outcome": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "regression",
+  "probe": "N-5 razor edge preserved: sigma exactly eps takes the DIVIDE branch",
+  "outcome": "PASS",
+  "detail": "d0=1e+12"
+ },
+ {
+  "area": "regression",
+  "probe": "F-3 duplicate question ids rejected by name",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: duplicate question ids in the cohort: ['q0']"
+ },
+ {
+  "area": "regression",
+  "probe": "safe_write_json refuses overwrite",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: refusing to overwrite an existing result file: C:\\Users\\MDP\\AppData\\Local\\Temp\\.ctx-mode-SFE194\\tmp48ycgxus\\a.json"
+ },
+ {
+  "area": "regression",
+  "probe": "real-data gate closed by default",
+  "outcome": "REJECTED",
+  "detail": "DesignViolation: real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, and no fitting, retrieval, ranking or bootstrap may "
+ },
+ {
+  "area": "README",
+  "probe": "mentions 'word scan'",
+  "outcome": "YES",
+  "detail": "does the README still lean on the word scan?"
+ },
+ {
+  "area": "README",
+  "probe": "mentions 'not a proof'",
+  "outcome": "YES",
+  "detail": "does it disclaim AST-as-proof?"
+ },
+ {
+  "area": "README",
+  "probe": "mentions 'conformance'",
+  "outcome": "YES",
+  "detail": "does it name the conformance test as the primary guarantee?"
+ }
+]
