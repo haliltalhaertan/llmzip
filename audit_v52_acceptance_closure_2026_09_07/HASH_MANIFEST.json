@@ -14,11 +14,11 @@
   "file_count": 14,
   "files": {
     "audit_v52_acceptance_closure_2026_09_07/CLOSURE_AUDIT_REPORT.md": {
-      "sha256": "c2dfbf1d2caaf2ef0d948b678f37487bcbf4e1439b1624004f654e486b672d8e",
-      "bytes": 33175
+      "sha256": "669a06c9d8e0efc95fd988252c85ac6c99123cba272040e80fc7716f4c4c25a9",
+      "bytes": 35573
     },
     "audit_v52_acceptance_closure_2026_09_07/CLOSURE_AUDIT_REPORT.md.sha256": {
-      "sha256": "8d2ce5520eb1a035b4badacf270cdccaef862cc416d874faa3685f47b73c03de",
+      "sha256": "2c7dd3dfab7bc1d78181aac751e690ec51017bec2e8a8930fd3937d4a55555a0",
       "bytes": 90
     },
     "audit_v52_acceptance_closure_2026_09_07/evidence/c1_c3_c5_c6_c7_c8_record_checks.json": {

@@ -496,3 +496,45 @@ Nothing in scope was blocked. I did not attempt anything the prompt placed out o
 required data I could not reach. The preregistration's absence of a `.sha256` sidecar meant C1 could
 verify it against the state file and the two documents rather than against a sidecar; its blob hash
 matches all three.
+
+---
+
+## Addendum — `main` advanced while this audit was running
+
+Recorded for completeness, after the deliverables were written and pushed.
+
+At clone time `origin/main` was `ed2b2f74` (L-060), the commissioned anchor. On re-listing the
+remote to verify my own push, `origin/main` had advanced to
+`b1f7075551c653f44ee9a117da9db1ead4e805d7` — **L-061, "commission the narrow closure audit; harden
+the next-question inference wording to v2"**, committed at 16:03 local, i.e. concurrently with this
+audit. That entry is the commissioning of *this* audit, so its appearance is expected.
+
+**No gate verdict changes.** I re-derived, from blobs, that L-061 leaves every in-scope object
+byte-identical:
+
+| object | `ed2b2f74` → `b1f7075` |
+|---|---|
+| acceptance decision | blob unchanged ✔ |
+| clarification note | blob unchanged ✔ |
+| deviation register (research branch) | untouched ✔ |
+| preregistration | untouched ✔ |
+| commissioning prompt | blob unchanged ✔ |
+| `hard_stops` | byte-identical ✔ |
+| `task_4f1_run` / outcome access | `BLOCKED` / `FORBIDDEN` ✔ |
+| `head_researcher_acceptance_decision_2026_09_07.sha256` | unchanged ✔ |
+
+L-061 touched four files: `docs/CONTINUITY_LEDGER.md`, `ops/CURRENT_STATE.json`,
+`docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md` and its `.sha256` sidecar. The state
+file's `ledger_entry` is `L-061`, matching the new newest entry, so C6's first clause continues to
+hold at the new head. The new sidecar correctly matches the new blob.
+
+> **Observation, outside my audited range and outside my scope — flagged, not adjudicated.**
+> L-061 modified `V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md` **in place** (`M`, not `A`),
+> rewriting a published, sidecar-hashed document and its sidecar, rather than adding a `_v2` file
+> beside it. The prior hash `c0828c5debf64d6a1d39e67dc6ecb9b57fff6746cb327ad1e794df3db47466bb`,
+> which L-060 records in the ledger, no longer resolves to any file on `main`. This is exactly the
+> pattern C7 exists to police, and it is the second in-place change in two days after `cf03007`. It
+> falls after L-060 and therefore outside the range I was commissioned to audit, so I take **no
+> verdict on it** — but a program whose stated rule is "corrections are additive" should decide
+> deliberately whether a proposal document is inside or outside that rule, before the pattern
+> settles by default.
