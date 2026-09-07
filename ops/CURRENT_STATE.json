@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T18:32:00Z",
+  "issued_at_utc": "2026-09-07T19:03:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the commissioned CLOSURE CHECK of candidate v2, scoped to the corrections and the core behaviours they could affect. Hash-verify its pushed report against its sidecar before recording any verdict. Do not seal, do not write the corpus-bound runner, and do not run anything: closing the core does not authorize the experiment. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the commissioned DELTA CLOSURE CHECK of candidate v3, scoped to the three acceptance criteria NEW-1, NEW-2 and NEW-3 ONLY; the earlier research and the independently closed first-round findings F-1..F-12 are explicitly OUT OF SCOPE and must not be re-audited. Hash-verify its pushed report against its sidecar before recording any verdict. Do not seal, do not write the corpus-bound runner, and do not run anything: closing the core does not authorize the experiment. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-069",
+  "ledger_entry": "L-070",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -575,8 +575,14 @@
         "sample_sd": 0.014935802685146212,
         "standard_error": 0.0066794940205021636,
         "relative_standard_error_pct": 1.745,
-        "seed_envelope": [0.361395390, 0.401278369],
-        "t_interval_95": [0.364174391, 0.401258942]
+        "seed_envelope": [
+          0.36139539,
+          0.401278369
+        ],
+        "t_interval_95": [
+          0.364174391,
+          0.401258942
+        ]
       },
       "longmemeval_verdict": "No LongMemEval verdict is threatened. Every arm's 0.25-gate breakdown point lies OUTSIDE the 95 percent interval; the tightest, B48, needs a 5.4 standard-error excursion.",
       "locomo": "STILL OPEN AND UNMEASURABLE FROM BYTES. No per-seed source is committed anywhere. The LongMemEval standard error is deliberately NOT transferred to it; only the consequence is bounded.",
@@ -1170,5 +1176,43 @@
     "proof": "the pushed v2 commit changes exactly 7 files, all under drafts/v52/membership_impl_v2_2026_09_07/; the blob b9b8a3e435b2b167c3d8364193ad0c48f0306e71 is identical at a6d70ff and at the v2 head, and the restored worktree file hashes to it",
     "remedy": "git checkout -- task4f1_execution_candidate_2026_08_31/; worktree verified clean",
     "rule_recorded": "never run a recursive delete across a checkout that contains sealed or Task 4F1 namespaces; scope cleanup to the working directory being prepared"
+  },
+  "membership_impl_v2_closure_check_2026_09_07": {
+    "branch": "audit/v52-membership-v2-closure-2026-09-07",
+    "commit": "712412a5947fa56374e05bf3e3a0b075d4578b6d",
+    "report_sha256": "ec75beb4e054c4bc6e7c46aa5c2a006c749e2bd65b3d93f90543d31a1e19d0be",
+    "independently_verified": true,
+    "verdict": "CLOSURE PASS WITH FINDINGS",
+    "first_round_findings_independently_closed": "F-1 through F-12 were confirmed closed in v2 by this check. They are RECORDED AS CLOSED and are NOT reopened. A successor must not re-audit them; proposing to do so is proposing a new round, which needs its own authority.",
+    "findings": {
+      "NEW-1": "the v2 conformance test recomputed only 3 of the 7 published fields, and the closed schema constrains key NAMES not values, so mutants R1 (ratio into per_seed_Delta_pp), R2 (ratio into per_seed_G_scaled_pp), R3 (per_seed_G_pp x1.5) and R6 (the same ratio via np.divide) ALL SURVIVED",
+      "NEW-2": "the F-1 cv_sigma_before check ended in `or True` and passed unconditionally; the 123456.0 mutant survived",
+      "NEW-3": "build_clusters([], 0) raised a raw ValueError from np.concatenate instead of a named DesignViolation"
+    },
+    "claim_retired": "the v2 wording 'a quantity added under ANY name fails a test' is retired - the second overstated assurance claim in this lineage after the v1 word scan (F-4)"
+  },
+  "membership_impl_candidate_v3_2026_09_07": {
+    "branch": "impl/v52-membership-under-scaling-v3-2026-09-07",
+    "commit": "dcb568d0a6c33154c1568500325ad457b4d6f455",
+    "namespace": "drafts/v52/membership_impl_v3_2026_09_07/",
+    "core_sha256": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72",
+    "tests_sha256": "1d426abcc908718ae2d95f0a84e323603fd05199dc3da8809d03e6795f5b2d87",
+    "readme_sha256": "eb35b0e7a7d895a8062cfc51179748a5a34eca3cd699457a3a721efbad228448",
+    "governing_documents_sha256": "6b8747180c3e577bdb27971e4eb259c5852fe28c25803dc8bdf8f2c63d0c8768",
+    "mutation_probes_sha256": "a5631f76cd264f986dca44881d80c81962e1d7b453f25679cc3e348c1865f5ea",
+    "status": "IMPLEMENTATION PREPARATION - NOT INDEPENDENTLY REVIEWED; the preparer may not call it reviewed",
+    "round_scope": "findings-limited to NEW-1, NEW-2 and NEW-3. Not a new design, not a new feature, not a general audit round.",
+    "NEW_1_closed_by": "conformance now recomputes ALL SEVEN published fields of aggregate against the independent reference - three scalars, three per-seed vectors elementwise, and n_question_slots - at the module's existing TOL, which binding section 6 fixes at an ABSOLUTE 1e-12. Bitwise equality is deliberately NOT demanded and would be an unjustified new condition; measured agreement is max|diff| = 3.55e-15 per vector. Negative controls assert a perturbed scalar and one perturbed per-seed element are both rejected. The schema check is kept for its different job: a NEW key.",
+    "NEW_2_closed_by": "the vacuous `or True` is replaced by a comparison against a CV recomputed in the test from the fixture archive, paired with a control asserting it rejects a wrong value. A machine AST sweep of the suite reports any check whose condition is a boolean expression ending in a literal True; it reports none and carries a control proving it detects that shape. SCOPE: that ONE shape only; no claim of comprehensive test soundness is made.",
+    "NEW_3_closed_by": "a named DesignViolation at the top of build_clusters, tested for a zero count and a negative count",
+    "claims_narrowed": "no claim is made that any wrong computation is necessarily caught. The AST division enumeration is explicitly NOT a proof - np.divide is not a Div node, which is exactly what mutant R6 exploits, and R6 is killed by conformance rather than by it. A word scan is not used as assurance anywhere.",
+    "evidence": "99 synthetic checks ALL PASS; 22 mutation probes applied, 21 killed",
+    "probe_provenance": "M1-M16 re-anchored from audit/v52-membership-impl-review-2026-09-07 @ 68819424765ed3da89377c89980d7e42546bfe02; R1, R2, R3, R6 and the NEW-2/NEW-3 probes from audit/v52-membership-v2-closure-2026-09-07 @ 712412a5947fa56374e05bf3e3a0b075d4578b6d. Neither audit namespace is modified.",
+    "kill_count_scope": "evidence that the suite catches exactly these 22 fault variants; NOT a correctness guarantee",
+    "expected_survivor": "M16 removes the partition-coverage guard, UNREACHABLE through the public API because label validation precedes it. A mutation test cannot kill an unreachable guard; reported rather than removed or papered over with a monkeypatching test.",
+    "governing_documents_bound": "GOVERNING_DOCUMENTS.md binds the acceptance record a99d547d @ 9b4af594, R2 39cbfcea @ 16019724, R1 3d7a79b2 @ 2eadc41b and the prereg draft 3da80e34 @ 56c29416, plus both audit reports and the candidate lineage, by commit/path/sha256 - because the v3 branch is parented on a commit that PREDATES the acceptance record and those documents are therefore absent from it. It instructs hashing RAW GIT BLOBS, since the repository ships no .gitattributes.",
+    "earlier_versions_preserved": "v1 core 707e166c80d9231d089341a804e0acdd8845781fec7560821c67b3f6d0731a00 and v2 core 60141d05f2285d268a88d98344770c8cb5d166168a6fa29371a1ea330db0a1e1 are byte-unchanged; commit dcb568d0a6c33154c1568500325ad457b4d6f455 adds 8 files and touches nothing outside drafts/v52/membership_impl_v3_2026_09_07/",
+    "runner_obligations_carried_forward": "unchanged by this round: N-2 preregister the bootstrap seed; N-3 emit the LongMemEval inheritance tag and prevent cluster-bootstrapping LongMemEval; N-4 apply the identical D to the query with nothing estimated from it. F-12 remains deliberately not acted on.",
+    "not_validated": "anything requiring a corpus; the corpus-bound runner is NOT written; tests ran on this machine's Python and NumPy, not the pinned research stack"
   }
 }
