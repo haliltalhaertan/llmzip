@@ -1,0 +1,139 @@
+{
+  "scope": "Persisted metric consistency only; no raw data, ranking, bit codes, or research imports.",
+  "tolerance": 1e-12,
+  "inputs": {
+    "research/v52/locomo_scale_outputs/locomo_scale_per_question.csv.gz": {
+      "sha256": "b7abd942c13cf9ce1b1c4a13e3ff39fb26a26e8b2f2749dd92d76f0b2a474602",
+      "bytes": 278724
+    },
+    "research/v52/locomo_scale_outputs/locomo_scale_summary.json": {
+      "sha256": "f878e19a091d0bccbf835231449debbb6f8299bc2dd8f81198891e322c9a9b0e",
+      "bytes": 6343
+    },
+    "research/v52/longmemeval_scale_outputs/longmemeval_scale_per_question.csv.gz": {
+      "sha256": "1db682a277b8fe7f0b3aa7cf02831bf07f0d5c4c340796a57c93df5441df3157",
+      "bytes": 94324
+    },
+    "research/v52/longmemeval_scale_outputs/longmemeval_scale_summary.json": {
+      "sha256": "4592a20ca64c73c9d4086187640e7ce8bc5d1ee40e1cc10580b89f531b219813",
+      "bytes": 102002
+    }
+  },
+  "benchmarks": {
+    "locomo": {
+      "status": "PASS",
+      "rows": 92100,
+      "questions": 1535,
+      "seeds": 10,
+      "arms": 6,
+      "native_recomputed": 0.23654714666441048,
+      "frozen_native": 0.23654714666441054,
+      "arm_means_recomputed": {
+        "NATIVE": 0.2365471466644105,
+        "SCALED_NATIVE": 0.2365471466644105,
+        "FULLHAAR_FRESH": 0.13913106338041972,
+        "SCALED_FULLHAAR": 0.20986555436330148,
+        "BLOCK32_FRESH": 0.23121552178841082,
+        "SCALED_BLOCK32": 0.2346898373886489
+      },
+      "question_set_sha256": "30c3c08ea17c9bfc1edba14a5ec3f70d4a16ccf1a9ff17862d373536b7d45132"
+    },
+    "longmemeval": {
+      "status": "PASS",
+      "rows": 28200,
+      "questions": 470,
+      "seeds": 10,
+      "arms": 6,
+      "native_recomputed": 0.5419751773049645,
+      "frozen_native": 0.5419751773049646,
+      "arm_means_recomputed": {
+        "NATIVE": 0.5419751773049646,
+        "SCALED_NATIVE": 0.5419751773049646,
+        "FULLHAAR_FRESH": 0.3809386524822695,
+        "SCALED_FULLHAAR": 0.48663244680851064,
+        "BLOCK32_FRESH": 0.5157040780141844,
+        "SCALED_BLOCK32": 0.5238076241134753
+      },
+      "question_set_sha256": "3913f325f99c490810e8786c3a61d904469d8285f9a4f6a0ec8404d852068209"
+    }
+  },
+  "negative_controls": {
+    "locomo": {
+      "NaN": {
+        "status": "REJECTED",
+        "gate": "score_finite_unit_interval"
+      },
+      "above_one": {
+        "status": "REJECTED",
+        "gate": "score_finite_unit_interval"
+      },
+      "below_zero": {
+        "status": "REJECTED",
+        "gate": "score_finite_unit_interval"
+      },
+      "missing": {
+        "status": "REJECTED",
+        "gate": "row_count"
+      },
+      "duplicate_replacing_cell": {
+        "status": "REJECTED",
+        "gate": "duplicate_cell"
+      },
+      "paired_native_tamper": {
+        "status": "REJECTED",
+        "gate": "paired_native_scaled_native"
+      },
+      "native_scalar_mismatch": {
+        "status": "REJECTED",
+        "gate": "native_scalar_repeat"
+      },
+      "summary_diagnostic_NaN": {
+        "status": "REJECTED",
+        "gate": "nonfinite:summary.diagnostics.cv_sigma_per_archive[0].cv_sigma_before"
+      },
+      "cancelling_paired_tamper": {
+        "status": "REJECTED",
+        "gate": "paired_native_scaled_native"
+      }
+    },
+    "longmemeval": {
+      "NaN": {
+        "status": "REJECTED",
+        "gate": "score_finite_unit_interval"
+      },
+      "above_one": {
+        "status": "REJECTED",
+        "gate": "score_finite_unit_interval"
+      },
+      "below_zero": {
+        "status": "REJECTED",
+        "gate": "score_finite_unit_interval"
+      },
+      "missing": {
+        "status": "REJECTED",
+        "gate": "row_count"
+      },
+      "duplicate_replacing_cell": {
+        "status": "REJECTED",
+        "gate": "duplicate_cell"
+      },
+      "paired_native_tamper": {
+        "status": "REJECTED",
+        "gate": "paired_native_scaled_native"
+      },
+      "native_scalar_mismatch": {
+        "status": "REJECTED",
+        "gate": "native_scalar_repeat"
+      },
+      "summary_diagnostic_NaN": {
+        "status": "REJECTED",
+        "gate": "nonfinite:summary.diagnostics.cv_sigma_per_archive[0].cv_sigma_before"
+      },
+      "cancelling_paired_tamper": {
+        "status": "REJECTED",
+        "gate": "paired_native_scaled_native"
+      }
+    }
+  },
+  "validator_sha256": "372e697c6e4c95120d836c34b3ffb03fc57cc19d625e3bc734be8fb15db58072"
+}
