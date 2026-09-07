@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T12:45:00Z",
+  "issued_at_utc": "2026-09-07T13:03:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher decision on two independent items: (a) commission the prepared narrow closure audit (prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md), in a session that did not write the acceptance record, and say whether this session may launch it or whether an external operator should; (b) rule on the next research question - take up the coordinate-membership proposal, prefer the encoder-generalisation alternative, or neither. Task 4F1 stays on hold; no run/finalize/HMAC/outcome authority. D11 Drive backup needs an operator with Drive access; the GitHub default branch is owner-only.",
+    "next_single_action": "Await the closure audit on branch audit/v52-acceptance-closure-2026-09-07; hash-verify the pushed report against its sidecar before recording any verdict, and check the auditor session's status rather than treating a silent branch as work in progress. Do not select the next research question before the audit returns. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-060",
+  "ledger_entry": "L-061",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -912,17 +912,29 @@
     "gates": "C1-C8",
     "scope": "acceptance document; A/B justification; section 7/9 deviation; source bindings incl. provenance-vs-recomputation; current-state consistency. Nothing else.",
     "explicitly_out_of_scope": "re-running any experiment, bootstrap or the LoCoMo reproduction; reading any corpus; recomputing the LongMemEval dependency graph; any Task 4F1 action; a broad literature scan; reopening the accepted conclusion",
-    "status": "PROMPT PREPARED - NOT COMMISSIONED, NO AGENT LAUNCHED. Head Researcher decides whether this session may launch it; this session wrote the record under audit and cannot be its auditor.",
-    "auditor_instruction_of_note": "hash raw Git blobs, not checked-out files - two earlier auditor sessions reported mismatches most likely caused by Windows CRLF checkout and neither confirmed it before being stopped"
+    "status": "RUNNING - commissioned 2026-09-07 as a separate zero-context agent session with its own clone and branch, seeded cold at main ed2b2f74347da6be68beae2c22d5c3d22992f1a3 (L-060). The commissioning session wrote the record under audit and is NOT independent of it; that is stated in the launch note, and the auditor is told that finding the record overstating what it verified is the intended outcome.",
+    "auditor_instruction_of_note": "hash raw Git blobs, not checked-out files - two earlier auditor sessions reported mismatches most likely caused by Windows CRLF checkout and neither confirmed it before being stopped",
+    "seeded_at_commit": "ed2b2f74347da6be68beae2c22d5c3d22992f1a3",
+    "health_check_required": "poll the auditor session's own status; a silent branch is not evidence of progress. Accept only a pushed report whose .sha256 sidecar verifies.",
+    "audit_is_pinned": "pinned at ed2b2f74, where the state file and the newest ledger entry both read L-060, so later main commits do not disturb gate C6. The next-question proposal is not among the audited objects."
   },
   "next_question_proposal_2026_09_07": {
     "path": "docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md",
-    "sha256": "c0828c5debf64d6a1d39e67dc6ecb9b57fff6746cb327ad1e794df3db47466bb",
+    "sha256": "bad083b5e92926a0f17e9923035d422d1c7c29320bb38130b588be91cb7056ff",
     "status": "PROPOSAL ONLY - NOT A PREREGISTRATION, NOT SEALED, NOT AUTHORIZED; no seeds drawn, no runner or workflow written",
     "question": "After coordinate scales are equalised, does the spectral 32/64 split still beat a matched-size random split?",
     "why_it_avoids_the_last_defect": "the primary quantity is a DIFFERENCE between arms 8.448609 pp (LoCoMo) and 13.203121 pp (LongMemEval) apart with non-overlapping per-seed rho ranges, not a ratio over a near-zero block loss; both figures re-derived from the committed boundary summaries at research 0c9916bd",
     "fixes_two_known_defects_prospectively": "the estimand is defined per seed then averaged, applying the A ruling in the text before anything runs; and the interpretation licence is attached to the primary quantity with frozen numeric bands, which sections 7 and 9 failed to do",
     "expected_information_gain": "gap survives rescaling -> scale is NOT the channel behind the membership effect, separating two damage channels and pointing positively at correlation structure / subspace alignment; gap collapses -> one channel plausibly explains both, unifying them but WEAKENING the independence of the audited membership finding; anything between narrows the share on a scale that cannot be floor-confounded",
-    "declared_alternative_not_proposed_first": "a different-encoder replication. The largest standing threat is an effect specific to one representation - both benchmarks share a single TF-IDF/SVD pipeline, so cross-benchmark agreement is not independent methodological replication. It is the higher-value experiment but needs a new frozen pipeline and adapters and reuses no validated control."
+    "declared_alternative_not_proposed_first": "a different-encoder replication. The largest standing threat is an effect specific to one representation - both benchmarks share a single TF-IDF/SVD pipeline, so cross-benchmark agreement is not independent methodological replication. It is the higher-value experiment but needs a new frozen pipeline and adapters and reuses no validated control.",
+    "revision": "v2, 2026-09-07 - inference wording only; v1 preserved in Git history at ed2b2f74 (sha256 c0828c5debf64d6a...)",
+    "wording_constraint_applied": "Head Researcher constraint: no outcome may be read as proving a mechanism; the retained bound is that scale equalisation ALONE does not suffice to explain the difference. Three v1 overstatements corrected: band labels now assert what the intervention ACCOUNTS FOR rather than properties of the mechanism; a surviving gap now licenses only that equalising coordinate scale is not by itself sufficient, with scale still able to participate through a route this intervention does not touch; and the claim that a surviving gap would 'point positively at' correlation structure or subspace alignment is withdrawn as an elimination inference dressed as positive support - those remain unexcluded candidates. The collapse branch now licenses only that this rescaling accounts for most of the gap on the frozen panel, and notes that consistency with a shared channel is not identification.",
+    "band_labels": [
+      "[SCALE EQUALISATION ALONE DOES NOT ACCOUNT FOR THE MEMBERSHIP GAP]",
+      "[SCALE EQUALISATION ACCOUNTS FOR MOST OF THE MEMBERSHIP GAP]",
+      "[PARTIAL]"
+    ],
+    "what_no_outcome_licenses": "identifying a mechanism; establishing necessity or exclusivity; proving or disproving the participation of coordinate scale in general; claiming production benefit; transferring to other encoders or corpora; upgrading a [LEAD]",
+    "unchanged_in_v2": "question, arms, controls, estimand, thresholds"
   }
 }

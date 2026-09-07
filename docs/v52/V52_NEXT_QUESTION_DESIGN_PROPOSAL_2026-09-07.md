@@ -3,6 +3,12 @@
 Date: 2026-09-07
 Author: Continuity Lead / co-chair
 Status: **`[PROPOSAL ONLY — NOT A PREREGISTRATION, NOT SEALED, NOT AUTHORIZED]`**
+Revision: **v2, 2026-09-07.** v1 is preserved in Git history at `main` `ed2b2f74` (sha256
+`c0828c5debf64d6a…`). v2 changes only the *inference wording* of the band labels (§4) and the
+expected-information-gain section (§5), at Head Researcher instruction: no outcome of this design may
+be read as proving a mechanism. The bound this design can actually deliver is **how much of the
+membership gap scale equalisation accounts for** — nothing stronger, in either direction. The
+question, arms, controls, estimand and thresholds are unchanged.
 
 No seeds are drawn, no runner exists, no workflow exists, no corpus is read. Nothing here authorizes
 an experiment; the Head Researcher decides separately. If taken up, this becomes the input to a
@@ -71,9 +77,14 @@ primary    = mean over seeds of Δ_s        (per-seed values reported)
 **Bands, and the interpretation licence attached to the primary quantity** — this fixes the §7/§9
 defect prospectively, and every threshold must be frozen before the run:
 
-- `Δ ≥ −0.20 · G` → the membership effect is essentially **scale-independent**
-- `Δ ≤ −0.60 · G` → rescaling removes most of it: **scale-mediated**
-- otherwise → partial
+- `Δ ≥ −0.20 · G` → `[SCALE EQUALISATION ALONE DOES NOT ACCOUNT FOR THE MEMBERSHIP GAP]`
+- `Δ ≤ −0.60 · G` → `[SCALE EQUALISATION ACCOUNTS FOR MOST OF THE MEMBERSHIP GAP]`
+- otherwise → `[PARTIAL]`
+
+The band labels are deliberately phrased as statements about **what this intervention accounts
+for**, not about what the mechanism *is*. "Scale equalisation alone does not account for the gap" is
+not the same claim as "scale plays no role", and the preregistration must not permit the second to
+be read from the first.
 
 Secondary, reported with its own dispersion: the ratio `G_scaled / G`, which is safe here only
 because `G` is bounded away from zero on every seed — a condition the preregistration must state as
@@ -96,22 +107,29 @@ matrix, minutes of compute, no new corpus.
 
 ## 5. Expected information gain
 
-Both outcomes are informative, which is the point.
+Both outcomes are informative, which is the point. What the design delivers in every case is a
+**bound on how much of the membership gap this specific intervention accounts for** — never a
+mechanism.
 
-- **`Δ ≈ 0` — the gap survives rescaling.** Coordinate scale is **not** the channel behind the
-  membership effect. Combined with the accepted descriptive finding, this would separate two
-  distinct damage channels: a scale channel for full mixing, and a non-scale channel for
-  membership. It would be the first result in this line to point positively at the remaining
-  candidates named in the preregistration's §9 — correlation structure and subspace alignment —
-  rather than merely failing to exclude them.
-- **`Δ ≈ −G` — the gap collapses.** One channel plausibly accounts for both findings, and the
-  audited membership result becomes downstream of scale heterogeneity across the boundary. That is
-  a unification, but it also **weakens the independence** of the membership finding, which any
-  future write-up would have to carry.
-- **Anything between** narrows the share, on a scale that cannot be floor-confounded.
+- **`Δ ≈ 0` — the gap survives rescaling.** The licensed reading is exactly: **equalising
+  coordinate scale is not by itself sufficient to account for the membership gap.** It would **not**
+  establish that scale plays no role: scale could still participate through a route this
+  intervention does not touch, and the intervention is one specific rescaling (`1/σ` on the centered
+  representation), not the general notion of scale. Nor would it constitute positive evidence for
+  correlation structure or subspace alignment; those would remain unexcluded candidates, exactly as
+  §9 of the earlier preregistration left them. The honest gain is a **narrowing**: one named
+  intervention would be shown insufficient on a contrast that cannot be floor-confounded, which is
+  more than the line currently has.
+- **`Δ ≈ −G` — the gap collapses.** The licensed reading is that **this rescaling accounts for most
+  of the membership gap on the frozen panel.** It would be consistent with a single shared channel
+  behind both findings, but consistency is not identification. It would also **weaken the
+  independence** of the audited membership result, and any future write-up would have to carry that
+  cost rather than only the benefit.
+- **Anything between** bounds the share, on a scale that cannot be floor-confounded.
 
-What it would **not** do in any outcome: identify the mechanism, establish necessity or exclusivity,
-claim production benefit, or transfer to other encoders or corpora.
+What no outcome of this design would do: identify a mechanism, establish necessity or exclusivity,
+prove or disprove the participation of coordinate scale in general, claim production benefit, or
+transfer to other encoders or corpora. A `[LEAD]` label may not be upgraded on the strength of it.
 
 ## 6. The alternative I am not proposing first, and why
 
