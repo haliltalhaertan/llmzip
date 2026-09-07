@@ -1,0 +1,37 @@
+{
+  "scope": "input feasibility, no bootstrap, no new endpoint",
+  "datasets": {
+    "locomo": {
+      "input_sha256": "b7abd942c13cf9ce1b1c4a13e3ff39fb26a26e8b2f2749dd92d76f0b2a474602",
+      "questions": 1535,
+      "tie_examples": [
+        "archive_ordinal=0;nuisance=20;stable_archive_seed(ci,t)+99",
+        "archive_ordinal=1;nuisance=20;stable_archive_seed(ci,t)+99"
+      ],
+      "cluster_question_counts": {
+        "0": 150,
+        "1": 81,
+        "2": 152,
+        "3": 199,
+        "4": 178,
+        "5": 123,
+        "6": 149,
+        "7": 191,
+        "8": 156,
+        "9": 156
+      },
+      "mapping_sha256": "39dc993fe487fcbe29df5d0c8a1a2037f09f505aee00d13f0bfc38b21946793f",
+      "status": "10 archive-ordinal clusters recoverable from persisted producer encoding; no independent corpus join"
+    },
+    "longmemeval": {
+      "input_sha256": "1db682a277b8fe7f0b3aa7cf02831bf07f0d5c4c340796a57c93df5441df3157",
+      "questions": 470,
+      "tie_examples": [
+        "global_lex=0;nuisance=20;5100000+lex*100000+t*100+99",
+        "global_lex=100;nuisance=20;5100000+lex*100000+t*100+99"
+      ],
+      "status": "470 question IDs; no conversation-cluster mapping certified by this check. Do not equate per-question archive with shared conversation."
+    }
+  },
+  "malformed_encoding_negative_controls": "3/3 REJECTED"
+}

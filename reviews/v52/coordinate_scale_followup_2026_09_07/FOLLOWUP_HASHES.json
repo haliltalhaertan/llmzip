@@ -18,6 +18,21 @@
       "bytes": 3307
     },
     {
+      "path": "reviews/v52/coordinate_scale_followup_2026_09_07/feasibility/check_cluster_inputs.py",
+      "sha256": "db0c47ced56e6a15b823c8aa01ac5410bef0ddec254868c05e2c63be7bc5c628",
+      "bytes": 2491
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_followup_2026_09_07/feasibility/DECISION_NEEDED.md",
+      "sha256": "e00752bb41c5105fadcfca078ea5af888113ccc5dded6b44fd376470c12bbe37",
+      "bytes": 2532
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_followup_2026_09_07/feasibility/RESULT.json",
+      "sha256": "910124d39a8faca615b340868435e5733a3266217106587affcbbd9d22e36666",
+      "bytes": 1345
+    },
+    {
       "path": "reviews/v52/coordinate_scale_followup_2026_09_07/records/README.md",
       "sha256": "a913f5d5c86ed3a7797abcc2454730c657a1a08265d6f0dd0f7c2329fbc6f391",
       "bytes": 3435
