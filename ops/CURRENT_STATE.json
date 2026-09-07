@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T08:40:00Z",
+  "issued_at_utc": "2026-09-07T08:44:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher decision: commission the cold-start independent audit of the coordinate-scale stage using prompts/V52_COORDINATE_SCALE_COLD_START_INDEPENDENT_AUDIT_PROMPT_2026-09-07.md (a session that did not prepare, seal, trigger or record the stage). Until it returns, the stage is [NOT INDEPENDENTLY AUDITED] and may not be cited. No re-run, no new mechanism experiment. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the commissioned coordinate-scale independent audit (audit/v52-coordinate-scale-independent-2026-09-07) and the literature scan (research/v52-sign-mechanism-literature-scan-2026-09-04); hash-verify each pushed report against its sidecar before recording any verdict. Do not re-trigger; do not cite the coordinate-scale stage before the audit returns. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-055",
+  "ledger_entry": "L-056",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -518,7 +518,7 @@
   },
   "mechanism_research_track": {
     "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
-    "head": "1c725a56752d1059148f48b89d8138c76c2f70e9",
+    "head": "591e5d0fd7af8c265ac12a6176761475a19b2f02",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
     "status": "AUDIT PASS WITH CAVEATS 2026-09-05, independently verified. Stop rule discharged; next experiment is a separate Head Researcher decision.",
@@ -640,9 +640,10 @@
     "prompt_sha256": "9eaefd512428c05250a7747c95ba65a81c26d6252ab76a4080908e1eb1c092ee",
     "target_branch": "research/v52-sign-mechanism-literature-scan-2026-09-04",
     "claims_to_test": "C1-C9; the load-bearing negatives are C2, C3 and C9",
-    "status": "PROMPT_WRITTEN - NOT YET COMMISSIONED",
+    "status": "RUNNING - commissioned 2026-09-07 as a zero-context agent session launched by the Continuity Lead",
     "gates_nothing": "the scan does not gate the boundary-localization decision",
-    "open_version_discrepancy": "arXiv 2605.17524 served two different contents with different Theorem 2 statements and corollary numbering; nothing from that paper may be quoted in a project artifact until one version is pinned"
+    "open_version_discrepancy": "arXiv 2605.17524 served two different contents with different Theorem 2 statements and corollary numbering; nothing from that paper may be quoted in a project artifact until one version is pinned",
+    "base_commit": "a7e9ba8f0b325db7ec8e168def4b85e615c1fca3"
   },
   "commissioned_boundary_localization_audit": {
     "stage": "BOUNDARY_LOCALIZATION_INDEPENDENT_AUDIT",
@@ -768,7 +769,7 @@
       "not_an_audit": true
     }
   },
-  "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes.",
+  "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes. UPDATE 2026-09-07: the LoCoMo dispersion is now MEASURED from the coordinate-scale stage's fresh ten-seed full-Haar panel (see locomo_denominator_dispersion_2026_09_07); the per-seed values of the ORIGINAL five LoCoMo seeds remain uncommitted.",
   "head_researcher_authorization_2026_09_07": {
     "decision": "AUTHORIZED - coordinate-scale participation experiment on LoCoMo and LongMemEval, as preregistered at draft bdc0db75 (document sha256 de667211)",
     "relayed_as": "chat text ('yetki sende devam et'); not a pushed hash-bound artifact",
@@ -781,6 +782,19 @@
     "prompt_sha256": "4ead85278e85e685d0053603488d07a2089b27b084ff72610e12cd932889606f",
     "target_branch": "audit/v52-coordinate-scale-independent-2026-09-07",
     "gates": "G1-G13",
-    "status": "PROMPT_WRITTEN - NOT YET COMMISSIONED (Head Researcher decision; auditor must be a session that did not prepare, seal, trigger or record the stage)"
+    "status": "RUNNING - commissioned 2026-09-07 as a zero-context agent session launched by the Continuity Lead (who prepared, sealed and triggered the stage; commissioner is NOT independent - disclosed in the launch note and in L-056)",
+    "base_commit": "a7e9ba8f0b325db7ec8e168def4b85e615c1fca3",
+    "audited_object": "research/v52-sign-mechanism-locomo-2026-09-04 @ 1c725a56752d1059148f48b89d8138c76c2f70e9",
+    "health_check_required": "a silent branch is not evidence of progress; accept only a pushed report whose .sha256 sidecar verifies"
+  },
+  "locomo_denominator_dispersion_2026_09_07": {
+    "addendum": "research/v52/V52_LOCOMO_DENOMINATOR_DISPERSION_ADDENDUM_2026-09-07.md @ 591e5d0fd7af8c265ac12a6176761475a19b2f02",
+    "sha256": "187f4cdb674881bf22764395f358517efa7003f541a59e31feabc94589f9c555",
+    "derivation": "research/v52/audit_support/locomo_denominator_dispersion.py from committed per-question rows and locomo_boundary_summary.json; 16 controls",
+    "fresh_panel": "FULLHAAR_FRESH seeds 59001..59010: mean 0.139131063, sd 0.005200, se5 0.002326 (1.69% of inherited 0.13770827054136); fresh - inherited = +0.27 sd",
+    "consequence": "every LoCoMo boundary-localization breakdown point lies outside the 95% t-interval; tightest B48 exclusion needs -15.34% = 9.1 se (4.1 sd); B32 sufficiency +48.12% = 28.5 se",
+    "closes": "the 'LoCoMo denominator dispersion unmeasurable from bytes' item (L-051 / takeover prompt section 7C)",
+    "does_not": "replace any frozen denominator, recompute any verdict, or lift the standing narrowing on the uniqueness of 32",
+    "independence": "NOT INDEPENDENTLY AUDITED; gate G12 of the commissioned audit covers the panel statistics"
   }
 }
