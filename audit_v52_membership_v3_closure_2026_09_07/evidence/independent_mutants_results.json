@@ -1,0 +1,188 @@
+{
+  "harness": "independent_mutants.py, written by the v3 closure auditor",
+  "candidate_dir": "C:\\Users\\MDP\\AppData\\Local\\Temp\\claude\\C--Users-MDP\\fef85655-9c07-4349-9946-f2a6ec044623\\scratchpad\\auditv3\\base\\drafts\\v52\\membership_impl_v3_2026_09_07",
+  "python": "3.14.3",
+  "scope_statement": "kills demonstrate coverage of these specific fault variants only",
+  "rows": [
+    {
+      "id": "A-R1-ratio-into-per-seed-delta",
+      "group": "A",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "substitute the forbidden Delta/G ratio into the permitted key per_seed_Delta_pp; all three scalars stay exactly correct",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 1.70e+02"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "  \"per_seed_Delta_pp\": (per_seed_d / per_seed_g).tolist(), \"n_question_slots\": int(idx.size)}"
+    },
+    {
+      "id": "A-R2-ratio-into-per-seed-g-scaled",
+      "group": "A",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "substitute the ratio per_seed_gs / per_seed_g into the permitted key per_seed_G_scaled_pp",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 1.71e+02"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "  \"per_seed_G_pp\": per_seed_g.tolist(), \"per_seed_G_scaled_pp\": (per_seed_gs / per_seed_g).tolist(),"
+    },
+    {
+      "id": "A-R3-per-seed-g-rescaled",
+      "group": "A",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "rescale the published per_seed_G_pp vector by 1.5 while every scalar stays correct",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 8.77e+00"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "1 FAILED"
+    },
+    {
+      "id": "A-R6-ratio-via-np-divide",
+      "group": "A",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "the A-R1 ratio written with np.divide, so no ast.Div node exists for the AST enumeration",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 1.70e+02"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "  \"per_seed_Delta_pp\": np.divide(per_seed_d, per_seed_g).tolist(), \"n_question_slots\": int(idx.size)}"
+    },
+    {
+      "id": "A-NEW2-cv-before-constant",
+      "group": "A",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "report a fixed wrong number 123456.0 as cv_sigma_before",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  F-1: cv_sigma_before is a genuine CV of this archive   123456.000000000",
+        "FAIL  F-1: a zero-mean sigma gives NaN, explicitly and with no epsilon added"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "2 FAILED"
+    },
+    {
+      "id": "A-NEW3-empty-guard-removed",
+      "group": "A",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "remove the named guard so build_clusters([], 0) falls through to a library exception",
+      "suite_kills": true,
+      "failing_checks": [],
+      "crashed_without_named_failure": true,
+      "exit_code": 1,
+      "tail": "ValueError: need at least one array to concatenate"
+    },
+    {
+      "id": "B-1-per-seed-g-and-gs-swapped",
+      "group": "B",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "AUDITOR'S OWN: swap per_seed_G_pp and per_seed_G_scaled_pp in the returned dict. Both keys are permitted, both values are real published quantities, and all three scalars are untouched",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 1.93e+01",
+        "FAIL  CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 1.93e+01"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "2 FAILED"
+    },
+    {
+      "id": "B-2-per-seed-vectors-reversed",
+      "group": "B",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "AUDITOR'S OWN: reverse each per-seed vector. The mean of a reversed vector is the same number, so every published scalar, the linearity identity and the schema are all unaffected; only an elementwise comparison against a reference can see it",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 1.95e+01",
+        "FAIL  CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 1.80e+01",
+        "FAIL  CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 2.31e+01"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "3 FAILED"
+    },
+    {
+      "id": "B-3-per-seed-rounded-1e6",
+      "group": "B",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "AUDITOR'S OWN: round the published per-seed vectors to 6 decimals - a plausible 'tidying' defect that leaves them visually right and about 1e-7 wrong",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 3.54e-07",
+        "FAIL  CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 4.61e-07",
+        "FAIL  CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 4.26e-07"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "3 FAILED"
+    },
+    {
+      "id": "B-4-slots-counted-as-distinct",
+      "group": "B",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "AUDITOR'S OWN: publish n_question_slots as the number of DISTINCT questions. On the conformance fixture idx has no repeats, so the conformance check alone cannot see this; it is only visible to a check that exercises multiplicity",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  a repeated index counts twice",
+        "FAIL  F-5: multiplicity is preserved in the slot count"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "2 FAILED"
+    },
+    {
+      "id": "B-5-slots-off-by-one",
+      "group": "B",
+      "expectation": "must be killed",
+      "applied": true,
+      "description": "AUDITOR'S OWN: publish n_question_slots + 1",
+      "suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: n_question_slots matches the reference",
+        "FAIL  aggregate divides by the number of selected SLOTS",
+        "FAIL  a repeated index counts twice",
+        "FAIL  F-5: multiplicity is preserved in the slot count"
+      ],
+      "crashed_without_named_failure": false,
+      "exit_code": 1,
+      "tail": "4 FAILED"
+    },
+    {
+      "id": "B-6-per-seed-delta-inside-tolerance",
+      "group": "B",
+      "expectation": "EXPECTED TO SURVIVE - not a defect",
+      "applied": true,
+      "description": "AUDITOR'S OWN: perturb per_seed_Delta_pp by +5e-13, i.e. INSIDE the accepted absolute tolerance of 1e-12 fixed by binding section 6. Survival is the correct behaviour of a tolerance-based comparison and is recorded to make the tolerance's reach explicit; demanding bit-level equality would itself be an unjustified new condition",
+      "suite_kills": false,
+      "failing_checks": [],
+      "crashed_without_named_failure": false,
+      "exit_code": 0,
+      "tail": "ALL PASS"
+    }
+  ],
+  "applied": 12,
+  "killed": 11,
+  "survivors": [
+    "B-6-per-seed-delta-inside-tolerance"
+  ],
+  "unexpected_survivors": []
+}

@@ -1,0 +1,37 @@
+            KILLED  A-R1-ratio-into-per-seed-delta  [A] (must be killed)
+                    by: FAIL  CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 1.70e+02
+            KILLED  A-R2-ratio-into-per-seed-g-scaled  [A] (must be killed)
+                    by: FAIL  CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 1.71e+02
+            KILLED  A-R3-per-seed-g-rescaled  [A] (must be killed)
+                    by: FAIL  CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 8.77e+00
+            KILLED  A-R6-ratio-via-np-divide  [A] (must be killed)
+                    by: FAIL  CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 1.70e+02
+            KILLED  A-NEW2-cv-before-constant  [A] (must be killed)
+                    by: FAIL  F-1: cv_sigma_before is a genuine CV of this archive   123456.000000000
+                    by: FAIL  F-1: a zero-mean sigma gives NaN, explicitly and with no epsilon added
+            KILLED  A-NEW3-empty-guard-removed  [A] (must be killed)
+                    killed by an unhandled exception, not a named FAIL line
+            KILLED  B-1-per-seed-g-and-gs-swapped  [B] (must be killed)
+                    by: FAIL  CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 1.93e+01
+                    by: FAIL  CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 1.93e+01
+            KILLED  B-2-per-seed-vectors-reversed  [B] (must be killed)
+                    by: FAIL  CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 1.95e+01
+                    by: FAIL  CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 1.80e+01
+                    by: FAIL  CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 2.31e+01
+            KILLED  B-3-per-seed-rounded-1e6  [B] (must be killed)
+                    by: FAIL  CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 3.54e-07
+                    by: FAIL  CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 4.61e-07
+                    by: FAIL  CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 4.26e-07
+            KILLED  B-4-slots-counted-as-distinct  [B] (must be killed)
+                    by: FAIL  a repeated index counts twice
+                    by: FAIL  F-5: multiplicity is preserved in the slot count
+            KILLED  B-5-slots-off-by-one  [B] (must be killed)
+                    by: FAIL  CONFORMANCE: n_question_slots matches the reference
+                    by: FAIL  aggregate divides by the number of selected SLOTS
+                    by: FAIL  a repeated index counts twice
+  *** SURVIVES ***  B-6-per-seed-delta-inside-tolerance  [B] (EXPECTED TO SURVIVE - not a defect)
+
+12 of 12 mutants applied; 11 killed; 1 survived
+survivors: ['B-6-per-seed-delta-inside-tolerance']
+UNEXPECTED survivors (would be a finding): []
+SCOPE: a kill is evidence about that one fault variant and nothing more. Nothing here shows the core or the suite to be correct.

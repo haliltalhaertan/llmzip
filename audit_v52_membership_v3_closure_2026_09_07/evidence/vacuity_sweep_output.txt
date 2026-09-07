@@ -1,0 +1,42 @@
+====================================================================================================
+FILE: C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\auditv3\base\drafts\v52\membership_impl_v3_2026_09_07\test_membership_scaling_core.py
+  check() calls: 64    expect_violation() calls: 28    total assertions: 92
+  preparer's own sweep predicate over this file reports lines: NONE
+
+  [V2] line 59: bare constant condition False - always fails
+         False
+  [V2] line 158: bare constant condition True - always passes
+         True
+  [V2] line 163: bare constant condition True - always passes
+         True
+  [V2] line 214: bare constant condition True - always passes
+         True
+  [V2] line 234: bare constant condition True - always passes
+         True
+  [V2] line 253: bare constant condition True - always passes
+         True
+  [V7] line 152: literal `or True` / `and True` in code
+         bool([1 for _n in ast.walk(ast.parse("check('x', a > 0 or True)"))
+
+====================================================================================================
+FILE: C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\auditv3\v2check\test_v2.py
+  check() calls: 59    expect_violation() calls: 26    total assertions: 85
+  preparer's own sweep predicate over this file reports lines: [132]
+
+  [V1] line 132: boolean expression with a literal True operand
+         abs(diag["cv_sigma_before"] - float(Cdeg.std(axis=0, ddof=0).std(ddof=0) / Cdeg.std(axis=0, ddof=0).mean())) > 0       or True
+  [V2] line 46: bare constant condition False - always fails
+         False
+  [V2] line 101: bare constant condition True - always passes
+         True
+  [V2] line 106: bare constant condition True - always passes
+         True
+  [V2] line 150: bare constant condition True - always passes
+         True
+  [V2] line 170: bare constant condition True - always passes
+         True
+  [V2] line 189: bare constant condition True - always passes
+         True
+  [V7] line 133: literal `or True` / `and True` in code
+         or True)
+

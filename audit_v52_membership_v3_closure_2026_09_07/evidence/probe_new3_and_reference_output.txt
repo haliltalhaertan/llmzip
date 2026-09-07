@@ -1,0 +1,57 @@
+====================================================================================================
+PART 1 - build_clusters boundary probes (CRITERION 3 / NEW-3)
+====================================================================================================
+build_clusters([], 0)                     the exact NEW-3 case
+    -> DesignViolation
+       'cluster grouping needs at least one question, got n_questions=0' raised at membership_scaling_core.py:394
+build_clusters([], -1)                    negative count, empty labels
+    -> DesignViolation
+       'cluster grouping needs at least one question, got n_questions=-1' raised at membership_scaling_core.py:394
+build_clusters([], -7)                    negative count, empty labels
+    -> DesignViolation
+       'cluster grouping needs at least one question, got n_questions=-7' raised at membership_scaling_core.py:394
+build_clusters([], 3)                     empty labels, POSITIVE count
+    -> DesignViolation
+       'cluster labels do not cover the questions one to one: 0 labels, 3 questions' raised at membership_scaling_core.py:397
+build_clusters(['A','B'], 0)              non-empty labels, zero count
+    -> DesignViolation
+       'cluster grouping needs at least one question, got n_questions=0' raised at membership_scaling_core.py:394
+build_clusters(['A','B'], -2)             non-empty labels, negative count
+    -> DesignViolation
+       'cluster grouping needs at least one question, got n_questions=-2' raised at membership_scaling_core.py:394
+build_clusters(['A'], 1)                  the minimal VALID case
+    -> RETURNED
+       n_clusters=1 covered=1
+build_clusters(['A','B'], 2)              a valid two-singleton case
+    -> RETURNED
+       n_clusters=2 covered=2
+build_clusters(['A','A'], 2)              a valid one-cluster case
+    -> RETURNED
+       n_clusters=1 covered=2
+
+Additional probe: a non-iterable first argument, which reaches list() before the guard.
+build_clusters(None, 0) -> *** TypeError (NOT a named violation) *** "'NoneType' object is not iterable" at membership_scaling_core.py:389
+build_clusters(3, 0) -> *** TypeError (NOT a named violation) *** "'int' object is not iterable" at membership_scaling_core.py:389
+
+Probe: the public path that reaches build_clusters with n_questions = 0.
+cluster_bootstrap on an EMPTY g -> DesignViolation 'cluster grouping needs at least one question, got n_questions=0'
+
+====================================================================================================
+PART 2 - is the conformance reference independent of the core? (CRITERION 1)
+====================================================================================================
+reference_quantities: lines 69-88
+  free/local Names touched : ['D_seeds', 'GS_seeds', 'G_seeds', 'by_arm_fractions', 'g', 'g_k', 'gs', 'gs_k', 'k', 'n_k', 'n_q', 'q', 'range', 'sum', 'zip']
+  attribute accesses       : ['GS_seeds.append', 'G_seeds.append']
+  functions called         : ['append', 'range', 'sum', 'zip']
+  references to the core module object `m` : NONE
+  imports numpy?           : False
+
+VERDICT (mechanical): the reference is independent of the core iff the line above is NONE and it calls no core function.
+
+Cross-check: the fixture the reference is fed vs the fixture the core is fed.
+  line 92: frac = {a: [[float(rng0.uniform(0.05, 0.95)) for _ in range(NK)] for _ in range(NQ)] for a in m.ARMS}
+  line 94: recs_c = [{"question_id": qids_c[q], "rotation_seed": m.ROTATION_SEEDS[k], "arm": a,
+           "fractional_R3": frac[a][q][k]}
+          for q in ran
+  line 98: agg_c = m.aggregate(g_c, gs_c)
+  line 99: ref = reference_quantities(frac, NQ, NK)
