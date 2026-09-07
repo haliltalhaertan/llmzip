@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T14:26:00Z",
+  "issued_at_utc": "2026-09-07T18:32:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher decision on commissioning an INDEPENDENT IMPLEMENTATION REVIEW of impl/v52-membership-under-scaling-2026-09-07, by a session that did not write it. The preparer may not review its own implementation. Nothing is sealed and real-data execution remains off by default and unauthorized. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the commissioned CLOSURE CHECK of candidate v2, scoped to the corrections and the core behaviours they could affect. Hash-verify its pushed report against its sidecar before recording any verdict. Do not seal, do not write the corpus-bound runner, and do not run anything: closing the core does not authorize the experiment. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-068",
+  "ledger_entry": "L-069",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1124,5 +1124,51 @@
     "refusals_tested": "missing, duplicated, NaN, out-of-range, unknown-arm, unknown-seed and malformed records each raise; result files are never overwritten silently; the matched-Q, identity, orthogonality, invariance, partition and linearity checks are each shown able to fail",
     "defect_found_in_this_preparation_and_disclosed": "DEGENERATE_FLAG_THRESHOLD was DEAD CODE standing in for a design requirement - the degenerate-coordinate count was recorded but the per-archive FLAG that R1 section 1 requires was never applied. Fixed by returning a diagnostics dictionary from scale_matrix carrying count AND flag together so a caller cannot record one and forget the other, with tests that the flag fires above 4 and does not fire at 3.",
     "not_validated": "anything requiring a corpus; no pipeline executed end to end; no real retrieval; no real-data bootstrap; the corpus-bound runner is NOT written because writing it is not authorized at this stage; tests ran on this machine's Python and NumPy rather than the pinned research stack, which is an inference and not a run"
+  },
+  "membership_impl_review_2026_09_07": {
+    "branch": "audit/v52-membership-impl-review-2026-09-07",
+    "commit": "68819424765ed3da89377c89980d7e42546bfe02",
+    "parent": "9b4af5949c4dc0e5054f8f522f1952ec47513f8f",
+    "report_sha256": "e245f0da2b0577f8940dfd906746f618638b45481280f93facb1774270bc3e98",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "15 files, all under audit_v52_membership_impl_review_2026_09_07/; zero outside",
+    "verdict": "PASS WITH FINDINGS - computation core only; the corpus-bound runner is neither reviewed nor approved",
+    "areas": "A formulas/pp unit PASS; B pairing PASS; C scaling PASS WITH FINDINGS; D multiplicity/denominator PASS; E rejection/output/gates PASS WITH FINDINGS; F tests and forbidden apparatus PASS WITH FINDINGS",
+    "blockers": [
+      "F-1 cv_sigma_after was a standard deviation, not a CV",
+      "F-2 cluster labels validated only for length, so a NaN label made an EMPTY cluster that silently dropped questions from numerator and slot denominator"
+    ],
+    "findings_about_the_preparers_evidence": "F-4 the forbidden-token self-check is NOT sound - a genuine Delta/G ratio named relative_change passed all 74 checks; F-5 the cluster-multiplicity fixture could not distinguish slot-weighting from distinct-question weighting while the README claimed it did; mutation score reviewer 13/13 against preparer 7/13, and one preparer check (spans_zero in (True, False)) asserted nothing at all",
+    "crlf_hazard_demonstrated": "the acceptance record's blob is a99d547d but the same file checked out on a Windows clone hashes 91380902"
+  },
+  "membership_impl_candidate_v2_2026_09_07": {
+    "branch": "impl/v52-membership-under-scaling-v2-2026-09-07",
+    "commit": "8179ce31afc8ec9a2469c801a0a5e022b4494518",
+    "namespace": "drafts/v52/membership_impl_v2_2026_09_07/",
+    "core_sha256": "60141d05f2285d268a88d98344770c8cb5d166168a6fa29371a1ea330db0a1e1",
+    "tests_sha256": "a0e9cc27191e3c7a9683cbd94007c17c9c6666eb8bea1a78f40e7ec09ce3ec12",
+    "status": "IMPLEMENTATION PREPARATION - NOT INDEPENDENTLY REVIEWED; the preparer may not call it reviewed",
+    "v1_and_audit_untouched": "v1 candidate core stays 707e166c80d9231d and the audit namespace is byte-unchanged; v2 is a separate versioned namespace",
+    "blockers_closed": {
+      "F-1": "cv_sigma_after is now a genuine CV (spread/mean) via a shared _cv helper. NO epsilon is added and the definition is not weakened: a zero mean returns NaN, tested on an all-zero archive. The v1 quantity is still published under its true name sd_sigma_after, so nothing is silently dropped.",
+      "F-2": "build_clusters validates BEFORE grouping - None, NaN, bool, unsupported types and MIXED label kinds are rejected rather than coerced, because coercion would merge 1 with '1' or split one conversation - requires every cluster non-empty, and PROVES the partition. Diagnostics separate questions_lost_to_invalid_labels (structurally 0) from mean_clusters_not_drawn_per_replicate (ordinary resampling)."
+    },
+    "other_findings_closed": "F-3 named violation for duplicate ids; F-6 gate reads the module global at call time; F-7/F-8 index dtype and range validated so negatives no longer wrap; F-9 boolean scores rejected; F-10 archives under two rows rejected; F-11 the no-op replace, dead conditional and vacuous assertion removed and spans_zero asserted is-True and is-False on separate fixtures",
+    "deliberately_not_acted_on": "F-12 - binding section 6 fixes an ABSOLUTE 1e-12 tolerance and says a relative form needs a new decision; the review's measured worst case 5.116e-14 (about 19.5x headroom) is recorded in LINEARITY_HEADROOM_NOTE instead",
+    "F_4_answered_by_dropping_the_claim_not_patching_the_scan": "a word scan cannot see a quantity spelled differently and AST enumeration is NOT a proof; both are stated as such. The primary guarantee is a CONFORMANCE test against an independent reference implementation written from the design text, plus a CLOSED output schema - which is what kills the reviewer's relative_change mutation",
+    "evidence": "88 synthetic checks ALL PASS; 16 mutation probes re-anchored from the reviewer's script with attribution, 15 killed",
+    "kill_count_scope": "evidence that the suite catches exactly these 16 fault variants; NOT a correctness guarantee and not to be reported as one",
+    "expected_survivor": "M16 removes the partition-coverage guard, which is UNREACHABLE through the public API because label validation precedes it. A mutation test cannot kill an unreachable guard; its survival is defence in depth, not a hole, and it is reported rather than removed or papered over with a monkeypatching test.",
+    "defect_in_the_preparers_own_probe_disclosed": "my first re-anchoring of the reviewer's M3 computed the cluster average into an UNUSED variable, so it mutated nothing and reported a FALSE hole in the suite. The probe was repaired to replace the assignment actually used; M3 is now killed. Both the error and the repair are recorded in the script.",
+    "runner_obligations_carried_forward": "N-2 the bootstrap seed must be preregistered; N-3 the LongMemEval inheritance tag must be emitted and cluster-bootstrapping LongMemEval prevented; N-4 the identical D must be applied to the query with nothing estimated from it",
+    "not_validated": "anything requiring a corpus; the corpus-bound runner is NOT written; tests ran on this machine's Python and NumPy, not the pinned research stack"
+  },
+  "process_incident_2026_09_07": {
+    "what": "a blanket __pycache__ cleanup in the v2 worktree deleted a TRACKED .pyc file inside task4f1_execution_candidate_2026_08_31/, a Task 4F1 namespace",
+    "scope": "worktree only; the file was never staged, never committed and never pushed",
+    "proof": "the pushed v2 commit changes exactly 7 files, all under drafts/v52/membership_impl_v2_2026_09_07/; the blob b9b8a3e435b2b167c3d8364193ad0c48f0306e71 is identical at a6d70ff and at the v2 head, and the restored worktree file hashes to it",
+    "remedy": "git checkout -- task4f1_execution_candidate_2026_08_31/; worktree verified clean",
+    "rule_recorded": "never run a recursive delete across a checkout that contains sealed or Task 4F1 namespaces; scope cleanup to the working directory being prepared"
   }
 }
