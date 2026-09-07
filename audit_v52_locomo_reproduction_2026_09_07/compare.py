@@ -57,6 +57,10 @@ def main():
         assert {int(r['rotation_seed']) for r in rows}==set(range(59001,59011))
         assert len({r['question_id'] for r in rows})==1535
     result={'controls':tests,**compare_rows(rows_a,rows_b),'compressed_bytes_equal':x==y,'decompressed_csv_bytes_equal':a==b,'original_sha256':hashlib.sha256(x).hexdigest(),'reproduction_sha256':hashlib.sha256(y).hexdigest(),'original_csv_sha256':hashlib.sha256(a).hexdigest(),'reproduction_csv_sha256':hashlib.sha256(b).hexdigest(),'limitation':'Only persisted question scores and metadata are compared; retrieval top-three document IDs were not persisted.'}
+    result['csv_after_crlf_to_lf_equal']=a.replace(b'\r\n',b'\n')==b.replace(b'\r\n',b'\n')
+    result['csv_line_endings']={'original_crlf':a.count(b'\r\n'),'reproduction_crlf':b.count(b'\r\n'),'original_lf':a.count(b'\n'),'reproduction_lf':b.count(b'\n')}
+    result['csv_columns']=list(rows_a[0])
+    result['gzip_header']={'original_first_10_bytes_hex':x[:10].hex(),'reproduction_first_10_bytes_hex':y[:10].hex(),'original_mtime':int.from_bytes(x[4:8],'little'),'reproduction_mtime':int.from_bytes(y[4:8],'little')}
     sa=p.parent/'locomo_scale_summary.json'; sb=q.parent/'locomo_scale_summary.json'
     if sa.exists() and sb.exists():
         result['summary_differences']=summary_differences(json.loads(sa.read_bytes()),json.loads(sb.read_bytes()))

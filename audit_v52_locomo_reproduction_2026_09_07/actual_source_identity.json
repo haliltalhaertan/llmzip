@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "file": "locomo10.json",
+      "bytes": 2805274,
+      "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4"
+    },
+    {
+      "file": "audit/conv_0.json",
+      "bytes": 395163,
+      "sha256": "697a996db06a90500bafbf21c96f5170eafc8377eef632278b7a4b841ae15c39"
+    },
+    {
+      "file": "audit/conv_1.json",
+      "bytes": 267513,
+      "sha256": "5b0a9a79e623e810a1e9a577d457ac99465e96e7c9cce58f593612d73350c34a"
+    },
+    {
+      "file": "audit/conv_2.json",
+      "bytes": 526311,
+      "sha256": "476d9bcdaddfc2c5c0caeed21c48b2bedb8fe687772c25f6f98e4c5a63ce1e8a"
+    },
+    {
+      "file": "audit/conv_3.json",
+      "bytes": 584086,
+      "sha256": "5c565f4efa6dbea4650a5f62eb04dea4b10fec713b984746ae5ca38df05a4754"
+    },
+    {
+      "file": "audit/conv_4.json",
+      "bytes": 571480,
+      "sha256": "609f74bfad9de7719ef170e21ea140a24b20c0bf278ab9db215c4a26705e874d"
+    },
+    {
+      "file": "audit/conv_5.json",
+      "bytes": 528568,
+      "sha256": "98c28de0c42795f2b67c85cc5a804191dee1a701959197c3167a2748b9260793"
+    },
+    {
+      "file": "audit/conv_6.json",
+      "bytes": 499707,
+      "sha256": "5f7f9182f5e7dd842488292acf340e24ff773790e720a212433e4c047875c9b1"
+    },
+    {
+      "file": "audit/conv_7.json",
+      "bytes": 551155,
+      "sha256": "84c53ec1b89b8846be2fd9146269a523fcc5542223344b517aa3757ac3a9fa88"
+    },
+    {
+      "file": "audit/conv_8.json",
+      "bytes": 489039,
+      "sha256": "b2f301735825844b7bf71816eae4e16983854edc80898a8a578e3a78963215e9"
+    },
+    {
+      "file": "audit/conv_9.json",
+      "bytes": 500515,
+      "sha256": "0f9775daf3bc6f9a6b8672aadbbf65f7e15947c5c1cb92d151306f1406d00a9d"
+    },
+    {
+      "file": "audit/errors_conv_0.json",
+      "bytes": 24365,
+      "sha256": "63c778c8432b058d791417ec37bf8ac30b0bb83b1272afacb5a162b84fe5e3c4"
+    },
+    {
+      "file": "audit/errors_conv_1.json",
+      "bytes": 7746,
+      "sha256": "a2db16644318c3c144544f4cb373028e416bbf20c6f07f46606cf66f45de4e6c"
+    },
+    {
+      "file": "audit/errors_conv_2.json",
+      "bytes": 11824,
+      "sha256": "93c2aa8ee7d3bfb59ae1cca283d176a794d76d3751c69264ddc1f63ceb2b4b3a"
+    },
+    {
+      "file": "audit/errors_conv_3.json",
+      "bytes": 23508,
+      "sha256": "c1d0162e534bf68dba6aff3ca3e73ba8179cab7a400d098b8be89048c7b58585"
+    },
+    {
+      "file": "audit/errors_conv_4.json",
+      "bytes": 15447,
+      "sha256": "42520f95b654c85b564da6cd26f40cefb981de574066f7b92bdebbc780fa1376"
+    },
+    {
+      "file": "audit/errors_conv_5.json",
+      "bytes": 9934,
+      "sha256": "af8c675a3e216ddb94e07c417fb37c45fc46740dfa8ce586fc8c527f7a3b9ee7"
+    },
+    {
+      "file": "audit/errors_conv_6.json",
+      "bytes": 14435,
+      "sha256": "acb6d0d02f938180b3d1a7a45f80d432ece69d13b197371cb71ddbddb83a26ea"
+    },
+    {
+      "file": "audit/errors_conv_7.json",
+      "bytes": 12048,
+      "sha256": "bbe2268a3254dcc9d3741a84748fadf8e169d21d837810e92dc63cdf8db562cb"
+    },
+    {
+      "file": "audit/errors_conv_8.json",
+      "bytes": 15587,
+      "sha256": "c15ace8ef1a7cbf3fe63d3b7ff9c2851885f5e00abc1c184971ebb11128aedb2"
+    },
+    {
+      "file": "audit/errors_conv_9.json",
+      "bytes": 15645,
+      "sha256": "2c2b8791d024e11ca6015a109f160b7177379b3b42ac8c9adb990546fc89c4ff"
+    }
+  ]
+}

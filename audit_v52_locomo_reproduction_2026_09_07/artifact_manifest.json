@@ -1,0 +1,103 @@
+{
+  "algorithm": "SHA-256",
+  "excludes": [
+    "artifact_manifest.json"
+  ],
+  "files": [
+    {
+      "path": "actual_source_identity.json",
+      "bytes": 3437,
+      "sha256": "ecb8384624aee0cc3cc11830e547c2f8f02a7a0f43a0f2894e3d9bec0226a28f"
+    },
+    {
+      "path": "collect_verify.py",
+      "bytes": 2002,
+      "sha256": "239871daba1858a7b6f738179e0fce2b8f2dcdfed4ab058e1d65c8092b0b17c1"
+    },
+    {
+      "path": "compare.py",
+      "bytes": 4850,
+      "sha256": "97b0762232715df37165ec562523b06d1bb42719455c1a78ffcfb2235e042077"
+    },
+    {
+      "path": "comparison.json",
+      "bytes": 6449,
+      "sha256": "fd810fd26d3f1f450419afbdac69675c6ad2caf0517239580ac7fd25dd321e61"
+    },
+    {
+      "path": "comparison_stdout_stderr.txt",
+      "bytes": 5876,
+      "sha256": "e4b9ccae8f890cd483f6e1208edf95bdbe7f44d39ee42065730ad209934922e8"
+    },
+    {
+      "path": "environment.txt",
+      "bytes": 201,
+      "sha256": "52efac8984648a718ffb467e8b436b717b28b1050fb668232a8cd8d6a68a8480"
+    },
+    {
+      "path": "invoke_once.py",
+      "bytes": 2738,
+      "sha256": "5aa40ae50f85034ab0a7f6a9e9959ba2f1bdfa4d9ee17b7857ed8dd2c5d4b018"
+    },
+    {
+      "path": "make_manifest.py",
+      "bytes": 664,
+      "sha256": "5f5b186e563c651b2657e10e00d65af828dff19c7a34a57640e32105af3e7582"
+    },
+    {
+      "path": "numerical_configuration.txt",
+      "bytes": 5790,
+      "sha256": "a2982ffcaec249de5a497851404026ca5ec1b07ce4b108b69821b166e918ab77"
+    },
+    {
+      "path": "preflight.json",
+      "bytes": 7794,
+      "sha256": "134acfc12fbebabf8044a1742a064aca710680b6051d41e6674f7d9613a6557f"
+    },
+    {
+      "path": "preflight.py",
+      "bytes": 3995,
+      "sha256": "2537b58effcdad8bf4630970cc224f78590579c5c9adabfa27b00a31c8d30398"
+    },
+    {
+      "path": "pure_function_tests.txt",
+      "bytes": 1610,
+      "sha256": "03e717ea39f50f85c46cc65d0fcd1f3a598b6d33ba04b9763fb02e95e1b73177"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2892,
+      "sha256": "0a22647ecafdc929102dc69e5b23413e736aba878fdd6dbe37a4d452dc9f77f7"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 7318,
+      "sha256": "db3274ff512488affe66636fa84004555d2f20e48cba027f9805fc3becd1fef8"
+    },
+    {
+      "path": "reproduced_outputs/locomo_scale_per_question.csv.gz",
+      "bytes": 278643,
+      "sha256": "efed0c46cd0f34e45daa5fcdf5d08fc51a61ffaafd6ca1d522c6c4c98fc7834f"
+    },
+    {
+      "path": "reproduced_outputs/locomo_scale_summary.json",
+      "bytes": 6559,
+      "sha256": "74f533780d1174b31fe40fa45f77e98ca293e3a441c344cef9bc50bdfa40e19d"
+    },
+    {
+      "path": "run_receipt.json",
+      "bytes": 1703,
+      "sha256": "16377289db132cfdab3a5997d5eb07848b611b3fa2b74fc3b8d65a5d93485d0b"
+    },
+    {
+      "path": "runner_stdout_stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "setup_history.md",
+      "bytes": 2246,
+      "sha256": "d71c07c36467498650b0ffcb40e57ee9b13272189860510620c41e4655c30c4f"
+    }
+  ]
+}

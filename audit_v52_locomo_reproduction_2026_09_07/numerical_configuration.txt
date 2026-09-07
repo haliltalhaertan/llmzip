@@ -1,0 +1,172 @@
+C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\locomo_reproduction_tmp_20260907\venv\Lib\site-packages\numpy\__config__.py:155: UserWarning: Install `pyyaml` for better output
+  warnings.warn("Install `pyyaml` for better output", stacklevel=1)
+C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\locomo_reproduction_tmp_20260907\venv\Lib\site-packages\scipy\__config__.py:166: UserWarning: Install `pyyaml` for better output
+  warnings.warn("Install `pyyaml` for better output", stacklevel=1)
+{
+  "Compilers": {
+    "c": {
+      "name": "msvc",
+      "linker": "link",
+      "version": "19.44.35219",
+      "commands": "cl"
+    },
+    "cython": {
+      "name": "cython",
+      "linker": "cython",
+      "version": "3.2.1",
+      "commands": "cython"
+    },
+    "c++": {
+      "name": "msvc",
+      "linker": "link",
+      "version": "19.44.35219",
+      "commands": "cl"
+    }
+  },
+  "Machine Information": {
+    "host": {
+      "cpu": "x86_64",
+      "family": "x86_64",
+      "endian": "little",
+      "system": "windows"
+    },
+    "build": {
+      "cpu": "x86_64",
+      "family": "x86_64",
+      "endian": "little",
+      "system": "windows"
+    }
+  },
+  "Build Dependencies": {
+    "blas": {
+      "name": "scipy-openblas",
+      "found": true,
+      "version": "0.3.30",
+      "detection method": "pkgconfig",
+      "include directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-tire4up4/cp313-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/include",
+      "lib directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-tire4up4/cp313-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/lib",
+      "openblas configuration": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+      "pc file directory": "D:/a/numpy-release/numpy-release/.openblas"
+    },
+    "lapack": {
+      "name": "scipy-openblas",
+      "found": true,
+      "version": "0.3.30",
+      "detection method": "pkgconfig",
+      "include directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-tire4up4/cp313-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/include",
+      "lib directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-tire4up4/cp313-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/lib",
+      "openblas configuration": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+      "pc file directory": "D:/a/numpy-release/numpy-release/.openblas"
+    }
+  },
+  "Python Information": {
+    "path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\build-env-d_fxr4of\\Scripts\\python.exe",
+    "version": "3.13"
+  },
+  "SIMD Extensions": {
+    "baseline": [
+      "SSE",
+      "SSE2",
+      "SSE3"
+    ],
+    "found": [
+      "SSSE3",
+      "SSE41",
+      "POPCNT",
+      "SSE42",
+      "AVX",
+      "F16C",
+      "FMA3",
+      "AVX2"
+    ],
+    "not found": [
+      "AVX512F",
+      "AVX512CD",
+      "AVX512_SKX",
+      "AVX512_CLX",
+      "AVX512_CNL",
+      "AVX512_ICL"
+    ]
+  }
+}
+{
+  "Compilers": {
+    "c": {
+      "name": "gcc",
+      "linker": "ld.bfd",
+      "version": "10.3.0",
+      "commands": "C:\\Strawberry\\c\\bin\\ccache.EXE, cc"
+    },
+    "cython": {
+      "name": "cython",
+      "linker": "cython",
+      "version": "3.2.4",
+      "commands": "cython"
+    },
+    "c++": {
+      "name": "gcc",
+      "linker": "ld.bfd",
+      "version": "10.3.0",
+      "commands": "C:\\Strawberry\\c\\bin\\ccache.EXE, c++"
+    },
+    "fortran": {
+      "name": "gcc",
+      "linker": "ld.bfd",
+      "version": "10.3.0",
+      "commands": "gfortran"
+    },
+    "pythran": {
+      "version": "0.18.1",
+      "include directory": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\build-env-536rtmwi\\Lib\\site-packages/pythran"
+    }
+  },
+  "Machine Information": {
+    "host": {
+      "cpu": "x86_64",
+      "family": "x86_64",
+      "endian": "little",
+      "system": "windows"
+    },
+    "build": {
+      "cpu": "x86_64",
+      "family": "x86_64",
+      "endian": "little",
+      "system": "windows"
+    },
+    "cross-compiled": false
+  },
+  "Build Dependencies": {
+    "blas": {
+      "name": "scipy-openblas",
+      "found": true,
+      "version": "0.3.30",
+      "detection method": "pkgconfig",
+      "include directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-fx8djanr/cp313-win_amd64/build/venv/Lib/site-packages/scipy_openblas32/include",
+      "lib directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-fx8djanr/cp313-win_amd64/build/venv/Lib/site-packages/scipy_openblas32/lib",
+      "openblas configuration": "OpenBLAS 0.3.30 DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+      "pc file directory": "D:/a/scipy/scipy",
+      "has ilp64": false
+    },
+    "lapack": {
+      "name": "scipy-openblas",
+      "found": true,
+      "version": "0.3.30",
+      "detection method": "pkgconfig",
+      "include directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-fx8djanr/cp313-win_amd64/build/venv/Lib/site-packages/scipy_openblas32/include",
+      "lib directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-fx8djanr/cp313-win_amd64/build/venv/Lib/site-packages/scipy_openblas32/lib",
+      "openblas configuration": "OpenBLAS 0.3.30 DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+      "pc file directory": "D:/a/scipy/scipy",
+      "has ilp64": false
+    },
+    "pybind11": {
+      "name": "pybind11",
+      "version": "3.0.1",
+      "detection method": "config-tool",
+      "include directory": "unknown"
+    }
+  },
+  "Python Information": {
+    "path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\build-env-536rtmwi\\Scripts\\python.exe",
+    "version": "3.13"
+  }
+}

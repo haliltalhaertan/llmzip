@@ -1,0 +1,37 @@
+{
+  "status": "COMPLETED",
+  "invocation_count": 1,
+  "utc_start": "2026-09-07T11:47:59.658317+00:00",
+  "gate_sha256": "134acfc12fbebabf8044a1742a064aca710680b6051d41e6674f7d9613a6557f",
+  "published_gate_receipt_commit": "d1d169f9104ff4dad7415ed68df02bc954730286",
+  "command": [
+    "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\sealed_source\\locomo_coordinate_scale.py",
+    "--out",
+    "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\reproduction_output"
+  ],
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "returncode": 0,
+  "elapsed_seconds": 59.308709000004455,
+  "utc_finish": "2026-09-07T11:49:00.715486+00:00",
+  "outputs": [
+    {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\reproduction_output\\locomo_scale_per_question.csv.gz",
+      "bytes": 278643,
+      "sha256": "efed0c46cd0f34e45daa5fcdf5d08fc51a61ffaafd6ca1d522c6c4c98fc7834f"
+    },
+    {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\reproduction_output\\locomo_scale_summary.json",
+      "bytes": 6559,
+      "sha256": "74f533780d1174b31fe40fa45f77e98ca293e3a441c344cef9bc50bdfa40e19d"
+    }
+  ]
+}

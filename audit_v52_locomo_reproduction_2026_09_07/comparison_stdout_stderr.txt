@@ -1,0 +1,155 @@
+{
+  "controls": {
+    "positive_control": "PASS",
+    "negative_controls": [
+      "numeric perturbation",
+      "duplicate key",
+      "missing row",
+      "wrong seed",
+      "NaN",
+      "metadata drift"
+    ],
+    "status": "ALL_REJECTED"
+  },
+  "max_absolute_numeric_difference": 0.0,
+  "changed_numeric_cells": 0,
+  "numeric_within_1e_12": true,
+  "rows": 92100,
+  "compressed_bytes_equal": false,
+  "decompressed_csv_bytes_equal": false,
+  "original_sha256": "b7abd942c13cf9ce1b1c4a13e3ff39fb26a26e8b2f2749dd92d76f0b2a474602",
+  "reproduction_sha256": "efed0c46cd0f34e45daa5fcdf5d08fc51a61ffaafd6ca1d522c6c4c98fc7834f",
+  "original_csv_sha256": "46c3a9ea2d6c7b4b954875704ca2a677a95ac5bc502b5a09b119cdc126921958",
+  "reproduction_csv_sha256": "ff577b5542e835de6e37aad4c96f3ac38b6f7ed213e1c4ef1917f30c59b4d5c9",
+  "limitation": "Only persisted question scores and metadata are compared; retrieval top-three document IDs were not persisted.",
+  "summary_differences": [
+    {
+      "path": "/controls/within_representation_dot_max_abs_error",
+      "original": 1.1368683772161603e-13,
+      "reproduction": 1.2789769243681803e-13,
+      "absolute_difference": 1.4210854715202004e-14
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/0/cv_sigma_before",
+      "original": 0.4547955879223498,
+      "reproduction": 0.4547955879223496,
+      "absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/0/cv_sigma_after",
+      "original": 3.771763847663369e-16,
+      "reproduction": 3.4200606031051284e-16,
+      "absolute_difference": 3.5170324455824054e-17
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/1/cv_sigma_before",
+      "original": 0.43834185442889695,
+      "reproduction": 0.438341854428897,
+      "absolute_difference": 5.551115123125783e-17
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/1/cv_sigma_after",
+      "original": 3.815760786470701e-16,
+      "reproduction": 3.3537189618722464e-16,
+      "absolute_difference": 4.620418245984548e-17
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/2/cv_sigma_before",
+      "original": 0.4986106809808875,
+      "reproduction": 0.4986106809808873,
+      "absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/2/cv_sigma_after",
+      "original": 4.071343396803174e-16,
+      "reproduction": 5.579952278851524e-16,
+      "absolute_difference": 1.5086088820483503e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/3/cv_sigma_before",
+      "original": 0.4930503456709179,
+      "reproduction": 0.49305034567091743,
+      "absolute_difference": 4.440892098500626e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/3/cv_sigma_after",
+      "original": 5.777783805466599e-16,
+      "reproduction": 4.2834206661883053e-16,
+      "absolute_difference": 1.4943631392782936e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/4/cv_sigma_before",
+      "original": 0.5004035974473754,
+      "reproduction": 0.5004035974473755,
+      "absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/4/cv_sigma_after",
+      "original": 5.294213865845955e-16,
+      "reproduction": 5.38439090608299e-16,
+      "absolute_difference": 9.017704023703491e-18
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/5/cv_sigma_before",
+      "original": 0.4948406907607563,
+      "reproduction": 0.49484069076075604,
+      "absolute_difference": 2.7755575615628914e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/5/cv_sigma_after",
+      "original": 4.763134970256631e-16,
+      "reproduction": 5.195064801072886e-16,
+      "absolute_difference": 4.319298308162554e-17
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/6/cv_sigma_before",
+      "original": 0.5017819578167749,
+      "reproduction": 0.5017819578167751,
+      "absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/6/cv_sigma_after",
+      "original": 4.620837945305284e-16,
+      "reproduction": 5.275993504817538e-16,
+      "absolute_difference": 6.551555595122538e-17
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/7/cv_sigma_before",
+      "original": 0.5084442294219229,
+      "reproduction": 0.5084442294219231,
+      "absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/7/cv_sigma_after",
+      "original": 4.772560264220842e-16,
+      "reproduction": 5.230778598187973e-16,
+      "absolute_difference": 4.582183339671307e-17
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/8/cv_sigma_before",
+      "original": 0.47077327135038843,
+      "reproduction": 0.4707732713503882,
+      "absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/8/cv_sigma_after",
+      "original": 4.2472984133949324e-16,
+      "reproduction": 3.9772232285729824e-16,
+      "absolute_difference": 2.7007518482195007e-17
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/9/cv_sigma_before",
+      "original": 0.4858445043585008,
+      "reproduction": 0.4858445043585009,
+      "absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "path": "/diagnostics/cv_sigma_per_archive/9/cv_sigma_after",
+      "original": 4.546608413945095e-16,
+      "reproduction": 4.74963781937695e-16,
+      "absolute_difference": 2.0302940543185478e-17
+    }
+  ],
+  "summary_original_sha256": "f878e19a091d0bccbf835231449debbb6f8299bc2dd8f81198891e322c9a9b0e",
+  "summary_reproduction_sha256": "74f533780d1174b31fe40fa45f77e98ca293e3a441c344cef9bc50bdfa40e19d"
+}
