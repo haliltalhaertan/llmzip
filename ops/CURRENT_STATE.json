@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T13:49:00Z",
+  "issued_at_utc": "2026-09-07T13:59:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher decision on the next research question, against the decision note: take up Option A (mechanism decomposition inside the current representation, recommended), or Option B (generalisability across representations, deferred because it is not yet well posed - it must first settle whether a reduction step is kept, and needs a feasibility check on encoding cost), or defer both. No experiment is authorized. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher review of the Option A preregistration DRAFT. Accepting the design is a separate decision from sealing it, which is separate again from implementing runners, from triggering, and from the audit that would follow. Nothing is authorized to run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-064",
+  "ledger_entry": "L-065",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1010,5 +1010,27 @@
     "what_survives": "the conceptual point, on different evidence: averaging ten ratios whose denominators change sign within their own envelope is a fragile construction, which rests on deviation-register D4 (LoCoMo block per-seed denominators -0.0066 to +0.0164, per-seed fractions -3.40 to +2.64), not on the audit's error table. The DIRECTION survives too, because the fragility is a property of the block-arm denominator: it strengthens the refusal of the comparative claim whichever estimator is primary.",
     "no_ruling_changes": "A remains the preregistered estimand on the textual grounds of section 7, which never depended on numerical stability; estimator fragility is not evidence that a mechanism is absent",
     "supersedes": "the corresponding passage of docs/v52/V52_CLAUDE_TO_CODEX_HANDOVER_2026-09-07.md, which repeats the unsupported phrasing and is hash-bound and therefore not edited"
+  },
+  "membership_under_scaling_prereg_draft_2026_09_07": {
+    "path": "docs/v52/V52_MEMBERSHIP_UNDER_SCALING_PREREG_DRAFT_2026-09-07.md",
+    "sha256": "3da80e3424a8f29bcd85ad1c0d5f5b8e97dfba857fbaaf042b2b0d06301e3399",
+    "status": "DRAFT - NOT AUTHORIZED FOR EXECUTION; not accepted, not sealed, not triggered; no runner or workflow exists for it",
+    "authorization_in_force": "the Head Researcher approved preparation of a design and a preregistration draft ONLY - not acceptance of the draft, not sealing authority, not an implementation change, not permission to run",
+    "question": "After coordinate scales are equalised, does the spectral 32/64 split give different retrieval performance from a matched-size random split, and by how much less than it does unscaled?",
+    "follow_up_disclosure": "section 1 states that the design was written AFTER the coordinate-scale and boundary-localization results were read, lists what was already known to the author, and records that only the primary quantity is unknown",
+    "priority_argument": "expected information gain per unit of preparation cost. The draft explicitly does NOT claim this work is a precondition for the representation-generalisation question, which can be taken up independently at any time and is on its own merits the more important question.",
+    "order_of_operations_normative": "centre -> rescale -> rotate. Representation fitted on archive memory units only, query transformed by the already-fitted objects. D = diag(1/sigma) learned from the archive's own centered representation, never from queries, gold sets, outcomes or another archive. B32 membership is fixed by the SVD variance order; RANDOM32 membership is fixed by a partition seed with no data entering the choice. Scaling is applied before rotation and never between group selection and rotation; because D is diagonal, coordinate i remains coordinate i.",
+    "primary_estimand": "per rotation seed, G_s = R@3(B32_FRESH) - R@3(RANDOM32_FRESH) and G_scaled_s likewise for the scaled arms; Delta_s = G_scaled_s - G_s; the primary quantity is the seed-panel MEAN of Delta_s in percentage points, per-seed values reported. No division in the primary quantity. Aggregation order fixed in the text before any run: per seed, then averaged. Pairing at (question, rotation seed); scaled and unscaled partners share the identical rotation; B32 and RANDOM32 at the same seed share identical Q32/Q64 with maximum absolute difference exactly 0.0.",
+    "barred_as_primary": "any ratio whose denominator is the block loss R@3(NATIVE) - R@3(BLOCK32), the quantity that approached zero in the closed stage",
+    "decision_scale_and_its_preconditions": "bands applied to Delta_bar / G_bar, both measured IN THIS RUN; G_bar is the membership gap, a different quantity from the block loss. Cut points -0.20 and -0.60 inherited from the already-frozen 0.20/0.70 scale, with -0.60 looser than 0.70 because Delta is a difference of differences. Preconditions checked at run time on this run's own arms: G_s > 0 on every seed AND G_bar >= 2.0 pp, else the verdict is [WITHHELD - GAP SCALE UNSUITABLE] and Delta_bar is reported descriptively. The prior stage's 8.448609 pp and 13.203121 pp came from a DIFFERENT seed panel and are explicitly not a guarantee about this run.",
+    "what_may_not_carry_the_verdict": "the sign of Delta_bar; whether per-seed ranges overlap; a point estimate without its dispersion",
+    "uncertainty_discipline": "question-level paired bootstrap on both benchmarks and a conversation-clustered bootstrap on LoCoMo ONLY, both labelled sensitivity analyses rather than certified intervals, with the LoCoMo clustered bootstrap's ten clusters named as a stated limitation; no clustered bootstrap on LongMemEval, whose single-component finding is cited as inherited and provenance-verified rather than recomputed; seeds are a nuisance factor and not independent statistical units; two benchmarks reported separately and never pooled.",
+    "representation_vs_sampling_kept_separate": "printed-decimal versus exactly-computed differences, of order 1e-14 in this programme's records, are a reporting-precision question. They are not evidence about estimator stability in EITHER direction and are never mixed into or substituted for resampling uncertainty.",
+    "outcome_licences": "gap persists -> only that the SPECIFIC intervention of section 5 is not by itself sufficient; NOT that axis ordering is operative, NOT that two mechanisms exist, NOT that scale plays no role, NOT positive support for any alternative. Gap shrinks -> only that this rescaling accounts for most of the gap on the frozen panel; NOT a single mechanism, NOT identification, and it would WEAKEN the independence of the audited membership finding.",
+    "seeds": "rotation 60001-60010, partition 70001-70010, paired by position; fresh panels so no panel already known to show an effect is reused",
+    "time_estimate_status": "of the order of minutes; stated as an EXPECTATION and not a guarantee, reasoned from identical arm count, seed count, cohorts and per-question workload rather than from a promise that a past duration repeats",
+    "code_status": "the two runners and their tests are NOT written; writing them is not authorized by this draft",
+    "gates_still_ahead": "design acceptance; implementation in a non-triggerable location; independent review of that implementation; pre-run seal; exactly one trigger; cold-start independent audit afterwards by a session that did not prepare it",
+    "author_must_not": "seal it or run it"
   }
 }
