@@ -1,0 +1,123 @@
+{
+  "fresh_panel": {
+    "seeds": [
+      59001,
+      59002,
+      59003,
+      59004,
+      59005,
+      59006,
+      59007,
+      59008,
+      59009,
+      59010
+    ],
+    "seed_means": [
+      0.14534604302682477,
+      0.13615900058416522,
+      0.14004006326644763,
+      0.13128912202527837,
+      0.14333218645270762,
+      0.1398121536444012,
+      0.13508404633198656,
+      0.14792675475085898,
+      0.13758932010273264,
+      0.1347319436187943
+    ],
+    "mean": 0.13913106338041975,
+    "sample_sd": 0.005200069807034957,
+    "se_of_ten_seed_mean": 0.001644406458210274,
+    "se_of_five_seed_mean": 0.0023255419152548753,
+    "sd_pct_of_inherited": 3.776149236783234,
+    "se5_pct_of_inherited": 1.688745277326252,
+    "fresh_mean_minus_inherited": 0.0014227928390597444,
+    "fresh_mean_minus_inherited_in_sd": 0.2736103344487621
+  },
+  "inherited_denominator": 0.13770827054136,
+  "interval_95_around_inherited_as_five_seed_mean": [
+    0.13125256618461248,
+    0.14416397489810753
+  ],
+  "gate": 0.25,
+  "arms": {
+    "B16": {
+      "arm_mean_R3": 0.15519899065242523,
+      "rho_recorded": 0.8230380514516377,
+      "rho_rederived": 0.8230380514516377,
+      "verdict": "not sufficient",
+      "breakdown_denominator": -0.08884547738353069,
+      "shift_needed_abs": -0.2265537479248907,
+      "shift_needed_pct": -164.517168819462,
+      "shift_in_se5": -97.41976544854526,
+      "shift_in_sd": -43.5674435790065,
+      "breakdown_outside_95pct_interval": true
+    },
+    "B24": {
+      "arm_mean_R3": 0.18448294256306808,
+      "rho_recorded": 0.5267583580829528,
+      "rho_rederived": 0.5267583580829528,
+      "verdict": "not sufficient",
+      "breakdown_denominator": 0.02829033025904068,
+      "shift_needed_abs": -0.10941794028231933,
+      "shift_needed_pct": -79.45633174548959,
+      "shift_in_se5": -47.05051307162843,
+      "shift_in_sd": -21.041629120880717,
+      "breakdown_outside_95pct_interval": true
+    },
+    "B32": {
+      "arm_mean_R3": 0.2284032180572201,
+      "rho_recorded": 0.08239600576853544,
+      "rho_rederived": 0.08239600576853544,
+      "verdict": "sufficient",
+      "breakdown_denominator": 0.20397143223564881,
+      "shift_needed_abs": 0.06626316169428881,
+      "shift_needed_pct": 48.118505470872925,
+      "shift_in_se5": 28.49364324918069,
+      "shift_in_sd": 12.7427446463592,
+      "breakdown_outside_95pct_interval": true
+    },
+    "B48": {
+      "arm_mean_R3": 0.20655573984998207,
+      "rho_recorded": 0.3034373516862974,
+      "rho_rederived": 0.3034373516862974,
+      "verdict": "not sufficient",
+      "breakdown_denominator": 0.11658151940669667,
+      "shift_needed_abs": -0.021126751134663335,
+      "shift_needed_pct": -15.34167196466099,
+      "shift_in_se5": -9.084657213046999,
+      "shift_in_sd": -4.062782216131375,
+      "breakdown_outside_95pct_interval": true
+    },
+    "B64": {
+      "arm_mean_R3": 0.18407845600162565,
+      "rho_recorded": 0.5308507413364699,
+      "rho_rederived": 0.5308507413364699,
+      "verdict": "not sufficient",
+      "breakdown_denominator": 0.02667238401327096,
+      "shift_needed_abs": -0.11103588652808905,
+      "shift_needed_pct": -80.63124029630447,
+      "shift_in_se5": -47.74624176830616,
+      "shift_in_sd": -21.352768452814466,
+      "breakdown_outside_95pct_interval": true
+    },
+    "RANDOM32": {
+      "arm_mean_R3": 0.14391712843920665,
+      "rho_recorded": 0.9371820265325876,
+      "rho_rederived": 0.9371820265325876,
+      "verdict": "not sufficient",
+      "breakdown_denominator": -0.13397292623640503,
+      "shift_needed_abs": -0.27168119677776503,
+      "shift_needed_pct": -197.28749457801587,
+      "shift_in_se5": -116.82489788535557,
+      "shift_in_sd": -52.24568262722529,
+      "breakdown_outside_95pct_interval": true
+    }
+  },
+  "tightest_arm": "B48",
+  "sources": {
+    "per_question_csv": "research\\v52\\locomo_scale_outputs\\locomo_scale_per_question.csv.gz",
+    "per_question_sha256": "b7abd942c13cf9ce1b1c4a13e3ff39fb26a26e8b2f2749dd92d76f0b2a474602",
+    "boundary_summary": "research\\v52\\locomo_boundary_outputs\\locomo_boundary_summary.json",
+    "boundary_summary_sha256": "5d25ed4f31bdc27e050cfd60b31687bbb384cfa4de3c72338f5c012548809761"
+  }
+}
