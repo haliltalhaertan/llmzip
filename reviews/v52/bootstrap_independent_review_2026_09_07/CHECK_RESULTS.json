@@ -51,6 +51,10 @@
           0.30842335529953385,
           5.606265249338193
         ]
+      },
+      "independent_any_seed_nonpositive_counts": {
+        "full": 0,
+        "block": 8910
       }
     },
     "locomo_cluster": {
@@ -101,6 +105,10 @@
           0.3913035870148296,
           5.572060430831893
         ]
+      },
+      "independent_any_seed_nonpositive_counts": {
+        "full": 0,
+        "block": 8410
       }
     },
     "longmemeval_question": {
@@ -151,6 +159,10 @@
           0.3402880428202132,
           0.5746306886927031
         ]
+      },
+      "independent_any_seed_nonpositive_counts": {
+        "full": 0,
+        "block": 3306
       }
     }
   },

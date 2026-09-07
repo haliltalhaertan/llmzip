@@ -80,12 +80,14 @@ def main():
                     assert not interaction
                 else:
                     close(float(full)-float(block), float(interaction))
+        summary['independent_any_seed_nonpositive_counts'] = {}
         for arm, entry in scheme['denominators'].items():
             low = [float(row['den_'+arm+'_min']) for row in rows]
             high = [float(row['den_'+arm+'_max']) for row in rows]
             mean = [float(row['den_'+arm+'_mean']) for row in rows]
             assert all(a <= b <= c for a,b,c in zip(low,mean,high))
             assert sum(v < 0 for v in low) == entry['replicates_any_seed_negative']
+            summary['independent_any_seed_nonpositive_counts'][arm] = sum(v <= 0 for v in low)
             assert sum(a < 0 < b for a,b in zip(low,high)) == entry['replicates_seed_signs_cross_zero']
             assert [min(low), max(high)] == entry['seed_denominator_range']
             assert sum(v < 0 for v in mean) == entry['aggregate_negative']
