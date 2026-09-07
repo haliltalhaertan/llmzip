@@ -1,0 +1,90 @@
+# PENDING — NOT INSTALLED. This file is not under .github/workflows/ and therefore cannot execute.
+# Installing it is part of what an authorization authorizes.
+#
+# Gate design, numerical stack and persistence mirror the audited boundary-localization workflow
+# (research branch, .github/workflows/v52-locomo-boundary-localization.yml) so that the run is
+# certifiable the same way: one trigger route, pre-run seal verified by git blob, exact blobs of
+# every bound file re-checked before anything is computed.
+name: V52 LoCoMo coordinate-scale participation
+
+on:
+  push:
+    branches:
+      - research/v52-sign-mechanism-locomo-2026-09-04
+    paths:
+      - research/v52/TRIGGER_COORDINATE_SCALE_2026-09-05.txt
+
+# No workflow_dispatch, no repository_dispatch, no schedule: the only trigger route is a push that
+# creates the named trigger file. That file does not exist.
+
+permissions:
+  contents: write
+
+jobs:
+  scale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify trigger, pre-run seal, and exact blobs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          trigger=Path('research/v52/TRIGGER_COORDINATE_SCALE_2026-09-05.txt').read_text().strip()
+          if not trigger.startswith('seal_git_blob='):
+              raise SystemExit('invalid trigger')
+          expected=trigger.split('=',1)[1]
+          seal_path=Path('research/v52/V52_COORDINATE_SCALE_PRERUN_SEAL_2026-09-05.json')
+          got=subprocess.check_output(['git','hash-object',str(seal_path)], text=True).strip()
+          if got != expected:
+              raise SystemExit(f'seal blob mismatch {got} != {expected}')
+          seal=json.loads(seal_path.read_text())
+          if seal.get('status') != 'PRERUN_SEALED_NO_OUTCOME_ACCESS':
+              raise SystemExit('seal status mismatch')
+          for key in ['preregistration','pilot_findings','locomo_runner','longmemeval_runner','locomo_test','longmemeval_test','locomo_workflow','longmemeval_workflow','locomo_base','longmemeval_base']:
+              ent=seal[key]
+              actual=subprocess.check_output(['git','hash-object',ent['path']], text=True).strip()
+              if actual != ent['git_blob_sha1']:
+                  raise SystemExit(f'blob mismatch {key}: {actual} != {ent["git_blob_sha1"]}')
+          print('COORDINATE_SCALE_PRERUN_GATE PASS')
+          PY
+          python -m py_compile research/v52/locomo_coordinate_scale.py
+      - name: Install frozen-compatible numerical stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scipy==1.17.0' 'scikit-learn==1.8.0'
+      - name: Self-test the runner's pure functions (must be able to fail)
+        run: python -B research/v52/test_coordinate_scale_pure_functions.py
+      - name: Run preregistered LoCoMo coordinate-scale experiment
+        run: |
+          python research/v52/locomo_coordinate_scale.py --out /tmp/locomo_scale_outputs
+          rm -rf /tmp/locomo_scale_outputs/source_bytes
+          python -m pip freeze > /tmp/locomo_scale_outputs/environment.txt
+      - name: Upload immutable result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: v52-locomo-coordinate-scale-results
+          path: /tmp/locomo_scale_outputs
+          if-no-files-found: error
+          retention-days: 30
+      - name: Persist outputs on research branch
+        shell: bash
+        run: |
+          git config user.name 'V52 Research Runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git fetch origin "${GITHUB_REF_NAME}"
+          git rebase "origin/${GITHUB_REF_NAME}"
+          mkdir -p research/v52/locomo_scale_outputs
+          cp -a /tmp/locomo_scale_outputs/. research/v52/locomo_scale_outputs/
+          git add research/v52/locomo_scale_outputs
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(v52): persist preregistered LoCoMo coordinate-scale result'
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi

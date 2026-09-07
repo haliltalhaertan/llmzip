@@ -1,0 +1,100 @@
+"""Self-test for the LoCoMo runner's pure functions, on synthetic data only.
+
+The full runner cannot be exercised here because the corpus is not in git. What CAN be tested is
+every function that does not touch the corpus - and those are where the design premises live.
+No corpus, no benchmark outcome, no Task 4F1 contact.
+
+A verifier is not evidence until it has been shown to fail: every check below that guards a design
+premise is paired with a negative control that must be REJECTED.
+"""
+from __future__ import annotations
+import importlib.util, sys
+from pathlib import Path
+import numpy as np
+
+HERE = Path(__file__).resolve().parent
+spec = importlib.util.spec_from_file_location("runner", HERE / "locomo_coordinate_scale.py")
+r = importlib.util.module_from_spec(spec); sys.modules["runner"] = r
+spec.loader.exec_module(r)
+
+class FakeBase:
+    @staticmethod
+    def haar_q(rng, d):
+        A = rng.standard_normal((d, d)); Q, R = np.linalg.qr(A)
+        return Q * np.where(np.diag(R) < 0, -1.0, 1.0)[None, :]
+
+fails = 0
+def check(name, ok, detail=""):
+    global fails
+    print(("ok    " if ok else "FAIL  ") + name + (f"   {detail}" if detail else ""))
+    if not ok: fails += 1
+
+rng = np.random.default_rng(0)
+sd = 0.93 ** np.arange(96)
+C = rng.standard_normal((300, 96)) * sd
+QC = rng.standard_normal((12, 96)) * sd
+C = C - C.mean(axis=0); QC = QC - QC.mean(axis=0)
+
+D, ndeg, cv = r.scale_matrix(C)
+check("scale_matrix returns a positive diagonal", bool(np.all(np.diag(D) > 0)) and np.count_nonzero(D - np.diag(np.diag(D))) == 0)
+check("no degenerate coordinates in a healthy archive", ndeg == 0, f"cv_before={cv:.3f}")
+check("rescaling equalises variance", abs((C @ D).std(axis=0).std()) < 1e-9)
+
+r.check_identity(C, QC, D)
+check("sign(xD) = sign(x) holds bit-identically", True)
+
+Cd = C.copy(); Cd[:, -7:] = 0.0                      # 7 truly dead coordinates
+Dd, ndeg_d, _ = r.scale_matrix(Cd)
+check("degenerate coordinates fall back to d=1", ndeg_d == 7 and np.allclose(np.diag(Dd)[-7:], 1.0), f"n={ndeg_d}")
+r.check_identity(Cd, QC, Dd)
+check("identity survives degenerate fallback", True)
+
+bad = np.diag(np.r_[np.ones(95), -1.0])              # a NEGATIVE diagonal must be rejected
+try:
+    r.check_identity(C, QC, bad); check("negative diagonal is rejected", False, "identity check passed a sign flip")
+except RuntimeError:
+    check("negative diagonal is rejected", True)
+
+Rb = r.block_matrix(FakeBase, 59001)
+check("block matrix is orthogonal", float(np.max(np.abs(Rb.T @ Rb - np.eye(96)))) < 1e-12)
+check("block matrix is block-diagonal at 32", np.all(Rb[:32, 32:] == 0) and np.all(Rb[32:, :32] == 0))
+Rb2 = r.block_matrix(FakeBase, 59001)
+check("block matrix is deterministic in its seed", np.array_equal(Rb, Rb2))
+Rf = r.full_matrix(FakeBase, 59001)
+check("full matrix is orthogonal", float(np.max(np.abs(Rf.T @ Rf - np.eye(96)))) < 1e-12)
+check("full and block matrices differ", float(np.max(np.abs(Rf - Rb))) > 0.1)
+
+# Invariance check - narrowed 2026-09-07 to query-archive dots and row norms (audited-stage scope).
+n, d = r.check_rotation_invariance(C @ D, QC @ D, Rf)
+check("norm/dot invariance holds WITHIN the rescaled representation at TOL", n <= r.TOL and d <= r.TOL, f"norm={n:.2e} dot={d:.2e} TOL={r.TOL:.0e}")
+n2, d2 = r.check_rotation_invariance(C, QC, Rf)
+check("norm/dot invariance holds WITHIN the original representation at TOL", n2 <= r.TOL and d2 <= r.TOL, f"norm={n2:.2e} dot={d2:.2e}")
+check("invariance is NOT claimed between original and rescaled",
+      float(np.max(np.abs(np.linalg.norm(C @ D, axis=1) - np.linalg.norm(C, axis=1)))) > 1e-6)
+# Negative controls: the check must be able to FAIL.
+Rp = Rf.copy(); Rp[0, 0] += 1e-6                     # tiny non-orthogonal perturbation
+n3, d3 = r.check_rotation_invariance(C, QC, Rp)
+check("invariance check REJECTS a non-orthogonal rotation (norm)", n3 > r.TOL, f"norm={n3:.2e}")
+check("invariance check REJECTS a non-orthogonal rotation (dot)", d3 > r.TOL, f"dot={d3:.2e}")
+n4, d4 = r.check_rotation_invariance(C, QC, 1.5 * Rf)
+check("invariance check REJECTS a scaled rotation", n4 > r.TOL and d4 > r.TOL, f"norm={n4:.2e} dot={d4:.2e}")
+# The narrowed check must NOT be weaker on what it still covers: query-archive dots are exactly the
+# Gram entries the retrieval uses, and the old Gram-based value bounds them from above.
+gram_old = float(np.max(np.abs((C @ Rf) @ (C @ Rf).T - C @ C.T)))
+check("narrowed dot error is reported at the audited stages' scale (headroom vs TOL)", d2 <= r.TOL, f"narrowed={d2:.2e} old_gram={gram_old:.2e}")
+
+check("frac = 1 when rescaling fully restores native", abs(r.frac(0.5, 0.3, 0.5) - 1.0) < 1e-15)
+check("frac = 0 when rescaling does nothing", abs(r.frac(0.5, 0.3, 0.3)) < 1e-15)
+check("frac may exceed 1 (overshoot admitted)", r.frac(0.5, 0.3, 0.6) > 1.0)
+check("frac is nan on a zero denominator", not np.isfinite(r.frac(0.5, 0.5, 0.6)))
+check("band: >= 0.70 -> most", r.band(0.70).startswith("[SCALE ACCOUNTS FOR MOST"))
+check("band: <= 0.20 -> little", r.band(0.20).startswith("[SCALE ACCOUNTS FOR LITTLE"))
+check("band: between -> partial", r.band(0.45) == "[PARTIAL]")
+check("band admits overshoot", r.band(1.4).startswith("[SCALE ACCOUNTS FOR MOST"))
+
+disp = r.seed_dispersion([0.10, 0.12, 0.11, 0.13, 0.09])
+check("seed_dispersion: mean/sd/se computed with ddof=1", abs(disp["mean"] - 0.11) < 1e-15 and abs(disp["sample_sd"] - np.std([0.10, 0.12, 0.11, 0.13, 0.09], ddof=1)) < 1e-15 and abs(disp["se"] - disp["sample_sd"] / np.sqrt(5)) < 1e-15)
+check("seed_dispersion: envelope is min/max of the panel", disp["min"] == 0.09 and disp["max"] == 0.13)
+
+print(f"\n{'ALL PASS' if fails == 0 else str(fails) + ' FAILED'}")
+raise SystemExit(1 if fails else 0)
