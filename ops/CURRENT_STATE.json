@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T07:10:00Z",
+  "issued_at_utc": "2026-09-07T08:40:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the two triggered coordinate-scale workflow runs on the research branch (LoCoMo single job; LongMemEval 10 shards + aggregate). Do NOT re-trigger under any failure; a failed run is recorded, not repaired. When both result packages are persisted, hash-verify them, record the preregistered verdict bands as computed, and commission a cold-start independent audit before any citation. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher decision: commission the cold-start independent audit of the coordinate-scale stage using prompts/V52_COORDINATE_SCALE_COLD_START_INDEPENDENT_AUDIT_PROMPT_2026-09-07.md (a session that did not prepare, seal, trigger or record the stage). Until it returns, the stage is [NOT INDEPENDENTLY AUDITED] and may not be cited. No re-run, no new mechanism experiment. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-054",
+  "ledger_entry": "L-055",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -518,7 +518,7 @@
   },
   "mechanism_research_track": {
     "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
-    "head": "680b10b8a3ef3dd55a5a05fe47f6fb5fa6d931d0",
+    "head": "1c725a56752d1059148f48b89d8138c76c2f70e9",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
     "status": "AUDIT PASS WITH CAVEATS 2026-09-05, independently verified. Stop rule discharged; next experiment is a separate Head Researcher decision.",
@@ -528,7 +528,7 @@
       "head/tail causal (AUDIT PASS WITH CAVEATS)",
       "matched random-partition null (NOT INDEPENDENTLY AUDITABLE - no per-question output was committed; internal consistency verified from bytes 2026-09-05, see matched_null_stage_auditability)",
       "boundary localization (AUDIT PENDING, auditor commissioned)",
-      "coordinate-scale participation (TRIGGERED 2026-09-07, results pending)"
+      "coordinate-scale participation (RUN COMPLETE 2026-09-07; recorded, NOT INDEPENDENTLY AUDITED)"
     ],
     "boundary_localization_result": "S_LoCoMo={32}, S_LongMemEval={32,48}, S_common={32}; labels [PC32-LOCALIZED SUFFICIENCY LEAD - ON TESTED GRID] AND [BOUNDARY-SET HETEROGENEITY PRESENT], which must always be reported together",
     "independently_reconstructed_by_continuity_lead": true,
@@ -693,7 +693,7 @@
   },
   "proposed_next_direction": "coordinate-scale participation test: for positive diagonal D, sign(xD)=sign(x), so a positive archive-derived rescaling preserves the native sign code exactly while changing sign(xDQ). Decisive comparison is an INTERACTION - does rescaling help full mixing more than within-block mixing under paired queries and fixed rotations. DIRECTION ONLY: not preregistered, not sealed, not authorized; no seeds, workflow or trigger exist.",
   "coordinate_scale_draft": {
-    "status": "AUTHORIZED, INSTALLED, SEALED AND TRIGGERED ONCE on 2026-09-07 (07:06Z). Results pending. NO RE-TRIGGER.",
+    "status": "RUN COMPLETE 2026-09-07; result recorded as computed at research 1c725a56; NOT INDEPENDENTLY AUDITED; no re-trigger",
     "branch": "draft/v52-coordinate-scale-prereg-2026-09-05",
     "commit": "bdc0db75ef8760319878e5ef07512ddddd53283c",
     "path": "drafts/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_DRAFT_2026-09-05.md",
@@ -719,7 +719,7 @@
       "block_seeds": "fresh 59001..59010 (reuse invites a panel-selection objection)",
       "scale_of_estimand": "fraction, not percentage points (pp confounded by a floor effect)"
     },
-    "remaining_gate": "none before results; after results: hash verification, verdict-band recording, cold-start independent audit before citation",
+    "remaining_gate": "cold-start independent audit before any citation",
     "implementation": {
       "status": "COMPLETE FOR BOTH BENCHMARKS - NON-TRIGGERABLE (revision 2026-09-07 at bdc0db7; preregistration document byte-unchanged at de667211)",
       "locomo_runner": "drafts/v52/pending_runners/locomo_coordinate_scale.py (git blob 13896ad9)",
@@ -749,6 +749,23 @@
         "research/v52/locomo_scale_outputs/",
         "research/v52/longmemeval_scale_outputs/"
       ]
+    },
+    "result": {
+      "result_commits": "f1bbb50 (LoCoMo 07:07:20Z), bce57b64dd2451d4d7bc0cd2c6e61d84e35261c8 (LongMemEval 07:11:15Z), both runner-authored",
+      "checkpoint": "research/v52/V52_COORDINATE_SCALE_RESULT_CHECKPOINT_2026-09-07.md @ 1c725a56752d1059148f48b89d8138c76c2f70e9, sha256 f151479b4d92329b3e057a098db8bb66fd051749e61d59314d749db48b5febac, git blob 83e64a36",
+      "controls": "all PASS on both benchmarks: native reproduction 0.0 / 1.1e-16; SCALED_NATIVE bit-identical; invariance norm <= 7.1e-15, dot <= 1.1e-13 (TOL 1e-12 untouched); rows 92,100 / 28,200 complete; zero degenerate coordinates; pinned stack numpy 2.3.5 pandas 2.2.3 scipy 1.17.0 scikit-learn 1.8.0",
+      "frac_full": "LoCoMo 0.7261 [SCALE ACCOUNTS FOR MOST OF THIS ARM'S DAMAGE]; LongMemEval 0.6563 [PARTIAL], 0.044 short of the 0.70 band",
+      "frac_block": "LoCoMo 0.6516 on the seed-mean but NOT INTERPRETABLE - block denominator 0.0053 crosses zero inside its seed envelope (-0.0066..+0.0164), per-seed frac -3.40..+2.64; LongMemEval 0.3085 [PARTIAL], all ten denominators positive",
+      "I_frac_secondary": "LoCoMo +0.074 (inherits non-interpretability); LongMemEval +0.348",
+      "labels_that_must_travel_together": [
+        "[COORDINATE-SCALE PARTICIPATION LEAD - MOST (LoCoMo) / PARTIAL (LongMemEval) FOR FULL MIXING]",
+        "[BLOCK-ARM FRACTION NOT INTERPRETABLE ON LoCoMo - DENOMINATOR NEAR ZERO]",
+        "[NOT INDEPENDENTLY AUDITED]"
+      ],
+      "cv_sigma_real_archives": "median 0.494 (LoCoMo) / 0.497 (LongMemEval) before rescaling; below the pilot's synthetic range; real recovery lower than the pilot model predicted",
+      "by_product_full_haar_fresh_panel": "LoCoMo mean 0.139131 sd 0.0052 se 0.00164 (inherited 0.137708, +0.27 sd); LongMemEval mean 0.380939 sd 0.0115 se 0.00362 (inherited 0.382717, -0.15 sd). First measured LoCoMo denominator dispersion from committed bytes; frozen denominators NOT replaced",
+      "continuity_lead_verification": "frac_full/frac_block recomputed from per-question rows, match < 1e-9; LongMemEval per-question sha256 matches summary; LoCoMo summary lacks an artifacts block (runner omission) - per-question sha256 b7abd942c13cf9ce recorded in the checkpoint",
+      "not_an_audit": true
     }
   },
   "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes.",
@@ -757,5 +774,13 @@
     "relayed_as": "chat text ('yetki sende devam et'); not a pushed hash-bound artifact",
     "acted_on_by": "Continuity Lead, same session, per next_single_action of L-053",
     "scope": "mechanism research track only; nothing about Task 4F1"
+  },
+  "commissioned_coordinate_scale_audit": {
+    "stage": "COORDINATE_SCALE_INDEPENDENT_AUDIT",
+    "prompt": "prompts/V52_COORDINATE_SCALE_COLD_START_INDEPENDENT_AUDIT_PROMPT_2026-09-07.md",
+    "prompt_sha256": "4ead85278e85e685d0053603488d07a2089b27b084ff72610e12cd932889606f",
+    "target_branch": "audit/v52-coordinate-scale-independent-2026-09-07",
+    "gates": "G1-G13",
+    "status": "PROMPT_WRITTEN - NOT YET COMMISSIONED (Head Researcher decision; auditor must be a session that did not prepare, seal, trigger or record the stage)"
   }
 }
