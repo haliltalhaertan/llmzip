@@ -1,0 +1,195 @@
+{
+  "status": "READY_FOR_ONE_INVOCATION",
+  "actual_runner_invocations": 0,
+  "trigger": "680b10b8a3ef3dd55a5a05fe47f6fb5fa6d931d0",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "files": [
+    {
+      "path": "research/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_2026-09-05.md",
+      "git_blob": "d7726147b3efa15ef73f6c4c2b0453826c48fcf9",
+      "sha256": "de6672119010bf561179014748e21836bff5c0ebf6efa10379213c59de5203fe"
+    },
+    {
+      "path": "research/v52/V52_COORDINATE_SCALE_PILOT_FINDINGS_2026-09-05.md",
+      "git_blob": "663b7e1ea67e8b3e8b4692d2ece2ac12882d3786",
+      "sha256": "54aee88c7cb71d6fcd2bf6cb17ff6960ef9f428231f561d081a5bb4bdf1de20d"
+    },
+    {
+      "path": "research/v52/locomo_coordinate_scale.py",
+      "git_blob": "13896ad93c58dbb0febeadf82d0c22b64a920915",
+      "sha256": "df1bdded0a196ab62fc43363b5b90edba791a08ca6a3ebdb5a7c7a4d22a716a4"
+    },
+    {
+      "path": "research/v52/longmemeval_coordinate_scale_shard.py",
+      "git_blob": "ee1f2ef9d000da57152fe9ba6cfd630fe90050d5",
+      "sha256": "b1b0239fef5fb8fd5a23b0f87f391599773e46a83a73205da935e067e2c712f6"
+    },
+    {
+      "path": "research/v52/test_coordinate_scale_pure_functions.py",
+      "git_blob": "16afcd57355a5f51c8004599d1e03aa8a4d1ab66",
+      "sha256": "f2c14b30351d484e0d88d744cdcbc7df2e829ac30cca8911f3cfb91cd1703d46"
+    },
+    {
+      "path": "research/v52/test_longmemeval_coordinate_scale_shard.py",
+      "git_blob": "b093b5001ddbd1a99eb1c6b490df11777e7cf3e8",
+      "sha256": "544035376264a74b97a53f8e495a0acdbf7910a1640655c53d30926e8f4db0c6"
+    },
+    {
+      "path": ".github/workflows/v52-locomo-coordinate-scale.yml",
+      "git_blob": "3c144c8ebc481010f5ab1b2d50d6690dc4674c9d",
+      "sha256": "cface4549fe019c84351d9b05329009df6a1c8e8409da819ad2b243aa962fa6d"
+    },
+    {
+      "path": ".github/workflows/v52-longmemeval-coordinate-scale.yml",
+      "git_blob": "4a9ff17c5f2de3eeba9baccad9a946c411906c77",
+      "sha256": "55137f6b6a1ac7347975ac9f5e6b90884f9606996d821c6ed988cbbb4d6d377e"
+    },
+    {
+      "path": "research/v52/locomo_spectral_band_haar_causal.py",
+      "git_blob": "7c4140252fb7f846d617189925cdf534515743f4",
+      "sha256": "58b28c4ed0a62896710ae5ebd1c07574c29b6b5bb424de6c1bfac206ea903a15"
+    },
+    {
+      "path": "research/v52/longmemeval_spectral_band_haar_causal.py",
+      "git_blob": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+      "sha256": "2e6601331779aab3d8bcd48c435fa0bb96124f3d14819a1945e125f9a72ca62c"
+    },
+    {
+      "execution_path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\sealed_source\\locomo_coordinate_scale.py",
+      "sha256": "df1bdded0a196ab62fc43363b5b90edba791a08ca6a3ebdb5a7c7a4d22a716a4",
+      "git_blob": "13896ad93c58dbb0febeadf82d0c22b64a920915"
+    },
+    {
+      "execution_path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\sealed_source\\locomo_spectral_band_haar_causal.py",
+      "sha256": "58b28c4ed0a62896710ae5ebd1c07574c29b6b5bb424de6c1bfac206ea903a15",
+      "git_blob": "7c4140252fb7f846d617189925cdf534515743f4"
+    },
+    {
+      "execution_path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\sealed_source\\locomo_sign_mechanism_replication.py",
+      "sha256": "a6ecee02e5d6a8735a922ec2d5f0a024b3c024e0cdf03b336e16e4357f20e74b",
+      "git_blob": "6700454915176854a55b0b5cf6ffe922a22e35f2"
+    },
+    {
+      "execution_path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\sealed_source\\test_coordinate_scale_pure_functions.py",
+      "sha256": "f2c14b30351d484e0d88d744cdcbc7df2e829ac30cca8911f3cfb91cd1703d46",
+      "git_blob": "16afcd57355a5f51c8004599d1e03aa8a4d1ab66"
+    }
+  ],
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0"
+  },
+  "seal_sha256": "3a9e9471f626abb71a2feaaf130fa50c9af95c34c8b3594aac6cb854e1a4c656",
+  "data": {
+    "raw_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "raw_bytes": 2805274,
+    "audit_rows": [
+      {
+        "file": "conv_0.json",
+        "bytes": 395163,
+        "sha256": "697a996db06a90500bafbf21c96f5170eafc8377eef632278b7a4b841ae15c39"
+      },
+      {
+        "file": "conv_1.json",
+        "bytes": 267513,
+        "sha256": "5b0a9a79e623e810a1e9a577d457ac99465e96e7c9cce58f593612d73350c34a"
+      },
+      {
+        "file": "conv_2.json",
+        "bytes": 526311,
+        "sha256": "476d9bcdaddfc2c5c0caeed21c48b2bedb8fe687772c25f6f98e4c5a63ce1e8a"
+      },
+      {
+        "file": "conv_3.json",
+        "bytes": 584086,
+        "sha256": "5c565f4efa6dbea4650a5f62eb04dea4b10fec713b984746ae5ca38df05a4754"
+      },
+      {
+        "file": "conv_4.json",
+        "bytes": 571480,
+        "sha256": "609f74bfad9de7719ef170e21ea140a24b20c0bf278ab9db215c4a26705e874d"
+      },
+      {
+        "file": "conv_5.json",
+        "bytes": 528568,
+        "sha256": "98c28de0c42795f2b67c85cc5a804191dee1a701959197c3167a2748b9260793"
+      },
+      {
+        "file": "conv_6.json",
+        "bytes": 499707,
+        "sha256": "5f7f9182f5e7dd842488292acf340e24ff773790e720a212433e4c047875c9b1"
+      },
+      {
+        "file": "conv_7.json",
+        "bytes": 551155,
+        "sha256": "84c53ec1b89b8846be2fd9146269a523fcc5542223344b517aa3757ac3a9fa88"
+      },
+      {
+        "file": "conv_8.json",
+        "bytes": 489039,
+        "sha256": "b2f301735825844b7bf71816eae4e16983854edc80898a8a578e3a78963215e9"
+      },
+      {
+        "file": "conv_9.json",
+        "bytes": 500515,
+        "sha256": "0f9775daf3bc6f9a6b8672aadbbf65f7e15947c5c1cb92d151306f1406d00a9d"
+      },
+      {
+        "file": "errors_conv_0.json",
+        "bytes": 24365,
+        "sha256": "63c778c8432b058d791417ec37bf8ac30b0bb83b1272afacb5a162b84fe5e3c4"
+      },
+      {
+        "file": "errors_conv_1.json",
+        "bytes": 7746,
+        "sha256": "a2db16644318c3c144544f4cb373028e416bbf20c6f07f46606cf66f45de4e6c"
+      },
+      {
+        "file": "errors_conv_2.json",
+        "bytes": 11824,
+        "sha256": "93c2aa8ee7d3bfb59ae1cca283d176a794d76d3751c69264ddc1f63ceb2b4b3a"
+      },
+      {
+        "file": "errors_conv_3.json",
+        "bytes": 23508,
+        "sha256": "c1d0162e534bf68dba6aff3ca3e73ba8179cab7a400d098b8be89048c7b58585"
+      },
+      {
+        "file": "errors_conv_4.json",
+        "bytes": 15447,
+        "sha256": "42520f95b654c85b564da6cd26f40cefb981de574066f7b92bdebbc780fa1376"
+      },
+      {
+        "file": "errors_conv_5.json",
+        "bytes": 9934,
+        "sha256": "af8c675a3e216ddb94e07c417fb37c45fc46740dfa8ce586fc8c527f7a3b9ee7"
+      },
+      {
+        "file": "errors_conv_6.json",
+        "bytes": 14435,
+        "sha256": "acb6d0d02f938180b3d1a7a45f80d432ece69d13b197371cb71ddbddb83a26ea"
+      },
+      {
+        "file": "errors_conv_7.json",
+        "bytes": 12048,
+        "sha256": "bbe2268a3254dcc9d3741a84748fadf8e169d21d837810e92dc63cdf8db562cb"
+      },
+      {
+        "file": "errors_conv_8.json",
+        "bytes": 15587,
+        "sha256": "c15ace8ef1a7cbf3fe63d3b7ff9c2851885f5e00abc1c184971ebb11128aedb2"
+      },
+      {
+        "file": "errors_conv_9.json",
+        "bytes": 15645,
+        "sha256": "2c2b8791d024e11ca6015a109f160b7177379b3b42ac8c9adb990546fc89c4ff"
+      }
+    ],
+    "audit_manifest_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06",
+    "archives": 10,
+    "corrections": 156
+  }
+}

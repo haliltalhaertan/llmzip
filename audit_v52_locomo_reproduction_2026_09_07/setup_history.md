@@ -1,0 +1,11 @@
+# Setup command history
+
+All paths below refer to this local audit session. No setup command invoked the real runner.
+
+1. `C:/Users/MDP/AppData/Local/Python/pythoncore-3.13-64/python.exe -m venv C:/Users/MDP/Documents/ChatGPT/LLM_TOKEN_ZIP/work/locomo_reproduction_tmp_20260907/venv` completed with exit 0. Python reports 3.13.15, MSC v.1944, 64-bit AMD64.
+2. The isolated venv's `python.exe -m pip install numpy==2.3.5 pandas==2.2.3 scipy==1.17.0 scikit-learn==1.8.0` was initially blocked by sandbox network access: `WinError 10013` connecting to pypi.org. It was repeated through the normal scoped escalation, which was approved. The elevated installation completed with exit 0; no substitute versions were selected. NumPy 12.8 MB, pandas 11.5 MB, SciPy 36.3 MB, and scikit-learn 8.0 MB wheels downloaded. SciPy alone took about four minutes. Full installed distribution versions are retained in `environment.txt` if the run stage is reached.
+3. `python.exe -B audit_v52_locomo_reproduction_2026_09_07/preflight.py` through scoped escalation initially stopped at Git ownership validation: the worktree belongs to `CodexSandboxOffline`, while the elevated process runs as the user. No data download or fitting occurred. The audit script was amended to pass only `git -c safe.directory=C:/Users/MDP/Documents/ChatGPT/LLM_TOKEN_ZIP/work/llmzip_locomo_reproduction` for this exact authorized worktree. No global Git configuration changed.
+4. The same no-fitting preflight was then repeated with normal scoped escalation for downloading the sealed corpus/audit files. Its literal outcome is `preflight.json`. It executes only sealed acquisition, dataset parsing, and synthetic pure-function tests; it does not call representation-building or retrieval functions.
+5. `C:/Users/MDP/AppData/Local/Python/pythoncore-3.13-64/python.exe audit_v52_locomo_reproduction_2026_09_07/compare.py` passed its positive synthetic control and rejected six negative controls before any benchmark invocation.
+
+The exact one-shot benchmark command, if reached, is recorded in `run_receipt.json`, including the published preflight receipt commit. A latch created with exclusive file creation prevents a second invocation. Setup retries above are not benchmark retries.
