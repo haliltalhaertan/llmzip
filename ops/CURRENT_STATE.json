@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T13:31:00Z",
+  "issued_at_utc": "2026-09-07T13:36:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-062",
+  "ledger_entry": "L-063",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -977,5 +977,13 @@
     "remedy": "a one-line .gitattributes ('* -text' or '* text=auto eol=lf')",
     "status": "NOT APPLIED - changes checkout semantics repo-wide for every file and every future clone; a repository-owner decision, not a record correction",
     "interim_rule": "every audit prompt must keep instructing auditors to hash raw Git blobs rather than checked-out files"
+  },
+  "claude_to_codex_handover_2026_09_07": {
+    "path": "docs/v52/V52_CLAUDE_TO_CODEX_HANDOVER_2026-09-07.md",
+    "sha256": "240c52568753abac4b7e18c52cdb2619cb2b1059dbb634fe42106fc158d2755f",
+    "purpose": "hand the closure-audit findings and the decisions taken since L-056 to the parallel Codex line, by identity rather than by narrative",
+    "answers_codex_open_items": "the two commissioned agents never ran and their branches are absent (undischarged, not mysterious); R1 ruled A with B preserved, from the preregistration text only; R5 recorded as an explicit deviation and not resolved; the LongMemEval cluster bootstrap is ill-posed rather than pending, but PROVENANCE-VERIFIED ONLY, not recomputed; the LoCoMo Full-Haar denominator dispersion is now measured",
+    "carries_to_codex": "erratum E8 - ruling A selects the LESS stable estimator on the block arm, which strengthens rather than weakens the refusal of the comparative claim, and was not in Codex's own R1 analysis; infrastructure finding I1 - no .gitattributes, so default Windows clones report mass hash mismatches, which explains two earlier false alarms; and the additive-only rule for sidecar-hashed or ledger-hashed documents on main",
+    "explicitly_tells_codex_not_to_redo": "the closure audit, the erratum, the hash repairs, any completed experiment or bootstrap or the LoCoMo reproduction, the acceptance decision, the dependency-graph recomputation, any Task 4F1 action, the paused literature scan"
   }
 }

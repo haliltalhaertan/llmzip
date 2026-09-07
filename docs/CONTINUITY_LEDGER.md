@@ -1254,3 +1254,20 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: Head Researcher decision on the next research question, now that the closure audit has returned with nothing requiring the stage to be reopened: take up the coordinate-membership proposal at v2, prefer the encoder-generalisation alternative, or neither. Separately, an owner decision on infrastructure finding I1. Task 4F1 stays on hold and D11 Drive backup still needs an operator with Drive access.
 ```
+
+### L-063
+
+```text
+timestamp_utc: 2026-09-07T13:36:00Z
+actor_role: Continuity Lead / co-chair (sole writer on main)
+predecessor_commit_or_tag: L-062 / 18bb70d
+scope: Write the handover that carries the closure-audit findings and every decision since L-056 to the parallel Codex line. Documentation only. No experiment, no re-run, no new authorization, no frozen file edited.
+changed_or_created_paths: docs/v52/V52_CLAUDE_TO_CODEX_HANDOVER_2026-09-07.md with sidecar (sha256 240c52568753abac4b7e18c52cdb2619cb2b1059dbb634fe42106fc158d2755f); ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+written_as_a_verification_map_not_a_summary: every claim names a commit, path or hash, and the document opens by telling Codex that if it and the repository disagree the repository wins. This mirrors the discipline of the Codex handover that reached this session, which said the same thing about itself.
+what_it_answers_from_codexs_own_open_list: the two commissioned agents never ran - I stopped them on Head Researcher instruction before either pushed, so their branches are absent and both tasks are UNDISCHARGED rather than mysterious; R1 is ruled A with B preserved, decided from the preregistration text alone with no outcome value in the reasoning; R2, R3 and R4 are recorded as deviation-register D3, D5 and D6 without adjudication; R5 is recorded as an explicit deviation and deliberately NOT resolved; the LongMemEval cluster bootstrap leaves the outstanding-work list as ill-posed; and the LoCoMo Full-Haar denominator dispersion, which the Codex handover listed as needing a re-run, is now measured.
+what_it_carries_that_codex_does_not_have: erratum E8, that ruling A selects the LESS numerically stable estimator precisely on the block arm where denominators change sign, which strengthens rather than weakens the refusal of the comparative claim and was absent from Codex's own R1 analysis; infrastructure finding I1, that the repository ships no .gitattributes so any default Windows clone reports mass verifier mismatches, proven a checkout artifact and the explanation for two earlier false alarms; and the additive-only rule now binding sidecar-hashed or ledger-hashed documents on main.
+qualifications_carried_forward_deliberately: the LongMemEval single-component finding is PROVENANCE VERIFIED, NOT RECOMPUTED, with its required citation label reproduced in the handover; the denominator dispersion is not independently audited; the Drive backup has never been performed for this stage or for the five Codex packages and the handover says so rather than leaving it ambiguous.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. No corpus read, no experiment or bootstrap re-run.
+status: PASS
+next_single_action: Deliver the handover to the Codex line. Head Researcher decision still outstanding on the next research question, on the .gitattributes infrastructure item, and on the Task 4F1 execution track; D11 Drive backup still needs an operator with Drive access.
+```
