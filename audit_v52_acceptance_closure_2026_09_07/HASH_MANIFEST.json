@@ -1,0 +1,73 @@
+{
+  "namespace": "audit_v52_acceptance_closure_2026_09_07",
+  "branch": "audit/v52-acceptance-closure-2026-09-07",
+  "audited_main_commit": "ed2b2f74347da6be68beae2c22d5c3d22992f1a3",
+  "audited_research_commit": "0c9916bd7786d7ddb332f5b6da3d96d61a6223f0",
+  "controlling_prompt_sha256": "c6a0da6a3076793b5b3cc0b0d0796b3fe30a1a21644e539c3b4f9a0bd1649faf",
+  "verdict": "CLOSURE PASS WITH CAVEATS",
+  "excludes": [
+    "HASH_MANIFEST.json (itself)",
+    "__pycache__",
+    "virtualenvs",
+    "corpora"
+  ],
+  "file_count": 14,
+  "files": {
+    "audit_v52_acceptance_closure_2026_09_07/CLOSURE_AUDIT_REPORT.md": {
+      "sha256": "c2dfbf1d2caaf2ef0d948b678f37487bcbf4e1439b1624004f654e486b672d8e",
+      "bytes": 33175
+    },
+    "audit_v52_acceptance_closure_2026_09_07/CLOSURE_AUDIT_REPORT.md.sha256": {
+      "sha256": "8d2ce5520eb1a035b4badacf270cdccaef862cc416d874faa3685f47b73c03de",
+      "bytes": 90
+    },
+    "audit_v52_acceptance_closure_2026_09_07/evidence/c1_c3_c5_c6_c7_c8_record_checks.json": {
+      "sha256": "7da6d83c8371ea0317b5da5abc5bf2b466e3a0e27b7b98a1fd9cacf055d806c8",
+      "bytes": 27272
+    },
+    "audit_v52_acceptance_closure_2026_09_07/evidence/c2_ab_reading.json": {
+      "sha256": "76f53a57cedf509b70871ff34a2766ada774fa1e766ac672380f1c8a1116f90e",
+      "bytes": 3258
+    },
+    "audit_v52_acceptance_closure_2026_09_07/evidence/c4_ab_recomputation.json": {
+      "sha256": "8178d2aa8962b716cde2c6a5188e6f553e4149fe8d4bc70eecfc8a765d0d6b1c",
+      "bytes": 9094
+    },
+    "audit_v52_acceptance_closure_2026_09_07/evidence/c4b_exact_rational.json": {
+      "sha256": "46c67cb839b4cd3dca7476a284b0a8123b7e4ed96bd6d8f1b51d5bd92d6afdfb",
+      "bytes": 3440
+    },
+    "audit_v52_acceptance_closure_2026_09_07/evidence/c6_verifier_runs.json": {
+      "sha256": "928d330fbdd667767225598e47d5dce0e9bfda4a2e82ccca3ae38cb4b567c2f9",
+      "bytes": 5082
+    },
+    "audit_v52_acceptance_closure_2026_09_07/GATE_TABLE.md": {
+      "sha256": "923209de29d39f56cbcd82ee6f144b029388113db8d61e9d7566d466c84d870f",
+      "bytes": 4923
+    },
+    "audit_v52_acceptance_closure_2026_09_07/scripts/c1_c3_c5_c6_c7_c8_record_checks.py": {
+      "sha256": "879e65cfd2bc147d70a9392b45bbe3a31ed8c2de006039c3c72c708efca2ef64",
+      "bytes": 27770
+    },
+    "audit_v52_acceptance_closure_2026_09_07/scripts/c2_ab_reading.py": {
+      "sha256": "24513548256db08053ce2e4ddd00d643bd404af46f61955ce9ed1c0f4e3fcfff",
+      "bytes": 6162
+    },
+    "audit_v52_acceptance_closure_2026_09_07/scripts/c4_recompute_ab.py": {
+      "sha256": "f9f69f176fb9560e27a619dce6550e15129c8218d94051c8a6f7e4547dc91616",
+      "bytes": 8510
+    },
+    "audit_v52_acceptance_closure_2026_09_07/scripts/c4b_exact_rational.py": {
+      "sha256": "b6c89017f96fc96c8034559b61d0286c64fbfde2e566fd600a821dfd48f74369",
+      "bytes": 4150
+    },
+    "audit_v52_acceptance_closure_2026_09_07/scripts/c6_run_verifiers.py": {
+      "sha256": "93ee5035a8426e429b7d8d5465852a95542844384b4328dd61427e46df1dfd48",
+      "bytes": 4868
+    },
+    "audit_v52_acceptance_closure_2026_09_07/scripts/make_manifest.py": {
+      "sha256": "58259da5ebdf6872bb1a5ed8ac5d7b9eac02ba358488b38e99abb97a7dec8746",
+      "bytes": 1538
+    }
+  }
+}

@@ -1,0 +1,540 @@
+{
+  "gates": {
+    "C1": [
+      {
+        "commit": "ed2b2f74",
+        "path": "docs/v52/V52_COORDINATE_SCALE_ACCEPTANCE_DECISION_2026-09-07.md",
+        "blob_sha256": "8ba55a616c33f23fd3e8cc6daf4565830b7e993f4749e8440c9c62e082d31d3f",
+        "bytes": 12122,
+        "git_blob_id": "52d6e0a012824c4746fd9995e78c038bb5bea337",
+        "sidecar_raw": "8ba55a616c33f23fd3e8cc6daf4565830b7e993f4749e8440c9c62e082d31d3f *V52_COORDINATE_SCALE_ACCEPTANCE_DECISION_2026-09-07.md",
+        "sidecar_hash": "8ba55a616c33f23fd3e8cc6daf4565830b7e993f4749e8440c9c62e082d31d3f",
+        "sidecar_names_basename": true,
+        "sidecar_matches_blob": true,
+        "prompt_declared_value": "8ba55a616c33f23fd3e8cc6daf4565830b7e993f4749e8440c9c62e082d31d3f",
+        "matches_declared": true,
+        "appears_in_state_file": true,
+        "checkout_sha256": "8ba55a616c33f23fd3e8cc6daf4565830b7e993f4749e8440c9c62e082d31d3f",
+        "checkout_equals_blob": true
+      },
+      {
+        "commit": "ed2b2f74",
+        "path": "docs/v52/V52_ACCEPTANCE_DECISION_CLARIFICATION_2026-09-07.md",
+        "blob_sha256": "52a37695e34b693f668e2fc36b4425b6aab22919912cca871de8271dffe42aae",
+        "bytes": 5362,
+        "git_blob_id": "15535adbc02213761824aef7820e49ac75d7e716",
+        "sidecar_raw": "52a37695e34b693f668e2fc36b4425b6aab22919912cca871de8271dffe42aae *V52_ACCEPTANCE_DECISION_CLARIFICATION_2026-09-07.md",
+        "sidecar_hash": "52a37695e34b693f668e2fc36b4425b6aab22919912cca871de8271dffe42aae",
+        "sidecar_names_basename": true,
+        "sidecar_matches_blob": true,
+        "appears_in_state_file": true,
+        "checkout_sha256": "52a37695e34b693f668e2fc36b4425b6aab22919912cca871de8271dffe42aae",
+        "checkout_equals_blob": true
+      },
+      {
+        "commit": "ed2b2f74",
+        "path": "docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md",
+        "blob_sha256": "c0828c5debf64d6a1d39e67dc6ecb9b57fff6746cb327ad1e794df3db47466bb",
+        "bytes": 7239,
+        "git_blob_id": "9dd17209e2d2eb463f0a54b7ccc74b91ebf6760b",
+        "sidecar_raw": "c0828c5debf64d6a1d39e67dc6ecb9b57fff6746cb327ad1e794df3db47466bb *V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md",
+        "sidecar_hash": "c0828c5debf64d6a1d39e67dc6ecb9b57fff6746cb327ad1e794df3db47466bb",
+        "sidecar_names_basename": true,
+        "sidecar_matches_blob": true,
+        "appears_in_state_file": true,
+        "checkout_sha256": "c0828c5debf64d6a1d39e67dc6ecb9b57fff6746cb327ad1e794df3db47466bb",
+        "checkout_equals_blob": true
+      },
+      {
+        "commit": "ed2b2f74",
+        "path": "prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md",
+        "blob_sha256": "c6a0da6a3076793b5b3cc0b0d0796b3fe30a1a21644e539c3b4f9a0bd1649faf",
+        "bytes": 7044,
+        "git_blob_id": "f0b5fb92bf497938dde85d088a8adee5e05c2c57",
+        "sidecar_raw": "c6a0da6a3076793b5b3cc0b0d0796b3fe30a1a21644e539c3b4f9a0bd1649faf *V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md",
+        "sidecar_hash": "c6a0da6a3076793b5b3cc0b0d0796b3fe30a1a21644e539c3b4f9a0bd1649faf",
+        "sidecar_names_basename": true,
+        "sidecar_matches_blob": true,
+        "prompt_declared_value": "c6a0da6a3076793b5b3cc0b0d0796b3fe30a1a21644e539c3b4f9a0bd1649faf",
+        "matches_declared": true,
+        "appears_in_state_file": true,
+        "checkout_sha256": "c6a0da6a3076793b5b3cc0b0d0796b3fe30a1a21644e539c3b4f9a0bd1649faf",
+        "checkout_equals_blob": true
+      },
+      {
+        "commit": "0c9916bd",
+        "path": "research/v52/V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md",
+        "blob_sha256": "4f70340774624b0bcdc4e519f6c42f0733b549a2b065a3a4e0b939c5aa5f22dc",
+        "bytes": 10828,
+        "git_blob_id": "b31ee129d6f9e63ca6929bd78c59aa348f44131b",
+        "sidecar_raw": "4f70340774624b0bcdc4e519f6c42f0733b549a2b065a3a4e0b939c5aa5f22dc *V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md",
+        "sidecar_hash": "4f70340774624b0bcdc4e519f6c42f0733b549a2b065a3a4e0b939c5aa5f22dc",
+        "sidecar_names_basename": true,
+        "sidecar_matches_blob": true,
+        "prompt_declared_value": "4f70340774624b0bcdc4e519f6c42f0733b549a2b065a3a4e0b939c5aa5f22dc",
+        "matches_declared": true,
+        "appears_in_state_file": true
+      },
+      {
+        "commit": "0c9916bd",
+        "path": "research/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_2026-09-05.md",
+        "blob_sha256": "de6672119010bf561179014748e21836bff5c0ebf6efa10379213c59de5203fe",
+        "bytes": 14495,
+        "git_blob_id": "d7726147b3efa15ef73f6c4c2b0453826c48fcf9",
+        "prompt_declared_value": "de6672119010bf561179014748e21836bff5c0ebf6efa10379213c59de5203fe",
+        "matches_declared": true,
+        "appears_in_state_file": true
+      }
+    ],
+    "C3": {
+      "quotes": {
+        "s7_secondary": {
+          "claimed_text": "**Secondary:** the interaction on the fraction scale, `I_frac = frac_full - frac_block`. It is\nsecondary precisely because the pilot showed it nearly vanishes once the floor effect is removed.",
+          "byte_exact_in_preregistration": true,
+          "present_as_blockquote_in_decision": true,
+          "whitespace_normalised_in_preregistration": true
+        },
+        "s9_positive": {
+          "claimed_text": "**Positive (`I` large).** Supports that relative coordinate scale *participates* in the damage from\ncross-band mixing.",
+          "byte_exact_in_preregistration": true,
+          "present_as_blockquote_in_decision": true,
+          "whitespace_normalised_in_preregistration": true
+        }
+      },
+      "s7_estimand_quote": {
+        "found": true,
+        "fragments": [
+          {
+            "fragment": "For each dataset independently, **per rotation seed**, paired at the question level:",
+            "byte_exact_in_prereg": false,
+            "exact_after_dash_and_ws_normalisation": false,
+            "exact_after_removing_bold_markers": true
+          },
+          {
+            "fragment": "frac_full  = ( R@3(SCALED_FULLHAAR) - R@3(FULLHAAR_FRESH) ) / ( R@3(NATIVE) - R@3(FULLHAAR_FRESH) )",
+            "byte_exact_in_prereg": true,
+            "exact_after_dash_and_ws_normalisation": true,
+            "exact_after_removing_bold_markers": true
+          },
+          {
+            "fragment": "frac_block = ( R@3(SCALED_BLOCK32)  - R@3(BLOCK32_FRESH)  ) / ( R@3(NATIVE) - R@3(BLOCK32_FRESH)  )",
+            "byte_exact_in_prereg": true,
+            "exact_after_dash_and_ws_normalisation": true,
+            "exact_after_removing_bold_markers": true
+          },
+          {
+            "fragment": "`frac_arm` is the share of that arm's **own** loss that rescaling recovers. It is the primary",
+            "byte_exact_in_prereg": true,
+            "exact_after_dash_and_ws_normalisation": true,
+            "exact_after_removing_bold_markers": true
+          },
+          {
+            "fragment": "quantity, reported **per arm**. Both denominators are measured **inside this experiment** \u2014 they",
+            "byte_exact_in_prereg": false,
+            "exact_after_dash_and_ws_normalisation": true,
+            "exact_after_removing_bold_markers": true
+          },
+          {
+            "fragment": "are not inherited \u2014 and must be reported with their per-seed dispersion.",
+            "byte_exact_in_prereg": false,
+            "exact_after_dash_and_ws_normalisation": true,
+            "exact_after_removing_bold_markers": true
+          },
+          {
+            "fragment": "**Resolved** bands on the seed-panel mean, applied per arm: \u2026",
+            "byte_exact_in_prereg": false,
+            "exact_after_dash_and_ws_normalisation": false,
+            "exact_after_removing_bold_markers": false
+          }
+        ],
+        "all_fragments_byte_exact": false,
+        "all_exact_modulo_dashes_and_bold": false
+      },
+      "defect_1_demotion_and_licence": {
+        "s7_calls_interaction_secondary": true,
+        "s7_calls_frac_arm_primary": true,
+        "s9_positive_clause_present": true,
+        "s9_clause_names_I_not_I_frac": true,
+        "note": "section 9 writes `I`, not `I_frac`. The identification is an inference the record makes silently; it is supported because section 7 bars the percentage-point interaction from carrying any verdict, leaving I_frac as the only interaction that can."
+      },
+      "defect_2_no_operational_threshold": {
+        "all_mentions_of_I_or_I_frac": [
+          {
+            "line": 85,
+            "text": "global `\u03c3` overshoots on the block arm (1.096) and flips the sign of `I_frac` between settings."
+          },
+          {
+            "line": 142,
+            "text": "**Secondary:** the interaction on the fraction scale, `I_frac = frac_full - frac_block`. It is"
+          },
+          {
+            "line": 152,
+            "text": "- Report the seed-panel mean **and** the per-seed range for every arm and for `I`."
+          },
+          {
+            "line": 153,
+            "text": "- Report a **question-level paired bootstrap** on `I` \u2014 and state in the same breath that it"
+          },
+          {
+            "line": 165,
+            "text": "**Positive (`I` large).** Supports that relative coordinate scale *participates* in the damage from"
+          },
+          {
+            "line": 216,
+            "text": "2. **Scope of `\u03c3`** \u2014 per-archive, resolved by pilot 04. Global overshoots and flips `I_frac`."
+          }
+        ],
+        "mentions_carrying_a_two_decimal_number": [
+          {
+            "line": 85,
+            "text": "global `\u03c3` overshoots on the block arm (1.096) and flips the sign of `I_frac` between settings."
+          }
+        ],
+        "string_large_is_defined": false,
+        "frac_arm_bands_present": true,
+        "auditor_reading": "no numeric band, threshold or operational direction test for I_frac exists anywhere in the preregistration. Section 9 does supply a QUALITATIVE dichotomy (`I` large vs `I` approximately 0), which is a direction distinction without an operational cut."
+      },
+      "record_selects_no_clause": {
+        "decision_states_no_clause_selected": false,
+        "register_states_not_adjudicated": true
+      }
+    },
+    "C5": {
+      "evidence_A": {
+        "path": "docs/v52/task3/V52_T3A1_PROTOCOL_PATCH.md",
+        "commit": "e97fbe052306e9042e994d2e83031c6e8edd6b3d",
+        "git_blob_id": "36505bcffd7d1ce983a71c5ec4d000a2c94ae1ac",
+        "declared_blob_id": "36505bcffd7d1ce983a71c5ec4d000a2c94ae1ac",
+        "sha256": "930db8e923652319f169ba0701febdc07a8cebc49b21c978960384682b37bef1",
+        "declared_sha256": "930db8e923652319f169ba0701febdc07a8cebc49b21c978960384682b37bef1",
+        "bytes": 744,
+        "declared_bytes": 744,
+        "decisive_sentence_present_verbatim": true,
+        "decisive_sentence_present_after_ws_norm": true,
+        "blob_id_matches": true,
+        "sha_matches": true,
+        "bytes_match": true
+      },
+      "evidence_B": {
+        "path": "adapters/longmemeval_v52_adapter_v2.py",
+        "commit": "e97fbe052306e9042e994d2e83031c6e8edd6b3d",
+        "git_blob_id": "aa0b6f956a9bbc7f27778760c2c6fc708ae72ba1",
+        "declared_blob_id": "aa0b6f956a9bbc7f27778760c2c6fc708ae72ba1",
+        "sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+        "declared_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+        "states_same_finding": false,
+        "finding_lines": [
+          "ID collision is repaired; primary 470 has no zero-gold questions; all 470 primary questions lie in one shared-session connected component."
+        ],
+        "blob_id_matches": true,
+        "sha_matches": true
+      },
+      "A2_SHA256_pin": {
+        "source": "research/v52/longmemeval_spectral_band_haar_causal.py",
+        "source_blob_id": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+        "declared_source_blob": "79dd4a5ec462102da5d82530088a4b7e89bef437",
+        "pinned_value": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+        "equals_evidence_B_sha256": true
+      },
+      "recomputation_claim_scan": {
+        "acceptance_decision": [],
+        "clarification_note": [
+          "rebuilt the `haystack",
+          "recounted its connected component",
+          "re-derived the \"1 component, largest = 470/470",
+          "dependency graph over the 470 primary LongMemEval questions was **not recomputed"
+        ],
+        "deviation_register": [],
+        "ledger_L057_L060": [
+          "rebuilt, its components were not recounted, and the \"1 component, largest 470/470",
+          "components were not recounted, and the \"1 component, largest 470/470\" figures were not re-derived"
+        ],
+        "current_state": [
+          "rebuilt, components were not recounted, the '1 component / 470 of 470",
+          "components were not recounted, the '1 component / 470 of 470' figures were not re-derived"
+        ]
+      },
+      "required_citation_label": {
+        "label": "[LONGMEMEVAL SINGLE-COMPONENT FINDING \u2014 INHERITED FROM TASK 3A.1; PROVENANCE VERIFIED, NOT RECOMPUTED HERE]",
+        "present_in_clarification_note": true,
+        "present_in_state_file": true,
+        "present_in_acceptance_decision": false,
+        "present_in_deviation_register": false,
+        "clarification_states_not_recomputed": true,
+        "clarification_states_inherited": true,
+        "clarification_states_confirming_is_not_confirming": false
+      }
+    },
+    "C6": {
+      "state_ledger_entry": "L-060",
+      "ledger_entries_found": [
+        "L-055",
+        "L-056",
+        "L-057",
+        "L-058",
+        "L-059",
+        "L-060"
+      ],
+      "newest_entry_by_number": "L-060",
+      "last_entry_in_file_order": "L-060",
+      "state_matches_newest": true,
+      "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
+      "task_4f1_run": "BLOCKED",
+      "outcome_access": "FORBIDDEN",
+      "awaiting_adjudication_in_state_file": [],
+      "awaiting_adjudication_in_decision": [],
+      "label_sets": {
+        "state_file": [
+          "[COMPARATIVE MECHANISM CLAIM NOT ACCEPTED - DENOMINATOR INSTABILITY AND PREREGISTRATION DEVIATIONS]",
+          "[LOCOMO COMPUTATIONAL REPRODUCTION PASS - SAME METHOD, NOT INDEPENDENT REPLICATION]",
+          "[MOST / PARTIAL ARE POINT CLASSIFICATIONS ON THE FROZEN PANEL - NOT A POPULATION-LEVEL DIFFERENCE]",
+          "[NOT INDEPENDENTLY AUDITED AS A WHOLE STAGE]",
+          "[UNCERTAINTY ANALYSIS IS POST-OUTCOME]"
+        ],
+        "acceptance_decision": [
+          "[COMPARATIVE MECHANISM CLAIM NOT ACCEPTED - DENOMINATOR INSTABILITY AND PREREGISTRATION DEVIATIONS]",
+          "[LOCOMO COMPUTATIONAL REPRODUCTION PASS - SAME METHOD, NOT INDEPENDENT REPLICATION]",
+          "[MOST / PARTIAL ARE POINT CLASSIFICATIONS ON THE FROZEN PANEL - NOT A POPULATION-LEVEL DIFFERENCE]",
+          "[NOT INDEPENDENTLY AUDITED AS A WHOLE STAGE]",
+          "[UNCERTAINTY ANALYSIS IS POST-OUTCOME]"
+        ],
+        "deviation_register": [
+          "[COMPARATIVE MECHANISM CLAIM NOT ESTABLISHED - DENOMINATOR INSTABILITY AND PREREGISTRATION DEVIATIONS]",
+          "[LOCOMO COMPUTATIONAL REPRODUCTION PASS - SAME METHOD, NOT INDEPENDENT REPLICATION]",
+          "[NOT INDEPENDENTLY AUDITED AS A WHOLE STAGE]",
+          "[UNCERTAINTY ANALYSIS IS POST-OUTCOME]"
+        ],
+        "state_equals_decision": true,
+        "decision_equals_register": false,
+        "in_decision_not_in_register": [
+          "[COMPARATIVE MECHANISM CLAIM NOT ACCEPTED - DENOMINATOR INSTABILITY AND PREREGISTRATION DEVIATIONS]",
+          "[MOST / PARTIAL ARE POINT CLASSIFICATIONS ON THE FROZEN PANEL - NOT A POPULATION-LEVEL DIFFERENCE]"
+        ],
+        "in_register_not_in_decision": [
+          "[COMPARATIVE MECHANISM CLAIM NOT ESTABLISHED - DENOMINATOR INSTABILITY AND PREREGISTRATION DEVIATIONS]"
+        ]
+      },
+      "accepted_conclusion_text": {
+        "decision": "On a fixed pipeline, positive coordinate rescaling preserves the native sign representation exactly while raising retrieval score after full orthogonal mixing. The LoCoMo computation reproduced numerically from verified raw data across 92,100 question/seed/arm records. Denominator instability in the block-normalised comparisons, together with preregistration aggregation and interpretation inconsistencies, limits any comparative mechanism inference. Post-hoc sensitivity analyses do not repair that limit; they make it visible. This is not a general mechanism result, not a production claim, and does not generalise to other encoders or corpora.",
+        "state_file": "On a fixed pipeline, positive coordinate rescaling preserves the native sign representation exactly while raising retrieval score after full orthogonal mixing. The LoCoMo computation reproduced numerically from verified raw data across 92,100 question/seed/arm records. Denominator instability in the block-normalised comparisons, together with preregistration aggregation and interpretation inconsistencies, limits any comparative mechanism inference. Post-hoc sensitivity analyses do not repair that limit; they make it visible. Not a general mechanism result, not a production claim, and not a generalisation to other encoders or corpora.",
+        "identical": false
+      }
+    },
+    "C7": {
+      "main_range": "a0944522..ed2b2f74",
+      "main_commits": [
+        "ed2b2f7 ops(v52): apply the two wording constraints, prepare the narrow closure audit, propose the next question (L-060)",
+        "cf03007 ops(v52): correct a stale state label left by L-059",
+        "9271341 ops(v52): record the Head Researcher acceptance decision; rule A vs B from the preregistration text (L-059)",
+        "e97fbe0 ops(v52): record the coordinate-scale deviation register; LongMemEval cluster bootstrap settled ill-posed (L-058)",
+        "37a39a4 ops(v52): integrate the five published Codex packages by identity verification (L-057)"
+      ],
+      "main_changes": [
+        {
+          "status": "M",
+          "path": "docs/CONTINUITY_LEDGER.md",
+          "is_addition": false,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "docs/v52/V52_ACCEPTANCE_DECISION_CLARIFICATION_2026-09-07.md",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "docs/v52/V52_ACCEPTANCE_DECISION_CLARIFICATION_2026-09-07.md.sha256",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "docs/v52/V52_COORDINATE_SCALE_ACCEPTANCE_DECISION_2026-09-07.md",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "docs/v52/V52_COORDINATE_SCALE_ACCEPTANCE_DECISION_2026-09-07.md.sha256",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md.sha256",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "M",
+          "path": "ops/CURRENT_STATE.json",
+          "is_addition": false,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md.sha256",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        }
+      ],
+      "research_range": "591e5d0..0c9916bd",
+      "research_commits": [
+        "0c9916b research(v52): register every coordinate-scale deviation in one place; settle the LongMemEval cluster item"
+      ],
+      "research_changes": [
+        {
+          "status": "A",
+          "path": "research/v52/V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        },
+        {
+          "status": "A",
+          "path": "research/v52/V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md.sha256",
+          "is_addition": true,
+          "touches_frozen_namespace": false
+        }
+      ],
+      "non_addition_paths_on_main": [
+        "docs/CONTINUITY_LEDGER.md",
+        "ops/CURRENT_STATE.json"
+      ],
+      "non_addition_paths_on_research": [],
+      "any_frozen_namespace_touched": [],
+      "register_D1_D2_left_stale": {
+        "D1_row": [
+          "| D1 | Aggregation order A vs B | Codex review `1aa6184` | OPEN \u2014 needs adjudication |"
+        ],
+        "D2_row": [
+          "| D2 | Preregistration \u00a77 / \u00a79 interpretation conflict | prereg `de667211` | OPEN \u2014 needs an explicit deviation ruling |"
+        ],
+        "research_tip_is_the_register_commit": true,
+        "superseded_in_writing_by_decision": true
+      },
+      "in_place_state_change": {
+        "commit": "cf03007f8d01",
+        "message": "ops(v52): correct a stale state label left by L-059\n\nThe state key still read 'proposed_narrow_conclusion_not_adopted' and its text still ended\n'AWAITING HEAD RESEARCHER ADJUDICATION', both false since L-059 accepted the conclusion. Renamed to\nnarrow_conclusion_text_ACCEPTED_2026_09_07; the conclusion text itself is preserved verbatim apart\nfrom that one trailing sentence. State hygiene only - no ledger entry, no decision changed.\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+        "files": [
+          "ops/CURRENT_STATE.json"
+        ],
+        "own_commit": true,
+        "disclosed_in_ledger": true,
+        "disclosed_in_audit_prompt": true,
+        "old_key_present": true,
+        "new_key_present": true,
+        "body_before_final_sentence_identical": true,
+        "old_trailing": "AWAITING HEAD RESEARCHER ADJUDICATION.",
+        "new_trailing": "ACCEPTED 2026-09-07 with the limits recorded in head_researcher_acceptance_decision_2026_09_07 (L-059); the text itself is unchanged from the version that was proposed.",
+        "claim_verbatim_apart_from_trailing_sentence": true,
+        "old_key_recoverable_only_from_git_history": true
+      }
+    },
+    "C8": {
+      "paths_changed_in_range": [
+        "docs/CONTINUITY_LEDGER.md",
+        "docs/v52/V52_ACCEPTANCE_DECISION_CLARIFICATION_2026-09-07.md",
+        "docs/v52/V52_ACCEPTANCE_DECISION_CLARIFICATION_2026-09-07.md.sha256",
+        "docs/v52/V52_COORDINATE_SCALE_ACCEPTANCE_DECISION_2026-09-07.md",
+        "docs/v52/V52_COORDINATE_SCALE_ACCEPTANCE_DECISION_2026-09-07.md.sha256",
+        "docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md",
+        "docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07.md.sha256",
+        "ops/CURRENT_STATE.json",
+        "prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md",
+        "prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md.sha256",
+        "research/v52/V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md",
+        "research/v52/V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md.sha256"
+      ],
+      "any_path_under_task4f1_namespace": [],
+      "any_candidate_or_seal_path": [],
+      "any_corpus_or_data_path": [],
+      "any_result_package_path": [],
+      "t4f1_tokens_in_added_docs": {
+        "acceptance_decision": [],
+        "clarification_note": []
+      },
+      "state_hard_stops_intact": {
+        "task_4f1_run": "BLOCKED",
+        "outcome_access": "FORBIDDEN",
+        "hard_stops_mention_mode_run": true,
+        "hard_stops_mention_hmac": true
+      },
+      "hard_stops_unchanged_across_range": true,
+      "hard_stops_unchanged_L056_to_L060": true,
+      "task_state_4f1_unchanged_L056_to_L060": true,
+      "note": "the only T4F1 tokens in the added documents are inside PROHIBITION sentences; listed above so the reader can confirm the context."
+    }
+  },
+  "negative_controls": {
+    "NC_C1_sidecar_can_fail": {
+      "perturbation": "append one newline byte",
+      "perturbed_sha256": "d5fa707eefede5557ee70bf3f1df3a1e7e89ff3bec1f14f807ad4b9e51e6c7e2",
+      "still_matches_sidecar": false,
+      "control_passes_iff_false": true
+    },
+    "NC_C3_quote_check_can_fail": {
+      "fake_quote": "**Secondary:** the interaction on the fraction scale, `I_frac = frac_full + frac_block`.",
+      "byte_exact_in_preregistration": false,
+      "control_passes_iff_false": true
+    },
+    "NC_C3_threshold_search_can_fail": {
+      "probe": "search the same document for the frac_arm band that DOES exist",
+      "found_frac_band": true,
+      "control_passes_iff_true": true,
+      "meaning": "the search finds a real band when one exists, so its silence on I_frac is evidence"
+    },
+    "NC_C5_pin_check_can_fail": {
+      "probe": "compare the A2_SHA256 pin against evidence A's sha256 instead of evidence B's",
+      "would_match": false,
+      "control_passes_iff_false": true
+    },
+    "NC_C5_recomputation_scan_can_fire": {
+      "probe": "run the same regex over a synthetic sentence that DOES claim recomputation",
+      "synthetic": "In this stage we recomputed the dependency graph and recounted its components.",
+      "fires": true,
+      "control_passes_iff_true": true
+    },
+    "NC_C6_newest_entry_check_can_fail": {
+      "probe": "assert the state file points at L-055 instead of the newest entry",
+      "would_pass": false,
+      "control_passes_iff_false": true
+    },
+    "NC_C7_additivity_check_can_fail": {
+      "probe": "classify a synthetic modification line as an addition",
+      "sample": [
+        {
+          "status": "M",
+          "path": "research/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_2026-09-05.md",
+          "is_addition": false,
+          "touches_frozen_namespace": true
+        }
+      ],
+      "detected_as_non_addition_and_frozen": true,
+      "control_passes_iff_true": true
+    },
+    "NC_C8_boundary_scan_can_fire": {
+      "synthetic": "python runner.py --mode run --auth $V52_T4F1_AUTH_HMAC_KEY_HEX",
+      "fires": true,
+      "control_passes_iff_true": true
+    }
+  },
+  "meta": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "main_commit": "ed2b2f74347da6be68beae2c22d5c3d22992f1a3",
+    "research_commit": "0c9916bd7786d7ddb332f5b6da3d96d61a6223f0",
+    "core_autocrlf": "false"
+  }
+}

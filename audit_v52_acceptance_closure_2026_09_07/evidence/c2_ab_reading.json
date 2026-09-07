@@ -1,0 +1,88 @@
+{
+  "section_7_bytes": 1793,
+  "section_9_bytes": 867,
+  "textual_facts": {
+    "fact_1_governing_per_seed_clause": {
+      "claim": "frac_arm is defined per rotation seed; the formulas sit under that clause",
+      "clause_text_present": true,
+      "clause_precedes_formulas": true,
+      "clause_is_bold_in_source": false,
+      "clause_is_bold_in_decision_quote": true
+    },
+    "fact_2_bands_on_seed_panel_mean": {
+      "claim": "the bands are applied to the seed-panel mean",
+      "text_present": true,
+      "nearest_defined_quantity_before_it": "frac_arm",
+      "any_other_quantity_defined_in_s7": [
+        "delta_block",
+        "delta_full",
+        "frac_arm"
+      ]
+    },
+    "fact_3_per_seed_dispersion_of_denominators": {
+      "claim": "denominators must be reported with their per-seed dispersion, so a per-seed denominator exists",
+      "text_present": true,
+      "denominators_measured_inside": true
+    }
+  },
+  "converse_claim": {
+    "claim": "section 7 nowhere describes averaging each arm across seeds before forming the ratio",
+    "matches_in_section_7": [],
+    "matches_in_whole_preregistration": [],
+    "phrase_seed_panel_mean_occurrences_in_prereg": 2,
+    "phrase_seed_mean_occurrences_in_prereg": 0,
+    "section_8_reporting_requirement": [
+      "**Resolved** bands on the seed-panel mean, applied per arm:",
+      "- Report the seed-panel mean **and** the per-seed range for every arm and for `I`."
+    ]
+  },
+  "outcome_free_check": {
+    "assertion_in_document": false,
+    "decimal_numbers_in_2_1_to_2_3": [
+      "2.1",
+      "2.2",
+      "2.3"
+    ],
+    "decimal_numbers_in_2_4_correction": [
+      "0.0006438693757745",
+      "0.001",
+      "0.001079",
+      "0.0010792266983414844",
+      "0.0080525777340523",
+      "0.206",
+      "0.2062003408892458",
+      "0.3084585844542308",
+      "0.3165111621882831",
+      "0.4454425786787960",
+      "0.6516429195680419",
+      "0.6563342970957214"
+    ],
+    "band_numbers_elided_from_the_s7_quote": true,
+    "quote_uses_an_elision_marker": true,
+    "auditor_note": "2.1-2.3, the derivation, carry no outcome value. 2.4 is inside section 2 and does carry the A/B values; it is labelled a presentational correction demanded by the Head Researcher and is not part of the derivation."
+  },
+  "negative_controls": {
+    "NC_C2_collapse_pattern_can_fire": {
+      "synthetic_text_describing_B": "Average each arm across the seed panel, then form the ratio of the seed-mean gain to the seed-mean loss before forming the ratio.",
+      "fires": [
+        "seed-mean gain",
+        "seed-mean loss",
+        "before forming the ratio"
+      ],
+      "control_passes_iff_nonempty": true
+    },
+    "NC_C2_number_detector_can_fire": {
+      "synthetic": "A is the natural reading because A = 0.7271861342884777 and B = 0.7261069075901362.",
+      "fires": [
+        "0.7271861342884777",
+        "0.7261069075901362"
+      ],
+      "control_passes_iff_nonempty": true
+    },
+    "NC_C2_fact_check_can_fail": {
+      "fake_clause": "For each dataset independently, per archive, paired at the question level:",
+      "present": false,
+      "control_passes_iff_false": true
+    }
+  }
+}

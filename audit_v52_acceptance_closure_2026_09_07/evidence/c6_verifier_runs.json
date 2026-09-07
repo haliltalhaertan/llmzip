@@ -1,0 +1,78 @@
+{
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "runs": {
+    "verify_continuity_state": {
+      "cmd": "C:\\Users\\MDP\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe tools/verify_continuity_state.py",
+      "exit": 0,
+      "stdout_tail": [
+        "CONTINUITY_STATE: PASS\r",
+        "state_id=V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3\r",
+        "next_single_action=Head Researcher decision on two independent items: (a) commission the prepared narrow closure audit (prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md), in a session that did not write the acceptance record, and say whether this session may launch it or whether an external operator should; (b) rule on the next research question - take up the coordinate-membership proposal, prefer the encoder-generalisation alternative, or neither. Task 4F1 stays on hold; no run/finalize/HMAC/outcome authority. D11 Drive backup needs an operator with Drive access; the GitHub default branch is owner-only."
+      ],
+      "stdout_head": [
+        "CONTINUITY_STATE: PASS\r",
+        "state_id=V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3\r",
+        "next_single_action=Head Researcher decision on two independent items: (a) commission the prepared narrow closure audit (prompts/V52_ACCEPTANCE_CLOSURE_NARROW_AUDIT_PROMPT_2026-09-07.md), in a session that did not write the acceptance record, and say whether this session may launch it or whether an external operator should; (b) rule on the next research question - take up the coordinate-membership proposal, prefer the encoder-generalisation alternative, or neither. Task 4F1 stays on hold; no run/finalize/HMAC/outcome authority. D11 Drive backup needs an operator with Drive access; the GitHub default branch is owner-only."
+      ]
+    },
+    "verify_frozen_artifacts": {
+      "cmd": "C:\\Users\\MDP\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe tools/verify_frozen_artifacts.py",
+      "exit": 0,
+      "stdout_tail": [
+        "    expected d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442\r",
+        "\r",
+        "match=26  mismatch=0  drive-only=2  external-pins=4  absent=1\r",
+        "\r",
+        "No committed frozen-artifact hash mismatch detected.\r",
+        "External pins still require independent byte materialization for full re-hash coverage."
+      ],
+      "stdout_head": [
+        "== docs\\v52\\task4c2\\V52_T4C2_POST_RUN_MANIFEST.json -- 25 declared artifacts ==\r",
+        "  ABSENT     V52_T4C2_same_input_proof.csv  (compact -- should be committed)\r",
+        "\r"
+      ]
+    }
+  },
+  "negative_controls": {
+    "NC_C6_frozen_verifier_can_fail": {
+      "method": "shadow copy of the tree; one byte appended to a checked adapter",
+      "clean_exit": 0,
+      "perturbed_exit": 1,
+      "clean_tail": [
+        "    expected d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442\r",
+        "\r",
+        "match=26  mismatch=0  drive-only=2  external-pins=4  absent=1\r",
+        "\r",
+        "No committed frozen-artifact hash mismatch detected.\r",
+        "External pins still require independent byte materialization for full re-hash coverage."
+      ],
+      "perturbed_tail": [
+        "    got      68a749b60d523ec635d9ee68cab61c6fa16f41ec32fe2d75ec7aabbc3359a657\r",
+        "    expected 643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218\r",
+        "\r",
+        "CHAIN-OF-CUSTODY DEFECT. Do not interpret affected results until resolved.\r",
+        "Never repair a frozen artifact by regenerating or reformatting it; restore\r",
+        "the canonical bytes and verify the published SHA256."
+      ],
+      "control_passes_iff": "clean_exit == 0 and perturbed_exit != 0",
+      "control_passed": true
+    },
+    "NC_C6_state_verifier_can_fail": {
+      "method": "observed live: the same verifier returned CONTINUITY_STATE: BLOCKED with 29 SHA256 mismatches on the default Windows (CRLF) checkout of this same commit, and PASS after re-checking out with core.autocrlf=false. No tracked byte was modified to produce the failure.",
+      "blocked_under_crlf": true,
+      "pass_under_lf": true,
+      "control_passed": true
+    }
+  },
+  "core_autocrlf": "false",
+  "gitattributes_in_tree": 0,
+  "blob_vs_checkout": {
+    "path": "adapters/longmemeval_v52_adapter_v2.py",
+    "blob_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+    "checkout_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+    "equal_under_current_checkout": true,
+    "crlf_would_produce": "db71d95be809de856acac90de5498d08e9bf06fec06f753269e8c20a98c47450",
+    "crlf_explains_the_earlier_reported_mismatch": true,
+    "note": "db71d95b... is the value this auditor observed on a default Windows clone (core.autocrlf=true) before re-checking out with LF. It is reproduced here purely by CRLF-expanding the blob, which proves the mismatch was a checkout artifact and not a byte defect."
+  }
+}
