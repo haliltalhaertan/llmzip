@@ -1,0 +1,57 @@
+{
+  "schema": "POST_OUTCOME_ANALYSIS_PAYLOAD_V1",
+  "precomputation_commit": "54605e2801f9cb1035a218936d64c9e70909139c",
+  "excludes": "self",
+  "files": [
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/ANALYSIS_PLAN.md",
+      "sha256": "7fecb3b033a774568eeb2f959ca299cdeb34bdc438a1ffd309d3ab7fa165f3b1",
+      "bytes": 4691
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/bootstrap.py",
+      "sha256": "125bba53606255eb23dbc1dc0b0a6cfdfc92ad08ecc62c38d58e6c87420f8d5a",
+      "bytes": 9271
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/COMMAND_LOG.md",
+      "sha256": "bd7a5238dba762ea4d8bea08ebd7f65208aab685c4b69d2452b0c6b428e3a3ae",
+      "bytes": 2266
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/REPORT.md",
+      "sha256": "95d3afc01c7444eda752555babca0635b67263781a58c89c293f40837c7a8b2e",
+      "bytes": 6359
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/test_bootstrap.py",
+      "sha256": "5e33db7a8207ba01dfd34b45e48b8eb0392bca9aa7eab4270f8faa914ab14ca9",
+      "bytes": 3379
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/verify_outputs.py",
+      "sha256": "cccbe910262c82a599bc27798285317690a6dffc6381b7ebc60ae33a5e9f80be",
+      "bytes": 2158
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/outputs/locomo_cluster.csv",
+      "sha256": "a03e81bcd24dce53bced620f6160d0830596633de8a02b085dbb19d038b85095",
+      "bytes": 2561078
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/outputs/locomo_question.csv",
+      "sha256": "70d01ee14e2ce6e85a4e481fa15c220c43fe5e7a06c4b0a58db72ec92497a97a",
+      "bytes": 2560649
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/outputs/longmemeval_question.csv",
+      "sha256": "fb43e7346b2a0ee3132cd5b10fef4f8dc38ab1155dcb238f15c9ed6b49aadd80",
+      "bytes": 2519914
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_uncertainty_2026_09_07/outputs/RESULTS.json",
+      "sha256": "1719c90f2c0e84dd5c734f0017a693ca864a6005a2c6c62e9e2053cabd341a72",
+      "bytes": 22800
+    }
+  ]
+}

@@ -1,0 +1,859 @@
+{
+  "status": "POST_OUTCOME_SENSITIVITY_NOT_SCIENTIFIC_ACCEPTANCE",
+  "replicates_per_scheme": 10000,
+  "fixed_rotation_seeds": [
+    59001,
+    59002,
+    59003,
+    59004,
+    59005,
+    59006,
+    59007,
+    59008,
+    59009,
+    59010
+  ],
+  "input_sha256": {
+    "locomo": "b7abd942c13cf9ce1b1c4a13e3ff39fb26a26e8b2f2749dd92d76f0b2a474602",
+    "longmemeval": "1db682a277b8fe7f0b3aa7cf02831bf07f0d5c4c340796a57c93df5441df3157"
+  },
+  "code_sha256": "125bba53606255eb23dbc1dc0b0a6cfdfc92ad08ecc62c38d58e6c87420f8d5a",
+  "plan_sha256": "7fecb3b033a774568eeb2f959ca299cdeb34bdc438a1ffd309d3ab7fa165f3b1",
+  "precomputation_commit": "54605e2801f9cb1035a218936d64c9e70909139c",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "threads": "1"
+  },
+  "schemes": {
+    "locomo_question": {
+      "planned_replicates": 10000,
+      "algorithmic_failures": 0,
+      "statistics": {
+        "A_full": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            0.6357009821710615,
+            0.727171184118016,
+            0.8397455180928916
+          ],
+          "min": 0.5598377001396195,
+          "max": 1.013084890988592,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.0,
+            "partial": 0.2897,
+            "most": 0.7103
+          }
+        },
+        "A_block": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -8.53712319085623,
+            0.5069879270830662,
+            9.89157224209706
+          ],
+          "min": -2968.4768827813036,
+          "max": 3299.654818945365,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.3763,
+            "partial": 0.2047,
+            "most": 0.419
+          }
+        },
+        "A_I": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -9.160580628543673,
+            0.21780469997236207,
+            9.268580071701443
+          ],
+          "min": -3298.953557210907,
+          "max": 2969.2045089200064,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "positive_fraction_of_all_replicates": 0.5926
+        },
+        "B_full": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            0.6353619630523022,
+            0.7262768578067856,
+            0.8372329460356382
+          ],
+          "min": 0.5601852468734578,
+          "max": 1.0019595335492353,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.0,
+            "partial": 0.2958,
+            "most": 0.7042
+          }
+        },
+        "B_block": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -4.818824582382891,
+            0.39053057002523284,
+            5.650971379838867
+          ],
+          "min": -1403.8933968998251,
+          "max": 1060.4646557430372,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.3164,
+            "partial": 0.397,
+            "most": 0.2866
+          }
+        },
+        "B_I": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -4.907153147070615,
+            0.30842335529953385,
+            5.606265249338193
+          ],
+          "min": -1059.6937329709872,
+          "max": 1404.6714859183014,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "positive_fraction_of_all_replicates": 0.7242
+        }
+      },
+      "denominators": {
+        "full": {
+          "replicates_any_seed_negative": 0,
+          "replicates_any_seed_zero": 0,
+          "replicates_any_seed_near_zero_1e_12": 0,
+          "replicates_seed_signs_cross_zero": 0,
+          "seed_denominator_range": [
+            0.0504678426893411,
+            0.13956330640043996
+          ],
+          "aggregate_negative": 0,
+          "aggregate_zero": 0,
+          "aggregate_near_zero_1e_12": 0,
+          "aggregate_range": [
+            0.07023180267945905,
+            0.12500702468712502
+          ]
+        },
+        "block": {
+          "replicates_any_seed_negative": 8910,
+          "replicates_any_seed_zero": 0,
+          "replicates_any_seed_near_zero_1e_12": 0,
+          "replicates_seed_signs_cross_zero": 8887,
+          "seed_denominator_range": [
+            -0.03866700509045787,
+            0.047622847836202964
+          ],
+          "aggregate_negative": 1962,
+          "aggregate_zero": 0,
+          "aggregate_near_zero_1e_12": 0,
+          "aggregate_range": [
+            -0.019725626146223953,
+            0.028701400440169167
+          ]
+        }
+      },
+      "bootstrap_rng_seed": 2026090701,
+      "point": {
+        "A_full": 0.7271861342884784,
+        "A_block": 0.4454425786788036,
+        "A_I": 0.28174355560967485,
+        "B_full": 0.726106907590137,
+        "B_block": 0.6516429195680569,
+        "B_I": 0.0744639880220801
+      },
+      "point_seed_gains": [
+        [
+          0.07213732720410243,
+          -0.007704052956687635
+        ],
+        [
+          0.06526858142484995,
+          0.01086744956854685
+        ],
+        [
+          0.0699831560894025,
+          -0.002528118653598893
+        ],
+        [
+          0.07678338921196742,
+          -0.0030677552631950544
+        ],
+        [
+          0.07749455578042916,
+          0.010753994105785591
+        ],
+        [
+          0.061703619427603634,
+          0.0013207936812076326
+        ],
+        [
+          0.07638417764437572,
+          0.013012429401728087
+        ],
+        [
+          0.0640884907709012,
+          -0.006618212757415531
+        ],
+        [
+          0.0755848518165533,
+          0.010479680471537106
+        ],
+        [
+          0.06791676045863174,
+          0.008226948404472967
+        ]
+      ],
+      "point_seed_ratios": [
+        [
+          0.7909698932017458,
+          1.1640667431479759
+        ],
+        [
+          0.6501622350180424,
+          2.208272479627293
+        ],
+        [
+          0.725160823696386,
+          1.2252223461358909
+        ],
+        [
+          0.7294777711743367,
+          -1.8052129602982456
+        ],
+        [
+          0.8313532034389048,
+          2.6437995729103427
+        ],
+        [
+          0.6378624477167278,
+          0.23031678083782484
+        ],
+        [
+          0.7528271597666344,
+          0.7917076595099876
+        ],
+        [
+          0.7231799520071979,
+          -3.4020307408182435
+        ],
+        [
+          0.7638087298678016,
+          0.8384006043685471
+        ],
+        [
+          0.6670591269970071,
+          0.5598833013666631
+        ]
+      ],
+      "point_seed_denominators": [
+        [
+          0.0912011036375856,
+          -0.006618222711056609
+        ],
+        [
+          0.10038814608024521,
+          0.0049212448503551665
+        ],
+        [
+          0.09650708339796277,
+          -0.0020633958085828907
+        ],
+        [
+          0.105258024639132,
+          0.0016993869037413845
+        ],
+        [
+          0.09321496021170278,
+          0.004067628354273239
+        ],
+        [
+          0.09673499302000918,
+          0.005734682798200691
+        ],
+        [
+          0.10146310033242387,
+          0.016435901870372055
+        ],
+        [
+          0.08862039191355145,
+          0.001945371239009952
+        ],
+        [
+          0.09895782656167779,
+          0.012499609872574008
+        ],
+        [
+          0.10181520304561617,
+          0.01469404139110983
+        ]
+      ],
+      "sample_size_range": [
+        1535,
+        1535
+      ],
+      "replicates_csv_sha256": "70d01ee14e2ce6e85a4e481fa15c220c43fe5e7a06c4b0a58db72ec92497a97a"
+    },
+    "locomo_cluster": {
+      "planned_replicates": 10000,
+      "algorithmic_failures": 0,
+      "statistics": {
+        "A_full": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            0.619814516787214,
+            0.7264374083605275,
+            0.9075623921794982
+          ],
+          "min": 0.5618580057687252,
+          "max": 1.1783836201099687,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.0,
+            "partial": 0.3455,
+            "most": 0.6545
+          }
+        },
+        "A_block": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -7.372327286739832,
+            0.38613053169210454,
+            9.228940932917544
+          ],
+          "min": -2894.4232552545463,
+          "max": 18755.70072026157,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.4194,
+            "partial": 0.1922,
+            "most": 0.3884
+          }
+        },
+        "A_I": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -8.479952751932206,
+            0.33944812392460166,
+            8.153621033404542
+          ],
+          "min": -18754.998777597073,
+          "max": 2895.1499403264875,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "positive_fraction_of_all_replicates": 0.6269
+        },
+        "B_full": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            0.6197420186808897,
+            0.7256862131479,
+            0.9040800277547998
+          ],
+          "min": 0.5633065777915178,
+          "max": 1.1639101357929278,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.0,
+            "partial": 0.3514,
+            "most": 0.6486
+          }
+        },
+        "B_block": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -4.797293150722568,
+            0.2882981499275027,
+            4.908416607432526
+          ],
+          "min": -431.096762592233,
+          "max": 454.0411811149822,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.3957,
+            "partial": 0.3784,
+            "most": 0.2259
+          }
+        },
+        "B_I": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -4.113827822773109,
+            0.3913035870148296,
+            5.572060430831893
+          ],
+          "min": -453.20904028484426,
+          "max": 431.9641029591592,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "positive_fraction_of_all_replicates": 0.7807
+        }
+      },
+      "denominators": {
+        "full": {
+          "replicates_any_seed_negative": 0,
+          "replicates_any_seed_zero": 0,
+          "replicates_any_seed_near_zero_1e_12": 0,
+          "replicates_seed_signs_cross_zero": 0,
+          "seed_denominator_range": [
+            0.03640873015873017,
+            0.16237890345900058
+          ],
+          "aggregate_negative": 0,
+          "aggregate_zero": 0,
+          "aggregate_near_zero_1e_12": 0,
+          "aggregate_range": [
+            0.060465721478148285,
+            0.14787653452185476
+          ]
+        },
+        "block": {
+          "replicates_any_seed_negative": 8410,
+          "replicates_any_seed_zero": 0,
+          "replicates_any_seed_near_zero_1e_12": 0,
+          "replicates_seed_signs_cross_zero": 8313,
+          "seed_denominator_range": [
+            -0.052462384542576485,
+            0.06634228492809302
+          ],
+          "aggregate_negative": 2670,
+          "aggregate_zero": 0,
+          "aggregate_near_zero_1e_12": 0,
+          "aggregate_range": [
+            -0.026760928003740032,
+            0.035987674175850956
+          ]
+        }
+      },
+      "bootstrap_rng_seed": 2026090702,
+      "point": {
+        "A_full": 0.7271861342884784,
+        "A_block": 0.4454425786788036,
+        "A_I": 0.28174355560967485,
+        "B_full": 0.726106907590137,
+        "B_block": 0.6516429195680569,
+        "B_I": 0.0744639880220801
+      },
+      "point_seed_gains": [
+        [
+          0.07213732720410243,
+          -0.007704052956687635
+        ],
+        [
+          0.06526858142484995,
+          0.01086744956854685
+        ],
+        [
+          0.0699831560894025,
+          -0.002528118653598893
+        ],
+        [
+          0.07678338921196742,
+          -0.0030677552631950544
+        ],
+        [
+          0.07749455578042916,
+          0.010753994105785591
+        ],
+        [
+          0.061703619427603634,
+          0.0013207936812076326
+        ],
+        [
+          0.07638417764437572,
+          0.013012429401728087
+        ],
+        [
+          0.0640884907709012,
+          -0.006618212757415531
+        ],
+        [
+          0.0755848518165533,
+          0.010479680471537106
+        ],
+        [
+          0.06791676045863174,
+          0.008226948404472967
+        ]
+      ],
+      "point_seed_ratios": [
+        [
+          0.7909698932017458,
+          1.1640667431479759
+        ],
+        [
+          0.6501622350180424,
+          2.208272479627293
+        ],
+        [
+          0.725160823696386,
+          1.2252223461358909
+        ],
+        [
+          0.7294777711743367,
+          -1.8052129602982456
+        ],
+        [
+          0.8313532034389048,
+          2.6437995729103427
+        ],
+        [
+          0.6378624477167278,
+          0.23031678083782484
+        ],
+        [
+          0.7528271597666344,
+          0.7917076595099876
+        ],
+        [
+          0.7231799520071979,
+          -3.4020307408182435
+        ],
+        [
+          0.7638087298678016,
+          0.8384006043685471
+        ],
+        [
+          0.6670591269970071,
+          0.5598833013666631
+        ]
+      ],
+      "point_seed_denominators": [
+        [
+          0.0912011036375856,
+          -0.006618222711056609
+        ],
+        [
+          0.10038814608024521,
+          0.0049212448503551665
+        ],
+        [
+          0.09650708339796277,
+          -0.0020633958085828907
+        ],
+        [
+          0.105258024639132,
+          0.0016993869037413845
+        ],
+        [
+          0.09321496021170278,
+          0.004067628354273239
+        ],
+        [
+          0.09673499302000918,
+          0.005734682798200691
+        ],
+        [
+          0.10146310033242387,
+          0.016435901870372055
+        ],
+        [
+          0.08862039191355145,
+          0.001945371239009952
+        ],
+        [
+          0.09895782656167779,
+          0.012499609872574008
+        ],
+        [
+          0.10181520304561617,
+          0.01469404139110983
+        ]
+      ],
+      "sample_size_range": [
+        1095,
+        1882
+      ],
+      "replicates_csv_sha256": "a03e81bcd24dce53bced620f6160d0830596633de8a02b085dbb19d038b85095"
+    },
+    "longmemeval_question": {
+      "planned_replicates": 10000,
+      "algorithmic_failures": 0,
+      "statistics": {
+        "A_full": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            0.5670391314560417,
+            0.6558046581159288,
+            0.7626524795611166
+          ],
+          "min": 0.4959721809757108,
+          "max": 0.8910298583631076,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.0,
+            "partial": 0.807,
+            "most": 0.193
+          }
+        },
+        "A_block": {
+          "finite": 9999,
+          "undefined": 1,
+          "percentiles_2_5_50_97_5": [
+            -1.79895400884091,
+            0.26743082087450964,
+            3.070210236579646
+          ],
+          "min": -9095035417685.7,
+          "max": 9623649416502.912,
+          "quantile_scope": "conditional on finite replicates",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.3777,
+            "partial": 0.4679,
+            "most": 0.1543
+          }
+        },
+        "A_I": {
+          "finite": 9999,
+          "undefined": 1,
+          "percentiles_2_5_50_97_5": [
+            -2.365682436016191,
+            0.3719450567943593,
+            2.5143171716749757
+          ],
+          "min": -9623649416502.227,
+          "max": 9095035417686.352,
+          "quantile_scope": "conditional on finite replicates",
+          "positive_fraction_of_all_replicates": 0.8403
+        },
+        "B_full": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            0.5678856093993887,
+            0.6565428957327255,
+            0.7618398156749613
+          ],
+          "min": 0.49749024798503655,
+          "max": 0.891852114647457,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.0,
+            "partial": 0.8056,
+            "most": 0.1944
+          }
+        },
+        "B_block": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            0.05206754937919448,
+            0.31000491721667606,
+            1.2250663112640758
+          ],
+          "min": -66.85143769968202,
+          "max": 37.65253360910324,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "band_frequencies_of_all_replicates": {
+            "little": 0.2275,
+            "partial": 0.6844,
+            "most": 0.0881
+          }
+        },
+        "B_I": {
+          "finite": 10000,
+          "undefined": 0,
+          "percentiles_2_5_50_97_5": [
+            -0.4923019250813979,
+            0.3402880428202132,
+            0.5746306886927031
+          ],
+          "min": -36.86808317222222,
+          "max": 67.58706682713975,
+          "quantile_scope": "all planned replicates; fixed-seed sensitivity only",
+          "positive_fraction_of_all_replicates": 0.9149
+        }
+      },
+      "denominators": {
+        "full": {
+          "replicates_any_seed_negative": 0,
+          "replicates_any_seed_zero": 0,
+          "replicates_any_seed_near_zero_1e_12": 0,
+          "replicates_seed_signs_cross_zero": 0,
+          "seed_denominator_range": [
+            0.06885460992907816,
+            0.26421985815602833
+          ],
+          "aggregate_negative": 0,
+          "aggregate_zero": 0,
+          "aggregate_near_zero_1e_12": 0,
+          "aggregate_range": [
+            0.1113170212765957,
+            0.2126673758865248
+          ]
+        },
+        "block": {
+          "replicates_any_seed_negative": 3305,
+          "replicates_any_seed_zero": 1,
+          "replicates_any_seed_near_zero_1e_12": 3,
+          "replicates_seed_signs_cross_zero": 3303,
+          "seed_denominator_range": [
+            -0.04071631205673759,
+            0.09794503546099298
+          ],
+          "aggregate_negative": 43,
+          "aggregate_zero": 0,
+          "aggregate_near_zero_1e_12": 0,
+          "aggregate_range": [
+            -0.018448226950354623,
+            0.06288226950354601
+          ]
+        }
+      },
+      "bootstrap_rng_seed": 2026090703,
+      "point": {
+        "A_full": 0.6569781664714958,
+        "A_block": 0.3165111621882834,
+        "A_I": 0.34046700428321236,
+        "B_full": 0.6563342970957208,
+        "B_block": 0.30845858445423857,
+        "B_I": 0.3478757126414822
+      },
+      "point_seed_gains": [
+        [
+          0.10955851063829819,
+          0.013714539007092297
+        ],
+        [
+          0.07890602836879435,
+          0.0033510638297872264
+        ],
+        [
+          0.09988829787234055,
+          0.014202127659574626
+        ],
+        [
+          0.1040124113475176,
+          0.010828014184397161
+        ],
+        [
+          0.10878014184397161,
+          0.008774822695035378
+        ],
+        [
+          0.1077482269503543,
+          0.0010460992907800337
+        ],
+        [
+          0.12003191489361692,
+          0.00834042553191483
+        ],
+        [
+          0.10094680851063831,
+          -0.0023333333333331874
+        ],
+        [
+          0.11367907801418431,
+          0.01153014184397172
+        ],
+        [
+          0.11338652482269501,
+          0.011581560283687953
+        ]
+      ],
+      "point_seed_ratios": [
+        [
+          0.665923052053024,
+          0.7057481751824846
+        ],
+        [
+          0.5196095601714016,
+          0.34029528267914694
+        ],
+        [
+          0.6488045881702599,
+          0.5971373192187291
+        ],
+        [
+          0.615806932459952,
+          0.269042689105246
+        ],
+        [
+          0.7360856159042095,
+          0.2974516167808628
+        ],
+        [
+          0.7056924541886325,
+          0.03487203735444999
+        ],
+        [
+          0.7012575358926012,
+          0.2538312108784782
+        ],
+        [
+          0.6567084986619917,
+          -0.1287797240434392
+        ],
+        [
+          0.706781753643319,
+          0.4442546796010414
+        ],
+        [
+          0.6131116735695659,
+          0.35125833512583443
+        ]
+      ],
+      "point_seed_denominators": [
+        [
+          0.1645212765957449,
+          0.01943262411347524
+        ],
+        [
+          0.15185638297872334,
+          0.009847517730496524
+        ],
+        [
+          0.1539574468085108,
+          0.023783687943262577
+        ],
+        [
+          0.16890425531914888,
+          0.040246453900709356
+        ],
+        [
+          0.14778191489361708,
+          0.02949999999999975
+        ],
+        [
+          0.15268439716312038,
+          0.02999822695035459
+        ],
+        [
+          0.1711666666666667,
+          0.032858156028368835
+        ],
+        [
+          0.15371631205673753,
+          0.018118794326241305
+        ],
+        [
+          0.1608404255319147,
+          0.02595390070921988
+        ],
+        [
+          0.18493617021276593,
+          0.0329716312056737
+        ]
+      ],
+      "sample_size_range": [
+        470,
+        470
+      ],
+      "replicates_csv_sha256": "fb43e7346b2a0ee3132cd5b10fef4f8dc38ab1155dcb238f15c9ed6b49aadd80"
+    }
+  },
+  "longmemeval_cluster": "NOT COMPUTED: conversation mapping not established"
+}
