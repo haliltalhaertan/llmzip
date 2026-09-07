@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T08:44:00Z",
+  "issued_at_utc": "2026-09-07T12:19:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the commissioned coordinate-scale independent audit (audit/v52-coordinate-scale-independent-2026-09-07) and the literature scan (research/v52-sign-mechanism-literature-scan-2026-09-04); hash-verify each pushed report against its sidecar before recording any verdict. Do not re-trigger; do not cite the coordinate-scale stage before the audit returns. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher adjudication, in order: (1) adopt or amend the proposed narrow conclusion in L-057; (2) rule on aggregation order A vs B as the preregistered estimand and record the prereg section 7/9 interpretation conflict as an explicit deviation; (3) decide whether the stopped coordinate-scale audit and literature scan are re-commissioned and by whom (this session is not independent of the stage); (4) decide whether the Task 4F1 execution track resumes with the V8 and exact-rational audits. No new experiment is proposed or authorized. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-056",
+  "ledger_entry": "L-057",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -640,7 +640,7 @@
     "prompt_sha256": "9eaefd512428c05250a7747c95ba65a81c26d6252ab76a4080908e1eb1c092ee",
     "target_branch": "research/v52-sign-mechanism-literature-scan-2026-09-04",
     "claims_to_test": "C1-C9; the load-bearing negatives are C2, C3 and C9",
-    "status": "RUNNING - commissioned 2026-09-07 as a zero-context agent session launched by the Continuity Lead",
+    "status": "NOT COMMISSIONED - the agent session launched at L-056 was stopped by Head Researcher instruction (quota) before it pushed anything; the target branch is confirmed ABSENT from the remote. C1-C9 remain untested.",
     "gates_nothing": "the scan does not gate the boundary-localization decision",
     "open_version_discrepancy": "arXiv 2605.17524 served two different contents with different Theorem 2 statements and corollary numbering; nothing from that paper may be quoted in a project artifact until one version is pinned",
     "base_commit": "a7e9ba8f0b325db7ec8e168def4b85e615c1fca3"
@@ -692,9 +692,9 @@
     "C1": "revise",
     "C9": "stands only as a search-qualified narrow claim"
   },
-  "proposed_next_direction": "coordinate-scale participation test: for positive diagonal D, sign(xD)=sign(x), so a positive archive-derived rescaling preserves the native sign code exactly while changing sign(xDQ). Decisive comparison is an INTERACTION - does rescaling help full mixing more than within-block mixing under paired queries and fixed rotations. DIRECTION ONLY: not preregistered, not sealed, not authorized; no seeds, workflow or trigger exist.",
+  "proposed_next_direction": "SUPERSEDED 2026-09-07. The coordinate-scale direction has been run and its comparative claim is not established. A next question has been SUGGESTED by the Codex synthesis and is NOT designed, NOT preregistered, NOT authorized: 'once scales are equalised, does the spectral 32/64 split still beat a matched-size random split?' Any such design must avoid dividing by a block loss that approaches zero. Do not inherit this as an approved experiment.",
   "coordinate_scale_draft": {
-    "status": "RUN COMPLETE 2026-09-07; result recorded as computed at research 1c725a56; NOT INDEPENDENTLY AUDITED; no re-trigger",
+    "status": "RUN COMPLETE 2026-09-07; LoCoMo computation independently reproduced (Codex 692f599e); comparative mechanism claim NOT ESTABLISHED; stage as a whole NOT INDEPENDENTLY AUDITED; no re-trigger",
     "branch": "draft/v52-coordinate-scale-prereg-2026-09-05",
     "commit": "bdc0db75ef8760319878e5ef07512ddddd53283c",
     "path": "drafts/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_DRAFT_2026-09-05.md",
@@ -759,14 +759,17 @@
       "frac_block": "LoCoMo 0.6516 on the seed-mean but NOT INTERPRETABLE - block denominator 0.0053 crosses zero inside its seed envelope (-0.0066..+0.0164), per-seed frac -3.40..+2.64; LongMemEval 0.3085 [PARTIAL], all ten denominators positive",
       "I_frac_secondary": "LoCoMo +0.074 (inherits non-interpretability); LongMemEval +0.348",
       "labels_that_must_travel_together": [
-        "[COORDINATE-SCALE PARTICIPATION LEAD - MOST (LoCoMo) / PARTIAL (LongMemEval) FOR FULL MIXING]",
-        "[BLOCK-ARM FRACTION NOT INTERPRETABLE ON LoCoMo - DENOMINATOR NEAR ZERO]",
-        "[NOT INDEPENDENTLY AUDITED]"
+        "[LOCOMO COMPUTATIONAL REPRODUCTION PASS - SAME METHOD, NOT INDEPENDENT REPLICATION]",
+        "[COMPARATIVE MECHANISM CLAIM NOT ESTABLISHED - DENOMINATOR INSTABILITY AND PREREGISTRATION DEVIATIONS]",
+        "[UNCERTAINTY ANALYSIS IS POST-OUTCOME]",
+        "[NOT INDEPENDENTLY AUDITED AS A WHOLE STAGE]"
       ],
       "cv_sigma_real_archives": "median 0.494 (LoCoMo) / 0.497 (LongMemEval) before rescaling; below the pilot's synthetic range; real recovery lower than the pilot model predicted",
       "by_product_full_haar_fresh_panel": "LoCoMo mean 0.139131 sd 0.0052 se 0.00164 (inherited 0.137708, +0.27 sd); LongMemEval mean 0.380939 sd 0.0115 se 0.00362 (inherited 0.382717, -0.15 sd). First measured LoCoMo denominator dispersion from committed bytes; frozen denominators NOT replaced",
       "continuity_lead_verification": "frac_full/frac_block recomputed from per-question rows, match < 1e-9; LongMemEval per-question sha256 matches summary; LoCoMo summary lacks an artifacts block (runner omission) - per-question sha256 b7abd942c13cf9ce recorded in the checkpoint",
-      "not_an_audit": true
+      "not_an_audit": true,
+      "narrowed_2026_09_07": "The MOST (LoCoMo) vs PARTIAL (LongMemEval) band assignment survives only as a point classification on the frozen panel. It must NOT be carried as a population-level category difference: every full-arm percentile interval crosses 0.70. The block-arm non-interpretability recorded at L-055 is strengthened and now applies to LongMemEval as well.",
+      "proposed_narrow_conclusion_not_adopted": "On a fixed pipeline, positive coordinate rescaling preserves the native sign representation exactly while raising retrieval score after full orthogonal mixing. The LoCoMo computation reproduced numerically from verified raw data across 92,100 question/seed/arm records. Denominator instability in the block-normalised comparisons, together with preregistration aggregation and interpretation inconsistencies, limits any comparative mechanism inference. Post-hoc sensitivity analyses do not repair that limit; they make it visible. Not a general mechanism result, not a production claim, and not a generalisation to other encoders or corpora. AWAITING HEAD RESEARCHER ADJUDICATION."
     }
   },
   "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes. UPDATE 2026-09-07: the LoCoMo dispersion is now MEASURED from the coordinate-scale stage's fresh ten-seed full-Haar panel (see locomo_denominator_dispersion_2026_09_07); the per-seed values of the ORIGINAL five LoCoMo seeds remain uncommitted.",
@@ -782,10 +785,11 @@
     "prompt_sha256": "4ead85278e85e685d0053603488d07a2089b27b084ff72610e12cd932889606f",
     "target_branch": "audit/v52-coordinate-scale-independent-2026-09-07",
     "gates": "G1-G13",
-    "status": "RUNNING - commissioned 2026-09-07 as a zero-context agent session launched by the Continuity Lead (who prepared, sealed and triggered the stage; commissioner is NOT independent - disclosed in the launch note and in L-056)",
+    "status": "NOT COMMISSIONED - the agent session launched at L-056 was stopped by Head Researcher instruction (quota) before it pushed anything; the target branch is confirmed ABSENT from the remote. The prompt remains undischarged.",
     "base_commit": "a7e9ba8f0b325db7ec8e168def4b85e615c1fca3",
     "audited_object": "research/v52-sign-mechanism-locomo-2026-09-04 @ 1c725a56752d1059148f48b89d8138c76c2f70e9",
-    "health_check_required": "a silent branch is not evidence of progress; accept only a pushed report whose .sha256 sidecar verifies"
+    "health_check_required": "a silent branch is not evidence of progress; accept only a pushed report whose .sha256 sidecar verifies",
+    "line_ending_hypothesis": "Before being stopped the agent reported that the prompt file's sha256 did not match when hashed from its fresh Windows working tree and suspected core.autocrlf. UNVERIFIED. Future audit prompts should instruct hashing the raw Git blob (git cat-file), not the checked-out file."
   },
   "locomo_denominator_dispersion_2026_09_07": {
     "addendum": "research/v52/V52_LOCOMO_DENOMINATOR_DISPERSION_ADDENDUM_2026-09-07.md @ 591e5d0fd7af8c265ac12a6176761475a19b2f02",
@@ -796,5 +800,27 @@
     "closes": "the 'LoCoMo denominator dispersion unmeasurable from bytes' item (L-051 / takeover prompt section 7C)",
     "does_not": "replace any frozen denominator, recompute any verdict, or lift the standing narrowing on the uniqueness of 32",
     "independence": "NOT INDEPENDENTLY AUDITED; gate G12 of the commissioned audit covers the panel statistics"
+  },
+  "codex_published_packages_2026_09_07": {
+    "nature": "Five packages published by a parallel Codex line on their own branches; none wrote to main, ledger or any sealed artifact. Verified here by identity only, at L-057.",
+    "verification": "git ls-remote confirmed all five branch tips at the claimed commits; LoCoMo REPORT.md sha256 db3274ff512488affe66636fa84004555d2f20e48cba027f9805fc3becd1fef8 matched; Codex's own verify_evidence.py executed read-only at 2f9adb84 printed '10/10 exact source objects PASS; synthesis numeric statements PASS; altered lock REJECTED'.",
+    "branches": {
+      "scientific_synthesis": "codex/v52-scientific-synthesis-2026-09-07 @ 2f9adb84f621b65cabd47b080b5ea90c008bd4df - reviews/v52/scientific_synthesis_2026_09_07/SCIENTIFIC_ASSESSMENT.md with EVIDENCE_LOCK.json, SYNTHESIS_HASHES.json, verify_evidence.py; a decision PROPOSAL, not a canonical acceptance",
+      "coordinate_scale_review": "codex/v52-coordinate-scale-review-2026-09-07 @ 1aa61843135b1ffb5a4590c56f63fe13c4c13a06 - findings R1-R5",
+      "scale_uncertainty_bootstrap": "codex/v52-scale-uncertainty-2026-09-07 @ 540580cfd87f70443123a3349979ab863e2fccc6 (bootstrap result commit 398c2ea4, pre-computation plan checkpoint 54605e28) - 3 schemes x 10,000 replicates, POST-OUTCOME, do not re-run",
+      "bootstrap_independent_review": "codex/v52-bootstrap-independent-review-2026-09-07 @ a131341392efa71b78b24b375e4bb8997c4d9ab2 - limited-scope PASS; read REPORT.md and CORRECTION.md together",
+      "locomo_reproduction_audit": "codex/v52-locomo-reproduction-audit-2026-09-07 @ 692f599eedeb7e7a649443f24ff507e8c4d1c17d - single authorized invocation, that authorization is SPENT"
+    },
+    "established": "LoCoMo computational reproduction PASS: 1,535 questions x 10 seeds x 6 arms = 92,100 rows, maximum numerical score difference 0.0, exit 0 in 59.309 s; disclosed byte differences are CRLF line endings and gzip timestamps only; largest diagnostic difference 1.42e-14 under the 1e-12 tolerance. Same method and benchmark - NOT an independent methodological replication; original top-3 document IDs were not persisted so identical document selection is not certified.",
+    "not_established": "The comparative mechanism claim. Under both aggregation definitions and all three resampling schemes every interaction percentile interval spans zero and every full-arm interval crosses the 0.70 band boundary (B_full: LoCoMo question [0.6354, 0.8372], LoCoMo cluster [0.6197, 0.9041], LongMemEval question [0.5679, 0.7618]). This is NOT a classical significance test and NOT evidence that no mechanism exists.",
+    "findings_recorded_not_adjudicated": {
+      "R1": "Aggregation order: A = mean of per-seed ratios, B = ratio of seed-means; the sealed runner's headline is B. Reproduced here from the persisted summaries at 591e5d0f: LoCoMo block B 0.651643 vs A 0.445443; LoCoMo interaction B 0.074464 vs A 0.281744. TWO ADDITIONS FROM THIS SESSION: both statistics are already recoverable from the published bytes (frac_*_per_seed is persisted beside the seed-mean ratio), so preserving both needs no file change; and the divergence is essentially a BLOCK-arm phenomenon - on the full-mixing arm A and B agree to 0.0011 (LoCoMo) and 0.0006 (LongMemEval), on the block arm they differ by 0.206 and 0.008.",
+      "R2": "Mandatory uncertainty reports were initially missing; the part achievable from existing records was completed later, POST-OUTCOME. Do not present as pre-outcome preregistration; do not recompute.",
+      "R3": "The automatic seal gate did not cover the transitive LoCoMo dependency. Retrospective check: the source was unchanged. A control-coverage defect, not observed manipulation.",
+      "R4": "The result combiner accepted some malformed synthetic records. The real 92,100 + 28,200 records were separately verified PASS, including paired Native/Scaled-Native METRIC equality - which is not top-3 ID or bit-code equality. 18 deliberately corrupted samples were rejected. This narrows current record risk; it does not fix the old combiner.",
+      "R5": "The frozen preregistration's sections 7 and 9 are inconsistent: per-arm ratio is primary and interaction secondary, yet the positive mechanism reading is still tied to an undefined 'large I'. Must be recorded as an explicit deviation, not closed by selecting the favourable clause after the outcome."
+    },
+    "evidence_limit_carried": "The bootstrap CSVs store per-seed denominator min/max/mean, not each seed's denominator, so some within-seed exact-zero counts cannot be independently derived. Replicates containing at least one non-positive seed denominator were verified from the minimum: LoCoMo question block 8,910/10,000; LoCoMo cluster block 8,410/10,000; LongMemEval question block 3,306/10,000.",
+    "not_done": "LongMemEval was not re-run from raw data and has no conversation-cluster mapping, so its cluster bootstrap is not complete. No Drive backup exists for these Codex packages."
   }
 }
