@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T13:36:00Z",
+  "issued_at_utc": "2026-09-07T13:49:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher decision on the next research question, now that the closure audit has returned CLOSURE PASS WITH CAVEATS with nothing requiring the stage to be reopened: take up the coordinate-membership proposal (v2), prefer the encoder-generalisation alternative, or neither. Separately, decide on infrastructure finding I1 (adding .gitattributes changes checkout semantics repo-wide and is an owner call). Task 4F1 remains BLOCKED; outcome access FORBIDDEN. D11 Drive backup still needs an operator.",
+    "next_single_action": "Head Researcher decision on the next research question, against the decision note: take up Option A (mechanism decomposition inside the current representation, recommended), or Option B (generalisability across representations, deferred because it is not yet well posed - it must first settle whether a reduction step is kept, and needs a feasibility check on encoding cost), or defer both. No experiment is authorized. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-063",
+  "ledger_entry": "L-064",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -985,5 +985,30 @@
     "answers_codex_open_items": "the two commissioned agents never ran and their branches are absent (undischarged, not mysterious); R1 ruled A with B preserved, from the preregistration text only; R5 recorded as an explicit deviation and not resolved; the LongMemEval cluster bootstrap is ill-posed rather than pending, but PROVENANCE-VERIFIED ONLY, not recomputed; the LoCoMo Full-Haar denominator dispersion is now measured",
     "carries_to_codex": "erratum E8 - ruling A selects the LESS stable estimator on the block arm, which strengthens rather than weakens the refusal of the comparative claim, and was not in Codex's own R1 analysis; infrastructure finding I1 - no .gitattributes, so default Windows clones report mass hash mismatches, which explains two earlier false alarms; and the additive-only rule for sidecar-hashed or ledger-hashed documents on main",
     "explicitly_tells_codex_not_to_redo": "the closure audit, the erratum, the hash repairs, any completed experiment or bootstrap or the LoCoMo reproduction, the acceptance decision, the dependency-graph recomputation, any Task 4F1 action, the paused literature scan"
+  },
+  "next_research_decision_note_2026_09_07": {
+    "path": "docs/v52/V52_NEXT_RESEARCH_DECISION_NOTE_2026-09-07.md",
+    "sha256": "8f79b97b1265c7d085472d50c1a43d17282445e994fd5c936d6ada13d909c298",
+    "status": "DECISION NOTE - not a preregistration, not a seal, not a run authorization; no experiment, retrieval, fitting, ranking, bootstrap or seed sweep was run to produce it",
+    "recommendation": "Option A as the single next step; Option B deferred, NOT because it is less valuable",
+    "why_B_is_deferred": "B is not yet a well-posed experiment. The effect is defined over VARIANCE-ORDERED axes - the bands are High32 0:32, Mid32 32:64, Low32 64:96 over TruncatedSVD components - so a different representation must either keep a reduction step, which confounds encoder with reduction, or drop it, which removes the object of study. That fork is a written design decision to take before spending compute. Option A's outcome also determines what B should test: scale heterogeneity if scale accounts for the membership gap, axis ordering if it does not.",
+    "cost_asymmetry": "A's estimate is ANCHORED to this repository's own recorded timings (LoCoMo invocation 59.309 s in the reproduction run receipt; the triggered run persisted LoCoMo at 07:07:20Z and the LongMemEval aggregate at 07:11:15Z against a 07:06:19Z trigger) with identical arm count, seed count and cohorts. B has NO comparable recorded run, needs a new adapter with its own leakage audit, NEW FROZEN ANCHORS, and a pinned model download; whether it fits Actions limits is genuinely unknown and would need a feasibility check that was not performed.",
+    "override_condition": "if the near-term goal is external validity for a write-up rather than mechanism, B is the right spend - but it should begin with the scoping decision and a feasibility check, not with an experiment",
+    "third_admissible_answer": "defer both; nothing in the record is unstable and the non-experimental open items are owned elsewhere"
+  },
+  "E8_correction_2026_09_07": {
+    "withdrawn": "the relayed claim that ruling A is less numerically stable than B 'confirmed by exact arithmetic', and the 'three orders of magnitude' figure, rendered in the Turkish relay as 'uc kat' (three times), which compounded the error",
+    "what_the_evidence_measures": "|document printed value - exact rational value| per estimator per cell, which mixes float64 computation error with the Continuity Lead's decimal truncation when typing the decision document; it is not a clean estimator-stability measurement in either direction",
+    "measured": {
+      "LoCoMo_full": "err(A) 2.542e-16 vs err(B) 2.858e-16",
+      "LoCoMo_block": "err(A) 9.682e-15 vs err(B) 1.102e-14",
+      "LongMemEval_full": "err(A) 2.108e-16 vs err(B) 6.345e-16",
+      "LongMemEval_block": "err(A) 4.723e-16 vs err(B) 7.270e-15"
+    },
+    "finding": "in 4 cells of 4 B's error is the LARGER one, so 'A is less stable than B' is not supported. The audit's F8 narrative draws an A-versus-B conclusion from a table that compares ARMS, a real inconsistency between the audit's narrative and its own evidence, recorded narrowly and NOT adjudicated; no new audit or experiment chain is opened",
+    "corrected_magnitude": "pooling both estimators the block/full arm gap is 1.102e-14 against 6.345e-16 - 1.24 orders of magnitude, about 17x, not three orders",
+    "what_survives": "the conceptual point, on different evidence: averaging ten ratios whose denominators change sign within their own envelope is a fragile construction, which rests on deviation-register D4 (LoCoMo block per-seed denominators -0.0066 to +0.0164, per-seed fractions -3.40 to +2.64), not on the audit's error table. The DIRECTION survives too, because the fragility is a property of the block-arm denominator: it strengthens the refusal of the comparative claim whichever estimator is primary.",
+    "no_ruling_changes": "A remains the preregistered estimand on the textual grounds of section 7, which never depended on numerical stability; estimator fragility is not evidence that a mechanism is absent",
+    "supersedes": "the corresponding passage of docs/v52/V52_CLAUDE_TO_CODEX_HANDOVER_2026-09-07.md, which repeats the unsupported phrasing and is hash-bound and therefore not edited"
   }
 }
