@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T14:06:00Z",
+  "issued_at_utc": "2026-09-07T14:13:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher review of design revision R1 together with the bound draft, and a decision on the five design questions R1 leaves open - the 2.0 pp floor, the four band cut points, whether the LoCoMo clustered bootstrap is co-primary, whether the indeterminate overlay requires both schemes to agree, and whether the remaining scaled gap deserves its own band. Nothing is accepted, sealed, implemented or authorized to run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher review of design revision R2, which simplifies the Option A design to three absolute percentage-point quantities with their uncertainty and withdraws the entire categorical apparatus. Nothing is accepted, sealed, implemented or authorized to run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-066",
+  "ledger_entry": "L-067",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1050,6 +1050,41 @@
         "whether the indeterminate overlay requires both schemes to agree on LoCoMo",
         "whether the remaining scaled gap Ghat_scaled deserves its own preregistered band"
       ]
+    },
+    "revision_r2": {
+      "path": "docs/v52/V52_MEMBERSHIP_UNDER_SCALING_DESIGN_REVISION_R2_2026-09-07.md",
+      "sha256": "39cbfcea3a93307d582f9765529d6d99c09d0204706befa6470b8b932f451669",
+      "status": "DRAFT - NOT AUTHORIZED FOR EXECUTION; additive, neither bound document edited; supersedes R1 and draft section 8 wherever they differ",
+      "criticism_accepted": "the design began by replacing a ratio with a difference, and R1 reintroduced a ratio (rho = Delta_bar / G_bar) purely to attach a categorical verdict, which then required a denominator to protect, a 2.0 pp floor to protect it, and four cut points to divide it. rho is NOT the same quantity as the old block-loss ratio and would not automatically have been as fragile - but it is not needed for the question, and the complexity was in the labelling rather than the science",
+      "primary_result": "three quantities in percentage points, always reported together with every per-seed value and an interval for each: G_bar the gap before the intervention, G_bar_scaled the gap remaining after it, and Delta_bar the paired change",
+      "aggregation_ambiguity_dissolved": "because Delta is LINEAR in the arm means, mean of per-seed differences equals difference of seed means EXACTLY. The A-versus-B dispute that consumed the closed stage was a consequence of the estimand being a RATIO; with a difference there is nothing to rule on, so removing the ratio removes the whole class of dispute rather than deciding it",
+      "withdrawn": [
+        "rho as the primary decision quantity",
+        "the five categorical labels (reversed / accounts-for-most / partial / does-not-account / gap-larger)",
+        "the cut points -1.00, -0.60, -0.20, +0.20",
+        "the 2.0 pp floor on G_bar, which existed only to protect rho's denominator",
+        "the [RELATIVE SCALE UNSUITABLE] state",
+        "the [INDETERMINATE - INTERVAL SPANS ...] overlay as a verdict mechanism; the interval is reported directly instead",
+        "the three-band decision rule of draft section 8",
+        "a preregistered band on the remaining gap G_bar_scaled - declined",
+        "the per-seed positivity gate on G_k, already withdrawn in R1 and staying withdrawn"
+      ],
+      "consequence": "this study produces an ESTIMATE, not a verdict; there is no preregistered threshold and no categorical output",
+      "loophole_closed": "because no threshold is preregistered, NO threshold may be introduced after outcome access - not to declare most, not little, not equivalence, not under any other name. The no-tuning rule is restated so it cannot be read as covering only seeds and parameters",
+      "ratio_status": "not forbidden, simply not a deliverable: not computed, not reported, not part of the preregistered output. Anyone who later wants it can derive it from the three reported numbers without re-running anything, which needs no new design and opens no audit chain",
+      "locomo_two_schemes_stated_separately": "question-level targets variability under question exchangeability, is unweighted, and DOES NOT ACCOUNT FOR WITHIN-CONVERSATION DEPENDENCE AT ALL, so its interval is narrower than the dependence structure warrants; conversation-cluster targets variability under conversation exchangeability, is question-weighted by construction, and is built on TEN units with correspondingly limited reliability whose width is an outcome and is not forecast. Stated because it is easy to get backwards: having ten clusters does NOT make the question-level analysis more trustworthy about dependence - it is the reason that analysis is inadequate on that axis. The two schemes are NOT independent confirmation; they are two views of the same fixed panel under different exchangeability assumptions computed from the same records, so agreement is not corroboration. If they diverge, the divergence IS the finding and both intervals are reported with a sentence saying the conclusion is sensitive to the resampling unit; no reconciled interval is manufactured",
+      "longmemeval": "question-level resampling only and solely as a sensitivity analysis, never population inference, because the 470 primary questions lie in a single shared-session component - a finding INHERITED from Task 3A.1 and provenance-verified, NOT recomputed here, and carrying its label. No conversation-cluster bootstrap is defined for LongMemEval",
+      "reporting_sentence_fixed_in_advance": "under the scale intervention defined in draft section 5 and R1 section 1, the membership gap on the frozen question and seed panel was G_bar pp before and G_bar_scaled pp after, a paired change of Delta_bar pp, with intervals as reported",
+      "prohibited_in_any_outcome": [
+        "calling any change a causal mechanism or saying the effect has been explained",
+        "generalising beyond the frozen panels, this pipeline or this specific intervention",
+        "concluding 'there is no effect', including from an interval that spans zero",
+        "claiming practical equivalence",
+        "introducing any threshold, band or categorical label after outcome access",
+        "upgrading a [LEAD]"
+      ],
+      "interval_spanning_zero": "reported as such; it means the data on this panel do not resolve the sign of the change, is not evidence of absence, and must not be converted into one",
+      "unchanged_by_r2": "the six arms; the matched draw structure with seeds paired one-to-one and not crossed; the scaling operator specification; unconditional publication of all arms, seeds, per-question records, aggregates, diagnostics and controls under every outcome; the mandatory control suite; the no-tuning rule; and the outcome-licence limits"
     }
   }
 }
