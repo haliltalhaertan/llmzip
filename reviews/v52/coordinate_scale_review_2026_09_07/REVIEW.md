@@ -11,7 +11,7 @@ This is a scoped team review, not the commissioned cold-start audit, not an exec
 - The result checkpoint is anchored at `1c725a56752d1059148f48b89d8138c76c2f70e9`.
 - Both canonical tools printed `CONTINUITY_STATE: PASS` and `PREREGISTRATION_SEAL: PASS` in a detached checkout of a094452. These are structural checks, NOT acceptance of this research stage.
 - No raw corpus was read; no real retrieval was run or retriggered. Task 4F1 run=0, finalize=0, HMAC=0; BEAM outcome access=false.
-- A live refresh was attempted twice; GitHub DNS/connection failures prevented confirmation of remote changes during this review. The previously observed commits are locally verified; the current health of the separately commissioned auditor and literature agent is unknown. A state string saying RUNNING is not a liveness check.
+- Initial live refresh attempts failed with GitHub DNS/connection errors. After publication, remote readback confirmed main remains a094452 and the review commit8390e28 was pushed; neither commissioned audit nor literature target branch was present. The current health of those separate agents is unknown. A state string saying RUNNING is not a liveness check.
 
 ## Findings requiring adjudication
 
