@@ -1,0 +1,41 @@
+{
+  "schema": "SCOPED_REVIEW_PAYLOAD_V1",
+  "excludes": "self",
+  "files": [
+    {
+      "path": "reviews/v52/coordinate_scale_review_2026_09_07/COMMAND_LOG.md",
+      "sha256": "df57e449077a27105a2aa4a9fa18185e8d805fbe01903d945f30d45a0f50dab0",
+      "bytes": 2481
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_review_2026_09_07/REVIEW.md",
+      "sha256": "c59fc09a73b897a3e24da56df4cb34bbd19e796369124687d0be75ba8fc59bc4",
+      "bytes": 6786
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_review_2026_09_07/implementation/FINDINGS.md",
+      "sha256": "141a1c86d44fde8d410a962e98848ebedf457794133dcf06c8924438b518f896",
+      "bytes": 5348
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_review_2026_09_07/implementation/reproduce_aggregate_gaps.py",
+      "sha256": "866931c17148dc9d14c273b77d9b717c36b7d162af25c03bc43ff65a2934d03e",
+      "bytes": 2103
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_review_2026_09_07/statistics/FINDINGS.md",
+      "sha256": "d18cd380f50c26c7827a4b87058e72903d7607e9d8b2ed982318eff27756c170",
+      "bytes": 5712
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_review_2026_09_07/statistics/reconstruct.py",
+      "sha256": "5fb224ceb4f7caeb9f303541adaca7b1725167f449faed5a86809dc8b7c7a2da",
+      "bytes": 2843
+    },
+    {
+      "path": "reviews/v52/coordinate_scale_review_2026_09_07/statistics/RESULTS.json",
+      "sha256": "10e2ae39af29e353e1f9b97a8066d253a12897036b125f7ed730ebe5c137e3bb",
+      "bytes": 1308
+    }
+  ]
+}

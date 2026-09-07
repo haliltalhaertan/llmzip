@@ -1,0 +1,36 @@
+{
+  "scope": "Compact transcription of reconstruct.py stdout; metric-record reconstruction only",
+  "locomo": {
+    "rows": 92100,
+    "unique_keys": 92100,
+    "seed_arm_groups": 60,
+    "mean_seed_ratios_full": 0.7271861342884781,
+    "ratio_of_seed_means_full": 0.7261069075901363,
+    "mean_seed_ratios_block": 0.4454425786787775,
+    "ratio_of_seed_means_block": 0.6516429195680556,
+    "mean_seed_I": 0.2817435556097006,
+    "reported_I": 0.07446398802209431,
+    "nonpositive_block_denominators": 2,
+    "max_per_seed_fraction_error": 1.5987211554602254e-13
+  },
+  "longmemeval": {
+    "rows": 28200,
+    "unique_keys": 28200,
+    "seed_arm_groups": 60,
+    "mean_seed_ratios_full": 0.656978166471496,
+    "ratio_of_seed_means_full": 0.6563342970957211,
+    "mean_seed_ratios_block": 0.31651116218828435,
+    "ratio_of_seed_means_block": 0.3084585844542379,
+    "mean_seed_I": 0.34046700428321164,
+    "reported_I": 0.34787571264149064,
+    "nonpositive_block_denominators": 0,
+    "max_per_seed_fraction_error": 1.1268763699945339e-14
+  },
+  "checks": {
+    "unique_record_keys": "PASS",
+    "scores_in_unit_interval": "PASS",
+    "seed_panel_59001_59010": "PASS",
+    "persisted_ratios_reconstructed_tolerance_1e_10": "PASS",
+    "averaging_division_noncommutativity_negative_control": "PASS"
+  }
+}
