@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T12:19:00Z",
+  "issued_at_utc": "2026-09-07T12:25:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-057",
+  "ledger_entry": "L-058",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -518,7 +518,7 @@
   },
   "mechanism_research_track": {
     "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
-    "head": "591e5d0fd7af8c265ac12a6176761475a19b2f02",
+    "head": "0c9916bd7786d7ddb332f5b6da3d96d61a6223f0",
     "relation_to_main": "diverged; merge base df9b0f59; touches only research/v52/** and .github/workflows/**; no Task 4F1 or sealed path",
     "result": "[CROSS-BENCHMARK HEAD-TAIL CAUSAL LEAD] on LoCoMo and LongMemEval; rho_2 = 0.10744461886682183 and 0.15669024668844653, both below the preregistered 0.25 band",
     "status": "AUDIT PASS WITH CAVEATS 2026-09-05, independently verified. Stop rule discharged; next experiment is a separate Head Researcher decision.",
@@ -769,7 +769,8 @@
       "continuity_lead_verification": "frac_full/frac_block recomputed from per-question rows, match < 1e-9; LongMemEval per-question sha256 matches summary; LoCoMo summary lacks an artifacts block (runner omission) - per-question sha256 b7abd942c13cf9ce recorded in the checkpoint",
       "not_an_audit": true,
       "narrowed_2026_09_07": "The MOST (LoCoMo) vs PARTIAL (LongMemEval) band assignment survives only as a point classification on the frozen panel. It must NOT be carried as a population-level category difference: every full-arm percentile interval crosses 0.70. The block-arm non-interpretability recorded at L-055 is strengthened and now applies to LongMemEval as well.",
-      "proposed_narrow_conclusion_not_adopted": "On a fixed pipeline, positive coordinate rescaling preserves the native sign representation exactly while raising retrieval score after full orthogonal mixing. The LoCoMo computation reproduced numerically from verified raw data across 92,100 question/seed/arm records. Denominator instability in the block-normalised comparisons, together with preregistration aggregation and interpretation inconsistencies, limits any comparative mechanism inference. Post-hoc sensitivity analyses do not repair that limit; they make it visible. Not a general mechanism result, not a production claim, and not a generalisation to other encoders or corpora. AWAITING HEAD RESEARCHER ADJUDICATION."
+      "proposed_narrow_conclusion_not_adopted": "On a fixed pipeline, positive coordinate rescaling preserves the native sign representation exactly while raising retrieval score after full orthogonal mixing. The LoCoMo computation reproduced numerically from verified raw data across 92,100 question/seed/arm records. Denominator instability in the block-normalised comparisons, together with preregistration aggregation and interpretation inconsistencies, limits any comparative mechanism inference. Post-hoc sensitivity analyses do not repair that limit; they make it visible. Not a general mechanism result, not a production claim, and not a generalisation to other encoders or corpora. AWAITING HEAD RESEARCHER ADJUDICATION.",
+      "deviation_register": "research/v52/V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md @ 0c9916bd7786d7ddb332f5b6da3d96d61a6223f0 (sha256 4f70340774624b0bcdc4e519f6c42f0733b549a2b065a3a4e0b939c5aa5f22dc) - D1-D11; cite the stage only together with it"
     }
   },
   "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes. UPDATE 2026-09-07: the LoCoMo dispersion is now MEASURED from the coordinate-scale stage's fresh ten-seed full-Haar panel (see locomo_denominator_dispersion_2026_09_07); the per-seed values of the ORIGINAL five LoCoMo seeds remain uncommitted.",
@@ -821,6 +822,37 @@
       "R5": "The frozen preregistration's sections 7 and 9 are inconsistent: per-arm ratio is primary and interaction secondary, yet the positive mechanism reading is still tied to an undefined 'large I'. Must be recorded as an explicit deviation, not closed by selecting the favourable clause after the outcome."
     },
     "evidence_limit_carried": "The bootstrap CSVs store per-seed denominator min/max/mean, not each seed's denominator, so some within-seed exact-zero counts cannot be independently derived. Replicates containing at least one non-positive seed denominator were verified from the minimum: LoCoMo question block 8,910/10,000; LoCoMo cluster block 8,410/10,000; LongMemEval question block 3,306/10,000.",
-    "not_done": "LongMemEval was not re-run from raw data and has no conversation-cluster mapping, so its cluster bootstrap is not complete. No Drive backup exists for these Codex packages."
+    "not_done": "LongMemEval was not re-run from raw data. Its conversation-cluster bootstrap is now established ILL-POSED rather than pending (see longmemeval_cluster_bootstrap_2026_09_07). No Drive backup exists for these Codex packages."
+  },
+  "coordinate_scale_deviation_register": {
+    "path": "research/v52/V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md",
+    "commit": "0c9916bd7786d7ddb332f5b6da3d96d61a6223f0",
+    "sha256": "4f70340774624b0bcdc4e519f6c42f0733b549a2b065a3a4e0b939c5aa5f22dc",
+    "nature": "Additive register of every recorded deviation and limitation of the coordinate-scale stage. Adjudicates none; names the bytes each item rests on.",
+    "open_items": [
+      "D1 aggregation order A vs B",
+      "D2 prereg section 7/9 interpretation conflict",
+      "D11 no Drive backup"
+    ],
+    "recorded_items": [
+      "D3 uncertainty analysis is post-outcome",
+      "D4 block denominator instability (both benchmarks)",
+      "D5 seal gate missed the transitive LoCoMo dependency (coverage defect, retrospectively unchanged)",
+      "D6 combiner accepted malformed synthetic records (real records separately verified)",
+      "D8 signed-permutation control not re-executed in this stage",
+      "D9 top-3 document IDs not persisted",
+      "D10 stale sentence inside the frozen preregistration, deliberately unedited"
+    ],
+    "settled_items": [
+      "D7 LongMemEval cluster bootstrap is ILL-POSED, not undone"
+    ]
+  },
+  "longmemeval_cluster_bootstrap_2026_09_07": {
+    "verdict": "ILL-POSED, NOT MERELY UNDONE - remove from the outstanding-work list",
+    "evidence": "docs/v52/task3/V52_T3A1_PROTOCOL_PATCH.md on main records 'Dependency graph: 1 component(s), largest=470/470. question-level bootstrap cannot be interpreted as independent underlying-memory population inference.' The same finding is stated inside adapters/longmemeval_v52_adapter_v2.py, whose SHA256 643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218 was verified here to equal the A2_SHA256 pinned by the frozen LongMemEval base, so it is the artifact the pipeline runs.",
+    "reasoning": "All 470 primary questions lie in ONE shared-session connected component. A cluster bootstrap needs at least two exchangeable clusters; with one component it returns the identical dataset every replicate (no information) or requires an arbitrary partition violating its own independence assumption.",
+    "what_is_actually_missing": "a dependency-aware inference scheme for a single connected component - a design question, not a re-run",
+    "asymmetry_with_locomo_explained": "LoCoMo's ten clusters were recovered from producer archive-ordinal metadata; ten is not one",
+    "consequence": "the LongMemEval question-level bootstrap that was run inherits the T3A1 warning verbatim: sensitivity analysis, never population inference"
   }
 }
