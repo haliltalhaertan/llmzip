@@ -1,0 +1,211 @@
+{
+  "python": "3.14.3",
+  "source_of_probes": "audit/v52-membership-impl-review-2026-09-07 @ 68819424765ed3da89377c89980d7e42546bfe02, scripts/mutation_probes.py",
+  "scope_statement": "kills demonstrate coverage of these specific fault variants only; not a correctness guarantee",
+  "rows": [
+    {
+      "id": "M1-ratio-reintroduced",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "add a genuine Delta/G ratio to the reported output under a neutral name",
+      "why_it_matters": "the acceptance record forbids ANY ratio of Delta to G under any name; the v1 word scan could not see this",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: the output schema is exactly the closed expected set   ['relative_change']",
+        "FAIL  AST: aggregate's literal return keys equal the declared schema   ['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'n_question_slots', 'per_seed_Delta_pp', 'per_seed_G_pp', 'per_seed_G_scaled_pp', 'relative_change']"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M2-denominator-distinct",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "divide the mean by the number of DISTINCT questions instead of the selected slots",
+      "why_it_matters": "binding section 4 step 5 requires division by the total number of selected question SLOTS",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  F-5: the core computes the SLOT-weighted value",
+        "FAIL  F-5: and not the distinct-question value"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M3-denominator-clusters",
+      "anchor_status": "re-anchored twice",
+      "applied": true,
+      "description": "make the cluster bootstrap average cluster means instead of question slots. Re-anchored twice: v2 inserts a diagnostic line between the reviewer's two original anchor lines, and my FIRST re-anchoring computed the cluster average into an UNUSED variable, so it mutated nothing and reported a false hole in the suite. That was a defect in the probe, not in the tests, and it is recorded here rather than quietly corrected",
+      "why_it_matters": "cluster-averaging destroys the question-weighting the acceptance record binds",
+      "v2_suite_kills": true,
+      "failing_checks": [],
+      "crashed_without_named_failure": true
+    },
+    {
+      "id": "M4-per-seed-resample",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "break pairing across the seed panel: resample each seed column independently",
+      "why_it_matters": "R1 section 6 requires ONE resampled index set per replicate applied to all arms AND all ten seeds",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: G_bar matches an independent reference   -4.128233667247203",
+        "FAIL  CONFORMANCE: G_bar_scaled matches an independent reference",
+        "FAIL  CONFORMANCE: Delta_bar matches an independent reference",
+        "FAIL  F-5: the core computes the SLOT-weighted value"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M5-flag-off-by-one",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "fire the per-archive degenerate flag at 4 instead of above 4",
+      "why_it_matters": "R1 section 1: an archive is flagged if the count EXCEEDS 4 of 96",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  F-boundary: flag at 4 dead coordinates is False"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M6-eps-as-clip",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "turn the eps fallback into a clip (divide by eps instead of leaving d = 1)",
+      "why_it_matters": "R1 section 1: the floor is a FALLBACK, not a clip",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  eps is a FALLBACK not a clip: dead coordinates keep d=1"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M7-ddof-one",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "use the sample form of sigma (ddof = 1) instead of the population form",
+      "why_it_matters": "R1 section 1: ddof = 0; the sample form would define a different intervention",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  sigma uses ddof=0, not ddof=1"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M8-pp-twice",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "apply the percentage-point factor twice",
+      "why_it_matters": "the pp conversion must be applied exactly once",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  CONFORMANCE: G_bar matches an independent reference   -727.8340785823881",
+        "FAIL  CONFORMANCE: Delta_bar matches an independent reference",
+        "FAIL  G_bar is in PERCENTAGE POINTS (0.30-0.22 -> 8.0 pp)",
+        "FAIL  Delta_bar is the paired change (3.0 - 8.0 -> -5.0 pp)"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M9-spans-zero-broken",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "always report spans_zero as False",
+      "why_it_matters": "an interval spanning zero must be reported as spanning zero (R2 section 5)",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  F-11: spans_zero is TRUE on a fixture centred at zero   [-0.423, 0.109]"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M10-cv-after-reverted-to-sd",
+      "anchor_status": "INVERTED",
+      "applied": true,
+      "description": "reintroduce the v1 defect: report the plain SD of the post-scaling sigma as cv_sigma_after (the reviewer's M10 introduced the CV because v1 reported the SD; v2 reports the CV, so the probe for the same weakness is the reverse substitution)",
+      "why_it_matters": "F-1: R1 section 1 asks for CV(sigma) before AND after; a suite that cannot tell the two apart does not test the diagnostic it names",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  F-1: cv_sigma_after is the CV (spread / mean), not the SD   cv=0.406116 sd=0.406116",
+        "FAIL  F-1: a zero-mean sigma gives NaN, explicitly and with no epsilon added"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M11-overwrite-allowed",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "let results be overwritten silently",
+      "why_it_matters": "the acceptance record requires refusing to overwrite result files",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  safe_write_json REFUSES to overwrite   no exception raised"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M12-gate-open",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "open the real-data gate by default",
+      "why_it_matters": "real-data execution must be OFF by default",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  REAL_DATA_EXECUTION_ENABLED is False",
+        "FAIL  the gate refuses by default   no exception raised",
+        "FAIL  ...and closes again when the global is restored   no exception raised"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M13-duplicates-accepted",
+      "anchor_status": "unchanged",
+      "applied": true,
+      "description": "stop reporting duplicate records",
+      "why_it_matters": "duplicated records must be refused, not accepted silently",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  a DUPLICATE record is rejected   no exception raised"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M14-cluster-labels-unvalidated",
+      "anchor_status": "new (probes the F-2 fix)",
+      "applied": true,
+      "description": "skip cluster-label validation, restoring the silent empty-cluster path",
+      "why_it_matters": "F-2: a NaN label produced an empty cluster that silently removed questions from the numerator and the slot denominator",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  F-2: a NaN label is REJECTED before grouping   cluster label at position 1 has unsupported type float; labels must be all strings or all integers"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M15-negative-index-wraps",
+      "anchor_status": "new (probes the F-7 fix)",
+      "applied": true,
+      "description": "allow negative indices to wrap again",
+      "why_it_matters": "F-7: a negative index silently wraps in numpy and would select a different question",
+      "v2_suite_kills": true,
+      "failing_checks": [
+        "FAIL  F-7: a NEGATIVE index is rejected, not wrapped   no exception raised"
+      ],
+      "crashed_without_named_failure": false
+    },
+    {
+      "id": "M16-partition-check-removed",
+      "anchor_status": "new; EXPECTED TO SURVIVE, see note",
+      "applied": true,
+      "description": "drop the partition coverage proof",
+      "why_it_matters": "F-2: coverage must be PROVED at construction. This guard is UNREACHABLE through the public API, because label validation precedes it and every question therefore carries exactly one label. A mutation test cannot kill an unreachable guard, so its survival is a property of defence in depth rather than a hole in the suite. Reported as such rather than removed, and rather than papered over with a test that reaches it only by monkeypatching internals.",
+      "v2_suite_kills": false,
+      "failing_checks": [],
+      "crashed_without_named_failure": false
+    }
+  ],
+  "applied": 16,
+  "killed": 15,
+  "survivors": [
+    "M16-partition-check-removed"
+  ]
+}

@@ -1,0 +1,34 @@
+            KILLED  M1-ratio-reintroduced  [unchanged]
+                    by: FAIL  CONFORMANCE: the output schema is exactly the closed expected set   ['relative_change']
+            KILLED  M2-denominator-distinct  [unchanged]
+                    by: FAIL  F-5: the core computes the SLOT-weighted value
+            KILLED  M3-denominator-clusters  [re-anchored twice]
+            KILLED  M4-per-seed-resample  [unchanged]
+                    by: FAIL  CONFORMANCE: G_bar matches an independent reference   -4.128233667247203
+            KILLED  M5-flag-off-by-one  [unchanged]
+                    by: FAIL  F-boundary: flag at 4 dead coordinates is False
+            KILLED  M6-eps-as-clip  [unchanged]
+                    by: FAIL  eps is a FALLBACK not a clip: dead coordinates keep d=1
+            KILLED  M7-ddof-one  [unchanged]
+                    by: FAIL  sigma uses ddof=0, not ddof=1
+            KILLED  M8-pp-twice  [unchanged]
+                    by: FAIL  CONFORMANCE: G_bar matches an independent reference   -727.8340785823881
+            KILLED  M9-spans-zero-broken  [unchanged]
+                    by: FAIL  F-11: spans_zero is TRUE on a fixture centred at zero   [-0.423, 0.109]
+            KILLED  M10-cv-after-reverted-to-sd  [INVERTED]
+                    by: FAIL  F-1: cv_sigma_after is the CV (spread / mean), not the SD   cv=0.406116 sd=0.406116
+            KILLED  M11-overwrite-allowed  [unchanged]
+                    by: FAIL  safe_write_json REFUSES to overwrite   no exception raised
+            KILLED  M12-gate-open  [unchanged]
+                    by: FAIL  REAL_DATA_EXECUTION_ENABLED is False
+            KILLED  M13-duplicates-accepted  [unchanged]
+                    by: FAIL  a DUPLICATE record is rejected   no exception raised
+            KILLED  M14-cluster-labels-unvalidated  [new (probes the F-2 fix)]
+                    by: FAIL  F-2: a NaN label is REJECTED before grouping   cluster label at position 1 has unsupported type float; l
+            KILLED  M15-negative-index-wraps  [new (probes the F-7 fix)]
+                    by: FAIL  F-7: a NEGATIVE index is rejected, not wrapped   no exception raised
+  *** SURVIVES ***  M16-partition-check-removed  [new; EXPECTED TO SURVIVE, see note]
+                    NOT CAUGHT: drop the partition coverage proof
+
+16 of 16 mutations applied; 15 killed; 1 survived
+SCOPE: this shows the suite catches exactly these fault variants. It is not evidence that the core is free of defects and must not be reported as such.
