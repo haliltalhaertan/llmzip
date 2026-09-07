@@ -1,0 +1,217 @@
+{
+  "status": "PREREGISTERED_COORDINATE_SCALE_RESULT",
+  "benchmark": "LoCoMo",
+  "base_git_blob": "7c4140252fb7f846d617189925cdf534515743f4",
+  "identity": {
+    "valid_questions": 1535,
+    "rotation_seeds": [
+      59001,
+      59002,
+      59003,
+      59004,
+      59005,
+      59006,
+      59007,
+      59008,
+      59009,
+      59010
+    ],
+    "arms": [
+      "NATIVE",
+      "SCALED_NATIVE",
+      "FULLHAAR_FRESH",
+      "SCALED_FULLHAAR",
+      "BLOCK32_FRESH",
+      "SCALED_BLOCK32"
+    ],
+    "scale_rule": "d_i = 1/sigma_i on the centered archive representation, per archive, eps=1e-12"
+  },
+  "controls": {
+    "native_reproduction": 0.23654714666441054,
+    "frozen_native": 0.23654714666441054,
+    "absolute_reproduction_error": 0.0,
+    "scaled_native_bit_identical": true,
+    "within_representation_norm_max_abs_error": 5.329070518200751e-15,
+    "within_representation_dot_max_abs_error": 1.1368683772161603e-13,
+    "per_question_expected_rows": 92100,
+    "per_question_actual_rows": 92100
+  },
+  "primary": {
+    "arm_means": {
+      "NATIVE": 0.23654714666441054,
+      "SCALED_NATIVE": 0.23654714666441054,
+      "FULLHAAR_FRESH": 0.13913106338041972,
+      "SCALED_FULLHAAR": 0.20986555436330145,
+      "BLOCK32_FRESH": 0.23121552178841082,
+      "SCALED_BLOCK32": 0.23468983738864888
+    },
+    "denominator_full": 0.09741608328399082,
+    "denominator_block": 0.005331624875999724,
+    "denominator_full_dispersion": {
+      "per_seed": [
+        0.09120110363758577,
+        0.10038814608024532,
+        0.0965070833979629,
+        0.10525802463913217,
+        0.09321496021170292,
+        0.09673499302000935,
+        0.10146310033242398,
+        0.08862039191355156,
+        0.09895782656167793,
+        0.10181520304561625
+      ],
+      "mean": 0.09741608328399083,
+      "sample_sd": 0.005200069807034959,
+      "se": 0.0016444064582102744,
+      "min": 0.08862039191355156,
+      "max": 0.10525802463913217
+    },
+    "denominator_block_dispersion": {
+      "per_seed": [
+        -0.006618222711056582,
+        0.004921244850355111,
+        -0.0020633958085828907,
+        0.0016993869037414677,
+        0.004067628354273323,
+        0.005734682798200719,
+        0.01643590187037211,
+        0.0019453712390099243,
+        0.012499609872574063,
+        0.01469404139110983
+      ],
+      "mean": 0.005331624875999708,
+      "sample_sd": 0.007351594149137724,
+      "se": 0.002324778194444279,
+      "min": -0.006618222711056582,
+      "max": 0.01643590187037211
+    },
+    "fullhaar_fresh_R3_dispersion": {
+      "per_seed": [
+        0.14534604302682477,
+        0.13615900058416522,
+        0.14004006326644763,
+        0.13128912202527837,
+        0.14333218645270762,
+        0.1398121536444012,
+        0.13508404633198656,
+        0.14792675475085898,
+        0.13758932010273262,
+        0.1347319436187943
+      ],
+      "mean": 0.13913106338041972,
+      "sample_sd": 0.005200069807034958,
+      "se": 0.0016444064582102741,
+      "min": 0.13128912202527837,
+      "max": 0.14792675475085898
+    },
+    "frac_full": 0.7261069075901362,
+    "frac_block": 0.6516429195680419,
+    "frac_full_band": "[SCALE ACCOUNTS FOR MOST OF THIS ARM'S DAMAGE]",
+    "frac_block_band": "[PARTIAL]",
+    "frac_full_per_seed": [
+      0.7909698932017446,
+      0.6501622350180419,
+      0.7251608236963847,
+      0.729477771174336,
+      0.8313532034389045,
+      0.637862447716727,
+      0.7528271597666336,
+      0.723179952007197,
+      0.7638087298678005,
+      0.6670591269970071
+    ],
+    "frac_block_per_seed": [
+      1.1640667431479723,
+      2.208272479627301,
+      1.2252223461359044,
+      -1.8052129602981408,
+      2.6437995729102957,
+      0.23031678083780435,
+      0.7917076595099883,
+      -3.4020307408183634,
+      0.8384006043685456,
+      0.5598833013666537
+    ],
+    "I_frac_secondary": 0.07446398802209431,
+    "descriptive_pp_only": {
+      "delta_full_pp": 7.073449098288173,
+      "delta_block_pp": 0.34743156002380593,
+      "note": "descriptive only; barred from carrying the verdict (floor-confounded)"
+    }
+  },
+  "diagnostics": {
+    "cv_sigma_per_archive": [
+      {
+        "archive_ordinal": 0,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.4547955879223498,
+        "cv_sigma_after": 3.771763847663369e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 1,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.43834185442889695,
+        "cv_sigma_after": 3.815760786470701e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 2,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.4986106809808875,
+        "cv_sigma_after": 4.071343396803174e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 3,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.4930503456709179,
+        "cv_sigma_after": 5.777783805466599e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 4,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.5004035974473754,
+        "cv_sigma_after": 5.294213865845955e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 5,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.4948406907607563,
+        "cv_sigma_after": 4.763134970256631e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 6,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.5017819578167749,
+        "cv_sigma_after": 4.620837945305284e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 7,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.5084442294219229,
+        "cv_sigma_after": 4.772560264220842e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 8,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.47077327135038843,
+        "cv_sigma_after": 4.2472984133949324e-16,
+        "flagged": false
+      },
+      {
+        "archive_ordinal": 9,
+        "degenerate_coords": 0,
+        "cv_sigma_before": 0.4858445043585008,
+        "cv_sigma_after": 4.546608413945095e-16,
+        "flagged": false
+      }
+    ]
+  },
+  "interpretation_ceiling": "Fixed-benchmark preregistered causal-intervention evidence under one shared pipeline. Not necessity, not a global claim, not independent replication, nothing about Task 4F1."
+}
