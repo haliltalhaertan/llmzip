@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T14:13:00Z",
+  "issued_at_utc": "2026-09-07T14:26:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher review of design revision R2, which simplifies the Option A design to three absolute percentage-point quantities with their uncertainty and withdraws the entire categorical apparatus. Nothing is accepted, sealed, implemented or authorized to run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher decision on commissioning an INDEPENDENT IMPLEMENTATION REVIEW of impl/v52-membership-under-scaling-2026-09-07, by a session that did not write it. The preparer may not review its own implementation. Nothing is sealed and real-data execution remains off by default and unauthorized. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-067",
+  "ledger_entry": "L-068",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1086,5 +1086,43 @@
       "interval_spanning_zero": "reported as such; it means the data on this panel do not resolve the sign of the change, is not evidence of absence, and must not be converted into one",
       "unchanged_by_r2": "the six arms; the matched draw structure with seeds paired one-to-one and not crossed; the scaling operator specification; unconditional publication of all arms, seeds, per-question records, aggregates, diagnostics and controls under every outcome; the mandatory control suite; the no-tuning rule; and the outcome-licence limits"
     }
+  },
+  "membership_under_scaling_acceptance_2026_09_07": {
+    "path": "docs/v52/V52_MEMBERSHIP_UNDER_SCALING_ACCEPTANCE_BINDING_2026-09-07.md",
+    "sha256": "a99d547d525594ec6c6a12ff62f2cbb701cc05de01d7094233c90f21a0d71c71",
+    "status": "DESIGN ACCEPTED - IMPLEMENTATION PREPARATION ONLY; NOT SEALED, NOT AUTHORIZED TO RUN ON REAL DATA",
+    "relayed_as": "chat text; not a pushed Head-Researcher-signed artifact",
+    "accepted": "R2's core design - three absolute percentage-point quantities, paired uncertainty analysis, unconditional reporting, no categorical mechanism verdict",
+    "precedence": "R2 -> R1 -> draft; draft section 8 and R1 sections 4-5 are superseded, the rest of each remains in force",
+    "dead_and_forbidden_in_the_implementation": [
+      "any ratio of Delta to G under any name",
+      "the cut points -1.00, -0.60, -0.20, +0.20",
+      "the five categorical labels or any categorical verdict",
+      "the 2.0 pp floor and the RELATIVE SCALE UNSUITABLE state",
+      "the INDETERMINATE overlay as a verdict mechanism",
+      "the three-band rule",
+      "any band on the remaining gap",
+      "the per-seed positivity gate"
+    ],
+    "clarification_question_level_limit": "WITHDRAWN: R2's phrasing that the question-level interval 'is narrower than the dependence structure warrants'. BINDING REPLACEMENT: the scheme does not model within-conversation dependence and may therefore understate uncertainty. No claim about interval width in either direction before it is computed.",
+    "clarification_point_estimate_vs_envelope": "the panel point estimate is a computed number whose sign is known and does not become unknown because an interval is wide; an interval spanning zero means both directions are supported under resampling and the interpretation is unresolved. It is NOT evidence of absence and NOT practical equivalence. Both are reported together and neither erases the other.",
+    "bound_cluster_bootstrap_algorithm": "per replicate: draw n_clusters conversations WITH REPLACEMENT; take ALL questions of each draw; PRESERVE MULTIPLICITY so a conversation drawn twice contributes twice; concatenate into the replicate's question multiset; divide by the total number of selected question SLOTS, not by distinct questions and not by clusters; apply the same selection to all six arms and the fixed ten-seed panel. Question-weighting is NOT automatic - it follows only from these steps. A different algorithm must be declared BEFORE implementation.",
+    "ratio_computed_later": "not a deliverable, not a preregistered result, not part of the record; it may not silently alter the scientific statement, and changing that statement needs a new decision taken before the quantity is looked at",
+    "linearity_requirement": "the implementation must preserve the same question scope and weights on both sides of the identity, and must NOT require bitwise equality; the consistency check is a tolerance check at 1e-12"
+  },
+  "membership_under_scaling_implementation_2026_09_07": {
+    "branch": "impl/v52-membership-under-scaling-2026-09-07",
+    "commit": "a6d70ff63ce44ea0f066a075853c9e93dec53122",
+    "namespace": "drafts/v52/membership_impl_2026_09_07/",
+    "core_sha256": "707e166c80d9231d089341a804e0acdd8845781fec7560821c67b3f6d0731a00",
+    "tests_sha256": "97e6e7206864dffe4638a19231bcc5ee706cda2906cf08890ac80aa7e1cd279f",
+    "status": "IMPLEMENTATION PREPARATION - NOT INDEPENDENTLY REVIEWED; the preparer may not call it reviewed",
+    "non_triggerable": "no workflow file exists and the directory is not research/v52/, so nothing can fire by push, schedule or dispatch",
+    "real_data_execution": "OFF BY DEFAULT - REAL_DATA_EXECUTION_ENABLED is False and the gate raises unless explicitly overridden; the module reads no corpus, downloads nothing and imports nothing that does",
+    "synthetic_tests": "74 checks, ALL PASS, every guard paired with its failing case; output captured at synthetic_test_output.txt",
+    "demonstrated_not_asserted": "percentage-point units and slot-weighted aggregation (0.30-0.22 gives exactly 8.0 pp; a repeated index counts twice); PAIRING, via a constant per-question change of -5 pp yielding a degenerate interval [-5.000000, -5.000000] while the level G still varies across replicates, which independent per-arm resampling could not produce; CLUSTER MULTIPLICITY, via drawing cluster A twice returning exactly 1.0 pp over 6 slots and A-then-B returning the question-weighted 3/8 rather than the cluster-averaged 0.5",
+    "refusals_tested": "missing, duplicated, NaN, out-of-range, unknown-arm, unknown-seed and malformed records each raise; result files are never overwritten silently; the matched-Q, identity, orthogonality, invariance, partition and linearity checks are each shown able to fail",
+    "defect_found_in_this_preparation_and_disclosed": "DEGENERATE_FLAG_THRESHOLD was DEAD CODE standing in for a design requirement - the degenerate-coordinate count was recorded but the per-archive FLAG that R1 section 1 requires was never applied. Fixed by returning a diagnostics dictionary from scale_matrix carrying count AND flag together so a caller cannot record one and forget the other, with tests that the flag fires above 4 and does not fire at 3.",
+    "not_validated": "anything requiring a corpus; no pipeline executed end to end; no real retrieval; no real-data bootstrap; the corpus-bound runner is NOT written because writing it is not authorized at this stage; tests ran on this machine's Python and NumPy rather than the pinned research stack, which is an inference and not a run"
   }
 }
