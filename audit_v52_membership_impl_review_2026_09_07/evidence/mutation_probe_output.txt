@@ -1,0 +1,21 @@
+         REVIEWER ONLY  M1-ratio-reintroduced: add a genuine Delta/G ratio to the reported output under a neutral name
+                        reviewer caught: ["FAIL  [F] the output schema contains no ratio, band, verdict or label key   -- keys=['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'cv_sigma_after', 'cv_sigma_before', 'degenerate_coords', 'flagged', 'hi', 'lo', 'n_question_slots', 'note', 'per_seed_Delta_pp', 'per_seed_G_pp', 'per_seed_G_scaled_pp', 'percentiles', 'relative_change', 'replicates', 'scheme', 'spans_zero']"]
+         REVIEWER ONLY  M2-denominator-distinct: divide the mean by the number of DISTINCT questions instead of the selected slots
+                        reviewer caught: ['FAIL  [B] the seed panel is FIXED: per-seed vectors keep length n_seeds and column identity', 'FAIL  [D] the mean divides by TOTAL SELECTED SLOTS, not by clusters and not by distinct questions   -- AAA: got=1.0000 slots=1.0000 clusters=1.0000 distinct=1.0000 | ABC: got=1.1000 slots=1.1000 clusters=1.6667 distinct=1.1000 | CCB: got=1.1429 slots=1.7778 clusters=2.6667 distinct=1.1429 | BBB: got=0.0000 slots=0.0000 clusters=0.0000 distinct=0.0000']
+         REVIEWER ONLY  M3-denominator-clusters: make the cluster bootstrap average cluster means instead of question slots
+                        reviewer caught: ['FAIL  [D] cluster_bootstrap END TO END reproduces an independent reference of the bound algorithm (unequal cluster sizes, all three quantities, identical RNG stream)   -- max interval discrepancy = 3.995e-01', 'FAIL  [D] NEGATIVE CONTROL: a cluster-AVERAGED denominator gives a different interval on this fixture, so the end-to-end comparison above is sharp   -- slot-weighted=[2.0950,3.7079] vs cluster-averaged=[2.0950,3.7079]']
+                  BOTH  M4-per-seed-resample: break pairing across the seed panel: resample each seed column independently
+         REVIEWER ONLY  M5-flag-off-by-one: fire the per-archive degenerate flag at 4 instead of above 4
+                        reviewer caught: ['FAIL  [C] per-archive FLAG boundary at exactly 4 degenerate coordinates (design: flagged iff count > 4)   -- flagged=True, expected=False']
+                  BOTH  M6-eps-as-clip: turn the eps fallback into a clip (divide by eps instead of leaving d = 1)
+                  BOTH  M7-ddof-one: use the sample form of sigma (ddof = 1) instead of the population form
+                  BOTH  M8-pp-twice: apply the percentage-point factor twice
+         REVIEWER ONLY  M9-spans-zero-broken: always report spans_zero as False
+                        reviewer caught: ['FAIL  [D] percentile interval is taken at 2.5/97.5 and spans_zero is lo<=0<=hi']
+         REVIEWER ONLY  M10-cv-after-true-cv: report a genuine CV(sigma) after rescaling instead of the plain standard deviation
+                        reviewer caught: ['FAIL  [C] DEFECT: cv_sigma_after is the standard deviation of post-scaling sigma, not its CV   -- reported=0.512989, SD=0.406116, true CV=0.512989 (they coincide only when the mean is 1, i.e. no degenerate coordinate)']
+                  BOTH  M11-overwrite-allowed: let results be overwritten silently
+                  BOTH  M12-gate-open: open the real-data gate by default
+                  BOTH  M13-duplicates-accepted: stop reporting duplicate records
+
+13 mutations; preparer's suite missed 6; nobody caught 0

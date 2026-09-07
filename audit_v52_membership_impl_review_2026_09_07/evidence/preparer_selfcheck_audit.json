@@ -1,0 +1,65 @@
+{
+  "n_check_calls": 51,
+  "n_expect_violation_calls": 16,
+  "vacuous_checks": [
+    {
+      "line": 34,
+      "check_name": "the gate can be opened only by an explicit argument",
+      "reason": "the asserted condition is the literal True",
+      "carried_by_a_preceding_call_that_would_raise": true,
+      "asserts_nothing_at_all": false,
+      "source": "m.require_real_data_authorization(enabled=True); check(\"the gate can be opened only by an explicit argument\", True)"
+    },
+    {
+      "line": 80,
+      "check_name": "sign(xD)=sign(x) holds bit-identically for archive and query",
+      "reason": "the asserted condition is the literal True",
+      "carried_by_a_preceding_call_that_would_raise": true,
+      "asserts_nothing_at_all": false,
+      "source": "m.check_identity(C, Q, D); check(\"sign(xD)=sign(x) holds bit-identically for archive and query\", True)"
+    },
+    {
+      "line": 105,
+      "check_name": "matched-Q control passes on identical blocks",
+      "reason": "the asserted condition is the literal True",
+      "carried_by_a_preceding_call_that_would_raise": true,
+      "asserts_nothing_at_all": false,
+      "source": "m.assert_matched_blocks(q32, q64, q32, q64); check(\"matched-Q control passes on identical blocks\", True)"
+    },
+    {
+      "line": 128,
+      "check_name": "a complete record set validates",
+      "reason": "the asserted condition is the literal True",
+      "carried_by_a_preceding_call_that_would_raise": true,
+      "asserts_nothing_at_all": false,
+      "source": "m.validate_per_question_records(recs, QIDS); check(\"a complete record set validates\", True)"
+    },
+    {
+      "line": 181,
+      "check_name": "an interval that contains zero is flagged, not reinterpreted",
+      "reason": "membership in (True, False) is true for every boolean, so nothing is asserted",
+      "carried_by_a_preceding_call_that_would_raise": false,
+      "asserts_nothing_at_all": true,
+      "source": "check(\"an interval that contains zero is flagged, not reinterpreted\","
+    }
+  ],
+  "forbidden_token_scan_scope": {
+    "scan_expression": "src.lower().split('\\\"\\\"\\\"', 2)[2]",
+    "module_docstring_chars_excluded_from_the_scan": 1321,
+    "chars_actually_scanned": 16169,
+    "tokens_scanned": [
+      "rho",
+      "verdict",
+      "accounts for most",
+      "indeterminate",
+      "relative scale unsuitable"
+    ],
+    "forbidden_strings_present_in_the_excluded_docstring": [
+      "indeterminate",
+      "ratio",
+      "relative scale unsuitable",
+      "verdict"
+    ],
+    "function_docstrings_ARE_inside_the_scanned_region": true
+  }
+}

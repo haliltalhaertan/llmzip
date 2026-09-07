@@ -1,0 +1,25 @@
+preparer's suite: 51 check() calls + 16 expect_violation() calls
+vacuous checks found: 5
+  L34 [CARRIED BY A PRECEDING CALL]: the gate can be opened only by an explicit argument
+        reason: the asserted condition is the literal True
+        source: m.require_real_data_authorization(enabled=True); check("the gate can be opened only by an explicit argument", True)
+  L80 [CARRIED BY A PRECEDING CALL]: sign(xD)=sign(x) holds bit-identically for archive and query
+        reason: the asserted condition is the literal True
+        source: m.check_identity(C, Q, D); check("sign(xD)=sign(x) holds bit-identically for archive and query", True)
+  L105 [CARRIED BY A PRECEDING CALL]: matched-Q control passes on identical blocks
+        reason: the asserted condition is the literal True
+        source: m.assert_matched_blocks(q32, q64, q32, q64); check("matched-Q control passes on identical blocks", True)
+  L128 [CARRIED BY A PRECEDING CALL]: a complete record set validates
+        reason: the asserted condition is the literal True
+        source: m.validate_per_question_records(recs, QIDS); check("a complete record set validates", True)
+  L181 [ASSERTS NOTHING]: an interval that contains zero is flagged, not reinterpreted
+        reason: membership in (True, False) is true for every boolean, so nothing is asserted
+        source: check("an interval that contains zero is flagged, not reinterpreted",
+
+forbidden-token self-check scope:
+  scan_expression: src.lower().split('\"\"\"', 2)[2]
+  module_docstring_chars_excluded_from_the_scan: 1321
+  chars_actually_scanned: 16169
+  tokens_scanned: ['rho', 'verdict', 'accounts for most', 'indeterminate', 'relative scale unsuitable']
+  forbidden_strings_present_in_the_excluded_docstring: ['indeterminate', 'ratio', 'relative scale unsuitable', 'verdict']
+  function_docstrings_ARE_inside_the_scanned_region: True

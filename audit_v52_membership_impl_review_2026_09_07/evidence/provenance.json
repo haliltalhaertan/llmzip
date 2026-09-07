@@ -1,0 +1,55 @@
+{
+  "review": "V52 membership-under-scaling: independent implementation review",
+  "date": "2026-09-07",
+  "hash_discipline": "all hashes are over RAW GIT BLOBS (git show <commit>:<path>); the repository ships no .gitattributes and this clone has core.autocrlf=true",
+  "environment": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.14.3",
+    "numpy": "2.5.2"
+  },
+  "commits": {
+    "main": "9b4af5949c4dc0e5054f8f522f1952ec47513f8f",
+    "candidate_impl_branch_tip": "a6d70ff63ce44ea0f066a075853c9e93dec53122",
+    "merge_base": "16019724564b5ac8db4a4d2d8bb08f98feb45c09"
+  },
+  "candidate_blob_sha256": {
+    "membership_scaling_core.py": "707e166c80d9231d089341a804e0acdd8845781fec7560821c67b3f6d0731a00",
+    "test_membership_scaling_core.py": "97e6e7206864dffe4638a19231bcc5ee706cda2906cf08890ac80aa7e1cd279f",
+    "README_IMPL.md": "37e86ed57717ad971cc5940c087027aff6eea1e5b75bd2be64fb53491754fefb",
+    "synthetic_test_output.txt": "eedf5b66adf3c2535a453c6c5b8a23885146ba96673d0908cd8f6b18d271ea80"
+  },
+  "candidate_blob_expected_by_commission": {
+    "membership_scaling_core.py": "707e166c80d9231d089341a804e0acdd8845781fec7560821c67b3f6d0731a00",
+    "test_membership_scaling_core.py": "97e6e7206864dffe4638a19231bcc5ee706cda2906cf08890ac80aa7e1cd279f"
+  },
+  "governing_doc_blob_sha256": {
+    "V52_MEMBERSHIP_UNDER_SCALING_ACCEPTANCE_BINDING_2026-09-07.md": "a99d547d525594ec6c6a12ff62f2cbb701cc05de01d7094233c90f21a0d71c71",
+    "V52_MEMBERSHIP_UNDER_SCALING_DESIGN_REVISION_R2_2026-09-07.md": "39cbfcea3a93307d582f9765529d6d99c09d0204706befa6470b8b932f451669",
+    "V52_MEMBERSHIP_UNDER_SCALING_DESIGN_REVISION_R1_2026-09-07.md": "3d7a79b249e97a1bc2657a6782aec5e6a138f6a8c5e2681978ed66ad217b3391",
+    "V52_MEMBERSHIP_UNDER_SCALING_PREREG_DRAFT_2026-09-07.md": "3da80e3424a8f29bcd85ad1c0d5f5b8e97dfba857fbaaf042b2b0d06301e3399"
+  },
+  "crlf_hazard_demonstration": {
+    "acceptance_record_raw_blob": "a99d547d525594ec6c6a12ff62f2cbb701cc05de01d7094233c90f21a0d71c71",
+    "acceptance_record_as_checked_out_on_this_windows_clone": "91380902859942bb558f12f754a0103ec5aa3b06be0672ce277dbc30bb8990da",
+    "note": "the difference is pure checkout artefact (CRLF); hashing the working tree would have produced a phantom mismatch"
+  },
+  "candidate_branch_change_set_from_merge_base": [
+    "A\tdrafts/v52/membership_impl_2026_09_07/README_IMPL.md",
+    "A\tdrafts/v52/membership_impl_2026_09_07/membership_scaling_core.py",
+    "A\tdrafts/v52/membership_impl_2026_09_07/synthetic_test_output.txt",
+    "A\tdrafts/v52/membership_impl_2026_09_07/test_membership_scaling_core.py"
+  ],
+  "boundary_attestation": [
+    "no corpus was read or downloaded",
+    "no model was downloaded",
+    "no real fitting, retrieval or ranking was performed",
+    "no bootstrap was run on real data; every fixture is synthetic and generated in process",
+    "nothing was sealed and no experiment was run",
+    "no Task 4F1 action of any kind: no --mode run, no --mode finalize, no run_archives/evaluate_archive/finalize_results, no V52_T4F1_AUTH_HMAC_KEY_HEX, no BEAM outcome read",
+    "no candidate file, no branch, no seal and no frozen artifact was modified",
+    "all mutations were applied to throwaway copies in a temp directory, deleted afterwards"
+  ],
+  "verdict": "PASS WITH FINDINGS",
+  "verdict_scope": "the reviewed computation core only; the corpus-bound runner has not been written and is neither reviewed nor approved",
+  "candidate_blob_hashes_match_commission": true
+}

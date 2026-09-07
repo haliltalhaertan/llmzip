@@ -1,0 +1,67 @@
+{
+  "algorithm": "sha256 over working-tree bytes, LF-normalised so they equal the git blob bytes",
+  "excludes": [
+    "HASH_MANIFEST.json (itself)",
+    "__pycache__"
+  ],
+  "file_count": 14,
+  "files": {
+    "FINDINGS.md": {
+      "bytes": 9359,
+      "sha256": "50d829bd9debc54f19d9ef185ba23d79d5c75afcfcd654aae298c1fc7db558ee"
+    },
+    "IMPL_REVIEW_REPORT.md": {
+      "bytes": 21207,
+      "sha256": "e245f0da2b0577f8940dfd906746f618638b45481280f93facb1774270bc3e98"
+    },
+    "IMPL_REVIEW_REPORT.md.sha256": {
+      "bytes": 88,
+      "sha256": "c857aefaa22f7bbebbf2f387f7be4a56c35efb187b60220f90689293f8e476ce"
+    },
+    "evidence/adversarial_core_output.txt": {
+      "bytes": 13655,
+      "sha256": "8b47a097822329c8e1e7354d52659721348fdf0c1cf9eb672b1caec994b556d5"
+    },
+    "evidence/adversarial_core_results.json": {
+      "bytes": 24118,
+      "sha256": "b63795b540ee0fd609f93d1ce9649ec7361e60220e9cfe8428bb61c0e45b30a7"
+    },
+    "evidence/mutation_probe_output.txt": {
+      "bytes": 3365,
+      "sha256": "7b2ee2218fe91de579f3cb232c8429550fc5223599a1d93f0cba80fed13580ea"
+    },
+    "evidence/mutation_probe_results.json": {
+      "bytes": 11136,
+      "sha256": "f8b20acf4c70e0c26d21f3cd7028c3665da9909d38ede85c275932eaf112ab5e"
+    },
+    "evidence/preparer_selfcheck_audit.json": {
+      "bytes": 2601,
+      "sha256": "c769996e09be8da10eda24a9839341c7a0535e6a5e6732e2059f4d3d343b4ade"
+    },
+    "evidence/preparer_selfcheck_output.txt": {
+      "bytes": 1870,
+      "sha256": "aff9800b5753902c6ca9e4b4535f550b3f80303e7a18a34f5838d7feaf6e0a5b"
+    },
+    "evidence/preparer_suite_reproduction.txt": {
+      "bytes": 5431,
+      "sha256": "f359ed070a79a535b6090acc3ef4c1579925adda76715ea8af0c263ae744da24"
+    },
+    "evidence/provenance.json": {
+      "bytes": 3496,
+      "sha256": "a43805a10207e1f444f904ed7cb69b38ce409ed19ad4a1a7c7ac1a4a757ab5c3"
+    },
+    "scripts/adversarial_core_tests.py": {
+      "bytes": 40341,
+      "sha256": "5a1aca19323188880f53dcfbe0f59e3bf1da5aea5ea941f26e0e3e4fcea9ae1f"
+    },
+    "scripts/mutation_probes.py": {
+      "bytes": 9148,
+      "sha256": "498a4fd0c3867d31d8766826650dae78eec0d99b8cee9f9c9930f108dcf65c47"
+    },
+    "scripts/preparer_selfcheck_audit.py": {
+      "bytes": 4199,
+      "sha256": "4a600efd395eb2a573b67803a090afc052ef64ccbb7dc3e995e23f3cc8285396"
+    }
+  },
+  "namespace": "audit_v52_membership_impl_review_2026_09_07"
+}

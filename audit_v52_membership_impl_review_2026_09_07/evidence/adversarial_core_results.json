@@ -1,0 +1,722 @@
+{
+  "core_sha256_of_file_as_read": "707e166c80d9231d089341a804e0acdd8845781fec7560821c67b3f6d0731a00",
+  "python": "3.14.3",
+  "numpy": "2.5.2",
+  "expectations_failed": 0,
+  "results": [
+    {
+      "area": "A",
+      "name": "g matches an independent reference (B32_FRESH - RANDOM32_FRESH, x100)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "max|diff|=0.000e+00"
+    },
+    {
+      "area": "A",
+      "name": "gs matches an independent reference (SCALED_B32 - SCALED_RANDOM32, x100)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "A",
+      "name": "G_bar_pp equals mean-over-seeds of mean-over-questions, in pp",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "-1.2664004724102005 vs -1.2664004724102005"
+    },
+    {
+      "area": "A",
+      "name": "G_bar_scaled_pp likewise",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "A",
+      "name": "Delta_bar_pp equals G_bar_scaled_pp - G_bar_pp to 1e-12",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "A",
+      "name": "per-seed Delta equals per-seed(gs) - per-seed(g) elementwise",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "A",
+      "name": "NEGATIVE CONTROL: a doubly-applied pp factor would be caught by the same comparison",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "reference comparison is sharp, not vacuous"
+    },
+    {
+      "area": "A",
+      "name": "gap magnitudes stay inside +/-100 pp for in-range fractional scores",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "A",
+      "name": "linearity tolerance 1e-12 survives 400 adversarial replicates at +/-100 pp, n=4000",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "worst |mean-of-diff - diff-of-means| = 5.116e-14 (TOL=1e-12)"
+    },
+    {
+      "area": "A",
+      "name": "OBSERVATION: the 1e-12 linearity tolerance is ABSOLUTE, not relative to the pp magnitude",
+      "ok": true,
+      "kind": "observation",
+      "detail": "headroom at 100 pp = 19.5x observed worst case"
+    },
+    {
+      "area": "B",
+      "name": "ONE index set is shared across the fixed seed panel (anti-correlated seeds collapse to 0)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "[0.000e+00, 0.000e+00]"
+    },
+    {
+      "area": "B",
+      "name": "NEGATIVE CONTROL: independent per-seed resampling does NOT collapse (so the test is sharp)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "width=1.4120 pp"
+    },
+    {
+      "area": "B",
+      "name": "ONE index set is shared across arms (constant per-question change -> degenerate Delta)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "B",
+      "name": "the seed panel is FIXED: per-seed vectors keep length n_seeds and column identity",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "B",
+      "name": "question_bootstrap is deterministic in its seed argument",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "B",
+      "name": "OBSERVATION: no bootstrap RNG seed is fixed as a module constant; it is a caller argument",
+      "ok": true,
+      "kind": "observation",
+      "detail": "reproducibility of the interval depends on the unwritten runner, not on this core"
+    },
+    {
+      "area": "B",
+      "name": "rotation seeds are 60001..60010 and partition seeds 70001..70010, paired by position",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "B",
+      "name": "one (Q32,Q64) pair per rotation seed serves every rotated arm (deterministic, head first)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "B",
+      "name": "different rotation seeds give different blocks (the draw is not degenerate)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "sigma uses ddof=0 exactly (and is NOT the ddof=1 form)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "D is estimated from the archive alone; scale_matrix takes no query argument",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "signature: C, eps"
+    },
+    {
+      "area": "C",
+      "name": "the identical D is applied to the query and the sign code is preserved",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "degenerate count 3: fallback keeps d=1 (never 1/eps, never dropped)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "per-archive FLAG boundary at exactly 3 degenerate coordinates (design: flagged iff count > 4)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "flagged=False, expected=False"
+    },
+    {
+      "area": "C",
+      "name": "degenerate count 4: fallback keeps d=1 (never 1/eps, never dropped)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "per-archive FLAG boundary at exactly 4 degenerate coordinates (design: flagged iff count > 4)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "flagged=False, expected=False"
+    },
+    {
+      "area": "C",
+      "name": "degenerate count 5: fallback keeps d=1 (never 1/eps, never dropped)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "per-archive FLAG boundary at exactly 5 degenerate coordinates (design: flagged iff count > 4)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "flagged=True, expected=True"
+    },
+    {
+      "area": "C",
+      "name": "OBSERVATION: sigma exactly at eps takes the DIVIDE branch (d = 1e12), per '>= eps'",
+      "ok": true,
+      "kind": "observation",
+      "detail": "max d = 1.000e+12; the fallback is a razor edge at eps, as specified"
+    },
+    {
+      "area": "C",
+      "name": "DEFECT: cv_sigma_after is the standard deviation of post-scaling sigma, not its CV",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "reported=0.406116, SD=0.406116, true CV=0.512989 (they coincide only when the mean is 1, i.e. no degenerate coordinate)"
+    },
+    {
+      "area": "C",
+      "name": "cv_sigma_before IS a genuine CV (sd/mean of sigma)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "a diagonal but NEGATIVE D is rejected by the identity check",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "IDENTITY VIOLATION: sign(xD) != sign(x); the design premise fails"
+    },
+    {
+      "area": "C",
+      "name": "OBSERVATION: scale_matrix cannot itself produce a negative d (sigma >= 0), so the negative-D net is check_identity only",
+      "ok": true,
+      "kind": "observation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "a NaN in the centered representation ABORTS scale_matrix",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "a non-finite D ABORTS check_identity",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "non-finite value in the rescaled representation C D; aborting, not rep"
+    },
+    {
+      "area": "C",
+      "name": "a wrong-width representation is rejected",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "a 1-D representation is rejected",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "OBSERVATION: a SINGLE-ROW archive yields sigma=0 everywhere -> D = I, 96 degenerate, flagged",
+      "ok": true,
+      "kind": "observation",
+      "detail": "accepted without complaint; a one-row archive is a meaningless intervention"
+    },
+    {
+      "area": "C",
+      "name": "DEFECT (minor): an EMPTY archive (n=0) is accepted silently instead of being refused",
+      "ok": true,
+      "kind": "observation",
+      "detail": "accepted: degenerate=96, flagged=True"
+    },
+    {
+      "area": "C",
+      "name": "recorded: empty-archive behaviour",
+      "ok": true,
+      "kind": "observation",
+      "detail": "accepted: degenerate=96, flagged=True"
+    },
+    {
+      "area": "C",
+      "name": "build_rotation places the GIVEN blocks and stays orthogonal to TOL",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "C",
+      "name": "a all-identical membership is rejected",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "partition is not a disjoint exhaustive split of the coordinates"
+    },
+    {
+      "area": "C",
+      "name": "a membership with one duplicate is rejected",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "partition is not a disjoint exhaustive split of the coordinates"
+    },
+    {
+      "area": "C",
+      "name": "a membership of the wrong cardinality is rejected",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "partition is not a disjoint exhaustive split of the coordinates"
+    },
+    {
+      "area": "C",
+      "name": "a membership one too large is rejected",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "partition is not a disjoint exhaustive split of the coordinates"
+    },
+    {
+      "area": "C",
+      "name": "an out-of-range coordinate in the membership is rejected",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "partition is not a disjoint exhaustive split of the coordinates"
+    },
+    {
+      "area": "D",
+      "name": "the mean divides by TOTAL SELECTED SLOTS, not by clusters and not by distinct questions",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "AAA: got=1.0000 slots=1.0000 clusters=1.0000 distinct=1.0000 | ABC: got=1.1000 slots=1.1000 clusters=1.6667 distinct=1.1000 | CCB: got=1.7778 slots=1.7778 clusters=2.6667 distinct=1.1429 | BBB: got=0.0000 slots=0.0000 clusters=0.0000 distinct=0.0000"
+    },
+    {
+      "area": "D",
+      "name": "NEGATIVE CONTROL: the cluster-averaged and distinct-question estimators give DIFFERENT answers on this data, so the check above is sharp",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "D",
+      "name": "each replicate draws exactly n_clusters cluster indices WITH REPLACEMENT",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "lo={0} hi={3} size={3} calls=200"
+    },
+    {
+      "area": "D",
+      "name": "multiplicity actually occurs (some replicate draws a cluster more than once)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "D",
+      "name": "a drawn cluster contributes ALL of its questions",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "D",
+      "name": "a ONE-cluster label vector gives a degenerate interval equal to the full-sample value",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "D",
+      "name": "DEFECT: NaN cluster labels are not refused; NaN becomes a cluster whose member set is EMPTY, so its questions are silently dropped from any replicate that draws it",
+      "ok": true,
+      "kind": "observation",
+      "detail": "cluster keys=[0.0, 1.0, nan, nan], NaN member count=0; cluster_bootstrap outcome: DesignViolation 'empty question selection' (only when every draw is the empty cluster)"
+    },
+    {
+      "area": "D",
+      "name": "...and a replicate mixing a real cluster with the NaN cluster is accepted with a denominator that silently omits the NaN questions",
+      "ok": true,
+      "kind": "observation",
+      "detail": "slots=8 for a draw of 3 clusters covering 8 of 10 questions"
+    },
+    {
+      "area": "D",
+      "name": "DEFECT (minor): cluster labels are not type-normalised; 1 and '1' become two clusters",
+      "ok": true,
+      "kind": "observation",
+      "detail": "n_clusters=2"
+    },
+    {
+      "area": "D",
+      "name": "cluster labels of the wrong length are refused",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "D",
+      "name": "percentile interval is taken at 2.5/97.5 and spans_zero is lo<=0<=hi",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "D",
+      "name": "design constants: 10,000 replicates and percentiles (2.5, 97.5)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "D",
+      "name": "cluster_bootstrap END TO END reproduces an independent reference of the bound algorithm (unequal cluster sizes, all three quantities, identical RNG stream)",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "max interval discrepancy = 0.000e+00"
+    },
+    {
+      "area": "D",
+      "name": "question_bootstrap END TO END reproduces an independent reference",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "max interval discrepancy = 0.000e+00"
+    },
+    {
+      "area": "D",
+      "name": "NEGATIVE CONTROL: a cluster-AVERAGED denominator gives a different interval on this fixture, so the end-to-end comparison above is sharp",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "slot-weighted=[1.8082,3.8205] vs cluster-averaged=[2.0950,3.7079]"
+    },
+    {
+      "area": "D",
+      "name": "OBSERVATION: no cluster bootstrap is defined for LongMemEval in this core; the caller chooses the scheme, so the R2 prohibition is the unwritten runner's to honour",
+      "ok": true,
+      "kind": "observation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "a complete, well-formed record set validates",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "a record set with a missing record is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q3', 60010, 'SC"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a duplicate record is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 duplicate record(s), e.g. [('q0', 60001, '"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a NaN score is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a infinite score is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a score above 1 is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a negative score is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a unknown arm is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a unknown seed is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a unknown question is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a missing key is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a non-numeric score is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a None score is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NA"
+    },
+    {
+      "area": "E",
+      "name": "a record set with a empty record list is REFUSED",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "record validation failed: 240 missing record(s), e.g. [('q0', 60001, '"
+    },
+    {
+      "area": "E",
+      "name": "DEFECT (minor): a boolean score passes validation as float(True)=1.0",
+      "ok": true,
+      "kind": "observation",
+      "detail": "no violation raised"
+    },
+    {
+      "area": "E",
+      "name": "DEFECT: DUPLICATE question ids pass validate_per_question_records unnoticed (the set comprehension de-duplicates them)",
+      "ok": true,
+      "kind": "observation",
+      "detail": "validator raised nothing"
+    },
+    {
+      "area": "E",
+      "name": "...and paired_matrices then dies with an unhandled IndexError rather than a DesignViolation naming the duplicate (it still refuses, but not by design)",
+      "ok": true,
+      "kind": "observation",
+      "detail": "IndexError('index 2 is out of bounds for axis 0 with size 2')"
+    },
+    {
+      "area": "E",
+      "name": "a duplicate question id NEVER yields a silently wrong answer: every variant aborts",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "['q0', 'q0']->IndexError; ['q0', 'q1', 'q1']->IndexError; ['q0', 'q0', 'q1']->IndexError"
+    },
+    {
+      "area": "E",
+      "name": "DEFECT (minor): a NEGATIVE index is silently accepted and wraps to the last question",
+      "ok": true,
+      "kind": "observation",
+      "detail": "aggregate(idx=[-1]) = 18.5 = aggregate(idx=[9])"
+    },
+    {
+      "area": "E",
+      "name": "an out-of-range index fails (as IndexError, not DesignViolation)",
+      "ok": true,
+      "kind": "observation",
+      "detail": "IndexError('index 99 is out of bounds for axis 0 with size 10')"
+    },
+    {
+      "area": "E",
+      "name": "OBSERVATION: a float index is silently truncated to int by np.asarray(dtype=int)",
+      "ok": true,
+      "kind": "observation",
+      "detail": "aggregate(idx=[0.7]) accepted -> row 0"
+    },
+    {
+      "area": "E",
+      "name": "an EMPTY question selection is refused",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "a SINGLE-element selection is accepted and weighted correctly",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "safe_write_json refuses to overwrite an existing FILE",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "the original file's content is untouched after the refusal",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "safe_write_json refuses when the target path is an existing DIRECTORY",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "refusing to overwrite an existing result file: C:\\Users\\MDP\\AppData\\Lo"
+    },
+    {
+      "area": "E",
+      "name": "safe_write_json refuses even a zero-byte existing file",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "the real-data gate refuses by default",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "OBSERVATION: the gate's default argument is bound at import, so flipping the module constant does NOT open it -- fail-closed, but the constant is not the live switch",
+      "ok": true,
+      "kind": "observation",
+      "detail": "mutating REAL_DATA_EXECUTION_ENABLED=True still raises"
+    },
+    {
+      "area": "E",
+      "name": "the module imports nothing that could read a corpus or reach a network",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "imports=['__future__', 'json', 'math', 'numpy', 'pathlib']"
+    },
+    {
+      "area": "E",
+      "name": "no open()/eval()/exec()/__import__() anywhere in the module",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    },
+    {
+      "area": "E",
+      "name": "OBSERVATION: no function in the core calls require_real_data_authorization -- the gate is declarative and enforces nothing until the unwritten runner calls it",
+      "ok": true,
+      "kind": "observation",
+      "detail": "callers=[]"
+    },
+    {
+      "area": "F",
+      "name": "every division in the module is enumerated and none is a ratio of Delta to G",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "1.0 / np.where(ok, sigma, 1.0); sigma.std(ddof=0) / mean_sigma"
+    },
+    {
+      "area": "F",
+      "name": "the four withdrawn cut points (-0.60, -0.20, +0.20, +0.60) do not occur at all",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "{}"
+    },
+    {
+      "area": "F",
+      "name": "no comparison anywhere applies a floor or a band to a reported quantity",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "comparisons touching a reported quantity or 2.0: []"
+    },
+    {
+      "area": "F",
+      "name": "every occurrence of 1.0 / -1.0 / 2 is located and none is a decision constant",
+      "ok": true,
+      "kind": "observation",
+      "detail": "-1.0@L111: return Q * np.where(np.diag(R) < 0, -1.0, 1.0)[None, :]; 1.0@L75: if C.ndim != 2 or C.shape[1] != DIM:; 1.0@L81: d = np.where(ok, 1.0 / np.where(ok, sigma, 1.0), 1.0); 1.0@L111: return Q * np.where(np.diag(R) < 0, -1.0, 1.0)[None, :]; 1.0@L162: n = max(float(np.max(np.abs(np.linalg.norm(Xr, axis=1) - np.linalg.nor; 1.0@L163: float(np.max(np.abs(np.linalg.norm(XQr, axis=1) - np.linalg.norm(XQ, a; 1.0@L170: return np.count_nonzero((C >= 0) != (q >= 0)[None, :], axis=1).astype(; 1.0@L191: if not math.isfinite(v) or not (0.0 <= v <= 1.0):; 2.0@L75: if C.ndim != 2 or C.shape[1] != DIM:; 2.0@L335: path.write_text(json.dumps(payload, indent=2, sort_keys=True) + \"\\n\", "
+    },
+    {
+      "area": "F",
+      "name": "no categorical verdict label appears in any string outside the module docstring",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "relative scale unsuitable:['membership-under-scaling: pure core. implementation preparat']; indeterminate:['membership-under-scaling: pure core. implementation preparat']"
+    },
+    {
+      "area": "F",
+      "name": "OBSERVATION: the module docstring does name the forbidden apparatus, in order to declare it absent; the preparer's own token scan deliberately excludes that docstring",
+      "ok": true,
+      "kind": "observation",
+      "detail": "judged acceptable: naming a thing to forbid it is not implementing it"
+    },
+    {
+      "area": "F",
+      "name": "the output schema contains no ratio, band, verdict or label key",
+      "ok": true,
+      "kind": "expectation",
+      "detail": "keys=['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'cv_sigma_after', 'cv_sigma_before', 'degenerate_coords', 'flagged', 'hi', 'lo', 'n_question_slots', 'note', 'per_seed_Delta_pp', 'per_seed_G_pp', 'per_seed_G_scaled_pp', 'percentiles', 'replicates', 'scheme', 'spans_zero']"
+    },
+    {
+      "area": "F",
+      "name": "no identifier names a ratio, verdict, band or floor",
+      "ok": true,
+      "kind": "expectation",
+      "detail": ""
+    }
+  ]
+}

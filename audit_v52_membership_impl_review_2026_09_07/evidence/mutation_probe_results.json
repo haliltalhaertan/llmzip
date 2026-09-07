@@ -1,0 +1,228 @@
+{
+  "python": "3.14.3",
+  "rows": [
+    {
+      "id": "M1-ratio-reintroduced",
+      "applied": true,
+      "description": "add a genuine Delta/G ratio to the reported output under a neutral name",
+      "why_it_matters": "the acceptance record forbids ANY ratio of Delta to G under any name; a token scan for the word 'rho' cannot see this",
+      "preparer_suite_kills": false,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [],
+      "reviewer_failing_checks": [
+        "FAIL  [F] the output schema contains no ratio, band, verdict or label key   -- keys=['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'cv_sigma_after', 'cv_sigma_before', 'degenerate_coords', 'flagged', 'hi', 'lo', 'n_question_slots', 'note', 'per_seed_Delta_pp', 'per_seed_G_pp', 'per_seed_G_scaled_pp', 'percentiles', 'relative_change', 'replicates', 'scheme', 'spans_zero']"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M2-denominator-distinct",
+      "applied": true,
+      "description": "divide the mean by the number of DISTINCT questions instead of the selected slots",
+      "why_it_matters": "acceptance record section 4 step 5 requires division by the total number of selected question SLOTS, explicitly not by distinct questions",
+      "preparer_suite_kills": false,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [],
+      "reviewer_failing_checks": [
+        "FAIL  [B] the seed panel is FIXED: per-seed vectors keep length n_seeds and column identity",
+        "FAIL  [D] the mean divides by TOTAL SELECTED SLOTS, not by clusters and not by distinct questions   -- AAA: got=1.0000 slots=1.0000 clusters=1.0000 distinct=1.0000 | ABC: got=1.1000 slots=1.1000 clusters=1.6667 distinct=1.1000 | CCB: got=1.1429 slots=1.7778 clusters=2.6667 distinct=1.1429 | BBB: got=0.0000 slots=0.0000 clusters=0.0000 distinct=0.0000",
+        "FAIL  [D] cluster_bootstrap END TO END reproduces an independent reference of the bound algorithm (unequal cluster sizes, all three quantities, identical RNG stream)   -- max interval discrepancy = 4.027e-01",
+        "FAIL  [D] question_bootstrap END TO END reproduces an independent reference   -- max interval discrepancy = 3.323e-01"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M3-denominator-clusters",
+      "applied": true,
+      "description": "make the cluster bootstrap average cluster means instead of question slots",
+      "why_it_matters": "cluster-averaging destroys the question-weighting the acceptance record binds",
+      "preparer_suite_kills": false,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [],
+      "reviewer_failing_checks": [
+        "FAIL  [D] cluster_bootstrap END TO END reproduces an independent reference of the bound algorithm (unequal cluster sizes, all three quantities, identical RNG stream)   -- max interval discrepancy = 3.995e-01",
+        "FAIL  [D] NEGATIVE CONTROL: a cluster-AVERAGED denominator gives a different interval on this fixture, so the end-to-end comparison above is sharp   -- slot-weighted=[2.0950,3.7079] vs cluster-averaged=[2.0950,3.7079]"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M4-per-seed-resample",
+      "applied": true,
+      "description": "break pairing across the seed panel: resample each seed column independently",
+      "why_it_matters": "R1 section 6 requires ONE resampled index set per replicate applied identically to all arms AND all ten seeds",
+      "preparer_suite_kills": true,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [
+        "FAIL  drawing cluster A twice yields exactly 1.0 pp and 6 slots (multiplicity preserved)",
+        "FAIL  drawing A then B is question-weighted (3 ones, 5 zeros -> 0.375, not 0.5)"
+      ],
+      "reviewer_failing_checks": [
+        "FAIL  [A] G_bar_pp equals mean-over-seeds of mean-over-questions, in pp   -- -0.05462130232571516 vs -1.2664004724102005",
+        "FAIL  [A] G_bar_scaled_pp likewise",
+        "FAIL  [A] Delta_bar_pp equals G_bar_scaled_pp - G_bar_pp to 1e-12",
+        "FAIL  [B] ONE index set is shared across the fixed seed panel (anti-correlated seeds collapse to 0)   -- [-7.246e-01, 7.375e-01]"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M5-flag-off-by-one",
+      "applied": true,
+      "description": "fire the per-archive degenerate flag at 4 instead of above 4",
+      "why_it_matters": "R1 section 1: an archive is flagged if the count EXCEEDS 4 of 96",
+      "preparer_suite_kills": false,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [],
+      "reviewer_failing_checks": [
+        "FAIL  [C] per-archive FLAG boundary at exactly 4 degenerate coordinates (design: flagged iff count > 4)   -- flagged=True, expected=False"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M6-eps-as-clip",
+      "applied": true,
+      "description": "turn the eps fallback into a clip (divide by eps instead of leaving d = 1)",
+      "why_it_matters": "R1 section 1: the floor is a FALLBACK, not a clip; a dead coordinate is never divided by eps",
+      "preparer_suite_kills": true,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [
+        "FAIL  eps is a FALLBACK not a clip: dead coordinates keep d=1"
+      ],
+      "reviewer_failing_checks": [
+        "FAIL  [C] degenerate count 3: fallback keeps d=1 (never 1/eps, never dropped)",
+        "FAIL  [C] degenerate count 4: fallback keeps d=1 (never 1/eps, never dropped)",
+        "FAIL  [C] degenerate count 5: fallback keeps d=1 (never 1/eps, never dropped)"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M7-ddof-one",
+      "applied": true,
+      "description": "use the sample form of sigma (ddof = 1) instead of the population form",
+      "why_it_matters": "R1 section 1: ddof = 0; the sample form would define a different intervention",
+      "preparer_suite_kills": true,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [
+        "FAIL  sigma uses ddof=0, not ddof=1"
+      ],
+      "reviewer_failing_checks": [
+        "FAIL  [C] sigma uses ddof=0 exactly (and is NOT the ddof=1 form)"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M8-pp-twice",
+      "applied": true,
+      "description": "apply the percentage-point factor twice",
+      "why_it_matters": "the pp conversion must be applied exactly once",
+      "preparer_suite_kills": true,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [
+        "FAIL  G_bar is in PERCENTAGE POINTS (0.30-0.22 -> 8.0 pp)   799.9999999999999",
+        "FAIL  Delta_bar is the paired change (3.0 - 8.0 -> -5.0 pp)"
+      ],
+      "reviewer_failing_checks": [
+        "FAIL  [A] g matches an independent reference (B32_FRESH - RANDOM32_FRESH, x100)   -- max|diff|=9.376e+03",
+        "FAIL  [A] G_bar_pp equals mean-over-seeds of mean-over-questions, in pp   -- -126.64004724102001 vs -1.2664004724102005",
+        "FAIL  [A] Delta_bar_pp equals G_bar_scaled_pp - G_bar_pp to 1e-12",
+        "FAIL  [A] NEGATIVE CONTROL: a doubly-applied pp factor would be caught by the same comparison   -- reference comparison is sharp, not vacuous"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M9-spans-zero-broken",
+      "applied": true,
+      "description": "always report spans_zero as False",
+      "why_it_matters": "an interval spanning zero must be reported as spanning zero (R2 section 5)",
+      "preparer_suite_kills": false,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [],
+      "reviewer_failing_checks": [
+        "FAIL  [D] percentile interval is taken at 2.5/97.5 and spans_zero is lo<=0<=hi"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M10-cv-after-true-cv",
+      "applied": true,
+      "description": "report a genuine CV(sigma) after rescaling instead of the plain standard deviation",
+      "why_it_matters": "R1 section 1 asks for CV(sigma) before AND after; if the preparer's suite cannot tell the two apart, it does not test the diagnostic it names",
+      "preparer_suite_kills": false,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [],
+      "reviewer_failing_checks": [
+        "FAIL  [C] DEFECT: cv_sigma_after is the standard deviation of post-scaling sigma, not its CV   -- reported=0.512989, SD=0.406116, true CV=0.512989 (they coincide only when the mean is 1, i.e. no degenerate coordinate)"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M11-overwrite-allowed",
+      "applied": true,
+      "description": "let results be overwritten silently",
+      "why_it_matters": "the acceptance record requires refusing to overwrite result files",
+      "preparer_suite_kills": true,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [
+        "FAIL  safe_write_json REFUSES to overwrite   no exception raised"
+      ],
+      "reviewer_failing_checks": [
+        "FAIL  [E] safe_write_json refuses to overwrite an existing FILE",
+        "FAIL  [E] the original file's content is untouched after the refusal",
+        "FAIL  [E] safe_write_json refuses when the target path is an existing DIRECTORY",
+        "FAIL  [E] safe_write_json refuses even a zero-byte existing file"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M12-gate-open",
+      "applied": true,
+      "description": "open the real-data gate by default",
+      "why_it_matters": "real-data execution must be OFF by default",
+      "preparer_suite_kills": true,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [
+        "FAIL  REAL_DATA_EXECUTION_ENABLED is False",
+        "FAIL  the real-data gate refuses by default   no exception raised"
+      ],
+      "reviewer_failing_checks": [
+        "FAIL  [E] the real-data gate refuses by default"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    },
+    {
+      "id": "M13-duplicates-accepted",
+      "applied": true,
+      "description": "stop reporting duplicate records",
+      "why_it_matters": "duplicated records must be refused, not accepted silently",
+      "preparer_suite_kills": true,
+      "reviewer_suite_kills": true,
+      "preparer_failing_checks": [
+        "FAIL  a DUPLICATE record is rejected   no exception raised"
+      ],
+      "reviewer_failing_checks": [
+        "FAIL  [E] a record set with a duplicate record is REFUSED"
+      ],
+      "preparer_crashed": false,
+      "reviewer_crashed": false
+    }
+  ],
+  "preparer_suite_missed": [
+    "M1-ratio-reintroduced",
+    "M2-denominator-distinct",
+    "M3-denominator-clusters",
+    "M5-flag-off-by-one",
+    "M9-spans-zero-broken",
+    "M10-cv-after-true-cv"
+  ],
+  "unkilled_by_anyone": []
+}

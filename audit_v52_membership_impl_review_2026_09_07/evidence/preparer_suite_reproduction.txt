@@ -1,0 +1,76 @@
+ok    REAL_DATA_EXECUTION_ENABLED is False
+ok    the real-data gate refuses by default   real-data execution is OFF by default and is not authorized at this stage; no corpus may b
+ok    the gate can be opened only by an explicit argument
+ok    forbidden token absent from executable code: 'rho'
+ok    forbidden token absent from executable code: 'verdict'
+ok    forbidden token absent from executable code: 'accounts for most'
+ok    forbidden token absent from executable code: 'indeterminate'
+ok    forbidden token absent from executable code: 'relative scale unsuitable'
+ok    every 'threshold' in the code is either the diagnostic counter or the sign quantization   3 total, 3 accounted for
+ok    the diagnostic threshold is actually USED, not dead code
+ok    no decision band appears in the code
+ok    withdrawn cut point absent from executable code: -0.60
+ok    withdrawn cut point absent from executable code: -0.20
+ok    withdrawn cut point absent from executable code: -1.00
+ok    withdrawn cut point absent from executable code: +0.20
+ok    withdrawn cut point absent from executable code: 0.60
+ok    withdrawn cut point absent from executable code: 1.00
+ok    no floor on the gap appears in the code
+ok    scale_matrix returns a positive diagonal
+ok    no degenerate coordinates in a healthy archive   cv=1.585
+ok    diagnostics carry the FLAG, not only the count
+ok    rescaling drives CV(sigma) to ~0 (reported as a diagnostic)
+ok    sigma uses ddof=0, not ddof=1
+ok    rescaling equalises variance
+ok    eps is a FALLBACK not a clip: dead coordinates keep d=1
+ok    a dead coordinate is not dropped: D stays 96x96
+ok    the degenerate FLAG fires above the design's limit of 4
+ok    ...and does NOT fire at or below it
+ok    sign(xD)=sign(x) holds bit-identically for archive and query
+ok    a negative diagonal is REJECTED   IDENTITY VIOLATION: sign(xD) != sign(x); the design premise fails
+ok    non-finite input ABORTS rather than being repaired   non-finite value in the centered representation; aborting, not repairing
+ok    a wrong-width representation is REJECTED   representation must be (n, 96), got (300, 95)
+ok    rotation blocks are deterministic in the seed
+ok    head block is drawn first and blocks differ in size
+ok    spectral membership is the leading 32 coordinates
+ok    random membership is 32 distinct coordinates and is not the leading block
+ok    random membership is deterministic in its seed
+ok    spectral rotation is block-diagonal at 32
+ok    both rotations are orthogonal at TOL
+ok    the two memberships give DIFFERENT rotations from the SAME blocks
+ok    matched-Q control passes on identical blocks
+ok    matched-Q control REJECTS different blocks   matched-Q control failed: the two memberships do not share identical blocks
+ok    a non-disjoint partition is REJECTED   partition is not a disjoint exhaustive split of the coordinates
+ok    invariance holds WITHIN a representation and its own rotation   norm=1.8e-15 dot=1.3e-14
+ok    invariance check can FAIL on a non-orthogonal rotation
+ok    hamming distance is int16 in [0,96], one per archive row
+ok    NATIVE and SCALED_NATIVE distances are exactly equal
+ok    a complete record set validates
+ok    record count is questions x seeds x arms
+ok    a MISSING record is rejected   record validation failed: 1 missing record(s), e.g. [('q5', 60010, 'SCALED_RANDOM32')]
+ok    a DUPLICATE record is rejected   record validation failed: 1 duplicate record(s), e.g. [('q0', 60001, 'NATIVE')]
+ok    a NaN score is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NATIVE')]; 1 invalid r
+ok    an out-of-range score is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'SCALED_NATIVE')]; 1 in
+ok    an unexpected arm is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'B32_FRESH')]; 1 invali
+ok    an unexpected seed is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'SCALED_B32')]; 1 inval
+ok    a malformed record is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'RANDOM32_FRESH')]; 1 i
+ok    G_bar is in PERCENTAGE POINTS (0.30-0.22 -> 8.0 pp)   7.999999999999998
+ok    G_bar_scaled is in pp (0.27-0.24 -> 3.0 pp)
+ok    Delta_bar is the paired change (3.0 - 8.0 -> -5.0 pp)
+ok    per-seed values are reported for all three
+ok    linearity holds to tolerance, not asserted bitwise
+ok    aggregate divides by the number of selected SLOTS
+ok    a repeated index counts twice in the mean
+ok    an empty selection is rejected   empty question selection
+ok    paired resampling: a constant per-question change gives a DEGENERATE Delta interval   [-5.000000, -5.000000]
+ok    ...while the level G itself still varies across replicates
+ok    an interval that contains zero is flagged, not reinterpreted
+ok    cluster bootstrap reports the number of clusters
+ok    cluster bootstrap interval spans the achievable range [0,1] pp
+ok    drawing cluster A twice yields exactly 1.0 pp and 6 slots (multiplicity preserved)
+ok    drawing A then B is question-weighted (3 ones, 5 zeros -> 0.375, not 0.5)
+ok    cluster labels must cover the questions one to one   cluster labels do not cover the questions one to one
+ok    safe_write_json writes a new file
+ok    safe_write_json REFUSES to overwrite   refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\tmp37iqfnxu
+
+ALL PASS
