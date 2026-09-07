@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T13:03:00Z",
+  "issued_at_utc": "2026-09-07T13:31:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the closure audit on branch audit/v52-acceptance-closure-2026-09-07; hash-verify the pushed report against its sidecar before recording any verdict, and check the auditor session's status rather than treating a silent branch as work in progress. Do not select the next research question before the audit returns. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher decision on the next research question, now that the closure audit has returned CLOSURE PASS WITH CAVEATS with nothing requiring the stage to be reopened: take up the coordinate-membership proposal (v2), prefer the encoder-generalisation alternative, or neither. Separately, decide on infrastructure finding I1 (adding .gitattributes changes checkout semantics repo-wide and is an owner call). Task 4F1 remains BLOCKED; outcome access FORBIDDEN. D11 Drive backup still needs an operator.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-061",
+  "ledger_entry": "L-062",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -773,7 +773,8 @@
       "deviation_register": "research/v52/V52_COORDINATE_SCALE_DEVIATION_REGISTER_2026-09-07.md @ 0c9916bd7786d7ddb332f5b6da3d96d61a6223f0 (sha256 4f70340774624b0bcdc4e519f6c42f0733b549a2b065a3a4e0b939c5aa5f22dc) - D1-D11; cite the stage only together with it",
       "acceptance_decision": "docs/v52/V52_COORDINATE_SCALE_ACCEPTANCE_DECISION_2026-09-07.md (sha256 8ba55a616c33f23fd3e8cc6daf4565830b7e993f4749e8440c9c62e082d31d3f) - ACCEPTED as a descriptive finding with limits; comparative mechanism claim NOT accepted",
       "preregistered_estimand_ruling": "A (mean of per-seed ratios) is the preregistered estimand; B (ratio of seed-means) preserved as the historical implementation output; both always published together",
-      "narrow_conclusion_text_ACCEPTED_2026_09_07": "On a fixed pipeline, positive coordinate rescaling preserves the native sign representation exactly while raising retrieval score after full orthogonal mixing. The LoCoMo computation reproduced numerically from verified raw data across 92,100 question/seed/arm records. Denominator instability in the block-normalised comparisons, together with preregistration aggregation and interpretation inconsistencies, limits any comparative mechanism inference. Post-hoc sensitivity analyses do not repair that limit; they make it visible. Not a general mechanism result, not a production claim, and not a generalisation to other encoders or corpora. ACCEPTED 2026-09-07 with the limits recorded in head_researcher_acceptance_decision_2026_09_07 (L-059); the text itself is unchanged from the version that was proposed."
+      "narrow_conclusion_text_ACCEPTED_2026_09_07": "On a fixed pipeline, positive coordinate rescaling preserves the native sign representation exactly while raising retrieval score after full orthogonal mixing. The LoCoMo computation reproduced numerically from verified raw data across 92,100 question/seed/arm records. Denominator instability in the block-normalised comparisons, together with preregistration aggregation and interpretation inconsistencies, limits any comparative mechanism inference. Post-hoc sensitivity analyses do not repair that limit; they make it visible. This is not a general mechanism result, not a production claim, and does not generalise to other encoders or corpora. ACCEPTED 2026-09-07 with the limits recorded in head_researcher_acceptance_decision_2026_09_07 (L-059). This text is copied verbatim from the normative decision document (erratum E6, L-062).",
+      "closure_audit": "CLOSURE PASS WITH CAVEATS - audit/v52-acceptance-closure-2026-09-07 @ 16e95a8035297e18891c4e51f1261bc27d64000b; report sha256 669a06c9d8e0efc95fd988252c85ac6c99123cba272040e80fc7716f4c4c25a9 verified against its sidecar. Nothing requires the stage to be reopened."
     }
   },
   "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes. UPDATE 2026-09-07: the LoCoMo dispersion is now MEASURED from the coordinate-scale stage's fresh ten-seed full-Haar panel (see locomo_denominator_dispersion_2026_09_07); the per-seed values of the ORIGINAL five LoCoMo seeds remain uncommitted.",
@@ -936,5 +937,45 @@
     ],
     "what_no_outcome_licenses": "identifying a mechanism; establishing necessity or exclusivity; proving or disproving the participation of coordinate scale in general; claiming production benefit; transferring to other encoders or corpora; upgrading a [LEAD]",
     "unchanged_in_v2": "question, arms, controls, estimand, thresholds"
+  },
+  "closure_audit_2026_09_07": {
+    "branch": "audit/v52-acceptance-closure-2026-09-07",
+    "commit": "16e95a8035297e18891c4e51f1261bc27d64000b (final; audit landed in two commits, 65bb044 then this addendum)",
+    "parent": "ed2b2f74347da6be68beae2c22d5c3d22992f1a3",
+    "report_sha256": "669a06c9d8e0efc95fd988252c85ac6c99123cba272040e80fc7716f4c4c25a9",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "15 files, all under audit_v52_acceptance_closure_2026_09_07/; zero files touched outside its namespace",
+    "verdict": "CLOSURE PASS WITH CAVEATS - nothing found requires the stage to be reopened",
+    "gates": "C1 C2 C3 C4 C5 C7 C8 ESTABLISHED; C6 NOT ESTABLISHED on one clause of four (label set not identical)",
+    "negative_controls": "15, each shown actually failing",
+    "auditor_could_not_construct_a_defensible_reading_of_B": true,
+    "independent_confirmations": "C2 reached the same reading of prereg section 7 independently and tested the converse - the string 'seed-mean' occurs zero times in the preregistration and no collapse-language appears anywhere; C4 recomputed A and B for all four cells from the persisted per-question rows in float64 AND in exact rational arithmetic, agreeing to <=1.1e-14, which exceeded the brief; C7 found no seal, preregistration, checkpoint, result package, adapter or historical audit namespace touched across L-056 to L-060; C8 found hard_stops byte-identical L-056 to L-060.",
+    "findings": "F1-F8 plus infrastructure finding I1; all non-reopening; answered additively in the erratum",
+    "erratum": "docs/v52/V52_ACCEPTANCE_RECORD_ERRATUM_2026-09-07.md",
+    "erratum_sha256": "a80262390778ac64916f619473b966e4f37cb4fe8a83a9a14995abe613b13bb2"
+  },
+  "acceptance_record_erratum_2026_09_07": {
+    "path": "docs/v52/V52_ACCEPTANCE_RECORD_ERRATUM_2026-09-07.md",
+    "sha256": "a80262390778ac64916f619473b966e4f37cb4fe8a83a9a14995abe613b13bb2",
+    "nature": "Additive. Accepts every audit finding; edits no bound or frozen document, so the audited bytes stay as the auditor saw them.",
+    "E1": "the section 7 block called 'verbatim' in decision 2.1 is not byte-verbatim - bold added to 'per rotation seed', em dashes substituted for ASCII hyphens; correct designation is 'quoted with emphasis added and typographic dashes substituted'; the ruling is unaffected",
+    "E2": "'no outcome value appears in this section's reasoning' should have read 'sections 2.1-2.3'; the derivation is outcome-free but the sentence was broader than the bytes support",
+    "E3": "'The exact differences' are float64 differences; exact-rational values recorded in the erratum; largest gap 2.08e-14 on the LoCoMo block cell; no conclusion moves",
+    "E4": "the inherited-not-recomputed label applies to the acceptance decision's section 4 and to register D7 as well, where it was absent",
+    "E5": "label set reconciled. The auditor notes an irony: the Head Researcher's own required wording is 'not established', which is the register's, so rather than declaring one set canonical and discarding the other, BOTH labels are recorded as denoting the same status. Preferred citation form: the comparative mechanism claim is NOT ESTABLISHED ON CURRENT EVIDENCE AND THEREFORE OUTSIDE THE ACCEPTANCE SCOPE; neither label asserts falsification. The MOST/PARTIAL label applies to the register too, which predates it.",
+    "E6": "the state file's copy of the accepted conclusion is now lifted verbatim from the normative decision document",
+    "E7": "prereg section 9's 'I' and section 7's 'I_frac' are the same quantity; the identification is now stated rather than implicit",
+    "E9": "decision section 3's claim of 'no band, threshold or direction test' for I_frac is marginally overstated on DIRECTION - section 9 does draw a qualitative large-versus-approximately-zero distinction. Accurate statement: qualitative only, no numeric cut, so the licence stays inoperable and the recorded section 7/9 conflict stands.",
+    "E10": "L-061 revised a published, sidecar-hashed document IN PLACE, so the hash L-060 recorded for it stopped resolving on main. Flagged by the auditor outside its range without a verdict; accepted and repaired by restoring the v1 bytes at docs/v52/V52_NEXT_QUESTION_DESIGN_PROPOSAL_2026-09-07_v1_SUPERSEDED.md (sha256 c0828c5deb... byte-identical). The L-061 justification by the coordinate-scale draft precedent was wrong: those revisions were on a draft branch before publication and before any sidecar hash entered the ledger. FORWARD RULE: on main, any document with a .sha256 sidecar or a ledger-recorded hash is additive-only; in-place revision stays available for unpublished drafts and for the live state file.",
+    "E8": "recorded, not previously said: ruling A averages ten per-seed ratios and is LESS numerically stable than B on the block arm, where per-seed denominators change sign (block-arm float error ~1e-14 vs full-arm ~1e-16). The textual ruling stands; the direction matters - this STRENGTHENS the refusal of the comparative claim rather than weakening it."
+  },
+  "infrastructure_finding_I1_2026_09_07": {
+    "finding": "the repository ships no .gitattributes, so on a default Windows clone (core.autocrlf=true) BOTH shipped verifiers report mass SHA256 mismatches",
+    "proven_artifact": "after 'git config core.autocrlf false' and a fresh checkout both verifiers pass with exit 0 - proven by the closure auditor",
+    "settles": "the two earlier auditor sessions that reported a prompt-file hash mismatch and suspected line-ending conversion were CORRECT; no chain-of-custody defect existed on either occasion",
+    "remedy": "a one-line .gitattributes ('* -text' or '* text=auto eol=lf')",
+    "status": "NOT APPLIED - changes checkout semantics repo-wide for every file and every future clone; a repository-owner decision, not a record correction",
+    "interim_rule": "every audit prompt must keep instructing auditors to hash raw Git blobs rather than checked-out files"
   }
 }
