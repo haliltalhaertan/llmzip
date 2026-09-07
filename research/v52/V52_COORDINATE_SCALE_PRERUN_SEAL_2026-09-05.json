@@ -1,0 +1,86 @@
+{
+  "status": "PRERUN_SEALED_NO_OUTCOME_ACCESS",
+  "date": "2026-09-07",
+  "repository": "haliltalhaertan/llmzip",
+  "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+  "package_head_before_seal": "59ae1b53d3c4e524621d87a08b396f72a8332816",
+  "trigger_path": "research/v52/TRIGGER_COORDINATE_SCALE_2026-09-05.txt",
+  "trigger_must_not_exist_before_this_seal": true,
+  "task4f1_execution_touched": false,
+  "outcome_access_before_seal": false,
+  "authorization": {
+    "by": "Head Researcher (repository owner)",
+    "relayed_as": "chat text, 2026-09-07: 'yetki sende devam et' - not a pushed hash-bound artifact; recorded in docs/CONTINUITY_LEDGER.md L-054 on main",
+    "candidate_reviewed": "draft/v52-coordinate-scale-prereg-2026-09-05 @ bdc0db75ef8760319878e5ef07512ddddd53283c"
+  },
+  "preregistration": {
+    "path": "research/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_2026-09-05.md",
+    "git_blob_sha1": "d7726147b3efa15ef73f6c4c2b0453826c48fcf9",
+    "sha256": "de6672119010bf561179014748e21836bff5c0ebf6efa10379213c59de5203fe",
+    "note": "verbatim copy of the candidate preregistration v3; its header sentence 'No runner exists, no workflow exists' is stale as of this seal and is left unedited because the bytes are what was reviewed"
+  },
+  "pilot_findings": {
+    "path": "research/v52/V52_COORDINATE_SCALE_PILOT_FINDINGS_2026-09-05.md",
+    "git_blob_sha1": "663b7e1ea67e8b3e8b4692d2ece2ac12882d3786",
+    "sha256": "54aee88c7cb71d6fcd2bf6cb17ff6960ef9f428231f561d081a5bb4bdf1de20d"
+  },
+  "locomo_runner": {
+    "path": "research/v52/locomo_coordinate_scale.py",
+    "git_blob_sha1": "13896ad93c58dbb0febeadf82d0c22b64a920915"
+  },
+  "longmemeval_runner": {
+    "path": "research/v52/longmemeval_coordinate_scale_shard.py",
+    "git_blob_sha1": "ee1f2ef9d000da57152fe9ba6cfd630fe90050d5"
+  },
+  "locomo_test": {
+    "path": "research/v52/test_coordinate_scale_pure_functions.py",
+    "git_blob_sha1": "16afcd57355a5f51c8004599d1e03aa8a4d1ab66"
+  },
+  "longmemeval_test": {
+    "path": "research/v52/test_longmemeval_coordinate_scale_shard.py",
+    "git_blob_sha1": "b093b5001ddbd1a99eb1c6b490df11777e7cf3e8"
+  },
+  "locomo_workflow": {
+    "path": ".github/workflows/v52-locomo-coordinate-scale.yml",
+    "git_blob_sha1": "3c144c8ebc481010f5ab1b2d50d6690dc4674c9d"
+  },
+  "longmemeval_workflow": {
+    "path": ".github/workflows/v52-longmemeval-coordinate-scale.yml",
+    "git_blob_sha1": "4a9ff17c5f2de3eeba9baccad9a946c411906c77"
+  },
+  "locomo_base": {
+    "path": "research/v52/locomo_spectral_band_haar_causal.py",
+    "git_blob_sha1": "7c4140252fb7f846d617189925cdf534515743f4"
+  },
+  "longmemeval_base": {
+    "path": "research/v52/longmemeval_spectral_band_haar_causal.py",
+    "git_blob_sha1": "79dd4a5ec462102da5d82530088a4b7e89bef437"
+  },
+  "frozen_arms": [
+    "NATIVE",
+    "SCALED_NATIVE",
+    "FULLHAAR_FRESH",
+    "SCALED_FULLHAAR",
+    "BLOCK32_FRESH",
+    "SCALED_BLOCK32"
+  ],
+  "frozen_rotation_seeds": [
+    59001,
+    59002,
+    59003,
+    59004,
+    59005,
+    59006,
+    59007,
+    59008,
+    59009,
+    59010
+  ],
+  "frozen_scale_rule": "d_i = 1/sigma_i on the centered archive representation, per archive, archive content only; eps = 1e-12 fallback d_i = 1; flag archive if > 4 degenerate coordinates",
+  "frozen_primary_estimand": "frac_full and frac_block (share of each arm's own loss recovered by rescaling), seed-panel mean per arm; bands >= 0.70 most / <= 0.20 little / otherwise partial; overshoot admitted",
+  "frozen_secondary": "I_frac = frac_full - frac_block; percentage-point quantities descriptive only",
+  "frozen_controls": "NATIVE reproduces frozen anchors within 1e-12; SCALED_NATIVE bit-identical to NATIVE on distances; orthogonality and within-representation invariance at 1e-12; per-question records for every arm and seed",
+  "drive_backup_required_before_trigger": false,
+  "drive_backup_status": "NOT PERFORMED - this session has no Google Drive access; GitHub holds the byte-exact record; the Head Researcher authorized proceeding. Drive content backup remains owed after the stage closes and must not be described as done.",
+  "interpretation": "This seal binds the exact preregistration, pilot findings, runners, tests, workflows and frozen bases before any coordinate-scale outcome trigger. It does not authorize or touch Task 4F1."
+}
