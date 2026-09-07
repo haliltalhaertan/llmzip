@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-06T10:05:00Z",
+  "issued_at_utc": "2026-09-07T00:40:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher authorization remains the only gate. On authorization: settle the invariance-check scope, write the LongMemEval sharded runner, install runner and workflow, seal pre-run, trigger once. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher authorization remains the only gate. On authorization: install both runners and both workflows into their working locations, write the pre-run seal binding every listed blob, push the trigger file once. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-052",
+  "ledger_entry": "L-053",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -694,7 +694,7 @@
   "coordinate_scale_draft": {
     "status": "CANDIDATE PREREGISTRATION v3 - COMPLETE, AWAITING AUTHORIZATION. NOT SEALED, NOT TRIGGERED.",
     "branch": "draft/v52-coordinate-scale-prereg-2026-09-05",
-    "commit": "c044d469f4c7c14b09f21fddb5fbaff123538030",
+    "commit": "bdc0db75ef8760319878e5ef07512ddddd53283c",
     "path": "drafts/v52/V52_COORDINATE_SCALE_PARTICIPATION_PREREG_DRAFT_2026-09-05.md",
     "sha256": "de6672119010bf561179014748e21836bff5c0ebf6efa10379213c59de5203fe",
     "not_on_research_branch": true,
@@ -718,18 +718,21 @@
       "block_seeds": "fresh 59001..59010 (reuse invites a panel-selection objection)",
       "scale_of_estimand": "fraction, not percentage points (pp confounded by a floor effect)"
     },
-    "remaining_gate": "Head Researcher authorization only. On authorization: build runners and workflows, seal pre-run, trigger once, persist per-question records for every arm.",
+    "remaining_gate": "Head Researcher authorization only. Runners, tests and workflows for BOTH benchmarks exist and are self-tested; on authorization: install, seal pre-run, trigger once, persist per-question records for every arm.",
     "implementation": {
-      "runner": "drafts/v52/pending_runners/locomo_coordinate_scale.py (LoCoMo only; LongMemEval deliberately deferred)",
-      "workflow": "drafts/v52/pending_workflows/v52-locomo-coordinate-scale.yml",
-      "non_triggerable": "verified: no installed copy under .github/workflows/ anywhere on the branch; GitHub cannot execute it where it sits",
-      "self_test": "drafts/v52/pending_runners/test_coordinate_scale_pure_functions.py - 23/23 pass on synthetic data",
-      "aborts_not_assumptions": "SCALED_NATIVE must be bit-identical to NATIVE; norm/dot invariance asserted WITHIN a representation and its own rotation only",
-      "not_validated": "anything requiring the corpus; the full pipeline has never been executed",
-      "stated_risks": [
-        "invariance check is O(n^2) in archive rows; if it dominates, narrow the check as earlier stages did - do NOT loosen TOL",
-        "synthetic dot error 1.1e-13 vs TOL 1e-12, less headroom than the audited stages' ~1e-15; a trip is information, not licence to raise TOL"
-      ]
+      "status": "COMPLETE FOR BOTH BENCHMARKS - NON-TRIGGERABLE (revision 2026-09-07 at bdc0db7; preregistration document byte-unchanged at de667211)",
+      "locomo_runner": "drafts/v52/pending_runners/locomo_coordinate_scale.py (git blob 13896ad9)",
+      "locomo_test": "drafts/v52/pending_runners/test_coordinate_scale_pure_functions.py - 29/29 pass on synthetic data (git blob 16afcd57)",
+      "longmemeval_runner": "drafts/v52/pending_runners/longmemeval_coordinate_scale_shard.py - deterministic 10-shard + aggregate, mirrors the audited boundary-localization shard runner (git blob ee1f2ef9)",
+      "longmemeval_test": "drafts/v52/pending_runners/test_longmemeval_coordinate_scale_shard.py - 42/42 pass, incl. end-to-end synthetic pass through evaluate_representation and summarize and a cross-runner consistency control (git blob b093b500)",
+      "workflows": "drafts/v52/pending_workflows/v52-locomo-coordinate-scale.yml (3c144c8e) and v52-longmemeval-coordinate-scale.yml (4a9ff17c); seal-by-git-blob gate, Python 3.13, pinned research stack numpy 2.3.5 / pandas 2.2.3 / scipy 1.17.0 / scikit-learn 1.8.0, no dispatch/schedule",
+      "non_triggerable": "verified after push: zero installed copies under .github/workflows/ on the draft branch; GitHub cannot execute them where they sit",
+      "invariance_check_scope": "SETTLED 2026-09-07: narrowed to archive row norms, query row norms and query-to-archive dot products, the audited stages' scope; the archive Gram matrix is no longer built. TOL unchanged at 1e-12; synthetic dot error 8.9e-15 (was 1.1e-13). Both L-049 risks closed by narrowing, not loosening.",
+      "aborts_not_assumptions": "SCALED_NATIVE must be bit-identical to NATIVE on distances; invariance asserted WITHIN a representation and its own rotation only, and shown able to FAIL by negative controls; non-finite values abort rather than being repaired; summarize rejects missing/duplicate questions, native-reproduction misses, carried invariance excursions and SCALED_NATIVE != NATIVE rows",
+      "reports_dispersion": "per-seed sample_sd / se / envelope of the measured denominators and of FULLHAAR_FRESH, per prereg section 8",
+      "not_validated": "anything requiring the corpus; neither pipeline has been executed end to end; local self-tests ran on Python 3.14 / numpy 2.5, not the pinned stack",
+      "stale_text_in_draft": "the preregistration header still says 'No runner exists, no workflow exists'; left byte-unchanged because the document is under Head Researcher review; the pre-run seal binds whatever version is authorized",
+      "stated_risks": "RESOLVED - see invariance_check_scope"
     }
   },
   "full_haar_denominator_gap": "CANNOT be closed from repository bytes: the per-seed Full-Haar panel is persisted nowhere; the T4C3 script computes haar96_seed_values but its output is not committed and it needs a raw table not in git. Only a re-run can produce the dispersion. Related item settled: the truncated LongMemEval denominator shifts rho by 3.3e-15 to 2.0e-14, immaterial and now measured; the LoCoMo denominator has no committed higher-precision source and its precision remains unverified from bytes."
