@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-07T13:59:00Z",
+  "issued_at_utc": "2026-09-07T14:06:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Head Researcher review of the Option A preregistration DRAFT. Accepting the design is a separate decision from sealing it, which is separate again from implementing runners, from triggering, and from the audit that would follow. Nothing is authorized to run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Head Researcher review of design revision R1 together with the bound draft, and a decision on the five design questions R1 leaves open - the 2.0 pp floor, the four band cut points, whether the LoCoMo clustered bootstrap is co-primary, whether the indeterminate overlay requires both schemes to agree, and whether the remaining scaled gap deserves its own band. Nothing is accepted, sealed, implemented or authorized to run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-065",
+  "ledger_entry": "L-066",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1031,6 +1031,25 @@
     "time_estimate_status": "of the order of minutes; stated as an EXPECTATION and not a guarantee, reasoned from identical arm count, seed count, cohorts and per-question workload rather than from a promise that a past duration repeats",
     "code_status": "the two runners and their tests are NOT written; writing them is not authorized by this draft",
     "gates_still_ahead": "design acceptance; implementation in a non-triggerable location; independent review of that implementation; pre-run seal; exactly one trigger; cold-start independent audit afterwards by a session that did not prepare it",
-    "author_must_not": "seal it or run it"
+    "author_must_not": "seal it or run it",
+    "revision_r1": {
+      "path": "docs/v52/V52_MEMBERSHIP_UNDER_SCALING_DESIGN_REVISION_R1_2026-09-07.md",
+      "sha256": "3d7a79b249e97a1bc2657a6782aec5e6a138f6a8c5e2681978ed66ad217b3391",
+      "status": "DRAFT REVISION - NOT AUTHORIZED FOR EXECUTION; additive, the bound draft is NOT edited; on conflict R1 governs as later and narrower",
+      "item_1_scaling_operator": "supplied: ddof=0 population std stated explicitly because the sample form would define a different intervention; sigma computed on the centered C actually used downstream, not on raw SVD output or singular values; eps=1e-12 is a FALLBACK not a clip, so a sub-eps coordinate keeps d=1 and stays in the sign code rather than being divided by eps or dropped; eps inherited rather than re-chosen, a guard against division by zero and not a tuning parameter; the IDENTICAL D is applied to the query with nothing estimated from the query; fallback count, >4-of-96 archive flag and CV(sigma) before/after are declared diagnostics and not decision inputs",
+      "item_2_matching": "supplied: seeds paired ONE-TO-ONE by position, rotation 60000+k with partition 70000+k, explicitly NOT crossed; per seed exactly one (Q32,Q64) Haar draw serving all four rotated arms and one permutation serving both random-membership arms; the four cells hold identical questions, gold sets, tie priority, nuisance trials, C, Q32 and Q64, and vary only in membership and in the presence of D; totals 10 Haar draws, 10 partitions, 40 rotated evaluations, per-question rows n x 10 x 6 = 92,100 LoCoMo and 28,200 LongMemEval matching the closed stage's schema",
+      "item_3_sign_and_reporting": "supplied: G>0 means spectral beats random; Delta<0 means the gap SHRANK and Delta>0 that it GREW; on the relative scale rho=0 is no change, rho=-1 is the gap exactly eliminated and rho<-1 is a sign reversal. Ghat, Ghat_scaled, Delta_bar, rho_hat and all per-seed values are reported together in EVERY outcome; reporting the change without the level it changed from and the level it left behind is barred",
+      "item_4_gate_reformed": "the draft's gate created the hazard the review named and is revised. Published unconditionally under every outcome: all six arms, all ten seeds, every per-question record, all four aggregate quantities with their per-seed values, all uncertainty output, all diagnostics and all control results - NO gate suppresses any number. A gate may ONLY decline to attach the categorical verdict, and may never trigger new seeds, a re-run, selective exclusion or withholding. The per-seed positivity requirement is WITHDRAWN: the count of seeds with G_k <= 0 becomes a reported diagnostic entering through the interval rather than a switch. One gate survives, on the relative scale only: if Ghat < 2.0 pp the categorical verdict is not attached and absolute results are still reported. The 2.0 pp figure is stated as a JUDGMENT, roughly a quarter of the smaller previously observed gap on a different panel, not a prediction, and changeable only now",
+      "item_5_decision_rules": "the draft had no category for the gap growing or reversing, a real gap now filled. Five point categories on rho_hat: <= -1.00 DIRECTION REVERSED; -1.00 to -0.60 ACCOUNTS FOR MOST; -0.60 to -0.20 PARTIAL; -0.20 to +0.20 ALONE DOES NOT ACCOUNT; > +0.20 GAP LARGER UNDER RESCALING. The actual decision rule is the uncertainty overlay: if the bootstrap interval for rho lies entirely inside one category that is the verdict, and if it spans two or more the verdict is INDETERMINATE with the point classification reported as a point observation only. Naming discipline binds every category: no label may be restated as a mechanism having been explained",
+      "item_6_uncertainty": "supplied in full: resampling unit is the question with replacement, 10,000 replicates, ONE resampled index set per replicate applied identically to all six arms and all ten seeds so pairing is preserved, unweighted at question level, SEED PANEL FIXED and not resampled with Delta_k recomputed per seed inside each replicate then averaged over the fixed panel, percentile interval at 2.5/97.5, datasets evaluated separately and never pooled, LoCoMo secondary clustered bootstrap resampling clusters and carrying all their questions, no clustered bootstrap on LongMemEval. CORRECTION: the draft's claim that the LoCoMo clustered interval 'will be wide and unreliable' predicts a result before the run and is WITHDRAWN - the accurate statement is that ten clusters limit the reliability of the estimate and the width is an outcome to be reported, not forecast. Both schemes are sensitivity analyses; for LongMemEval the question-level bootstrap must not be presented as population inference",
+      "item_7_follow_up_framing": "already in draft section 1; restated - fresh seeds are drawn on the SAME previously examined corpora, they prevent reuse of a panel already known to show an effect but do NOT make this a fresh independent test and do not restore blindness",
+      "open_design_decisions": [
+        "the 2.0 pp floor on Ghat",
+        "the four band cut points, of which -1.00 and +0.20 are new and chosen for symmetry rather than derived",
+        "whether the LoCoMo clustered bootstrap is co-primary or secondary",
+        "whether the indeterminate overlay requires both schemes to agree on LoCoMo",
+        "whether the remaining scaled gap Ghat_scaled deserves its own preregistered band"
+      ]
+    }
   }
 }
