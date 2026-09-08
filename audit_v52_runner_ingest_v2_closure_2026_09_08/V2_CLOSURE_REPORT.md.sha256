@@ -1,0 +1,5 @@
+43969c4e1614a98b707dbc730a31b10bf83bac19ebaf87e069c25e141371b0df  V2_CLOSURE_REPORT.md
+
+# sha256 of the RAW GIT BLOB of V2_CLOSURE_REPORT.md at commit 6859e2461eb998f6ad052d4a44399fec6097ab25
+# computed as: git cat-file blob 6859e2461eb998f6ad052d4a44399fec6097ab25:audit_v52_runner_ingest_v2_closure_2026_09_08/V2_CLOSURE_REPORT.md | sha256sum
+# NOT the sha256 of the checked-out file, which differs on a Windows checkout (see finding D-4).
