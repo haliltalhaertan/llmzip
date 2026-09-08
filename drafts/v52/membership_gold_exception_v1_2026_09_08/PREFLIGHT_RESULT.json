@@ -1,0 +1,16 @@
+{
+  "actual_experiment_started": false,
+  "cohort_questions": 1535,
+  "corpus_identity_matched": true,
+  "corrected_cohort_questions": 155,
+  "correction_files_identity_matched": 10,
+  "correction_records": 156,
+  "effective_gold_references": 6,
+  "exception_question": "locomo_4_qa18",
+  "original_declared_references": 7,
+  "original_unresolved_references": 1,
+  "representation_fit": false,
+  "retrieval": false,
+  "scores": false,
+  "status": "SOURCE_GOLD_PREFLIGHT_PASS_WITH_APPROVED_EXCEPTION"
+}

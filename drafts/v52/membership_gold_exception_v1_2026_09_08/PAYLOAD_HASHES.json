@@ -1,0 +1,30 @@
+{
+  "status": "SOURCE_GOLD_PASS_WITH_APPROVED_EXCEPTION_NOT_EXPERIMENT_RESULT",
+  "payloads": [
+    {
+      "path": "DECISION_AND_VERIFICATION.md",
+      "bytes": 3028,
+      "sha256": "d182e731a0507c7fc951894166122d0f00934c649f51e5815ba8a3e138ba22d4"
+    },
+    {
+      "path": "exception.py",
+      "bytes": 2046,
+      "sha256": "036611628238c9a36cde1e64359c09828ddcfd270e9d151538f994911d3e4e3f"
+    },
+    {
+      "path": "PREFLIGHT_RESULT.json",
+      "bytes": 502,
+      "sha256": "2bc2bfdfe7693b5b6e79f8bb37eb1b6b25ff5528a49e2b061a31f9d76cabecb2"
+    },
+    {
+      "path": "preflight.py",
+      "bytes": 5665,
+      "sha256": "416df9cdef77eb65c75b882053163ee6077094cb1bae81aed3daf56db8ceff28"
+    },
+    {
+      "path": "test_exception.py",
+      "bytes": 2949,
+      "sha256": "38feb2eb609c2c156b65cbc9d1343019e99bb72df226c1b5896fbb097d0e4d0c"
+    }
+  ]
+}
