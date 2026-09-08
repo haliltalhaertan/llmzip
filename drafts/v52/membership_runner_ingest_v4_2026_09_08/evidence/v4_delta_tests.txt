@@ -1,0 +1,86 @@
+====================================================================================================
+DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS - v4. Fake files only; no real corpus, no corpus scan.
+====================================================================================================
+
+== 1. evidence normalisation: the bound contract, and what is refused ======================
+ok    VALID EMPTY: None is the contract's empty representation, and it is not a loss   
+ok    VALID EMPTY: an empty list is too   
+ok    VALID: a list of id strings normalises unchanged   
+ok    VALID: a dict carrying dia_id, and one carrying id, both normalise   
+ok    VALID: the producer's whole-string fallback is PRESERVED, because it is the bound contract   
+ok    VALID: de-duplication of genuine repeats is unchanged - two identical ids give one reference   raw items 2, normalised references 1 - the two counts are
+ok    NEGATIVE CONTROL: v3 SILENTLY DISCARDS a dict with neither dia_id nor id   no exception; v3 returned []
+ok    CLOSED: v4 refuses a dict with neither dia_id nor id with E-COH-011   
+ok    ...and the refusal carries no content for a dict with neither dia_id nor id   
+ok    NEGATIVE CONTROL: v3 SILENTLY DISCARDS a dict whose id is empty   no exception; v3 returned []
+ok    CLOSED: v4 refuses a dict whose id is empty with E-COH-011   
+ok    ...and the refusal carries no content for a dict whose id is empty   
+ok    NEGATIVE CONTROL: v3 SILENTLY DISCARDS a dict whose id is null   no exception; v3 returned []
+ok    CLOSED: v4 refuses a dict whose id is null with E-COH-011   
+ok    ...and the refusal carries no content for a dict whose id is null   
+ok    NEGATIVE CONTROL: v3 SILENTLY DISCARDS a non-string, non-dict list item   no exception; v3 returned []
+ok    CLOSED: v4 refuses a non-string, non-dict list item with E-COH-011   
+ok    ...and the refusal carries no content for a non-string, non-dict list item   
+ok    NEGATIVE CONTROL: v3 SILENTLY DISCARDS a malformed FIRST item   no exception; v3 returned ['D1:0', 'D1:1']
+ok    CLOSED: v4 refuses a malformed FIRST item with E-COH-011   
+ok    ...and the refusal carries no content for a malformed FIRST item   
+ok    NEGATIVE CONTROL: v3 SILENTLY DISCARDS a malformed MIDDLE item   no exception; v3 returned ['D1:0', 'D1:1']
+ok    CLOSED: v4 refuses a malformed MIDDLE item with E-COH-011   
+ok    ...and the refusal carries no content for a malformed MIDDLE item   
+ok    NEGATIVE CONTROL: v3 SILENTLY DISCARDS a malformed LAST item   no exception; v3 returned ['D1:0', 'D1:1']
+ok    CLOSED: v4 refuses a malformed LAST item with E-COH-011   
+ok    ...and the refusal carries no content for a malformed LAST item   
+ok    NEGATIVE CONTROL: v3 silently returns [] for an int   
+ok    CLOSED: v4 refuses an int as an unsupported structure, E-COH-012   
+ok    NEGATIVE CONTROL: v3 silently returns [] for a top-level dict   
+ok    CLOSED: v4 refuses a top-level dict as an unsupported structure, E-COH-012   
+ok    NEGATIVE CONTROL: v3 silently returns [] for a set   
+ok    CLOSED: v4 refuses a set as an unsupported structure, E-COH-012   
+ok    the two faults are DIFFERENT codes, because they are different faults   
+ok    no malformed item is coerced to a string, guessed at, or dropped   
+
+== 2. 'one valid + one malformed' can no longer be reported as complete =====================
+ok    NEGATIVE CONTROL: v3 reports the mixed source as SUCCESSFUL AND LOSSLESS   one of two source entries vanished and every published number says nothing wa
+ok    CLOSED: v4 stops on the mixed source   
+ok    CLOSED: and it writes nothing   
+ok    a clean source still ingests, unchanged   
+ok    THREE COUNTS are published as three fields, not two with a third inferred   
+ok    valid repeats keep the existing set semantics, and the difference is now VISIBLE   
+ok    no question was excluded, no gold repaired, no cohort changed   
+
+== 3. the two remaining error paths ========================================================
+ok    NEGATIVE CONTROL: v3 echoes the caller's `kind` verbatim   
+ok    CLOSED: v4 refuses an unknown identifier kind without echoing it   
+ok    v4 takes `kind` from a closed enumeration   
+ok    ...and a genuine identifier fault still refuses by code (E-COH-016)   
+ok    ...and a genuine identifier fault still refuses by code (E-COH-015)   
+ok    ...and a genuine identifier fault still refuses by code (E-COH-014)   
+ok    NEGATIVE CONTROL: v3 raises an uncaught ValueError carrying the value out   
+ok    CLOSED: v4 refuses the manifest field by type, with no content and no ValueError   
+ok    ...and expected_question_to_cluster=str is refused the same way, no content   
+ok    ...and expected_cluster_ids=str is refused the same way, no content   
+ok    ...and n_questions=float is refused the same way, no content   
+ok    ...and n_questions=bool is refused the same way, no content   
+ok    a well-formed manifest still passes the identity contract   
+
+== 4. claims and labels ====================================================================
+ok    the stale version label is corrected   
+ok    no new universal claim is ASSERTED - the v3 sentences survive only as quoted, falsified text   
+ok    what replaces it is an INVENTORY of checked interfaces   
+ok    the three earlier falsified sentences are recorded as falsified, not repeated as true   
+ok    what is untested is named   
+ok    the bound evidence contract is transcribed with its source, not asserted from memory   
+
+== 5. regression ===========================================================================
+ok    D-3 still closed   
+ok    D-2 still closed   
+ok    F12 ordering still closed   
+ok    F20 still closed: nothing read from a seed record reaches a message   
+ok    the accepted configuration still runs end to end   
+ok    LongMemEval accounting still closed   
+ok    gates still closed   
+ok    the closed core is untouched   
+ok    no real corpus was opened and no corpus scan was made by this suite   
+
+ALL PASS
+Scope: DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS for the evidence normalisation, the two remaining error paths and the claim corrections. Fake files only. Not a seal, not run authorization.
