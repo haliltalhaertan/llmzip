@@ -1,0 +1,212 @@
+====================================================================================================
+INDEPENDENT AUDIT PROBES - v3 delta closure. Synthetic data only; no real corpus.
+python 3.13.15   tmp=C:\Users\MDP\AppData\Local\Temp\v52_audit_v3_r3ta285m
+====================================================================================================
+
+== A. environment and identity ==============================================
+INFO     interpreter   C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\locomo_reproduction_tmp_20260907\venv\Scripts\python.exe
+INFO     PYTHONHASHSEED   0
+INFO     thread vars   OMP_NUM_THREADS=1,MKL_NUM_THREADS=1,OPENBLAS_NUM_THREADS=1,NUMEXPR_NUM_THREADS=1
+PASS     A1 the real-data gate is CLOSED by default   False
+PASS     A2 no representation stage was added (no sklearn / tfidf / svd / retrieval in the v3 package)   
+PASS     A3 M-1/M-2/M-3 representation stage NOT added   
+
+== B. D-5: the nine paths F12-F20, my canaries, full surface + files written ========
+PASS     B-NEG F12 compute_results, mapping benchmark vs the stamp check: v2 DOES leak (control)   ['Q']
+PASS     B     F12 compute_results, mapping benchmark vs the stamp check: v3 leaks nothing   files_written=[]
+PASS     B-NEG F13 compute_results, unknown benchmark (caller): v2 DOES leak (control)   ['Q']
+PASS     B     F13 compute_results, unknown benchmark (caller): v3 leaks nothing   files_written=[]
+PASS     B-NEG F14 compute_results, unknown scheme (caller): v2 DOES leak (control)   ['Q']
+PASS     B     F14 compute_results, unknown scheme (caller): v3 leaks nothing   files_written=[]
+PASS     B-NEG F15 freeze_bootstrap_seed -> accepted_bootstrap_for: v2 DOES leak (control)   ['Q']
+PASS     B     F15 freeze_bootstrap_seed -> accepted_bootstrap_for: v3 leaks nothing   files_written=[]
+FINDING  B-NEG F16 load_accepted_mapping, unknown benchmark: v2 DOES leak (control)   []
+PASS     B     F16 load_accepted_mapping, unknown benchmark: v3 leaks nothing   files_written=[]
+PASS     B-NEG F20 read_bootstrap_seed, values read out of a JSON FILE ON DISK: v2 DOES leak (control)   ['Q', 'A']
+PASS     B     F20 read_bootstrap_seed, values read out of a JSON FILE ON DISK: v3 leaks nothing   files_written=[]
+PASS     B     F17 resolve_accepted_manifest, unknown benchmark: v3 leaks nothing   
+PASS     B     F18 verify_source_bytes, unknown benchmark: v3 leaks nothing   
+PASS     B     F19 verify_source_bytes, a MISSING PATH carrying a canary: v3 leaks nothing   
+PASS     B     F19b verify_source_bytes, a PRESENT file whose NAME is a canary: v3 leaks nothing   
+
+== C. D-5: the ORDERING claim in compute_results =====================================
+PASS     C1 v3 reads ONLY the stamp key from an unstamped mapping before refusing   reads=[('get', '_accepted_manifest_sha256')]
+PASS     C2 and nothing from that mapping reaches the surface   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     C3 NEG: v2 reads mapping['benchmark'] BEFORE the stamp and leaks it   reads=[('getitem', 'benchmark'), ('getitem', 'benchmark')] leaked=['Q']
+
+== D. D-5: hunting paths the preparer did NOT test ==================================
+PASS     D1 UnsafeErrorField does not echo the VALUE   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\work\probe_v3_closure.p
+OBSERVE  D1b UnsafeErrorField DOES echo the field NAME (a kwarg key)   leaks the key
+OBSERVE  D2 safe_report.counts TypeError echoes its kwarg key   counts() takes ints only; canaryKeyOdessa1987 is str
+OBSERVE  D3 errors._safe accepts ANY Enum and prints .value verbatim   E-CFG-001: the benchmark is not one of the accepted benchmarks [x=Where did Rashid park the blue van on the night of the storm?]
+PASS     D4 assert_content_free leaks nothing (key)   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D4 assert_content_free leaks nothing (value)   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D4 assert_content_free leaks nothing (short key)   
+PASS     D4 assert_content_free leaks nothing (nested)   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D5 write_ingest_manifest refuses and leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+FINDING  D6 verify_source_identity(n_questions=<canary str>) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\work\probe_v3_closure.py",
+PASS     D6b verify_source_identity(canary cohort) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\work\probe_v3_closure.py", line 81, 
+PASS     D6c verify_source_identity(expected_question_to_cluster=<canary str>) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\work\pro
+PASS     D7 validate_identifier(trailing ws canary) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+OBSERVE  D7b validate_identifier echoes its `kind` argument verbatim (caller-supplied)   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\work\probe_v3
+PASS     D7c duplicate ids reported by position+digest only   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D8 malformed manifest (unaccepted bytes) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D8b manifest with an unexpected field leaks neither key nor value   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D8c manifest declaring a canary benchmark leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D8d invalid-JSON manifest: identity refuses first, no JSON error text   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D8e seed record (non-mapping record) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D8e seed record (canary seed field) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D8e seed record (canary replicates) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D9 fully-canaried corpus, HAPPY path: nothing on the surface, nothing written   files=[]
+PASS     D9b the written ingest manifest carries no canary   837B
+PASS     D9c ...while the in-memory structures DO still hold the text (that is the point)   
+PASS     D9d canaried corpus down the COHORT-FAILURE refusal: no leak   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D9e canary DIA IDs down the duplicate-memory-unit refusal: no leak   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D9f LongMemEval refusal (ragged arrays) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D9f LongMemEval refusal (empty haystack) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D9f LongMemEval refusal (missing field) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D9f LongMemEval refusal (non-bool gold) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D9f LongMemEval refusal (turn not a mapping) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D9f LongMemEval refusal (session not a list) leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D10 run_on_real_corpus refuses (gate first) and leaks nothing   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+PASS     D10b with the gate OPEN there is still no ingestion path, and no leak   Traceback (most recent call last):
+  File "C:\Users\MDP\AppData\Local\Temp\claude\audit_v3
+
+== E. D-1: the partial-evidence policy ==============================================
+PASS     E1 allow_partial_evidence is GONE from the v3 signature   ('source_path', 'mapping', 'enabled', 'identity', 'raw', 'conversations')
+PASS     E1b ...and not renamed: no waiver/citation/exception keyword survives anywhere in the module   
+PASS     E1c module-level names mentioning waiver/allow/override are policy constants only   ['PARTIAL_EVIDENCE_POLICY']
+PASS     E1d NEG: v2 still HAS the parameter   
+PASS     E2 a PARTIAL resolution STOPS   membership_scaling_core.DesignViolation: E-COH-002: some declared evidence ids resolve and some do not, so the gold set 
+PASS     E2b ...with safe numeric diagnostics only, and no canary   
+PASS     E2c ...and the diagnostics are the counts, not the ids   ['membership_scaling_core.DesignViolation: E-COH-002: some declared evidence ids resolve and some do not, so the gold set would be sil
+PASS     E2d ...and NOTHING is written   
+PASS     E3 a FULLY unresolvable question is NOT treated as partial - it proceeds   
+PASS     E3b ...and the loss is VISIBLE in the persisted summary   {"model": "declared_reference_ids", "declared_reference_ids": 1, "resolved_reference_ids": 0, "unresolved_reference_ids": 1}
+PASS     E4 a fully resolved source PROCEEDS   {"model": "declared_reference_ids", "declared_reference_ids": 1, "resolved_reference_ids": 1, "unresolved_reference_ids": 0}
+PASS     E5 gold rows and cohort are BYTE-IDENTICAL to v2 on a clean source   
+INFO     E6 accepted LoCoMo manifest shape   n_questions=1535 clusters=10 sha256=66379b9dcf01f954
+PASS     E7 full-shape (1535q/10 clusters) run: cohort resolves, nothing excluded   n=1535 clusters=10
+PASS     E7b ...and the accounting is complete over 1535 questions   {"model": "declared_reference_ids", "declared_reference_ids": 1535, "resolved_reference_ids": 1535, "unresolved_reference_ids": 0}
+PASS     E7c ...and questions OUTSIDE the cohort are counted, not refused and not repaired   extra_ids_in_source=6
+PASS     E8 ONE partial question in a 1535-question cohort still STOPS the whole run   ['membership_scaling_core.DesignViolation: E-COH-002: some declared evidence ids resolve and some do not, so the 
+PASS     E8b ...and no question id leaks   
+
+-- E9: attempts to construct a partial loss that slips through --
+PASS     E9 [duplicate declared id, one unresolvable] -> STOPS as a partial loss   
+PASS     E9 [free text with no D<n>:<n> at all] -> proceeds; loss VISIBLE   declared=1 resolved=0 unresolved=1 empty_gold=1 gold_rows=[]
+FINDING  E9 [free text mixing a real id and prose] -> proceeds; loss INVISIBLE in the persisted manifest   declared=1 resolved=1 unresolved=0 empty_gold=0 gold_rows=[0]
+FINDING  E9 [dict evidence with a MISSING id key] -> proceeds; loss INVISIBLE in the persisted manifest   declared=1 resolved=1 unresolved=0 empty_gold=0 gold_rows=[0]
+FINDING  E9 [dict evidence with an EMPTY id] -> proceeds; loss INVISIBLE in the persisted manifest   declared=1 resolved=1 unresolved=0 empty_gold=0 gold_rows=[0]
+FINDING  E9 [dict evidence with a NULL id] -> proceeds; loss INVISIBLE in the persisted manifest   declared=1 resolved=1 unresolved=0 empty_gold=0 gold_rows=[0]
+FINDING  E9 [list item that is neither str nor dict] -> proceeds; loss INVISIBLE in the persisted manifest   declared=1 resolved=1 unresolved=0 empty_gold=0 gold_rows=[0]
+FINDING  E9 [list item that is None] -> proceeds; loss INVISIBLE in the persisted manifest   declared=1 resolved=1 unresolved=0 empty_gold=0 gold_rows=[0]
+PASS     E9 [evidence is a dict (not a list)] -> proceeds; loss VISIBLE   declared=0 resolved=0 unresolved=0 empty_gold=1 gold_rows=[]
+PASS     E9 [evidence is an int] -> proceeds; loss VISIBLE   declared=0 resolved=0 unresolved=0 empty_gold=1 gold_rows=[]
+PASS     E9 [nested list] -> proceeds; loss VISIBLE   declared=0 resolved=0 unresolved=0 empty_gold=1 gold_rows=[]
+
+== F. LongMemEval evidence accounting ===============================================
+PASS     F1 `declared` is no longer derived from `resolved`   {"model": "per_turn_gold_markers", "declared_reference_ids": null, "declared_reference_ids_status": "NOT_APPLICABLE", "gold_units_resolved
+PASS     F1b NEG: v2 published declared == resolved as a tautology   
+PASS     F2 the two benchmarks no longer share the same accounting field set   LME=['completeness_guarded_by', 'declared_reference_ids', 'declared_reference_ids_status', 'gold_units_resolved', 'model'
+PASS     F3 the model name distinguishes them   
+PASS     F4 completeness_guarded_by is present and non-empty   ['parallel_array_length_check', 'empty_haystack_refused', 'units_enumerated_from_sessions', 'non_boolean_gold_marker_refused']
+PASS     F5 guard `parallel_array_length_check` is named AND fires   ['membership_scaling_core.DesignViolation: E-COH-007: the parallel haystack arrays have different lengths; zipping them would silen
+PASS     F5 guard `empty_haystack_refused` is named AND fires   ['membership_scaling_core.DesignViolation: E-COH-008: an item has no haystack sessions, so its archive would be empty']
+PASS     F5 guard `non_boolean_gold_marker_refused` is named AND fires   ['membership_scaling_core.DesignViolation: E-COH-009: a gold marker is not a boolean; the bound adapter records this as INVALID
+PASS     F5 guard `units_enumerated_from_sessions` holds: rows index the enumerated units   units=3 gold=[0, 2]
+PASS     F6 a non-boolean gold marker is REFUSED (E-COH-009), not coerced to False   ['membership_scaling_core.DesignViolation: E-COH-009: a gold marker is not a boolean; the bound adapter records thi
+PASS     F6-NEG v2 silently coerces it and reports declared == resolved   {"questions_with_partial_evidence_loss": 0, "evidence_ids_declared": 1, "evidence_ids_resolved": 1, "evidence_ids_unresolved":
+PASS     F7 for WELL-FORMED input v3 gives byte-identical gold rows, units and cohort to v2   
+
+-- F8: can a LongMemEval gold loss still hide? --
+PASS     F8 [has_answer: 1 (JSON int)] -> REFUSED   membership_scaling_core.DesignViolation: E-COH-009: a gold marker is n
+PASS     F8 [has_answer: 'true' (string)] -> REFUSED   membership_scaling_core.DesignViolation: E-COH-009: a gold marker is n
+OBSERVE  F8 [has_answer absent everywhere] -> proceeds   gold_rows=[] empty_gold=1 acct={"model": "per_turn_gold_markers", "declared_reference_ids": null, "declared_ref
+PASS     F8 [has_answer: null] -> REFUSED   membership_scaling_core.DesignViolation: E-COH-009: a gold marker is n
+OBSERVE  F8 [has_answer: False only] -> proceeds   gold_rows=[] empty_gold=1 acct={"model": "per_turn_gold_markers", "declared_reference_ids": null, "declared_ref
+
+== G. REGRESSION on what earlier checks CLOSED =====================================
+PASS     G1 D-2 still closed: a contradicting replicate count is refused   sult would misstate how it was computed [record_replicates=10000, requested_replicates=7]
+
+PASS     G2 D-3 still closed: seed 999 is refused    accepted seed for this benchmark and scheme [accepted_seed=52001107]
+
+PASS     G2b D-3 still closed: the TRANSPOSED seed 52001170 is refused   
+PASS     G2c D-3 still closed: a hand-forged record is caught ON READ    accepted_seed=52001107, replicates_matches=True, seed_matches=False]
+
+PASS     G3 D-4 still closed: a CRLF-translated manifest is REFUSED   ot the accepted manifest [crlf_to_lf_would_match=True, got_bytes=300, lf_to_crlf_would_match=False]
+
+PASS     G3b ...and the CRLF diagnosis survives as a SAFE FLAG   ['membership_scaling_core.DesignViolation: E-SRC-001: these manifest bytes are not the accepted manifest [crlf_to_lf_would_match=True, 
+INFO     G3c the LoCoMo manifest as CHECKED OUT on this machine   60823B sha256=4a1f7c2dbe8d915d crlf=1555
+PASS     G3d the REAL CRLF checkout is refused with the CRLF diagnosis   ['membership_scaling_core.DesignViolation: E-SRC-001: these manifest bytes are not the accepted manifest [crlf_to_lf_would_matc
+PASS     G4 source trust still closed: the SUPERSEDED manifest is refused AS SUPERSEDED   ['authoritative.resolve_sources.SourceResolutionError: E-SRC-002: these manifest bytes are a SUPERSEDED manife
+PASS     G4b ...under the other benchmark too   
+PASS     G5 D-6 still closed: the honest stamp passes   
+PASS     G5b ...a query-derived centering is caught   
+PASS     G5c ...and a ONE-ULP perturbation of D is caught   
+PASS     G5d ...and a value-equal COPY still passes (bytes, not identity)   
+PASS     G6 D-7 still closed: ragged parallel arrays are refused   
+PASS     G7 D-8 still closed: a missing field is a NAMED refusal, not a KeyError   
+PASS     G7b N-4 residual is now CLOSED: an empty mapping is a named refusal, not KeyError   me through the accepted-resolution path; only the accepted manifest may be used
+
+PASS     G8 the LongMemEval cluster bootstrap is still REFUSED   e. R2 line 141: 'No conversation-cluster bootstrap is defined for LongMemEval.'
+
+PASS     G9 identity precedes parsing (a wrong-hashed AND invalid-JSON manifest fails on IDENTITY)   
+PASS     G10 write_results still refuses to overwrite   ile: C:\Users\MDP\AppData\Local\Temp\v52_audit_v3_r3ta285m\g\res.json
+
+PASS     G10b write_ingest_manifest still refuses to overwrite   
+PASS     G10c freeze_bootstrap_seed still refuses to overwrite   
+PASS     G11 importing the v3 modules opened no corpus-shaped file   
+PASS     G12 the bound core identity in the module matches the accepted configuration   bc2282d3fccfe83c
+
+== H. the preparer's negative controls: real or vacuous? ============================
+INFO     H0 subprocess control resolved `authoritative` from   C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\co_v3\drafts\v52\membership_runner_ingest_v2_2026_09_08\authoritative\__init__.py
+PASS     H1 the subprocess control really loads v2's OWN authoritative package, not v3's   C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\co_v3\drafts\v52\membership_runner_ingest_v2_2026_09_08
+PASS     H1b ...and that resolver is genuinely the UNFIXED one (no errors module wired in)   False
+PASS     H2 subprocess control is NOT vacuous: v2 really leaks through F16   True
+PASS     H2 subprocess control is NOT vacuous: v2 really leaks through F17   True
+PASS     H2 subprocess control is NOT vacuous: v2 really leaks through F18   True
+PASS     H2 subprocess control is NOT vacuous: v2 really leaks through F19   True
+INFO     H3 in-process `authoritative` resolves to   C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\co_v3\drafts\v52\membership_runner_ingest_v3_2026_09_08\authoritative\__init__.py
+PASS     H3b the shadowing hazard the preparer names is REAL (in-process it is v3's package)   C:\Users\MDP\AppData\Local\Temp\claude\audit_v3_indep\co_v3\drafts\v52\membership_runner_ingest_v3_2026_0
+
+== I. the three OPTIONAL residuals N-3/N-4/N-5 ======================================
+PASS     I1 N-3 residual SURVIVES: a caller that re-derives the stamp still passes   deliberate forgery, not an honest-caller error
+OBSERVE  I1b ...but it requires the caller to deliberately compute a stamp it did not use; no wrong DATA is accepted on an honest path   
+PASS     I2 N-4 residual is FIXED in v3 (no raw KeyError from an empty mapping)   
+OBSERVE  I3 N-5 residual SURVIVES: a hand-built mapping carrying the public constant passes the stamp   stamp accepted; but see I3b
+FINDING  I3b ...but a forged mapping cannot get a corpus in: verify_source_bytes still pins the source identity   
+INFO     I3c the forged-mapping route requires the caller to already hold the accepted source bytes AND to hand-write a mapping; it substitutes a COHORT, not data   
+
+====================================================================================================
+TALLY PASS=120  FINDING=9  OBSERVE=8  INFO=8
+====================================================================================================
+NOTHING SEALED. NO HMAC. NO RUN. NO FINALIZE. NO REAL CORPUS READ, OPENED OR HASHED.

@@ -1,0 +1,74 @@
+====================================================================================================
+DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS - v3. Fake files only; no real corpus.
+====================================================================================================
+
+== D-5  the nine residual paths, and the error interface ===================================
+ok    D-5 NEGATIVE CONTROL: v2 leaks through F12 compute_results, mapping benchmark before the stamp check   ['question']
+ok    D-5 CLOSED: v3 leaks nothing through F12 compute_results, mapping benchmark before the stamp check   code + safe fields only
+ok    D-5 NEGATIVE CONTROL: v2 leaks through F13 compute_results, unknown benchmark   ['question']
+ok    D-5 CLOSED: v3 leaks nothing through F13 compute_results, unknown benchmark   code + safe fields only
+ok    D-5 NEGATIVE CONTROL: v2 leaks through F14 compute_results, unknown scheme   ['question']
+ok    D-5 CLOSED: v3 leaks nothing through F14 compute_results, unknown scheme   code + safe fields only
+ok    D-5 NEGATIVE CONTROL: v2 leaks through F15 freeze_bootstrap_seed -> accepted_bootstrap_for   ['question']
+ok    D-5 CLOSED: v3 leaks nothing through F15 freeze_bootstrap_seed -> accepted_bootstrap_for   code + safe fields only
+ok    D-5 NEGATIVE CONTROL: v2 leaks through F20 read_bootstrap_seed, values read out of a JSON FILE   ['question', 'answer']
+ok    D-5 CLOSED: v3 leaks nothing through F20 read_bootstrap_seed, values read out of a JSON FILE   code + safe fields only
+ok    D-5 CLOSED: v3 leaks nothing through F17 resolve_accepted_manifest, unknown benchmark   
+ok    D-5 CLOSED: v3 leaks nothing through F18 verify_source_bytes, unknown benchmark   
+ok    D-5 CLOSED: v3 leaks nothing through F19 verify_source_bytes, a missing PATH   
+ok    D-5 NEGATIVE CONTROL (subprocess, against v2's OWN package): v2 leaks through F16   True
+ok    D-5 NEGATIVE CONTROL (subprocess, against v2's OWN package): v2 leaks through F17   True
+ok    D-5 NEGATIVE CONTROL (subprocess, against v2's OWN package): v2 leaks through F18   True
+ok    D-5 NEGATIVE CONTROL (subprocess, against v2's OWN package): v2 leaks through F19   True
+ok    D-5: every v3 message is a fixed code plus safe fields   
+ok    D-5: a string field is refused BEFORE a message exists   
+ok    D-5: the code set is closed and every code has a fixed sentence   
+ok    D-5: a refusal carries no chained library context out with it   
+ok    D-5: the absolute claim is no longer ASSERTED - it survives only as quoted, falsified v2 text   
+ok    D-5: a tested surface and a threat model are stated instead   
+
+== D-1  the unauthorized exception is closed ================================================
+ok    D-1 NEGATIVE CONTROL: v2 proceeds on a free-text citation   
+ok    D-1 NEGATIVE CONTROL: and that citation reaches no written manifest   
+ok    D-1 CLOSED: v3 stops on a partial resolution, with a fixed code   E-COH-002
+ok    D-1: the diagnostics are safe numbers   
+ok    D-1: the waiver parameter no longer exists   
+ok    D-1: and the policy says why, and that a new permission is not produced in code   
+ok    D-1: a FULLY unresolvable question is not a partial loss - it proceeds and is counted   
+ok    D-1: a fully resolved source proceeds with zero unresolved   
+ok    D-1: no gold repaired, no question excluded, no cohort changed   
+
+== LongMemEval  real evidence accounting ====================================================
+ok    LME NEGATIVE CONTROL: v2 silently drops a has_answer of 1 and reports declared == resolved   a gold unit vanished and the accounting called it complete
+ok    LME CLOSED: v3 REFUSES a non-boolean gold marker instead of coercing it   E-COH-009
+ok    LME: the refusal cites the bound adapter's own issue code   
+ok    LME: declared is NOT derived from resolved - it is absent, because none is defined   
+ok    LME: the resolved gold units are counted under their own name   
+ok    LME: the model is named, and it is NOT the LoCoMo model   
+ok    LME: what guards completeness instead is named, as tokens each backed by a real check   
+ok    LME: the model name is a short token and the prose is NOT written into the artefact   
+ok    LME: the LoCoMo accounting keeps a real declared count, in its own model   
+ok    LME: and the two shapes are genuinely different, not the same keys with different values   
+
+== regression: what v2 closed must stay closed ==============================================
+ok    D-3 still closed: a non-accepted seed is refused   
+ok    D-2 still closed: a contradicting replicate count is refused   
+ok    the accepted configuration still runs end to end   
+ok    D-4 still closed: a CRLF-translated manifest is refused   
+ok    D-4: the diagnosis survives as a SAFE FLAG rather than a sentence   
+ok    D-4: the accepted bytes still load   
+ok    source trust still closed: the superseded manifest is refused AS SUPERSEDED   E-SRC-002
+ok    D-6 still closed: a query-derived transform is caught   
+ok    D-7 still closed: ragged arrays are refused   
+ok    D-8 still closed: a missing field is a named refusal   
+ok    gates still closed: the real-data gate refuses FIRST, before the stub's own refusal   the core gate fires first; the stub code is only reachable with th
+ok    gates still closed: with the gate open there is still NO ingestion path behind it   
+ok    gates still closed: and the gate is shut again afterwards   
+ok    a fully canaried source emits no canary anywhere on the happy path   
+ok    ...and the written manifest carries none   
+ok    ...while the in-memory structures still hold the text, which is the point of ingestion   
+ok    a second write is still refused   
+ok    the closed core is untouched   
+
+ALL PASS
+Scope: DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS for the nine D-5 paths, the D-1 partial-evidence policy and the LongMemEval evidence accounting. Fake files only. Not a seal, not run authorization.

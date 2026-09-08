@@ -1,0 +1,13 @@
+v1: _normalise_evidence sha256 = cc8170e724ce798a743dee9ee2c5cc97  len=737
+v2: _normalise_evidence sha256 = cc8170e724ce798a743dee9ee2c5cc97  len=737
+v3: _normalise_evidence sha256 = cc8170e724ce798a743dee9ee2c5cc97  len=737
+
+case                       v2 _normalise_evidence       v3 _normalise_evidence
+dict with missing id       ['D1:0']                     ['D1:0']
+dict with empty id         ['D1:0']                     ['D1:0']
+dict with null id          ['D1:0']                     ['D1:0']
+list item not str/dict     ['D1:0']                     ['D1:0']
+list item None             ['D1:0']                     ['D1:0']
+free text + real id        ['D1:0']                     ['D1:0']
+
+IDENTICAL BEHAVIOUR v2 vs v3: True

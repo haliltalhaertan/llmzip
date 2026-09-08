@@ -1,0 +1,89 @@
+====================================================================================================
+PART 2 - byte-verbatim residual escapes and the interpolation census
+====================================================================================================
+
+-- P1. verify_source_identity: a non-numeric n_questions --
+BYTE-VERBATIM SURFACE:
+[builtins.ValueError] invalid literal for int() with base 10: 'Where did Rashid park the blue van on the night of the storm?'
+LEAKED: True
+
+-- P1b. the same, via a mapping key that is a float --
+[membership_scaling_core.DesignViolation] the mapping manifest declares n_questions=99.5 but maps 1
+
+-- P1c. is verify_source_identity reachable with an UNSTAMPED mapping? --
+signature: ('question_ids', 'cluster_ids', 'mapping', 'qs')
+does it call _check_accepted_mapping or test the stamp? False
+
+-- P1d. and through compute_results (i.e. behind the stamp check)? --
+[builtins.ValueError] invalid literal for int() with base 10: 'Where did Rashid park the blue van on the night of the storm?'
+LEAKED: True
+
+-- P2. validate_identifier echoes its `kind` argument --
+BYTE-VERBATIM: [membership_scaling_core.DesignViolation] Where did Rashid park the blue van on the night of the storm? at 0 has unsupported type <int scalar digest=5994471abb01>; this runner supports string identifiers only, so that no int()-equal pair can merge (NEW-5). Render non-string ids as strings in the adapter, where the choice is visible
+LEAKED: True
+call sites of validate_identifier inside the package:
+  217: qs = [validate_identifier(v, "question id", i) for i, v in enumerate(q)]
+  218: cs = [validate_identifier(v, "cluster id", i) for i, v in enumerate(c)]
+
+-- P3. UnsafeErrorField / counts: the kwarg KEY --
+BYTE-VERBATIM: [errors.UnsafeErrorField] error field 'canaryKeyOdessa1987' is a str; only numbers, booleans, None and validated enum members may appear in an error message
+BYTE-VERBATIM: [builtins.TypeError] counts() takes ints only; canaryKeyOdessa1987 is str
+
+-- P4. census: every f-string / .format / % site that could reach an exception --
+
+membership_runner_v3.py: 19 interpolated expressions inside `raise` statements
+  RAW   line 190: kind
+  RAW   line 190: position
+  SAFE  line 190: safe_report.describe(value)
+  RAW   line 196: kind
+  RAW   line 196: position
+  SAFE  line 196: safe_report.describe(value)
+  RAW   line 201: kind
+  RAW   line 201: position
+  SAFE  line 201: safe_report.describe(value)
+  SAFE  line 213: len(q)
+  SAFE  line 213: len(c)
+  SAFE  line 225: safe_report.positions(dupes)
+  RAW   line 290: mapping['n_questions']
+  SAFE  line 290: len(expected_map)
+  SAFE  line 418: core.DIM
+  SAFE  line 418: A.shape
+  SAFE  line 449: core.DIM
+  SAFE  line 449: X.shape
+  SAFE  line 469: safe_report.describe(query_stamp)
+
+corpus_ingest_v3.py: 0 interpolated expressions inside `raise` statements
+
+errors.py: 2 interpolated expressions inside `raise` statements
+  RAW   line 141: field
+  RAW   line 141: type(value).__name__
+
+safe_report.py: 2 interpolated expressions inside `raise` statements
+  RAW   line 96: key
+  RAW   line 96: type(value).__name__
+
+authoritative/resolve_sources.py: 0 interpolated expressions inside `raise` statements
+
+authoritative/accepted_configuration.py: 0 interpolated expressions inside `raise` statements
+
+-- P5. total raw-interpolation sites (any f-string anywhere) per module, v2 vs v3 --
+  membership_runner_ingest_v2_2026_09_08/membership_runner_v2.py: 63 interpolations total, 57 inside a `raise`
+  membership_runner_ingest_v2_2026_09_08/corpus_ingest_v2.py: 67 interpolations total, 39 inside a `raise`
+  membership_runner_ingest_v3_2026_09_08/membership_runner_v3.py: 25 interpolations total, 19 inside a `raise`
+  membership_runner_ingest_v3_2026_09_08/corpus_ingest_v3.py: 20 interpolations total, 0 inside a `raise`
+  membership_runner_ingest_v3_2026_09_08/errors.py: 6 interpolations total, 2 inside a `raise`
+  membership_runner_ingest_v3_2026_09_08/safe_report.py: 16 interpolations total, 2 inside a `raise`
+
+-- P6. does any raise site expand a DATA-DERIVED kwarg dict (**something)? --
+  corpus_ingest_v3.py:464  **lengths
+  authoritative/resolve_sources.py:85  **_diagnose(raw, entry['blob_sha256'])
+  authoritative/resolve_sources.py:129  **_diagnose(raw, entry['blob_sha256'])
+  (all others use literal keyword names)
+
+-- P7. claim-accuracy: the file headers --
+  membership_runner_v3.py line 1: """Corpus-bound runner v2 for the V52 membership-under-scaling experiment - PREPARATION ONLY.
+  corpus_ingest_v3.py line 1: """Corpus ingestion v2 for the V52 membership-under-scaling experiment - WRITTEN, NOT AUTHORIZED TO RUN.
+  membership_runner_v3.py:18:   D-5  exception messages interpolated values verbatim and unbounded. Every message now goes
+  membership_runner_v3.py:19:        through `safe_report`, which reports type, shape and digest and never content.
+
+DONE
