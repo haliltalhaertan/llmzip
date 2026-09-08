@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T09:44:00Z",
+  "issued_at_utc": "2026-09-08T10:34:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's disposition of the D-5 residuals (NINE remaining leak paths, one FILE-DERIVED and one an ORDERING defect), the D-1 claim-accuracy defect (the waiver citation reaches no persisted artefact while the code says it does), and the NEW LongMemEval evidence-accounting defect (evidence_ids_declared is defined as the resolved count, so a partial gold loss there is invisible). Do NOT fix automatically. M-1/M-2/M-3 remain unauthorized; no pilot, no sealing, no run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's disposition of what the v3 closure check left open: TWO remaining caller-supplied leak paths in membership_runner_v3 (validate_identifier's `kind`, and an uncaught ValueError from int(mapping['n_questions']) in verify_source_identity); a FALSE claim paragraph at lines 69-72 and a stale 'runner v2' header; and the INHERITED _normalise_evidence residual, byte-identical in v1, v2 and v3, whose effect on the real corpus neither role may investigate without separate authorization. Do NOT fix automatically. M-1/M-2/M-3 remain unauthorized; no pilot, no sealing, no run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-077",
+  "ledger_entry": "L-078",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1736,5 +1736,43 @@
     ],
     "what_the_checker_verified_itself": "a fresh clone in its own directory; all identities from raw Git blobs with every bound artifact byte-unchanged; every commit/path/hash inside accepted_configuration.py resolving; no .gitattributes and no Git setting changed; D-4 tested against a REAL CRLF checkout, refused with the diagnosis and never normalised; 123 probes plus 9 follow-ups, with one of its own mis-built controls and one false alarm disclosed; the preparer's suite reproduced exactly; and the 19 negative controls genuinely EXECUTING the v1 modules, nine reproduced independently. No regression in what the previous review passed.",
     "nothing_was_fixed_afterwards": "no correction applied to D-5, the D-1 claim defect, the new LongMemEval defect or the three optional residuals; the package stands as submitted"
+  },
+  "runner_ingest_v3_fix_package_2026_09_08": {
+    "branch": "impl/v52-runner-ingest-v3-2026-09-08",
+    "commit": "64d774a66c8af154b9421c5bdd1b3964d0b82fe4",
+    "namespace": "drafts/v52/membership_runner_ingest_v3_2026_09_08/",
+    "blob_sha256": {
+      "errors.py": "b115fdf99545ff6eff540d2d28abce5d9dbfd92b82cc306ea954743a1b7ef20a",
+      "membership_runner_v3.py": "29379aaccb31c7e634e75290d0108f0ac49c90028733a7000d686e9302770fc0",
+      "corpus_ingest_v3.py": "4d3450cf20af5233b4d92e627773b070779e2127c517f7441f94a8db5b530523",
+      "safe_report.py": "c7f4f0a0735b8022723251af26607ea8d74654e8d692ec70145f300578bce44c",
+      "authoritative/accepted_configuration.py": "fc533825902fa9a523eab4f810ed05c78ce6ca949e83faa75bf45e7c46a432bc",
+      "authoritative/resolve_sources.py": "c2bc0824f62acd68dcedb4713abcdcd91e4014194082a62d359ec92ac564a992",
+      "test_runner_ingest_v3.py": "604363a96aadd03a8ef7161c66c1e6f83c99e65d7854a135a65a25824f38366e",
+      "FIX_PACKAGE_V3_2026-09-08.md": "0cc80ca41417abf5237f08f0579804b1bcc2a349000b565b7b99eed8233b9049"
+    },
+    "scope": "the three items left open by the v2 closure check; no M-1/M-2/M-3",
+    "byte_unchanged": "the closed core, both v1 modules, the entire v2 package and both accepted manifests; purely additive",
+    "evidence": "60 checks ALL PASS, 12 negative controls of which FOUR run in a subprocess against v2's own package"
+  },
+  "runner_ingest_v3_closure_check_2026_09_08": {
+    "branch": "audit/v52-runner-ingest-v3-closure-2026-09-08",
+    "commit": "dc4c47dafc6f4dfe40e8bfacebca910f6b8f75da",
+    "parent": "88d66989a752e5e02b282f328f4cfb635a95c22d",
+    "report_sha256": "079dc9726529595d4a17472afa7837f2b472b7643f89bf25003f9cef46404f7b",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "11 files, all under audit_v52_runner_ingest_v3_closure_2026_09_08/; zero outside",
+    "fix_branch_head_unchanged": "64d774a66c8af154b9421c5bdd1b3964d0b82fe4; no candidate file modified",
+    "verdict": "CLOSURE PASS WITH FINDINGS - scoped to the three items and the affected wiring ONLY",
+    "D5_closed_for_behaviour": "all nine paths F12-F20 shut against the checker's OWN canaries - caller-supplied, read back out of a JSON file the pipeline wrote, and parsed corpus text - with stdout, stderr, the message, its repr, the whole cause/context chain and every written file captured. ZERO files written on any refusal. corpus_ingest_v3 and authoritative/ have ZERO interpolated expressions inside any raise, against 39 and 57 in v2. The F12 ordering was MEASURED with a key-logging dict subclass: v3 reads only _accepted_manifest_sha256 before refusing; v2 reads benchmark first and leaks it.",
+    "D5_open_the_third_absolute_claim": "membership_runner_v3.py:69-72 says byte-verbatim 'every message here is built by errors.message' and 'A string cannot enter a message without first raising UnsafeErrorField'. BOTH FALSE. Ten interpolated raises survive in that module and TWO leak: validate_identifier's `kind` argument, and an uncaught ValueError from int(mapping['n_questions']) in verify_source_identity, a public entry with no stamp check. Caller-supplied only; not reachable from corpus content or from an honest call. THIRD absolute claim in three versions, all the preparer's: v1 'never printed or put in an exception', v2 'no value is interpolated', v3 'every message is built by errors.message'.",
+    "also_the_preparers": "membership_runner_v3.py line 1 still reads 'Corpus-bound runner v2', and a carried-forward line still says every message goes through safe_report",
+    "D1_closed_with_an_inherited_residual": "the waiver is gone from the signature, not renamed; a partial resolution stops with numeric diagnostics only and writes nothing; gold and cohort are byte-identical to v2 on a clean source; full vs partial are distinguished. Verified against the ACCEPTED 1535-question ten-cluster manifest's shape - one partial question in 1535 stops the run. RESIDUAL: _normalise_evidence silently discards entries it cannot turn into an id (a dict without dia_id/id, an empty or null id, a non-string list item), so those never enter the declared count and declared==resolved with unresolved=0 while the source declared more. BYTE-IDENTICAL in v1, v2 and v3 (function-source sha cc8170e7, 737 B) - a residual, not a regression. Whether the real corpus contains those shapes cannot be checked in either role without separate authorization.",
+    "LongMemEval_closed_and_the_semantics_call_was_verified_correct": "the checker read adapters/longmemeval_v52_adapter_v2.py from the raw blob - lines 37-38 record INVALID_HAS_ANSWER_TYPE, line 45 coerces to False, line 48 derives gold from the turns - and confirms there is no declared-reference model, so no declared count exists. The NOT_APPLICABLE representation is honest; all four named guards exist, three fire (E-COH-007/008/009) and the fourth holds structurally; non-boolean markers are refused, not coerced; well-formed input is byte-identical to v2.",
+    "regression": "NONE. D-2/3/4/6/7/8, source trust, the gates, identity-before-parse, the cluster block and all three writers still hold, including against a real CRLF checkout. The v2 N-4 residual is now closed.",
+    "subprocess_controls_verified_real": "the checker confirmed the four subprocess controls load v2's OWN authoritative package and the unfixed resolver, and that in-process v3's package genuinely shadows it - its own in-process F16 control was vacuous for exactly that reason, which it disclosed. The preparer's suite reproduced the committed evidence exactly: 60 ok, 0 fail, 12 negative controls.",
+    "optional_residuals": "N-3/N-4/N-5 stay optional; the preparer's reason was judged and holds. N-4 is now unreachable.",
+    "nothing_was_fixed_afterwards": "no correction applied to the two leaks, the false claim, the stale header or the _normalise_evidence residual"
   }
 }
