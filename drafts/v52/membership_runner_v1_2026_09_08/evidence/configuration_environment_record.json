@@ -1,0 +1,64 @@
+{
+  "configuration_identity": "V52 membership-under-scaling follow-up experiment",
+  "status": "ACCEPTED BY THE HEAD RESEARCHER on 2026-09-08 for this follow-up study only; Task 4F1 lock unchanged",
+  "accepted_lock": {
+    "python": "3.13.15",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3"
+  },
+  "measured_now": {
+    "python": "3.13.15",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit_learn": "1.8.0",
+    "pandas": "2.2.3"
+  },
+  "full_dependency_freeze": [
+    "cloudpickle==3.1.2",
+    "joblib==1.6.0",
+    "numpy==2.3.5",
+    "pandas==2.2.3",
+    "python-dateutil==2.9.0.post0",
+    "pytz==2026.3.post1",
+    "scikit-learn==1.8.0",
+    "scipy==1.17.0",
+    "six==1.17.0",
+    "threadpoolctl==3.6.0",
+    "tzdata==2026.3"
+  ],
+  "interpreter": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\venv\\Scripts\\python.exe",
+  "platform": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "machine": "AMD64",
+    "processor_arch": "64bit",
+    "python_build": [
+      "tags/v3.13.15:4061bc4",
+      "Aug  5 2026 13:05:39"
+    ],
+    "python_compiler": "MSC v.1944 64 bit (AMD64)",
+    "implementation": "CPython"
+  },
+  "blas": {
+    "name": "scipy-openblas",
+    "version": "0.3.30",
+    "configuration": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24"
+  },
+  "lapack": {
+    "name": "scipy-openblas",
+    "version": "0.3.30"
+  },
+  "threadpoolctl_runtime_info": "threadpool_info() returns an empty list in this venv; the BLAS is the scipy-openblas build recorded above and thread counts are pinned by the environment variables below rather than by runtime introspection",
+  "determinism_and_thread_settings": {
+    "PYTHONHASHSEED": "0",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "thread_policy": "one process; one worker; no implicit BLAS parallelism",
+  "decoding_policy": "UTF-8 source/data decoding required",
+  "unlisted_dependency_policy": "if a dependency outside the accepted lock and this freeze is ever required, it is NOT to be chosen silently - it must be brought to the Head Researcher as a lock amendment",
+  "task4f1_lock": "UNCHANGED; task4f1_execution_candidate_v7_2026_09_03/DEPENDENCY_LOCK.txt is not edited and not inherited by this study"
+}
