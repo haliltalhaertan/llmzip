@@ -1,0 +1,15 @@
+test_correction_replaces_not_unions (__main__.Tests.test_correction_replaces_not_unions) ... ok
+test_dedup_and_nonmutation (__main__.Tests.test_dedup_and_nonmutation) ... ok
+test_empty_present_never_falls_back_or_drops (__main__.Tests.test_empty_present_never_falls_back_or_drops) ... ok
+test_identifier_not_in_error_surfaces (__main__.Tests.test_identifier_not_in_error_surfaces) ... ok
+test_invalid_coverage_types_and_empty (__main__.Tests.test_invalid_coverage_types_and_empty) ... ok
+test_lme_distinct_orders_and_bound_order_invariance (__main__.Tests.test_lme_distinct_orders_and_bound_order_invariance) ... ok
+test_missing_field_fallback_and_no_cohort_reselection (__main__.Tests.test_missing_field_fallback_and_no_cohort_reselection) ... ok
+test_partial_and_total_unresolved_fail (__main__.Tests.test_partial_and_total_unresolved_fail) ... ok
+test_real_entry_refuses (__main__.Tests.test_real_entry_refuses) ... ok
+test_ten_shards_complete (__main__.Tests.test_ten_shards_complete) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.004s
+
+OK
