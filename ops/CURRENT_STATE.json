@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T12:07:00Z",
+  "issued_at_utc": "2026-09-08T13:00:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's disposition of the four NON-BLOCKING findings on the Codex v5 repair, and of whether the Codex v5 package becomes the working candidate line in place of v4. A scope-limited PASS on this repair does NOT authorize the experiment, does NOT open M-1/M-2/M-3, and does NOT license a seal or a run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's disposition of the seven findings and nine named test gaps on the execution-preparation package, and - separately and more importantly - of the FIVE INTEGRATION OBLIGATIONS. Obligation 2 (the LoCoMo gold reconciliation: the historical producer applies 156 audit corrections while the accepted v5 ingestion reads RAW evidence) and obligation 3 (the LongMemEval ordinal and shard convention, DEMONSTRATED outcome-affecting) require a scientific decision that no implementation or audit may take. A preparation PASS does NOT license a seal, a pilot or a run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-080",
+  "ledger_entry": "L-081",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1859,5 +1859,52 @@
     },
     "recorded_but_not_reopened": "safe_report.counts still interpolates its kwarg key and type name - adversarial-only and unreachable from current call sites; and the CLOSED CORE's safe_write_json echoes the output path, out of scope, bytes unchanged at bc2282d3",
     "nothing_remediated_or_merged": "the candidate stands at 07ec929243068914676a0f30efd10c9f294c7e71 exactly as pushed; no candidate file modified by anyone in the audit"
+  },
+  "membership_execution_prep_v1_2026_09_08": {
+    "implementer": "Codex; the Continuity Lead did NOT write, modify, merge or remediate it",
+    "branch": "codex/v52-membership-execution-prep-2026-09-08",
+    "commit": "ed4e22c520b7dc0ae2f43f915e0c621070c72a87",
+    "namespace": "drafts/v52/membership_execution_prep_v1_2026_09_08/",
+    "parent": "07ec929243068914676a0f30efd10c9f294c7e71 - the audited Codex v5 repair, matching the declared base_commit",
+    "manifest_status": "PREPARATION_NOT_SEALED_NOT_EXECUTION_READY",
+    "identity_verified": {
+      "PAYLOAD_HASHES.json": "39d8ebfbeaa4ece63c4aaa2fb220e886047b7c8e700deded47a8a83e79abec3c",
+      "entries": "8 of 8 match their raw blobs; the only unlisted file is the manifest itself"
+    },
+    "purely_additive": "9 files, every entry an A, all inside the namespace, zero outside",
+    "what_it_is": "the first M-1 (representation), M-2 (six-arm scoring) and M-3 (in-memory adapter) code in this programme - the three components the completion map listed as MISSING",
+    "what_it_is_NOT": "a preparation PASS is NOT experiment authorization, does NOT accept the five open obligations, and is NOT an execution-readiness declaration",
+    "not_included_by_design": "no source ingestion call, download, cohort construction, on-disk record writer, production sharding, bootstrap invocation, seal or real driver; run_on_real_corpus always refuses"
+  },
+  "execution_prep_v1_review_2026_09_08": {
+    "independence": "the Continuity Lead is not cold-start on this programme, so the behavioural review was carried out by a SEPARATE session with no prior context; the Lead performed identity and scope verification and targeted spot checks only",
+    "branch": "audit/v52-execution-prep-v1-review-2026-09-08",
+    "commit": "5126766cac9201bbede178ccb558efa428f9488c",
+    "parent": "c3cfb98a5dfb38db53cefa929a22eb66fd69441a",
+    "report_sha256": "aea5d05c220571076b7961afd07cd8356c93e989eb1416e873772349bd62b9bb",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "17 files, all under audit_v52_execution_prep_v1_review_2026_09_08/; ZERO outside",
+    "verdict": "PASS WITH FINDINGS, scoped to the prepared M-1/M-2/M-3 functions ONLY",
+    "found_sound": "M-1 and M-2 numerics matched every independent oracle and exact control; top-k is BIT-IDENTICAL to the pinned source over 4,000 tie-heavy fuzz cases; declared provenance confirmed from raw blobs (core bc2282d3, pinned arithmetic a6ecee02 at 692f599e); the replay reproduced the committed evidence exactly; caller-TEXT protection works, with __context__ left empty on every surface",
+    "findings": {
+      "F1 (moderate)": "caller-supplied question IDS reach str(e), repr(e) and the traceback - native_anchors[q] and ingested['questions'][qid] raise a bare KeyError rather than the package's named error. Confirmed by the Lead at pipeline.py lines 196 and 206. Asymmetric: text is protected, ids are not.",
+      "F2 (moderate)": "an EMPTY COHORT silently returns empty records and diagnostics with no exception, and validate_per_question_records([], []) also accepts - a silent success landing exactly where obligation 4's finalizer would consume it",
+      "F3 (moderate, coverage)": "the signed-permutation canary aborts correctly on mixed exact zeros in both directions and never fires on all-zero coordinates (-0.0 >= 0 is True), but its fixed alternating sign vector negates only 48 of 96 coordinates, so a zero at column 0 aborts while column 1 passes undetected. Construction confirmed by the Lead. The auditor verified in exact Fraction arithmetic that the property is real, and that the canary is fixed source literals - NOT chosen after observing data.",
+      "F4 (minor)": "assert_matched_blocks(a, b, a, b) is vacuous and cannot fail; the guarantee holds structurally but the line is zero evidence",
+      "F5/F6/F7 (minor)": "one error code unreachable because a later check masks it; on a DEFAULT Windows checkout core.autocrlf changes the core hash and the pipeline refuses - fail-closed, but the replay is not reproducible from a default clone; M-3 has no ingestion schema validation"
+    },
+    "test_gaps_named": "nine, including: priority reuse across arms and seeds never asserted, all three M-3 refusal codes untested, the empty cohort untested, leak suppression untested",
+    "five_obligations_classified_none_resolved": {
+      "1_native_anchor": "OPEN on provenance; the code does fix granularity to one float per question, and discloses it",
+      "2_locomo_gold": "OPEN and scientifically the heaviest. The historical producer applies 156 audit corrections in which correct_evidence REPLACES raw evidence and five questions are dropped (L-075), while the accepted v5 ingestion reads RAW evidence. Codex flags it, loads no corrections and changes no accepted gold. Neither the implementer, the auditor nor the Lead resolved it, and no corpus was accessed to investigate it.",
+      "3_longmemeval_ordinal_and_shards": "OPEN and THE ONE TO WATCH: the ordinal is decided here as enumerate(cohort_ids) and the auditor DEMONSTRATED it is outcome-affecting - permuting cohort order changed 2 of 120 scores. Disclosed in the README, so not silently decided, but LOAD-BEARING rather than a placeholder.",
+      "4_finalizer": "OPEN - no machinery exists in the package to decide it",
+      "5_coverage_regression_acceptance_seal": "OPEN - no machinery exists in the package to decide it",
+      "none_silently_decided": true
+    },
+    "limits_the_package_states_about_itself_and_the_reviewer_upheld": "pure Python in-memory APIs compute what a caller gives them; the refusing real entry point is not a universal security boundary; the tests' Python audit hook is not an OS sandbox",
+    "reviewer_process_caveats_self_disclosed": "core.autocrlf=false and a commit identity set REPO-LOCALLY in its own scratch clone only; no global Git setting changed, no .gitattributes added",
+    "nothing_remediated_or_merged": "the candidate stands at ed4e22c520b7dc0ae2f43f915e0c621070c72a87 exactly as pushed; the core, v5 ingestion, manifests, cohorts and seeds are untouched"
   }
 }
