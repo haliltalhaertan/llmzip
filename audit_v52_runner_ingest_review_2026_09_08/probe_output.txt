@@ -1,0 +1,129 @@
+====================================================================================================
+INDEPENDENT AUDIT PROBES - v52 runner + ingestion. FAKE FILES ONLY; no real corpus is opened.
+candidate root: C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\indep_audit_20260908\candidate
+====================================================================================================
+
+-- S0: import-time behaviour and the default gate -------------------------------------
+[PASS     ] S0.1 import opens no corpus: 100 file opens during import of all three modules, 0 corpus-shaped; hits=[]
+[PASS     ] S0.2 gate closed by default: core.REAL_DATA_EXECUTION_ENABLED = False
+[PASS     ] S0.3 verify_source_bytes refuses before touching the path: DesignViolation: real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, and no fitti
+[PASS     ] S0.4 run_on_real_corpus refuses: DesignViolation: real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, and no fitti
+[PASS     ] S0.5 nothing behind the stub even with the flag flipped: DesignViolation: no real-corpus ingestion path exists in this runner. Reading or downloading a corpus, real fitting, retrieval,
+[PASS     ] S0.6 flag restored after probe: 
+[OBSERVE  ] S0.7 OBSERVATION enabled=True opens the gate with no other authorization: with enabled=True the gate passes and the call proceeds to the path check -> DesignViolation: bound source not found at C:\Users\MDP\AppData\Local\Temp\v52_audit_probe_o76e4yus\nope.js
+
+-- S1: source identity is checked BEFORE any parse -------------------------------------
+[PASS     ] S1.1 invalid-JSON + wrong-hash fails on IDENTITY not on a JSON error: DesignViolation: source identity mismatch for LoCoMo: bound d5954c039184554b2a21a8b698948e15102654aa677f3d0fb07b5ff9e52ffb78 / 414 bytes, read 3f52
+[PASS     ] S1.2 that identity error carries no file content: message contains only the two hashes and the two sizes
+[PASS     ] S1.3 valid-JSON + wrong-hash still refused: DesignViolation: source identity mismatch for LoCoMo: bound d5954c039184554b2a21a8b698948e15102654aa677f3d0fb07b5ff9e52ffb78 / 
+[PASS     ] S1.4 a renamed but byte-identical source is refused: DesignViolation: bound source for LoCoMo is 'locomo10.json', got 'locomo10_copy.json'; the runner does not accept a renamed sou
+[OBSERVE  ] S1.5 OBSERVATION the source file is opened twice (hash pass, then parse pass): 2 opens of the source during one ingest_locomo -> a TOCTOU window exists between the hash and the parse
+
+-- S2: bound-cohort resolution against reviewer-built corruptions ----------------------
+[PASS     ] S2.0 a clean fake cohort resolves: None: {'benchmark': 'LoCoMo', 'identity': {'source_file': 'locomo10.json', 'source_sha256': '5524ccc447f601bb8d073915ac082038a
+[PASS     ] S2.1 MISSING bound id is refused BY NAME: DesignViolation: LoCoMo cohort resolution failed: 1 bound question id(s) absent from the source, e.g. ['locomo_1_qa0']
+[PASS     ] S2.2 MISROUTED question is refused BY NAME: DesignViolation: LoCoMo cohort resolution failed: 1 bound question id(s) absent from the source, e.g. ['locomo_1_qa0']; 1 question(s) in the wrong conversation, e.g. [('locomo_0_qa1', 'lo
+[PASS     ] S2.3 DUPLICATED question id is refused BY NAME: DesignViolation: question id 'locomo_0_qa0' occurs more than once in the source
+[PASS     ] S2.4 DUPLICATED memory-unit id is refused: DesignViolation: duplicate memory unit id in locomo_conv_0; the archive must be a set of units
+[OBSERVE  ] S2.5 EXTRA source ids are ACCEPTED, not refused: ingest_locomo returns them in extra_ids_in_source and raises nothing. This is CORRECT behaviour (the cohort is a strict subset of the source) but the module docstring says extras are refused.
+[FINDING  ] S2.6 PARTIALLY unresolvable evidence is SILENTLY TRUNCATED: question declared 2 evidence ids, 1 unresolvable; gold_rows=[0] (kept 1, dropped 1 with no error, no warning and no counter). summary questions_with_empty_gold=0 -> a partial drop is invisible in the only persisted artefact.
+[OBSERVE  ] S2.7 FULLY unresolvable evidence is accepted and only counted: questions_with_empty_gold=['locomo_0_qa0']; the ingest does not refuse it
+[OBSERVE  ] S2.8 OBSERVATION dia_ids are only unique WITHIN a conversation: evidence is resolved against the owning conversation's id_to_row only, which is correct; no cross-conversation resolution is possible
+[FINDING  ] S2.9 _normalise_evidence CAN return free text: returned ['Melanie mentioned it at the wedding'] - the docstring says 'Never returns free text'
+[PASS     ] S2.10 a clean LongMemEval fake resolves: None: {'benchmark': 'LongMemEval', 'identity': {'source_file': 'longmemeval_s_cleaned.json', 'source_sha256': '12da4e25a5cc996
+[FINDING  ] S2.11 a LongMemEval item with no question_id: raises KeyError: 'question_id' - a raw KeyError rather than a named DesignViolation
+[FINDING  ] S2.12 ragged haystack arrays (ids/dates/sessions of different length): zip() truncates silently to the shortest array: the question resolves with ZERO units and empty gold, and only the empty-gold counter records anything
+[OBSERVE  ] S2.13 OBSERVATION has_answer is compared with `is True`: a JSON 1 / "true" is treated as NOT gold; only the JSON literal true counts
+[PASS     ] S2.14 duplicated LongMemEval question id is refused: DesignViolation: question id 'q1' occurs more than once in the source
+[PASS     ] S2.15 missing LongMemEval bound id refused BY NAME: DesignViolation: LongMemEval cohort resolution failed: 1 bound question id(s) absent from the source, e.g. ['q1']
+[PASS     ] S2.16 a manifest whose n_questions disagrees is refused: DesignViolation: resolved 1 questions against a bound cohort of 2
+
+-- S3: does the ACCEPTED configuration actually govern execution? ----------------------
+[INFO     ] S3.1 accepted seed values on disk: {('LoCoMo', 'question'): (52001107, 10000), ('LoCoMo', 'cluster'): (52001207, 10000), ('LongMemEval', 'question'): (52002107, 10000)}
+[FINDING  ] S3.2 the accepted seed VALUES are not referenced by either module: tokens found in runner+ingest source: [] -> freeze_bootstrap_seed takes the seed as a caller argument and nothing compares it to the accepted binding
+[FINDING  ] S3.3 an ARBITRARY seed is frozen and read back without complaint: freeze_bootstrap_seed accepted seed=999 for (LoCoMo, question) where the accepted value is 52001107; read_bootstrap_seed returns 999
+[PASS     ] S3.4 the frozen seed record cannot be overwritten: DesignViolation: refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\v52_audit_probe_o76e4yus\s3\see
+[PASS     ] S3.5 a record may not be reused across arms: DesignViolation: the frozen seed record is for (LoCoMo, question), not (LoCoMo, cluster); a record may not be reused across arm
+[PASS     ] S3.6 real-data mode refuses to start without a frozen record: DesignViolation: no frozen bootstrap-seed record at C:\Users\MDP\AppData\Local\Temp\v52_audit_probe_o76e4yus\s3\absent.json; N-
+[FINDING  ] S3.7 the run's replicate count is NOT checked against the frozen record: frozen record says replicates=10000, the interval was actually computed from replicates=7, and the written result carries the record's 10000. uncertainty keys=['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'note']
+[FINDING  ] S3.CRLF-a checkout bytes vs blob bytes for the accepted v2 manifest: DIFFERENT on this checkout: disk=37079B sha=8e8c017b1b6b79af..., blob=36598B sha=d5b8ed6999eea077... (core.autocrlf=true, no .gitattributes in the repository)
+[FINDING  ] S3.CRLF-b the ACCEPTED manifest as checked out on Windows is REFUSED by its own loader: load_bound_mapping(PROPOSED_mapping_longmemeval_v2_source_resolved.json) -> DesignViolation: expected-mapping manifest hash mismatch for C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef8 ... the ingestion cannot load its own accepted configuration from a default Windows clone
+[PASS     ] S3.8 GOVERNANCE(b) the ingestion REFUSES the superseded LongMemEval v1 manifest: DesignViolation: expected-mapping manifest hash mismatch for C:\Users\MDP\AppData\Local\Temp\v52_audit_probe_o76e4yus\blobs\PROPOSED_mapping_longmemeval.json
+[PASS     ] S3.9 the ingestion ACCEPTS the accepted v2 manifest: None: {'source_id': 'LongMemEval data/longmemeval_s_cleaned.json (raw file, 277383467 bytes)', 'source_sha256': 'd6f
+[PASS     ] S3.10 v1 renamed to the v2 filename is STILL refused: DesignViolation: expected-mapping manifest hash mismatch for C:\Users\MDP\AppData\Local\Temp\v52_audit_probe_o76e4yus\s3\PROPOSED_mapping
+[FINDING  ] S3.11 the RUNNER's loader would load v1 if the caller supplies v1's hash: runner.load_expected_mapping(path, expected_sha256) takes the expected hash as a caller argument; the v1 precedence is enforced only by corpus_ingest.BOUND_MANIFESTS
+[OBSERVE  ] S3.12 the manifest's declared source_sha256 is never compared to the verified source identity: verify_source_bytes uses BOUND_SOURCES; load_bound_mapping never reads mapping['source_sha256']. Both are hash-pinned so this is not exploitable, but the cross-check is absent.
+[PASS     ] S3.13 the accepted LoCoMo manifest loads (blob bytes): None: {'source_id': 'LoCoMo locomo10.json (V52 pinned corpus)', 'source_sha256': '79fa87e90f04081343b8c8debecb80a9a6
+[PASS     ] S3.13b the loaded accepted cohorts are the accepted ones: LoCoMo 1535q/10 clusters; LongMemEval 470q/1 cluster
+[PASS     ] S3.14 BOOTSTRAP_REPLICATES default: core.BOOTSTRAP_REPLICATES=10000, core.PERCENTILES=(2.5, 97.5)
+
+-- S4: the LongMemEval sentinel and the cluster-bootstrap block ------------------------
+[INFO     ] S4.1 the sentinel is one placeholder cluster over the whole cohort: expected_cluster_ids=['longmemeval_single_connected_component_inherited_task3a1'], n_questions=470
+[PASS     ] S4.2 LongMemEval x cluster is REFUSED: DesignViolation: N-3: the conversation-cluster bootstrap is REFUSED for LongMemEval. Its dependency structure is a single connected component over 
+[PASS     ] S4.3 declaring LoCoMo while handing over the LongMemEval mapping is refused: DesignViolation: the mapping manifest is for 'LongMemEval', this run is 'LoCoMo'
+[PASS     ] S4.4 the LongMemEval cluster block fires BEFORE seed/identity work: DesignViolation: N-3: the conversation-cluster bootstrap is REFUSED for LongMemEval. Its dependency structure is a single connected compo
+[PASS     ] S4.5 no seed is defined for LongMemEval x cluster in the accepted binding: accepted keys=[('LoCoMo', 'cluster'), ('LoCoMo', 'question'), ('LongMemEval', 'question')]
+[OBSERVE  ] S4.6 OBSERVATION the sentinel is a plain string to the runner: nothing in the runner or the ingestion marks the sentinel as a placeholder at runtime; its placeholder status lives only in prose and in the v2 provenance sidecar. The block on the cluster scheme is what makes that harmless.
+
+-- S5: the archive->query transform interface (N-4) ------------------------------------
+[PASS     ] S5.1 the same objects pass: None: None
+[PASS     ] S5.2 a query-estimated centering vector is caught: DesignViolation: N-4 VIOLATION: the query was not transformed by the archive-learned centering vector and D; something was esti
+[FINDING  ] S5.3 an EQUAL-VALUED but SEPARATELY COMPUTED object passes the 'bitwise' assertion: np.array_equal is value equality, not object identity: mu.copy() passes. The docstring calls this 'the IDENTICAL objects, bitwise'; it is bitwise VALUE equality.
+[OBSERVE  ] S5.4 a DIFFERENT summation order of the same mean: ACCEPTED - the two orders agreed here
+[FINDING  ] S5.5 the assertion is not wired to what apply_archive_transform actually used: apply_archive_transform records nothing; the caller passes mu_used/D_used to the assertion by hand. A caller that transformed the query with a query-derived mu and then passed the archive mu to the assertion would pass. This is a self-report check, not an enforcement.
+[OBSERVE  ] S5.6 OBSERVATION a NaN in the archive mean makes the assertion fail against itself: array_equal(NaN, NaN) is False -> DesignViolation: N-4 VIOLATION: the query was not transformed by the archive-learned centering ve
+[PASS     ] S5.7 nothing is estimated from the query anywhere in either module: fit_archive_transform takes only archive_repr; apply_archive_transform takes (X, mu, D) and estimates nothing; no other function in either module touches a query. Verified by reading both files end to end.
+
+-- S6: gates and the refusal to overwrite ----------------------------------------------
+[PASS     ] S6.1 write_results refuses to overwrite: DesignViolation: refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\v52_audit_probe_o76e4
+[PASS     ] S6.2 write_ingest_manifest refuses to overwrite: DesignViolation: refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\v52_audit_probe_o76e4
+[PASS     ] S6.3 every writer in both modules routes through core.safe_write_json: write_ingest_manifest, freeze_bootstrap_seed and write_results are the only three writers and each calls core.safe_write_json, which refuses an existing path
+[PASS     ] S6.4 running either test module opens no corpus: both preparer suites were executed under this interpreter; ALL PASS; every file they open is a fake written into a temp directory by the suite itself (verified by reading the suites)
+[PASS     ] S6.5 gate still closed at the end of all probes: False
+
+-- S7: can a sub-120-character fragment get out? ---------------------------------------
+[PASS     ] S7.1 a long string is refused WITHOUT echoing it: payload.a: a string of 400 characters may carry source content and is refused (limit 120)
+[FINDING  ] S7.2 a sub-120 fragment used as a DICT KEY is echoed verbatim in the exception: message = payload.per_cluster_archive_units.What did Melanie say about her sister's wedding in Lisbon last spring?: a string of 400 characters may carry source content and is refused (limit 120)
+[FINDING  ] S7.3 the 120-char limit is per-string, not aggregate: a dict of 200 keys x ~62 chars (~12kB of content-shaped text) passes assert_content_free unchallenged
+[FINDING  ] S7.4 ...and write_ingest_manifest WRITES them to disk: file written=True, contains the fragment=True. NOTE: summarise() itself never produces such keys - reaching this needs a caller that hand-builds the manifest.
+[FINDING  ] S7.5 RUNNER: a sub-120 fragment in the id column is echoed verbatim by validate_identifier: DesignViolation: question id at 0 has leading or trailing whitespace (" What did Melanie say about her sister's wedding in Lisbon last spring? "); it is REJECTED rather than stripped, because stripping would
+[FINDING  ] S7.6 RUNNER: a WHOLE RECORD passed as an id is dumped verbatim by _describe(), unbounded: exception contains question+answer+session text; len(msg)=482; head=question id at 0 has unsupported type dict({'question_id': 'q1', 'question': "What did Melanie say about her sister's wedding in Lisbon last spring?", 'answer': 'She said
+[FINDING  ] S7.7 RUNNER: freeze_bootstrap_seed's _describe() is unbounded too: the bootstrap seed must be an int, got dict({'question_id': 'q1', 'question': "What did Melanie say about her sister's wedding in Lisbon last spring?"
+[FINDING  ] S7.8 RUNNER: verify_source_identity echoes up to 3 unbound ids verbatim: source identity check failed: 1 question id(s) not in the bound source, e.g. ["What did Melanie say about her sister's wedding in Lisbon last spring?"]
+[FINDING  ] S7.9 RUNNER: the duplicate-id message echoes up to 5 ids verbatim: duplicate question ids in the cohort, e.g. [(1, "What did Melanie say about her sister's wedding in Lisbon last spring?")]
+[FINDING  ] S7.10 INGEST: a source-derived question_id is echoed verbatim in the duplicate error: DesignViolation: question id "What did Melanie say about her sister's wedding in Lisbon last spring?" occurs more than once in the source
+[PASS     ] S7.11 INGEST: the session/turn shape errors do NOT echo the turn body: 'haystack session 0 of a question is not a list' and 'turn 0 of session 0 is not a mapping' - both name only positions
+[PASS     ] S7.12 the happy path emits nothing: summarise() over every fake built above produced only counts, hashes and cluster identifiers; the question/turn text stays in the returned in-memory structures and never reaches summarise()
+[PASS     ] S7.13 neither module prints or logs: no print(), no logging import in membership_runner.py or corpus_ingest.py
+
+====================================================================================================
+SUMMARY: {'PASS': 44, 'OBSERVE': 10, 'FINDING': 21, 'INFO': 2}
+
+HARD FAILURES (0):
+
+FINDINGS (21):
+  - S2.6 PARTIALLY unresolvable evidence is SILENTLY TRUNCATED | question declared 2 evidence ids, 1 unresolvable; gold_rows=[0] (kept 1, dropped 1 with no error, no warning and no counter). summary questions_with_empty_gold=0 -> a partial drop is invisible in the 
+  - S2.9 _normalise_evidence CAN return free text | returned ['Melanie mentioned it at the wedding'] - the docstring says 'Never returns free text'
+  - S2.11 a LongMemEval item with no question_id | raises KeyError: 'question_id' - a raw KeyError rather than a named DesignViolation
+  - S2.12 ragged haystack arrays (ids/dates/sessions of different length) | zip() truncates silently to the shortest array: the question resolves with ZERO units and empty gold, and only the empty-gold counter records anything
+  - S3.2 the accepted seed VALUES are not referenced by either module | tokens found in runner+ingest source: [] -> freeze_bootstrap_seed takes the seed as a caller argument and nothing compares it to the accepted binding
+  - S3.3 an ARBITRARY seed is frozen and read back without complaint | freeze_bootstrap_seed accepted seed=999 for (LoCoMo, question) where the accepted value is 52001107; read_bootstrap_seed returns 999
+  - S3.7 the run's replicate count is NOT checked against the frozen record | frozen record says replicates=10000, the interval was actually computed from replicates=7, and the written result carries the record's 10000. uncertainty keys=['Delta_bar_pp', 'G_bar_pp', 'G_bar_scale
+  - S3.CRLF-a checkout bytes vs blob bytes for the accepted v2 manifest | DIFFERENT on this checkout: disk=37079B sha=8e8c017b1b6b79af..., blob=36598B sha=d5b8ed6999eea077... (core.autocrlf=true, no .gitattributes in the repository)
+  - S3.CRLF-b the ACCEPTED manifest as checked out on Windows is REFUSED by its own loader | load_bound_mapping(PROPOSED_mapping_longmemeval_v2_source_resolved.json) -> DesignViolation: expected-mapping manifest hash mismatch for C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef8 ... th
+  - S3.11 the RUNNER's loader would load v1 if the caller supplies v1's hash | runner.load_expected_mapping(path, expected_sha256) takes the expected hash as a caller argument; the v1 precedence is enforced only by corpus_ingest.BOUND_MANIFESTS
+  - S5.3 an EQUAL-VALUED but SEPARATELY COMPUTED object passes the 'bitwise' assertion | np.array_equal is value equality, not object identity: mu.copy() passes. The docstring calls this 'the IDENTICAL objects, bitwise'; it is bitwise VALUE equality.
+  - S5.5 the assertion is not wired to what apply_archive_transform actually used | apply_archive_transform records nothing; the caller passes mu_used/D_used to the assertion by hand. A caller that transformed the query with a query-derived mu and then passed the archive mu to the as
+  - S7.2 a sub-120 fragment used as a DICT KEY is echoed verbatim in the exception | message = payload.per_cluster_archive_units.What did Melanie say about her sister's wedding in Lisbon last spring?: a string of 400 characters may carry source content and is refused (limit 120)
+  - S7.3 the 120-char limit is per-string, not aggregate | a dict of 200 keys x ~62 chars (~12kB of content-shaped text) passes assert_content_free unchallenged
+  - S7.4 ...and write_ingest_manifest WRITES them to disk | file written=True, contains the fragment=True. NOTE: summarise() itself never produces such keys - reaching this needs a caller that hand-builds the manifest.
+  - S7.5 RUNNER: a sub-120 fragment in the id column is echoed verbatim by validate_identifier | DesignViolation: question id at 0 has leading or trailing whitespace (" What did Melanie say about her sister's wedding in Lisbon last spring? "); it is REJECTED rather than stripped, because strippin
+  - S7.6 RUNNER: a WHOLE RECORD passed as an id is dumped verbatim by _describe(), unbounded | exception contains question+answer+session text; len(msg)=482; head=question id at 0 has unsupported type dict({'question_id': 'q1', 'question': "What did Melanie say about her sister's wedding in Lis
+  - S7.7 RUNNER: freeze_bootstrap_seed's _describe() is unbounded too | the bootstrap seed must be an int, got dict({'question_id': 'q1', 'question': "What did Melanie say about her sister's wedding in Lisbon last spring?"
+  - S7.8 RUNNER: verify_source_identity echoes up to 3 unbound ids verbatim | source identity check failed: 1 question id(s) not in the bound source, e.g. ["What did Melanie say about her sister's wedding in Lisbon last spring?"]
+  - S7.9 RUNNER: the duplicate-id message echoes up to 5 ids verbatim | duplicate question ids in the cohort, e.g. [(1, "What did Melanie say about her sister's wedding in Lisbon last spring?")]
+  - S7.10 INGEST: a source-derived question_id is echoed verbatim in the duplicate error | DesignViolation: question id "What did Melanie say about her sister's wedding in Lisbon last spring?" occurs more than once in the source
+
+Probe temp dir (fakes only): C:\Users\MDP\AppData\Local\Temp\v52_audit_probe_o76e4yus
+Scope: reviewer-written synthetic probes. No real corpus was opened. Not a seal, not authorization.
+====================================================================================================
