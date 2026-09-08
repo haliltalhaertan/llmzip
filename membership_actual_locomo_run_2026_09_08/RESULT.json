@@ -1,0 +1,218 @@
+{
+  "benchmark": "LoCoMo",
+  "diagnostics": [
+    {
+      "archive": 0,
+      "cv_sigma_after": 3.4200606031051284e-16,
+      "cv_sigma_before": 0.4547955879223496,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 3.4200606031051284e-16
+    },
+    {
+      "archive": 1,
+      "cv_sigma_after": 3.3537189618722464e-16,
+      "cv_sigma_before": 0.438341854428897,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 3.3537189618722464e-16
+    },
+    {
+      "archive": 2,
+      "cv_sigma_after": 5.579952278851524e-16,
+      "cv_sigma_before": 0.4986106809808873,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 5.579952278851524e-16
+    },
+    {
+      "archive": 3,
+      "cv_sigma_after": 4.2834206661883053e-16,
+      "cv_sigma_before": 0.49305034567091743,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 4.2834206661883053e-16
+    },
+    {
+      "archive": 4,
+      "cv_sigma_after": 5.38439090608299e-16,
+      "cv_sigma_before": 0.5004035974473755,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 5.384390906082989e-16
+    },
+    {
+      "archive": 5,
+      "cv_sigma_after": 5.195064801072886e-16,
+      "cv_sigma_before": 0.49484069076075604,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 5.195064801072886e-16
+    },
+    {
+      "archive": 6,
+      "cv_sigma_after": 5.275993504817538e-16,
+      "cv_sigma_before": 0.5017819578167751,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 5.275993504817538e-16
+    },
+    {
+      "archive": 7,
+      "cv_sigma_after": 5.230778598187973e-16,
+      "cv_sigma_before": 0.5084442294219231,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 5.230778598187973e-16
+    },
+    {
+      "archive": 8,
+      "cv_sigma_after": 3.9772232285729824e-16,
+      "cv_sigma_before": 0.4707732713503882,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 3.9772232285729824e-16
+    },
+    {
+      "archive": 9,
+      "cv_sigma_after": 4.74963781937695e-16,
+      "cv_sigma_before": 0.4858445043585009,
+      "degenerate_coords": 0,
+      "flagged": false,
+      "sd_sigma_after": 4.74963781937695e-16
+    }
+  ],
+  "elapsed_seconds": 274.7503778000246,
+  "estimates": {
+    "Delta_bar_pp": -6.638693818954884,
+    "G_bar_pp": 8.230868478053235,
+    "G_bar_scaled_pp": 1.592174659098349,
+    "n_question_slots": 1535,
+    "per_seed_Delta_pp": [
+      -8.46674970353357,
+      -6.583953575767647,
+      -7.147977178236806,
+      -6.358111360228625,
+      -7.452692667235681,
+      -5.560075213945436,
+      -6.276504586685759,
+      -5.378894257597577,
+      -7.7279643779855585,
+      -5.434015268332187
+    ],
+    "per_seed_G_pp": [
+      8.620026953630132,
+      8.131706437646779,
+      8.298147420057747,
+      8.334342964310393,
+      7.904583527221962,
+      7.83419883733616,
+      9.099138689186693,
+      7.806650760195499,
+      8.400593911488823,
+      7.879295279458146
+    ],
+    "per_seed_G_scaled_pp": [
+      0.15327725009656398,
+      1.5477528618791316,
+      1.1501702418209412,
+      1.9762316040817676,
+      0.4518908599862806,
+      2.2741236233907243,
+      2.822634102500935,
+      2.427756502597922,
+      0.6726295335032643,
+      2.4452800111259587
+    ]
+  },
+  "n_archives": 10,
+  "n_questions": 1535,
+  "n_records": 92100,
+  "native_gate": {
+    "historical_reference": 0.23654714666441054,
+    "passed": true,
+    "per_seed_means": [
+      0.23654714666441054,
+      0.23654714666441054,
+      0.23654714666441054,
+      0.23654714666441054,
+      0.23654714666441054,
+      0.23654714666441054,
+      0.23654714666441054,
+      0.23654714666441054,
+      0.23654714666441054,
+      0.23654714666441054
+    ],
+    "tolerance": 1e-12
+  },
+  "other_benchmark_status": "LongMemEval_NOT_RUN_BY_THIS_DRIVER",
+  "status": "COMPUTED_PENDING_POSTRUN_AUDIT",
+  "uncertainty": {
+    "cluster": {
+      "Delta_bar_pp": {
+        "hi": -5.678272756056388,
+        "lo": -7.537673072441288,
+        "spans_zero": false
+      },
+      "G_bar_pp": {
+        "hi": 9.4875400756564,
+        "lo": 6.93403971850814,
+        "spans_zero": false
+      },
+      "G_bar_scaled_pp": {
+        "hi": 2.7915434113657245,
+        "lo": 0.5568980950201291,
+        "spans_zero": false
+      },
+      "cluster_sizes": {
+        "locomo_conv_0": 150,
+        "locomo_conv_1": 81,
+        "locomo_conv_2": 152,
+        "locomo_conv_3": 199,
+        "locomo_conv_4": 178,
+        "locomo_conv_5": 123,
+        "locomo_conv_6": 149,
+        "locomo_conv_7": 191,
+        "locomo_conv_8": 156,
+        "locomo_conv_9": 156
+      },
+      "limit": "built on 10 units; a resampling estimate over that few clusters has limited reliability. Its width is an outcome and is not forecast.",
+      "mean_clusters_not_drawn_per_replicate": 3.4762,
+      "n_clusters": 10,
+      "not_drawn_is_not_loss": "clusters absent from a replicate are ordinary resampling; question loss to an invalid label is impossible because labels are validated before grouping",
+      "note": "a sensitivity analysis, not a certified sampling interval. The point estimate on the fixed panel is a computed number whose sign is known; an interval spanning zero means both directions are supported under resampling and the interpretation is unresolved. It is not evidence of absence of effect and not a claim of practical equivalence.",
+      "percentiles": [
+        2.5,
+        97.5
+      ],
+      "questions_covered_at_construction": 1535,
+      "questions_lost_to_invalid_labels": 0,
+      "replicates": 10000,
+      "scheme": "conversation-cluster"
+    },
+    "question": {
+      "Delta_bar_pp": {
+        "hi": -5.703971597907745,
+        "lo": -7.595710353404019,
+        "spans_zero": false
+      },
+      "G_bar_pp": {
+        "hi": 9.243459929705793,
+        "lo": 7.2408705840914,
+        "spans_zero": false
+      },
+      "G_bar_scaled_pp": {
+        "hi": 2.2237819331554665,
+        "lo": 0.985676760716313,
+        "spans_zero": false
+      },
+      "note": "a sensitivity analysis, not a certified sampling interval. The point estimate on the fixed panel is a computed number whose sign is known; an interval spanning zero means both directions are supported under resampling and the interpretation is unresolved. It is not evidence of absence of effect and not a claim of practical equivalence.",
+      "percentiles": [
+        2.5,
+        97.5
+      ],
+      "replicates": 10000,
+      "scheme": "question-level"
+    }
+  }
+}

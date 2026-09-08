@@ -1,0 +1,115 @@
+{
+  "archive_count": 10,
+  "benchmark": "LoCoMo",
+  "bound_code_and_metadata": [
+    {
+      "bytes": 4399,
+      "commit": "5a1dc16f37353effb68a3b582ad29284d0437101",
+      "git_blob": "193e1c97da9c93a5490df707a0976d5cb0f3e418",
+      "path": "drafts/v52/membership_correction_reader_v1_2026_09_08/reader.py",
+      "sha256": "2e903af52b12e9ba03886320d4721f36b02d95b486d64def1b691c4e9ef5cb12"
+    },
+    {
+      "bytes": 3715,
+      "commit": "56e67018b61c32fd0392f0d8f4234e731faf8ce9",
+      "git_blob": "aa07db9c46be0905ba90dd9e4ddb863dab83119b",
+      "path": "drafts/v52/membership_source_contracts_v1_2026_09_08/contracts.py",
+      "sha256": "15d5f102d6207755d180ca0477d02b1e8bb41a5985fd091bded4771503e99ae4"
+    },
+    {
+      "bytes": 2046,
+      "commit": "57167bcfb6c792415a9de0457fdea9435a594522",
+      "git_blob": "8148ccf8e614811c00150f690e05c3441487efd7",
+      "path": "drafts/v52/membership_gold_exception_v1_2026_09_08/exception.py",
+      "sha256": "036611628238c9a36cde1e64359c09828ddcfd270e9d151538f994911d3e4e3f"
+    },
+    {
+      "bytes": 2118,
+      "commit": "271f63dfd4dc19c274b6d1488b68de00a86867e1",
+      "git_blob": "b171712225c524c80387bbcd6579c04c531e85b0",
+      "path": "drafts/v52/membership_source_identity_v1_2026_09_08/EXPECTED_CORRECTION_IDENTITIES.json",
+      "sha256": "0a7920efc439915249cf0039f1daa959e3883edee5448f461a63abc25d0fbea2"
+    },
+    {
+      "bytes": 59268,
+      "commit": "6911a03af68cb48a5090690b05acec59a67ce211",
+      "git_blob": "214ac064f3a0ceeb4fdfaa344f4867a1cbac442f",
+      "path": "drafts/v52/membership_runner_v1_2026_09_08/binding/PROPOSED_mapping_locomo.json",
+      "sha256": "66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671"
+    },
+    {
+      "bytes": 25033,
+      "commit": "692f599eedeb7e7a649443f24ff507e8c4d1c17d",
+      "git_blob": "6700454915176854a55b0b5cf6ffe922a22e35f2",
+      "path": "research/v52/locomo_sign_mechanism_replication.py",
+      "sha256": "a6ecee02e5d6a8735a922ec2d5f0a024b3c024e0cdf03b336e16e4357f20e74b"
+    }
+  ],
+  "corrected_cohort_questions": 155,
+  "correction_identities": [
+    {
+      "bytes": 24365,
+      "file": "errors_conv_0.json",
+      "sha256": "63c778c8432b058d791417ec37bf8ac30b0bb83b1272afacb5a162b84fe5e3c4"
+    },
+    {
+      "bytes": 7746,
+      "file": "errors_conv_1.json",
+      "sha256": "a2db16644318c3c144544f4cb373028e416bbf20c6f07f46606cf66f45de4e6c"
+    },
+    {
+      "bytes": 11824,
+      "file": "errors_conv_2.json",
+      "sha256": "93c2aa8ee7d3bfb59ae1cca283d176a794d76d3751c69264ddc1f63ceb2b4b3a"
+    },
+    {
+      "bytes": 23508,
+      "file": "errors_conv_3.json",
+      "sha256": "c1d0162e534bf68dba6aff3ca3e73ba8179cab7a400d098b8be89048c7b58585"
+    },
+    {
+      "bytes": 15447,
+      "file": "errors_conv_4.json",
+      "sha256": "42520f95b654c85b564da6cd26f40cefb981de574066f7b92bdebbc780fa1376"
+    },
+    {
+      "bytes": 9934,
+      "file": "errors_conv_5.json",
+      "sha256": "af8c675a3e216ddb94e07c417fb37c45fc46740dfa8ce586fc8c527f7a3b9ee7"
+    },
+    {
+      "bytes": 14435,
+      "file": "errors_conv_6.json",
+      "sha256": "acb6d0d02f938180b3d1a7a45f80d432ece69d13b197371cb71ddbddb83a26ea"
+    },
+    {
+      "bytes": 12048,
+      "file": "errors_conv_7.json",
+      "sha256": "bbe2268a3254dcc9d3741a84748fadf8e169d21d837810e92dc63cdf8db562cb"
+    },
+    {
+      "bytes": 15587,
+      "file": "errors_conv_8.json",
+      "sha256": "c15ace8ef1a7cbf3fe63d3b7ff9c2851885f5e00abc1c184971ebb11128aedb2"
+    },
+    {
+      "bytes": 15645,
+      "file": "errors_conv_9.json",
+      "sha256": "2c2b8791d024e11ca6015a109f160b7177379b3b42ac8c9adb990546fc89c4ff"
+    }
+  ],
+  "gold_exception": {
+    "effective_references": 6,
+    "original_declared": 7,
+    "original_unresolved": 1,
+    "policy": "USER_APPROVED_HISTORICAL_SIX_REFERENCES",
+    "question_id": "locomo_4_qa18"
+  },
+  "question_count": 1535,
+  "representation_fit": false,
+  "retrieval": false,
+  "scores": false,
+  "source_bytes": 2805274,
+  "source_path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\locomo_reproduction_tmp_20260907\\preflight_source_bytes\\locomo10.json",
+  "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4"
+}

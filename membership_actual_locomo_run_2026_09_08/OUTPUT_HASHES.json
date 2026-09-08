@@ -1,0 +1,70 @@
+{
+  "payloads": [
+    {
+      "bytes": 1229496,
+      "path": "archive_00.json",
+      "sha256": "ef0ebdc0afe7d486f9e642a1a7ac01b304cb870e73621e48d3e605794fce85eb"
+    },
+    {
+      "bytes": 662972,
+      "path": "archive_01.json",
+      "sha256": "d5a5d3e3e51fe4d363a5f503b4f65c9841bed0f6410cdf54f1514bd48dfffd30"
+    },
+    {
+      "bytes": 1246457,
+      "path": "archive_02.json",
+      "sha256": "03286d01da60d7a7252371a5c952f59da738c7223af3f17b606c1d9afb5604c6"
+    },
+    {
+      "bytes": 1638560,
+      "path": "archive_03.json",
+      "sha256": "e08d50c65d03cd81fb7f6605d5e01829fc71305748f40bad804a6c7b594f0721"
+    },
+    {
+      "bytes": 1460876,
+      "path": "archive_04.json",
+      "sha256": "8757ed6a089b5cd493da665c85fa58ddceaba52e67f25bc0854e017646ea5f15"
+    },
+    {
+      "bytes": 1007932,
+      "path": "archive_05.json",
+      "sha256": "8c1ff85773c64e0df9ee1258e3bc29e2adc270c78a86ccb1548da882033f1985"
+    },
+    {
+      "bytes": 1222567,
+      "path": "archive_06.json",
+      "sha256": "29e1187ec30ea8eaa37867ba98072e4393a0cfe6b033ae4f43d0f54bd2f2d2de"
+    },
+    {
+      "bytes": 1572496,
+      "path": "archive_07.json",
+      "sha256": "377fb10f4a1abd43d0d2d9e5c45b923ee2e76556a2aef12d675cb405a6f1880b"
+    },
+    {
+      "bytes": 1283776,
+      "path": "archive_08.json",
+      "sha256": "b6121f4c137d68d54c3eb3af94dc53cd3dbc5fcc41d8d5d680c5d2ae7ac5ac9a"
+    },
+    {
+      "bytes": 1280161,
+      "path": "archive_09.json",
+      "sha256": "1038a15a9fb9bb8e02110efb523d70dd50619198a9faaf6d4f250a15758f536f"
+    },
+    {
+      "bytes": 3953,
+      "path": "PRE_RUN_BINDING.json",
+      "sha256": "4b127543e60562b3dc30e5dcbadeba2f05def2b70d069d0cd9024f82a6e5a999"
+    },
+    {
+      "bytes": 6602,
+      "path": "RESULT.json",
+      "sha256": "d1c1853996879145151ed5f78b8ce1c0789de485a8bcf811564b18914bf35a9e"
+    },
+    {
+      "bytes": 4213,
+      "path": "SOURCE_IDENTITY.json",
+      "sha256": "4699c509a0276d9a36bfbae8b1cfbc7e95720dbdbbc9fea4fcc76ace4d4a9198"
+    }
+  ],
+  "status": "COMPUTED_PENDING_POSTRUN_AUDIT"
+}

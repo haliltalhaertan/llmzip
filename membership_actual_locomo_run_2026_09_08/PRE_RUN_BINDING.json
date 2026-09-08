@@ -1,0 +1,115 @@
+{
+  "binding": {
+    "authority": "User explicit run request; exact gold exception 57167bc; bounded independent pre-run review and head-researcher acceptance",
+    "date": "2026-09-08",
+    "payloads": [
+      {
+        "bytes": 6893,
+        "path": "data.py",
+        "sha256": "5575a0a9ab4378d798fd5a008ec7f7f13e5c825a9b5d746e04d236ad999124ea"
+      },
+      {
+        "bytes": 3584,
+        "path": "EXECUTION_SCOPE.md",
+        "sha256": "7faf29963a154dd6b960b4825d1a84d300df1513a157e2b4fd26231a50f80ef5"
+      },
+      {
+        "bytes": 1574,
+        "path": "pinned.py",
+        "sha256": "91fedcc14b07229194b33cb8eeb049da096c2870200a7463e6fd81d84f0fe75a"
+      },
+      {
+        "bytes": 8870,
+        "path": "pipeline.py",
+        "sha256": "b181c77820d028d20dcae93e16df28c052db5d66b6ae07e4301f50d0ac763db7"
+      },
+      {
+        "bytes": 2134,
+        "path": "PRE_RUN_REVIEW_ACCEPTANCE.md",
+        "sha256": "7b8a2794c8f24f3f6d22b5a1761f3433c391b3949f4b4435fb562c9ea1a78f2d"
+      },
+      {
+        "bytes": 6735,
+        "path": "run.py",
+        "sha256": "0b023b6872e8b590b0429a92e30a86d62af4e87c5ec73206ef57e61b8c1b729d"
+      },
+      {
+        "bytes": 2528,
+        "path": "test_run.py",
+        "sha256": "ae9a5ad3d4aa58648ef6fe6c90d389985df4c54fa3ea7364f1dc06929a576720"
+      },
+      {
+        "bytes": 1696,
+        "path": "evidence_regression/0_test_audit_regressions.stderr.txt",
+        "sha256": "11403e8653147df39f391b408170df382e4c55b674e7bd531ef4e1a691d02917"
+      },
+      {
+        "bytes": 0,
+        "path": "evidence_regression/0_test_audit_regressions.stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 682,
+        "path": "evidence_regression/1_test_integration.stderr.txt",
+        "sha256": "0680ef0ed3dee55cfa8ba67739e2cdfc1cc258da51d45ac81a2d5f3bc9f25d78"
+      },
+      {
+        "bytes": 0,
+        "path": "evidence_regression/1_test_integration.stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 1110,
+        "path": "evidence_regression/2_test_contracts.stderr.txt",
+        "sha256": "eee2518448addf4644931c5ca922d1cd6bd425cac4e263fb22bc2c30905a3338"
+      },
+      {
+        "bytes": 0,
+        "path": "evidence_regression/2_test_contracts.stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 0,
+        "path": "evidence_regression/3_test_membership_scaling_core.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 8525,
+        "path": "evidence_regression/3_test_membership_scaling_core.stdout.txt",
+        "sha256": "eeef0c78c64b15f85397064df71d9f31185b4251ac001a054c054c292beed817"
+      },
+      {
+        "bytes": 1901,
+        "path": "evidence_regression/REPLAY.json",
+        "sha256": "bcb54e7bbc71b83cac53ed1c445348a5f18be8fc993a914d14112cff32c267bc"
+      }
+    ],
+    "scope": "LoCoMo leg only; 1535 questions; no automatic retry; post-run audit pending",
+    "status": "APPROVED_FOR_ONE_LOCOMO_EXECUTION"
+  },
+  "environment": {
+    "PYTHONHASHSEED": "0",
+    "packages": {
+      "cloudpickle": "3.1.2",
+      "joblib": "1.6.0",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "python-dateutil": "2.9.0.post0",
+      "pytz": "2026.3.post1",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.0",
+      "six": "1.17.0",
+      "threadpoolctl": "3.6.0",
+      "tzdata": "2026.3"
+    },
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "thread_introspection_claim": false
+  },
+  "head": "1b88957af2ce604a91bf04099aafba3b42d08ab4"
+}
