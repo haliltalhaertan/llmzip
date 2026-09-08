@@ -1,0 +1,117 @@
+====================================================================================================
+DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS - runner v1. No corpus, no real data, no run authority.
+====================================================================================================
+
+-- the core this runner binds to is the audited one -------------------------------------
+ok    the imported core is the v3 module   membership_impl_v3_2026_09_07
+ok    BOUND_CORE names the closed v3 commit and its raw-blob hash   
+ok    the checked-out core matches that blob hash, OR differs only by line endings   raw-blob identity is the authority; a Windows checkout hashes dif
+
+-- 1. identifier validation: NEW-4 (missing indicators) ----------------------------------
+ok    NEW-4: the empty string is rejected as a cluster id   cluster id at 0 is a designated missing-value indicator ''; a missing id must be fixed at 
+ok    NEW-4: a whitespace-only string is rejected as a cluster id   cluster id at 0 is a designated missing-value indicator '   '; a missing id must b
+ok    NEW-4: the literal string 'nan' is rejected as a cluster id   cluster id at 0 is a designated missing-value indicator 'nan'; a missing id must b
+ok    NEW-4: 'NaN' in another case is rejected as a cluster id   cluster id at 0 is a designated missing-value indicator 'NaN'; a missing id must be f
+ok    NEW-4: the literal string 'None' is rejected as a cluster id   cluster id at 0 is a designated missing-value indicator 'None'; a missing id must
+ok    NEW-4: 'null' is rejected as a cluster id   cluster id at 0 is a designated missing-value indicator 'null'; a missing id must be fixed at the so
+ok    NEW-4: 'N/A' is rejected as a cluster id   cluster id at 0 is a designated missing-value indicator 'N/A'; a missing id must be fixed at the sou
+ok    NEW-4: a lone dash is rejected as a cluster id   cluster id at 0 is a designated missing-value indicator '-'; a missing id must be fixed at the 
+ok    NEW-4: the rejection list is declared, not implicit   10 designated tokens
+ok    a legitimate id containing a rejected token as a SUBSTRING is accepted unchanged   
+ok    a legitimate id is returned byte-identical, not normalised   
+
+-- 2. identifier validation: NEW-5 (no int()-equal merging) ------------------------------
+ok    NEW-5: a python int is rejected as an unsupported id type   cluster id at 0 has unsupported type int(1); this runner supports string identifiers
+ok    NEW-5: an np.int64 is rejected as an unsupported id type   cluster id at 0 has unsupported type int64(np.int64(1)); this runner supports string 
+ok    NEW-5: a float is rejected as an unsupported id type   cluster id at 0 has unsupported type float(1.0); this runner supports string identifiers 
+ok    NEW-5: a bool is rejected as an unsupported id type   cluster id at 0 has unsupported type bool(True); this runner supports string identifiers o
+ok    NEW-5: None is rejected as an unsupported id type   cluster id at 0 has unsupported type NoneType(None); this runner supports string identifiers
+ok    NEW-5: bytes is rejected as an unsupported id type   cluster id at 0 has unsupported type bytes(b'c1'); this runner supports string identifiers 
+ok    NEW-5: a tuple is rejected as an unsupported id type   cluster id at 0 has unsupported type tuple(('c', 1)); this runner supports string identif
+ok    NEW-5 is structurally unreachable, not merely tested: no int ever reaches build_clusters   the runner accepts string ids only, so int() keying c
+
+-- 3. identifier validation: no silent transformation ------------------------------------
+ok    a leading-space id is REJECTED, not stripped (stripping would merge it)   cluster id at 0 has leading or trailing whitespace (' conv-01'); it is
+ok    a trailing-space id is rejected the same way   cluster id at 0 has leading or trailing whitespace ('conv-01 '); it is REJECTED rather than strip
+ok    proof that stripping WOULD have merged: the two differ only by that space   
+ok    misaligned id columns are rejected   identifier columns are not aligned: 40 question ids against 39 cluster ids
+ok    an empty cohort is rejected   the cohort is empty; there is nothing to validate
+ok    duplicate question ids are rejected   duplicate question ids in the cohort, e.g. [(1, 'conv-01-q0')]
+
+-- 4. source identity: the mapping contract ----------------------------------------------
+ok    the clean synthetic cohort passes the identity contract   40 questions in 10 conversations
+ok    the contract records that a count check alone is NOT accepted   
+ok    the corrupted cohort has the SAME number of conversations as the clean one   a count check would pass here; the grouping is silently corrupted
+ok    a swapped question->conversation mapping is caught although the count is unchanged   source identity check failed: 2 question(s) mapped to the W
+ok    the relabelled cohort also has ten conversations   
+ok    a relabelled conversation is caught by SET equality, not by counting   source identity check failed: 4 question(s) mapped to the WRONG conversat
+ok    the blanked cohort STILL has ten distinct labels   'a visible 11th cluster' is not guaranteed; the grouping can break silently
+ok    a blank conversation id is caught by identifier validation, before grouping   cluster id at 8 is a designated missing-value indicator ''; a miss
+ok    a dropped question is caught   source identity check failed: 1 question id(s) missing against the bound source, e.g. ['conv-10-q3']
+ok    an unknown extra question is caught   source identity check failed: 1 question id(s) not in the bound source, e.g. ['ghost-q']
+ok    an internally inconsistent manifest is rejected   the mapping manifest declares n_questions=999 but maps 40
+
+-- 5. the mapping manifest is hash-bound -------------------------------------------------
+ok    a manifest matching its bound hash loads   
+ok    a manifest whose hash does not match the bound value is refused   expected-mapping manifest hash mismatch for C:\Users\MDP\AppData\Local\Temp\v5
+ok    a manifest with an unexpected field is refused   expected-mapping manifest schema mismatch: missing [], unexpected ['surprise']
+
+-- 6. N-2: the bootstrap seed is frozen before any result ---------------------------------
+ok    N-2: the seed record is written and marked frozen before any result   
+ok    N-2: the seed record REFUSES to be overwritten with a second seed   refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Te
+ok    N-2: a run with no frozen record is refused   no frozen bootstrap-seed record at C:\Users\MDP\AppData\Local\Temp\v52_runner_9b42kuvz\absent.json
+ok    N-2: a record may not be reused across a different scheme   the frozen seed record is for (LoCoMo, question), not (LoCoMo, cluster); a record ma
+ok    N-2: a non-integer seed is refused at freezing time   the bootstrap seed must be an int, got float(1.5)
+ok    N-2: a bool is not an integer seed   the bootstrap seed must be an int, got bool(True)
+
+-- 7. N-4: the archive-learned transform is applied to the query --------------------------
+ok    N-4: the centering vector is the ARCHIVE mean   
+ok    N-4: D is diagonal and archive-derived   
+ok    N-4: the transformed archive is centred at zero   max |mean| = 1.70e-16
+ok    N-4: the transformed QUERY is NOT centred at zero - nothing was fitted to it   max |mean| = 1.356
+ok    N-4: applying the identical objects passes the inheritance assertion   
+ok    N-4: a transform fitted to the QUERY is rejected, bitwise   N-4 VIOLATION: the query was not transformed by the archive-learned centering vector
+ok    N-4: even a 1-ULP perturbation of D is rejected (this must not use a tolerance)   N-4 VIOLATION: the query was not transformed by the archive-le
+ok    N-4: the scaling diagnostics come from the core, unmodified   
+
+-- 8. end-to-end integration on synthetic data --------------------------------------------
+ok    integration: the result carries exactly the declared schema   
+ok    integration: the estimates carry exactly the core's declared schema   
+ok    integration: the three pp quantities are present and linear   G=8.0843 G_s=4.4464 D=-3.6380
+ok    integration: the fixture's scaled gap is smaller than the unscaled one   a property of the FIXTURE, not a prediction about the experiment
+ok    integration: the frozen seed record travels into the output   
+ok    integration: the source-identity evidence travels into the output   
+ok    integration: the bound core identity travels into the output   
+ok    integration: the LoCoMo cluster bootstrap runs and reports ten conversations   
+ok    integration: cluster multiplicity is preserved in the slot denominator   3.440 per replicate
+
+-- 9. N-3: LongMemEval carries its tag and refuses a cluster bootstrap --------------------
+ok    N-3: the LongMemEval inheritance tag is emitted in the output   
+ok    N-3: the tag names the consequence, not just the fact   
+ok    N-3: LoCoMo outputs carry no LongMemEval tag   
+ok    N-3: a LongMemEval CLUSTER bootstrap is refused   N-3: the conversation-cluster bootstrap is REFUSED for LongMemEval. Its dependency structure i
+ok    a mapping manifest for the wrong benchmark is refused   the mapping manifest is for 'LongMemEval', this run is 'LoCoMo'
+
+-- 10. output protection and the real-data gate, THROUGH the integration ------------------
+ok    output: results are written to a new file   
+ok    output: a second write to the same path is REFUSED   refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\v52_runner_9
+ok    output: a result missing a declared field is not written   refusing to write a result whose schema is not the declared one
+ok    output: a result carrying an UNDECLARED field is not written   refusing to write a result whose schema is not the declared one
+ok    gate: real-data execution is OFF in the core   
+ok    gate: the runner's only corpus entry point refuses   real-data execution is OFF by default and is not authorized at this stage; no corpus may be
+ok    gate: it refuses via the CORE's authorization check, not a private flag   real-data execution is OFF by default and is not authorized at this st
+ok    gate: even with the flag flipped there is NO ingestion path behind it   no real-corpus ingestion path exists in this runner. Reading or download
+ok    gate: the flag is restored to False after that probe   
+
+-- 11. record validation still applies through the integration ----------------------------
+ok    a missing per-question record is refused at integration   record validation failed: 1 missing record(s), e.g. [('conv-10-q3', 60010, 'SCALED_B32
+ok    a duplicated record is refused at integration   record validation failed: 1 duplicate record(s), e.g. [('conv-01-q0', 60001, 'NATIVE')]
+ok    an unknown resampling scheme is refused   unknown resampling scheme 'jackknife'
+ok    an unknown benchmark is refused   unknown benchmark 'MMLU'
+
+-- 12. the audited core is untouched by this runner ---------------------------------------
+ok    the core file is byte-identical to what it was at import   
+ok    the runner adds no attribute to the core module   
+
+ALL PASS
+Scope: DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS. Not evidence of lock conformance, not a seal, and not authorization to run on real data.
