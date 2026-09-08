@@ -1,0 +1,346 @@
+====================================================================================================
+SECTION A - environment, imports, gates
+====================================================================================================
+[INFO   ] A0         interpreter / numpy
+                       | 3.13.15 AMD64)] | numpy 2.3.5 | PYTHONHASHSEED=0 OMP=1
+[PASS   ] A1         importing all three v2 modules opens no corpus-shaped file
+                       | 101 opens during import, 0 corpus-shaped: []
+[PASS   ] A2         the real-data gate is closed by default and is checked first
+                       | DesignViolation: real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, and no fitting, retrieval, ranking or bootstrap may run on real data
+[PASS   ] A3         run_on_real_corpus refuses
+                       | DesignViolation: real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, and no fitting, retrieval, ranking or bootstrap may run on real data
+[PASS   ] A4         with the gate deliberately open there is still nothing behind it
+                       | DesignViolation: no real-corpus ingestion path exists in this runner. Reading or downloading a corpus, real fitting, retrieval, ranking and any real-data bootstrap are NOT authorized at this stage.
+[PASS   ] A5         the representation stage (M-1/M-2/M-3) was NOT added to this package
+                       | tokens found: []
+
+====================================================================================================
+SECTION B - D-4  RAW BYTE DISCIPLINE
+====================================================================================================
+[PASS   ] B1.LoCoMo  the (commit 6911a03a, path) pair named in accepted_configuration resolves to the accepted blob hash for LoCoMo
+                       | 59268 bytes, sha256 66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671
+[PASS   ] B1.LongMemEval the (commit e61c414e, path) pair named in accepted_configuration resolves to the accepted blob hash for LongMemEval
+                       | 36598 bytes, sha256 d5b8ed6999eea0773fa2d7167054889d869efc283b1b7f4a475771ded9ed3714
+[PASS   ] B2         the accepted LoCoMo manifest loads from Git's ORIGINAL BYTES
+                       | n_questions=1535, clusters=10
+[PASS   ] B3         the accepted LongMemEval v2 manifest loads from Git's ORIGINAL BYTES
+                       | n_questions=470, clusters=1
+[INFO   ] B4         this checkout IS CRLF-translated (the D-4 condition is live here)
+                       | checkout 60823 B sha 4a1f7c2dbe8d915d… vs blob 59268 B sha 66379b9dcf01f954…, 1555 CRLFs, normalises to the accepted hash: True
+[PASS   ] B5         a CRLF-translated checkout of the accepted manifest is REFUSED, with the line-ending diagnosis
+                       | DesignViolation: manifest bytes for LoCoMo do not match the accepted hash: expected 66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671, got 4a1f7c2dbe8d915d63e510d96fcffe33bf782320582b2d1359772a1ea3e3c7cc — the bytes match the accepted hash after CRLF-to-LF conversion, so this is a line-ending-translated checkout (finding D-4). It is REFUSED rather than normalised: normalising here would also hide a genuine substitution.
+[PASS   ] B6         the same CRLF bytes handed in directly as `raw` are also refused (no second, softer door)
+                       | DesignViolation: manifest bytes for LoCoMo do not match the accepted hash: expected 66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671, got 4a1f7c2dbe8d915d63e510d96fcffe33bf782320582b2d1359772a1ea3e3c7cc — the bytes match the accepted hash after CRLF-to-LF conversion, so this is a line-ending-translated checkout (finding D-4). It is REFUSED rather than normalised: normalising here would also hide a genuine substitution.
+[PASS   ] B7         resolve_sources.verify_manifest_bytes itself refuses the CRLF bytes (the check is not relaxed)
+                       | SourceResolutionError: manifest bytes for LoCoMo do not match the accepted hash: expected 66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671, got 4a1f7c2dbe8d915d63e510d96fcffe33bf782320582b2d1359772a1ea3e3c7cc — the bytes match the accepted hash after CRLF-to-LF conversion, so this is a line-ending-translated checkout (finding D-4). It is REFUSED rather than normalised: normalising here would also hide a genuine substitution.
+[PASS   ] B8         a genuinely substituted manifest is refused and diagnosed as CONTENT, not as line endings
+                       | SourceResolutionError: manifest bytes for LoCoMo do not match the accepted hash: expected 66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671, got d14e0992d5c038b10d65b946e0514500263c3aaef5061e5b12177dec94a34701 — the difference is not a line-ending translation; the content itself diffe
+[PASS   ] B9         the documented byte-preserving materialisation produces a file that loads
+                       | 59268 bytes, sha 66379b9dcf01f954…, CRLFs=0, load error=none
+[INFO   ] B10        every line-ending manipulation site in the package
+                       | authoritative/resolve_sources.py:47 if _sha256(raw.replace(b"\r\n", b"\n")) == expected:
+                       | authoritative/resolve_sources.py:51 if _sha256(raw.replace(b"\n", b"\r\n")) == expected:
+[PASS   ] B11        line-ending manipulation exists ONLY inside resolve_sources._diagnose (message, never a fallback)
+                       | []
+[PASS   ] B12        no .gitattributes was added anywhere at the candidate commit
+                       | []
+[INFO   ] B13        core.autocrlf as this machine reports it (unchanged, still true)
+                       | file:C:/Program Files/Git/etc/gitconfig	true
+[PASS   ] B14        the clone's LOCAL git config sets no line-ending override
+                       | []
+
+====================================================================================================
+SECTION C - D-3  the accepted seed values must govern
+====================================================================================================
+[PASS   ] C1         seed 999 is REFUSED and nothing is written
+                       | DesignViolation: seed 999 is not the accepted seed for (LoCoMo, question); the accepted value is 52001107 (D-3)
+[PASS   ] C2         the TRANSPOSED digit 52001170 is refused
+                       | DesignViolation: seed 52001170 is not the accepted seed for (LoCoMo, question); the accepted value is 52001107 (D-3)
+[PASS   ] C3         the ACCEPTED seed 52001107 is accepted
+                       | {"bootstrap_seed": 52001107, "benchmark": "LoCoMo", "scheme": "question", "replicates": 10000, "frozen_before_any_result": true, "runner_version": "membership_runner v2 2026-09-08"}
+[PASS   ] C4         a HAND-EDITED frozen record carrying seed 999 is caught on read
+                       | DesignViolation: the frozen seed record does not match the accepted configuration for (LoCoMo, question): record has seed=999 replicates=10000, accepted is seed=52001107 replicates=10000 (D-2, D-3)
+[PASS   ] C5         a hand-edited record carrying the transposed seed is caught on read
+                       | DesignViolation: the frozen seed record does not match the accepted configuration for (LoCoMo, question): record has seed=52001170 replicates=10000, accepted is seed=52001107 replicates=10000 (D-2, D-3)
+[PASS   ] C6         a record forged by hand (never through freeze_bootstrap_seed) is refused on read
+                       | DesignViolation: the frozen seed record does not match the accepted configuration for (LoCoMo, question): record has seed=999 replicates=10000, accepted is seed=52001107 replicates=10000 (D-2, D-3)
+[PASS   ] C7         (LongMemEval, cluster) is refused - its ABSENCE from the accepted config is the authority
+                       | DesignViolation: no accepted bootstrap configuration exists for (LongMemEval, cluster); its absence from the accepted configuration is the authority for refusing it
+[PASS   ] C8         a bool seed is refused
+                       | DesignViolation: the bootstrap seed must be an int, got <bool scalar digest=3cbc87c7681f>
+[OBSERVE] C9         a numpy int64 carrying the accepted value
+                       | DesignViolation: the bootstrap seed must be an int, got <int64 scalar digest=44beaab02de4>
+[PASS   ] C10        MY OWN v1 NEGATIVE CONTROL: v1 accepts seed 999 and reads it back (old behaviour reproduced)
+                       | v1 froze and returned bootstrap_seed=999
+
+====================================================================================================
+SECTION D - D-2  the replicate count must match the frozen record
+====================================================================================================
+[PASS   ] D1         freezing a record with replicates=7 is refused
+                       | DesignViolation: replicate count 7 is not the accepted count for (LoCoMo, question); the accepted value is 10000 (D-2)
+[PASS   ] D2         a hand-edited record claiming replicates=7 is caught on read
+                       | DesignViolation: the frozen seed record does not match the accepted configuration for (LoCoMo, question): record has seed=52001107 replicates=7, accepted is seed=52001107 replicates=10000 (D-2, D-3)
+[PASS   ] D3         compute_results REFUSES a run whose replicate count contradicts the frozen record
+                       | DesignViolation: replicate count 7 contradicts the frozen seed record, which fixes 10000; the persisted result would misstate how it was computed (D-2)
+[PASS   ] D4         the honest run (10000) succeeds and the persisted record states 10000
+                       | n_questions=4 seed=52001107
+[PASS   ] D5         a bool replicate count is refused
+                       | DesignViolation: the replicate count must be an int, got <bool scalar digest=3cbc87c7681f>
+[PASS   ] D6         compute_results takes only a seed record PATH, so the record cannot be handed in pre-made
+                       | (records, question_ids, cluster_ids, mapping, seed_record_path, *, benchmark: 'str', scheme: 'str', replicates: 'int' = 10000, scaling_diagnostics: 'dict | None' = None) -> 'dict'
+[PASS   ] D7         MY OWN v1 NEGATIVE CONTROL: v1 runs 7 replicates and persists a record claiming 10000
+                       | record.replicates=10000, actually ran replicates=7
+
+====================================================================================================
+SECTION E - D-1  evidence accounting
+====================================================================================================
+[PASS   ] E1         a CLEAN source reports declared==resolved, unresolved 0
+                       | {"evidence_ids_declared": 4, "evidence_ids_resolved": 4, "evidence_ids_unresolved": 0, "questions_with_empty_gold": 0, "questions_with_partial_evidence_loss": 0}
+[PASS   ] E2         a PARTIAL evidence loss STOPS the ingestion with a NAMED violation
+                       | DesignViolation: LoCoMo cohort resolution failed: 1 question(s) have PARTIALLY unresolvable evidence - some declared evidence ids resolve and some do not, so the gold set is silently smaller than the source declares: questions=1, declared=2, unresolved=1. If this is a historically permitted state for this source, pass allow_partial_evidence=True WITH the citation that permits it; it is then recorded in the manifest rather than waived silently (D-1)
+[PASS   ] E3         a waiver WITHOUT a citation is refused
+                       | DesignViolation: allow_partial_evidence requires partial_evidence_citation: the document or committed record that permits partial evidence resolution for this source. A waiver without a citation is a silent repair under another name (D-1)
+[PASS   ] E4         an EMPTY-STRING citation is refused too
+                       | DesignViolation: allow_partial_evidence requires partial_evidence_citation: the document or committed record that permits partial evidence resolution for this source. A waiver without a citation is a silent repair under another name (D-1)
+[PASS   ] E5         with a CITED waiver the loss is published: declared/resolved/unresolved and a partial-loss count
+                       | {"evidence_ids_declared": 5, "evidence_ids_resolved": 4, "evidence_ids_unresolved": 1, "questions_with_empty_gold": 0, "questions_with_partial_evidence_loss": 1}
+[FINDING] E6         the WAIVER and its CITATION appear in the written manifest
+                       | summary keys carrying it: NONE; schema keys: NONE; in-memory only: partial_evidence_waiver={'allowed': True, 'citation': 'LOCOMO_SELECTION_RULE_NOTE_2026-09-08.md sec 3'}
+[OBSERVE] E7         the closed manifest schema forbids adding the waiver to the artefact
+                       | DesignViolation: ingest manifest schema mismatch: missing [], unexpected ['partial_evidence_waiver']
+[PASS   ] E8         SLIP-THROUGH ATTEMPT: a TOTAL evidence loss is not 'partial' - is it still visible?
+                       | {"evidence_ids_declared": 5, "evidence_ids_resolved": 3, "evidence_ids_unresolved": 2, "questions_with_empty_gold": 1, "questions_with_partial_evidence_loss": 0}
+[OBSERVE] E9         SLIP-THROUGH ATTEMPT: free-text evidence (no D<n>:<n> match)
+                       | {"evidence_ids_declared": 4, "evidence_ids_resolved": 3, "evidence_ids_unresolved": 1, "questions_with_empty_gold": 1, "questions_with_partial_evidence_loss": 0}
+[OBSERVE] E10        SLIP-THROUGH ATTEMPT: the same evidence id declared twice in a string
+                       | {"evidence_ids_declared": 5, "evidence_ids_resolved": 5, "evidence_ids_unresolved": 0, "questions_with_partial_evidence_loss": 0}
+[PASS   ] E11        GOLD ROWS and COHORT are BYTE-IDENTICAL between v1 and v2 on a clean source (nothing newly excluded, repaired or re-cohorted)
+                       | v1 gold={'locomo_0_qa0': [0], 'locomo_0_qa1': [0], 'locomo_1_qa0': [0], 'locomo_1_qa1': [0]}
+                       | v2 gold={'locomo_0_qa0': [0], 'locomo_0_qa1': [0], 'locomo_1_qa0': [0], 'locomo_1_qa1': [0]}
+                       | cohort equal=True
+[PASS   ] E12        MY OWN v1 NEGATIVE CONTROL: v1 ACCEPTS the partial loss, reports empty_gold=0 and publishes NO evidence accounting
+                       | v1 summary keys = ['benchmark', 'content_emitted', 'ingest_version', 'mapping_sha256', 'n_archive_units_total', 'n_clusters', 'n_questions', 'per_cluster_archive_units', 'per_cluster_questions', 'questions_with_empty_gold', 'source_bytes', 'source_file', 'source_sha256']
+
+====================================================================================================
+SECTION F - D-5  error and output paths  (pressed hardest)
+====================================================================================================
+[PASS   ] F1         validate_identifier: whitespace branch
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: question id at 0 has leading or trailing whitespace (<str len=45 digest=83d5185c8d48>); it is REJECTED rather than stripped, because stripping would silently merge it with its nei
+[PASS   ] F2         validate_identifier: unsupported type (a whole record dict) - v1's _describe path
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: question id at 0 has unsupported type <dict keys=3 digest=e4593f23cecf>; this runner supports string identifiers only, so that no int()-equal pair can merge (NEW-5). Render non-st
+[PASS   ] F3         freeze_bootstrap_seed: a non-int seed carrying a record dict
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: the bootstrap seed must be an int, got <dict keys=1 digest=6af9686efd90>
+[PASS   ] F4         validate_identifier_columns: duplicate ids
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: duplicate question ids in the cohort at position 1 (digest=b3ca35bc1bcd)
+[PASS   ] F5         verify_source_identity: unbound (extra) ids
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: source identity check failed: 1 question id(s) not in the accepted cohort: <str len=44 digest=b3ca35bc1bcd>
+[PASS   ] F6         verify_source_identity: missing ids
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: source identity check failed: 1 question id(s) missing against the accepted cohort: <str len=12 digest=5f48278f6648>
+[PASS   ] F7         assert_content_free: a sub-120 dict KEY beside a failing sibling
+                       | canaries in stdout/stderr/exception text: none
+                       | message: corpus_ingest_v2.ContentPolicyViolation: payload.<value 1 of key digest 4755bd1b0177>: a string of 400 characters may carry source content and is refused (structural limit 120; this limit is a blunt check, NOT a guarante
+[PASS   ] F8         ingest_locomo: a duplicate source question_id that IS a text fragment
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: a question id occurs more than once in the source, at locomo_conv_0 position 1 (id digest b3ca35bc1bcd)
+[PASS   ] F9         ingest_longmemeval: ragged haystack whose ids/content are canaries
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: the parallel haystack arrays of a LongMemEval item have different lengths (haystack_session_ids=1, haystack_dates=0, haystack_sessions=1); zipping them would silently truncate to 
+[PASS   ] F10        the HAPPY path with every canary in the source: nothing on stdout/stderr
+                       | canaries in stdout/stderr/exception text: none
+[PASS   ] F11        the WRITTEN manifest from a fully-canaried source carries no canary
+                       | 732 bytes written, canaries: none
+--- paths the preparer did not test ---
+[FINDING] F12        compute_results: mapping['benchmark'] is interpolated verbatim, BEFORE the stamp check
+                       | canaries in stdout/stderr/exception text: ['question']
+                       | message: membership_scaling_core.DesignViolation: the mapping manifest is for "What did Melanie say about her sister's wedding in Lisbon last spring?", this run is 'LoCoMo'
+[FINDING] F13        compute_results: an unknown `benchmark` argument is echoed verbatim
+                       | canaries in stdout/stderr/exception text: ['question']
+                       | message: membership_scaling_core.DesignViolation: unknown benchmark "What did Melanie say about her sister's wedding in Lisbon last spring?"
+[FINDING] F14        compute_results: an unknown `scheme` argument is echoed verbatim
+                       | canaries in stdout/stderr/exception text: ['answer']
+                       | message: membership_scaling_core.DesignViolation: unknown resampling scheme 'She said the ceremony was on a rooftop and it rained.'
+[FINDING] F15        accepted_bootstrap_for / freeze_bootstrap_seed echo an unknown benchmark verbatim
+                       | canaries in stdout/stderr/exception text: ['question']
+                       | message: membership_scaling_core.DesignViolation: unknown benchmark "What did Melanie say about her sister's wedding in Lisbon last spring?"
+[FINDING] F16        load_accepted_mapping echoes an unknown benchmark verbatim
+                       | canaries in stdout/stderr/exception text: ['question']
+                       | message: membership_scaling_core.DesignViolation: no accepted manifest for benchmark "What did Melanie say about her sister's wedding in Lisbon last spring?"
+[FINDING] F17        resolve_sources.resolve_accepted_manifest echoes an unknown benchmark verbatim
+                       | canaries in stdout/stderr/exception text: ['answer']
+                       | message: authoritative.resolve_sources.SourceResolutionError: no accepted manifest for benchmark 'She said the ceremony was on a rooftop and it rained.'
+[FINDING] F18        corpus_ingest.verify_source_bytes echoes an unknown benchmark verbatim
+                       | canaries in stdout/stderr/exception text: ['question']
+                       | message: membership_scaling_core.DesignViolation: unknown benchmark "What did Melanie say about her sister's wedding in Lisbon last spring?"
+[FINDING] F19        corpus_ingest.verify_source_bytes echoes the missing source PATH verbatim
+                       | canaries in stdout/stderr/exception text: ['id']
+                       | message: membership_scaling_core.DesignViolation: bound source not found at C:\Users\MDP\AppData\Local\Temp\probe_v2_sp9lvcwh\f19\Melanie's private note about the Lisbon trip.json
+[FINDING] F20        read_bootstrap_seed interpolates FILE-DERIVED benchmark/scheme values verbatim
+                       | canaries in stdout/stderr/exception text: ['answer', 'question']
+                       | message: membership_scaling_core.DesignViolation: the frozen seed record is for (What did Melanie say about her sister's wedding in Lisbon last spring?, She said the ceremony was on a rooftop and it rained.), not (LoCoMo, questio
+[PASS   ] F21        the D-1 partial-loss refusal on a fully-canaried source
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: LoCoMo cohort resolution failed: 1 question(s) have PARTIALLY unresolvable evidence - some declared evidence ids resolve and some do not, so the gold set is silently smaller than 
+[PASS   ] F22        the missing-cohort-id refusal on a fully-canaried source
+                       | canaries in stdout/stderr/exception text: none
+                       | message: membership_scaling_core.DesignViolation: LoCoMo cohort resolution failed: 2 accepted question id(s) absent from the source: <str len=12 digest=375895f9523e>, <str len=12 digest=582900af1e50>
+[PASS   ] F23        MY OWN v1 NEGATIVE CONTROL: v1 _describe() dumps a whole record dict
+                       | canaries in stdout/stderr/exception text: ['answer', 'question', 'session']
+                       | message: membership_scaling_core.DesignViolation: question id at 0 has unsupported type dict({'question': "What did Melanie say about her sister's wedding in Lisbon last spring?", 'answer': 'She said the ceremony was on a rooftop
+[PASS   ] F24        MY OWN v1 NEGATIVE CONTROL: v1 validate_identifier whitespace branch
+                       | canaries in stdout/stderr/exception text: ['id']
+                       | message: membership_scaling_core.DesignViolation: question id at 0 has leading or trailing whitespace (" Melanie's private note about the Lisbon trip"); it is REJECTED rather than stripped, because stripping would silently merge 
+[FINDING] F25        MY OWN v1 NEGATIVE CONTROL: v1 assert_content_free echoes a sub-120 KEY
+                       | canaries in stdout/stderr/exception text: none
+                       | message: corpus_ingest.ContentPolicyViolation: payload.x: a string of 400 characters may carry source content and is refused (limit 120)
+
+====================================================================================================
+SECTION G - D-6  the archive-learned transform must be shown to have been USED
+====================================================================================================
+[PASS   ] G0         the assertion no longer takes caller-supplied mu_used/D_used echoes
+                       | (mu_archive, D_archive, query_stamp: 'str') -> 'None'
+[PASS   ] G1         the honest path passes
+                       | ok
+[PASS   ] G2         a WRONG CENTERING (query-derived mu) is caught - the exact v1 bypass
+                       | DesignViolation: N-4 VIOLATION: the query was NOT transformed by the archive-learned centering vector and D - the stamp recorded by apply_archive_transform does not match the archive parameters, so something was estimated from the query
+[PASS   ] G3         a WRONG D, perturbed by ONE ULP, is caught
+                       | DesignViolation: N-4 VIOLATION: the query was NOT transformed by the archive-learned centering vector and D - the stamp recorded by apply_archive_transform does
+[OBSERVE] G4         copies still pass - but v2 no longer claims 'IDENTICAL objects', it claims the same BYTES
+                       | passes, as the v2 docstring now states
+[PASS   ] G5         a non-stamp argument is refused (and is not echoed)
+                       | DesignViolation: the query transform stamp must be the string returned by apply_archive_transform, got <dict keys=1 digest=28bd1b64c3ee>
+[OBSERVE] G6         RESIDUAL: transform_stamp is public, so a caller that deliberately re-derives the stamp can still report an untrue one
+                       | forged stamp accepted
+[PASS   ] G7         MY OWN v1 NEGATIVE CONTROL: v1 passes on copies AND passes when the archive mu is merely reported after a query-derived transform
+                       | both v1 calls returned without raising
+[INFO   ] G8         v1 apply_archive_transform returned no stamp
+                       | v1 (X: 'np.ndarray', mu: 'np.ndarray', D: 'np.ndarray') -> 'np.ndarray' -> array only; v2 (X: 'np.ndarray', mu: 'np.ndarray', D: 'np.ndarray') -> (array, stamp)
+
+====================================================================================================
+SECTION H - D-7  parallel-array validation before zip
+====================================================================================================
+[PASS   ] H1         a short haystack_dates is refused BEFORE zip, with the lengths
+                       | DesignViolation: the parallel haystack arrays of a LongMemEval item have different lengths (haystack_session_ids=2, haystack_dates=1, haystack_sessions=2); zipping them would silently truncate to the shortest (D-7)
+[PASS   ] H2         a short haystack_session_ids is refused
+                       | DesignViolation: the parallel haystack arrays of a LongMemEval item have different lengths (haystack_session_ids=1, haystack_dates=2, haystack_sessions=2); zipping them would silently truncate to the 
+[PASS   ] H3         a short haystack_sessions is refused
+                       | DesignViolation: the parallel haystack arrays of a LongMemEval item have different lengths (haystack_session_ids=2, haystack_dates=2, haystack_sessions=1); zipping them would silently truncate to the 
+[PASS   ] H4         an entirely EMPTY haystack (all three length 0) is refused, not accepted as zero units
+                       | DesignViolation: a LongMemEval item has no haystack sessions, so its archive is empty
+[PASS   ] H5         a well-formed LongMemEval source still ingests
+                       | 2 questions, 4 units each
+[PASS   ] H6         MY OWN v1 NEGATIVE CONTROL: v1 silently truncates the ragged haystack
+                       | v1 accepted it and produced 2 archive units (should be 4)
+[OBSERVE] H7         LongMemEval evidence_ids_declared is DEFINED as the resolved count, so unresolved is always 0
+                       | {"evidence_ids_declared": 1, "evidence_ids_resolved": 1, "evidence_ids_unresolved": 0, "questions_with_empty_gold": 0, "questions_with_partial_evidence_loss": 0}
+                       | (one turn carries has_answer=1 (int) and is silently NOT gold; gold rows=[[1]])
+
+====================================================================================================
+SECTION I - D-8  missing required fields
+====================================================================================================
+[PASS   ] I1.question_id a missing 'question_id' gives a NAMED DesignViolation, not a raw KeyError
+                       | DesignViolation: the LongMemEval item at position 0 is not a mapping with a question_id (D-8)
+[PASS   ] I2.question_id the 'question_id' refusal carries no content
+                       | canaries: none
+[PASS   ] I1.haystack_session_ids a missing 'haystack_session_ids' gives a NAMED DesignViolation, not a raw KeyError
+                       | DesignViolation: a LongMemEval item is missing the required field 'haystack_session_ids' (fields_present=4)
+[PASS   ] I2.haystack_session_ids the 'haystack_session_ids' refusal carries no content
+                       | canaries: none
+[PASS   ] I1.haystack_dates a missing 'haystack_dates' gives a NAMED DesignViolation, not a raw KeyError
+                       | DesignViolation: a LongMemEval item is missing the required field 'haystack_dates' (fields_present=4)
+[PASS   ] I2.haystack_dates the 'haystack_dates' refusal carries no content
+                       | canaries: none
+[PASS   ] I1.haystack_sessions a missing 'haystack_sessions' gives a NAMED DesignViolation, not a raw KeyError
+                       | DesignViolation: a LongMemEval item is missing the required field 'haystack_sessions' (fields_present=4)
+[PASS   ] I2.haystack_sessions the 'haystack_sessions' refusal carries no content
+                       | canaries: none
+[PASS   ] I3         a non-mapping LongMemEval item is refused by name
+                       | DesignViolation: the LongMemEval item at position 0 is not a mapping with a question_id (D-8)
+[PASS   ] I4         MY OWN v1 NEGATIVE CONTROL: v1 raises a raw KeyError
+                       | KeyError: 'question_id'
+
+====================================================================================================
+SECTION J - SOURCE TRUST and governance
+====================================================================================================
+[PASS   ] J1         the expected manifest hash is NOT a caller argument any more
+                       | v2 (benchmark: 'str', *, raw: 'bytes | None' = None, path=None) -> 'dict' | v1 (path: 'Path', expected_sha256: 'str') -> 'dict'
+[PASS   ] J2         both raw and path is refused
+                       | DesignViolation: load_accepted_mapping takes exactly one of `raw` or `path`
+[PASS   ] J3         neither raw nor path is refused
+                       | DesignViolation: load_accepted_mapping takes exactly one of `raw` or `path`
+[INFO   ] J4         superseded v1 LongMemEval manifest blob
+                       | 36589 bytes sha bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886
+[PASS   ] J5         the SUPERSEDED LongMemEval v1 manifest is refused AS SUPERSEDED, with the reason
+                       | DesignViolation: this is the SUPERSEDED LongMemEval manifest (d5b8ed69-predecessor); it is not accepted and must not be loaded. Superseded by d5b8ed6999eea0773fa2d7167054889d869efc283b1b7f4a475771ded9ed3714. Reason: its source_sha256 was the placeholder 'UNRESOLVED-see-BINDING_PROPOSAL-section-1'. v2 carries the verified raw-file identity. The 470 question ids and the sentinel cluster are IDENTICA
+[PASS   ] J6         it is refused as superseded even when offered under the OTHER benchmark
+                       | DesignViolation: this is the SUPERSEDED LongMemEval manifest (d5b8ed69-predecessor); it is not accepted and must not be loaded. Superseded by d5b8ed6999eea0773fa2d7167054889d869efc283b1b7f4a475771ded9
+[PASS   ] J7         MY OWN v1 NEGATIVE CONTROL: v1 loads the SUPERSEDED manifest happily when the caller supplies its hash
+                       | loaded, n_questions=470
+[OBSERVE] J8         RESIDUAL: the accepted-manifest 'stamp' is a plain dict key whose value is a PUBLIC constant, so a hand-built mapping can still be pushed through compute_results
+                       | hand-built mapping ACCEPTED
+[OBSERVE] J9         the same forged stamp satisfies corpus_ingest._check_accepted_mapping
+                       | accepted
+[PASS   ] J10        an UNSTAMPED mapping is refused by compute_results
+                       | DesignViolation: this mapping did not come through load_accepted_mapping; a run may only use the ACCEPTED manifest, resolved from the authoritative configuration
+[FINDING] J11        no accepted hash or seed VALUE is duplicated outside authoritative/
+                       | [('membership_runner_v2.py', '52001107')]
+[PASS   ] J12        ACCEPTANCE_RECORD names a document that really hashes to the stated value
+                       | 6539 bytes, sha c5d2e63956426f61f28b19856e1298ac964b3a8228b7acf72ae32128f79e1d83, claimed c5d2e63956426f61f28b19856e1298ac964b3a8228b7acf72ae32128f79e1d83
+[PASS   ] J13        the configuration identity document hashes to the stated value
+                       | sha 33c1dc98ae3d0ea5d7d4fdf7d91755c9a85c94eb2790754b0d750c765ca55739
+[PASS   ] J14        BOUND_CORE resolves to the closed core blob bc2282d3…
+                       | sha bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72
+[PASS   ] J15        RNG_RULE's cited seeds blob resolves to the hash it states
+                       | sha 3f01082d2659d6485a460ef9edad0ae70f653c9a25b4e27680bb8bb058da4fea
+[INFO   ] J16        the accepted seed file's own values vs. accepted_configuration.ACCEPTED_BOOTSTRAP
+                       | {"('LoCoMo', 'question')": {"seed": 52001107, "replicates": 10000}, "('LoCoMo', 'cluster')": {"seed": 52001207, "replicates": 10000}, "('LongMemEval', 'question')": {"seed": 52002107, "replicates": 10000}}
+                       | file: {"binding_status": "PROPOSED - NOT BOUND; requires Head Researcher approval before any real result exists", "why_a_file_is_not_a_preregistration": "Writing a seed to a file immediately before a run is not preregistration. These values become preregistered only when they are bound into the design/configuration identity that is accepted BEFORE any real outcome is accessible - i.e. carried in the accepted configuration document and hashed there. The runner's freeze_bootstrap_seed mechanism enforces write-once and no-reuse; it does not, and cannot, establish that the value was chosen before the re
+[PASS   ] J17        the package states, in code, how to read 'PROPOSED' in the older files
+                       | Several files under drafts/v52/membership_runner_v1_2026_09_08/binding/ still carry the string 'PROPOSED - NOT BOUND' in their own text and in their sidecars. That word records their state WHEN THEY W…
+
+====================================================================================================
+SECTION K - regressions in what the previous review PASSED
+====================================================================================================
+[PASS   ] K1         a file that is BOTH wrong-hashed and invalid JSON fails on IDENTITY, not on parsing
+                       | DesignViolation: source identity mismatch for LoCoMo: bound 79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4 / 2805274 bytes, read 8717488fb7d6a058013ea31fcbaa27a108c55e1713d927b15309eb780263c893 / 25 bytes
+[PASS   ] K2         the LongMemEval conversation-cluster bootstrap is refused by every route I could reach
+                       | [('compute_results', True), ('freeze_bootstrap_seed', True), ('accepted_bootstrap_for', True), ('read_bootstrap_seed', True)]
+[PASS   ] K3         all three writers still refuse to overwrite
+                       | [('freeze_bootstrap_seed', True), ('write_ingest_manifest', True), ('write_results', True)]
+[PASS   ] K4         fit_archive_transform sees no query; apply estimates nothing
+                       | checked by source inspection
+[PASS   ] K5         a misrouted question is still refused by name
+                       | DesignViolation: source identity check failed: 1 question(s) mapped to the WRONG conversation: <str len=12 digest=000809347e49>
+
+====================================================================================================
+TALLY: FINDING=12, INFO=7, OBSERVE=9, PASS=95
+FINDINGS:
+  E6: the WAIVER and its CITATION appear in the written manifest
+  F12: compute_results: mapping['benchmark'] is interpolated verbatim, BEFORE the stamp check
+  F13: compute_results: an unknown `benchmark` argument is echoed verbatim
+  F14: compute_results: an unknown `scheme` argument is echoed verbatim
+  F15: accepted_bootstrap_for / freeze_bootstrap_seed echo an unknown benchmark verbatim
+  F16: load_accepted_mapping echoes an unknown benchmark verbatim
+  F17: resolve_sources.resolve_accepted_manifest echoes an unknown benchmark verbatim
+  F18: corpus_ingest.verify_source_bytes echoes an unknown benchmark verbatim
+  F19: corpus_ingest.verify_source_bytes echoes the missing source PATH verbatim
+  F20: read_bootstrap_seed interpolates FILE-DERIVED benchmark/scheme values verbatim
+  F25: MY OWN v1 NEGATIVE CONTROL: v1 assert_content_free echoes a sub-120 KEY
+  J11: no accepted hash or seed VALUE is duplicated outside authoritative/
+OBSERVATIONS:
+  C9: a numpy int64 carrying the accepted value
+  E7: the closed manifest schema forbids adding the waiver to the artefact
+  E9: SLIP-THROUGH ATTEMPT: free-text evidence (no D<n>:<n> match)
+  E10: SLIP-THROUGH ATTEMPT: the same evidence id declared twice in a string
+  G4: copies still pass - but v2 no longer claims 'IDENTICAL objects', it claims the same BYTES
+  G6: RESIDUAL: transform_stamp is public, so a caller that deliberately re-derives the stamp can still report an untrue one
+  H7: LongMemEval evidence_ids_declared is DEFINED as the resolved count, so unresolved is always 0
+  J8: RESIDUAL: the accepted-manifest 'stamp' is a plain dict key whose value is a PUBLIC constant, so a hand-built mapping can still be pushed through compute_results
+  J9: the same forged stamp satisfies corpus_ingest._check_accepted_mapping
+====================================================================================================
+temp dir: C:\Users\MDP\AppData\Local\Temp\probe_v2_sp9lvcwh

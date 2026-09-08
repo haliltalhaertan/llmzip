@@ -1,0 +1,102 @@
+[PASS   ] P1       CORRECTED v1 NEGATIVE CONTROL: v1's assert_content_free echoes a sub-120 dict KEY verbatim
+                     | canaries: ['question']
+                     | corpus_ingest.ContentPolicyViolation: payload.What did Melanie say about her sister's wedding in Lisbon last spring?: a string of 400 characters may carry source content and is refused (limit 120)
+[PASS   ] P2       v2's assert_content_free reports the key by digest only
+                     | canaries: none
+                     | corpus_ingest_v2.ContentPolicyViolation: payload.<value 0 of key digest d5f10f373730>: a string of 400 characters may carry source content and is refused (structural limit 120; this limit is a blunt check, NOT a guarante
+[FINDING] P3       compute_results with a mapping that has no 'benchmark' key
+                     | KeyError: 'benchmark'
+[INFO   ] P4       every writer in the two v2 modules (all route through core.safe_write_json)
+                     | ['freeze_bootstrap_seed', 'write_ingest_manifest', 'write_results']
+[PASS   ] P5       no v2 module opens a file for writing except through the core writer
+                     | checked by source inspection
+[INFO   ] P6       the two content claims, byte-verbatim
+                     | runner_v2.py:68  On content: no value is interpolated into any message in this module. That is a property of the code
+                     | corpus_ingest_v2.py:46  * NO value is interpolated into any message raised or printed by this module. Every message is
+[INFO   ] P7       the D-1 waiver claim, byte-verbatim
+                     | # discarded every evidence id that did not resolve, and recorded only the fully-empty case.
+                     | "allow_partial_evidence=True WITH the citation that permits it; it is then recorded "
+                     | "in the manifest rather than waived silently (D-1)")
+
+[INFO   ] P8       70 raw interpolation sites survive in the two v2 modules
+                     | membership_runner_v2.py:146  {type(value).__name__}   # D-5: v1 had `_describe(value) -> f"{type(value).__name__}({value!r})"` here, with no length cap
+                     | membership_runner_v2.py:146  {value}   # D-5: v1 had `_describe(value) -> f"{type(value).__name__}({value!r})"` here, with no length cap
+                     | membership_runner_v2.py:235  {benchmark}   f"the accepted {benchmark} manifest declares benchmark {mapping['benchmark']!r}")
+                     | membership_runner_v2.py:235  {mapping['benchmark']}   f"the accepted {benchmark} manifest declares benchmark {mapping['benchmark']!r}")
+                     | membership_runner_v2.py:262  {mapping['n_questions']}   f"the mapping manifest declares n_questions={mapping['n_questions']} but maps {len(expected_map)}")
+                     | membership_runner_v2.py:309  {benchmark}   raise DesignViolation(f"unknown benchmark {benchmark!r}")
+                     | membership_runner_v2.py:311  {scheme}   raise DesignViolation(f"unknown resampling scheme {scheme!r}")
+                     | membership_runner_v2.py:316  {benchmark}   f"no accepted bootstrap configuration exists for ({benchmark}, {scheme}); its absence "
+                     | membership_runner_v2.py:316  {scheme}   f"no accepted bootstrap configuration exists for ({benchmark}, {scheme}); its absence "
+                     | membership_runner_v2.py:341  {seed}   f"seed {seed} is not the accepted seed for ({benchmark}, {scheme}); the accepted value "
+                     | membership_runner_v2.py:341  {benchmark}   f"seed {seed} is not the accepted seed for ({benchmark}, {scheme}); the accepted value "
+                     | membership_runner_v2.py:341  {scheme}   f"seed {seed} is not the accepted seed for ({benchmark}, {scheme}); the accepted value "
+                     | membership_runner_v2.py:342  {want['seed']}   f"is {want['seed']} (D-3)")
+                     | membership_runner_v2.py:345  {replicates}   f"replicate count {replicates} is not the accepted count for ({benchmark}, {scheme}); "
+                     | membership_runner_v2.py:345  {benchmark}   f"replicate count {replicates} is not the accepted count for ({benchmark}, {scheme}); "
+                     | membership_runner_v2.py:345  {scheme}   f"replicate count {replicates} is not the accepted count for ({benchmark}, {scheme}); "
+                     | membership_runner_v2.py:346  {want['replicates']}   f"the accepted value is {want['replicates']} (D-2)")
+                     | membership_runner_v2.py:359  {path}   f"no frozen bootstrap-seed record at {path}; N-2 requires the seed to be fixed and "
+                     | membership_runner_v2.py:364  {record.get('benchmark')}   f"the frozen seed record is for ({record.get('benchmark')}, {record.get('scheme')}), "
+                     | membership_runner_v2.py:364  {record.get('scheme')}   f"the frozen seed record is for ({record.get('benchmark')}, {record.get('scheme')}), "
+                     | membership_runner_v2.py:365  {benchmark}   f"not ({benchmark}, {scheme}); a record may not be reused across arms of the design")
+                     | membership_runner_v2.py:365  {scheme}   f"not ({benchmark}, {scheme}); a record may not be reused across arms of the design")
+                     | membership_runner_v2.py:371  {benchmark}   f"the frozen seed record does not match the accepted configuration for ({benchmark}, "
+                     | membership_runner_v2.py:372  {scheme}   f"{scheme}): record has seed={record['bootstrap_seed']} "
+                     | membership_runner_v2.py:372  {record['bootstrap_seed']}   f"{scheme}): record has seed={record['bootstrap_seed']} "
+                     | membership_runner_v2.py:373  {record.get('replicates')}   f"replicates={record.get('replicates')}, accepted is seed={want['seed']} "
+                     | membership_runner_v2.py:373  {want['seed']}   f"replicates={record.get('replicates')}, accepted is seed={want['seed']} "
+                     | membership_runner_v2.py:374  {want['replicates']}   f"replicates={want['replicates']} (D-2, D-3)")
+                     | membership_runner_v2.py:390  {core.DIM}   raise DesignViolation(f"archive representation must be (n, {core.DIM}), got {A.shape}")
+                     | membership_runner_v2.py:390  {A.shape}   raise DesignViolation(f"archive representation must be (n, {core.DIM}), got {A.shape}")
+                     | membership_runner_v2.py:421  {core.DIM}   raise DesignViolation(f"representation must be (n, {core.DIM}), got {X.shape}")
+                     | membership_runner_v2.py:421  {X.shape}   raise DesignViolation(f"representation must be (n, {core.DIM}), got {X.shape}")
+                     | membership_runner_v2.py:462  {benchmark}   raise DesignViolation(f"unknown benchmark {benchmark!r}")
+                     | membership_runner_v2.py:464  {scheme}   raise DesignViolation(f"unknown resampling scheme {scheme!r}")
+                     | membership_runner_v2.py:473  {mapping['benchmark']}   f"the mapping manifest is for {mapping['benchmark']!r}, this run is {benchmark!r}")
+                     | membership_runner_v2.py:473  {benchmark}   f"the mapping manifest is for {mapping['benchmark']!r}, this run is {benchmark!r}")
+                     | membership_runner_v2.py:489  {replicates}   f"replicate count {replicates} contradicts the frozen seed record, which fixes "
+                     | membership_runner_v2.py:490  {seed_record['replicates']}   f"{seed_record['replicates']}; the persisted result would misstate how it was computed (D-2)")
+                     | corpus_ingest_v2.py:124  {benchmark}   f"this mapping did not come through the accepted-resolution path for {benchmark}; only "
+                     | corpus_ingest_v2.py:136  {benchmark}   raise DesignViolation(f"unknown benchmark {benchmark!r}")
+                     | corpus_ingest_v2.py:140  {path}   raise DesignViolation(f"bound source not found at {path}")
+                     | corpus_ingest_v2.py:143  {benchmark}   f"the accepted source for {benchmark} is named {bound['filename']!r}; a differently "
+                     | corpus_ingest_v2.py:143  {bound['filename']}   f"the accepted source for {benchmark} is named {bound['filename']!r}; a differently "
+                     | corpus_ingest_v2.py:154  {benchmark}   f"source identity mismatch for {benchmark}: bound {bound['sha256']} / {bound['bytes']} "
+                     | corpus_ingest_v2.py:154  {bound['sha256']}   f"source identity mismatch for {benchmark}: bound {bound['sha256']} / {bound['bytes']} "
+                     | corpus_ingest_v2.py:154  {bound['bytes']}   f"source identity mismatch for {benchmark}: bound {bound['sha256']} / {bound['bytes']} "
+                     | corpus_ingest_v2.py:155  {digest}   f"bytes, read {digest} / {size} bytes")
+                     | corpus_ingest_v2.py:155  {size}   f"bytes, read {digest} / {size} bytes")
+                     | corpus_ingest_v2.py:198  {_MAX_STRING}   f"refused (structural limit {_MAX_STRING}; this limit is a blunt check, NOT a "
+                     | corpus_ingest_v2.py:204  {k}   # D-5: v1 built the child path as f"{_path}.{k}", which interpolated the KEY verbatim and
+                     | corpus_ingest_v2.py:215  {type(payload).__name__}   raise ContentPolicyViolation(f"{_path}: type {type(payload).__name__} is not allowed in a written manifest")
+                     | corpus_ingest_v2.py:251  {text}   text = f"{text} [IMAGE: {caption}]".strip()
+                     | corpus_ingest_v2.py:251  {caption}   text = f"{text} [IMAGE: {caption}]".strip()
+                     | corpus_ingest_v2.py:253  {speaker}   "text": f"{speaker}: {text}".strip(": ")})
+                     | corpus_ingest_v2.py:253  {text}   "text": f"{speaker}: {text}".strip(": ")})
+                     | corpus_ingest_v2.py:300  {index}   cluster_id = f"locomo_conv_{index}"
+                     | corpus_ingest_v2.py:306  {cluster_id}   f"duplicate memory unit id in {cluster_id}; the archive must be a set of units")
+                     | corpus_ingest_v2.py:311  {index}   qid = str(question.get("question_id") or f"locomo_{index}_qa{position}")
+                     | corpus_ingest_v2.py:314  {cluster_id}   f"a question id occurs more than once in the source, at {cluster_id} position "
+                     | corpus_ingest_v2.py:390  {resolved}   f"resolved {resolved} questions against a bound cohort of {len(bound)}")
+                     | corpus_ingest_v2.py:416  {field}   f"a LongMemEval item is missing the required field {field!r} "
+                     | corpus_ingest_v2.py:446  {qid}   units.append({"memory_id": f"{qid}::s{si}::{sid}::t{ti}", "session_position": si,
+                     | corpus_ingest_v2.py:446  {sid}   units.append({"memory_id": f"{qid}::s{si}::{sid}::t{ti}", "session_position": si,
+                     | corpus_ingest_v2.py:448  {date}   "text": f"[{date}] {role}: {content}"})
+                     | corpus_ingest_v2.py:448  {role}   "text": f"[{date}] {role}: {content}"})
+                     | corpus_ingest_v2.py:448  {content}   "text": f"[{date}] {role}: {content}"})
+                     | corpus_ingest_v2.py:492  {mapping['n_questions']}   f"resolved {len(questions)} questions against a bound cohort of {mapping['n_questions']}")
+                     | corpus_ingest_v2.py:515  {c: len(v["units"]) for c, v in convs.items()}   per_units = {c: len(v["units"]) for c, v in convs.items()}
+                     | corpus_ingest_v2.py:516  {c: len(v["questions"]) for c, v in convs.items()}   per_questions = {c: len(v["questions"]) for c, v in convs.items()}
+                     | corpus_ingest_v2.py:521  {mapping["expected_cluster_ids"][0]: len(qs)}   per_questions = {mapping["expected_cluster_ids"][0]: len(qs)}
+[INFO   ] P9       how the LongMemEval evidence tally is built
+                     | evidence_tally = {"declared": 0, "resolved": 0, "unresolved": 0}
+                     | "evidence_tally": dict(evidence_tally),
+                     | "evidence_tally": {"declared": sum(len(v["gold_rows"]) for v in questions.values()),
+                     | "resolved": sum(len(v["gold_rows"]) for v in questions.values()),
+                     | "unresolved": 0},
+                     | "evidence_ids_declared": ingested["evidence_tally"]["declared"],
+                     | "evidence_ids_resolved": ingested["evidence_tally"]["resolved"],
+                     | "evidence_ids_unresolved": ingested["evidence_tally"]["unresolved"],
+
+done. temp: C:\Users\MDP\AppData\Local\Temp\probe2_ex9m24gz
