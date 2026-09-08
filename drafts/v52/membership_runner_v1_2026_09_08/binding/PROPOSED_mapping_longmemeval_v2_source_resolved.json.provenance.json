@@ -1,0 +1,15 @@
+{
+  "binding_status": "PROPOSED - NOT BOUND; requires Head Researcher approval",
+  "supersedes": {
+    "file": "PROPOSED_mapping_longmemeval.json",
+    "sha256": "bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886",
+    "kept_byte_unchanged": true,
+    "reason": "its source_sha256 was the placeholder UNRESOLVED-see-BINDING_PROPOSAL-section-1"
+  },
+  "only_change": "source_id and source_sha256 resolved to the raw file identity verified in the narrow data-identity task",
+  "provenance": "COHORT INHERITED FROM PRODUCER METADATA and now CONFIRMED AGAINST THE RAW SOURCE: the 470 accepted ids are exactly the non-_abs question ids of the verified file.",
+  "raw_corpus_read": true,
+  "raw_corpus_read_scope": "identity only - question_id fields, counts and set sizes; no question, answer or session content was read out, logged or emitted",
+  "sentinel_cluster_status": "TECHNICAL PLACEHOLDER. It is not real conversation membership and not a dependency component recomputed at this stage; the conversation-cluster bootstrap stays refused.",
+  "manifest_sha256": "d5b8ed6999eea0773fa2d7167054889d869efc283b1b7f4a475771ded9ed3714"
+}

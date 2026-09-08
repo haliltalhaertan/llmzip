@@ -1,0 +1,117 @@
+{
+  "task": "narrow data-identity task A - LoCoMo",
+  "verdict": "MAPPING CONFIRMED AGAINST THE RAW SOURCE",
+  "source": {
+    "file": "locomo10.json",
+    "bytes": 2805274,
+    "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "identity": "VERIFIED"
+  },
+  "mapping_file": "PROPOSED_mapping_locomo.json",
+  "identity_rule": {
+    "form": "locomo_<c>_qa<n>",
+    "c": "0-based index in the TOP-LEVEL JSON LIST of locomo10.json, NOT the sample_id",
+    "n": "0-based index in that conversation's RAW qa list, before cohort filtering",
+    "proved_raw_not_filtered_by": "non-contiguous index sets in conversations [0, 1, 6, 9]",
+    "index_to_sample_id": {
+      "0": "conv-26",
+      "1": "conv-30",
+      "2": "conv-41",
+      "3": "conv-42",
+      "4": "conv-43",
+      "5": "conv-44",
+      "6": "conv-47",
+      "7": "conv-48",
+      "8": "conv-49",
+      "9": "conv-50"
+    }
+  },
+  "reconstructed_selection_rule": "category != 5 AND evidence non-empty",
+  "selection_rule_residual": {
+    "6": [
+      11
+    ]
+  },
+  "assignment_uniqueness": {
+    "candidates_under_range_and_category_structure": 2,
+    "candidates_under_the_selection_rule": 1,
+    "is_identity_permutation": true
+  },
+  "per_conversation_cohort_sizes": {
+    "locomo_conv_0": 150,
+    "locomo_conv_1": 81,
+    "locomo_conv_2": 152,
+    "locomo_conv_3": 199,
+    "locomo_conv_4": 178,
+    "locomo_conv_5": 123,
+    "locomo_conv_6": 149,
+    "locomo_conv_7": 191,
+    "locomo_conv_8": 156,
+    "locomo_conv_9": 156
+  },
+  "raw_qa_lengths": [
+    199,
+    105,
+    193,
+    260,
+    242,
+    158,
+    190,
+    239,
+    196,
+    204
+  ],
+  "checks": [
+    {
+      "check": "the raw source has exactly as many conversations as the mapping has clusters",
+      "pass": true,
+      "detail": "10 vs 10"
+    },
+    {
+      "check": "every conversation index in the mapping exists in the raw source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "every question index resolves to a real question of the conversation its id names",
+      "pass": true,
+      "detail": "0 out-of-range indices"
+    },
+    {
+      "check": "the index is into the RAW qa list, not a filtered one (proved, not assumed)",
+      "pass": true,
+      "detail": "conversations [0, 1, 6, 9] have non-contiguous index sets whose maximum exceeds the cohort size, which a filtered index could not produce"
+    },
+    {
+      "check": "no cohort question sits on a category-5 position",
+      "pass": true,
+      "detail": "446 category-5 questions in the source, none selected"
+    },
+    {
+      "check": "the rule 'category != 5 AND evidence non-empty' reproduces the cohort",
+      "pass": true,
+      "detail": "9 of 10 conversations reproduced exactly; 1 unexplained position(s): {6: [11]}"
+    },
+    {
+      "check": "range and category-5 structure alone already narrow the assignment",
+      "pass": true,
+      "detail": "2 candidate assignments found (search capped at 4)"
+    },
+    {
+      "check": "with the reconstructed selection rule the assignment is UNIQUELY DETERMINED",
+      "pass": true,
+      "detail": "1 perfect matching(s); it is the identity permutation"
+    }
+  ],
+  "not_performed": [
+    "representation learning",
+    "fitting",
+    "retrieval",
+    "ranking",
+    "evaluation",
+    "real-data bootstrap",
+    "pilot",
+    "producer adapter import"
+  ],
+  "content_emitted": "none - integer indices, counts and categories only"
+}
