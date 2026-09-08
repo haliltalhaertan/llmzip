@@ -1,0 +1,17 @@
+{
+  "exit_code": 0,
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3"
+  },
+  "scope": "implementation-team synthetic tests, NOT independent audit",
+  "real_data_authorized": false,
+  "sources": {
+    "pipeline.py": "db417ade3a4e2e1ceca342dbf5b4a0fde2562296b91932126ebeca01652be5ae",
+    "replay.py": "30be19caef5c2cfd642478f7e6515a8069ae42a7d70006ddcb81f9d5762162f9",
+    "test_pipeline.py": "cfd3263686de93bf87ca8b5336ac080fd7f3d759bfe1341bfd2e49e735a9bd81"
+  }
+}
