@@ -1,0 +1,33 @@
+{
+  "binding_status": "PROPOSED - NOT BOUND; requires Head Researcher approval before any real result exists",
+  "why_a_file_is_not_a_preregistration": "Writing a seed to a file immediately before a run is not preregistration. These values become preregistered only when they are bound into the design/configuration identity that is accepted BEFORE any real outcome is accessible - i.e. carried in the accepted configuration document and hashed there. The runner's freeze_bootstrap_seed mechanism enforces write-once and no-reuse; it does not, and cannot, establish that the value was chosen before the result.",
+  "how_these_values_were_chosen": "Fixed by an announced arithmetic rule, before any real result exists and with no reference to any outcome: seed = 52000000 + 1000 * benchmark_index + 100 * scheme_index + panel_tag, with benchmark_index LoCoMo=1 LongMemEval=2, scheme_index question=1 cluster=2, panel_tag=7 for the fixed ten-seed rotation panel 60001..60010. No value was tried, compared, or selected against any computed quantity. The rule is stated so a successor can see there was no search.",
+  "generator": {
+    "algorithm": "numpy.random.Generator with the PCG64 bit generator, constructed as numpy.random.default_rng(seed)",
+    "call_shape_question_scheme": "rng.integers(0, n_questions, size=n_questions), once per replicate, one index set shared by all six arms and all ten rotation seeds",
+    "call_shape_cluster_scheme": "rng.integers(0, n_clusters, size=n_clusters), once per replicate; each drawn cluster contributes ALL of its questions, multiplicity preserved, the mean divided by the total number of selected question SLOTS",
+    "authority": "acceptance record section 4 for the cluster algorithm; R1 section 6 for one index set per replicate applied to all arms and the fixed seed panel",
+    "replicates": 10000,
+    "percentiles": [2.5, 97.5],
+    "source_of_those_constants": "membership_scaling_core.BOOTSTRAP_REPLICATES and PERCENTILES in the closed v3 core"
+  },
+  "stream_stability_across_the_two_candidate_environments": {
+    "claim": "the PCG64 draws are identical under numpy 2.3.2 / Python 3.12.14 and numpy 2.3.5 / Python 3.13.15",
+    "how_it_was_checked": "not asserted from NumPy's policy - measured. The same default_rng(seed).integers(0, n, size=n) calls for seeds 424242, 515151, 606060, 717171 and n in (1535, 470, 10) were run under both interpreters and the concatenated int64 bytes hashed.",
+    "sha256_both_environments": "83c5a58a0b9d3bfe7451ed1635a2233bd56baf49e2b7c9ae27d19a0214a82ca7",
+    "consequence": "the choice of environment lock does not change the bootstrap draws for these call shapes. It says nothing about the representation pipeline, where the two stacks do differ."
+  },
+  "proposed_values": [
+    {"benchmark": "LoCoMo", "scheme": "question", "bootstrap_seed": 52001107, "replicates": 10000},
+    {"benchmark": "LoCoMo", "scheme": "cluster", "bootstrap_seed": 52001207, "replicates": 10000},
+    {"benchmark": "LongMemEval", "scheme": "question", "bootstrap_seed": 52002107, "replicates": 10000}
+  ],
+  "deliberately_absent": {
+    "LongMemEval_cluster": "no seed is proposed, because R2 line 141 defines no conversation-cluster bootstrap for LongMemEval and the runner refuses that combination. Proposing a seed for it would imply the scheme exists."
+  },
+  "not_to_be_done": [
+    "do not re-roll or compare these values against any computed result",
+    "do not add a seed for a scheme the design does not define",
+    "do not treat freeze_bootstrap_seed alone as preregistration - see the first field of this file"
+  ]
+}

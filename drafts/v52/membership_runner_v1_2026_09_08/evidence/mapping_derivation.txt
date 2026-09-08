@@ -1,0 +1,24 @@
+Reading committed blobs (no corpus is opened):
+  verified  locomo_original        b7abd942c13cf9ce…  research/v52/locomo_scale_outputs/locomo_scale_per_question.csv.gz
+  verified  locomo_reproduced      efed0c46cd0f34e4…  audit_v52_locomo_reproduction_2026_09_07/reproduced_outputs/locomo_scale_per_question.csv.gz
+  verified  locomo_source_identity ecb8384624aee0cc…  audit_v52_locomo_reproduction_2026_09_07/actual_source_identity.json
+  verified  longmemeval_scale      1db682a277b8fe7f…  research/v52/longmemeval_scale_outputs/longmemeval_scale_per_question.csv.gz
+  verified  longmemeval_t4c2       69c21b2ffaea1e92…  docs/v52/task4c2/V52_T4C2_question_level.csv
+
+LoCoMo: two independent records agree exactly — 1535 questions
+  conversations from the id scheme : 10
+  conversation files in the source : 10  (independent cross-check, agrees)
+  per-conversation counts          : {'locomo_conv_0': 150, 'locomo_conv_1': 81, 'locomo_conv_2': 152, 'locomo_conv_3': 199, 'locomo_conv_4': 178, 'locomo_conv_5': 123, 'locomo_conv_6': 149, 'locomo_conv_7': 191, 'locomo_conv_8': 156, 'locomo_conv_9': 156}
+  total                            : 1535
+
+LongMemEval: two independent records agree exactly — 470 questions
+  no conversation id is present in either record, and none is invented:
+  R2 line 141 defines NO conversation-cluster bootstrap for LongMemEval, so no
+  question -> conversation map is required. The single connected component inherited
+  from Task 3A.1 is recorded as ONE sentinel cluster, which the runner refuses to resample.
+
+wrote PROPOSED_mapping_locomo.json  sha256 66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671
+
+wrote PROPOSED_mapping_longmemeval.json  sha256 bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886
+
+Both manifests are PROPOSALS. Nothing here binds them to the experiment.

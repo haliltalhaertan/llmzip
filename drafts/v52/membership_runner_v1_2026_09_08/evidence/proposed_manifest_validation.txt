@@ -1,0 +1,28 @@
+
+=== PROPOSED_mapping_locomo.json  sha256 66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671
+ok    loads under the declared schema against its own hash   
+ok    declares 1535 questions   1535
+ok    declares 10 cluster id(s)   10
+ok    passes the identity contract (schema and internal consistency only)   
+ok    every identifier survives the NEW-4 / NEW-5 rules unmodified   
+ok    the count-preserving swap corruption is still caught on the REAL cohort   
+ok    the provenance sidecar marks it PROPOSED, not bound   
+ok    the provenance sidecar records that no raw corpus was read   
+ok    the provenance sidecar's recorded manifest hash matches the file   
+
+=== PROPOSED_mapping_longmemeval.json  sha256 bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886
+ok    loads under the declared schema against its own hash   
+ok    declares 470 questions   470
+ok    declares 1 cluster id(s)   1
+ok    passes the identity contract (schema and internal consistency only)   
+ok    every identifier survives the NEW-4 / NEW-5 rules unmodified   
+ok    the provenance sidecar marks it PROPOSED, not bound   
+ok    the provenance sidecar records that no raw corpus was read   
+ok    the provenance sidecar's recorded manifest hash matches the file   
+
+=== gate behaviour on the proposed LongMemEval manifest
+ok    a LongMemEval CLUSTER bootstrap is refused before any seed is read   
+ok    the sentinel cluster is a single, explicitly named component, not a fabricated conversation set   
+
+ALL PASS
+Scope: schema, internal consistency and gate behaviour of two PROPOSED manifests. Not a binding, not corpus verification, and not authorization to run.

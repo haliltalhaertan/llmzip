@@ -1,0 +1,34 @@
+{
+  "binding_status": "PROPOSED - NOT BOUND; requires Head Researcher approval",
+  "provenance": "COHORT INHERITED FROM PRODUCER METADATA - the 470 question ids, agreeing exactly across two committed records. NO conversation structure is claimed or invented; the single sentinel cluster records the single connected component inherited from Task 3A.1 and is never resampled.",
+  "raw_corpus_read": false,
+  "derived_by": "binding/derive_expected_mappings.py",
+  "inputs": {
+    "locomo_original": {
+      "commit": "692f599eedeb7e7a649443f24ff507e8c4d1c17d",
+      "path": "research/v52/locomo_scale_outputs/locomo_scale_per_question.csv.gz",
+      "blob_sha256": "b7abd942c13cf9ce1b1c4a13e3ff39fb26a26e8b2f2749dd92d76f0b2a474602"
+    },
+    "locomo_reproduced": {
+      "commit": "692f599eedeb7e7a649443f24ff507e8c4d1c17d",
+      "path": "audit_v52_locomo_reproduction_2026_09_07/reproduced_outputs/locomo_scale_per_question.csv.gz",
+      "blob_sha256": "efed0c46cd0f34e45daa5fcdf5d08fc51a61ffaafd6ca1d522c6c4c98fc7834f"
+    },
+    "locomo_source_identity": {
+      "commit": "692f599eedeb7e7a649443f24ff507e8c4d1c17d",
+      "path": "audit_v52_locomo_reproduction_2026_09_07/actual_source_identity.json",
+      "blob_sha256": "ecb8384624aee0cc3cc11830e547c2f8f02a7a0f43a0f2894e3d9bec0226a28f"
+    },
+    "longmemeval_scale": {
+      "commit": "692f599eedeb7e7a649443f24ff507e8c4d1c17d",
+      "path": "research/v52/longmemeval_scale_outputs/longmemeval_scale_per_question.csv.gz",
+      "blob_sha256": "1db682a277b8fe7f0b3aa7cf02831bf07f0d5c4c340796a57c93df5441df3157"
+    },
+    "longmemeval_t4c2": {
+      "commit": "origin/main",
+      "path": "docs/v52/task4c2/V52_T4C2_question_level.csv",
+      "blob_sha256": "69c21b2ffaea1e92923bf3f0e83287e12d07a5f34b4b42afde1752d6b50b3b51"
+    }
+  },
+  "manifest_sha256": "bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886"
+}
