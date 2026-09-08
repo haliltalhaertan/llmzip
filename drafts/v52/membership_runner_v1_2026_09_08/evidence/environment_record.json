@@ -1,0 +1,24 @@
+{
+  "label": "DEVELOPMENT ENVIRONMENT - NOT A BINDING LOCK FOR THIS EXPERIMENT",
+  "venv": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip\\remediation_v52_t4f0_env_2026_08_31\\Scripts\\python.exe",
+  "python": "3.12.14",
+  "numpy": "2.3.2",
+  "scipy": "1.16.1",
+  "scikit_learn": "1.7.1",
+  "psutil": "7.0.0",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "thread_and_hash_env_used": {
+    "PYTHONHASHSEED": "0",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "nearest_existing_lock": {
+    "path": "task4f1_execution_candidate_v7_2026_09_03/DEPENDENCY_LOCK.txt",
+    "note": "belongs to Task 4F1; NOT automatically applicable to this follow-up experiment",
+    "python": "3.12.13"
+  },
+  "divergence_from_that_lock": "Python 3.12.14 in this environment vs 3.12.13 in the Task 4F1 V7 lock; numpy, scipy, scikit-learn and psutil match exactly",
+  "status": "the binding environment lock for THIS experiment does not exist; see ENVIRONMENT_LOCK_PROPOSAL.md"
+}
