@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T09:03:00Z",
+  "issued_at_utc": "2026-09-08T09:44:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's disposition of the runner+ingestion review findings - gate G-2. The reviewed scope did NOT pass, so the single bounded implementation package for M-1, M-2 and M-3 is NOT reachable yet and G-3 stays not granted. Do not fix automatically, do not run a pilot, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's disposition of the D-5 residuals (NINE remaining leak paths, one FILE-DERIVED and one an ORDERING defect), the D-1 claim-accuracy defect (the waiver citation reaches no persisted artefact while the code says it does), and the NEW LongMemEval evidence-accounting defect (evidence_ids_declared is defined as the resolved count, so a partial gold loss there is invisible). Do NOT fix automatically. M-1/M-2/M-3 remain unauthorized; no pilot, no sealing, no run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-076",
+  "ledger_entry": "L-077",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1681,5 +1681,60 @@
     "governance_b_v2_precedence": "REAL ENFORCEMENT in the ingestion, not convention: BOUND_MANIFESTS pins the v2 hash, v1's path is refused, and v1 renamed to the v2 filename is STILL refused because the hash governs and not the path. Two gaps: the runner's own loader takes the expected hash as a caller argument, and binding/validate_proposed_manifests.py still loads V1 - self-hashing, so vacuously - and never mentions v2.",
     "what_is_genuinely_sound": "identity really does precede parsing; the gates are real and were measured; cohort refusals are named and correct; the cluster block held; all writers refuse to overwrite; both preparer suites reproduce ALL PASS",
     "nothing_was_fixed": "no correction applied, no candidate file touched, no pilot, no sealing, no HMAC, no real run"
+  },
+  "runner_ingest_v2_fix_package_2026_09_08": {
+    "branch": "impl/v52-runner-ingest-v2-2026-09-08",
+    "commit": "9b569687b394b0507fdeefc5abe456a9958e0788",
+    "namespace": "drafts/v52/membership_runner_ingest_v2_2026_09_08/",
+    "blob_sha256": {
+      "membership_runner_v2.py": "56be6a6b9711ecb03cd3021e86be5299dc57c01f18e964788cef678e63e89504",
+      "corpus_ingest_v2.py": "6b8d89ae822506bc937e3ccc9e3427aca9c28cbcd5c68c269049ebb077ade82d",
+      "safe_report.py": "c7f4f0a0735b8022723251af26607ea8d74654e8d692ec70145f300578bce44c",
+      "authoritative/accepted_configuration.py": "fc533825902fa9a523eab4f810ed05c78ce6ca949e83faa75bf45e7c46a432bc",
+      "authoritative/resolve_sources.py": "9dc7814aa788152783f18e7c7d9806e586feec235f312b20d00686e6cddfa6b8",
+      "test_runner_ingest_v2.py": "9100c14de534aeb4de403a3860ee580841ff896a9afa89cd2603aab091c5d123",
+      "FIX_PACKAGE_V2_2026-09-08.md": "869336ebe36d7727043c1449d5fd11cbbb51b7ff568f28d4548436a3463cfc8a"
+    },
+    "scope": "findings-limited to D-1..D-8 and the connected source-trust items; no M-1/M-2/M-3 preparation",
+    "byte_unchanged": "closed core bc2282d3, runner v1 b322f851, ingest v1 7dc084d8, both accepted manifests and the superseded v1 manifest; the commit is purely additive - 2535 insertions, 0 deletions",
+    "evidence": "82 checks ALL PASS, of which 19 are NEGATIVE CONTROLS executing the v1 modules; the three earlier suites still pass (99 core, 85 runner v1, 55 ingest v1)"
+  },
+  "runner_ingest_v2_closure_check_2026_09_08": {
+    "branch": "audit/v52-runner-ingest-v2-closure-2026-09-08",
+    "commit": "823a361d1a72735783259e5a6fa1914c25870abf",
+    "parent": "6c5e0840c262443e372f6c71cf8eea2fd47ea253",
+    "report_sha256": "43969c4e1614a98b707dbc730a31b10bf83bac19ebaf87e069c25e141371b0df",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "7 files, all under audit_v52_runner_ingest_v2_closure_2026_09_08/; zero outside",
+    "fix_branch_head_unchanged": "9b569687b394b0507fdeefc5abe456a9958e0788; no candidate file modified",
+    "verdict": "CLOSURE PASS WITH FINDINGS - scoped to D-1..D-8 and the source-trust/governance items ONLY; does not extend to the representation stage or the experiment as a whole",
+    "closed": [
+      "D-2",
+      "D-3",
+      "D-4",
+      "D-6",
+      "D-7",
+      "D-8",
+      "source trust",
+      "governance (b)",
+      "D-1 (with a claim-accuracy defect attached)"
+    ],
+    "not_closed_D5": "the seven v1 paths are shut and _describe is gone, but sub-120-character canaries still escape verbatim through NINE residual paths: compute_results x3, freeze_bootstrap_seed and accepted_bootstrap_for, load_accepted_mapping, resolve_sources.resolve_accepted_manifest, and verify_source_bytes x2",
+    "the_two_residuals_that_matter_most": {
+      "file_derived": "read_bootstrap_seed:364 interpolates record.get('benchmark') and record.get('scheme') read out of a JSON FILE ON DISK, uncapped - inherited from v1 and not touched",
+      "ordering": "compute_results:473 echoes mapping['benchmark'] verbatim BEFORE the _accepted_manifest_sha256 stamp check on line 474 - the guard fires one line too late to stop that mapping's content being printed"
+    },
+    "preparer_claims_falsified_again": "membership_runner_v2.py:68 'no value is interpolated into any message in this module' and corpus_ingest_v2.py:46 'NO value is interpolated into any message raised or printed by this module' are byte-verbatim FALSE. This is the SECOND absolute claim about message content in this lineage that an independent check has falsified.",
+    "what_could_NOT_be_extracted": "no PARSED CORPUS TEXT escaped anywhere, even driving refusals on a fully canaried source; the realistic exposure is identifiers and caller-supplied values",
+    "D1_claim_defect": "the loss IS visible and a partial resolution stops with a named violation requiring a non-empty citation, but the citation reaches NO persisted artefact - the closed manifest schema refuses it - while corpus_ingest_v2.py:382-383 tells the operator it is recorded in the manifest rather than waived silently",
+    "NEW_defect_out_of_closure_scope": "for LongMemEval, evidence_ids_declared is DEFINED as the resolved count, so a partial gold loss there (e.g. has_answer: 1 rather than True) is completely invisible. Behaviour inherited from v1, but the NEW field names now promise an accounting that does not exist for that benchmark.",
+    "optional_residuals_not_blockers": [
+      "transform_stamp is public so a determined caller can forge it",
+      "an unguarded mapping['benchmark'] raises a KeyError in the runner (D-8 class)",
+      "the accepted-manifest stamp is a public constant, so a hand-built mapping can carry it"
+    ],
+    "what_the_checker_verified_itself": "a fresh clone in its own directory; all identities from raw Git blobs with every bound artifact byte-unchanged; every commit/path/hash inside accepted_configuration.py resolving; no .gitattributes and no Git setting changed; D-4 tested against a REAL CRLF checkout, refused with the diagnosis and never normalised; 123 probes plus 9 follow-ups, with one of its own mis-built controls and one false alarm disclosed; the preparer's suite reproduced exactly; and the 19 negative controls genuinely EXECUTING the v1 modules, nine reproduced independently. No regression in what the previous review passed.",
+    "nothing_was_fixed_afterwards": "no correction applied to D-5, the D-1 claim defect, the new LongMemEval defect or the three optional residuals; the package stands as submitted"
   }
 }
