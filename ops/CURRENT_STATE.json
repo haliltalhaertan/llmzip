@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T07:45:00Z",
+  "issued_at_utc": "2026-09-08T08:02:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's decisions on the four items only they can supply: accept or reject the two PROPOSED mapping manifests; supply or decline the LongMemEval corpus source hash; approve an environment lock; and bind the three seed values into the configuration identity accepted BEFORE any outcome is accessible. Do not write a real ingestion path, do not commission the runner review, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's decision on the two remaining items before real ingestion can be prepared: formally BIND the two mapping manifests - LoCoMo 66379b9d and LongMemEval v2 d5b8ed69, both still PROPOSED - and authorize writing the real ingestion path, which is still a refusing stub. Do not commission the independent runner review, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-073",
+  "ledger_entry": "L-074",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1325,7 +1325,7 @@
       "9eb30c9 binding proposal",
       "6911a03 second-environment synthetic evidence"
     ],
-    "status": "PROPOSAL ONLY - NOTHING IS BOUND; every artifact carries binding_status PROPOSED",
+    "status": "environment lock and bootstrap seeds ACCEPTED on 2026-09-08 (see configuration_identity_2026_09_08). The two mapping manifests remain PROPOSED and NOT BOUND, though both are now verified against their raw sources - see data_identity_task_2026_09_08.",
     "method": "read-only inspection of committed records, each read as a RAW GIT BLOB and hash-checked before use; no raw corpus opened",
     "blob_sha256": {
       "BINDING_PROPOSAL_2026-09-08.md": "3f2e4bc4a592a0e24839dc60aab0c308bdfb5448944e98ec17bb16d3ececd860",
@@ -1374,13 +1374,129 @@
       "binding_status": "PROPOSED - NOT BOUND"
     },
     "still_genuinely_missing": {
-      "1_independent_locomo_derivation": "would need a narrow, SEPARATELY authorized task reading locomo10.json and the ten audit/conv_*.json and emitting ONLY question ids and their conversation - no scores, no retrieval, no representations, no outcome, and not given the arms, seeds or estimand. That authority is NOT requested; the task is named so the gap is not silently accepted.",
-      "2_longmemeval_corpus_source_hash": "the proposed manifest carries an explicit placeholder. No record inspected pins the LongMemEval dataset file the way actual_source_identity.json pins locomo10.json. V52_T4C2_POST_RUN_MANIFEST.json carries dataset_sha256 d6f21ea9 but nothing read states which file that covers, so it was NOT bound.",
-      "3_environment_lock_decision": "Head Researcher",
-      "4_seed_binding_into_the_configuration_identity": "Head Researcher",
-      "5_real_ingestion_path": "not authorized; run_on_real_corpus is still a refusing stub",
-      "6_independent_runner_review": "not commissioned; scope note written and waiting",
-      "7_rerun_under_the_approved_lock": "once one exists"
+      "1_independent_locomo_derivation": "DONE - the mapping is confirmed against locomo10.json and the assignment is uniquely determined by the corpus",
+      "2_longmemeval_corpus_source_hash": "RESOLVED - raw file bytes of longmemeval_s_cleaned.json, d6f21ea9..., verified locally",
+      "3_environment_lock_decision": "ACCEPTED 2026-09-08",
+      "4_seed_binding_into_the_configuration_identity": "ACCEPTED 2026-09-08",
+      "5_formal_binding_of_the_two_mapping_manifests": "OPEN - both still carry binding_status PROPOSED",
+      "6_real_ingestion_path": "OPEN - not authorized; run_on_real_corpus is still a refusing stub",
+      "7_independent_runner_review": "OPEN - not commissioned; scope note written and waiting",
+      "8_rerun_under_the_bound_lock": "the accepted lock now exists; a rerun under it is part of the runner review stage"
+    }
+  },
+  "configuration_identity_2026_09_08": {
+    "status": "ACCEPTED by the Head Researcher on 2026-09-08 for this follow-up study only; NOT a seal and NOT run authorization",
+    "commit": "e61c414e6bfc2dab1ad56cd93f66e1f2fddf71bf",
+    "document": "drafts/v52/membership_runner_v1_2026_09_08/CONFIGURATION_IDENTITY_2026-09-08.md",
+    "document_sha256": "33c1dc98ae3d0ea5d7d4fdf7d91755c9a85c94eb2790754b0d750c765ca55739",
+    "task4f1_lock": "UNCHANGED - task4f1_execution_candidate_v7_2026_09_03/DEPENDENCY_LOCK.txt is neither edited nor inherited",
+    "environment_lock": {
+      "python": "3.13.15",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "pandas": "2.2.3",
+      "threads": "OMP/MKL/OPENBLAS/NUMEXPR all 1",
+      "PYTHONHASHSEED": "0",
+      "decoding": "UTF-8 required",
+      "policy": "one process; one worker; no implicit BLAS parallelism"
+    },
+    "full_freeze_11_entries": [
+      "cloudpickle==3.1.2",
+      "joblib==1.6.0",
+      "numpy==2.3.5",
+      "pandas==2.2.3",
+      "python-dateutil==2.9.0.post0",
+      "pytz==2026.3.post1",
+      "scikit-learn==1.8.0",
+      "scipy==1.17.0",
+      "six==1.17.0",
+      "threadpoolctl==3.6.0",
+      "tzdata==2026.3"
+    ],
+    "platform": "Windows-10-10.0.19045-SP0, AMD64, 64-bit; CPython tags/v3.13.15:4061bc4 under MSC v.1944",
+    "blas_lapack": "scipy-openblas 0.3.30 - OpenBLAS 0.3.30 USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+    "disclosed_environment_fact": "threadpoolctl.threadpool_info() returns an EMPTY list in this venv; thread counts are pinned by the environment variables and the BLAS identity comes from NumPy's build config, not from runtime introspection. Recorded as an observation, not as a verified runtime thread state.",
+    "unlisted_dependency_policy": "never chosen silently; returns as a lock amendment for approval",
+    "bootstrap_seeds": {
+      "LoCoMo/question": 52001107,
+      "LoCoMo/cluster": 52001207,
+      "LongMemEval/question": 52002107,
+      "replicates": 10000,
+      "percentiles": [
+        2.5,
+        97.5
+      ],
+      "LongMemEval/cluster": "does not exist - R2 line 141 defines no such scheme"
+    },
+    "generator_binding": "numpy.random.Generator over PCG64 via default_rng(seed); one generator per (benchmark, scheme), seeded once and never reseeded mid-run. QUESTION scheme: one rng.integers(0, n, size=n) per replicate applied identically to all six arms and all ten rotation seeds, seed panel fixed and never resampled (R1 section 6). CLUSTER scheme, LoCoMo only: one rng.integers(0, n_clusters, size=n_clusters) per replicate, conversations with replacement, each contributing ALL its questions, multiplicity preserved, divided by TOTAL SELECTED QUESTION SLOTS (acceptance record section 4).",
+    "what_acceptance_settles": "acceptance into this configuration identity is what makes the seeds PREREGISTERED; freeze_bootstrap_seed was only ever the write-once enforcement at execution time",
+    "wording_limits_binding_on_later_reports": {
+      "rng": "identical draws across the two candidate environments show ONLY that the TESTED draws matched; NOT that the environments produce the same results or intervals in general, and nothing about the representation pipeline",
+      "locomo_cross_record": "the cross-record agreement is NOT corpus-independent verification; that was done separately in the data-identity task and the two claims must not be merged",
+      "longmemeval_sentinel": "a TECHNICAL PLACEHOLDER - not conversation membership, not a dependency component recomputed at this stage; the cluster bootstrap stays refused"
+    }
+  },
+  "data_identity_task_2026_09_08": {
+    "commit": "e61c414e6bfc2dab1ad56cd93f66e1f2fddf71bf",
+    "report": "drafts/v52/membership_runner_v1_2026_09_08/DATA_IDENTITY_REPORT_2026-09-08.md",
+    "report_sha256": "2fcf1129296c167ffa2cb9f3fe85656ba81a048b380ec511152f65ee1ca80264",
+    "blob_sha256": {
+      "CONFIGURATION_IDENTITY_2026-09-08.md": "33c1dc98ae3d0ea5d7d4fdf7d91755c9a85c94eb2790754b0d750c765ca55739",
+      "DATA_IDENTITY_REPORT_2026-09-08.md": "2fcf1129296c167ffa2cb9f3fe85656ba81a048b380ec511152f65ee1ca80264",
+      "identity/verify_locomo_mapping.py": "15e0177bdfd46a7b5045c9e16f2b9e64f91510a0cb30a2e38fbcf29375ef0747",
+      "identity/verify_longmemeval_identity.py": "fbadead7ce4526498bb934f8ec124059a0878f86d97311001292915df660b847",
+      "binding/PROPOSED_mapping_longmemeval_v2_source_resolved.json": "d5b8ed6999eea0773fa2d7167054889d869efc283b1b7f4a475771ded9ed3714",
+      "evidence/configuration_environment_record.json": "d49656685909fcc4829dd4e45d0a0c667e90f587de44c4303bafa6f4625a7902",
+      "evidence/locomo_identity_result.json": "be2273c84b05d05ae85b48f596ecf8b49c969b093060f14af006f316b8236627",
+      "evidence/longmemeval_identity_result.json": "95631e05dd8925187d9634dd0fbf2affaf9bec71e02e63c3db155f3243c613f0"
+    },
+    "scope_discipline": "identity and mapping only. No representation learning, fitting, retrieval, ranking, evaluation, real-data bootstrap, pilot or download; no producer adapter or shard imported or called. NO question, answer, dialogue or session content printed, logged, written or uploaded - only identifiers, indices, categories, counts and set sizes. Scripts are committed and replayable.",
+    "locomo": {
+      "verdict": "MAPPING CONFIRMED AGAINST THE RAW SOURCE - 8 of 8 checks pass",
+      "source_verified_first": "locomo10.json, 2,805,274 bytes, sha256 79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4; the script aborts before reading if it mismatches",
+      "identity_rule_is_positional": "in locomo_<c>_qa<n>, c is the 0-based index in the TOP-LEVEL JSON LIST and NOT the sample_id - index 0 is 'conv-26', index 9 is 'conv-50' - and n is the 0-based index in that conversation's RAW qa list, before cohort filtering",
+      "raw_not_filtered_PROVED": "conversations 0, 1, 6 and 9 have non-contiguous index sets whose maximum exceeds the cohort size, which a filtered index cannot produce",
+      "independence": "as a permutation problem the raw file's own structure leaves EXACTLY ONE consistent assignment of the ten cohort index sets to the ten raw conversations out of 3,628,800, and it is the identity. Range and category-5 structure alone narrow it to two; the selection rule closes it to one. The producer's labelling is confirmed BY the corpus rather than trusted.",
+      "counts": {
+        "raw_qa_lengths": [
+          199,
+          105,
+          193,
+          260,
+          242,
+          158,
+          190,
+          239,
+          196,
+          204
+        ],
+        "raw_total": 1986,
+        "cohort": [
+          150,
+          81,
+          152,
+          199,
+          178,
+          123,
+          149,
+          191,
+          156,
+          156
+        ],
+        "cohort_total": 1535,
+        "category_5_in_source": 446,
+        "category_5_selected": 0
+      },
+      "residual_disclosed": "the reconstructed selection rule 'category != 5 AND evidence non-empty' reproduces 9 of 10 conversations EXACTLY and leaves ONE unexplained position - conversation 6, raw index 11, a category-2 question with one resolvable evidence id. One of 1986. No rule was guessed to cover it, and a narrower hypothesis tested (evidence pointing only at image turns) was WRONG and is not reported as a finding. It does NOT touch the mapping - all 1535 accepted questions sit in the conversation their id names - only the reconstruction of WHY those 1535 were chosen, which was not the authorized question."
+    },
+    "longmemeval": {
+      "verdict": "SOURCE IDENTITY RESOLVED AND VERIFIED - 7 of 7 cohort checks pass",
+      "what_the_hash_covers": "the RAW FILE BYTES, not transformed data: v52_t4c2_centering_geometry.py:127 computes it as sha256_file(args.dataset) and sha256_file at line 57 streams the file in 8 MiB blocks. Lines 23-24 pin the hash and 277,383,467 bytes; tools/verify_frozen_artifacts.py binds it under DATASET_EXTERNAL to data/longmemeval_s_cleaned.json; README.md and the dataset manifests corroborate; the adapter records the HuggingFace acquisition URL.",
+      "file_present_and_verified": "longmemeval_s_cleaned.json, 277,383,467 bytes, raw-byte sha256 d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442; size, hash and basename all match. NO download was performed - the file was already on this machine.",
+      "cohort": "500 items, all ids unique, 470 non-_abs, and that set is EXACTLY the accepted 470-question cohort",
+      "no_grouping_supplied": "the file supplies NO conversation grouping and none was inferred; the sentinel cluster stays a technical placeholder and the cluster bootstrap stays refused",
+      "placeholder_resolved_additively": "PROPOSED_mapping_longmemeval.json is left BYTE-UNCHANGED at bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886; the v2 manifest at d5b8ed6999eea0773fa2d7167054889d869efc283b1b7f4a475771ded9ed3714 supersedes it changing ONLY source_id and source_sha256, and passes the runner's contract. Both remain PROPOSED; neither is bound."
     }
   }
 }
