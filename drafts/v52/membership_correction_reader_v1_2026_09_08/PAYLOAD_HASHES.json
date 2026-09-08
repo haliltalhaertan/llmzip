@@ -1,0 +1,30 @@
+{
+  "status": "SYNTHETIC_READER_NOT_EXECUTION_READY",
+  "payloads": [
+    {
+      "path": "reader.py",
+      "bytes": 4399,
+      "sha256": "2e903af52b12e9ba03886320d4721f36b02d95b486d64def1b691c4e9ef5cb12"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4781,
+      "sha256": "8f7598a7715f3c4e3ecf56f81506fc1de491934255ee7c2934c425949b07831c"
+    },
+    {
+      "path": "test_contract_bridge.py",
+      "bytes": 3220,
+      "sha256": "b9f8d3d0ee139e6a6f42293f86ad70e69fa25e9bcd48ab6b6f428e185575bbb4"
+    },
+    {
+      "path": "test_reader.py",
+      "bytes": 5476,
+      "sha256": "45ada5c8846f891bc0b7ccb939c28bda77f70fcf8bab4864d3cd362952ba4fd0"
+    },
+    {
+      "path": "TEST_REPLAY.txt",
+      "bytes": 2396,
+      "sha256": "d962ddd5b8eb306058923bb4b189527d1a30b6dae3274ecdc29d881b9fed2a0f"
+    }
+  ]
+}

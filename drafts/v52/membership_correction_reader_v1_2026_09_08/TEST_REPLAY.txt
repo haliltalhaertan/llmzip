@@ -1,0 +1,28 @@
+test_dictionary_labels_are_literal (test_contract_bridge.BridgeTests.test_dictionary_labels_are_literal) ... ok
+test_empty_never_falls_back (test_contract_bridge.BridgeTests.test_empty_never_falls_back) ... ok
+test_float_overflow_in_ignored_metadata_rejected (test_contract_bridge.BridgeTests.test_float_overflow_in_ignored_metadata_rejected) ... ok
+test_partial_never_drops_reference (test_contract_bridge.BridgeTests.test_partial_never_drops_reference) ... ok
+test_real_entry_stays_disabled (test_contract_bridge.BridgeTests.test_real_entry_stays_disabled) ... ok
+test_replacement_and_absence (test_contract_bridge.BridgeTests.test_replacement_and_absence) ... ok
+test_absent_evidence_and_metadata (test_reader.ReaderTests.test_absent_evidence_and_metadata) ... ok
+test_all_identities_before_any_parse (test_reader.ReaderTests.test_all_identities_before_any_parse) ... ok
+test_distinct_questions_across_files (test_reader.ReaderTests.test_distinct_questions_across_files) ... ok
+test_duplicate_expected_names (test_reader.ReaderTests.test_duplicate_expected_names) ... ok
+test_duplicate_json_keys (test_reader.ReaderTests.test_duplicate_json_keys) ... ok
+test_duplicate_question_across_files (test_reader.ReaderTests.test_duplicate_question_across_files) ... ok
+test_duplicate_question_within_file (test_reader.ReaderTests.test_duplicate_question_within_file) ... ok
+test_invalid_evidence_dict_entries (test_reader.ReaderTests.test_invalid_evidence_dict_entries) ... ok
+test_invalid_json_utf8_and_nonfinite (test_reader.ReaderTests.test_invalid_json_utf8_and_nonfinite) ... ok
+test_missing_and_extra_files (test_reader.ReaderTests.test_missing_and_extra_files) ... ok
+test_mixed_list_and_dedup (test_reader.ReaderTests.test_mixed_list_and_dedup) ... ok
+test_present_empty_and_null_preserved (test_reader.ReaderTests.test_present_empty_and_null_preserved) ... ok
+test_question_id_required_strict (test_reader.ReaderTests.test_question_id_required_strict) ... ok
+test_regex_and_literal (test_reader.ReaderTests.test_regex_and_literal) ... ok
+test_size_and_hash_mismatch (test_reader.ReaderTests.test_size_and_hash_mismatch) ... ok
+test_top_level_and_rows (test_reader.ReaderTests.test_top_level_and_rows) ... ok
+test_unsupported_evidence (test_reader.ReaderTests.test_unsupported_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.101s
+
+OK
