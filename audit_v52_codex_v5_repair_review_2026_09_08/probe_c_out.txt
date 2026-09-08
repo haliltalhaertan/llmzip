@@ -1,0 +1,167 @@
+====================================================================================================
+C1  seed / replicate paths (accepted schemes are ('question', 'cluster'))
+====================================================================================================
+PASS C1.1 seed of the wrong TYPE refuses by code
+      exc=DesignViolation | E-CFG-007: the frozen seed record is malformed [seed_is_int=False]
+PASS C1.2 transposed seed 52001207->52001702 refused
+      exc=DesignViolation | E-CFG-004: the seed is not the accepted seed for this benchmark and scheme [accepted_seed=52001207]
+PASS C1.3 seed 999 refused
+      exc=DesignViolation | E-CFG-004: the seed is not the accepted seed for this benchmark and scheme [accepted_seed=52001207]
+PASS C1.4 wrong replicate count refused
+      exc=DesignViolation | E-CFG-005: the replicate count is not the accepted count for this benchmark and scheme [accepted_replicates=10000]
+PASS C1.5 (LME, cluster) has no accepted bootstrap
+      exc=DesignViolation | E-CFG-003: no accepted bootstrap configuration exists for this benchmark and scheme; its absence from the accepted configuration is the authority for refusing it [accepted_combinations=3]
+PASS C1.6 absent seed record refused
+      exc=DesignViolation | E-CFG-009: no frozen bootstrap-seed record exists; the seed must be fixed before any result
+PASS C1.7 the ACCEPTED seed freezes and writes exactly one file   {'bootstrap_seed': 52001207, 'benchmark': 'LoCoMo', 'scheme': 'cluster', 'replicates': 10000, 'frozen_before_any_result': True, 'runner_version': 'membership_runner Codex v5 2026-09-08'}
+PASS C1.8 freeze refuses to OVERWRITE an existing record
+      exc=DesignViolation | refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\probe_c_oo0cdpsz\seed_ok.json
+PASS C1.9 the frozen record reads back
+PASS C1.10 FILE-supplied canaries in the seed record never reach a message
+      exc=DesignViolation | E-CFG-006: the frozen seed record was written for a different benchmark or scheme [benchmark_matches=False, scheme_matches=False]
+PASS C1.11 drifted+canaried record refuses content-free
+      exc=DesignViolation | E-CFG-008: the frozen seed record does not match the accepted configuration [accepted_replicates=10000, accepted_seed=52001207, replicates_matches=False, seed_matches=False]
+
+====================================================================================================
+C2  the real-data gate, identity-before-parse, the cluster block, writers
+====================================================================================================
+PASS C2.1 gate closed by default and refuses first   real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, and no fitting, retrie
+PASS C2.2 identity is checked BEFORE any field is parsed   [('get', '_accepted_manifest_sha256')]
+INFO C2.3 LongMemEval cluster-block text present in module: True
+PASS C2.4 core writer refuses to overwrite   refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\probe_c_oo0cdpsz\written.json
+
+====================================================================================================
+C3  manifest resolution: CRLF refusal, superseded, truncation, no override
+====================================================================================================
+INFO C3.0 accepted LoCoMo manifest bytes (from git blob): 59268 bytes sha=66379b9dcf01f954
+PASS C3.1 accepted manifest loads through the accepted path
+PASS C3.2 a CRLF copy is REFUSED and diagnosed without normalising   E-SRC-001: these manifest bytes are not the accepted manifest [crlf_to_lf_would_match=True, got_bytes=60823, lf_to_crlf_would_match=False]
+PASS C3.3 a one-byte truncation is refused   E-SRC-001: these manifest bytes are not the accepted manifest [crlf_to_lf_would_match=False, got_bytes=59267, lf_to_crlf_would_match=False]
+PASS C3.4a the superseded blob resolves to its recorded hash   bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886
+PASS C3.4 a SUPERSEDED manifest is refused AS SUPERSEDED   E-SRC-002: these manifest bytes are a SUPERSEDED manifest and must not be loaded [superseded_manifests_known=1]
+PASS C3.5 raw and path are mutually exclusive; no third override   E-SRC-003: exactly one of raw bytes or a path must be given
+PASS C3.6 no caller-supplied expected-hash argument exists   (benchmark: 'str', *, raw: 'bytes | None' = None, path=None) -> 'dict'
+INFO C3.7 accepted cohort shapes (manifest metadata only, no corpus): LoCoMo n_questions=1535 clusters=10 | LME n_questions=470 clusters=1
+PASS C3.8 cohort semantics unchanged: 1535 questions / 10 clusters and 470 questions
+
+====================================================================================================
+C4  evidence normalisation -- valid empty / malformed item / unsupported structure
+====================================================================================================
+PASS C4 accepted shape None -> ([], 0)   ([], 0)
+PASS C4 accepted shape [] -> ([], 0)   ([], 0)
+PASS C4 accepted shape () -> ([], 0)   ([], 0)
+PASS C4 accepted shape 'D1:0' -> (['D1:0'], 1)   (['D1:0'], 1)
+PASS C4 accepted shape 'see D1:0 and also D2:3' -> (['D1:0', 'D2:3'], 1)   (['D1:0', 'D2:3'], 1)
+PASS C4 accepted shape 'not-an-id-shape' -> (['not-an-id-shape'], 1)   (['not-an-id-shape'], 1)
+PASS C4 accepted shape ['D1:0', 'D1:0'] -> (['D1:0'], 2)   (['D1:0'], 2)
+PASS C4 accepted shape ('D1:0', 'D2:1') -> (['D1:0', 'D2:1'], 2)   (['D1:0', 'D2:1'], 2)
+PASS C4 accepted shape [{'dia_id': 'D1:0'}] -> (['D1:0'], 1)   (['D1:0'], 1)
+PASS C4 accepted shape [{'id': 'D1:0'}] -> (['D1:0'], 1)   (['D1:0'], 1)
+PASS C4 accepted shape [{'dia_id': 'D1:0', 'id': 'D9:9'}] -> (['D1:0'], 1)   (['D1:0'], 1)
+PASS C4 accepted shape [{'dia_id': 12345}] -> (['12345'], 1)   (['12345'], 1)
+PASS C4 accepted shape [{'dia_id': 1.5}] -> (['1.5'], 1)   (['1.5'], 1)
+PASS C4 accepted shape [{'dia_id': ['D1:0']}] -> (["['D1:0']"], 1)   (["['D1:0']"], 1)
+PASS C4.M first -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=0, items=2]
+PASS C4.M middle -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=3]
+PASS C4.M last -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M nested list -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M nested tuple -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M int item -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M bool item -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M None item -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M bytes item -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M nan item -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M set item -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M object item -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_str=False, item_position=1, items=2]
+PASS C4.M dict no ids -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [has_dia_id_key=False, has_id_key=False, id_is_empty=True, item_position
+PASS C4.M dia_id empty -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [has_dia_id_key=True, has_id_key=False, id_is_empty=True, item_position=
+PASS C4.M dia_id None -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [has_dia_id_key=True, has_id_key=False, id_is_empty=True, item_position=
+PASS C4.M dia_id 0 -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [has_dia_id_key=True, has_id_key=False, id_is_empty=True, item_position=
+PASS C4.M dia_id False -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [has_dia_id_key=True, has_id_key=False, id_is_empty=True, item_position=
+PASS C4.M dia_id [] -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [has_dia_id_key=True, has_id_key=False, id_is_empty=True, item_position=
+PASS C4.M id empty -> named refusal, no coercion
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [has_dia_id_key=False, has_id_key=True, id_is_empty=True, item_position=
+PASS C4.M0 no __str__/__repr__ hook was called on a malformed item
+PASS C4.S int -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S float -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S bool -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S bytes -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S set -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S object -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S dict -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S DictTrap -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S generator -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS C4.S float -> unsupported STRUCTURE
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+
+====================================================================================================
+C5  end-to-end LoCoMo ingest on a fully canaried SYNTHETIC source
+====================================================================================================
+PASS C5.1 happy path ingests with no leak on stdout/stderr
+PASS C5.2 four counts published: raw=2 declared=1 resolved=1 unresolved=0   {'model': 'declared_reference_ids', 'raw_evidence_items': 2, 'declared_reference_ids': 1, 'resolved_reference_ids': 1, 'unresolved_reference_ids': 0}
+C5.E one valid + one malformed                     exc=DesignViolation code=E-COH-011: an item inside an otherwise valid evidence list c leak=False files_written=0
+PASS C5.E one valid + one malformed content-free
+C5.E unsupported structure                         exc=DesignViolation code=E-COH-012: the evidence field is not one of the shapes the b leak=False files_written=0
+PASS C5.E unsupported structure content-free
+C5.E dict with no id                               exc=DesignViolation code=E-COH-011: an item inside an otherwise valid evidence list c leak=False files_written=0
+PASS C5.E dict with no id content-free
+C5.E all unresolvable -> empty gold, run continues exc=None code=- leak=False files_written=0
+PASS C5.E all unresolvable -> empty gold, run continues content-free
+C5.E partial: one resolves one does not            exc=DesignViolation code=E-COH-002: some declared evidence ids resolve and some do no leak=False files_written=0
+PASS C5.E partial: one resolves one does not content-free
+PASS C5.3 a fully unresolvable question does NOT stop the run; it stays visible as empty_gold   ['locomo_0_qa0']
+PASS C5.4 a PARTIAL evidence loss STOPS the run with E-COH-002   E-COH-002: some declared evidence ids resolve and some do not, so the gold set would be silently smaller than the source declares [affected_questions=1, cohort_size=1, declared_ids
+PASS C5.5 no accepted partial-evidence override argument exists   (source_path, mapping, *, enabled: 'bool | None' = None) -> 'dict'
+
+====================================================================================================
+C6  the written ingest manifest and the writers
+====================================================================================================
+PASS C6.1 the ingest manifest writes   None
+PASS C6.2 the written manifest carries NO canary   846 bytes
+INFO C6.3 written manifest keys: ['benchmark', 'content_emitted', 'evidence_accounting', 'ingest_version', 'mapping_sha256', 'n_archive_units_total', 'n_clusters', 'n_questions', 'per_cluster_archive_units', 'per_cluster_questions', 'questions_with_empty_gold', 'questions_with_partial_evidence_loss', 'source_bytes', 'source_file', 
+PASS C6.4 the ingest writer refuses to OVERWRITE   refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\probe_c_oo0cdpsz\ingest_manifest.json
+
+====================================================================================================
+C7  LongMemEval evidence accounting is UNCHANGED (field sets still differ)
+====================================================================================================
+INFO C7.1 EVIDENCE_MODEL: {"LoCoMo": "declared_reference_ids", "LongMemEval": "per_turn_gold_markers"}
+PASS C7.2 declared_reference_ids: null + NOT_APPLICABLE retained for LongMemEval
+PASS C7.3 raw_evidence_items was NOT added to the LongMemEval model   per_turn_gold_markers
+
+====================================================================================================
+C8  N-4 transform stamp
+====================================================================================================
+PASS C8.1 the stamp produced by apply_archive_transform is accepted   None
+PASS C8.2 a QUERY-derived mu is caught by the stamp (N-4)   N-4 VIOLATION: the query was NOT transformed by the archive-learned centering vector and D - the stamp recorded by apply
+PASS C8.3 a byte-equal COPY of the archive parameters still passes (value stamp, by design)   None
+PASS C8.4 a non-string CANARY stamp is described, not echoed   the query transform stamp must be the string returned by apply_archive_transform, got <list items=1 digest=b430d3be9ca7>
+
+SUMMARY  PASS=85 FAIL=0 INFO=5
+TEMP ROOT: C:\Users\MDP\AppData\Local\Temp\probe_c_oo0cdpsz

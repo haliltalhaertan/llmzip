@@ -1,0 +1,97 @@
+FIELD_NAMES count: 76
+
+A1  keyword names NOT in FIELD_NAMES: NONE
+A4  **kwargs expansions at errors.* call sites: [('corpus_ingest_v4.py', 465, 'lengths'), ('errors.py', 195, 'fields'), ('authoritative\\resolve_sources.py', 85, "_diagnose(raw, entry['blob_sha256'])"), ('authoritative\\resolve_sources.py', 129, "_diagnose(raw, entry['blob_sha256'])")]
+
+A2  value-expression shapes across all errors.* call sites
+  attr:result.returncode                 x1
+  call:entry.get                         x1
+  call:int                               x2
+  call:isinstance                        x1
+  call:len                               x41
+  call:sum                               x2
+  compare                                x7
+  const:bool                             x16
+  const:int                              x6
+  name:_MAX_STRING                       x1
+  name:index                             x2
+  name:kind                              x3
+  name:n_declared                        x1
+  name:position                          x8
+  name:resolved                          x1
+  name:row                               x1
+  name:si                                x3
+  name:size                              x1
+  name:ti                                x2
+  subscript                              x8
+
+A2b RISK: value expressions that are NOT obviously bool/int/float/None/IdentifierKind
+  authoritative\resolve_sources.py:65  git_exit_code = result.returncode   [attr:result.returncode]
+  authoritative\resolve_sources.py:85  expected_bytes = entry.get('bytes', -1)   [call:entry.get]
+  corpus_ingest_v4.py:511  item_is_mapping = isinstance(item, dict)   [call:isinstance]
+  corpus_ingest_v4.py:408  declared_ids = sum((d for _, d, _ in partial_loss))   [call:sum]
+  corpus_ingest_v4.py:408  unresolved_ids = sum((u for _, _, u in partial_loss))   [call:sum]
+  corpus_ingest_v4.py:199  structural_limit = _MAX_STRING   [name:_MAX_STRING]
+  corpus_ingest_v4.py:345  conversation_index = index   [name:index]
+  corpus_ingest_v4.py:353  conversation_index = index   [name:index]
+  membership_runner_v4.py:139  kind = kind   [name:kind]
+  membership_runner_v4.py:143  kind = kind   [name:kind]
+  membership_runner_v4.py:146  kind = kind   [name:kind]
+  membership_runner_v4.py:242  declared = n_declared   [name:n_declared]
+  corpus_ingest_v4.py:305  item_position = position   [name:position]
+  corpus_ingest_v4.py:311  item_position = position   [name:position]
+  corpus_ingest_v4.py:353  position = position   [name:position]
+  corpus_ingest_v4.py:511  position = position   [name:position]
+  corpus_ingest_v4.py:515  position = position   [name:position]
+  membership_runner_v4.py:139  position = position   [name:position]
+  membership_runner_v4.py:143  position = position   [name:position]
+  membership_runner_v4.py:146  position = position   [name:position]
+  corpus_ingest_v4.py:421  resolved = resolved   [name:resolved]
+  corpus_ingest_v4.py:345  unit_row = row   [name:row]
+  corpus_ingest_v4.py:473  session_index = si   [name:si]
+  corpus_ingest_v4.py:477  session_index = si   [name:si]
+  corpus_ingest_v4.py:485  session_index = si   [name:si]
+  corpus_ingest_v4.py:156  read_bytes = size   [name:size]
+  corpus_ingest_v4.py:477  turn_index = ti   [name:ti]
+  corpus_ingest_v4.py:485  turn_index = ti   [name:ti]
+  corpus_ingest_v4.py:156  accepted_bytes = bound['bytes']   [subscript]
+  corpus_ingest_v4.py:421  manifest_n_questions = mapping['n_questions']   [subscript]
+  corpus_ingest_v4.py:533  manifest_n_questions = mapping['n_questions']   [subscript]
+  membership_runner_v4.py:168  first_position = dupes[0][0]   [subscript]
+  membership_runner_v4.py:318  accepted_seed = want['seed']   [subscript]
+  membership_runner_v4.py:321  accepted_replicates = want['replicates']   [subscript]
+  membership_runner_v4.py:351  accepted_replicates = want['replicates']   [subscript]
+  membership_runner_v4.py:351  accepted_seed = want['seed']   [subscript]
+  risky-count: 36
+
+A3  interpolations inside every `raise` statement (per module)
+  membership_runner_v4.py                      interpolations=5 raw=2
+      RAW    line 370: core.DIM
+      cooked line 370: A.shape
+      RAW    line 401: core.DIM
+      cooked line 401: X.shape
+      cooked line 421: safe_report.describe(query_stamp)
+  corpus_ingest_v4.py                          interpolations=0 raw=0
+  errors.py                                    interpolations=0 raw=0
+  safe_report.py                               interpolations=2 raw=2
+      RAW    line 119: key
+      RAW    line 119: type(value).__name__
+  authoritative\resolve_sources.py             interpolations=0 raw=0
+  authoritative\accepted_configuration.py      interpolations=0 raw=0
+
+A5  plain (non-errors.raise_violation) raise statements in runner/ingest
+  membership_runner_v4.py:269: raise DesignViolation('source identity check failed: ' + '; '.join(problems))
+  membership_runner_v4.py:370: raise DesignViolation(f'archive representation must be (n, {core.DIM}), got {A.shape}')
+  membership_runner_v4.py:401: raise DesignViolation(f'representation must be (n, {core.DIM}), got {X.shape}')
+  membership_runner_v4.py:421: raise DesignViolation(f'the query transform stamp must be the string returned by apply_archive_transform, got {safe_report.describe(query_stamp)}')
+  membership_runner_v4.py:425: raise DesignViolation('N-4 VIOLATION: the query was NOT transformed by the archive-learned centering vector and D - the stamp recorded by apply_archive_transform does not match the archi
+  membership_runner_v4.py:451: raise DesignViolation("N-3: the conversation-cluster bootstrap is REFUSED for LongMemEval. Its dependency structure is a single connected component over all 470 questions, inherited from
+  membership_runner_v4.py:199: raise DesignViolation(str(exc))
+
+A6  counts of errors.raise_violation vs safe_report.* per module
+  membership_runner_v4.py                      raise_violation=35  safe_report.=5
+  corpus_ingest_v4.py                          raise_violation=27  safe_report.=0
+  errors.py                                    raise_violation=1  safe_report.=0
+  safe_report.py                               raise_violation=0  safe_report.=0
+  authoritative\resolve_sources.py             raise_violation=7  safe_report.=0
+  authoritative\accepted_configuration.py      raise_violation=0  safe_report.=0

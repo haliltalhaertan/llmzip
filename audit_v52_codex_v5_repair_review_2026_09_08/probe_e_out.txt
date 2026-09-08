@@ -1,0 +1,57 @@
+====================================================================================================
+E1  the two byte-verbatim FALSE sentences from the prior audit
+====================================================================================================
+PASS E1 phrase 'Every message now goes' absent from every candidate document   {'runner': 0, 'ingest': 0, 'errors': 0, 'safe_report': 0, 'README': 0}
+PASS E1 phrase 'through `safe_report`, which reports type, shape' absent from every candidate document   {'runner': 0, 'ingest': 0, 'errors': 0, 'safe_report': 0, 'README': 0}
+PASS E1 phrase 'membership_runner_v3' absent from every candidate document   {'runner': 0, 'ingest': 0, 'errors': 0, 'safe_report': 0, 'README': 0}
+PASS E1 phrase 'corpus_ingest_v3' absent from every candidate document   {'runner': 0, 'ingest': 0, 'errors': 0, 'safe_report': 0, 'README': 0}
+PASS E1 phrase 'find none' absent from every candidate document   {'runner': 0, 'ingest': 0, 'errors': 0, 'safe_report': 0, 'README': 0}
+PASS E1 phrase 'Nothing is guessed, coerced to a string or dropp' absent from every candidate document   {'runner': 0, 'ingest': 0, 'errors': 0, 'safe_report': 0, 'README': 0}
+PASS E1 phrase 'coerced to a string, or dropped' absent from every candidate document   {'runner': 0, 'ingest': 0, 'errors': 0, 'safe_report': 0, 'README': 0}
+
+====================================================================================================
+E2  are the sentences the candidate DOES assert true?
+====================================================================================================
+PASS E2 unknown name raises UnsafeErrorField   an error field name is not in the closed field set
+PASS E2 foreign enum raises UnsafeErrorField   an error field has an unsupported value type
+PASS E2 int subclass raises UnsafeErrorField   an error field has an unsupported value type
+PASS E2 str value raises UnsafeErrorField   an error field has an unsupported value type
+PASS E2 bad code raises UnsafeErrorField   an error code must be a member of the closed Code enumeration
+PASS E2 the UnsafeErrorField messages are FIXED (a closed set, no interpolation)   ['an error code must be a member of the closed Code enumeration', 'an error field has an unsupported value type', 'an error field name is not in the closed field set']
+PASS E2 describe(): no custom repr/len hook is called on any of five shapes
+PASS E2 describe(): a class whose NAME is the canary is reported as 'object'   <object scalar digest=53a876637f02>
+PASS E2 _MAX_STRING appears only in the content policy   [187, 198, 200]
+     _MAX_STRING lines: ['_MAX_STRING = 120', 'if len(payload) > _MAX_STRING:', 'string_length=len(payload), structural_limit=_MAX_STRING)']
+     safe_report call sites in the runner: lines [256, 259, 262, 266, 423]
+PASS E2 runner: safe_report is used, and the docstring does NOT claim universality
+PASS E2 README: resolve_sources.py byte-identical to the v4 predecessor   c2bc0824f62acd68dcedb4713abcdcd91e4014194082a62d359ec92ac564a992
+PASS E2 README: accepted_configuration differs ONLY in PACKAGE_VERSION   ['-PACKAGE_VERSION = "membership runner+ingest v2 2026-09-08"', '+PACKAGE_VERSION = "membership runner+ingest Codex v5 2026-09-08"']
+PASS E2 README: IdentifierKind defined in errors.py, re-exported by the runner
+PASS E2 README: runtime version fields say Codex v5   ('membership_runner Codex v5 2026-09-08', 'corpus_ingest Codex v5 2026-09-08')
+
+====================================================================================================
+E3  M8 follow-up: does the undetected mutant actually LEAK, or is the check merely
+    unable to discriminate?
+====================================================================================================
+     isolated mutant run -> EXC KeyError | <__main__.FakeCode object at 0x000001F625E85D30> | KeyError(<__main__.FakeCode object at 0x000001F625E85D30>)
+PASS E3 the isinstance-only Code gate does NOT leak the canary (so the suite's 'spoofed code' check passes for the wrong reason, it is not a security hole)
+
+====================================================================================================
+E4  committed evidence/ vs evidence_final/
+====================================================================================================
+     RESULTS.json                                   evidence=747075b8eebe evidence_final=fb7b23d367e4 DIFFER
+     test_codex_v5.stderr.txt                       evidence=e3b0c44298fc evidence_final=e3b0c44298fc SAME
+     test_codex_v5.stdout.txt                       evidence=88a07bdf08cb evidence_final=88a07bdf08cb SAME
+     test_membership_scaling_core.stderr.txt        evidence=e3b0c44298fc evidence_final=e3b0c44298fc SAME
+     test_membership_scaling_core.stdout.txt        evidence=58d35b0c5332 evidence_final=3c47beaac8dd DIFFER
+     test_runner_ingest_v4.stderr.txt               evidence=e3b0c44298fc evidence_final=e3b0c44298fc SAME
+     test_runner_ingest_v4.stdout.txt               evidence=3ae7990021f9 evidence_final=2dbd57606e84 DIFFER
+PASS E4 both committed RESULTS.json report status PASS and no seal/run
+
+====================================================================================================
+E5  FIELD_NAMES hygiene
+====================================================================================================
+PASS E5 every field name a call site can emit IS in the closed set
+     declared-but-currently-unused names (2): ['missing', 'unexpected']
+
+SUMMARY  PASS=24 FAIL=0

@@ -1,0 +1,8 @@
+PROVENANCE errors -> C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\audit_cold_v5\wt_cand\drafts\v52\membership_runner_ingest_v4_2026_09_08\errors.py
+PROVENANCE runner -> C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\audit_cold_v5\wt_cand\drafts\v52\membership_runner_ingest_v4_2026_09_08\membership_runner_v4.py
+  v4 exact int 5        -> DesignViolation: E-SRC-013: the manifest contradicts itself [declared=5, mapped=1, reason_index=2]
+  v4                       canary: False
+  v4 int SUBCLASS 5     -> DesignViolation: E-SRC-013: the manifest contradicts itself [declared=Where did Rashid park the blue van on the night of the storm?, mapped=1, reason_index=2]
+  v4                       canary: True
+  v4 str                -> DesignViolation: E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]
+  v4                       canary: False

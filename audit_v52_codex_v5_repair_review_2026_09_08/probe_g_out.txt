@@ -1,0 +1,23 @@
+G1  runner.verify_source_identity, field `declared=n_declared`
+    the gate is `isinstance(n_declared, int)`; errors._safe requires `type(...) is int`
+  G1.a exact int 5 (mismatched) -> intended E-SRC-013        -> DesignViolation: E-SRC-013: the manifest contradicts itself [declared=5, mapped=1, reason_index=2]
+                                                                canary on surface: False
+  G1.b int SUBCLASS 5 (mismatched)                           -> UnsafeErrorField: an error field has an unsupported value type
+                                                                canary on surface: False
+  G1.c int SUBCLASS 1 (matching, no error path taken)        -> RETURNED 1
+  G1.d str n_questions -> intended E-SRC-012                 -> DesignViolation: E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]
+                                                                canary on surface: False
+
+G2  ingest COHORT_SIZE_MISMATCH, field `manifest_n_questions=mapping['n_questions']`
+    this site has NO type gate of its own; it relies on the accepted manifest hash pin
+  G2.a n_questions = 1 (matches)         -> ingests          -> RETURNED True
+  G2.b n_questions = 2 (mismatch, int)   -> intended E-COH-005 -> DesignViolation: E-COH-005: the number of resolved questions is not the accepted cohort size [cohort_size=1, manifest_n_questions=2, resolved=1]
+                                                                canary on surface: False
+  G2.c n_questions = '1' (mismatch, str; a JSON-SHAPED value) -> UnsafeErrorField: an error field has an unsupported value type
+                                                                canary on surface: False
+  G2.d n_questions = 1.0 (mismatch, float; JSON-shaped)      -> RETURNED {'benchmark': 'LoCoMo', 'identity': {'source_file': 'locomo10.json', 'source_sha
+
+NOTE: G2.c/G2.d require a manifest whose bytes hash to the ACCEPTED value, which the
+      hash pin forbids for the two real accepted manifests (n_questions = 1535 / 470,
+      both exact ints -- verified from the raw Git blobs in probe C, C3.7/C3.8).
+TEMP: C:\Users\MDP\AppData\Local\Temp\probe_g_x98mraau

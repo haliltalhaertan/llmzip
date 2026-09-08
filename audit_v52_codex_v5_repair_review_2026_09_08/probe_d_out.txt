@@ -1,0 +1,45 @@
+====================================================================================================
+D-A  STATIC SWEEP for checks that cannot fail
+====================================================================================================
+check() calls parsed: 61
+  no check() call is decided at parse time; none iterates an empty literal
+
+  weak-but-not-vacuous (compares fixed module constants only):
+    test_runner_ingest_v4.py:172  'the two faults are DIFFERENT codes, because they are differ   ->   errors.Code.EVIDENCE_ITEM_MALFORMED.value != errors.Code.EVIDENCE_STRUCTURE_UNSUPPORTED.va
+    test_codex_v5.py:170  'spoof payload never accessed'   ->   fake.value_reads == 0
+    test_codex_v5.py:242  'real-data execution gate remains closed'   ->   R.core.REAL_DATA_EXECUTION_ENABLED is False
+  weak count: 3
+
+====================================================================================================
+D-B  MUTATION TEST -- reintroduce one defect at a time on a TEMP COPY
+====================================================================================================
+BASELINE (unmutated copy):
+   test_runner_ingest_v4.py     exit=0  Scope: DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS for the evidence normalisation, the two rem
+   test_codex_v5.py             exit=0  ALL PASS: 45 implementation-team synthetic checks (not independent audit)
+
+M1 require_identifier_kind back to isinstance-only         caught_by=['test_codex_v5.py']
+        test_codex_v5.py: assert condition, label
+        test_codex_v5.py: AssertionError: spoofed kind refused before identifier processing
+M2 errors._safe accepts ANY Enum and echoes .value         caught_by=['test_codex_v5.py']
+        test_codex_v5.py: assert condition, label
+        test_codex_v5.py: AssertionError: foreign enum refused without content
+M3 errors.message drops the closed field-NAME set          caught_by=['test_codex_v5.py']
+        test_codex_v5.py: assert condition, label
+        test_codex_v5.py: AssertionError: dynamic field key refused without content
+M4 errors._safe accepts numeric SUBCLASSES again           caught_by=['test_codex_v5.py']
+        test_codex_v5.py: assert condition, label
+        test_codex_v5.py: AssertionError: numeric subclass refused without content
+M5 _normalise_evidence silently DROPS a malformed item     caught_by=['test_runner_ingest_v4.py', 'test_codex_v5.py']
+        test_runner_ingest_v4.py: FAIL  malformed object at 2 is refused without coercion
+        test_runner_ingest_v4.py: 5 FAILING CHECK(S): ['CLOSED: v4 refuses a non-string, non-dict list item with E-COH-011', 'CLOSED: v4 refuses a malformed MIDDLE 
+        test_codex_v5.py: assert condition, label
+        test_codex_v5.py: AssertionError: malformed position 0 refuses without coercion or loss
+M6 safe_report.describe prints the raw type name again     caught_by=['test_codex_v5.py']
+        test_codex_v5.py: assert condition, label
+        test_codex_v5.py: AssertionError: diagnostic custom objects remain opaque
+M7 safe_report.digest calls repr() on custom objects again caught_by=['test_codex_v5.py']
+        test_codex_v5.py: assert condition, label
+        test_codex_v5.py: AssertionError: diagnostic custom objects remain opaque
+M8 errors.message accepts any Code-lookalike (isinstance)  caught_by=*** NOTHING -- undetected ***
+
+MUTANTS UNDETECTED BY THE CANDIDATE'S OWN SUITES: ['M8 errors.message accepts any Code-lookalike (isinstance)']

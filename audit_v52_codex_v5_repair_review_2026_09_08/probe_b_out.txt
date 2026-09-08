@@ -1,0 +1,185 @@
+MODULE PROVENANCE
+    errors -> C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\audit_cold_v5\wt_cand\drafts\v52\membership_runner_ingest_codex_v5_2026_09_08\errors.py
+    safe_report -> C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\audit_cold_v5\wt_cand\drafts\v52\membership_runner_ingest_codex_v5_2026_09_08\safe_report.py
+    membership_runner_v4 -> C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\audit_cold_v5\wt_cand\drafts\v52\membership_runner_ingest_codex_v5_2026_09_08\membership_runner_v4.py
+    corpus_ingest_v4 -> C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\audit_cold_v5\wt_cand\drafts\v52\membership_runner_ingest_codex_v5_2026_09_08\corpus_ingest_v4.py
+    membership_scaling_core -> C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\audit_cold_v5\wt_cand\drafts\v52\membership_impl_v3_2026_09_07\membership_scaling_core.py
+
+====================================================================================================
+B1  ITEM 3 -- enum identity spoofs against require_identifier_kind / _safe
+====================================================================================================
+INFO B1.0 isinstance(spoof, IdentifierKind): True
+INFO B1.0 type(spoof) is IdentifierKind: False
+PASS B1.1 __class__ spoof refused by require_identifier_kind
+      exc=DesignViolation | E-COH-013: the identifier kind is not one of the declared identifier kinds [declared_kinds=2]
+PASS B1.2 __class__ spoof refused by validate_identifier (whitespace id)
+      exc=DesignViolation | E-COH-013: the identifier kind is not one of the declared identifier kinds [declared_kinds=2]
+PASS B1.3 __class__ spoof passed straight to errors._safe
+      exc=UnsafeErrorField | an error field has an unsupported value type
+INFO B1.4 spoof.value read count after all three: 0
+PASS B1.5 __instancecheck__ metaclass spoof refused
+      exc=DesignViolation | E-COH-013: the identifier kind is not one of the declared identifier kinds [declared_kinds=2]
+INFO B1.6 orphan type is IdentifierKind: True
+PASS B1.7 non-member of the real enum type refused by require_identifier_kind
+      exc=DesignViolation | E-COH-013: the identifier kind is not one of the declared identifier kinds [declared_kinds=2]
+PASS B1.8 non-member of the real enum type refused by errors._safe
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B1.9 mutated member .value is NOT echoed (hardcoded label)
+      msg=E-COH-018: the cohort is empty; there is nothing to validate [kind=question_id]
+INFO B1.10 enum subclass with a new member refused by Python: <enum 'Child'> cannot extend <enum 'IdentifierKind'>
+
+====================================================================================================
+B2  ITEM 4 -- the closed Code enumeration and the closed field-name set
+====================================================================================================
+PASS B2.1 spoofed Code (via __class__) refused
+      exc=UnsafeErrorField | an error code must be a member of the closed Code enumeration
+PASS B2.2 foreign enum as code refused
+      exc=UnsafeErrorField | an error code must be a member of the closed Code enumeration
+PASS B2.3 raw string as code refused
+      exc=UnsafeErrorField | an error code must be a member of the closed Code enumeration
+INFO B2.4 Code orphan construction failed: TypeError: object.__new__(Code) is not safe, use str.__new__()
+PASS B2.5 unknown field NAME carrying the canary is refused, name not echoed
+      exc=UnsafeErrorField | an error field name is not in the closed field set
+INFO B2.6a kwargs key subclass preserved?: StrSub
+PASS B2.6 str-subclass field name (allowlisted spelling) refused
+      exc=UnsafeErrorField | an error field name is not in the closed field set
+
+====================================================================================================
+B3  ITEM 4 -- the value allowlist in errors._safe
+====================================================================================================
+PASS B3.1 int subclass refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.2 float subclass refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.3 Decimal refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.4 Fraction refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.5 complex refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.6 plain str refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.7 bytes refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.8 list refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.9 dict refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.10 foreign enum refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.11 IntEnum member refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.12 object with evil repr refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.13 class whose NAME is the canary refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.14 numpy int64 refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.15 numpy float64 refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.16 numpy bool_ refused as an error field
+      exc=UnsafeErrorField | an error field has an unsupported value type
+PASS B3.20 None accepted as a legitimate diagnostic
+      E-COH-018: the cohort is empty; there is nothing to validate [position=None]
+PASS B3.21 True accepted as a legitimate diagnostic
+      E-COH-018: the cohort is empty; there is nothing to validate [position=True]
+PASS B3.22 int accepted as a legitimate diagnostic
+      E-COH-018: the cohort is empty; there is nothing to validate [position=7]
+PASS B3.23 float accepted as a legitimate diagnostic
+      E-COH-018: the cohort is empty; there is nothing to validate [position=1.5]
+PASS B3.24 nan accepted as a legitimate diagnostic
+      E-COH-018: the cohort is empty; there is nothing to validate [position=nan]
+PASS B3.25 inf accepted as a legitimate diagnostic
+      E-COH-018: the cohort is empty; there is nothing to validate [position=inf]
+
+====================================================================================================
+B4  ITEM 4 -- safe_report.describe / digest / positions / counts
+====================================================================================================
+PASS B4.1 custom object described opaquely
+      describe -> <object scalar digest=53a876637f02>   (repr/len hooks fired: 0)
+PASS B4.2 list containing it described opaquely
+      describe -> <list items=1 digest=53a876637f02>   (repr/len hooks fired: 0)
+PASS B4.3 dict value described opaquely
+      describe -> <dict keys=1 digest=53a876637f02>   (repr/len hooks fired: 0)
+PASS B4.4 dict key described opaquely
+      describe -> <dict keys=1 digest=53a876637f02>   (repr/len hooks fired: 0)
+PASS B4.5 nested list described opaquely
+      describe -> <list items=1 digest=53a876637f02>   (repr/len hooks fired: 0)
+PASS B4.6 tuple described opaquely
+      describe -> <tuple items=1 digest=53a876637f02>   (repr/len hooks fired: 0)
+PASS B4.7 set described opaquely
+      describe -> <set items=2 digest=26a90b8c49b8>   (repr/len hooks fired: 0)
+PASS B4.8 str subclass described opaquely
+      describe -> <object scalar digest=53a876637f02>   (repr/len hooks fired: 0)
+PASS B4.9 class named after the canary described opaquely
+      describe -> <object scalar digest=53a876637f02>   (repr/len hooks fired: 0)
+PASS B4.10 describe_many opaque
+      <object scalar digest=53a876637f02>, <object scalar digest=53a876637f02>, <object scalar digest=53a876637f02>, … (4 total)
+PASS B4.11 positions opaque
+      position 0 (digest=53a876637f02), position 1 (digest=135208043289)
+INFO B4.12 safe_report.counts type-name interpolation -> counts() takes ints only; k is Where did Rashid park the blue van on the night of the storm?
+INFO B4.13 safe_report.counts kwarg-key interpolation -> counts() takes ints only; Where did Rashid park the blue van on the night of the storm? is str
+INFO B4.14 is safe_report.counts reachable from a call site?: runner uses it at verify_source_identity with literal keys missing=/unexpected=
+
+====================================================================================================
+B5  ITEM 5 -- does the field allowlist / scalar narrowing MISS a current call site?
+====================================================================================================
+PASS B5.1 UNKNOWN_BENCHMARK
+      exc=DesignViolation | E-CFG-001: the benchmark is not one of the accepted benchmarks [accepted_benchmarks=2]
+PASS B5.2 UNKNOWN_SCHEME
+      exc=DesignViolation | E-CFG-002: the resampling scheme is not one of the accepted schemes [accepted_schemes=2]
+PASS B5.3 IDENTIFIER_KIND_UNKNOWN
+      exc=DesignViolation | E-COH-013: the identifier kind is not one of the declared identifier kinds [declared_kinds=2]
+PASS B5.4 UNSUPPORTED_ID_TYPE
+      exc=DesignViolation | E-COH-014: the identifier is not a string; this runner supports string identifiers only, so that no int()-equal pair can merge (NEW-5) [kind=question_id, positi
+PASS B5.5 MISSING_VALUE_INDICATOR
+      exc=DesignViolation | E-COH-015: the identifier is a designated missing-value indicator; a missing id must be fixed at the source, not accepted as a label (NEW-4) [kind=question_id, 
+PASS B5.6 IDENTIFIER_WHITESPACE
+      exc=DesignViolation | E-COH-016: the identifier has leading or trailing whitespace; it is REJECTED rather than stripped, because stripping would merge it with its neighbour [kind=clu
+PASS B5.7 COLUMNS_NOT_ALIGNED
+      exc=DesignViolation | E-COH-017: the question id and cluster id columns do not have the same length [cluster_ids=0, question_ids=1]
+PASS B5.8 EMPTY_COHORT
+      exc=DesignViolation | E-COH-018: the cohort is empty; there is nothing to validate
+PASS B5.9 DUPLICATE_QUESTION_ID
+      exc=DesignViolation | E-COH-003: a question id occurs more than once in the source [duplicates=1, first_position=1]
+PASS B5.10 MANIFEST_ARGUMENTS
+      exc=DesignViolation | E-SRC-003: exactly one of raw bytes or a path must be given
+PASS B5.11 MANIFEST_NOT_ACCEPTED
+      exc=DesignViolation | E-SRC-001: these manifest bytes are not the accepted manifest [crlf_to_lf_would_match=False, got_bytes=2, lf_to_crlf_would_match=False]
+PASS B5.12 MANIFEST_FIELD_TYPE n_questions str
+      exc=DesignViolation | E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]
+PASS B5.13 MANIFEST_FIELD_TYPE n_questions float
+      exc=DesignViolation | E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]
+PASS B5.14 MANIFEST_FIELD_TYPE expected map
+      exc=DesignViolation | E-SRC-012: a manifest field does not have the type the source contract requires [field_index=0]
+PASS B5.15 MANIFEST_INTERNALLY_INCONSISTENT reason 2
+      exc=DesignViolation | E-SRC-013: the manifest contradicts itself [declared=5, mapped=1, reason_index=2]
+FAIL B5.16 SEED_RECORD_MALFORMED seed type
+      exc=DesignViolation | E-CFG-002: the resampling scheme is not one of the accepted schemes [accepted_schemes=2]
+FAIL B5.17 SEED_NOT_ACCEPTED
+      exc=DesignViolation | E-CFG-002: the resampling scheme is not one of the accepted schemes [accepted_schemes=2]
+FAIL B5.18 SEED_RECORD_ABSENT
+      exc=DesignViolation | E-CFG-002: the resampling scheme is not one of the accepted schemes [accepted_schemes=2]
+FAIL B5.19 NO_ACCEPTED_BOOTSTRAP
+      exc=DesignViolation | E-CFG-002: the resampling scheme is not one of the accepted schemes [accepted_schemes=2]
+FAIL B5.20 MAPPING_NOT_FROM_ACCEPTED_PATH
+      exc=DesignViolation | E-SRC-007: the accepted source file is not present at the given location
+PASS B5.21 SOURCE_ABSENT
+      exc=DesignViolation | E-SRC-007: the accepted source file is not present at the given location
+FAIL B5.22 NO_INGESTION_PATH gate
+      exc=DesignViolation | real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, and no fitting, retrieval, ranking or bootstrap may run on rea
+PASS B5.23 CONTENT_POLICY long string
+      exc=ContentPolicyViolation | E-OUT-003: a value bound for a written artefact failed the structural content policy [string_length=200, structural_limit=120]
+PASS B5.24 EVIDENCE_STRUCTURE_UNSUPPORTED
+      exc=DesignViolation | E-COH-012: the evidence field is not one of the shapes the bound source contract defines [is_none=False, is_sequence=False, is_str=False]
+PASS B5.25 EVIDENCE_ITEM_MALFORMED
+      exc=DesignViolation | E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [item_is_mapping=False, item_is_
+
+--- B5.30 supported-Python-API corner: an int SUBCLASS passes isinstance() gates ---
+FAIL B5.30 int-subclass n_questions reaches errors._safe as `declared=`
+      exc=UnsafeErrorField | an error field has an unsupported value type
+FAIL B5.31 int-subclass replicates in freeze_bootstrap_seed
+      exc=DesignViolation | E-CFG-002: the resampling scheme is not one of the accepted schemes [accepted_schemes=2]
+
+SUMMARY  PASS=64 FAIL=8 INFO=10
+TEMP ROOT USED: C:\Users\MDP\AppData\Local\Temp\probe_b_3c098iqj

@@ -1,0 +1,26 @@
+====================================================================================================
+F1/F2  guarded_suite.py negative and positive controls
+====================================================================================================
+PASS F1 a .json read OUTSIDE the guard root is DENIED and the launcher exits non-zero
+      exit=1 | PermissionError: source access outside synthetic temporary root
+      guard line: PYTHON_IO_GUARD {"denied_data_events": 1, "observed_data_events": 1, "scope": "Python open/scandir/listdir data events; no native IO proof"}
+PASS F2 a .json read INSIDE the guard root is observed and allowed
+      {'denied_data_events': 0, 'observed_data_events': 2, 'scope': 'Python open/scandir/listdir data events; no native IO proof'}
+
+====================================================================================================
+F3/F4  validate_candidate.py
+====================================================================================================
+PASS F3 the writer REFUSES an existing output folder
+      FileExistsError: [WinError 183] Eine Datei kann nicht erstellt werden, wenn sie bereits vorhanden ist: 'C:\\Users\\MDP\\AppData\\Local\\Temp\\probe_f_w3pyuj97\\already_here'
+PASS F4 the no-argument payload verification DETECTS a one-line tamper
+      AssertionError: errors.py
+
+====================================================================================================
+F5  compute_results requires a mapping stamped by the accepted-resolution path
+====================================================================================================
+      compute_results signature: (records, question_ids, cluster_ids, mapping, seed_record_path, *, benchmark: 'str', scheme: 'str', replicates: 'int' = 10000, scaling_diagnostics: 'dict | None' = None) -> 'dict'
+PASS F5 compute_results checks the accepted-manifest stamp before parsing
+      ['if not isinstance(mapping, dict) or mapping.get("_accepted_manifest_sha256") != \\']
+
+SUMMARY  PASS=5 FAIL=0
+TEMP: C:\Users\MDP\AppData\Local\Temp\probe_f_w3pyuj97
