@@ -1,0 +1,10 @@
+test_bad_direct_args_real_gate_and_empty_writer (__main__.Tests.test_bad_direct_args_real_gate_and_empty_writer) ... ok
+test_git_loader_ignores_checkout_and_rejects_wrong_bytes (__main__.Tests.test_git_loader_ignores_checkout_and_rejects_wrong_bytes) ... ok
+test_lme_all_source_ordinal_to_score (__main__.Tests.test_lme_all_source_ordinal_to_score) ... ok
+test_locomo_correction_to_bootstrap_to_writer (__main__.Tests.test_locomo_correction_to_bootstrap_to_writer) ... ok
+test_presence_bridge_absent_null_empty (__main__.Tests.test_presence_bridge_absent_null_empty) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.618s
+
+OK

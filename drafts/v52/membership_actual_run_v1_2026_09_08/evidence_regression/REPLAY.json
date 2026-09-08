@@ -1,0 +1,50 @@
+{
+  "status": "IMPLEMENTATION_TEAM_SYNTHETIC_REPLAY",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "cloudpickle": "3.1.2",
+    "joblib": "1.6.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "python-dateutil": "2.9.0.post0",
+    "pytz": "2026.3.post1",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.0",
+    "six": "1.17.0",
+    "threadpoolctl": "3.6.0",
+    "tzdata": "2026.3"
+  },
+  "suites": [
+    {
+      "suite": "drafts\\v52\\membership_integration_v2_2026_09_08\\test_audit_regressions.py",
+      "exit_code": 0,
+      "unittest_methods": 12
+    },
+    {
+      "suite": "drafts\\v52\\membership_integration_v2_2026_09_08\\test_integration.py",
+      "exit_code": 0,
+      "unittest_methods": 5
+    },
+    {
+      "suite": "drafts\\v52\\membership_source_contracts_v1_2026_09_08\\test_contracts.py",
+      "exit_code": 0,
+      "unittest_methods": 10
+    },
+    {
+      "suite": "drafts\\v52\\membership_impl_v3_2026_09_07\\test_membership_scaling_core.py",
+      "exit_code": 0,
+      "unittest_methods": null
+    }
+  ],
+  "real_corpus_access": false,
+  "historical_outcomes_access": false,
+  "source_sha256_on_disk": {
+    "finish_synthetic.py": "8fe291f99f684764a08ccb2a79adbfcfdd1cdbb13696e89a30c4ec7fc769fcff",
+    "pinned.py": "91fedcc14b07229194b33cb8eeb049da096c2870200a7463e6fd81d84f0fe75a",
+    "pipeline.py": "a842e04e4a5aaad383c01e64d3d3cd26cb311043ad181721cf5e1457a1aa7293",
+    "replay.py": "225293afd0cbf64a2a38c77e9e0d5dbb9ad100e4010eae03125897a0da61b2fd",
+    "source_adapter.py": "ad0fd8ca9cde3ea8b5be7870c09d4f7bbe67a69b2d2225086c7d8b3c081303ae",
+    "test_audit_regressions.py": "794757923e6ad82ee35346c0157a44a1b498c0d27edabb5e876495ec58a78f65",
+    "test_integration.py": "7c4cfbc9813ebec0c3be6cb625b81f03ddd6fc6a7ee34164c485200c14bd8808"
+  }
+}

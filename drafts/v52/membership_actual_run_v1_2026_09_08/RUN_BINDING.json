@@ -1,0 +1,88 @@
+{
+  "status": "APPROVED_FOR_ONE_LOCOMO_EXECUTION",
+  "date": "2026-09-08",
+  "authority": "User explicit run request; exact gold exception 57167bc; bounded independent pre-run review and head-researcher acceptance",
+  "scope": "LoCoMo leg only; 1535 questions; no automatic retry; post-run audit pending",
+  "payloads": [
+    {
+      "path": "data.py",
+      "bytes": 6893,
+      "sha256": "5575a0a9ab4378d798fd5a008ec7f7f13e5c825a9b5d746e04d236ad999124ea"
+    },
+    {
+      "path": "EXECUTION_SCOPE.md",
+      "bytes": 3584,
+      "sha256": "7faf29963a154dd6b960b4825d1a84d300df1513a157e2b4fd26231a50f80ef5"
+    },
+    {
+      "path": "pinned.py",
+      "bytes": 1574,
+      "sha256": "91fedcc14b07229194b33cb8eeb049da096c2870200a7463e6fd81d84f0fe75a"
+    },
+    {
+      "path": "pipeline.py",
+      "bytes": 8870,
+      "sha256": "b181c77820d028d20dcae93e16df28c052db5d66b6ae07e4301f50d0ac763db7"
+    },
+    {
+      "path": "PRE_RUN_REVIEW_ACCEPTANCE.md",
+      "bytes": 2134,
+      "sha256": "7b8a2794c8f24f3f6d22b5a1761f3433c391b3949f4b4435fb562c9ea1a78f2d"
+    },
+    {
+      "path": "run.py",
+      "bytes": 6735,
+      "sha256": "0b023b6872e8b590b0429a92e30a86d62af4e87c5ec73206ef57e61b8c1b729d"
+    },
+    {
+      "path": "test_run.py",
+      "bytes": 2528,
+      "sha256": "ae9a5ad3d4aa58648ef6fe6c90d389985df4c54fa3ea7364f1dc06929a576720"
+    },
+    {
+      "path": "evidence_regression/0_test_audit_regressions.stderr.txt",
+      "bytes": 1696,
+      "sha256": "11403e8653147df39f391b408170df382e4c55b674e7bd531ef4e1a691d02917"
+    },
+    {
+      "path": "evidence_regression/0_test_audit_regressions.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence_regression/1_test_integration.stderr.txt",
+      "bytes": 682,
+      "sha256": "0680ef0ed3dee55cfa8ba67739e2cdfc1cc258da51d45ac81a2d5f3bc9f25d78"
+    },
+    {
+      "path": "evidence_regression/1_test_integration.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence_regression/2_test_contracts.stderr.txt",
+      "bytes": 1110,
+      "sha256": "eee2518448addf4644931c5ca922d1cd6bd425cac4e263fb22bc2c30905a3338"
+    },
+    {
+      "path": "evidence_regression/2_test_contracts.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence_regression/3_test_membership_scaling_core.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence_regression/3_test_membership_scaling_core.stdout.txt",
+      "bytes": 8525,
+      "sha256": "eeef0c78c64b15f85397064df71d9f31185b4251ac001a054c054c292beed817"
+    },
+    {
+      "path": "evidence_regression/REPLAY.json",
+      "bytes": 1901,
+      "sha256": "bcb54e7bbc71b83cac53ed1c445348a5f18be8fc993a914d14112cff32c267bc"
+    }
+  ]
+}
