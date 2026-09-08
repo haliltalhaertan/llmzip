@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T11:12:00Z",
+  "issued_at_utc": "2026-09-08T12:07:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's disposition of what the v4 closure check left open: TWO byte-verbatim statements that are still ASSERTED and FALSE - membership_runner_v4.py:18-19 'Every message now goes through safe_report' (measured: errors.raise_violation x35, safe_report x6) and errors.py:20-24, which names the v3 modules and says the tests 'find none' on the surface where the v3 check found two leaks; the str-coercion wording; TWO structurally vacuous checks in the preparer's own suite; and one NEW optional isinstance finding. Do NOT fix automatically. M-1/M-2/M-3 remain unauthorized; no pilot, no sealing, no run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's disposition of the four NON-BLOCKING findings on the Codex v5 repair, and of whether the Codex v5 package becomes the working candidate line in place of v4. A scope-limited PASS on this repair does NOT authorize the experiment, does NOT open M-1/M-2/M-3, and does NOT license a seal or a run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-079",
+  "ledger_entry": "L-080",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1815,5 +1815,49 @@
     "regression": "NONE. All four committed evidence files reproduce exactly; the v2 suite is 82/0, both v1 suites pass, and 35 regression checks of the checker's own pass - D-2/3/4/6/7/8, F12, F20, source trust, the gates, identity-before-parse, the cluster block, the writers, the D-1 policy and the LongMemEval accounting.",
     "negative_controls_and_the_sys_path_fix_verified": "the checker confirmed `errors` is imported before any v3 module so it binds to v4's, and verified WHY that is behaviour-neutral: safe_report and authoritative are byte-identical v3 to v4, errors is a strict superset by addition, and the three control behaviours never touch errors at all.",
     "nothing_was_fixed_afterwards": "no correction applied to the two false statements, the stale labels, the str() wording, the two vacuous checks or the new optional finding"
+  },
+  "codex_v5_repair_package_2026_09_08": {
+    "implementer": "Codex (a different agent); the Continuity Lead did NOT write, modify, merge or remediate it",
+    "branch": "codex/v52-runner-ingest-repair-2026-09-08",
+    "commit": "07ec929243068914676a0f30efd10c9f294c7e71",
+    "namespace": "drafts/v52/membership_runner_ingest_codex_v5_2026_09_08/",
+    "parent": "86a8fd7a73a0d4e045666e692cd7e2016f134885 - matches the base_commit the manifest declares",
+    "identities_verified_from_raw_git_objects": {
+      "CLAUDE_AUDIT_PROMPT.md": "7bdae4f4465c122ce2e6b90966b2b28c1118c7effde94e33d12aef2215d77734",
+      "PAYLOAD_HASHES.json": "8879e78e88df01395fef6c45c088f265fcd6cf7692b22b75872ee48137d02955",
+      "manifest_entries": "27 of 27 match on hash AND byte count, zero mismatches; the only unlisted file is the manifest itself"
+    },
+    "purely_additive": "28 files, every entry an A, all inside the codex_v5 namespace, zero outside; main and the ledger untouched by Codex",
+    "branch_point_artefact_disarmed": "git diff main shows SIX deleted normative documents and a twelve-entry-shorter ledger; the merge base with main is 16019724, which predates all of them. The commit itself deletes and modifies nothing. Verified before reporting, and reproduced independently by the auditor, which did not raise it.",
+    "handoff_prompt_read_as_data": "no attempt to widen anyone's authority; it narrowed it and repeated the same prohibitions"
+  },
+  "codex_v5_repair_audit_2026_09_08": {
+    "independence": "the Continuity Lead is NOT cold-start on this package - it wrote candidates v1 through v4 and every finding this repair answers was found in its own code - so the behavioural review was carried out by a SEPARATE session with no prior context. The Lead performed identity verification, scope verification and targeted spot checks only.",
+    "branch": "audit/v52-codex-v5-repair-review-2026-09-08",
+    "commit": "2cf602090a6c4c42dba44f66d95d8dfed0e0f2e8",
+    "report_commit": "3bb4ba87fb985bcca2a33c1c71f1e40ce9a7abd7",
+    "parent": "a5bc6bd272402a8b6d7e823fde21a6b367a6f0bd",
+    "report_sha256": "fd10e53324787965e11155cb6cd31952496199f0e8250fe9416c996abf227cea",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "23 files, all under audit_v52_codex_v5_repair_review_2026_09_08/; ZERO outside",
+    "verdict": "PASS WITH FINDINGS, limited to this repair package; it does NOT authorize the real experiment",
+    "six_items_all_closed": {
+      "false_descriptions": "both byte-verbatim sentences and two smaller wordings gone from all 28 files, zero occurrences of seven searched phrases, replacements measurably true",
+      "vacuous_checks": "the wording check replaced by a real coercion probe at three positions, the empty-comprehension check removed rather than re-dressed; a sweep of all 61 check calls found none decided at parse time; an eight-mutant test caught seven",
+      "enum_spoof": "exact-type plus member-identity gate with hard-coded labels; four spoof classes refused and the spoof's .value read ZERO times",
+      "error_interface": "about forty hostile constructions all land on one of three fixed UnsafeErrorField sentences that interpolate nothing; full surface captured; zero files written on every refusal",
+      "field_allowlisting": "closed, with one narrow miss recorded as F-1",
+      "regression": "NONE - 85 checks, zero failures; cohort, gold and seed semantics unchanged (1535/10 and 470)"
+    },
+    "replay_done_not_trusted": "validate_candidate.py re-run in the approved interpreter with a fresh output folder: PAYLOAD PASS on 27 files, three exit-zeros, empty stderr, and both evidence_final stdout blobs reproduce BYTE FOR BYTE",
+    "findings_none_blocking_none_a_leak": {
+      "F-1 (optional, NEW)": "verify_source_identity gates n_questions with isinstance while errors._safe requires an exact type, so an INT SUBCLASS yields UnsafeErrorField instead of the named refusal, losing the diagnostic. Confirmed by the Lead in the candidate source. Not reachable from JSON, fails CLOSED, and the auditor's isolated control shows v4 printed the canary verbatim on the same input - so v5 is strictly safer here, only less informative.",
+      "F-2 (optional, NEW)": "one suite probe passes for the wrong reason and is the single mutant nothing caught; confirmed in isolation not to leak - a test-discrimination gap, not a hole",
+      "F-3 (optional)": "the ingest's cohort-size site forwards a manifest value with no local type gate, relying on the hash pin; not a v5 regression",
+      "F-4 (wording)": "one README sentence is slightly wider than the code at two gated sites"
+    },
+    "recorded_but_not_reopened": "safe_report.counts still interpolates its kwarg key and type name - adversarial-only and unreachable from current call sites; and the CLOSED CORE's safe_write_json echoes the output path, out of scope, bytes unchanged at bc2282d3",
+    "nothing_remediated_or_merged": "the candidate stands at 07ec929243068914676a0f30efd10c9f294c7e71 exactly as pushed; no candidate file modified by anyone in the audit"
   }
 }
