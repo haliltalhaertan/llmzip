@@ -1,0 +1,22 @@
+{
+  "actual_experiment_started": false,
+  "cohort_questions": 1535,
+  "corpus_identity_matched": true,
+  "correction_files_identity_matched": 10,
+  "correction_records": 156,
+  "gold_failure_questions": 1,
+  "gold_failures": [
+    {
+      "correction_applied": false,
+      "declared_reference_count": 7,
+      "question_id": "locomo_4_qa18",
+      "resolved_reference_count": 6,
+      "unresolved_reference_count": 1
+    }
+  ],
+  "refusal_code": "E-S-014",
+  "representation_fit": false,
+  "retrieval": false,
+  "scores": false,
+  "status": "STOPPED_GOLD_CONTRACT"
+}

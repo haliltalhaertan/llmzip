@@ -1,0 +1,20 @@
+{
+  "status": "STOPPED_GOLD_CONTRACT_NOT_EXPERIMENT_RESULT",
+  "payloads": [
+    {
+      "path": "PREFLIGHT_RESULT.json",
+      "bytes": 568,
+      "sha256": "98ca9061976b866288982b155d746d53f327e034ad6b41806db47221c766c057"
+    },
+    {
+      "path": "preflight.py",
+      "bytes": 5425,
+      "sha256": "93e1c0d23d9403442cb216217bc33e84b67ea6df764e71e0f9bbc0e3dc8d0e8f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3424,
+      "sha256": "7409d527487a8fc9646014e2082e8b87b681850fc507384a0b32cea7aecbba37"
+    }
+  ]
+}
