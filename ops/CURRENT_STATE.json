@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T08:34:00Z",
+  "issued_at_utc": "2026-09-08T09:03:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's authorization to commission the independent runner and ingestion review, whose scope note is written and waiting at drafts/v52/membership_ingest_v1_2026_09_08/REVIEW_PACKAGE_2026-09-08.md. Do NOT execute the ingestion on a real corpus, do not write the representation-fitting stage, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's disposition of the runner+ingestion review findings - gate G-2. The reviewed scope did NOT pass, so the single bounded implementation package for M-1, M-2 and M-3 is NOT reachable yet and G-3 stays not granted. Do not fix automatically, do not run a pilot, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-075",
+  "ledger_entry": "L-076",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1580,7 +1580,7 @@
       "evidence/thread_policy_observation.json": "5225eb357d7335bbc271a1b26b9456d278db5a86b6af957c2b87e77c5fe3be14",
       "evidence/selection_rule_result.json": "be55ec7e645cc01e10f8d2f7394710e901bd8d6a9b305b2a2d8a0e371a5ab954"
     },
-    "status": "INGESTION CODE WRITTEN - NEVER EXECUTED ON A REAL CORPUS; NOT INDEPENDENTLY REVIEWED; NO RUN AUTHORIZATION",
+    "status": "INGESTION CODE WRITTEN - NEVER EXECUTED ON A REAL CORPUS. Independently reviewed 2026-09-08 with verdict FAIL for the runner+ingestion wiring; see runner_ingest_review_2026_09_08. NOT fixed; awaiting Head Researcher disposition.",
     "what_it_does": "source byte identity FIRST - streamed sha256 and size against bound values BEFORE any parse; then the bound manifest through the runner's hash-checked loader; then EVERY bound question id resolved individually, refusing missing, extra, misrouted, duplicated and position-mismatched ids rather than repairing them; then archive units and query texts assembled in memory with their gold row indices",
     "where_it_stops": "no representation fitting, retrieval, ranking, evaluation, bootstrap or sealing; the suite asserts TfidfVectorizer, TruncatedSVD, sklearn, haar_q and hamming_dist are absent from the module source",
     "cohort_is_bound_never_recomputed": "it takes the bound 1535 and 470 ids and resolves each one; it never derives a cohort",
@@ -1608,5 +1608,78 @@
       "the representation-fitting stage, not written and not authorized",
       "a pre-run seal, not made"
     ]
+  },
+  "completion_map_2026_09_08": {
+    "map": {
+      "path": "docs/v52/V52_MEMBERSHIP_COMPLETION_MAP_2026-09-08.md",
+      "sha256": "2b0ed8f6d5381314c89844ef9a673efbf357df32042bd9fd1224d1aa549a5666",
+      "commit": "21f5710d"
+    },
+    "addendum": {
+      "path": "docs/v52/V52_MEMBERSHIP_COMPLETION_MAP_ADDENDUM_2026-09-08.md",
+      "sha256": "1d6726ee5e3daccae3271be160009c4fd2137dab711fd2e63972b1f4bc322d51",
+      "commit": "847aad64",
+      "why_separate": "the map carries a .sha256 sidecar, so it was NOT edited; corrections are additive"
+    },
+    "G_9_clarified": "a rerun means running the RELEVANT EXISTING TEST SUITES in the accepted environment - core regression, runner, ingestion synthetic, and whatever suites an authorized M-1/M-2/M-3 brings. It is NOT re-executing any past experiment. Timing is fixed: COMPLETE BEFORE the seal (G-7) and before any real run (G-8), because a seal binding code whose tests ran afterwards binds something not yet checked.",
+    "G_6_clarified": "NO pilot is planned and none is authorized. A pilot producing REAL RETRIEVAL RESULTS is assessed as OUTCOME ACCESS under the same boundary that governs the experiment - anything yielding real top-3 identities, real distances or real retrieval-quality numbers, whatever it is called and however small. The implementation stage may not reach for one as a debugging convenience.",
+    "reuse_distinction": {
+      "reusable_computation": [
+        "fit_archive_representation",
+        "build_representation",
+        "topks_by_hamming with tie and priority handling",
+        "fractional",
+        "stable_archive_seed",
+        "SVD_SEED 5204, SOURCE_LATENT_DIM 32, N_NUISANCE 20, TOPK 3",
+        "the SHAPE of a six-arm ten-seed driver"
+      ],
+      "must_NOT_be_carried_over": [
+        "the FULLHAAR/BLOCK32 arm definitions",
+        "the 59001..59010 rotation seeds",
+        "cohort selection rebuilt from audit/errors_conv_*.json",
+        "the corpus download and acquisition path"
+      ],
+      "why": "carrying any of those would be a design error wearing reuse as a disguise, caught late if at all"
+    }
+  },
+  "runner_ingest_review_2026_09_08": {
+    "branch": "audit/v52-runner-ingest-review-2026-09-08",
+    "commit": "8c8ba7aefe2622efb4fbf65230f04dbfbec25449",
+    "parent": "aa42a96e004fdccdae61875a957ab5cfb1b313d6",
+    "report_sha256": "456645a61c7e44148ee454287e7db0e66adfa128539b17679ce1c94897764676",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "4 files, all under audit_v52_runner_ingest_review_2026_09_08/; zero outside",
+    "reviewed_branch_head_unchanged": "22e44608bab838974a6e65aa1a4297c815b5506b; no candidate file modified",
+    "verdict": "FAIL - scoped ONLY to the runner and ingestion wiring at 22e44608. Does NOT extend to the not-yet-written representation stage or to the experiment as a whole. The closed core, design, preregistration and statistics were not reopened.",
+    "identity_checks": "all six required blob identities verified from raw Git objects and all MATCH, including the SUPERSEDED LongMemEval v1 at bdf05c12, byte-unchanged",
+    "dispositions": {
+      "1_identity_before_parse": "PASS - a file both invalid JSON and wrong-hashed fails on IDENTITY; a renamed but byte-identical source is refused; no path parses first",
+      "2_bound_cohort": "FAIL - missing, duplicate and misrouted are refused by name, but a corruption exists that it ACCEPTS (D-1)",
+      "3_accepted_config_governs": "FAIL - the manifests genuinely govern by hash; the seeds and replicates do not (D-2, D-3)",
+      "4_sentinel_and_cluster_block": "PASS - unreachable by any route; the refusal fires before any seed or identity work",
+      "5_N4_transform_interface": "FAIL - the assertion is bypassable and is a self-report (D-6); nothing is estimated from the query, and that half is sound",
+      "6_gates": "PASS - measured with sys.addaudithook, not grepped: 100 opens at import, ZERO corpus-shaped; gate closed by default and checked first; all three writers refuse to overwrite",
+      "7_no_raw_content_leaves": "FAIL - sub-120-character fragments escape verbatim through SEVEN exception paths (D-5)"
+    },
+    "real_defects": {
+      "D-1": "WORST. Partially unresolvable LoCoMo evidence is SILENTLY TRUNCATED: a question declaring two evidence ids with one unresolvable is accepted with gold_rows of length one, and the persisted summary reports questions_with_empty_gold = 0. A partial loss of the ground truth the estimand rests on is invisible in the only artefact that reaches disk.",
+      "D-2": "compute_results never checks replicates against the frozen seed record - froze 10000, ran with 7, and the written result carries 10000, so the artefact misstates how it was computed",
+      "D-3": "the accepted seed VALUES do not govern - 52001107/52001207/52002107 appear nowhere in either module and freeze_bootstrap_seed accepted 999. Disclosed by the preparer, but a transposed digit passes every check.",
+      "D-4": "with core.autocrlf true a checked-out manifest hashes to 4a1f7c2dbe8d915d63e510d96fcffe33bf782320582b2d1359772a1ea3e3c7cc instead of the bound 66379b9d, so load_expected_mapping refuses its own accepted manifest. CONFIRMED BY THE PREPARER AND MADE PRECISE: this machine's SYSTEM config sets core.autocrlf=true, so ANY FRESH CLONE hits it; this long-lived repository has it explicitly false, which is why it does not reproduce in the preparer's worktrees. It FAILS CLOSED - it blocks rather than corrupts.",
+      "D-5": "corpus_ingest.py lines 35-36 say byte-verbatim 'It is never printed, logged, put in an exception message, or written to disk.' FALSE. The content policy is applied only in write_ingest_manifest, never to exception text; _describe() dumps whole objects unbounded and leaked question, answer and session text in a 482-character message; assert_content_free interpolates a sub-120 dict KEY into its own error.",
+      "D-6": "assert_query_transform_is_inherited(mu, D, mu.copy(), D.copy()) PASSES - np.array_equal is value equality, not the 'IDENTICAL objects' the docstring claims - and it is disconnected from what apply_archive_transform consumed, so it is a self-report. Harmless today; must be wired before the representation stage.",
+      "D-7_D-8": "ragged LongMemEval haystacks silently zip()-truncate to zero units; a missing question_id raises a raw KeyError"
+    },
+    "overstatements_found_in_the_preparers_documents": [
+      "extras described as 'refused' when they are correctly not refused",
+      "the never-in-an-exception claim",
+      "'Never returns free text'",
+      "'IDENTICAL objects, bitwise'"
+    ],
+    "governance_a_proposed_vs_accepted": "COHERENT BUT NOT UNAMBIGUOUS - a successor could conclude the wrong thing. All five binding/ files carry the IDENTICAL 'PROPOSED - NOT BOUND' string - accepted, superseded and never-accepted alike; the v1 sidecar never mentions supersession while only the v2 sidecar does; validate_proposed_manifests.py:70 actively asserts 'the provenance sidecar marks it PROPOSED, not bound'; and NO file in the runner namespace points at the acceptance record, which lives in the other namespace.",
+    "governance_b_v2_precedence": "REAL ENFORCEMENT in the ingestion, not convention: BOUND_MANIFESTS pins the v2 hash, v1's path is refused, and v1 renamed to the v2 filename is STILL refused because the hash governs and not the path. Two gaps: the runner's own loader takes the expected hash as a caller argument, and binding/validate_proposed_manifests.py still loads V1 - self-hashing, so vacuously - and never mentions v2.",
+    "what_is_genuinely_sound": "identity really does precede parsing; the gates are real and were measured; cohort refusals are named and correct; the cluster block held; all writers refuse to overwrite; both preparer suites reproduce ALL PASS",
+    "nothing_was_fixed": "no correction applied, no candidate file touched, no pilot, no sealing, no HMAC, no real run"
   }
 }
