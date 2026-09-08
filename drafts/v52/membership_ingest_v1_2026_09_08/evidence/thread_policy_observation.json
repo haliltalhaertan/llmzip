@@ -1,0 +1,28 @@
+{
+  "correction_to_L074": "L-074 and CONFIGURATION_IDENTITY_2026-09-08.md record that threadpoolctl.threadpool_info() returns an EMPTY list in this venv. That statement is WRONG as written, and the cause was my probe, not the environment: I called threadpool_info() in a process that had not imported NumPy, so no BLAS library was loaded yet and there was no pool to report. With NumPy imported first it reports one pool. Corrected here additively; the earlier hash-bound documents are not edited.",
+  "requested_by_environment_variables": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "observed_after_importing_numpy": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell"
+    }
+  ],
+  "control_without_numpy_imported": [],
+  "what_this_observation_IS": "threadpoolctl reports ONE loaded BLAS pool - libscipy_openblas 0.3.30, pthreads, Haswell - configured at num_threads = 1. That is a read of the library configuration after the environment variables were applied.",
+  "what_this_observation_IS_NOT": [
+    "it is not proof that no other native thread pool exists in a future run that imports other libraries",
+    "it is not a measurement of how many threads actually executed any particular operation",
+    "Python-level thread counting cannot see native OpenBLAS workers, so it cannot substitute for this either"
+  ],
+  "the_distinction_to_keep": "REQUESTED single-threaded execution (the four environment variables) and OBSERVED library configuration (threadpoolctl reporting num_threads = 1) are two different statements. Neither is a runtime measurement of executed threads, and none of the three may be reported as the others."
+}
