@@ -1,0 +1,5 @@
+456645a61c7e44148ee454287e7db0e66adfa128539b17679ce1c94897764676  RUNNER_INGEST_REVIEW.md
+
+# sha256 of the RAW GIT BLOB of RUNNER_INGEST_REVIEW.md at commit ee8635e8d244a9a996aa3080723e6a807e9cae53
+# computed as: git cat-file blob ee8635e8d244a9a996aa3080723e6a807e9cae53:audit_v52_runner_ingest_review_2026_09_08/RUNNER_INGEST_REVIEW.md | sha256sum
+# NOT the sha256 of the checked-out file, which differs on a Windows checkout (see finding D-4).
