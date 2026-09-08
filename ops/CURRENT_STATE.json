@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T10:34:00Z",
+  "issued_at_utc": "2026-09-08T11:12:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's disposition of what the v3 closure check left open: TWO remaining caller-supplied leak paths in membership_runner_v3 (validate_identifier's `kind`, and an uncaught ValueError from int(mapping['n_questions']) in verify_source_identity); a FALSE claim paragraph at lines 69-72 and a stale 'runner v2' header; and the INHERITED _normalise_evidence residual, byte-identical in v1, v2 and v3, whose effect on the real corpus neither role may investigate without separate authorization. Do NOT fix automatically. M-1/M-2/M-3 remain unauthorized; no pilot, no sealing, no run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's disposition of what the v4 closure check left open: TWO byte-verbatim statements that are still ASSERTED and FALSE - membership_runner_v4.py:18-19 'Every message now goes through safe_report' (measured: errors.raise_violation x35, safe_report x6) and errors.py:20-24, which names the v3 modules and says the tests 'find none' on the surface where the v3 check found two leaks; the str-coercion wording; TWO structurally vacuous checks in the preparer's own suite; and one NEW optional isinstance finding. Do NOT fix automatically. M-1/M-2/M-3 remain unauthorized; no pilot, no sealing, no run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-078",
+  "ledger_entry": "L-079",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1774,5 +1774,46 @@
     "subprocess_controls_verified_real": "the checker confirmed the four subprocess controls load v2's OWN authoritative package and the unfixed resolver, and that in-process v3's package genuinely shadows it - its own in-process F16 control was vacuous for exactly that reason, which it disclosed. The preparer's suite reproduced the committed evidence exactly: 60 ok, 0 fail, 12 negative controls.",
     "optional_residuals": "N-3/N-4/N-5 stay optional; the preparer's reason was judged and holds. N-4 is now unreachable.",
     "nothing_was_fixed_afterwards": "no correction applied to the two leaks, the false claim, the stale header or the _normalise_evidence residual"
+  },
+  "runner_ingest_v4_fix_package_2026_09_08": {
+    "branch": "impl/v52-runner-ingest-v4-2026-09-08",
+    "commit": "86a8fd7a73a0d4e045666e692cd7e2016f134885",
+    "namespace": "drafts/v52/membership_runner_ingest_v4_2026_09_08/",
+    "blob_sha256": {
+      "errors.py": "b99132ac72f25215dcd2bf4b72a798e7834dbc098431dc8fc21bbb1bf4989f14",
+      "membership_runner_v4.py": "3ea4444e36280dccca545d5e230eb3604841f10f1decf1b6003b53549da63b9f",
+      "corpus_ingest_v4.py": "10e691b8223a9fe6ca20622e202b8dbb78c1bfdddba0482ddcea8312d7f15381",
+      "safe_report.py": "c7f4f0a0735b8022723251af26607ea8d74654e8d692ec70145f300578bce44c",
+      "test_runner_ingest_v4.py": "fbe249eb94a4a6c6d953e0bd2da87a0fba9178b94ed7b08b5e2117b83896791f",
+      "FIX_PACKAGE_V4_2026-09-08.md": "d7c451bf22bfc6da1f9989c2e5182be78c02c0bcb0135fae1803d4360ab499ff"
+    },
+    "scope": "evidence normalisation, the two remaining error paths, claim corrections; no M-1/M-2/M-3",
+    "purely_additive_verified_by_the_checker": "12 files, 2460 insertions, 0 deletions, every entry an A, nothing outside the namespace",
+    "byte_unchanged": "the closed core bc2282d3, the v1/v2/v3 packages, both accepted manifests, the superseded manifest, the seeds file and the adapter",
+    "evidence": "70 checks ALL PASS, 13 negative controls on v3 including malformed first/middle/last items",
+    "no_corpus_scan": "no scan of the real corpus was made to find out whether the malformed shapes occur there; the fix is unconditional and reading it is not authorized"
+  },
+  "runner_ingest_v4_closure_check_2026_09_08": {
+    "branch": "audit/v52-runner-ingest-v4-closure-2026-09-08",
+    "commit": "6b3de298850edf7a7696683726316b83909f5b6e",
+    "parent": "c894caa92c16818f86926a5c7e6f776b6b051cb7",
+    "report_sha256": "8ccde7f464ec1206d0fce3feeb3305eb5226f0212e1d62f148bde4c52e3f0ea2",
+    "sidecar_agrees": true,
+    "independently_verified": true,
+    "branch_adds_only": "16 files, all under audit_v52_runner_ingest_v4_closure_2026_09_08/; ZERO outside",
+    "fix_branch_head_unchanged": "86a8fd7a73a0d4e045666e692cd7e2016f134885; no candidate file modified",
+    "verdict": "CLOSURE PASS WITH FINDINGS - scoped to the three items and their wiring ONLY",
+    "evidence_normalisation": "CLOSED. The checker read norm_evidence from the raw blob at 692f599e (a6ecee02e5d6), RETYPED IT AS AN ORACLE, and every accepted shape in v4 matches the producer exactly, including the whole-string fallback. It wrote 29 malformed shapes of its own - first, middle and last position, nested lists, a list inside a list, float nan, a str subclass, a dict subclass, a dict subclass whose get returns a canary, non-string dict ids - and EVERY ONE is refused, none leaks, none writes a file. It could not construct one that passes through and under-counts. Raw/normalised/resolved are four published fields, measured on disk as raw=2 declared=1 resolved=1; dedup of valid repeats is byte-identical to v3; gold rows byte-identical to v3 on a clean source; 'one valid plus one malformed' stops and writes ZERO BYTES.",
+    "both_error_paths": "CLOSED. `kind` is an IdentifierKind member; 12 canaries including a dynamic Enum, a str subclass and an object whose __repr__ IS the canary all refuse with E-COH-013 and none is echoed, where v3 leaks six of the twelve. The int() is gone, the type validated explicitly with bool excluded; 9 n_questions canaries and 15 adjacent manifest-field canaries all refuse E-SRC-012, content-free, no ValueError. '1' and 1.0 are now REFUSED where v3 silently accepted them. AST census: the runner is down from 19 interpolations (10 raw) to 5 (2 raw, both core.DIM).",
+    "claims_NOT_fully_closed": {
+      "runner_18_19": "byte-verbatim 'Every message now goes through safe_report, which reports type, shape and digest and never content' - measured, errors.raise_violation x35 against safe_report x6. A carried-forward line in the v2 change-log paragraph that the preparer never revised while rewriting the paragraph beneath it. THIRD LINEAGE IN A ROW with a false asserted content claim.",
+      "errors_20_24": "still names membership_runner_v3 and corpus_ingest_v3 - a stale label in a file that WAS edited in v4 - and says the tests 'find none' on exactly the surface where the v3 check found two leaks",
+      "str_coercion_wording": "the comment says 'Nothing is guessed, coerced to a string or dropped' while the accepted dict branch does str(did). Contract-faithful, so wording rather than defect - but more absolute than the code"
+    },
+    "two_of_the_preparers_own_checks_are_vacuous": "one tests an error sentence's wording and one iterates an EMPTY LIST and therefore always passes - the same unconditionally-passing-check class as NEW-2, which the preparer identified and fixed in the core lineage and then reintroduced here. The checker verified both underlying claims independently, so nothing false is recorded.",
+    "NEW_optional_out_of_scope": "require_identifier_kind gates on isinstance, so an object that lies about __class__ passes and errors._safe prints its .value; the leak was captured byte-verbatim. NOT reachable from any JSON value; marked optional, not a blocker.",
+    "regression": "NONE. All four committed evidence files reproduce exactly; the v2 suite is 82/0, both v1 suites pass, and 35 regression checks of the checker's own pass - D-2/3/4/6/7/8, F12, F20, source trust, the gates, identity-before-parse, the cluster block, the writers, the D-1 policy and the LongMemEval accounting.",
+    "negative_controls_and_the_sys_path_fix_verified": "the checker confirmed `errors` is imported before any v3 module so it binds to v4's, and verified WHY that is behaviour-neutral: safe_report and authoritative are byte-identical v3 to v4, errors is a strict superset by addition, and the three control behaviours never touch errors at all.",
+    "nothing_was_fixed_afterwards": "no correction applied to the two false statements, the stale labels, the str() wording, the two vacuous checks or the new optional finding"
   }
 }
