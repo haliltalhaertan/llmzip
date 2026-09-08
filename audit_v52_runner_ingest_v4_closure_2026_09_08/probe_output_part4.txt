@@ -1,0 +1,52 @@
+==============================================================================================================
+INDEPENDENT AUDIT PROBES part 4 - regression. SYNTHETIC ONLY. No real corpus opened or scanned.
+==============================================================================================================
+INFO     accepted manifests read as RAW GIT BLOBS (not from a checkout)   |  locomo 59268 B sha256=66379b9dcf01f954…; lme 36598 B sha256=d5b8ed6999eea077…
+
+== P. source trust, D-4 and the manifest resolution ========================================
+PASS     P1  the ACCEPTED locomo manifest resolves from its raw Git bytes
+PASS     P2  the ACCEPTED longmemeval manifest resolves from its raw Git bytes
+PASS     P3  D-4/source-trust: the SUPERSEDED manifest is refused AS SUPERSEDED   |  [chain SourceResolutionError] SourceResolutionError('E-SRC-002: these manifest bytes are a SUPERSEDED manifest and must not be loaded [superseded_mani
+PASS     P3b and refused under the other benchmark too   |  [chain SourceResolutionError] SourceResolutionError('E-SRC-002: these manifest bytes are a SUPERSEDED manifest and must not be loaded [superseded_mani
+PASS     P4  D-4: a CRLF-translated copy of the accepted manifest is REFUSED, not normalised   |  [chain SourceResolutionError] SourceResolutionError('E-SRC-001: these manifest bytes are not the accepted manifest [crlf_to_lf_would_match=True, got_bytes=60823, lf_to_crlf_would_match=False]')
+P4b BYTE-VERBATIM CRLF refusal:
+   >>> membership_scaling_core.DesignViolation: E-SRC-001: these manifest bytes are not the accepted manifest [crlf_to_lf_would_match=True, got_bytes=60823, lf_to_crlf_would_match=False]
+PASS     P5  a one-byte-truncated manifest is refused
+PASS     P6  giving both raw and path is refused (no override)
+PASS     P7  an unknown benchmark is refused BEFORE any manifest byte is looked at, no echo
+PASS     P8  there is still no caller-supplied expected-hash argument in the signature   |  (benchmark: 'str', *, raw: 'bytes | None' = None, path=None) -> 'dict'
+
+== Q. D-2, D-3, D-6, seeds, gates, writers =================================================
+PASS     Q1  D-3: seed 999 refused
+PASS     Q2  D-3: the transposed 52001170 refused
+PASS     Q3  D-3: a hand-forged seed record is caught on READ
+PASS     Q4  F20: nothing read out of a poisoned seed record reaches a message
+PASS     Q5  D-2: a replicate count contradicting the frozen record is refused
+PASS     Q6  F12 ordering: an unstamped mapping is refused before anything in it is read
+PASS     Q7  N-4 residual stays closed: an EMPTY mapping gives E-SRC-006, not KeyError
+PASS     Q8  the accepted configuration still runs end to end on the ACCEPTED 1535-question cohort   |  n_q=1535 n_c=10
+PASS     Q9  D-6: the N-4 transform stamp is still checked
+PASS     Q10 N-3: the conversation-cluster bootstrap is still REFUSED for LongMemEval
+PASS     Q11 the writer refuses to OVERWRITE
+PASS     Q12 the real-data gate is closed by default and refuses first
+PASS     Q13 the closed core blob is byte-unchanged against the bound hash   |  bc2282d3fccfe83c3e9f…
+
+== R. D-1, D-7, D-8 and LongMemEval on the ACCEPTED cohort SHAPE ===========================
+INFO     R0  synthetic source of the ACCEPTED SHAPE built from the manifest's id list only   |  10 conversations, 1541 qa entries, cohort 1535
+PASS     R1  the accepted-shape cohort resolves clean
+PASS     R2  D-1: ONE partial question in 1535 STOPS the whole run   |  [chain DesignViolation] DesignViolation('E-COH-002: some declared evidence ids resolve and some do not, so the gold set would be silently smaller than the source declares [affected
+PASS     R3  a fully unresolvable question does NOT stop (visible as empty_gold)
+PASS     R4  one malformed item in 1535 STOPS the run   |  [chain DesignViolation] DesignViolation('E-COH-011: an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract [has_dia_id
+INFO     R5  accounting on the accepted-shape source   |  {"model": "declared_reference_ids", "raw_evidence_items": 1535, "declared_reference_ids": 1535, "resolved_reference_ids": 1535, "unresolved_reference_ids": 0}
+PASS     R6  raw == declared == resolved on a clean source of the accepted shape
+PASS     R7  no question excluded and no cohort changed
+PASS     R8  D-8/E-COH-005: a short LongMemEval source is refused on cohort size   |  [chain DesignViolation] DesignViolation('E-COH-001: the accepted cohort could not be resolved against the source [cohort_size=470, missing_ids=467]')
+PASS     R9  a bool gold marker is accepted
+PASS     R10 D-7: the int 1 is REFUSED, not coerced   |  [chain DesignViolation] DesignViolation('E-COH-009: a gold marker is not a boolean; the bound adapter records this as INVALID_HAS_ANSWER_TYPE and coerces it to False, whi
+PASS     R11 the string 'true' is REFUSED   |  [chain DesignViolation] DesignViolation('E-COH-009: a gold marker is not a boolean; the bound adapter records this as INVALID_HAS_ANSWER_TYPE and coerces it to False, whi
+PASS     R12 null is REFUSED   |  [chain DesignViolation] DesignViolation('E-COH-009: a gold marker is not a boolean; the bound adapter records this as INVALID_HAS_ANSWER_TYPE and coerces it to False, whi
+INFO     R13 LongMemEval accounting object   |  {"model": "per_turn_gold_markers", "declared_reference_ids": null, "declared_reference_ids_status": "NOT_APPLICABLE", "gold_units_resolved": 1, "completeness_guarded_by": ["parallel_array_length_check", "empty_haystack_refused", "units_enumerated_from_sessions", "non_boolean_gold_marker_refused"]}
+PASS     R14 LongMemEval accounting is unchanged from v3: declared is null + NOT_APPLICABLE, and the two benchmarks' field SETS still differ
+PASS     R15 D-7: ragged parallel arrays still refused   |  [chain DesignViolation] DesignViolation('E-COH-007: the parallel haystack arrays have different lengths; zipping them would silently truncate to the s
+
+TALLY-PART4 {'INFO': 4, 'PASS': 35}

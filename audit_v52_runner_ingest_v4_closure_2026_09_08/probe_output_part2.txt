@@ -1,0 +1,132 @@
+==============================================================================================================
+INDEPENDENT AUDIT PROBES part 2 - the two error paths, and a hunt for others. SYNTHETIC ONLY.
+==============================================================================================================
+INFO     modules   |  errors=membership_runner_ingest_v4_2026_09_08 safe_report=membership_runner_ingest_v4_2026_09_08 accepted=authoritative
+PASS     M0  the SHARED modules the v3 controls will pick up are v4's - and v4's are byte-identical to v3's for safe_report/authoritative, and a strict superset for errors (so the controls are not vacuous)
+
+== E. validate_identifier's `kind` =========================================================
+PASS     E1  IdentifierKind is a closed enumeration with exactly the two declared members
+PASS     E2  `kind` is produced by require_identifier_kind, which admits ONLY IdentifierKind members
+PASS     E3  a plain str canary: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E3  a plain str canary: v3 negative control   |  v3 LEAKS it
+PASS     E4  the canonical-looking str 'question_id': v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E4  the canonical-looking str 'question_id': v3 negative control   |  v3 does not leak this one
+PASS     E5  bytes: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E5  bytes: v3 negative control   |  v3 LEAKS it
+PASS     E6  an int: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E6  an int: v3 negative control   |  v3 does not leak this one
+PASS     E7  None: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E7  None: v3 negative control   |  v3 does not leak this one
+PASS     E8  a list holding the canary: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E8  a list holding the canary: v3 negative control   |  v3 LEAKS it
+PASS     E9  a dict holding the canary: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E9  a dict holding the canary: v3 negative control   |  v3 LEAKS it
+PASS     E10 an object whose __str__ is the canary: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E10 an object whose __str__ is the canary: v3 negative control   |  v3 LEAKS it
+PASS     E11 a DYNAMIC Enum whose value is the canary: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E11 a DYNAMIC Enum whose value is the canary: v3 negative control   |  v3 does not leak this one
+PASS     E12 a str SUBCLASS carrying the canary: v4 does not echo it   |  refused: [chain DesignViolation] DesignViolation('E-COH-013: the identifier kind is not one of the declared identifier 
+INFO     E12 a str SUBCLASS carrying the canary: v3 negative control   |  v3 LEAKS it
+FINDING  E13 an object faking __class__ = IdentifierKind: v4 does not echo it   |  LEAK: membership_scaling_core.DesignViolation: E-COH-016: the identifier has leading or trailing whitespace; it is REJECTED rather than stripped, because stripping would merge it with it
+INFO     E13 an object faking __class__ = IdentifierKind: v3 negative control   |  v3 does not leak this one
+PASS     E14 a genuine identifier fault ' x' still refuses by code E-COH-016 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-016: the identifier has leading or trailing whitespace; it is REJECTED ra
+PASS     E14 a genuine identifier fault '' still refuses by code E-COH-015 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-015: the identifier is a designated missing-value indicator; a missing id
+PASS     E14 a genuine identifier fault 'nan' still refuses by code E-COH-015 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-015: the identifier is a designated missing-value indicator; a missing id
+PASS     E14 a genuine identifier fault 'None' still refuses by code E-COH-015 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-015: the identifier is a designated missing-value indicator; a missing id
+PASS     E14 a genuine identifier fault '   ' still refuses by code E-COH-015 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-015: the identifier is a designated missing-value indicator; a missing id
+PASS     E14 a genuine identifier fault 7 still refuses by code E-COH-014 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-014: the identifier is not a string; this runner supports string identifi
+PASS     E14 a genuine identifier fault True still refuses by code E-COH-014 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-014: the identifier is not a string; this runner supports string identifi
+PASS     E14 a genuine identifier fault None still refuses by code E-COH-014 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-014: the identifier is not a string; this runner supports string identifi
+PASS     E14 a genuine identifier fault 3.5 still refuses by code E-COH-014 with kind/position   |  [chain DesignViolation] DesignViolation('E-COH-014: the identifier is not a string; this runner supports string identifi
+PASS     E15 the bad IDENTIFIER's own text is not echoed either   |  [chain DesignViolation] DesignViolation('E-COH-016: the identifier has leading or trailing whitespace; it is REJECTED rather than stripped, because st
+PASS     E16 the duplicate-id path does not echo the duplicated identifier   |  [chain DesignViolation] DesignViolation('E-COH-003: a question id occurs more than once in the source [duplicates=1, first_position=1]') :: E-COH-003:
+PASS     E17 a valid identifier is returned UNCHANGED, not transformed
+PASS     E18 in-package call sites pass IdentifierKind members, never a caller string
+
+== F. verify_source_identity's n_questions conversion ======================================
+FINDING  F0  no int() conversion of n_questions survives anywhere in verify_source_identity
+PASS     F0b the expected TYPE is validated explicitly, and bool is excluded from int
+PASS     F1  n_questions = a str canary: v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F1  n_questions = a str canary: v3 negative control   |  v3 LEAKS + [chain ValueError] ValueError("invalid literal for int() with base 10: 'Where did Rashid park the blue van on 
+PASS     F2  n_questions = the numeric-looking str '1': v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F2  n_questions = the numeric-looking str '1': v3 negative control   |  v3 accepted
+PASS     F3  n_questions = 1.0 (float, value-equal): v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F3  n_questions = 1.0 (float, value-equal): v3 negative control   |  v3 accepted
+PASS     F4  n_questions = True (bool): v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F4  n_questions = True (bool): v3 negative control   |  v3 accepted
+PASS     F5  n_questions = None: v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F5  n_questions = None: v3 negative control   |  v3 [chain TypeError] TypeError("int() argument must be a string, a bytes-like object or a real number, not 'NoneT
+PASS     F6  n_questions = a list: v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F6  n_questions = a list: v3 negative control   |  v3 [chain TypeError] TypeError("int() argument must be a string, a bytes-like object or a real number, not 'list'
+PASS     F7  n_questions = a str subclass carrying the canary: v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F7  n_questions = a str subclass carrying the canary: v3 negative control   |  v3 LEAKS + [chain ValueError] ValueError("invalid literal for int() with base 10: 'Where did Rashid park the blue van on 
+PASS     F8  n_questions = an object whose __int__ returns 1: v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F8  n_questions = an object whose __int__ returns 1: v3 negative control   |  v3 accepted
+PASS     F9  n_questions absent entirely: v4 refuses with a NAMED, content-free E-SRC-012   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+INFO     F9  n_questions absent entirely: v3 negative control   |  v3 [chain KeyError] KeyError('n_questions') :: 'n_questions'
+PASS     F10 expected_question_to_cluster = canary str: refused by type, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=0]') :
+PASS     F11 expected_question_to_cluster = list: refused by type, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=0]') :
+PASS     F12 expected_question_to_cluster absent: refused by type, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=0]') :
+PASS     F13 expected_cluster_ids = canary str: refused by type, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=1]') :
+PASS     F14 expected_cluster_ids = dict: refused by type, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=1]') :
+PASS     F15 expected_cluster_ids absent: refused by type, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=1]') :
+PASS     F16 a value-equal float 1.0 is REFUSED, not silently accepted as the integer 1
+PASS     F17 the numeric string '1' is REFUSED, where v3's int() would have accepted it
+INFO     F17b v3 accepted '1' silently   |  yes
+PASS     F18 a well-formed manifest still passes the six-check identity contract
+PASS     F19 duplicate cluster ids: refused by code, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-013: the manifest contradicts itself [reason_index=0]') :: E-SRC-013: the manifest contradict
+PASS     F20 cluster set mismatch: refused by code, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-013: the manifest contradicts itself [reason_index=1]') :: E-SRC-013: the manifest contradict
+PASS     F21 n_questions disagrees with the map size: refused by code, content-free   |  [chain DesignViolation] DesignViolation('E-SRC-013: the manifest contradicts itself [declared=99, mapped=1, reason_index=2]') :: E-SRC-013: 
+PASS     F22 the cohort-mismatch problem path does not echo a caller question id   |  [chain DesignViolation] DesignViolation('source identity check failed: 1 question id(s) missing against the accepted cohort: <str len=12 digest=000809347e49>; 1 question id(s) not in the accepted coho
+PASS     F23 nor a caller cluster id   |  [chain DesignViolation] DesignViolation('source identity check failed: 1 question(s) mapped to the WRONG conversation: <str len=12 digest=000809347e49>; conversation id SET mismatch: missing=1, unexpe
+PASS     F24 nor a MANIFEST-supplied question id on the missing/extra path   |  [chain DesignViolation] DesignViolation('source identity check failed: 1 question id(s) missing against the accepted cohort: <str len=61 digest=135208043289>; 1 question id(s) not in the accepted coho
+PASS     F25 nor a MANIFEST-supplied cluster id on the set-mismatch path   |  [chain DesignViolation] DesignViolation('source identity check failed: 1 question(s) mapped to the WRONG conversation: <str len=12 digest=000809347e49>; conversation id SET mismatch: missing=1, unexpe
+PASS     F26 neither error path writes any file
+
+== G. OTHER paths out of the same two functions and their callers =========================
+INFO     G1 census membership_runner_v4.py   |  5 interpolations inside raise, 2 raw: L457:core.DIM; L488:core.DIM
+INFO     G1 census corpus_ingest_v4.py   |  0 interpolations inside raise, 0 raw: 
+INFO     G1 census errors.py   |  2 interpolations inside raise, 2 raw: L168:field; L168:type(value).__name__
+INFO     G1 census safe_report.py   |  2 interpolations inside raise, 2 raw: L96:key; L96:type(value).__name__
+INFO     G1 census authoritative/resolve_sources.py   |  0 interpolations inside raise, 0 raw: 
+INFO     G1 census authoritative/accepted_configuration.py   |  0 interpolations inside raise, 0 raw: 
+INFO     G1b v3 baseline membership_runner_v3.py   |  19 interpolations inside raise, 10 raw
+INFO     G1b v3 baseline corpus_ingest_v3.py   |  0 interpolations inside raise, 0 raw
+INFO     G2 plain raise at membership_runner_v4.py:356   |  raise DesignViolation("source identity check failed: " + "; ".join(problems))
+INFO     G2 plain raise at membership_runner_v4.py:457   |  raise DesignViolation(f"archive representation must be (n, {core.DIM}), got {A.shape}")
+INFO     G2 plain raise at membership_runner_v4.py:488   |  raise DesignViolation(f"representation must be (n, {core.DIM}), got {X.shape}")
+INFO     G2 plain raise at membership_runner_v4.py:508   |  raise DesignViolation( f"the query transform stamp must be the string returned by apply_archive_transform, got " f"{safe_report.describe(query_stamp)}
+INFO     G2 plain raise at membership_runner_v4.py:512   |  raise DesignViolation( "N-4 VIOLATION: the query was NOT transformed by the archive-learned centering vector " "and D - the stamp recorded by apply_ar
+INFO     G2 plain raise at membership_runner_v4.py:538   |  raise DesignViolation( "N-3: the conversation-cluster bootstrap is REFUSED for LongMemEval. Its dependency " "structure is a single connected componen
+INFO     G2 plain raise at membership_runner_v4.py:286   |  raise DesignViolation(str(exc)) from None
+FINDING  G3 every plain raise in the runner formats only shapes/counts, never a caller value   |  7 plain raises
+OBSERVE  G4 a kwarg KEY still reaches UnsafeErrorField's own message (unchanged from v3, theoretical: every in-package call site uses literal keyword names)   |  True
+INFO     G5 `**`-expansions in the runner   |  the count. The honest statement is that **the grouping can be corrupted silently
+OBSERVE  G6 errors._safe still prints ANY Enum's .value verbatim (unchanged from v3)   |  no
+PASS     G6b but no call site in v4 passes a caller-supplied enum: `kind` is now gated by require_identifier_kind, and that is the only enum field in the package
+PASS     G7 reaching verify_source_identity BEHIND the stamp check with a hand-forged mapping still refuses content-free (the v3 N-5 residual does not re-open the n_questions leak)   |  [chain DesignViolation] DesignViolation('E-SRC-012: a manifest field does not have the type the source contract requires [field_index=2]') :: E-SRC-01
+PASS     G8 compute_results with a canary question id does not echo it   |  [chain DesignViolation] DesignViolation('source identity check failed: 1 question id(s) missing against the accepted cohort: <str len=12 digest=000809347e49>; 1 question id(s) not 
+PASS     G9 an unknown benchmark name is not echoed   |  [chain DesignViolation] DesignViolation('E-CFG-001: the benchmark is not one of the accepted benchmarks [accepted_benchmarks=2]') :: E-CFG-001: the be
+PASS     G10 an unknown scheme name is not echoed   |  [chain DesignViolation] DesignViolation('E-CFG-002: the resampling scheme is not one of the accepted schemes [accepted_schemes=2]') :: E-CFG-002: the 
+PASS     G11 identity-before-parse: only the stamp key is read from an unstamped mapping, and nothing leaks   |  [('get', '_accepted_manifest_sha256')]
+INFO     G11b v3 baseline for the same probe   |  reads=[('get', '_accepted_manifest_sha256')] leak=False
+
+== H. ITEM 3 - claims and labels ===========================================================
+PASS     H1  membership_runner_v4.py line 1 carries the CORRECT version label   |  """Corpus-bound runner v4 for the V52 membership-under-scaling experiment - PREPARATION ON
+PASS     H2  corpus_ingest_v4.py line 1 carries the CORRECT version label   |  """Corpus ingestion v4 for the V52 membership-under-scaling experiment - WRITTEN, NOT AUTH
+PASS     H3  INGEST_VERSION is v4
+FINDING  H4  errors.py in the v4 package names the v4 modules, not the v3 ones   |  errors.py:20: WHAT IS AND IS NOT CLAIMED. The tested surface is: every exception raised by `membership_runner_v3`, | errors.py:21: `corpus_ingest_v3`, `authoritative.resolve_sources` and this module, together with stdout, stderr, the
+INFO     H5 universal-shaped sentence in membership_runner_v4.py:70   |  check. v1: content is "never printed, logged, put in an exception message, or written to disk". v2:
+INFO     H5 universal-shaped sentence in membership_runner_v4.py:71   |  "no value is interpolated into any message in this module". v3: "every message here is built by
+INFO     H5 universal-shaped sentence in membership_runner_v4.py:71   |  "no value is interpolated into any message in this module". v3: "every message here is built by
+INFO     H5 universal-shaped sentence in membership_runner_v4.py:72   |  `errors.message`" and "A string cannot enter a message without first raising `UnsafeErrorField`" -
+INFO     H5 universal-shaped sentence in membership_runner_v4.py:18   |  D-5  exception messages interpolated values verbatim and unbounded. Every message now goes
+INFO     H5 universal-shaped sentence in corpus_ingest_v4.py:40   |  the caller. It is never printed, logged, put in an exception message, or written to disk." The
+INFO     H5 universal-shaped sentence in corpus_ingest_v4.py:45   |  v2 then claimed 'NO value is interpolated into any message raised or printed by this module', and that
+PASS     H6  no FOURTH new universal sentence is introduced (the three prior ones appear once each, as quoted falsified text, inside the inventory)
+OBSERVE  H7  the v2-era D-5 sentence in the changelog block   |  L18: D-5  exception messages interpolated values verbatim and unbounded. Every message now goes
+PASS     H8  the inventory names what is UNTESTED
+PASS     H9  the bound evidence contract is cited by file and commit, not asserted from memory
+INFO     H10 message builders actually used in membership_runner_v4.py   |  errors.raise_violation x35, safe_report.* x6
+
+TALLY-PART2 {'INFO': 47, 'PASS': 65, 'FINDING': 4, 'OBSERVE': 3}

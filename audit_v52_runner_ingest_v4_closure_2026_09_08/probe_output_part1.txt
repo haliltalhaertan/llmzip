@@ -1,0 +1,176 @@
+==============================================================================================================
+INDEPENDENT AUDIT PROBES - v4 delta closure. SYNTHETIC ONLY. No real corpus opened or scanned.
+==============================================================================================================
+python              3.13.15
+PYTHONHASHSEED      0
+threads             OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
+checkout            C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\audit_v4_cold\wt_v4
+tmp                 C:\Users\MDP\AppData\Local\Temp\audit_v4_01k9wp4j
+
+== S. the harness itself - is the negative control vacuous? ================================
+PASS     S1  I3/I4 and R3/R4 are DIFFERENT files (control is not testing v4 against itself)   |  I3=membership_runner_ingest_v3_2026_09_08 I4=membership_runner_ingest_v4_2026_09_08
+PASS     S2  I3 really is the v3 package's module   |  corpus_ingest_v3.py
+PASS     S3  R3 really is the v3 package's module   |  membership_runner_v3.py
+INFO     S4  sys.path[0:3]   |  membership_runner_ingest_v3_2026_09_08 | membership_impl_v3_2026_09_07 | membership_runner_ingest_v4_2026_09_08
+FINDING  S5  the LAST-inserted dir is searched FIRST, so v4 wins - the documented order is what ships
+PASS     S6  safe_report is byte-identical in v3 and v4, so v3 running against v4's is behaviour-neutral
+PASS     S7  authoritative/ is byte-identical in v3 and v4, so the v3-closure shadowing hazard is neutral here
+PASS     S8  errors.py v4 is a STRICT SUPERSET of v3's code set (v3 paths still resolve against it)   |  v3=35 codes, v4=45 codes, added=10
+PASS     S9  errors.py v4 changed ONLY by addition (no v3 code or sentence altered)
+PASS     S10 v3's _normalise_evidence contains NO raise at all, so v4's errors module cannot change it
+FINDING  S11 v3's validate_identifier raises plain f-strings, not errors.message - control is real
+INFO     S12 v3 int(mapping['n_questions']) is a builtin conversion, unaffected by errors.py   |  True
+
+== A. scope guard - the representation stage was NOT added =================================
+INFO     A1  files in the v4 namespace   |  FIX_PACKAGE_V4_2026-09-08.md, __init__.py, accepted_configuration.py, core_regression.txt, corpus_ingest_v4.py, errors.py, membership_runner_v4.py, resolve_sources.py, safe_report.py, test_runner_ingest_v4.py, v3_regression.txt, v4_delta_tests.txt
+PASS     A2  no representation fitting / retrieval / ranking / embedding entry point added
+PASS     A3  no M-1/M-2/M-3 module appears in the namespace
+PASS     A4  the real-data gate is still closed by default
+PASS     A5  run_on_real_corpus still refuses
+
+== B. ITEM 1 - the BOUND contract, transcribed correctly? ==================================
+PASS     B1  claimed VALID EMPTY: None -> ([],0), and the producer agrees it is empty
+PASS     B2  claimed VALID EMPTY: [] and () -> ([],0), producer agrees
+PASS     B3  claimed VALID: a string yields its D<n>:<n> ids, exactly as the producer does
+PASS     B4  claimed WHOLE-STRING FALLBACK is preserved and matches the producer byte for byte
+PASS     B5  claimed VALID: list of id strings, and dicts carrying dia_id or id - identical to the producer
+PASS     B6  dia_id takes precedence over id, exactly as the producer's `or` does
+PASS     B7  a tuple is accepted like a list (the producer accepts both)
+INFO     B8  E-COH-011 sentence   |  an item inside an otherwise valid evidence list cannot be turned into a reference id under the bound source contract
+INFO     B9  E-COH-012 sentence   |  the evidence field is not one of the shapes the bound source contract defines
+PASS     B10 valid-empty, malformed-item and unsupported-structure are three DIFFERENT outcomes
+PASS     B11 valid-empty is NOT reported as a malformed item (an empty list is not a fault)
+
+== C. ITEM 1 - MY OWN malformed shapes, including ones the preparer did not test ===========
+PASS     C01 malformed at FIRST position: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0', 'D1:1']
+PASS     C01 malformed at FIRST position: refusal carries no content
+PASS     C02 malformed at MIDDLE position: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0', 'D1:1']
+PASS     C02 malformed at MIDDLE position: refusal carries no content
+PASS     C03 malformed at LAST position: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0', 'D1:1']
+PASS     C03 malformed at LAST position: refusal carries no content
+PASS     C04 a list containing another list: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C04 a list containing another list: refusal carries no content
+PASS     C05 a list containing a tuple: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C05 a list containing a tuple: refusal carries no content
+PASS     C06 a nested list of lists: v4 REFUSES with E-COH-011   |  v3 silently returned []
+PASS     C06 a nested list of lists: refusal carries no content
+PASS     C07 float('nan') as a list item: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C07 float('nan') as a list item: refusal carries no content
+PASS     C08 a bool as a list item: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C08 a bool as a list item: refusal carries no content
+PASS     C09 bytes as a list item: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C09 bytes as a list item: refusal carries no content
+PASS     C10 a dict with an unrelated key only: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C10 a dict with an unrelated key only: refusal carries no content
+PASS     C11 a dict with dia_id = '': v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C11 a dict with dia_id = '': refusal carries no content
+PASS     C12 a dict with dia_id = None: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C12 a dict with dia_id = None: refusal carries no content
+PASS     C13 a dict with dia_id = 0 (falsy int): v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C13 a dict with dia_id = 0 (falsy int): refusal carries no content
+PASS     C14 a dict with dia_id = False: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C14 a dict with dia_id = False: refusal carries no content
+PASS     C15 a dict with dia_id = [] (falsy list): v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C15 a dict with dia_id = [] (falsy list): refusal carries no content
+PASS     C16 a dict with id = '' and no dia_id: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C16 a dict with id = '' and no dia_id: refusal carries no content
+PASS     C17 a dict SUBCLASS with no id keys: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C17 a dict SUBCLASS with no id keys: refusal carries no content
+PASS     C18 a set as a list item: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C18 a set as a list item: refusal carries no content
+PASS     C19 a None-only list: v4 REFUSES with E-COH-011   |  v3 silently returned []
+PASS     C19 a None-only list: refusal carries no content
+PASS     C20 an object() as a list item: v4 REFUSES with E-COH-011   |  v3 silently returned ['D1:0']
+PASS     C20 an object() as a list item: refusal carries no content
+PASS     C21 top-level int: v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C21 top-level int: refusal carries no content
+PASS     C22 top-level float nan: v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C22 top-level float nan: refusal carries no content
+PASS     C23 top-level dict: v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C23 top-level dict: refusal carries no content
+PASS     C24 top-level dict SUBCLASS: v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C24 top-level dict SUBCLASS: refusal carries no content
+PASS     C25 top-level set: v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C25 top-level set: refusal carries no content
+PASS     C26 top-level bytes: v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C26 top-level bytes: refusal carries no content
+PASS     C27 top-level bool True: v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C27 top-level bool True: refusal carries no content
+PASS     C28 top-level object(): v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C28 top-level object(): refusal carries no content
+PASS     C29 top-level generator: v4 REFUSES with E-COH-012   |  v3 silently returned []
+PASS     C29 top-level generator: refusal carries no content
+
+-- exotic shapes --
+PASS     C30 a str SUBCLASS is treated as a string (contract-faithful, matches the producer)   |  (['D1:0'], 1)
+PASS     C31 a str SUBCLASS with no id falls back whole-string, exactly as the producer does
+PASS     C32 a dict SUBCLASS carrying dia_id is accepted, as the producer accepts it
+PASS     C33 a dict subclass whose get() hands back a canary: nothing of it reaches the message   |  no leak
+INFO     C33b what a lying dict subclass yields   |  (['Where did Rashid park the blue van on the night of the storm?'], 1)
+PASS     C34 dia_id = 12345 (int): v4 matches the frozen producer exactly (str() coercion is the bound contract)   |  v4=(['12345'], 1)  producer=['12345']
+PASS     C34 dia_id = 12345 (int): raw count is published, so the entry is NOT invisible
+PASS     C35 dia_id = 1.5 (float): v4 matches the frozen producer exactly (str() coercion is the bound contract)   |  v4=(['1.5'], 1)  producer=['1.5']
+PASS     C35 dia_id = 1.5 (float): raw count is published, so the entry is NOT invisible
+PASS     C36 dia_id = nan (truthy float): v4 matches the frozen producer exactly (str() coercion is the bound contract)   |  v4=(['nan'], 1)  producer=['nan']
+PASS     C36 dia_id = nan (truthy float): raw count is published, so the entry is NOT invisible
+PASS     C37 dia_id = ['D1:0'] (list): v4 matches the frozen producer exactly (str() coercion is the bound contract)   |  v4=(["['D1:0']"], 1)  producer=["['D1:0']"]
+PASS     C37 dia_id = ['D1:0'] (list): raw count is published, so the entry is NOT invisible
+PASS     C38 dia_id = {'a':1} (dict): v4 matches the frozen producer exactly (str() coercion is the bound contract)   |  v4=(["{'a': 1}"], 1)  producer=["{'a': 1}"]
+PASS     C38 dia_id = {'a':1} (dict): raw count is published, so the entry is NOT invisible
+PASS     C39 a pathological str subclass collapses two ids under dict.fromkeys - IDENTICAL in v4 and the frozen producer, and raw_items still exposes the difference   |  v4=(['D1:0', 'D1:9'], 2)  producer=['D1:0', 'D1:9']
+
+== D. ITEM 1 - end to end: can an UNDER-COUNTED gold set still be published? ===============
+PASS     D01 one valid + one malformed dict (the named case): NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=1 resolved=1 unresolved=0 empty_gold=0 partial_loss=0
+PASS     D01 one valid + one malformed dict (the named case): v4 STOPS
+PASS     D01 one valid + one malformed dict (the named case): v4 leaks no content on the refusal
+PASS     D01 one valid + one malformed dict (the named case): v4 wrote NO file   |  set()
+PASS     D02 one valid + one empty-id dict: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=1 resolved=1 unresolved=0 empty_gold=0 partial_loss=0
+PASS     D02 one valid + one empty-id dict: v4 STOPS
+PASS     D02 one valid + one empty-id dict: v4 leaks no content on the refusal
+PASS     D02 one valid + one empty-id dict: v4 wrote NO file   |  set()
+PASS     D03 one valid + one null-id dict: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=1 resolved=1 unresolved=0 empty_gold=0 partial_loss=0
+PASS     D03 one valid + one null-id dict: v4 STOPS
+PASS     D03 one valid + one null-id dict: v4 leaks no content on the refusal
+PASS     D03 one valid + one null-id dict: v4 wrote NO file   |  set()
+PASS     D04 one valid + one int: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=1 resolved=1 unresolved=0 empty_gold=0 partial_loss=0
+PASS     D04 one valid + one int: v4 STOPS
+PASS     D04 one valid + one int: v4 leaks no content on the refusal
+PASS     D04 one valid + one int: v4 wrote NO file   |  set()
+PASS     D05 one valid + one null: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=1 resolved=1 unresolved=0 empty_gold=0 partial_loss=0
+PASS     D05 one valid + one null: v4 STOPS
+PASS     D05 one valid + one null: v4 leaks no content on the refusal
+PASS     D05 one valid + one null: v4 wrote NO file   |  set()
+PASS     D06 malformed FIRST, two valid after: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=2 resolved=2 unresolved=0 empty_gold=0 partial_loss=0
+PASS     D06 malformed FIRST, two valid after: v4 STOPS
+PASS     D06 malformed FIRST, two valid after: v4 leaks no content on the refusal
+PASS     D06 malformed FIRST, two valid after: v4 wrote NO file   |  set()
+PASS     D07 malformed MIDDLE: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=2 resolved=2 unresolved=0 empty_gold=0 partial_loss=0
+PASS     D07 malformed MIDDLE: v4 STOPS
+PASS     D07 malformed MIDDLE: v4 leaks no content on the refusal
+PASS     D07 malformed MIDDLE: v4 wrote NO file   |  set()
+PASS     D08 malformed LAST: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=2 resolved=2 unresolved=0 empty_gold=0 partial_loss=0
+PASS     D08 malformed LAST: v4 STOPS
+PASS     D08 malformed LAST: v4 leaks no content on the refusal
+PASS     D08 malformed LAST: v4 wrote NO file   |  set()
+FINDING  D09 unsupported structure at the top: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=0 resolved=0 unresolved=0 empty_gold=1 partial_loss=0
+PASS     D09 unsupported structure at the top: v4 STOPS
+PASS     D09 unsupported structure at the top: v4 leaks no content on the refusal
+PASS     D09 unsupported structure at the top: v4 wrote NO file   |  set()
+FINDING  D10 unsupported structure - int: NEGATIVE CONTROL - v3 publishes it as complete and lossless   |  declared=0 resolved=0 unresolved=0 empty_gold=1 partial_loss=0
+PASS     D10 unsupported structure - int: v4 STOPS
+PASS     D10 unsupported structure - int: v4 leaks no content on the refusal
+PASS     D10 unsupported structure - int: v4 wrote NO file   |  set()
+OBSERVE  D11 the v3 report's SIXTH shape - a free-text string with one embedded id - still ingests in v4 and is NOT refused   |  raw=1 declared=1 resolved=1 unresolved=0 empty_gold=0
+INFO     D11b the frozen producer does the same on that string   |  ['D1:0']
+PASS     D11c the published raw_evidence_items truthfully says ONE entry was presented
+INFO     D12 raw 3 / declared 2 / resolved 1 -> the unresolved one now STOPS the run   |  True
+PASS     D13 THREE published fields are three different numbers for a VALID repeated id   |  {'model': 'declared_reference_ids', 'raw_evidence_items': 2, 'declared_reference_ids': 1, 'resolved_reference_ids': 1, 'unresolved_reference_ids': 0}
+PASS     D14 the set/dedup semantics for VALID repeats are UNCHANGED from v3
+PASS     D15 four accounting fields are published, not two   |  ['declared_reference_ids', 'model', 'raw_evidence_items', 'resolved_reference_ids', 'unresolved_reference_ids']
+PASS     D16 on a CLEAN source the gold rows are byte-identical to v3 - nothing repaired
+PASS     D17 the cohort is unchanged
+PASS     D18 no question is excluded
+PASS     D19 a fully-unresolvable question is still NOT treated as partial - it proceeds and is visible
+PASS     D19b  ...measured   |  {'model': 'declared_reference_ids', 'raw_evidence_items': 1, 'declared_reference_ids': 1, 'resolved_reference_ids': 0, 'unresolved_reference_ids': 1}
+
+TALLY-PART1 {'PASS': 141, 'FINDING': 4, 'OBSERVE': 1, 'INFO': 8}

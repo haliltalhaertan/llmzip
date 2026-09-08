@@ -1,0 +1,50 @@
+==============================================================================================================
+INDEPENDENT AUDIT PROBES part 3. SYNTHETIC ONLY. No real corpus opened, read, hashed or scanned.
+==============================================================================================================
+
+== J. byte-verbatim: the __class__-spoof escape out of validate_identifier ================
+INFO     J1 isinstance(fake, IdentifierKind)   |  True
+INFO     J2 the object is NOT actually a member   |  FakeKind
+J3 BYTE-VERBATIM message from validate_identifier with a __class__-spoofed kind:
+   >>> E-COH-016: the identifier has leading or trailing whitespace; it is REJECTED rather than stripped, because stripping would merge it with its neighbour [kind=Where did Rashid park the blue van on the night of the storm?, length=2, position=0]
+PASS     J4 the escape needs an object that LIES about its own __class__; no JSON value can do it   |  recorded as a THEORETICAL caller-override path, not a data path
+INFO     J5 the honest gate would be an identity check   |  `value in IdentifierKind` / `value is a member`
+PASS     J6 no in-package caller passes anything but an IdentifierKind literal
+
+== K. errors.message: what still reaches a message =========================================
+K1 BYTE-VERBATIM errors.message with a hand-built Enum whose value is a canary:
+   >>> E-COH-018: the cohort is empty; there is nothing to validate [x=Where did Rashid park the blue van on the night of the storm?]
+PASS     K1b errors._safe still prints ANY Enum's .value - unchanged from v3, and now reachable only by a caller that hand-builds an Enum   |  THEORETICAL
+K2 BYTE-VERBATIM UnsafeErrorField message for an unsafe field:
+   >>> error field 'canaryKeyOdessa1987' is a str; only numbers, booleans, None and validated enum members may appear in an error message
+PASS     K2b the kwarg KEY is echoed by UnsafeErrorField's own message - unchanged from v3, theoretical   |  every in-package call site uses literal keyword names
+PASS     K3 a str VALUE still cannot enter a message - UnsafeErrorField fires first
+
+== L. the OTHER int() sites in the same module and its callers =============================
+PASS     L1 freeze_bootstrap_seed(seed=<canary str>): no caller value escapes   |  [chain DesignViolation] DesignViolation('E-CFG-007: the frozen seed record is malformed [seed_is_int=False]')
+PASS     L2 freeze_bootstrap_seed(replicates=<canary str>): no caller value escapes   |  [chain DesignViolation] DesignViolation('E-CFG-007: the frozen seed record is malformed [replicates_is_int=False]')
+PASS     L3 freeze_bootstrap_seed(seed=<obj with __int__>): no caller value escapes   |  [chain DesignViolation] DesignViolation('E-CFG-007: the frozen seed record is malformed [seed_is_int=False]')
+PASS     L4 a FILE-derived replicates canary (read back out of a record the pipeline itself writes) does not escape through int()   |  [chain DesignViolation] DesignViolation('E-CFG-008: the frozen seed record does not match the accepted configuration [accepted_replicates=10000, accepted_seed=52001107, replicates_matches=False, seed_
+PASS     L5 a CALLER-supplied replicates canary does not escape through int()   |  [chain DesignViolation] DesignViolation('E-CFG-007: the frozen seed record is malformed [replicates_is_int=False]')
+
+== M. the free-text string: the sixth shape of the v3 closure report =======================
+PASS     M1 [{'dia_id':'D1:0'},{'note':'second gold turn'}]: v4 refuses   |  v4 returned None; v3 returned ['D1:0']
+PASS     M2 [{'dia_id':'D1:0'},{'dia_id':''}]: v4 refuses   |  v4 returned None; v3 returned ['D1:0']
+PASS     M3 [{'dia_id':'D1:0'},{'dia_id':None}]: v4 refuses   |  v4 returned None; v3 returned ['D1:0']
+PASS     M4 ['D1:0',12345]: v4 refuses   |  v4 returned None; v3 returned ['D1:0']
+PASS     M5 ['D1:0',None]: v4 refuses   |  v4 returned None; v3 returned ['D1:0']
+OBSERVE  M6 'see D1:0 and also the bakery note': v4 refuses   |  v4 returned (['D1:0'], 1); v3 returned ['D1:0']
+INFO     M7 the frozen producer's own result for M6   |  ['D1:0']
+PASS     M8 v4's result for M6 is EXACTLY the frozen producer's - the shape is contract-valid, not a malformed one, and v4 now publishes raw_evidence_items=1 which truthfully reports one entry
+
+== N. str() coercion inside the accepted dict branch =======================================
+N1 the v4 comment says: 'Neither is repaired, coerced to a string, or dropped. Nothing is guessed.'
+N2 the FIX_PACKAGE table says: 'Nothing is guessed, coerced to a string or dropped.'
+OBSERVE  N3 {'dia_id': 12345} IS coerced by str(did) - identical to the frozen producer, and NOT refused   |  (['12345'], 1)
+OBSERVE  N4 {'dia_id': 1.5} IS coerced by str(did) - identical to the frozen producer, and NOT refused   |  (['1.5'], 1)
+OBSERVE  N5 {'dia_id': ['D1:0']} IS coerced by str(did) - identical to the frozen producer, and NOT refused   |  (["['D1:0']"], 1)
+PASS     N6 that coercion is the bound contract's own (`out.append(str(did))` in norm_evidence), so it is contract-faithful; the two sentences above are about the two REFUSAL cases, and read as absolute   |  classified (iii) wording, not (i)
+PASS     N7 a str()-coerced non-string id cannot resolve, so it lands in `unresolved` and the run STOPS with E-COH-002 - the loss is NOT silent   |  [chain DesignViolation] DesignViolation('E-COH-002: some declared evidence ids resolve and some do not, so the gold set would be silently smaller than the source declares [affected_questions=1, cohort
+PASS     N8 and that refusal carries no content
+
+TALLY-PART3 {'INFO': 4, 'PASS': 19, 'OBSERVE': 4}

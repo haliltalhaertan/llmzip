@@ -1,0 +1,104 @@
+====================================================================================================
+DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS - v2 fix package. Fake files only; no real corpus.
+====================================================================================================
+
+== D-1  partially unresolvable evidence ====================================================
+ok    D-1 NEGATIVE CONTROL: v1 ACCEPTS the partial loss   one gold row kept, one evidence id silently dropped
+ok    D-1 NEGATIVE CONTROL: v1's persisted summary reports questions_with_empty_gold = 0   the partial loss is invisible in the only artefact that reaches 
+ok    D-1 NEGATIVE CONTROL: v1 publishes no evidence accounting at all   
+ok    D-1 CLOSED: v2 STOPS with a named violation on an unexpected partial resolution   LoCoMo cohort resolution failed: 1 question(s) have PARTIALLY unres
+ok    D-1: a waiver without a citation is refused   allow_partial_evidence requires partial_evidence_citation: the document or committed record that per
+ok    D-1: with a cited waiver it proceeds, and the loss is COUNTED not hidden   evidence_ids_declared=2, evidence_ids_resolved=1, evidence_ids_unresolved=
+ok    D-1: the affected question count is published in the manifest   
+ok    D-1: the waiver and its citation travel with the ingest   
+ok    D-1: the gold/adapter semantics are unchanged - resolved ids still map to their own rows   
+ok    D-1: no question was excluded, no gold repaired, no cohort changed   
+ok    D-1: a fully resolvable source needs no waiver and reports zero unresolved   
+
+== D-2 / D-3  the accepted configuration governs ===========================================
+ok    D-3 NEGATIVE CONTROL: v1 accepts seed 999 where 52001107 is the accepted value   
+ok    D-3 NEGATIVE CONTROL: v1 reads it straight back   
+ok    D-3 CLOSED: v2 refuses a seed that is not the accepted one   seed 999 is not the accepted seed for (LoCoMo, question); the accepted value is 52001107
+ok    D-3: a transposed digit is refused   seed 52001170 is not the accepted seed for (LoCoMo, question); the accepted value is 52001107 (D-3)
+ok    D-2: a replicate count that is not the accepted one is refused at freezing time   replicate count 7 is not the accepted count for (LoCoMo, question);
+ok    D-3: the accepted seed is accepted   
+ok    D-3: the accepted values come from the authoritative module, not from this file   
+ok    D-3: a scheme the design does not define has no accepted configuration and is refused   no accepted bootstrap configuration exists for (LongMemEval, 
+ok    D-3: a hand-edited seed record is caught when it is read   the frozen seed record does not match the accepted configuration for (LoCoMo, question): r
+ok    D-2 CLOSED: a run whose replicate count contradicts the frozen record is refused   replicate count 7 contradicts the frozen seed record, which fixes 
+ok    D-2: the matching count runs and the artefact states what was actually used   
+ok    D-2 NEGATIVE CONTROL: v1 ran 7 replicates and persisted a record saying 10000   the artefact misstated how it was computed
+
+== source trust: the expected hash is not a caller argument =================================
+ok    NEGATIVE CONTROL: v1 loads any file against any hash the CALLER supplies   
+ok    CLOSED: v2 has no caller hash argument, and refuses bytes that are not the accepted ones   manifest bytes for LoCoMo do not match the accepted hash: 
+ok    v2 refuses being given both raw bytes and a path   load_accepted_mapping takes exactly one of `raw` or `path`
+ok    the SUPERSEDED LongMemEval v1 manifest is refused AS SUPERSEDED, not as a hash mismatch   this is the SUPERSEDED LongMemEval manifest (d5b8ed69-prede
+ok    ...and the refusal names what supersedes it and why   
+ok    the accepted LongMemEval v2 manifest loads from Git's original bytes   
+ok    the accepted LoCoMo manifest loads the same way, with 1535 questions in 10 conversations   
+ok    the acceptance record is reachable from the authoritative module   
+ok    the PROPOSED-vs-ACCEPTED relation is stated in one place, in this package   
+
+== D-4  raw-byte discipline ================================================================
+ok    the CRLF form differs from the accepted blob, as the review measured   blob 59268 B vs CRLF 60823 B
+ok    D-4 NEGATIVE CONTROL: v1 refuses its OWN accepted manifest from a CRLF checkout   expected-mapping manifest hash mismatch for C:\Users\MDP\AppData\Lo
+ok    D-4 CLOSED: v2 also refuses it - the hash check is NOT relaxed   manifest bytes for LoCoMo do not match the accepted hash: expected 66379b9dcf01f954c
+ok    D-4: ...but v2 DIAGNOSES the cause instead of leaving a bare mismatch   
+ok    D-4: and says explicitly that it refuses rather than normalising   
+ok    D-4: the accepted bytes still load through the same path   
+ok    D-4: byte-preserving materialisation reproduces the accepted hash on disk   PROPOSED_mapping_locomo.json
+ok    D-4: and a materialised file loads   
+ok    D-4: no .gitattributes was added by this package   
+
+== D-5  nothing carries content out ========================================================
+ok    D-5 NEGATIVE CONTROL: v1 leaks through S7.5 validate_identifier whitespace   ['question']
+ok    D-5 CLOSED: v2 leaks nothing through S7.5 validate_identifier whitespace   no canary in stdout, stderr or exception text
+ok    D-5 NEGATIVE CONTROL: v1 leaks through S7.6 validate_identifier -> describe   ['question', 'answer', 'session']
+ok    D-5 CLOSED: v2 leaks nothing through S7.6 validate_identifier -> describe   no canary in stdout, stderr or exception text
+ok    D-5 NEGATIVE CONTROL: v1 leaks through S7.7 freeze_bootstrap_seed -> describe   ['question', 'answer', 'session']
+ok    D-5 CLOSED: v2 leaks nothing through S7.7 freeze_bootstrap_seed -> describe   no canary in stdout, stderr or exception text
+ok    D-5 NEGATIVE CONTROL: v1 leaks through S7.9 duplicate ids   ['question']
+ok    D-5 CLOSED: v2 leaks nothing through S7.9 duplicate ids   no canary in stdout, stderr or exception text
+ok    D-5 NEGATIVE CONTROL: v1 leaks through S7.8 verify_source_identity extras   
+ok    D-5 CLOSED: v2 leaks nothing through S7.8   
+ok    D-5 NEGATIVE CONTROL: v1's assert_content_free echoes a sub-120 KEY in its own error   
+ok    D-5 CLOSED: v2's assert_content_free reports the key by digest   
+ok    D-5 NEGATIVE CONTROL: v1 leaks through S7.10 the duplicate-id error   
+ok    D-5 CLOSED: v2 leaks nothing through S7.10   
+ok    D-5: the happy path emits no canary on stdout or stderr   
+ok    D-5: the written manifest carries no canary   
+ok    D-5: ...even though the ingested structures DO hold the text in memory   that is what ingestion is for; the claim is about messages and files
+ok    D-5: safe_report.describe never reproduces the value   
+ok    D-5: the 120-character limit is NOT presented as a guarantee anywhere in v2   
+
+== D-6  the transform is checked by construction ===========================================
+ok    D-6 NEGATIVE CONTROL: v1's assertion passes on COPIES, though it claims IDENTICAL objects   
+ok    D-6 NEGATIVE CONTROL: v1 passes when the query was transformed with a QUERY-derived mu and the ARCHIVE mu was reported instead   the assertion never 
+ok    D-6 CLOSED: the stamp produced by the real transform call verifies   
+ok    D-6: the transformed query is unchanged in value by the fix   
+ok    D-6: a query transformed with QUERY-derived parameters is caught   N-4 VIOLATION: the query was NOT transformed by the archive-learned centering vect
+ok    D-6: a 1-ULP perturbation of D is caught   N-4 VIOLATION: the query was NOT transformed by the archive-learned centering vector and D - the sta
+ok    D-6: copies of the same VALUES produce the same stamp - the check is on bytes, not identity   value-based by design; the fix is that the caller can n
+ok    D-6: a caller that hands back something that is not a stamp is refused   the query transform stamp must be the string returned by apply_archive_trans
+ok    D-6: the docstring no longer claims object identity   
+ok    D-6: nothing is estimated from the query - that half was sound and is unchanged   
+
+== D-7 / D-8  structural validation ========================================================
+ok    D-7 NEGATIVE CONTROL: v1 truncates a ragged haystack to ZERO units, silently   
+ok    D-8 NEGATIVE CONTROL: v1 raises a raw KeyError for a missing question_id   'question_id'
+ok    D-7 CLOSED: v2 refuses ragged parallel arrays before zipping them   the parallel haystack arrays of a LongMemEval item have different lengths (haysta
+ok    D-8 CLOSED: v2 gives a named DesignViolation for a missing question_id   the LongMemEval item at position 0 is not a mapping with a question_id (D-8)
+ok    D-7/D-8: a well-formed item still ingests, with both sessions contributing   
+ok    D-8: a missing question_id error carries no content   a LongMemEval item is missing the required field 'haystack_session_ids' (fields_present=1)
+
+== unchanged behaviour that must stay unchanged =============================================
+ok    the gate is closed   
+ok    the gate still refuses by default   real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, an
+ok    the real-corpus entry point is still a refusing stub   real-data execution is OFF by default and is not authorized at this stage; no corpus may be re
+ok    a LongMemEval cluster bootstrap is still refused   N-3: the conversation-cluster bootstrap is REFUSED for LongMemEval. Its dependency structure is a 
+ok    writers still refuse to overwrite   refusing to overwrite an existing result file: C:\Users\MDP\AppData\Local\Temp\v52_v2_cabkldnu\final
+ok    the closed core is untouched by this package   
+
+ALL PASS
+Scope: DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS for findings D-1 through D-8 and the directly connected source-trust items. Fake files only. Not a seal and not authorization to run.

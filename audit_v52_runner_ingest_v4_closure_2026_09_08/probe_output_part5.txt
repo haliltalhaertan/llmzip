@@ -1,0 +1,12 @@
+== T. the WRITTEN ingest manifest =========================================================
+T1 BYTE-VERBATIM evidence_accounting as WRITTEN to disk:
+   >>> {"declared_reference_ids": 1, "model": "declared_reference_ids", "raw_evidence_items": 2, "resolved_reference_ids": 1, "unresolved_reference_ids": 0}
+PASS     T2 the written manifest carries the FOUR distinct counts
+PASS     T3 raw(2) != declared(1) == resolved(1) - the dedup of a valid repeat is now VISIBLE on disk
+PASS     T4 the written manifest carries NO canary content   |  840 bytes
+PASS     T5 the manifest schema check still accepts the new field set (no E-OUT-002)
+PASS     T6 the writer still refuses to OVERWRITE
+FINDING  T7 assert_content_free still refuses a canary-bearing payload
+T8 NEGATIVE CONTROL - v3's accounting object for the same source:
+   >>> {"declared_reference_ids": 1, "model": "declared_reference_ids", "resolved_reference_ids": 1, "unresolved_reference_ids": 0}
+PASS     T9 v3 published only TWO reference counts and no raw count, so a dropped raw item was indistinguishable from an item that never existed
