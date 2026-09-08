@@ -1,0 +1,3 @@
+fd10e53324787965e11155cb6cd31952496199f0e8250fe9416c996abf227cea  CODEX_V5_REVIEW.md
+# sha256 of the RAW GIT BLOB of CODEX_V5_REVIEW.md at commit 3bb4ba87fb985bcca2a33c1c71f1e40ce9a7abd7
+# method: git cat-file blob <commit>:audit_v52_codex_v5_repair_review_2026_09_08/CODEX_V5_REVIEW.md | sha256sum
