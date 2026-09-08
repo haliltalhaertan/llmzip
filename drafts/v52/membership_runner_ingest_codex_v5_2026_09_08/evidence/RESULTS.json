@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "evidence_kind": "implementation-team synthetic tests; NOT independent audit",
+  "python": "3.13.15",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3"
+  },
+  "platform": "Windows-10-10.0.19045-SP0",
+  "thread_settings": {
+    "PYTHONHASHSEED": "0",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "suites": [
+    {
+      "suite": "drafts/v52/membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py",
+      "exit_code": 0,
+      "stdout_sha256": "3ae7990021f9408fdadc4ef1a664f955b8a234d2a8286ad8a399ac7a1bc1cd51",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "suite": "drafts/v52/membership_runner_ingest_codex_v5_2026_09_08/test_codex_v5.py",
+      "exit_code": 0,
+      "stdout_sha256": "88a07bdf08cb242747eb277455500147a4e30ab4f6f1d47e2e48248ffd20e250",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "suite": "drafts/v52/membership_impl_v3_2026_09_07/test_membership_scaling_core.py",
+      "exit_code": 0,
+      "stdout_sha256": "58d35b0c533273c23e7076d391bb86c83386353ef81e6e42a887319747360d9b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "preserved": [
+    {
+      "path": "drafts/v52/membership_impl_v3_2026_09_07/membership_scaling_core.py",
+      "base_commit": "86a8fd7a73a0d4e045666e692cd7e2016f134885",
+      "sha256": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72",
+      "bytes": 29271
+    },
+    {
+      "path": "drafts/v52/membership_runner_ingest_v4_2026_09_08/membership_runner_v4.py",
+      "base_commit": "86a8fd7a73a0d4e045666e692cd7e2016f134885",
+      "sha256": "3ea4444e36280dccca545d5e230eb3604841f10f1decf1b6003b53549da63b9f",
+      "bytes": 35787
+    },
+    {
+      "path": "drafts/v52/membership_runner_ingest_v4_2026_09_08/corpus_ingest_v4.py",
+      "base_commit": "86a8fd7a73a0d4e045666e692cd7e2016f134885",
+      "sha256": "10e691b8223a9fe6ca20622e202b8dbb78c1bfdddba0482ddcea8312d7f15381",
+      "bytes": 37535
+    },
+    {
+      "path": "drafts/v52/membership_runner_v1_2026_09_08/binding/PROPOSED_bootstrap_seeds.json",
+      "base_commit": "86a8fd7a73a0d4e045666e692cd7e2016f134885",
+      "sha256": "3f01082d2659d6485a460ef9edad0ae70f653c9a25b4e27680bb8bb058da4fea",
+      "bytes": 3605
+    }
+  ],
+  "real_corpus_access_authorized": false,
+  "real_experiment_run": false,
+  "seal": false,
+  "claude_independent_audit": "PENDING"
+}

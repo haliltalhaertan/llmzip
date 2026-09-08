@@ -1,0 +1,53 @@
+ok   isolated original-v4 controls fail the repaired contract
+ok   old isinstance gate is demonstrably spoofed
+ok   old identifier route emits canary
+ok   old formatter emits foreign enum
+ok   old formatter emits numeric subclass
+ok   old formatter emits arbitrary field key
+OLD CONTROL PASS
+ok   malformed position 0 refuses without coercion or loss
+ok   malformed position 1 refuses without coercion or loss
+ok   malformed position 2 refuses without coercion or loss
+ok   accepted producer behavior retained
+ok   accepted producer behavior retained
+ok   accepted producer behavior retained
+ok   accepted producer behavior retained
+ok   accepted producer behavior retained
+ok   accepted producer behavior retained
+ok   spoof fixture exercises isinstance weakness
+ok   spoofed kind refused before identifier processing
+ok   spoofed kind refused before identifier processing
+ok   spoof payload never accessed
+ok   genuine identifier member retained
+ok   genuine identifier member retained
+ok   foreign enum refused without content
+ok   numeric subclass refused without content
+ok   payload class name refused without content
+ok   dynamic field key refused without content
+ok   dynamic key with bad value refused without content
+ok   spoofed code refused without content
+ok   enum-as-position refused without content
+ok   foreign kind refused without content
+ok   builtin scalar diagnostic retained
+ok   builtin scalar diagnostic retained
+ok   builtin scalar diagnostic retained
+ok   builtin scalar diagnostic retained
+ok   builtin scalar diagnostic retained
+ok   builtin scalar diagnostic retained
+ok   builtin scalar diagnostic retained
+ok   canonical enum diagnostic retained
+ok   canonical enum diagnostic retained
+ok   diagnostic custom objects remain opaque
+ok   diagnostic custom objects remain opaque
+ok   diagnostic custom objects remain opaque
+ok   diagnostic custom objects remain opaque
+ok   scope guard blocks open
+ok   scope guard blocks os.scandir
+ok   scope guard blocks os.listdir
+ok   synthetic ingest retains distinct evidence counts
+ok   source observation ledger is nonempty
+ok   all successful observed source operations stay in synthetic root
+ok   no unexpected blocked access hidden by capture
+ok   real-data execution gate remains closed
+ALL PASS: 45 implementation-team synthetic checks (not independent audit)
+PYTHON_IO_GUARD {"denied_data_events": 0, "observed_data_events": 5, "scope": "Python open/scandir/listdir data events; no native IO proof"}
