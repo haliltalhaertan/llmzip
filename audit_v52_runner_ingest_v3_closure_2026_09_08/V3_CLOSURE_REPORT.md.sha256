@@ -1,0 +1,10 @@
+079dc9726529595d4a17472afa7837f2b472b7643f89bf25003f9cef46404f7b  V3_CLOSURE_REPORT.md
+
+sha256 of the RAW GIT BLOB of V3_CLOSURE_REPORT.md at commit
+9e8ca9fb513c7067ff5ac2c57939b33fd64612c8, computed as:
+
+  git cat-file blob 9e8ca9fb513c7067ff5ac2c57939b33fd64612c8:audit_v52_runner_ingest_v3_closure_2026_09_08/V3_CLOSURE_REPORT.md | sha256sum
+
+NOT the sha256 of the checked-out file, which differs on a Windows checkout
+(core.autocrlf=true in this machine system config; the repository ships no
+.gitattributes) - that is finding D-4 itself.
