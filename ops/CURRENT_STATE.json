@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T08:02:00Z",
+  "issued_at_utc": "2026-09-08T08:34:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's decision on the two remaining items before real ingestion can be prepared: formally BIND the two mapping manifests - LoCoMo 66379b9d and LongMemEval v2 d5b8ed69, both still PROPOSED - and authorize writing the real ingestion path, which is still a refusing stub. Do not commission the independent runner review, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's authorization to commission the independent runner and ingestion review, whose scope note is written and waiting at drafts/v52/membership_ingest_v1_2026_09_08/REVIEW_PACKAGE_2026-09-08.md. Do NOT execute the ingestion on a real corpus, do not write the representation-fitting stage, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-074",
+  "ledger_entry": "L-075",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1498,5 +1498,115 @@
       "no_grouping_supplied": "the file supplies NO conversation grouping and none was inferred; the sentinel cluster stays a technical placeholder and the cluster bootstrap stays refused",
       "placeholder_resolved_additively": "PROPOSED_mapping_longmemeval.json is left BYTE-UNCHANGED at bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886; the v2 manifest at d5b8ed6999eea0773fa2d7167054889d869efc283b1b7f4a475771ded9ed3714 supersedes it changing ONLY source_id and source_sha256, and passes the runner's contract. Both remain PROPOSED; neither is bound."
     }
+  },
+  "bound_configuration_acceptance_2026_09_08": {
+    "commit": "22e44608bab838974a6e65aa1a4297c815b5506b",
+    "document": "drafts/v52/membership_ingest_v1_2026_09_08/BOUND_CONFIGURATION_ACCEPTANCE_2026-09-08.md",
+    "document_sha256": "c5d2e63956426f61f28b19856e1298ac964b3a8228b7acf72ae32128f79e1d83",
+    "method": "SEPARATE acceptance record; no PROPOSED_* file was modified in place, so every earlier hash keeps resolving",
+    "scope": "identity and mapping only - which questions exist, which conversation each belongs to, and which source file is authoritative. NOT a statement about the correctness of the experiment and NOT run authorization.",
+    "seed_binding_clarified": "'bound with their sampling rules, not just their values' was ambiguous. BOTH are bound. The VALUES were already in a hash-bound file at acceptance time: CONFIGURATION_IDENTITY_2026-09-08.md at e61c414e, sha256 33c1dc98..., hash-recorded in L-074, and PROPOSED_bootstrap_seeds.json at 6911a03, sha256 3f01082d.... Nothing was re-chosen.",
+    "accepted_seeds": {
+      "LoCoMo/question": 52001107,
+      "LoCoMo/cluster": 52001207,
+      "LongMemEval/question": 52002107,
+      "replicates": 10000,
+      "LongMemEval/cluster": "none - R2 line 141 defines no such scheme"
+    },
+    "accepted_manifests": {
+      "LoCoMo": {
+        "path": "drafts/v52/membership_runner_v1_2026_09_08/binding/PROPOSED_mapping_locomo.json",
+        "commit": "6911a03af68cb48a5090690b05acec59a67ce211",
+        "sha256": "66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671",
+        "content": "1535 questions in 10 conversations"
+      },
+      "LongMemEval": {
+        "path": "drafts/v52/membership_runner_v1_2026_09_08/binding/PROPOSED_mapping_longmemeval_v2_source_resolved.json",
+        "commit": "e61c414e6bfc2dab1ad56cd93f66e1f2fddf71bf",
+        "sha256": "d5b8ed6999eea0773fa2d7167054889d869efc283b1b7f4a475771ded9ed3714",
+        "content": "470-question cohort in one sentinel cluster"
+      }
+    },
+    "hashes_recomputed_from_raw_git_objects_at_acceptance_time": true,
+    "longmemeval_precedence": "v2 SUPERSEDES v1 for every purpose and is the accepted manifest. v1 bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886 is SUPERSEDED and must NOT be loaded by the ingestion or the runner; it is kept byte-unchanged only so its hash keeps resolving in L-072 and L-073. The only difference is source_id and source_sha256; the 470 ids and the sentinel are identical.",
+    "sentinel_status": "still a TECHNICAL PLACEHOLDER - not real conversation membership, not a dependency component recomputed at this stage; the conversation-cluster bootstrap stays refused"
+  },
+  "environment_claim_correction_2026_09_08": {
+    "what_was_wrong": "L-074 and CONFIGURATION_IDENTITY_2026-09-08.md state that threadpoolctl.threadpool_info() returns an EMPTY list in this venv. That is WRONG as written.",
+    "cause": "my probe, not the environment: I called it in a process that had not imported NumPy, so no BLAS library was loaded and there was no pool to report",
+    "corrected_observation": "with NumPy imported first it reports ONE pool - libscipy_openblas, OpenBLAS 0.3.30, pthreads, Haswell - at num_threads = 1; the control without the NumPy import still returns []",
+    "method": "additive - the earlier documents are NOT edited; see drafts/v52/membership_ingest_v1_2026_09_08/evidence/thread_policy_observation.json",
+    "the_three_statements_that_must_stay_apart": {
+      "requested": "single-threaded execution is REQUESTED by the four environment variables; that is all they establish",
+      "observed": "the loaded BLAS pool is OBSERVED at num_threads = 1 by threadpoolctl after NumPy import",
+      "measured": "single-threaded execution at RUNTIME is NOT measured - neither of the above counts executed threads, and Python-level thread counting cannot see native OpenBLAS workers"
+    }
+  },
+  "locomo_selection_rule_note_2026_09_08": {
+    "document": "drafts/v52/membership_ingest_v1_2026_09_08/LOCOMO_SELECTION_RULE_NOTE_2026-09-08.md",
+    "document_sha256": "b13a2b9eb35a4bfe2857d900e3c302adbb27398f2d9fb8336e1a546f3a94a356",
+    "evidence": "drafts/v52/membership_ingest_v1_2026_09_08/evidence/selection_rule_result.json",
+    "two_claims_kept_apart": {
+      "claim_1_mapping_verified": "every one of the 1535 bound ids resolves to a real question in the conversation its id names; the raw file's structure leaves exactly one consistent assignment out of 3,628,800. Established in L-074 and NOT strengthened by claim 2.",
+      "claim_2_selection_reproduced": "why those 1535 of 1986 - established here, from committed code, read-only"
+    },
+    "the_committed_rule_has_THREE_steps": [
+      "1. keep category in {1,2,3,4} - the frozen EXPECTED_QUESTIONS = 1540",
+      "2. load the 156 audit corrections from audit/errors_conv_*.json; correct_evidence REPLACES raw evidence",
+      "3. resolve against the conversation's archive rows and drop when the gold set is empty - 'if not gold: continue'"
+    ],
+    "source": "research/v52/locomo_sign_mechanism_replication.py @ 692f599eedeb7e7a649443f24ff507e8c4d1c17d, TRANSCRIBED not imported, because importing it would execute its representation machinery",
+    "the_residual_explained": "locomo_6_qa11 carries a correction with error_type TEMPORAL_ERROR whose correct_evidence is PRESENT BUT EMPTY, so its gold set is empty and step 3 drops it. Its raw evidence resolving fine is exactly why a two-step reconstruction could not see it.",
+    "verified_end_to_end": "1535 predicted, 1535 bound, zero on either side; 156 corrections loaded, matching the frozen constant",
+    "cohort_unchanged_and_rule_NOT_reimplemented": "a reimplementation would be a SECOND selection rule that could drift from the bound cohort, most plausibly by omitting the audit-corrections step - exactly the step the reconstruction missed. The ingestion resolves the bound ids individually and never derives a cohort; it never reads audit/errors_conv_*.json."
+  },
+  "corpus_ingest_v1_2026_09_08": {
+    "branch": "impl/v52-membership-ingest-v1-2026-09-08",
+    "commit": "22e44608bab838974a6e65aa1a4297c815b5506b",
+    "namespace": "drafts/v52/membership_ingest_v1_2026_09_08/",
+    "commits": [
+      "2eb1e00 acceptance record and threadpool correction",
+      "c94756e selection-rule note and read-only verification",
+      "22e44608 ingestion code, tests and review package"
+    ],
+    "based_on": "e61c414e (runner head), so the CLOSED v3 core is present byte-unchanged at bc2282d3 and the accepted manifests are importable",
+    "blob_sha256": {
+      "corpus_ingest.py": "7dc084d8795c7e7d07270b866fdbc5e9c597508cbf331862b4075f9943fdf219",
+      "test_corpus_ingest.py": "4175516421bc8f6615724d1bbc39022e7239104d96449103bfa451d72d7b1a54",
+      "BOUND_CONFIGURATION_ACCEPTANCE_2026-09-08.md": "c5d2e63956426f61f28b19856e1298ac964b3a8228b7acf72ae32128f79e1d83",
+      "LOCOMO_SELECTION_RULE_NOTE_2026-09-08.md": "b13a2b9eb35a4bfe2857d900e3c302adbb27398f2d9fb8336e1a546f3a94a356",
+      "REVIEW_PACKAGE_2026-09-08.md": "e6fbb9cc80392c87522c46ae2b62b2c49952fe107a2ca16a4fc0ae6a214e4855",
+      "identity/verify_selection_rule.py": "b92b004587dba5f186254a1ad18230cf7636bff445ce0939f3cf708f2fa2a939",
+      "evidence/thread_policy_observation.json": "5225eb357d7335bbc271a1b26b9456d278db5a86b6af957c2b87e77c5fe3be14",
+      "evidence/selection_rule_result.json": "be55ec7e645cc01e10f8d2f7394710e901bd8d6a9b305b2a2d8a0e371a5ab954"
+    },
+    "status": "INGESTION CODE WRITTEN - NEVER EXECUTED ON A REAL CORPUS; NOT INDEPENDENTLY REVIEWED; NO RUN AUTHORIZATION",
+    "what_it_does": "source byte identity FIRST - streamed sha256 and size against bound values BEFORE any parse; then the bound manifest through the runner's hash-checked loader; then EVERY bound question id resolved individually, refusing missing, extra, misrouted, duplicated and position-mismatched ids rather than repairing them; then archive units and query texts assembled in memory with their gold row indices",
+    "where_it_stops": "no representation fitting, retrieval, ranking, evaluation, bootstrap or sealing; the suite asserts TfidfVectorizer, TruncatedSVD, sklearn, haar_q and hamming_dist are absent from the module source",
+    "cohort_is_bound_never_recomputed": "it takes the bound 1535 and 470 ids and resolves each one; it never derives a cohort",
+    "content_policy": "text is held in memory and handed to the caller, never printed, logged, placed in an exception message or written. write_ingest_manifest is the ONLY writer: closed schema, then a conservative content policy refusing any string over 120 characters and any unexpected type, then the core's refuse-to-overwrite path.",
+    "gate": "core.require_real_data_authorization() is the first statement of every corpus-touching entry point and refuses by default. Importing opens nothing - no module-level file access, no path resolved at import, no corpus path stored in the module - so TEST DISCOVERY CANNOT TRIGGER CORPUS ACCESS. All asserted, not stated.",
+    "evidence": "55 ingestion checks on FAKE FILES ONLY, 85 runner checks, 99 core regression checks, all ALL PASS in the ACCEPTED environment; every result labelled DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS",
+    "negative_coverage": [
+      "a file that is not valid JSON refused ON IDENTITY before it is ever parsed",
+      "a renamed source",
+      "a wrong size",
+      "a bound id absent from the source",
+      "a bound id routed to the wrong conversation",
+      "a duplicated question id",
+      "an id whose positional index contradicts its position",
+      "a duplicate memory unit id"
+    ],
+    "review_package": {
+      "document": "drafts/v52/membership_ingest_v1_2026_09_08/REVIEW_PACKAGE_2026-09-08.md",
+      "sha256": "e6fbb9cc80392c87522c46ae2b62b2c49952fe107a2ca16a4fc0ae6a214e4855",
+      "status": "READY - the reviewer is NOT commissioned and must not be started"
+    },
+    "still_required_before_a_real_run": [
+      "authorization to execute the ingestion on a real corpus",
+      "the independent runner and ingestion review",
+      "the representation-fitting stage, not written and not authorized",
+      "a pre-run seal, not made"
+    ]
   }
 }
