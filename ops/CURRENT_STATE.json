@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T07:30:00Z",
+  "issued_at_utc": "2026-09-08T07:45:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's decisions on the two items this delivery could not settle without inventing something: WHICH EXPECTED-MAPPING ARTIFACT IS BOUND for LoCoMo and LongMemEval, and WHICH ENVIRONMENT LOCK IS BINDING for this experiment. Neither may be chosen by the preparer. Do not commission the independent runner review until instructed, do not write a real ingestion path, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's decisions on the four items only they can supply: accept or reject the two PROPOSED mapping manifests; supply or decline the LongMemEval corpus source hash; approve an environment lock; and bind the three seed values into the configuration identity accepted BEFORE any outcome is accessible. Do not write a real ingestion path, do not commission the runner review, do not seal and do not run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -196,7 +196,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-072",
+  "ledger_entry": "L-073",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -1317,5 +1317,70 @@
     "label_on_all_results": "DEVELOPMENT-ENVIRONMENT SYNTHETIC TESTS - not evidence of lock conformance, not a seal, not authorization to run on real data",
     "full_environment_verification": "OPEN",
     "proposal_put_to_the_head_researcher": "Option A adopt the 4F1 V7 stack verbatim including Python 3.12.13, at the cost of an interpreter this machine does not have; Option B bind 3.12.14 with the identical numerical stack. Choosing is a scientific judgement about comparability with the sealed lineage, not an implementation one."
+  },
+  "binding_proposal_2026_09_08": {
+    "branch": "impl/v52-membership-runner-v1-2026-09-08",
+    "commit": "6911a03af68cb48a5090690b05acec59a67ce211",
+    "commits": [
+      "9eb30c9 binding proposal",
+      "6911a03 second-environment synthetic evidence"
+    ],
+    "status": "PROPOSAL ONLY - NOTHING IS BOUND; every artifact carries binding_status PROPOSED",
+    "method": "read-only inspection of committed records, each read as a RAW GIT BLOB and hash-checked before use; no raw corpus opened",
+    "blob_sha256": {
+      "BINDING_PROPOSAL_2026-09-08.md": "3f2e4bc4a592a0e24839dc60aab0c308bdfb5448944e98ec17bb16d3ececd860",
+      "binding/PROPOSED_mapping_locomo.json": "66379b9dcf01f954cd1b7dac84bf16230f7c606f6092a4dc53cbcfe8b9708671",
+      "binding/PROPOSED_mapping_longmemeval.json": "bdf05c12b4bc9298f54442932dd291b2d245370e18afa6df52d61af1a0844886",
+      "binding/PROPOSED_bootstrap_seeds.json": "3f01082d2659d6485a460ef9edad0ae70f653c9a25b4e27680bb8bb058da4fea",
+      "binding/derive_expected_mappings.py": "8e6166dbae2c1b5c33988fd703b7c72162b407e89ba193fc940060f6e66c9737",
+      "binding/validate_proposed_manifests.py": "904d6cc0f45b5888edfad04d71f253ed4803ec7e04d5acd1b84a1d97c6a8f4d5"
+    },
+    "mapping_source": {
+      "beam_inventory_REJECTED": "audit_v52_t4f0_codex_2026_08_31/conversation_inventory.csv is unusable on two independent grounds: it is the WRONG BENCHMARK (BEAM, tier=100K, chats/100K/1/chat.json) and a conversation inventory is NOT a question-to-conversation mapping. Same for estimand_primary_cohort.csv in that namespace (ids 100K::1::abstention::1).",
+      "locomo_FOUND": "the producer encodes the conversation in the question id: locomo_<conversation_index>_qa<n>. Two committed per-question records at 692f599eedeb7e7a649443f24ff507e8c4d1c17d agree QUESTION FOR QUESTION - the original research output b7abd942c13cf9ce1b1c4a13e3ff39fb26a26e8b2f2749dd92d76f0b2a474602 and the independent bit-exact reproduction efed0c46cd0f34e45daa5fcdf5d08fc51a61ffaafd6ca1d522c6c4c98fc7834f, whose comparison.json records max_absolute_numeric_difference 0.0, changed_numeric_cells 0, positive control PASS, six negative controls ALL REJECTED, and an original_sha256 equal to the first record's blob hash.",
+      "locomo_cohort_agreement": "1535 questions, 10 conversations, ZERO ids failing the scheme; per-conversation 150, 81, 152, 199, 178, 123, 149, 191, 156, 156 summing to 1535. Independent cross-check: actual_source_identity.json (ecb8384624aee0cc3cc11830e547c2f8f02a7a0f43a0f2894e3d9bec0226a28f) lists exactly TEN conversation files audit/conv_0..9.json and pins locomo10.json at 79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4, which the manifest carries as source_sha256.",
+      "PROVENANCE_LABEL": "INHERITED FROM PRODUCER METADATA, NOT independently derived from the raw corpus. The two records catch a transcription or pipeline error but both descend from the same labelling decision made when the ids were generated, so a producer-side mis-assignment would be inherited undetected. Stated in the manifest sidecars, the derivation script and the proposal.",
+      "longmemeval": "ids are opaque and carry NO session component; no committed record supplies one and NONE was invented or substituted. R2 line 141 defines no conversation-cluster bootstrap for LongMemEval, so only the cohort is needed. Two committed records agree EXACTLY on 470 questions - 1db682a277b8fe7f0b3aa7cf02831bf07f0d5c4c340796a57c93df5441df3157 and docs/v52/task4c2/V52_T4C2_question_level.csv at 69c21b2ffaea1e92923bf3f0e83287e12d07a5f34b4b42afde1752d6b50b3b51, whose hash MATCHES the value recorded for it inside V52_T4C2_POST_RUN_MANIFEST.json. All 470 map to one explicitly named sentinel cluster recording the single connected component inherited from Task 3A.1, which the runner refuses to resample; no conversation structure is claimed.",
+      "replayability": "derive_expected_mappings.py regenerates both manifests from raw Git blobs and ABORTS on any input hash mismatch or any id failing the scheme. validate_proposed_manifests.py runs the runner's own contract over both: 19 checks ALL PASS, including the count-preserving swap corruption caught on the REAL 1535-question cohort.",
+      "what_the_validation_does_NOT_prove": "feeding a manifest its own id columns is consistent by construction, so it proves schema, internal consistency and gate behaviour only. The cohort evidence is the cross-record agreement, not that script."
+    },
+    "environment": {
+      "recommendation_changed": "the instruction that closeness to the BEAM lock must not be the sole justification overturned the previous note. The stack that PRODUCED and bit-exactly reproduced the LoCoMo and LongMemEval representations is Python 3.13.15 with numpy 2.3.5, scipy 1.17.0, scikit-learn 1.8.0 and pandas 2.2.3 - preflight.json 134acfc12fbebabf8044a1742a064aca710680b6051d41e6674f7d9613a6557f and environment.txt 52efac8984648a718ffb467e8b436b717b28b1050fb668232a8cd8d6a68a8480. That is NEITHER the Task 4F1 V7 lock (3.12.13 / numpy 2.3.2 / scipy 1.16.1 / scikit-learn 1.7.1) NOR this session's dev environment (3.12.14, same package set).",
+      "why_it_matters_scientifically": "the pipeline computes word and char TF-IDF plus LSA THROUGH scikit-learn, so 1.7.1 against 1.8.0 is a difference in the library that builds the representation, not a cosmetic one; pandas is required there and absent from the BEAM lock entirely",
+      "measured_not_asserted": {
+        "bootstrap_streams_identical": "default_rng(seed).integers(0, n, size=n) for seeds 424242, 515151, 606060, 717171 and n in (1535, 470, 10) gives byte-identical draws on both stacks, sha256 83c5a58a0b9d3bfe7451ed1635a2233bd56baf49e2b7c9ae27d19a0214a82ca7; the lock choice does not move the uncertainty intervals",
+        "both_suites_pass_on_both_stacks": "85 runner checks and 99 core regression checks, ALL PASS, four evidence files"
+      },
+      "stated_against_the_proposal": "it diverges from the sealed BEAM lineage on four of five components, and the synthetic suites exercise NO representation code, so they cannot detect a scikit-learn behavioural difference. Nothing demonstrates that the representation pipeline gives identical output on the two stacks, and it was not run because that needs the corpus.",
+      "decision_reserved": "whether cross-lineage comparability outweighs fidelity to the representation pipeline is a scientific judgement for the Head Researcher",
+      "nothing_installed_or_changed": true,
+      "binding_status": "PROPOSED - the lock for this experiment is still NOT BOUND"
+    },
+    "bootstrap_seeds": {
+      "proposed": {
+        "LoCoMo/question": 52001107,
+        "LoCoMo/cluster": 52001207,
+        "LongMemEval/question": 52002107
+      },
+      "replicates": 10000,
+      "percentiles": [
+        2.5,
+        97.5
+      ],
+      "generator": "numpy.random.default_rng (PCG64); call shapes fixed by acceptance record section 4 and R1 section 6",
+      "deliberately_absent": "no seed for LongMemEval/cluster - proposing one would imply a scheme R2 does not define",
+      "how_chosen": "an announced arithmetic rule, 52000000 + 1000*benchmark + 100*scheme + 7, fixed before any real result exists and with no reference to any outcome; machine-checked against the three values, so a successor can see no search happened",
+      "preregistration_caveat_recorded_in_the_file": "writing a seed to a file immediately before a run is NOT preregistration. freeze_bootstrap_seed enforces write-once and no-reuse-across-schemes but cannot establish the value was chosen before the outcome. These become preregistered only when carried INSIDE the design and configuration identity accepted and hashed before any real outcome is accessible - a Head Researcher decision the runner cannot perform.",
+      "binding_status": "PROPOSED - NOT BOUND"
+    },
+    "still_genuinely_missing": {
+      "1_independent_locomo_derivation": "would need a narrow, SEPARATELY authorized task reading locomo10.json and the ten audit/conv_*.json and emitting ONLY question ids and their conversation - no scores, no retrieval, no representations, no outcome, and not given the arms, seeds or estimand. That authority is NOT requested; the task is named so the gap is not silently accepted.",
+      "2_longmemeval_corpus_source_hash": "the proposed manifest carries an explicit placeholder. No record inspected pins the LongMemEval dataset file the way actual_source_identity.json pins locomo10.json. V52_T4C2_POST_RUN_MANIFEST.json carries dataset_sha256 d6f21ea9 but nothing read states which file that covers, so it was NOT bound.",
+      "3_environment_lock_decision": "Head Researcher",
+      "4_seed_binding_into_the_configuration_identity": "Head Researcher",
+      "5_real_ingestion_path": "not authorized; run_on_real_corpus is still a refusing stub",
+      "6_independent_runner_review": "not commissioned; scope note written and waiting",
+      "7_rerun_under_the_approved_lock": "once one exists"
+    }
   }
 }
