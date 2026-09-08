@@ -1,0 +1,61 @@
+{
+  "canonicalization": "UTF-8 compact sorted-key JSON; rows sorted by file",
+  "files": [
+    {
+      "bytes": 24365,
+      "file": "errors_conv_0.json",
+      "sha256": "63c778c8432b058d791417ec37bf8ac30b0bb83b1272afacb5a162b84fe5e3c4"
+    },
+    {
+      "bytes": 7746,
+      "file": "errors_conv_1.json",
+      "sha256": "a2db16644318c3c144544f4cb373028e416bbf20c6f07f46606cf66f45de4e6c"
+    },
+    {
+      "bytes": 11824,
+      "file": "errors_conv_2.json",
+      "sha256": "93c2aa8ee7d3bfb59ae1cca283d176a794d76d3751c69264ddc1f63ceb2b4b3a"
+    },
+    {
+      "bytes": 23508,
+      "file": "errors_conv_3.json",
+      "sha256": "c1d0162e534bf68dba6aff3ca3e73ba8179cab7a400d098b8be89048c7b58585"
+    },
+    {
+      "bytes": 15447,
+      "file": "errors_conv_4.json",
+      "sha256": "42520f95b654c85b564da6cd26f40cefb981de574066f7b92bdebbc780fa1376"
+    },
+    {
+      "bytes": 9934,
+      "file": "errors_conv_5.json",
+      "sha256": "af8c675a3e216ddb94e07c417fb37c45fc46740dfa8ce586fc8c527f7a3b9ee7"
+    },
+    {
+      "bytes": 14435,
+      "file": "errors_conv_6.json",
+      "sha256": "acb6d0d02f938180b3d1a7a45f80d432ece69d13b197371cb71ddbddb83a26ea"
+    },
+    {
+      "bytes": 12048,
+      "file": "errors_conv_7.json",
+      "sha256": "bbe2268a3254dcc9d3741a84748fadf8e169d21d837810e92dc63cdf8db562cb"
+    },
+    {
+      "bytes": 15587,
+      "file": "errors_conv_8.json",
+      "sha256": "c15ace8ef1a7cbf3fe63d3b7ff9c2851885f5e00abc1c184971ebb11128aedb2"
+    },
+    {
+      "bytes": 15645,
+      "file": "errors_conv_9.json",
+      "sha256": "2c2b8791d024e11ca6015a109f160b7177379b3b42ac8c9adb990546fc89c4ff"
+    }
+  ],
+  "full20_inventory_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06",
+  "producer_commit": "692f599eedeb7e7a649443f24ff507e8c4d1c17d",
+  "producer_path": "research/v52/locomo_sign_mechanism_replication.py",
+  "producer_sha256": "a6ecee02e5d6a8735a922ec2d5f0a024b3c024e0cdf03b336e16e4357f20e74b",
+  "status": "EXPECTED_IDENTITIES_ONLY_ACTUAL_FILES_NOT_READ",
+  "subset10_inventory_sha256": "7df45317f0cb3029fc8cb008d8480ee5c8e61ac01dd0d77bc1cfcd6a3eb7224a"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "SOURCE_ONLY_NOT_EXECUTION_READY",
+  "payloads": [
+    {
+      "path": "EXPECTED_CORRECTION_IDENTITIES.json",
+      "bytes": 2118,
+      "sha256": "0a7920efc439915249cf0039f1daa959e3883edee5448f461a63abc25d0fbea2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3482,
+      "sha256": "4eb5c24133b50ee456a86806b2a299ebab6dad06576b97bfe71d7b8cc1caca38"
+    },
+    {
+      "path": "test_inventory.py",
+      "bytes": 1155,
+      "sha256": "128dc77ee2a24e3f119723077924577b56b9ac5fda4882256d65a882801eed52"
+    },
+    {
+      "path": "verify_inventory.py",
+      "bytes": 2329,
+      "sha256": "0af3dc8b93a2bc6a5381d5d7d38d84556c19a5444a3e066cb358dc773c4929fc"
+    }
+  ]
+}
