@@ -1,0 +1,101 @@
+==============================================================================
+P05.1  can caller-supplied TEXT reach an exception surface?
+   Representation(text that fails to vectorise)   -> PipelineError: 'E-M-006: representation fit failed'
+                                                     chain=NONE
+                                                     no canary on any surface
+   queries() with a text the vectoriser rejects   -> PipelineError: 'E-M-003: text type'
+                                                     chain=NONE
+                                                     no canary on any surface
+   queries() with a non-str element               -> PipelineError: 'E-M-003: text type'
+                                                     chain=NONE
+                                                     no canary on any surface
+   Representation with non-str element            -> PipelineError: 'E-M-003: text type'
+                                                     chain=NONE
+                                                     no canary on any surface
+   NOTE: the fit/query bodies set a flag inside `except Exception:` and raise the
+   PipelineError AFTER the handler exits, so __context__ is not attached. Verified above.
+
+==============================================================================
+P05.2  can caller-supplied IDENTIFIERS reach an exception surface?
+   score_archive with a duplicate question id     -> PipelineError: 'E-M-019: duplicate identifiers'
+                                                     chain=NONE
+                                                     no canary on any surface
+   LoCoMo: conversation question not in cohort    -> KeyError: "'CANARYID_ZQ8'"
+                                                     chain=NONE
+                                                     *** 'CANARYID_ZQ8' LEAKS on: ['str(e)', 'repr(e)', 'traceback'] ***
+   LongMemEval: cohort id with no question record -> KeyError: "'CANARYID_ZQ8'"
+                                                     chain=NONE
+                                                     *** 'CANARYID_ZQ8' LEAKS on: ['str(e)', 'repr(e)', 'traceback'] ***
+   LoCoMo: cohort id never scored (missing records) -> DesignViolation: "record validation failed: 60 missing record(s), e.g. [('CANARYID_ZQ8',"
+                                                     chain=NONE
+                                                     *** 'CANARYID_ZQ8' LEAKS on: ['str(e)', 'repr(e)', 'traceback'] ***
+
+==============================================================================
+P05.3  non-finite refusals
+   nan in centered archive        -> DesignViolation: non-finite value in the centered representation; aborting, n
+   inf in centered archive        -> DesignViolation: non-finite value in the centered representation; aborting, n
+   -inf in centered archive       -> DesignViolation: non-finite value in the centered representation; aborting, n
+   nan in D                       -> E-M-030: positive diagonal required
+   inf in D                       -> E-M-030: positive diagonal required
+   zero on diagonal               -> E-M-030: positive diagonal required
+   negative diagonal              -> E-M-030: positive diagonal required
+   non-diagonal D                 -> E-M-030: positive diagonal required
+   wrong shape D                  -> E-M-030: positive diagonal required
+   nan distance                   -> E-M-012: distance
+   inf distance                   -> E-M-012: distance
+   empty distance                 -> E-M-012: distance
+   nan priority                   -> E-M-013: priority
+
+==============================================================================
+P05.4  real-gate refusal
+   run_on_real_corpus(...) -> E-M-029: real execution not authorized
+   run_on_real_corpus(...) -> E-M-029: real execution not authorized
+   run_on_real_corpus(...) -> E-M-029: real execution not authorized
+   core.REAL_DATA_EXECUTION_ENABLED = False
+   core.require_real_data_authorization() -> DesignViolation: real-data execution is OFF by default and is not authorized at this st
+   pipeline.py acquisition/writer verbs found: NONE
+   pipeline.py file-system calls: ['read_bytes']
+
+==============================================================================
+P05.5  did anything write a file during this whole probe?
+   write-mode open() events observed: 0
+
+==============================================================================
+P05.6  the Python audit hook is NOT an OS sandbox -- does the package claim otherwise?
+   README lines mentioning 'not a universal security boundary': 1
+      point is not a universal security boundary. Code does not certify arbitrary callers or native
+   README lines mentioning 'audit hook': 1
+      through a Python audit hook, with a narrow installed-package direct_url.json exception.
+   README lines mentioning 'sandbox': 0
+   README lines mentioning 'security': 1
+      point is not a universal security boundary. Code does not certify arbitrary callers or native
+
+   the test-file guard, verbatim:
+      def guard(event, args):
+          if event in ('socket.connect', 'socket.getaddrinfo'):
+              raise RuntimeError('test network forbidden')
+          if event == 'open' and isinstance(args[0], (str, bytes)):
+              p = os.fsdecode(args[0]).lower()
+              # Installed-package origin metadata is not corpus data.
+              if p.endswith('direct_url.json') and '.dist-info' in p and 'site-packages' in p:
+                  return
+              if p.endswith(('.json', '.jsonl', '.csv', '.gz', '.parquet')):
+                  raise RuntimeError('test data file access forbidden')
+      guard('data/locomo10.json'                                      ) -> blocked
+      guard('data/x.jsonl'                                            ) -> blocked
+      guard('data/x.csv'                                              ) -> blocked
+      guard('a.gz'                                                    ) -> blocked
+      guard('a.parquet'                                               ) -> blocked
+      guard('corpus.txt'                                              ) -> ALLOWED
+      guard('corpus.dat'                                              ) -> ALLOWED
+      guard('corpus'                                                  ) -> ALLOWED
+      guard('corpus.JSON'                                             ) -> blocked
+      guard('corpus.pkl'                                              ) -> ALLOWED
+      guard('corpus.npy'                                              ) -> ALLOWED
+      guard('site-packages/numpy-2.3.5.dist-info/direct_url.json'     ) -> ALLOWED
+
+   -> the guard is an extension allow/deny list inside ONE Python process. It does not
+      cover: other extensions (.txt/.dat/.pkl/.npy/no extension), reads by a child
+      process, memory-mapped or C-level reads, or anything outside this interpreter.
+   -> README states this limitation explicitly: True
+   -> pipeline.py itself installs NO audit hook (guard lives only in the test file): True

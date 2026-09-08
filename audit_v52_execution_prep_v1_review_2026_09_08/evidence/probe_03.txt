@@ -1,0 +1,74 @@
+==============================================================================
+P03.1  IEEE ground truth: what negation actually does to the >=0 code at zero
+   x=0.0        (x>=0)=True    (-1.0*x)=-0.0       ((-1.0*x)>=0)=True 
+   x=-0.0       (x>=0)=True    (-1.0*x)=0.0        ((-1.0*x)>=0)=True 
+   x=1e-300     (x>=0)=True    (-1.0*x)=-1e-300    ((-1.0*x)>=0)=False
+   x=-1e-300    (x>=0)=False   (-1.0*x)=1e-300     ((-1.0*x)>=0)=True 
+   -> for x == 0.0 the code is PRESERVED under negation because -0.0 >= 0 is True.
+   -> so an ALL-zero coordinate does NOT trip the canary; the danger is the MIXED case
+      where the archive side is exactly 0 and the query side is not (or vice versa).
+
+==============================================================================
+P03.2  the canary as written in the candidate
+def controls(C, Q, D):
+    require(D.shape == (96, 96) and np.array_equal(D, np.diag(np.diag(D)))
+            and np.isfinite(D).all() and (np.diag(D) > 0).all(), 'E-M-030: positive diagonal required')
+    core.check_identity(C, Q, D)
+    # Deterministic canary, not a new experimental arm or a seed panel.
+    # At exact zero, signed real coordinates need not preserve >=0 codes;
+    # an observed failure aborts rather than silently changing zero convention.
+    perm = np.arange(95, -1, -1)
+    signs = np.where(np.arange(96) % 2, -1, 1)
+    for X, V in ((C, Q), (C @ D, Q @ D)):
+        for q in V:
+            require(np.array_equal(core.hamming_dist(X, q),
+                                   core.hamming_dist(X[:, perm] * signs, q[perm] * signs)),
+                    'E-M-031: signed permutation control')
+
+   perm  = reverse permutation, fixed literal      : [95 94 93 92 91 90] ... [2 1 0]
+   signs = alternating +1/-1, fixed literal        : [ 1 -1  1 -1  1 -1  1 -1]
+   both are SOURCE LITERALS with no data dependence and no RNG: False
+   canary applied to both (C,Q) and (C@D, Q@D)     : True
+
+==============================================================================
+P03.3  ALL-ZERO coordinate: canary must NOT fire (and must not silently "fix" anything)
+   all-zero column -> canary did NOT fire (expected)
+
+==============================================================================
+P03.4  MIXED zero coordinate: archive exactly 0, query non-zero -> canary MUST abort
+   -> ABORTED with E-M-031: signed permutation control
+   -> correct: it aborts, it does not reinterpret the zero
+   and the mirrored case (query exactly 0, archive non-zero):
+   -> ABORTED with E-M-031: signed permutation control
+   which coordinates can trip it?  only ones whose sign is NEGATED by `signs`:
+      zero at column 0: new index 95, sign -1 -> ABORTS
+      zero at column 1: new index 94, sign +1 -> not detected
+      zero at column 2: new index 93, sign -1 -> ABORTS
+      zero at column 3: new index 92, sign +1 -> not detected
+   -> a zero at a coordinate that keeps sign +1 is NOT detected by this canary.
+      (see P03.6 for the consequence)
+
+==============================================================================
+P03.5  EXACT / RATIONAL control -- no floating point anywhere
+   A: no exact zeros      -> before=[48, 48, 47, 49, 47, 47] after=[48, 48, 47, 49, 47, 47]  invariant=True
+   B: exact zero, mixed   -> before=[48, 47, 47, 48, 46, 47] after=[49, 48, 48, 49, 47, 48]  invariant=False
+   -> in EXACT rational arithmetic the invariance genuinely fails, so the property the
+      canary tests is a real mathematical fact, not a floating-point artefact.
+   NOTE: in exact rationals 0 has no sign, so Fraction(-1)*Fraction(0) == 0 and 0 >= 0
+      stays True -- identical to the IEEE -0.0 >= 0 behaviour shown in P03.1.
+
+==============================================================================
+P03.6  can exact zeros arise on the real path, and is the canary complete?
+   exact zeros in fitted C : 0 of 10560
+   exact zeros in fitted Q : 0 of 192
+   min |C| = 2.824e-06
+   -> on this synthetic archive exact zeros do not occur; the canary is a tripwire for
+      a condition that is rare, not a routine gate.
+
+   COMPLETENESS: the canary uses ONE fixed sign vector, so it can only observe a
+   zero-coordinate break at coordinates it negates. After perm, new index j holds old
+   index 95-j and is negated when j is odd, i.e. old index even is negated.
+   old coordinates actually negated: 48 of 96 (e.g. [np.int64(0), np.int64(2), np.int64(4), np.int64(6), np.int64(8)] ... [np.int64(90), np.int64(92), np.int64(94)])
+   coordinates NEVER negated by this canary: 48
+   -> a zero-coordinate sign break confined to a never-negated coordinate would pass.
+      This is a COVERAGE limit of the canary, not an incorrect result.

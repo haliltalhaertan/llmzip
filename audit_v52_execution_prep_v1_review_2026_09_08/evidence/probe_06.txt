@@ -1,0 +1,74 @@
+==============================================================================
+P06.1  EMPTY COHORT -- does the adapter refuse, or silently succeed?
+   LongMemEval, empty cohort                        -> RETURNED SUCCESSFULLY  records=0 diagnostics=0
+   LoCoMo, empty cohort                             -> RETURNED SUCCESSFULLY  records=0 diagnostics=0
+   LoCoMo, cohort empty but conversations present   -> RETURNED SUCCESSFULLY  records=0 diagnostics=0
+   -> an empty cohort produces a well-formed, EMPTY, apparently successful result.
+      core.validate_per_question_records([], []) has an empty expected set, so nothing
+      is missing and nothing is invalid. No minimum-cohort guard exists in M-3.
+   core.validate_per_question_records([], []) raises? NO (accepts the empty set)
+
+==============================================================================
+P06.2  native-anchor tolerance boundary, with a STRICTLY INTERIOR anchor
+   interior anchor value = 0.20000000000000004   (0 < a < 1 : True)
+   anchor exact            -> ACCEPTED
+   anchor +1e-13 (< TOL)   -> ACCEPTED
+   anchor +1e-12 (== TOL)  -> E-M-025: native anchor mismatch
+   anchor +2e-12 (> TOL)   -> E-M-025: native anchor mismatch
+   anchor +1e-9            -> E-M-025: native anchor mismatch
+   anchor -1e-13           -> ACCEPTED
+   anchor -2e-12           -> E-M-025: native anchor mismatch
+   -> tolerance is core.TOL = 1e-12, applied as abs(value - anchor) <= TOL
+
+==============================================================================
+P06.3  evidence for OBLIGATION 1 -- native-anchor provenance and granularity
+      def score_archive(rep, query_texts, gold_sets, question_ids, ordinal, native_anchor):
+      native_anchor is required, not generated as a substitute here. Binding to real
+      require(type(native_anchor) is list and len(native_anchor) == len(question_ids), 'E-M-021: anchor required')
+      require(all(type(v) is float and np.isfinite(v) and 0 <= v <= 1 for v in native_anchor), 'E-M-022: anchor value')
+      require(abs(value - native_anchor[j]) <= core.TOL, 'E-M-025: native anchor mismatch')
+      def assemble_in_memory(ingested, native_anchors):
+      require(set(native_anchors) == set(ids), 'E-M-027: anchor coverage')
+      [native_anchors[q] for q in qids])
+   the anchor is a REQUIRED argument; nothing in pipeline.py generates, defaults,
+   caches or derives it: generation keywords present = NONE
+   BUT the signature FIXES the granularity to one float per question id
+   (len(native_anchor) == len(question_ids)), which is itself part of obligation 1.
+
+==============================================================================
+P06.4  evidence for OBLIGATION 2 -- LoCoMo gold divergence
+   audit-correction machinery in pipeline.py: NONE
+   gold enters only as caller-supplied "gold_rows": 1 reference(s)
+      [questions[q]['gold_rows'] for q in qids], qids, ordinal,
+   -> the package neither loads corrections nor reinterprets gold; it validates the
+      indices it is handed (validate_gold) and nothing more.
+
+==============================================================================
+P06.5  evidence for OBLIGATION 3 -- LME ordinal, priority ordering, ten-shard assignment
+   sharding machinery in pipeline.py: NONE
+   ordinal assignment, verbatim:
+      archives = [(c['index'], c['units'], c['questions']) for c in ingested['conversations'].values()
+      archives = [(i, ingested['questions'][qid]['units'], {qid: ingested['questions'][qid]})
+      for i, qid in enumerate(ids)]
+   -> NO sharding policy is invented (obligation stays open).
+   -> BUT the LongMemEval archive ordinal IS chosen here (enumerate(cohort_ids)), and
+      P06.6 shows that choice changes the numbers.
+
+==============================================================================
+P06.6  is the LongMemEval ordinal choice outcome-affecting?  (direct demonstration)
+   records compared        : 120
+   records whose score CHANGED when only cohort_ids order changed : 2
+      ('s0', 60009, 'SCALED_RANDOM32'): 0.280000 -> 0.310000
+      ('s1', 60006, 'SCALED_RANDOM32'): 0.110000 -> 0.120000
+   VERDICT -> the LongMemEval ordinal is OUTCOME-AFFECTING
+
+==============================================================================
+P06.7  evidence for OBLIGATION 4 -- finalizer / bootstrap / output path
+   bootstrap or writer calls in pipeline.py: NONE
+   pipeline.py returns records in memory only; file-system calls: ['read_bytes']
+   -> read_bytes is used ONCE, to hash-verify the closed core. No output path exists.
+
+==============================================================================
+P06.8  evidence for OBLIGATION 5 -- seal / HMAC / lock / acceptance
+   sealing machinery in pipeline.py: ['lock']
+   hashlib used only for the core identity check: ['import hashlib', 'if hashlib.sha256(CORE_PATH.read_bytes()).hexdigest() != CORE_HASH:']

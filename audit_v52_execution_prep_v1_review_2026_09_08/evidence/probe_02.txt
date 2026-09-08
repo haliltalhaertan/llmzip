@@ -1,0 +1,94 @@
+independent native anchors = [1.0, 0.0]
+
+==============================================================================
+P02.1  six arms, their ORDER, and the ten paired seeds
+   arm order as emitted   : ['NATIVE', 'SCALED_NATIVE', 'B32_FRESH', 'SCALED_B32', 'RANDOM32_FRESH', 'SCALED_RANDOM32']
+   core.ARMS (normative)  : ['NATIVE', 'SCALED_NATIVE', 'B32_FRESH', 'SCALED_B32', 'RANDOM32_FRESH', 'SCALED_RANDOM32']
+   ORDER MATCHES CORE     : True
+   rotation seeds emitted : [60001, 60002, 60003, 60004, 60005, 60006, 60007, 60008, 60009, 60010]
+   core.ROTATION_SEEDS    : [60001, 60002, 60003, 60004, 60005, 60006, 60007, 60008, 60009, 60010]
+   core.PARTITION_SEEDS   : [70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010]
+   SEED PANEL MATCHES     : True
+   record count = 120 (expect 2 q x 10 seeds x 6 arms = 120)
+   no historical seed panel (e.g. 5101/5204/1..10) present : True
+
+==============================================================================
+P02.2  scaling is applied BEFORE rotation
+   independent reconstruction equals candidate at seed 60001 : True
+   (C@D)@rs  vs  (C@rs)@D  identical? False   max diff = 1.258e+01
+   -> the two orders are genuinely different; candidate uses scale-then-rotate
+
+==============================================================================
+P02.3  nuisance priority vectors REUSED across arms and seeds (not redrawn)
+   P is constructed at: P = np.array([np.random.default_rng(stable_archive_seed(ordinal, t) + 99).random(len(C))
+   P constructed INSIDE the seed loop? False
+   P constructed BEFORE the seed loop?  True
+   default_rng() calls with a nuisance seed during one score_archive : 20
+   distinct nuisance seeds                                           : 20
+   expected if reused once per archive                               : 20
+   VERDICT P02.3 -> PASS (drawn once, reused for all 10 seeds x 6 arms)
+   other default_rng seeds seen (rotation/partition) : [60001, 60002, 60003, 60004, 60005, 60006, 60007, 60008, 60009, 60010, 70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010]
+
+==============================================================================
+P02.4  matched block identity across arms
+   source line: core.assert_matched_blocks(a, b, a, b)
+   -> the call passes the SAME objects (a, b, a, b) to both argument pairs.
+   control CAN distinguish different blocks : YES (it works when given different blocks)
+   but as CALLED, assert_matched_blocks(a,b,a,b) computes max|a-a| and max|b-b| == 0.0
+   -> the assertion as invoked is VACUOUS: it cannot fail for any input. max|a-a| = 0.0
+   structural check: rs and rr both embed the identical q32 block : True
+
+==============================================================================
+P02.5  top-k tie handling: parity with pinned a6ecee02 under HEAVY ties
+   fuzz cases=4000  branch coverage={'small': 343, 'all_boundary': 922, 'partial': 2735}
+   element-wise mismatches vs pinned = 0
+   VERDICT P02.5 -> PASS (bit-identical to pinned incl. heavy ties)
+   pinned source has an extra `if need <= 0` branch that the port omits.
+   times `need <= 0` occurred in 20000 random cases : 0
+   proof: strict = {i : d_i < d_(k)} has at most k-1 elements by definition of the
+   k-th order statistic, so need = k - |strict| >= 1 always. The omitted branch is
+   DEAD CODE in the pinned source; omitting it is behaviour-preserving.
+
+==============================================================================
+P02.6  fractional recall / gold accounting
+   fractional(top,gold) = |set(top) & set(gold)| / len(gold)  (denominator = |gold|)
+      gold=[4] top=[4, 3, 16] -> 1.0000  (max attainable with k=3 is 1.0000)
+      gold=[3, 16] top=[4, 3, 16] -> 1.0000  (max attainable with k=3 is 1.0000)
+      gold=[1, 2, 3, 4, 5] top=[4, 3, 16] -> 0.4000  (max attainable with k=3 is 0.6000)
+   NOTE: with |gold| > k=3 the arm can never reach 1.0; this is recall, not precision.
+   core record validator accepts scores in [0,1] only -> consistent.
+   gold validation:
+      empty            []             -> E-M-015: empty or invalid gold
+      bool             [True]         -> E-M-016: gold row
+      negative         [-1]           -> E-M-016: gold row
+      out of range     [110]          -> E-M-016: gold row
+      duplicate        [0, 0]         -> E-M-017: duplicate gold
+      numpy int        [np.int64(3)]  -> E-M-016: gold row
+      tuple not list   (3,)           -> E-M-015: empty or invalid gold
+      float            [3.0]          -> E-M-016: gold row
+
+==============================================================================
+P02.7  native anchor semantics
+   correct              -> ACCEPTED
+   perturbed by 1e-9    -> E-M-022: anchor value
+   perturbed by 1e-13   -> E-M-022: anchor value
+   wrong                -> E-M-025: native anchor mismatch
+   missing (None)       -> E-M-021: anchor required
+   wrong length         -> E-M-021: anchor required
+   out of range         -> E-M-022: anchor value
+   numpy float          -> E-M-022: anchor value
+   int                  -> E-M-022: anchor value
+   nan                  -> E-M-022: anchor value
+   core.TOL = 1e-12 (anchor tolerance)
+
+==============================================================================
+P02.8  native / scaled-native sign and distance controls; rotation norm/dot
+   check_identity: sign(xD) == sign(x) bitwise for archive AND query
+   check_identity on real fitted D : PASS
+   check_identity with a negated coordinate : DETECTED -> IDENTITY VIOLATION: sign(xD) != sign(x); the design premise 
+   NATIVE vs SCALED_NATIVE distances identical for every query : True
+   consequently NATIVE == SCALED_NATIVE in every emitted record : True
+   rotation invariance spectral /native : norm=3.331e-16 dot=5.551e-16 TOL=1e-12 -> ok
+   rotation invariance spectral /scaled : norm=1.776e-15 dot=4.263e-14 TOL=1e-12 -> ok
+   rotation invariance random   /native : norm=3.331e-16 dot=4.441e-16 TOL=1e-12 -> ok
+   rotation invariance random   /scaled : norm=1.776e-15 dot=4.263e-14 TOL=1e-12 -> ok

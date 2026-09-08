@@ -1,0 +1,58 @@
+==============================================================================
+P04.1  LoCoMo schema, well formed
+   single conversation, 2 questions             -> OK (120 records, 1 diagnostics)
+   diagnostics keys : ['archive_ordinal', 'cv_sigma_after', 'cv_sigma_before', 'degenerate_coords', 'flagged', 'sd_sigma_after']
+   archive_ordinal present and taken from conversation["index"] : True
+
+==============================================================================
+P04.2  LoCoMo ORDERING: archive ordinal source, and whether it is outcome-affecting
+   ordinal 0 native anchor = 1.0
+   ordinal 5 native anchor = 1.0
+   full score vectors identical across ordinals : True
+   differing arm-records: 0 of 60
+   -> the archive ordinal feeds stable_archive_seed -> the 20 nuisance priority vectors
+      -> top-k tie-breaking -> scores. The ordinal is OUTCOME-AFFECTING, not cosmetic.
+   LoCoMo ordinal is supplied by ingestion (conversation["index"]) -> bound upstream.
+   LongMemEval ordinal is enumerate(cohort_ids) -> chosen by THIS package.
+
+==============================================================================
+P04.3  LongMemEval schema, well formed; ordinal = position in cohort_ids
+   two single-question archives                 -> OK (120 records, 2 diagnostics)
+   ordinals emitted in diagnostics : [0, 1]
+   permuting cohort_ids leaves every score unchanged : False
+   -> cohort ORDER is load-bearing for LongMemEval results (CONFIRMED sensitivity)
+
+==============================================================================
+P04.4  malformed fixtures -- LoCoMo
+   missing "questions_with_empty_gold"          -> KeyError: "'questions_with_empty_gold'"
+   non-empty questions_with_empty_gold          -> PipelineError: 'E-M-026: empty gold in cohort'
+   missing "cohort_ids"                         -> KeyError: "'cohort_ids'"
+   unknown benchmark name                       -> PipelineError: 'E-M-028: benchmark'
+   anchor coverage mismatch                     -> PipelineError: 'E-M-027: anchor coverage'
+   conversation missing "index"                 -> KeyError: "'index'"
+   unit missing "text"                          -> KeyError: "'text'"
+   question missing "gold_rows"                 -> KeyError: "'gold_rows'"
+   cohort id absent from any conversation       -> DesignViolation: "record validation failed: 60 missing record(s), e.g. [('sMISSING', 60001, 'B32_FRESH'), ('sMISSING', 60001, 'N"
+
+   *** the important one: a conversation containing a question NOT in cohort_ids ***
+   conversation has extra question not in cohort -> KeyError: "'LEAKCANARY7'"
+
+==============================================================================
+P04.5  malformed fixtures -- LongMemEval
+   cohort id with no question record            -> KeyError: "'LEAKCANARY8'"
+   missing "questions" key                      -> KeyError: "'questions'"
+   question missing "units"                     -> KeyError: "'units'"
+   duplicate cohort ids                         -> DesignViolation: "duplicate question ids in the cohort: ['s0']"
+   empty cohort                                 -> OK (0 records, 0 diagnostics)
+   ingested is a list, not a mapping            -> TypeError: 'list indices must be integers or slices, not str'
+   ingested is None                             -> TypeError: "'NoneType' object is not subscriptable"
+
+==============================================================================
+P04.6  record-validation completeness (does the adapter re-validate the whole set?)
+   validate_per_question_records call sites in pipeline.py : 2
+      core.validate_per_question_records(records, question_ids)
+      core.validate_per_question_records(records, ids)
+   -> validated once per archive (against that archive's qids) and once for the whole
+      cohort. The core validator demands every (question, seed, arm) exactly once with a
+      finite score in [0,1], and rejects unexpected keys -- so extra or missing archives
+      are caught, provided execution reaches it.

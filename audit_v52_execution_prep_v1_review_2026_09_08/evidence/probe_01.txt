@@ -1,0 +1,57 @@
+==============================================================================
+P01.1  fitting is archive-only: fitted state must be byte-identical before/after queries
+   fitted-state keys compared : 11
+   keys changed by queries    : []
+   VERDICT P01.1 -> PASS (no query leakage into fitted state)
+
+==============================================================================
+P01.2  attempt to force a query-derived quantity into the transform
+   fit-family calls during queries(): []
+   VERDICT P01.2a -> PASS (no refitting on queries)
+   word feature dim before/after unseen query: 689 / 689
+   VERDICT P01.2b -> PASS
+   same query alone vs batched with another: identical = True
+   VERDICT P01.2c -> PASS (no cross-query contamination)
+
+==============================================================================
+P01.3  memory-only fitting: files opened during Representation() construction
+   total open() events during fit : 0
+   open() events with write mode  : 0
+   VERDICT P01.3 -> PASS (no artefact written during fit)
+
+==============================================================================
+P01.4  query transform genuinely reuses the archive-fitted objects
+   max |manual - queries()| = 0.000e+00
+   bitwise identical        = True
+   VERDICT P01.4 -> PASS
+   max |queries(archive) - C| = 1.610e-15
+
+==============================================================================
+P01.5  pinned arithmetic parity: M-1 hyperparameters vs a6ecee02 source
+   pinned source sha256 verified: a6ecee02...
+   pinned constants          : {'SVD_SEED': 5204, 'SOURCE_LATENT_DIM': 32, 'N_NUISANCE': 20, 'TOPK': 3}
+   prep TOPK / N_NUISANCE    : 3 / 20
+   prep lsa.random_state=5101 svd.random_state=5204 lsa.n_components=32 svd.n_components=96
+   VERDICT P01.5 -> PASS (seeds/dims match pinned)
+
+==============================================================================
+P01.6  scale_matrix comes from the closed core, unchanged
+   core path : C:\Users\MDP\AppData\Local\Temp\claude\C--Users-MDP\fef85655-9c07-4349-9946-f2a6ec044623\scratchpad\rev_v52_prep\repo\wt2\drafts\v52\membership_impl_v3_2026_09_07\membership_scaling_core.py
+   core hash pinned in pipeline.py : bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72
+   sha256 of file actually loaded  : bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72
+   rep.D equals core.scale_matrix(rep.C) bitwise : True
+   diagnostics equal                            : True
+   D is diagonal, strictly positive             : True
+
+==============================================================================
+P01.7  boundary: exactly 96 archive rows (minimum the code accepts for SVD96)
+   n=95: PipelineError: E-M-004: insufficient rows for dimension 96
+   n=96: OK  C.shape=(96, 96)  degenerate_coords=0  flagged=False
+   n=97: OK  C.shape=(97, 96)  degenerate_coords=0  flagged=False
+
+==============================================================================
+P01.8  E-M-005 reachability (require() inside the try/except that raises E-M-006)
+C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\locomo_reproduction_tmp_20260907\venv\Lib\site-packages\sklearn\decomposition\_truncated_svd.py:273: RuntimeWarning: invalid value encountered in divide
+  self.explained_variance_ratio_ = exp_var / full_var
+   raised: E-M-006: representation fit failed
+   -> E-M-005 is MASKED by E-M-006
