@@ -1,0 +1,78 @@
+{
+  "task": "read-only reproduction of the committed LoCoMo selection rule",
+  "verdict": "SELECTION RULE REPRODUCED FROM COMMITTED CODE",
+  "rule_source": "research/v52/locomo_sign_mechanism_replication.py @ 692f599eedeb7e7a649443f24ff507e8c4d1c17d, TRANSCRIBED not imported",
+  "steps": [
+    "1. keep category in {1,2,3,4} - excludes category 5",
+    "2. apply the 156 audit corrections; correct_evidence REPLACES raw evidence when present",
+    "3. resolve evidence against the conversation's archive rows; drop when the gold set is empty"
+  ],
+  "counts": {
+    "after_category_step": 1540,
+    "dropped_for_empty_gold": 5,
+    "predicted": 1535,
+    "bound": 1535
+  },
+  "dropped_for_empty_gold": [
+    {
+      "question_id": "locomo_0_qa30",
+      "had_correction": false,
+      "error_type": null,
+      "corrected_evidence_count": null
+    },
+    {
+      "question_id": "locomo_0_qa46",
+      "had_correction": false,
+      "error_type": null,
+      "corrected_evidence_count": null
+    },
+    {
+      "question_id": "locomo_6_qa11",
+      "had_correction": true,
+      "error_type": "TEMPORAL_ERROR",
+      "corrected_evidence_count": 0
+    },
+    {
+      "question_id": "locomo_9_qa39",
+      "had_correction": false,
+      "error_type": null,
+      "corrected_evidence_count": null
+    },
+    {
+      "question_id": "locomo_9_qa42",
+      "had_correction": false,
+      "error_type": null,
+      "corrected_evidence_count": null
+    }
+  ],
+  "checks": [
+    {
+      "check": "the audit corrections load to the frozen count",
+      "pass": true,
+      "detail": "156 vs 156"
+    },
+    {
+      "check": "step 1, category in {1,2,3,4}, gives the frozen intermediate count",
+      "pass": true,
+      "detail": "1540 vs 1540"
+    },
+    {
+      "check": "step 3 drops exactly the questions whose CORRECTED evidence resolves to no archive row",
+      "pass": true,
+      "detail": "5 dropped: ['locomo_0_qa30', 'locomo_0_qa46', 'locomo_6_qa11', 'locomo_9_qa39', 'locomo_9_qa42']"
+    },
+    {
+      "check": "the committed three-step rule reproduces the bound cohort EXACTLY",
+      "pass": true,
+      "detail": "predicted 1535, bound 1535, only-predicted [], only-bound []"
+    },
+    {
+      "check": "the previously unexplained position is explained by step 2, the audit corrections",
+      "pass": true,
+      "detail": "{'question_id': 'locomo_6_qa11', 'had_correction': True, 'error_type': 'TEMPORAL_ERROR', 'corrected_evidence_count': 0}"
+    }
+  ],
+  "claim_separation": "claim 1 - the mapping is verified - is established in DATA_IDENTITY_REPORT_2026-09-08.md and is NOT strengthened by this file; claim 2 is what this file establishes",
+  "ingestion_does_not_implement_this": "corpus_ingest.py resolves the BOUND cohort id by id and never derives a cohort; reimplementing this rule would be a second rule that could drift",
+  "content_emitted": "none - ids, counts and set sizes only"
+}
