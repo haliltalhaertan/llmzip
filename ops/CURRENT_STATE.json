@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-08T13:00:00Z",
+  "issued_at_utc": "2026-09-09T14:30:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's disposition of the seven findings and nine named test gaps on the execution-preparation package, and - separately and more importantly - of the FIVE INTEGRATION OBLIGATIONS. Obligation 2 (the LoCoMo gold reconciliation: the historical producer applies 156 audit corrections while the accepted v5 ingestion reads RAW evidence) and obligation 3 (the LongMemEval ordinal and shard convention, DEMONSTRATED outcome-affecting) require a scientific decision that no implementation or audit may take. A preparation PASS does NOT license a seal, a pilot or a run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Await the Head Researcher's disposition of integration obligations 1, 4 and 5, of the seven findings and of the nine named test gaps on the execution-preparation package. Obligations 2 and 3 are DISPOSED 2026-09-09 by the pushed hash-bound decision (see integration_obligations_2_and_3_decision). Decision 3 makes the v5 ingestion reconciliation a named prerequisite for any run authorization on the membership-under-scaling track. A preparation PASS does NOT license a seal, a pilot or a run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,12 +191,31 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
+  "integration_obligations_2_and_3_decision": {
+    "artifact": "docs/v52/V52_INTEGRATION_OBLIGATIONS_2_AND_3_HR_DECISION_2026-09-09.md",
+    "sha256": "babf2245cb231f883fe051f3b450d7353b35fe705e406b4f89303080753d75ab",
+    "branch": "hr/integration-obligations-2026-09-09",
+    "commit": "f9951c0241a812e1b31d4ec1b526da5f1971281e",
+    "merge_base_with_main": "a8e6d5d31dd01f2ea953012c7899420de7356232",
+    "not_merged_into_main": true,
+    "prepared_by": "a parallel Continuity Lead session; approved by the Head Researcher; pushed by that session",
+    "independently_verified_here": "all five checks re-run from the pushed bytes, and the document READ rather than relayed: sha256 recomputed = babf2245 and sidecar agrees and names the file; diff is 2 files / 211 insertions / 0 deletions, all additions; merge-base is exactly a8e6d5d (L-081), not the audit HEAD; no task4f1, seal, audit_v52 or candidate path in the diff; Seal V3 blob 39c99fd1 byte-identical on both refs",
+    "content_checked_not_only_hashed": "every verification pointer opened: ledger lines 778, 823, 1063, 1517, 1576, 1577, 1738, 1739 all exist and say what is claimed; the ten per-conversation counts sum to exactly 1535; 1540 minus 5 dropped = 1535 matching the committed manifest; the quoted frozen figures round correctly from committed values",
+    "decision_1_locomo_gold": "the CORRECTED key is authoritative under the three-step L-075 rule; binding cohort 1535 questions",
+    "decision_1_mandatory_dual_reporting": "corrected (1535) and raw (1540) are ALWAYS reported together with their cohort sizes; neither may be reported alone in any document, table or summary; the corrected figure is primary and carries the claim, the raw figure is descriptive and carries none; the divergence between them is itself a reportable quantity",
+    "decision_2_longmemeval_enumeration": "bound to the historical convention - enumerate(cohort_ids) over the sorted primary cohort, nuisance priorities on the GLOBAL lexical ordinal, shard membership i % num_shards - and it MUST be stated explicitly in any seal text, never inherited from an implementation or a README",
+    "decision_3_v5_ingestion": "NON-CONFORMING as a primary source for this track; reconciliation required before any run authorization. Modifies no accepted artifact, sealed byte or frozen result. Codex's posture of flagging rather than resolving is recorded as CORRECT.",
+    "decision_4_sharded_exact": "the SHARDED_EXACT label is WITHDRAWN, replaced by shard-invariant semantics plus aggregate reproduction to approximately 1e-16; bit-level exactness is not claimed. Discharges the fourth caveat owed at ledger line 778.",
+    "scope_correction_applied_before_push": "the earlier draft bound its decisions to 'Task 4F1 and all subsequent LoCoMo runs'. The sealed Task 4F1 preregistration contains no occurrence of locomo or longmemeval and does contain beam: Task 4F1 does not use LoCoMo, so that was a scope error. The pushed text binds the membership-under-scaling track instead, and the path moved from docs/v52/task4f1/ to docs/v52/ to match the convention.",
+    "stale_header_recorded_not_repaired": "the pushed file still reads 'Status: DRAFT' and 'Intended repository path'; both became stale at the push that satisfied them. Pushed bytes are not rewritten in this programme, so L-082 is the record: commit f9951c0 with its agreeing sidecar is what makes the decision binding, and the path is actual rather than intended.",
+    "does_not_authorize": "no execution, seal, pilot or run on any track; no outcome access; obligations 1, 4 and 5, the seven findings and the nine test gaps remain open"
+  },
   "session_takeover_prompt": {
     "path": "prompts/V52_CONTINUITY_LEAD_SESSION_TAKEOVER_2026-09-06.md",
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-081",
+  "ledger_entry": "L-082",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
