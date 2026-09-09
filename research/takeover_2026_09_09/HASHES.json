@@ -1,0 +1,21 @@
+{
+  "scope": "additive takeover diagnostic, not a seal",
+  "files": {
+    "EVIDENCE.json": {
+      "sha256": "d9090263efab3e8dadc6e3071486715327239113d0ff712abd439a6f0e302057",
+      "bytes": 976
+    },
+    "TAKEOVER_REVIEW.md": {
+      "sha256": "27c9e46b1ba172c8821f2234ff46cfffb0cfb82d54b684150663fe409499f71e",
+      "bytes": 11556
+    },
+    "TEST_LOG.txt": {
+      "sha256": "3f85e65092506c35bfd70540e96f232822ceb651ed925f2c62b45930be18b38c",
+      "bytes": 1152
+    },
+    "probe_signed_zero_cancellation.py": {
+      "sha256": "9d014814bd0037dcd5e357fc3e63b051f096b7b835722069385dd9dcab24e0be",
+      "bytes": 7812
+    }
+  }
+}

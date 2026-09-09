@@ -1,0 +1,14 @@
+test_all_negative_alternative_also_misses_cancellation (__main__.DiagnosticTests.test_all_negative_alternative_also_misses_cancellation) ... ok
+test_covered_single_zero_is_detected (__main__.DiagnosticTests.test_covered_single_zero_is_detected) ... ok
+test_exact_fraction_counterexample (__main__.DiagnosticTests.test_exact_fraction_counterexample) ... ok
+test_no_zero_control_passes (__main__.DiagnosticTests.test_no_zero_control_passes) ... ok
+test_positive_diagonal_refusal_preserved (__main__.DiagnosticTests.test_positive_diagonal_refusal_preserved) ... ok
+test_separate_coordinate_flips_reveal_both_changes (__main__.DiagnosticTests.test_separate_coordinate_flips_reveal_both_changes) ... ok
+test_two_covered_zero_changes_cancel (__main__.DiagnosticTests.test_two_covered_zero_changes_cancel) ... ok
+test_uncovered_single_zero_passes (__main__.DiagnosticTests.test_uncovered_single_zero_passes) ... ok
+test_zero_mask_characterization_exhaustive_small_domain (__main__.DiagnosticTests.test_zero_mask_characterization_exhaustive_small_domain) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.005s
+
+OK

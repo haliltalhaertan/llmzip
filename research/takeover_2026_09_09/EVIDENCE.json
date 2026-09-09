@@ -1,0 +1,26 @@
+{
+  "accepted_environment_replay": false,
+  "all_negative_canary_cancellation": true,
+  "candidate_commit": "ed4e22c520b7dc0ae2f43f915e0c621070c72a87",
+  "candidate_pipeline_git_blob": "6b41a4242ec7de5018537f4be5f4835d16ed03fd",
+  "core_git_blob": "b0f8183ec53d590abd765afe5a301ca906fb6a35",
+  "errors": 0,
+  "exact_domain_vector_pairs_checked": 81,
+  "exact_two_dimensional_distances": {
+    "native": 1,
+    "negate_both": 1,
+    "negate_first": 2,
+    "negate_second": 0
+  },
+  "execution_scope": "isolated copied control functions and independent exact-rational oracle",
+  "failures": 0,
+  "full_continuity_verifier_run": false,
+  "numpy": "2.3.5",
+  "original_canary_two_covered_coordinate_cancellation": true,
+  "python": "3.13.5",
+  "real_corpus_accessed": false,
+  "real_outcomes_accessed": false,
+  "script_sha256": "9d014814bd0037dcd5e357fc3e63b051f096b7b835722069385dd9dcab24e0be",
+  "status": "SYNTHETIC_DIAGNOSTIC_ONLY_NOT_PACKAGE_ACCEPTANCE",
+  "tests_run": 9
+}
