@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-09T14:30:00Z",
+  "issued_at_utc": "2026-09-10T09:15:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Await the Head Researcher's disposition of integration obligations 1, 4 and 5, of the seven findings and of the nine named test gaps on the execution-preparation package. Obligations 2 and 3 are DISPOSED 2026-09-09 by the pushed hash-bound decision (see integration_obligations_2_and_3_decision). Decision 3 makes the v5 ingestion reconciliation a named prerequisite for any run authorization on the membership-under-scaling track. A preparation PASS does NOT license a seal, a pilot or a run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Two items need the Head Researcher's word: the G-2 replacement label (both sessions propose 'reachable - pending Head Researcher disposition'; NOT adopted anywhere yet), and the disposition of L-080's four non-blocking findings together with the v5-versus-v4 candidate question, which is what G-2 consists of. Separately open: L-081's seven findings and nine named test gaps, integration obligations 4 and 5, and the dependency decision the twelve-byte preregistration names as a sealing precondition. Obligations 1, 2 and 3 are DISPOSED. A preparation PASS does NOT license a seal, a pilot or a run. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -191,6 +191,37 @@
     "reviewing_authority": "Head Researcher holds final approval and veto; the Continuity Lead prepares and never self-seals. The 2026-09-03 governance ratification IS a pushed hash-bound artifact (6f1de9eb) and is recorded as verified, unlike the earlier chat-relayed REQUEST CHANGES."
   },
   "resume_command": "python -B tools/verify_continuity_state.py",
+  "ledger_authorship_rule_2026_09_10": {
+    "rule": "A ledger entry is written by the session that actually RAN the verification it records. The session that prepared an artifact does not record that its own preparation passed.",
+    "why": "the programme's independence principle applied to the record itself; it binds to the function rather than to a session and survives session turnover",
+    "naming": "sessions are identified by commit trailer or session id, never by the phrase 'the other session', which resolves differently in each frame of a three-party relay",
+    "agreed_by": "both active sessions, 2026-09-10"
+  },
+  "obligation_1_and_f3_n1_decision": {
+    "branch": "hr/obligation-1-and-f3-n1-2026-09-09",
+    "commit": "8671128a13877c97754da182421ba615422dd2ec",
+    "not_merged_into_main": true,
+    "decision_artifact": "docs/v52/V52_OBLIGATION_1_AND_F3_N1_DECISION_2026-09-09.md",
+    "decision_sha256": "03f5fe7d7ff838936bf8bc3bc4a406836613d611fefd94f79228cb8e2cbd4970",
+    "addendum_artifact": "docs/v52/V52_MEMBERSHIP_COMPLETION_MAP_ADDENDUM_2026-09-10.md",
+    "prepared_by": "a parallel Continuity Lead session (its commits carry no Claude-Session trailer)",
+    "independently_verified_here": "five structural checks re-run from the pushed bytes and all 22 line references opened: three digests match their sidecars; 412 insertions and ZERO deletions, all additions; merge-base exactly 0a79017; no task4f1/seal/audit_v52/candidate path touched; Seal V3 blob 39c99fd1 byte-identical. Seventeen ledger lines and five completion-map lines all exist and say what is claimed. ops/CURRENT_STATE.json:1912 carries 'F3 (moderate, coverage)'; TAKEOVER_REVIEW.md:31 carries the 'negating every coordinate' suggestion. No stale self-describing header field; the L-082 DRAFT defect was not repeated.",
+    "decision_1": "obligation 1 disposed - granularity RATIFIED as one float per question, provenance BOUND to the coordinate-scale NATIVE per-question values pinned by branch, blob and sha256 for both benchmarks",
+    "decision_2": "closure criterion for F3 and N1 - a COORDINATEWISE certificate is required; an aggregate-distance comparison is not accepted at any coverage. Guards against vacuous satisfaction: independent exact-arithmetic oracle, every family member including the all-96-negation vector, family fixed as source literals before data. N1's own witness is a mandatory negative control the new check must REJECT and the old one accepts.",
+    "decision_3": "the completion map's G-1 record is stale and its findings were misattributed. G-1 = runner+ingestion, chain L-076 through L-080, FOUR non-blocking findings. L-081 is a SEPARATE object with seven findings and nine test gaps, and corresponds to NO gate in the map: G-3 is not granted and G-4 reviews components written under G-3, so L-081 is a preparation review lying outside the chain - a candidate for review once G-3 is granted, never an inheritance substituting for it. G-3 unchanged.",
+    "G2_status": "REACHABLE AND PENDING, not 'not reached'. The replacement label is the Head Researcher's word and is NOT adopted by this decision, by its addendum, or by this state file.",
+    "does_not_authorize": "no execution, seal, pilot or run; no outcome access; disposes none of L-080's four findings, the v5-versus-v4 question, L-081's seven findings, its nine test gaps, or obligations 4 and 5"
+  },
+  "twelve_byte_baseline_prereg_draft": {
+    "branch": "draft/v52-twelve-byte-baseline-prereg-2026-09-10",
+    "commit": "d2cfbaacdfc52af2ac2077ffa1d87b719a7d0779",
+    "artifact": "docs/v52/V52_TWELVE_BYTE_BASELINE_PREREG_2026-09-09.md",
+    "sha256": "05f8b12295bb59dce19c32954cf67d980b3b0621950c756f9fb176a46069d22e",
+    "standing": "NOT a decision. Deliberately on a draft/ branch rather than hr/ so it cannot be mistaken for one. Its own text states it is not eligible for sealing.",
+    "verified_here": "208 insertions, zero deletions, merge-base 0a79017, no sealed path touched, digest matches sidecar",
+    "sealing_precondition_it_names": "arms 4-6 require third-party implementations (RaBitQ, extended RaBitQ, OPQ/PQ); the environment lock and audit-hook policy must cover them or reference implementations must be vendored and hashed. That dependency decision is the Head Researcher's and is NOT taken.",
+    "not_merged_into_main": true
+  },
   "integration_obligations_2_and_3_decision": {
     "artifact": "docs/v52/V52_INTEGRATION_OBLIGATIONS_2_AND_3_HR_DECISION_2026-09-09.md",
     "sha256": "babf2245cb231f883fe051f3b450d7353b35fe705e406b4f89303080753d75ab",
@@ -215,7 +246,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-082",
+  "ledger_entry": "L-083",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
