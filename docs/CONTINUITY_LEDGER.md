@@ -1829,3 +1829,23 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: The single open direction question stands with the Head Researcher: run the twelve-byte baseline race first, or continue toward the membership-under-scaling experiment. Both sessions recommended the race. Nothing else is blocked on this session.
 ```
+
+### L-086
+
+```text
+timestamp_utc: 2026-09-10T14:20:00Z
+actor_role: Continuity Lead / co-chair (sole writer on main)
+predecessor_commit_or_tag: L-085 / f602cb8
+scope: Record the Head Researcher's disposition of the twelve-byte preregistration's dependency precondition. Recording only. No experiment, no seal, no pilot, no run, no corpus access, and no edit to the draft branch that carries the preregistration. Task 4F1 untouched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+the_decision_as_given: "A, faiss-cpu kur." Relayed as chat text from the Head Researcher (repository owner), 2026-09-10, and recorded here as relayed text and NOT as a pushed hash-bound artifact - the same standing as the 2026-09-07 mechanism authorization at L-054. It disposes the dependency precondition that the pushed preregistration at d2cfbaa section 12 names.
+what_it_actually_decides: section 12 puts two things to the Head Researcher - WHICH implementations are adopted, and WHETHER they are vendored or covered by an extended environment lock. The answer settles the second: the environment lock is EXTENDED and pinned implementations are INSTALLED; reference code is NOT vendored into the repository.
+the_consequence_that_follows_and_is_not_a_new_decision: the policy applies to every third-party arm, not only to the one named. faiss-cpu supplies OPQ/PQ. It does NOT supply RaBitQ, and RABITQ96 is half of the declared primary contrast SIGN96 - RABITQ96, so an unnamed RaBitQ source would leave the primary estimand uncomputable - exactly the failure section 12 exists to prevent. Under the decided policy RaBitQ likewise comes from a pinned published implementation rather than from vendored code or from an implementation written here. Which package and which version is an engineering pin, decided and recorded by the implementing session under the L-084 consultation threshold, not put back to the Head Researcher.
+this_supersedes_a_pre_committed_trigger: an unpushed revision had set a trigger to fetch a reference implementation only if a locally written RaBitQ arm underperformed. Under this decision the reference implementation is used from the start, which is both simpler and better evidence: a comparison against our own reimplementation of a competitor is weaker than a comparison against the competitor's own code.
+an_error_of_mine_recorded_rather_than_smoothed: I put the question to the Head Researcher as "faiss-cpu >= 1.13.2". Neither the string faiss nor 1.13 occurs anywhere in the pushed preregistration at d2cfbaa; that version came from a revision that was never pushed. I relayed an unverified figure into a question to the principal. This is the third appearance in three days of the programme's recurring failure - asserting without checking - and it is recorded here so the count is honest. The decision is bound to the POLICY, which is what the Head Researcher actually answered, and not to that version string.
+what_is_still_required_before_sealing: section 12 has two conjuncts. This decision closes the dependency one. The other - the arm 5 to 7 codebook and centroid training seeds, which the pushed section 5 line 75 requires to be declared as source literals and which the pushed bytes leave undeclared - remains open and is preparation work, not a Head Researcher question. The preregistration is NOT yet eligible for sealing.
+what_this_does_not_do: it authorizes no execution, seal, pilot or run; grants no outcome access; edits no draft; and disposes none of G-2's content, L-081's seven findings and nine named test gaps, or integration obligations 4 and 5.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. No corpus read, no benchmark retrieval computed, no Task 4F1 artifact touched.
+status: PASS
+next_single_action: The session holding the twelve-byte preregistration declares the arm 5 to 7 seeds as source literals and pins the concrete packages and versions for the third-party arms under the decided install-not-vendor policy, then republishes with a fresh digest. Only then is the preregistration eligible for a pre-run seal. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.
+```

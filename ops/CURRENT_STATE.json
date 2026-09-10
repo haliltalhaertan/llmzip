@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-10T12:40:00Z",
+  "issued_at_utc": "2026-09-10T14:20:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "ONE question for the Head Researcher, and it is a real one: whether the programme continues toward running the membership-under-scaling experiment, or first answers whether SIGN96 is competitive at twelve bytes. Everything else is either preparation this session performs or a disposition that can wait for that answer. Still open and undisposed: L-080's four non-blocking findings and the v5-versus-v4 candidate question (together these ARE G-2), L-081's seven findings and nine named test gaps, integration obligations 4 and 5, and the twelve-byte preregistration's dependency precondition. Obligations 1, 2 and 3 are DISPOSED. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "The twelve-byte dependency precondition is DISPOSED 2026-09-10 (L-086): the environment lock is EXTENDED and pinned implementations are INSTALLED; reference code is NOT vendored. The other conjunct of section 12 - the arm 5-7 codebook/centroid seeds, which the pushed section 5 requires as source literals - is still open and is PREPARATION, not a Head Researcher question. The preregistration is NOT yet eligible for sealing. Still undisposed and awaiting the Head Researcher: G-2's content (L-080's four non-blocking findings plus the v5-versus-v4 candidate question), L-081's seven findings and nine named test gaps, and integration obligations 4 and 5. Obligations 1, 2 and 3 are DISPOSED. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -218,6 +218,16 @@
     "G2_status": "REACHABLE - PENDING HEAD RESEARCHER DISPOSITION. Label set 2026-09-10 (L-084) with Head Researcher approval. The completion map at map:106 still reads 'not reached'; per the additive-correction rule those bytes are not rewritten and this state file plus L-084 are the record of the corrected status. What G-2 consists of is unchanged: disposition of L-080's four non-blocking findings and of whether the Codex v5 package becomes the working candidate line in place of v4.",
     "does_not_authorize": "no execution, seal, pilot or run; no outcome access; disposes none of L-080's four findings, the v5-versus-v4 question, L-081's seven findings, its nine test gaps, or obligations 4 and 5"
   },
+  "twelve_byte_dependency_decision_2026_09_10": {
+    "decision": "A - extend the environment lock and INSTALL pinned implementations; do NOT vendor reference code into the repository",
+    "as_given": "\"A, faiss-cpu kur.\" - relayed chat text from the Head Researcher, NOT a pushed hash-bound artifact; same standing as the 2026-09-07 authorization recorded at L-054",
+    "closes": "the dependency conjunct of the pushed preregistration's section 12 (branch draft/v52-twelve-byte-baseline-prereg-2026-09-10 at d2cfbaa)",
+    "consequence_not_a_new_decision": "the policy covers every third-party arm. faiss-cpu supplies OPQ/PQ but NOT RaBitQ, and RABITQ96 is half the declared primary contrast, so RaBitQ likewise comes from a pinned published implementation. The concrete package and version is an engineering pin decided by the implementing session under the L-084 consultation threshold.",
+    "supersedes": "an unpushed revision's trigger to fetch a reference implementation only if a locally written RaBitQ arm underperformed; the reference implementation is used from the start, which is stronger evidence",
+    "recorded_error": "the question was put to the Head Researcher as 'faiss-cpu >= 1.13.2'. Neither 'faiss' nor '1.13' occurs in the pushed preregistration; that version came from a revision never pushed. The decision is bound to the POLICY, not to that version string.",
+    "still_required_before_sealing": "the arm 5-7 codebook/centroid seeds, which the pushed section 5 line 75 requires as source literals and the pushed bytes leave undeclared. PREPARATION, not a Head Researcher question.",
+    "authorizes": "nothing - no execution, seal, pilot, run or outcome access"
+  },
   "twelve_byte_baseline_prereg_draft": {
     "branch": "draft/v52-twelve-byte-baseline-prereg-2026-09-10",
     "commit": "d2cfbaacdfc52af2ac2077ffa1d87b719a7d0779",
@@ -260,7 +270,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-085",
+  "ledger_entry": "L-086",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
