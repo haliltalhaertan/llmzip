@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-10T10:05:00Z",
+  "issued_at_utc": "2026-09-10T12:40:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -248,11 +248,19 @@
     "does_not_authorize": "no execution, seal, pilot or run on any track; no outcome access; obligations 1, 4 and 5, the seven findings and the nine test gaps remain open"
   },
   "session_takeover_prompt": {
+    "path": "prompts/V52_CONTINUITY_LEAD_SESSION_TAKEOVER_2026-09-10.md",
+    "sha256": "f35860f54e4e83a15ca62209fee7185f35af110c0711a35f90e1b39644a58556",
+    "supersedes": "prompts/V52_CONTINUITY_LEAD_SESSION_TAKEOVER_2026-09-06.md (sha256 3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5), preserved not deleted",
+    "written_at": "L-085, main 7a67ea6",
+    "carries": "the seven prohibitions, the additive-correction rule, the paired boundary labels, the direction of rho, the two rules added at L-084, the gate positions, the strategic reframing (SimHash-96; arXiv 2605.17524v2; benchmark scale gap), the recurring assert-without-checking failure mode, and the proportionality instruction",
+    "warns": "git branch -r is not a reliable view of the remote; use git ls-remote or a fresh fetch"
+  },
+  "superseded_session_takeover_prompt_2026_09_06": {
     "path": "prompts/V52_CONTINUITY_LEAD_SESSION_TAKEOVER_2026-09-06.md",
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-084",
+  "ledger_entry": "L-085",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",

@@ -1810,3 +1810,22 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: One question for the Head Researcher, and it is a real one: whether the programme continues toward running the membership-under-scaling experiment, or first answers whether SIGN96 is competitive at twelve bytes. Everything else on the open list is either preparation this session performs or a disposition that can wait for that answer. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.
 ```
+
+### L-085
+
+```text
+timestamp_utc: 2026-09-10T12:40:00Z
+actor_role: Continuity Lead / co-chair (sole writer on main)
+predecessor_commit_or_tag: L-084 / 7a67ea6
+scope: Write a session-takeover prompt for a cold-start successor, superseding the 2026-09-06 one. Documentation only. No experiment, no seal, no pilot, no run, no corpus access. Task 4F1 untouched.
+changed_or_created_paths: prompts/V52_CONTINUITY_LEAD_SESSION_TAKEOVER_2026-09-10.md with its sha256 sidecar; docs/CONTINUITY_LEDGER.md; ops/CURRENT_STATE.json
+why_a_new_one: the 2026-09-06 prompt predates L-053 through L-084. Everything it calls the next gate has moved: the coordinate-scale experiment was authorized, run and recorded; integration obligations 1, 2 and 3 were disposed; G-1 closed and G-2 became reachable; two governance rules were added; and an independent review reframed the scientific position. A successor reading the old prompt would prepare for a gate that no longer exists. The old prompt is preserved, not deleted, and the new one names it as superseded.
+every_embedded_claim_verified_before_writing: main 7a67ea6; ledger entry count 84 matching L-001 through L-084; state file key count 98; Seal V3 blob 39c99fd1; the twelve live branch heads read from git ls-remote rather than from remote-tracking refs; and the claim that the sealed Task 4F1 preregistration contains no occurrence of locomo, checked directly and returning zero.
+what_it_carries_that_a_summary_would_lose: the seven absolute prohibitions and that only a pushed hash-bound artifact relaxes them; the additive-correction rule; the paired boundary-localization labels; the direction of rho against the denominator, which a session got backwards; that the coordinate-scale result was NEVER independently audited because the commissioned agent was stopped on quota; that the matched-null stage is not auditable at all; the two rules added at L-084; and the warning that git branch -r is not a reliable view of the remote, which bit two sessions in one day.
+it_records_the_strategic_position_rather_than_only_the_state: the full-Haar arm is SimHash-96 and the headline result reframes accordingly; the mechanism is already published at arXiv 2605.17524v2 over nine embedding families and eighteen datasets, with off-diagonal covariance named as a confounder this programme has never manipulated; and the benchmarks are five orders of magnitude away in k/N from the archive size the claim targets. A successor that does not know this would repeat the framing.
+it_also_records_the_programmes_recurring_failure_mode: across three consecutive days and three different reviewers the failure was never missing a defect - it was asserting without checking, usually by judging from where one looked rather than from what was claimed. The prompt states this plainly and tells the successor to assume it will happen to them.
+proportionality_recorded_as_a_standing_instruction: Task 4F1's weight belongs to Task 4F1. Between 2026-09-07 and 2026-09-10 the programme produced no new scientific result while producing a great deal of process. The prompt says so.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. The prompt instructs the successor to begin no experiment and to touch nothing in Task 4F1.
+status: PASS
+next_single_action: The single open direction question stands with the Head Researcher: run the twelve-byte baseline race first, or continue toward the membership-under-scaling experiment. Both sessions recommended the race. Nothing else is blocked on this session.
+```
