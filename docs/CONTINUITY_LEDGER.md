@@ -1792,3 +1792,21 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: Two items need the Head Researcher's word: the G-2 replacement label, and the disposition of L-080's four non-blocking findings together with the v5-versus-v4 candidate question, which is what G-2 consists of. Separately open: L-081's seven findings and nine test gaps, integration obligations 4 and 5, and the dependency decision the twelve-byte preregistration names as a sealing precondition. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.
 ```
+
+### L-084
+
+```text
+timestamp_utc: 2026-09-10T10:05:00Z
+actor_role: Continuity Lead / co-chair (sole writer on main)
+predecessor_commit_or_tag: L-083 / 90dbecc
+scope: Set the G-2 status label the completion map addendum left to the Head Researcher, and record a correction to this session's own consultation threshold. No experiment, no seal, no pilot, no run, no corpus access. Task 4F1 untouched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+the_label: G-2 is recorded as REACHABLE - PENDING HEAD RESEARCHER DISPOSITION. The completion map at map:106 still reads "not reached"; per the additive-correction rule those bytes are not rewritten, and this entry together with the state file is the record of the corrected status. What G-2 consists of is unchanged: disposition of L-080's four non-blocking findings and of whether the Codex v5 package becomes the working candidate line in place of v4.
+head_researcher_direction_recorded_verbatim_in_substance: asked to approve the label, the Head Researcher approved it and asked why it had been put to them at all. The question is correct and is recorded as a correction rather than smoothed over.
+what_i_got_wrong: I treated a bookkeeping word as a decision requiring authority. It was not. The completion map addendum declined to invent a label for a good reason - the addendum is a hash-bound artifact and inventing status vocabulary inside one is overreach - but recording the obvious word in the mutable state file was always within this role. The effect of asking was to hand the Head Researcher a queue of small items alongside the real ones, which makes the real ones harder to see.
+the_threshold_going_forward: a question reaches the Head Researcher only when the answer changes what the programme DOES - which experiment runs, which gold is authoritative, which dependency is adopted, whether a gate opens. Wording, file placement, entry numbering, status vocabulary and every other bookkeeping choice are decided here and recorded, not asked. Where a bookkeeping choice turns out to be load-bearing, it is raised as one question with a recommendation, never as a list.
+what_this_does_not_do: it disposes of nothing. L-080's four findings, the v5-versus-v4 candidate question, L-081's seven findings and nine named test gaps, integration obligations 4 and 5, and the twelve-byte preregistration's dependency precondition all remain open. No gate is opened; G-3 is unchanged.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. No corpus was read, no benchmark retrieval computed, no Task 4F1 artifact touched.
+status: PASS
+next_single_action: One question for the Head Researcher, and it is a real one: whether the programme continues toward running the membership-under-scaling experiment, or first answers whether SIGN96 is competitive at twelve bytes. Everything else on the open list is either preparation this session performs or a disposition that can wait for that answer. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.
+```
