@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "BOTH Head Researcher decisions are DISPOSED 2026-09-11. The budget is twelve MARGINAL PERSISTENT BYTES PER VECTOR (L-088) and G-3 IS GRANTED as one controlled remediation package (L-089). Two lines are now open and independent: implement the G-3 package, leaving a finding-to-change-to-verification triple for each of L-081's seven findings and nine test gaps, obligations 4 and 5, and the G-2 items taken in; and write the baseline preregistration revision to the L-088 budget decision. Do NOT restore an aggregate-distance control. G-3 is fix-and-test authority only - it licenses no seal, pilot or run, no HMAC, no production authorization and no outcome access. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Line A, the G-3 package, is blocked on PERSISTENCE, not authority or reasoning: it exists in one working tree only and must be committed from the machine that holds it, or rebuilt where it can be committed, with any rebuild bound to the verified v5 manifest. Line B, the baseline preregistration revision to the L-088 budget decision, is blocked on nothing and proceeds. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -338,7 +338,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-089",
+  "ledger_entry": "L-090",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -2048,5 +2048,34 @@
     "limits_the_package_states_about_itself_and_the_reviewer_upheld": "pure Python in-memory APIs compute what a caller gives them; the refusing real entry point is not a universal security boundary; the tests' Python audit hook is not an OS sandbox",
     "reviewer_process_caveats_self_disclosed": "core.autocrlf=false and a commit identity set REPO-LOCALLY in its own scratch clone only; no global Git setting changed, no .gitattributes added",
     "nothing_remediated_or_merged": "the candidate stands at ed4e22c520b7dc0ae2f43f915e0c621070c72a87 exactly as pushed; the core, v5 ingestion, manifests, cohorts and seeds are untouched"
-  }
+  },
+  "g3_remediation_attempt_2026_09_11": {
+    "status": "REPORTED_NOT_IN_REPOSITORY",
+    "branch": "fix/g3-membership-remediation-2026-09-11",
+    "branch_commit": "077474013d95d6f343d31385d8a57d42fb72f721",
+    "branch_content": "byte-identical to main; git diff --stat empty; zero paths matching g3",
+    "hazard": "branch NAME asserts remediation, branch CONTENT is main; not progress until a commit lands",
+    "verified_from_bytes_this_session": [
+      "sealed core sha256 bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72 MATCHES drafts/v52/membership_impl_v3_2026_09_07/membership_scaling_core.py on origin/codex/v52-runner-ingest-repair-2026-09-08",
+      "v5 PAYLOAD_HASHES.json declares 27 files; 27/27 match repository bytes on size and sha256; base_commit 86a8fd7a73a0d4e045666e692cd7e2016f134885"
+    ],
+    "relayed_not_verified": [
+      "ALL PASS: 42 G-3 synthetic checks",
+      "runner diff 4/3 and ingestion diff 17/8",
+      "coordinatewise certificate tests, 96 singleton negations, all-96-negation member, exact-Fraction oracle, old-accept-new-reject witness",
+      "L-080 F1-F3 regressions",
+      "obligation 4 integration and overwrite refusal",
+      "hard-stop line run=0 finalize=0 HMAC=0 real_outcome_access=0",
+      "the 22-row disposition table is a PROPOSED matrix, not an accepted one"
+    ],
+    "vacuous_confirmation_noted": "authoritative/__init__.py is 0 bytes (sha256 e3b0c442... = empty string); its byte-identity carries no evidential weight",
+    "stack_nonconformance": "reported suite ran on Python 3.12.14 / NumPy 2.3.2 / SciPy 1.16.1 / scikit-learn 1.7.1; accepted lock is Python 3.13.15 / NumPy 2.3.5 / SciPy 1.17.0 / scikit-learn 1.8.0 / pandas 2.2.3 - different stacks, so obligation 5 cannot close on this evidence even once the bytes arrive",
+    "did_not_reach_repository": [
+      "L-080 finding 4 narrowed README sentence",
+      "v5-versus-v4 working-candidate decision"
+    ],
+    "g3_grant_state": "OPEN and UNSPENT; acceptance criterion of L-089 unchanged",
+    "checkable_manifest_for_any_arriving_package": "origin/codex/v52-runner-ingest-repair-2026-09-08 : drafts/v52/membership_runner_ingest_codex_v5_2026_09_08/PAYLOAD_HASHES.json"
+  },
+  "next_single_action": null
 }
