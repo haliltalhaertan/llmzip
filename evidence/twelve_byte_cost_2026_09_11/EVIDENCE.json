@@ -1,0 +1,177 @@
+{
+  "what_this_is": "Measurements behind the twelve-byte cost claims, so they stop being relayed. Synthetic data only; the single repository input is one metric CSV's N_archive column, which is archive cardinality and not a retrieval outcome.",
+  "environment": {
+    "faiss": "1.15.0",
+    "numpy": "2.4.6",
+    "python": "3.11.15",
+    "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+    "seed": 0,
+    "archive_size_blob_resolved_here": "b4336dd47fcf14e4b39f65bed3377d56ea9e77c7",
+    "archive_size_blob_expected": "b4336dd47fcf14e4b39f65bed3377d56ea9e77c7",
+    "blob_matches": true
+  },
+  "rabitq_code_sizes": {
+    "nb1": {
+      "32": 12,
+      "64": 16,
+      "96": 20,
+      "128": 24,
+      "256": 40,
+      "1024": 136
+    },
+    "nb2": {
+      "32": 28,
+      "64": 36,
+      "96": 44,
+      "128": 52,
+      "256": 84,
+      "1024": 276
+    },
+    "overhead_nb1": {
+      "32": 8,
+      "64": 8,
+      "96": 8,
+      "128": 8,
+      "256": 8,
+      "1024": 8
+    },
+    "overhead_is_constant": true,
+    "largest_d_within_12B_nb1": 32
+  },
+  "nb_bits_silent_trap": {
+    "post_construction_assignment_code_size": 20,
+    "post_construction_nb_bits_reads_back": 2,
+    "constructor_form_code_size": 44,
+    "assignment_is_silently_ignored": true
+  },
+  "serialized_versus_analytic": {
+    "OPQ_PQ96_serialized": 135325,
+    "OPQ_PQ96_analytic_content": 135168,
+    "OPQ_PQ96_header": 157,
+    "PQ96_serialized": 98390,
+    "PQ96_analytic_content": 98304,
+    "note": "A storage budget counts the serialized object, not the analytic content."
+  },
+  "serialization_S_of_N": {
+    "SIGN96_BinaryFlat": {
+      "points": {
+        "0": 33,
+        "1": 45,
+        "100": 1233,
+        "1000": 12033,
+        "10000": 120033
+      },
+      "shared_bytes": 33.00000000000785,
+      "marginal_bytes_per_vector": 11.999999999999998,
+      "max_abs_residual": 7.851497230149107e-12,
+      "linear": true
+    },
+    "TOP32_RABITQ32": {
+      "points": {
+        "0": 202,
+        "1": 214,
+        "100": 1402,
+        "1000": 12202,
+        "10000": 120202
+      },
+      "shared_bytes": 202.00000000000796,
+      "marginal_bytes_per_vector": 11.999999999999998,
+      "max_abs_residual": 7.958078640513122e-12,
+      "linear": true
+    },
+    "RABITQ96": {
+      "points": {
+        "0": 458,
+        "1": 478,
+        "100": 2458,
+        "1000": 20458,
+        "10000": 200458
+      },
+      "shared_bytes": 458.0000000000264,
+      "marginal_bytes_per_vector": 19.999999999999993,
+      "max_abs_residual": 2.9103830456733704e-11,
+      "linear": true
+    },
+    "PQ96_m12x8": {
+      "points": {
+        "0": 98390,
+        "1": 98402,
+        "100": 99590,
+        "1000": 110390,
+        "10000": 218390
+      },
+      "shared_bytes": 98390.0,
+      "marginal_bytes_per_vector": 12.000000000000004,
+      "max_abs_residual": 2.9103830456733704e-11,
+      "linear": true
+    },
+    "OPQ_PQ96_m12x8": {
+      "points": {
+        "0": 135325,
+        "1": 135337,
+        "100": 136525,
+        "1000": 147325,
+        "10000": 255325
+      },
+      "shared_bytes": 135324.99999999997,
+      "marginal_bytes_per_vector": 12.000000000000004,
+      "max_abs_residual": 2.9103830456733704e-11,
+      "linear": true
+    }
+  },
+  "pq_trainability": {
+    "min_points_per_centroid": 39,
+    "max_points_per_centroid": 256,
+    "hard_bound_probe": {
+      "300": "trains",
+      "256": "trains",
+      "255": "RuntimeError",
+      "100": "RuntimeError"
+    },
+    "hard_bound_is": "points < centroids",
+    "twelve_byte_configs": {
+      "m12x8bit": {
+        "k": 256,
+        "code_size": 12,
+        "recommended_points": 9984,
+        "meets_recommendation_at_min_archive_396": false
+      },
+      "m16x6bit": {
+        "k": 64,
+        "code_size": 12,
+        "recommended_points": 2496,
+        "meets_recommendation_at_min_archive_396": false
+      },
+      "m24x4bit": {
+        "k": 16,
+        "code_size": 12,
+        "recommended_points": 624,
+        "meets_recommendation_at_min_archive_396": false
+      },
+      "m48x2bit": {
+        "k": 4,
+        "code_size": 12,
+        "recommended_points": 156,
+        "meets_recommendation_at_min_archive_396": true
+      }
+    },
+    "correction": "An earlier statement called 39*k a trainability limit. It is not. m=12x8 does train at 396-616 points, with a faiss reliability warning."
+  },
+  "archive_cost": {
+    "source": "docs/v52/task4c2/V52_T4C2_feature_geometry.csv",
+    "source_blob": "b4336dd47fcf14e4b39f65bed3377d56ea9e77c7",
+    "n_archives": 470,
+    "N_archive_min": 396,
+    "N_archive_max": 616,
+    "N_archive_mean": 492.77872340425535,
+    "shared_bytes_serialized": 135325,
+    "cost_at_min": 353.729797979798,
+    "cost_at_mean_N": 286.6161584760326,
+    "cost_at_max": 231.68344155844156,
+    "mean_cost_over_archives": 287.6889713064122,
+    "jensen_gap": 1.0728128303796325,
+    "quotable_figure": 287.6889713064122,
+    "note": "1/N is convex, so the mean of the costs exceeds the cost at the mean. The panel figure to quote is mean_cost_over_archives."
+  },
+  "task_4f1": "untouched: SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN"
+}
