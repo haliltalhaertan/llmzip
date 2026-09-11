@@ -1849,3 +1849,23 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: The session holding the twelve-byte preregistration declares the arm 5 to 7 seeds as source literals and pins the concrete packages and versions for the third-party arms under the decided install-not-vendor policy, then republishes with a fresh digest. Only then is the preregistration eligible for a pre-run seal. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.
 ```
+
+### L-087
+
+```text
+timestamp_utc: 2026-09-11T09:30:00Z
+actor_role: Continuity Lead / co-chair (sole writer on main)
+predecessor_commit_or_tag: L-086 / 7e1de3a
+scope: Reproduce the twelve-byte budget finding independently, and commission a Muse audit of it by writing the task file. No experiment, no seal, no pilot, no run, no corpus access, no edit to the draft branch. Task 4F1 untouched.
+changed_or_created_paths: prompts/V52_TWELVE_BYTE_BUDGET_MUSE_AUDIT_TASK_2026-09-11.md with its sha256 sidecar (cf72402e467eca5e00e12e4f9f9233ee59bd72060561d34b82f48f757ed44781); docs/CONTINUITY_LEDGER.md; ops/CURRENT_STATE.json
+the_finding_reproduced_here_not_relayed: faiss-cpu 1.15.0 was installed in a scratch virtualenv and the sizes measured directly. RaBitQuantizer(96).code_size is 20, not 12. RaBitQuantizer(96, METRIC_L2, 2).code_size is 44. ProductQuantizer(96,12,8).code_size is 12. Every figure the parallel session reported matched exactly.
+the_decomposition_this_session_added: the overhead is FIXED AT 8 BYTES independent of d - 32 gives 12, 64 gives 16, 96 gives 20, 128 gives 24 - so it is two float32 scalars per vector, the correction terms RaBitQ's unbiased estimator and error bound are built on. They cannot be dropped without the method ceasing to be RaBitQ. The single number that follows: the largest d fitting 12 bytes in total at one bit per dimension is 32.
+why_this_is_not_bookkeeping: the preregistration's title and arm table equate 96 bit with 12 byte. Arm 4 is the declared primary comparator. Run as written, a 20-byte RaBitQ would be compared against a 12-byte SIGN96 and the result would establish nothing, whichever way it fell. The experiment's central premise does not hold as the document stands.
+the_silent_trap_reproduced: assigning nb_bits after construction is silently ignored - RaBitQuantizer(96) then q.nb_bits=2 leaves code_size at 20, a one-bit code, while the constructor form gives 44. A runner written the first way would run arm 5 as an undetected duplicate of arm 4. The remedy proposed is a preregistered abort: every arm asserts its code_size equals its declared budget before computing.
+recommendation_put_to_the_head_researcher: hold the budget at twelve bytes TOTAL including every per-vector auxiliary byte, let each method pick its own configuration so RaBitQ runs at d=32, drop arm 5 from the matched-budget contrast because a twelve-byte extended RaBitQ is not meaningfully extended, and report a recall-versus-actual-bytes curve beside the contrast so the compression of RaBitQ to a third of its dimension is visible rather than hidden.
+a_fourth_instance_of_my_own_recurring_error: L-086 states that faiss-cpu does not supply RaBitQ. It does; I used it. The policy that entry records - install pinned, do not vendor - is unaffected, and one package rather than two now suffices. The correction is additive here; L-086 is not rewritten.
+the_audit_is_commissioned_but_not_run_here: Muse is not present in this environment, which was checked rather than assumed. The task file is written instead, scoped to twelve claims with an exact ref for each and discovery forbidden, because an earlier twenty-one-claim run over eighty-five branches exhausted its search budget and timed out. It carries the flag combination that made the third run stream, the warning that the wrapper captures only the final message, and three questions that matter more than the grades - whether d=32 RaBitQ is a fair comparator at all, whether other arms carry hidden auxiliary cost, and whether a cheaper measurement would settle the same question.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. No corpus read, no benchmark retrieval computed, no Task 4F1 artifact touched. The faiss measurements used synthetic dimensions only and no data of any kind.
+status: PASS
+next_single_action: The budget question stands with the Head Researcher - twelve bytes total, or a budget raised to what every method can reach. Once answered, section 5's seed scope, the budget definition and the code_size abort are corrected together in one revision producing one digest, rather than in three rounds.
+```

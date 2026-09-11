@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-10T14:20:00Z",
+  "issued_at_utc": "2026-09-11T09:30:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "The twelve-byte dependency precondition is DISPOSED 2026-09-10 (L-086): the environment lock is EXTENDED and pinned implementations are INSTALLED; reference code is NOT vendored. The other conjunct of section 12 - the arm 5-7 codebook/centroid seeds, which the pushed section 5 requires as source literals - is still open and is PREPARATION, not a Head Researcher question. The preregistration is NOT yet eligible for sealing. Still undisposed and awaiting the Head Researcher: G-2's content (L-080's four non-blocking findings plus the v5-versus-v4 candidate question), L-081's seven findings and nine named test gaps, and integration obligations 4 and 5. Obligations 1, 2 and 3 are DISPOSED. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "THE BUDGET QUESTION stands with the Head Researcher: twelve bytes TOTAL including per-vector auxiliary data (RaBitQ then runs at d=32), or a budget raised to what every method can reach. Measured 2026-09-11 and reproduced independently: RaBitQ at d=96 costs 20 bytes, not 12, because of a fixed 8-byte per-vector scalar overhead that its error bound depends on; extended RaBitQ at 2 bits costs 44. The preregistration's premise of a matched 12-byte budget does not hold as written, so the declared primary contrast SIGN96 - RABITQ96 is not currently computable at a matched budget. Once the budget is answered, section 5's seed scope, the budget definition and a code_size abort are corrected in ONE revision producing ONE digest. Still undisposed: G-2's content, L-081's seven findings and nine named test gaps, integration obligations 4 and 5. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -218,6 +218,25 @@
     "G2_status": "REACHABLE - PENDING HEAD RESEARCHER DISPOSITION. Label set 2026-09-10 (L-084) with Head Researcher approval. The completion map at map:106 still reads 'not reached'; per the additive-correction rule those bytes are not rewritten and this state file plus L-084 are the record of the corrected status. What G-2 consists of is unchanged: disposition of L-080's four non-blocking findings and of whether the Codex v5 package becomes the working candidate line in place of v4.",
     "does_not_authorize": "no execution, seal, pilot or run; no outcome access; disposes none of L-080's four findings, the v5-versus-v4 question, L-081's seven findings, its nine test gaps, or obligations 4 and 5"
   },
+  "twelve_byte_budget_finding_2026_09_11": {
+    "measured_here": "faiss-cpu 1.15.0 installed in a scratch virtualenv; sizes read directly, not relayed",
+    "RaBitQ_d96_nb1_code_size": 20,
+    "RaBitQ_d96_nb2_code_size": 44,
+    "PQ_m12x8_code_size": 12,
+    "overhead": "FIXED at 8 bytes independent of d (32->12, 64->16, 96->20, 128->24): two float32 per-vector scalars, the correction terms RaBitQ's unbiased estimator and error bound are built on. Not removable without ceasing to be RaBitQ.",
+    "largest_d_fitting_12_bytes_total_at_nb1": 32,
+    "why_it_matters": "the preregistration's title and arm table equate 96 bit with 12 byte. Arm 4 is the declared primary comparator. Run as written, a 20-byte RaBitQ against a 12-byte SIGN96 establishes nothing whichever way it falls.",
+    "silent_trap_reproduced": "assigning nb_bits after construction is silently ignored - RaBitQuantizer(96) then q.nb_bits=2 leaves code_size at 20, a one-bit code. A runner written that way would run arm 5 as an undetected duplicate of arm 4. Remedy proposed: a preregistered abort asserting each arm's code_size equals its declared budget before computing.",
+    "recommendation": "twelve bytes TOTAL including every per-vector auxiliary byte; each method picks its own configuration so RaBitQ runs at d=32; arm 5 leaves the matched-budget contrast; a recall-versus-actual-bytes curve is reported beside it so the compression of RaBitQ is visible rather than hidden",
+    "corrects_L086_additively": "L-086 states faiss-cpu does not supply RaBitQ. It does. The install-not-vendor policy is unaffected and one package now suffices. L-086 is NOT rewritten.",
+    "commissioned_audit": {
+      "task_file": "prompts/V52_TWELVE_BYTE_BUDGET_MUSE_AUDIT_TASK_2026-09-11.md",
+      "sha256": "cf72402e467eca5e00e12e4f9f9233ee59bd72060561d34b82f48f757ed44781",
+      "auditor": "Muse 1.3, to be run on the Head Researcher's desktop - Muse is NOT present in the working environment, which was checked rather than assumed",
+      "scope": "twelve claims, an exact ref for each, discovery forbidden, ~15 commands - an earlier 21-claim run over 85 branches exhausted its search budget and timed out",
+      "status": "NOT RUN. A silent branch is not evidence; accept only a report whose claims verify from bytes."
+    }
+  },
   "twelve_byte_dependency_decision_2026_09_10": {
     "decision": "A - extend the environment lock and INSTALL pinned implementations; do NOT vendor reference code into the repository",
     "as_given": "\"A, faiss-cpu kur.\" - relayed chat text from the Head Researcher, NOT a pushed hash-bound artifact; same standing as the 2026-09-07 authorization recorded at L-054",
@@ -270,7 +289,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-086",
+  "ledger_entry": "L-087",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
