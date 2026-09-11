@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-11T18:40:00Z",
+  "issued_at_utc": "2026-09-11T19:15:00Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "THE BUDGET QUESTION IS DISPOSED 2026-09-11 (L-088): twelve bytes means at most twelve MARGINAL PERSISTENT BYTES PER VECTOR; shared model state sits outside the cap but is always reported separately; the preregistration must state that it tests ARCHIVE-LOCAL fitting. The primary contrast SIGN96 - RABITQ96 is CANCELLED as written because RaBitQ at d=96 costs twenty bytes. The preregistration revision is now UNBLOCKED. ONE decision remains with the Head Researcher: grant G-3 or withhold it - that single grant unblocks L-081's seven findings, its nine named test gaps and integration obligations 4 and 5, and G-2's content can ride with it. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "BOTH Head Researcher decisions are DISPOSED 2026-09-11. The budget is twelve MARGINAL PERSISTENT BYTES PER VECTOR (L-088) and G-3 IS GRANTED as one controlled remediation package (L-089). Two lines are now open and independent: implement the G-3 package, leaving a finding-to-change-to-verification triple for each of L-081's seven findings and nine test gaps, obligations 4 and 5, and the G-2 items taken in; and write the baseline preregistration revision to the L-088 budget decision. Do NOT restore an aggregate-distance control. G-3 is fix-and-test authority only - it licenses no seal, pilot or run, no HMAC, no production authorization and no outcome access. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -218,6 +218,24 @@
     "G2_status": "REACHABLE - PENDING HEAD RESEARCHER DISPOSITION. Label set 2026-09-10 (L-084) with Head Researcher approval. The completion map at map:106 still reads 'not reached'; per the additive-correction rule those bytes are not rewritten and this state file plus L-084 are the record of the corrected status. What G-2 consists of is unchanged: disposition of L-080's four non-blocking findings and of whether the Codex v5 package becomes the working candidate line in place of v4.",
     "does_not_authorize": "no execution, seal, pilot or run; no outcome access; disposes none of L-080's four findings, the v5-versus-v4 question, L-081's seven findings, its nine test gaps, or obligations 4 and 5"
   },
+  "g3_remediation_grant_2026_09_11": {
+    "decision": "G-3 IS GRANTED, defined as ONE SINGLE CONTROLLED REMEDIATION PACKAGE, not a standing licence",
+    "covers": "L-081's seven findings; L-081's nine named test gaps; integration obligations 4 and 5; and, to the extent directly related, L-080's four non-blocking findings (G-2's content) plus the v5-versus-v4 candidate question - all inside the same package",
+    "permitted": "code changes, adding and changing tests, fail-closed controls, provenance and state-hygiene corrections, and verifying them",
+    "not_permitted": "running the Task 4F1 experiment; sealing, finalizing or any HMAC operation; granting production authorization; access to real retrieval-quality outcome data",
+    "what_it_is": "a FIX-AND-TEST authorization. It is NOT an authorization to run an experiment.",
+    "acceptance": "one commit passing does NOT close it. G-3 closes only when a traceable test and evidence matrix exists across the seven findings, the nine test gaps and obligations 4 and 5, AND the disposition of the G-2 items taken into the package is explicitly written. Every finding leaves at minimum: finding -> code/test change -> verification result.",
+    "may_not_be_undone": "the coordinatewise certificate decision stands. No return to an aggregate-distance control at any coverage. The fixed family including the all-96-negation vector and its negative control remain mandatory.",
+    "artifact": {
+      "path": "docs/v52/V52_G3_REMEDIATION_GRANT_HR_DECISION_2026-09-11.md",
+      "sha256": "533bf10ec66fa7ab225a60d43161e129791d0f168f7e0ab520ce0afc7f23548f",
+      "branch": "hr/g3-remediation-grant-2026-09-11",
+      "commit": "b6b06e0c7e51089aa402dcdbddf03f692d690948",
+      "not_merged_into_main": true,
+      "relayed_as": "chat text from the Head Researcher, NOT a signed artifact; same standing as L-054, L-086 and L-088"
+    },
+    "numbering_correction": "L-088 reserved 'the NEXT ledger number' for a parallel session's unpushed disposition. That held the line hostage to a replay that has not happened. Ledger numbers go by PUSH ORDER, not reservation; that disposition takes whatever number is next when it lands. L-088's bytes are not rewritten - L-089 supersedes the wording."
+  },
   "twelve_byte_budget_decision_2026_09_11": {
     "decision": "twelve bytes = at most twelve MARGINAL PERSISTENT BYTES PER VECTOR",
     "inside_the_cap": "everything written once per stored memory: the code, any norm or scale, any correction scalar, any per-vector metadata",
@@ -320,7 +338,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-088",
+  "ledger_entry": "L-089",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",

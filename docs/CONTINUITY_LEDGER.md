@@ -1890,3 +1890,23 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: ONE decision remains with the Head Researcher: grant G-3, the authority to write and fix code, or withhold it. That single grant unblocks L-081's seven findings, its nine named test gaps, and integration obligations 4 and 5, all of which are currently frozen for want of code authority; G-2's content can ride with it. Independently of that, the preregistration revision is now UNBLOCKED and may be written to the budget decision recorded here. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.
 ```
+
+### L-089
+
+```text
+timestamp_utc: 2026-09-11T19:15:00Z
+actor_role: Continuity Lead / co-chair (sole writer on main)
+predecessor_commit_or_tag: L-088 / d03309b
+scope: Record the Head Researcher's grant of G-3, and correct a numbering reservation this session wrote one entry earlier. Recording only. No code was written, no test run, no experiment, no seal, no pilot, no corpus access. Task 4F1 untouched.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md. The grant artifact is on hr/g3-remediation-grant-2026-09-11 at b6b06e0c7e51089aa402dcdbddf03f692d690948 and is NOT merged into main.
+the_grant: G-3 IS GRANTED, defined as ONE SINGLE CONTROLLED REMEDIATION PACKAGE rather than a standing licence. Artifact V52_G3_REMEDIATION_GRANT_HR_DECISION_2026-09-11.md, sha256 533bf10ec66fa7ab225a60d43161e129791d0f168f7e0ab520ce0afc7f23548f.
+what_the_package_covers: L-081's seven findings; L-081's nine named test gaps; integration obligations 4 and 5; and, to the extent directly related, the four non-blocking findings of L-080 that constitute G-2's content together with the question of whether v5 becomes the working candidate line in place of v4, all handled inside the same package.
+the_boundary_stated_in_both_directions: PERMITTED are code changes, adding and changing tests, fail-closed controls, provenance and state-hygiene corrections, and verifying them. NOT PERMITTED are running the Task 4F1 experiment, sealing, finalizing, any HMAC operation, granting production authorization, and access to real retrieval-quality outcome data. G-3 is a fix-and-test authorization and is NOT an authorization to run an experiment.
+acceptance_is_not_a_green_commit: one commit passing does not close G-3. It closes only when a traceable test and evidence matrix exists across the seven findings, the nine test gaps and obligations 4 and 5, AND the disposition of the G-2 items taken into the package is explicitly written. Every finding leaves at minimum the triple finding, then code or test change, then verification result.
+what_may_not_be_undone_while_fixing: the coordinatewise certificate decision stands. There is no return to an aggregate-distance control at any coverage. The fixed family including the all-96-negation vector remains mandatory, as does the negative control that the new check must REJECT and the old aggregate control accepts. A remediation that quietly restored the aggregate form would satisfy a test suite and destroy the finding it was written for.
+a_correction_to_my_own_entry_one_number_earlier: L-088 states that the parallel session's unpushed Muse and PQ disposition "takes the NEXT ledger number". That reserved a number for an entry gated on a replay that has not happened, which would have held the line hostage. Ledger numbers are assigned by PUSH ORDER, not by reservation. This entry therefore takes L-089, and that disposition takes whatever number is next when it actually lands. The reservation wording in L-088 is superseded by this paragraph; L-088's bytes are not rewritten.
+two_lines_are_now_open_and_independent: the baseline preregistration revision may be written to the budget decision recorded at L-088, and the G-3 remediation package may be implemented. Neither waits on the other, and neither licenses a seal or a run.
+outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal V3; run BLOCKED; production authorization NONE; retrieval-quality outcome access FORBIDDEN. No corpus read, no gold read, no benchmark retrieval computed, and no Task 4F1 artifact, payload, candidate, manifest or audit namespace read or modified.
+status: PASS
+next_single_action: Implement the G-3 remediation package as ONE package, leaving the finding-to-change-to-verification triple for each of L-081's seven findings and nine test gaps, obligations 4 and 5, and the G-2 items taken in; and, independently, write the baseline preregistration revision to the L-088 budget decision. Do not restore an aggregate-distance control. No seal, pilot or run is licensed by either. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.
+```
