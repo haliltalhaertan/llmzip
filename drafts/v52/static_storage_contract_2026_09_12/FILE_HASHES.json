@@ -1,0 +1,37 @@
+{
+  "self_excluded": "FILE_HASHES.json",
+  "files": {
+    "INDEPENDENT_DESIGN_DELTA_REVIEW.md": {
+      "sha256": "19317514858cefdbd80098dc8f2b9bb706df9bc1f1dfb3b274ee896456f16e9a",
+      "bytes": 5681
+    },
+    "INDEPENDENT_DESIGN_REVIEW.md": {
+      "sha256": "3e8f1bcfe40ebd4c4cc794f1612ddb4046ea950e7aebac9e8ad40284440664ca",
+      "bytes": 8941
+    },
+    "MEASUREMENT_CONTRACT_TR.md": {
+      "sha256": "8155bf9a22284697404c0a1770facaced96878be327d2e846e5a57e20e68d040",
+      "bytes": 16784
+    },
+    "README.md": {
+      "sha256": "91575d979cb9a97edec97d3dd2dca68817740cab783c922bf18d70cacdbeaa9a",
+      "bytes": 2182
+    },
+    "source/V52_TWELVE_BYTE_BUDGET_HR_DECISION_2026-09-11.md": {
+      "sha256": "1832f4b368024edba4a7f5d2d3f925e9c9b1c53367f1a4ed54b7586b2ec8cc26",
+      "bytes": 4893
+    },
+    "source/V52_TWELVE_BYTE_BUDGET_HR_DECISION_2026-09-11.md.sha256": {
+      "sha256": "5f12f9cfa2bf1e5d22dcf2084d5453d68899b75daa6979c6816655be6616ca0e",
+      "bytes": 115
+    },
+    "SOURCE_BINDINGS.json": {
+      "sha256": "d0038bbf09419260e78744092e5c3567574b05cf8518a4f064b05bc93a63ae48",
+      "bytes": 825
+    },
+    "verify_draft.py": {
+      "sha256": "15002475487fa672543add95fdce37b9f4376d7e0e1a15f799e470ba04b23cb6",
+      "bytes": 2493
+    }
+  }
+}

@@ -20,13 +20,13 @@ Bu paketin arama sonucunu gerçek metne bağlaması için gerekli kimlik/offset 
 
 ## 2. Ekleme sırasında ne sabit kalıyor?
 
-Arşivin eğitim kümesi/kimliği, TF-IDF sözlüğü ve IDF değerleri, metin işleme kuralları, SVD bileşenleri, gerekli merkez/normalizasyon durumu, kod kitabı/rotasyon, sayısal tip, tohumlar, serileştirme biçimi ve paylaşım grupları sabittir. Yalnız eklenen kodlanmış kayıt ve onun zorunlu vektör başına durumu değişir.
+Arşivin eğitim kümesi/kimliği, TF-IDF sözlüğü ve IDF değerleri, metin işleme kuralları, SVD bileşenleri, gerekli merkez/normalizasyon durumu, kod kitabı/rotasyon, sayısal tip, tohumlar, serileştirme biçimi, paylaşım politikası ve fiziksel model durumu kopyaları sabittir. G_k üyeliği ve D_k her prob anlık görüntüsü için ayrıca bağlanır. Yalnız eklenen kodlanmış kayıt, onun zorunlu vektör başına durumu ve kayıt sayısına bağlı kapsayıcı ek yükü değişir.
 
 Bu, **dondurulmuş modele kayıt ekleme muhasebesidir**; büyüyen bir arşivi yeniden eğitmenin ölçümü değildir. Yeni kelime görülmesi tek başına yeniden fit işlemini zorunlu kılmaz; dondurulmuş sözlüğün OOV davranışı ve yeniden eğitim politikası ayrıca belirtilir. Mevcut uygulamanın her eklemede yeniden fit yaptığı bu belgeyle iddia edilmez.
 
 Dinamik sözlük/IDF/SVD güncellemesi, yeniden kodlama, yazma trafiği, eğitim zamanı ve tepe RAM kapsam dışıdır. Bu dışlama, bunların ücretsiz veya küçük olduğu anlamına gelmez. Genel dinamik maliyet farkı `C(N+1)-C(N)`, paylaşılan durumdaki değişimi de içerebilir; statik sonuç ona taşınmaz.
 
-Sonlu fark ölçümü: aynı frozen modelin serileştirilmiş `B(N+q)-B(N)` farkı, `q` ile birlikte kaydedilir. Birden çok ilan edilmiş N/q noktası, sabit kayıt maliyetini ve olası blok/başlık basamaklarını ayırmalıdır. Lineerlik doğrulanmazsa tek bir evrensel b sayısı yazılmaz; farklar ve gözlenen aralık raporlanır. Problar yalnız ayrıca izin verilen sentetik kayıtlarla yapılır; gerçek retrieval çıktısı hesaplanmaz. Bu taslak sayısal prob paneli veya çalıştırma izni tanımlamaz.
+Sonlu fark ölçümünde q pozitif tamsayıdır. `delta_bytes = B(N+q)-B(N)` toplam ek bayt; `delta_bytes_per_added_vector = delta_bytes/q` o partinin vektör başına ortalama farkıdır. İkisi ayrı kaydedilir; toplam fark doğrudan 12 B/vektör ile karşılaştırılmaz. Kayıt başına zorunlu `b_v+a_v`, N'ye bağlı serileştirme farkı ve paylaşılan durum ayrı uzlaştırılır; aynı bayt iki kez sayılmaz. Birden çok ilan edilmiş N/q noktası, sabit kayıt maliyetini ve olası blok/başlık basamaklarını ayırmalıdır. Lineer olmayan farkların bütçe koşuluna nasıl bağlandığı önceden açıklanıp doğrulanmadan bir parti ortalamasından genel uygunluk hükmü çıkarılmaz; farklar ve gözlenen aralık raporlanır. Paylaşılan model durumu bu yolla marjinal tavana taşınmaz; zorunlu vektör başına durum da paylaşılmış sayılarak dışarı çıkarılmaz. Problar yalnız ayrıca izin verilen sentetik kayıtlarla yapılır; gerçek retrieval çıktısı hesaplanmaz. Bu taslak sayısal prob paneli veya çalıştırma izni tanımlamaz.
 
 Her N ve N+q ayrı bir depolama anlık görüntüsüdür; etkin maliyetin paylaşım nüfusu her biri için yeniden belirtilir. Bu prob, gerçek arşiv üyeliğini değiştirmez. Sabit filo depolaması ile yeni bir bağımsız arşiv eklemenin maliyeti ayrı nesnelerdir; ikincisinde yeni arşiv-yerel durum da eklenir. Kapasite sınırları ve yeniden eğitim tetikleyicileri envanterde bildirilir; dondurulmuş modele eklenebilmesi kalite korunumu iddiası değildir.
 
@@ -72,11 +72,13 @@ OpenSearch formülleri yalnız vektör, segment ve paylaşılan durum terimlerin
 
 Yeni bir yüzde eşiği veya toplam B/vektör tavanı icat edilmez. Karar ①'de mevcut olan tek bütçe eşiği **marjinal kalıcı ≤12 B/vektör**dür. Ortak projektörün payını o tavana ekleyerek bir kolu diskalifiye etmek kararın nesnesini değiştirir.
 
+Sabit bütçe kararındaki ön kontrol ve abort yükümlülüğü aynen sürer: eşleşmiş karşılaştırmanın runner'ı `measured_persistent_bytes_per_vector <= 12` koşulunu ilgili hesaplamalara geçmeden doğrular; tavan aşımı veya gerçek `code_size`/serileştirme çıktısının deklarasyonla uyuşmaması halinde durur. Bulguyu kaydetmek devam izni oluşturmaz. Bu belge kontrolü çalıştırmaz veya çalıştırma yetkisi vermez; diğer mevcut korumaları ve açık yükümlülükleri kaldırmaz.
+
 | Sınanan iddia/koşul | Çürüten veya sınırlayan gözlem | Önceden belirlenen dispozisyon |
 |---|---|---|
-| İlan edilen zincir marjinal ≤12 B/vektör | Zorunlu vektör başına durum dahil farkın tavanı aşması veya deklarasyonla uyuşmaması | O tam konfigürasyonun eşleşmiş uygunluk iddiası kurulmaz; gerçek değer kaydedilir. Yeni kol/ayar arayışı başlatılmaz |
+| İlan edilen zincir marjinal ≤12 B/vektör | Zorunlu vektör başına durum dahil, yukarıdaki birim/uzlaştırma kuralıyla doğrulanmış B/vektör maliyetinin tavanı aşması veya deklarasyonla uyuşmaması | Eşleşmiş runner ön kontrolde durur; o tam konfigürasyonun uygunluk iddiası kurulmaz, gerçek değer kaydedilir. Yeni kol/ayar arayışı başlatılmaz |
 | Model paketi ilan edilen ortamda yeniden açılabilir | Gerekli durum eksik, digest uyuşmuyor veya dönüşüm dışarıda kalmış model verisi gerektiriyor | Eksik bağımlılık/yeniden üretim bulgusu; eksik durum UNKNOWN. Tam maliyet ve kullanılabilirlik iddiası verilmez |
-| Paylaşım ve toplam maliyet hesabı eksiksiz | Kopya atlama, çift sayım, belirsiz D_k, bilinmeyen zorunlu kalem | Tam toplam yerine bilinen alt sınır; eksik kalemler. Eksikliği küçük maliyet diye yorumlamayız |
+| Paylaşım ve toplam maliyet hesabı eksiksiz | Kopya atlama, çift sayım, belirsiz D_k, bilinmeyen zorunlu kalem | Tam toplam UNKNOWN; yalnız aşağıdaki koşulları sağlayan tekilleştirilmiş kalemlerden alt sınır kurulabilir. Yanlış/çift sayımlı toplam alt sınır sayılmaz |
 | Kod-only maliyet eşitliği toplamda sürer | Aynı popülasyonda yönteme özgü durum farklı toplamlar oluşturur | Eşitliğin bozulması betimlenir. Önceden strict sıra yoksa "tersine dönme" denmez |
 | Ortak projektör eklemek sıralamayı değiştirir | Her yönteme aynı arşivde aynı P_i ekleniyorsa sıra korunur | Bu değişmezlik cebirseldir; veriyle keşfedilmiş veya projektörün önemsizliğini gösteren sonuç sayılmaz |
 | Maliyet farkı bir yöntem seçimini gerektirir | Kalite/fayda ve toplam maliyet için ilan edilmiş karar kuralı yok | "Maliyetler ölçüldü; yöntem seçimi etkisi bu sözleşmede belirlenmedi." Ucuzluk kalite üstünlüğü yerine geçmez |
@@ -93,7 +95,7 @@ Bu sözleşme karar temelli kapanışı korur, fakat onu şu ifadeye daraltır: 
 
 Bu sonuçta yeni kol, tohum, alt grup, N aralığı, serileştirme arayışı veya held-out ITQ otomatik başlatılmaz. Makale katkısı çıkarmak için kapsam büyütülmez. Bütün önceden ilan edilmiş arşiv satırları korunur; yalnız dikkat çekici örnek seçilmez.
 
-Gerekli model artefaktı veya paylaşım nüfusu bulunamazsa durum **PARTIAL / UNKNOWN** olur; "etki yok" ya da "doğrulandı" diye kapanmaz. Bilinen maliyetler alt sınır olarak yayımlanabilir; eksik kaynak tam olarak listelenir. Korpusun yeniden işlenmesi veya güncelleme/kalite çalışması bu taslağın boşluk doldurma yolu değildir.
+Gerekli model artefaktı veya paylaşım nüfusu bulunamazsa durum **PARTIAL / UNKNOWN** olur; "etki yok" ya da "doğrulandı" diye kapanmaz. Alt sınır yalnız kapsam içinde olduğu doğrulanmış, çakışmayan ve tekilleştirilmiş fiziksel kalemlerin toplamından kurulabilir; kuşkulu kalemler bu kanıtlanmış alt toplama dahil edilmez. B/vektör alt sınırı ayrıca doğru tahsis ve bilinen pozitif nüfus gerektirir. Bu koşullar yoksa ilgili toplam veya etkin değer UNKNOWN kalır; yalnız doğrulanmış mutlak baytlar ve çözülmemiş kalemler ayrı raporlanır. Yanlış veya çift sayımlı toplam alt sınır diye yayımlanmaz. Korpusun yeniden işlenmesi veya güncelleme/kalite çalışması bu taslağın boşluk doldurma yolu değildir.
 
 ### Sonraki adımın sınırı
 

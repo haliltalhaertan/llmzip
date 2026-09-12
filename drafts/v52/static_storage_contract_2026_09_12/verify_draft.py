@@ -39,8 +39,8 @@ if __name__ == "__main__":
     sidecar = (ROOT / binding["sources"][1]["local_path"]).read_text(encoding="utf-8")
     require(source["sha256"] in sidecar, "budget sidecar")
     draft = (ROOT / "MEASUREMENT_CONTRACT_TR.md").read_bytes()
-    review = (ROOT / "INDEPENDENT_DESIGN_REVIEW.md").read_text(encoding="utf-8")
-    require(sha(draft) in review, "review does not identify current draft bytes")
+    review = (ROOT / "INDEPENDENT_DESIGN_DELTA_REVIEW.md").read_text(encoding="utf-8")
+    require(sha(draft) in review.lower(), "delta review does not identify current draft bytes")
     require(len(re.findall(r"^## [1-5]\. ", draft.decode(), re.M)) == 5, "five-question structure")
     if args.write:
         with MANIFEST.open("x", encoding="utf-8", newline="\n") as f:
