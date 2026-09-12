@@ -41,6 +41,11 @@ ZIP merkez dizinleri incelenmiş gibi bir iddia yok. Klasör envanteri ve sını
 `task1/SOURCE_INVENTORY.json` içinde. İlk geniş yerel dosya adı taraması BEAM dosya
 adlarını da döndürdü; içerikleri açılmadı ve sonraki tarama yalnız üç mekanizma
 klonuna daraltıldı. Bu, geniş taramanın kapsam sapmasıdır; sonuç verisi okunmadı.
+Statik üretici kaynak görünümünde gömülü eski native/ITQ referans sabitleri de
+çıktıya geldi. Bu istenmeyen görünürlük kayda geçiriliyor; bu sabitler tanı girdisi,
+eşik ayarı veya yöntem seçimi için kullanılmadı. Retrieval sonuç CSV'leri veya
+query/gold içeren önbellekler açılmadı. Kaynak SVD96 seed'i5204; bu tanı hesabı
+hiçbir rastgele işlem veya yeni temsil fit'i kullanmıyor.
 
 Literatürün sabit sürüm ve uygulama kimliği kontrolü
 `LITERATURE_ASSESSMENT_TR.md` içindedir. **0,75 evrensel bir karar eşiği olarak

@@ -7,7 +7,10 @@
     "bytes": 1947381,
     "producer_sha256": "8dce37b1611ba6257570beea559630208f67ffb93697015e95656858a3c7d996",
     "producer_operator": ">=0",
-    "sampling": false
+    "sampling": false,
+    "producer_SVD96_seed": 5204,
+    "producer_C_dtype": "float64",
+    "diagnostic_randomness": "None; exact finite CSV vectors used without sampling"
   },
   "environment": {
     "python": "3.13.15",

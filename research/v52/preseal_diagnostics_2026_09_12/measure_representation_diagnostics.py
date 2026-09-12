@@ -122,7 +122,9 @@ def main():
         'status':'PARTIAL - exact published sufficient statistics recovered; full matrices unavailable',
         'base_commit':'ae9175676b840ae6a80a31eba9836187dc1b7491',
         'source':{'drive_id':'1PME-hZHxp3fRN0AYgygp1oM7v-GNYm6Z','sha256':SOURCE_SHA256,'bytes':len(raw),
-                  'producer_sha256':PRODUCER_SHA256,'producer_operator':'>=0','sampling':False},
+                  'producer_sha256':PRODUCER_SHA256,'producer_operator':'>=0','sampling':False,
+                  'producer_SVD96_seed':5204,'producer_C_dtype':'float64',
+                  'diagnostic_randomness':'None; exact finite CSV vectors used without sampling'},
         'environment':{'python':platform.python_version(),'numpy':np.__version__,'platform':platform.platform()},
         'controls':controls(),
         'longmemeval':{
