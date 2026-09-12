@@ -1,0 +1,167 @@
+{
+  "status": "PASS_ACTUAL_NUMPY_FITTED_STATE_ACCOUNTING",
+  "created_utc": "2026-09-12T13:50:19.012287+00:00",
+  "supplement_source_sha256": "9f9c5ce0617a66c2a5c4f2d6c21b74cfd78a2159d23b0d2238e601fcabe1cbbe",
+  "main_source_sha256": "18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d",
+  "main_plan_sha256": "e56ea0d6858e06211fa9eb82d6d255724a3d0e23016b77d28f8d8ff10923c53f",
+  "existing_results_sha256": "0c2cf96553dbf448d22def0538c8993ada038d1fdac52665f759c08e5a304214",
+  "base_commit": "ae9175676b840ae6a80a31eba9836187dc1b7491",
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "executable": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "thread_pools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-9e3e5a4229c1ca39f10dc82bba9e2b2b.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Lib\\site-packages\\scipy.libs\\libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      }
+    ],
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_THREAD_LIMIT": "1"
+    }
+  },
+  "distribution": "gaussian",
+  "n": 100,
+  "dimension": 96,
+  "data_seed": 5212100,
+  "initialization_seed": 7312001,
+  "input_data": {
+    "shape": [
+      100,
+      96
+    ],
+    "dtype": "<f8",
+    "order": "C",
+    "sha256_raw_c_bytes": "89f7d1b3dd8b554c5b8e6e088ae0af98f91818f82b0bdd1f1d91eadb8b25aaa2",
+    "bytes": 76800
+  },
+  "initial_rotation": {
+    "shape": [
+      96,
+      96
+    ],
+    "dtype": "<f8",
+    "order": "C",
+    "sha256_raw_c_bytes": "29d7236dfa0c7782784c0713c0010d5960193f97d12cb4e6272a316c5a840880",
+    "bytes": 73728
+  },
+  "existing_fit_data_rotation_codes_objective_stopping_identity": "EXACT_MATCH",
+  "fit": {
+    "iterations": 11,
+    "converged": true,
+    "stop_reason": "relative_objective_stable_5",
+    "cap_hit": false,
+    "initial_objective_mean": 0.40303494737337664,
+    "final_objective_mean": 0.15444087334881323,
+    "initial_objective_sum": 3869.1354947844156,
+    "final_objective_sum": 1482.6323841486071,
+    "relative_training_objective_reduction": 0.6168052563299498,
+    "orthogonality_frobenius_error": 2.601426449589915e-14,
+    "monotonicity_violations": 0,
+    "positive_half_step_increases_within_tolerance": 0,
+    "largest_positive_half_step_increase": 0.0,
+    "exact_zero_projection_entries_over_observed_steps": 0,
+    "elapsed_seconds": 0.042886000010184944,
+    "initial_rotation": {
+      "shape": [
+        96,
+        96
+      ],
+      "dtype": "<f8",
+      "order": "C",
+      "sha256_raw_c_bytes": "29d7236dfa0c7782784c0713c0010d5960193f97d12cb4e6272a316c5a840880",
+      "bytes": 73728
+    },
+    "final_rotation": {
+      "shape": [
+        96,
+        96
+      ],
+      "dtype": "<f8",
+      "order": "C",
+      "sha256_raw_c_bytes": "4fd1bc937b7f0dbdc5376242b86c30554c0910c0006943b1946d5e0031f2d658",
+      "bytes": 73728
+    },
+    "final_binary_codes": {
+      "shape": [
+        100,
+        96
+      ],
+      "dtype": "|i1",
+      "order": "C",
+      "sha256_raw_c_bytes": "3b1f33ed649a5bf081292168d1cf80ec30030477ddc28677e23c390b3af0c11c",
+      "bytes": 9600
+    }
+  },
+  "artifacts": {
+    "actual_numpy_fitted_float64": {
+      "path_relative_to_receipt": "actual_binary_artifacts/R_fitted_float64.npy",
+      "matrix": {
+        "shape": [
+          96,
+          96
+        ],
+        "dtype": "<f8",
+        "order": "C",
+        "sha256_raw_c_bytes": "4fd1bc937b7f0dbdc5376242b86c30554c0910c0006943b1946d5e0031f2d658",
+        "bytes": 73728
+      },
+      "raw_nbytes": 73728,
+      "npy_bytes": 73856,
+      "npy_sha256": "71aed99e903f6e1ec206fb2c3342fc2168052b968eb906a31eb9684adbe15baf",
+      "npy_header_and_framing_bytes": 128,
+      "allow_pickle": false,
+      "npy_roundtrip_identity": "PASS"
+    },
+    "explicit_float32_conversion": {
+      "path_relative_to_receipt": "actual_binary_artifacts/R_converted_float32.npy",
+      "matrix": {
+        "shape": [
+          96,
+          96
+        ],
+        "dtype": "<f4",
+        "order": "C",
+        "sha256_raw_c_bytes": "32ec309a6f8203689cf4f467ac3a192514bbbb1e5751539c98fbd96064fe8aef",
+        "bytes": 36864
+      },
+      "raw_nbytes": 36864,
+      "npy_bytes": 36992,
+      "npy_sha256": "47801c7c2441953c375e661c3da6f8140f9133cd80ba5533401ff3790b77ebe5",
+      "npy_header_and_framing_bytes": 128,
+      "allow_pickle": false,
+      "npy_roundtrip_identity": "PASS"
+    }
+  },
+  "float32_conversion_max_abs_delta": 1.486746448176035e-08,
+  "limitations": [
+    "Actual state is the float64 R fitted by this NumPy/SciPy synthetic implementation, not a Faiss ITQ fit.",
+    "Float32 state is explicitly converted from that fitted R; it has different dtype, bytes and numerical values.",
+    "Float32 conversion was not refitted; no code-stability, quantization-loss or retrieval claim is made for it.",
+    "This accounts for the learned rotation array and its npy container only, not a complete deployment/index footprint.",
+    "No real matrix, corpus, query-distance or retrieval code is accessed; the original 240-fit panel is not rerun."
+  ],
+  "elapsed_seconds": 2.556339400005527
+}

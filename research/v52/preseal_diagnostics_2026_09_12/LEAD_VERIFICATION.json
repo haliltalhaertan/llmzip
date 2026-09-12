@@ -84,5 +84,16 @@
       "check": "actual deserialize/serialize byte roundtrip"
     }
   ],
-  "scope": "Parent independently read persisted synthetic objects; no training or query evaluation repeated."
+  "scope": "Parent independently read persisted synthetic objects; no training or query evaluation repeated.",
+  "task3": {
+    "worker_commit": "86670326052e0019b9efc762ce9f718b59225eed",
+    "manifest_hashes_verified": 14,
+    "actual_float64_nbytes": 73728,
+    "explicit_float32_nbytes": 36864,
+    "saved_synthetic_fitted_matrix_identity": "PASS",
+    "cast_identity_and_delta": "PASS",
+    "storage_ratio_rows": 1880,
+    "ratio_source_sha256": "85aedf01d54bd1a074fe1feef6182c952ab02a4044a43696b03dbc7b4677ad45",
+    "ratio_scope": "Rotation component only relative to N*12 code bytes; no complete deployment claim."
+  }
 }

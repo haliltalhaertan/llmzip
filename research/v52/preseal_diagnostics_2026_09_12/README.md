@@ -102,6 +102,43 @@ olduğu iddia edilmiyor. Task3'ün gerçek NumPy fit'i ve saklama dtype'ı ayrı
 bağlanmalıdır. QuIVer-style burada yalnız kodlama/paketlemedir; graf, sorgulama
 ve float rerank içeren bütün QuIVer sistemi değildir.
 
+## Task3 — sentetik ITQ fizibilitesi ve gerçek öğrenilmiş durum
+
+Alt ajan Ohm'un `86670326052e0019b9efc762ce9f718b59225eed` teslimi alındı.
+Gaussian, heterojen ve aynı spektrumun döndürülmüş hali; n={100,250,500,1000},
+d96 ve sabit veri başına20 başlangıç: **240/240 fit yakınsadı**. Önceden belirlenen
+250 iterasyon / göreli1e-8 / ardışık5 durma kuralı değiştirilmedi. Gözlenen
+iterasyonlar9–141; sınıra ulaşan0. Tam panel45,973 saniyede tamamlandı.
+
+İşaret/permutasyon hizalı normalize Frobenius mesafesinin panel medyanları
+1,206850–1,208505; Haar–Haar referansının medyanı1,210181. Amaç yakınsaması,
+tek veya kararlı bir rotasyon bulunduğu anlamına gelmiyor. Çiftler bağımlı;
+buradan istatistiksel eşdeğerlik, ayırt edilemezlik veya evrensel minimum n
+çıkarılmadı. Gaussian popülasyonda ayrıcalıklı yön olmayışı da tek başına fit
+başarısızlığı diye etiketlenmedi. Ayrıntılar `task3/README.md` ve `RESULTS.json`.
+
+**Gerçek öğrenilmiş matris**, aynı sabit fitin yeniden üretimiyle bağlandı:
+
+| Matris biçimi | Ham bayt | Gerçek `.npy` baytı |
+|---|---:|---:|
+| NumPy/SciPy fitinin float64 R'si | 73.728 | 73.856 |
+| Bu R'nin açık float32 dönüşümü | 36.864 | 36.992 |
+
+Dönüşümün en büyük mutlak farkı1,486746448176035e-08. Float32 farklı baytlar ve
+sayısal değerlerdir; kod/retrieval kararlılığı ölçülmedi. Task2'nin float32 matris
+vekilini bu float64 fitin gerçek toplam belleği gibi sunmuyoruz. `.npy` maliyeti
+yalnız rotasyon dizisi ve kabıdır; ortak ön işleme ve kodlar ayrıca sayılmalıdır.
+`task3/FITTED_STATE.json` kaynak/seed/veri/fit/matris kimliğini bağlar. Ana panel
+ve PLAN değiştirilmeden ek ölçüm yapıldı. İki gerçek matris, lead tarafından da
+`allow_pickle=False` ile yüklenip dtype, ham hash ve açık dönüşüm farkıyla doğrulandı.
+Bu iki dtype'ın ham ve `.npy` durumlarının her biri, aynı470 gerçek N değeriyle
+`N*12` kod hacmine oranlandı: `ITQ_STORAGE_RATIOS.csv`. Bunlar yalnız rotasyon
+bileşeninin oranlarıdır; tam dağıtım boyutu değildir.
+
+11.776 iterasyon kaydı, 2.470 çift mesafe ve panel başına ilk başlangıcın12/12
+tekrarı uygulayıcı tarafından doğrulandı. Bu implementasyon tekrarıdır; bağımsız
+bilimsel mekanizma doğrulaması değildir. Hiç gerçek temsil üzerinde ITQ fit'i yoktur.
+
 Hiçbir gerçek sorgu-belge uzaklığı, top-k, recall, yöntem skoru veya gerçek ITQ
 fit'i hesaplanmadı. Ön-kayıt değiştirilmedi; yöntem kolları seçilmedi. Task4F1
 deneyi, seal/finalize/HMAC veya production authorization yoktur.
