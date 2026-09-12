@@ -1,0 +1,59 @@
+{
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "faiss_compile_options": "",
+  "packages": {
+    "faiss-cpu": {
+      "version": "1.15.0",
+      "metadata_records": {
+        "METADATA": {
+          "sha256_of_utf8_text": "30590c25e66c1d8c76bf633bf586fef188354fb22ae24b10bde6a3f53a6accdc",
+          "bytes": 7785
+        },
+        "WHEEL": {
+          "sha256_of_utf8_text": "757cf9dd45ffc15ac4354de983b2230479754df0131748ca497b500edac59cbc",
+          "bytes": 105
+        },
+        "RECORD": {
+          "sha256_of_utf8_text": "dba929ccbeaf7898729ee0ba7a3877fdc1959bac0d54cdc3e1d223ce2615ac51",
+          "bytes": 3347
+        }
+      }
+    },
+    "numpy": {
+      "version": "2.4.6",
+      "metadata_records": {
+        "METADATA": {
+          "sha256_of_utf8_text": "b082c52ccbe3b880bae177c35171b52ed6c947f3ad71e3762f2723f60a411de0",
+          "bytes": 6608
+        },
+        "WHEEL": {
+          "sha256_of_utf8_text": "b2eabc011af16e223b88b1f70602bef36bb3c50fb81e6fa6f30d35a02a24aed0",
+          "bytes": 85
+        },
+        "RECORD": {
+          "sha256_of_utf8_text": "9719694ceaa0e6c69ae7cc2553b779e2981425141cc7a2cd2eb5875ce0d521eb",
+          "bytes": 86803
+        }
+      }
+    },
+    "packaging": {
+      "version": "26.3",
+      "metadata_records": {
+        "METADATA": {
+          "sha256_of_utf8_text": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763",
+          "bytes": 3544
+        },
+        "WHEEL": {
+          "sha256_of_utf8_text": "1b68144734c4b66791f27add5d425f3620775585718a03d0f9b110ba3a4d88db",
+          "bytes": 82
+        },
+        "RECORD": {
+          "sha256_of_utf8_text": "1b8655965b0d83e9a067fd7f84b977bd1e117e0fb9f2874b2572781bdc9e2147",
+          "bytes": 2515
+        }
+      }
+    }
+  },
+  "scope": "Installed distribution record fingerprints, not a claim of downloaded wheel hash verification."
+}

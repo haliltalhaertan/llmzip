@@ -1,0 +1,44 @@
+{
+  "files": {
+    "build_receipt.py": {
+      "sha256": "0bdce46b226d349637bae4cc0a3f8764e0491be4484ab908044314f5adaaac2a",
+      "bytes": 4687
+    },
+    "capture_environment.py": {
+      "sha256": "21e6885598b2f0a069c65c0357e1929e8498a1ad50ba0256c6747428a7b7233a",
+      "bytes": 1153
+    },
+    "COMPARISON.json": {
+      "sha256": "d14b264b5caf43aa2e83466f9828f06b12bce677df5ded1d99971afd11c6f606",
+      "bytes": 1772
+    },
+    "ENVIRONMENT.json": {
+      "sha256": "06e985260085ce741bc639e0bf45fa7320b5976d2d1a3a221b218a89f5a5d7f9",
+      "bytes": 2023
+    },
+    "README.md": {
+      "sha256": "a604448cfa934af57a2b3dd6cab58112fd9d2dbf60f6fb10556fe3c5cd723b38",
+      "bytes": 3437
+    },
+    "REPLAY.json": {
+      "sha256": "56d0ab0c21cb84fb89de3367c7c197b55ec3546b1fb6a5b6824b719c1feb8380",
+      "bytes": 5314
+    },
+    "replay.py": {
+      "sha256": "74003ce0f637baa3fdb449233639dc4f8a14d91412f37f4f3ed17df96800305b",
+      "bytes": 4365
+    },
+    "STDERR.txt": {
+      "sha256": "b9d634913617842716698c57ed4fb707164f1f9a1e72c4a8f518fa8d604e5361",
+      "bytes": 2232
+    },
+    "SUPPLEMENTARY.json": {
+      "sha256": "9b3c3e85fc530577c5221adace69e5a62cbc9e5c51c0ba857c7f7170d63dc3ad",
+      "bytes": 1252
+    },
+    "supplementary_checks.py": {
+      "sha256": "f84885f24c08e5db7b8f01322fb07110cbbe7a1637cdd384015154e54b5f84f1",
+      "bytes": 2640
+    }
+  }
+}

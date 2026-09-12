@@ -1,0 +1,48 @@
+{
+  "simhash": {
+    "source_sha256": "8f6b31050c6e211b7c34ba8214405cff91251d33bd590be97c996ce17f2be238",
+    "seeds": [
+      43001,
+      43002,
+      43003,
+      43004,
+      43005
+    ],
+    "published_percentages": [
+      "36.1395390",
+      "39.1393617",
+      "37.9320922",
+      "38.0195035",
+      "40.1278369"
+    ],
+    "mean_fraction_decimal": "0.3827166666",
+    "rounding": "8 decimal places; Decimal ROUND_HALF_EVEN",
+    "rounded": "0.38271667"
+  },
+  "fixed_ray_probe": {
+    "code_size": 20,
+    "input_norms": [
+      1.285792589187622,
+      10.286340713500977,
+      82.29072570800781
+    ],
+    "decoded_norms": [
+      1.5852707624435425,
+      12.68216609954834,
+      101.45732879638672
+    ],
+    "decoded_to_input_norm_ratio": [
+      1.2329132556915283,
+      1.2329132556915283,
+      1.2329132556915283
+    ],
+    "code_byte_positions_varying_with_scale": [
+      15,
+      18,
+      19
+    ],
+    "functional_scale_preserved": true,
+    "limitation": "No attribution to unbiased-estimator correction terms or theorem; no minimal-encoding impossibility claim."
+  },
+  "boundary": "Published aggregate scalars and synthetic vectors only. No retrieval outcomes computed."
+}
