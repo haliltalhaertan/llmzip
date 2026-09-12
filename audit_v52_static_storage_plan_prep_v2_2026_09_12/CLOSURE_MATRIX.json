@@ -1,0 +1,8 @@
+{
+  "object_under_audit":"ecd839b6519be9e56d3ead88c4bab8f7b30ff7b3",
+  "closures":[
+    {"finding":"PLANPREP-AUD-001","status":"CLOSED","next_stage_blocker":false,"evidence":"LongMemEval=500 probes/1000 populations; LoCoMo=40/80; full archive q=1 estimand preserved."},
+    {"finding":"PLANPREP-AUD-002","status":"PARTIALLY_CLOSED","next_stage_blocker":true,"evidence":"Binding checks work, but verified content is not carried through the later-consumption boundary and JSON section validation is incomplete."},
+    {"finding":"PLANPREP-AUD-003","status":"PARTIALLY_CLOSED","next_stage_blocker":true,"evidence":"Source identity and positive population-count derivation work, but N=0 produces a zero denominator."}
+  ]
+}
