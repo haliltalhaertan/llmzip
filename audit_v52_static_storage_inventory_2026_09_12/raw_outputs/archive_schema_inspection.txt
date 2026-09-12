@@ -1,0 +1,17 @@
+T4C2 nested BINARY_GEOMETRY SHA256 40026fe6e773c20b284e926efda6e5e72f9193b5a4c98710687e1a162913c96d
+Nested members: 471 = 470 NPZ code files + MANIFEST.json
+Sample codes/001be529.npz schema:
+sign_doc_packed (514, 12) uint8 6168
+sign_query_packed (12,) uint8 12
+itq_doc_packed (5, 514, 12) uint8 30840
+itq_query_packed (5, 12) uint8 60
+itq_seeds (5,) int32 20
+gold_rows (1,) int32 4
+N_archive (1,) int32 4
+bitorder (1,) <U3 12
+
+T4C2 ALL_OUTPUTS SHA256 960f71fd7ad7d66c0364f9445202da890a8a99ef8f6db065e8e0c8d98a48a17f
+T4C3 ALL_OUTPUTS SHA256 ce1340615ff65f326c0c6e1fcfa8513284dfa6dfc2efeb8a75940cda5ca67e52
+T4D ALL_OUTPUTS SHA256 81d678dac8b16a86c0f721cc01457266257c5a1e782feee3253a29d9fadf1378
+T4D proof SHA256 957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd
+T4D manifest SHA256 a97e411c1ed24c5c93590638fcb51248936d8428a38e4d76cf0c6b74a9399b9c
