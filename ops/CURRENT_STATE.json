@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-11T19:15:00Z",
+  "issued_at_utc": "2026-09-12T13:08:31.871535Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -338,7 +338,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-090",
+  "ledger_entry": "L-091",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -2077,5 +2077,15 @@
     "g3_grant_state": "OPEN and UNSPENT; acceptance criterion of L-089 unchanged",
     "checkable_manifest_for_any_arriving_package": "origin/codex/v52-runner-ingest-repair-2026-09-08 : drafts/v52/membership_runner_ingest_codex_v5_2026_09_08/PAYLOAD_HASHES.json"
   },
-  "next_single_action": null
+  "next_single_action": null,
+  "pr_2_disposition_2026_09_12": {
+    "status": "CLOSED_WITHOUT_MERGE",
+    "url": "https://github.com/haliltalhaertan/llmzip/pull/2",
+    "closed_at_utc": "2026-09-12T13:01:56Z",
+    "merged": false,
+    "decision_commit": "8671128a13877c97754da182421ba615422dd2ec",
+    "comment_url": "https://github.com/haliltalhaertan/llmzip/pull/2#issuecomment-5646048644",
+    "branch_preserved": true,
+    "verification": "gh pr view returned state CLOSED and mergedAt null after gh pr close; closure comment read back."
+  }
 }

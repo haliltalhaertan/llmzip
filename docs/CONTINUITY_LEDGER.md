@@ -1935,3 +1935,19 @@ outcome_boundary: Unchanged. Task 4F1 scientific preregistration SEALED at Seal 
 status: PASS
 next_single_action: The two lines opened at L-089 are no longer symmetric. Line A, the G-3 package, is blocked on PERSISTENCE rather than on authority or on reasoning - the work exists only in one working tree and must be committed from the machine that holds it, or rebuilt where it can be committed, with any rebuild bound to the v5 manifest verified here. Line B, the baseline preregistration revision to the L-088 budget decision, is blocked on nothing and proceeds. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.
 ```
+
+### L-091
+
+```text
+timestamp_utc: 2026-09-12T13:08:31.871535Z
+actor_role: Codex acting as research lead under user delegation; sole main writer for this transition
+predecessor_commit_or_tag: L-090 / 4f2429b257546d6899f3ed48f605cd18210aeae0
+scope: Complete the previously authorized closure of PR #2 and record actual remote state. No research branch merged.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+action: gh pr close 2 with a closure comment referencing Decision 2 at 8671128a13877c97754da182421ba615422dd2ec.
+verification: gh pr view returned CLOSED, mergedAt null, closedAt 2026-09-12T13:01:56Z; the comment was read back at https://github.com/haliltalhaertan/llmzip/pull/2#issuecomment-5646048644.
+disposition: N1 remains historical evidence and a mandatory negative control for the coordinatewise certificate. Research branch preserved; no merge or branch deletion.
+other_work: G-3 implementation, baseline preregistration revision and runtime cost replay are in progress in isolated checkouts. This entry claims no result from them.
+outcome_boundary: Task 4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN. No corpus or retrieval outcome access.
+status: PASS - PR closure only
+```
