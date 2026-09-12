@@ -1,0 +1,142 @@
+{
+  "schema": "V52_STATIC_STORAGE_PLAN_PREP_V1",
+  "status": "DESIGN_PREP_NOT_EXECUTABLE_NOT_FROZEN_NOT_AUTHORIZED",
+  "parent_inventory_v2_commit": "552088ae8907b13d0dcf44dfc26c0a2389503125",
+  "canonical_main_observed": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+  "bindings": {
+    "measurement_contract_sha256": "e395451d026f176b875856244abe73b54a7d54cdf2649eec272f14cfc609c510",
+    "measurement_plan_guard_sha256": "19724919c9085e49a531e94bdb269cba96c81739f7d9449b717db982becde4c9",
+    "plan_interface_git_blob": "465e99cdf8b8e93f0ba240f13a0be2a08a67f68c",
+    "inventory_v2_source": "drafts/v52/static_storage_inventory_2026_09_12/SOURCE_INVENTORY_V2.json"
+  },
+  "actual_plan_unit": {
+    "benchmark_count": 1,
+    "configuration_count": 1,
+    "serialization_format_count": 1,
+    "rationale": "Do not mix benchmark weighting, package configurations, or serialization choices inside one frozen plan."
+  },
+  "cost_objects": [
+    "code_bytes_per_vector",
+    "marginal_persistent_bytes_per_vector",
+    "effective_persistent_bytes_per_vector"
+  ],
+  "budget": {
+    "decision_object": "marginal_persistent_bytes_per_vector",
+    "cap_bytes": 12,
+    "all_required_per_vector_state_inside_cap": true,
+    "shared_state_reported_separately": true,
+    "effective_cost_not_used_as_cap": true
+  },
+  "archive_sources": {
+    "LongMemEval": {
+      "archive_identity": "question_id",
+      "n_i_field": "N_archive",
+      "roster_source": "docs/v52/task4c2/V52_T4C2_feature_geometry.csv",
+      "roster_source_manifest_sha256": "d4c9ce62b0f1b66611611bb014a887d2e7e5fcfaee0af94f53ffb70dc84d7d32",
+      "expected_archives": 470
+    },
+    "LoCoMo": {
+      "archive_identity": "conversation_id",
+      "n_i_field": "N",
+      "proof_drive_file_id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+      "proof_sha256": "957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd",
+      "manifest_drive_file_id": "1Lk5ZLaceKuc3OF-v0X52OfItU0PqVlmp",
+      "manifest_sha256": "a97e411c1ed24c5c93590638fcb51248936d8428a38e4d76cf0c6b74a9399b9c",
+      "expected_archives": 10
+    }
+  },
+  "probe_policy": {
+    "deployment_probes_per_archive": [
+      {"id": "DEPLOY_ADD1", "N": "N_i", "q": 1},
+      {"id": "DEPLOY_ADD8", "N": "N_i", "q": 8}
+    ],
+    "sentinel_selection": "lexicographically first and last archive_id in frozen ordered roster",
+    "sentinel_q": 1,
+    "sentinel_N": [0, 1, 31, 32, 33, 63, 64, 65, 255, 256, 257, 1023, 1024, 1025],
+    "duplicate_key_policy": "deduplicate identical archive_id/N/q key before freeze and record collision",
+    "all_points_reported": true,
+    "post_outcome_panel_edits_forbidden": true
+  },
+  "fixture_policy": {
+    "real_query_gold_outcome_used": false,
+    "fixed_text_sentinel": "literal UTF-8 bytes plus SHA256 required in actual plan",
+    "vocab_bound_sentinel": "literalized before measurement after source resolution; if vocabulary unresolved then TRANSFORM readiness is blocked",
+    "toy_id_payload_table": "synthetic preassigned ID/offset/payload bytes plus SHA256",
+    "corruption_fixture": "literal byte offsets and bit flips frozen before measurement",
+    "seed_is_not_identity": true,
+    "final_fixture_bytes_and_sha256_required": true
+  },
+  "source_resolution_taxonomy": [
+    "PERSISTED_ARTIFACT_VERIFIED",
+    "DETERMINISTIC_REGENERATION_VERIFIED",
+    "REGENERATION_CANDIDATE_NOT_VERIFIED",
+    "UNKNOWN"
+  ],
+  "mapping_taxonomy_fields": [
+    "logical_id_exists",
+    "package_stores_id",
+    "implicit_mapping_reproducible",
+    "external_boundary_dependency",
+    "mapping_status"
+  ],
+  "package_boundary": {
+    "must_reopen_after_process_restart": true,
+    "raw_archive_refit_allowed": false,
+    "transform_operation": "synthetic text -> frozen representation/code",
+    "id_mapping_operation": "synthetic row/id/offset -> toy payload",
+    "raw_payload_bytes": "EXTERNAL_BOUNDARY",
+    "runtime_libraries": "EXTERNAL_BOUNDARY with exact build/version/hash",
+    "mapping_bytes_free_by_default": false
+  },
+  "serialization_policy": {
+    "exactly_one_format_per_actual_plan": true,
+    "preference": "verbatim existing frozen artifact format",
+    "new_format_requires_pre_measurement_design_decision_and_independent_review": true,
+    "post_measurement_format_selection_forbidden": true
+  },
+  "physical_copy_requirements": [
+    "copy_id",
+    "artifact_identity",
+    "raw_sha256",
+    "raw_byte_length",
+    "physical_locator",
+    "population_ids",
+    "D_k"
+  ],
+  "control_policy": {
+    "known_included_and_excluded_items": ["BASELINE", "REMOVE", "RESTORE", "CORRUPT"],
+    "fallback_combined_required": true,
+    "baseline_expected": "MATCH",
+    "restore_expected": "MATCH",
+    "restore_requires_same_bytes": true,
+    "unknown_items_not_silently_ablated": true,
+    "optional_serialized_bytes_remain_included": true
+  },
+  "claim_rules": {
+    "potentially_per_vector_unknown_blocks_within_cap": true,
+    "shared_only_unknown_can_allow_qualified_marginal_observation": true,
+    "effective_total_with_shared_unknown": "UNKNOWN",
+    "lower_bound_never_proves_within_cap": true,
+    "unaccounted_persistent_bytes": "BLOCK"
+  },
+  "actual_plan_freeze_requirements": [
+    "literal complete ordered archive roster and N_i",
+    "literal ordered probe list",
+    "literal item roster and dispositions",
+    "literal physical copy identities and populations",
+    "literal serialization identity",
+    "literal fixture bytes/hash identities",
+    "literal control expectations",
+    "raw plan SHA256 recorded externally before callback",
+    "contract SHA256 binding"
+  ],
+  "current_blockers_before_actual_plan_can_be_run_ready": [
+    "fitted model/projector persistent artifacts unresolved",
+    "persistent ID/offset/lookup representation unresolved",
+    "physical copy count and sharing populations unresolved",
+    "serialization identity for the measured package not yet bound",
+    "real adapter implementation does not yet exist",
+    "external freeze record does not yet exist"
+  ],
+  "task4f1_boundary": "SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN"
+}
