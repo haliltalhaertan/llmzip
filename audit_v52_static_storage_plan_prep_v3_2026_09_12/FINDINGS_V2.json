@@ -1,0 +1,119 @@
+{
+  "audit_target": "3fab24bce46203348935492ba8276b9920aea898",
+  "verdict": "REQUEST_CHANGES",
+  "findings": [
+    {
+      "id": "PLANPREP3-AUD-001",
+      "severity": "BLOCKING",
+      "title": "Amortization denominator has no external anchor",
+      "where": "measurement_plan_guard.py probe/archive validation; consumed by storage_adapter_preflight_v3.verify_physical_artifact",
+      "evidence": "probe N validated only as integer in [0,2**63-1]; no binding of probe N to archive N_i; no binding of N_i to docs/v52/task4c2/V52_T4C2_feature_geometry.csv in any executable guard",
+      "impact": "effective_persistent_bytes_per_vector can be diluted without limit while both guards pass",
+      "v3_regression": false,
+      "scope_note": "CORRECTION_01: the headline aggregate mean_i(C_i/N_i) is unanchored too, via N_i alone, without any probe"
+    },
+    {
+      "id": "PLANPREP3-AUD-002",
+      "severity": "MODERATE",
+      "title": "CORRUPT control can be made vacuous",
+      "where": "storage_adapter_preflight_v3.validate_fixture_payload",
+      "evidence": "xor_mask bounded [1,255] (correct); byte_offset bounded [0,2**63-1] and not bounded against the corrupted artifact; probe with byte_offset=10**12 ACCEPTED",
+      "impact": "item-necessity proof (F2 BASELINE/REMOVE/RESTORE/CORRUPT) can pass with a no-op corruption",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-003",
+      "severity": "MODERATE",
+      "title": "Preflight raises KeyError instead of PreflightError on missing plan sub-fields",
+      "where": "storage_adapter_preflight_v3.verify_fixture_artifact / verify_physical_artifact / unique_index",
+      "evidence": "plan fixture without sha256, plan copy without population_ids, population without count all CRASH(KeyError)",
+      "impact": "defense-in-depth only; parent guard rejects these first in the declared order",
+      "v3_regression": false,
+      "severity_note": "raised from LOW by CORRECTION_01: the parent-guard mitigation is unenforceable, see PLANPREP3-AUD-007"
+    },
+    {
+      "id": "PLANPREP3-AUD-004",
+      "severity": "LOW",
+      "title": "Divergent MAX_ENTITIES between the two guards",
+      "where": "measurement_plan_guard.MAX_ENTITIES=1024 vs storage_adapter_preflight_v3.MAX_ENTITIES=4096",
+      "evidence": "constants read from both sources",
+      "impact": "latent drift; stricter guard gates first so no current hole",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-005",
+      "severity": "LOW",
+      "title": "Zero-byte physical artifact accepted without absence evidence",
+      "where": "storage_adapter_preflight_v3.verify_physical_artifact",
+      "evidence": "source_raw_byte_length minimum 0; zero-length artifact ACCEPTED",
+      "impact": "contract requires verifying absence of the persistent requirement before writing zero",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-006",
+      "severity": "BLOCKING",
+      "title": "Non-regular file hangs preflight forever",
+      "where": "storage_adapter_preflight_v3.read_bytes",
+      "evidence": "physical_locator -> FIFO; preflight never returns; timeout exit 124; reproduced by the lead session",
+      "impact": "fail-open by hang in the window the original report declared safe; a hang is not the promised stop",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-007",
+      "severity": "BLOCKING",
+      "title": "No mechanical binding between the guarded plan and the preflighted plan",
+      "where": "storage_adapter_preflight_v3.preflight signature; VerifiedBindings fields",
+      "evidence": "preflight takes (plan_path, expected_plan_sha256, ...) with no Plan parameter and no contract_sha256 in the returned object",
+      "impact": "the declared execution order is unenforceable; a caller can guard plan A and preflight plan B",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-008",
+      "severity": "MODERATE",
+      "title": "Denominator rule yields a menu of candidate D_k, not a value",
+      "where": "storage_adapter_preflight_v3.verify_physical_artifact",
+      "evidence": "one copy bound to four populations emits states spanning None, 1, 1000000000 and 4, ordered only by caller-supplied population_ids",
+      "impact": "selecting the largest candidate is exactly the dilution AUD-001 warns about; contract says D_k is THE real cardinality",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-009",
+      "severity": "MODERATE",
+      "title": "Uncaught OSError/ValueError from the companion binding documents",
+      "where": "storage_adapter_preflight_v3.safe_child / read_bytes",
+      "evidence": "relative_path '.' -> IsADirectoryError; embedded NUL -> ValueError; physical_locator '.' -> IsADirectoryError",
+      "impact": "the parent guard never sees these V3-owned schemas, so the AUD-003 mitigation does not extend here even in principle",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-010",
+      "severity": "LOW",
+      "title": "Version fields accept bool and float",
+      "where": "storage_adapter_preflight_v3.preflight version comparisons",
+      "evidence": "version True and 1.0 both ACCEPTED; version 2 correctly REJECTED",
+      "impact": "parent guard uses type(...) is int; preflight uses bare equality",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-011",
+      "severity": "LOW",
+      "title": "Two physical copies may bind to one file on disk",
+      "where": "storage_adapter_preflight_v3.verify_physical_artifact",
+      "evidence": "pc1 and pc2 both bound to phys.bin ACCEPTED with copies=2",
+      "impact": "cannot distinguish two real copies from one file counted twice",
+      "v3_regression": false
+    }
+  ],
+  "blocking": [
+    "PLANPREP3-AUD-001",
+    "PLANPREP3-AUD-006",
+    "PLANPREP3-AUD-007"
+  ],
+  "supersedes": "FINDINGS.json (pushed at 0ef799a0, bytes unchanged)",
+  "authority": "CORRECTION_01.md",
+  "report_errors_corrected": [
+    "probe count twelve -> eleven",
+    "dismissal count seven -> five",
+    "the absolute 'cannot be swapped' claim is false; frozen=True blocks rebinding only"
+  ]
+}

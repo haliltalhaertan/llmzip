@@ -1,0 +1,22 @@
+{
+  "namespace": "audit_v52_static_storage_plan_prep_v3_2026_09_12",
+  "audit_target": "3fab24bce46203348935492ba8276b9920aea898",
+  "revision": "after CORRECTION_01",
+  "supersedes": "HASHES.json, whose pushed bytes are unchanged and which covers only the seven files present at 0ef799a0",
+  "files": {
+    "CLOSURE_MATRIX.json": "8fbac21df21ffaea83f9590f610e673bbb6c91a96450a325f65b780566b6c72d",
+    "CORRECTION_01.md": "c543106109ad58709067bd6700465d738697789fb2bdf8f851b2d4080516634f",
+    "DRIVE_RECEIPT.md": "2b30e6d4d4a8f0f2b8a4d835aa219e8cb6aa2186a58cc627b38809f289379356",
+    "DRIVE_UPLOAD_CONFIRMATION.md": "6ff6af508c53731828ff114c4037092667fb9d96445f9f21a26d26422dc7727c",
+    "EXECUTION_LOG.txt": "81d8919b204af30bb2b761b9bb5fafeae525840cee05077c2a55f8406ba9c481",
+    "FINDINGS.json": "ccfcf2d9c339405d328c1a71d6a92905ed5f0d094fb8bfed780f9b48ec9caf09",
+    "FINDINGS_V2.json": "ce1b15c8a30dab73d349a10cc94ccd75d79bcf8cfd95bcdb7cba484bf655d100",
+    "HASHES.json": "0701d17bf742dbce51bd209a8a146ef6a1883450f2a41088622a91ae8742bd56",
+    "HASHES.json.sha256": "0601ec76aca084b5cf3ea8050f6acf20e0da91e7a70a988e954b450b46777215",
+    "INDEPENDENT_V3_AUDIT_REPORT.md": "b3391c72295c1faa96d4a3574102d3c9d7d9ee47bfc44d329c6b106e273ccbe7",
+    "raw_outputs/EXECUTION_RAW.txt": "8ccd5ee4daa9af14c6c7e035ed7ccb5a03cf425dc959d5309dfb3ec30175b1f8",
+    "raw_outputs/adversarial_probes.py": "17dc60cbd138b5523d3cb8ebdd6e3794f201214ca01896c248a734a635562ad5",
+    "raw_outputs/fifo_hang_repro.py": "45665231e0ff972ca576c3356e0da923284189c00bbd53f4736a045f7878c7e1",
+    "raw_outputs/second_round_probes.py": "fc3d1ae8a257ade5a7afffce3281198a0d71dc5a560b5a1d930154af2fe3ac4a"
+  }
+}
