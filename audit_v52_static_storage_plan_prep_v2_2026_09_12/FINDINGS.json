@@ -1,0 +1,9 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "object_under_audit": "ecd839b6519be9e56d3ead88c4bab8f7b30ff7b3",
+  "findings": [
+    {"id":"PLANPREP2-AUD-001","severity":"P2","blocking":true,"title":"Preflight returns mutable artifact paths rather than verified bytes or payloads."},
+    {"id":"PLANPREP2-AUD-002","severity":"P2","blocking":true,"title":"Companion and fixture JSON parsing accepts ambiguous or weakly validated content."},
+    {"id":"PLANPREP2-AUD-003","severity":"P2","blocking":true,"title":"POPULATION_COUNT can emit D_k=0 for mandatory N=0 BEFORE probes."}
+  ]
+}
