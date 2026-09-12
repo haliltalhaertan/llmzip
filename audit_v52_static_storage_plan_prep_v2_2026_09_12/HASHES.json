@@ -1,0 +1,25 @@
+{
+  "self_excluded": "HASHES.json",
+  "files": {
+    "CLOSURE_MATRIX.json": {
+      "sha256": "f5b15c7a833087bf619f251e918f8ad38e19923c9d61cd493b4a66d578399f52",
+      "bytes": 720
+    },
+    "DRIVE_RECEIPT.md": {
+      "sha256": "4be1b62d4984955779fa835b1668a98bba26860b0afeb077e0adab0ef6629317",
+      "bytes": 659
+    },
+    "EXECUTION_LOG.txt": {
+      "sha256": "d0cb95b58fced2724bd3756f3ae56572a11be2fdb4c143f06afaa43af73f597e",
+      "bytes": 792
+    },
+    "FINDINGS.json": {
+      "sha256": "a83f85e64fdf19f66877bfd27c674899104d9e180a6e7464e803df0b165dd9ec",
+      "bytes": 573
+    },
+    "INDEPENDENT_V2_AUDIT_REPORT.md": {
+      "sha256": "6a77b8fd74da49113e13fff70a01bceadc185968cd39c239417234e94c2ba621",
+      "bytes": 583
+    }
+  }
+}
