@@ -1,0 +1,6 @@
+{
+  "original_audit": "2a025ee3b85f25af80e1b939f85f23c6cf06af30",
+  "original_probe_sha256": "91f9a3a92665dab60b6c60abd1afa421d74a87d74d8852ddfc9a1a1fae15730c",
+  "new_probe_sha256": "679164cc89af0521c206f48a50fb13be17173c1db09638e4d063df1551553491",
+  "note": "Original unsorted fixture and real computation preserved; expect zero mismatches, check CV/records/order and independently rehash wrong IDs."
+}

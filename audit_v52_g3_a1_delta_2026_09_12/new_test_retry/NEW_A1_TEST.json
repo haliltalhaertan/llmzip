@@ -1,0 +1,29 @@
+{
+  "candidate": "23fb505ae47d06b34a75a97955e5d1a3d8586de1",
+  "status": "PASS",
+  "runtime": {
+    "python": "3.13.15",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3"
+  },
+  "executable": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+  "test_methods": 1,
+  "subtests": 2,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "tests": [
+    {
+      "test": "test_delivery_integration.DeliveryIntegration.test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly",
+      "status": "PASS"
+    }
+  ],
+  "data_events": {
+    "allowed_synthetic": 9,
+    "denied": 0
+  },
+  "source_binding": "EXECUTED_SOURCE_BINDING.json",
+  "scope": "Only newly added A1 regression. Existing setUpClass generates LoCoMo integration fixture. No full54 or historical suite run."
+}

@@ -1,0 +1,46 @@
+--- 2a025ee3b85f25af80e1b939f85f23c6cf06af30:probe_lme_binding.py
++++ replay_a1_probe.py
+@@ -85,13 +85,39 @@
+         mismatches.append(dict(archive_ordinal=diag['archive_ordinal'],
+                                actual_preparation_question_ids=actual['question_ids'],
+                                persisted_envelope_question_ids=diag['question_ids']))
+-report = dict(candidate='24d3351f068f6982148c14a9e3338c29a2769449',
++
++assert envelope['question_ids'] == ingested['cohort_ids'] == ids
++assert envelope['records'] == prepared['records']
++for diag in envelope['diagnostics']:
++    actual = next(x for x in calls if x['ordinal'] == diag['archive_ordinal'])
++    assert diag['question_ids'] == actual['question_ids']
++    assert diag['cv_sigma_before'] == actual['diagnostics']['cv_sigma_before']
++wrong = copy.deepcopy(envelope)
++wrong['diagnostics'][0]['question_ids'], wrong['diagnostics'][1]['question_ids'] = (
++    wrong['diagnostics'][1]['question_ids'], wrong['diagnostics'][0]['question_ids'])
++binding_bytes = json.dumps({k:v for k,v in wrong.items() if k != 'binding_sha256'},
++    sort_keys=True, separators=(',', ':'), ensure_ascii=True, allow_nan=False).encode('ascii')
++wrong['binding_sha256'] = hashlib.sha256(binding_bytes).hexdigest()
++negative_codes = []
++with mock.patch.object(bridge.runner, 'compute_synthetic_results', side_effect=AssertionError('numerics reached')) as numerical:
++    for validate in (bridge._validate_envelope, bridge.compute_synthetic_result):
++        try:
++            validate(wrong)
++        except bridge.IntegrationError as exc:
++            assert str(exc) == 'E-G3-I05'
++            assert exc.__cause__ is None and exc.__context__ is None
++            negative_codes.append(str(exc))
++        else:
++            raise AssertionError('Rehashed wrong IDs accepted')
++    numerical.assert_not_called()
++
++report = dict(negative_codes=negative_codes, question_order_preserved=True, records_preserved=True, diagnostics_cv_matches_observer=True, candidate='23fb505ae47d06b34a75a97955e5d1a3d8586de1',
+               scope='Generated LME-shaped bytes only. Source/mapping checks substituted solely for exact generated fixture. Unchanged ingestion, representation, full controls, scoring and envelope builder. No bootstrap, production writer, finalizer or suite rerun.',
+               cohort_order=ingested['cohort_ids'],
+               true_assembly_order=[dict(ordinal=x['ordinal'], question_ids=x['question_ids']) for x in calls],
+               envelope_accepted=True, record_count=len(prepared['records']),
+               envelope_binding_sha256=envelope['binding_sha256'],
+-              mismatches=mismatches, reproduced=len(mismatches) == 2, data_events=events)
+-(AUDIT / 'LME_BINDING_REPRO.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8', newline='\n')
++              mismatches=mismatches, fixed=len(mismatches) == 0, data_events=events)
++(AUDIT / 'A1_DELTA_PROBE.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8', newline='\n')
+ print(json.dumps(report))
+-assert report['reproduced'], 'Static finding not reproduced'
++assert report['fixed'], 'A1 still present'

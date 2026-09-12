@@ -1,0 +1,7 @@
+test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly (test_delivery_integration.DeliveryIntegration.test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly)
+Independent audit A1: observe real assembly, not bridge's own lookup. ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.571s
+
+OK

@@ -1,0 +1,137 @@
+diff --git a/drafts/v52/membership_g3_remediation_2026_09_11/README.md b/drafts/v52/membership_g3_remediation_2026_09_11/README.md
+index c9b5532..3093416 100644
+--- a/drafts/v52/membership_g3_remediation_2026_09_11/README.md
++++ b/drafts/v52/membership_g3_remediation_2026_09_11/README.md
+@@ -1,5 +1,15 @@
+ # G-3 remediation delivery — scoped synthetic candidate
+ 
++**Latest delta:** Independent audit `2a025ee3b85f25af80e1b939f85f23c6cf06af30`
++rejected the initial `24d3351f068f6982148c14a9e3338c29a2769449` candidate for
++A1: an unsorted LongMemEval cohort misbound diagnostics to questions. The current
++delta corrects the bridge to use the preparation's sorted global ordinal and adds
++a real two-archive synthetic regression. The regression failed against the old
++bridge; the updated full suite passes **54 methods / 5,961 subtest observations**.
++`A1_REMEDIATION.md` and `evidence/a1_fixed/` bind the change. Independent delta
++acceptance remains pending. Earlier `evidence/final` and inherited/provenance
++receipts remain unchanged evidence for the initial candidate, not reruns of this delta.
++
+ This is a **G-3 successor candidate derived from Codex v5 and execution preparation
+ v1**, prepared for the user's cold-start independent scoped audit. It is not an
+ accepted execution package. G-3 acceptance, G-4, and production readiness are not
+diff --git a/drafts/v52/membership_g3_remediation_2026_09_11/TRACEABILITY.md b/drafts/v52/membership_g3_remediation_2026_09_11/TRACEABILITY.md
+index 7d3710d..7281983 100644
+--- a/drafts/v52/membership_g3_remediation_2026_09_11/TRACEABILITY.md
++++ b/drafts/v52/membership_g3_remediation_2026_09_11/TRACEABILITY.md
+@@ -7,6 +7,16 @@ historical and adapted inherited suites are in `inherited/final/RESULTS.json`.
+ Provenance checks and diffs are in `provenance/final/RESULTS.json`.
+ The user's cold-start independent audit is pending.
+ 
++Update after independent audit `2a025ee3b85f25af80e1b939f85f23c6cf06af30`:
++initial candidate24d3351 was NOT ACCEPTED for A1. The latest implementation delta
++uses sorted global LongMemEval ordinals both when binding and validating archive
++diagnostics. `DeliveryIntegration.test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly`
++observes the unchanged real synthetic ingestion/fit/score path for sorted and
++unsorted cohorts, checks actual question identity, and rejects rebound swapped
++metadata. Old bridge fails this regression. Full updated suite54/5961 passes;
++`evidence/a1_fixed/RESULTS.json` is current. Independent delta review remains pending.
++Obligation4's synthetic closure cannot be accepted on the historical53-test receipt.
++
+ | Requirement from authoritative audit | Code / explicit change | Named verification in this namespace | Disposition |
+ |---|---|---|---|
+ | L-081 F1: caller identifiers in exceptions, including core validation | `pipeline_g3._validate_ingested_schema`, `validate_records`; `record_boundary.valid_records`; runner pre-core guard | `DeliveryPipelineTests.test_gap_05_F1_all_three_identifier_leak_paths_all_surfaces`, `test_gap_02_F1_F7_multi_archive_duplicate_question_ids_refused_upfront`, both `E_M_043` tests; `RelatedG2Tests.test_F1_F2_record_boundary_before_immutable_core` | Implemented for the named wrapper surfaces. Immutable core unchanged; arbitrary Python introspection is outside scope. |
+diff --git a/drafts/v52/membership_g3_remediation_2026_09_11/integration_g3.py b/drafts/v52/membership_g3_remediation_2026_09_11/integration_g3.py
+index 0d83889..ee24d0d 100644
+--- a/drafts/v52/membership_g3_remediation_2026_09_11/integration_g3.py
++++ b/drafts/v52/membership_g3_remediation_2026_09_11/integration_g3.py
+@@ -142,6 +142,7 @@ def _validate_envelope(e):
+         _require(key in expected and key not in seen, "E-G3-I04")
+         seen.add(key)
+     diags, seen, ordinals, clusters_seen = e["diagnostics"], set(), set(), set()
++    lme_ordinals = {q: j for j, q in enumerate(sorted(qs))}
+     _require(type(diags) is list and len(diags) > 0, "E-G3-I05")
+     for d in diags:
+         _schema(d, DIAG_KEYS, "E-G3-I05")
+@@ -156,7 +157,7 @@ def _validate_envelope(e):
+             _require(len(cset) == 1 and not cset.intersection(clusters_seen), "E-G3-I05")
+             clusters_seen.update(cset)
+         else:
+-            _require(len(ids) == 1 and ordinal == qs.index(ids[0]), "E-G3-I05")
++            _require(len(ids) == 1 and ordinal == lme_ordinals[ids[0]], "E-G3-I05")
+         _require(type(n) is int and 0 <= n <= 96 and type(d["flagged"]) is bool
+                  and d["flagged"] == (n > runner.core.DEGENERATE_FLAG_THRESHOLD)
+                  and _number(d["sd_sigma_after"], 0, math.inf), "E-G3-I05")
+@@ -191,7 +192,8 @@ def prepare_synthetic_envelope(ingested, prepared, source_bytes):
+         groups = [(c["index"], list(c["questions"])) for c in i["conversations"].values() if c["questions"]]
+     else:
+         _require(b == runner.LONGMEMEVAL and set(i["questions"]) == set(qs), "E-G3-I08")
+-        groups = [(j, [q]) for j, q in enumerate(qs)]
++        # L-082 and assemble_in_memory bind LME ordinals to the sorted global cohort.
++        groups = [(j, [q]) for j, q in enumerate(sorted(qs))]
+     _require(all(type(j) is int and j >= 0 for j, _ in groups)
+              and len(dict(groups)) == len(groups) == len(p["diagnostics"]), "E-G3-I05")
+     for d in p["diagnostics"]:
+diff --git a/drafts/v52/membership_g3_remediation_2026_09_11/test_delivery_integration.py b/drafts/v52/membership_g3_remediation_2026_09_11/test_delivery_integration.py
+index c06d831..ad81f21 100644
+--- a/drafts/v52/membership_g3_remediation_2026_09_11/test_delivery_integration.py
++++ b/drafts/v52/membership_g3_remediation_2026_09_11/test_delivery_integration.py
+@@ -97,6 +97,60 @@ class DeliveryIntegration(unittest.TestCase):
+         self.assertIsNone(got.exception.__context__)
+         self.assertIsNone(got.exception.__cause__)
+ 
++    def test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly(self):
++        """Independent audit A1: observe real assembly, not bridge's own lookup."""
++        for ids in (["q_z", "q_a"], ["q_a", "q_z"]):
++            with self.subTest(cohort_order=ids):
++                items=[]
++                for qid in ids:
++                    offset = 0 if qid == "q_a" else 1
++                    turns=[{"role":"user", "has_answer":True,
++                            "content":f"synthetic archive token{j} topic{j % (13+offset)} item{j*(17+offset)} detail{j%7}"}
++                           for j in range(110)]
++                    items.append(dict(question_id=qid,question="synthetic topic3 item34 query",
++                                      haystack_session_ids=["fixture_session"],haystack_dates=["synthetic date"],
++                                      haystack_sessions=[turns]))
++                raw=json.dumps(items).encode()
++                path=self.root/"a1"/"synthetic_fixture.json"
++                path.parent.mkdir(exist_ok=True);path.write_bytes(raw)
++                digest=hashlib.sha256(raw).hexdigest()
++                mapping=dict(provenance=bridge.SYNTHETIC,source_id="synthetic_fixture",source_sha256=digest,
++                             benchmark=runner.LONGMEMEVAL,n_questions=2,expected_cluster_ids=["synthetic_component"],
++                             expected_question_to_cluster=dict.fromkeys(ids,"synthetic_component"))
++                identity=dict(source_file=path.name,source_sha256=digest,source_bytes=len(raw))
++                def fixture_bytes(p,benchmark,*,enabled=None):
++                    self.assertEqual(Path(p),path);self.assertEqual(benchmark,runner.LONGMEMEVAL)
++                    self.assertIsNone(enabled);self.assertEqual(path.read_bytes(),raw)
++                    return dict(identity)
++                def fixture_mapping(m,benchmark):
++                    self.assertEqual(m,mapping);self.assertEqual(benchmark,runner.LONGMEMEVAL)
++                    self.assertNotIn("_accepted_manifest_sha256",m)
++                with mock.patch.object(ingest,"verify_source_bytes",side_effect=fixture_bytes), \
++                     mock.patch.object(ingest,"_check_accepted_mapping",side_effect=fixture_mapping):
++                    ingested=ingest.ingest_longmemeval(path,copy.deepcopy(mapping))
++                self.assertEqual(ingested["cohort_ids"],ids)
++                observed=[]
++                original=pipeline.score_archive
++                def observe(*args,**kwargs):
++                    result=original(*args,**kwargs)
++                    observed.append((args[4],list(args[3]),copy.deepcopy(result[1])))
++                    return result
++                with mock.patch.object(pipeline,"score_archive",side_effect=observe):
++                    prepared=pipeline.assemble_in_memory(ingested,dict.fromkeys(ids,float(3/110)))
++                envelope=bridge.prepare_synthetic_envelope(ingested,prepared,raw)
++                self.assertEqual([(o,qs) for o,qs,_ in observed],[(0,["q_a"]),(1,["q_z"])])
++                self.assertEqual(len(envelope["records"]),120)
++                self.assertEqual(envelope["question_ids"],ids)
++                for diag in envelope["diagnostics"]:
++                    match=next(item for item in observed if item[0]==diag["archive_ordinal"])
++                    self.assertEqual(diag["question_ids"],match[1])
++                    self.assertEqual(diag["cv_sigma_before"],match[2]["cv_sigma_before"])
++                wrong=copy.deepcopy(envelope)
++                wrong["diagnostics"][0]["question_ids"],wrong["diagnostics"][1]["question_ids"] = \
++                    wrong["diagnostics"][1]["question_ids"],wrong["diagnostics"][0]["question_ids"]
++                rebind(wrong)
++                self.refusal(lambda:bridge._validate_envelope(wrong),"E-G3-I05")
++
+     def test_real_fixture_ingress_assemble_bootstrap_output(self):
+         self.assertEqual(len(self.prepared["records"]), 120)
+         self.assertEqual(self.result["provenance"], bridge.SYNTHETIC)

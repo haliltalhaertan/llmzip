@@ -1,0 +1,20 @@
+{
+  "candidate": "23fb505ae47d06b34a75a97955e5d1a3d8586de1",
+  "previous_candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
+  "original_audit": "2a025ee3b85f25af80e1b939f85f23c6cf06af30",
+  "A1": "CLOSED_SCOPED_SYNTHETIC",
+  "A2": "OPEN_MANIFEST_ORDER",
+  "scoped_A1_repair": "ACCEPTED",
+  "exact_delivery": "NOT_ACCEPTED_PENDING_A2",
+  "independent_new_methods": 1,
+  "independent_new_subtests": 2,
+  "independent_prior_probe_replays": 1,
+  "full54_replays": 0,
+  "historical_suite_replays": 0,
+  "identity_checks": 484,
+  "audit_launcher_import_failures": 1,
+  "production_holds": "UNCHANGED_OPEN",
+  "main_writes": 0,
+  "prior_audit_unchanged": true,
+  "candidate_worktree_unchanged": true
+}

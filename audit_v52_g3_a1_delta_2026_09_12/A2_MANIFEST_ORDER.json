@@ -1,0 +1,14 @@
+{
+  "candidate": "23fb505ae47d06b34a75a97955e5d1a3d8586de1",
+  "entries": 432,
+  "duplicates": 0,
+  "all_payload_hashes_verified": true,
+  "list_order_matches_verifier": false,
+  "first_order_difference": {
+    "declared": "INTEGRATION_TRANSFER.json",
+    "expected": "A1_REMEDIATION.md"
+  },
+  "verifier_sha256": "9b63b2dca72410ea1501d1910fd03d31e8495a939f83cb650135ef2c181a3f27",
+  "observed_exit_code": 1,
+  "error": "RuntimeError: file inventory mismatch"
+}

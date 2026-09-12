@@ -1,0 +1,1960 @@
+{
+  "candidate": "23fb505ae47d06b34a75a97955e5d1a3d8586de1",
+  "previous_candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
+  "original_audit": "2a025ee3b85f25af80e1b939f85f23c6cf06af30",
+  "check_count": 484,
+  "failed": 0,
+  "changes": [
+    "A\tdrafts/v52/membership_g3_remediation_2026_09_11/A1_REMEDIATION.md",
+    "M\tdrafts/v52/membership_g3_remediation_2026_09_11/FILE_HASHES.json",
+    "M\tdrafts/v52/membership_g3_remediation_2026_09_11/README.md",
+    "M\tdrafts/v52/membership_g3_remediation_2026_09_11/TRACEABILITY.md",
+    "A\tdrafts/v52/membership_g3_remediation_2026_09_11/evidence/a1_fixed/COMMAND.json",
+    "A\tdrafts/v52/membership_g3_remediation_2026_09_11/evidence/a1_fixed/RESULTS.json",
+    "A\tdrafts/v52/membership_g3_remediation_2026_09_11/evidence/a1_fixed/stderr.txt",
+    "A\tdrafts/v52/membership_g3_remediation_2026_09_11/evidence/a1_fixed/stdout.txt",
+    "A\tdrafts/v52/membership_g3_remediation_2026_09_11/evidence/a1_red/stderr.txt",
+    "A\tdrafts/v52/membership_g3_remediation_2026_09_11/evidence/a1_red/stdout.txt",
+    "M\tdrafts/v52/membership_g3_remediation_2026_09_11/integration_g3.py",
+    "M\tdrafts/v52/membership_g3_remediation_2026_09_11/test_delivery_integration.py"
+  ],
+  "manifest_sha256": "0678ab5ea4ce87b846a3c14fa1dd90b8961287ef05ec131d7b962b98b6c2899f",
+  "checks": [
+    {
+      "name": "candidate parent equals original candidate",
+      "passed": true
+    },
+    {
+      "name": "audit branch retains original rejection",
+      "passed": true
+    },
+    {
+      "name": "remote candidate exact",
+      "passed": true
+    },
+    {
+      "name": "local core.autocrlf=false",
+      "passed": true
+    },
+    {
+      "name": "exact twelve changed paths and no deletions",
+      "passed": true
+    },
+    {
+      "name": "unchanged historical provenance",
+      "passed": true
+    },
+    {
+      "name": "unchanged historical inherited",
+      "passed": true
+    },
+    {
+      "name": "unchanged historical evidence/final",
+      "passed": true
+    },
+    {
+      "name": "432 payload entries exact unique coverage",
+      "passed": true
+    },
+    {
+      "name": "payload .gitignore",
+      "passed": true
+    },
+    {
+      "name": "payload INTEGRATION_TRANSFER.json",
+      "passed": true
+    },
+    {
+      "name": "payload README.md",
+      "passed": true
+    },
+    {
+      "name": "payload RECOVERY_INPUT.json",
+      "passed": true
+    },
+    {
+      "name": "payload SOURCE_PRESERVATION.json",
+      "passed": true
+    },
+    {
+      "name": "payload TRACEABILITY.md",
+      "passed": true
+    },
+    {
+      "name": "payload VERIFICATION_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "name": "payload authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "payload authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "payload authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "payload corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "payload errors.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged errors.py",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/final/COMMAND.json",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/final/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/final/stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/final/stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/integrated_001/COMMAND.json",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/integrated_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/integrated_001/stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/integrated_001/stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/DEVELOPMENT_RUNS.md",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/RECEIPT.md",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/RECEIPT_FILES_SHA256.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/SOURCE_DOCUMENTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/final/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_001/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_002/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_003/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/run_004/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_execution_prep_v1_2026_09_08/README.md",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_execution_prep_v1_2026_09_08/pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_execution_prep_v1_2026_09_08/test_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_impl_v3_2026_09_07/GOVERNING_DOCUMENTS.md",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_impl_v3_2026_09_07/README_IMPL_V3.md",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_impl_v3_2026_09_07/membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_impl_v3_2026_09_07/test_membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/README.md",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_codex_v5.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v3_2026_09_08/corpus_ingest_v3.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v3_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v3_2026_09_08/membership_runner_v3.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v3_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v4_2026_09_08/corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v4_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v4_2026_09_08/membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/membership_runner_ingest_v4_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "payload inherited/sources/pinned_arithmetic_source.py",
+      "passed": true
+    },
+    {
+      "name": "payload integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "payload membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "payload membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "payload package_integrity.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged package_integrity.py",
+      "passed": true
+    },
+    {
+      "name": "payload pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/SOURCE_DOCUMENTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/checks.log",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/final/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/NEGATIVE_CONTROL.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/checks.log",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/negative_payload_001/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/path_controls_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/path_controls_001/control_1.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/path_controls_001/control_2.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/errors.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/v5_corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/pre_edit/v5_membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/checks.log",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload provenance/verify_001/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "payload record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "payload recovery/test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "payload recovery_baseline.txt",
+      "passed": true
+    },
+    {
+      "name": "payload run_inherited.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged run_inherited.py",
+      "passed": true
+    },
+    {
+      "name": "payload safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "payload test_certificate.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged test_certificate.py",
+      "passed": true
+    },
+    {
+      "name": "payload test_delivery_g2.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged test_delivery_g2.py",
+      "passed": true
+    },
+    {
+      "name": "payload test_delivery_integration.py",
+      "passed": true
+    },
+    {
+      "name": "payload test_delivery_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged test_delivery_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "payload test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "payload verify_delivery.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged verify_delivery.py",
+      "passed": true
+    },
+    {
+      "name": "payload verify_provenance.py",
+      "passed": true
+    },
+    {
+      "name": "Python unchanged verify_provenance.py",
+      "passed": true
+    },
+    {
+      "name": "payload A1_REMEDIATION.md",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/a1_fixed/COMMAND.json",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/a1_fixed/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/a1_fixed/stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/a1_fixed/stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/a1_red/stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "payload evidence/a1_red/stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "one added regression method",
+      "passed": true
+    },
+    {
+      "name": "all old test AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "reported full54 success",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding errors.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding package_integrity.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding run_inherited.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding test_certificate.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding test_delivery_g2.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding test_delivery_integration.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding test_delivery_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding verify_delivery.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding verify_provenance.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "implementation full54 source binding authoritative/resolve_sources.py",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "candidate": "23fb505ae47d06b34a75a97955e5d1a3d8586de1",
+  "executions": [
+    {
+      "name": "new_a1_method",
+      "argv": [
+        "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_independent_audit_20260912\\audit_v52_g3_a1_delta_2026_09_12\\run_delta_checks.py",
+        "--child",
+        "--retry-new-test"
+      ],
+      "exit_code": 0
+    }
+  ]
+}
