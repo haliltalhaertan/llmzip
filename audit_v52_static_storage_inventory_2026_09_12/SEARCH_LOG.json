@@ -1,0 +1,14 @@
+{
+  "policy": "SEARCHED/NOT LOCATED/UNKNOWN; no absence inference",
+  "terms": [".pkl",".pickle",".joblib",".npz",".npy",".faiss",".index",".bin",".model",".pt",".pth","vectorizer","vocabulary","vocab","idf","svd","components","projector","projection","mu96","center","centering","rotation","itq","haar","pq","opq","rabitq","centroid","codebook","serializer","serialization","archive_model","model_state","manifest","hash","receipt"],
+  "namespaces": [
+    {"name":"Git target f9404f2... recursive tree","result":"no qualifying fitted-state file path located"},
+    {"name":"Git research/v52-sign-mechanism-locomo-2026-09-04","result":"no qualifying fitted-state file path located"},
+    {"name":"Git twelve-byte prereg/evidence/runtime/decision branches","result":"no qualifying real-archive fitted-state package located; evidence documents/scripts are not model serialization"},
+    {"name":"Drive T4C2 FINAL_2026-08-27_FULL_470","result":"nested 470-NPZ diagnostic code bundle found; excluded as non-fitted diagnostic artifact"},
+    {"name":"Drive T4C3 FINAL_2026-08-28_FULL_470","result":"CSV/JSON/reports/script ZIP; no fitted-state serialization located"},
+    {"name":"Drive T4D LoCoMo final","result":"CSV/JSON/reports/script ZIP; proof digest manifest-bound; no fitted-state serialization located"},
+    {"name":"Drive global OPQ/RaBitQ keyword searches","result":"report/literature/handoff hits; no identified real archive-fitted codebook/rotation artifact"}
+  ],
+  "forbidden_not_searched": ["Task4F1 real corpus","Task4F1 query/gold/outcome","sealed outcomes","retrieval scoring"]
+}
