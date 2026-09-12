@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "original_manifest_entries_verified": 9,
+  "fits_verified": 240,
+  "half_step_trace_rows_verified": 11776,
+  "pairwise_rows_verified": 2470,
+  "all_fit_stop_rules_and_trace_continuity_verified": true,
+  "all_fits_training_objective_strictly_reduced": true,
+  "replayed_fits": [
+    {
+      "n": 100,
+      "distribution": "gaussian",
+      "seed": 7312001,
+      "data_sha256": "89f7d1b3dd8b554c5b8e6e088ae0af98f91818f82b0bdd1f1d91eadb8b25aaa2",
+      "final_rotation_sha256": "4fd1bc937b7f0dbdc5376242b86c30554c0910c0006943b1946d5e0031f2d658",
+      "final_binary_codes_sha256": "3b1f33ed649a5bf081292168d1cf80ec30030477ddc28677e23c390b3af0c11c",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 100,
+      "distribution": "heterogeneous",
+      "seed": 7312001,
+      "data_sha256": "bcee7bf8b246bbdcdbb7433f89e211c9518c315f42ebe7283a2b53b4afbfb1b1",
+      "final_rotation_sha256": "7628d0d78c80698607863200612a82d09d7263ad83d49455399de008bbf55c52",
+      "final_binary_codes_sha256": "070c5e767b8bb3f8ac5c39e3ddcfa3c7c9d9a6e1100fb0fef582e761d3b19e81",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 100,
+      "distribution": "rotated_heterogeneous",
+      "seed": 7312001,
+      "data_sha256": "5d468f54649c52ae9506e94f25fc31287de0f73f2df02851117658549e501509",
+      "final_rotation_sha256": "f637f40a1a93a9cdbb7ac0e33a898558f95d489432cb52158ed271514774b40d",
+      "final_binary_codes_sha256": "faf1c06aa0af64b2230a6d56a7db187c7248ae41d3dffceeb85bc38fc4ba493c",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 250,
+      "distribution": "gaussian",
+      "seed": 7312001,
+      "data_sha256": "9d7980e0265cbcf9a4403d9add4617a9ccaac0b26502ad83b52d0436dd53865c",
+      "final_rotation_sha256": "48e213164ed6ff452597115135a0a50d4678d1785924690c3c12c4065fb2569e",
+      "final_binary_codes_sha256": "563b69c2ab7b25748d661868537e164307ae2b600e3bc2c6434f851d1236d91d",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 250,
+      "distribution": "heterogeneous",
+      "seed": 7312001,
+      "data_sha256": "8051c69109fb7b4cede916554f6b6e19b1b928fdd90ee22f189f82ce2dd849fe",
+      "final_rotation_sha256": "da49ada5e6af6d9833cc7ec0dcdbda87d465e13d278e1e40d06537bc4590c171",
+      "final_binary_codes_sha256": "2001764da971b3f787acd5d7c8beab2d88901bd0d95d89c41e998a4ae23cc68d",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 250,
+      "distribution": "rotated_heterogeneous",
+      "seed": 7312001,
+      "data_sha256": "728731b7725fbecfa0ded8ff98e365ace5af4d779b01ae9891387539b792997a",
+      "final_rotation_sha256": "fb72e34aaaeffdfde81dce3c12236e00e91f3f3a813647be3dd2cb3afe6f2224",
+      "final_binary_codes_sha256": "8e71fa73e8789e96bed9214e9cbab997e59fe10ee9462d9599c732e322c12408",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 500,
+      "distribution": "gaussian",
+      "seed": 7312001,
+      "data_sha256": "209b31960d04aaa72ee758688d0f72011fda1029749141d604bd9a16b5d77be9",
+      "final_rotation_sha256": "02743259e222e6dd4c81a471af413a01bf4d137d9b72f526b3190d35d2514e7c",
+      "final_binary_codes_sha256": "bc8ad0ff5ea623da0514cb7317bfccf25d5978fe7cdca200426b0549e2db4e1c",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 500,
+      "distribution": "heterogeneous",
+      "seed": 7312001,
+      "data_sha256": "c3175781baf22fd3c6ee81fedfd4d300ed17f4d88b6c383456abf90ad953933b",
+      "final_rotation_sha256": "0cd795b1ce8624b35ad2adde58be36d0fc24860cc23c8a1725360b8782c084ed",
+      "final_binary_codes_sha256": "60ffd6a4328870b13303a21982f6032eaa5c2c96768c0e8c474c33fd0b8b2784",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 500,
+      "distribution": "rotated_heterogeneous",
+      "seed": 7312001,
+      "data_sha256": "792175ef9ae779e80dc60cd0f668fc1fdb9bb52f040a6c5732a3f3be9ca14d88",
+      "final_rotation_sha256": "a34d72ba63c114d4a0b5059c9594fc9c69c3fc97a60bea5ba944e09f830b6a20",
+      "final_binary_codes_sha256": "8b2a317c834bba46ef4d219eafde84dd3ae5476396690bdcdc894c4fd743dbd4",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 1000,
+      "distribution": "gaussian",
+      "seed": 7312001,
+      "data_sha256": "7d99a2b1c08d801499f4873243b7afa84c9891608bffe9aa1f3535acd5a22422",
+      "final_rotation_sha256": "ee9991b113746b2c41072a37fe14fe0092e243804a150357a9513cd14fc019cd",
+      "final_binary_codes_sha256": "0eb70bfc9a33dce60e6aa04aed1586f1768f5f496bc244a36ae62d2569e62bc6",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 1000,
+      "distribution": "heterogeneous",
+      "seed": 7312001,
+      "data_sha256": "19c64d481857c5c7490208a4df169b5ab7c8f8d025e9c6901a20b1a5ed27bed8",
+      "final_rotation_sha256": "f86d1621c6bc09e0689b0fa796a5552da276680f70acfec4fd5203c2ac4226d6",
+      "final_binary_codes_sha256": "7c58b95edc73dff2bead9e34b3d449a8a0c26e712d786afef7def46310e16a99",
+      "status": "EXACT_MATCH"
+    },
+    {
+      "n": 1000,
+      "distribution": "rotated_heterogeneous",
+      "seed": 7312001,
+      "data_sha256": "b79e7a1f3ffcfb349bfb2af41f26600569afb01d921826233af1ccab39247f51",
+      "final_rotation_sha256": "8faa331a5bf967650b09a9802cfa3e55a1b5c9aead1ef72c16cb5d1b8f65ee58",
+      "final_binary_codes_sha256": "4c2ac1e07d667c9599a91599eccfeed3f2036bb09766cdde7e42e0d10fb45175",
+      "status": "EXACT_MATCH"
+    }
+  ],
+  "replay_scope": "First literal initialization in each of the 12 panels; same implementation, exact final matrix and binary-code hashes plus objective/stopping metadata; not an independent algorithm audit.",
+  "independent_math_controls": "See CONTROL_RESULTS.json: exhaustive 3D symmetry enumeration and fixed-code Procrustes closed-form objective.",
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "executable": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "thread_pools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-9e3e5a4229c1ca39f10dc82bba9e2b2b.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Lib\\site-packages\\scipy.libs\\libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      }
+    ],
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_THREAD_LIMIT": "1"
+    }
+  }
+}
