@@ -1,0 +1,7 @@
+{
+  "task1": {
+    "python": "3.13.15",
+    "numpy": "2.3.5",
+    "platform": "Windows-10-10.0.19045-SP0"
+  }
+}

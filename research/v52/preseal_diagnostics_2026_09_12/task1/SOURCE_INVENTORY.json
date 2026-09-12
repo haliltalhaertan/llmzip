@@ -1,0 +1,869 @@
+{
+  "status": "PARTIAL_SOURCE_RECOVERY_FULL_MATRICES_NOT_LOCATED",
+  "searched_at": "2026-09-12",
+  "scope": "Mechanism-track LoCoMo and LongMemEval input representations only; no retrieval recomputation.",
+  "folders": [
+    {
+      "store_source": "driveFinal0",
+      "url": "https://drive.google.com/drive/folders/1u1sYaFav17j7i5-3Nd6RrOvRpWy8juZF",
+      "title": "V52_TASK_4D_LOCOMO_FROZEN_CROSS_BENCHMARK_REPLICATION_2026-08-29",
+      "files": [
+        {
+          "id": "1x5arkoj2boNGbqXI5K1tYMIVVQCBr8-atUp-Lth_ZzU",
+          "title": "V52_TASK_4D_ACCEPTED_CHECKPOINT_2026-08-29",
+          "size": "4702",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1x5arkoj2boNGbqXI5K1tYMIVVQCBr8-atUp-Lth_ZzU/edit?usp=drivesdk"
+        },
+        {
+          "id": "1rzMu9VvIIOL_Knjx6jPcR1i5zNvEfh_wTKI94vgzf-4",
+          "title": "V52_TASK_4D_HEAD_RESEARCHER_INTERIM_ASSESSMENT_2026-08-29",
+          "size": "3078",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1rzMu9VvIIOL_Knjx6jPcR1i5zNvEfh_wTKI94vgzf-4/edit?usp=drivesdk"
+        },
+        {
+          "id": "1BJgsMU37aw5yFnZ2g76kuNYMJkfR6HIP",
+          "title": "V52_T4D_UPLOAD_RECEIPT.txt",
+          "size": "780",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/1BJgsMU37aw5yFnZ2g76kuNYMJkfR6HIP/view?usp=drivesdk"
+        },
+        {
+          "id": "1UBG-70aAXG34QZ9WQsewVAe3TIUj99X-",
+          "title": "V52_T4D_PROTOCOL_DEFECT_SENSITIVITY.csv",
+          "size": "1478",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1UBG-70aAXG34QZ9WQsewVAe3TIUj99X-/view?usp=drivesdk"
+        },
+        {
+          "id": "1gLXfsSF3me1DTx3ky4CS_GGAWqfZ5A5M",
+          "title": "V52_T4D_ARCHIVE_SIZE_QUARTILES_FROZEN.csv",
+          "size": "193",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1gLXfsSF3me1DTx3ky4CS_GGAWqfZ5A5M/view?usp=drivesdk"
+        },
+        {
+          "id": "1hcRpus553XcQzZEmXc1ViepUnVnSdwPL",
+          "title": "V52_T4D_PRE_OUTCOME_QUESTION_COHORT.csv",
+          "size": "60691",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1hcRpus553XcQzZEmXc1ViepUnVnSdwPL/view?usp=drivesdk"
+        },
+        {
+          "id": "1shiCUeA_LYZEpIieF-VU-POyj2EUrrs-",
+          "title": "V52_T4D_COMPOSITION_SENSITIVITY.csv",
+          "size": "395",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1shiCUeA_LYZEpIieF-VU-POyj2EUrrs-/view?usp=drivesdk"
+        },
+        {
+          "id": "1XIhW3eqH1anGfyUKytXJe1L8mp-0PeFF",
+          "title": "V52_T4D_strata_archive_size.csv",
+          "size": "359",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1XIhW3eqH1anGfyUKytXJe1L8mp-0PeFF/view?usp=drivesdk"
+        },
+        {
+          "id": "1t9nvXE1H3Xms1HTlSLnwx_pR3Lkagbmh",
+          "title": "V52_T4D_strata_gold_cardinality.csv",
+          "size": "244",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1t9nvXE1H3Xms1HTlSLnwx_pR3Lkagbmh/view?usp=drivesdk"
+        },
+        {
+          "id": "1zlFGpifUjUIP49pp2mVrFacvgf_AbQk9",
+          "title": "V52_T4D_strata_conversation.csv",
+          "size": "793",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1zlFGpifUjUIP49pp2mVrFacvgf_AbQk9/view?usp=drivesdk"
+        },
+        {
+          "id": "1P3-IksBUiwahoiZaVfIOUP3lJsygDXnt",
+          "title": "V52_T4D_strata_category.csv",
+          "size": "349",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1P3-IksBUiwahoiZaVfIOUP3lJsygDXnt/view?usp=drivesdk"
+        },
+        {
+          "id": "1dRx_KJfL5D9zZMqmc79FfqjjgChgVQCP",
+          "title": "V52_T4D_rank_geometry.csv",
+          "size": "1266214",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1dRx_KJfL5D9zZMqmc79FfqjjgChgVQCP/view?usp=drivesdk"
+        },
+        {
+          "id": "1YWRmqxwnnBViWa6M-LHTEakjSagNjdxx",
+          "title": "V52_T4D_tie_diagnostics.csv",
+          "size": "1072005",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1YWRmqxwnnBViWa6M-LHTEakjSagNjdxx/view?usp=drivesdk"
+        },
+        {
+          "id": "1DGNev6-Lx5KPWM1hgv72bAKmbioBk83I",
+          "title": "V52_T4D_collision_diagnostics.csv",
+          "size": "12430",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1DGNev6-Lx5KPWM1hgv72bAKmbioBk83I/view?usp=drivesdk"
+        },
+        {
+          "id": "1e9vbPnm9F-0oEKdp1RsxzeJAxFj8B2kq",
+          "title": "V52_T4D_ITQ_HAAR_ENVELOPE.csv",
+          "size": "270",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1e9vbPnm9F-0oEKdp1RsxzeJAxFj8B2kq/view?usp=drivesdk"
+        },
+        {
+          "id": "1Q0XjQc0iiB76daTNop607Hjnl08amPgx",
+          "title": "V52_T4D_CONTINUOUS_INVARIANCE.csv",
+          "size": "6925",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1Q0XjQc0iiB76daTNop607Hjnl08amPgx/view?usp=drivesdk"
+        },
+        {
+          "id": "1WO5Yyo0nkTVSc1N7Mq08gummHsO2o56W",
+          "title": "V52_T4D_SIGNED_PERM_CONTROL.csv",
+          "size": "1421",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1WO5Yyo0nkTVSc1N7Mq08gummHsO2o56W/view?usp=drivesdk"
+        },
+        {
+          "id": "1AcXqiGGTETlIVM7-ScYxS6zkQY7e1C_f",
+          "title": "V52_T4D_HAAR_SEED_RESULTS.csv",
+          "size": "946",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1AcXqiGGTETlIVM7-ScYxS6zkQY7e1C_f/view?usp=drivesdk"
+        },
+        {
+          "id": "1M7LSlum1cje0EuVQexuiTTw4jgDHh_WQ",
+          "title": "V52_T4D_aggregate.csv",
+          "size": "581",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1M7LSlum1cje0EuVQexuiTTw4jgDHh_WQ/view?usp=drivesdk"
+        },
+        {
+          "id": "1L5ZqqFQfrxEqdvqU3PED2IQt5Y3EMDbD",
+          "title": "V52_T4D_question_level.csv",
+          "size": "209415",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1L5ZqqFQfrxEqdvqU3PED2IQt5Y3EMDbD/view?usp=drivesdk"
+        },
+        {
+          "id": "1oFaqNb1Jre-LYAa6DMQ9tzYE6iRAbMnt",
+          "title": "V52_T4D_trial_results.csv",
+          "size": "28498699",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1oFaqNb1Jre-LYAa6DMQ9tzYE6iRAbMnt/view?usp=drivesdk"
+        },
+        {
+          "id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+          "title": "V52_T4D_REPRESENTATION_TRANSFER_PROOF.txt",
+          "size": "4416",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi/view?usp=drivesdk"
+        },
+        {
+          "id": "1PuuUiqZIW--B2RE4OUJRcRd5eTg1488i",
+          "title": "V52_T4D_REPRESENTATION_TRANSFER_PROOF.csv",
+          "size": "629",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1PuuUiqZIW--B2RE4OUJRcRd5eTg1488i/view?usp=drivesdk"
+        },
+        {
+          "id": "1TCAv9mBD-eNit-UH6FfZm1CXTY6c9jOX",
+          "title": "V52_T4D_INPUT_CHECKS.csv",
+          "size": "976",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1TCAv9mBD-eNit-UH6FfZm1CXTY6c9jOX/view?usp=drivesdk"
+        },
+        {
+          "id": "1LxL_EwGFc3pecgNJ0Bp2FU85Uo3Gr9NA",
+          "title": "V52_T4D_HEAD_RESEARCHER_HANDOFF.txt",
+          "size": "1597",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/1LxL_EwGFc3pecgNJ0Bp2FU85Uo3Gr9NA/view?usp=drivesdk"
+        },
+        {
+          "id": "1OuiYoYTm6EbY7skQHPwzRyBJqF71rdN7",
+          "title": "V52_T4D_COMPUTE_REPORT.md",
+          "size": "1721",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/1OuiYoYTm6EbY7skQHPwzRyBJqF71rdN7/view?usp=drivesdk"
+        },
+        {
+          "id": "1s9Te1GNDWzjs2Cvah86veM2TVPxIGV2H",
+          "title": "V52_T4D_POST_RUN_HASHES.txt",
+          "size": "178",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/1s9Te1GNDWzjs2Cvah86veM2TVPxIGV2H/view?usp=drivesdk"
+        },
+        {
+          "id": "1Lk5ZLaceKuc3OF-v0X52OfItU0PqVlmp",
+          "title": "V52_T4D_POST_RUN_MANIFEST.json",
+          "size": "4705",
+          "mime_type": "application/json",
+          "url": "https://drive.google.com/file/d/1Lk5ZLaceKuc3OF-v0X52OfItU0PqVlmp/view?usp=drivesdk"
+        },
+        {
+          "id": "1a_ctuEgxMLzuSCjTelxEEovfhxmCoZ5z",
+          "title": "v52_t4d_locomo_frozen_cross_benchmark.py",
+          "size": "63381",
+          "mime_type": "text/x-python",
+          "url": "https://drive.google.com/file/d/1a_ctuEgxMLzuSCjTelxEEovfhxmCoZ5z/view?usp=drivesdk"
+        },
+        {
+          "id": "1c2QMmAIA-spECbLHx_kYKjVl3DVmIoq8",
+          "title": "V52_T4D_PRE_RUN_SEAL.json",
+          "size": "8089",
+          "mime_type": "application/json",
+          "url": "https://drive.google.com/file/d/1c2QMmAIA-spECbLHx_kYKjVl3DVmIoq8/view?usp=drivesdk"
+        },
+        {
+          "id": "1jBgSS4A239X-5aVmYiAqvk96VP82ZYK5",
+          "title": "V52_T4D_ALL_OUTPUTS.zip",
+          "size": "1451357",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1jBgSS4A239X-5aVmYiAqvk96VP82ZYK5/view?usp=drivesdk"
+        }
+      ]
+    },
+    {
+      "store_source": "driveFinal1",
+      "url": "https://drive.google.com/drive/folders/1ABFEBsp7KfNxtIRkdaqU-6ImTFbsXAnv",
+      "title": "FINAL_2026-08-28_FULL_470",
+      "files": [
+        {
+          "id": "1AQu8Zoe_Rc6xHfZQ92l3gHGo5xu7H6uApmH03olS1Qw",
+          "title": "V52_TASK_4C3_ACCEPTED_CHECKPOINT_2026-08-28",
+          "size": "3191",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1AQu8Zoe_Rc6xHfZQ92l3gHGo5xu7H6uApmH03olS1Qw/edit?usp=drivesdk"
+        },
+        {
+          "id": "1kkwo0L9elK8p_aCj0vYK0S5-GNwOu187",
+          "title": "V52_T4C3_rank_geometry.csv",
+          "size": "1205877",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1kkwo0L9elK8p_aCj0vYK0S5-GNwOu187/view?usp=drivesdk"
+        },
+        {
+          "id": "1wquekIN_Hui3S_qStVr4jj7M2jGl2h5r",
+          "title": "V52_T4C3_tie_diagnostics.csv",
+          "size": "1134821",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1wquekIN_Hui3S_qStVr4jj7M2jGl2h5r/view?usp=drivesdk"
+        },
+        {
+          "id": "10IrKLtm1CaV4MZdMdrlyK9-3odaeiy35",
+          "title": "V52_T4C3_question_type.csv",
+          "size": "2305",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/10IrKLtm1CaV4MZdMdrlyK9-3odaeiy35/view?usp=drivesdk"
+        },
+        {
+          "id": "15M41K4ljxVv0ljZ0O1REtd9SnfAdgTQD",
+          "title": "V52_T4C3_reuse.csv",
+          "size": "1348",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/15M41K4ljxVv0ljZ0O1REtd9SnfAdgTQD/view?usp=drivesdk"
+        },
+        {
+          "id": "1hc6KY7Fch4R7fcQAzXQa9BS4B-tzS2gt",
+          "title": "V52_T4C3_rotation_seed_results.csv",
+          "size": "2663",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1hc6KY7Fch4R7fcQAzXQa9BS4B-tzS2gt/view?usp=drivesdk"
+        },
+        {
+          "id": "13WMESuSqfkAN6xohsE4I02IXc_gw1pMX",
+          "title": "V52_T4C3_question_level.csv",
+          "size": "69428",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/13WMESuSqfkAN6xohsE4I02IXc_gw1pMX/view?usp=drivesdk"
+        },
+        {
+          "id": "1P5vuHU736w1AnvQRLrz2GIsj6S0OXJB7",
+          "title": "V52_T4C3_heterogeneity_alignment.csv",
+          "size": "1620",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1P5vuHU736w1AnvQRLrz2GIsj6S0OXJB7/view?usp=drivesdk"
+        },
+        {
+          "id": "1flMTr5i8Zuv4bk8WGGlBIujZn5XMRVL2",
+          "title": "V52_T4C3_ITQ_HAAR_ENVELOPE.csv",
+          "size": "281",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1flMTr5i8Zuv4bk8WGGlBIujZn5XMRVL2/view?usp=drivesdk"
+        },
+        {
+          "id": "1KU6PiLumi9FR-0ZudE6-mI4rNALmOqTY",
+          "title": "V52_T4C3_collision_diagnostics.csv",
+          "size": "1648720",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1KU6PiLumi9FR-0ZudE6-mI4rNALmOqTY/view?usp=drivesdk"
+        },
+        {
+          "id": "1kd9xwmP04-orOuKATrGyPxBoh-1DYo7a",
+          "title": "V52_T4C3_gold_cardinality.csv",
+          "size": "1014",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1kd9xwmP04-orOuKATrGyPxBoh-1DYo7a/view?usp=drivesdk"
+        },
+        {
+          "id": "1T3LyEwdY0_H9ZvYiJVcLjYL67OhvmkA7",
+          "title": "V52_T4C3_archive_size.csv",
+          "size": "1662",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1T3LyEwdY0_H9ZvYiJVcLjYL67OhvmkA7/view?usp=drivesdk"
+        },
+        {
+          "id": "1rZol5gm6T2ly2AW_4M33Jr57jICq8J7Q",
+          "title": "V52_T4C3_block_gradient.csv",
+          "size": "1461",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1rZol5gm6T2ly2AW_4M33Jr57jICq8J7Q/view?usp=drivesdk"
+        },
+        {
+          "id": "1l22nP6YzjMLiWCvIdl002qVW0leAJP3d",
+          "title": "V52_T4C3_aggregate.csv",
+          "size": "768",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1l22nP6YzjMLiWCvIdl002qVW0leAJP3d/view?usp=drivesdk"
+        },
+        {
+          "id": "1DXvUT_bfks2gKlOaTZJqkfOVKi7nCMvU",
+          "title": "V52_T4C3_POST_RUN_MANIFEST.json",
+          "size": "3964",
+          "mime_type": "application/json",
+          "url": "https://drive.google.com/file/d/1DXvUT_bfks2gKlOaTZJqkfOVKi7nCMvU/view?usp=drivesdk"
+        },
+        {
+          "id": "1giKpbJKde5G5FrlPXRe1Z-3goohYa7CD",
+          "title": "V52_T4C3_sanity_checks.csv",
+          "size": "461",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1giKpbJKde5G5FrlPXRe1Z-3goohYa7CD/view?usp=drivesdk"
+        },
+        {
+          "id": "1KmjZIK_0H8FDQqyE6-4OSgjrNifw97xr",
+          "title": "V52_T4C3_HEAD_RESEARCHER_HANDOFF.txt",
+          "size": "773",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/1KmjZIK_0H8FDQqyE6-4OSgjrNifw97xr/view?usp=drivesdk"
+        },
+        {
+          "id": "1AzbO_n08yqEvJ4iwKEA-Z0joBhBcaHD8",
+          "title": "V52_T4C3_COMPUTE_REPORT.md",
+          "size": "1318",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/1AzbO_n08yqEvJ4iwKEA-Z0joBhBcaHD8/view?usp=drivesdk"
+        },
+        {
+          "id": "1PME-hZHxp3fRN0AYgygp1oM7v-GNYm6Z",
+          "title": "V52_T4C3_native_heterogeneity.csv",
+          "size": "1947381",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1PME-hZHxp3fRN0AYgygp1oM7v-GNYm6Z/view?usp=drivesdk"
+        },
+        {
+          "id": "1fZP8GQnWJtOWG-WoPFNasguIAKo0Tlwm",
+          "title": "V52_T4C3_continuous_invariance.csv",
+          "size": "1833254",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1fZP8GQnWJtOWG-WoPFNasguIAKo0Tlwm/view?usp=drivesdk"
+        },
+        {
+          "id": "1cgJgZ2JG_AKDV3TFMiICZqTXHffChnHw",
+          "title": "V52_T4C3_leakage_audit.csv",
+          "size": "144",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1cgJgZ2JG_AKDV3TFMiICZqTXHffChnHw/view?usp=drivesdk"
+        },
+        {
+          "id": "1qGgObNL7gmEWIdPduJLXDNUVB2JqfYLD",
+          "title": "V52_T4C3_signed_permutation_control.csv",
+          "size": "56658",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1qGgObNL7gmEWIdPduJLXDNUVB2JqfYLD/view?usp=drivesdk"
+        },
+        {
+          "id": "1PfFJfOJzhvud8eLvzcMnCwa9DLFzcdSt",
+          "title": "V52_T4C3_heterogeneity_quintiles.csv",
+          "size": "16478",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1PfFJfOJzhvud8eLvzcMnCwa9DLFzcdSt/view?usp=drivesdk"
+        },
+        {
+          "id": "1B_qVTP6v8GAXhKBoEn0mXTeuLrP92m-9",
+          "title": "V52_T4C3_INPUT_CHECKS.json",
+          "size": "1023",
+          "mime_type": "application/json",
+          "url": "https://drive.google.com/file/d/1B_qVTP6v8GAXhKBoEn0mXTeuLrP92m-9/view?usp=drivesdk"
+        },
+        {
+          "id": "1Mvd54Y3LjSbZClrADOHHvVBDifses74o",
+          "title": "v52_t4c3_coordinate_axis_probe.py",
+          "size": "32837",
+          "mime_type": "text/x-python",
+          "url": "https://drive.google.com/file/d/1Mvd54Y3LjSbZClrADOHHvVBDifses74o/view?usp=drivesdk"
+        },
+        {
+          "id": "1aTBPjXnxl4XUJIYs6QlGgpWDPx0bZwAO",
+          "title": "V52_T4C3_PRE_RUN_SEAL.json",
+          "size": "3166",
+          "mime_type": "application/json",
+          "url": "https://drive.google.com/file/d/1aTBPjXnxl4XUJIYs6QlGgpWDPx0bZwAO/view?usp=drivesdk"
+        },
+        {
+          "id": "1KoDZx0h88JMUfJsAgd_rUtAyeS5_3ESm",
+          "title": "V52_T4C3_ALL_OUTPUTS.zip",
+          "size": "24756509",
+          "mime_type": "application/x-zip-compressed",
+          "url": "https://drive.google.com/file/d/1KoDZx0h88JMUfJsAgd_rUtAyeS5_3ESm/view?usp=drivesdk"
+        },
+        {
+          "id": "1sMbkfQvdH2yX3uKREb-gM37nIYh_83ko",
+          "title": "V52_T4C3_rotated_heterogeneity.csv",
+          "size": "78405429",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1sMbkfQvdH2yX3uKREb-gM37nIYh_83ko/view?usp=drivesdk"
+        },
+        {
+          "id": "1dHAZ1wV9kem7BM87OwpW86BS6GAj3Fx3",
+          "title": "V52_T4C3_trial_results.csv",
+          "size": "21723081",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1dHAZ1wV9kem7BM87OwpW86BS6GAj3Fx3/view?usp=drivesdk"
+        }
+      ]
+    },
+    {
+      "store_source": "mechanismDirect",
+      "url": "https://drive.google.com/drive/folders/17JSHz_64KvKIJwzEPshUuwgld8Smczht",
+      "title": "V52_CAUSAL_SPECTRAL_BAND_HAAR_2026-09-04",
+      "files": [
+        {
+          "id": "1Wt_I_5jvCcJCMHy0FOCcSMruN1vXy2q7",
+          "title": "V52_BOUNDARY_LOCALIZATION_POST_AUDIT_INTERPRETATION_ADDENDUM_2026-09-05_NAVIGATION_MIRROR.md",
+          "size": "4702",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/1Wt_I_5jvCcJCMHy0FOCcSMruN1vXy2q7/view?usp=drivesdk"
+        },
+        {
+          "id": "13zdeIJhjxDGySB2uMxtKybqKYTo8w0nW",
+          "title": "V52_BOUNDARY_LOCALIZATION_AUDIT_RESULT_2026-09-05_NAVIGATION_MIRROR.md",
+          "size": "3860",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/13zdeIJhjxDGySB2uMxtKybqKYTo8w0nW/view?usp=drivesdk"
+        },
+        {
+          "id": "1W_p5GRbYfiM7XdO_YJibZed56yslXraY",
+          "title": "V52_BOUNDARY_LOCALIZATION_COLD_START_AUDIT_HANDOFF_2026-09-04_NAVIGATION_MIRROR.md",
+          "size": "4532",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/1W_p5GRbYfiM7XdO_YJibZed56yslXraY/view?usp=drivesdk"
+        },
+        {
+          "id": "1W9Cs8ijdLxbT0lt6WqnG2Y0hky1KiXFBtTTsT_hi4Xk",
+          "title": "V52_BOUNDARY_LOCALIZATION_PROVENANCE_MANIFEST_2026-09-04",
+          "size": "3429",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1W9Cs8ijdLxbT0lt6WqnG2Y0hky1KiXFBtTTsT_hi4Xk/edit?usp=drivesdk"
+        },
+        {
+          "id": "1Rhq_GyLmUgLorvoTOyx38U4pfaReJGs8zwYpG6IVGEw",
+          "title": "CROSS_DATASET_HEAD_TAIL_BOUNDARY_LOCALIZATION_CHECKPOINT_2026-09-04",
+          "size": "4019",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1Rhq_GyLmUgLorvoTOyx38U4pfaReJGs8zwYpG6IVGEw/edit?usp=drivesdk"
+        },
+        {
+          "id": "1qLSdVsbUb8Eo5D8YgmGdkk3gx0w_vufQ",
+          "title": "V52_LONGMEMEVAL_BOUNDARY_LOCALIZATION_FINAL_2026-09-04.zip",
+          "size": "91808",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1qLSdVsbUb8Eo5D8YgmGdkk3gx0w_vufQ/view?usp=drivesdk"
+        },
+        {
+          "id": "1suAZoTuYsaah_oWf1fB9vPxQ2KPg92tr",
+          "title": "V52_LOCOMO_BOUNDARY_LOCALIZATION_RESULTS_2026-09-04.zip",
+          "size": "211990",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1suAZoTuYsaah_oWf1fB9vPxQ2KPg92tr/view?usp=drivesdk"
+        },
+        {
+          "id": "1z-WSwgCgB_HKoO6F8t6fxfKh6KBol-4pSMzcLrqyiLs",
+          "title": "V52_BOUNDARY_LOCALIZATION_PRERUN_SEAL_2026-09-04",
+          "size": "2219",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1z-WSwgCgB_HKoO6F8t6fxfKh6KBol-4pSMzcLrqyiLs/edit?usp=drivesdk"
+        },
+        {
+          "id": "13hV2Ubw4Dgfi2TBO5MuNEtpLIJXJ0NuDXga-BmC94z8",
+          "title": "V52_HEAD_TAIL_POST_AUDIT_INTERPRETATION_ADDENDUM_2026-09-04",
+          "size": "4628",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/13hV2Ubw4Dgfi2TBO5MuNEtpLIJXJ0NuDXga-BmC94z8/edit?usp=drivesdk"
+        },
+        {
+          "id": "1hE_-z6qIn3g-zX0jLAClwoQeHbsZDeVuQ83SyO17sI0",
+          "title": "V52_CAUSAL_HEAD_TAIL_BOUNDARY_LOCALIZATION_PREREG_2026-09-04",
+          "size": "9869",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1hE_-z6qIn3g-zX0jLAClwoQeHbsZDeVuQ83SyO17sI0/edit?usp=drivesdk"
+        },
+        {
+          "id": "1l7rE9TPn15Ob6yP9a7A9Vfcqi83IcDnu61n8Tp9A-pI",
+          "title": "V52_MATCHED_RANDOM_PARTITION_NULL_COLD_START_AUDIT_HANDOFF_2026-09-04",
+          "size": "4061",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1l7rE9TPn15Ob6yP9a7A9Vfcqi83IcDnu61n8Tp9A-pI/edit?usp=drivesdk"
+        },
+        {
+          "id": "1jPagpqOQQmlhcSnmKMNJzLinyYQbcXg0jhctHllXUMw",
+          "title": "V52_MATCHED_RANDOM_PARTITION_NULL_PROVENANCE_MANIFEST_2026-09-04",
+          "size": "3349",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1jPagpqOQQmlhcSnmKMNJzLinyYQbcXg0jhctHllXUMw/edit?usp=drivesdk"
+        },
+        {
+          "id": "1__c-LIzdI9SsKxkyiQmvzix1NA4SDC5hFX8EWuZ4ZJs",
+          "title": "CROSS_BENCHMARK_MATCHED_RANDOM_PARTITION_NULL_CHECKPOINT_2026-09-04",
+          "size": "3438",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1__c-LIzdI9SsKxkyiQmvzix1NA4SDC5hFX8EWuZ4ZJs/edit?usp=drivesdk"
+        },
+        {
+          "id": "1YHi5QT1cX4T_qXHzaXRtxNUw5m5DP7R4",
+          "title": "V52_LONGMEMEVAL_MATCHED_RANDOM_PARTITION_NULL_FINAL_2026-09-04.zip",
+          "size": "9829",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1YHi5QT1cX4T_qXHzaXRtxNUw5m5DP7R4/view?usp=drivesdk"
+        },
+        {
+          "id": "19zuaMJeF32BAdG7dSKOmovjGzhSmvzT7",
+          "title": "V52_LOCOMO_MATCHED_RANDOM_PARTITION_NULL_RESULTS_2026-09-04.zip",
+          "size": "10821",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/19zuaMJeF32BAdG7dSKOmovjGzhSmvzT7/view?usp=drivesdk"
+        },
+        {
+          "id": "14PJunDnAshUvXBf5uA1T5UCFlA5Xkfa1rYa6Gg4bXIg",
+          "title": "V52_MATCHED_RANDOM_PARTITION_NULL_PRERUN_SEAL_2026-09-04",
+          "size": "2446",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/14PJunDnAshUvXBf5uA1T5UCFlA5Xkfa1rYa6Gg4bXIg/edit?usp=drivesdk"
+        },
+        {
+          "id": "16cpNlMnVmehI6faMfvmicK280SKWHheA7bfAom7Ub_g",
+          "title": "V52_MATCHED_RANDOM_PARTITION_NULL_PREREG_2026-09-04",
+          "size": "8380",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/16cpNlMnVmehI6faMfvmicK280SKWHheA7bfAom7Ub_g/edit?usp=drivesdk"
+        },
+        {
+          "id": "1HSBrmm4ufVbiY24GhEoo3wyGHUkCKu4T",
+          "title": "CROSS_BENCHMARK_HEAD_TAIL_CAUSAL_CHECKPOINT_2026-09-04.md",
+          "size": "5190",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/1HSBrmm4ufVbiY24GhEoo3wyGHUkCKu4T/view?usp=drivesdk"
+        },
+        {
+          "id": "1P58-aWzcHf-YtyHBHqCOiIiE-2AtH2ru",
+          "title": "V52_LONGMEMEVAL_HEAD_TAIL_CAUSAL_FINAL_2026-09-04.zip",
+          "size": "3573",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1P58-aWzcHf-YtyHBHqCOiIiE-2AtH2ru/view?usp=drivesdk"
+        },
+        {
+          "id": "1fd470TNLtOING2obnfcuPtEiLdTUIBdr",
+          "title": "CROSS_BENCHMARK_CAUSAL_SPECTRAL_SUBSPACE_CHECKPOINT_2026-09-04.md",
+          "size": "3957",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/1fd470TNLtOING2obnfcuPtEiLdTUIBdr/view?usp=drivesdk"
+        },
+        {
+          "id": "1atTWg-DOGiekK7wx1DBS7GozFIDxtOp6",
+          "title": "V52_LONGMEMEVAL_CAUSAL_SHARDED_FINAL_2026-09-04.zip",
+          "size": "3887",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1atTWg-DOGiekK7wx1DBS7GozFIDxtOp6/view?usp=drivesdk"
+        },
+        {
+          "id": "15AjflormsdLveHWgIIc7rqhrsVE8bQNv",
+          "title": "V52_LOCOMO_HEAD_TAIL_CAUSAL_RESULTS_2026-09-04.zip",
+          "size": "3576",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/15AjflormsdLveHWgIIc7rqhrsVE8bQNv/view?usp=drivesdk"
+        },
+        {
+          "id": "1RhJizffeiFVa8NsIKOOmkvFG3LIb2FUw",
+          "title": "V52_CAUSAL_HEAD_TAIL_TWO_SUBSPACE_HAAR_PREREG_2026-09-04.md",
+          "size": "6624",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/1RhJizffeiFVa8NsIKOOmkvFG3LIb2FUw/view?usp=drivesdk"
+        },
+        {
+          "id": "1G8iytJjdJhDNAmbt4zJfp9Gy1wgX33bx",
+          "title": "V52_CAUSAL_SPECTRAL_BAND_HAAR_INTERIM_DOUBLE_BACKUP_2026-09-04.zip",
+          "size": "7381",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1G8iytJjdJhDNAmbt4zJfp9Gy1wgX33bx/view?usp=drivesdk"
+        },
+        {
+          "id": "1mfJUZ5i8TG5mwCKfHGJ2avBaIRVGAgi1",
+          "title": "V52_LOCOMO_CAUSAL_BAND_HAAR_RESULTS_2026-09-04.zip",
+          "size": "4861",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1mfJUZ5i8TG5mwCKfHGJ2avBaIRVGAgi1/view?usp=drivesdk"
+        }
+      ]
+    },
+    {
+      "store_source": "locomoInventory",
+      "url": "https://drive.google.com/drive/folders/1u1sYaFav17j7i5-3Nd6RrOvRpWy8juZF",
+      "title": "V52_TASK_4D_LOCOMO_FROZEN_CROSS_BENCHMARK_REPLICATION_2026-08-29",
+      "files": [
+        {
+          "id": "1x5arkoj2boNGbqXI5K1tYMIVVQCBr8-atUp-Lth_ZzU",
+          "title": "V52_TASK_4D_ACCEPTED_CHECKPOINT_2026-08-29",
+          "size": "4702",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1x5arkoj2boNGbqXI5K1tYMIVVQCBr8-atUp-Lth_ZzU/edit?usp=drivesdk"
+        },
+        {
+          "id": "1rzMu9VvIIOL_Knjx6jPcR1i5zNvEfh_wTKI94vgzf-4",
+          "title": "V52_TASK_4D_HEAD_RESEARCHER_INTERIM_ASSESSMENT_2026-08-29",
+          "size": "3078",
+          "mime_type": "application/vnd.google-apps.document",
+          "url": "https://docs.google.com/document/d/1rzMu9VvIIOL_Knjx6jPcR1i5zNvEfh_wTKI94vgzf-4/edit?usp=drivesdk"
+        },
+        {
+          "id": "1BJgsMU37aw5yFnZ2g76kuNYMJkfR6HIP",
+          "title": "V52_T4D_UPLOAD_RECEIPT.txt",
+          "size": "780",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/1BJgsMU37aw5yFnZ2g76kuNYMJkfR6HIP/view?usp=drivesdk"
+        },
+        {
+          "id": "1UBG-70aAXG34QZ9WQsewVAe3TIUj99X-",
+          "title": "V52_T4D_PROTOCOL_DEFECT_SENSITIVITY.csv",
+          "size": "1478",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1UBG-70aAXG34QZ9WQsewVAe3TIUj99X-/view?usp=drivesdk"
+        },
+        {
+          "id": "1gLXfsSF3me1DTx3ky4CS_GGAWqfZ5A5M",
+          "title": "V52_T4D_ARCHIVE_SIZE_QUARTILES_FROZEN.csv",
+          "size": "193",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1gLXfsSF3me1DTx3ky4CS_GGAWqfZ5A5M/view?usp=drivesdk"
+        },
+        {
+          "id": "1hcRpus553XcQzZEmXc1ViepUnVnSdwPL",
+          "title": "V52_T4D_PRE_OUTCOME_QUESTION_COHORT.csv",
+          "size": "60691",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1hcRpus553XcQzZEmXc1ViepUnVnSdwPL/view?usp=drivesdk"
+        },
+        {
+          "id": "1shiCUeA_LYZEpIieF-VU-POyj2EUrrs-",
+          "title": "V52_T4D_COMPOSITION_SENSITIVITY.csv",
+          "size": "395",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1shiCUeA_LYZEpIieF-VU-POyj2EUrrs-/view?usp=drivesdk"
+        },
+        {
+          "id": "1XIhW3eqH1anGfyUKytXJe1L8mp-0PeFF",
+          "title": "V52_T4D_strata_archive_size.csv",
+          "size": "359",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1XIhW3eqH1anGfyUKytXJe1L8mp-0PeFF/view?usp=drivesdk"
+        },
+        {
+          "id": "1t9nvXE1H3Xms1HTlSLnwx_pR3Lkagbmh",
+          "title": "V52_T4D_strata_gold_cardinality.csv",
+          "size": "244",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1t9nvXE1H3Xms1HTlSLnwx_pR3Lkagbmh/view?usp=drivesdk"
+        },
+        {
+          "id": "1zlFGpifUjUIP49pp2mVrFacvgf_AbQk9",
+          "title": "V52_T4D_strata_conversation.csv",
+          "size": "793",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1zlFGpifUjUIP49pp2mVrFacvgf_AbQk9/view?usp=drivesdk"
+        },
+        {
+          "id": "1P3-IksBUiwahoiZaVfIOUP3lJsygDXnt",
+          "title": "V52_T4D_strata_category.csv",
+          "size": "349",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1P3-IksBUiwahoiZaVfIOUP3lJsygDXnt/view?usp=drivesdk"
+        },
+        {
+          "id": "1dRx_KJfL5D9zZMqmc79FfqjjgChgVQCP",
+          "title": "V52_T4D_rank_geometry.csv",
+          "size": "1266214",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1dRx_KJfL5D9zZMqmc79FfqjjgChgVQCP/view?usp=drivesdk"
+        },
+        {
+          "id": "1YWRmqxwnnBViWa6M-LHTEakjSagNjdxx",
+          "title": "V52_T4D_tie_diagnostics.csv",
+          "size": "1072005",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1YWRmqxwnnBViWa6M-LHTEakjSagNjdxx/view?usp=drivesdk"
+        },
+        {
+          "id": "1DGNev6-Lx5KPWM1hgv72bAKmbioBk83I",
+          "title": "V52_T4D_collision_diagnostics.csv",
+          "size": "12430",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1DGNev6-Lx5KPWM1hgv72bAKmbioBk83I/view?usp=drivesdk"
+        },
+        {
+          "id": "1e9vbPnm9F-0oEKdp1RsxzeJAxFj8B2kq",
+          "title": "V52_T4D_ITQ_HAAR_ENVELOPE.csv",
+          "size": "270",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1e9vbPnm9F-0oEKdp1RsxzeJAxFj8B2kq/view?usp=drivesdk"
+        },
+        {
+          "id": "1Q0XjQc0iiB76daTNop607Hjnl08amPgx",
+          "title": "V52_T4D_CONTINUOUS_INVARIANCE.csv",
+          "size": "6925",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1Q0XjQc0iiB76daTNop607Hjnl08amPgx/view?usp=drivesdk"
+        },
+        {
+          "id": "1WO5Yyo0nkTVSc1N7Mq08gummHsO2o56W",
+          "title": "V52_T4D_SIGNED_PERM_CONTROL.csv",
+          "size": "1421",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1WO5Yyo0nkTVSc1N7Mq08gummHsO2o56W/view?usp=drivesdk"
+        },
+        {
+          "id": "1AcXqiGGTETlIVM7-ScYxS6zkQY7e1C_f",
+          "title": "V52_T4D_HAAR_SEED_RESULTS.csv",
+          "size": "946",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1AcXqiGGTETlIVM7-ScYxS6zkQY7e1C_f/view?usp=drivesdk"
+        },
+        {
+          "id": "1M7LSlum1cje0EuVQexuiTTw4jgDHh_WQ",
+          "title": "V52_T4D_aggregate.csv",
+          "size": "581",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1M7LSlum1cje0EuVQexuiTTw4jgDHh_WQ/view?usp=drivesdk"
+        },
+        {
+          "id": "1L5ZqqFQfrxEqdvqU3PED2IQt5Y3EMDbD",
+          "title": "V52_T4D_question_level.csv",
+          "size": "209415",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1L5ZqqFQfrxEqdvqU3PED2IQt5Y3EMDbD/view?usp=drivesdk"
+        },
+        {
+          "id": "1oFaqNb1Jre-LYAa6DMQ9tzYE6iRAbMnt",
+          "title": "V52_T4D_trial_results.csv",
+          "size": "28498699",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1oFaqNb1Jre-LYAa6DMQ9tzYE6iRAbMnt/view?usp=drivesdk"
+        },
+        {
+          "id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+          "title": "V52_T4D_REPRESENTATION_TRANSFER_PROOF.txt",
+          "size": "4416",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi/view?usp=drivesdk"
+        },
+        {
+          "id": "1PuuUiqZIW--B2RE4OUJRcRd5eTg1488i",
+          "title": "V52_T4D_REPRESENTATION_TRANSFER_PROOF.csv",
+          "size": "629",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1PuuUiqZIW--B2RE4OUJRcRd5eTg1488i/view?usp=drivesdk"
+        },
+        {
+          "id": "1TCAv9mBD-eNit-UH6FfZm1CXTY6c9jOX",
+          "title": "V52_T4D_INPUT_CHECKS.csv",
+          "size": "976",
+          "mime_type": "text/csv",
+          "url": "https://drive.google.com/file/d/1TCAv9mBD-eNit-UH6FfZm1CXTY6c9jOX/view?usp=drivesdk"
+        },
+        {
+          "id": "1LxL_EwGFc3pecgNJ0Bp2FU85Uo3Gr9NA",
+          "title": "V52_T4D_HEAD_RESEARCHER_HANDOFF.txt",
+          "size": "1597",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/1LxL_EwGFc3pecgNJ0Bp2FU85Uo3Gr9NA/view?usp=drivesdk"
+        },
+        {
+          "id": "1OuiYoYTm6EbY7skQHPwzRyBJqF71rdN7",
+          "title": "V52_T4D_COMPUTE_REPORT.md",
+          "size": "1721",
+          "mime_type": "text/markdown",
+          "url": "https://drive.google.com/file/d/1OuiYoYTm6EbY7skQHPwzRyBJqF71rdN7/view?usp=drivesdk"
+        },
+        {
+          "id": "1s9Te1GNDWzjs2Cvah86veM2TVPxIGV2H",
+          "title": "V52_T4D_POST_RUN_HASHES.txt",
+          "size": "178",
+          "mime_type": "text/plain",
+          "url": "https://drive.google.com/file/d/1s9Te1GNDWzjs2Cvah86veM2TVPxIGV2H/view?usp=drivesdk"
+        },
+        {
+          "id": "1Lk5ZLaceKuc3OF-v0X52OfItU0PqVlmp",
+          "title": "V52_T4D_POST_RUN_MANIFEST.json",
+          "size": "4705",
+          "mime_type": "application/json",
+          "url": "https://drive.google.com/file/d/1Lk5ZLaceKuc3OF-v0X52OfItU0PqVlmp/view?usp=drivesdk"
+        },
+        {
+          "id": "1a_ctuEgxMLzuSCjTelxEEovfhxmCoZ5z",
+          "title": "v52_t4d_locomo_frozen_cross_benchmark.py",
+          "size": "63381",
+          "mime_type": "text/x-python",
+          "url": "https://drive.google.com/file/d/1a_ctuEgxMLzuSCjTelxEEovfhxmCoZ5z/view?usp=drivesdk"
+        },
+        {
+          "id": "1c2QMmAIA-spECbLHx_kYKjVl3DVmIoq8",
+          "title": "V52_T4D_PRE_RUN_SEAL.json",
+          "size": "8089",
+          "mime_type": "application/json",
+          "url": "https://drive.google.com/file/d/1c2QMmAIA-spECbLHx_kYKjVl3DVmIoq8/view?usp=drivesdk"
+        },
+        {
+          "id": "1jBgSS4A239X-5aVmYiAqvk96VP82ZYK5",
+          "title": "V52_T4D_ALL_OUTPUTS.zip",
+          "size": "1451357",
+          "mime_type": "application/zip",
+          "url": "https://drive.google.com/file/d/1jBgSS4A239X-5aVmYiAqvk96VP82ZYK5/view?usp=drivesdk"
+        }
+      ]
+    }
+  ],
+  "recovered": [
+    {
+      "name": "v52_t4c3_coordinate_axis_probe.py",
+      "drive_id": "1Mvd54Y3LjSbZClrADOHHvVBDifses74o",
+      "sha256": "8dce37b1611ba6257570beea559630208f67ffb93697015e95656858a3c7d996",
+      "method": "Source text only, not imported or executed"
+    },
+    {
+      "name": "V52_T4C3_native_heterogeneity.csv",
+      "drive_id": "1PME-hZHxp3fRN0AYgygp1oM7v-GNYm6Z",
+      "sha256": "148ae5b727ce1aedc6c84ee9c00727f1454b0e0710d100ac8154fdf8d00924cb",
+      "bytes": 1947381,
+      "method": "Connector readable text; original CRLF restored; resulting exact published SHA256 matched"
+    }
+  ],
+  "limits": [
+    "No full frozen matrix found in scoped Git/local locations or identified Drive folder metadata.",
+    "Producer caches C together with qC and gold under cache_repr/*.pkl; its ZIP whitelist omits caches. No pickle loaded.",
+    "ZIP fetches returned sediment URIs with no available local materializer. ZIP central directories were NOT inspected; absence claim relies only on producer whitelist and folder inventory.",
+    "CSV has >=0 occupancy and per-coordinate variances; exact >0 entropy/zero mass and requested full correlation statistics cannot be reconstructed from those summaries.",
+    "No diagnostic values computed yet; no corpus rebuilt."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "base_commit": "ae9175676b840ae6a80a31eba9836187dc1b7491",
+  "scope": "Representation diagnostics, shared-state cost, synthetic ITQ only; no retrieval outcomes.",
+  "tasks": {
+    "task1": {
+      "receipt": "task1/RESULTS.json",
+      "sha256": "e30579739a6fbbd55c53c8070cbe6e3485c4a787cb8ca2d2606ee7638bd9937b",
+      "status": "PARTIAL - exact published sufficient statistics recovered; full matrices unavailable"
+    },
+    "task2": {
+      "status": "IN_PROGRESS_NO_RESULT_CLAIMED"
+    },
+    "task3": {
+      "status": "IN_PROGRESS_NO_RESULT_CLAIMED"
+    }
+  },
+  "scientific_arm_decision": "NOT_MADE",
+  "sealed": false
+}
