@@ -1,15 +1,17 @@
 {
-  "status": "A1_REMEDIATED_SCOPED_SYNTHETIC_CANDIDATE_AWAITING_INDEPENDENT_DELTA_AUDIT",
+  "status": "SCOPED_SYNTHETIC_CANDIDATE_AWAITING_INDEPENDENT_AUDIT",
   "base_commit": "4f2429b257546d6899f3ed48f605cd18210aeae0",
-  "prior_candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
-  "prior_independent_audit": "2a025ee3b85f25af80e1b939f85f23c6cf06af30",
-  "latest_verification": "evidence/a1_fixed/RESULTS.json",
   "manifest_self_excluded": true,
   "files": [
     {
       "path": ".gitignore",
       "bytes": 71,
       "sha256": "9f5c622af3fe15fc90bf62c845550b8f6bc268636271ef1b10b0cca95784f51d"
+    },
+    {
+      "path": "A1_REMEDIATION.md",
+      "bytes": 2697,
+      "sha256": "75e2b41b818d9529a9cc67f685fa0036ac29f5b0bca6715afdc935b05a1926f6"
     },
     {
       "path": "INTEGRATION_TRANSFER.json",
@@ -65,6 +67,36 @@
       "path": "errors.py",
       "bytes": 11298,
       "sha256": "1f5912611d8fbd943a55ab90e737e2e3c6f0b6f14048cc439881dbd90ea9930c"
+    },
+    {
+      "path": "evidence/a1_fixed/COMMAND.json",
+      "bytes": 525,
+      "sha256": "8a827eeece0635cf60938feee285316ec63e3ce664b16287b73f5094cbec62f1"
+    },
+    {
+      "path": "evidence/a1_fixed/RESULTS.json",
+      "bytes": 11519,
+      "sha256": "81ef3622b8638d90f7f8c4b0ee65001ce79fbf77522325a04cd243f4e425dc07"
+    },
+    {
+      "path": "evidence/a1_fixed/stderr.txt",
+      "bytes": 8992,
+      "sha256": "84ef3ac6fbbec435a471e6637f92cff74d787a3fcee4fae1cfc1ff7232200fef"
+    },
+    {
+      "path": "evidence/a1_fixed/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/a1_red/stderr.txt",
+      "bytes": 1069,
+      "sha256": "36b6d2599884953840e888827c096be53d6492e93d1ece503c098f60e673007f"
+    },
+    {
+      "path": "evidence/a1_red/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "evidence/final/COMMAND.json",
@@ -2130,41 +2162,6 @@
       "path": "verify_provenance.py",
       "bytes": 13542,
       "sha256": "40ef9221dea80e04b81c1d8b166ffa40e3254113619703c36fe3b9d5e7a76686"
-    },
-    {
-      "path": "A1_REMEDIATION.md",
-      "bytes": 2697,
-      "sha256": "75e2b41b818d9529a9cc67f685fa0036ac29f5b0bca6715afdc935b05a1926f6"
-    },
-    {
-      "path": "evidence/a1_fixed/COMMAND.json",
-      "bytes": 525,
-      "sha256": "8a827eeece0635cf60938feee285316ec63e3ce664b16287b73f5094cbec62f1"
-    },
-    {
-      "path": "evidence/a1_fixed/RESULTS.json",
-      "bytes": 11519,
-      "sha256": "81ef3622b8638d90f7f8c4b0ee65001ce79fbf77522325a04cd243f4e425dc07"
-    },
-    {
-      "path": "evidence/a1_fixed/stderr.txt",
-      "bytes": 8992,
-      "sha256": "84ef3ac6fbbec435a471e6637f92cff74d787a3fcee4fae1cfc1ff7232200fef"
-    },
-    {
-      "path": "evidence/a1_fixed/stdout.txt",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "evidence/a1_red/stderr.txt",
-      "bytes": 1069,
-      "sha256": "36b6d2599884953840e888827c096be53d6492e93d1ece503c098f60e673007f"
-    },
-    {
-      "path": "evidence/a1_red/stdout.txt",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ]
 }
