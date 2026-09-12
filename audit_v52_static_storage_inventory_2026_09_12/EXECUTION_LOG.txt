@@ -1,0 +1,17 @@
+V52 STATIC STORAGE INVENTORY INDEPENDENT AUDIT — EXECUTION LOG
+Date: 2026-09-12
+
+1. Verified live refs/heads/main = 5ec3db60c03edde490374bf9cd7c3e56dd6bcd00.
+2. Verified object branch head = f9404f2b1e56e5a63878978c19f30283b18324fd.
+3. Compared d29c7b1d668f8abf47889e132e084c4abd72615b -> f9404f2b1e56e5a63878978c19f30283b18324fd; merge base exact parent; only inventory namespace additions.
+4. Read parent inventory MD/JSON and contract context.
+5. Verified LongMemEval feature-geometry source and manifest binding; no retrieval outcome interpretation.
+6. Downloaded LoCoMo proof raw bytes; SHA256=957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd.
+7. Downloaded T4D post-run manifest raw bytes; SHA256=a97e411c1ed24c5c93590638fcb51248936d8428a38e4d76cf0c6b74a9399b9c; confirmed proof digest binding.
+8. Read T4D upload receipt; it binds manifest digest a97e411c....
+9. Inspected adapter source procedure and V2 aliases.
+10. Searched Git and Drive fitted-state namespaces and serialization terms.
+11. Inspected T4C2 ALL_OUTPUTS and nested BINARY_GEOMETRY container schema only. No retrieval metrics calculated.
+12. Inspected T4C3/T4D output ZIP member names only for physical-artifact classification.
+13. Did not open/run Task4F1 corpus/query/gold/outcome, scoring, HMAC, seal, finalize or production actions.
+14. Local container could not directly resolve github.com; GitHub connector was used for Git reads/writes. This is why three individual contract files are not falsely claimed as raw-byte SHA recomputations.
