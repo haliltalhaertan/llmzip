@@ -84,8 +84,9 @@ def controls():
     assert d['active_coordinates']==2 and np.isclose(d['correlation_proxy']['off_mass'],1/np.sqrt(2))
     assert np.isclose(d['correlation_proxy']['p95_abs'],1)
     # >=0 occupancy alone cannot identify >0 occupancy, even for centered inputs.
-    a=np.array([-3.,1,1,1]);b=np.array([-1.,0,0,1])
+    a=np.array([-3.,1,1,1]);b=np.array([-2.,0,1,1])
     assert (a>=0).mean()==(b>=0).mean() and (a>0).mean()!=(b>0).mean()
+    assert entropy([(a>0).mean()])[0] != entropy([(b>0).mean()])[0]
     assert matrix_diagnostics(np.zeros((2,96)))['correlation_proxy'] is None
     assert variance_diagnostics(np.zeros(96))['cv_sigma'] is None
     return {'status':'PASS','cases':['entropy endpoints','CV sigma not variance','constant-coordinate mask',
