@@ -7,6 +7,16 @@ historical and adapted inherited suites are in `inherited/final/RESULTS.json`.
 Provenance checks and diffs are in `provenance/final/RESULTS.json`.
 The user's cold-start independent audit is pending.
 
+Update after independent audit `2a025ee3b85f25af80e1b939f85f23c6cf06af30`:
+initial candidate24d3351 was NOT ACCEPTED for A1. The latest implementation delta
+uses sorted global LongMemEval ordinals both when binding and validating archive
+diagnostics. `DeliveryIntegration.test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly`
+observes the unchanged real synthetic ingestion/fit/score path for sorted and
+unsorted cohorts, checks actual question identity, and rejects rebound swapped
+metadata. Old bridge fails this regression. Full updated suite54/5961 passes;
+`evidence/a1_fixed/RESULTS.json` is current. Independent delta review remains pending.
+Obligation4's synthetic closure cannot be accepted on the historical53-test receipt.
+
 | Requirement from authoritative audit | Code / explicit change | Named verification in this namespace | Disposition |
 |---|---|---|---|
 | L-081 F1: caller identifiers in exceptions, including core validation | `pipeline_g3._validate_ingested_schema`, `validate_records`; `record_boundary.valid_records`; runner pre-core guard | `DeliveryPipelineTests.test_gap_05_F1_all_three_identifier_leak_paths_all_surfaces`, `test_gap_02_F1_F7_multi_archive_duplicate_question_ids_refused_upfront`, both `E_M_043` tests; `RelatedG2Tests.test_F1_F2_record_boundary_before_immutable_core` | Implemented for the named wrapper surfaces. Immutable core unchanged; arbitrary Python introspection is outside scope. |

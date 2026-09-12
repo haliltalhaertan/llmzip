@@ -97,6 +97,60 @@ class DeliveryIntegration(unittest.TestCase):
         self.assertIsNone(got.exception.__context__)
         self.assertIsNone(got.exception.__cause__)
 
+    def test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly(self):
+        """Independent audit A1: observe real assembly, not bridge's own lookup."""
+        for ids in (["q_z", "q_a"], ["q_a", "q_z"]):
+            with self.subTest(cohort_order=ids):
+                items=[]
+                for qid in ids:
+                    offset = 0 if qid == "q_a" else 1
+                    turns=[{"role":"user", "has_answer":True,
+                            "content":f"synthetic archive token{j} topic{j % (13+offset)} item{j*(17+offset)} detail{j%7}"}
+                           for j in range(110)]
+                    items.append(dict(question_id=qid,question="synthetic topic3 item34 query",
+                                      haystack_session_ids=["fixture_session"],haystack_dates=["synthetic date"],
+                                      haystack_sessions=[turns]))
+                raw=json.dumps(items).encode()
+                path=self.root/"a1"/"synthetic_fixture.json"
+                path.parent.mkdir(exist_ok=True);path.write_bytes(raw)
+                digest=hashlib.sha256(raw).hexdigest()
+                mapping=dict(provenance=bridge.SYNTHETIC,source_id="synthetic_fixture",source_sha256=digest,
+                             benchmark=runner.LONGMEMEVAL,n_questions=2,expected_cluster_ids=["synthetic_component"],
+                             expected_question_to_cluster=dict.fromkeys(ids,"synthetic_component"))
+                identity=dict(source_file=path.name,source_sha256=digest,source_bytes=len(raw))
+                def fixture_bytes(p,benchmark,*,enabled=None):
+                    self.assertEqual(Path(p),path);self.assertEqual(benchmark,runner.LONGMEMEVAL)
+                    self.assertIsNone(enabled);self.assertEqual(path.read_bytes(),raw)
+                    return dict(identity)
+                def fixture_mapping(m,benchmark):
+                    self.assertEqual(m,mapping);self.assertEqual(benchmark,runner.LONGMEMEVAL)
+                    self.assertNotIn("_accepted_manifest_sha256",m)
+                with mock.patch.object(ingest,"verify_source_bytes",side_effect=fixture_bytes), \
+                     mock.patch.object(ingest,"_check_accepted_mapping",side_effect=fixture_mapping):
+                    ingested=ingest.ingest_longmemeval(path,copy.deepcopy(mapping))
+                self.assertEqual(ingested["cohort_ids"],ids)
+                observed=[]
+                original=pipeline.score_archive
+                def observe(*args,**kwargs):
+                    result=original(*args,**kwargs)
+                    observed.append((args[4],list(args[3]),copy.deepcopy(result[1])))
+                    return result
+                with mock.patch.object(pipeline,"score_archive",side_effect=observe):
+                    prepared=pipeline.assemble_in_memory(ingested,dict.fromkeys(ids,float(3/110)))
+                envelope=bridge.prepare_synthetic_envelope(ingested,prepared,raw)
+                self.assertEqual([(o,qs) for o,qs,_ in observed],[(0,["q_a"]),(1,["q_z"])])
+                self.assertEqual(len(envelope["records"]),120)
+                self.assertEqual(envelope["question_ids"],ids)
+                for diag in envelope["diagnostics"]:
+                    match=next(item for item in observed if item[0]==diag["archive_ordinal"])
+                    self.assertEqual(diag["question_ids"],match[1])
+                    self.assertEqual(diag["cv_sigma_before"],match[2]["cv_sigma_before"])
+                wrong=copy.deepcopy(envelope)
+                wrong["diagnostics"][0]["question_ids"],wrong["diagnostics"][1]["question_ids"] = \
+                    wrong["diagnostics"][1]["question_ids"],wrong["diagnostics"][0]["question_ids"]
+                rebind(wrong)
+                self.refusal(lambda:bridge._validate_envelope(wrong),"E-G3-I05")
+
     def test_real_fixture_ingress_assemble_bootstrap_output(self):
         self.assertEqual(len(self.prepared["records"]), 120)
         self.assertEqual(self.result["provenance"], bridge.SYNTHETIC)

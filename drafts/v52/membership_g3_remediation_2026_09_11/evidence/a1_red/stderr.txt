@@ -1,0 +1,26 @@
+F
+======================================================================
+FAIL: test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly (test_delivery_integration.DeliveryIntegration.test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly) (cohort_order=['q_z', 'q_a'])
+Independent audit A1: observe real assembly, not bridge's own lookup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\test_delivery_integration.py", line 146, in test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly
+    self.assertEqual(diag["question_ids"],match[1])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['q_z'] != ['q_a']
+
+First differing element 0:
+'q_z'
+'q_a'
+
+- ['q_z']
+?     ^
+
++ ['q_a']
+?     ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 4.515s
+
+FAILED (failures=1)

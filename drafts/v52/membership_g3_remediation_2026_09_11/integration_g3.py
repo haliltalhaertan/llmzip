@@ -142,6 +142,7 @@ def _validate_envelope(e):
         _require(key in expected and key not in seen, "E-G3-I04")
         seen.add(key)
     diags, seen, ordinals, clusters_seen = e["diagnostics"], set(), set(), set()
+    lme_ordinals = {q: j for j, q in enumerate(sorted(qs))}
     _require(type(diags) is list and len(diags) > 0, "E-G3-I05")
     for d in diags:
         _schema(d, DIAG_KEYS, "E-G3-I05")
@@ -156,7 +157,7 @@ def _validate_envelope(e):
             _require(len(cset) == 1 and not cset.intersection(clusters_seen), "E-G3-I05")
             clusters_seen.update(cset)
         else:
-            _require(len(ids) == 1 and ordinal == qs.index(ids[0]), "E-G3-I05")
+            _require(len(ids) == 1 and ordinal == lme_ordinals[ids[0]], "E-G3-I05")
         _require(type(n) is int and 0 <= n <= 96 and type(d["flagged"]) is bool
                  and d["flagged"] == (n > runner.core.DEGENERATE_FLAG_THRESHOLD)
                  and _number(d["sd_sigma_after"], 0, math.inf), "E-G3-I05")
@@ -191,7 +192,8 @@ def prepare_synthetic_envelope(ingested, prepared, source_bytes):
         groups = [(c["index"], list(c["questions"])) for c in i["conversations"].values() if c["questions"]]
     else:
         _require(b == runner.LONGMEMEVAL and set(i["questions"]) == set(qs), "E-G3-I08")
-        groups = [(j, [q]) for j, q in enumerate(qs)]
+        # L-082 and assemble_in_memory bind LME ordinals to the sorted global cohort.
+        groups = [(j, [q]) for j, q in enumerate(sorted(qs))]
     _require(all(type(j) is int and j >= 0 for j, _ in groups)
              and len(dict(groups)) == len(groups) == len(p["diagnostics"]), "E-G3-I05")
     for d in p["diagnostics"]:

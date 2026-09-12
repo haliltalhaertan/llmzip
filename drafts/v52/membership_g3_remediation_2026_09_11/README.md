@@ -1,5 +1,15 @@
 # G-3 remediation delivery — scoped synthetic candidate
 
+**Latest delta:** Independent audit `2a025ee3b85f25af80e1b939f85f23c6cf06af30`
+rejected the initial `24d3351f068f6982148c14a9e3338c29a2769449` candidate for
+A1: an unsorted LongMemEval cohort misbound diagnostics to questions. The current
+delta corrects the bridge to use the preparation's sorted global ordinal and adds
+a real two-archive synthetic regression. The regression failed against the old
+bridge; the updated full suite passes **54 methods / 5,961 subtest observations**.
+`A1_REMEDIATION.md` and `evidence/a1_fixed/` bind the change. Independent delta
+acceptance remains pending. Earlier `evidence/final` and inherited/provenance
+receipts remain unchanged evidence for the initial candidate, not reruns of this delta.
+
 This is a **G-3 successor candidate derived from Codex v5 and execution preparation
 v1**, prepared for the user's cold-start independent scoped audit. It is not an
 accepted execution package. G-3 acceptance, G-4, and production readiness are not
