@@ -16,5 +16,12 @@
       "sha256": "5f12f9cfa2bf1e5d22dcf2084d5453d68899b75daa6979c6816655be6616ca0e",
       "bytes": 115
     }
-  ]
+  ],
+  "revision_base_commit": "d936455e2938a37da2b1a934f912cc2705b07ad3",
+  "revision_base_contract_sha256": "8155bf9a22284697404c0a1770facaced96878be327d2e846e5a57e20e68d040",
+  "reporting_selection": {
+    "headline": "archive_weighted",
+    "secondary": "vector_weighted",
+    "selection_phase": "design_revision_before_new_measurements"
+  }
 }

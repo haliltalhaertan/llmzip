@@ -1,4 +1,4 @@
-"""Read-only draft/source/inventory check; --write creates the initial manifest.
+"""Read-only draft/source/inventory check; --write rebuilds the package manifest.
 
 Checks artifact identity only. Does not run a model, validate cost measurements,
 grant approval, access corpus data or change any experiment authorization.
@@ -39,11 +39,13 @@ if __name__ == "__main__":
     sidecar = (ROOT / binding["sources"][1]["local_path"]).read_text(encoding="utf-8")
     require(source["sha256"] in sidecar, "budget sidecar")
     draft = (ROOT / "MEASUREMENT_CONTRACT_TR.md").read_bytes()
-    review = (ROOT / "INDEPENDENT_DESIGN_DELTA_REVIEW.md").read_text(encoding="utf-8")
-    require(sha(draft) in review.lower(), "delta review does not identify current draft bytes")
+    review = (ROOT / "INDEPENDENT_FIVE_FINDINGS_REVIEW.md").read_text(encoding="utf-8")
+    require(sha(draft) in review.lower(), "five-findings review does not identify current draft bytes")
+    guard = (ROOT / "measurement_plan_guard.py").read_bytes()
+    require(sha(guard) in review.lower(), "five-findings review does not identify current guard bytes")
     require(len(re.findall(r"^## [1-5]\. ", draft.decode(), re.M)) == 5, "five-question structure")
     if args.write:
-        with MANIFEST.open("x", encoding="utf-8", newline="\n") as f:
+        with MANIFEST.open("w", encoding="utf-8", newline="\n") as f:
             json.dump({"self_excluded": "FILE_HASHES.json", "files": inventory()}, f, indent=2)
             f.write("\n")
     expected = json.loads(MANIFEST.read_bytes())
