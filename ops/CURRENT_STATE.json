@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-12T14:15:06.227617Z",
+  "issued_at_utc": "2026-09-12T14:52:03.160952+00:00",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "G3 synthetic remediation is accepted. Recover exact mechanism-track frozen C arrays or source-bound sufficient statistics for remaining Task1 (LoCoMo coverage, LongMemEval strict-positive entropy/zero mass and D4). Do not reconstruct from raw corpus under the current diagnostics scope. Baseline draft proposals remain unapproved; no arm choice, seal or experiment authorized. Task4F1 run BLOCKED / outcome access FORBIDDEN.",
+    "next_single_action": "Recover exact mechanism-track frozen C arrays or source-bound sufficient statistics for remaining Task1; no raw corpus reconstruction under current scope. Haar objective comparison is already measured and replayed; do not refit completed synthetic panels. ITQ remains a comparator proposal, not dismissible solely from rotation distances. RQ32 plain/rotated identities are separately proposed; baseline arm/deployment decisions remain unapproved. G3 accepted at L094; use codex/g3-remediation-delivery-2026-09-12, legacy fix branch deprecated. Task4F1 run BLOCKED / outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -338,7 +338,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-094",
+  "ledger_entry": "L-095",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -2168,5 +2168,30 @@
       "pre_run_seal",
       "production_readiness"
     ]
+  },
+  "itq_haar_objective_replay_2026_09_12": {
+    "branch": "codex/v52-itq-haar-objective-2026-09-12",
+    "commit": "b06bc04d544d7847d085d73f68dbd3b02aff85e2",
+    "namespace": "research/v52/itq_haar_objective_comparison_2026_09_12",
+    "manifest_sha256": "70d4ef2c7e8f9bbffb2ef7d4a8265d0a81dd011701c4fbcdf8f3ca4a84ce9f3f",
+    "independent_review_sha256": "0b6a9f3a3e9340058158469c0b6416ce7950c31064cd49c91e8a8ab66b0f3f30",
+    "status": "EXACT_HISTORICAL_SYNTHETIC_HAAR_OBJECTIVE_REPLAY; NO ARM APPROVAL",
+    "replayed_objectives": 480,
+    "input_panels": 12,
+    "new_itq_fits": 0,
+    "historical_fitted_objectives_source": "4001fc9d8ea2c932042de7823713c6efce8e56d0",
+    "interpretation": "Heterogeneous n500 Haar mean0.4089874654 versus historical ITQ mean0.2662770224, 34.8936% training quantization reduction; no retrieval or identifiability verdict.",
+    "configuration_proposal": "RABITQ32_PLAIN and RABITQ32_ROTATED distinguish measured implementations; scientific arms remain unapproved.",
+    "ledger": "L-095"
+  },
+  "legacy_g3_branch_disposition_2026_09_12": {
+    "branch": "fix/g3-membership-remediation-2026-09-11",
+    "observed_head": "077474013d95d6f343d31385d8a57d42fb72f721",
+    "status": "DEPRECATED AS DELIVERY ROUTE; PRESERVED",
+    "replacement_branch": "codex/g3-remediation-delivery-2026-09-12",
+    "replacement_commit": "7266160ac03bdd064fe75f058eae3430fbe14496",
+    "acceptance": "L-094",
+    "ledger": "L-095",
+    "preservation": "No branch deletion, checkout or original user index/worktree change. Legacy HEAD is historical main, not current main."
   }
 }
