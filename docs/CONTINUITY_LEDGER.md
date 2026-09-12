@@ -1951,3 +1951,24 @@ other_work: G-3 implementation, baseline preregistration revision and runtime co
 outcome_boundary: Task 4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN. No corpus or retrieval outcome access.
 status: PASS - PR closure only
 ```
+
+### L-092
+
+```text
+timestamp_utc: 2026-09-12T13:33:31.459007Z
+actor_role: Codex acting as research lead under user delegation
+predecessor_commit_or_tag: L-091 / 1d15fddf3fd89a2a2efef8961cfa892704a80e9c
+scope: Receipt of actually pushed historical runtime replay and separately published baseline preregistration draft. No research branch merged.
+changed_or_created_paths: ops/CURRENT_STATE.json; docs/CONTINUITY_LEDGER.md
+runtime_commit: 9cd3f540ae0dbd2ff555f324bbe803e8ba5de902 on codex/twelve-byte-runtime-replay-2026-09-12
+runtime_result: Original script hash checked before execution; Windows Python3.13.15/Faiss1.15.0/NumPy2.4.6 matched Linux reference exactly in ALL non-environment leaves, zero differences, exit0. No tolerance needed. Manifest payload hashes rechecked by Lead.
+runtime_disposition: Historical cost runtime replay CLOSED at this narrow scope. Separate executor did not author original producer; not a cold-start scientific audit. Future runner RNG/auxiliary/negative-control gate remains OPEN. No claim of Muse raw-log verification.
+supplementary: SIMHASH published five-seed panel rounds exactly to0.38271667; fixed-direction scaled inputs produce proportionally scaled decoding. No unbiased-correction theorem attribution is added.
+prereg_commit: a73393a62c6d3feaa78ee322b07b1d151f412c34 on codex/twelve-byte-prereg-revision-2026-09-12
+prereg_verification: Lead reran package verification; 11 files,9 payload hashes,13 raw blobs,4 commits,8 published hashes,7 seed panels; source receipt reproduced. Status PUBLISHED DRAFT, NOT APPROVED, NOT SEALED.
+prereg_disposition: P1-P5 remain proposals. New literature-driven diagnostics may change arm shape; no primary-arm or practical-margin scientific approval is implied by this receipt.
+state_correction: Historical byte-cost replay no longer blocks. Implementation identity remains separate: plain Faiss IndexRaBitQ must not be assumed to include a random-rotation wrapper without verifying that chain.
+other_work: G-3 final synthetic package verification and independent review pending; no G-3 acceptance claimed here. Frozen mechanism representation inventory in progress.
+outcome_boundary: No experiment, seal, finalize, HMAC or production authorization. Task4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+status: PASS WITH SCOPE LIMITS - actual deliveries receipted, scientific and execution gates preserved
+```

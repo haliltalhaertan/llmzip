@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-12T13:08:31.871535Z",
+  "issued_at_utc": "2026-09-12T13:33:31.459007Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Line A, the G-3 package, is blocked on PERSISTENCE, not authority or reasoning: it exists in one working tree only and must be committed from the machine that holds it, or rebuilt where it can be committed, with any rebuild bound to the verified v5 manifest. Line B, the baseline preregistration revision to the L-088 budget decision, is blocked on nothing and proceeds. Task 4F1 remains BLOCKED; outcome access FORBIDDEN.",
+    "next_single_action": "Complete and independently review committed G-3 fix-and-test delivery. Separately complete representation-source inventory and literature-driven diagnostics before disposing baseline draft proposals. Historical byte-cost replay is closed; Task 4F1 run remains BLOCKED and outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -338,7 +338,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-091",
+  "ledger_entry": "L-092",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -2087,5 +2087,32 @@
     "comment_url": "https://github.com/haliltalhaertan/llmzip/pull/2#issuecomment-5646048644",
     "branch_preserved": true,
     "verification": "gh pr view returned state CLOSED and mergedAt null after gh pr close; closure comment read back."
+  },
+  "twelve_byte_runtime_replay_2026_09_12": {
+    "status": "EXACT_NON_ENVIRONMENT_MATCH",
+    "branch": "codex/twelve-byte-runtime-replay-2026-09-12",
+    "commit": "9cd3f540ae0dbd2ff555f324bbe803e8ba5de902",
+    "namespace": "evidence/runtime_replay_2026_09_12",
+    "comparison_sha256": "d14b264b5caf43aa2e83466f9828f06b12bce677df5ded1d99971afd11c6f606",
+    "hash_manifest_sha256": "645803e11d9c5814ac4a340032ea0e4fb054862be90e89cb801b639dfb047a56",
+    "source_commit": "8217704700d793862a6c43130b88236da551f010",
+    "executor": "Separate Windows environment, not original script author; not a cold-start scientific audit.",
+    "scope": "Historical byte-cost script and functional scale probe only; not future baseline-runner execution readiness.",
+    "gate_closed": "Separate historical Faiss cost runtime replay",
+    "gates_open": [
+      "Future baseline implementation identity, RNG/auxiliary/negative-control verification",
+      "Scientific preregistration disposition",
+      "Muse raw-log authenticity is not claimed by this receipt"
+    ]
+  },
+  "twelve_byte_prereg_revision_2026_09_12": {
+    "status": "PUBLISHED_DRAFT_VERIFIED_NOT_APPROVED_NOT_SEALED",
+    "branch": "codex/twelve-byte-prereg-revision-2026-09-12",
+    "commit": "a73393a62c6d3feaa78ee322b07b1d151f412c34",
+    "namespace": "drafts/v52/twelve_byte_prereg_revision_2026_09_12",
+    "draft_sha256": "19e0df1b09b71bf1fccac78efeb0b5616a2d368f67a590eb1aae66405a0e1e24",
+    "verification": "Lead reran verify_package.mjs: 11 files, 9 payload hashes, 13 raw source blobs, 4 source commits, 8 published hashes, 7 seed panels; source receipt reproduced.",
+    "proposals": "SIGN96 minus PQ96 primary; TOP32_RABITQ32 descriptive. These remain proposals pending new literature-driven representation diagnostics and method-identity accounting.",
+    "budget": "L-088 <=12 marginal persistent bytes/vector unchanged; shared costs separately visible."
   }
 }
