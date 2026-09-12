@@ -1,0 +1,101 @@
+{
+  "status": "PREDECLARED_BEFORE_COMPUTATION_NOT_A_SEAL",
+  "created_utc": "2026-09-12T13:46:38.269073+00:00",
+  "base_commit": "ae9175676b840ae6a80a31eba9836187dc1b7491",
+  "source_sha256": "18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d",
+  "task_file_sha256": "d10e6bc47f0c418f44d0d66c11d93a7da682bb266729a32d92b81f8986e7776f",
+  "methodological_review_sha256": "bd0a704eb011a7d43dda50e022120b5aa76e557d4a9e4db62ab6f7f95169224b",
+  "dimension": 96,
+  "dtype": "<f8",
+  "data_seeds": [
+    [
+      100,
+      5212100
+    ],
+    [
+      250,
+      5212250
+    ],
+    [
+      500,
+      5212500
+    ],
+    [
+      1000,
+      5213000
+    ]
+  ],
+  "initialization_seeds": [
+    7312001,
+    7312002,
+    7312003,
+    7312004,
+    7312005,
+    7312006,
+    7312007,
+    7312008,
+    7312009,
+    7312010,
+    7312011,
+    7312012,
+    7312013,
+    7312014,
+    7312015,
+    7312016,
+    7312017,
+    7312018,
+    7312019,
+    7312020
+  ],
+  "haar_null_seeds": [
+    8312001,
+    8312002,
+    8312003,
+    8312004,
+    8312005,
+    8312006,
+    8312007,
+    8312008,
+    8312009,
+    8312010,
+    8312011,
+    8312012,
+    8312013,
+    8312014,
+    8312015,
+    8312016,
+    8312017,
+    8312018,
+    8312019,
+    8312020
+  ],
+  "rotated_heterogeneity_seed": 9312001,
+  "control_seed": 9312099,
+  "distributions": [
+    "gaussian",
+    "heterogeneous",
+    "rotated_heterogeneous"
+  ],
+  "max_iterations": 250,
+  "relative_tolerance": 1e-08,
+  "consecutive_stable_steps": 5,
+  "relative_denominator": "max(abs(previous mean objective), float64 epsilon)",
+  "monotonicity_tolerance": 2.842170943040401e-14,
+  "orthogonality_frobenius_tolerance": 1e-10,
+  "variance_profile": "geomspace(16,1/16,96) / mean(geomspace(16,1/16,96))",
+  "centering": "subtract each generated matrix's coordinate sample means; no row normalization or whitening",
+  "paired_data": "same underlying Gaussian realization per n across distributions; rotated heterogeneous uses same matrix and spectrum",
+  "sampling_replications_per_panel": 1,
+  "limitations": [
+    "One generated data realization per n, paired across distributions; twenty initializations per fixed matrix.",
+    "This measures conditional optimizer variability, not sampling stability across independent datasets.",
+    "The 190 pairwise distances share twenty fits and are dependent; the Haar pairs are also dependent.",
+    "The same initial and null rotations are reused across panels; panels are not independent replications.",
+    "Distribution differences are descriptive only: no p-values, significance, equivalence margin, or power claim.",
+    "This finite panel cannot determine a universal minimum n, equivalence, or statistical indistinguishability.",
+    "Objective convergence under the declared rule does not imply a unique/stable rotation or a global optimum.",
+    "An isotropic Gaussian population has no preferred orientation; different fits alone do not establish failure.",
+    "Training quantization error is measured; no held-out loss, real representation or retrieval outcome is measured.",
+    "No preregistration arm selection, seal, main ledger/state update, or G3 modification is authorized here."
+  ]
+}
