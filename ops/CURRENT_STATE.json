@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-12T13:33:31.459007Z",
+  "issued_at_utc": "2026-09-12T14:01:00.463289Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Complete and independently review committed G-3 fix-and-test delivery. Separately complete representation-source inventory and literature-driven diagnostics before disposing baseline draft proposals. Historical byte-cost replay is closed; Task 4F1 run remains BLOCKED and outcome access FORBIDDEN.",
+    "next_single_action": "Finish independent A1 delta audit of G3 candidate23fb505. Task1 remains partial pending exact frozen mechanism matrices; cost and syntheticITQ diagnostics are published. Preregistration proposals are unapproved; Task4F1 remains BLOCKED and outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -338,7 +338,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-092",
+  "ledger_entry": "L-093",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -2114,5 +2114,26 @@
     "verification": "Lead reran verify_package.mjs: 11 files, 9 payload hashes, 13 raw source blobs, 4 source commits, 8 published hashes, 7 seed panels; source receipt reproduced.",
     "proposals": "SIGN96 minus PQ96 primary; TOP32_RABITQ32 descriptive. These remain proposals pending new literature-driven representation diagnostics and method-identity accounting.",
     "budget": "L-088 <=12 marginal persistent bytes/vector unchanged; shared costs separately visible."
+  },
+  "preseal_diagnostics_2026_09_12": {
+    "branch": "research/v52-preseal-diagnostics-2026-09-12",
+    "results_commit": "4001fc9d8ea2c932042de7823713c6efce8e56d0",
+    "branch_ledger_commit": "9fc7fe88e134a1023b4a68b1d42c6e14cbfbf2c9",
+    "hash_manifest_sha256": "5bf22716a82139ce59b35def4a10488904288fdda4ab8032e7ba62c49341780b",
+    "task1": "PARTIAL:470 LongMemEval published variance and >=0 occupancy vectors recovered; strict>0/zero mass/D4 and LoCoMo missing.",
+    "task2": "COMPLETE synthetic package storage accounting; plainRQ32 no rotation, explicit wrapper storesmatrix; commonpreprocessing unmeasured.",
+    "task3": "COMPLETE finite synthetic panel240fits; actualfloat64 fittedmatrixand explicitfloat32 storage measured; no universalminimumN/equivalence claim.",
+    "arm_decisions": "NONE; preregistration proposals remain unapproved.",
+    "source_gap": "Need exact mechanism-track frozen C arrays or source-bound sufficient statistics for missing Task1 components. Raw corpus reconstruction not authorized by diagnostics task.",
+    "source_visibility_limit": "Initial names-only search surfaced BEAM paths; no BEAM contents. Static historical producer showed embedded reference literals; unused in diagnostics/selection. No retrieval result tables/query-gold cache opened."
+  },
+  "g3_remediation_delivery_2026_09_12": {
+    "branch": "codex/g3-remediation-delivery-2026-09-12",
+    "initial_candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
+    "initial_independent_audit": "2a025ee3b85f25af80e1b939f85f23c6cf06af30",
+    "initial_disposition": "NOT_ACCEPTED_A1_DIAGNOSTIC_QUESTION_MISBINDING",
+    "current_candidate": "23fb505ae47d06b34a75a97955e5d1a3d8586de1",
+    "current_disposition": "A1_FIXED_FULL54METHOD5961SUBTESTS_PASS_INDEPENDENT_DELTA_PENDING",
+    "authority": "Existing G3 fix-and-test grant only; no experiment/seal/production authority."
   }
 }

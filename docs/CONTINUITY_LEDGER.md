@@ -1972,3 +1972,27 @@ other_work: G-3 final synthetic package verification and independent review pend
 outcome_boundary: No experiment, seal, finalize, HMAC or production authorization. Task4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
 status: PASS WITH SCOPE LIMITS - actual deliveries receipted, scientific and execution gates preserved
 ```
+
+### L-093
+
+```text
+timestamp_utc: 2026-09-12T14:00:08.050699Z
+actor_role: Codex research lead; Task1 executed by Lead, Task2 by Locke, Task3 by Ohm; Lead integrated and independently checked stored artifacts
+predecessor_commit_or_tag: L-092 / ae9175676b840ae6a80a31eba9836187dc1b7491
+scope: Literature-driven pre-seal diagnostics on a separate research branch after G3 implementation was parked for independent review. No preregistration or arm decision.
+research_branch: research/v52-preseal-diagnostics-2026-09-12
+results_commit: 4001fc9d8ea2c932042de7823713c6efce8e56d0
+namespace: research/v52/preseal_diagnostics_2026_09_12
+hash_manifest_sha256: 5bf22716a82139ce59b35def4a10488904288fdda4ab8032e7ba62c49341780b
+persistence: Task1 first pushed1ecf6d9f378b8a39bdd5c1059323997310fa7733; Task2 separately pushed03c6625645d85ac1e272bb122a9e0f2a71440d9e; Task3 separately pushed4001fc9d8ea2c932042de7823713c6efce8e56d0. No number reserved in advance; L093 assigned at this landing.
+task1: PARTIAL. Exact published Drive native heterogeneity CSV sha148ae5b727ce1aedc6c84ee9c00727f1454b0e0710d100ac8154fdf8d00924cb recovered.470 LongMemEval archives: H_ge mean0.9970337299, zero below local0.75; CV_sigma mean0.4974774993; first32 variance share mean0.7598736235. Requested H_gt and D4 remain unavailable; LoCoMo frozen representation not found. No raw corpus reconstruction.
+task1_limit: >=0 is not silently substituted for >0; zero mass unavailable. Sorted diagonal/prefix variance does not establish retrieval quality or comparator fairness.0.75 universal threshold was not verified in cited paper; no automatic literature-conflict or mechanism conclusion.
+task2: Actual Faiss1.15.0 serialization,105 integer size-difference checks. Shared package bytes SIGN96/32=33, compact QuIVer-style=0, float32 ITQ surrogate=36935, PQ96=98390, plainRQ32=202, explicitRandomRotationRQ32=4369. PlainRQ32 contains no rotation; explicit wrapper stores4096-byte matrix. Common preprocessing remains unknown, not0. Ratios use only pinned470-row N_archive.
+task3:240/240 syntheticITQ fits converged under predeclared250/1e-8/5 rule,9-141 iterations,0cap hits. Symmetry-aligned Frobenius variability reported descriptively; no statistical equivalence or universal minimum-n claim. Actual float64 learnedR raw73728/npy73856B; explicitfloat32 raw36864/npy36992B, conversion separately measured.
+verification: Root49payload hashes rechecked; Task2 worker23hashes and16 saved serializations checked by Lead; Task3 worker14hashes plus actual saved fitted-array identity and cast delta checked by Lead. Full details and executor attribution remain in receipts; no independent scientific mechanism audit claimed.
+source_inventory_deviation: A broad initial file-name search surfaced BEAM paths but no contents were opened; narrowed searches followed. Static historical producer source displayed embedded old reference literals; not used in diagnostics, tuning or arm selection. No retrieval result tables or query/gold caches opened. These limitations are disclosed in README.
+disposition: TASK2 COMPLETE at package-only scope; TASK3 COMPLETE finite synthetic diagnostic; TASK1 PARTIAL with full frozen-matrix source gap. Preregistration P1-P5 remain unapproved. No seal or experiment authorization.
+g3_parallel_state: Initialcandidate24d3351 rejected by independentaudit2a025ee3 forA1 misbound LMEdiagnostic IDs. Fix23fb505ae47d06b34a75a97955e5d1a3d8586de1 passes54/5961; independent delta review pending. This entry does not accept G3.
+outcome_boundary: Task4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN remains unchanged. No new real retrieval outcomes computed, no seal/finalize/HMAC/production authorization.
+status: PASS WITH EXPLICIT PARTIAL TASK1 AND SCOPE LIMITS
+```
