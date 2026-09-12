@@ -1,0 +1,13 @@
+{
+  "namespace": "audit_v52_static_storage_plan_prep_v3_2026_09_12",
+  "audit_target": "3fab24bce46203348935492ba8276b9920aea898",
+  "files": {
+    "CLOSURE_MATRIX.json": "8fbac21df21ffaea83f9590f610e673bbb6c91a96450a325f65b780566b6c72d",
+    "DRIVE_RECEIPT.md": "2b30e6d4d4a8f0f2b8a4d835aa219e8cb6aa2186a58cc627b38809f289379356",
+    "EXECUTION_LOG.txt": "81d8919b204af30bb2b761b9bb5fafeae525840cee05077c2a55f8406ba9c481",
+    "FINDINGS.json": "ccfcf2d9c339405d328c1a71d6a92905ed5f0d094fb8bfed780f9b48ec9caf09",
+    "INDEPENDENT_V3_AUDIT_REPORT.md": "b3391c72295c1faa96d4a3574102d3c9d7d9ee47bfc44d329c6b106e273ccbe7",
+    "raw_outputs/EXECUTION_RAW.txt": "8ccd5ee4daa9af14c6c7e035ed7ccb5a03cf425dc959d5309dfb3ec30175b1f8",
+    "raw_outputs/adversarial_probes.py": "17dc60cbd138b5523d3cb8ebdd6e3794f201214ca01896c248a734a635562ad5"
+  }
+}

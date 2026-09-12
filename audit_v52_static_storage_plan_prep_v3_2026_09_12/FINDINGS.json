@@ -1,0 +1,51 @@
+{
+  "audit_target": "3fab24bce46203348935492ba8276b9920aea898",
+  "verdict": "REQUEST_CHANGES",
+  "findings": [
+    {
+      "id": "PLANPREP3-AUD-001",
+      "severity": "BLOCKING",
+      "title": "Amortization denominator has no external anchor",
+      "where": "measurement_plan_guard.py probe/archive validation; consumed by storage_adapter_preflight_v3.verify_physical_artifact",
+      "evidence": "probe N validated only as integer in [0,2**63-1]; no binding of probe N to archive N_i; no binding of N_i to docs/v52/task4c2/V52_T4C2_feature_geometry.csv in any executable guard",
+      "impact": "effective_persistent_bytes_per_vector can be diluted without limit while both guards pass",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-002",
+      "severity": "MODERATE",
+      "title": "CORRUPT control can be made vacuous",
+      "where": "storage_adapter_preflight_v3.validate_fixture_payload",
+      "evidence": "xor_mask bounded [1,255] (correct); byte_offset bounded [0,2**63-1] and not bounded against the corrupted artifact; probe with byte_offset=10**12 ACCEPTED",
+      "impact": "item-necessity proof (F2 BASELINE/REMOVE/RESTORE/CORRUPT) can pass with a no-op corruption",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-003",
+      "severity": "LOW",
+      "title": "Preflight raises KeyError instead of PreflightError on missing plan sub-fields",
+      "where": "storage_adapter_preflight_v3.verify_fixture_artifact / verify_physical_artifact / unique_index",
+      "evidence": "plan fixture without sha256, plan copy without population_ids, population without count all CRASH(KeyError)",
+      "impact": "defense-in-depth only; parent guard rejects these first in the declared order",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-004",
+      "severity": "LOW",
+      "title": "Divergent MAX_ENTITIES between the two guards",
+      "where": "measurement_plan_guard.MAX_ENTITIES=1024 vs storage_adapter_preflight_v3.MAX_ENTITIES=4096",
+      "evidence": "constants read from both sources",
+      "impact": "latent drift; stricter guard gates first so no current hole",
+      "v3_regression": false
+    },
+    {
+      "id": "PLANPREP3-AUD-005",
+      "severity": "LOW",
+      "title": "Zero-byte physical artifact accepted without absence evidence",
+      "where": "storage_adapter_preflight_v3.verify_physical_artifact",
+      "evidence": "source_raw_byte_length minimum 0; zero-length artifact ACCEPTED",
+      "impact": "contract requires verifying absence of the persistent requirement before writing zero",
+      "v3_regression": false
+    }
+  ]
+}

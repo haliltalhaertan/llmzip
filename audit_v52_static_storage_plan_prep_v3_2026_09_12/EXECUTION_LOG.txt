@@ -1,0 +1,20 @@
+Independent audit execution log
+Auditor environment: Python 3.11.15
+Object under audit: 3fab24bce46203348935492ba8276b9920aea898
+
+1. git fetch origin --prune; git rev-parse origin/main -> 5ec3db60c03edde490374bf9cd7c3e56dd6bcd00
+2. ledger tail on origin/main -> L-095
+3. git cat-file -t 3fab24bc... -> commit (exists)
+4. git rev-parse <v3 branch>^ -> 695e403dbd37691205b465531c62effea99ecbd4 (immediate parent)
+5. git merge-base --is-ancestor ecd839b6... 3fab24bc... -> YES
+6. git diff --stat ecd839b6... 3fab24bc... -> 6 files, 351 insertions, all in the V3 namespace; no parent/V2/contract bytes rewritten
+7. git cat-file -t 11654538... -> commit (V2 audit target exists)
+8. read all six V3 files from the exact commit
+9. extracted both Python files via git show and hashed them
+10. python3 -B -m unittest -v test_storage_adapter_preflight_v3 -> 4 tests, OK, exit 0
+11. wrote and executed twelve adversarial probes -> raw_outputs/EXECUTION_RAW.txt
+12. read measurement_plan_guard.py from origin/codex/v52-static-storage-contract-2026-09-12 to determine
+    which probe outcomes are preflight defects and which are caught by the parent guard
+13. grep for N_i across the guard and for feature_geometry.csv across the prep namespaces
+
+Nothing was fitted, measured, scored or sealed. No corpus, query, gold or outcome was opened.

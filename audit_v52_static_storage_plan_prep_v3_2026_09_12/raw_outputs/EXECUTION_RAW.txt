@@ -1,0 +1,28 @@
+test_authenticated_bytes_and_zero_semantics (test_storage_adapter_preflight_v3.V3PreflightTests.test_authenticated_bytes_and_zero_semantics) ... ok
+test_duplicate_key_rejected (test_storage_adapter_preflight_v3.V3PreflightTests.test_duplicate_key_rejected) ... ok
+test_fixture_section_schema_is_exact (test_storage_adapter_preflight_v3.V3PreflightTests.test_fixture_section_schema_is_exact) ... ok
+test_nonfinite_rejected (test_storage_adapter_preflight_v3.V3PreflightTests.test_nonfinite_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.008s
+
+OK
+exit=0
+=== A. empty rosters ===
+A1 empty plan rosters                          ACCEPTED                   fixtures=0 copies=0 states=()  <-- FINDING
+=== B. plan schema laxity ===
+B1 plan carries arbitrary extra top keys       ACCEPTED                   fixtures=1 copies=1 states=(('p1', 'POSITIVE', 4),)  <-- FINDING
+B2 plan has NO probes/archives/items key       ACCEPTED                   fixtures=1 copies=1 states=(('p1', 'POSITIVE', 4),)  <-- FINDING
+=== C. plan entry field validation ===
+C1 plan fixture missing sha256                 CRASH(KeyError)            'sha256'  <-- FINDING
+C2 plan copy missing population_ids            CRASH(KeyError)            'population_ids'  <-- FINDING
+C3 population entry missing count              CRASH(KeyError)            'count'  <-- FINDING
+C4 population_ids not a list (string)          REJECTED(PreflightError)   unknown population p
+=== D. denominator semantics ===
+D1 D_k declared 10,000,000 (dilution)          ACCEPTED                   fixtures=1 copies=1 states=(('p1', 'POSITIVE', 10000000),)  <-- FINDING
+D2 duplicate population_ids in one copy        ACCEPTED                   fixtures=1 copies=1 states=(('p1', 'POSITIVE', 4), ('p1', 'POSITIVE', 4))  <-- FINDING
+=== E. control vacuity ===
+E1 corruption byte_offset beyond artifact      ACCEPTED                   fixtures=1 copies=1 states=(('p1', 'POSITIVE', 4),)  <-- FINDING
+=== F. zero-byte artifact ===
+F1 physical artifact is zero bytes             ACCEPTED                   fixtures=1 copies=1 states=(('p1', 'POSITIVE', 4),)  <-- FINDING
+exit=0

@@ -1,0 +1,29 @@
+{
+  "audit_target": "3fab24bce46203348935492ba8276b9920aea898",
+  "inherited": {
+    "PLANPREP2-AUD-001": {
+      "status": "CLOSED",
+      "scope": "design and preflight level; no real adapter exists, which V3 itself declares",
+      "reproduced": true
+    },
+    "PLANPREP2-AUD-002": {
+      "status": "CLOSED",
+      "scope": "duplicate keys, nonfinite constants, exact nested fields, bounded JSON",
+      "reproduced": true
+    },
+    "PLANPREP2-AUD-003": {
+      "status": "CLOSED",
+      "scope": "count==0 -> EMPTY_NO_AMORTIZATION, D_k None; no division",
+      "reproduced": true
+    }
+  },
+  "verdict_reason": "three inherited P2 findings closed; one blocking pipeline defect (PLANPREP3-AUD-001) found, not a V3 regression, but a pass authorizes literal plan freezing which would make it permanent",
+  "verdict_does_not_mean": [
+    "storage measured",
+    "<=12 proven",
+    "actual plan approved",
+    "real adapter ready",
+    "retrieval ready",
+    "Task4F1 authorized"
+  ]
+}
