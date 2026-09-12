@@ -1,0 +1,324 @@
+{
+  "schema": "V52_STATIC_STORAGE_SOURCE_INVENTORY_V2",
+  "status": "DRAFT_PARTIAL_NOT_READY_AFTER_INDEPENDENT_REQUEST_CHANGES",
+  "created_date": "2026-09-12",
+  "revised_date": "2026-09-12",
+  "scope": "existing-source inventory only; no real measurement or retrieval",
+  "canonical_main_observed": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+  "contract_package_commit_before_inventory": "d29c7b1d668f8abf47889e132e084c4abd72615b",
+  "parent_inventory_audit_target_commit": "f9404f2b1e56e5a63878978c19f30283b18324fd",
+  "independent_audit": {
+    "branch": "audit/v52-static-storage-inventory-independent-2026-09-12",
+    "commit": "22b58b609f766c028a344813eacec4abab0a7804",
+    "verdict": "REQUEST_CHANGES",
+    "namespace": "audit_v52_static_storage_inventory_2026_09_12/",
+    "hashes_json_sha256": "a1ae82bb7114409aaf9fc58bb234f2ac93fa5934bbdfce47c86a57d07bf3579a",
+    "findings_disposition": {
+      "INV-AUD-001": "ACCEPTED_AND_CORRECTED",
+      "INV-AUD-002": "ACCEPTED_AND_CORRECTED",
+      "INV-AUD-003": "ACCEPTED_AND_CORRECTED",
+      "INV-AUD-004": "ACCEPTED_AND_CORRECTED",
+      "INV-AUD-005": "ACCEPTED_AND_CORRECTED"
+    },
+    "note": "Corrections do not make the inventory READY; a fresh independent source-resolution review is required before a real adapter/measurement plan stage."
+  },
+  "task4f1_boundary": "SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN",
+  "budget": {
+    "decision_object": "marginal persistent bytes per vector",
+    "cap_bytes": 12,
+    "shared_state_reported_separately": true,
+    "effective_cost_reported_separately": true
+  },
+  "archive_rosters": [
+    {
+      "benchmark": "LongMemEval",
+      "archive_identity": "question_id",
+      "n_i_field": "N_archive",
+      "source_type": "git_file",
+      "source_commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "source_path": "docs/v52/task4c2/V52_T4C2_feature_geometry.csv",
+      "source_sha256_from_post_run_manifest": "d4c9ce62b0f1b66611611bb014a887d2e7e5fcfaee0af94f53ffb70dc84d7d32",
+      "expected_primary_archives": 470,
+      "access": "AVAILABLE",
+      "status": "FOUND_MANIFEST_BOUND_ROSTER_SOURCE",
+      "notes": "Use row-local N_archive; do not substitute a single 493-like constant."
+    },
+    {
+      "benchmark": "LoCoMo",
+      "archive_identity": "conversation id",
+      "n_i_field": "archive_fit_docs / N",
+      "source_type": "google_drive_file",
+      "drive_file_id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+      "title": "V52_T4D_REPRESENTATION_TRANSFER_PROOF.txt",
+      "access": "AVAILABLE",
+      "raw_sha256": "957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd",
+      "sha256_status": "VERIFIED_MANIFEST_BOUND",
+      "binding": {
+        "post_run_manifest_drive_file_id": "1Lk5ZLaceKuc3OF-v0X52OfItU0PqVlmp",
+        "post_run_manifest_sha256": "a97e411c1ed24c5c93590638fcb51248936d8428a38e4d76cf0c6b74a9399b9c",
+        "upload_receipt_drive_file_id": "1BJgsMU37aw5yFnZ2g76kuNYMJkfR6HIP",
+        "relationship": "post-run manifest binds proof raw SHA256; upload receipt binds post-run manifest SHA256"
+      },
+      "status": "FOUND_MANIFEST_BOUND_ROSTER_SOURCE",
+      "n_i": {
+        "locomo_0": 419,
+        "locomo_1": 369,
+        "locomo_2": 663,
+        "locomo_3": 629,
+        "locomo_4": 680,
+        "locomo_5": 675,
+        "locomo_6": 689,
+        "locomo_7": 681,
+        "locomo_8": 509,
+        "locomo_9": 568
+      },
+      "notes": "Proof provenance is bound. This establishes procedure/archive-size record identity, not persistence of fitted model/projector state."
+    }
+  ],
+  "procedure_sources": [
+    {
+      "id": "LME_ADAPTER_V1",
+      "commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "path": "adapters/longmemeval_v52_adapter.py",
+      "git_blob": "16c1349336e143d27d9cac68198cbb50a1e6340b",
+      "role": "archive-local word/char TF-IDF plus latent SVD fit procedure"
+    },
+    {
+      "id": "LME_ADAPTER_V2",
+      "commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "path": "adapters/longmemeval_v52_adapter_v2.py",
+      "git_blob": "aa0b6f956a9bbc7f27778760c2c6fc708ae72ba1",
+      "role": "accepted identity construction; representation fit aliases V1"
+    },
+    {
+      "id": "T4D_TRANSFER_PROOF",
+      "source_type": "google_drive_file",
+      "drive_file_id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+      "raw_sha256": "957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd",
+      "hash_status": "VERIFIED_MANIFEST_BOUND",
+      "role": "mixed96 SVD, centering and LoCoMo archive-fit provenance"
+    }
+  ],
+  "state_items": [
+    {
+      "item": "word_tfidf_vocabulary",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Fit procedure found; serialized fitted vocabulary not located.",
+      "regeneration_evidence_or_blocker": "Archive-dependent fitted state; no persisted artifact or corpus-free reopening contract found."
+    },
+    {
+      "item": "word_tfidf_idf",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Fitted transform state required; physical bytes not located.",
+      "regeneration_evidence_or_blocker": "IDF values depend on archive fit; no corpus-free deterministic reopening contract found."
+    },
+    {
+      "item": "char_tfidf_vocabulary",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Fitted vocabulary required by transform; physical bytes not located.",
+      "regeneration_evidence_or_blocker": "Archive-dependent fitted vocabulary; no persisted artifact or reopening contract found."
+    },
+    {
+      "item": "char_tfidf_idf",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Fitted transform state; physical bytes not located.",
+      "regeneration_evidence_or_blocker": "Archive-dependent fitted IDF; no persisted artifact or reopening contract found."
+    },
+    {
+      "item": "source_latent_svd_components_random_state_5101",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Fitted components required by archive transform; no physical artifact located.",
+      "regeneration_evidence_or_blocker": "random_state alone does not determine fitted SVD without fitted archive data."
+    },
+    {
+      "item": "mixed96_svd_components_random_state_5204",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Fitted 96-D projector physical artifact not located.",
+      "regeneration_evidence_or_blocker": "random_state alone does not determine fitted mixed96 SVD without archive data."
+    },
+    {
+      "item": "mu96_centering_vector",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Archive-specific centering state; physical artifact not located.",
+      "regeneration_evidence_or_blocker": "mu96 is computed from archive document representations; no persisted mu96 or corpus-free reopening state located."
+    },
+    {
+      "item": "l2_normalization_rule",
+      "fit_scope": "algorithm configuration",
+      "physical_artifact": "SOURCE_CODE_PRESENT",
+      "hash_status": "SOURCE_BOUND_ONLY",
+      "classification": "SCOPE_UNKNOWN",
+      "deterministic_regeneration_status": "DETERMINISTIC_REGENERATION_VERIFIED",
+      "reason": "Not learned state; storage-boundary treatment not yet bound.",
+      "regeneration_evidence_or_blocker": "Algorithmic rule is pinned in source. This does not establish that a future package needs zero persistent configuration/header bytes."
+    },
+    {
+      "item": "itq96_fitted_rotation",
+      "fit_scope": "archive-local method state",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Historical code/results are not a persistent fitted matrix artifact.",
+      "regeneration_evidence_or_blocker": "Fitted ITQ rotation depends on archive fit/optimization; no persisted rotation or corpus-free reopening contract found."
+    },
+    {
+      "item": "simhash_haar_rotation_or_regeneration_state",
+      "fit_scope": "method state",
+      "physical_artifact": "NOT_BOUND",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "REGENERATION_CANDIDATE_NOT_VERIFIED",
+      "reason": "Matrix-storage versus deterministic-regeneration policy not yet bound.",
+      "regeneration_evidence_or_blocker": "Seeded generation exists, but exact RNG algorithm/version, dtype, draw/order conventions and dimension binding are not frozen as a reopening contract."
+    },
+    {
+      "item": "pq96_codebooks_centroids",
+      "fit_scope": "archive-local candidate arm",
+      "physical_artifact": "REAL_ARCHIVE_ARTIFACT_NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Synthetic Faiss serializer evidence is not a frozen real-archive codebook.",
+      "regeneration_evidence_or_blocker": "PQ centroids are archive-fitted state in this track; no real persisted codebook or approved corpus-free regeneration contract found."
+    },
+    {
+      "item": "opq_pq96_rotation_and_codebooks",
+      "fit_scope": "archive-local candidate arm",
+      "physical_artifact": "REAL_ARCHIVE_ARTIFACT_NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Synthetic S0 is not the real archive model package.",
+      "regeneration_evidence_or_blocker": "OPQ/PQ learned state is archive-dependent; no real persisted state or corpus-free reopening contract found."
+    },
+    {
+      "item": "rabitq32_index_shared_state",
+      "fit_scope": "archive-local candidate arm",
+      "physical_artifact": "REAL_ARCHIVE_ARTIFACT_NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Library structure is known from synthetic evidence, but real archive package is not bound.",
+      "regeneration_evidence_or_blocker": "No real archive package or approved deterministic reopening state located."
+    },
+    {
+      "item": "persistent_row_or_memory_id_mapping",
+      "fit_scope": "package interface",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Logical IDs exist at runtime; stored mapping versus implicit/external ordinal has not been bound.",
+      "regeneration_evidence_or_blocker": "Payload recovery contract is undeclared; zero-byte implicit mapping is not verified."
+    },
+    {
+      "item": "offset_lookup_metadata",
+      "fit_scope": "package interface",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "Necessity and physical representation are not established.",
+      "regeneration_evidence_or_blocker": "No declared package boundary or payload lookup contract establishes whether offsets are stored, implicit or external."
+    },
+    {
+      "item": "optional_per_vector_metadata",
+      "fit_scope": "package interface",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "deterministic_regeneration_status": "UNKNOWN",
+      "reason": "If serialized it cannot be subtracted from persistent marginal cost.",
+      "regeneration_evidence_or_blocker": "No complete physical package roster exists yet."
+    }
+  ],
+  "diagnostic_artifacts": [
+    {
+      "id": "T4C2_NESTED_BINARY_GEOMETRY_NPZ_BUNDLE",
+      "status": "FOUND_BUT_EXCLUDED_DIAGNOSTIC_ARTIFACT",
+      "source": "Drive T4C2 FINAL_2026-08-27_FULL_470 -> V52_T4C2_ALL_OUTPUTS.zip -> V52_T4C2_BINARY_GEOMETRY.zip",
+      "reported_contents": "470 per-question NPZ artifacts plus manifest; sample schema includes packed document/query codes, ITQ seed metadata, gold_rows, N_archive and bitorder.",
+      "exclusion_reason": "Diagnostic code/query/gold artifacts are not serialized fitted TF-IDF/SVD/mu96/rotation state and are not a declared static-storage package.",
+      "quality_interpretation": "NOT_PERFORMED_FORBIDDEN"
+    }
+  ],
+  "mapping_taxonomy": {
+    "logical_id_exists": {
+      "status": "VERIFIED",
+      "evidence": "Adapters deterministically construct memory_id values."
+    },
+    "package_stores_id": {
+      "status": "UNKNOWN",
+      "evidence": "No verified physical package boundary or persisted ID array/file located."
+    },
+    "implicit_mapping_reproducible": {
+      "status": "UNKNOWN",
+      "evidence": "No declaration proves zero-byte row ordinal alone can recover the correct payload after reopening."
+    },
+    "external_boundary_dependency": {
+      "status": "UNKNOWN",
+      "evidence": "Raw payload is outside accounting boundary, but lookup contract from stored code row to payload is not bound."
+    },
+    "mapping_status": "UNKNOWN",
+    "persistent_mapping_bytes": "UNKNOWN",
+    "rule": "Never write 0 bytes until payload recovery without per-vector mapping bytes is verified under a declared package boundary."
+  },
+  "physical_copy_policy": {
+    "fit_scope_established": "archive-local",
+    "persistent_serialization_scope": "UNKNOWN",
+    "physical_copy_count": "UNKNOWN",
+    "sharing_population": "N_i_CANDIDATE_NOT_PHYSICALLY_VERIFIED",
+    "effective_cost_status": "NOT_READY"
+  },
+  "search_log": {
+    "path": "drafts/v52/static_storage_inventory_2026_09_12/SEARCH_LOG_V2.json",
+    "status": "EXPANDED_FOR_INV_AUD_005",
+    "policy": "SEARCHED_NOT_LOCATED_UNKNOWN; no absence inference"
+  },
+  "ready_gate": {
+    "ready": false,
+    "blockers": [
+      "fitted model/projector physical artifact identities unresolved or explicitly UNKNOWN",
+      "persistent id/offset/metadata necessity not functionally bound",
+      "physical copy count and sharing population not file/serializer verified",
+      "real adapter and pre-bound serialization/probe plan do not yet exist",
+      "fresh independent review of this corrected inventory has not yet passed"
+    ],
+    "forbidden_shortcuts": [
+      "do not refit from raw corpus to fill missing state",
+      "do not infer not-found means absent",
+      "do not create a filled READY plan from placeholders",
+      "do not choose panel points or serialization after seeing candidate measurements",
+      "do not interpret diagnostic query/gold artifacts as retrieval-quality evidence in this inventory"
+    ]
+  }
+}
