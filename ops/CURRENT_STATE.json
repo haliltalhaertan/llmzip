@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
   "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-12T14:01:00.463289Z",
+  "issued_at_utc": "2026-09-12T14:15:06.227617Z",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -22,7 +22,7 @@
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
     "current_task": "Execution track only. The scientific preregistration is sealed and closed.",
-    "next_single_action": "Finish independent A1 delta audit of G3 candidate23fb505. Task1 remains partial pending exact frozen mechanism matrices; cost and syntheticITQ diagnostics are published. Preregistration proposals are unapproved; Task4F1 remains BLOCKED and outcome access FORBIDDEN.",
+    "next_single_action": "G3 synthetic remediation is accepted. Recover exact mechanism-track frozen C arrays or source-bound sufficient statistics for remaining Task1 (LoCoMo coverage, LongMemEval strict-positive entropy/zero mass and D4). Do not reconstruct from raw corpus under the current diagnostics scope. Baseline draft proposals remain unapproved; no arm choice, seal or experiment authorized. Task4F1 run BLOCKED / outcome access FORBIDDEN.",
     "completion_decision_owner": "Head Researcher",
     "task_4f1_preregistration": "SEALED 2026-09-04 at Seal V3 (e906c6d2), draft SHA256 5e618981. Seal V1 (c9e06195) and Seal V2 (9ed480f4) BLOCKED and superseded, both preserved byte-unchanged.",
     "task_4f1_run": "BLOCKED",
@@ -338,7 +338,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-093",
+  "ledger_entry": "L-094",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -2113,7 +2113,8 @@
     "draft_sha256": "19e0df1b09b71bf1fccac78efeb0b5616a2d368f67a590eb1aae66405a0e1e24",
     "verification": "Lead reran verify_package.mjs: 11 files, 9 payload hashes, 13 raw source blobs, 4 source commits, 8 published hashes, 7 seed panels; source receipt reproduced.",
     "proposals": "SIGN96 minus PQ96 primary; TOP32_RABITQ32 descriptive. These remain proposals pending new literature-driven representation diagnostics and method-identity accounting.",
-    "budget": "L-088 <=12 marginal persistent bytes/vector unchanged; shared costs separately visible."
+    "budget": "L-088 <=12 marginal persistent bytes/vector unchanged; shared costs separately visible.",
+    "historical_runtime_gate": "R1_CLOSED_BY_L092; future implementation gates remain OPEN"
   },
   "preseal_diagnostics_2026_09_12": {
     "branch": "research/v52-preseal-diagnostics-2026-09-12",
@@ -2132,8 +2133,40 @@
     "initial_candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
     "initial_independent_audit": "2a025ee3b85f25af80e1b939f85f23c6cf06af30",
     "initial_disposition": "NOT_ACCEPTED_A1_DIAGNOSTIC_QUESTION_MISBINDING",
-    "current_candidate": "23fb505ae47d06b34a75a97955e5d1a3d8586de1",
-    "current_disposition": "A1_FIXED_FULL54METHOD5961SUBTESTS_PASS_INDEPENDENT_DELTA_PENDING",
-    "authority": "Existing G3 fix-and-test grant only; no experiment/seal/production authority."
+    "current_candidate": "7266160ac03bdd064fe75f058eae3430fbe14496",
+    "current_disposition": "ACCEPTED_SCOPED_SYNTHETIC_REMEDIATION_BY_INDEPENDENT_AUDIT_AND_HR",
+    "authority": "Existing G3 fix-and-test grant only; no experiment/seal/production authority.",
+    "corrected_code_candidate": "23fb505ae47d06b34a75a97955e5d1a3d8586de1",
+    "corrected_code_audit": "214afbda06a93e083f1357c25fc40cd023701ee4",
+    "final_independent_audit": "57532439746d9d12152964fc594e821b875ff541",
+    "final_report_path": "audit_v52_g3_a2_final_2026_09_12/FINAL_SCOPED_ACCEPTANCE.md",
+    "final_report_sha256": "7a87964d8f181087e4170d71e77db698d25377038b3a2cc35450c8606463a53c",
+    "manifest_sha256": "9508d1257e0adb515f48c616e67dd410b640fd93d4d472eb54afbffcd148f33d",
+    "HR_decision_commit": "4278cb2b82507f84ce6c2990b0b3fd4bce6e09df",
+    "HR_decision_path": "V52_G3_SCOPED_ACCEPTANCE_2026-09-12.md",
+    "HR_decision_sha256": "8ff22aaebb5dc6ead2f40e2a4d3d5928b21bc158ed930ed3b86c50441f235ee5",
+    "acceptance_blockers": [],
+    "audit_findings": {
+      "A1": "CLOSED_DIAGNOSTIC_QUESTION_BINDING_FIXED",
+      "A2": "CLOSED_CANONICAL_MANIFEST_ORDER"
+    },
+    "verification": {
+      "updated_full_suite": "54 methods /5961 subtest observations,0 failures/errors/skips,exactlock; implementation execution",
+      "independent_chain": "Original53/5959 suite; independent A1 counterexample and regression; final manifest-only byte audit; no relabeling full54 as independent rerun.",
+      "payload_files": 432,
+      "original_source_preserved": true
+    },
+    "working_line": "G3 successor accepted for scoped synthetic development/review; carries v5 fixes forward. Historical v5 primary LoCoMo conformity not claimed.",
+    "obligation4": "SYNTHETIC_BRIDGE_ACCEPTED; REAL_SOURCE_PROVENANCE_OPEN",
+    "obligation5": "SYNTHETIC_COMPONENTS_AND_INDEPENDENT_ACCEPTANCE_SATISFIED; FULL_CHAIN_PARTIAL_OPEN",
+    "remaining_open": [
+      "real_ingestion_integration_review",
+      "actual_native_anchor_binding",
+      "real_cohort_identity",
+      "corrected_raw_gold_reconciliation_and_dual_reporting",
+      "production_shard_integration",
+      "pre_run_seal",
+      "production_readiness"
+    ]
   }
 }

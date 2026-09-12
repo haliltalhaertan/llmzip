@@ -1996,3 +1996,27 @@ g3_parallel_state: Initialcandidate24d3351 rejected by independentaudit2a025ee3 
 outcome_boundary: Task4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN remains unchanged. No new real retrieval outcomes computed, no seal/finalize/HMAC/production authorization.
 status: PASS WITH EXPLICIT PARTIAL TASK1 AND SCOPE LIMITS
 ```
+
+### L-094
+
+```text
+timestamp_utc: 2026-09-12T14:15:06.227617Z
+actor_role: Codex acting as Head Researcher under explicit user delegation; independent audit by Copernicus
+predecessor_commit_or_tag: L-093 / fa9a5f218b55d86b705f6204380cb40f90ba5d34
+scope: Hash-bound scoped G3 acceptance after independent implementation and package review; no research or HR branch merged.
+accepted_candidate:7266160ac03bdd064fe75f058eae3430fbe14496 on codex/g3-remediation-delivery-2026-09-12
+candidate_manifest_sha256:9508d1257e0adb515f48c616e67dd410b640fd93d4d472eb54afbffcd148f33d
+independent_audit:57532439746d9d12152964fc594e821b875ff541; audit_v52_g3_a2_final_2026_09_12/FINAL_SCOPED_ACCEPTANCE.md; reportsha2567a87964d8f181087e4170d71e77db698d25377038b3a2cc35450c8606463a53c
+HR_decision:4278cb2b82507f84ce6c2990b0b3fd4bce6e09df on hr/g3-scoped-acceptance-2026-09-12; V52_G3_SCOPED_ACCEPTANCE_2026-09-12.md; sha2568ff22aaebb5dc6ead2f40e2a4d3d5928b21bc158ed930ed3b86c50441f235ee5; rawGit artifact and sidecar verified.
+acceptance_chain:24d3351 rejected by2a025ee3 for A1 misbound LongMemEval diagnostics.23fb505 fixes A1;214afbda accepts code fix but holds A2 manifest ordering.7266160 changes only FILE_HASHES.json via unchanged package_integrity.py --write;5753243 closes A2. Prior rejections remain unchanged and correct for their exact bytes.
+verification: Updated full54-method/5961-subtest synthetic suite passed exactlock. Original independent53/5959 suite and focused A1 regression/counterexample support repaired code. Final audit checks unchanged432payloads/21exercised sources and official package verifierPASS without another numerical/suite rerun. Lead independently checked committed432payload hashes.
+disposition: ACCEPTED SCOPED SYNTHETIC G3 REMEDIATION. SevenL081 findings, ninegaps, fourG2 dispositions and A1/A2 resolved within declared surfaces. No in-scope acceptance blocker remains.
+working_candidate_decision: Adopt G3 successor for authorized synthetic development/review, carrying v5 fixes forward. Historical v5 ingestion is not certified as primary corrected-LoCoMo producer.
+obligation4: Synthetic ingestion/preparation/bootstrap/protected-output bridge ACCEPTED; actual anchor/gold/cohort/provenance remains OPEN.
+obligation5: Synthetic regressions, source provenance and independent scoped acceptance SATISFIED; real integration and pre-run/production gate chain remains PARTIAL/OPEN. No seal granted or performed.
+irrevocable: Coordinatewise certificate, fixed97-member family including all96negation, independent exact oracle and all member-specific negatives unchanged; no aggregate certificate fallback. Sealed core unchanged.
+other_tracks: Runtime cost replay CLOSED L092; PR2 CLOSED without merge L091. Diagnostics L093 published with Task1PARTIAL/Task2COMPLETE/Task3finite-syntheticCOMPLETE. Baseline prereg P1-P5 not approved; no arm winner or mechanism claim.
+next: Exact frozen mechanism representations or sufficient statistics needed for remaining Task1. Raw corpus reconstruction not covered by diagnostics instruction. No user authorization is needed to redo already completed work; completed work should not be repeated.
+outcome_boundary: Task4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN. No G3 real corpus/outcome access, experiment, finalize, HMAC, seal or production authorization.
+status: PASS - SCOPED SYNTHETIC ACCEPTANCE; REAL EXECUTION GATES REMAIN OPEN
+```
