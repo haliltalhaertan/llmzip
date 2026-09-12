@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "task2_worker_commit": "44ae95a1830405a40d14a843bc61f450eac8249e",
+  "task2_manifest_hashes_verified": 23,
+  "serialized_checks": [
+    {
+      "path": "task2/serialized_examples/ITQ96_MATRIX_SURROGATE/add_0/index.bin",
+      "bytes": 33,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/ITQ96_MATRIX_SURROGATE/add_0/synthetic_itq_transform.bin",
+      "bytes": 36902,
+      "check": "VectorTransform actual96x96matrix decoded"
+    },
+    {
+      "path": "task2/serialized_examples/ITQ96_MATRIX_SURROGATE/add_1000/index.bin",
+      "bytes": 12033,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/ITQ96_MATRIX_SURROGATE/add_1000/synthetic_itq_transform.bin",
+      "bytes": 36902,
+      "check": "VectorTransform actual96x96matrix decoded"
+    },
+    {
+      "path": "task2/serialized_examples/PQ96_M12X8/add_0/index.bin",
+      "bytes": 98390,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/PQ96_M12X8/add_1000/index.bin",
+      "bytes": 110390,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/QUIVER_STYLE48X2_COMPACT/add_0/codes.bin",
+      "bytes": 0,
+      "check": "compact code length only; no Faiss object"
+    },
+    {
+      "path": "task2/serialized_examples/QUIVER_STYLE48X2_COMPACT/add_1000/codes.bin",
+      "bytes": 12000,
+      "check": "compact code length only; no Faiss object"
+    },
+    {
+      "path": "task2/serialized_examples/RQ32_PLAIN_NO_ROTATION/add_0/index.bin",
+      "bytes": 202,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/RQ32_PLAIN_NO_ROTATION/add_1000/index.bin",
+      "bytes": 12202,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/RQ32_RANDOM_ROTATION_WRAPPER/add_0/index.bin",
+      "bytes": 4369,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/RQ32_RANDOM_ROTATION_WRAPPER/add_1000/index.bin",
+      "bytes": 16369,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/SIGN32/add_0/index.bin",
+      "bytes": 33,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/SIGN32/add_1000/index.bin",
+      "bytes": 4033,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/SIGN96/add_0/index.bin",
+      "bytes": 33,
+      "check": "actual deserialize/serialize byte roundtrip"
+    },
+    {
+      "path": "task2/serialized_examples/SIGN96/add_1000/index.bin",
+      "bytes": 12033,
+      "check": "actual deserialize/serialize byte roundtrip"
+    }
+  ],
+  "scope": "Parent independently read persisted synthetic objects; no training or query evaluation repeated."
+}

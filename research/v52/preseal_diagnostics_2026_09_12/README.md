@@ -70,8 +70,37 @@ yalnız sentetik kontrollerde kullanıldı. Gerçek matris üzerinde D4 çalış
 
 `RESULTS.json` üç görevin durumunu bir arada tutar. `ENVIRONMENT.json` her görev
 için gerçek ortamı kaydeder. `HASHES.txt` kendi dışında bu namespace'in tüm
-dosyalarını hash'ler; recursive self-hash yoktur. Task2 ve Task3 ayrı çalışma
-sonuçları geldikçe ayrı commit/push ile eklenecek; ilk commit yalnız Task1'dir.
+dosyalarını hash'ler; recursive self-hash yoktur. Görevler ayrı commit/push ile
+eklenir; ilk commit yalnız Task1'i, sonraki teslim Task2'yi içerir.
+
+## Task2 — gerçek serileştirme maliyeti
+
+Alt ajan Locke'un `44ae95a1830405a40d14a843bc61f450eac8249e` teslimi
+buraya yalnız script ve Task2 dosyalarıyla alındı. Faiss1.15.0 / NumPy2.4.6 ile
+7 kol × 3 eğitim büyüklüğü × 5 ekleme büyüklüğünde **105 tam sayı fark kontrolü**
+geçti. `task2/NOTES.md` komutları, serileştirici sınırlarını ve kontrolleri anlatır.
+
+| Ölçülen paket | Marjinal B/vektör | Paylaşılan B/arşiv |
+|---|---:|---:|
+| SIGN96 + BinaryFlat | 12 | 33 |
+| SIGN32 + BinaryFlat | 4 | 33 |
+| QuIVer-style48×2, saf 6+6 bayt paket | 12 | 0 |
+| ITQ96 **float32 matris vekili** + BinaryFlat | 12 | 36.935 |
+| PQ96 m12×8 | 12 | 98.390 |
+| Düz RQ32 | 12 | 202 |
+| Açık RandomRotationMatrix + RQ32 | 12 | 4.369 |
+
+Düz RQ32 kendi içinde rotasyon/seed taşımıyor. Açık rotasyonlu paket 4.096 baytlık
+matrisi gerçekten saklıyor. İki uygulama aynı yöntem kimliğiyle sunulmuyor.
+İşaret kodlayıcısının öğrenilmiş durumunun sıfır olması, BinaryFlat başlığını veya
+ortak ön işlemeyi sıfırlamıyor. **Ortak ön işleme halen ölçülmemiştir**; tabloda
+tam dağıtım maliyeti iddiası yoktur. Arşive özel oranlar ve etkin maliyetler,
+470 satırlık sabit T4C2 `N_archive` sütunuyla `task2/ARCHIVE_COST_RATIOS.csv`'de.
+
+Task2'deki ITQ matrisi bir serileştirme vekilidir; gerçekten öğrenilmiş bir matris
+olduğu iddia edilmiyor. Task3'ün gerçek NumPy fit'i ve saklama dtype'ı ayrıca
+bağlanmalıdır. QuIVer-style burada yalnız kodlama/paketlemedir; graf, sorgulama
+ve float rerank içeren bütün QuIVer sistemi değildir.
 
 Hiçbir gerçek sorgu-belge uzaklığı, top-k, recall, yöntem skoru veya gerçek ITQ
 fit'i hesaplanmadı. Ön-kayıt değiştirilmedi; yöntem kolları seçilmedi. Task4F1

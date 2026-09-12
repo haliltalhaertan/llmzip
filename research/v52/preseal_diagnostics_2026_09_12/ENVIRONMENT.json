@@ -3,5 +3,216 @@
     "python": "3.13.15",
     "numpy": "2.3.5",
     "platform": "Windows-10-10.0.19045-SP0"
+  },
+  "task2": {
+    "scope": "TASK2 SYNTHETIC STORAGE ONLY; NO SEAL/RUN/OUTCOME AUTHORIZATION",
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\faiss-replay-20260912\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "machine": "AMD64",
+    "faiss": "1.15.0",
+    "numpy": "2.4.6",
+    "faiss_compile_options": "",
+    "faiss_omp_threads": 1,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "runtime_files": [
+      {
+        "distribution": "faiss-cpu",
+        "path": "faiss/_swigfaiss.pyd",
+        "bytes": 5621760,
+        "sha256": "c051dae5a4681ece94ba3da8cf82e2c84291bc89a6e2e7531cf5f93d5fe68862"
+      },
+      {
+        "distribution": "faiss-cpu",
+        "path": "faiss/faiss.dll",
+        "bytes": 7428608,
+        "sha256": "6b400ad49f6b580cda96acbae7217129dbfe02a71f645736bdc7dea33265a1fc"
+      },
+      {
+        "distribution": "faiss-cpu",
+        "path": "faiss_cpu-1.15.0.dist-info/METADATA",
+        "bytes": 7785,
+        "sha256": "30590c25e66c1d8c76bf633bf586fef188354fb22ae24b10bde6a3f53a6accdc"
+      },
+      {
+        "distribution": "faiss-cpu",
+        "path": "faiss_cpu-1.15.0.dist-info/RECORD",
+        "bytes": 3347,
+        "sha256": "dba929ccbeaf7898729ee0ba7a3877fdc1959bac0d54cdc3e1d223ce2615ac51"
+      },
+      {
+        "distribution": "faiss-cpu",
+        "path": "faiss_cpu-1.15.0.dist-info/WHEEL",
+        "bytes": 105,
+        "sha256": "757cf9dd45ffc15ac4354de983b2230479754df0131748ca497b500edac59cbc"
+      },
+      {
+        "distribution": "faiss-cpu",
+        "path": "faiss_cpu.libs/libopenblas.dll",
+        "bytes": 51076488,
+        "sha256": "e824cf9fc22e5949807ce995a32e413a345fb97e63e6d10cfbf41aa86382193c"
+      },
+      {
+        "distribution": "faiss-cpu",
+        "path": "faiss_cpu.libs/msvcp140.dll",
+        "bytes": 575056,
+        "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+      },
+      {
+        "distribution": "faiss-cpu",
+        "path": "faiss_cpu.libs/vcomp140.dll",
+        "bytes": 213072,
+        "sha256": "f96f3a14d88d8846f31f3ab38a490304ce7d6e4f70fae4304c63e59c7aea2d30"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy-2.4.6.dist-info/METADATA",
+        "bytes": 6608,
+        "sha256": "b082c52ccbe3b880bae177c35171b52ed6c947f3ad71e3762f2723f60a411de0"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy-2.4.6.dist-info/RECORD",
+        "bytes": 86803,
+        "sha256": "9719694ceaa0e6c69ae7cc2553b779e2981425141cc7a2cd2eb5875ce0d521eb"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy-2.4.6.dist-info/WHEEL",
+        "bytes": 85,
+        "sha256": "b2eabc011af16e223b88b1f70602bef36bb3c50fb81e6fa6f30d35a02a24aed0"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy.libs/libscipy_openblas64_-63c857e738469261263c764a36be9436.dll",
+        "bytes": 20415488,
+        "sha256": "63c857e738469261263c764a36be9436ebdeaa272e340a828f42047a97131080"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+        "bytes": 575056,
+        "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/_core/_multiarray_tests.cp313-win_amd64.pyd",
+        "bytes": 65024,
+        "sha256": "10216eb3d7fc2ebdab1b4416663927f48dd48dde0f28dc6ccde81209220b272d"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/_core/_multiarray_umath.cp313-win_amd64.pyd",
+        "bytes": 3713024,
+        "sha256": "322ad38e97638cc83da31ec28185dd65fc722f0ade096f8620660f08c7cd9dd4"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/_core/_operand_flag_tests.cp313-win_amd64.pyd",
+        "bytes": 12288,
+        "sha256": "2c3c1640801ccef814e4cd4dd6619b477ad6fb45bbc1248a1ef528a53ab97f0c"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/_core/_rational_tests.cp313-win_amd64.pyd",
+        "bytes": 39936,
+        "sha256": "b6a6ebfc4ea394e4f287d37515148eb31255455f0d3e5dd40689247a31adb4e3"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/_core/_simd.cp313-win_amd64.pyd",
+        "bytes": 832000,
+        "sha256": "92da099d22fe1aa5144c87eaced063492899eda393aa4f336c01b1abc9df072f"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/_core/_struct_ufunc_tests.cp313-win_amd64.pyd",
+        "bytes": 14336,
+        "sha256": "b4e669ad829f8ef267feec8d426c30b7a12d7efd6b9cacd2b11a2cbfd0660942"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/_core/_umath_tests.cp313-win_amd64.pyd",
+        "bytes": 33280,
+        "sha256": "67d490d332a1dc64e7de8eacbf814315e47d6c56c6d78c45c07a41a94a8d0aca"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/fft/_pocketfft_umath.cp313-win_amd64.pyd",
+        "bytes": 276480,
+        "sha256": "1d6e58ffb3a42baac76c7334009bbd113fc4705553d0da8bf62629ef3f5e3335"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/linalg/_umath_linalg.cp313-win_amd64.pyd",
+        "bytes": 112128,
+        "sha256": "bebba591b563ff7dddb8f67956d68a303d7e5967cf08570cacb090b73826b13c"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/linalg/lapack_lite.cp313-win_amd64.pyd",
+        "bytes": 18944,
+        "sha256": "89da21d6a899832138207ba8b72d842e7677f7befc761002b286150ac6fc2cfe"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/_bounded_integers.cp313-win_amd64.pyd",
+        "bytes": 207360,
+        "sha256": "c256907646433d9a5fb083465750ccd1c08f4f256c8c45c6d70ad284a70729b1"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/_common.cp313-win_amd64.pyd",
+        "bytes": 167936,
+        "sha256": "e4af22f738da47fbd7b7295808d7df76389253f48734cae49b6d7ce3a365a741"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/_generator.cp313-win_amd64.pyd",
+        "bytes": 584192,
+        "sha256": "d7596499179429c584ae662296ef85738df3432c396f41f4ea5b1fe629b41f75"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/_mt19937.cp313-win_amd64.pyd",
+        "bytes": 83968,
+        "sha256": "f7ac94f39338c4b0262fb7a63ab9799ae367cf789b00e20f2501c5c9c26b92fe"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/_pcg64.cp313-win_amd64.pyd",
+        "bytes": 92672,
+        "sha256": "964e758fee35f006e25cfc58bfa61f47421ca5185a935f0df01e977f056897d8"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/_philox.cp313-win_amd64.pyd",
+        "bytes": 78336,
+        "sha256": "ae59fc2578517c2d58eff8a482a0a7715fafb1b7def686d04c608f7ae60bcea8"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/_sfc64.cp313-win_amd64.pyd",
+        "bytes": 58880,
+        "sha256": "17d499abff6ae232e77b3bdc96511d3f44df532680a162e26aedbf190addd83e"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/bit_generator.cp313-win_amd64.pyd",
+        "bytes": 157696,
+        "sha256": "7cf498318e1d84e20b2b2a4aee9eb59d13c3c87dd4af8c962c53d78d15bfd770"
+      },
+      {
+        "distribution": "numpy",
+        "path": "numpy/random/mtrand.cp313-win_amd64.pyd",
+        "bytes": 488960,
+        "sha256": "106352ea29423e822f05931d0591f82299a99c9a8a9aeb09a3ef6f9842c9e49e"
+      }
+    ],
+    "note": "Installed binary hashes identify this runtime; they do not prove a wheel was built from the referenced upstream commit."
   }
 }

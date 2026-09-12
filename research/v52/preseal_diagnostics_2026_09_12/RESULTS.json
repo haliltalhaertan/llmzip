@@ -10003,7 +10003,2347 @@
       }
     },
     "task2": {
-      "status": "IN_PROGRESS_NO_RESULT_CLAIMED"
+      "receipt": "task2/RESULTS.json",
+      "sha256": "35bdc2ee68c0f5c37c26b1b082cd6dcfffcec55134a22f1af6290a8f523bc190",
+      "status": "COMPLETE",
+      "results": {
+        "status": "COMPLETE",
+        "scope": "TASK2 SYNTHETIC STORAGE ACCOUNTING ONLY",
+        "environment": {
+          "scope": "TASK2 SYNTHETIC STORAGE ONLY; NO SEAL/RUN/OUTCOME AUTHORIZATION",
+          "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+          "executable": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\faiss-replay-20260912\\Scripts\\python.exe",
+          "platform": "Windows-10-10.0.19045-SP0",
+          "machine": "AMD64",
+          "faiss": "1.15.0",
+          "numpy": "2.4.6",
+          "faiss_compile_options": "",
+          "faiss_omp_threads": 1,
+          "thread_environment": {
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "MKL_NUM_THREADS": "1"
+          },
+          "runtime_files": [
+            {
+              "distribution": "faiss-cpu",
+              "path": "faiss/_swigfaiss.pyd",
+              "bytes": 5621760,
+              "sha256": "c051dae5a4681ece94ba3da8cf82e2c84291bc89a6e2e7531cf5f93d5fe68862"
+            },
+            {
+              "distribution": "faiss-cpu",
+              "path": "faiss/faiss.dll",
+              "bytes": 7428608,
+              "sha256": "6b400ad49f6b580cda96acbae7217129dbfe02a71f645736bdc7dea33265a1fc"
+            },
+            {
+              "distribution": "faiss-cpu",
+              "path": "faiss_cpu-1.15.0.dist-info/METADATA",
+              "bytes": 7785,
+              "sha256": "30590c25e66c1d8c76bf633bf586fef188354fb22ae24b10bde6a3f53a6accdc"
+            },
+            {
+              "distribution": "faiss-cpu",
+              "path": "faiss_cpu-1.15.0.dist-info/RECORD",
+              "bytes": 3347,
+              "sha256": "dba929ccbeaf7898729ee0ba7a3877fdc1959bac0d54cdc3e1d223ce2615ac51"
+            },
+            {
+              "distribution": "faiss-cpu",
+              "path": "faiss_cpu-1.15.0.dist-info/WHEEL",
+              "bytes": 105,
+              "sha256": "757cf9dd45ffc15ac4354de983b2230479754df0131748ca497b500edac59cbc"
+            },
+            {
+              "distribution": "faiss-cpu",
+              "path": "faiss_cpu.libs/libopenblas.dll",
+              "bytes": 51076488,
+              "sha256": "e824cf9fc22e5949807ce995a32e413a345fb97e63e6d10cfbf41aa86382193c"
+            },
+            {
+              "distribution": "faiss-cpu",
+              "path": "faiss_cpu.libs/msvcp140.dll",
+              "bytes": 575056,
+              "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+            },
+            {
+              "distribution": "faiss-cpu",
+              "path": "faiss_cpu.libs/vcomp140.dll",
+              "bytes": 213072,
+              "sha256": "f96f3a14d88d8846f31f3ab38a490304ce7d6e4f70fae4304c63e59c7aea2d30"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy-2.4.6.dist-info/METADATA",
+              "bytes": 6608,
+              "sha256": "b082c52ccbe3b880bae177c35171b52ed6c947f3ad71e3762f2723f60a411de0"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy-2.4.6.dist-info/RECORD",
+              "bytes": 86803,
+              "sha256": "9719694ceaa0e6c69ae7cc2553b779e2981425141cc7a2cd2eb5875ce0d521eb"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy-2.4.6.dist-info/WHEEL",
+              "bytes": 85,
+              "sha256": "b2eabc011af16e223b88b1f70602bef36bb3c50fb81e6fa6f30d35a02a24aed0"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy.libs/libscipy_openblas64_-63c857e738469261263c764a36be9436.dll",
+              "bytes": 20415488,
+              "sha256": "63c857e738469261263c764a36be9436ebdeaa272e340a828f42047a97131080"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+              "bytes": 575056,
+              "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/_core/_multiarray_tests.cp313-win_amd64.pyd",
+              "bytes": 65024,
+              "sha256": "10216eb3d7fc2ebdab1b4416663927f48dd48dde0f28dc6ccde81209220b272d"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/_core/_multiarray_umath.cp313-win_amd64.pyd",
+              "bytes": 3713024,
+              "sha256": "322ad38e97638cc83da31ec28185dd65fc722f0ade096f8620660f08c7cd9dd4"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/_core/_operand_flag_tests.cp313-win_amd64.pyd",
+              "bytes": 12288,
+              "sha256": "2c3c1640801ccef814e4cd4dd6619b477ad6fb45bbc1248a1ef528a53ab97f0c"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/_core/_rational_tests.cp313-win_amd64.pyd",
+              "bytes": 39936,
+              "sha256": "b6a6ebfc4ea394e4f287d37515148eb31255455f0d3e5dd40689247a31adb4e3"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/_core/_simd.cp313-win_amd64.pyd",
+              "bytes": 832000,
+              "sha256": "92da099d22fe1aa5144c87eaced063492899eda393aa4f336c01b1abc9df072f"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/_core/_struct_ufunc_tests.cp313-win_amd64.pyd",
+              "bytes": 14336,
+              "sha256": "b4e669ad829f8ef267feec8d426c30b7a12d7efd6b9cacd2b11a2cbfd0660942"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/_core/_umath_tests.cp313-win_amd64.pyd",
+              "bytes": 33280,
+              "sha256": "67d490d332a1dc64e7de8eacbf814315e47d6c56c6d78c45c07a41a94a8d0aca"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/fft/_pocketfft_umath.cp313-win_amd64.pyd",
+              "bytes": 276480,
+              "sha256": "1d6e58ffb3a42baac76c7334009bbd113fc4705553d0da8bf62629ef3f5e3335"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/linalg/_umath_linalg.cp313-win_amd64.pyd",
+              "bytes": 112128,
+              "sha256": "bebba591b563ff7dddb8f67956d68a303d7e5967cf08570cacb090b73826b13c"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/linalg/lapack_lite.cp313-win_amd64.pyd",
+              "bytes": 18944,
+              "sha256": "89da21d6a899832138207ba8b72d842e7677f7befc761002b286150ac6fc2cfe"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/_bounded_integers.cp313-win_amd64.pyd",
+              "bytes": 207360,
+              "sha256": "c256907646433d9a5fb083465750ccd1c08f4f256c8c45c6d70ad284a70729b1"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/_common.cp313-win_amd64.pyd",
+              "bytes": 167936,
+              "sha256": "e4af22f738da47fbd7b7295808d7df76389253f48734cae49b6d7ce3a365a741"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/_generator.cp313-win_amd64.pyd",
+              "bytes": 584192,
+              "sha256": "d7596499179429c584ae662296ef85738df3432c396f41f4ea5b1fe629b41f75"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/_mt19937.cp313-win_amd64.pyd",
+              "bytes": 83968,
+              "sha256": "f7ac94f39338c4b0262fb7a63ab9799ae367cf789b00e20f2501c5c9c26b92fe"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/_pcg64.cp313-win_amd64.pyd",
+              "bytes": 92672,
+              "sha256": "964e758fee35f006e25cfc58bfa61f47421ca5185a935f0df01e977f056897d8"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/_philox.cp313-win_amd64.pyd",
+              "bytes": 78336,
+              "sha256": "ae59fc2578517c2d58eff8a482a0a7715fafb1b7def686d04c608f7ae60bcea8"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/_sfc64.cp313-win_amd64.pyd",
+              "bytes": 58880,
+              "sha256": "17d499abff6ae232e77b3bdc96511d3f44df532680a162e26aedbf190addd83e"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/bit_generator.cp313-win_amd64.pyd",
+              "bytes": 157696,
+              "sha256": "7cf498318e1d84e20b2b2a4aee9eb59d13c3c87dd4af8c962c53d78d15bfd770"
+            },
+            {
+              "distribution": "numpy",
+              "path": "numpy/random/mtrand.cp313-win_amd64.pyd",
+              "bytes": 488960,
+              "sha256": "106352ea29423e822f05931d0591f82299a99c9a8a9aeb09a3ef6f9842c9e49e"
+            }
+          ],
+          "note": "Installed binary hashes identify this runtime; they do not prove a wheel was built from the referenced upstream commit."
+        },
+        "authorization_scope": "No corpus, gold, queries, distances, rankings, quality, seal, HMAC, Task1, Task3 or OPQ",
+        "base_commit": "ae9175676b840ae6a80a31eba9836187dc1b7491",
+        "script_sha256": "aedc031b1f1191076d365608a5479bf168d2ca1429069bee21ba71acc8e72fc3",
+        "seeds": {
+          "synthetic_data": 73001,
+          "random_rotation32": 73002,
+          "itq96_surrogate_matrix": 73003,
+          "pq_training": 73004
+        },
+        "train_sample_sizes": [
+          256,
+          257,
+          1000
+        ],
+        "add_sample_sizes": [
+          0,
+          1,
+          256,
+          257,
+          1000
+        ],
+        "cardinality_source": {
+          "commit": "ae9175676b840ae6a80a31eba9836187dc1b7491",
+          "path": "docs/v52/task4c2/V52_T4C2_feature_geometry.csv",
+          "git_blob_sha1": "b4336dd47fcf14e4b39f65bed3377d56ea9e77c7",
+          "sha256": "d4c9ce62b0f1b66611611bb014a887d2e7e5fcfaee0af94f53ffb70dc84d7d32",
+          "raw_bytes": 77491,
+          "accessed_statistic_column": "N_archive",
+          "rows": 470,
+          "minimum": 396,
+          "maximum": 616,
+          "mean": 492.77872340425535,
+          "cohort": "470 archive cardinalities in pinned T4C2 source; not a LoCoMo claim"
+        },
+        "controls": {
+          "known_vectors_and_zero_equality_roundtrip": "PASS",
+          "compact_plane_bytes": [
+            6,
+            6
+          ],
+          "negative_controls_rejected": [
+            "two_uint64_planes_16B",
+            "silent_extra_byte",
+            "declared_over_cap",
+            "noninteger_slope"
+          ]
+        },
+        "arms": [
+          {
+            "arm": "SIGN96",
+            "marginal_bytes_per_vector": 12,
+            "marginal_cap_pass": true,
+            "shared_state_bytes_per_archive": 33,
+            "storage_boundary": "Serialized quantizer/transform/code package only; common preprocessing excluded and explicitly unknown; not a full deployed system total",
+            "actual_itq_fit_performed": false,
+            "training_trials": [
+              {
+                "synthetic_training_input_rows": 256,
+                "training_identity": "Deterministic sign >=0, packed big-endian, BinaryFlat store; no learned quantizer state",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 33,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 33,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 33,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "e011f0d5749ad57a2cdecbf0bb4651cfb16fae74e939f912770e536e93ae53fc"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 45,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 45,
+                        "sha256": "5ae233cf6d3a223e2d29ad96f9fe1e6d1c8f1947fc08508d9de09c3faf362736"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3105,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3105,
+                        "sha256": "c4c4c488cbc5296af69d6837bbbb375a43d18bc3e54ff19cb62de20ee34c608f"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3117,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3117,
+                        "sha256": "2a0ae7bd36a38e36dcb6164f163bfb44a67d6f1f8c5d5d90adcac362896895eb"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12033,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12033,
+                        "sha256": "720397b1d9698fb58835d6305bb8cf12990ac8827642ffe959def5bc06994a5c"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 257,
+                "training_identity": "Deterministic sign >=0, packed big-endian, BinaryFlat store; no learned quantizer state",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 33,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 33,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 33,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "e011f0d5749ad57a2cdecbf0bb4651cfb16fae74e939f912770e536e93ae53fc"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 45,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 45,
+                        "sha256": "5ae233cf6d3a223e2d29ad96f9fe1e6d1c8f1947fc08508d9de09c3faf362736"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3105,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3105,
+                        "sha256": "c4c4c488cbc5296af69d6837bbbb375a43d18bc3e54ff19cb62de20ee34c608f"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3117,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3117,
+                        "sha256": "2a0ae7bd36a38e36dcb6164f163bfb44a67d6f1f8c5d5d90adcac362896895eb"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12033,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12033,
+                        "sha256": "720397b1d9698fb58835d6305bb8cf12990ac8827642ffe959def5bc06994a5c"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 1000,
+                "training_identity": "Deterministic sign >=0, packed big-endian, BinaryFlat store; no learned quantizer state",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 33,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 33,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 33,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "e011f0d5749ad57a2cdecbf0bb4651cfb16fae74e939f912770e536e93ae53fc"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 45,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 45,
+                        "sha256": "5ae233cf6d3a223e2d29ad96f9fe1e6d1c8f1947fc08508d9de09c3faf362736"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3105,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3105,
+                        "sha256": "c4c4c488cbc5296af69d6837bbbb375a43d18bc3e54ff19cb62de20ee34c608f"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3117,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3117,
+                        "sha256": "2a0ae7bd36a38e36dcb6164f163bfb44a67d6f1f8c5d5d90adcac362896895eb"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12033,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12033,
+                        "sha256": "720397b1d9698fb58835d6305bb8cf12990ac8827642ffe959def5bc06994a5c"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              }
+            ],
+            "archive_ratio_summary": {
+              "n_archives": 470,
+              "denominator": "Each archive's own N_archive * marginal_bytes_per_vector",
+              "effective_package_bytes_mean_over_archives": 12.067228790342595,
+              "effective_package_bytes_min": 12.053571428571429,
+              "effective_package_bytes_max": 12.083333333333334,
+              "effective_package_cost_at_mean_N_separate": 12.066967177016139,
+              "shared_to_code_volume_ratio_mean": 0.00560239919521621,
+              "shared_to_code_volume_ratio_min": 0.004464285714285714,
+              "shared_to_code_volume_ratio_max": 0.006944444444444444,
+              "common_preprocessing_included": false
+            }
+          },
+          {
+            "arm": "SIGN32",
+            "marginal_bytes_per_vector": 4,
+            "marginal_cap_pass": true,
+            "shared_state_bytes_per_archive": 33,
+            "storage_boundary": "Serialized quantizer/transform/code package only; common preprocessing excluded and explicitly unknown; not a full deployed system total",
+            "actual_itq_fit_performed": false,
+            "training_trials": [
+              {
+                "synthetic_training_input_rows": 256,
+                "training_identity": "Deterministic sign >=0, packed big-endian, BinaryFlat store; no learned quantizer state",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 33,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 33,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 33,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "49813c8738c684b8c48f8e894463378d029b71ceb933f40762b318dab0d96048"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 37,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 37,
+                        "sha256": "97833428237ac237b899222de042ee447876bad3acb34e11d11d75c41906ae03"
+                      }
+                    },
+                    "integer_difference": 4,
+                    "expected_difference": 4,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 1057,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 1057,
+                        "sha256": "9fd17abdd20da7dd183bc8e721ec2619aea307bd7a1012145046e1af137a7327"
+                      }
+                    },
+                    "integer_difference": 1024,
+                    "expected_difference": 1024,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 1061,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 1061,
+                        "sha256": "447e13d1c567b430e8c697e1fc6c05cee2de5641f752b0ea412562f9d320d022"
+                      }
+                    },
+                    "integer_difference": 1028,
+                    "expected_difference": 1028,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 4033,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4033,
+                        "sha256": "cf5a89b656207b01b966cc6b19cabd06500de7369c532fa8303b8fff7b1f0f5c"
+                      }
+                    },
+                    "integer_difference": 4000,
+                    "expected_difference": 4000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 257,
+                "training_identity": "Deterministic sign >=0, packed big-endian, BinaryFlat store; no learned quantizer state",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 33,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 33,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 33,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "49813c8738c684b8c48f8e894463378d029b71ceb933f40762b318dab0d96048"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 37,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 37,
+                        "sha256": "97833428237ac237b899222de042ee447876bad3acb34e11d11d75c41906ae03"
+                      }
+                    },
+                    "integer_difference": 4,
+                    "expected_difference": 4,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 1057,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 1057,
+                        "sha256": "9fd17abdd20da7dd183bc8e721ec2619aea307bd7a1012145046e1af137a7327"
+                      }
+                    },
+                    "integer_difference": 1024,
+                    "expected_difference": 1024,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 1061,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 1061,
+                        "sha256": "447e13d1c567b430e8c697e1fc6c05cee2de5641f752b0ea412562f9d320d022"
+                      }
+                    },
+                    "integer_difference": 1028,
+                    "expected_difference": 1028,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 4033,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4033,
+                        "sha256": "cf5a89b656207b01b966cc6b19cabd06500de7369c532fa8303b8fff7b1f0f5c"
+                      }
+                    },
+                    "integer_difference": 4000,
+                    "expected_difference": 4000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 1000,
+                "training_identity": "Deterministic sign >=0, packed big-endian, BinaryFlat store; no learned quantizer state",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 33,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 33,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 33,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "49813c8738c684b8c48f8e894463378d029b71ceb933f40762b318dab0d96048"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 37,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 37,
+                        "sha256": "97833428237ac237b899222de042ee447876bad3acb34e11d11d75c41906ae03"
+                      }
+                    },
+                    "integer_difference": 4,
+                    "expected_difference": 4,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 1057,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 1057,
+                        "sha256": "9fd17abdd20da7dd183bc8e721ec2619aea307bd7a1012145046e1af137a7327"
+                      }
+                    },
+                    "integer_difference": 1024,
+                    "expected_difference": 1024,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 1061,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 1061,
+                        "sha256": "447e13d1c567b430e8c697e1fc6c05cee2de5641f752b0ea412562f9d320d022"
+                      }
+                    },
+                    "integer_difference": 1028,
+                    "expected_difference": 1028,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 4033,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4033,
+                        "sha256": "cf5a89b656207b01b966cc6b19cabd06500de7369c532fa8303b8fff7b1f0f5c"
+                      }
+                    },
+                    "integer_difference": 4000,
+                    "expected_difference": 4000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              }
+            ],
+            "archive_ratio_summary": {
+              "n_archives": 470,
+              "denominator": "Each archive's own N_archive * marginal_bytes_per_vector",
+              "effective_package_bytes_mean_over_archives": 4.067228790342594,
+              "effective_package_bytes_min": 4.053571428571429,
+              "effective_package_bytes_max": 4.083333333333333,
+              "effective_package_cost_at_mean_N_separate": 4.0669671770161395,
+              "shared_to_code_volume_ratio_mean": 0.01680719758564863,
+              "shared_to_code_volume_ratio_min": 0.013392857142857142,
+              "shared_to_code_volume_ratio_max": 0.020833333333333332,
+              "common_preprocessing_included": false
+            }
+          },
+          {
+            "arm": "QUIVER_STYLE48X2_COMPACT",
+            "marginal_bytes_per_vector": 12,
+            "marginal_cap_pass": true,
+            "shared_state_bytes_per_archive": 0,
+            "storage_boundary": "Serialized quantizer/transform/code package only; common preprocessing excluded and explicitly unknown; not a full deployed system total",
+            "actual_itq_fit_performed": false,
+            "training_trials": [
+              {
+                "synthetic_training_input_rows": 256,
+                "training_identity": "Pure code bytes; no Faiss index/header, fit, graph, or float rerank",
+                "before_training_empty_index_bytes": 0,
+                "after_training_empty_index_bytes": 0,
+                "shared_package_bytes": 0,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 0,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 0,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 0,
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 12,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 12,
+                        "sha256": "dc6f67e04b1e9fcc6e7bc1c4526eb02d4b437b08a67a8a15dfeafbc00d4454fe"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3072,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 3072,
+                        "sha256": "03498660810296085eb19b116a060c2aca395e204210a70444a9a87a7f99e1f0"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3084,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 3084,
+                        "sha256": "adc4fa8e8970bc6f9add98b9a482dee7bfa78575509c0c13d7fa3709feb85bea"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12000,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 12000,
+                        "sha256": "f30afe8c8c14b7fdf26299b63ae97dca8392cdb61e78c52b60eb82c1d61d6a7b"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 257,
+                "training_identity": "Pure code bytes; no Faiss index/header, fit, graph, or float rerank",
+                "before_training_empty_index_bytes": 0,
+                "after_training_empty_index_bytes": 0,
+                "shared_package_bytes": 0,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 0,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 0,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 0,
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 12,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 12,
+                        "sha256": "dc6f67e04b1e9fcc6e7bc1c4526eb02d4b437b08a67a8a15dfeafbc00d4454fe"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3072,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 3072,
+                        "sha256": "03498660810296085eb19b116a060c2aca395e204210a70444a9a87a7f99e1f0"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3084,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 3084,
+                        "sha256": "adc4fa8e8970bc6f9add98b9a482dee7bfa78575509c0c13d7fa3709feb85bea"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12000,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 12000,
+                        "sha256": "f30afe8c8c14b7fdf26299b63ae97dca8392cdb61e78c52b60eb82c1d61d6a7b"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 1000,
+                "training_identity": "Pure code bytes; no Faiss index/header, fit, graph, or float rerank",
+                "before_training_empty_index_bytes": 0,
+                "after_training_empty_index_bytes": 0,
+                "shared_package_bytes": 0,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 0,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {},
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 0,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 0,
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 12,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 12,
+                        "sha256": "dc6f67e04b1e9fcc6e7bc1c4526eb02d4b437b08a67a8a15dfeafbc00d4454fe"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3072,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 3072,
+                        "sha256": "03498660810296085eb19b116a060c2aca395e204210a70444a9a87a7f99e1f0"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3084,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 3084,
+                        "sha256": "adc4fa8e8970bc6f9add98b9a482dee7bfa78575509c0c13d7fa3709feb85bea"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12000,
+                    "parts": {
+                      "codes.bin": {
+                        "bytes": 12000,
+                        "sha256": "f30afe8c8c14b7fdf26299b63ae97dca8392cdb61e78c52b60eb82c1d61d6a7b"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              }
+            ],
+            "archive_ratio_summary": {
+              "n_archives": 470,
+              "denominator": "Each archive's own N_archive * marginal_bytes_per_vector",
+              "effective_package_bytes_mean_over_archives": 12.0,
+              "effective_package_bytes_min": 12.0,
+              "effective_package_bytes_max": 12.0,
+              "effective_package_cost_at_mean_N_separate": 12.0,
+              "shared_to_code_volume_ratio_mean": 0.0,
+              "shared_to_code_volume_ratio_min": 0.0,
+              "shared_to_code_volume_ratio_max": 0.0,
+              "common_preprocessing_included": false
+            }
+          },
+          {
+            "arm": "ITQ96_MATRIX_SURROGATE",
+            "marginal_bytes_per_vector": 12,
+            "marginal_cap_pass": true,
+            "shared_state_bytes_per_archive": 36935,
+            "storage_boundary": "Serialized quantizer/transform/code package only; common preprocessing excluded and explicitly unknown; not a full deployed system total",
+            "actual_itq_fit_performed": false,
+            "training_trials": [
+              {
+                "synthetic_training_input_rows": 256,
+                "training_identity": "ITQMatrix serialization surrogate plus BinaryFlat code store; no ITQ fit",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 36935,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 36864,
+                "serializer_headers_and_configuration_bytes": 71,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "actual_itq_fit_performed": false,
+                  "serialized_is_trained_flag": true,
+                  "matrix_identity": "Seeded synthetic orthogonal A installed in ITQMatrix; NOT fitted ITQ",
+                  "surrogate_for_future_fitted_matrix_content_bytes": 36864,
+                  "matrix_sha256": "e15ec9441e2555dca92259571f4d0e300249794d7274241bbd0849025a9ff830",
+                  "orthogonality_max_abs": 2.558282352627117e-08,
+                  "transform_serialized_bytes": 36902,
+                  "transform_serialization_overhead_bytes": 38,
+                  "fit_sample_count": null,
+                  "feasibility_or_stability_claim": false
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 36935,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "e011f0d5749ad57a2cdecbf0bb4651cfb16fae74e939f912770e536e93ae53fc"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 36947,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 45,
+                        "sha256": "7d036365f4a5ddc2021db7cf8a3da8369ce091d6efc2b4fa164e564ae6ffe592"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 40007,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3105,
+                        "sha256": "27cbb78eb98efaf15ebe3884fb418f41b79b869f2c81a0c872ba8c5a5a669427"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 40019,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3117,
+                        "sha256": "4b3dc779d6a148f7af0978c7cb744d9d3947cd41398b57170bf097db74fbc21d"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 48935,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12033,
+                        "sha256": "91a91cfdf25e1b47c920f932fa3b9c93a23758b3a97e90d81fa3f332b6d70efa"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 257,
+                "training_identity": "ITQMatrix serialization surrogate plus BinaryFlat code store; no ITQ fit",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 36935,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 36864,
+                "serializer_headers_and_configuration_bytes": 71,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "actual_itq_fit_performed": false,
+                  "serialized_is_trained_flag": true,
+                  "matrix_identity": "Seeded synthetic orthogonal A installed in ITQMatrix; NOT fitted ITQ",
+                  "surrogate_for_future_fitted_matrix_content_bytes": 36864,
+                  "matrix_sha256": "e15ec9441e2555dca92259571f4d0e300249794d7274241bbd0849025a9ff830",
+                  "orthogonality_max_abs": 2.558282352627117e-08,
+                  "transform_serialized_bytes": 36902,
+                  "transform_serialization_overhead_bytes": 38,
+                  "fit_sample_count": null,
+                  "feasibility_or_stability_claim": false
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 36935,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "e011f0d5749ad57a2cdecbf0bb4651cfb16fae74e939f912770e536e93ae53fc"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 36947,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 45,
+                        "sha256": "7d036365f4a5ddc2021db7cf8a3da8369ce091d6efc2b4fa164e564ae6ffe592"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 40007,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3105,
+                        "sha256": "27cbb78eb98efaf15ebe3884fb418f41b79b869f2c81a0c872ba8c5a5a669427"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 40019,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3117,
+                        "sha256": "4b3dc779d6a148f7af0978c7cb744d9d3947cd41398b57170bf097db74fbc21d"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 48935,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12033,
+                        "sha256": "91a91cfdf25e1b47c920f932fa3b9c93a23758b3a97e90d81fa3f332b6d70efa"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 1000,
+                "training_identity": "ITQMatrix serialization surrogate plus BinaryFlat code store; no ITQ fit",
+                "before_training_empty_index_bytes": 33,
+                "after_training_empty_index_bytes": 33,
+                "shared_package_bytes": 36935,
+                "algorithm_specific_fitted_content_bytes": 0,
+                "algorithm_specific_nonfitted_content_bytes": 36864,
+                "serializer_headers_and_configuration_bytes": 71,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "actual_itq_fit_performed": false,
+                  "serialized_is_trained_flag": true,
+                  "matrix_identity": "Seeded synthetic orthogonal A installed in ITQMatrix; NOT fitted ITQ",
+                  "surrogate_for_future_fitted_matrix_content_bytes": 36864,
+                  "matrix_sha256": "e15ec9441e2555dca92259571f4d0e300249794d7274241bbd0849025a9ff830",
+                  "orthogonality_max_abs": 2.558282352627117e-08,
+                  "transform_serialized_bytes": 36902,
+                  "transform_serialization_overhead_bytes": 38,
+                  "fit_sample_count": null,
+                  "feasibility_or_stability_claim": false
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 36935,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 33,
+                        "sha256": "e011f0d5749ad57a2cdecbf0bb4651cfb16fae74e939f912770e536e93ae53fc"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 36947,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 45,
+                        "sha256": "7d036365f4a5ddc2021db7cf8a3da8369ce091d6efc2b4fa164e564ae6ffe592"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 40007,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3105,
+                        "sha256": "27cbb78eb98efaf15ebe3884fb418f41b79b869f2c81a0c872ba8c5a5a669427"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 40019,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3117,
+                        "sha256": "4b3dc779d6a148f7af0978c7cb744d9d3947cd41398b57170bf097db74fbc21d"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 48935,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12033,
+                        "sha256": "91a91cfdf25e1b47c920f932fa3b9c93a23758b3a97e90d81fa3f332b6d70efa"
+                      },
+                      "synthetic_itq_transform.bin": {
+                        "bytes": 36902,
+                        "sha256": "aded76900d800e9013f125e75f51028d13b7b3a57c1e85c04577135a95b422af"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              }
+            ],
+            "archive_ratio_summary": {
+              "n_archives": 470,
+              "denominator": "Each archive's own N_archive * marginal_bytes_per_vector",
+              "effective_package_bytes_mean_over_archives": 87.24531428193117,
+              "effective_package_bytes_min": 71.95941558441558,
+              "effective_package_bytes_max": 105.27020202020202,
+              "effective_package_cost_at_mean_N_separate": 86.9525055482155,
+              "shared_to_code_volume_ratio_mean": 6.270442856827597,
+              "shared_to_code_volume_ratio_min": 4.996617965367966,
+              "shared_to_code_volume_ratio_max": 7.772516835016835,
+              "common_preprocessing_included": false
+            }
+          },
+          {
+            "arm": "PQ96_M12X8",
+            "marginal_bytes_per_vector": 12,
+            "marginal_cap_pass": true,
+            "shared_state_bytes_per_archive": 98390,
+            "storage_boundary": "Serialized quantizer/transform/code package only; common preprocessing excluded and explicitly unknown; not a full deployed system total",
+            "actual_itq_fit_performed": false,
+            "training_trials": [
+              {
+                "synthetic_training_input_rows": 256,
+                "training_identity": "Actual synthetic archive-local PQ training and serialization",
+                "before_training_empty_index_bytes": 98390,
+                "after_training_empty_index_bytes": 98390,
+                "shared_package_bytes": 98390,
+                "algorithm_specific_fitted_content_bytes": 98304,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 86,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "m": 12,
+                  "nbits": 8,
+                  "centroid_content_bytes": 98304,
+                  "training_iterations": 10,
+                  "training_seed": 73004,
+                  "min_points_per_centroid_recommendation": 39,
+                  "recommended_training_points": 9984,
+                  "recommendation_met": false,
+                  "training_status": "COMPLETED; reliability recommendation is distinct from hard trainability",
+                  "quality_claim": false
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 98390,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 98390,
+                        "sha256": "a4693f5b35e9786e6543fe10a2670e73386acff592f2129924bb55d415d9e750"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 98402,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 98402,
+                        "sha256": "21be833fa7c2fcb75d301dca825b53e33a27d16d8760fb9074813cd4a68226cd"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 101462,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 101462,
+                        "sha256": "2cefb539a8fb2e7a3ce20baf65222ee314553ea3f2e8f466279a1b3fd4506aff"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 101474,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 101474,
+                        "sha256": "0d6107e5e8b2161d21d7ff492ac8bfbfbc15483a9e04350e743de2618266c040"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 110390,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 110390,
+                        "sha256": "c2154baacc837c45d91ce3736864a718d6d417c2cf40d9ee45ee782168af8a66"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 257,
+                "training_identity": "Actual synthetic archive-local PQ training and serialization",
+                "before_training_empty_index_bytes": 98390,
+                "after_training_empty_index_bytes": 98390,
+                "shared_package_bytes": 98390,
+                "algorithm_specific_fitted_content_bytes": 98304,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 86,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "m": 12,
+                  "nbits": 8,
+                  "centroid_content_bytes": 98304,
+                  "training_iterations": 10,
+                  "training_seed": 73004,
+                  "min_points_per_centroid_recommendation": 39,
+                  "recommended_training_points": 9984,
+                  "recommendation_met": false,
+                  "training_status": "COMPLETED; reliability recommendation is distinct from hard trainability",
+                  "quality_claim": false
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 98390,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 98390,
+                        "sha256": "d466d34d48a21e9f188edb2f3c5df8526a38f63a314da05dc4f7b13559c7b186"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 98402,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 98402,
+                        "sha256": "10fb730055f8dd4b31c3f59782dec8377be81b28caaccf69ef045043afe2568b"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 101462,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 101462,
+                        "sha256": "6e3187a4169b896ac15013851e468fc7f6660d17028f3258462fab4fc000cff3"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 101474,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 101474,
+                        "sha256": "07e88907053e70899106e17db0c9724b3d18c8c633b6197c7fe7ddd338bb63ed"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 110390,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 110390,
+                        "sha256": "fbf62a64dad61d3c84c838e2aaf73d443ea0d810015580cb3ccf5b8ea250eee8"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 1000,
+                "training_identity": "Actual synthetic archive-local PQ training and serialization",
+                "before_training_empty_index_bytes": 98390,
+                "after_training_empty_index_bytes": 98390,
+                "shared_package_bytes": 98390,
+                "algorithm_specific_fitted_content_bytes": 98304,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 86,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "m": 12,
+                  "nbits": 8,
+                  "centroid_content_bytes": 98304,
+                  "training_iterations": 10,
+                  "training_seed": 73004,
+                  "min_points_per_centroid_recommendation": 39,
+                  "recommended_training_points": 9984,
+                  "recommendation_met": false,
+                  "training_status": "COMPLETED; reliability recommendation is distinct from hard trainability",
+                  "quality_claim": false
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 98390,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 98390,
+                        "sha256": "d5120866503764fa276c59fe44da335a352d1f28e5f445fa8323521ac90703cf"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 98402,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 98402,
+                        "sha256": "fdead0670e8718d2de10f3aa4faf8f9ddd807283ff969fca406c1f3ff13bda0c"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 101462,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 101462,
+                        "sha256": "52c8c83445d7dc8e171cd3a69d5b030c0182f7a55fcaee58668117e3773ea01f"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 101474,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 101474,
+                        "sha256": "3c54f95da87e7c691f2eca06bbda303d80126871d881b4d28d87c64feb0f2688"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 110390,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 110390,
+                        "sha256": "b4d52ae1577de6464c4049890192388f72bb3a815c3bbf05f9bed0b5dcbf95bd"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              }
+            ],
+            "archive_ratio_summary": {
+              "n_archives": 470,
+              "denominator": "Each archive's own N_archive * marginal_bytes_per_vector",
+              "effective_package_bytes_mean_over_archives": 212.44365702448107,
+              "effective_package_bytes_min": 171.72402597402598,
+              "effective_package_bytes_max": 260.45959595959596,
+              "effective_package_cost_at_mean_N_separate": 211.66365292781705,
+              "shared_to_code_volume_ratio_mean": 16.703638085373424,
+              "shared_to_code_volume_ratio_min": 13.310335497835498,
+              "shared_to_code_volume_ratio_max": 20.70496632996633,
+              "common_preprocessing_included": false
+            }
+          },
+          {
+            "arm": "RQ32_PLAIN_NO_ROTATION",
+            "marginal_bytes_per_vector": 12,
+            "marginal_cap_pass": true,
+            "shared_state_bytes_per_archive": 202,
+            "storage_boundary": "Serialized quantizer/transform/code package only; common preprocessing excluded and explicitly unknown; not a full deployed system total",
+            "actual_itq_fit_performed": false,
+            "training_trials": [
+              {
+                "synthetic_training_input_rows": 256,
+                "training_identity": "Plain IndexRaBitQ: fits centroid only; no internal rotation and no rotation seed",
+                "before_training_empty_index_bytes": 74,
+                "after_training_empty_index_bytes": 202,
+                "shared_package_bytes": 202,
+                "algorithm_specific_fitted_content_bytes": 128,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 74,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "centroid_content_bytes": 128,
+                  "nb_bits": 1,
+                  "sign_code_bytes": 4,
+                  "per_vector_factors_bytes": 8,
+                  "factor_fields": [
+                    "or_minus_c_l2sqr:float32",
+                    "dp_multiplier:float32"
+                  ],
+                  "plain_index_internal_rotation": false,
+                  "plain_index_rotation_seed": null,
+                  "query_quantization_qb_setting_only_no_queries": 4
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 202,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 202,
+                        "sha256": "5512c2412fcc9411f443deef902708de8e907df3d1f6ad570caf026ff7f15c0e"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 214,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 214,
+                        "sha256": "d4275fdb6e8cf50100ecab13f263121dafd3fc3bb930a8adf6b530323d7db10a"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3274,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3274,
+                        "sha256": "937271cfac1ad48d38fc2d598a32e9586ae5d88601f100e922e7480d5dccbe6b"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3286,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3286,
+                        "sha256": "45fe951643d5505a9297b3b2d119d2ce4fd65feabfd0c5d5e9c2446bdcb47bef"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12202,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12202,
+                        "sha256": "b360b805b3609fe79add111e84f7c0a4648b69554422498596d889062cbd2e62"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 257,
+                "training_identity": "Plain IndexRaBitQ: fits centroid only; no internal rotation and no rotation seed",
+                "before_training_empty_index_bytes": 74,
+                "after_training_empty_index_bytes": 202,
+                "shared_package_bytes": 202,
+                "algorithm_specific_fitted_content_bytes": 128,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 74,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "centroid_content_bytes": 128,
+                  "nb_bits": 1,
+                  "sign_code_bytes": 4,
+                  "per_vector_factors_bytes": 8,
+                  "factor_fields": [
+                    "or_minus_c_l2sqr:float32",
+                    "dp_multiplier:float32"
+                  ],
+                  "plain_index_internal_rotation": false,
+                  "plain_index_rotation_seed": null,
+                  "query_quantization_qb_setting_only_no_queries": 4
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 202,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 202,
+                        "sha256": "da7cb3db525e08e966955121934466d087a256cd01e6016c6c4b580dd5a740ef"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 214,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 214,
+                        "sha256": "e7c6d3648c76a028f221345ef1e1db3f3f36ea20c2a9208d02c0f67cb195f81c"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3274,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3274,
+                        "sha256": "ac9a31f0960e68bc73bc670b9516cc84f045081338f9445fdc1e696e0ffc5877"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3286,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3286,
+                        "sha256": "07588a8c15d3699d4cf2517a2b40cdd4fc785d29a94c07baaa5002a80fff1858"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12202,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12202,
+                        "sha256": "86620965474ad4e416c7f641d00283a85c02a2e7f53af8c7710f18d14506fc1a"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 1000,
+                "training_identity": "Plain IndexRaBitQ: fits centroid only; no internal rotation and no rotation seed",
+                "before_training_empty_index_bytes": 74,
+                "after_training_empty_index_bytes": 202,
+                "shared_package_bytes": 202,
+                "algorithm_specific_fitted_content_bytes": 128,
+                "algorithm_specific_nonfitted_content_bytes": 0,
+                "serializer_headers_and_configuration_bytes": 74,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "centroid_content_bytes": 128,
+                  "nb_bits": 1,
+                  "sign_code_bytes": 4,
+                  "per_vector_factors_bytes": 8,
+                  "factor_fields": [
+                    "or_minus_c_l2sqr:float32",
+                    "dp_multiplier:float32"
+                  ],
+                  "plain_index_internal_rotation": false,
+                  "plain_index_rotation_seed": null,
+                  "query_quantization_qb_setting_only_no_queries": 4
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 202,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 202,
+                        "sha256": "714490ba8075c6725561aceb48ffc2fb0212cbe1369c1a593752a849b68b70f9"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 214,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 214,
+                        "sha256": "c3068581e3ce991f5026b9cf986b5bfbbd1b7d0e744f109aedffdbe6aab617a2"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 3274,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3274,
+                        "sha256": "7ec0a81e4d73a85a5ccf3e8ab2b37d1f9cde4fd0638647b5a12428c771b758a9"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 3286,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 3286,
+                        "sha256": "e8a203e1c9dfbee4bea7074316783b2ef3989f421cdfaab1d1a44a24cb748624"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 12202,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 12202,
+                        "sha256": "ef8f34d3383387ff2424c0b6e70ec1317f17a8023b26a4e7062f6ca87ec2fc79"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              }
+            ],
+            "archive_ratio_summary": {
+              "n_archives": 470,
+              "denominator": "Each archive's own N_archive * marginal_bytes_per_vector",
+              "effective_package_bytes_mean_over_archives": 12.411521686339517,
+              "effective_package_bytes_min": 12.327922077922079,
+              "effective_package_bytes_max": 12.51010101010101,
+              "effective_package_cost_at_mean_N_separate": 12.409920295674551,
+              "shared_to_code_volume_ratio_mean": 0.0342934738616265,
+              "shared_to_code_volume_ratio_min": 0.027326839826839828,
+              "shared_to_code_volume_ratio_max": 0.04250841750841751,
+              "common_preprocessing_included": false
+            }
+          },
+          {
+            "arm": "RQ32_RANDOM_ROTATION_WRAPPER",
+            "marginal_bytes_per_vector": 12,
+            "marginal_cap_pass": true,
+            "shared_state_bytes_per_archive": 4369,
+            "storage_boundary": "Serialized quantizer/transform/code package only; common preprocessing excluded and explicitly unknown; not a full deployed system total",
+            "actual_itq_fit_performed": false,
+            "training_trials": [
+              {
+                "synthetic_training_input_rows": 256,
+                "training_identity": "Explicit random rotation then IndexRaBitQ; actual Faiss IndexPreTransform serializer",
+                "before_training_empty_index_bytes": 4241,
+                "after_training_empty_index_bytes": 4369,
+                "shared_package_bytes": 4369,
+                "algorithm_specific_fitted_content_bytes": 128,
+                "algorithm_specific_nonfitted_content_bytes": 4096,
+                "serializer_headers_and_configuration_bytes": 145,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "centroid_content_bytes": 128,
+                  "nb_bits": 1,
+                  "sign_code_bytes": 4,
+                  "per_vector_factors_bytes": 8,
+                  "factor_fields": [
+                    "or_minus_c_l2sqr:float32",
+                    "dp_multiplier:float32"
+                  ],
+                  "plain_index_internal_rotation": false,
+                  "plain_index_rotation_seed": null,
+                  "query_quantization_qb_setting_only_no_queries": 4,
+                  "explicit_rotation_seed": 73002,
+                  "rotation_A_content_bytes": 4096,
+                  "rotation_A_sha256": "6d691f4a7804386747c72dfacd89ffbc5922485d0bce65f2f9b9e3bc6fbe68b2",
+                  "rotation_bias_content_bytes": 0,
+                  "rotation_serialized_bytes": 4126,
+                  "rotation_serialization_overhead_bytes": 30,
+                  "inner_plain_index_trained_empty_bytes": 202,
+                  "pretransform_wrapper_overhead_bytes": 41,
+                  "rotation_state_representation": "Full float32 matrix A, NOT seed-only"
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 4369,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4369,
+                        "sha256": "ec13a1fbf6f469d77573cd32e564c7378e826b387e621aaec1fb0fd415981a68"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 4381,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4381,
+                        "sha256": "a84c2a6b11201fa85af6c3e4559f375e1f15d9136e9b18e10928ea2571a4aa38"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 7441,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 7441,
+                        "sha256": "2bb04b67c05956477cb1121f00a1fb7124275eec6a09caf7b96986b16d0cb95c"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 7453,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 7453,
+                        "sha256": "473311e9e890ab61f09010b6444380b23d78d5bac83371b88228f55ab36a1f9c"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 16369,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 16369,
+                        "sha256": "ea26c0f555c2dcb42e8676269196e1467c8d22d9d03ec496f5cbef6c1dc9ec40"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 257,
+                "training_identity": "Explicit random rotation then IndexRaBitQ; actual Faiss IndexPreTransform serializer",
+                "before_training_empty_index_bytes": 4241,
+                "after_training_empty_index_bytes": 4369,
+                "shared_package_bytes": 4369,
+                "algorithm_specific_fitted_content_bytes": 128,
+                "algorithm_specific_nonfitted_content_bytes": 4096,
+                "serializer_headers_and_configuration_bytes": 145,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "centroid_content_bytes": 128,
+                  "nb_bits": 1,
+                  "sign_code_bytes": 4,
+                  "per_vector_factors_bytes": 8,
+                  "factor_fields": [
+                    "or_minus_c_l2sqr:float32",
+                    "dp_multiplier:float32"
+                  ],
+                  "plain_index_internal_rotation": false,
+                  "plain_index_rotation_seed": null,
+                  "query_quantization_qb_setting_only_no_queries": 4,
+                  "explicit_rotation_seed": 73002,
+                  "rotation_A_content_bytes": 4096,
+                  "rotation_A_sha256": "6d691f4a7804386747c72dfacd89ffbc5922485d0bce65f2f9b9e3bc6fbe68b2",
+                  "rotation_bias_content_bytes": 0,
+                  "rotation_serialized_bytes": 4126,
+                  "rotation_serialization_overhead_bytes": 30,
+                  "inner_plain_index_trained_empty_bytes": 202,
+                  "pretransform_wrapper_overhead_bytes": 41,
+                  "rotation_state_representation": "Full float32 matrix A, NOT seed-only"
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 4369,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4369,
+                        "sha256": "23b7b74cb07f6b96d209667dc57e4984d32a5e1a020569a34d323f189fea9a1b"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 4381,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4381,
+                        "sha256": "71e52957ca2ca23103ffe41261dd224c44ca3956ccbb632f92aa7bc3e1f0bc6f"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 7441,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 7441,
+                        "sha256": "7004d4d2c96b1980759ccc1b6bcae712a0c8413a7e1a1af014d459fa2f9350ca"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 7453,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 7453,
+                        "sha256": "4ad5a4423ab4bd1e6e4cff3047795c98b28909f08386890ddbc4dc7071152784"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 16369,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 16369,
+                        "sha256": "0772984f60afc49757b3451b15ba04f9a944c37be6ee9553dee551ab20a0c913"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              },
+              {
+                "synthetic_training_input_rows": 1000,
+                "training_identity": "Explicit random rotation then IndexRaBitQ; actual Faiss IndexPreTransform serializer",
+                "before_training_empty_index_bytes": 4241,
+                "after_training_empty_index_bytes": 4369,
+                "shared_package_bytes": 4369,
+                "algorithm_specific_fitted_content_bytes": 128,
+                "algorithm_specific_nonfitted_content_bytes": 4096,
+                "serializer_headers_and_configuration_bytes": 145,
+                "common_preprocessing_bytes": null,
+                "common_preprocessing_status": "NOT MEASURED; these synthetic inputs already represent the archive feature matrix",
+                "auxiliary": {
+                  "centroid_content_bytes": 128,
+                  "nb_bits": 1,
+                  "sign_code_bytes": 4,
+                  "per_vector_factors_bytes": 8,
+                  "factor_fields": [
+                    "or_minus_c_l2sqr:float32",
+                    "dp_multiplier:float32"
+                  ],
+                  "plain_index_internal_rotation": false,
+                  "plain_index_rotation_seed": null,
+                  "query_quantization_qb_setting_only_no_queries": 4,
+                  "explicit_rotation_seed": 73002,
+                  "rotation_A_content_bytes": 4096,
+                  "rotation_A_sha256": "6d691f4a7804386747c72dfacd89ffbc5922485d0bce65f2f9b9e3bc6fbe68b2",
+                  "rotation_bias_content_bytes": 0,
+                  "rotation_serialized_bytes": 4126,
+                  "rotation_serialization_overhead_bytes": 30,
+                  "inner_plain_index_trained_empty_bytes": 202,
+                  "pretransform_wrapper_overhead_bytes": 41,
+                  "rotation_state_representation": "Full float32 matrix A, NOT seed-only"
+                },
+                "samples": [
+                  {
+                    "added_vectors": 0,
+                    "total_bytes": 4369,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4369,
+                        "sha256": "398715a34175dc5257574d2b7b1c6ed889f800a86d12168d82ea6f711dec3152"
+                      }
+                    },
+                    "integer_difference": 0,
+                    "expected_difference": 0,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1,
+                    "total_bytes": 4381,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 4381,
+                        "sha256": "ffa9b7f3b3458f57012d1a34427b60d127f13bda485440d1ffd06a714d536110"
+                      }
+                    },
+                    "integer_difference": 12,
+                    "expected_difference": 12,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 256,
+                    "total_bytes": 7441,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 7441,
+                        "sha256": "09b434f4a63f96071012a975c880b99a31cc22f1e2fc4d2ac085eb5f23318bee"
+                      }
+                    },
+                    "integer_difference": 3072,
+                    "expected_difference": 3072,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 257,
+                    "total_bytes": 7453,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 7453,
+                        "sha256": "5df9e1e3645863bf1efae42811ab44c3a4a2598b86b7d972c8814ab376741ad6"
+                      }
+                    },
+                    "integer_difference": 3084,
+                    "expected_difference": 3084,
+                    "integer_difference_pass": true
+                  },
+                  {
+                    "added_vectors": 1000,
+                    "total_bytes": 16369,
+                    "parts": {
+                      "index.bin": {
+                        "bytes": 16369,
+                        "sha256": "9bdaf943fc02a757b768a8bae7c35e291e5be98924428a67f65d18c8c076ea37"
+                      }
+                    },
+                    "integer_difference": 12000,
+                    "expected_difference": 12000,
+                    "integer_difference_pass": true
+                  }
+                ]
+              }
+            ],
+            "archive_ratio_summary": {
+              "n_archives": 470,
+              "denominator": "Each archive's own N_archive * marginal_bytes_per_vector",
+              "effective_package_bytes_mean_over_archives": 20.900684394145316,
+              "effective_package_bytes_min": 19.092532467532468,
+              "effective_package_bytes_max": 23.032828282828284,
+              "effective_package_cost_at_mean_N_separate": 20.866048375257982,
+              "shared_to_code_volume_ratio_mean": 0.7417236995121098,
+              "shared_to_code_volume_ratio_min": 0.5910443722943723,
+              "shared_to_code_volume_ratio_max": 0.9194023569023569,
+              "common_preprocessing_included": false
+            }
+          }
+        ],
+        "assertion_summary": {
+          "measured_arms": 7,
+          "training_cases": 21,
+          "exact_integer_serialization_checks": 105,
+          "noninteger_regression_or_tolerance_used": false,
+          "all_measured_cap_and_roundtrip_checks_pass": true
+        },
+        "limits": [
+          "ITQ is matrix serialization surrogate only, never a fitted ITQ result.",
+          "Plain RQ32 has no rotation; explicit rotated wrapper is a different package.",
+          "QuIVer-style compact codec is not the complete QuIVer graph/rerank system.",
+          "Common preprocessing is unknown, not zero; effective costs are package-only.",
+          "Synthetic successful training is not real-archive training reliability or retrieval evidence.",
+          "This is not a future retrieval runner integration pass or seal authorization."
+        ]
+      }
     },
     "task3": {
       "status": "IN_PROGRESS_NO_RESULT_CLAIMED"
