@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_independent_audit_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\package_integrity.py",
+    "--ref",
+    "7266160ac03bdd064fe75f058eae3430fbe14496"
+  ],
+  "exit_code": 0
+}

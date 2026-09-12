@@ -1,0 +1,52 @@
+{
+  "candidate": "7266160ac03bdd064fe75f058eae3430fbe14496",
+  "self_excluded": true,
+  "kind": "Audit integrity inventory only; not a seal",
+  "files": [
+    {
+      "path": "COMMAND.json",
+      "bytes": 392,
+      "sha256": "84d8ba8f02245c750eedaec5e93fedbe44dbf254d4a85ab51555ce8550fae41d"
+    },
+    {
+      "path": "FILE_HASHES.raw.json",
+      "bytes": 83790,
+      "sha256": "9508d1257e0adb515f48c616e67dd410b640fd93d4d472eb54afbffcd148f33d"
+    },
+    {
+      "path": "FINAL_SCOPED_ACCEPTANCE.md",
+      "bytes": 7314,
+      "sha256": "7a87964d8f181087e4170d71e77db698d25377038b3a2cc35450c8606463a53c"
+    },
+    {
+      "path": "package_integrity.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "package_integrity.stdout.txt",
+      "bytes": 172,
+      "sha256": "6e07fd9fdbbcf8221238527886d6747828ad50f8b82c4b7ad4e4133838bc44ce"
+    },
+    {
+      "path": "SCOPED_ACCEPTANCE.json",
+      "bytes": 1920,
+      "sha256": "0268e85a2e14c51de2c1e2c13d84a4a2bc20e9bdc37f5db4c0f21d84a9a826cb"
+    },
+    {
+      "path": "VERIFICATION_RESULTS.json",
+      "bytes": 106203,
+      "sha256": "bdf9d0862886149a8872ad22791eb24a5cb9ae85f5e6c3e450e979a4545f8f98"
+    },
+    {
+      "path": "verify_final_delta.py",
+      "bytes": 4789,
+      "sha256": "b62dbaf69fdfefc3d5635fd7bd19eacb01055c29dcb0107f2cb0628ee9d7ad9d"
+    },
+    {
+      "path": "write_audit_inventory.py",
+      "bytes": 3061,
+      "sha256": "75cd318bd14bd8615fb94791b0a489a24779d9a39fc97335e5c1af24ca487cfb"
+    }
+  ]
+}
