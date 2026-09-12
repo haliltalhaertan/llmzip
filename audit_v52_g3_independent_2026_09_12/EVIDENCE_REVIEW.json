@@ -1,0 +1,852 @@
+{
+  "scope": "Static raw identities and inherited receipt consistency only; no historical suite rerun.",
+  "check_count": 193,
+  "failed": 0,
+  "inherited_suites": [
+    {
+      "suite": "historical_test_membership_scaling_core",
+      "exit_code": 0,
+      "check_count": 99,
+      "unittest_tests_run": 0,
+      "source_sha256": "1d426abcc908718ae2d95f0a84e323603fd05199dc3da8809d03e6795f5b2d87"
+    },
+    {
+      "suite": "historical_test_runner_ingest_v4",
+      "exit_code": 0,
+      "check_count": 68,
+      "unittest_tests_run": 0,
+      "source_sha256": "1e0c853c090e506c93aa9a0ab13292fb4ff0bd5396d300cec857878a2844c461"
+    },
+    {
+      "suite": "historical_test_codex_v5",
+      "exit_code": 0,
+      "check_count": 45,
+      "unittest_tests_run": 0,
+      "source_sha256": "0558211434694308fb2c3f1983b63731010945079d2bc575143e10037d7ec6a2"
+    },
+    {
+      "suite": "historical_test_codex_v5_old_control",
+      "exit_code": 0,
+      "check_count": 5,
+      "unittest_tests_run": 0,
+      "source_sha256": "0558211434694308fb2c3f1983b63731010945079d2bc575143e10037d7ec6a2"
+    },
+    {
+      "suite": "historical_test_pipeline",
+      "exit_code": 0,
+      "check_count": 0,
+      "unittest_tests_run": 7,
+      "source_sha256": "cfd3263686de93bf87ca8b5336ac080fd7f3d759bfe1341bfd2e49e735a9bd81"
+    },
+    {
+      "suite": "g3_test_membership_scaling_core",
+      "exit_code": 0,
+      "check_count": 99,
+      "unittest_tests_run": 0,
+      "source_sha256": "1d426abcc908718ae2d95f0a84e323603fd05199dc3da8809d03e6795f5b2d87"
+    },
+    {
+      "suite": "g3_test_runner_ingest_v4",
+      "exit_code": 0,
+      "check_count": 68,
+      "unittest_tests_run": 0,
+      "source_sha256": "8427b3609f63827098d59c1d641b75decbb9a9e4c300867544d90fbc342842c2"
+    },
+    {
+      "suite": "g3_test_codex_v5",
+      "exit_code": 0,
+      "check_count": 45,
+      "unittest_tests_run": 0,
+      "source_sha256": "a2f660339a3850ab7480a44e18608b12487844f957aca112586aa6d04e586126"
+    },
+    {
+      "suite": "g3_test_codex_v5_old_control",
+      "exit_code": 0,
+      "check_count": 5,
+      "unittest_tests_run": 0,
+      "source_sha256": "a2f660339a3850ab7480a44e18608b12487844f957aca112586aa6d04e586126"
+    },
+    {
+      "suite": "g3_test_pipeline",
+      "exit_code": 0,
+      "check_count": 0,
+      "unittest_tests_run": 7,
+      "source_sha256": "974c099d671504f2ad028f9caff7326f4fe2e1fa717e8bce42a70605bbf93d13"
+    }
+  ],
+  "executed_source_count": 21,
+  "checks": [
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/CLAUDE_AUDIT_PROMPT.md",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence_final/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence_final/test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence_final/test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence_final/test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence_final/test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence_final/test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence_final/test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence/test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence/test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence/test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence/test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence/test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/evidence/test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/guarded_suite.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/README.md",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/test_codex_v5.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_runner_ingest_codex_v5_2026_09_08/validate_candidate.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_execution_prep_v1_2026_09_08/CLAUDE_REVIEW_REQUEST.md",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_execution_prep_v1_2026_09_08/pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_execution_prep_v1_2026_09_08/README.md",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_execution_prep_v1_2026_09_08/replay.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_execution_prep_v1_2026_09_08/test_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_execution_prep_v1_2026_09_08/evidence/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_execution_prep_v1_2026_09_08/evidence/stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "historical payload membership_execution_prep_v1_2026_09_08/evidence/stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot errors.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "inherited final snapshot safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\__init__.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash errors.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\errors.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_impl_v3_2026_09_07/GOVERNING_DOCUMENTS.md",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_impl_v3_2026_09_07\\GOVERNING_DOCUMENTS.md",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_impl_v3_2026_09_07/membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_impl_v3_2026_09_07\\membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_impl_v3_2026_09_07/README_IMPL_V3.md",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_impl_v3_2026_09_07\\README_IMPL_V3.md",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_impl_v3_2026_09_07/test_membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_impl_v3_2026_09_07\\test_membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v3_2026_09_08\\authoritative\\__init__.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v3_2026_09_08\\authoritative\\accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v3_2026_09_08\\authoritative\\resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v3_2026_09_08/corpus_ingest_v3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v3_2026_09_08\\corpus_ingest_v3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v3_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v3_2026_09_08\\errors.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v3_2026_09_08/membership_runner_v3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v3_2026_09_08\\membership_runner_v3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v3_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v3_2026_09_08\\safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v4_2026_09_08\\authoritative\\__init__.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v4_2026_09_08\\authoritative\\accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v4_2026_09_08\\authoritative\\resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v4_2026_09_08/corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v4_2026_09_08\\corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v4_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v4_2026_09_08\\errors.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v4_2026_09_08/membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v4_2026_09_08\\membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_v4_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_v4_2026_09_08\\safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_execution_prep_v1_2026_09_08/pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_execution_prep_v1_2026_09_08/README.md",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\README.md",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_execution_prep_v1_2026_09_08/test_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\test_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "allowlisted routing-only substitution inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py import membership_runner_v4 as R4",
+      "passed": true
+    },
+    {
+      "name": "allowlisted routing-only substitution inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py import corpus_ingest_v4 as I4",
+      "passed": true
+    },
+    {
+      "name": "allowlisted routing-only substitution inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py \"membership_runner_v4.py\"",
+      "passed": true
+    },
+    {
+      "name": "allowlisted routing-only substitution inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py \"corpus_ingest_v4.py\"",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\test_runner_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_codex_v5.py",
+      "passed": true
+    },
+    {
+      "name": "allowlisted routing-only substitution inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_codex_v5.py import membership_runner_v4 as R\nimport corpus_ingest_v4 as I",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_runner_ingest_codex_v5_2026_09_08\\test_codex_v5.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\authoritative\\__init__.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\authoritative\\accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\authoritative\\resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash errors.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\errors.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "adaptation source hash inherited/sources/membership_execution_prep_v1_2026_09_08/test_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "allowlisted routing-only substitution inherited/sources/membership_execution_prep_v1_2026_09_08/test_pipeline.py import pipeline as p",
+      "passed": true
+    },
+    {
+      "name": "reconstructed adaptation inherited\\final\\g3\\membership_execution_prep_v1_2026_09_08\\test_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "inherited receipt complete/no drift",
+      "passed": true
+    },
+    {
+      "name": "inherited launcher hash current",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt historical_test_membership_scaling_core",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source historical_test_membership_scaling_core",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt historical_test_runner_ingest_v4",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source historical_test_runner_ingest_v4",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt historical_test_codex_v5",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source historical_test_codex_v5",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt historical_test_codex_v5_old_control",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source historical_test_codex_v5_old_control",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt historical_test_pipeline",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source historical_test_pipeline",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt g3_test_membership_scaling_core",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source g3_test_membership_scaling_core",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt g3_test_runner_ingest_v4",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source g3_test_runner_ingest_v4",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt g3_test_codex_v5",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source g3_test_codex_v5",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt g3_test_codex_v5_old_control",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source g3_test_codex_v5_old_control",
+      "passed": true
+    },
+    {
+      "name": "inherited suite receipt g3_test_pipeline",
+      "passed": true
+    },
+    {
+      "name": "receipt binds suite source g3_test_pipeline",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source errors.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source package_integrity.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source run_inherited.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source test_certificate.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source test_delivery_g2.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source test_delivery_integration.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source test_delivery_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source verify_delivery.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source verify_provenance.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "implementation final receipt current source authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "provenance final receipt no failed checks",
+      "passed": true
+    }
+  ]
+}

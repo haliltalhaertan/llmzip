@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_independent_audit_20260912\\audit_v52_g3_independent_2026_09_12\\v52\\membership_g3_remediation_2026_09_11\\verify_delivery.py",
+    "--child",
+    "--output",
+    "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_independent_audit_20260912\\audit_v52_g3_independent_2026_09_12\\v52\\membership_g3_remediation_2026_09_11\\evidence\\independent_once"
+  ],
+  "exit_code": 0
+}

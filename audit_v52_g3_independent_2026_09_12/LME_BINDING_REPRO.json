@@ -1,0 +1,50 @@
+{
+  "candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
+  "scope": "Generated LME-shaped bytes only. Source/mapping checks substituted solely for exact generated fixture. Unchanged ingestion, representation, full controls, scoring and envelope builder. No bootstrap, production writer, finalizer or suite rerun.",
+  "cohort_order": [
+    "q_z",
+    "q_a"
+  ],
+  "true_assembly_order": [
+    {
+      "ordinal": 0,
+      "question_ids": [
+        "q_a"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "question_ids": [
+        "q_z"
+      ]
+    }
+  ],
+  "envelope_accepted": true,
+  "record_count": 120,
+  "envelope_binding_sha256": "29706bb1c5caaefc1ec0b022dc582f408f989bd14b8a59a7796b846fa2c14d28",
+  "mismatches": [
+    {
+      "archive_ordinal": 0,
+      "actual_preparation_question_ids": [
+        "q_a"
+      ],
+      "persisted_envelope_question_ids": [
+        "q_z"
+      ]
+    },
+    {
+      "archive_ordinal": 1,
+      "actual_preparation_question_ids": [
+        "q_z"
+      ],
+      "persisted_envelope_question_ids": [
+        "q_a"
+      ]
+    }
+  ],
+  "reproduced": true,
+  "data_events": {
+    "synthetic_data": 3,
+    "denied": 0
+  }
+}

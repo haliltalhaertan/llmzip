@@ -1,0 +1,47 @@
+[
+  {
+    "bytes": 2831,
+    "commit": "b6b06e0c7e51089aa402dcdbddf03f692d690948",
+    "expected_sha256": "533bf10ec66fa7ab225a60d43161e129791d0f168f7e0ab520ce0afc7f23548f",
+    "git_blob": "d34455e418a43cc81d9219cdc73c9ec8bc8397aa",
+    "label": "grant",
+    "path": "docs/v52/V52_G3_REMEDIATION_GRANT_HR_DECISION_2026-09-11.md",
+    "sha256": "533bf10ec66fa7ab225a60d43161e129791d0f168f7e0ab520ce0afc7f23548f"
+  },
+  {
+    "bytes": 16470,
+    "commit": "8671128a13877c97754da182421ba615422dd2ec",
+    "expected_sha256": "03f5fe7d7ff838936bf8bc3bc4a406836613d611fefd94f79228cb8e2cbd4970",
+    "git_blob": "b2992edaa492fb54cdad3d046763fbb991da5378",
+    "label": "decision",
+    "path": "docs/v52/V52_OBLIGATION_1_AND_F3_N1_DECISION_2026-09-09.md",
+    "sha256": "03f5fe7d7ff838936bf8bc3bc4a406836613d611fefd94f79228cb8e2cbd4970"
+  },
+  {
+    "bytes": 37944,
+    "commit": "5126766cac9201bbede178ccb558efa428f9488c",
+    "expected_sha256": "aea5d05c220571076b7961afd07cd8356c93e989eb1416e873772349bd62b9bb",
+    "git_blob": "846a03c95a9f83ec4c19bd962174b47f721fa4d9",
+    "label": "prep_audit",
+    "path": "audit_v52_execution_prep_v1_review_2026_09_08/EXECUTION_PREP_V1_REVIEW.md",
+    "sha256": "aea5d05c220571076b7961afd07cd8356c93e989eb1416e873772349bd62b9bb"
+  },
+  {
+    "bytes": 34480,
+    "commit": "2cf602090a6c4c42dba44f66d95d8dfed0e0f2e8",
+    "expected_sha256": "fd10e53324787965e11155cb6cd31952496199f0e8250fe9416c996abf227cea",
+    "git_blob": "484088ab100535d8ae1da684810a1cefdcfaca3a",
+    "label": "v5_audit",
+    "path": "audit_v52_codex_v5_repair_review_2026_09_08/CODEX_V5_REVIEW.md",
+    "sha256": "fd10e53324787965e11155cb6cd31952496199f0e8250fe9416c996abf227cea"
+  },
+  {
+    "bytes": 496820,
+    "commit": "4f2429b257546d6899f3ed48f605cd18210aeae0",
+    "expected_sha256": "3deef4740f0691d109960d659ec636f19ef58b81f04522fb5dabb5cba665180f",
+    "git_blob": "379956b751f66f250eb0095f245957d603c4ca87",
+    "label": "delivery_base_ledger",
+    "path": "docs/CONTINUITY_LEDGER.md",
+    "sha256": "3deef4740f0691d109960d659ec636f19ef58b81f04522fb5dabb5cba665180f"
+  }
+]

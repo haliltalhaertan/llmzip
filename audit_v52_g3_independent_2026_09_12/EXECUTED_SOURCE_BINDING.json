@@ -1,0 +1,111 @@
+{
+  "candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
+  "relocation": "Byte-identical root Python and authoritative Python files copied into audit/v52/package; same directory depth, same pinned interpreter, unchanged launcher and assertions.",
+  "sources": [
+    {
+      "path": "corpus_ingest_g3.py",
+      "sha256": "e6392bbca9681c97501e37f4292a5b31c3b3c323422e8ca2f58b8ac531ca7819",
+      "bytes": 34556
+    },
+    {
+      "path": "errors.py",
+      "sha256": "1f5912611d8fbd943a55ab90e737e2e3c6f0b6f14048cc439881dbd90ea9930c",
+      "bytes": 11298
+    },
+    {
+      "path": "exact_oracle.py",
+      "sha256": "5df57dfc02ea75a7d778008c22031907e77af715d80fd1ac283a13371e8c8ef8",
+      "bytes": 924
+    },
+    {
+      "path": "integration_g3.py",
+      "sha256": "bfbc1d1976f9b7112abdde03aeb69db1d62659f34791f20a6e5428b1d8b65b2a",
+      "bytes": 15290
+    },
+    {
+      "path": "membership_runner_g3.py",
+      "sha256": "b76ec43277ce50f88c1f30970c0761ea4957c78fa80393ce065cdf814c129479",
+      "bytes": 31486
+    },
+    {
+      "path": "membership_scaling_core.py",
+      "sha256": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72",
+      "bytes": 29271
+    },
+    {
+      "path": "package_integrity.py",
+      "sha256": "9b63b2dca72410ea1501d1910fd03d31e8495a939f83cb650135ef2c181a3f27",
+      "bytes": 2454
+    },
+    {
+      "path": "pipeline_g3.py",
+      "sha256": "c4a34e01d70022d39d230071733c185a115b71ad73035815f19f7378b100ac5d",
+      "bytes": 21096
+    },
+    {
+      "path": "record_boundary.py",
+      "sha256": "7d883c8523f848147c1872bed84f871e8765c31da79aab43173be5a5a9226d5c",
+      "bytes": 1172
+    },
+    {
+      "path": "run_inherited.py",
+      "sha256": "f4660e4fdf3573bcf127a060fbfc18e6a6a9af3741a3fee7339827a68b117a4c",
+      "bytes": 19379
+    },
+    {
+      "path": "safe_report.py",
+      "sha256": "be4b3156edce0799d60dbb2a88a7e39314c450f38d417d044de85a803e6d126e",
+      "bytes": 5240
+    },
+    {
+      "path": "test_certificate.py",
+      "sha256": "9de095291ede96f385a370c656152788acaf11fcfbebac03e4298847a74eebec",
+      "bytes": 7213
+    },
+    {
+      "path": "test_delivery_g2.py",
+      "sha256": "29c1bd0b46ea3aceb27e742f5c51d973edd36b1fe51a2e9c310e7ef78a4e7cb1",
+      "bytes": 6036
+    },
+    {
+      "path": "test_delivery_integration.py",
+      "sha256": "7d50e9e5c794d3fef4bba0770b40fa3dfa1b5322190b1c5861cf61d4626282fc",
+      "bytes": 15445
+    },
+    {
+      "path": "test_delivery_pipeline.py",
+      "sha256": "238830529cf72926c958bd086e0519fcf7fea316b4a3a505717909ec3301151e",
+      "bytes": 42370
+    },
+    {
+      "path": "test_g3_remediation.py",
+      "sha256": "1f72d43483032ca45c4fff89bce88e0ba9f3194c9d17bfc3a741ddaf312815b7",
+      "bytes": 323
+    },
+    {
+      "path": "verify_delivery.py",
+      "sha256": "24d75a881e3a790fa026861a863c5428d36cf93cdd2a79e22c75c9212e712bba",
+      "bytes": 5851
+    },
+    {
+      "path": "verify_provenance.py",
+      "sha256": "40ef9221dea80e04b81c1d8b166ffa40e3254113619703c36fe3b9d5e7a76686",
+      "bytes": 13542
+    },
+    {
+      "path": "authoritative/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "authoritative/accepted_configuration.py",
+      "sha256": "47ccc1717a9be6f0cb42008cd38d625dbc3b6ba73f717e6b11c09ee93627fee9",
+      "bytes": 9030
+    },
+    {
+      "path": "authoritative/resolve_sources.py",
+      "sha256": "c2bc0824f62acd68dcedb4713abcdcd91e4014194082a62d359ec92ac564a992",
+      "bytes": 6621
+    }
+  ]
+}

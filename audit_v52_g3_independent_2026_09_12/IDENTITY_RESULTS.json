@@ -1,0 +1,2018 @@
+{
+  "candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
+  "base": "4f2429b257546d6899f3ed48f605cd18210aeae0",
+  "origin_main_at_audit": "ae9175676b840ae6a80a31eba9836187dc1b7491",
+  "check_count": 502,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "candidate HEAD",
+      "passed": true
+    },
+    {
+      "name": "local LF configuration",
+      "passed": true
+    },
+    {
+      "name": "candidate remote at clone",
+      "passed": true
+    },
+    {
+      "name": "candidate additive namespace only",
+      "passed": true,
+      "file_count": 426
+    },
+    {
+      "name": "manifest exact coverage",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout .gitignore",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout INTEGRATION_TRANSFER.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout README.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout RECOVERY_INPUT.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout SOURCE_PRESERVATION.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout TRACEABILITY.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout VERIFICATION_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout errors.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout evidence/final/COMMAND.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout evidence/final/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout evidence/final/stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout evidence/final/stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout evidence/integrated_001/COMMAND.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout evidence/integrated_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout evidence/integrated_001/stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout evidence/integrated_001/stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/DEVELOPMENT_RUNS.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/RECEIPT.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/RECEIPT_FILES_SHA256.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/SOURCE_DOCUMENTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/final/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_001/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_002/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_003/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/ADAPTATIONS.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/ADAPTATIONS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/CURRENT_SOURCE_SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/g3_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_codex_v5.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_codex_v5_old_control.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_codex_v5_old_control.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_codex_v5_old_control.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_membership_scaling_core.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_pipeline.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_pipeline.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_pipeline.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_runner_ingest_v4.metrics.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/historical_test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/checks.log",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/run_004/provenance/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_execution_prep_v1_2026_09_08/README.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_execution_prep_v1_2026_09_08/pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_execution_prep_v1_2026_09_08/test_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_impl_v3_2026_09_07/GOVERNING_DOCUMENTS.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_impl_v3_2026_09_07/README_IMPL_V3.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_impl_v3_2026_09_07/membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_impl_v3_2026_09_07/test_membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/README.md",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_codex_v5.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_codex_v5_2026_09_08/test_runner_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v3_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v3_2026_09_08/corpus_ingest_v3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v3_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v3_2026_09_08/membership_runner_v3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v3_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v4_2026_09_08/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v4_2026_09_08/corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v4_2026_09_08/errors.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v4_2026_09_08/membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/membership_runner_ingest_v4_2026_09_08/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout inherited/sources/pinned_arithmetic_source.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout package_integrity.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/SOURCE_DOCUMENTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/checks.log",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/final/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/NEGATIVE_CONTROL.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/checks.log",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/authoritative/__init__.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/authoritative/accepted_configuration.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/authoritative/resolve_sources.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/errors.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/integration_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/membership_scaling_core.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/pipeline_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/safe_report.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/recovery_to_current/test_g3_remediation.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/negative_payload_001/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/path_controls_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/path_controls_001/control_1.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/path_controls_001/control_2.stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/SNAPSHOT.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/errors.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/v5_corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/pre_edit/v5_membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/CURRENT_VS_RECOVERY.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/MATERIALIZED.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/RAW_BLOBS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/RESULTS.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/checks.log",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/core_raw_identity.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/current_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/current_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/pre_edit_corpus_ingest_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/pre_edit_membership_runner_g3.py.diff",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/prep_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout provenance/verify_001/v5_PAYLOAD_HASHES.raw.json",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout recovery/test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout recovery_baseline.txt",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout run_inherited.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout test_certificate.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout test_delivery_g2.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout test_delivery_integration.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout test_delivery_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout verify_delivery.py",
+      "passed": true
+    },
+    {
+      "name": "raw manifest and checkout verify_provenance.py",
+      "passed": true
+    },
+    {
+      "name": "authority raw grant",
+      "passed": true
+    },
+    {
+      "name": "authority raw decision",
+      "passed": true
+    },
+    {
+      "name": "authority raw prep_audit",
+      "passed": true
+    },
+    {
+      "name": "authority raw v5_audit",
+      "passed": true
+    },
+    {
+      "name": "authority raw delivery_base_ledger",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes errors.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "recovery bytes test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_impl_v3_2026_09_07\\membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_impl_v3_2026_09_07\\test_membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_impl_v3_2026_09_07\\README_IMPL_V3.md",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_impl_v3_2026_09_07\\GOVERNING_DOCUMENTS.md",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\authoritative\\__init__.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\authoritative\\accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\authoritative\\resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\errors.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\membership_runner_v3.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\corpus_ingest_v3.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\authoritative\\__init__.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\authoritative\\accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\authoritative\\resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\errors.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\__init__.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\resolve_sources.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\errors.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\test_runner_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\test_codex_v5.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\README.md",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_execution_prep_v1_2026_09_08\\pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_execution_prep_v1_2026_09_08\\test_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\membership_execution_prep_v1_2026_09_08\\README.md",
+      "passed": true
+    },
+    {
+      "name": "inherited raw source inherited\\sources\\pinned_arithmetic_source.py",
+      "passed": true
+    },
+    {
+      "name": "source ancestry dcb568d0a6c33154c1568500325ad457b4d6f455 -> 07ec929243068914676a0f30efd10c9f294c7e71",
+      "passed": true
+    },
+    {
+      "name": "source ancestry 07ec929243068914676a0f30efd10c9f294c7e71 -> ed4e22c520b7dc0ae2f43f915e0c621070c72a87",
+      "passed": true
+    },
+    {
+      "name": "suite exact observed count and success",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit errors.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit exact_oracle.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit integration_g3.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit package_integrity.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit record_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit run_inherited.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit safe_report.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit test_certificate.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit test_delivery_g2.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit test_delivery_integration.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit test_delivery_pipeline.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit verify_delivery.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit verify_provenance.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "name": "executed bytes bound to commit authoritative/resolve_sources.py",
+      "passed": true
+    }
+  ]
+}

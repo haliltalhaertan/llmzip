@@ -1,0 +1,41 @@
+{
+  "candidate": "24d3351f068f6982148c14a9e3338c29a2769449",
+  "candidate_branch": "codex/g3-remediation-delivery-2026-09-12",
+  "audit_branch": "codex/g3-independent-audit-2026-09-12",
+  "verdict": "NOT_ACCEPTED_CHANGES_REQUIRED",
+  "blocking_findings": [
+    "A1"
+  ],
+  "full_synthetic_suite_invocations": 1,
+  "test_methods": 53,
+  "subtests": 5959,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "targeted_probe_invocations": 1,
+  "historical_suite_invocations": 0,
+  "identity_checks": 502,
+  "evidence_checks": 193,
+  "executed_python_sources": 21,
+  "candidate_namespace_unchanged": true,
+  "original_preservation_observation": "ORIGINAL_SOURCE_OBSERVATION.json",
+  "origin_refs_observed": [
+    "24d3351f068f6982148c14a9e3338c29a2769449\trefs/heads/codex/g3-remediation-delivery-2026-09-12",
+    "ae9175676b840ae6a80a31eba9836187dc1b7491\trefs/heads/main"
+  ],
+  "boundaries": {
+    "corpus_access": 0,
+    "frozen_outcome_access": 0,
+    "experiment": 0,
+    "production_retrieval": 0,
+    "finalize": 0,
+    "seal": 0,
+    "HMAC": 0,
+    "production_authorization": 0,
+    "implementation_edits": 0,
+    "main_writes": 0,
+    "Drive_work": 0,
+    "cost_replay": 0
+  },
+  "scope": "Independent scoped synthetic acceptance audit; no production/native/gold work."
+}
