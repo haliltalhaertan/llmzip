@@ -1,0 +1,23 @@
+{
+  "object_under_audit": {
+    "branch": "codex/v52-static-storage-contract-2026-09-12",
+    "commit": "f9404f2b1e56e5a63878978c19f30283b18324fd"
+  },
+  "live_main": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+  "sources": [
+    {"source":"LongMemEval feature geometry","locator":"docs/v52/task4c2/V52_T4C2_feature_geometry.csv","status":"VERIFIED","binding":"manifest sha256 d4c9ce62b0f1b66611611bb014a887d2e7e5fcfaee0af94f53ffb70dc84d7d32","use":"question_id + N_archive only"},
+    {"source":"LoCoMo representation proof","locator":"Drive 11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi","status":"VERIFIED_MANIFEST_BOUND","sha256":"957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd","binding":"T4D post-run manifest -> upload receipt"},
+    {"source":"adapter V1","locator":"adapters/longmemeval_v52_adapter.py","status":"VERIFIED_SOURCE_PROCEDURE"},
+    {"source":"adapter V2","locator":"adapters/longmemeval_v52_adapter_v2.py","status":"VERIFIED_ALIAS_TO_V1"},
+    {"source":"word/char TF-IDF fitted bytes","status":"SEARCHED_NOT_LOCATED_UNKNOWN"},
+    {"source":"source SVD components","status":"SEARCHED_NOT_LOCATED_UNKNOWN"},
+    {"source":"mixed96 SVD components","status":"SEARCHED_NOT_LOCATED_UNKNOWN"},
+    {"source":"mu96","status":"SEARCHED_NOT_LOCATED_UNKNOWN"},
+    {"source":"ITQ96 fitted rotation","status":"SEARCHED_NOT_LOCATED_UNKNOWN"},
+    {"source":"SIMHASH/Haar regeneration","status":"REGENERATION_CANDIDATE_NOT_VERIFIED"},
+    {"source":"PQ/OPQ/RaBitQ real archive state","status":"REAL_ARCHIVE_ARTIFACT_UNKNOWN"},
+    {"source":"persistent ID/offset mapping","status":"UNKNOWN"},
+    {"source":"T4C2 nested binary NPZ bundle","status":"FOUND_BUT_EXCLUDED_DIAGNOSTIC_ARTIFACT","detail":"470 NPZ + manifest; includes doc/query codes and gold_rows; not fitted state/package"},
+    {"source":"contract raw SHA recomputation","status":"PARTIAL","detail":"FILE_HASHES.json raw SHA recomputed; three other requested files verified transitively by manifest/object/additive delta but not labeled raw-recomputed"}
+  ]
+}
