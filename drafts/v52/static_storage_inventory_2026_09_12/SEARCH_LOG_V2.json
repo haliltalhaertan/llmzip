@@ -1,0 +1,127 @@
+{
+  "schema": "V52_STATIC_STORAGE_SEARCH_LOG_V2",
+  "status": "SEARCH_RECORD_ONLY_NO_ABSENCE_INFERENCE",
+  "policy": "SEARCHED / NOT LOCATED / UNKNOWN unless a positive artifact identity is verified; not-found is not absence.",
+  "audit_reference": {
+    "branch": "audit/v52-static-storage-inventory-independent-2026-09-12",
+    "commit": "22b58b609f766c028a344813eacec4abab0a7804",
+    "audit_search_log_path": "audit_v52_static_storage_inventory_2026_09_12/SEARCH_LOG.json",
+    "audit_verdict": "REQUEST_CHANGES"
+  },
+  "terms": [
+    ".pkl",
+    ".pickle",
+    ".joblib",
+    ".npz",
+    ".npy",
+    ".faiss",
+    ".index",
+    ".bin",
+    ".model",
+    ".pt",
+    ".pth",
+    "vectorizer",
+    "vocabulary",
+    "vocab",
+    "idf",
+    "svd",
+    "components",
+    "projector",
+    "projection",
+    "mu96",
+    "center",
+    "centering",
+    "rotation",
+    "itq",
+    "haar",
+    "pq",
+    "opq",
+    "rabitq",
+    "centroid",
+    "codebook",
+    "serializer",
+    "serialization",
+    "archive_model",
+    "model_state",
+    "manifest",
+    "hash",
+    "receipt"
+  ],
+  "namespaces": [
+    {
+      "name": "Git target f9404f2b1e56e5a63878978c19f30283b18324fd recursive tree",
+      "coverage_source": "parent + independent audit",
+      "result": "No qualifying real archive-fitted TF-IDF/SVD/mu96/ITQ/PQ/OPQ/RaBitQ persistent package was positively identified.",
+      "status": "SEARCHED_NOT_LOCATED_UNKNOWN"
+    },
+    {
+      "name": "Git research/v52-sign-mechanism-locomo-2026-09-04",
+      "coverage_source": "parent + independent audit",
+      "result": "No qualifying fitted-state serialization path positively identified.",
+      "status": "SEARCHED_NOT_LOCATED_UNKNOWN"
+    },
+    {
+      "name": "Git twelve-byte prereg/evidence/runtime/decision branches",
+      "coverage_source": "parent + independent audit",
+      "result": "Documents, scripts and synthetic storage evidence were found; no identified real archive-fitted model package.",
+      "status": "SEARCHED_NOT_LOCATED_UNKNOWN"
+    },
+    {
+      "name": "Drive V52_TASK_4C2_CENTERING_GEOMETRY/FINAL_2026-08-27_FULL_470",
+      "coverage_source": "independent audit container inspection",
+      "result": "V52_T4C2_ALL_OUTPUTS.zip contains nested V52_T4C2_BINARY_GEOMETRY.zip with 470 per-question NPZ diagnostics plus manifest. These are diagnostic packed codes/query/gold/N metadata, not serialized fitted TF-IDF/SVD/mu96/rotation state.",
+      "positive_hit": "FOUND_BUT_EXCLUDED_DIAGNOSTIC_ARTIFACT"
+    },
+    {
+      "name": "Drive V52_TASK_4C3_COORDINATE_AXIS_CAUSAL_PROBE/FINAL_2026-08-28_FULL_470",
+      "coverage_source": "parent + independent audit",
+      "result": "CSV/JSON/report/script outputs inspected; no qualifying fitted-state serialization positively identified.",
+      "status": "SEARCHED_NOT_LOCATED_UNKNOWN"
+    },
+    {
+      "name": "Drive V52_TASK_4D_LOCOMO_FROZEN_CROSS_BENCHMARK_REPLICATION_2026-08-29",
+      "coverage_source": "parent + independent audit",
+      "result": "Representation proof and provenance manifests/receipt found; no qualifying fitted-state serialization positively identified.",
+      "positive_hits": [
+        {
+          "artifact": "V52_T4D_REPRESENTATION_TRANSFER_PROOF.txt",
+          "drive_file_id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+          "sha256": "957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd",
+          "classification": "PROCEDURE_AND_ARCHIVE_ROSTER_PROOF_NOT_FITTED_STATE"
+        },
+        {
+          "artifact": "V52_T4D_POST_RUN_MANIFEST.json",
+          "drive_file_id": "1Lk5ZLaceKuc3OF-v0X52OfItU0PqVlmp",
+          "sha256": "a97e411c1ed24c5c93590638fcb51248936d8428a38e4d76cf0c6b74a9399b9c"
+        },
+        {
+          "artifact": "V52_T4D_UPLOAD_RECEIPT.txt",
+          "drive_file_id": "1BJgsMU37aw5yFnZ2g76kuNYMJkfR6HIP",
+          "classification": "MANIFEST_DIGEST_RECEIPT"
+        }
+      ]
+    },
+    {
+      "name": "Drive global OPQ/RaBitQ/codebook/model-state keyword searches",
+      "coverage_source": "parent + independent audit",
+      "result": "Report/literature/handoff hits only for the relevant project track; no identified real archive-fitted codebook/rotation package.",
+      "status": "SEARCHED_NOT_LOCATED_UNKNOWN"
+    }
+  ],
+  "container_hits": [
+    {
+      "artifact": "T4C2 nested binary NPZ bundle",
+      "status": "FOUND_BUT_EXCLUDED_DIAGNOSTIC_ARTIFACT",
+      "reason": "Contains packed document/query codes, ITQ seed metadata, gold_rows, N_archive and bitorder; it does not serialize the fitted vectorizers, SVDs, mu96 or rotations and is not a declared static-storage package.",
+      "retrieval_quality_interpretation": "FORBIDDEN_NOT_PERFORMED"
+    }
+  ],
+  "forbidden_not_searched_or_not_interpreted": [
+    "Task4F1 real corpus",
+    "Task4F1 query/gold/outcome",
+    "sealed outcomes",
+    "retrieval scoring or quality interpretation",
+    "raw-corpus model reconstruction/refit"
+  ],
+  "conclusion": "No real archive-fitted model serialization package has been positively identified in the logged namespaces. This is not evidence that none exists."
+}
