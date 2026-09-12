@@ -1,0 +1,76 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "findings": [
+    {
+      "id": "INV-AUD-001",
+      "severity": "P2",
+      "claim_challenged": "LoCoMo source hash/provenance is UNKNOWN_IN_THIS_INVENTORY / FOUND_ACCESSIBLE_HASH_NOT_BOUND_HERE.",
+      "evidence": [
+        "Drive file 11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi raw SHA256=957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd",
+        "V52_T4D_POST_RUN_MANIFEST.json atomic_output_hashes binds that exact digest",
+        "manifest raw SHA256=a97e411c1ed24c5c93590638fcb51248936d8428a38e4d76cf0c6b74a9399b9c",
+        "V52_T4D_UPLOAD_RECEIPT.txt binds that manifest digest"
+      ],
+      "reproduced": true,
+      "disposition": "CONFIRMED_DEFECT",
+      "required_correction": "Change LoCoMo proof provenance from hash-not-bound/unknown to manifest-bound raw artifact provenance. Do not infer fitted model state from this proof.",
+      "blocks_next_stage": true
+    },
+    {
+      "id": "INV-AUD-002",
+      "severity": "P2",
+      "claim_challenged": "Inventory is complete enough for the next adapter-plan stage.",
+      "evidence": [
+        "Parent inventory records fitted-state UNKNOWNs but does not assign the required per-item deterministic-regeneration statuses PERSISTED_ARTIFACT_VERIFIED / DETERMINISTIC_REGENERATION_VERIFIED / REGENERATION_CANDIDATE_NOT_VERIFIED / UNKNOWN.",
+        "TF-IDF vocabulary/IDF, source SVD, mixed96 SVD, mu96 and ITQ rotation are archive-dependent; no source proves corpus-free regeneration from small persisted state.",
+        "SIMHASH/Haar generation is a candidate because seeded RNG is used, but exact RNG/version/dtype/order plus archive-dependent dimensions are not bound as a regeneration contract."
+      ],
+      "reproduced": true,
+      "disposition": "MISSING_REQUIRED_CLASSIFICATION",
+      "required_correction": "Add a deterministic_regeneration_status and evidence/blocker field for every fitted/shared state item; retain UNKNOWN unless source establishes corpus-free deterministic reopening.",
+      "blocks_next_stage": true
+    },
+    {
+      "id": "INV-AUD-003",
+      "severity": "P2",
+      "claim_challenged": "Fitted-state/artifact search log is sufficiently explicit and complete.",
+      "evidence": [
+        "T4C2 FINAL contains V52_T4C2_ALL_OUTPUTS.zip, which contains nested V52_T4C2_BINARY_GEOMETRY.zip with 470 codes/<question_id>.npz artifacts plus MANIFEST.json.",
+        "Sample NPZ schema: sign_doc_packed (N,12) uint8, sign_query_packed (12), itq_doc_packed (5,N,12), itq_query_packed (5,12), itq_seeds, gold_rows, N_archive, bitorder.",
+        "These are diagnostic code/query/gold artifacts, not serialized TF-IDF/SVD/mu96/rotation state and not a valid real static-storage package. Parent search conclusion remains directionally correct, but the found compressed artifact class is not recorded."
+      ],
+      "reproduced": true,
+      "disposition": "COMPLETENESS_GAP",
+      "required_correction": "Record the T4C2 nested NPZ bundle explicitly as FOUND_BUT_EXCLUDED_DIAGNOSTIC_ARTIFACT and state why it is not fitted state or a storage-cost package.",
+      "blocks_next_stage": false
+    },
+    {
+      "id": "INV-AUD-004",
+      "severity": "P2",
+      "claim_challenged": "ID/offset/payload mapping accounting is fully inventory-ready.",
+      "evidence": [
+        "Adapters deterministically construct logical memory_id values.",
+        "No verified package boundary was found that proves IDs are physically stored, proves a zero-byte implicit ordinal mapping, or defines an offset table/external payload lookup contract.",
+        "Parent text says mapping remains UNKNOWN, but does not encode the required five-way distinction: logical ID exists / package stores ID / implicit reproducible / external boundary dependency / UNKNOWN."
+      ],
+      "reproduced": true,
+      "disposition": "MISSING_REQUIRED_CLASSIFICATION",
+      "required_correction": "Add explicit mapping-status fields. Keep persistent bytes UNKNOWN; never write 0 bytes until payload recovery without per-vector mapping bytes is verified under a declared package boundary.",
+      "blocks_next_stage": true
+    },
+    {
+      "id": "INV-AUD-005",
+      "severity": "P3",
+      "claim_challenged": "Search coverage is independently reproducible from the parent search log.",
+      "evidence": [
+        "The parent inventory records only a subset of the required extension/name panel.",
+        "This audit separately checked target/research/twelve-byte Git trees and T4C2/T4C3/T4D Drive namespaces for model/projector/state terms and common serialization extensions.",
+        "No real archive-fitted TF-IDF/SVD/mu96/ITQ/PQ/OPQ/RaBitQ persistent package was located."
+      ],
+      "reproduced": true,
+      "disposition": "AUDITABILITY_GAP",
+      "required_correction": "Expand SEARCH_LOG to list every searched term/extension, namespace, container inspection, hit, and exclusion reason. Use SEARCHED/NOT LOCATED/UNKNOWN rather than absence claims.",
+      "blocks_next_stage": false
+    }
+  ]
+}
