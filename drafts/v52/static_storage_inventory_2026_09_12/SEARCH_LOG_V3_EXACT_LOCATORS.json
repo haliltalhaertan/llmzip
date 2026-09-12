@@ -1,0 +1,83 @@
+{
+  "schema": "V52_STATIC_STORAGE_SEARCH_LOG_EXACT_LOCATORS_V3",
+  "status": "AUDITABILITY_ADDENDUM_ONLY_NO_ABSENCE_INFERENCE",
+  "parent_v2_commit": "552088ae8907b13d0dcf44dfc26c0a2389503125",
+  "residual_finding": "INV2-AUD-001 P3 (relayed independent V2 re-audit; independently confirmed from SEARCH_LOG_V2 bytes)",
+  "policy": "Each locator below is replay-addressable independently. SEARCHED_NOT_LOCATED_UNKNOWN is never an absence claim.",
+  "exact_locators": [
+    {
+      "id": "CANONICAL_MAIN_AT_PREP",
+      "type": "git_ref",
+      "ref": "refs/heads/main",
+      "observed_commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "purpose": "canonical context only; do not substitute repository default branch"
+    },
+    {
+      "id": "V2_OBJECT_UNDER_PRIOR_REAUDIT",
+      "type": "git_commit",
+      "branch": "codex/v52-static-storage-contract-2026-09-12",
+      "commit": "552088ae8907b13d0dcf44dfc26c0a2389503125",
+      "path": "drafts/v52/static_storage_inventory_2026_09_12/",
+      "purpose": "exact V2 inventory candidate"
+    },
+    {
+      "id": "TASK4C2_CANONICAL_NAMESPACE",
+      "type": "git_directory",
+      "commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "path": "docs/v52/task4c2/",
+      "verification_note": "directory independently resolved at exact canonical commit; contains V52_T4C2_POST_RUN_MANIFEST.json and feature-geometry source"
+    },
+    {
+      "id": "TASK4C3_CANONICAL_NAMESPACE",
+      "type": "git_directory",
+      "commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "path": "docs/v52/task4c3/",
+      "verification_note": "directory independently resolved at exact canonical commit"
+    },
+    {
+      "id": "ADAPTERS_CANONICAL_NAMESPACE",
+      "type": "git_directory",
+      "commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "path": "adapters/",
+      "children_of_interest": [
+        {"path": "adapters/longmemeval_v52_adapter.py", "git_blob": "16c1349336e143d27d9cac68198cbb50a1e6340b"},
+        {"path": "adapters/longmemeval_v52_adapter_v2.py", "git_blob": "aa0b6f956a9bbc7f27778760c2c6fc708ae72ba1"}
+      ]
+    },
+    {
+      "id": "LOCOMO_MECHANISM_RESEARCH_NAMESPACE",
+      "type": "git_branch_namespace",
+      "branch": "research/v52-sign-mechanism-locomo-2026-09-04",
+      "observed_commit": "0c9916bd7786d7ddb332f5b6da3d96d61a6223f0",
+      "path": "research/v52/"
+    },
+    {
+      "id": "DRIVE_T4C2_FINAL",
+      "type": "drive_folder",
+      "folder_id": "1rXeSGN0__wXTYVzvJy1wVulTY0gFTUaP",
+      "title": "FINAL_2026-08-27_FULL_470",
+      "classification": "stage output namespace; nested diagnostic NPZ bundle known and excluded from fitted-state inventory"
+    },
+    {
+      "id": "DRIVE_T4C3_FINAL",
+      "type": "drive_folder",
+      "folder_id": "1ABFEBsp7KfNxtIRkdaqU-6ImTFbsXAnv",
+      "title": "FINAL_2026-08-28_FULL_470"
+    },
+    {
+      "id": "DRIVE_T4D_LOCOMO_FINAL",
+      "type": "drive_folder",
+      "folder_id": "1u1sYaFav17j7i5-3Nd6RrOvRpWy8juZF",
+      "title": "V52_TASK_4D_LOCOMO_FROZEN_CROSS_BENCHMARK_REPLICATION_2026-08-29",
+      "positive_provenance": {
+        "proof_file_id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+        "proof_sha256": "957e9e022f6f42ebf3e4f68eaa69cf1ec1f48367100a959a0ba9623caf5e1ddd",
+        "post_run_manifest_file_id": "1Lk5ZLaceKuc3OF-v0X52OfItU0PqVlmp",
+        "post_run_manifest_sha256": "a97e411c1ed24c5c93590638fcb51248936d8428a38e4d76cf0c6b74a9399b9c",
+        "upload_receipt_file_id": "1BJgsMU37aw5yFnZ2Fu85Uo3Gr9NA"
+      }
+    }
+  ],
+  "disposition": "The exact-locator auditability gap is repaired for future replay. This addendum does not upgrade any UNKNOWN fitted-state artifact, does not prove persistence, does not measure bytes, and does not authorize execution.",
+  "task4f1_boundary": "SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN"
+}
