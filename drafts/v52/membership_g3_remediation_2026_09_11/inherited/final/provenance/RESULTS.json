@@ -1,0 +1,330 @@
+{
+  "check_count": 73,
+  "checks": [
+    {
+      "label": "document raw identity grant",
+      "passed": true
+    },
+    {
+      "label": "document raw identity decision",
+      "passed": true
+    },
+    {
+      "label": "document raw identity prep_audit",
+      "passed": true
+    },
+    {
+      "label": "document raw identity v5_audit",
+      "passed": true
+    },
+    {
+      "label": "document raw identity delivery_base_ledger",
+      "passed": true
+    },
+    {
+      "label": "resolved pin 07ec929",
+      "passed": true
+    },
+    {
+      "label": "HEAD ancestry query completed 07ec929",
+      "passed": true
+    },
+    {
+      "label": "resolved pin ed4e22c",
+      "passed": true
+    },
+    {
+      "label": "HEAD ancestry query completed ed4e22c",
+      "passed": true
+    },
+    {
+      "label": "resolved pin dcb568d",
+      "passed": true
+    },
+    {
+      "label": "HEAD ancestry query completed dcb568d",
+      "passed": true
+    },
+    {
+      "label": "ancestry dcb568d -> 07ec929",
+      "passed": true
+    },
+    {
+      "label": "ancestry 07ec929 -> ed4e22c",
+      "passed": true
+    },
+    {
+      "actual": 27,
+      "label": "v5 manifest entry count",
+      "passed": true
+    },
+    {
+      "label": "v5 manifest unique paths",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload CLAUDE_AUDIT_PROMPT.md",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload errors.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence_final/RESULTS.json",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence_final/test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence_final/test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence_final/test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence_final/test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence_final/test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence_final/test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence/RESULTS.json",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence/test_codex_v5.stderr.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence/test_codex_v5.stdout.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence/test_membership_scaling_core.stderr.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence/test_membership_scaling_core.stdout.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence/test_runner_ingest_v4.stderr.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload evidence/test_runner_ingest_v4.stdout.txt",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload guarded_suite.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload README.md",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload safe_report.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload test_codex_v5.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload test_runner_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "label": "v5 raw payload validate_candidate.py",
+      "passed": true
+    },
+    {
+      "label": "v5 manifest base ancestry",
+      "passed": true
+    },
+    {
+      "actual": 8,
+      "label": "prep manifest entry count",
+      "passed": true
+    },
+    {
+      "label": "prep manifest unique paths",
+      "passed": true
+    },
+    {
+      "label": "prep raw payload CLAUDE_REVIEW_REQUEST.md",
+      "passed": true
+    },
+    {
+      "label": "prep raw payload pipeline.py",
+      "passed": true
+    },
+    {
+      "label": "prep raw payload README.md",
+      "passed": true
+    },
+    {
+      "label": "prep raw payload replay.py",
+      "passed": true
+    },
+    {
+      "label": "prep raw payload test_pipeline.py",
+      "passed": true
+    },
+    {
+      "label": "prep raw payload evidence/RESULTS.json",
+      "passed": true
+    },
+    {
+      "label": "prep raw payload evidence/stderr.txt",
+      "passed": true
+    },
+    {
+      "label": "prep raw payload evidence/stdout.txt",
+      "passed": true
+    },
+    {
+      "label": "prep manifest base ancestry",
+      "passed": true
+    },
+    {
+      "label": "pinned core raw hash",
+      "passed": true,
+      "sha256": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72"
+    },
+    {
+      "label": "core unchanged at v5 and prep",
+      "passed": true
+    },
+    {
+      "label": "recovery entry count",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit authoritative/__init__.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit authoritative/accepted_configuration.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit authoritative/resolve_sources.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit corpus_ingest_g3.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit errors.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit integration_g3.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit membership_runner_g3.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit membership_scaling_core.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit pipeline_g3.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit safe_report.py",
+      "passed": true
+    },
+    {
+      "label": "recovery pre-edit test_g3_remediation.py",
+      "passed": true
+    },
+    {
+      "label": "current core remains bound raw bytes",
+      "passed": true
+    },
+    {
+      "label": "pre-edit raw v5 capture membership_runner_v4.py",
+      "passed": true
+    },
+    {
+      "label": "pre-edit raw v5 capture corpus_ingest_v4.py",
+      "passed": true
+    },
+    {
+      "label": "pinned arithmetic raw hash",
+      "passed": true
+    },
+    {
+      "label": "arithmetic has exactly three selected functions",
+      "passed": true
+    }
+  ],
+  "environment": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "failed": 0,
+  "head": "4f2429b257546d6899f3ed48f605cd18210aeae0",
+  "head_ancestry_note": "Delivery HEAD ancestry is an observation; required source chain is core -> v5 -> prep.",
+  "locked_package_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.0"
+  },
+  "pins_are_ancestors_of_head": {
+    "07ec929243068914676a0f30efd10c9f294c7e71": false,
+    "dcb568d0a6c33154c1568500325ad457b4d6f455": false,
+    "ed4e22c520b7dc0ae2f43f915e0c621070c72a87": false
+  },
+  "python": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+  "python_version": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "recovery_manifest_sha256": "11b3bb19e6041e199588265fb933cdaa90fa999cba22f1bba6efd6b3ce26a6b0",
+  "scope": "Raw identity and Git ancestry only. Synthetic evidence hashed in memory; no corpus or historical result materialized.",
+  "verifier_sha256": "40ef9221dea80e04b81c1d8b166ffa40e3254113619703c36fe3b9d5e7a76686"
+}

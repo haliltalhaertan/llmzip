@@ -1,0 +1,5 @@
+{
+  "expected_failure_observed": true,
+  "kind": "synthetic in-memory raw reader mutation; no Git or source bytes changed",
+  "reported_failure_count": 1
+}

@@ -1,0 +1,68 @@
+PASS resolved pin 07ec929
+PASS HEAD ancestry query completed 07ec929
+PASS resolved pin ed4e22c
+PASS HEAD ancestry query completed ed4e22c
+PASS resolved pin dcb568d
+PASS HEAD ancestry query completed dcb568d
+PASS ancestry dcb568d -> 07ec929
+PASS ancestry 07ec929 -> ed4e22c
+PASS v5 manifest entry count
+PASS v5 manifest unique paths
+PASS v5 raw payload authoritative/__init__.py
+PASS v5 raw payload authoritative/accepted_configuration.py
+PASS v5 raw payload authoritative/resolve_sources.py
+PASS v5 raw payload CLAUDE_AUDIT_PROMPT.md
+PASS v5 raw payload corpus_ingest_v4.py
+PASS v5 raw payload errors.py
+PASS v5 raw payload evidence_final/RESULTS.json
+PASS v5 raw payload evidence_final/test_codex_v5.stderr.txt
+PASS v5 raw payload evidence_final/test_codex_v5.stdout.txt
+PASS v5 raw payload evidence_final/test_membership_scaling_core.stderr.txt
+PASS v5 raw payload evidence_final/test_membership_scaling_core.stdout.txt
+PASS v5 raw payload evidence_final/test_runner_ingest_v4.stderr.txt
+PASS v5 raw payload evidence_final/test_runner_ingest_v4.stdout.txt
+PASS v5 raw payload evidence/RESULTS.json
+PASS v5 raw payload evidence/test_codex_v5.stderr.txt
+FAIL v5 raw payload evidence/test_codex_v5.stdout.txt
+PASS v5 raw payload evidence/test_membership_scaling_core.stderr.txt
+PASS v5 raw payload evidence/test_membership_scaling_core.stdout.txt
+PASS v5 raw payload evidence/test_runner_ingest_v4.stderr.txt
+PASS v5 raw payload evidence/test_runner_ingest_v4.stdout.txt
+PASS v5 raw payload guarded_suite.py
+PASS v5 raw payload membership_runner_v4.py
+PASS v5 raw payload README.md
+PASS v5 raw payload safe_report.py
+PASS v5 raw payload test_codex_v5.py
+PASS v5 raw payload test_runner_ingest_v4.py
+PASS v5 raw payload validate_candidate.py
+PASS v5 manifest base ancestry
+PASS prep manifest entry count
+PASS prep manifest unique paths
+PASS prep raw payload CLAUDE_REVIEW_REQUEST.md
+PASS prep raw payload pipeline.py
+PASS prep raw payload README.md
+PASS prep raw payload replay.py
+PASS prep raw payload test_pipeline.py
+PASS prep raw payload evidence/RESULTS.json
+PASS prep raw payload evidence/stderr.txt
+PASS prep raw payload evidence/stdout.txt
+PASS prep manifest base ancestry
+PASS pinned core raw hash
+PASS core unchanged at v5 and prep
+PASS recovery entry count
+PASS recovery pre-edit authoritative/__init__.py
+PASS recovery pre-edit authoritative/accepted_configuration.py
+PASS recovery pre-edit authoritative/resolve_sources.py
+PASS recovery pre-edit corpus_ingest_g3.py
+PASS recovery pre-edit errors.py
+PASS recovery pre-edit integration_g3.py
+PASS recovery pre-edit membership_runner_g3.py
+PASS recovery pre-edit membership_scaling_core.py
+PASS recovery pre-edit pipeline_g3.py
+PASS recovery pre-edit safe_report.py
+PASS recovery pre-edit test_g3_remediation.py
+PASS current core remains bound raw bytes
+PASS pre-edit raw v5 capture membership_runner_v4.py
+PASS pre-edit raw v5 capture corpus_ingest_v4.py
+PASS pinned arithmetic raw hash
+PASS arithmetic has exactly three selected functions

@@ -1,0 +1,44 @@
+ok   canary family is an AST tuple of source literal integers
+ok   fixed canary family has 96 singleton members plus all-96 negation
+ok   independent exact-Fraction oracle proves all 97 fixed members on no-zero input
+ok   production coordinatewise certificate accepts the exact-oracle no-zero case
+ok   mandatory negative control is accepted by the old aggregate-distance equality
+ok   independent exact oracle says all-96 negation changes the coordinatewise vector
+ok   new coordinatewise certificate rejects the old-aggregate false negative
+ok   signed zero canary detects every one of 96 coordinates
+ok   E-M-005 is reachable instead of being swallowed by E-M-006
+ok   bound core bytes pass identity verification
+ok   default-Windows CRLF checkout translation is accepted only via canonical bound hash
+ok   a non-line-ending byte mutation still fails closed
+ok   representation library failure is re-raised without caller text or chained context
+ok   empty cohort is refused
+ok   E-M-026 empty-gold refusal is tested
+ok   E-M-027 anchor-coverage refusal is tested
+ok   E-M-028 unknown-benchmark refusal is tested
+ok   malformed M-3 fixture fails with PipelineError
+ok   malformed M-3 fixture fails with PipelineError
+ok   malformed M-3 fixture fails with PipelineError
+ok   malformed M-3 fixture fails with PipelineError
+ok   malformed M-3 fixture fails with PipelineError
+ok   caller question id is refused before indexed access and does not leak
+ok   nuisance priorities are constructed exactly once and reused across all arms/seeds
+ok   six arms times ten paired seeds produce 60 complete records for one question
+ok   matched-block control survives independent deterministic redraw
+ok   E-M-022 rejects invalid anchor type/range
+ok   E-M-022 rejects invalid anchor type/range
+ok   E-M-022 rejects invalid anchor type/range
+ok   E-M-022 rejects invalid anchor type/range
+ok   4000-case tie-heavy parity fuzz covers all three top-k branches
+ok   selection ordering is explicitly non-contractual and downstream metric is order-invariant
+ok   L-080 F1 int subclass gets named DesignViolation, never UnsafeErrorField
+ok   L-080 F3 ingest count guard rejects int subclass locally with named violation
+ok   L-080 F2 spoofed Code probe discriminates the exact UnsafeErrorField failure
+ok   obligation 4 bridge uses frozen replicate count and accepted runner result schema
+ok   obligation 4 output path refuses overwrite
+ok   obligation 4 bridge refuses an empty prepared record set
+ok   real execution entrypoint remains refusing
+ok   real execution entrypoint remains refusing
+ok   real execution entrypoint remains refusing
+ok   closed core real-data gate remains false
+ALL PASS: 42 G-3 synthetic checks
+HARD STOP: run=0 finalize=0 HMAC=0 real_outcome_access=0

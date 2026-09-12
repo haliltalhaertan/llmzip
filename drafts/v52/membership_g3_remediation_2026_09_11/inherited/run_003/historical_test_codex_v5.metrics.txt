@@ -1,0 +1,287 @@
+{
+  "check_count": 45,
+  "checks": [
+    {
+      "label": "isolated original-v4 controls fail the repaired contract",
+      "passed": true
+    },
+    {
+      "label": "malformed position 0 refuses without coercion or loss",
+      "passed": true
+    },
+    {
+      "label": "malformed position 1 refuses without coercion or loss",
+      "passed": true
+    },
+    {
+      "label": "malformed position 2 refuses without coercion or loss",
+      "passed": true
+    },
+    {
+      "label": "accepted producer behavior retained",
+      "passed": true
+    },
+    {
+      "label": "accepted producer behavior retained",
+      "passed": true
+    },
+    {
+      "label": "accepted producer behavior retained",
+      "passed": true
+    },
+    {
+      "label": "accepted producer behavior retained",
+      "passed": true
+    },
+    {
+      "label": "accepted producer behavior retained",
+      "passed": true
+    },
+    {
+      "label": "accepted producer behavior retained",
+      "passed": true
+    },
+    {
+      "label": "spoof fixture exercises isinstance weakness",
+      "passed": true
+    },
+    {
+      "label": "spoofed kind refused before identifier processing",
+      "passed": true
+    },
+    {
+      "label": "spoofed kind refused before identifier processing",
+      "passed": true
+    },
+    {
+      "label": "spoof payload never accessed",
+      "passed": true
+    },
+    {
+      "label": "genuine identifier member retained",
+      "passed": true
+    },
+    {
+      "label": "genuine identifier member retained",
+      "passed": true
+    },
+    {
+      "label": "foreign enum refused without content",
+      "passed": true
+    },
+    {
+      "label": "numeric subclass refused without content",
+      "passed": true
+    },
+    {
+      "label": "payload class name refused without content",
+      "passed": true
+    },
+    {
+      "label": "dynamic field key refused without content",
+      "passed": true
+    },
+    {
+      "label": "dynamic key with bad value refused without content",
+      "passed": true
+    },
+    {
+      "label": "spoofed code refused without content",
+      "passed": true
+    },
+    {
+      "label": "enum-as-position refused without content",
+      "passed": true
+    },
+    {
+      "label": "foreign kind refused without content",
+      "passed": true
+    },
+    {
+      "label": "builtin scalar diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "builtin scalar diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "builtin scalar diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "builtin scalar diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "builtin scalar diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "builtin scalar diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "builtin scalar diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "canonical enum diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "canonical enum diagnostic retained",
+      "passed": true
+    },
+    {
+      "label": "diagnostic custom objects remain opaque",
+      "passed": true
+    },
+    {
+      "label": "diagnostic custom objects remain opaque",
+      "passed": true
+    },
+    {
+      "label": "diagnostic custom objects remain opaque",
+      "passed": true
+    },
+    {
+      "label": "diagnostic custom objects remain opaque",
+      "passed": true
+    },
+    {
+      "label": "scope guard blocks open",
+      "passed": true
+    },
+    {
+      "label": "scope guard blocks os.scandir",
+      "passed": true
+    },
+    {
+      "label": "scope guard blocks os.listdir",
+      "passed": true
+    },
+    {
+      "label": "synthetic ingest retains distinct evidence counts",
+      "passed": true
+    },
+    {
+      "label": "source observation ledger is nonempty",
+      "passed": true
+    },
+    {
+      "label": "all successful observed source operations stay in synthetic root",
+      "passed": true
+    },
+    {
+      "label": "no unexpected blocked access hidden by capture",
+      "passed": true
+    },
+    {
+      "label": "real-data execution gate remains closed",
+      "passed": true
+    }
+  ],
+  "environment": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "exit_code": 0,
+  "io_events": [
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "argv": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe -B C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\test_codex_v5.py --old-control",
+      "event": "subprocess.Popen"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "event": "open",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    }
+  ],
+  "modules": {
+    "__main__": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\run_inherited.py",
+      "sha256": "38920a23e33196b42c132a9f565f4680c0518612a87a8a07091071518993a78f"
+    },
+    "authoritative": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "authoritative.accepted_configuration": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\accepted_configuration.py",
+      "sha256": "47ccc1717a9be6f0cb42008cd38d625dbc3b6ba73f717e6b11c09ee93627fee9"
+    },
+    "authoritative.resolve_sources": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\resolve_sources.py",
+      "sha256": "c2bc0824f62acd68dcedb4713abcdcd91e4014194082a62d359ec92ac564a992"
+    },
+    "corpus_ingest_v4": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\corpus_ingest_v4.py",
+      "sha256": "bcb79852aee522fcd96427cfbdf520c7aa7fcd87b6727fdd309fade5bc1fcc29"
+    },
+    "errors": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\errors.py",
+      "sha256": "1f5912611d8fbd943a55ab90e737e2e3c6f0b6f14048cc439881dbd90ea9930c"
+    },
+    "membership_runner_v4": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\membership_runner_v4.py",
+      "sha256": "32c56c6c394169e587c454ae9978accc2c7a33bffcf37698a92029a7886813a3"
+    },
+    "membership_scaling_core": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_impl_v3_2026_09_07\\membership_scaling_core.py",
+      "sha256": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72"
+    },
+    "safe_report": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\safe_report.py",
+      "sha256": "be4b3156edce0799d60dbb2a88a7e39314c450f38d417d044de85a803e6d126e"
+    },
+    "verify_provenance": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\verify_provenance.py",
+      "sha256": "45498934768567876ce456327e5114516611ab9791a50ec0b91fa95bb9488e88"
+    }
+  },
+  "python": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+  "scope": "Python audit events only; native I/O not an OS sandbox. Nested old-control uses its own source guard.",
+  "subprocess_path_routing": [],
+  "unittest_assertion_calls": 0,
+  "unittest_outcomes": [],
+  "unittest_tests_run": 0
+}

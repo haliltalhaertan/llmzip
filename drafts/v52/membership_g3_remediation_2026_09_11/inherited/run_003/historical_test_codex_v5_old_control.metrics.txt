@@ -1,0 +1,92 @@
+{
+  "check_count": 5,
+  "checks": [
+    {
+      "label": "old isinstance gate is demonstrably spoofed",
+      "passed": true
+    },
+    {
+      "label": "old identifier route emits canary",
+      "passed": true
+    },
+    {
+      "label": "old formatter emits foreign enum",
+      "passed": true
+    },
+    {
+      "label": "old formatter emits numeric subclass",
+      "passed": true
+    },
+    {
+      "label": "old formatter emits arbitrary field key",
+      "passed": true
+    }
+  ],
+  "environment": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "exit_code": 0,
+  "io_events": [
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    }
+  ],
+  "modules": {
+    "__main__": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\run_inherited.py",
+      "sha256": "38920a23e33196b42c132a9f565f4680c0518612a87a8a07091071518993a78f"
+    },
+    "authoritative": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\authoritative\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "authoritative.accepted_configuration": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\authoritative\\accepted_configuration.py",
+      "sha256": "fc533825902fa9a523eab4f810ed05c78ce6ca949e83faa75bf45e7c46a432bc"
+    },
+    "authoritative.resolve_sources": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\authoritative\\resolve_sources.py",
+      "sha256": "c2bc0824f62acd68dcedb4713abcdcd91e4014194082a62d359ec92ac564a992"
+    },
+    "corpus_ingest_v4": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\corpus_ingest_v4.py",
+      "sha256": "10e691b8223a9fe6ca20622e202b8dbb78c1bfdddba0482ddcea8312d7f15381"
+    },
+    "errors": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\errors.py",
+      "sha256": "b99132ac72f25215dcd2bf4b72a798e7834dbc098431dc8fc21bbb1bf4989f14"
+    },
+    "membership_runner_v4": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\membership_runner_v4.py",
+      "sha256": "3ea4444e36280dccca545d5e230eb3604841f10f1decf1b6003b53549da63b9f"
+    },
+    "membership_scaling_core": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_impl_v3_2026_09_07\\membership_scaling_core.py",
+      "sha256": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72"
+    },
+    "safe_report": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v4_2026_09_08\\safe_report.py",
+      "sha256": "c7f4f0a0735b8022723251af26607ea8d74654e8d692ec70145f300578bce44c"
+    },
+    "verify_provenance": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\verify_provenance.py",
+      "sha256": "45498934768567876ce456327e5114516611ab9791a50ec0b91fa95bb9488e88"
+    }
+  },
+  "python": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+  "scope": "Python audit events only; native I/O not an OS sandbox. Nested old-control uses its own source guard.",
+  "subprocess_path_routing": [],
+  "unittest_assertion_calls": 0,
+  "unittest_outcomes": [],
+  "unittest_tests_run": 0
+}

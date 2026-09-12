@@ -1,0 +1,14 @@
+{
+  "authoritative/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "authoritative/accepted_configuration.py": "47ccc1717a9be6f0cb42008cd38d625dbc3b6ba73f717e6b11c09ee93627fee9",
+  "authoritative/resolve_sources.py": "c2bc0824f62acd68dcedb4713abcdcd91e4014194082a62d359ec92ac564a992",
+  "corpus_ingest_g3.py": "e6392bbca9681c97501e37f4292a5b31c3b3c323422e8ca2f58b8ac531ca7819",
+  "errors.py": "1f5912611d8fbd943a55ab90e737e2e3c6f0b6f14048cc439881dbd90ea9930c",
+  "exact_oracle.py": "5df57dfc02ea75a7d778008c22031907e77af715d80fd1ac283a13371e8c8ef8",
+  "integration_g3.py": "bfbc1d1976f9b7112abdde03aeb69db1d62659f34791f20a6e5428b1d8b65b2a",
+  "membership_runner_g3.py": "b76ec43277ce50f88c1f30970c0761ea4957c78fa80393ce065cdf814c129479",
+  "membership_scaling_core.py": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72",
+  "pipeline_g3.py": "c4a34e01d70022d39d230071733c185a115b71ad73035815f19f7378b100ac5d",
+  "record_boundary.py": "7d883c8523f848147c1872bed84f871e8765c31da79aab43173be5a5a9226d5c",
+  "safe_report.py": "be4b3156edce0799d60dbb2a88a7e39314c450f38d417d044de85a803e6d126e"
+}

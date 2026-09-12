@@ -1,0 +1,13 @@
+{
+  "authoritative/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "authoritative/accepted_configuration.py": "47ccc1717a9be6f0cb42008cd38d625dbc3b6ba73f717e6b11c09ee93627fee9",
+  "authoritative/resolve_sources.py": "c2bc0824f62acd68dcedb4713abcdcd91e4014194082a62d359ec92ac564a992",
+  "corpus_ingest_g3.py": "e6392bbca9681c97501e37f4292a5b31c3b3c323422e8ca2f58b8ac531ca7819",
+  "errors.py": "1f5912611d8fbd943a55ab90e737e2e3c6f0b6f14048cc439881dbd90ea9930c",
+  "integration_g3.py": "b4d9f82ead41d477bfe8ae5184a05f1bb5012f74e1089ffde52f842cdba28835",
+  "membership_runner_g3.py": "28db3dd8519efc8a1906b8a76084593504dcfd7d77ad9cc8c635b74fa89c37b3",
+  "membership_scaling_core.py": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72",
+  "pipeline_g3.py": "2187f05f8c2917328d1bd6faeffa0ee489096dee9ba55e06962ad28de6615ccd",
+  "safe_report.py": "be4b3156edce0799d60dbb2a88a7e39314c450f38d417d044de85a803e6d126e",
+  "test_g3_remediation.py": "57fba50c727d28a59ccc5f23df9e7683728a438ae203504472855593c0a1625d"
+}

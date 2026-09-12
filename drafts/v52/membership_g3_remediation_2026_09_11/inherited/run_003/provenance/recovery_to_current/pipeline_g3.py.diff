@@ -1,0 +1,181 @@
+--- verified_pre_edit/pipeline_g3.py
++++ current/pipeline_g3.py
+@@ -6,6 +6,8 @@
+ from pathlib import Path
+ import hashlib
+ import importlib.util
++import exact_oracle
++import record_boundary
+ 
+ import numpy as np
+ from scipy import sparse
+@@ -18,13 +20,9 @@
+ 
+ 
+ def _verified_core_bytes(raw):
+-    """Accept the bound blob or only Git's CRLF checkout translation of that blob."""
++    """Require raw blob identity; use the documented LF checkout/materializer."""
+     if hashlib.sha256(raw).hexdigest() == CORE_HASH:
+         return raw
+-    if b'\r\n' in raw and b'\r' not in raw.replace(b'\r\n', b''):
+-        canonical = raw.replace(b'\r\n', b'\n')
+-        if hashlib.sha256(canonical).hexdigest() == CORE_HASH:
+-            return raw
+     raise RuntimeError('E-M-001: core identity mismatch')
+ 
+ 
+@@ -243,21 +241,63 @@
+     return np.array([-1.0 if (mask >> j) & 1 else 1.0 for j in range(96)], dtype=np.float64)
+ 
+ 
+-def _coordinatewise_mismatch(X, q):
+-    return np.not_equal(np.asarray(X) >= 0, np.asarray(q) >= 0)
++# Filled once from the declared seed before observing any archive; tests rederive
++# the literal independently. The 97 masks above are applied in this output basis.
++SIGNED_CANARY_SEED = 52003107
++SIGNED_CANARY_PERMUTATION = (53, 77, 36, 58, 54, 11, 10, 50, 90, 76, 49, 12, 51, 32, 64, 60, 28, 86, 31, 66, 63, 56, 91, 82, 20, 87, 3, 7, 92, 17, 43, 83, 18, 81, 46, 24, 57, 9, 35, 47, 68, 30, 14, 25, 29, 15, 69, 21, 55, 74, 41, 88, 73, 5, 6, 23, 72, 59, 38, 61, 8, 79, 22, 65, 2, 48, 34, 1, 85, 40, 16, 70, 62, 52, 44, 95, 19, 39, 67, 45, 26, 13, 78, 37, 42, 89, 80, 0, 4, 75, 84, 94, 93, 27, 71, 33)
++
++
++def signed_code_images(rows, permutation, mask):
++    """Implementation under test: numerical permutation, sign, zero threshold."""
++    return (rows[:, permutation] * _signs_from_mask(mask)) >= 0
++
++
++def assert_signed_member(X, V, mask, permutation= None):
++    """One independently testable member; compare each archive AND query code bit."""
++    if permutation is None:
++        permutation = SIGNED_CANARY_PERMUTATION
++    for rows in (X, V):
++        wanted = exact_oracle.expected_images(exact_oracle.exact_codes(rows), permutation, mask)
++        actual = signed_code_images(rows, permutation, mask)
++        require(np.array_equal(actual, np.asarray(wanted, dtype=bool)),
++                'E-M-031: signed permutation control')
+ 
+ 
+ def coordinatewise_signed_certificate(X, V):
+-    """Compare per-coordinate mismatch bits before any Hamming aggregation."""
++    """Independent exact oracle vs every transported code bit for every member.
++
++    In particular all-zero coordinates fail when negated: shared disagreement
++    equality cannot hide two wrong bits. No aggregate comparison is a certificate.
++    """
+     X, V = np.asarray(X), np.asarray(V)
+-    require(X.ndim == 2 and X.shape[1] == 96 and np.isfinite(X).all(), 'E-M-033: canary archive')
+-    require(V.ndim == 2 and V.shape[1] == 96 and np.isfinite(V).all(), 'E-M-034: canary queries')
++    require(X.ndim == 2 and X.shape[0] > 0 and X.shape[1] == 96 and np.isfinite(X).all(), 'E-M-033: canary archive')
++    require(V.ndim == 2 and V.shape[0] > 0 and V.shape[1] == 96 and np.isfinite(V).all(), 'E-M-034: canary queries')
++    for mask in SIGNED_CANARY_MASKS:
++        assert_signed_member(X, V, mask)
++
++
++def legacy_signed_canary(X, V):
++    """Historical 48-coordinate aggregate canary; regression only, never authority."""
++    perm = np.arange(95, -1, -1)
++    signs = np.array([1.0 if i % 2 == 0 else -1.0 for i in range(96)])
+     for q in V:
+-        baseline = _coordinatewise_mismatch(X, q)
+-        for mask in SIGNED_CANARY_MASKS:
+-            signs = _signs_from_mask(mask)
+-            transformed = _coordinatewise_mismatch(X * signs, q * signs)
+-            require(np.array_equal(baseline, transformed), 'E-M-031: signed permutation control')
++        require(np.array_equal(core.hamming_dist(X, q),
++                               core.hamming_dist(X[:, perm] * signs, q[perm] * signs)),
++                'E-M-031: signed permutation control')
++
++
++def validate_records(records, question_ids):
++    """Keep immutable core diagnostics behind a fixed-message wrapper."""
++    require(type(records) is list and len(records) > 0, 'E-M-042: empty record set')
++    require(record_boundary.valid_records(records, question_ids, core.ROTATION_SEEDS, core.ARMS),
++            'E-M-043: invalid record set')
++    failed = False
++    try:
++        core.validate_per_question_records(records, question_ids)
++    except Exception:
++        failed = True
++    if failed:
++        raise PipelineError('E-M-043: invalid record set')
+ 
+ 
+ def controls(C, Q, D):
+@@ -272,6 +312,22 @@
+     require(type(n_rows) is int and n_rows > 0, 'E-M-035: archive rows')
+     return np.array([np.random.default_rng(stable_archive_seed(ordinal, t) + 99).random(n_rows)
+                      for t in range(N_NUISANCE)])
++
++
++def assert_embedded_blocks(rotation, membership, expected_a, expected_b):
++    """Check blocks ACTUALLY embedded, not only two detached RNG outputs."""
++    complement = np.setdiff1d(np.arange(96), membership)
++    failed = False
++    try:
++        core.assert_matched_blocks(rotation[np.ix_(membership, membership)],
++                                   rotation[np.ix_(complement, complement)], expected_a, expected_b)
++    except Exception:
++        failed = True
++    if failed:
++        raise PipelineError('E-M-044: rotation block mismatch')
++    require(np.count_nonzero(rotation[np.ix_(membership, complement)]) == 0
++            and np.count_nonzero(rotation[np.ix_(complement, membership)]) == 0,
++            'E-M-044: rotation block mismatch')
+ 
+ 
+ def score_archive(rep, query_texts, gold_sets, question_ids, ordinal, native_anchor):
+@@ -296,8 +352,11 @@
+         a, b = core.draw_rotation_blocks(seed)
+         a_check, b_check = core.draw_rotation_blocks(seed)
+         core.assert_matched_blocks(a, b, a_check, b_check)
+-        rs = core.build_rotation(a, b, core.spectral_membership())
+-        rr = core.build_rotation(a, b, core.random_membership(partition))
++        spectral, random = core.spectral_membership(), core.random_membership(partition)
++        rs = core.build_rotation(a, b, spectral)
++        rr = core.build_rotation(a, b, random)
++        assert_embedded_blocks(rs, spectral, a_check, b_check)
++        assert_embedded_blocks(rr, random, a_check, b_check)
+         for X, V in ((C, Q), (Cs, Qs)):
+             for R in (rs, rr):
+                 norm, dot = core.check_rotation_invariance(X, V, R)
+@@ -314,7 +373,7 @@
+                 if arm == 'NATIVE':
+                     require(abs(value - native_anchor[j]) <= core.TOL, 'E-M-025: native anchor mismatch')
+                 records.append(dict(question_id=qid, rotation_seed=int(seed), arm=arm, fractional_R3=value))
+-    core.validate_per_question_records(records, question_ids)
++    validate_records(records, question_ids)
+     return records, dict(rep.diagnostics)
+ 
+ 
+@@ -343,6 +402,8 @@
+             for qid, q in questions.items():
+                 require(type(qid) is str and type(q) is dict and type(q.get('text')) is str
+                         and type(q.get('gold_rows')) is list, 'E-M-038: LoCoMo ingestion schema')
++                require(qid not in seen, 'E-M-040: ingestion cohort coverage')
++                validate_gold(q['gold_rows'], len(units))
+                 seen.add(qid)
+         require(seen == set(ids), 'E-M-040: ingestion cohort coverage')
+     elif benchmark == 'LongMemEval':
+@@ -355,6 +416,7 @@
+             units = q.get('units')
+             require(type(units) is list and all(type(u) is dict and type(u.get('text')) is str for u in units),
+                     'E-M-039: LongMemEval ingestion schema')
++            validate_gold(q['gold_rows'], len(units))
+     else:
+         raise PipelineError('E-M-028: benchmark')
+     return ids
+@@ -375,7 +437,7 @@
+                     if c['questions']]
+     elif benchmark == 'LongMemEval':
+         archives = [(i, ingested['questions'][qid]['units'], {qid: ingested['questions'][qid]})
+-                    for i, qid in enumerate(ids)]
++                    for i, qid in enumerate(sorted(ids))]
+     require(len(archives) > 0, 'E-M-041: empty archive set')
+     records, diagnostics = [], []
+     for ordinal, units, questions in archives:
+@@ -387,7 +449,7 @@
+         records.extend(rows)
+         diagnostics.append(dict(archive_ordinal=ordinal, **diag))
+     require(len(records) > 0, 'E-M-042: empty record set')
+-    core.validate_per_question_records(records, ids)
++    validate_records(records, ids)
+     return {'records': records, 'diagnostics': diagnostics}
+ 
+ 

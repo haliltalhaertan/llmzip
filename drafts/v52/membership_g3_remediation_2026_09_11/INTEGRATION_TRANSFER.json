@@ -1,0 +1,28 @@
+{
+  "source_directory": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_integration_owned_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11",
+  "workflow_deviation": "Integration worker edited a separate scratch clone instead of delivery clone; lead copied two files and merged named runner functions in delivery, then reverified. Original checkout untouched.",
+  "files": [
+    {
+      "path": "integration_g3.py",
+      "source_sha256": "bfbc1d1976f9b7112abdde03aeb69db1d62659f34791f20a6e5428b1d8b65b2a",
+      "landed_sha256": "bfbc1d1976f9b7112abdde03aeb69db1d62659f34791f20a6e5428b1d8b65b2a"
+    },
+    {
+      "path": "test_delivery_integration.py",
+      "source_sha256": "7d50e9e5c794d3fef4bba0770b40fa3dfa1b5322190b1c5861cf61d4626282fc",
+      "landed_sha256": "7d50e9e5c794d3fef4bba0770b40fa3dfa1b5322190b1c5861cf61d4626282fc"
+    }
+  ],
+  "runner": {
+    "source_sha256": "5e41fa6a406389890368348f97d8c1b6b31296b3142d085ecc44805d2976c3c4",
+    "before_sha256": "28db3dd8519efc8a1906b8a76084593504dcfd7d77ad9cc8c635b74fa89c37b3",
+    "after_sha256": "b76ec43277ce50f88c1f30970c0761ea4957c78fa80393ce065cdf814c129479",
+    "functions": [
+      "read_bootstrap_seed",
+      "compute_results",
+      "_compute_numerical_results",
+      "compute_synthetic_results"
+    ],
+    "lead_record_guard_retained": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "original_head": "077474013d95d6f343d31385d8a57d42fb72f721",
+  "head_unchanged": true,
+  "index_sha256": "353d7486ada6314204d94522776162568509b077701f67b3a8db33fc5d65f32a",
+  "index_unchanged": true,
+  "status_unchanged": true,
+  "recovered_namespace_source_files": [
+    {
+      "path": "authoritative/__init__.py",
+      "unchanged": true
+    },
+    {
+      "path": "authoritative/accepted_configuration.py",
+      "unchanged": true
+    },
+    {
+      "path": "authoritative/resolve_sources.py",
+      "unchanged": true
+    },
+    {
+      "path": "corpus_ingest_g3.py",
+      "unchanged": true
+    },
+    {
+      "path": "errors.py",
+      "unchanged": true
+    },
+    {
+      "path": "integration_g3.py",
+      "unchanged": true
+    },
+    {
+      "path": "membership_runner_g3.py",
+      "unchanged": true
+    },
+    {
+      "path": "membership_scaling_core.py",
+      "unchanged": true
+    },
+    {
+      "path": "pipeline_g3.py",
+      "unchanged": true
+    },
+    {
+      "path": "safe_report.py",
+      "unchanged": true
+    },
+    {
+      "path": "test_g3_remediation.py",
+      "unchanged": true
+    }
+  ],
+  "no_write_commands_targeted_original": true
+}

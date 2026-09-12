@@ -1,0 +1,12 @@
+test_controls_negative (__main__.Tests.test_controls_negative) ... ok
+test_lme_connector (__main__.Tests.test_lme_connector) ... ok
+test_old_source_arithmetic (__main__.Tests.test_old_source_arithmetic) ... ok
+test_refusals (__main__.Tests.test_refusals) ... ok
+test_representation (__main__.Tests.test_representation) ... ok
+test_score_and_connector (__main__.Tests.test_score_and_connector) ... ok
+test_topk_oracle (__main__.Tests.test_topk_oracle) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.871s
+
+OK

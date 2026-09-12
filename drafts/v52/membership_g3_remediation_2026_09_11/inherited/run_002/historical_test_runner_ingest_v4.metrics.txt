@@ -1,0 +1,541 @@
+{
+  "check_count": 68,
+  "checks": [
+    {
+      "label": "VALID EMPTY: None is the contract's empty representation, and it is not a loss",
+      "passed": true
+    },
+    {
+      "label": "VALID EMPTY: an empty list is too",
+      "passed": true
+    },
+    {
+      "label": "VALID: a list of id strings normalises unchanged",
+      "passed": true
+    },
+    {
+      "label": "VALID: a dict carrying dia_id, and one carrying id, both normalise",
+      "passed": true
+    },
+    {
+      "label": "VALID: the producer's whole-string fallback is PRESERVED, because it is the bound contract",
+      "passed": true
+    },
+    {
+      "label": "VALID: de-duplication of genuine repeats is unchanged - two identical ids give one reference",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 SILENTLY DISCARDS a dict with neither dia_id nor id",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a dict with neither dia_id nor id with E-COH-011",
+      "passed": true
+    },
+    {
+      "label": "...and the refusal carries no content for a dict with neither dia_id nor id",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 SILENTLY DISCARDS a dict whose id is empty",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a dict whose id is empty with E-COH-011",
+      "passed": true
+    },
+    {
+      "label": "...and the refusal carries no content for a dict whose id is empty",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 SILENTLY DISCARDS a dict whose id is null",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a dict whose id is null with E-COH-011",
+      "passed": true
+    },
+    {
+      "label": "...and the refusal carries no content for a dict whose id is null",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 SILENTLY DISCARDS a non-string, non-dict list item",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a non-string, non-dict list item with E-COH-011",
+      "passed": true
+    },
+    {
+      "label": "...and the refusal carries no content for a non-string, non-dict list item",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 SILENTLY DISCARDS a malformed FIRST item",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a malformed FIRST item with E-COH-011",
+      "passed": true
+    },
+    {
+      "label": "...and the refusal carries no content for a malformed FIRST item",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 SILENTLY DISCARDS a malformed MIDDLE item",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a malformed MIDDLE item with E-COH-011",
+      "passed": true
+    },
+    {
+      "label": "...and the refusal carries no content for a malformed MIDDLE item",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 SILENTLY DISCARDS a malformed LAST item",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a malformed LAST item with E-COH-011",
+      "passed": true
+    },
+    {
+      "label": "...and the refusal carries no content for a malformed LAST item",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 silently returns [] for an int",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses an int as an unsupported structure, E-COH-012",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 silently returns [] for a top-level dict",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a top-level dict as an unsupported structure, E-COH-012",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 silently returns [] for a set",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses a set as an unsupported structure, E-COH-012",
+      "passed": true
+    },
+    {
+      "label": "the two faults are DIFFERENT codes, because they are different faults",
+      "passed": true
+    },
+    {
+      "label": "malformed object at 0 is refused without coercion",
+      "passed": true
+    },
+    {
+      "label": "malformed object at 1 is refused without coercion",
+      "passed": true
+    },
+    {
+      "label": "malformed object at 2 is refused without coercion",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 reports the mixed source as SUCCESSFUL AND LOSSLESS",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 stops on the mixed source",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: and it writes nothing",
+      "passed": true
+    },
+    {
+      "label": "a clean source still ingests, unchanged",
+      "passed": true
+    },
+    {
+      "label": "THREE COUNTS are published as three fields, not two with a third inferred",
+      "passed": true
+    },
+    {
+      "label": "valid repeats keep the existing set semantics, and the difference is now VISIBLE",
+      "passed": true
+    },
+    {
+      "label": "no question was excluded, no gold repaired, no cohort changed",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 echoes the caller's `kind` verbatim",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses an unknown identifier kind without echoing it",
+      "passed": true
+    },
+    {
+      "label": "v4 takes `kind` from a closed enumeration",
+      "passed": true
+    },
+    {
+      "label": "...and a genuine identifier fault still refuses by code (E-COH-016)",
+      "passed": true
+    },
+    {
+      "label": "...and a genuine identifier fault still refuses by code (E-COH-015)",
+      "passed": true
+    },
+    {
+      "label": "...and a genuine identifier fault still refuses by code (E-COH-014)",
+      "passed": true
+    },
+    {
+      "label": "NEGATIVE CONTROL: v3 raises an uncaught ValueError carrying the value out",
+      "passed": true
+    },
+    {
+      "label": "CLOSED: v4 refuses the manifest field by type, with no content and no ValueError",
+      "passed": true
+    },
+    {
+      "label": "...and expected_question_to_cluster=str is refused the same way, no content",
+      "passed": true
+    },
+    {
+      "label": "...and expected_cluster_ids=str is refused the same way, no content",
+      "passed": true
+    },
+    {
+      "label": "...and n_questions=float is refused the same way, no content",
+      "passed": true
+    },
+    {
+      "label": "...and n_questions=bool is refused the same way, no content",
+      "passed": true
+    },
+    {
+      "label": "a well-formed manifest still passes the identity contract",
+      "passed": true
+    },
+    {
+      "label": "runner module comes from this candidate",
+      "passed": true
+    },
+    {
+      "label": "ingest module comes from this candidate",
+      "passed": true
+    },
+    {
+      "label": "error module comes from this candidate",
+      "passed": true
+    },
+    {
+      "label": "D-3 still closed",
+      "passed": true
+    },
+    {
+      "label": "D-2 still closed",
+      "passed": true
+    },
+    {
+      "label": "F12 ordering still closed",
+      "passed": true
+    },
+    {
+      "label": "F20 still closed: nothing read from a seed record reaches a message",
+      "passed": true
+    },
+    {
+      "label": "the accepted configuration still runs end to end",
+      "passed": true
+    },
+    {
+      "label": "LongMemEval accounting still closed",
+      "passed": true
+    },
+    {
+      "label": "gates still closed",
+      "passed": true
+    },
+    {
+      "label": "the closed core is untouched",
+      "passed": true
+    }
+  ],
+  "environment": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "exit_code": 0,
+  "io_events": [
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "open",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "open",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "open",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "open",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "open",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "open",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    }
+  ],
+  "modules": {
+    "__main__": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\run_inherited.py",
+      "sha256": "10f88500106cc2a5517a41a4c8734d2f50c4bd2307c9f34a7a2cd5d6c48368d3"
+    },
+    "authoritative": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "authoritative.accepted_configuration": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\accepted_configuration.py",
+      "sha256": "47ccc1717a9be6f0cb42008cd38d625dbc3b6ba73f717e6b11c09ee93627fee9"
+    },
+    "authoritative.resolve_sources": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\authoritative\\resolve_sources.py",
+      "sha256": "c2bc0824f62acd68dcedb4713abcdcd91e4014194082a62d359ec92ac564a992"
+    },
+    "corpus_ingest_v3": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\corpus_ingest_v3.py",
+      "sha256": "4d3450cf20af5233b4d92e627773b070779e2127c517f7441f94a8db5b530523"
+    },
+    "corpus_ingest_v4": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\corpus_ingest_v4.py",
+      "sha256": "bcb79852aee522fcd96427cfbdf520c7aa7fcd87b6727fdd309fade5bc1fcc29"
+    },
+    "errors": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\errors.py",
+      "sha256": "1f5912611d8fbd943a55ab90e737e2e3c6f0b6f14048cc439881dbd90ea9930c"
+    },
+    "membership_runner_v3": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_v3_2026_09_08\\membership_runner_v3.py",
+      "sha256": "29379aaccb31c7e634e75290d0108f0ac49c90028733a7000d686e9302770fc0"
+    },
+    "membership_runner_v4": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\membership_runner_v4.py",
+      "sha256": "32c56c6c394169e587c454ae9978accc2c7a33bffcf37698a92029a7886813a3"
+    },
+    "membership_scaling_core": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_impl_v3_2026_09_07\\membership_scaling_core.py",
+      "sha256": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72"
+    },
+    "safe_report": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_runner_ingest_codex_v5_2026_09_08\\safe_report.py",
+      "sha256": "be4b3156edce0799d60dbb2a88a7e39314c450f38d417d044de85a803e6d126e"
+    },
+    "verify_provenance": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\verify_provenance.py",
+      "sha256": "45498934768567876ce456327e5114516611ab9791a50ec0b91fa95bb9488e88"
+    }
+  },
+  "python": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+  "scope": "Python audit events only; native I/O not an OS sandbox. Nested old-control uses its own source guard.",
+  "unittest_assertion_calls": 0,
+  "unittest_outcomes": [],
+  "unittest_tests_run": 0
+}

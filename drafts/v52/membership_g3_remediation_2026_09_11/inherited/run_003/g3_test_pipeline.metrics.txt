@@ -1,0 +1,105 @@
+{
+  "check_count": 0,
+  "checks": [],
+  "environment": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "exit_code": 0,
+  "io_events": [
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "argv": "git show 692f599eedeb7e7a649443f24ff507e8c4d1c17d:research/v52/locomo_sign_mechanism_replication.py",
+      "event": "subprocess.Popen"
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    }
+  ],
+  "modules": {
+    "__main__": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\run_inherited.py",
+      "sha256": "f69973bbdfd98e667a4337c11a359d957ee3adeac836ce747fa35ed7ba555ed7"
+    },
+    "__mp_main__": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\run_003\\g3\\membership_execution_prep_v1_2026_09_08\\test_pipeline.py",
+      "sha256": "974c099d671504f2ad028f9caff7326f4fe2e1fa717e8bce42a70605bbf93d13"
+    },
+    "exact_oracle": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\run_003\\g3\\membership_execution_prep_v1_2026_09_08\\exact_oracle.py",
+      "sha256": "5df57dfc02ea75a7d778008c22031907e77af715d80fd1ac283a13371e8c8ef8"
+    },
+    "pipeline_g3": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\run_003\\g3\\membership_execution_prep_v1_2026_09_08\\pipeline_g3.py",
+      "sha256": "2187f05f8c2917328d1bd6faeffa0ee489096dee9ba55e06962ad28de6615ccd"
+    },
+    "record_boundary": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\run_003\\g3\\membership_execution_prep_v1_2026_09_08\\record_boundary.py",
+      "sha256": "7d883c8523f848147c1872bed84f871e8765c31da79aab43173be5a5a9226d5c"
+    },
+    "verify_provenance": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\verify_provenance.py",
+      "sha256": "45498934768567876ce456327e5114516611ab9791a50ec0b91fa95bb9488e88"
+    }
+  },
+  "python": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+  "scope": "Python audit events only; native I/O not an OS sandbox. Nested old-control uses its own source guard.",
+  "subprocess_path_routing": [
+    {
+      "argv": [
+        "git",
+        "show",
+        "692f599eedeb7e7a649443f24ff507e8c4d1c17d:research/v52/locomo_sign_mechanism_replication.py"
+      ],
+      "cwd": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912",
+      "reason": "raw arithmetic Git path resolution"
+    }
+  ],
+  "unexpected_source_modules": [],
+  "unittest_assertion_calls": 433,
+  "unittest_outcomes": [
+    {
+      "status": "PASS",
+      "test": "__main__.Tests.test_controls_negative"
+    },
+    {
+      "status": "PASS",
+      "test": "__main__.Tests.test_lme_connector"
+    },
+    {
+      "status": "PASS",
+      "test": "__main__.Tests.test_old_source_arithmetic"
+    },
+    {
+      "status": "PASS",
+      "test": "__main__.Tests.test_refusals"
+    },
+    {
+      "status": "PASS",
+      "test": "__main__.Tests.test_representation"
+    },
+    {
+      "status": "PASS",
+      "test": "__main__.Tests.test_score_and_connector"
+    },
+    {
+      "status": "PASS",
+      "test": "__main__.Tests.test_topk_oracle"
+    }
+  ],
+  "unittest_tests_run": 7
+}

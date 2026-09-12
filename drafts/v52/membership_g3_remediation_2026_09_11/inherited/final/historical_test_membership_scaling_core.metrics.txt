@@ -1,0 +1,476 @@
+{
+  "check_count": 99,
+  "checks": [
+    {
+      "label": "CONFORMANCE: the output schema is exactly the closed expected set",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE: the reference covers every published field",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE: G_bar_pp matches an independent reference",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE: G_bar_scaled_pp matches an independent reference",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE: Delta_bar_pp matches an independent reference",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE: per_seed_G_pp matches an independent reference elementwise",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE: n_question_slots matches the reference",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE check can FAIL on a scalar (perturbed reference rejected)",
+      "passed": true
+    },
+    {
+      "label": "CONFORMANCE check can FAIL on a per-seed vector (one perturbed element rejected)",
+      "passed": true
+    },
+    {
+      "label": "SCHEMA check can FAIL (an extra key breaks equality)",
+      "passed": true
+    },
+    {
+      "label": "AST: every division in the core is enumerable and few",
+      "passed": true
+    },
+    {
+      "label": "AST: aggregate's literal return keys equal the declared schema",
+      "passed": true
+    },
+    {
+      "label": "AST enumeration is declared NOT a proof, in the module docstring",
+      "passed": true
+    },
+    {
+      "label": "NEW-2: no check condition in this suite is a boolean expression ending in literal True",
+      "passed": true
+    },
+    {
+      "label": "NEW-2: that sweep can FAIL (it detects the v2 shape)",
+      "passed": true
+    },
+    {
+      "label": "REAL_DATA_EXECUTION_ENABLED is False",
+      "passed": true
+    },
+    {
+      "label": "the gate refuses by default",
+      "passed": true
+    },
+    {
+      "label": "an explicit argument opens the gate",
+      "passed": true
+    },
+    {
+      "label": "F-6: the gate reads the module global at CALL time",
+      "passed": true
+    },
+    {
+      "label": "...and closes again when the global is restored",
+      "passed": true
+    },
+    {
+      "label": "scale_matrix returns a positive diagonal",
+      "passed": true
+    },
+    {
+      "label": "sigma uses ddof=0, not ddof=1",
+      "passed": true
+    },
+    {
+      "label": "diagnostics carry count, flag, both CVs and the SD",
+      "passed": true
+    },
+    {
+      "label": "F-1: cv_sigma_after is the CV (spread / mean), not the SD",
+      "passed": true
+    },
+    {
+      "label": "F-1: the v1 quantity is still published, under its true name sd_sigma_after",
+      "passed": true
+    },
+    {
+      "label": "F-1: cv_sigma_before is a genuine CV of this archive",
+      "passed": true
+    },
+    {
+      "label": "NEW-2: that check can FAIL (a wrong value is rejected)",
+      "passed": true
+    },
+    {
+      "label": "F-1: a zero-mean sigma gives NaN, explicitly and with no epsilon added",
+      "passed": true
+    },
+    {
+      "label": "F-1: the zero archive takes the fallback everywhere and is flagged",
+      "passed": true
+    },
+    {
+      "label": "eps is a FALLBACK not a clip: dead coordinates keep d=1",
+      "passed": true
+    },
+    {
+      "label": "F-boundary: flag at 3 dead coordinates is False",
+      "passed": true
+    },
+    {
+      "label": "F-boundary: flag at 4 dead coordinates is False",
+      "passed": true
+    },
+    {
+      "label": "F-boundary: flag at 5 dead coordinates is True",
+      "passed": true
+    },
+    {
+      "label": "F-10: an empty archive is REJECTED",
+      "passed": true
+    },
+    {
+      "label": "F-10: a single-row archive is REJECTED",
+      "passed": true
+    },
+    {
+      "label": "sign(xD)=sign(x) holds bit-identically for archive and query",
+      "passed": true
+    },
+    {
+      "label": "a negative diagonal is REJECTED",
+      "passed": true
+    },
+    {
+      "label": "non-finite input ABORTS rather than being repaired",
+      "passed": true
+    },
+    {
+      "label": "a wrong-width representation is REJECTED",
+      "passed": true
+    },
+    {
+      "label": "rotation blocks are deterministic in the seed",
+      "passed": true
+    },
+    {
+      "label": "head block is drawn first and blocks differ in size",
+      "passed": true
+    },
+    {
+      "label": "spectral membership is the leading 32 coordinates",
+      "passed": true
+    },
+    {
+      "label": "random membership is 32 distinct coordinates and is not the leading block",
+      "passed": true
+    },
+    {
+      "label": "spectral rotation is block-diagonal at 32",
+      "passed": true
+    },
+    {
+      "label": "both rotations are orthogonal at TOL",
+      "passed": true
+    },
+    {
+      "label": "the two memberships give DIFFERENT rotations from the SAME blocks",
+      "passed": true
+    },
+    {
+      "label": "matched-Q control passes on identical blocks",
+      "passed": true
+    },
+    {
+      "label": "matched-Q control REJECTS different blocks",
+      "passed": true
+    },
+    {
+      "label": "a non-disjoint partition is REJECTED",
+      "passed": true
+    },
+    {
+      "label": "invariance holds WITHIN a representation and its own rotation",
+      "passed": true
+    },
+    {
+      "label": "invariance check can FAIL on a non-orthogonal rotation",
+      "passed": true
+    },
+    {
+      "label": "hamming distance is int16 in [0,96], one per archive row",
+      "passed": true
+    },
+    {
+      "label": "NATIVE and SCALED_NATIVE distances are exactly equal",
+      "passed": true
+    },
+    {
+      "label": "a complete record set validates",
+      "passed": true
+    },
+    {
+      "label": "record count is questions x seeds x arms",
+      "passed": true
+    },
+    {
+      "label": "a MISSING record is rejected",
+      "passed": true
+    },
+    {
+      "label": "a DUPLICATE record is rejected",
+      "passed": true
+    },
+    {
+      "label": "F-3: a DUPLICATE QUESTION ID is rejected by name, not by IndexError",
+      "passed": true
+    },
+    {
+      "label": "a NaN score is rejected",
+      "passed": true
+    },
+    {
+      "label": "an out-of-range score is rejected",
+      "passed": true
+    },
+    {
+      "label": "an unexpected arm is rejected",
+      "passed": true
+    },
+    {
+      "label": "an unexpected seed is rejected",
+      "passed": true
+    },
+    {
+      "label": "F-9: a BOOLEAN score is rejected",
+      "passed": true
+    },
+    {
+      "label": "a malformed record is rejected",
+      "passed": true
+    },
+    {
+      "label": "G_bar is in PERCENTAGE POINTS (0.30-0.22 -> 8.0 pp)",
+      "passed": true
+    },
+    {
+      "label": "G_bar_scaled is in pp (0.27-0.24 -> 3.0 pp)",
+      "passed": true
+    },
+    {
+      "label": "Delta_bar is the paired change (3.0 - 8.0 -> -5.0 pp)",
+      "passed": true
+    },
+    {
+      "label": "PP is applied exactly once",
+      "passed": true
+    },
+    {
+      "label": "linearity holds to tolerance, not asserted bitwise",
+      "passed": true
+    },
+    {
+      "label": "aggregate divides by the number of selected SLOTS",
+      "passed": true
+    },
+    {
+      "label": "a repeated index counts twice",
+      "passed": true
+    },
+    {
+      "label": "an empty selection is rejected",
+      "passed": true
+    },
+    {
+      "label": "F-7: a NEGATIVE index is rejected, not wrapped",
+      "passed": true
+    },
+    {
+      "label": "F-7: a FLOAT index is rejected, not truncated",
+      "passed": true
+    },
+    {
+      "label": "F-8: an OUT-OF-RANGE index raises DesignViolation, not IndexError",
+      "passed": true
+    },
+    {
+      "label": "pairing: a constant per-question change gives a DEGENERATE Delta interval",
+      "passed": true
+    },
+    {
+      "label": "...while the level G still varies across replicates",
+      "passed": true
+    },
+    {
+      "label": "F-11: spans_zero is TRUE on a fixture centred at zero",
+      "passed": true
+    },
+    {
+      "label": "F-11: ...and FALSE on a fixture far from zero",
+      "passed": true
+    },
+    {
+      "label": "F-5: the three weightings genuinely differ on this fixture",
+      "passed": true
+    },
+    {
+      "label": "F-5: the core computes the SLOT-weighted value",
+      "passed": true
+    },
+    {
+      "label": "F-5: and not the distinct-question value",
+      "passed": true
+    },
+    {
+      "label": "F-5: and not the cluster-averaged value",
+      "passed": true
+    },
+    {
+      "label": "F-5: multiplicity is preserved in the slot count",
+      "passed": true
+    },
+    {
+      "label": "F-2: build_clusters returns a proven partition",
+      "passed": true
+    },
+    {
+      "label": "F-2: a NaN label is REJECTED before grouping",
+      "passed": true
+    },
+    {
+      "label": "F-2: a None label is REJECTED",
+      "passed": true
+    },
+    {
+      "label": "F-2: MIXED types are rejected, not coerced",
+      "passed": true
+    },
+    {
+      "label": "F-2: an unsupported label type is rejected",
+      "passed": true
+    },
+    {
+      "label": "F-2: a bool label is rejected",
+      "passed": true
+    },
+    {
+      "label": "F-2: a length mismatch is still rejected",
+      "passed": true
+    },
+    {
+      "label": "NEW-3: build_clusters([], 0) raises a named DesignViolation, not a raw ValueError",
+      "passed": true
+    },
+    {
+      "label": "NEW-3: a negative question count is rejected the same way",
+      "passed": true
+    },
+    {
+      "label": "F-2: the bootstrap reports cluster sizes and the loss counter",
+      "passed": true
+    },
+    {
+      "label": "F-2: clusters not drawn are reported SEPARATELY from question loss",
+      "passed": true
+    },
+    {
+      "label": "safe_write_json writes a new file",
+      "passed": true
+    },
+    {
+      "label": "safe_write_json REFUSES to overwrite",
+      "passed": true
+    }
+  ],
+  "environment": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "exit_code": 0,
+  "io_events": [
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "os.mkdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "open",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "open"
+    },
+    {
+      "allowed": true,
+      "event": "os.remove",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "data": true,
+      "event": "os.remove"
+    },
+    {
+      "allowed": true,
+      "event": "os.rmdir",
+      "write": true
+    },
+    {
+      "allowed": true,
+      "event": "os.rmdir",
+      "write": true
+    }
+  ],
+  "modules": {
+    "__main__": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\run_inherited.py",
+      "sha256": "f4660e4fdf3573bcf127a060fbfc18e6a6a9af3741a3fee7339827a68b117a4c"
+    },
+    "mcore2": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\inherited\\sources\\membership_impl_v3_2026_09_07\\membership_scaling_core.py",
+      "sha256": "bc2282d3fccfe83c3e9fc36a59d7df8e4f748048ff94baebdfa4010584404e72"
+    },
+    "verify_provenance": {
+      "path": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\llmzip_g3_delivery_20260912\\drafts\\v52\\membership_g3_remediation_2026_09_11\\verify_provenance.py",
+      "sha256": "40ef9221dea80e04b81c1d8b166ffa40e3254113619703c36fe3b9d5e7a76686"
+    }
+  },
+  "python": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+  "scope": "Python audit events only; native I/O not an OS sandbox. Nested old-control uses its own source guard.",
+  "subprocess_path_routing": [],
+  "unexpected_source_modules": [],
+  "unittest_assertion_calls": 0,
+  "unittest_outcomes": [],
+  "unittest_tests_run": 0
+}

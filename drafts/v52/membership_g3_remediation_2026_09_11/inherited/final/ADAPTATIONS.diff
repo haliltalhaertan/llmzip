@@ -1,0 +1,99 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\inherited\sources\membership_runner_ingest_codex_v5_2026_09_08\test_runner_ingest_v4.py
++++ C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\inherited\final\g3\membership_runner_ingest_codex_v5_2026_09_08\test_runner_ingest_v4.py
+@@ -37,8 +37,8 @@
+ 
+ import membership_scaling_core as core                                           # noqa: E402
+ import errors                                                                    # noqa: E402
+-import membership_runner_v4 as R4                                                # noqa: E402
+-import corpus_ingest_v4 as I4                                                    # noqa: E402
++import membership_runner_g3 as R4                                                # noqa: E402
++import corpus_ingest_g3 as I4                                                    # noqa: E402
+ import membership_runner_v3 as R3                                                # noqa: E402  (unchanged)
+ import corpus_ingest_v3 as I3                                                    # noqa: E402  (unchanged)
+ from authoritative import accepted_configuration as accepted                     # noqa: E402
+@@ -270,8 +270,8 @@
+ # --------------------------------------------------------------------------------------------
+ print("\n== 4. candidate module identity ============================================================")
+ # --------------------------------------------------------------------------------------------
+-rsrc = (HERE / "membership_runner_v4.py").read_text(encoding="utf-8")
+-isrc = (HERE / "corpus_ingest_v4.py").read_text(encoding="utf-8")
++rsrc = (HERE / "membership_runner_g3.py").read_text(encoding="utf-8")
++isrc = (HERE / "corpus_ingest_g3.py").read_text(encoding="utf-8")
+ check("runner module comes from this candidate", Path(R4.__file__).resolve().parent == HERE)
+ check("ingest module comes from this candidate", Path(I4.__file__).resolve().parent == HERE)
+ check("error module comes from this candidate", Path(errors.__file__).resolve().parent == HERE)
+
+--- C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\inherited\sources\membership_runner_ingest_codex_v5_2026_09_08\test_codex_v5.py
++++ C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\inherited\final\g3\membership_runner_ingest_codex_v5_2026_09_08\test_codex_v5.py
+@@ -48,8 +48,12 @@
+ PACKAGE = HERE.parent / "membership_runner_ingest_v4_2026_09_08" if OLD else HERE
+ sys.path[:0] = [str(PACKAGE), str(HERE.parent / "membership_impl_v3_2026_09_07")]
+ import errors
+-import membership_runner_v4 as R
+-import corpus_ingest_v4 as I
++if OLD:
++    import membership_runner_v4 as R
++    import corpus_ingest_v4 as I
++else:
++    import membership_runner_g3 as R
++    import corpus_ingest_g3 as I
+ import safe_report
+ from authoritative import accepted_configuration as accepted
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\inherited\sources\membership_execution_prep_v1_2026_09_08\test_pipeline.py
++++ C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\inherited\final\g3\membership_execution_prep_v1_2026_09_08\test_pipeline.py
+@@ -21,7 +21,7 @@
+         if p.endswith(('.json', '.jsonl', '.csv', '.gz', '.parquet')):
+             raise RuntimeError('test data file access forbidden')
+ sys.addaudithook(guard)
+-import pipeline as p
++import pipeline_g3 as p
+ import numpy as np
+ 
+ 

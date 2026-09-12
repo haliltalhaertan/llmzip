@@ -1,0 +1,44 @@
+test_controls_negative (__main__.Tests.test_controls_negative) ... ok
+test_lme_connector (__main__.Tests.test_lme_connector) ... ok
+test_old_source_arithmetic (__main__.Tests.test_old_source_arithmetic) ... ERROR
+test_refusals (__main__.Tests.test_refusals) ... ok
+test_representation (__main__.Tests.test_representation) ... ok
+test_score_and_connector (__main__.Tests.test_score_and_connector) ... ok
+test_topk_oracle (__main__.Tests.test_topk_oracle) ... ok
+
+======================================================================
+ERROR: test_old_source_arithmetic (__main__.Tests.test_old_source_arithmetic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\inherited\sources\membership_execution_prep_v1_2026_09_08\test_pipeline.py", line 119, in test_old_source_arithmetic
+    blob = subprocess.check_output(['git', 'show',
+        '692f599eedeb7e7a649443f24ff507e8c4d1c17d:research/v52/locomo_sign_mechanism_replication.py'])
+  File "C:\Users\MDP\AppData\Local\Python\pythoncore-3.13-64\Lib\subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "C:\Users\MDP\AppData\Local\Python\pythoncore-3.13-64\Lib\subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\AppData\Local\Python\pythoncore-3.13-64\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\AppData\Local\Python\pythoncore-3.13-64\Lib\subprocess.py", line 1550, in _execute_child
+    sys.audit("subprocess.Popen", executable, args, cwd, env)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\run_inherited.py", line 126, in guard
+    for command in commands)
+PermissionError: inherited suite subprocess outside source-test allowlist
+
+----------------------------------------------------------------------
+Ran 7 tests in 4.932s
+
+FAILED (errors=1)

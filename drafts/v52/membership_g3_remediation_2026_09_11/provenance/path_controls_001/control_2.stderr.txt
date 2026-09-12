@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\verify_provenance.py", line 220, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\verify_provenance.py", line 208, in main
+    out = fresh_dir(args.evidence_dir)
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\verify_provenance.py", line 67, in fresh_dir
+    raise ValueError('evidence must be a fresh subdirectory under inherited/ or provenance/')
+ValueError: evidence must be a fresh subdirectory under inherited/ or provenance/

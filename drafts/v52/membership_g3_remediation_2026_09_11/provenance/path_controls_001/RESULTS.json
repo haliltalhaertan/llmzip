@@ -1,0 +1,15 @@
+{
+  "checks": [
+    {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "value": "provenance/verify_001"
+    },
+    {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "value": "../outside_namespace"
+    }
+  ],
+  "passed": true
+}

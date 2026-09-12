@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\run_inherited.py", line 194, in child
+    runpy.run_path(str(suite), run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 294, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\inherited\sources\membership_runner_ingest_codex_v5_2026_09_08\test_codex_v5.py", line 144, in <module>
+    control = subprocess.run([sys.executable, "-B", str(Path(__file__).resolve()), "--old-control"],
+                             capture_output=True, text=True, check=False)
+  File "C:\Users\MDP\AppData\Local\Python\pythoncore-3.13-64\Lib\subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\AppData\Local\Python\pythoncore-3.13-64\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\AppData\Local\Python\pythoncore-3.13-64\Lib\subprocess.py", line 1550, in _execute_child
+    sys.audit("subprocess.Popen", executable, args, cwd, env)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MDP\Documents\ChatGPT\LLM_TOKEN_ZIP\work\llmzip_g3_delivery_20260912\drafts\v52\membership_g3_remediation_2026_09_11\run_inherited.py", line 126, in guard
+    raise PermissionError('inherited suite subprocess outside source-test allowlist')
+PermissionError: inherited suite subprocess outside source-test allowlist
