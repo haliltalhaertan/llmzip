@@ -71,3 +71,12 @@ Rebuild paths live in `harness/` and `bench3/*/*.py`.
   `findings/campaign-2026-09-13` created from `main` @ `5ec3db6`; main untouched.
 - Session transcripts: excerpts under `pilots_round3/muse_sessions/`; full run logs remain local.
 - Numbers carry the gates recorded in their own reports; this tree adds no new claims.
+
+## Heavy-artifact backup (Drive)
+
+The excluded heavy categories (datasets, caches, transcripts, review bundles, drive-frozen
+originals, wheels) were backed up on 2026-09-13 to the Drive folder **llmzip_heavy_backup_2026-09-13**
+(https://drive.google.com/drive/folders/1-8DYki9uXVPIVsKBAL2xCzw_LeUJH0q4): 8 archives + backup
+README + `MANIFEST_sha256.txt`; all uploads size-verified byte-exact (10/10). Recovery tooling
+(IPv4-first + proxy-bypass wrapper for `google_api.py`, and the uploader) lives in `ops/`.
+Local staging copy remains at `C:/Users/MDP/dev/llmzip-work/_drive_backup_2026_09_13/`.
