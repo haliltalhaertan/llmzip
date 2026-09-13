@@ -1,0 +1,57 @@
+{
+  "findings": [
+    {
+      "finding": "Exact main/frozen/V2/evidence commits verified; V2\u2192target is 36 commits and 33 added files. Frozen target/main untouched.",
+      "id": "F01",
+      "severity": "INFO"
+    },
+    {
+      "finding": "All 7 required source SHA-256 values match exactly. Older bindings located for question-level CSV, axis NPZ, RB2 and REALTALK are consistent.",
+      "id": "F02",
+      "severity": "INFO"
+    },
+    {
+      "finding": "All 10 required scripts reran successfully in Actions run 34764744784; no compared common scalar field differed by >1e-12.",
+      "id": "F03",
+      "severity": "INFO"
+    },
+    {
+      "finding": "Claim A is a global weak/null result, not universal subgroup null: single-session-preference corr_p95 rho=-0.3877 (n=30), single-session-user=-0.2766 (n=64). Post-hoc only.",
+      "id": "F04",
+      "severity": "LOW"
+    },
+    {
+      "finding": "P64 is weak per query (LME 0.1084; PerLTQA 0.1092; REALTALK 0.0746) but stronger by character/chat (0.3188/0.4182). Rank-tie handling changes some query-level magnitudes; no router claim.",
+      "id": "F05",
+      "severity": "MEDIUM"
+    },
+    {
+      "finding": "REALTALK within-category evidence is small-n (10 chats): category 1 ~null; category 3 leave-one-chat can cross zero; category 2 is the clearest descriptive stratum.",
+      "id": "F06",
+      "severity": "MEDIUM"
+    },
+    {
+      "finding": "Simple tie rate does not explain profile/events reversal; untied profile remains +19.65pp and events -9.81pp. Ties can matter in secondary strata (social_relationship sign changes when untied).",
+      "id": "F07",
+      "severity": "LOW"
+    },
+    {
+      "finding": "No Task4F1 reference, result-as-input reuse, or obvious representation refit detected in inspected E1 scripts.",
+      "id": "F08",
+      "severity": "INFO"
+    },
+    {
+      "finding": "PHI/EFFDIM/query-magnitude and LoCoMo per-query centered-float remain NOT_RUN/NOT_AVAILABLE; no refit or invented substitute.",
+      "id": "F09",
+      "severity": "INFO"
+    },
+    {
+      "finding": "V2 spec/freeze predates E1 result commits, but campaign remains post-hoc to already-observed benchmark outcomes.",
+      "id": "F10",
+      "severity": "INFO"
+    }
+  ],
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "schema": "LLMZIP_INDEPENDENT_E1_AUDIT_FINDINGS_V1",
+  "verdict": "PASS_WITH_FINDINGS"
+}

@@ -1,0 +1,44 @@
+{
+  "claims": {
+    "A": {
+      "evidence": "470/470 exact join; global |rho|<=0.0983; subgroup heterogeneity remains post-hoc.",
+      "status": "PASS_WITH_FINDING"
+    },
+    "B": {
+      "evidence": "delta/alone/drop/var_rank=470x96; strongest tested marginal concentration |rho|=0.1144; delta is gold-informed.",
+      "status": "PASS"
+    },
+    "C": {
+      "evidence": "rho(Delta, BOT-TOP drop loss)=0.02986; absolute TOP/BOT loss rho=0.2496/0.2040.",
+      "status": "PASS"
+    },
+    "D": {
+      "evidence": "P64 rho query LME/PerLTQA/RT=0.1084/0.1092/0.0746; character/chat=0.3188/0.4182; LOO direction positive.",
+      "status": "PASS_WITH_FINDING"
+    },
+    "E": {
+      "evidence": "PerLTQA within-section archive-unit rho positive (0.1422..0.3130); RT category evidence heterogeneous, n=10.",
+      "status": "PASS_WITH_FINDING"
+    },
+    "F": {
+      "evidence": "Same archive verified; events Delta-/P64- 30/30, profile Delta+ 23/30, P64+ 28/30, joint flip 22/30, same-sign 87/115.",
+      "status": "PASS"
+    },
+    "G": {
+      "evidence": "Profile/events reversal persists untied; overall P64-Delta rho untied/tied=0.1015/0.1270; secondary tie effects exist.",
+      "status": "PASS_WITH_FINDING"
+    },
+    "H": {
+      "evidence": "Checkpoint keeps noncausal/nondeployable wording, P64 descriptive-marker scope, and Task4F1 block.",
+      "status": "PASS"
+    }
+  },
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "limitations": {
+    "C96_qC_V2": "NOT_RUN / NOT_AVAILABLE",
+    "LoCoMo_per_query_centered_float": "NOT_RUN / NOT_AVAILABLE"
+  },
+  "schema": "LLMZIP_INDEPENDENT_E1_CLAIM_MATRIX_V1",
+  "target_commit": "4bfdb820904ead1b6378b00bd5bf71c1ab2fe138",
+  "verdict": "PASS_WITH_FINDINGS"
+}

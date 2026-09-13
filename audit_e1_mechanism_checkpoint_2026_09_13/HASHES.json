@@ -1,0 +1,23 @@
+{
+  "CLAIM_MATRIX.json": {
+    "bytes": 1780,
+    "sha256": "2dfbde40ceadde261b3753720ea00b053114842f8adc36a438c5fed034c970f9"
+  },
+  "EXECUTION_LOG.txt": {
+    "bytes": 1049,
+    "sha256": "89ce9e933d58a66a6536e3f667badaf8d1a957349503f15014d545bb976715f6"
+  },
+  "FINDINGS.json": {
+    "bytes": 2448,
+    "sha256": "6d8428aa6d79a53cf82006dd8abe0469b8ed5c7dedb0ae10c1c5f11f2efb6695"
+  },
+  "INDEPENDENT_E1_AUDIT_REPORT.md": {
+    "bytes": 13621,
+    "sha256": "75322be72e07448a76ea100a49ea5a76fd26a8b7373b1974f5f7e294dbbd6e9c"
+  },
+  "independent_diagnostics.py": {
+    "bytes": 18857,
+    "note": "already present on audit branch",
+    "sha256": "79597dc0395bb674f5690fdc5ddc0da5dc99b37bec6f468f79851a683b946269"
+  }
+}

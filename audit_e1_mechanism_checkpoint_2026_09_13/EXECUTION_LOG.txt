@@ -1,0 +1,14 @@
+INDEPENDENT E1 AUDIT EXECUTION LOG
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+TARGET frozen=4bfdb820904ead1b6378b00bd5bf71c1ab2fe138 v2_parent=775a09c1ba6fd8c28f1e98ec1826d31a7f2c3484 main=5ec3db60c03edde490374bf9cd7c3e56dd6bcd00
+AUDIT branch=audit/e1-mechanism-checkpoint-independent-2026-09-13 execution_head=87641cad65356f08e7d7ec6867f1a0b622fdb0ab
+Task4F1_accessed=NO; main_modified=NO; frozen_target_modified=NO
+
+Run 34764532566: infra-only stop (numpy absent).
+Run 34764638660: scientific gates passed; later hash cwd invocation failed.
+Run 34764744784: SUCCESS. All 10 required scripts reran; 7 source hashes matched; common committed-vs-fresh scalar fields had no >1e-12 mismatch; audit hashes verified; artifact uploaded.
+artifact_id=10320205400 artifact_sha256=13021267393df051b9dab9ea21b68e0131d07ca6a7d46358250ced03915e56a0
+
+LIMITATIONS: raw frozen C96/qC V2 metrics NOT_RUN/NOT_AVAILABLE; LoCoMo centered-float per-query NOT_RUN/NOT_AVAILABLE. No refit/invention.
+VERDICT=PASS_WITH_FINDINGS
