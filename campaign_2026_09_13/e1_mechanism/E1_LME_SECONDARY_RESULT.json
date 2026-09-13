@@ -1,0 +1,27 @@
+{
+  "schema": "LLMZIP_E1_LME_SECONDARY_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34758390297,
+  "head_sha": "9cef2a044acc79258d901c5d9d95b6df1d4131ff",
+  "status": "SUCCESS",
+  "scope": "Secondary E1 analysis using pre-existing committed LME outcome + certified-regeneration geometry. No raw-cache E1 run.",
+  "inputs": {
+    "question_level_sha256": "69c21b2ffaea1e92923bf3f0e83287e12d07a5f34b4b42afde1752d6b50b3b51",
+    "task1_extension_sha256": "682440a0e3329ebab223d45079455ff3b7f97122244cf077a969ce887dfe25da"
+  },
+  "n": 470,
+  "join_exact": true,
+  "delta_mean_pp": 10.037943262411346,
+  "delta_counts": {"positive": 122, "zero": 304, "negative": 44},
+  "correlations": {
+    "cv_sigma": {"pearson_r": 0.02955755679812722, "spearman_rho": -0.009637016719858508},
+    "top32_share": {"pearson_r": 0.057518438757377305, "spearman_rho": 0.021327870540274924},
+    "corr_off_mass": {"pearson_r": -0.10094674560010976, "spearman_rho": -0.08557891733647255},
+    "corr_median_abs": {"pearson_r": -0.10320992848025645, "spearman_rho": -0.07186749489056994},
+    "corr_p95_abs": {"pearson_r": -0.12468587616575456, "spearman_rho": -0.09824343304442582},
+    "sign_entropy": {"pearson_r": 0.02957811416707498, "spearman_rho": 0.033612610682490954},
+    "N": {"pearson_r": -0.01579788165853266, "spearman_rho": 0.008350965206607575}
+  },
+  "interpretation": "Archive-wide scalar concentration/heterogeneity metrics have near-zero association with per-question SIGN-minus-centered-float delta on LME. Continuous-coordinate correlation summaries show only weak negative association. This does not test V2's subset-specific sign-bit PHI/EFFDIM or ranking-competition gaps.",
+  "epistemic_note": "Exploratory/post-hoc secondary analysis. Correlation is not causal evidence."
+}
