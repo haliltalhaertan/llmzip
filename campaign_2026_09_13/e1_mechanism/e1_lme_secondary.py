@@ -8,7 +8,7 @@ from __future__ import annotations
 import csv, hashlib, json, math
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[2]
 Q=ROOT/'docs/v52/task4c2/V52_T4C2_question_level.csv'
 G=ROOT/'campaign_2026_09_13/regen/lme/task1_extension_lme.json'
 
