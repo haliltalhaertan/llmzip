@@ -1,0 +1,74 @@
+ok   document raw identity grant
+ok   document raw identity decision
+ok   document raw identity prep_audit
+ok   document raw identity v5_audit
+ok   document raw identity delivery_base_ledger
+ok   resolved pin 07ec929
+ok   HEAD ancestry query completed 07ec929
+ok   resolved pin ed4e22c
+ok   HEAD ancestry query completed ed4e22c
+ok   resolved pin dcb568d
+ok   HEAD ancestry query completed dcb568d
+ok   ancestry dcb568d -> 07ec929
+ok   ancestry 07ec929 -> ed4e22c
+ok   v5 manifest entry count
+ok   v5 manifest unique paths
+ok   v5 raw payload authoritative/__init__.py
+ok   v5 raw payload authoritative/accepted_configuration.py
+ok   v5 raw payload authoritative/resolve_sources.py
+ok   v5 raw payload CLAUDE_AUDIT_PROMPT.md
+ok   v5 raw payload corpus_ingest_v4.py
+ok   v5 raw payload errors.py
+ok   v5 raw payload evidence_final/RESULTS.json
+ok   v5 raw payload evidence_final/test_codex_v5.stderr.txt
+ok   v5 raw payload evidence_final/test_codex_v5.stdout.txt
+ok   v5 raw payload evidence_final/test_membership_scaling_core.stderr.txt
+ok   v5 raw payload evidence_final/test_membership_scaling_core.stdout.txt
+ok   v5 raw payload evidence_final/test_runner_ingest_v4.stderr.txt
+ok   v5 raw payload evidence_final/test_runner_ingest_v4.stdout.txt
+ok   v5 raw payload evidence/RESULTS.json
+ok   v5 raw payload evidence/test_codex_v5.stderr.txt
+ok   v5 raw payload evidence/test_codex_v5.stdout.txt
+ok   v5 raw payload evidence/test_membership_scaling_core.stderr.txt
+ok   v5 raw payload evidence/test_membership_scaling_core.stdout.txt
+ok   v5 raw payload evidence/test_runner_ingest_v4.stderr.txt
+ok   v5 raw payload evidence/test_runner_ingest_v4.stdout.txt
+ok   v5 raw payload guarded_suite.py
+ok   v5 raw payload membership_runner_v4.py
+ok   v5 raw payload README.md
+ok   v5 raw payload safe_report.py
+ok   v5 raw payload test_codex_v5.py
+ok   v5 raw payload test_runner_ingest_v4.py
+ok   v5 raw payload validate_candidate.py
+ok   v5 manifest base ancestry
+ok   prep manifest entry count
+ok   prep manifest unique paths
+ok   prep raw payload CLAUDE_REVIEW_REQUEST.md
+ok   prep raw payload pipeline.py
+ok   prep raw payload README.md
+ok   prep raw payload replay.py
+ok   prep raw payload test_pipeline.py
+ok   prep raw payload evidence/RESULTS.json
+ok   prep raw payload evidence/stderr.txt
+ok   prep raw payload evidence/stdout.txt
+ok   prep manifest base ancestry
+ok   pinned core raw hash
+ok   core unchanged at v5 and prep
+ok   recovery entry count
+ok   recovery pre-edit authoritative/__init__.py
+ok   recovery pre-edit authoritative/accepted_configuration.py
+ok   recovery pre-edit authoritative/resolve_sources.py
+ok   recovery pre-edit corpus_ingest_g3.py
+ok   recovery pre-edit errors.py
+ok   recovery pre-edit integration_g3.py
+ok   recovery pre-edit membership_runner_g3.py
+ok   recovery pre-edit membership_scaling_core.py
+ok   recovery pre-edit pipeline_g3.py
+ok   recovery pre-edit safe_report.py
+ok   recovery pre-edit test_g3_remediation.py
+ok   current core remains bound raw bytes
+ok   pre-edit raw v5 capture membership_runner_v4.py
+ok   pre-edit raw v5 capture corpus_ingest_v4.py
+ok   pinned arithmetic raw hash
+ok   arithmetic has exactly three selected functions
+PROVENANCE: 73 checks; 0 failed

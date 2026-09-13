@@ -1,0 +1,6 @@
+ok   old isinstance gate is demonstrably spoofed
+ok   old identifier route emits canary
+ok   old formatter emits foreign enum
+ok   old formatter emits numeric subclass
+ok   old formatter emits arbitrary field key
+OLD CONTROL PASS

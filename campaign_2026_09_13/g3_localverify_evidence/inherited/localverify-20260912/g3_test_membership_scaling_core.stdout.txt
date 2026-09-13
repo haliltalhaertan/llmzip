@@ -1,0 +1,101 @@
+ok    CONFORMANCE: the output schema is exactly the closed expected set   []
+ok    CONFORMANCE: the reference covers every published field   []
+ok    CONFORMANCE: G_bar_pp matches an independent reference   -7.2783407858238816
+ok    CONFORMANCE: G_bar_scaled_pp matches an independent reference   4.223582938418095
+ok    CONFORMANCE: Delta_bar_pp matches an independent reference   11.501923724241976
+ok    CONFORMANCE: per_seed_G_pp matches an independent reference elementwise   max|diff| = 3.55e-15
+ok    CONFORMANCE: per_seed_G_scaled_pp matches an independent reference elementwise   max|diff| = 3.55e-15
+ok    CONFORMANCE: per_seed_Delta_pp matches an independent reference elementwise   max|diff| = 3.55e-15
+ok    CONFORMANCE: n_question_slots matches the reference
+ok    CONFORMANCE check can FAIL on a scalar (perturbed reference rejected)
+ok    CONFORMANCE check can FAIL on a per-seed vector (one perturbed element rejected)
+ok    SCHEMA check can FAIL (an extra key breaks equality)
+ok    AST: every division in the core is enumerable and few   2 divisions
+ok    AST: aggregate's literal return keys equal the declared schema   ['Delta_bar_pp', 'G_bar_pp', 'G_bar_scaled_pp', 'n_question_slots', 'per_seed_Delta_pp', 'per_seed_G_pp', 'per_seed_G_scaled_pp']
+ok    AST enumeration is declared NOT a proof, in the module docstring
+ok    NEW-2: no check condition in this suite is a boolean expression ending in literal True   lines []
+ok    NEW-2: that sweep can FAIL (it detects the v2 shape)
+ok    REAL_DATA_EXECUTION_ENABLED is False
+ok    the gate refuses by default   real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, an
+ok    an explicit argument opens the gate
+ok    F-6: the gate reads the module global at CALL time
+ok    ...and closes again when the global is restored   real-data execution is OFF by default and is not authorized at this stage; no corpus may be read, an
+ok    scale_matrix returns a positive diagonal
+ok    sigma uses ddof=0, not ddof=1
+ok    diagnostics carry count, flag, both CVs and the SD
+ok    F-1: cv_sigma_after is the CV (spread / mean), not the SD   cv=0.512989 sd=0.406116
+ok    F-1: the v1 quantity is still published, under its true name sd_sigma_after
+ok    F-1: cv_sigma_before is a genuine CV of this archive   1.591353371
+ok    NEW-2: that check can FAIL (a wrong value is rejected)
+ok    F-1: a zero-mean sigma gives NaN, explicitly and with no epsilon added
+ok    F-1: the zero archive takes the fallback everywhere and is flagged
+ok    eps is a FALLBACK not a clip: dead coordinates keep d=1
+ok    F-boundary: flag at 3 dead coordinates is False
+ok    F-boundary: flag at 4 dead coordinates is False
+ok    F-boundary: flag at 5 dead coordinates is True
+ok    F-10: an empty archive is REJECTED   an archive needs at least 2 rows for a dispersion to be defined, got 0
+ok    F-10: a single-row archive is REJECTED   an archive needs at least 2 rows for a dispersion to be defined, got 1
+ok    sign(xD)=sign(x) holds bit-identically for archive and query
+ok    a negative diagonal is REJECTED   IDENTITY VIOLATION: sign(xD) != sign(x); the design premise fails
+ok    non-finite input ABORTS rather than being repaired   non-finite value in the centered representation; aborting, not repairing
+ok    a wrong-width representation is REJECTED   representation must be (n, 96), got (300, 95)
+ok    rotation blocks are deterministic in the seed
+ok    head block is drawn first and blocks differ in size
+ok    spectral membership is the leading 32 coordinates
+ok    random membership is 32 distinct coordinates and is not the leading block
+ok    spectral rotation is block-diagonal at 32
+ok    both rotations are orthogonal at TOL
+ok    the two memberships give DIFFERENT rotations from the SAME blocks
+ok    matched-Q control passes on identical blocks
+ok    matched-Q control REJECTS different blocks   matched-Q control failed: the two memberships do not share identical blocks
+ok    a non-disjoint partition is REJECTED   partition is not a disjoint exhaustive split of the coordinates
+ok    invariance holds WITHIN a representation and its own rotation   norm=1.8e-15 dot=1.2e-14
+ok    invariance check can FAIL on a non-orthogonal rotation
+ok    hamming distance is int16 in [0,96], one per archive row
+ok    NATIVE and SCALED_NATIVE distances are exactly equal
+ok    a complete record set validates
+ok    record count is questions x seeds x arms
+ok    a MISSING record is rejected   record validation failed: 1 missing record(s), e.g. [('q5', 60010, 'SCALED_RANDOM32')]
+ok    a DUPLICATE record is rejected   record validation failed: 1 duplicate record(s), e.g. [('q0', 60001, 'NATIVE')]
+ok    F-3: a DUPLICATE QUESTION ID is rejected by name, not by IndexError   duplicate question ids in the cohort: ['q0']
+ok    a NaN score is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NATIVE')]; 1 invalid record(s), 
+ok    an out-of-range score is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NATIVE')]; 1 invalid record(s), 
+ok    an unexpected arm is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NATIVE')]; 1 invalid record(s), 
+ok    an unexpected seed is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NATIVE')]; 1 invalid record(s), 
+ok    F-9: a BOOLEAN score is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NATIVE')]; 1 invalid record(s), 
+ok    a malformed record is rejected   record validation failed: 1 missing record(s), e.g. [('q0', 60001, 'NATIVE')]; 1 invalid record(s), 
+ok    G_bar is in PERCENTAGE POINTS (0.30-0.22 -> 8.0 pp)
+ok    G_bar_scaled is in pp (0.27-0.24 -> 3.0 pp)
+ok    Delta_bar is the paired change (3.0 - 8.0 -> -5.0 pp)
+ok    PP is applied exactly once
+ok    linearity holds to tolerance, not asserted bitwise
+ok    aggregate divides by the number of selected SLOTS
+ok    a repeated index counts twice
+ok    an empty selection is rejected   empty question selection
+ok    F-7: a NEGATIVE index is rejected, not wrapped   question selection out of range: [-1, -1] against 20 questions
+ok    F-7: a FLOAT index is rejected, not truncated   question selection must have an integer dtype, got float64
+ok    F-8: an OUT-OF-RANGE index raises DesignViolation, not IndexError   question selection out of range: [99, 99] against 20 questions
+ok    pairing: a constant per-question change gives a DEGENERATE Delta interval
+ok    ...while the level G still varies across replicates
+ok    F-11: spans_zero is TRUE on a fixture centred at zero   [-0.423, 0.109]
+ok    F-11: ...and FALSE on a fixture far from zero
+ok    F-5: the three weightings genuinely differ on this fixture   slots=1.3333 distinct=0.8571 clusters=2.0000
+ok    F-5: the core computes the SLOT-weighted value
+ok    F-5: and not the distinct-question value
+ok    F-5: and not the cluster-averaged value
+ok    F-5: multiplicity is preserved in the slot count
+ok    F-2: build_clusters returns a proven partition
+ok    F-2: a NaN label is REJECTED before grouping   cluster label at position 1 is NaN
+ok    F-2: a None label is REJECTED   cluster label at position 0 is missing (None)
+ok    F-2: MIXED types are rejected, not coerced   cluster labels mix types ['int', 'str']; mixed labels would merge or split conversations under coerc
+ok    F-2: an unsupported label type is rejected   cluster label at position 0 has unsupported type tuple; labels must be all strings or all integers
+ok    F-2: a bool label is rejected   cluster label at position 0 is a bool, which is not a supported label type
+ok    F-2: a length mismatch is still rejected   cluster labels do not cover the questions one to one: 9 labels, 10 questions
+ok    NEW-3: build_clusters([], 0) raises a named DesignViolation, not a raw ValueError   cluster grouping needs at least one question, got n_questions=0
+ok    NEW-3: a negative question count is rejected the same way   cluster grouping needs at least one question, got n_questions=-1
+ok    F-2: the bootstrap reports cluster sizes and the loss counter
+ok    F-2: clusters not drawn are reported SEPARATELY from question loss   0.913 per replicate
+ok    safe_write_json writes a new file
+ok    safe_write_json REFUSES to overwrite   refusing to overwrite an existing result file: C:\Users\MDP\dev\llmzip-work\verify\g3\drafts\v52\mem
+
+ALL PASS

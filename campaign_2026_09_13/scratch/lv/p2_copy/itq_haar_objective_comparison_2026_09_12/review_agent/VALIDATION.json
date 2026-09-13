@@ -1,0 +1,46 @@
+{
+  "status": "PASS_NARROW_INDEPENDENT_REPLAY_REVIEW",
+  "reviewed_utc": "2026-09-12T14:48:37.790900+00:00",
+  "executor": "Independent review agent; executed replay and separate output validator",
+  "interpreter": "C:\\Users\\MDP\\Documents\\ChatGPT\\LLM_TOKEN_ZIP\\work\\.venvs\\g3-lock-20260912\\Scripts\\python.exe",
+  "source_commit": "4001fc9d8ea2c932042de7823713c6efce8e56d0",
+  "preflight_raw_git_blob_equality": {
+    "source/itq_feasibility_synthetic.py": true,
+    "source/PLAN.json": true,
+    "source/RESULTS.json": true
+  },
+  "unchanged_preflight_sha256": {
+    "replay_objectives.py": "3f87cc5c8a573fae578f9cba9741d04b66142d481017677028403effc8a8b74b",
+    "source/itq_feasibility_synthetic.py": "18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d",
+    "source/PLAN.json": "e56ea0d6858e06211fa9eb82d6d255724a3d0e23016b77d28f8d8ff10923c53f",
+    "source/RESULTS.json": "0c2cf96553dbf448d22def0538c8993ada038d1fdac52665f759c08e5a304214",
+    "replay/ENVIRONMENT.json": "9b5516a8f0acdd353d81030883a56d34c89c0f1a5319081cb0cedb9c0212a4a6",
+    "replay/objectives.csv": "e98ce727da8ef93ab25aa66996967c3a5bb29fa6f2277f3935f8b4a76f504b44",
+    "replay/PLAN.json": "b61d78357077102b37ad4c44d17b3bec453c7bccf9c2c912cb5becf29e328c2e",
+    "replay/RESULTS.json": "f0ac1ef0dab530fe44c15ffbe7025f1fc8d1a66c3fe71a5fb6555a60feda50ca"
+  },
+  "replay_exit_code": 0,
+  "csv_rows": 480,
+  "unique_expected_row_keys": 480,
+  "groups": 24,
+  "rows_per_group": 20,
+  "csv_parent_byte_equal": true,
+  "results_parent_byte_equal": true,
+  "environment_parent_equal": true,
+  "plan_equal_except_created_utc": true,
+  "all_three_summary_families_all_exported_statistics_match_historical": true,
+  "all_12_reduction_and_range_comparisons_checked": true,
+  "historical_final_values": 240,
+  "new_itq_fits": 0,
+  "review_artifact_sha256": {
+    "PLAN.json": "8e65140f1a44b7fc0817446f97869d19ac69440b9c53bb9992c2ef0007b64394",
+    "ENVIRONMENT.json": "9b5516a8f0acdd353d81030883a56d34c89c0f1a5319081cb0cedb9c0212a4a6",
+    "RESULTS.json": "f0ac1ef0dab530fe44c15ffbe7025f1fc8d1a66c3fe71a5fb6555a60feda50ca",
+    "objectives.csv": "e98ce727da8ef93ab25aa66996967c3a5bb29fa6f2277f3935f8b4a76f504b44"
+  },
+  "remote_refs_observed_read_only": {
+    "refs/heads/fix/g3-membership-remediation-2026-09-11": "077474013d95d6f343d31385d8a57d42fb72f721",
+    "refs/heads/codex/g3-remediation-delivery-2026-09-12": "7266160ac03bdd064fe75f058eae3430fbe14496"
+  },
+  "L094_acceptance_provenance": "Supplied by user and stated in parent README; ledger itself was not re-audited"
+}

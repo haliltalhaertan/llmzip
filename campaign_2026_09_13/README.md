@@ -30,7 +30,17 @@ konvansiyonu gereği dışarıda tutuldu (bkz. Exclusions).
 - `task1/` — Task-1 rederivation & certification surface (receipt, 60-entry hash ledger, TR summary).
 - `harness/` — derivation/eval scripts holding the frozen conventions (e.g. `deney1_lme.py`,
   `lme_regen.py`, `code_cert_v2.py`).
+- `regen/` — compact Task-1 regeneration surface (certification JSON/JSONL, extension run log,
+  `muse_independent/` regeneration audit).
+- `reports/` — Task-1 closure round (red-team certification, coldstart review, closure verification,
+  locomo/representation provenance, Drive inventory, verification receipts, local logs).
+- `scratch/` — mechanism-study preregs & scripts (`mech/`) + local-verification working files (`lv/`).
+- `g3_localverify_evidence/` — untracked local-verification evidence recovered from the `verify/g3`
+  worktree (evidence + gatelock + inherited + provenance payloads).
+- `misc/` — push-plan draft and postscript notes.
 - `pilots_round3/` — axis-attack round-3 reports, per-question details, Muse session slips (d1v…d5, c2).
+- `pilots_round1/` — round-1 axis probe surface (REPORT, attack/probe scripts, per-axis tables, review slips).
+- `pilots_round2/` — r2a–r2v replication & verification round (ROUND2_REPORT + per-trial details + wsl evidence).
 - `race/` — sealed twelve-byte race: `rb1/` calibration, `rb2/` sign runner, `rb3/` FAISS runner,
   `cert/` certificates, `racev/` independent verification, `official_run/` sealed outputs,
   `analysis/` verdict, `RACE_REPORT.md`, `CAMPAIGN.md`.

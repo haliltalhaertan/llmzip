@@ -1,0 +1,68 @@
+{
+  "TOP48": {
+    "FR_mean": 0.34949468085106383,
+    "FR_strict_mean": 0.3609929078014184,
+    "dup_bucket_mean": 3.2297872340425533,
+    "vs_RAND48mean_W_T_L": [
+      91,
+      179,
+      200
+    ],
+    "vs_RAND48mean_median_gap": 0.0,
+    "vs_RAND48mean_q25_q75": [
+      -0.22500000000000006,
+      0.0
+    ],
+    "vs_RAND48mean_min": -1.0,
+    "corr_gap_vs_bucket_excess": 0.011143673198837913
+  },
+  "RAND48_s0": {
+    "FR_mean": 0.47292553191489356,
+    "FR_strict_mean": 0.4795035460992908,
+    "dup_bucket_mean": 2.519148936170213
+  },
+  "RAND48_s1": {
+    "FR_mean": 0.44098581560283684,
+    "FR_strict_mean": 0.44347517730496455,
+    "dup_bucket_mean": 2.5829787234042554
+  },
+  "RAND48_s2": {
+    "FR_mean": 0.4382145390070922,
+    "FR_strict_mean": 0.43939716312056737,
+    "dup_bucket_mean": 2.5659574468085107
+  },
+  "BOT48": {
+    "FR_mean": 0.4284574468085106,
+    "FR_strict_mean": 0.430886524822695,
+    "dup_bucket_mean": 2.3680851063829786,
+    "vs_RAND48mean_W_T_L": [
+      114,
+      200,
+      156
+    ],
+    "vs_RAND48mean_median_gap": 0.0,
+    "vs_RAND48mean_q25_q75": [
+      -0.08958333333333335,
+      0.0
+    ],
+    "vs_RAND48mean_min": -1.0,
+    "corr_gap_vs_bucket_excess": -0.07982083535434228
+  },
+  "TOP16": {
+    "FR_mean": 0.16931028368794324,
+    "FR_strict_mean": 0.1928368794326241,
+    "dup_bucket_mean": 9.448936170212766,
+    "vs_RAND48mean_W_T_L": [
+      50,
+      110,
+      310
+    ],
+    "vs_RAND48mean_median_gap": -0.20833333333333331,
+    "vs_RAND48mean_q25_q75": [
+      -0.5,
+      0.0
+    ],
+    "vs_RAND48mean_min": -1.0,
+    "corr_gap_vs_bucket_excess": -0.003654709035023424
+  }
+}
