@@ -1,0 +1,37 @@
+{
+  "target_commit": "9802b49fe7b662f873f985c39790d4f6ca16523d",
+  "runs": [
+    {
+      "cwd": "/home/mdp/muse-work/static-integrated",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "drafts/v52/static_storage_integration_v10_2026_09_13",
+        "-p",
+        "test_static_storage_preflight_v10.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_940_distinct_copies_yield_231606_unique_by_archive (test_static_storage_preflight_v10.AcceptanceDuplicateCopyE2E.test_940_distinct_copies_yield_231606_unique_by_archive) ... ok\ntest_single_copy_baseline_still_accepts (test_static_storage_preflight_v10.AcceptanceDuplicateCopyE2E.test_single_copy_baseline_still_accepts) ... ok\ntest_ambient_hashlib_substitution_is_refused (test_static_storage_preflight_v10.AmbientPoisonTests.test_ambient_hashlib_substitution_is_refused) ... ok\ntest_planted_sysmodules_cannot_substitute_code (test_static_storage_preflight_v10.AmbientPoisonTests.test_planted_sysmodules_cannot_substitute_code) ... ok\ntest_two_threads_share_no_state (test_static_storage_preflight_v10.ConcurrencySmokeTests.test_two_threads_share_no_state) ... ok\ntest_inconsistent_duplicates_reject_end_to_end (test_static_storage_preflight_v10.DenominatorLogicTests.test_inconsistent_duplicates_reject_end_to_end) ... ok\ntest_no_byte_total_helpers (test_static_storage_preflight_v10.DenominatorLogicTests.test_no_byte_total_helpers) ... ok\ntest_public_signature_and_labels (test_static_storage_preflight_v10.DenominatorLogicTests.test_public_signature_and_labels) ... ok\ntest_pure_math_matches_candidate_module (test_static_storage_preflight_v10.DenominatorLogicTests.test_pure_math_matches_candidate_module) ... ok\ntest_no_sysmodules_publication (test_static_storage_preflight_v10.LoaderHardeningTests.test_no_sysmodules_publication) ... ok\ntest_consumption_refuses_after_corruption_on_both_paths (test_static_storage_preflight_v10.RevalidationTests.test_consumption_refuses_after_corruption_on_both_paths) ... ok\ntest_context_carries_no_snapshot (test_static_storage_preflight_v10.RevalidationTests.test_context_carries_no_snapshot) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 10.002s\n\nOK\n"
+    },
+    {
+      "cwd": "/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_security_regression_2026_09_13",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_security_regression"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_ambient_hashlib_substitution_is_refused (test_security_regression.SecurityRegression.test_ambient_hashlib_substitution_is_refused)\n[EXPECTED-V9-FAIL] Ambient hashlib must not vouch for swapped bytes. ... ok\ntest_ambient_sysmodules_cannot_substitute_code (test_security_regression.SecurityRegression.test_ambient_sysmodules_cannot_substitute_code)\n[V10-ACCEPTANCE] Planted v8_runtime/v8_snapshot must be inert. ... ok\ntest_concurrent_consumption_is_isolated (test_security_regression.SecurityRegression.test_concurrent_consumption_is_isolated)\n[V10-ACCEPTANCE] Barrier-started threads must not cross-bind. ... ok\ntest_consumption_revalidates_after_corruption (test_security_regression.SecurityRegression.test_consumption_revalidates_after_corruption)\n[V10-ACCEPTANCE] No validated snapshot may survive file corruption. ... ok\ntest_duplicate_physical_copy_rows_are_refused (test_security_regression.SecurityRegression.test_duplicate_physical_copy_rows_are_refused)\n[V10-ACCEPTANCE] A repeated physical_copy_id must not double-count. ... ok\ntest_inflated_denominator_plan_is_refused (test_security_regression.SecurityRegression.test_inflated_denominator_plan_is_refused)\n[V10-ACCEPTANCE] Guard-shaped but anchor-violating N must refuse. ... ok\ntest_valid_plan_end_to_end (test_security_regression.SecurityRegression.test_valid_plan_end_to_end)\n[V10-ACCEPTANCE] Real entrypoint accepts a realistic valid set. ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 3.365s\n\nOK\n"
+    }
+  ]
+}

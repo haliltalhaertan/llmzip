@@ -1,0 +1,17 @@
+muse: workspace root: /home/mdp/muse-work/static-integrated (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+muse: retrying meta model stream in 2000ms (attempt 3/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+Integration complete and committed locally as `9802b49` on `muse/integrate-static-v10` (no push, no network, no main edits, frozen V7/V8/V9 bytes untouched — verified zero diff under their directories).
+
+Single public entrypoint: `static_storage_preflight_v10.preflight_longmemeval_v10(...)` → `V10Context` in `drafts/v52/static_storage_integration_v10_2026_09_13/`. It fuses both repair strands: the hardened loader (scoped importer, whole-transaction reentrant lock, pristine digest) extended across ALL pinned paths (V8 chain, parent guard, V7 anchor), plus unique-by-archive rows `(archive_id, physical_copy_id, population_id, n_i)`. The denominator candidate's V9-wrapping path is preserved byte-exact for provenance but superseded; one integration-time fix was needed (pinned V7/guard use `@dataclass`, which requires transient self-registration under a unique private name on Python 3.14 — documented, `sys.modules` delta after consumption is exactly empty).
+
+Results, all with `python -B` on Python 3.14.4: frozen V7 8/8, V8 7/7, V9 7/7; denom candidate 18/18; concurrency gate 13/13 ×5 runs; V9-loader defect pair exactly the 2 expected interference failures; new integrated suite 12/12 including a no-stub valid-plan E2E with 940 DISTINCT duplicate copies → logical 231606, naive 463212 (no contract adaptation needed — the guard explicitly permits distinct physical identities). Hardened matrix verdict `MATRIX-AS-EXPECTED` (exit 0): integrated-v10 passes 7/7 new tests including the ambient-hashlib protection plus 7/7 old tests.
+
+Negative controls (intentional FAILs, not passes): on V9, ambient-hashlib substitution FAILs as expected; the retained-snapshot variant additionally FAILs corruption-revalidation and the unsafe-loader variant FAILs sysmodules-substitution — proving suite sensitivity — while both still pass the old 7/7 suite (documented blindness reproduced). No unresolved failures, no BLOCKED/CONDITIONAL items; the ambient-hashlib threat is fixed in-model via import-time primitive capture, so nothing was silently dropped. Evidence: `V10_INTEGRATION_DISPOSITION.md`, `V10_INTEGRATION_TEST_RECEIPT.md`, `RECEIPT_V10.json`; manifest refreshed with detached digest; all new narrative reports carry the pilot labels.

@@ -4,6 +4,12 @@
 
 This is a preservation/review surface, NOT an integrated release or measurement authorization. Main and frozen V7/V8/V9 artifacts are unchanged. LongMemEval-only; Task4F1 remains blocked.
 
+## Completed integration update
+
+The later completed integration is commit `9802b49fe7b662f873f985c39790d4f6ca16523d` on [findings/static-integrated-v10-2026-09-13](https://github.com/haliltalhaertan/llmzip/tree/findings/static-integrated-v10-2026-09-13). Public entrypoint: `drafts/v52/static_storage_integration_v10_2026_09_13/static_storage_preflight_v10.py:preflight_longmemeval_v10`.
+
+Coordinator reran 12/12 integrated tests and 7/7 adversarial E2E tests successfully. This includes the real valid-plan path with 940 distinct copies yielding 231606 unique logical vectors. Full command/stdout/stderr receipts: `INTEGRATION_COORDINATOR_VERIFICATION.json`; worker final report: `INTEGRATION_FINAL_MUSE.log`. This remains a tested repair candidate, not independent certification or measurement authorization. The prior live snapshot below is retained as historical evidence and is superseded by this commit.
+
 ## Completed candidate commits (separate branches)
 
 | Candidate | Commit | GitHub branch |
