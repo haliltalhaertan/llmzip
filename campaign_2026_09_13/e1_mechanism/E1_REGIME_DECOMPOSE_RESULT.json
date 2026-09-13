@@ -1,0 +1,24 @@
+{
+  "schema": "LLMZIP_E1_REGIME_DECOMPOSE_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34759346371,
+  "head_sha": "367d995156f71fc5ffe6d95a0648afd4f5fccc2a",
+  "status": "SUCCESS",
+  "inputs": {
+    "perltqa_results_sha256": "ec9b8b2c7f384fe2f56c72fdc7a7216930a9db35eda2c4441496c8ad401bf958",
+    "realtalk_details_sha256": "8bae1d380240adc856f8a787b142286efc16fd1d30dfc03bed7e5074769d1757"
+  },
+  "perltqa_character_within_section": {
+    "profile": {"n_units":30,"n_q_total":333,"pearson_r":0.2627967092349944,"spearman_rho":0.26167418524727637,"same_sign_fraction_nonzero":0.8461538461538461},
+    "events": {"n_units":30,"n_q_total":4346,"pearson_r":0.39399672844513106,"spearman_rho":0.31301446051167964,"same_sign_fraction_nonzero":1.0},
+    "social_relationship": {"n_units":30,"n_q_total":844,"pearson_r":0.24230109305502281,"spearman_rho":0.2767827361659401,"same_sign_fraction_nonzero":0.5517241379310345},
+    "dialogues": {"n_units":30,"n_q_total":2742,"pearson_r":0.07530163275887991,"spearman_rho":0.1421579532814238,"same_sign_fraction_nonzero":0.6333333333333333}
+  },
+  "realtalk_chat_within_category": {
+    "1": {"n_units":10,"n_q_total":288,"pearson_r":0.309640524740393,"spearman_rho":0.030303030303030304,"same_sign_fraction_nonzero":0.7},
+    "2": {"n_units":10,"n_q_total":312,"pearson_r":0.5851797926738317,"spearman_rho":0.38181818181818183,"same_sign_fraction_nonzero":0.9},
+    "3": {"n_units":10,"n_q_total":105,"pearson_r":0.35199427569709485,"spearman_rho":0.19137260935085798,"same_sign_fraction_nonzero":0.5}
+  },
+  "interpretation": "The archive-unit P64-vs-Delta relationship does not disappear after holding semantic section fixed in PerLTQA: all four within-section Spearman coefficients remain positive, strongest in events/profile/social. REALTALK is mixed: category 2 retains a moderate chat-level association while categories 1 and 3 are weaker. Semantic task type is therefore not the whole regime variable, but archive/chat variation is not uniformly predictive either.",
+  "epistemic_note": "Post-hoc decomposition with 30 PerLTQA characters and 10 REALTALK chats; descriptive only."
+}
