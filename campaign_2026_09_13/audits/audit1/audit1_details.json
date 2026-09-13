@@ -1,0 +1,36 @@
+{
+  "label": "[LOCAL AUDIT] AUDIT-1 details — per-question arrays for Task C (+ Task B recompute)",
+  "scope_note": "Real per-question rows come ONLY from committed frozen artifacts in /home/mdp/muse-work/llmzip-audit (LME n=470). Race arms {SPREAD80,RAND80_s2,BOT80,TOP48}, deney1 harnesses, per-qid cache pkls, and LoCoMo per-question data are ABSENT from this checkout; synthetic rows below validate the tie machinery only and are NOT measurements of any real arm.",
+  "interpreter": "$HOME/muse-work/faiss-python -> /usr/bin/python3 with PYTHONPATH=$HOME/muse-work/fpylibs (numpy 2.5.3, pandas 3.0.5, scipy 1.18.1; sklearn NOT installed)",
+  "taskB": {
+    "source": "docs/v52/task4c2/V52_T4C2_question_level.csv (n=470), cross-checked vs V52_T4C2_aggregate.csv",
+    "mean_floatY_uncentered": 0.4401063829787234,
+    "mean_floatC_centered": 0.4415957446808511,
+    "mean_signC_native": 0.5419751773049645,
+    "mean_itq_centered": 0.3761411347517731,
+    "native_minus_anchor_abs": 0.0,
+    "centering_gain_pp": 0.14893617021276562,
+    "binarization_gain_pp": 10.037943262411343,
+    "total_vs_uncentered_pp": 10.186879432624108,
+    "wtl_sign_vs_floatC": [122, 304, 44, 0.0],
+    "wtl_floatC_vs_floatU": [7, 458, 5, 0.0]
+  },
+  "taskC_real_boundary_ties": "see taskC_real_boundary_ties.json (2820 rows: 470 SIGN96 + 2350 ITQ96; fields: question_id, method, itq_seed, N_archive, top3_boundary_distance, candidates_at_top3_boundary_distance, slots_remaining_at_boundary, top3_boundary_tie)",
+  "taskC_real_summary": {
+    "SIGN96_boundary_tie_share": 0.23404255319148937,
+    "SIGN96_boundary_tie_count": 110,
+    "SIGN96_n": 470,
+    "SIGN96_mean_candidates_at_boundary": 1.528,
+    "SIGN96_max_candidates_at_boundary": 6.0,
+    "ITQ96_row_boundary_tie_share": 0.3872340425531915,
+    "ITQ96_max_candidates_at_boundary": 12.0
+  },
+  "taskC_synthetic": "see taskC_synthetic_perq.json (121 hamming + 60 float single-gold rows; fields: qid, N, a, t, FR_pess, FR_exp, FR_opt, mc20, diff_mc_minus_exp). Frozen functions mirrored: rank_hamming/rank_float/metrics3 (v52_t4c2_centering_geometry.py L69/74/75), stable_archive_seed (adapter v1 L125-132), 20 trials, priority=rng(seed+99).random(N).",
+  "taskC_synthetic_summary": {
+    "hamming_n": 121, "hamming_max_abs_diff_mc20_vs_FRexp": 0.2,
+    "hamming_mean_abs_diff": 0.0205, "hamming_mean_diff": -0.005,
+    "float_n": 60, "float_max_abs_diff": 0.1615,
+    "float_mean_abs_diff": 0.0377, "float_mean_diff": -0.0012,
+    "tie_free_t0_max_abs_diff": 0.0
+  }
+}

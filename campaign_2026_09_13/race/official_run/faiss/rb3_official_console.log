@@ -1,0 +1,190 @@
+[13:13:41] faiss=1.15.0 threads=1
+[13:13:41] loading frozen benchmarks...
+[13:13:52] LME archives=470 LoCoMo convs=10 valid_q=1535 corrections=156
+[13:13:55] S1 native LME=0.5419751773049645 diff=0.0; LoCoMo=0.23654714666441054 diff=0.0 (3.3s)
+[13:13:55] S3 nb_bits trap PASS: PASS: IndexRaBitQ lacks nb_bits; (96,2)=METRIC_L1@20B; attr-assign reads 2/stores 20B; only ctor-form yields 44B
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 1000 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 256 points to 256 centroids: please provide at least 9984 training points
+[13:13:55] S2 byte replay PASS: RQ96=20 RQ32=12 PQ=12 EXT2=44 S0=202/458/98390
+[13:13:55] S7 rotation chain PASS 8/8
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 396 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 369 points to 256 centroids: please provide at least 9984 training points
+[13:13:55] S4 min-N: LME min=396 (OK); LoCoMo min=369 @ locomo_1 (OK)
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+WARNING clustering 514 points to 256 centroids: please provide at least 9984 training points
+[13:13:55] S5 determinism PASS (in-process A4/A6 + cross-process A4)
+[13:13:55] A4_spread_94101: checkpoint hit
+[13:13:55] A4_spread_94102: checkpoint hit
+[13:13:55] A4_spread_94103: checkpoint hit
+[13:13:55] A4_random_94201: checkpoint hit
+[13:13:55] A4_random_94202: checkpoint hit
+[13:13:55] A4_random_94203: checkpoint hit
+[13:13:55] A5_wrapper: checkpoint hit
+[13:13:55] A6_PQ: checkpoint hit
+python=3.14.4 numpy=2.5.3 faiss=1.15.0 threads=1 BLAS=0.3.34.106.0 OS=Linux-6.18.33.2-microsoft-standard-WSL2 faiss_path=/home/mdp/muse-work/fpylibs/faiss/__init__.py
+
+[13:13:56] manifest: {"environment.txt": "f308bec5cbcf65ad379122e5ff62af9f19bf27f7842810a95bdb3f82067ee785", "race_faiss.py": "67a4b5e47cfd3dc6b3f24f3423e18f64a6dfcb5e585c733a70435f81cda8aec3", "race_faiss_details.json": "aed5fd91a0a41685acf2ebcb3f60fbc0cfaa97c1d49612cc3ec09544e5fda95b", "smoke_log.txt": "e8675c1966b5bd7b10a3aaffb5215c8e18c22f66e182b0608242b0823fb3ff5e"}
+RB3_VERDICT:
+ bytes: RQ96=20B RQ32=12B PQ=12B EXT2=44B; S0=202/458/98390; S(n)-S0==n*decl PASS; mismatch-abort PASS; S3 PASS: IndexRaBitQ lacks nb_bits; (96,2)=...
+ minN: LME min-N=396 train=OK; LoCoMo min-N=369@locomo_1 train=OK; A6 masked_archives=[]
+ determinism: PASS: retrain/rerun bit-identical codes+FR, incl. fresh-process A4
+ A4_spread_rot94101: LME=0.297624(n=470) LoCoMo=0.086831(n=1535) WTL_LME=26/240/204 WTL_LOCO=41/1151/343
+ A4_spread_rot94102: LME=0.311667(n=470) LoCoMo=0.088787(n=1535) WTL_LME=31/241/198 WTL_LOCO=52/1140/343
+ A4_spread_rot94103: LME=0.294468(n=470) LoCoMo=0.095496(n=1535) WTL_LME=22/243/205 WTL_LOCO=53/1152/330
+ A4_random_axes94201: LME=0.280851(n=470) LoCoMo=0.080028(n=1535) WTL_LME=31/226/213 WTL_LOCO=47/1145/343
+ A4_random_axes94202: LME=0.301543(n=470) LoCoMo=0.100463(n=1535) WTL_LME=39/228/203 WTL_LOCO=59/1155/321
+ A4_random_axes94203: LME=0.290957(n=470) LoCoMo=0.085913(n=1535) WTL_LME=28/235/207 WTL_LOCO=53/1142/340
+ A5_wrapper: LME=0.338316(n=470) LoCoMo=0.083523(n=1535) WTL_LME=39/245/186 WTL_LOCO=36/1161/338
+ A6_PQ: LME=0.430745(n=470) LoCoMo=0.153676(n=1535) WTL_LME=42/299/129 WTL_LOCO=76/1225/234
+ rotation-chain: PASS 8/8: runner rotation orthonormal+regenerable+distance-preserving; wrapper convention X@A.T diagnosed; pinned IndexRaBitQ deterministic (panel is runner-side by necessity); faiss wrapper orthonormal, nontrivial, unseeded, query-path equivalent
+[13:13:56] TOTAL 14.7s

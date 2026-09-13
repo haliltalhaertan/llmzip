@@ -1,0 +1,66 @@
+{
+ "labels": [
+  "[LOCAL EXPLORATORY]",
+  "[NOT PREREGISTERED]",
+  "[DISCLOSE-BEFORE-USE]",
+  "D5 missing-analysis #1: kill OR-rule null (selection-lift) quantification"
+ ],
+ "LME": {
+  "null_mean_pp": -1.6189814814814816,
+  "null_sd_pp": 1.3825166664563155,
+  "null_range_pp": [
+   -5.781695156695155,
+   1.907763532763529
+  ],
+  "null_winrate": 0.1,
+  "strict10_correction_delta_pp": 0.05626780626780514,
+  "strict10_null_mean_pp": -1.6752492877492866,
+  "drop64": {
+   "mean_pp": -1.2460826210826181,
+   "sd_units_vs_null": 0.2697246763430943,
+   "percentile_in_null": 56.99999999999999,
+   "mean_pp_strict10_units": 0.3104242263977287
+  },
+  "alone64": {
+   "mean_pp": -3.1452635327635305,
+   "sd_units_vs_null": -1.1039881748364269,
+   "percentile_in_null": 15.0,
+   "mean_pp_strict10_units": -1.0632886247817925
+  },
+  "SPREAD64": {
+   "mean_pp": -0.5019586894586879,
+   "sd_units_vs_null": 0.8079633462111966,
+   "percentile_in_null": 78.0,
+   "mean_pp_strict10_units": 0.848662896265831
+  }
+ },
+ "LOCOMO": {
+  "null_mean_pp": -1.203101579239416,
+  "null_sd_pp": 0.9339893256302589,
+  "null_range_pp": [
+   -3.580266830765333,
+   1.2422600939550055
+  ],
+  "null_winrate": 0.1,
+  "strict10_correction_delta_pp": 0.052234496560268906,
+  "strict10_null_mean_pp": -1.255336075799685,
+  "drop64": {
+   "mean_pp": -0.14953631584987523,
+   "sd_units_vs_null": 1.128027092470882,
+   "percentile_in_null": 89.0,
+   "mean_pp_strict10_units": 1.1839533168150638
+  },
+  "alone64": {
+   "mean_pp": -0.09175066237628539,
+   "sd_units_vs_null": 1.1898968075606084,
+   "percentile_in_null": 89.0,
+   "mean_pp_strict10_units": 1.2458230319047903
+  },
+  "SPREAD64": {
+   "mean_pp": -1.5813218090760466,
+   "sd_units_vs_null": -0.40495134093894103,
+   "percentile_in_null": 33.0,
+   "mean_pp_strict10_units": -0.34902511659475915
+  }
+ }
+}

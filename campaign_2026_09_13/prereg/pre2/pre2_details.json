@@ -1,0 +1,88 @@
+{
+  "session": "PRE2 twelve-byte-race decisiveness brainstorm",
+  "date": "2026-09-13",
+  "inputs_read": [
+    "/mnt/c/Users/MDP/dev/llmzip-work/DRAFT_PREREG_TWELVE_BYTE_RACE.md",
+    "strategy/roadmap_2026-09-13/muse_strategy_roadmap.md",
+    "strategy/roadmap_2026-09-13/muse_ideas_technical.md",
+    "review_transfer/.../axis_attack_2026-09-12/round3/ROUND3_REPORT.md",
+    "review_transfer/.../axis_attack_2026-09-12/round3/missing_analyses/m1_kill_null/missing1_kill_null.md",
+    "review_transfer/.../axis_attack_2026-09-12/round3/missing_analyses/m2_d2multi/d2x_report.md",
+    "review_transfer/.../axis_attack_2026-09-12/round3/missing_analyses/m3_c2ablation/c2x_report.md",
+    "review_transfer/.../axis_attack_2026-09-12/round2/ROUND2_REPORT.md"
+  ],
+  "frozen_facts_respected": {
+    "learned_selection": "EXCLUDED by Design-1 gate (LME drop64 -1.25pp 2/10; alone64 -3.15pp 0/10; LoCoMo drop64 -0.15pp 2/10; Jaccard 0.329)",
+    "best_simple_arms": "spread/random (LME); bottom-tail benchmark-local (LoCoMo BOT80 -0.1pp)",
+    "top_variance": "anti-optimal, worst arm (R2B out-of-sample; 59/60 cross-checks)",
+    "m1_null_vs_best": {"LME_pp": -1.62, "LME_sd": 1.38, "LoCoMo_pp": -1.20, "LoCoMo_sd": 0.93},
+    "adaptive_routing": "CLOSED (m3 p_bonf 0.18 LME a=0.20; LoCoMo empty; m2 gold-free G 0/10 >=0.65, mean 0.555)",
+    "tie_mechanism": "D2 T AUC 0.798 vs M 0.686; D2X 10/10 stable, mean T-M +0.162; gold-informed (F1), not deployable",
+    "transfer": "e1 Spearman ~0.1, transfer ~= chance (C5); utilities benchmark-local",
+    "mixing": "d4 n=2 confirmatory, strict min-matched > max-random > max-anti both benchmarks"
+  },
+  "proposed_changes_ranked": [
+    {"id": "C1", "change": "10 seeds/width + dual-bar vs-best/vs-mean + m1-null percentile", "cost": "tiny", "risk": "low"},
+    {"id": "C2", "change": "TOP-variance negative-control arm k=48", "cost": "tiny", "risk": "low"},
+    {"id": "C3", "change": "Specify BOT-tail arms exactly, benchmark-local flagged", "cost": "tiny", "risk": "low"},
+    {"id": "C4", "change": "recall-vs-measured-bytes curve as decision instrument (isotonic + dominance kill + k=16/24 point)", "cost": "small", "risk": "low"},
+    {"id": "C5", "change": "Freeze non-sign-codec eval semantics (estimator/ties/K/distance/centering/bytes)", "cost": "text", "risk": "medium-if-wrong"},
+    {"id": "C6", "change": "Per-question W/T/L matrices + tie-share + per-type/Cat descriptives", "cost": "small", "risk": "low"},
+    {"id": "C7", "change": "Two gold-free diagnostic arms: median-shift sign + entropy/stratified subset", "cost": "small", "risk": "low-medium"},
+    {"id": "C8", "change": "Prespecify bootstraps (B=5000 paired + cluster) + seed-range reporting + fixed-vs-max caveat", "cost": "small", "risk": "low"},
+    {"id": "C9", "change": "Publishable-null and credible-positive criteria in section 4", "cost": "text", "risk": "low"},
+    {"id": "C10", "change": "Arm-table hygiene: A3 zero-code, A7 off-contrast, RaBitQ primary/secondary, PQ effective-bytes col", "cost": "text", "risk": "negligible"},
+    {"id": "C11", "change": "Shared-state + effective-bytes accounting rows; code_size + rotation verification", "cost": "small", "risk": "low"},
+    {"id": "C12", "change": "Seed-range + construction-assert reporting rule (eff_k==k, cols, sentinels)", "cost": "tiny", "risk": "negligible"}
+  ],
+  "do_not_add": [
+    "learned-selection arm (any variant)",
+    "hetero-precision A1 as race arm (future prereg only)",
+    "adaptive routing / per-question masks (closed)",
+    "PCA/whitening/learned rotations/reweighting/float-rerank/alternate metrics (NOES)",
+    "dither/deadzone/companding/ternary codecs (note B5 curves only)",
+    "new-encoder generality e2",
+    "transfer utility as race arm",
+    "global codebooks",
+    "sub-8-bit direction / per-type rules / PR-weighted codecs beyond one confirmatory point",
+    "estimator or trial-count changes mid-race; vs-mean headlines"
+  ],
+  "eval_semantics": {
+    "estimator": "per-question fractional R@3, mean over 20 tie draws, then mean over questions",
+    "K": 3,
+    "ties": "same 20 draws all arms; float arms tolerance 1e-12, report trial-SD",
+    "distances": "Hamming (sign); codec-native asymmetric (RaBitQ primary plain, secondary rotation-wrapper); ADC (PQ, archive-local, no rerank)",
+    "centering": "frozen centered pipeline for all arms; deviations = violations",
+    "bytes": "measured==declared pre-compute abort on serialized per-vector payload; shared state separate; A7 curve-only",
+    "comparison": "per-question paired differences; question-paired bootstrap + LoCoMo cluster bootstrap; no pooling",
+    "fairness_sentence": "Same task wrapper + rank-based FR@3 + measured-bytes abort + dominance check."
+  },
+  "pre_seal_checklist": [
+    "HR approval + seal hash",
+    "native aborts LME 0.5419751773049645 / LoCoMo 0.23654714666441054 tol 1e-12",
+    "seed literals frozen (10/width, tie draws, bootstrap B+seeds)",
+    "measured==declared abort all arms + byte worksheets",
+    "construction asserts eff_k==k, cols, sentinels; tie-seed identity",
+    "faiss-cpu pin + wheel hash + import assert + rotation verification",
+    "negative controls (one failing example per abort)",
+    "5-question dry run per benchmark",
+    "artifact manifest + sha256sum -c ALL OK + no-network attestation + read-only /mnt/c",
+    "disclosure boilerplate + C9/C1/C4 specs travel with sealed text"
+  ],
+  "future_work_noted": [
+    "hetero A1 needs own prereg (width + threshold NOES)",
+    "adaptive revival gate: gain@0.20 > max of 200+ random draws, LARGE-free, per-benchmark",
+    "entropy/stratified rule as portable-default candidate",
+    "tie T-model stays mechanism (gold-informed); gold-free prediction open",
+    "fresh-Q d4 n=2 disclosed support; pairing confound open"
+  ],
+  "key_numbers_cited": {
+    "R2A_WTL_TOP48_vs_RAND48": "63/250/157, gap -0.1234",
+    "R2A_single_session_user_gap": "-0.30pp (n=64)",
+    "R2B_drop64": "test 0.4838, +3.39 vs mean / +1.62 vs best; seed range 3.34pp",
+    "R2C_BOT80_LoCoMo": "-0.1pp vs native",
+    "D2X": "T mean 0.821, T-M +0.162 10/10; G mean 0.555, 0/10 >=0.65",
+    "c2x": "LME COMBO 0.686 / gain@0.20 +3.086 (p_bonf 0.18); LoCoMo COMBO 0.558; FREE10 0.670/0.568",
+    "m1": "LME null -1.62 sd 1.38; drop64 pct 57; SPREAD64 pct 78 / LoCoMo null -1.20 sd 0.93; drop64 pct 89"
+  }
+}
