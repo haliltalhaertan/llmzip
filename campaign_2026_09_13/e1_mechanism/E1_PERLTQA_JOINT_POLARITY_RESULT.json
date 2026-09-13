@@ -1,0 +1,20 @@
+{
+  "schema": "LLMZIP_E1_PERLTQA_JOINT_POLARITY_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34759147758,
+  "head_sha": "bd5b981fded9e7627eba3534c412ba2491208082",
+  "status": "SUCCESS",
+  "scope": "Joint TOP64/BOT64 retrieval polarity from verified PerLTQA B3B per-QA outputs; no representation rebuild or rescoring.",
+  "input": {"results_sha256":"ec9b8b2c7f384fe2f56c72fdc7a7216930a9db35eda2c4441496c8ad401bf958","n_qa":8265,"n_char":30},
+  "overall": {"mean_delta_pp":-6.2750079598036175,"mean_p64":-0.1140478129586035,"n":8265,"n_nonzero_both":1069,"pearson_r":0.10956117417559358,"same_sign_fraction_nonzero":0.6894293732460243,"spearman_rho":0.10916753396746055},
+  "by_character": {"mean_delta_pp":-6.472554082830538,"mean_p64":-0.11492055443728799,"n":30,"n_nonzero_both":30,"pearson_r":0.29541069100135847,"same_sign_fraction_nonzero":0.9666666666666667,"spearman_rho":0.3187986651835373},
+  "by_section": {
+    "profile":{"mean_delta_pp":20.435435435435437,"mean_p64":0.18243243243243243,"n":333,"n_nonzero_both":59,"pearson_r":0.34022336417967314,"same_sign_fraction_nonzero":0.864406779661017,"spearman_rho":0.35497036946929456},
+    "social_relationship":{"mean_delta_pp":-0.8056872037914692,"mean_p64":-0.2359004739336493,"n":844,"n_nonzero_both":95,"pearson_r":0.08190691344855593,"same_sign_fraction_nonzero":0.6210526315789474,"spearman_rho":0.08031511623923276},
+    "events":{"mean_delta_pp":-12.411412793373216,"mean_p64":-0.17647261849976992,"n":4346,"n_nonzero_both":375,"pearson_r":0.04839158593258306,"same_sign_fraction_nonzero":0.7706666666666667,"spearman_rho":0.056758484645560006},
+    "dialogues":{"mean_delta_pp":-1.4762730808814348,"mean_p64":-0.013605096317599536,"n":2742,"n_nonzero_both":540,"pearson_r":0.09453944670623218,"same_sign_fraction_nonzero":0.6259259259259259,"spearman_rho":0.1208529043031922}
+  },
+  "section_regime_descriptive": {"n":4,"pearson_r":0.8384341212124719,"spearman_rho":0.4,"same_sign_fraction_nonzero":1.0},
+  "interpretation": "Per-query P64 association is weak and almost identical in magnitude to LME (~0.109 vs ~0.108). The signal strengthens after aggregation to the character/archive level (rho ~0.319; 29/30 same sign) and all four section means share the sign of their SIGN-minus-float mean. This supports a regime-level marker interpretation rather than an individual-query predictor. Profile is the only section with a moderate within-section association; events, despite driving the reversal, has weak within-section rho.",
+  "epistemic_note": "PerLTQA outcome was observed before E1. Sections and characters are descriptive aggregation units, not independent confirmatory benchmarks."
+}
