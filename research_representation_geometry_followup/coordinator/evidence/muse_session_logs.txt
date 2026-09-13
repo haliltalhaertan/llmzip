@@ -1,0 +1,40 @@
+===== geometry-cert-adversarial.I3yIYA.log
+muse: workspace root: /home/mdp/muse-work/geometry-cert-adversarial (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done. Adversarial suite delivered, committed locally as `e3f30d2` on `muse/geometry-cert-adversarial` (no push, no network).
+
+**Outcome:** 41-case deterministic suite in [research_representation_geometry_followup/adversarial/](//home/mdp/muse-work/geometry-cert-adversarial/research_representation_geometry_followup/adversarial/) that reproduces the BULGU-1 blocker from independent truth and fails the archived v2 in exactly 5 places: `poc_K100` + `poc_K1000` (false `ISOLATED_TIES/-1` on truth `{5/4:+1, 3/2:+1, 7/4:0, 5/2:-1, 4:-1}`), mirrored `poc_reversed_K100` (false `+1`), plus two invalid-J faults found here — `invalidJ_empty` (`STRICT/0` vs point truth `-1`) and `invalidJ_inverted` (v2 silently certifies `L>R`). 36/41 pass on v2, including honest-budget K=1/K=10 twins, both tangents, common-zero VARIES, endpoint ties, persistent, and all 24 fuzz rows.
+
+**Verification actually run:** `build_corpus.py` exit 0 → `run_suite.py --out results_v2.json` exit 1 (5 unsound, expected) → `test_soundness.py` exit 0, 12/12 (157-point truth replay, 57-interval oracle reclosure, M1–M5 forged-cert rejections, 13 positive controls, always-STRICT canary fails 32/41, always-UNRESOLVED splits safety-PASS/completeness-FAIL) → `repro_bulgu1.py` exit 0 (bug exists, not repair success). Second-route corroboration: Sturm 57/57 and rational-roots 34/34 agree with archived primitives.
+
+**Protections held:** published tree byte-identical before/after (74 files, manifest 73/73 OK); only the new followup dir added; Task4F1 seal kept (synthetic rational tests only); every file headed `[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]`.
+
+**Limits:** finite corpus proves nothing general; same-model-family authorship (partial independence only); runner is in-process without timeout; repaired APIs with new status names get flagged strict. **NOT YET AUDITED V3** — reviewer must run the actual v3 via `GATE_UNDER_TEST_PATH=... run_suite.py` before any verdict; remaining P1/P2 findings (BULGU-2/3/4/6/7/8) stay open. Full detail: [FINAL_REPORT.md](//home/mdp/muse-work/geometry-cert-adversarial/research_representation_geometry_followup/adversarial/FINAL_REPORT.md), acceptance bar: [ADVERSARIAL_SPEC.md](//home/mdp/muse-work/geometry-cert-adversarial/research_representation_geometry_followup/adversarial/ADVERSARIAL_SPEC.md).
+===== geometry-cert-repair-v3.eD5tOO.log
+muse: workspace root: /home/mdp/muse-work/geometry-cert-repair-v3 (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done. The false certificate is repaired at its root cause, with an independent validator closing the BULGU-5 hole.
+
+**Outcome:** `certify_v3.py` returns `ISOLATED_TIES/VARIES` (with `exact crossing at 7/4` cell evidence) on the POC where archived v2 falsely certified direction `-1`. The published flawed package is byte-identical (manifest 73/73, before/after tree hashes identical).
+
+**Root cause (both defects fixed):** v2's rational-enumeration skip silently dropped the 7/4 pre-cut at K=100 scaling, and *both* isolator branches counted crossings only over bisection brackets — bisection exact-hits were logged as ties but never classified, so one midpoint sample certified the whole interval. v3 classifies every exact root from proven root-free neighbour cells and samples every proven root-free cell via one shared routine; refusals stay `UNRESOLVED`.
+
+**Commit (local, no push):** `f46a08550b748c754058960c78c12885a2086736` on `muse/geometry-cert-repair-v3` — 16 new files, all under `research_representation_geometry_followup/candidate/`.
+
+**Reviewer commands** (worktree root, stdlib only, `python3 -B`):
+- `PYTHONDONTWRITEBYTECODE=1 python3 -B research_representation_geometry_followup/candidate/test_red_poc.py` → exit 1 on archived v2 with `FALSE SINGLE-DIRECTION CERTIFICATE`
+- `CERT_DIR=research_representation_geometry_followup/candidate CERT_MODULE=certify_v3 PYTHONDONTWRITEBYTECODE=1 python3 -B research_representation_geometry_followup/candidate/test_red_poc.py` → exit 0, `VARIES`
+- `test_certify_v3.py` → 80/80 (scales K=1/7/100/1000 identical, score-preserving transforms, swaps, exhaustion→UNRESOLVED, invalid intervals, labeled realizable/abstract examples, orig agreement)
+- `test_validate_v3.py` → 19/19 (literal v2 counterfeit rejected; 9 genuine v3 certs accepted; 5 mutations rejected)
+- `fuzz_v3.py` → n=2000 synthetic-only (seal respected, no LME/corpus), eff 1765: orig-unresolved 631 → v3-unresolved 0; agree/mono/validator/countersign/VARIES-witness violations all 0
+
+**Evidence honesty:** executed reproduction, proof argument (sign-constancy + per-cell Sturm proofs + full root classification), sample fuzz (labeled supporting, not proof), and incompleteness (no 'certified safe generally'; narrow synthetic distribution; shared order definition) are distinguished in [FIX_DISPOSITION.md](/home/mdp/muse-work/geometry-cert-repair-v3/research_representation_geometry_followup/candidate/FIX_DISPOSITION.md).
+
+**Remaining:** BULGU-2/3/4/6/7/8 and measurement observations F-01–F-07 are OPEN/untouched — no blanket closure claimed. Full details: [STATUS.md](/home/mdp/muse-work/geometry-cert-repair-v3/research_representation_geometry_followup/candidate/STATUS.md), receipts in `candidate/receipts/`.

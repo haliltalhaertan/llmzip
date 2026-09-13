@@ -1,0 +1,586 @@
+{
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ],
+  "target": {
+    "path": "/home/mdp/muse-work/geometry-cert-repair-v3/research_representation_geometry_followup/candidate/certify_v3.py",
+    "sha256": "b920737c6123622918e3931659131320f4dbe423ade5408bb21d074725dae592"
+  },
+  "n_cases": 41,
+  "safety_fail": 0,
+  "completeness_fail": 0,
+  "completeness_na": 27,
+  "results": [
+    {
+      "id": "poc_K1",
+      "kind": "poc-scale-family",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "1",
+          "7/4"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "poc_K10",
+      "kind": "poc-scale-family",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "1",
+          "7/4"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "poc_K100",
+      "kind": "poc-scale-family",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "1",
+          "7/4"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "poc_K1000",
+      "kind": "poc-scale-family",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "1",
+          "7/4"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "poc_reversed_K100",
+      "kind": "poc-reversed",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "1",
+          "7/4"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "tangent_realizable",
+      "kind": "tangent-realizable",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": 1,
+        "ties": [
+          "1/2"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "tangent_abstract_only",
+      "kind": "tangent-abstract",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": 1,
+        "ties": [
+          "1"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "common_zero",
+      "kind": "common-zero",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "1"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "endpoint_tie_L",
+      "kind": "endpoint-root",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": -1,
+        "ties": [
+          "0"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "endpoint_tie_R",
+      "kind": "endpoint-root",
+      "must_resolve": true,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": 1,
+        "ties": [
+          "2"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "P_identically_zero",
+      "kind": "persistent",
+      "must_resolve": true,
+      "cert": {
+        "status": "PERSISTENT_TIE",
+        "direction": 0,
+        "ties": [
+          "1",
+          "2",
+          "persistent(1,2)"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "invalidJ_empty",
+      "kind": "robustness",
+      "must_resolve": false,
+      "cert": {
+        "status": "UNRESOLVED",
+        "direction": null,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "invalidJ_inverted",
+      "kind": "robustness",
+      "must_resolve": false,
+      "cert": {
+        "status": "UNRESOLVED",
+        "direction": null,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "invalidJ_domain",
+      "kind": "robustness",
+      "must_resolve": false,
+      "cert": {
+        "status": "DOMAIN_FAIL",
+        "direction": null,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "search_strict_pos_Jq",
+      "kind": "strict",
+      "must_resolve": true,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "search_strict_neg_Jq",
+      "kind": "strict-negative-numerators",
+      "must_resolve": true,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "search_two_roots_Jq",
+      "kind": "two-exact-roots",
+      "must_resolve": true,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "PASS"
+    },
+    {
+      "id": "fuzz_00",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_01",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_02",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_03",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_04",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_05",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_06",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_07",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_08",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "1"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_09",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_10",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_11",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_12",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "3"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_13",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_14",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_15",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_16",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_17",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_18",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_19",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_20",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": 1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_21",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_22",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": []
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    },
+    {
+      "id": "fuzz_23",
+      "kind": "fuzz-supplemental",
+      "must_resolve": false,
+      "cert": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "3/7"
+        ]
+      },
+      "safety": "PASS",
+      "safety_errors": [],
+      "completeness": "NA"
+    }
+  ]
+}

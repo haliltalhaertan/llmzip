@@ -1,0 +1,2 @@
+checks=80 fail=0
+ALL PASS

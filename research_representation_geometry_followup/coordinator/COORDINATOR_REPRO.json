@@ -1,0 +1,26 @@
+{
+  "source_commit": "75b7e057abbda4c46aabe3a7fb0d51f98b245ad0",
+  "manifest_verified": 73,
+  "independent_truth": {
+    "5/4": 1,
+    "3/2": 1,
+    "7/4": 0,
+    "5/2": -1,
+    "4": -1
+  },
+  "v2_certificate": {
+    "status": "ISOLATED_TIES",
+    "direction": -1,
+    "ties": [
+      "1",
+      "7/4"
+    ],
+    "notes": [
+      "rational-root enumeration over budget: kept exact, bisection still finds rational hits exactly"
+    ],
+    "sturm_calls": 5,
+    "xbrackets": [],
+    "disc_fired": 0
+  },
+  "unsafe_certificate_reproduced": true
+}

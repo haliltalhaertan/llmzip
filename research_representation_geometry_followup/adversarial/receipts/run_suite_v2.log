@@ -1,0 +1,8 @@
+target=/home/mdp/muse-work/geometry-cert-adversarial/research_representation_geometry_2026_09_13/repairs/rank_cert/certify_v2.py
+cases=41 safety_fail=5 completeness_fail=3 completeness_na=27 -> results_v2.json
+FAIL poc_K100                     safety=FAIL compl=FAIL cert=ISOLATED_TIES/-1 ['1', '7/4'] | ['stable -1 certified despite crossing evidence', 'stable -1 certified on VARIES case (false stabilization)']
+FAIL poc_K1000                    safety=FAIL compl=FAIL cert=ISOLATED_TIES/-1 ['1', '7/4'] | ['stable -1 certified despite crossing evidence', 'stable -1 certified on VARIES case (false stabilization)']
+FAIL poc_reversed_K100            safety=FAIL compl=FAIL cert=ISOLATED_TIES/1 ['1', '7/4'] | ['stable 1 certified despite crossing evidence', 'stable 1 certified on VARIES case (false stabilization)']
+FAIL invalidJ_empty               safety=FAIL compl=NA cert=STRICT/0 [] | ['direction 0 contradicts point truth -1']
+FAIL invalidJ_inverted            safety=FAIL compl=NA cert=ISOLATED_TIES/-1 ['1', '7/4'] | ['inverted J certified as ISOLATED_TIES']
+SUITE FOUND 5 UNSOUND CERTIFICATES (see results_v2.json)

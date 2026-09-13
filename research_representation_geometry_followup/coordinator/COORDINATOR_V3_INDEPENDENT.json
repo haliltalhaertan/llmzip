@@ -1,0 +1,36 @@
+{
+  "candidate": "/home/mdp/muse-work/geometry-cert-repair-v3/research_representation_geometry_followup/candidate/certify_v3.py",
+  "checked": 684,
+  "skipped": 4,
+  "violations": [],
+  "scale_violations": [],
+  "status_counts": {
+    "STRICT": 558,
+    "ISOLATED_TIES": 126
+  },
+  "unresolved": 0,
+  "bracket_ties": 114,
+  "poc_scales": {
+    "1": {
+      "status": "ISOLATED_TIES",
+      "direction": "VARIES"
+    },
+    "100": {
+      "status": "ISOLATED_TIES",
+      "direction": "VARIES"
+    },
+    "10000": {
+      "status": "ISOLATED_TIES",
+      "direction": "VARIES"
+    },
+    "1000000": {
+      "status": "ISOLATED_TIES",
+      "direction": "VARIES"
+    },
+    "100000000": {
+      "status": "ISOLATED_TIES",
+      "direction": "VARIES"
+    }
+  },
+  "hardcoded_poc_literals": 2
+}

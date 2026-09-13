@@ -1,0 +1,32 @@
+{
+  "frozen_truth_points_checked": 157,
+  "frozen_truth_mismatches": [],
+  "poc_truth": {
+    "5/4": 1,
+    "3/2": 1,
+    "7/4": 0,
+    "5/2": -1,
+    "4": -1
+  },
+  "poc_varies": true,
+  "canaries": {
+    "always_strict": {
+      "exit": 1,
+      "summary": "cases=41 safety_fail=32 completeness_fail=13 completeness_na=27 -> /tmp/res_always_strict.json"
+    },
+    "always_unresolved": {
+      "exit": 0,
+      "summary": "cases=41 safety_fail=0 completeness_fail=14 completeness_na=27 -> /tmp/res_always_unresolved.json"
+    },
+    "v2_relabelled": {
+      "exit": 1,
+      "summary": "cases=41 safety_fail=15 completeness_fail=10 completeness_na=27 -> /tmp/res_v2_relabelled.json"
+    }
+  },
+  "test_soundness_exit": 0,
+  "test_soundness_tail": [
+    "PASS results_v2_documents_failures -- results_v2: safety_fail=5",
+    "tests=12 ran=12 pass=12 fail=0 skipped=0",
+    "ALL SOUNDNESS TESTS PASS"
+  ]
+}
