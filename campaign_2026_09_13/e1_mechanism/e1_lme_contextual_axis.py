@@ -37,7 +37,7 @@ if alone.shape!=(470,96) or drop.shape!=(470,96) or vr.shape!=(470,96): raise Sy
 qout={}
 with Q.open(newline='',encoding='utf-8') as f:
     for r in csv.DictReader(f):
-        qout[r['question_id']]={'native':float(r['native_fractional_r3']),'delta_pp':float(r['sign_minus_centered_float_fractional_pp'])}
+        qout[r['question_id']]={'native':float(r['sign96_centered_fractional_r3']),'delta_pp':float(r['sign_minus_centered_float_fractional_pp'])}
 if set(qids)!=set(qout): raise SystemExit('QID_COVERAGE_FAIL')
 rows=[]
 for i,qid in enumerate(qids):
