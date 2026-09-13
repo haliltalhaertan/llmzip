@@ -1,0 +1,18 @@
+{
+  "schema": "LLMZIP_E1_LME_QTYPE_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34758510859,
+  "head_sha": "84093e1c558995a49dc95d4c78ff917f400c4880",
+  "status": "SUCCESS",
+  "scope": "Predeclared secondary LME question-type stratification of committed-surface geometry correlations.",
+  "strata": {
+    "knowledge-update": {"n":72,"mean_delta_pp":10.706018518518519,"spearman":{"cv_sigma":0.14029602149380863,"top32_share":0.08685248265989073,"corr_off_mass":-0.09487709195070743,"corr_p95_abs":-0.0634608363378904}},
+    "multi-session": {"n":121,"mean_delta_pp":10.24793388429752,"spearman":{"cv_sigma":-0.04098826590966897,"top32_share":0.021351701285139257,"corr_off_mass":-0.07286413908507905,"corr_p95_abs":-0.09191343469429801}},
+    "single-session-assistant": {"n":56,"mean_delta_pp":4.196428571428571,"spearman":{"cv_sigma":0.0797029158960825,"top32_share":0.08002386723526135,"corr_off_mass":-0.008451718598376533,"corr_p95_abs":-0.014442810263048507,"sign_entropy":0.15523346438283986}},
+    "single-session-preference": {"n":30,"mean_delta_pp":8.111111111111112,"spearman":{"cv_sigma":0.022789176899245568,"top32_share":0.01592496698983425,"corr_off_mass":-0.2959847312938159,"corr_median_abs":-0.36023373604590586,"corr_p95_abs":-0.3876905756835511,"sign_entropy":-0.21883101191203275}},
+    "single-session-user": {"n":64,"mean_delta_pp":10.1171875,"spearman":{"N":-0.2462339599937643,"cv_sigma":-0.10472553420796318,"top32_share":0.07846155954066643,"corr_off_mass":-0.2170494510240751,"corr_median_abs":-0.24119358706518546,"corr_p95_abs":-0.2765976451596756,"sign_entropy":0.20193527692308358}},
+    "temporal-reasoning": {"n":127,"mean_delta_pp":12.450131233595801,"spearman":{"cv_sigma":0.003635046049174456,"top32_share":0.00838191021229055,"corr_off_mass":0.013544873968947676,"corr_p95_abs":0.03383721894675673}}
+  },
+  "interpretation": "The overall near-zero scalar result is not hiding a consistent question-type effect. Moderate negative continuous-correlation associations appear in the small preference/user strata, but are absent or weak in the larger multi-session/temporal strata. No pooled mechanism claim is licensed.",
+  "epistemic_note": "Secondary stratification was predeclared. Small strata and multiple descriptive metrics; no confirmatory p-values."
+}
