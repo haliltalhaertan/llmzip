@@ -1,0 +1,89 @@
+{
+  "schema": "E1_V2_COMPETITION_CORRECTED_RESULT_R2_V1",
+  "status": "CORRECTED_SUMMARY_FROM_INDEPENDENT_AUDIT_FULL_PAYLOAD_PENDING",
+  "labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "source_target": "d5441698fa8fb8404873af47233569803b887376",
+  "source_audit": "010bcbbe0ade15ed1dc501ce6d2f4e2e5ccd89b7",
+  "frozen_design": "775a09c1ba6fd8c28f1e98ec1826d31a7f2c3484",
+  "definition": {
+    "lead_r1_invalid_behavior": "collapse all gold rows to dmin=min(distance[gold]) and count competition once",
+    "r2_required_behavior": "compute competition per gold, then aggregate within query using the frozen V2/D2 convention",
+    "primary_summary_below": "independent audit per-gold all-row D2 recomputation",
+    "non_gold_sensitivity": "also independently computed; same qualitative direction on all four benchmarks"
+  },
+  "benchmarks": {
+    "LME": {
+      "n": 470,
+      "multi_gold_n": 296,
+      "multi_gold_rate": 0.6297872340425532,
+      "rho_delta_vs_strict_gap": 0.14168629605302735,
+      "rho_delta_vs_gold_tie_gap": 0.14045379360271315,
+      "non_gold_sensitivity_strict": 0.141200412379537,
+      "non_gold_sensitivity_tie": 0.14883000714957909,
+      "r1_min_gold_strict": 0.09965709814218833,
+      "r1_min_gold_tie": 0.0989586520264074
+    },
+    "REALTALK": {
+      "n": 705,
+      "multi_gold_n": 386,
+      "multi_gold_rate": 0.5475177304964539,
+      "rho_delta_vs_strict_gap": 0.097939128891117,
+      "rho_delta_vs_gold_tie_gap": 0.12281952421315011,
+      "non_gold_sensitivity_strict": 0.09813662381103015,
+      "non_gold_sensitivity_tie": 0.12231123187522679,
+      "r1_min_gold_strict": 0.06118332620206951,
+      "r1_min_gold_tie": 0.0871527005507532
+    },
+    "PERLTQA": {
+      "n": 8265,
+      "multi_gold_n": 2322,
+      "multi_gold_rate": 0.2809437386569873,
+      "rho_delta_vs_strict_gap": 0.25416826537535475,
+      "rho_delta_vs_gold_tie_gap": 0.2797878341571222,
+      "non_gold_sensitivity_strict": 0.25432876802474186,
+      "non_gold_sensitivity_tie": 0.2797727287692079,
+      "r1_min_gold_strict": 0.27738722348615524,
+      "r1_min_gold_tie": 0.285059265942642,
+      "sections": {
+        "dialogues": {
+          "n": 2742,
+          "multi_gold_n": 2322,
+          "multi_gold_rate": 0.8468271334792122,
+          "rho_delta_vs_strict_gap": 0.13054126734088975,
+          "rho_delta_vs_gold_tie_gap": 0.11123087254360414
+        },
+        "events": {
+          "n": 4346,
+          "multi_gold_n": 0,
+          "rho_delta_vs_strict_gap": 0.39790634780463613,
+          "rho_delta_vs_gold_tie_gap": 0.38922832069574037
+        },
+        "profile": {
+          "n": 333,
+          "multi_gold_n": 0,
+          "rho_delta_vs_strict_gap": 0.0573253028779693,
+          "rho_delta_vs_gold_tie_gap": 0.018738683422868593
+        },
+        "social_relationship": {
+          "n": 844,
+          "multi_gold_n": 0,
+          "rho_delta_vs_strict_gap": 0.30428515802019,
+          "rho_delta_vs_gold_tie_gap": 0.2993013213223269
+        }
+      }
+    },
+    "LOCOMO": {
+      "n": 1535,
+      "multi_gold_n": 432,
+      "multi_gold_rate": 0.2814332247557003,
+      "rho_delta_vs_strict_gap": 0.09491957131277647,
+      "rho_delta_vs_gold_tie_gap": 0.10376015063205302,
+      "non_gold_sensitivity_strict": 0.09478580583026314,
+      "non_gold_sensitivity_tie": 0.10401481252579545,
+      "r1_min_gold_strict": 0.09370604039357276,
+      "r1_min_gold_tie": 0.09533237242284638
+    }
+  },
+  "interpretation": "Corrected competition direction remains positive on all four benchmarks. Numerical R1 Claim-D values and all R1 competition-derived bootstrap/prose are superseded. This is descriptive post-hoc evidence only.",
+  "remaining_gate": "Regenerate and persist full per-query competition rows and descriptive cluster bootstrap using the per-gold implementation, then independently re-audit."
+}
