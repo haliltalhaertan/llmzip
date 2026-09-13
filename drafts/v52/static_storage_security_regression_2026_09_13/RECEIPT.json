@@ -1,0 +1,129 @@
+{
+  "expectations": {
+    "EXPECTED_V9_FAIL": [
+      "test_ambient_hashlib_substitution_is_refused"
+    ],
+    "TARGET_EXPECTED_FAIL": {
+      "v9": [
+        "test_ambient_hashlib_substitution_is_refused"
+      ],
+      "variant-retained-snapshot": [
+        "test_ambient_hashlib_substitution_is_refused",
+        "test_consumption_revalidates_after_corruption"
+      ],
+      "variant-unsafe-loader": [
+        "test_ambient_hashlib_substitution_is_refused",
+        "test_ambient_sysmodules_cannot_substitute_code"
+      ]
+    }
+  },
+  "surprises": [],
+  "targets": {
+    "v9": {
+      "gate": "/home/mdp/muse-work/static-tests/drafts/v52/static_storage_integration_v9_2026_09_13/consumption_gate_v9.py",
+      "new_suite": {
+        "outcomes": {
+          "test_ambient_hashlib_substitution_is_refused": "fail",
+          "test_ambient_sysmodules_cannot_substitute_code": "pass",
+          "test_concurrent_consumption_is_isolated": "pass",
+          "test_consumption_revalidates_after_corruption": "pass",
+          "test_duplicate_physical_copy_rows_are_refused": "pass",
+          "test_inflated_denominator_plan_is_refused": "pass",
+          "test_valid_plan_end_to_end": "pass"
+        },
+        "returncode": 1,
+        "tail": [
+          "",
+          "----------------------------------------------------------------------",
+          "Ran 7 tests in 2.866s",
+          "",
+          "FAILED (failures=1)"
+        ]
+      },
+      "old_tests": {
+        "outcomes": {
+          "test_context_exposes_no_snapshot_field (test_consumption_gate_v9_frozen.Tests.test_context_exposes_no_snapshot_field)": "pass",
+          "test_exact_loader_ignores_preloaded_same_name (test_consumption_gate_v9_frozen.Tests.test_exact_loader_ignores_preloaded_same_name)": "pass",
+          "test_exact_v8_chain_loads (test_consumption_gate_v9_frozen.Canonical.test_exact_v8_chain_loads)": "pass",
+          "test_fresh_snapshot_reruns_each_access (test_consumption_gate_v9_frozen.Tests.test_fresh_snapshot_reruns_each_access)": "pass",
+          "test_preflight_discards_validation_snapshot (test_consumption_gate_v9_frozen.Tests.test_preflight_discards_validation_snapshot)": "pass",
+          "test_public_signature (test_consumption_gate_v9_frozen.Tests.test_public_signature)": "pass",
+          "test_v8_hashes_match (test_consumption_gate_v9_frozen.Canonical.test_v8_hashes_match)": "pass"
+        },
+        "returncode": 0,
+        "stderr_tail": []
+      }
+    },
+    "variant-retained-snapshot": {
+      "gate": "/home/mdp/muse-work/static-tests/drafts/v52/static_storage_security_regression_2026_09_13/mutation_variants/variant_retained_snapshot.py",
+      "new_suite": {
+        "outcomes": {
+          "test_ambient_hashlib_substitution_is_refused": "fail",
+          "test_ambient_sysmodules_cannot_substitute_code": "pass",
+          "test_concurrent_consumption_is_isolated": "pass",
+          "test_consumption_revalidates_after_corruption": "fail",
+          "test_duplicate_physical_copy_rows_are_refused": "pass",
+          "test_inflated_denominator_plan_is_refused": "pass",
+          "test_valid_plan_end_to_end": "pass"
+        },
+        "returncode": 1,
+        "tail": [
+          "",
+          "----------------------------------------------------------------------",
+          "Ran 7 tests in 2.150s",
+          "",
+          "FAILED (failures=2)"
+        ]
+      },
+      "old_tests": {
+        "outcomes": {
+          "test_context_exposes_no_snapshot_field (test_consumption_gate_v9_frozen.Tests.test_context_exposes_no_snapshot_field)": "pass",
+          "test_exact_loader_ignores_preloaded_same_name (test_consumption_gate_v9_frozen.Tests.test_exact_loader_ignores_preloaded_same_name)": "pass",
+          "test_exact_v8_chain_loads (test_consumption_gate_v9_frozen.Canonical.test_exact_v8_chain_loads)": "pass",
+          "test_fresh_snapshot_reruns_each_access (test_consumption_gate_v9_frozen.Tests.test_fresh_snapshot_reruns_each_access)": "pass",
+          "test_preflight_discards_validation_snapshot (test_consumption_gate_v9_frozen.Tests.test_preflight_discards_validation_snapshot)": "pass",
+          "test_public_signature (test_consumption_gate_v9_frozen.Tests.test_public_signature)": "pass",
+          "test_v8_hashes_match (test_consumption_gate_v9_frozen.Canonical.test_v8_hashes_match)": "pass"
+        },
+        "returncode": 0,
+        "stderr_tail": []
+      }
+    },
+    "variant-unsafe-loader": {
+      "gate": "/home/mdp/muse-work/static-tests/drafts/v52/static_storage_security_regression_2026_09_13/mutation_variants/variant_unsafe_loader.py",
+      "new_suite": {
+        "outcomes": {
+          "test_ambient_hashlib_substitution_is_refused": "fail",
+          "test_ambient_sysmodules_cannot_substitute_code": "fail",
+          "test_concurrent_consumption_is_isolated": "pass",
+          "test_consumption_revalidates_after_corruption": "pass",
+          "test_duplicate_physical_copy_rows_are_refused": "pass",
+          "test_inflated_denominator_plan_is_refused": "pass",
+          "test_valid_plan_end_to_end": "pass"
+        },
+        "returncode": 1,
+        "tail": [
+          "",
+          "----------------------------------------------------------------------",
+          "Ran 7 tests in 2.972s",
+          "",
+          "FAILED (failures=2)"
+        ]
+      },
+      "old_tests": {
+        "outcomes": {
+          "test_context_exposes_no_snapshot_field (test_consumption_gate_v9_frozen.Tests.test_context_exposes_no_snapshot_field)": "pass",
+          "test_exact_loader_ignores_preloaded_same_name (test_consumption_gate_v9_frozen.Tests.test_exact_loader_ignores_preloaded_same_name)": "pass",
+          "test_exact_v8_chain_loads (test_consumption_gate_v9_frozen.Canonical.test_exact_v8_chain_loads)": "pass",
+          "test_fresh_snapshot_reruns_each_access (test_consumption_gate_v9_frozen.Tests.test_fresh_snapshot_reruns_each_access)": "pass",
+          "test_preflight_discards_validation_snapshot (test_consumption_gate_v9_frozen.Tests.test_preflight_discards_validation_snapshot)": "pass",
+          "test_public_signature (test_consumption_gate_v9_frozen.Tests.test_public_signature)": "pass",
+          "test_v8_hashes_match (test_consumption_gate_v9_frozen.Canonical.test_v8_hashes_match)": "pass"
+        },
+        "returncode": 0,
+        "stderr_tail": []
+      }
+    }
+  },
+  "verdict": "MATRIX-AS-EXPECTED"
+}
