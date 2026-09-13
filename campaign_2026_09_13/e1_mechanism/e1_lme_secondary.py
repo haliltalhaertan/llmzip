@@ -35,6 +35,10 @@ def spearman(x,y): return pearson(ranks(x),ranks(y))
 
 def mean(x): return sum(x)/len(x) if x else None
 
+def correlations(rr, metrics):
+    y=[r['delta_pp'] for r in rr]
+    return {m:{'pearson_r':pearson([r[m] for r in rr],y),'spearman_rho':spearman([r[m] for r in rr],y)} for m in metrics}
+
 qrows={}
 with Q.open(newline='',encoding='utf-8') as f:
     for r in csv.DictReader(f):
@@ -61,23 +65,26 @@ for qid in sorted(qrows):
       'N':int(a['N'])})
 metrics=['cv_sigma','top32_share','corr_off_mass','corr_median_abs','corr_p95_abs','sign_entropy','N']
 y=[r['delta_pp'] for r in rows]
-cor={m:{'pearson_r':pearson([r[m] for r in rows],y),'spearman_rho':spearman([r[m] for r in rows],y)} for m in metrics}
+cor=correlations(rows,metrics)
 pos=[r for r in rows if r['delta_pp']>0]; neg=[r for r in rows if r['delta_pp']<0]; zero=[r for r in rows if r['delta_pp']==0]
 groups={}
 for m in metrics:
     groups[m]={'positive_delta_mean':mean([r[m] for r in pos]),'negative_delta_mean':mean([r[m] for r in neg]),'zero_delta_mean':mean([r[m] for r in zero])}
 bytype={}
+type_cor={}
 for qt in sorted(set(r['question_type'] for r in rows)):
     rr=[r for r in rows if r['question_type']==qt]
     bytype[qt]={'n':len(rr),'mean_delta_pp':mean([r['delta_pp'] for r in rr])}
+    type_cor[qt]=correlations(rr,metrics)
 out={
- 'schema':'LLMZIP_E1_LME_SECONDARY_V1',
+ 'schema':'LLMZIP_E1_LME_SECONDARY_V2',
  'label':'[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]',
  'scope':'Secondary E1 analysis from pre-existing committed surfaces; no raw-cache E1 run.',
  'inputs':{'question_level_sha256':sha256(Q),'task1_extension_sha256':sha256(G)},
  'n':len(rows),'join_exact':True,'delta_mean_pp':mean(y),
  'delta_counts':{'positive':len(pos),'zero':len(zero),'negative':len(neg)},
  'correlations':cor,'geometry_by_delta_sign':groups,'question_type_summary':bytype,
- 'epistemic_note':'Post-hoc/exploratory. task1 geometry predates E1; outcome and geometry were not generated for this correlation test. Correlation is not causal evidence.'
+ 'question_type_correlations':type_cor,
+ 'epistemic_note':'Post-hoc/exploratory. Question-type stratification was predeclared as secondary in E1 design. Correlation is not causal evidence.'
 }
 print(json.dumps(out,sort_keys=True,indent=2))
