@@ -1,0 +1,32 @@
+{
+  "schema": "LLMZIP_E1_LME_JOINT_POLARITY_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34758997510,
+  "head_sha": "b36f964fd1d3010c83305dfcebb631d7c25ded65",
+  "status": "SUCCESS",
+  "scope": "Joint TOP/BOT retrieval polarity from already-sealed race per-question arrays; no representation rebuild or rescoring.",
+  "inputs": {
+    "race_details_sha256": "87a4d1f2ac3da82ee5593e70d5b5347320349d8d266d895debe4a35698a76375",
+    "question_level_sha256": "69c21b2ffaea1e92923bf3f0e83287e12d07a5f34b4b42afde1752d6b50b3b51",
+    "native_perq_max_abs_diff": 1.1102230246251565e-16
+  },
+  "primary_P64": {
+    "n": 470,
+    "mean_delta_pp": 10.037943262411346,
+    "mean_p": 0.0679113475177305,
+    "pearson_r": 0.13356131284825032,
+    "spearman_rho": 0.1084458833761871,
+    "same_sign_fraction_nonzero": 0.625
+  },
+  "sensitivity_P48": {
+    "n": 470,
+    "mean_p": 0.07896276595744682,
+    "pearson_r": 0.1082634784889223,
+    "spearman_rho": 0.12130483418718338,
+    "same_sign_fraction_nonzero": 0.6293103448275862
+  },
+  "question_type_note": "P64 Spearman is heterogeneous and mostly small: knowledge +0.082, multi-session +0.086, assistant -0.003, preference +0.125, user +0.023, temporal +0.206. The 6 question-type mean P64 values do not track their mean SIGN-float deltas monotonically.",
+  "prediction_disposition": "DIRECTION_MATCHES_BUT_EFFECT_WEAK",
+  "interpretation": "E1 V2 primary A has the predicted positive sign on LME, but the association is weak rather than a strong per-question law. The earlier six-unit bridge should therefore be treated as a possible benchmark/section-regime signal, not as evidence that P64 predicts individual-query SIGN advantage.",
+  "epistemic_note": "Mechanism validation on an already-observed benchmark. Per-question race arrays predate E1; this remains exploratory, not causal or confirmatory."
+}
