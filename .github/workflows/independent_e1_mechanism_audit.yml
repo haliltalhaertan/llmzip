@@ -27,6 +27,11 @@ jobs:
           bad=$(git diff --name-only "$BASE" HEAD | grep -Ev '^(audit_e1_mechanism_checkpoint_2026_09_13/|\.github/workflows/independent_e1_mechanism_audit\.yml$)' || true)
           test -z "$bad"
           printf 'HEAD=%s\nBASE=%s\n' "$(git rev-parse HEAD)" "$BASE" | tee audit_e1_mechanism_checkpoint_2026_09_13/PROVENANCE.txt
+      - name: Install audit dependency
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check numpy
       - name: Runtime inventory
         shell: bash
         run: |
@@ -103,7 +108,6 @@ jobs:
                 if abs(float(av)-float(bv))>1e-12: mism.append([k,av,bv])
               elif av!=bv: mism.append([k,av,bv])
             report[name]={'fresh_numeric_or_scalar_fields':len(a),'committed_numeric_or_scalar_fields':len(b),'common_scalar_fields':len(common),'mismatches_gt_1e-12':mism}
-          # QTYPE is a manually persisted slice of fresh secondary V2; recompute that slice here.
           fresh=json.loads((R/'E1_LME_SECONDARY_FRESH.json').read_text()); qtype=json.loads((C/'E1_LME_QTYPE_RESULT.json').read_text())
           qm=[]
           for qt,vals in qtype['strata'].items():
