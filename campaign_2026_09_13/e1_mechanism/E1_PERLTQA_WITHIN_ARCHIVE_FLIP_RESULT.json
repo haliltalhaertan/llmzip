@@ -1,0 +1,24 @@
+{
+  "schema": "LLMZIP_E1_PERLTQA_WITHIN_ARCHIVE_FLIP_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34759416637,
+  "head_sha": "5850d877547fdf1281309f1172997fbc6d7da06c",
+  "status": "SUCCESS",
+  "input": {"results_sha256":"ec9b8b2c7f384fe2f56c72fdc7a7216930a9db35eda2c4441496c8ad401bf958","n_char":30},
+  "counts": {
+    "n_archives_profile_and_events": 30,
+    "profile_delta_positive": 23,
+    "events_delta_negative": 30,
+    "profile_p64_positive": 28,
+    "events_p64_negative": 30,
+    "delta_profile_pos_events_neg": 23,
+    "p64_profile_pos_events_neg": 28,
+    "both_joint_flip": 22,
+    "char_section_nonzero_pairs": 115,
+    "char_section_same_sign": 87,
+    "char_section_same_sign_fraction": 0.7565217391304347
+  },
+  "disposition": "ARCHIVE_ONLY_EXPLANATION_INSUFFICIENT",
+  "interpretation": "The same character archive C96 supports opposite semantic-section regimes: events has negative SIGN-minus-float and negative P64 in 30/30 characters, while profile is positive in 23/30 for SIGN-minus-float and 28/30 for P64. In 22/30 characters both quantities flip together from profile-positive to events-negative. Therefore archive-only geometry cannot be sufficient; the mechanism must include query/semantic-section by archive interaction.",
+  "epistemic_note": "Post-hoc fixed-archive comparison. Holding archive fixed identifies insufficiency of archive-only explanations but does not establish causal semantics."
+}
