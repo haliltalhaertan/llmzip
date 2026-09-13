@@ -1,0 +1,28 @@
+{
+  "schema": "LLMZIP_E1_LME_PREEXISTING_REDUNDANCY_V1",
+  "status": "PRE_EXISTING_EVIDENCE_NOT_E1_OUTCOME",
+  "source_commit": "8f6e0fab4c2fb2eeb8dcd5087376a6736e1865f1",
+  "sources": [
+    "campaign_2026_09_13/pilots_round1/REPORT.md",
+    "campaign_2026_09_13/pilots_round1/diagnostics.json"
+  ],
+  "TOP48": {
+    "FR": 0.34949468085106383,
+    "mean_abs_phi": 0.05926048876632774,
+    "dup_frac": 0.02351552658973569,
+    "boundary_tie_rate": 0.4595744680851064
+  },
+  "BOT48": {
+    "FR": 0.4284574468085106,
+    "mean_abs_phi": 0.03725537691086058,
+    "dup_frac": 0.005786170297427093,
+    "boundary_tie_rate": 0.42340425531914894
+  },
+  "gaps": {
+    "BOT_minus_TOP_FR_pp": 7.896276595744678,
+    "TOP_minus_BOT_mean_abs_phi": 0.022005111855467156,
+    "TOP_minus_BOT_dup_frac": 0.017729356292308596,
+    "TOP_minus_BOT_boundary_tie_rate": 0.036170212765957444
+  },
+  "marginal_axis_caveat": "The pre-existing round-1 report states that all 96 axes have positive marginal discrimination and the strongest individual axes are high-variance axes. Joint TOP48 failure therefore cannot be licensed as evidence that low-variance axes are individually more informative."
+}
