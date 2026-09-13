@@ -1,0 +1,54 @@
+E1 V2 RAW-CACHE RECOVERY INDEPENDENT ZERO-TRUST AUDIT
+Date: 2026-09-13
+Verdict: REQUEST_CHANGES
+
+TARGETS
+repo=haliltalhaertan/llmzip
+target_branch=research/e1-v2-raw-cache-recovery-2026-09-13
+target_commit=d5441698fa8fb8404873af47233569803b887376
+parent_commit=4bfdb820904ead1b6378b00bd5bf71c1ab2fe138
+v2_design_commit=775a09c1ba6fd8c28f1e98ec1826d31a7f2c3484
+main_observed=5ec3db60c03edde490374bf9cd7c3e56dd6bcd00
+
+BOUND BYTE HASHES
+03_regen_caches.tar.gz expected=a16bdf95d3a96cb964fd6fd614d3b49d22bb9329c5afaf81cd692214d50f8aad observed=a16bdf95d3a96cb964fd6fd614d3b49d22bb9329c5afaf81cd692214d50f8aad match=True size=248907436
+04_bench3_runs_caches.tar.gz expected=87d6312ef6c195ac6c161a8693ab635c447074c969f6573a0d0b0ca994219ae4 observed=87d6312ef6c195ac6c161a8693ab635c447074c969f6573a0d0b0ca994219ae4 match=True size=39253236
+07_drive_frozen.tar.gz expected=370ea40962b078fc2fc09ab5319942b242f1559adeb62765e271f90cc21a9f59 observed=370ea40962b078fc2fc09ab5319942b242f1559adeb62765e271f90cc21a9f59 match=True size=173679147
+E1_V2_RAW_CACHE_RECOVERY_2026-09-13.zip expected=b6b7923f2e9623f5e1d46dda523f8f4a2919b62f69e82ba5b2bb679ad9771ae8 observed=b6b7923f2e9623f5e1d46dda523f8f4a2919b62f69e82ba5b2bb679ad9771ae8 match=True size=531261
+
+GIT SCOPE
+parent->target=exactly one additive commit; added paths confined to campaign_2026_09_13/e1_v2_raw_recovery_2026_09_13/
+
+INDEPENDENCE DISCLOSURE
+GitHub compare/fetch response used to verify parent->target additive scope included target diff text containing lead prose before raw table freeze. No derived result JSON/per-query/archive-geometry/package was intentionally inspected before Stage-1 freeze; the independent raw table was then frozen and hashed before package extraction.
+
+RAW INVENTORY
+{"lme_cache_repr_pkl": 470, "locomo_repr_pkl": 10, "perltqa_required_cache_files": 2, "realtalk_RT_pkl": 10, "total_inventory_entries": 504}
+
+HEADLINE GATES
+{"LME": {"float": 0.44159574468085105, "float_diff": -5.551115123125783e-17, "float_pass": true, "sign": 0.5419751773049645, "sign_diff": 0.0, "sign_pass": true}, "LOCOMO": {"float": 0.16826334541318252, "float_diff": null, "float_pass": null, "sign": 0.23654714666441054, "sign_diff": 0.0, "sign_pass": true}, "PERLTQA": {"float": 0.551692074528853, "float_diff": 0.0, "float_pass": true, "sign": 0.488941994930817, "sign_diff": 0.0, "sign_pass": true}, "REALTALK": {"float": 0.17253405381064954, "float_diff": -2.7755575615628914e-17, "float_pass": true, "sign": 0.22477507598784194, "sign_diff": 0.0, "sign_pass": true}}
+
+LOCOMO
+centered_float=0.16826334541318252
+sign_minus_float_pp=6.828380125122796
+
+STRUCTURAL GEOMETRY
+{"duplicate_C_hash_groups": {}, "effdim_disjoint32_positive": 520, "effdim_positive": 520, "max_abs_col_mean": 7.683883675760834e-16, "n": 520, "n_duplicate_C_hash_groups": 0, "phi_disjoint32_positive": 520, "phi_positive": 520, "topbot_overlap_values": [32], "zero_entries_total": 0}
+
+P64
+{"LME": 0.10856532762715705, "LOCOMO": 0.24946905393531763, "PERLTQA": 0.10916753396746055, "REALTALK": 0.07452747581886462}
+
+QUERY MAGNITUDE REDUNDANCY
+{"LME": {"delta_vs_q_abs_cv": 0.046015379111320184, "delta_vs_q_eff": -0.046015379111320184, "identity_max_abs_error": 2.842170943040401e-14, "rho_q_abs_cv_q_eff": -1.0}, "LOCOMO": {"delta_vs_q_abs_cv": 0.08029852812058498, "delta_vs_q_eff": -0.08029852812058498, "identity_max_abs_error": 2.842170943040401e-14, "rho_q_abs_cv_q_eff": -0.9999999999999999}, "PERLTQA": {"delta_vs_q_abs_cv": 0.012152581396030114, "delta_vs_q_eff": -0.012152581396030114, "identity_max_abs_error": 2.842170943040401e-14, "rho_q_abs_cv_q_eff": -1.0}, "REALTALK": {"delta_vs_q_abs_cv": 0.06478246599598106, "delta_vs_q_eff": -0.06478246599598106, "identity_max_abs_error": 2.842170943040401e-14, "rho_q_abs_cv_q_eff": -0.9999999999999999}}
+
+CLAIM D COMPETITION
+{"LME": {"multi_gold_n": 296, "multi_gold_rate": 0.6297872340425532, "n": 470, "rho": {"d2_per_gold_all_rows_strict": 0.14168629605302735, "d2_per_gold_all_rows_tie": 0.14045379360271315, "lead_min_gold_strict": 0.09965709814218833, "lead_min_gold_tie": 0.0989586520264074, "non_gold_only_sensitivity_strict": 0.141200412379537, "non_gold_only_sensitivity_tie": 0.14883000714957909}}, "LOCOMO": {"multi_gold_n": 432, "multi_gold_rate": 0.2814332247557003, "n": 1535, "rho": {"d2_per_gold_all_rows_strict": 0.09491957131277647, "d2_per_gold_all_rows_tie": 0.10376015063205302, "lead_min_gold_strict": 0.09370604039357276, "lead_min_gold_tie": 0.09533237242284638, "non_gold_only_sensitivity_strict": 0.09478580583026314, "non_gold_only_sensitivity_tie": 0.10401481252579545}}, "PERLTQA": {"multi_gold_n": 2322, "multi_gold_rate": 0.2809437386569873, "n": 8265, "rho": {"d2_per_gold_all_rows_strict": 0.25416826537535475, "d2_per_gold_all_rows_tie": 0.2797878341571222, "lead_min_gold_strict": 0.27738722348615524, "lead_min_gold_tie": 0.285059265942642, "non_gold_only_sensitivity_strict": 0.25432876802474186, "non_gold_only_sensitivity_tie": 0.2797727287692079}, "sections": {"dialogues": {"multi_gold_n": 2322, "multi_gold_rate": 0.8468271334792122, "n": 2742, "rho": {"d2_per_gold_all_rows_strict": 0.13054126734088975, "d2_per_gold_all_rows_tie": 0.11123087254360414, "lead_min_gold_strict": 0.09443662871319979, "lead_min_gold_tie": 0.12193178779559244}}, "events": {"multi_gold_n": 0, "multi_gold_rate": 0.0, "n": 4346, "rho": {"d2_per_gold_all_rows_strict": 0.39790634780463613, "d2_per_gold_all_rows_tie": 0.38922832069574037, "lead_min_gold_strict": 0.39790634780463613, "lead_min_gold_tie": 0.38922832069574037}}, "profile": {"multi_gold_n": 0, "multi_gold_rate": 0.0, "n": 333, "rho": {"d2_per_gold_all_rows_strict": 0.0573253028779693, "d2_per_gold_all_rows_tie": 0.018738683422868593, "lead_min_gold_strict": 0.0573253028779693, "lead_min_gold_tie": 0.018738683422868593}}, "social_relationship": {"multi_gold_n": 0, "multi_gold_rate": 0.0, "n": 844, "rho": {"d2_per_gold_all_rows_strict": 0.30428515802019, "d2_per_gold_all_rows_tie": 0.2993013213223269, "lead_min_gold_strict": 0.30428515802019, "lead_min_gold_tie": 0.2993013213223269}}}}, "REALTALK": {"multi_gold_n": 386, "multi_gold_rate": 0.5475177304964539, "n": 705, "rho": {"d2_per_gold_all_rows_strict": 0.097939128891117, "d2_per_gold_all_rows_tie": 0.12281952421315011, "lead_min_gold_strict": 0.06118332620206951, "lead_min_gold_tie": 0.0871527005507532, "non_gold_only_sensitivity_strict": 0.09813662381103015, "non_gold_only_sensitivity_tie": 0.12231123187522679}}}
+
+LEAD COMPARISON
+{"LME": {"competition_mismatch_count": {"strict": 265, "strict_max_abs": 221.5, "tie": 261, "tie_max_abs": 55.0}, "n": 470, "noncompetition_max_abs": {"Delta": 0.0, "FR_BOT64": 0.0, "FR_FLOAT": 0.0, "FR_SIGN": 0.0, "FR_TOP64": 0.0, "P64": 0.0, "Q_ABS_CV": 0.0, "Q_EFF": 0.0}}, "LOCOMO": {"competition_mismatch_count": {"strict": 425, "strict_max_abs": 272.5, "tie": 424, "tie_max_abs": 54.0}, "n": 1535, "noncompetition_max_abs": {"Delta": 0.0, "FR_BOT64": 0.0, "FR_FLOAT": 0.0, "FR_SIGN": 0.0, "FR_TOP64": 0.0, "P64": 0.0, "Q_ABS_CV": 0.0, "Q_EFF": 0.0}}, "PERLTQA": {"competition_mismatch_count": {"strict": 2315, "strict_max_abs": 286.83333333333337, "tie": 2307, "tie_max_abs": 46.66666666666667}, "n": 8265, "noncompetition_max_abs": {"Delta": 0.0, "FR_BOT64": 0.0, "FR_FLOAT": 0.0, "FR_SIGN": 0.0, "FR_TOP64": 0.0, "P64": 0.0, "Q_ABS_CV": 0.0, "Q_EFF": 0.0}}, "REALTALK": {"competition_mismatch_count": {"strict": 385, "strict_max_abs": 482.0, "tie": 385, "tie_max_abs": 98.60000000000001}, "n": 705, "noncompetition_max_abs": {"Delta": 0.0, "FR_BOT64": 0.0, "FR_FLOAT": 0.0, "FR_SIGN": 0.0, "FR_TOP64": 0.0, "P64": 0.0, "Q_ABS_CV": 0.0, "Q_EFF": 0.0}}}
+
+GEOMETRY LEAD COMPARISON
+{"LME": {"max_abs_diff": {"DUP_GAP": 0, "EFFDIM_GAP": 0, "PHI_GAP": 0}, "n": 470}, "LOCOMO": {"max_abs_diff": {"DUP_GAP": 0, "EFFDIM_GAP": 0, "PHI_GAP": 0}, "n": 10}, "PERLTQA": {"max_abs_diff": {"DUP_GAP": 0, "EFFDIM_GAP": 0, "PHI_GAP": 0}, "n": 30}, "REALTALK": {"max_abs_diff": {"DUP_GAP": 0, "EFFDIM_GAP": 0, "PHI_GAP": 0}, "n": 10}}
+
+TASK4F1
+NOT ACCESSED / NOT RUN / OUTCOME ACCESS FORBIDDEN respected.
