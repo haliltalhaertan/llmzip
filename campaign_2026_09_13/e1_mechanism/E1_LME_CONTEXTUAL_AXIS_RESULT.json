@@ -1,0 +1,37 @@
+{
+  "schema": "LLMZIP_E1_LME_CONTEXTUAL_AXIS_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34758766530,
+  "head_sha": "ca4d67a63253029b44ef3e982a13c08f7e595786",
+  "status": "SUCCESS",
+  "scope": "Gold-informed contextual axis-importance probe from pre-existing round-1 NPZ. No representation rebuild.",
+  "inputs": {
+    "npz_sha256": "be8c645d241bac3b913cfcf24f5533c55775a383b46a5f43401d633c873a635a",
+    "question_level_sha256": "69c21b2ffaea1e92923bf3f0e83287e12d07a5f34b4b42afde1752d6b50b3b51"
+  },
+  "aggregate_means": {
+    "alone_top_mean": 0.008393321513002365,
+    "alone_bot_mean": 0.007811650413711585,
+    "alone_bot_minus_top": -0.00058167109929078,
+    "drop_loss_top_mean": 0.0010793070330969259,
+    "drop_loss_bot_mean": 0.0025424423758865244,
+    "drop_loss_bot_minus_top": 0.0014631353427895983
+  },
+  "spearman": {
+    "alone_top_mean": 0.03532729370763337,
+    "alone_bot_mean": 0.05967620312711157,
+    "alone_bot_minus_top": 0.0688207066786711,
+    "drop_loss_top_mean": 0.249627390127059,
+    "drop_loss_bot_mean": 0.2039614659492247,
+    "drop_loss_bot_minus_top": 0.02986012491194064,
+    "drop_positive_top": 0.19594826465375934,
+    "drop_positive_bot": 0.18606740616632123
+  },
+  "prediction_test": {
+    "predeclared_exploratory_prediction": "Spearman(delta_pp, drop_loss_bot_minus_top) > 0",
+    "observed": 0.02986012491194064,
+    "disposition": "NOT_SUPPORTED / PRACTICALLY_NULL"
+  },
+  "interpretation": "High-variance axes are slightly stronger alone on average, while BOT axes have larger average contextual drop-loss inside the full code. However the BOT-vs-TOP contextual-importance gap is essentially unrelated to per-query SIGN-minus-float advantage. Both TOP and BOT absolute drop importance correlate positively with Delta. Thus a simple low-variance-complementarity explanation does not account for query-level LME variation; the remaining load-bearing target is joint retrieval polarity and ranking competition, not single-axis drop importance.",
+  "epistemic_note": "Post-hoc and gold-informed. Mechanism-only; not deployable or causal."
+}
