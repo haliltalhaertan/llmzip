@@ -1,8 +1,28 @@
 {
   "files": {
+    "V10_DENOMINATOR_DISPOSITION_src5ff0ab0.md": {
+      "bytes": 3724,
+      "sha256": "a3d620a075ae30ec056a3b2c44fe9b45f446d587aba6a09d2b6da37bbe107caf"
+    },
+    "V10_DENOMINATOR_HASHES_src5ff0ab0.json": {
+      "bytes": 832,
+      "sha256": "7607cc45b49250a0f1dd13e361025ff36203a278492036e1536d724a75ea6ad9"
+    },
+    "V10_DENOMINATOR_TEST_RECEIPT_src5ff0ab0.md": {
+      "bytes": 3301,
+      "sha256": "e816ce3509d9edc3e82663b97d96b07e47d01fc5c3bbf15ccc64863a7c381724"
+    },
     "V10_DISPOSITION.md": {
       "bytes": 3508,
       "sha256": "53b583f3dd7812d0406e307721d8210d0ed9cba6045002bfd63b606fb783c0e3"
+    },
+    "V10_INTEGRATION_DISPOSITION.md": {
+      "bytes": 4895,
+      "sha256": "f09038e22286ddff432f0870ec0088ed7d2c4b62b6e196ca6cfc274db73e80cd"
+    },
+    "V10_INTEGRATION_TEST_RECEIPT.md": {
+      "bytes": 3812,
+      "sha256": "9e7ea5ecc7dd2e7ff2db7e17434751018a5d33f5a6f2c8d99759c8bbdf01feee"
     },
     "V10_RACE_REPRO.md": {
       "bytes": 2456,
@@ -16,9 +36,25 @@
       "bytes": 8283,
       "sha256": "29a4e4cf073c13bbfadc4a90b5560bc4922d08938226f72b952a75f967b45150"
     },
+    "denominator_integrity_v10.py": {
+      "bytes": 15283,
+      "sha256": "b4808b1dbdc6074125be47a3899ff8ef329073d66b3cf051495717117de9a6fd"
+    },
+    "static_storage_preflight_v10.py": {
+      "bytes": 20895,
+      "sha256": "f84e7db87fa477ddabd76f3852f9fc02e76d6410bbb070f56bc0f80200be7428"
+    },
     "test_consumption_gate_v10.py": {
       "bytes": 19463,
       "sha256": "3744951d691b46a6251790ade13021b31fae9edbe724b2f5ec51be2ff9ff87e6"
+    },
+    "test_denominator_integrity_v10.py": {
+      "bytes": 11117,
+      "sha256": "0d8c996a080b9c94d16f000a1f814c9bcfb8d7dad3c727a1a643eae566c330a9"
+    },
+    "test_static_storage_preflight_v10.py": {
+      "bytes": 14877,
+      "sha256": "ee7331fb4b74cfaed54007b4fe57c06a22a9b15757aa2366be15612607ef180e"
     }
   },
   "namespace": "drafts/v52/static_storage_integration_v10_2026_09_13",
