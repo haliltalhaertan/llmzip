@@ -1,0 +1,33 @@
+{
+  "schema": "LLMZIP_E1_PERLTQA_P64_TIE_CONDITIONED_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34759558073,
+  "head_sha": "2a16252655161a93053e53c04243f526b4c84dc3",
+  "status": "SUCCESS",
+  "input": {"results_sha256":"ec9b8b2c7f384fe2f56c72fdc7a7216930a9db35eda2c4441496c8ad401bf958"},
+  "overall": {
+    "untied": {"n":5852,"mean_delta_pp":-4.839480580819045,"mean_p64":-0.11362444213131458,"pearson_r":0.10184519148266126,"spearman_rho":0.10154134695449263,"same_sign_fraction_nonzero":0.6990291262135923,"n_nonzero_both":618},
+    "tied": {"n":2413,"mean_delta_pp":-9.756444437970924,"mean_p64":-0.1150745705554932,"pearson_r":0.12825386920232143,"spearman_rho":0.12696521549750237,"same_sign_fraction_nonzero":0.6762749445676275,"n_nonzero_both":451}
+  },
+  "by_section": {
+    "profile": {
+      "untied": {"n":229,"mean_delta_pp":19.650655021834062,"mean_p64":0.1777292576419214,"spearman_rho":0.37056071925484385,"same_sign_fraction_nonzero":0.8918918918918919},
+      "tied": {"n":104,"mean_delta_pp":22.16346153846154,"mean_p64":0.19278846153846155,"spearman_rho":0.3212023184100397,"same_sign_fraction_nonzero":0.8181818181818182}
+    },
+    "events": {
+      "untied": {"n":3169,"mean_delta_pp":-9.813821394761755,"mean_p64":-0.1778794572420322,"spearman_rho":0.0452927337958197,"same_sign_fraction_nonzero":0.7547169811320755},
+      "tied": {"n":1177,"mean_delta_pp":-19.405267629566694,"mean_p64":-0.17268479184367036,"spearman_rho":0.07714100572622051,"same_sign_fraction_nonzero":0.7914110429447853}
+    },
+    "social_relationship": {
+      "untied": {"n":566,"mean_delta_pp":0.8833922261484098,"mean_p64":-0.22049469964664312,"spearman_rho":0.03171132481023247,"same_sign_fraction_nonzero":0.5384615384615384},
+      "tied": {"n":278,"mean_delta_pp":-4.244604316546763,"mean_p64":-0.2672661870503597,"spearman_rho":0.15147462724589492,"same_sign_fraction_nonzero":0.7209302325581395}
+    },
+    "dialogues": {
+      "untied": {"n":1888,"mean_delta_pp":-1.1761866308014048,"mean_p64":-0.009073217877358498,"spearman_rho":0.14616801893339365,"same_sign_fraction_nonzero":0.6656151419558359},
+      "tied": {"n":854,"mean_delta_pp":-2.139696052486934,"mean_p64":-0.023624050059022347,"spearman_rho":0.0720798874478889,"same_sign_fraction_nonzero":0.5695067264573991}
+    }
+  },
+  "disposition": "P64_MARKER_PERSISTS_WITHOUT_NATIVE_BOUNDARY_TIES",
+  "interpretation": "The positive P64-vs-Delta association remains among untied queries, and the strong profile-positive/events-negative P64 and SIGN-minus-float regime separation remains when native K=3 boundary ties are absent. Therefore P64 is not merely a simple boundary-tie artifact. Ties amplify some losses but are not the source of the regime flip.",
+  "epistemic_note": "Post-hoc conditioning on an observed retrieval property; explanatory only."
+}
