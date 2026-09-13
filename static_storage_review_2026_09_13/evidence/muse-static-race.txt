@@ -1,0 +1,14 @@
+You are the concurrency-security implementer. Work only in the current git worktree, based on b300cbf (V9). Do not mutate frozen V7/V8/V9 artifacts in place; create an additive V10 repair layer or narrowly scoped additive hardened loader/tests.
+
+Confirmed defect to reproduce first: V9 consumption_gate_v9.py authenticates source bytes then _exec_exact temporarily publishes modules under shared sys.modules names. Two concurrent calls can interleave across that global namespace and one chain may bind an ambient/wrong module. In the reproduced failure, all 12 rejection controls can be bypassed silently. This is ordinary concurrency, not an arbitrary-code attacker, and V8 test setup already leaves a pathname/module that can participate.
+
+Requirements:
+1. Build a deterministic concurrent regression test using barriers/events, not probabilistic sleeps. Exercise the public V9/V10 preflight or consumption boundary end-to-end. It must fail on the vulnerable V9 behavior (or document an exact reproduction against V9) and pass on the repair.
+2. Analyze the full loading transaction. A per-module lock may be insufficient if the V8 dependency chain releases between module executions. Use a process-global reentrant lock or a design that prevents all sys.modules publication races across the entire authenticated chain. Avoid deadlock on nested loads.
+3. Ensure authenticated bytes are still executed; preserve pycache avoidance and hash checks. Restore sys.modules exactly on success and exception.
+4. Add tests for two concurrent valid calls, concurrent poisoned ambient module, exception restoration, repeated fresh_snapshot, and all relevant existing V7/V8/V9 tests.
+5. Keep scope LongMemEval-only; no authorization. Any report banner must be exactly: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE].
+6. Add a test receipt and hashes as additive files; do not rewrite historical receipts.
+7. Commit with a descriptive message. Final response: commit SHA, precise locking/loader invariant, tests and outputs, remaining caveats.
+
+Do not browse the web. Use repo source only. Avoid unrelated changes.

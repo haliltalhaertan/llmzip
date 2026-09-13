@@ -1,0 +1,8 @@
+muse: workspace root: /home/mdp/muse-work/static-integrated (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+muse: retrying meta model stream in 2000ms (attempt 3/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)

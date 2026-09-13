@@ -1,0 +1,24 @@
+{
+  "schema": "V52_STATIC_STORAGE_INTEGRATION_V10_HASHES_V1",
+  "parent_commit": "b300cbf70b158bc075d45e4bfb8e0105a970596b",
+  "namespace": "drafts/v52/static_storage_integration_v10_2026_09_13",
+  "self_excluded": "HASHES.json",
+  "files": {
+    "V10_DISPOSITION.md": {
+      "bytes": 3724,
+      "sha256": "a3d620a075ae30ec056a3b2c44fe9b45f446d587aba6a09d2b6da37bbe107caf"
+    },
+    "V10_TEST_RECEIPT.md": {
+      "bytes": 3301,
+      "sha256": "e816ce3509d9edc3e82663b97d96b07e47d01fc5c3bbf15ccc64863a7c381724"
+    },
+    "denominator_integrity_v10.py": {
+      "bytes": 15283,
+      "sha256": "b4808b1dbdc6074125be47a3899ff8ef329073d66b3cf051495717117de9a6fd"
+    },
+    "test_denominator_integrity_v10.py": {
+      "bytes": 11117,
+      "sha256": "0d8c996a080b9c94d16f000a1f814c9bcfb8d7dad3c727a1a643eae566c330a9"
+    }
+  }
+}

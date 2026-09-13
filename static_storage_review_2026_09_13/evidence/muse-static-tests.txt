@@ -1,0 +1,19 @@
+You are the adversarial test engineer. Work only in the current git worktree, based on b300cbf (V9). Do not edit frozen V7/V8/V9 implementation artifacts. Your goal is an additive, implementation-independent security regression suite and audit report that can later be pointed at an integrated V10 candidate.
+
+Confirmed test weakness: auditors created deliberately broken variants—one retained forbidden data/snapshot, another used an unsafe loader—and the existing tests still passed. Until the audits, no test ran the real public entrypoint end-to-end.
+
+Requirements:
+1. Inspect all tests and receipts for V7/V8/V9 and identify exactly why broken retention and unsafe-loader variants survive.
+2. Build executable negative/mutation tests, not source-text grep assertions. The suite must fail when:
+   - a validated snapshot is retained across consumption,
+   - importlib/pycache/ambient sys.modules can substitute unverified code,
+   - the real public entrypoint does not revalidate on each consumption,
+   - duplicate physical-copy denominator rows inflate the logical denominator,
+   - concurrent calls can cross-bind modules.
+3. At least one test must run the actual public entrypoint with realistic temp plan/bindings files end-to-end. Prefer deterministic barriers for concurrency and explicit malicious modules for loader tests.
+4. Keep the suite additive and parameterizable so it can first demonstrate failures on V9 and later pass against V10; clearly distinguish EXPECTED V9 FAIL from V10 acceptance tests.
+5. Run the suite against V9 and record the exact failing protections. Do not fake a green receipt. Existing passing tests are not sufficient evidence.
+6. Write a concise Turkish or English audit report with exact status banner: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]. State raw evidence paths and limitations.
+7. Commit changes. Final response must include commit SHA, test matrix, which weaknesses are reproduced, and integration instructions for V10.
+
+No web. Do not change unrelated files.

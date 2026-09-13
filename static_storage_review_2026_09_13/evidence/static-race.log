@@ -1,0 +1,14 @@
+muse: workspace root: /home/mdp/muse-work/static-race (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+Done. Commit `35b50581b566ff9f5dfbcfe5d7035f6f098d192e` — purely additive (7 new files under `drafts/v52/static_storage_integration_v10_2026_09_13/`; frozen V7/V8/V9 untouched).
+
+Locking/loader invariant: a V10 transaction shares no mutable global namespace state. Pinned dependencies resolve through a transaction-local scoped `__import__` (everything else delegates to the real importer) with zero `sys.modules` publication, and a process-global reentrant `_CHAIN_LOCK` is held across the entire transaction — all pinned execs, dependency wiring, and the consuming `gate._fresh_preflight(...)`. Reentrancy keeps nested V10 loads on one thread deadlock-free. This covers the whole chain because the race lives in the gaps between per-module publications, not inside any single exec. Preserved: exact SHA256 auth, O_NOFOLLOW identity-checked reads, compile+exec only (no pycache/import authority), exact namespace restoration on success and exception.
+
+Tests and outputs (Python 3.14.4, `python -B`, deterministic barrier/event rendezvous on the gate exec window — timeouts are hang guards only):
+- V10 suite default loader: 13/13 pass, 5 consecutive runs (~0.5 s each) — 12 rejection controls hold under concurrent poison publication, 2 concurrent valid chain loads stay genuine, static ambient poison preserved, exception restoration under overlap, 3× `fresh_snapshot` rerun count, exact `sys.modules` restoration, V9 bypass documentation.
+- Same suite with `V52_LOADER_UNDER_TEST=v9`: 11 pass, exactly the 2 interference tests FAIL — the required fail-on-V9/pass-on-repair pair, plus exact repro in `V10_RACE_REPRO.md`.
+- Existing suites rerun unmodified: V7 8/8, V8 7/7, V9 7/7 OK. Receipt and `HASHES.json` (+`.sha256`) added; historical receipts untouched. All report files carry exactly `[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]`.
+
+Remaining caveats: protection applies to callers entering through V10 (`preflight_longmemeval_v10`/`V10Context`); frozen V9 entries stay vulnerable by design. Success-path consumption is verified at the genuine-gate level (no valid LongMemEval fixture set exists in-repo); invalid-input rejection is end-to-end through the public boundary. The `builtins.exec` hook is test-only instrumentation. Scope stayed LongMemEval-only; Task4F1 remains sealed with no authorization code.

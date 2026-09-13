@@ -1,0 +1,14 @@
+You are an independent read-only campaign-label auditor. The current worktree is branch findings/campaign-2026-09-13 at commit 84e75cc. Do not modify any file and do not commit.
+
+Audit objective: verify whether detached report-like artifacts can be mistaken for citation-ready/pre-registered results. The required exact disclosure banner is:
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+Tasks:
+1. Enumerate report-like .md/.txt files under campaign_2026_09_13 using a documented deterministic rule (names like report, analysis, result, summary, findings, audit, disposition, receipt, campaign, README/overview where appropriate). Exclude pure source-code comments and raw logs only with reason.
+2. For each, verify the exact four labels appear in the file itself, not only in a parent README. Check the first 40 lines and also whole-file presence. Report counts and exact missing paths.
+3. Verify campaign MANIFEST.sha256 covers every other campaign file exactly once, hashes match, and the manifest does not hash itself.
+4. Inspect git diff from parent a3a335f to 84e75cc: confirm only disclosure banners, manifest refresh, and line-ending restoration occurred; identify any semantic edits or line-ending churn.
+5. Verify no obvious secrets by filename/pattern scan (do not print secret values).
+6. Print the final report to stdout. Do not write files. Include commit tested and exact commands/results. Be skeptical; if a claimed 29-file scope differs from your deterministic rule, explain the difference rather than forcing the number.
+
+No web. Read-only. Before/after prove git status clean.

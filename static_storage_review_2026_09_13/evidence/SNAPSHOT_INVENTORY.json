@@ -1,0 +1,144 @@
+{
+  "captured_at": "2026-09-13T16:49:26.123637+00:00",
+  "status": "WORK IN PROGRESS; NON-ATOMIC LIVE COPY; NOT VERIFIED INTEGRATED RELEASE",
+  "completed_commits": {
+    "muse/fix-static-denominator": "5ff0ab0368b1d1515b5214b7952757aeb03651c3",
+    "muse/fix-v9-concurrency": "35b50581b566ff9f5dfbcfe5d7035f6f098d192e",
+    "muse/harden-static-tests": "6e764b1207b565b16beb460151a4b955b69a94f0",
+    "muse/complete-campaign-labels": "c09d6eae2c75ea11488eafd99a43d534f407f6a9"
+  },
+  "integration_head": "35b50581b566ff9f5dfbcfe5d7035f6f098d192e",
+  "integration_status": "A  drafts/v52/static_storage_security_regression_2026_09_13/AUDIT_REPORT.md\nA  drafts/v52/static_storage_security_regression_2026_09_13/RECEIPT.json\nA  drafts/v52/static_storage_security_regression_2026_09_13/adversarial/malicious_v8_runtime.py\nA  drafts/v52/static_storage_security_regression_2026_09_13/adversarial/malicious_v8_snapshot.py\nA  drafts/v52/static_storage_security_regression_2026_09_13/e2e_fixtures.py\nA  drafts/v52/static_storage_security_regression_2026_09_13/gate_adapter.py\nA  drafts/v52/static_storage_security_regression_2026_09_13/mutation_variants/variant_retained_snapshot.py\nA  drafts/v52/static_storage_security_regression_2026_09_13/mutation_variants/variant_unsafe_loader.py\nAM drafts/v52/static_storage_security_regression_2026_09_13/run_matrix.py\nA  drafts/v52/static_storage_security_regression_2026_09_13/run_old_tests_against_target.py\nA  drafts/v52/static_storage_security_regression_2026_09_13/test_security_regression.py\n?? drafts/v52/static_storage_integration_v10_2026_09_13/V10_DENOMINATOR_DISPOSITION_src5ff0ab0.md\n?? drafts/v52/static_storage_integration_v10_2026_09_13/V10_DENOMINATOR_HASHES_src5ff0ab0.json\n?? drafts/v52/static_storage_integration_v10_2026_09_13/V10_DENOMINATOR_TEST_RECEIPT_src5ff0ab0.md\n?? drafts/v52/static_storage_integration_v10_2026_09_13/denominator_integrity_v10.py\n?? drafts/v52/static_storage_integration_v10_2026_09_13/static_storage_preflight_v10.py\n?? drafts/v52/static_storage_integration_v10_2026_09_13/test_denominator_integrity_v10.py\n?? drafts/v52/static_storage_integration_v10_2026_09_13/test_static_storage_preflight_v10.py\n?? drafts/v52/static_storage_security_regression_2026_09_13/RECEIPT_V10.json\n",
+  "files": [
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/HASHES.json",
+      "bytes": 959,
+      "sha256": "3b94733a839c79e1b2cdeb0da60fadf85bd43f7a113241c0f726aba8fd3a10ec"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/HASHES.json.sha256",
+      "bytes": 78,
+      "sha256": "948eaa43493186811d52a8bed78379ae38ed787b497c8e099b99ff42a43da241"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/V10_DENOMINATOR_DISPOSITION_src5ff0ab0.md",
+      "bytes": 3724,
+      "sha256": "a3d620a075ae30ec056a3b2c44fe9b45f446d587aba6a09d2b6da37bbe107caf"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/V10_DENOMINATOR_HASHES_src5ff0ab0.json",
+      "bytes": 832,
+      "sha256": "7607cc45b49250a0f1dd13e361025ff36203a278492036e1536d724a75ea6ad9"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/V10_DENOMINATOR_TEST_RECEIPT_src5ff0ab0.md",
+      "bytes": 3301,
+      "sha256": "e816ce3509d9edc3e82663b97d96b07e47d01fc5c3bbf15ccc64863a7c381724"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/V10_DISPOSITION.md",
+      "bytes": 3508,
+      "sha256": "53b583f3dd7812d0406e307721d8210d0ed9cba6045002bfd63b606fb783c0e3"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/V10_RACE_REPRO.md",
+      "bytes": 2456,
+      "sha256": "5f1b4d7d8e4437a179ccc3f8b06626b4bddaa5b2535bd53e687b940aca815635"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/V10_TEST_RECEIPT.md",
+      "bytes": 1808,
+      "sha256": "709f599f236ce53132d064b2e4c81b4e60c556a917273d93f4819c889176246c"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/consumption_gate_v10.py",
+      "bytes": 8283,
+      "sha256": "29a4e4cf073c13bbfadc4a90b5560bc4922d08938226f72b952a75f967b45150"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/denominator_integrity_v10.py",
+      "bytes": 15283,
+      "sha256": "b4808b1dbdc6074125be47a3899ff8ef329073d66b3cf051495717117de9a6fd"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/static_storage_preflight_v10.py",
+      "bytes": 20895,
+      "sha256": "f84e7db87fa477ddabd76f3852f9fc02e76d6410bbb070f56bc0f80200be7428"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/test_consumption_gate_v10.py",
+      "bytes": 19463,
+      "sha256": "3744951d691b46a6251790ade13021b31fae9edbe724b2f5ec51be2ff9ff87e6"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/test_denominator_integrity_v10.py",
+      "bytes": 11117,
+      "sha256": "0d8c996a080b9c94d16f000a1f814c9bcfb8d7dad3c727a1a643eae566c330a9"
+    },
+    {
+      "path": "drafts/v52/static_storage_integration_v10_2026_09_13/test_static_storage_preflight_v10.py",
+      "bytes": 14877,
+      "sha256": "ee7331fb4b74cfaed54007b4fe57c06a22a9b15757aa2366be15612607ef180e"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/AUDIT_REPORT.md",
+      "bytes": 7913,
+      "sha256": "f399f142a6383662b4a4ec7e689c6987f1714bfa5f9cce4ba666993b39084ff4"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/RECEIPT.json",
+      "bytes": 6406,
+      "sha256": "932a4188b76e2a761a2a8f924203a3a67a478cabe3167c3561a407c0a483edd2"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/RECEIPT_V10.json",
+      "bytes": 22676,
+      "sha256": "00e06e334849c84b9e71931d911fba7e77ff4838088a253922a9991c53095709"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/adversarial/malicious_v8_runtime.py",
+      "bytes": 2788,
+      "sha256": "c9e04d28e76b78e4bd779988383b645a00f2b59e5df3701492bf803f8398fe58"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/adversarial/malicious_v8_snapshot.py",
+      "bytes": 1223,
+      "sha256": "23b4439c87aa6bef89a96b39e6602c3b3e89e4d0e3b6e1593d915e337122266f"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/e2e_fixtures.py",
+      "bytes": 10418,
+      "sha256": "92df37bfa5c3e2778ed1896b8eb5fa5fd7ae7578a91e2b130c88ac93d213cb4c"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/gate_adapter.py",
+      "bytes": 2732,
+      "sha256": "b24ed6e4c2e03f06f50970b46906aad8682149326b621870541f9d1d28ee276d"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/mutation_variants/variant_retained_snapshot.py",
+      "bytes": 3653,
+      "sha256": "a195bc8c14877bc9a2ddb403786f7139fc017fbdb5b9e890ee16ac454a9bdec1"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/mutation_variants/variant_unsafe_loader.py",
+      "bytes": 4296,
+      "sha256": "59c0d0d67af26694e7cddb76c2462f23eb70b572af0ead1b70d718c2ab2a243a"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/run_matrix.py",
+      "bytes": 10606,
+      "sha256": "325cd638f0c5d0bacc296bdb7b1172f34054435cee50319906bd72c38dc266d3"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/run_old_tests_against_target.py",
+      "bytes": 2469,
+      "sha256": "bc5ee845cd99193c6892f545d57b4fdf52591ba842b0f2be4f9bca456e72edfc"
+    },
+    {
+      "path": "drafts/v52/static_storage_security_regression_2026_09_13/test_security_regression.py",
+      "bytes": 12860,
+      "sha256": "26ec4bbf81d9557121a7ffa47223327b1555b2e0fc1ae166f756365209cc6677"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+muse: workspace root: /home/mdp/muse-work/static-denom (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done. V10 denominator-integrity repair candidate is implemented, tested, and committed — no frozen V7/V8/V9 file was modified.
+
+Commit SHA: `5ff0ab0368b1d1515b5214b7952757aeb03651c3` (branch `muse/fix-static-denominator`, parent `b300cbf`).
+
+Files changed (all new, in `drafts/v52/static_storage_integration_v10_2026_09_13/`):
+- [denominator_integrity_v10.py](/home/mdp/muse-work/static-denom/drafts/v52/static_storage_integration_v10_2026_09_13/denominator_integrity_v10.py) — additive repair layer
+- [test_denominator_integrity_v10.py](/home/mdp/muse-work/static-denom/drafts/v52/static_storage_integration_v10_2026_09_13/test_denominator_integrity_v10.py) — regression + adversarial tests
+- [V10_DISPOSITION.md](/home/mdp/muse-work/static-denom/drafts/v52/static_storage_integration_v10_2026_09_13/V10_DISPOSITION.md), [V10_TEST_RECEIPT.md](/home/mdp/muse-work/static-denom/drafts/v52/static_storage_integration_v10_2026_09_13/V10_TEST_RECEIPT.md), `HASHES.json` + `.sha256` (historical receipts untouched)
+
+What was built: `LogicalDenominatorRow(archive_id, physical_copy_id, population_id, n_i)`; `enrich_denominator_rows` attaches archive identity and rejects unknown copies, out-of-roster archives, and inconsistent duplicates; `deduplicate_logical_total` sums one frozen N_i per archive; `naive_copy_total` is kept only as a defect demonstrator; `V10Context` mirrors `V9Context` (same six path/hash fields, no snapshot field) with every access rerunning the pinned V9 chain plus pinned guard/anchor cross-checks. Accounting rule (also in code as `ACCOUNTING_RULE`): the TOTAL logical vector denominator is unique-by-archive; byte numerators are never deduplicated and V10 offers no byte total. All reports carry `[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]`; LongMemEval-only; no measurement authorization.
+
+Tests run (72 total, 0 failures/errors): pre-fix the V9 defect demo passed (naive 20 vs logical 10, 12 B/vec appearing as 6, rows without archive identity) while all 17 V10 tests errored with `ModuleNotFoundError`; post-fix V10 suite is 18/18 including duplicate-copy dedup, three inconsistent-duplicate rejections, two unknown-archive rejections, one-copy parity, the 470-archive check (940 doubled rows → logical 231606, naive 463212), numerator non-dedup, labels, signatures, and context-path tests; historical suites rerun green (contract guard 32, V7 8, V8 7, V9 7). Receipt captured in `V10_TEST_RECEIPT.md`.
+
+Remaining caveats: repair-candidate status, no independent audit; no end-to-end run against a real full-coverage plan with fixture/physical bindings (context path covered via stubbed seams; pure path covered against the real pinned anchor); V8's previously open items (runner pinning, LoCoMo profile, external freeze) are inherited, not closed; I set repo-local git identity to match prior commits to complete the requested commit.

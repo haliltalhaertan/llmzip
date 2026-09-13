@@ -1,0 +1,19 @@
+muse: workspace root: /home/mdp/muse-work/campaign-label-fix (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+muse: retrying meta model stream in 1000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 2000ms (attempt 3/10)
+Done. Committed locally as `c09d6eae2c75ea11488eafd99a43d534f407f6a9` on `muse/complete-campaign-labels` (base `84e75cc`). No push, nothing outside `campaign_2026_09_13/`, no dataset edits.
+
+**Coverage.** Checker scope = R1 (audit rule, 47 files) ∪ narrative-`.md` keywords ∪ report-like `.txt`, basename-only case-insensitive: 62 files. Before: 28 pass, 34 missing/nonprominent (33 absent + `pilots_round1/muse_pilot_review.md`, banner only incidentally at line 46). R1 subset reproduced the audit exactly (21/47 pass, 26 missing). After: 63/63 pass (report itself included), exit 0. Checker prints explicit include/exclude reasons with counts and writes full path lists + aggregates to `disclosure_fix/check_evidence.json`.
+
+**Change.** 34 files got the exact banner as the first line plus one blank line, in bytes (all were LF, no BOM, no CR introduced). Preservation check: `current == PREFIX + git show 84e75cc:path` for all 34 — exact. Diff net: only banner prefixes, 3 new `disclosure_fix/` files, manifest refresh. Added-line scan excluding banner + manifest lines is empty; zero deletions outside manifest; no raw numeric/log/code edits; secrets scans clean.
+
+**Manifest.** 581 entries (578 + 3 new), `sha256sum -c` 581/581 OK, all unique, set-equal to on-disk files excluding itself. Ordering kept in the file's original case-insensitive path sort — a first attempt with byte sort caused 44 lines of pure reorder churn, caught by the diff review and redone. Manifest deletions exactly equal the 34 banner-touched files.
+
+**Embedded-manifest caveat.** Five labeled copies no longer match hashes embedded in historical manifests, deliberately left un-rehashed; pristine bytes recoverable via `git show 84e75cc:<path>`: `FILE_HASHES.json` (LEDGER_RECEIPT_BODY.txt, README_TR.md), `V52_T4D_POST_RUN_MANIFEST.json` (V52_T4D_COMPUTE_REPORT.md), `task3/HASHES.json` (task3 README.md), both `MATERIALIZED.json` copies (README_IMPL_V3.md). Nothing was immutable/signed, so nothing was flagged untouchable.
+
+**Mutation control.** Isolated `/tmp` copies only: intact file → checker exit 0; banner-stripped copy → exit 1. Frozen data never touched. No external upload or certification claimed — this is distribution-copy labeling only.

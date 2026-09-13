@@ -1,0 +1,20 @@
+You are the denominator-integrity implementer. Work only in the current git worktree, based on b300cbf (V9). Do not modify frozen V7/V8/V9 files in place; preserve their historical artifacts and hashes. Create a clearly named V10 repair-candidate layer or equivalent additive artifact.
+
+Confirmed defect to reproduce first: authoritative denominator data is keyed/emitted per physical copy. The plan contract requires physical copies per archive/config/format/item, so two legitimate physical copies of the same archive can each carry the same frozen N_i. A consumer summing rows can count one logical archive twice. LongMemEval has 470 logical archives and total N=231606; duplicating all copy rows can produce denominator 463212 without any individually false count. If the byte numerator is for one representation this makes 12 B/vector appear as 6. Returned denominator entries currently do not carry archive_id, so consumers cannot repair it.
+
+Relevant files:
+- drafts/v52/static_storage_contract_2026_09_12/measurement_plan_guard.py
+- drafts/v52/static_storage_integration_v7_2026_09_13/storage_semantic_gate_v7.py
+- drafts/v52/static_storage_integration_v8_2026_09_13/{storage_semantic_gate_v8.py,v8_runtime.py,v8_snapshot.py}
+- drafts/v52/static_storage_integration_v9_2026_09_13/consumption_gate_v9.py
+
+Requirements:
+1. Write a failing regression test that constructs two physical copies for one archive and demonstrates the duplicate-denominator problem through the public consumption surface, not merely a private helper.
+2. Design an additive V10 API where each denominator row exposes archive identity and the authoritative TOTAL logical vector denominator deduplicates by archive_id. All copies must agree with the frozen archive N_i; inconsistent duplicates must reject. Do not silently deduplicate numerator bytes; only the logical vector denominator is unique-by-archive. State the accounting rule explicitly.
+3. Keep scope LongMemEval-only; no measurement authorization; label reports exactly: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE].
+4. Add adversarial tests: duplicate copy same archive, inconsistent duplicate count, unknown archive, ordinary one-copy plan, and a 470-archive assertion that the logical denominator is 231606 even with doubled copy rows.
+5. Run all relevant V7/V8/V9 plus new tests. Capture command/output receipt.
+6. Update additive HASHES/receipt for the new layer; never rewrite historical receipts.
+7. Commit the work on this branch with a descriptive message. Final response must state commit SHA, files changed, tests run, and remaining caveats.
+
+Do not browse the web. Use the repo as source of truth. You may use shell and write files. Avoid changing unrelated files.

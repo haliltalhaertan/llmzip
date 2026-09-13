@@ -1,0 +1,81 @@
+muse: workspace root: /home/mdp/muse-work/campaign-label-audit (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+# Campaign-label audit — final report (read-only, to stdout, no files written)
+
+**Commit tested:** `84e75ccfbbbaa8555a83465aa710adc1ac93ee75`
+**Branch note:** the worktree is on branch `muse/audit-campaign-labels`, not `findings/campaign-2026-09-13` as stated — but HEAD commit `84e75cc` matches, so the audit target is correct.
+**Required banner (exact):** `[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]`
+**Git status:** clean before (`git status --porcelain` → empty, exit 0) and clean after (0 lines, same HEAD). No files modified, nothing committed.
+
+## 1. Deterministic rule and enumeration
+
+**Documented rule R1 (strict, basename-only, case-insensitive):** a `.md`/`.txt` file under `campaign_2026_09_13/` is report-like iff its basename matches `report|analysis|result|summary|finding|audit|dispo|receipt|campaign|readme|overview`.
+
+- Universe: `find campaign_2026_09_13 -type f \( -name '*.md' -o -name '*.txt' \) | sort` → **181 files** (125 `.md`, 56 `.txt`).
+- R1 scope: **47 files** (list verified by basename regex in Python, not whole-path grep, which falsely matches all 181 via directory names).
+- Exclusions with reason: pure source (`.py`), machine JSON/CSV/NPZ, hash files (`HASHES*.txt`, `det_hash_*.txt`, `*.sha256`), raw console/log output (`*.log`, `rerun_log.txt`, `stderr/stdout.txt`, `smoke_log.txt`, `environment.txt`, `run.log`), and prompt/working-note `.md` files not matching R1 — excluded because they are not detached narrative artifacts a reader could mistake for results. Raw `.txt` logs are excluded as raw logs; `LEDGER_RECEIPT_BODY.txt` and `itq_crossstack_sample_result.txt` are the two judgment calls kept IN scope by R1 (receipt/result in basename).
+
+## 2. Banner verification (in-file, not parent README)
+
+Exact-string `grep -F` over all 181 files:
+
+- Whole-file exact banner present: **51 / 181**. All 51 also individually contain each of the four labels (no partial-only case among them).
+- Of the 51, in first 40 lines: **50**; outside first 40: **1** — [muse_pilot_review.md](/home/mdp/muse-work/campaign-label-audit/campaign_2026_09_13/pilots_round1/muse_pilot_review.md) line 46 of 49, where the banner appears only as an incidental mention in a bullet, not as a disclosure header. Prominence FAIL.
+- Near-miss variants that do **not** satisfy the exact-string requirement: [00_READ_ME_FIRST.md](/home/mdp/muse-work/campaign-label-audit/campaign_2026_09_13/review/ed3_docs/00_READ_ME_FIRST.md) line 84 has all four labels backtick-separated (`` `] [*` `` between labels, not single spaces); [muse_prompt_pilot_review.md](/home/mdp/muse-work/campaign-label-audit/campaign_2026_09_13/muse_prompts/muse_prompt_pilot_review.md) line 41 uses slash separators. 30 further files carry 1–3 of the four labels only (e.g. `ROUND2_REPORT.md`, `r2a_flip_analysis.md`, `math1_report.md`, `cert_report.md`, `d2/d3/d4/c2` reports carry `[NOT PREREGISTERED]` + `[NOT FOR CITATION]` without the full banner).
+
+**R1-scope verdict: 21 / 47 whole-file OK (all 21 also in first 40); 26 MISSING the exact banner:**
+
+- `campaign_2026_09_13/bench3/b3a_realtalk/report.md`
+- `campaign_2026_09_13/bench3/b3b_fin/report.md`
+- `campaign_2026_09_13/g3_localverify_evidence/inherited/localverify-20260912/g3/membership_execution_prep_v1_2026_09_08/README.md`
+- `campaign_2026_09_13/g3_localverify_evidence/inherited/localverify-20260912/g3/membership_impl_v3_2026_09_07/README_IMPL_V3.md`
+- `campaign_2026_09_13/muse_prompts/muse_prompt_audit1.md`
+- `campaign_2026_09_13/muse_prompts/muse_prompt_audit1_cont.md`
+- `campaign_2026_09_13/muse_prompts/muse_prompt_verify_receipts.md`
+- `campaign_2026_09_13/pilots_round2/ROUND2_REPORT.md`
+- `campaign_2026_09_13/pilots_round2/r2a_flip_analysis.md`
+- `campaign_2026_09_13/pilots_round3/missing_analyses/m2_d2multi/d2x_report.md`
+- `campaign_2026_09_13/pilots_round3/missing_analyses/m3_c2ablation/c2x_report.md`
+- `campaign_2026_09_13/pilots_round3/muse_sessions/c2/c2_report.md`
+- `campaign_2026_09_13/pilots_round3/muse_sessions/d2/d2_report.md`
+- `campaign_2026_09_13/pilots_round3/muse_sessions/d3/d3_report.md`
+- `campaign_2026_09_13/pilots_round3/muse_sessions/d4/d4_report.md`
+- `campaign_2026_09_13/prereg/math1/math1_report.md`
+- `campaign_2026_09_13/prereg/math2/math2_report.md`
+- `campaign_2026_09_13/race/CAMPAIGN.md`
+- `campaign_2026_09_13/race/cert/cert_report.md`
+- `campaign_2026_09_13/regen/lme/itq_crossstack_sample_result.txt`
+- `campaign_2026_09_13/review/README_review_transfer.txt`
+- `campaign_2026_09_13/scratch/lv/p1_copy_ns/README.md`
+- `campaign_2026_09_13/scratch/lv/p1_copy_ns/task3/README.md`
+- `campaign_2026_09_13/scratch/lv/p2_copy/itq_haar_objective_comparison_2026_09_12/LEDGER_RECEIPT_BODY.txt`
+- `campaign_2026_09_13/scratch/lv/p2_copy/itq_haar_objective_comparison_2026_09_12/README_TR.md`
+- `campaign_2026_09_13/scratch/t4dzip/V52_T4D_COMPUTE_REPORT.md`
+
+The campaign [README.md](/home/mdp/muse-work/campaign-label-audit/campaign_2026_09_13/README.md) carries the banner on line 3, which covers itself only — per the audit rule it does not cover any file above. (Minor: that line has a trailing CR; the file has mixed line endings.)
+
+## 3. MANIFEST.sha256 — PASS
+
+- `sha256sum -c campaign_2026_09_13/MANIFEST.sha256` from repo root: **578/578 OK, 0 failures** (run from inside the directory fails only because entries are prefixed `campaign_2026_09_13/…` — expected).
+- Coverage: 578 entries, all unique, set-equal to the 578 on-disk files excluding the manifest itself — **covers every other campaign file exactly once**.
+- Self-hash: **absent** (the single `grep MANIFEST` hit is the unrelated `scratch/t4dzip/V52_T4D_POST_RUN_MANIFEST.json` entry).
+- Refresh correctness: path sets identical (CR-stripped) between `a3a335f` and HEAD; exactly **45 changed hashes = exactly the 45 banner-touched files**. The manifest itself was additionally normalized CRLF→LF (old: `ASCII text, with CRLF line terminators`; new: `ASCII text`).
+
+## 4. Git diff `a3a335f..84e75cc` — banners-only net, with line-ending history
+
+- Net diff: 46 files = 45 `.md` banner insertions (**+2/−0 each**: banner line + blank line, e.g. [ANALYSIS.md](/home/mdp/muse-work/campaign-label-audit/campaign_2026_09_13/race/analysis/ANALYSIS.md)) + manifest refresh. `--ignore-all-space` confirms 135 insertions / 45 deletions total; an added-/deleted-line scan excluding the manifest and the exact banner string returns **empty — zero semantic edits**.
+- Line-ending churn: the intermediate `bfb93ab` rewrote whole files (thousands of changed lines); `84e75cc` ("restore pre-banner line-ending style") undid that, so the **net** `a3a335f..84e75cc` diff is churn-free on content files (sampled parent vs HEAD: both plain UTF-8, no CRLF). Residual churn is confined to the manifest's own CRLF→LF normalization noted above.
+- Commands: `git diff --stat/--numstat a3a335f..84e75cc`, `git diff -U0 … | grep '^[+-]'` filtered against the banner, per-file `file` checks, `git log --stat a3a335f..84e75cc`.
+
+## 5. Secrets — no obvious hits (values never printed)
+
+- Filename scan (`secret|passwd|password|*.pem|*.key|token|credential|private`): **0 hits**.
+- High-confidence content patterns (`AKIA…`, `ghp_/gho_…`, `BEGIN … PRIVATE KEY`, `sk-live/test-…`, `xox[bap]-`): **0 files**.
+- Generic `api[_-]?key|secret|password\s*[:=]` over `.py/.json/.md`: **0 files**.
+
+## 6. On the claimed 29-file scope — skeptical finding
+
+No 29-file set exists anywhere I could verify: a repo-wide grep for `29-file`/`29 file` in campaign `.md` files returns nothing; `git diff --name-only a3a335f..bfb93ab` and `a3a335f..84e75cc` both show **45 banner files + manifest (46 total)**, and my independent R1 rule yields **47 files**. Overlap between R1 and the actual banner set is only 17 files: **28 bannered files fall outside strict R1** (review/verification/memo/notebook/draft/provenance/inventory etc. — defensible "where appropriate" over-disclosure, but undocumented), while **26 R1 files lack the exact banner**, including high-risk detached artifacts (`ROUND2_REPORT.md`, `r2a_flip_analysis.md`, `d2/d3/d4/c2` session reports, `math1/math2` reports, `cert_report.md`, `CAMPAIGN.md`, both bench3 `report.md` files). A "29" claim matches neither the rule output (47), the banner effort (45), nor their overlap (17/21); do not force the number — the gap analysis above stands on the reproduced counts.
+
+**Bottom line:** the diff itself is clean (banners + manifest only, no semantic edits, no secrets, manifest fully consistent), but the disclosure objective is **not met**: 26 of 47 strictly report-like files can still be detached and mistaken for citation-ready results, one bannered file hides its banner at line 46, and two files use non-exact label variants.
