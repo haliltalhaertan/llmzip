@@ -135,7 +135,7 @@ jobs:
           h=hashlib.sha256((d/'HASHES.json').read_bytes()).hexdigest()
           (d/'HASHES.json.sha256').write_text(h+'  HASHES.json\n')
           PY
-          sha256sum -c audit_e1_mechanism_checkpoint_2026_09_13/HASHES.json.sha256
+          (cd audit_e1_mechanism_checkpoint_2026_09_13 && sha256sum -c HASHES.json.sha256)
       - uses: actions/upload-artifact@v4
         with:
           name: independent-e1-mechanism-audit-rerun
