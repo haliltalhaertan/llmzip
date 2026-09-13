@@ -1,0 +1,9 @@
+{
+  "schema": "LLMZIP_E1_BRIDGE_OUTPUT_V1",
+  "n_units": 6,
+  "sign_concordance": "6/6",
+  "pearson_r": 0.8545594995738994,
+  "spearman_rho": 0.8285714285714286,
+  "interpretation": "Exploratory/post-hoc only. Mixed k (LME=48; others=64), rounded PerLTQA strata, and non-independent PerLTQA sections forbid confirmatory inference.",
+  "falsified_simple_story": "Boundary tie rate alone cannot explain the direction of SIGN-minus-float advantage."
+}
