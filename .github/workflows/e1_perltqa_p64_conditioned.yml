@@ -1,0 +1,16 @@
+name: E1 PerLTQA P64 conditioned
+on:
+  push:
+    branches:
+      - research/e1-lme-secondary-run-2026-09-13
+    paths:
+      - 'campaign_2026_09_13/e1_mechanism/e1_perltqa_p64_conditioned.py'
+      - '.github/workflows/e1_perltqa_p64_conditioned.yml'
+  workflow_dispatch:
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tie-conditioned P64 analysis
+        run: python campaign_2026_09_13/e1_mechanism/e1_perltqa_p64_conditioned.py
