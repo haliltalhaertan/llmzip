@@ -1,5 +1,7 @@
 # OFFICIAL RUN — twelve-byte race (post-seal execution record)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 [LOCAL] [NOT PUSHED] Executed 2026-09-13 ~13:12–13:14 (TRT), WSL.
 Interpreter: `~/muse-work/faiss-python` (= /usr/bin/python3 + PYTHONPATH=fpylibs);
 env: python 3.14.4, numpy 2.5.3, faiss 1.15.0, OpenBLAS 0.3.34, threads=1.

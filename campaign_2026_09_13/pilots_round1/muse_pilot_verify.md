@@ -1,5 +1,7 @@
 # Independent recomputation report (read-only; scratch in `/tmp/pilotverify/`)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Stack: system python3, numpy 2.5.3. All values recomputed from the 470 pkls + dataset lex ordinals using the frozen protocol as specified.
 
 ## E0 gate — full 470

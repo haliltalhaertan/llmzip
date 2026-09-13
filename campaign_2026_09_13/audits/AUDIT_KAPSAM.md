@@ -1,5 +1,7 @@
 # AUDIT-1 — bağımsız denetim kapsamı (kullanıcı talebi: "şüphelendiğin şeyleri muse denetlesin")
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Tarih:** 2026-09-13 · [LOCAL] · Denetçi: bağımsız Muse oturumu (read-only /mnt/c, /tmp/audit1).
 
 ## Denetlenen şüpheler

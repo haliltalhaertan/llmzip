@@ -1,5 +1,7 @@
 # ROUND-3 ÇALIŞTIRMA GÜNLÜĞÜ (kanıt)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 [LOCAL EXPLORATORY] Koşular: 2026-09-13, Windows venv (Python 3.13.15 / NumPy 2.3.5),
 OMP/MKL/OPENBLAS/NUMEXPR=1. Scriptler donmuş regen önbelleklerini okur; hiçbir şey repo'ya yazılmaz.
 

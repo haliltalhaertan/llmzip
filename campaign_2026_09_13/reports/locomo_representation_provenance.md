@@ -1,4 +1,6 @@
 # LoCoMo Native Representation — Provenance, Specification, and Cross-Validation Targets
+
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
 ### (mechanism research track of the `llmzip` / V52 program)
 
 Prepared: 2026-09-12 (UTC+03). Scope: read-only repository-byte and artifact analysis under

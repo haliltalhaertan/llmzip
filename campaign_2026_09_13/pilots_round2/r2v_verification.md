@@ -1,5 +1,7 @@
 # R2V: independent recomputation of round-2 headline numbers
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Method: recomputed from raw inputs only (LME pkls + `per_axis_matrices.npz` + `pilot_results.json` + `longmemeval_s_cleaned.json`; LoCoMo pkls + `locomo10.json` + `audit_layer/`), with protocols taken from the frozen sources (`pilot_axis_attack.py` for LME tie/lex rules, `v52_t4d_locomo_frozen_cross_benchmark.py` for LoCoMo — functions copied verbatim). Never read `/tmp/r2a|r2b|r2c`. Scripts kept at `/tmp/r2v/r2v_lme.py`, `/tmp/r2v/r2v_locomo.py`. No `/mnt/c` writes, no network.
 
 ## 1. R2B drop64 headline

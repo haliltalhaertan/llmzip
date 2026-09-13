@@ -1,3 +1,5 @@
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 > **ORCHESTRATOR ERRATA (2026-09-13, after D5 adversarial review).** F3: cannot-check items 1–2 were oversights, not limits. RE-CHECKED (f3_rechecks.txt): LoCoMo split counts/balance verified for all 10 splits; 5 nonzero-FR test qids recomputed EXACT (membership aligned); r2c_replicate.py located at round2/session_scripts/. HASHES_ROUND3.txt: 6/6 OK; delta64 cols EXACT. See ERRATA_ROUND3_D5.md §F3.
 
 # D1V — Independent recompute of Deney 1 (round3) numbers

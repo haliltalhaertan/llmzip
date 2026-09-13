@@ -1,5 +1,7 @@
 # Google Drive inventory — llmzip research project (`LLM_TOKEN_ZIP_RESEARCH_MASTER`) and the search for the "frozen representation matrices"
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 - **Date:** 2026-09-12 (Europe/Istanbul)
 - **Owner / account:** haliltalhaertan@gmail.com (display name: Halil Talha Ertan)
 - **Access:** existing Hermes Google Workspace OAuth token (`google_token.json`), **read-only usage** (no uploads, no deletes, no trashing, no sharing, no permission changes; nothing in the project tree was modified)

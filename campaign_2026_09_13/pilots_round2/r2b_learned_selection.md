@@ -1,3 +1,5 @@
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 > **ORCHESTRATOR ERRATA (2026-09-13, after adversarial review R2D).** Two factual errors in the prose above are corrected here: (1) **two** learned arms beat their k-matched random mean — `drop64` (+3.39 pp) **and `alone64` (+2.17 pp)**; (2) `alone64` does **not** sit inside the RANDOM64 seed range — its test FR 0.47154 **exceeds the best seed** (0.46760, +0.39 pp). Headline gaps should be read as drop64 +1.62 pp and alone64 +0.39 pp **vs the best** of the three seeds (vs-mean gaps flatter: seeds span 3.34 pp). Everything else stands; details in `wsl_details/r2b_details.json`.
 
 # R2B result — [EXPLORATORY] [NOT PREREGISTERED]

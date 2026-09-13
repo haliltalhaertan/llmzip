@@ -1,5 +1,7 @@
 # D5-missing-1 — kill OR-rule null simulation (selection lift)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 ## LME
 - Null (no-edge arm vs best-of-9): mean **-1.62pp**, sd 1.38, range [-5.78, +1.91], null win-rate 10%
 - Strict-10 correction δ = +0.06pp → strict null mean -1.68pp

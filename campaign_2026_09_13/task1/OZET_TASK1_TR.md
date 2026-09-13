@@ -1,5 +1,7 @@
 # TASK1 TAMAMLAMA ÖZETİ (Türkçe) — 2026-09-12, lokal oturum
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Durum: TAMAMLANDI. Hiçbir şey GitHub'a push edilmedi. Her şey `C:/Users/MDP/dev/llmzip-work/` altında.**
 
 ## Ne kapandı?

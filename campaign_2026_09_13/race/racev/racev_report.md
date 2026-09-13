@@ -1,5 +1,7 @@
 # RACE-V independent recomputation report
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Independent verifier (D1V-pattern). All numbers recomputed from raw artifacts
 (pkls, cleaned JSONs, audit layer) with own implementations; runner sources read
 for exact definitions only, never executed as authority. No network.

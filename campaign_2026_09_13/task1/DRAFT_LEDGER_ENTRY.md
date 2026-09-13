@@ -1,5 +1,7 @@
 # DRAFT — pending ledger entry (LOCAL, NOT PUSHED)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Status: local draft only. For the Head Researcher to review, amend, and land when they choose.
 Written by the local desktop session that ran the verifications it records (per the 2026-09-10
 ledger-authorship rule); the independent recomputations it cites were run by separate Muse executor

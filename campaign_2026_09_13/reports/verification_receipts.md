@@ -1,5 +1,7 @@
 # Verification receipts — three accepted packages (independent, read-only)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Verifier session: 2026-09-12. Repository `~/muse-work/llmzip-audit` was never
 modified (no commits, pushes, checkouts inside it; only `git fetch`, `git show`,
 `git cat-file`, `git ls-tree`, `git archive` reads).

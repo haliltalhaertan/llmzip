@@ -1,3 +1,5 @@
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 File writes are blocked in this session (`~/muse-work/reports/` and `~/muse-work/scratch/` are read-only filesystems), so per the task instructions the report below is the deliverable and the report file could not be written.
 
 # Twelve-byte budget audit report — 2026-09-12

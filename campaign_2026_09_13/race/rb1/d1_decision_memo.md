@@ -1,5 +1,7 @@
 # RACE-1 D1 — Decision memo: RaBitQ 32-dim rule (A4)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Verdict: RATIFIED as proposed** (spread-32 PRIMARY; random-32 SECONDARY sensitivity;
 TOP32 curve-point only; same centered C; float query through same reduction; 3-seed
 rotation panel). One amendment: recorded non-verification on the cited 4C3 figure (no

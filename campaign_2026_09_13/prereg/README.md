@@ -1,5 +1,7 @@
 # prereg_race_2026-09-13 — (b) 12-byte yarışı: taslak + dört bağımsız inceleme oturumu
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 [LOCAL] [NOT PUSHED] Bu klasör, (b) 12-byte bütçe yarışı preregistration'ının hazırlık
 malzemelerini toplar. Hiçbir şey mühürlenmedi, hiçbir şey koşulmadı.
 

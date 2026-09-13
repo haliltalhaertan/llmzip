@@ -1,5 +1,7 @@
 # ERRATA — Round-3, D5 adversarial review sonrası (2026-09-13)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 [ORCHESTRATOR ERRATA] D5 bulgularının disposition'u + uygulanan düzeltmeler + F3 recheck sonuçları.
 D5 tam metni: `d5_review.md`. Bu dosya, hangi bulgunun nasıl karşılandığının kaydıdır.
 

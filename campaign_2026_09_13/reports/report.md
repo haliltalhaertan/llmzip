@@ -1,5 +1,7 @@
 # Task1 independent extension — recomputation from regenerated matrices
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Independent session. All quantities computed by importing the frozen programme script
 `/mnt/c/Users/MDP/dev/llmzip-work/harness/ref/measure_representation_diagnostics.py`
 and calling its `matrix_diagnostics` / `entropy` verbatim per archive (no reimplementation

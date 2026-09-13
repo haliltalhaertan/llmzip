@@ -1,5 +1,7 @@
 # TASK 1 COMPLETION RECEIPT — LongMemEval & LoCoMo representation diagnostics
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Date:** 2026-09-12 (evening, Europe/Istanbul)
 **Session:** local desktop working session (Hermes); no repository pushes; all outputs under `C:/Users/MDP/dev/llmzip-work/`.
 **Labels:** `[LOCAL SESSION — NOT PUSHED]` `[CERTIFIED REGENERATION]` `[NOT AN INDEPENDENT AUDIT]`

@@ -1,5 +1,7 @@
 # PUSH PLAN (draft) — how to land this session's Task1 completion, when the Head Researcher decides
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Nothing here has been pushed. Repository state is untouched (`main` @ 5ec3db6; no new commits,
 no new branches in the repo).** All deliverables live under `C:/Users/MDP/dev/llmzip-work/`.
 

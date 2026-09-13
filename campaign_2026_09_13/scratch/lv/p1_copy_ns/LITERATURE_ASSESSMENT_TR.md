@@ -1,5 +1,7 @@
 # V52 literatür ve pre-seal tanı tanımları — 2026-09-12
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Yalnızca kaynak/yöntem incelemesi. NOT SEALED / NOT AUTHORIZED.**
 Ek görev okundu; bu not kullanıcının sonraki, daha dar talimatını izler. Gerçek
 temsil, corpus, gold, sorgu-belge uzaklığı, retrieval sonucu okunmadı/hesaplanmadı;

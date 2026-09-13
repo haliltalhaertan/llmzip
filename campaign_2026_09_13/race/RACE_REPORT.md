@@ -1,5 +1,7 @@
 # TWELVE-BYTE RACE — result report (local, pre-registered-shape)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 [LOCAL] [NOT PUSHED] [EXPLORATORY — non-preregistered governance, prereg-shaped rules frozen pre-official-run]
 
 **Question.** At the 12-byte marginal budget, is NATIVE SIGN96 “competitive” against the full

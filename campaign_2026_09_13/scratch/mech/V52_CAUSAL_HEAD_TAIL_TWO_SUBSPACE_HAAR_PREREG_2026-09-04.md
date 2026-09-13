@@ -1,5 +1,7 @@
 # V52 Causal Head-vs-Tail Two-Subspace Haar Test — Preregistration
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Date: 2026-09-04
 Status: `[PREREGISTERED — NO TWO-SUBSPACE OUTCOME ACCESS YET]`
 Branch: `research/v52-sign-mechanism-locomo-2026-09-04`

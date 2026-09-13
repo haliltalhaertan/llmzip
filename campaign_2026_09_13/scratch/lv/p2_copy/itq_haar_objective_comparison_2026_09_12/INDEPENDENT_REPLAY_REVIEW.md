@@ -1,5 +1,7 @@
 # Independent narrow replay review — 2026-09-12
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Disposition: PASS for the recorded synthetic Haar-objective replay and historical-value transcription only.** I am the independent review agent who actually executed this verification. Parent preparation is not scientific approval; this review grants no arm acceptance, preregistration approval, seal or experiment authorization.
 
 ## Exact tested identity

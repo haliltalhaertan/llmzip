@@ -1,5 +1,7 @@
 # RACE-1 D2 — Pre-seal calibration notebook (F4): kill/promote lines
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Executable record:** `/tmp/rb1/calib.py` → `/tmp/rb1/calib_details.json`.
 All numbers below are that script's output (N=2M draws, seed 94301 + offsets).
 Gate: m1 LOO null reproduced from Deney-1 details within 0.05pp — PASS both benchmarks

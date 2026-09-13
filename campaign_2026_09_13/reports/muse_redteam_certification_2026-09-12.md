@@ -1,5 +1,7 @@
 # Certification red-team review: LME + LoCoMo "certified regeneration"
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Session note.** This environment is write-locked (no report file could be saved to `~/muse-work/reports/`), so the report below is delivered as the answer instead. A sibling session was actively writing files mid-review (`task1_extend_lme.py` fixed 22:20, `code_cert_v2.py` + `code_certification_sign.json` + `code_certification_itq.jsonl` appearing 22:29–22:30); findings distinguish what I read at which version. **Verified by execution** means I ran it (commands quoted); **by reading** means code/text inspection only. No regeneration was run; nothing was modified.
 
 **Status snapshot (execution).** `certification_report.json` present (all deviations `0.0`, 470/470). `code_certification.json` (the filename in the brief): polled 8× at 60 s intervals — **absent all 8 polls**. Siblings instead wrote `code_certification_sign.json` (22:30) and `code_certification_itq.jsonl` (22:30, 20/470 lines at read time). `task1_extension_lme.json/csv` appeared 22:20. `extension_run.log` at first read contained only a traceback (quoted below).

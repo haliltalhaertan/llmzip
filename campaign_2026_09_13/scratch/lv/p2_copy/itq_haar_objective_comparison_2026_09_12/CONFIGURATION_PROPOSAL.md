@@ -1,5 +1,7 @@
 # Baseline draft addendum: distinguish the two RQ32 configurations
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Status: PROPOSED NOMENCLATURE AND IMPLEMENTATION IDENTITY; NOT APPROVED ARMS, NOT SEALED, NO EXECUTION AUTHORIZATION.
 
 Applies as an additive review proposal to baseline draft `a73393a62c6d3feaa78ee322b07b1d151f412c34` (`codex/twelve-byte-prereg-revision-2026-09-12`). No existing preregistration bytes or P1–P5 approvals are changed. This is sufficient to prevent the two paths being silently called the same baseline while retaining the scientific selection gate.

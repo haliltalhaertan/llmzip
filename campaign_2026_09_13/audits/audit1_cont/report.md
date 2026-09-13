@@ -1,5 +1,7 @@
 # AUDIT-1 final report — [LOCAL AUDIT] tie-convention robustness + provenance (continuation)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Scope: LOCAL only. Read-only `/mnt/c/Users/MDP/dev/llmzip-work/`; writes only `/tmp/audit1/`;
 no network; system python3 (numpy). Continuation of a SIGTERM-killed session: Task B numbers
 reused verbatim from `/tmp/audit1/taskB_numbers.json` (STAND); Task C-real + Task D finished here.

@@ -1,4 +1,6 @@
 # LİTERATÜR TARAMASI — llmzip programı için fayda haritası
+
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
 **Tarih:** 2026-09-13 · [LOCAL] [NOT PUSHED] · Kapsam: binary/sign kuantalama, BQ teori,
 vektör sıkıştırma, LLM bellek sistemleri, bellek benchmark'ları.
 Amaç: (a) bizim bulgularımızın literatürdeki yeri, (b) somut olarak faydalanabileceğimiz

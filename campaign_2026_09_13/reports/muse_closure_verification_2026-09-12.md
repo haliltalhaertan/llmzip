@@ -1,3 +1,5 @@
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Closure verification complete. All work read-only; scratch in `/tmp/closure7/`.
 
 ## 1. NaN-safe `certify` — PASS

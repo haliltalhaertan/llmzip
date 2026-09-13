@@ -1,5 +1,7 @@
 # Cold-start review — Task1 completion package (read-only)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Ordering statement:** I finished Step 1 (independent sample re-derivation) and wrote `/tmp/review5/step1_results.json` (sha256 `fc34f065…`, 12 LME + 2 LoCoMo samples) **before** opening any of the package's own certification/extension outputs. The marker command (`exec-12`) timestamps the sealed Step-1 file, lists the still-unopened JSONs, and only then do `exec-13+` open them. I never read `/tmp/task1indep`, `/tmp/verify`, `/tmp/run`, or any session logs.
 
 **`[PENDING]` scope:** receipt §6 red-team line, §8 `code_certification.json [PENDING, §4b]`, and §8 provenance-hashes block are marked `[PENDING]` and treated as **out of scope**, except where a stale filename is directly observable (noted as minor doc defect D4 below).

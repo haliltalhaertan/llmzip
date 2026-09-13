@@ -1,5 +1,7 @@
 # RACE — official analysis (post-RACE-V)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 [LOCAL] [NOT PUSHED]. Runs on the official-run outputs; frozen literals from
 `rb1/frozen_literals.json`; rules from RB1 d2 notebook §3–§4. Script: `analysis.py`
 (this folder). B=5000, seeds 94301 (LME) / 94302 (LoCoMo); fixed-argmax secondary +10;

@@ -1,5 +1,7 @@
 # Local byte-level verification receipts — llmzip evidence packages (2026-09-12)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Scope: independent, local, byte-level verification of the three most recent accepted
 evidence packages of the `llmzip` research programme. Zero-trust standard applied:
 verify from bytes, quote raw outputs. All work is read-only toward

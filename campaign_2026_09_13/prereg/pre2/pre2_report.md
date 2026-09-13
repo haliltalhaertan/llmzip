@@ -1,5 +1,7 @@
 # PRE2 — Brainstorm: make the twelve-byte race more decisive (read-only, no seal/run)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Scope:** proposed edits to `DRAFT_PREREG_TWELVE_BYTE_RACE.md` (2026-09-13 draft). No compute, no seal, no run.
 Read: draft + `muse_strategy_roadmap.md` (§3 Design 2) + `muse_ideas_technical.md` (top-5 + A1)
 + `ROUND2_REPORT.md` + `ROUND3_REPORT.md` + `missing_analyses/{m1,m2,m3}`.

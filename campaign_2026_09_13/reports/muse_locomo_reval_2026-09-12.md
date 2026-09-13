@@ -1,5 +1,7 @@
 # LoCoMo native-representation independent re-execution — final report
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 ## Environment
 `~/muse-work/ml-python -c`: python **3.14.4**, numpy **2.5.3**, scipy **1.18.1**, scikit-learn **1.9.1** (a different stack from the original producer run, as required). Scratch used: `/tmp/locomo_reval/reval.py`, `reval_out.json`. No repo writes; `main()` never called — only `load_dataset`/`build_representation` imported via `importlib` from the frozen producer, and `matrix_diagnostics`/`variance_diagnostics`/`entropy` used verbatim from the frozen definitions file.
 

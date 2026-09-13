@@ -1,5 +1,7 @@
 # PRE1 — Adversarial review: DRAFT PREREGISTRATION, twelve-byte budget race
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Reviewer role:** independent adversarial (pre-seal). **Verdict: NOT SEALABLE as written — 8 FAILs must be closed first.**
 Draft honestly marks opens (§8 checklist), so the skeleton is right; the missing content is load-bearing, not cosmetic.
 Methods: read-only inspection of the draft, the roadmap Design-2 spec, round-1..3 reports/errata, frozen protocol

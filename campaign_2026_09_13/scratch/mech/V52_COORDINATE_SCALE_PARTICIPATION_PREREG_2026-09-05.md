@@ -1,5 +1,7 @@
 # V52 — Coordinate-Scale Participation in Cross-Band Mixing Damage: PREREGISTRATION DRAFT
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 Status: **`[CANDIDATE PREREGISTRATION v3 — COMPLETE, AWAITING AUTHORIZATION. NOT SEALED, NOT TRIGGERED]`**
 Revision history: v1 drafted; v2 after a synthetic pilot found the v1 primary estimand confounded;
 v3 after pilot 04 resolved the last three open design questions. Every value below is now decided.

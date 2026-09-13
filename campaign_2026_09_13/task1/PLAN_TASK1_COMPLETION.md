@@ -1,5 +1,7 @@
 # PLAN — Task1 completion via certified regeneration (local working session, 2026-09-12)
 
+**[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]**
+
 **Status: COMPLETE (fix round applied and re-issued; independent closure verification running at
 time of writing; nothing pushed).** Every checklist item below is closed except the two final
 verification/report lines, which are in progress at the time of this note.
