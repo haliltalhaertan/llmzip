@@ -1,0 +1,18 @@
+{
+  "schema":"LLMZIP_E1_PERLTQA_TIE_SECTION_RESULT_V1",
+  "label":"[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id":34759486715,
+  "head_sha":"da9c9b38ce7dddc70bf974a217a4e4ef74f5a3b4",
+  "status":"SUCCESS",
+  "input":{"results_sha256":"ec9b8b2c7f384fe2f56c72fdc7a7216930a9db35eda2c4441496c8ad401bf958","overall_native_tie_rate":0.29195402298850576},
+  "by_section":{
+    "profile":{"tie_rate":0.3123123123123123,"mean_delta_pp":20.435435435435437,"delta_tied_pp":22.16346153846154,"delta_untied_pp":19.650655021834062},
+    "events":{"tie_rate":0.27082374597330877,"mean_delta_pp":-12.411412793373216,"delta_tied_pp":-19.405267629566694,"delta_untied_pp":-9.813821394761755},
+    "social_relationship":{"tie_rate":0.3293838862559242,"mean_delta_pp":-0.8056872037914692,"delta_tied_pp":-4.244604316546763,"delta_untied_pp":0.8833922261484098},
+    "dialogues":{"tie_rate":0.31145149525893506,"mean_delta_pp":-1.4762730808814348,"delta_tied_pp":-2.139696052486934,"delta_untied_pp":-1.1761866308014048}
+  },
+  "character_level_tie_rate_vs_delta_spearman":{"overall":-0.3325917686318131,"profile":0.24751116989682115,"events":-0.3486095661846496,"social_relationship":-0.15935900684045023,"dialogues":0.381979977753059},
+  "disposition":"SIMPLE_BOUNDARY_TIE_RATE_EXPLANATION_REFUTED",
+  "interpretation":"The losing events section has a lower native boundary-tie rate than the strongly winning profile section. Untied events still lose by about 9.81pp while untied profile still wins by about 19.65pp. Ties exacerbate the event loss and hurt social, but they cannot explain the profile/events sign reversal. Richer ranking-competition geometry remains open.",
+  "epistemic_note":"Post-hoc explanatory analysis; tie incidence is not randomly assigned."
+}
