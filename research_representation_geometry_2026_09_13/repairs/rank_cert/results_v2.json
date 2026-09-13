@@ -1,0 +1,277 @@
+{
+  "sections": {
+    "S0-sturm-selftests": {
+      "n": 13
+    },
+    "S1-nonmonotone-witness": {
+      "C1": [
+        -3,
+        4,
+        5,
+        10
+      ],
+      "C2": [
+        -2,
+        2,
+        2,
+        10
+      ],
+      "z": [
+        "1/64",
+        "1/16",
+        "1/4",
+        "1",
+        "4",
+        "16",
+        "64"
+      ],
+      "verdicts_C1_minus_C2": [
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "P": [
+        "-2",
+        "42",
+        "-148",
+        "120"
+      ]
+    },
+    "S2-persistent-tie": {
+      "T1": [
+        2,
+        2,
+        4,
+        4
+      ],
+      "T2": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "verdicts": [
+        0,
+        0,
+        0
+      ],
+      "P": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "S3-fake-root": {
+      "F1": [
+        1,
+        1,
+        1,
+        10
+      ],
+      "F2": [
+        -1,
+        -1,
+        10,
+        1
+      ],
+      "P": [
+        "9",
+        "9",
+        "-9",
+        "-9"
+      ],
+      "P_at_1": "0",
+      "verdicts": [
+        1,
+        1,
+        1
+      ],
+      "mutant_at_1": 0,
+      "mutant_status": "FAILS_AS_INTENDED"
+    },
+    "S4-tangent": {
+      "E1": [
+        1,
+        1,
+        0,
+        4
+      ],
+      "E2": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "P": [
+        "1",
+        "-2",
+        "1",
+        "0"
+      ],
+      "verdicts_at_1/4_1_4": [
+        1,
+        0,
+        1
+      ]
+    },
+    "S5-common-zero-tie": {
+      "G1": [
+        -1,
+        1,
+        1,
+        1
+      ],
+      "G2": [
+        -2,
+        2,
+        1,
+        3
+      ],
+      "verdicts": [
+        1,
+        0,
+        -1
+      ]
+    },
+    "S6a-top1-stable-fake-root": {
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "strict": "CERTIFIED_STABLE",
+      "prio": "CERTIFIED_STABLE",
+      "cross_pairs": 2
+    },
+    "S6b-top1-unstable": {
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "strict": "CERTIFIED_UNSTABLE",
+      "witness_kind": "probe-sets-differ"
+    },
+    "S6c-touch-boundary-ties": {
+      "strict": "TIES_PRESENT",
+      "prio_E1first": "CERTIFIED_STABLE",
+      "prio_E2first": "PRIO_FLIPS_AT_TIE",
+      "expected_gold2_K1_at_1/2_1_2": [
+        "0",
+        "1/2",
+        "0"
+      ],
+      "expectation_remark": "tie-structure change with constant E (1 vs 1)"
+    },
+    "S7-one-plus-one-search": {
+      "budget": 40000,
+      "evals": 18048,
+      "grid": "c,g in -3..3; qc,qg in +-1,+-2",
+      "z": [
+        "1/64",
+        "1/16",
+        "1/4",
+        "1",
+        "4",
+        "16",
+        "64"
+      ],
+      "result": "UNRESOLVED-in-grid"
+    },
+    "S8-lme-illustration": {
+      "used": true,
+      "float_signs_gold_minus_rival": {
+        "0.25": -1,
+        "1.0": -1,
+        "4.0": 1
+      },
+      "exact_reading_verdicts_gold_minus_rival": {
+        "1/16": -1,
+        "1": -1,
+        "16": 1
+      },
+      "cert_[1/16,1]": {
+        "status": "STRICT",
+        "direction": -1,
+        "ties": [],
+        "notes": [
+          "rational-root enumeration over budget: kept exact, bisection still finds rational hits exactly",
+          "(1/16,1): sturm=0 same-sign roots, strict order constant"
+        ],
+        "sturm_calls": 1,
+        "xbrackets": [],
+        "disc_fired": 0
+      },
+      "cert_[1,16]": {
+        "status": "ISOLATED_TIES",
+        "direction": "VARIES",
+        "ties": [
+          "cross(105773471117/8589934592,211546942249/17179869184)"
+        ],
+        "notes": [
+          "rational-root enumeration over budget: kept exact, bisection still finds rational hits exactly",
+          "(1,16): discriminator: endpoint verdicts differ (-1 vs 1) with sturm=1 -> >=1 genuine crossing",
+          "certified flip across listed ties/brackets: piecewise order, NOT stable"
+        ],
+        "sturm_calls": 69,
+        "xbrackets": [
+          {
+            "lo": "105773471117/8589934592",
+            "hi": "211546942249/17179869184",
+            "kind": "cross"
+          }
+        ],
+        "disc_fired": 1
+      },
+      "expected": {
+        "cA": [
+          "STRICT",
+          -1
+        ],
+        "cB": [
+          "ISOLATED_TIES",
+          "VARIES"
+        ]
+      },
+      "proc": "certify_v2",
+      "note": "POST-HOC explanatory only; exact certs about binary-exact rational reading, not about BLAS float order; no prediction."
+    },
+    "S9-float-note": {
+      "agreement_on_spots": true,
+      "status": "INFORMATIONAL-UNCERTIFIED"
+    }
+  },
+  "env": {
+    "python": "3.14.4",
+    "threads": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1",
+    "bytecode": "off"
+  },
+  "totals": {
+    "n_checks": 53,
+    "n_fail": 0,
+    "failed": []
+  },
+  "suite": {
+    "name": "verify_v2",
+    "proc": "certify_v2",
+    "kept": 48,
+    "repaired": [
+      "S7-1plus1-unresolved"
+    ],
+    "added": [
+      "S8-cA-status",
+      "S8-cA-direction",
+      "S8-cB-status",
+      "S8-cB-direction"
+    ]
+  },
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ]
+}

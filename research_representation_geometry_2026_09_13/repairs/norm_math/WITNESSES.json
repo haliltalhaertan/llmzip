@@ -1,0 +1,62 @@
+{"_labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "_aciklama": "Ek duzeltme paketi taniklari. Kaynak arsiv 1021083d4f2faebda760546e1217b4de1eef87ea commit'indedir ve degistirilmemistir.",
+  "_commit": "1021083d4f2faebda760546e1217b4de1eef87ea",
+  "D1": {
+    "ozgun": "REPORT.md:78 + verify.py:76-77,85-86 eksen-erisim kuralı (tek-eksen testi)",
+    "tanik": {"s": [-1, -1, 1], "q": ["0", "0", "-1"], "x": ["-3/5", "-4/5", "0"],
+      "m": "0", "q_x": "0", "eksenler_F_disinda": [[-1, 0, 0], [0, -1, 0]]},
+    "duzeltilmis": {"sup_m_eksi": "m<0: tek-eksen (N alt-kume {j})", "sup_m_sifir": "m=0: yuz kurali N alt-kume {j:q_j=0}",
+      "inf_m_artı": "m'>0: tek-eksen", "inf_m_sifir": "m'=0: yuz kurali N alt-kume {j:q_j=0}"},
+    "inf_ayna": {"s": [-1, -1, 1], "q": ["0", "0", "1"], "x": ["-3/5", "-4/5", "0"], "m_us": "0"}
+  },
+  "D2": {
+    "ozgun": "REPORT.md:94-97 d=2 tablosu erisim bayraklari (4/8 yanlis)",
+    "q": ["3/5", "4/5"],
+    "duzeltilmis_tablo": [
+      {"s": [1, 1], "sup": "1", "sup_erisim": true, "sup_tanik": ["3/5", "4/5"],
+       "inf": "3/5", "inf_erisim": true, "inf_tanik": ["1", "0"]},
+      {"s": [1, -1], "sup": "3/5", "sup_erisim": false, "sup_kapanis": ["1", "0"],
+       "inf": "-4/5", "inf_erisim": true, "inf_tanik": ["0", "-1"]},
+      {"s": [-1, 1], "sup": "4/5", "sup_erisim": false, "sup_kapanis": ["0", "1"],
+       "inf": "-3/5", "inf_erisim": true, "inf_tanik": ["-1", "0"]},
+      {"s": [-1, -1], "sup": "-3/5", "sup_erisim": false, "sup_kapanis": ["-1", "0"],
+       "inf": "-1", "inf_erisim": true, "inf_tanik": ["-3/5", "-4/5"]}],
+    "not": "verify.py sup/inf_attained bu 8 hucrede duzeltilmisle uyumludur; kusur yalnizca REPORT duzyazisindadir."
+  },
+  "D3": {
+    "ozgun": "Destek hic belirtilmemis; REPORT.md:132 rho in [-1,1]; verify.py:302 negative-rho rho=-0.3",
+    "lemma": "s=sign(x) icin rho = ||x||_1/kok(d), destek [1/kok(d),1]",
+    "imkansiz": ["-0.3", "0", "-1"],
+    "ornek": {"d": 4, "x": ["1/2", "1/2", "1/2", "1/2"], "rho": "1"},
+    "sifir_yuzu": {"x": ["0", "-1", "0"], "s": [1, -1, 1]}
+  },
+  "D4": {
+    "ozgun": ["REPORT.md:105 (0.5, 1]", "REPORT.md:153 (0.5,1]", "verify.py:370 (0.5,1]"],
+    "duzeltilmis": "[0.5, 1]",
+    "tanik_alt": {"x": ["1", "0", "0", "0"], "skor": "1/2"},
+    "tanik_ust": {"x": ["1/2", "1/2", "1/2", "1/2"], "skor": "1"}
+  },
+  "D5": {
+    "a_exact_tie": {"ozgun": "REPORT.md:111 'Exact cross-pattern tie'", "durum": "GERI CEKILDI",
+      "gozlem": {"sA": 0.7000000000000001, "sE": 0.7000000000000001, "fark_hedeften": 1.11e-16, "tolerans": 1e-9},
+      "duzeltilmis": "yaklasik sayisal tanik (1e-9 tolerans)"},
+    "b_iki_bagimsiz": {"ozgun": "REPORT.md:20 'two independent routes'", "durum": "GERI CEKILDI",
+      "gerekce": "iki route ayni verify.py dosyasinda, tek yazar; bagimsiz denetim degil"},
+    "c_equal_relevance": {"ozgun": "REPORT.md:113 'equal relevance'", "durum": "GERI CEKILDI (desteksiz)"}
+  },
+  "D6": {
+    "ozgun": "verify.py:321 K_HALF 1e-12 + REPORT.md:134; 'certified' sonekleri",
+    "durum": "1e-12 gevsekligi sertifika degildir; genel girdi icin yuvarlama analizi YOK",
+    "kesin_sertifika_top3": {"u": "1", "kutular": [255, 255, 254, 191, 218, 238],
+      "min_L123": "252/255", "max_U456": "222/255", "marj": "30/255",
+      "rho2": ["1", "200/201", "50/51", "1/4", "1/2", "3/4"]},
+    "sertifikasiz_kalan": ["genel (u,rho) float cap degerlendirmeleri", "1e-12 genel yuvarlama iddiasi",
+      "D.agree 1e-12 gozlemi (ispat degil)", "worst_rank 1e-12 toleransi (bu ornekte marj 30/255 oldugundan sonuc degismez)"]
+  },
+  "D7": {
+    "ozgun_yok": "israf muhasebesi belgede yoktu (ek beyan)",
+    "d": 4, "aralik": "[0.5, 1]", "kullanilan": 65, "bos": 191, "oran_bos": "191/256",
+    "uc_kodlar": {"m_0.5": 191, "m_1": 255},
+    "kiyas": "ayni baytin baska harcamasiyla kiyas YAPILMADI"
+  }
+}
