@@ -1,0 +1,12 @@
+{
+  "schema": "E1_V2_RAW_RECOVERY_DRIVE_BINDING_V1",
+  "drive_folder_id": "15v4kB230kKx2tRq-GGVz2XsoJdMInDlM",
+  "drive_folder_url": "https://drive.google.com/drive/folders/15v4kB230kKx2tRq-GGVz2XsoJdMInDlM",
+  "package_file_id": "1qP5ZtCnC-seOQIWDPkEYEGdISQooT0r0",
+  "package_url": "https://drive.google.com/file/d/1qP5ZtCnC-seOQIWDPkEYEGdISQooT0r0/view?usp=drivesdk",
+  "package_sha256": "b6b7923f2e9623f5e1d46dda523f8f4a2919b62f69e82ba5b2bb679ad9771ae8",
+  "report_file_id": "1ZWznlHcMPTRBQw2wcRH1912JogMd2cxx",
+  "report_url": "https://drive.google.com/file/d/1ZWznlHcMPTRBQw2wcRH1912JogMd2cxx/view?usp=drivesdk",
+  "authority": "GitHub text/result summary + SHA-bound Drive package containing compressed per-query rows; raw source caches remain in the SHA-verified heavy-backup folder",
+  "task4f1": "SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN"
+}
