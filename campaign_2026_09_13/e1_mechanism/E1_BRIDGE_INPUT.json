@@ -4,12 +4,65 @@
   "source_commit": "8f6e0fab4c2fb2eeb8dcd5087376a6736e1865f1",
   "note": "Post-hoc bridge table from already-observed results. Not a confirmatory test.",
   "units": [
-    {"id":"LME","sign_minus_float_pp":10.037943262411336,"polarity_pp":7.896276595744676,"polarity_definition":"BOT48 - TOP48","source_delta":"campaign_2026_09_13/audits/audit1_cont/report.md","source_polarity":"campaign_2026_09_13/pilots_round2/ROUND2_REPORT.md","precision":"exact from reported values"},
-    {"id":"REALTALK","sign_minus_float_pp":5.224102217719237,"polarity_pp":2.206694336313595,"polarity_definition":"BOT64 - TOP64","source_delta":"campaign_2026_09_13/bench3/b3a_realtalk/rt_summary.json","source_polarity":"campaign_2026_09_13/bench3/b3a_realtalk/rt_summary.json","precision":"exact from JSON"},
-    {"id":"PerLTQA_profile","sign_minus_float_pp":20.435,"polarity_pp":18.24,"polarity_definition":"BOT64 - TOP64","source_delta":"campaign_2026_09_13/bench3/b3b_fin/summary.json","source_polarity":"campaign_2026_09_13/bench3/b3b_fin/summary.json","precision":"summary-rounded"},
-    {"id":"PerLTQA_social","sign_minus_float_pp":-0.806,"polarity_pp":-23.59,"polarity_definition":"BOT64 - TOP64","source_delta":"campaign_2026_09_13/bench3/b3b_fin/summary.json","source_polarity":"campaign_2026_09_13/bench3/b3b_fin/summary.json","precision":"summary-rounded"},
-    {"id":"PerLTQA_events","sign_minus_float_pp":-12.411,"polarity_pp":-17.64,"polarity_definition":"BOT64 - TOP64","source_delta":"campaign_2026_09_13/bench3/b3b_fin/summary.json","source_polarity":"campaign_2026_09_13/bench3/b3b_fin/summary.json","precision":"summary-rounded"},
-    {"id":"PerLTQA_dialogues","sign_minus_float_pp":-1.476,"polarity_pp":-1.36,"polarity_definition":"BOT64 - TOP64","source_delta":"campaign_2026_09_13/bench3/b3b_fin/summary.json","source_polarity":"campaign_2026_09_13/bench3/b3b_fin/summary.json","precision":"summary-rounded"}
+    {
+      "id": "LME",
+      "sign_minus_float_pp": 10.037943262411336,
+      "polarity_pp": 7.896276595744676,
+      "polarity_definition": "BOT48 - TOP48",
+      "source_delta": "campaign_2026_09_13/audits/audit1_cont/report.md",
+      "source_polarity": "campaign_2026_09_13/pilots_round2/ROUND2_REPORT.md",
+      "precision": "exact from reported values"
+    },
+    {
+      "id": "REALTALK",
+      "sign_minus_float_pp": 5.224102217719237,
+      "polarity_pp": 2.206694336313595,
+      "polarity_definition": "BOT64 - TOP64",
+      "source_delta": "campaign_2026_09_13/bench3/b3a_realtalk/rt_summary.json",
+      "source_polarity": "campaign_2026_09_13/bench3/b3a_realtalk/rt_summary.json",
+      "precision": "exact from JSON"
+    },
+    {
+      "id": "PerLTQA_profile",
+      "sign_minus_float_pp": 20.435,
+      "polarity_pp": 18.24,
+      "polarity_definition": "BOT64 - TOP64",
+      "source_delta": "campaign_2026_09_13/bench3/b3b_fin/summary.json",
+      "source_polarity": "campaign_2026_09_13/bench3/b3b_fin/summary.json",
+      "precision": "summary-rounded"
+    },
+    {
+      "id": "PerLTQA_social",
+      "sign_minus_float_pp": -0.806,
+      "polarity_pp": -23.59,
+      "polarity_definition": "BOT64 - TOP64",
+      "source_delta": "campaign_2026_09_13/bench3/b3b_fin/summary.json",
+      "source_polarity": "campaign_2026_09_13/bench3/b3b_fin/summary.json",
+      "precision": "summary-rounded"
+    },
+    {
+      "id": "PerLTQA_events",
+      "sign_minus_float_pp": -12.411,
+      "polarity_pp": -17.64,
+      "polarity_definition": "BOT64 - TOP64",
+      "source_delta": "campaign_2026_09_13/bench3/b3b_fin/summary.json",
+      "source_polarity": "campaign_2026_09_13/bench3/b3b_fin/summary.json",
+      "precision": "summary-rounded"
+    },
+    {
+      "id": "PerLTQA_dialogues",
+      "sign_minus_float_pp": -1.476,
+      "polarity_pp": -1.36,
+      "polarity_definition": "BOT64 - TOP64",
+      "source_delta": "campaign_2026_09_13/bench3/b3b_fin/summary.json",
+      "source_polarity": "campaign_2026_09_13/bench3/b3b_fin/summary.json",
+      "precision": "summary-rounded"
+    }
   ],
-  "tie_rate_note": {"LME_top3_boundary_approx":0.234,"REALTALK_boundary":0.3546099290780142,"PerLTQA_boundary":0.291954,"interpretation":"Tie rate alone is non-monotone with SIGN-minus-float direction."}
+  "tie_rate_note": {
+    "LME_top3_boundary_approx": 0.234,
+    "REALTALK_boundary": 0.3546099290780142,
+    "PerLTQA_boundary": 0.291954,
+    "interpretation": "Tie rate alone is non-monotone with SIGN-minus-float direction."
+  }
 }
