@@ -1,0 +1,19 @@
+{
+  "schema": "LLMZIP_E1_REALTALK_JOINT_POLARITY_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34759230935,
+  "head_sha": "028049d067245aed2f9ca9e54dc8f3d5b62b4f58",
+  "status": "SUCCESS",
+  "scope": "Joint TOP64/BOT64 retrieval polarity from committed REALTALK B3A per-QA outputs; no representation rebuild or rescoring.",
+  "inputs": {"details_sha256":"8bae1d380240adc856f8a787b142286efc16fd1d30dfc03bed7e5074769d1757","summary_sha256":"8e725fca6dff584f853ef9dbf6888b700b12acd1dde42752417f3fa5302bf946","n_valid":705,"n_chat":10},
+  "overall": {"mean_delta_pp":5.224102217719239,"mean_p64":0.022066943363135975,"n":705,"n_nonzero_both":83,"pearson_r":0.09834520751517985,"same_sign_fraction_nonzero":0.5662650602409639,"spearman_rho":0.0745780719943222},
+  "by_chat": {"mean_delta_pp":5.304612459134399,"mean_p64":0.02411260957978294,"n":10,"n_nonzero_both":10,"pearson_r":0.5039987613706527,"same_sign_fraction_nonzero":0.9,"spearman_rho":0.41818181818181815},
+  "by_category": {
+    "1":{"mean_delta_pp":1.4441275352733687,"mean_p64":0.0042267851341316245,"n":288,"n_nonzero_both":34,"pearson_r":0.16565861114565134,"same_sign_fraction_nonzero":0.5294117647058824,"spearman_rho":0.05369068222763663},
+    "2":{"mean_delta_pp":8.629807692307692,"mean_p64":0.03667200854700855,"n":312,"n_nonzero_both":39,"pearson_r":0.06312511030420478,"same_sign_fraction_nonzero":0.5641025641025641,"spearman_rho":0.05734714294400237},
+    "3":{"mean_delta_pp":5.472222222222222,"mean_p64":0.027602040816326532,"n":105,"n_nonzero_both":10,"pearson_r":0.33946365069877227,"same_sign_fraction_nonzero":0.7,"spearman_rho":0.24366582017282318}
+  },
+  "category_regime_note": "The three category means have identical rank order for P64 and SIGN-minus-float (cat1 < cat3 < cat2), descriptive Spearman rho=1.0. With only three post-hoc strata this is not inferential evidence.",
+  "interpretation": "Per-query association is weak (rho ~0.075), but chat-level aggregation strengthens it (rho ~0.418; 9/10 chats same sign) and the three category mean regimes rank identically. Together with LME and PerLTQA, P64 increasingly looks like a regime-level marker rather than an individual-query predictor.",
+  "epistemic_note": "REALTALK outcome was observed before E1. Chat/category aggregation is descriptive and not confirmatory."
+}
