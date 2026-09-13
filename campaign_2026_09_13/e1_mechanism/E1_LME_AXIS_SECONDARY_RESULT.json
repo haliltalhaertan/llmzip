@@ -1,0 +1,29 @@
+{
+  "schema": "LLMZIP_E1_LME_AXIS_SECONDARY_RESULT_V1",
+  "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "workflow_run_id": 34758606366,
+  "head_sha": "07137fa44be03e6edc774d25713c1285ee70e2c1",
+  "status": "SUCCESS",
+  "scope": "Gold-informed explanatory analysis of the pre-existing 470x96 per-axis discrimination matrix; no representation rebuild.",
+  "inputs": {
+    "npz_sha256": "be8c645d241bac3b913cfcf24f5533c55775a383b46a5f43401d633c873a635a",
+    "question_level_sha256": "69c21b2ffaea1e92923bf3f0e83287e12d07a5f34b4b42afde1752d6b50b3b51",
+    "npz_keys": ["alone","delta","drop","goldrate","qids","var_rank"],
+    "delta_shape": [470,96]
+  },
+  "n": 470,
+  "delta_mean_pp": 10.037943262411346,
+  "spearman": {
+    "axis_delta_abs_sum": -0.028488926738604432,
+    "axis_delta_sum": 0.08589716993812603,
+    "n_negative_axes": -0.08021411110411512,
+    "n_positive_axes": 0.07810898147188017,
+    "negative_mass": -0.1143610945030004,
+    "positive_effdim": 0.0369827546368539,
+    "positive_mass": 0.029672430718396096,
+    "positive_top16_share": -0.03194525704793933,
+    "positive_top32_share": -0.029745607812240202
+  },
+  "interpretation": "The amount, count and concentration/effective-dimension of marginal gold-vs-nongold axis discrimination show only weak association with per-question SIGN-minus-float advantage. Simple marginal-signal concentration is therefore not a useful LME mechanism explanation. This strengthens the need to test joint sign-bit redundancy and retrieval-competition interactions.",
+  "epistemic_note": "Post-hoc and gold-informed; explanatory only, not deployable and not causal."
+}
