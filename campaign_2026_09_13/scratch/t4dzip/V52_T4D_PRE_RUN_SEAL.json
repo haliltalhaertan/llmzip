@@ -1,0 +1,222 @@
+{
+  "BLIP_caption_rule": "speaker: text [IMAGE: blip_caption] when caption non-empty",
+  "audit_layer_file_hashes": [
+    {
+      "bytes": 395163,
+      "file": "conv_0.json",
+      "sha256": "697a996db06a90500bafbf21c96f5170eafc8377eef632278b7a4b841ae15c39"
+    },
+    {
+      "bytes": 267513,
+      "file": "conv_1.json",
+      "sha256": "5b0a9a79e623e810a1e9a577d457ac99465e96e7c9cce58f593612d73350c34a"
+    },
+    {
+      "bytes": 526311,
+      "file": "conv_2.json",
+      "sha256": "476d9bcdaddfc2c5c0caeed21c48b2bedb8fe687772c25f6f98e4c5a63ce1e8a"
+    },
+    {
+      "bytes": 584086,
+      "file": "conv_3.json",
+      "sha256": "5c565f4efa6dbea4650a5f62eb04dea4b10fec713b984746ae5ca38df05a4754"
+    },
+    {
+      "bytes": 571480,
+      "file": "conv_4.json",
+      "sha256": "609f74bfad9de7719ef170e21ea140a24b20c0bf278ab9db215c4a26705e874d"
+    },
+    {
+      "bytes": 528568,
+      "file": "conv_5.json",
+      "sha256": "98c28de0c42795f2b67c85cc5a804191dee1a701959197c3167a2748b9260793"
+    },
+    {
+      "bytes": 499707,
+      "file": "conv_6.json",
+      "sha256": "5f7f9182f5e7dd842488292acf340e24ff773790e720a212433e4c047875c9b1"
+    },
+    {
+      "bytes": 551155,
+      "file": "conv_7.json",
+      "sha256": "84c53ec1b89b8846be2fd9146269a523fcc5542223344b517aa3757ac3a9fa88"
+    },
+    {
+      "bytes": 489039,
+      "file": "conv_8.json",
+      "sha256": "b2f301735825844b7bf71816eae4e16983854edc80898a8a578e3a78963215e9"
+    },
+    {
+      "bytes": 500515,
+      "file": "conv_9.json",
+      "sha256": "0f9775daf3bc6f9a6b8672aadbbf65f7e15947c5c1cb92d151306f1406d00a9d"
+    },
+    {
+      "bytes": 24365,
+      "file": "errors_conv_0.json",
+      "sha256": "63c778c8432b058d791417ec37bf8ac30b0bb83b1272afacb5a162b84fe5e3c4"
+    },
+    {
+      "bytes": 7746,
+      "file": "errors_conv_1.json",
+      "sha256": "a2db16644318c3c144544f4cb373028e416bbf20c6f07f46606cf66f45de4e6c"
+    },
+    {
+      "bytes": 11824,
+      "file": "errors_conv_2.json",
+      "sha256": "93c2aa8ee7d3bfb59ae1cca283d176a794d76d3751c69264ddc1f63ceb2b4b3a"
+    },
+    {
+      "bytes": 23508,
+      "file": "errors_conv_3.json",
+      "sha256": "c1d0162e534bf68dba6aff3ca3e73ba8179cab7a400d098b8be89048c7b58585"
+    },
+    {
+      "bytes": 15447,
+      "file": "errors_conv_4.json",
+      "sha256": "42520f95b654c85b564da6cd26f40cefb981de574066f7b92bdebbc780fa1376"
+    },
+    {
+      "bytes": 9934,
+      "file": "errors_conv_5.json",
+      "sha256": "af8c675a3e216ddb94e07c417fb37c45fc46740dfa8ce586fc8c527f7a3b9ee7"
+    },
+    {
+      "bytes": 14435,
+      "file": "errors_conv_6.json",
+      "sha256": "acb6d0d02f938180b3d1a7a45f80d432ece69d13b197371cb71ddbddb83a26ea"
+    },
+    {
+      "bytes": 12048,
+      "file": "errors_conv_7.json",
+      "sha256": "bbe2268a3254dcc9d3741a84748fadf8e169d21d837810e92dc63cdf8db562cb"
+    },
+    {
+      "bytes": 15587,
+      "file": "errors_conv_8.json",
+      "sha256": "c15ace8ef1a7cbf3fe63d3b7ff9c2851885f5e00abc1c184971ebb11128aedb2"
+    },
+    {
+      "bytes": 15645,
+      "file": "errors_conv_9.json",
+      "sha256": "2c2b8791d024e11ca6015a109f160b7177379b3b42ac8c9adb990546fc89c4ff"
+    }
+  ],
+  "audit_layer_manifest_sha256": "90a4e94c9247d8ace7aaf62acdda7315744b111d84e42658cccfeb0a3c89df06",
+  "canonical_parent_git_commit": "8f52c8072f4f781ad2539c461fae154c4c52753b",
+  "cohort": {
+    "Cat1_Cat4_questions": 1540,
+    "category_counts": {
+      "1": 282,
+      "2": 321,
+      "3": 96,
+      "4": 841
+    },
+    "conversations": 10
+  },
+  "composition_sensitivity": [
+    "W/T/L",
+    "median paired gap",
+    "mean paired gap",
+    "remove top 10,25,50 native-positive contributors"
+  ],
+  "continuous_invariance_tolerance": 1e-12,
+  "correction_layer_identifier": "dial481/locomo-audit; 10 conv files + 10 errors files; explicit-empty correction semantics preserved",
+  "created_at_utc": "2026-08-29T14:23:40.005685+00:00",
+  "dataset_bytes": 2805274,
+  "dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "date": "2026-08-29",
+  "decision_bands": {
+    "falsified_direction": "D_LoCoMo>+1.0 pp",
+    "no_material": "abs(D_LoCoMo)<=1.0 pp",
+    "partial_mixed": "D_LoCoMo<-1.0 pp but strong rule not fully satisfied",
+    "strong": "D_LoCoMo<=-5.0 pp AND all 5/5 Haar seeds below native"
+  },
+  "drive_prompt_id": "19nbkI9g0djWMoIO8DqdsNQowdLiO1-_hKYx-8831w58",
+  "drive_prompt_url": "https://docs.google.com/document/d/19nbkI9g0djWMoIO8DqdsNQowdLiO1-_hKYx-8831w58/edit?usp=drivesdk",
+  "github_preregistration_commit": "68c4c10a6886e1076efcffd8981d53bf14fb9b6f",
+  "github_prompt_blob_sha": "bd82b564b5ee065ee2e4dad799bf0bacf6bd2aa8",
+  "github_prompt_path": "prompts/V52_TASK_4D_LOCOMO_FROZEN_CROSS_BENCHMARK_REPLICATION_2026-08-29.md",
+  "inference": "exact fixed-benchmark paired estimand; nuisance collapsed within question; Haar/ITQ seeds collapsed within question; no population p-value claim",
+  "itq_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "methods": [
+    "NATIVE_SIGN96",
+    "SIGNED_PERM_CONTROL96",
+    "HAAR96_SIGN",
+    "ITQ96_CENTERED",
+    "CENTERED_FLOAT_INVARIANCE_REFERENCE"
+  ],
+  "no_rescue_no_expansion": [
+    "block sizes",
+    "rotation seeds",
+    "nuisance trials",
+    "bit widths",
+    "thresholds",
+    "centering rule",
+    "alternate embeddings/encoders",
+    "alternate source-block weighting",
+    "whitening/PCA variants",
+    "supervised rotations",
+    "query-adaptive rotations",
+    "reranking/shortlists",
+    "alternate top-k",
+    "new LoCoMo subsets/categories",
+    "alternative correction sets",
+    "new metrics chosen because the primary result is weak",
+    "LongMemEval-V2",
+    "million-memory scaling",
+    "latency/system benchmark"
+  ],
+  "nuisance_trials": 20,
+  "primary_metric": "Audit-clean Fractional Evidence Recall@3",
+  "protocol_defect_effect_predefinition": "maximum absolute raw-vs-audit-clean Fractional R@3 difference in percentage points on the intersection of raw/audit retrievable-evidence-valid questions, across Native, each Haar seed, mean Haar, each ITQ seed, mean ITQ",
+  "representation_recipe": "frozen source blocks -> concatenate -> archive-only TruncatedSVD(96,random_state=5204) -> L2 normalize -> archive mean centering",
+  "retrievable_gold_semantics": {
+    "audit_clean_evidence_valid_pre_outcome": 1535,
+    "common_valid_pre_outcome": 1534,
+    "raw_evidence_valid_pre_outcome": 1535,
+    "unretrievable annotations excluded from metric denominator": true
+  },
+  "rotation_seeds": [
+    43001,
+    43002,
+    43003,
+    43004,
+    43005
+  ],
+  "sealed_compute_script_sha256": "3f7f091fadc88dfcc1f68f38d6df10607d05d1e416d048fe776929a9a7b185a7",
+  "secondary_metrics": [
+    "ANY Evidence Recall@3",
+    "ALL Evidence Recall@3"
+  ],
+  "source_block_implementation": {
+    "accepted_4c3_script_sha256": "8dce37b1611ba6257570beea559630208f67ffb93697015e95656858a3c7d996",
+    "adapter_v1_git_blob": "16c1349336e143d27d9cac68198cbb50a1e6340b",
+    "adapter_v1_recorded_sha256": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+    "adapter_v1_repo_path": "adapters/longmemeval_v52_adapter.py",
+    "adapter_v2_git_blob": "aa0b6f956a9bbc7f27778760c2c6fc708ae72ba1",
+    "adapter_v2_recorded_sha256": "643082d6fc6b82fdd68dc7d97a77258b1d68eb1e479b2e390f13137d3dc1a218",
+    "adapter_v2_repo_path": "adapters/longmemeval_v52_adapter_v2.py",
+    "local_fit_archive_representation_source_sha256": "48297fd495f400c02ad1a33769fd8f91d8930f6c7ff7f0e412981032d03ce564",
+    "local_fit_input_payload_source_sha256": "4573ebdb2e5f04b414f110ab59ce256a225dd732a7a7aff064e29562fcbe25d4"
+  },
+  "status": "SEALED_BEFORE_ANY_TASK4D_RETRIEVAL_QUALITY_OUTCOME",
+  "strata_frozen": [
+    "Cat1",
+    "Cat2",
+    "Cat3",
+    "Cat4",
+    "one-gold vs multi-gold if valid",
+    "all 10 conversations",
+    "archive-size quartiles frozen before outcomes"
+  ],
+  "task": "V52 TASK 4D — LOCOMO FROZEN CROSS-BENCHMARK REPLICATION",
+  "tie_priority_rule": "conversation ordinal 0..9; stable_archive_seed=5_100_000+ordinal*100_000+trial*100; priority=default_rng(seed+99).random(N_archive)",
+  "top_k": 3
+}

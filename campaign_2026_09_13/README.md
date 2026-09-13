@@ -34,7 +34,8 @@ konvansiyonu gereği dışarıda tutuldu (bkz. Exclusions).
   `muse_independent/` regeneration audit).
 - `reports/` — Task-1 closure round (red-team certification, coldstart review, closure verification,
   locomo/representation provenance, Drive inventory, verification receipts, local logs).
-- `scratch/` — mechanism-study preregs & scripts (`mech/`) + local-verification working files (`lv/`).
+- `scratch/` — mechanism-study preregs & scripts (`mech/`), local-verification working files (`lv/`), and the
+  T4D delivery surface (`t4dzip/`, complete incl. the `V52_T4D_trial_results.csv` raw table).
 - `g3_localverify_evidence/` — untracked local-verification evidence recovered from the `verify/g3`
   worktree (evidence + gatelock + inherited + provenance payloads).
 - `misc/` — push-plan draft and postscript notes.

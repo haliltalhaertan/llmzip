@@ -1,0 +1,11 @@
+N,source_word_features,source_char_features,source_latent_dim,mixed_concat_features,mixed96_dim,archive_fit_docs,query_count,no_nan,conv_id
+419,5704,14154,32,19890,96,419,152,True,locomo_0
+369,4377,11734,32,16143,96,369,81,True,locomo_1
+663,7636,16004,32,23672,96,663,152,True,locomo_2
+629,6885,15624,32,22541,96,629,199,True,locomo_3
+680,8121,17336,32,25489,96,680,178,True,locomo_4
+675,7449,15811,32,23292,96,675,123,True,locomo_5
+689,7672,17343,32,25047,96,689,150,True,locomo_6
+681,7289,16771,32,24092,96,681,191,True,locomo_7
+509,6107,15337,32,21476,96,509,156,True,locomo_8
+568,7137,15265,32,22434,96,568,158,True,locomo_9
