@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 > **ORCHESTRATOR ERRATA (2026-09-13, after adversarial review R2D).** Labels/limits: [LOCAL EXPLORATORY] [NOT PREREGISTERED] [NOT FOR CITATION]; single benchmark (LME-470); baseline is the SINGLE seed RAND48_s0 (round-1 five-seed spread at k=48 was 3.5 pp — flip counts inherit that noise); findings are descriptive. "The discriminative signal lived in low-variance axes" is demoted to subset-level description (no causal mechanism licensed; round-1 REPORT leaves the mechanism OPEN). "Hard losers average" refers to all 34 hard-loss questions (the 10 largest shown have higher TOP48 ranks, ~21.4 average).
 
 All gates reproduce exactly. Results below; details saved in [/tmp/r2a/per_q.json](/tmp/r2a/per_q.json) (211,088 bytes).

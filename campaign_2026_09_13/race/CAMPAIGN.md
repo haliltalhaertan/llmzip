@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # RACE CAMPAIGN TRAcker — (b) twelve-byte budget race (2026-09-13, LOCAL ONLY)
 
 [LOCAL] [NO PUSH] [NOTHING RUNS UNTIL SEAL] Kullanıcı talimatı: "bana bir şey sorma — muse ile

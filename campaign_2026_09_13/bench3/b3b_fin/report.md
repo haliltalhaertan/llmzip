@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # BENCH-3B FINISH — PerLTQA port (killed-run salvage + verification)
 
 Labels: [LOCAL EXPLORATORY PILOT]. License of source data: CC BY-NC 4.0 (non-commercial research).

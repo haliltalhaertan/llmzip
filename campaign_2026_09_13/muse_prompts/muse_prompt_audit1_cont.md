@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Muse session — AUDIT-1 CONTINUATION (tie-convention robustness + provenance; killed-run salvage)
 
 A previous AUDIT-1 session was externally SIGTERM-killed at ~13:50 after completing Task B

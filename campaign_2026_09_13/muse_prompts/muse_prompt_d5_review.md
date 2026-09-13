@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Muse session — D5: ADVERSARIAL DESIGN REVIEW of Round-3 (Deney 1/2/4/5 + verifications)
 
 You are an independent adversarial reviewer (R2D-style). Read the artifacts below and produce a

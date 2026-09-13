@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Muse session — AUDIT-1: confound decomposition + tie-convention robustness (independent audit)
 
 You are an independent auditor for the llmzip programme's headline findings. LOCAL only:

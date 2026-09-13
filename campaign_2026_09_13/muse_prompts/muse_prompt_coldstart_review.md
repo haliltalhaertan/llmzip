@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Muse session — cold-start adversarial review of the Task1 completion package (read-only)
 
 You are a fresh reviewer session with no prior context. Other Muse sessions ran on this machine

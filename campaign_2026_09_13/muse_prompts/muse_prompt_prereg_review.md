@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Muse session — PREREG DRAFT REVIEW: twelve-byte budget race (adversarial)
 
 You are an independent adversarial reviewer. A docket draft is about to be submitted for internal

@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Task 3 — finite synthetic ITQ diagnostic
 
 Base: `ae9175676b840ae6a80a31eba9836187dc1b7491`. This report changes no preregistration, root report, ledger, or G3 artifact.

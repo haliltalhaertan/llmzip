@@ -1,1 +1,3 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 0 mismatched of 50 (10 questions x 5 seeds) under numpy 2.5.3 WSL stack; run 2026-09-12

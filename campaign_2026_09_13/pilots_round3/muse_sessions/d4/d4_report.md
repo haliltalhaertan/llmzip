@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 > **ORCHESTRATOR ERRATA (2026-09-13, after D5 adversarial review).** C6: language is CONFIRMATORY-ONLY (n=2 fresh draws); seed-numeral collision flagged (43004/05 are LoCoMo-fresh but LME gate-seed numerals; LME fresh set is 44001/44002); full-5-seed LME contrast noted (strict separation fails on all five, robust on fresh 44001/02 draws). See ERRATA_ROUND3_D5.md §C6.
 
 # DENEY 4: fresh-Q confirmatory check of the mixing-disparity ordering

@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # MATH-1: analytic model of top-3 sign-code retrieval + validation on frozen LME-470 data
 
 **[LOCAL EXPLORATORY] [NOT PREREGISTERED] [NOT FOR CITATION]**

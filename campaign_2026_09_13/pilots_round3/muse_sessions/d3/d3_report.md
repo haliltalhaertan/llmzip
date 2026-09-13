@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 > **ORCHESTRATOR ERRATA (2026-09-13, after D5 adversarial review).** C5: the licensed conclusion is "utilities are benchmark-local; transfer ~ chance"; var-row FAV is TAUTOLOGICAL (src==own by construction). See ERRATA_ROUND3_D5.md §C5.
 
 # D3: cross-benchmark utility transfer matrix (LME ⇄ LoCoMo)

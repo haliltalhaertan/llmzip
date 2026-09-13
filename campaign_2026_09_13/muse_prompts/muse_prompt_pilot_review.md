@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Muse session — ADVERSARIAL DESIGN REVIEW of the axis-attack pilot
 
 You are a fresh adversarial reviewer. Critique the DESIGN and CLAIMS of a local exploratory pilot

@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 > **ORCHESTRATOR ERRATA (2026-09-13, after D5 adversarial review).** F2: the LoCoMo leg is VACUOUS vs random-abstention (random routing alone passes the +0.5pp leg; COMBO AUC 0.558). "PROMOTE" is CONDITIONAL on a future preregistration carrying a BINDING vs-random superiority gate (model gain > random-range max at alpha=0.20); LoCoMo must NOT be called a replication. See ERRATA_ROUND3_D5.md §F2.
 
 # DENEY 5 (c2) — gold-free failure predictor -> adaptive budget routing

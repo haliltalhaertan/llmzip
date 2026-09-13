@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 > **ORCHESTRATOR ERRATA (2026-09-13, after D5 adversarial review).** F1/C8: the T/M model features (all except `margin`, `top20_entropy`) REQUIRE GOLD QRELS at inference — this is a MECHANISM result, not a deployable-predictor claim; the §4 verdict is downgraded to "cleared the roadmap kill-bar; the tie story graduates to c2 exploration". See ERRATA_ROUND3_D5.md §F1.
 
 # DENEY 2 (c1) — tie-mass decomposition + flip predictor (LME)

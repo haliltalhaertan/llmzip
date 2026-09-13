@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # MATH-2: theory framing for the bit-budget floor
 
 [LOCAL EXPLORATORY] [NOT PREREGISTERED] [NOT FOR CITATION] [LIT-CHECK: no network — all "established results" below are from knowledge, flag before citing]

@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # R2D adversarial design review — round-2 outputs
 
 Read-only review. All numeric claims below were recomputed from the evidence files (`round2/*.md`, `round2/wsl_details/*.json`, `REPORT.md`, `01_CANONICAL_STATUS.md`, both frozen protocol scripts, `per_axis_matrices.npz`).

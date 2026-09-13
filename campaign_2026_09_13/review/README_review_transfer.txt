@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 EXTERNAL LLM TRANSFERS — llmzip local session work (2026-09-12/13)
 =================================================================
 

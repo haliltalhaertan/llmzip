@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 Independent executor receipt body — synthetic ITQ/Haar objective replay; no ledger number reserved.
 
 Authorship: I am the independent review agent who actually ran the replay and a separate output validator. I verified execution and transcription within the scope below; I do not accept parent preparation as scientific approval.

@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # ITQ–Haar amaç karşılaştırması: mevcut kanıtın açılması ve dar tekrar doğrulama
 
 İstenen Haar amaç karşılaştırması önceki `4001fc9d8ea2c932042de7823713c6efce8e56d0` teslimatında zaten vardı. `task3/RESULTS.json` içindeki `haar_null_objective` ve `haar_null_objectives_per_rotation` alanları, ayrı 20 Haar tohumu için değerleri taşıyor. Önceki kısa Markdown tablosu bu sütunu göstermediği için bulgu görünmez kalmıştı. Ayrıca `initial_objective` de ITQ'nun rastgele Haar başlangıcındaki amaç değeridir.

@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Muse session — R2D: ADVERSARIAL DESIGN REVIEW of round-2 outputs
 
 Fresh adversarial reviewer. Read-only; scratch /tmp/r2d/. No network. Do not read /tmp/r2a|r2b|r2c.

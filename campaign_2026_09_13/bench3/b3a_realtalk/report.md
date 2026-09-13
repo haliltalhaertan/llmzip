@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # BENCH-3A REALTALK port — report [LOCAL EXPLORATORY PILOT]
 
 Local, read-only-source pilot. No network. faiss never run (constraint obeyed;

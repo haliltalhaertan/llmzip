@@ -1,3 +1,5 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
 # Muse session — verification receipts for three accepted packages (read-only)
 
 You are one of several parallel Muse sessions on this machine. A different session is auditing the
