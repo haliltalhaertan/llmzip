@@ -61,6 +61,7 @@ Not in this branch (remain local / Drive): raw datasets (`bench3/REALTALK`, `ben
 canonical LongMemEval already documented in the repo), binary caches (`*.pkl` incl. `rt_repr/`
 and `regen/` caches), `review_transfer` zip bundles, Muse run logs / `session.jsonl` transcripts,
 `drive/` frozen originals (several already committed under `docs/v52/`), virtualenvs.
+Also outside: Muse session transcript exports under `reports/` (uuid JSONs ≈16.8 MB; `reports/muse_sessions/` ≈32 MB), `verify/` git worktrees (left as-is; their branches are already on origin: codex/g3-remediation-delivery, codex/v52-itq-haar-objective, research/v52-preseal-diagnostics, codex/twelve-byte-prereg-revision, draft/v52-twelve-byte-baseline-prereg, hr/twelve-byte-budget-decision), `scratch/lv` serialized index examples (`*.bin`), `wheels_*/` and `venv/`.
 Rebuild paths live in `harness/` and `bench3/*/*.py`.
 
 ## Provenance
