@@ -1,0 +1,16 @@
+name: E1 REALTALK joint polarity
+on:
+  push:
+    branches:
+      - research/e1-lme-secondary-run-2026-09-13
+    paths:
+      - 'campaign_2026_09_13/e1_mechanism/e1_realtalk_joint_polarity.py'
+      - '.github/workflows/e1_realtalk_joint_polarity.yml'
+  workflow_dispatch:
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run committed REALTALK joint-polarity test
+        run: python campaign_2026_09_13/e1_mechanism/e1_realtalk_joint_polarity.py
