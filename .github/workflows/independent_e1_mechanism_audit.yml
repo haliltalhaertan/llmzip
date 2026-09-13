@@ -1,0 +1,139 @@
+name: Independent E1 mechanism checkpoint audit
+on:
+  push:
+    branches:
+      - audit/e1-mechanism-checkpoint-independent-2026-09-13
+    paths:
+      - 'audit_e1_mechanism_checkpoint_2026_09_13/**'
+      - '.github/workflows/independent_e1_mechanism_audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify audit branch ancestry and additive scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=4bfdb820904ead1b6378b00bd5bf71c1ab2fe138
+          mkdir -p audit_e1_mechanism_checkpoint_2026_09_13/reruns
+          test "$(git merge-base "$BASE" HEAD)" = "$BASE"
+          git diff --name-only "$BASE" HEAD | tee audit_e1_mechanism_checkpoint_2026_09_13/BRANCH_DIFF.txt
+          bad=$(git diff --name-only "$BASE" HEAD | grep -Ev '^(audit_e1_mechanism_checkpoint_2026_09_13/|\.github/workflows/independent_e1_mechanism_audit\.yml$)' || true)
+          test -z "$bad"
+          printf 'HEAD=%s\nBASE=%s\n' "$(git rev-parse HEAD)" "$BASE" | tee audit_e1_mechanism_checkpoint_2026_09_13/PROVENANCE.txt
+      - name: Runtime inventory
+        shell: bash
+        run: |
+          set -euo pipefail
+          python --version | tee audit_e1_mechanism_checkpoint_2026_09_13/PYTHON_VERSION.txt
+          python - <<'PY' | tee audit_e1_mechanism_checkpoint_2026_09_13/RUNTIME.txt
+          import numpy, platform
+          print('platform', platform.platform())
+          print('numpy', numpy.__version__)
+          PY
+      - name: Independent diagnostics from source surfaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          python audit_e1_mechanism_checkpoint_2026_09_13/independent_diagnostics.py > audit_e1_mechanism_checkpoint_2026_09_13/INDEPENDENT_DIAGNOSTICS_STDOUT.txt
+          cat audit_e1_mechanism_checkpoint_2026_09_13/INDEPENDENT_DIAGNOSTICS_STDOUT.txt
+      - name: Fresh rerun of all required E1 scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          D=audit_e1_mechanism_checkpoint_2026_09_13/reruns
+          run_one() {
+            s="$1"; o="$2"
+            echo "RUN $s" | tee -a audit_e1_mechanism_checkpoint_2026_09_13/EXECUTION_LOG.txt
+            python "campaign_2026_09_13/e1_mechanism/$s" > "$D/$o"
+            python -m json.tool "$D/$o" >/dev/null
+            echo "PASS $s -> $D/$o" | tee -a audit_e1_mechanism_checkpoint_2026_09_13/EXECUTION_LOG.txt
+          }
+          run_one e1_lme_secondary.py E1_LME_SECONDARY_FRESH.json
+          run_one e1_lme_axis_secondary.py E1_LME_AXIS_SECONDARY_FRESH.json
+          run_one e1_lme_contextual_axis.py E1_LME_CONTEXTUAL_AXIS_FRESH.json
+          run_one e1_lme_joint_polarity.py E1_LME_JOINT_POLARITY_FRESH.json
+          run_one e1_perltqa_joint_polarity.py E1_PERLTQA_JOINT_POLARITY_FRESH.json
+          run_one e1_realtalk_joint_polarity.py E1_REALTALK_JOINT_POLARITY_FRESH.json
+          run_one e1_regime_decompose.py E1_REGIME_DECOMPOSE_FRESH.json
+          run_one e1_perltqa_within_archive_flip.py E1_PERLTQA_WITHIN_ARCHIVE_FLIP_FRESH.json
+          run_one e1_perltqa_tie_section.py E1_PERLTQA_TIE_SECTION_FRESH.json
+          run_one e1_perltqa_p64_conditioned.py E1_PERLTQA_P64_CONDITIONED_FRESH.json
+      - name: Cross-check committed result payloads against fresh recomputation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' | tee audit_e1_mechanism_checkpoint_2026_09_13/RERUN_COMPARISON.json
+          import json
+          from pathlib import Path
+          R=Path('audit_e1_mechanism_checkpoint_2026_09_13/reruns')
+          C=Path('campaign_2026_09_13/e1_mechanism')
+          pairs={
+            'lme_secondary':('E1_LME_SECONDARY_FRESH.json','E1_LME_SECONDARY_RESULT.json'),
+            'lme_axis':('E1_LME_AXIS_SECONDARY_FRESH.json','E1_LME_AXIS_SECONDARY_RESULT.json'),
+            'lme_context':('E1_LME_CONTEXTUAL_AXIS_FRESH.json','E1_LME_CONTEXTUAL_AXIS_RESULT.json'),
+            'lme_polarity':('E1_LME_JOINT_POLARITY_FRESH.json','E1_LME_JOINT_POLARITY_RESULT.json'),
+            'perltqa_polarity':('E1_PERLTQA_JOINT_POLARITY_FRESH.json','E1_PERLTQA_JOINT_POLARITY_RESULT.json'),
+            'realtalk_polarity':('E1_REALTALK_JOINT_POLARITY_FRESH.json','E1_REALTALK_JOINT_POLARITY_RESULT.json'),
+            'regime':('E1_REGIME_DECOMPOSE_FRESH.json','E1_REGIME_DECOMPOSE_RESULT.json'),
+            'within_archive':('E1_PERLTQA_WITHIN_ARCHIVE_FLIP_FRESH.json','E1_PERLTQA_WITHIN_ARCHIVE_FLIP_RESULT.json'),
+            'tie_section':('E1_PERLTQA_TIE_SECTION_FRESH.json','E1_PERLTQA_TIE_SECTION_RESULT.json'),
+            'p64_conditioned':('E1_PERLTQA_P64_CONDITIONED_FRESH.json','E1_PERLTQA_P64_TIE_CONDITIONED_RESULT.json'),
+          }
+          def flatten(x,p=''):
+            out={}
+            if isinstance(x,dict):
+              for k,v in x.items(): out.update(flatten(v,p+'/'+str(k)))
+            elif isinstance(x,list): out[p]=x
+            elif isinstance(x,(int,float,bool)) or x is None: out[p]=x
+            return out
+          report={}
+          for name,(ff,cf) in pairs.items():
+            fresh=json.loads((R/ff).read_text()); committed=json.loads((C/cf).read_text())
+            a=flatten(fresh); b=flatten(committed); common=sorted(set(a)&set(b)); mism=[]
+            for k in common:
+              av,bv=a[k],b[k]
+              if isinstance(av,(int,float)) and not isinstance(av,bool) and isinstance(bv,(int,float)) and not isinstance(bv,bool):
+                if abs(float(av)-float(bv))>1e-12: mism.append([k,av,bv])
+              elif av!=bv: mism.append([k,av,bv])
+            report[name]={'fresh_numeric_or_scalar_fields':len(a),'committed_numeric_or_scalar_fields':len(b),'common_scalar_fields':len(common),'mismatches_gt_1e-12':mism}
+          # QTYPE is a manually persisted slice of fresh secondary V2; recompute that slice here.
+          fresh=json.loads((R/'E1_LME_SECONDARY_FRESH.json').read_text()); qtype=json.loads((C/'E1_LME_QTYPE_RESULT.json').read_text())
+          qm=[]
+          for qt,vals in qtype['strata'].items():
+            fr=fresh['question_type_correlations'][qt]
+            for metric,val in vals['spearman'].items():
+              got=fr[metric]['spearman_rho']
+              if abs(got-float(val))>1e-12: qm.append([qt,metric,got,val])
+          report['lme_qtype_slice']={'mismatches_gt_1e-12':qm,'n_strata':len(qtype['strata'])}
+          print(json.dumps(report,indent=2,sort_keys=True))
+          if any(v.get('mismatches_gt_1e-12') for v in report.values()): raise SystemExit('RERUN_PAYLOAD_MISMATCH')
+          PY
+      - name: Hash audit outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          d=Path('audit_e1_mechanism_checkpoint_2026_09_13')
+          rows={}
+          for p in sorted(d.rglob('*')):
+            if p.is_file() and p.name not in {'HASHES.json','HASHES.json.sha256'}:
+              rows[str(p.relative_to(d))]={'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size}
+          (d/'HASHES.json').write_text(json.dumps(rows,indent=2,sort_keys=True)+'\n')
+          h=hashlib.sha256((d/'HASHES.json').read_bytes()).hexdigest()
+          (d/'HASHES.json.sha256').write_text(h+'  HASHES.json\n')
+          PY
+          sha256sum -c audit_e1_mechanism_checkpoint_2026_09_13/HASHES.json.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: independent-e1-mechanism-audit-rerun
+          path: audit_e1_mechanism_checkpoint_2026_09_13/
+          if-no-files-found: error
