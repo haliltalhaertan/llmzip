@@ -1,0 +1,22 @@
+muse: workspace root: /home/mdp/muse-work/math3-all-n-ranking (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+Done — one clean parametric theorem, fully verified.
+
+**Result:** for model H with shared gold, writing `A`/`B_j` for gold/nongold nuisance agreement and `D_j = B_j − A`: sign gives `W ⇔ D≤0, T ⇔ D=1, L ⇔ D=2`, while cosine gives `W/T/L ⇔ 2−2tD ≷ 0`. With the same tie priorities, each nongold can only move gold-ward as `t` crosses `1/2` and `1`, so per-realization coupling yields: cosine ≥ sign for all `N,K` when `t<1`, equality when `t=1`, reversed when `t>1` — strict iff `N≥2` and `1≤K<N`, degenerate (`=1` both) when `K≥N` or `N=1`. Cosine expectations are piecewise-constant with jumps only at `t ∈ {1/2, 1}`.
+
+**Evidence:** `verify.py` (exit 0, ~50 PASS) has two independent exact-Fraction checkers (joint-composition enumeration + coordinator conditional-multinomial) agreeing everywhere, an exhaustive same-priority permutation check (N=3, all states × orders), a hand derivation (N=2/K=1: sign `13/16`, cosine `1 / 31/32 / 15/16 / 13/16 / 11/16`), corrected N6/N10 values confirmed, and a negative control — the old unconditional multinomial gives `33129/524288 ≠ 1763/2048`, detected as false.
+
+Outputs in workspace only: [STATUS.md](/home/mdp/muse-work/math3-all-n-ranking/STATUS.md), [REPORT.md](/home/mdp/muse-work/math3-all-n-ranking/REPORT.md), [verify.py](/home/mdp/muse-work/math3-all-n-ranking/verify.py), `results.json` (`ALL-PASS`). No priority, benchmark, or generality claims; scope limits and two recovered script/shell slips are recorded in REPORT.md §4.[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+Done. One parametric theorem for model H, verified by execution.
+
+**Theorem (shared gold, all N/K):** With `A` = gold nuisance agreement, `B_j` = nongold agreement, `D_j = B_j − A`: sign gives `W ⇔ D≤0, T ⇔ D=1, L ⇔ D=2`; cosine gives `W/T/L ⇔ 2−2tD ≷ 0`. Coupling with the SAME tie priorities, each nongold moves only ahead→tied→behind as `t` grows, so pointwise for every realization and priority draw: cosine ≥ sign for `t<1`, equality at `t=1`, reversed for `t>1`. Hence the same ordering holds for expected top-K recall for every `N,K`. Strict iff `N≥2` and `1≤K<N`; degenerate equality (`=1` both) for `K≥N` or `N=1`. Cosine is piecewise-constant with jumps only at `t ∈ {1/2, 1}`.
+
+**Verification actually run:** `python3 verify.py` → exit 0, ~50 PASS, `FAILURES: none`. Two independent exact-Fraction checkers (joint-composition enumeration + coordinator conditional-multinomial) agree everywhere; exhaustive coupling-cell and N=3 same-priority permutation witnesses pass; hand derivation N=2/K=1 matches (sign `13/16`; cosine `1`, `31/32`, `15/16`, `13/16`, `11/16`); corrected N6/N10 values confirmed (e.g. N6K3 sign `1763/2048`, cosine `4067/4096` / `1483/2048`); negative control (unconditional multinomial `33129/524288 ≠ 1763/2048`) detected as false. `results.json` status `ALL-PASS`, confirmed present with the other three files just now.
+
+**Files (workspace only):** `STATUS.md`, `REPORT.md` (proof + scope + commands/exit codes + failed attempts), `verify.py`, `results.json`.
+
+**Scope:** model H only; no benchmark, centering, priority, or generality claims. No network/install/APIs/git writes; narrow input reads only.

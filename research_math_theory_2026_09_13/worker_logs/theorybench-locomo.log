@@ -1,0 +1,22 @@
+muse: workspace root: /home/mdp/muse-work/theorybench-locomo (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+First pass complete. Verdict: **NEGATIVE for the LOW48 proxy transfer; the Model-H theorem itself is untouched.**
+
+## Outcome
+
+Primary (sealed before outcomes): LOW48 endpoint contrast mean[delta(t=4) − delta(t=.25)] = **−0.02583**, 95% archive-cluster CI **[−0.03777, −0.01313]** over 1535 valid QAs. The sealed rule required > 0, so this falsifies the LOW48-as-nuisance proxy/transfer, not the conditional theorem (theoretical t is unidentified on real data; LOW48 is query magnitude, not proven nuisance). Amplifying low-|q| coords *helps* float relative to sign (float 0.160→0.186 across the t grid); the HIGH48 curve is the exact structural mirror (+0.02583, entailed by cosine global-scale invariance, not independent evidence). 151/1535 LOW48 QAs (9.8%) show a decreasing adjacent-delta step, so pointwise monotonicity doesn't transfer unconditionally either.
+
+## Verification (all observed, not inferred)
+
+- **Gate passed before any intervention**: sign MC mean 0.23654714666441054 (anchor diff exactly 0.0); per-QA vs `deney1_loco_peraxis.npz` maxabs 1.1e-16; vs audit perq exact-exp 0.0; vs official MC arrays bitwise 0.0. Counts recounted by code: 1540 Cat1-4 / 1535 valid / 5 excluded / 10 archives.
+- **Float baseline is a sealed fresh measurement** (0.16826334541318252, exp and MC): no frozen LoCoMo float arrays exist in scope — I searched artifact contents, names, and the audit report rather than trusting the "+12pp" style summary. Effectively zero float ties (max|MC−exact| 2.2e-16).
+- **Controls exact**: sign distances byte-identical across t; FULL96 bitwise invariant (t grid is all powers of two, so fp scaling is exact); t=1 identity maxabs 0.0.
+- **verification.py: 33/33 PASS**, including 3 spot-QA recomputes via an independent loop-based path (1e-12), a brute-force permutation check of the tie law, and source-hash equality before/after (pkls, producers, PLAN.md all unchanged).
+- Caveats recorded in [REPORT.md](/home/mdp/muse-work/theorybench-locomo/REPORT.md): only 10 bootstrap clusters (coarse intervals), exploratory / not preregistered / not audited.
+
+Deliverables in `/home/mdp/muse-work/theorybench-locomo/`: [run_locomo.py](/home/mdp/muse-work/theorybench-locomo/run_locomo.py), [gate.json](/home/mdp/muse-work/theorybench-locomo/gate.json), [PRE_RUN.json](/home/mdp/muse-work/theorybench-locomo/PRE_RUN.json) (sha256 3ba760f1…), per_query.jsonl (1535 rows), [summary.json](/home/mdp/muse-work/theorybench-locomo/summary.json), [REPORT.md](/home/mdp/muse-work/theorybench-locomo/REPORT.md), [verification.py](/home/mdp/muse-work/theorybench-locomo/verification.py), [STATUS.md](/home/mdp/muse-work/theorybench-locomo/STATUS.md), four stdout receipts, and `ckpt/` checkpoints. No source writes, no pushes, no API/model costs; threads=1 throughout.

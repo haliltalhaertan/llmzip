@@ -1,0 +1,13 @@
+muse: workspace root: /home/mdp/muse-work/math2-allocation-optimality (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done. All work inside [workspace](/home/mdp/muse-work/math2-allocation-optimality); sources elsewhere read-only; no push, benchmarks, or external calls.
+
+Result: unsupported "greedy optimal" claims are replaced by two exact theorems — (1) a strict fixed-budget greedy failure on pairwise ranking error: instance G* (sparse C1, ±3/2, ±1/10; q=(1,1,1); B=3) where three contested, strictly-unique greedy steps (MVs 163/718, 41/718, 19/359) land at (1,1,1) P=117/718 vs unique optimum (2,1,0) P=41/718; (2) an exchange proof that greedy is optimal for separable query-weighted MSE iff diminishing gains + prefix hold, with diminishing shown to fail on a real conditional-mean quantizer (sparse gains 361/100 < 729/100) plus abstract and realizable separable counterexamples.
+
+Artifacts: [REPORT.md](/home/mdp/muse-work/math2-allocation-optimality/REPORT.md), [verify.py](/home/mdp/muse-work/math2-allocation-optimality/verify.py), [results.json](/home/mdp/muse-work/math2-allocation-optimality/results.json), [STATUS.md](/home/mdp/muse-work/math2-allocation-optimality/STATUS.md), [checker.py](/home/mdp/muse-work/math2-allocation-optimality/checker.py).
+
+Executed checks: `verify.py` 17/17 PASS exit 0 (two exact paths — pair loop vs gap convolution — agree on all 14 nodes; hand lemmas D/O/G; corrupted table rejected fail-closed); `checker.py` ALL PASS exit 0 (14 recomputations + greedy steps + MSE spots + broken-variant rejection). Search counted: d=2 shared-t grid 0 failures; d=2 extended 14 (smallest witness disclosed as weaker — forced final step); d=3 sample 5; S-probe 8/66.
+
+Limits: intermediate table entries are double-path machine-verified, not hand-proved (split stated in §4); no benchmark/symmetric-query/top-K/novelty claims; d≥4 and continuous laws unsearched.

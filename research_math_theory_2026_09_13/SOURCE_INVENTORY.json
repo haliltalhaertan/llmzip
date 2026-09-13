@@ -1,0 +1,1706 @@
+{
+  "captured_utc": "2026-09-13T19:05:28.241299+00:00",
+  "completed_workers": {
+    "math-ranking-bounds": "math_discovery_2026_09_13/ranking_bounds",
+    "math-sign-mechanism": "math_discovery_2026_09_13/sign_mechanism",
+    "math-bit-allocation": "math_discovery_2026_09_13/bit_allocation",
+    "math2-sharp-bounds": "math_discovery_2026_09_13/round2/sharp_bounds",
+    "math2-allocation-optimality": "math_discovery_2026_09_13/round2/allocation_optimality",
+    "math3-joint-gold-bounds": "math_discovery_2026_09_13/round3/joint_gold_bounds",
+    "math3-all-n-ranking": "math_discovery_2026_09_13/round3/all_n_ranking",
+    "math4-norm-aware-sign-bounds": "math_discovery_2026_09_13/round4/norm_aware_sign_bounds",
+    "math4-rank-crossing-certificates": "math_discovery_2026_09_13/round4/rank_crossing_certificates",
+    "theorybench-lme": "theory_benchmark_test_v1/lme",
+    "theorybench-locomo": "theory_benchmark_test_v1/locomo",
+    "theorybench-realtalk": "theory_benchmark_test_v1/realtalk",
+    "theorybench-perltqa": "theory_benchmark_test_v1/perltqa",
+    "theory-audit-locomo-provenance": "theory_benchmark_test_v1/audit_locomo_provenance",
+    "theory-audit-mapping": "theory_benchmark_test_v1/audit_mapping",
+    "theory-audit-real-geometry": "theory_benchmark_test_v1/audit_real_geometry"
+  },
+  "failed_attempt_with_no_output": "math2-conditional-ranking; initial/retry logs retained",
+  "math_workers": 9,
+  "benchmark_workers": 4,
+  "audit_workers": 3,
+  "records": [
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/bit_allocation/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/bit_allocation/COORDINATOR_REVIEW.md",
+      "sha256": "ff1204ff99e6359b38cc849ed2fed3df40481f636223247bb21fdafdfa997e8f",
+      "bytes": 3283,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/bit_allocation/REPORT.md",
+      "path": "math_discovery_2026_09_13/bit_allocation/REPORT.md",
+      "sha256": "68de381cad7526aa6e941e6986fa08bc92e38e30ae26b8f934562ce62535adb9",
+      "bytes": 20073,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/bit_allocation/STATUS.md",
+      "path": "math_discovery_2026_09_13/bit_allocation/STATUS.md",
+      "sha256": "050511b8353e09aac1359323f9367cd196078c153df204cb31fd147e85572d5e",
+      "bytes": 4296,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/bit_allocation/check_independent.py",
+      "path": "math_discovery_2026_09_13/bit_allocation/check_independent.py",
+      "sha256": "8fbaf0273109f431336956a6e4128b8198afee1861081195f8a1169aabd0c246",
+      "bytes": 1748,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/bit_allocation/coordinator_exact_results.json",
+      "path": "math_discovery_2026_09_13/bit_allocation/coordinator_exact_results.json",
+      "sha256": "5ecff2794dd57a6cdb52cf9637931b0b4b0051d756441bbd6f48a8b757965ffb",
+      "bytes": 1398,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/bit_allocation/results.json",
+      "path": "math_discovery_2026_09_13/bit_allocation/results.json",
+      "sha256": "b2158b1355f2b72755f938268918ad1fd7edecb783a5ba870c91521ff9c32f99",
+      "bytes": 5141,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/bit_allocation/verify.py",
+      "path": "math_discovery_2026_09_13/bit_allocation/verify.py",
+      "sha256": "c0d0ea1df86b5ac1d0a0ccdd92dab2cf01a7287ab172c019d76d8585ec83f18d",
+      "bytes": 11920,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/ranking_bounds/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/ranking_bounds/COORDINATOR_REVIEW.md",
+      "sha256": "b0abb28daf160db47391291fca26a0905a499a93a5237c490a7ef482c7534316",
+      "bytes": 2213,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/ranking_bounds/REPORT.md",
+      "path": "math_discovery_2026_09_13/ranking_bounds/REPORT.md",
+      "sha256": "fb1b42288e0e2dde8f9a9c7a3342ac3ccf2325d3f430724da7f0a6ef3073371a",
+      "bytes": 18684,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/ranking_bounds/STATUS.md",
+      "path": "math_discovery_2026_09_13/ranking_bounds/STATUS.md",
+      "sha256": "a81d829d844479e116daabcf13a8481b3ee531b70915dc8413ed83f4ba7a6e8a",
+      "bytes": 1824,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/ranking_bounds/coordinator_results.json",
+      "path": "math_discovery_2026_09_13/ranking_bounds/coordinator_results.json",
+      "sha256": "0c130afd1e90e601811a97dca2ba0f950211e1d01b335a0b3de156b11e98405e",
+      "bytes": 2358,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/ranking_bounds/results.json",
+      "path": "math_discovery_2026_09_13/ranking_bounds/results.json",
+      "sha256": "0c130afd1e90e601811a97dca2ba0f950211e1d01b335a0b3de156b11e98405e",
+      "bytes": 2358,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/ranking_bounds/verify.py",
+      "path": "math_discovery_2026_09_13/ranking_bounds/verify.py",
+      "sha256": "0c899709884a333250f9d58b4633acff73b8fdce3745feba19e4154c6160eb5a",
+      "bytes": 13687,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/allocation_optimality/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/round2/allocation_optimality/COORDINATOR_REVIEW.md",
+      "sha256": "9410a21775fc35cecae86757904eba75c86c522de1648c27d437fb6fe775cceb",
+      "bytes": 2153,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/allocation_optimality/REPORT.md",
+      "path": "math_discovery_2026_09_13/round2/allocation_optimality/REPORT.md",
+      "sha256": "295d1e7f6733cfa99bbf9358aa8dcfdad261f71a72d54162590c602135d49fb7",
+      "bytes": 15702,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/allocation_optimality/STATUS.md",
+      "path": "math_discovery_2026_09_13/round2/allocation_optimality/STATUS.md",
+      "sha256": "6477bd048cfb94f5ada161df2f6ef938fa6bc535dddfd1caf7a10a5bcd1f5a8e",
+      "bytes": 2705,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/allocation_optimality/checker.py",
+      "path": "math_discovery_2026_09_13/round2/allocation_optimality/checker.py",
+      "sha256": "5bdc3c88908b7677c9cd1b01ca1968c98100d0fe75ccc7025c9c725c493de261",
+      "bytes": 5394,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/allocation_optimality/results.json",
+      "path": "math_discovery_2026_09_13/round2/allocation_optimality/results.json",
+      "sha256": "e17f1beb5e94ffe0aa2ba621be1675d73bba16e7d60d06df6b9572856f933cc7",
+      "bytes": 7012,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/allocation_optimality/verify.py",
+      "path": "math_discovery_2026_09_13/round2/allocation_optimality/verify.py",
+      "sha256": "30826700cb8a05cbee98ac920c99534eb1860b33523dd21236522a3b851c5247",
+      "bytes": 15082,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/sharp_bounds/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/round2/sharp_bounds/COORDINATOR_REVIEW.md",
+      "sha256": "d2fd599baa3f74108a37f4475972c96a9ce8e5226a100463bc72dd8e70c1b5be",
+      "bytes": 2379,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/sharp_bounds/REPORT.md",
+      "path": "math_discovery_2026_09_13/round2/sharp_bounds/REPORT.md",
+      "sha256": "b8ef6923b5f6d541b476adb423ba7b609a3178cd95513250d556309f36c4c742",
+      "bytes": 9115,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/sharp_bounds/STATUS.md",
+      "path": "math_discovery_2026_09_13/round2/sharp_bounds/STATUS.md",
+      "sha256": "e1d42e827acaba6f2eb62e0271502979fdb85c8217e800b5dd9fd6c3faa980d3",
+      "bytes": 2339,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/sharp_bounds/check_independent.py",
+      "path": "math_discovery_2026_09_13/round2/sharp_bounds/check_independent.py",
+      "sha256": "71edfd319d9b18b023f540f14e85874533d5a75aeec5cfeb8c6dbc1a9b6e8818",
+      "bytes": 4776,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/sharp_bounds/coordinator_results.json",
+      "path": "math_discovery_2026_09_13/round2/sharp_bounds/coordinator_results.json",
+      "sha256": "7eb5ddf8d78071d44e8143c8d4b338694048ad360c4e7d2a4cc03559a51c3f1a",
+      "bytes": 2099,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/sharp_bounds/results.json",
+      "path": "math_discovery_2026_09_13/round2/sharp_bounds/results.json",
+      "sha256": "7eb5ddf8d78071d44e8143c8d4b338694048ad360c4e7d2a4cc03559a51c3f1a",
+      "bytes": 2099,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round2/sharp_bounds/verify.py",
+      "path": "math_discovery_2026_09_13/round2/sharp_bounds/verify.py",
+      "sha256": "339240e66a581acaa1efbdd88479216a79e66e174cafde2ea4dedcb1e3f0a3bf",
+      "bytes": 13229,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/all_n_ranking/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/round3/all_n_ranking/COORDINATOR_REVIEW.md",
+      "sha256": "2e3d7242849e4017b75da95a023ca95711fb8ab15c8cb30a6550b55033c1d838",
+      "bytes": 2365,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/all_n_ranking/REPORT.md",
+      "path": "math_discovery_2026_09_13/round3/all_n_ranking/REPORT.md",
+      "sha256": "137c7aaea3043c14bd726308c33bd80e227431aecc0c3b1fba4ad30bdb1f34aa",
+      "bytes": 6993,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/all_n_ranking/STATUS.md",
+      "path": "math_discovery_2026_09_13/round3/all_n_ranking/STATUS.md",
+      "sha256": "bbb86572e27f0a817b4c7a694b72b02c9d0357c20cf0b108b93a7e4d5ebae8f3",
+      "bytes": 1656,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/all_n_ranking/results.json",
+      "path": "math_discovery_2026_09_13/round3/all_n_ranking/results.json",
+      "sha256": "795a3ff30ae8717a689755b744b39dd16b0d4469d2d03ada09ea99ccf9c38189",
+      "bytes": 4123,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/all_n_ranking/verify.py",
+      "path": "math_discovery_2026_09_13/round3/all_n_ranking/verify.py",
+      "sha256": "1e7c6c013457dc820948ebe151fc1d87aa6a701f93ca62756c8a88eb71fd3b44",
+      "bytes": 7803,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/joint_gold_bounds/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/round3/joint_gold_bounds/COORDINATOR_REVIEW.md",
+      "sha256": "119085342b51b3076b27d880ca72d88d36eb9a01326d39f42e38db96bb4fcc9e",
+      "bytes": 2183,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/joint_gold_bounds/REPORT.md",
+      "path": "math_discovery_2026_09_13/round3/joint_gold_bounds/REPORT.md",
+      "sha256": "394edb426bae03a0a0d2a7e2ac92f7ab5d9e8b5966260fa3120d228a6bfa1f64",
+      "bytes": 7479,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/joint_gold_bounds/STATUS.md",
+      "path": "math_discovery_2026_09_13/round3/joint_gold_bounds/STATUS.md",
+      "sha256": "35c5143d1e05712972a0d7d3f83beb6076d3ac215f8f5b9723406fce55b4bcdb",
+      "bytes": 1602,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/joint_gold_bounds/check_independent.py",
+      "path": "math_discovery_2026_09_13/round3/joint_gold_bounds/check_independent.py",
+      "sha256": "910e0a7b22dfca0c44f51b3954a22f5076a282b63ffc10ebdea61a5fbdd5cfa2",
+      "bytes": 4630,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/joint_gold_bounds/coordinator_results.json",
+      "path": "math_discovery_2026_09_13/round3/joint_gold_bounds/coordinator_results.json",
+      "sha256": "ea387622fb802b7323b1e8969ada07b03793342242b8c1276ac282173de6395c",
+      "bytes": 1238,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/joint_gold_bounds/results.json",
+      "path": "math_discovery_2026_09_13/round3/joint_gold_bounds/results.json",
+      "sha256": "ea387622fb802b7323b1e8969ada07b03793342242b8c1276ac282173de6395c",
+      "bytes": 1238,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round3/joint_gold_bounds/verify.py",
+      "path": "math_discovery_2026_09_13/round3/joint_gold_bounds/verify.py",
+      "sha256": "0190ebc76c1aaef53448bae8935716e29b4eaa7e0487fbe8e690d45d686d381e",
+      "bytes": 9575,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/norm_aware_sign_bounds/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/round4/norm_aware_sign_bounds/COORDINATOR_REVIEW.md",
+      "sha256": "53c9c8d9b35772221cb710ed4a594667980eb452ebc966edb9a868940327c59c",
+      "bytes": 3485,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/norm_aware_sign_bounds/REPORT.md",
+      "path": "math_discovery_2026_09_13/round4/norm_aware_sign_bounds/REPORT.md",
+      "sha256": "df71157a0720ef8cf2c8029da1cd760be7e8f7d0ff7ed08278b8e069ac530183",
+      "bytes": 12820,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/norm_aware_sign_bounds/STATUS.md",
+      "path": "math_discovery_2026_09_13/round4/norm_aware_sign_bounds/STATUS.md",
+      "sha256": "13a7d477fa8c9724597928a24ba50e00e4459444cc1bc08b2f4b7b0ddef0e579",
+      "bytes": 2083,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/norm_aware_sign_bounds/results.json",
+      "path": "math_discovery_2026_09_13/round4/norm_aware_sign_bounds/results.json",
+      "sha256": "754f8fadcd2858f33b63338b05f2b55df77f8dcf12b0f8458c17d166b6f5153e",
+      "bytes": 32590,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/norm_aware_sign_bounds/verify.py",
+      "path": "math_discovery_2026_09_13/round4/norm_aware_sign_bounds/verify.py",
+      "sha256": "700f6ed6ff23e53effae27348518d89c5576383f6cd2db76a5ffcf950609299d",
+      "bytes": 20259,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/rank_crossing_certificates/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/round4/rank_crossing_certificates/COORDINATOR_REVIEW.md",
+      "sha256": "87de6ed667ae271b8a73b2903dc85501fcb2c1826f14edfa41ba6b2b9e6637f8",
+      "bytes": 3208,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/rank_crossing_certificates/REPORT.md",
+      "path": "math_discovery_2026_09_13/round4/rank_crossing_certificates/REPORT.md",
+      "sha256": "eab5e29fd744cb3e68dad255a9d20203db71184681195fae49401329a6edd39f",
+      "bytes": 17915,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/rank_crossing_certificates/STATUS.md",
+      "path": "math_discovery_2026_09_13/round4/rank_crossing_certificates/STATUS.md",
+      "sha256": "cf3ccf882693a67ccd702c81bf152689bfd04b97ea872f16cce923e805dcd967",
+      "bytes": 2119,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/rank_crossing_certificates/results.json",
+      "path": "math_discovery_2026_09_13/round4/rank_crossing_certificates/results.json",
+      "sha256": "58910ea5c0500b95036131f87a38df0ec4d38a3f3502fcf6495c84b22cea8b58",
+      "bytes": 4291,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/round4/rank_crossing_certificates/verify.py",
+      "path": "math_discovery_2026_09_13/round4/rank_crossing_certificates/verify.py",
+      "sha256": "0f984cfb2d334f7b3111d82df1fc24005b4c9ee9468e7ed6db04f55b8d74474d",
+      "bytes": 35648,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/sign_mechanism/COORDINATOR_REVIEW.md",
+      "path": "math_discovery_2026_09_13/sign_mechanism/COORDINATOR_REVIEW.md",
+      "sha256": "351a679bfb30f62e886484a5c79eb406efae1a88731ce7865c4649a220c89b39",
+      "bytes": 2295,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/sign_mechanism/REPORT.md",
+      "path": "math_discovery_2026_09_13/sign_mechanism/REPORT.md",
+      "sha256": "b5c2752f51f05471475c722a3691850c47a8633ca842998888a68199579b5fa1",
+      "bytes": 16381,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/sign_mechanism/STATUS.md",
+      "path": "math_discovery_2026_09_13/sign_mechanism/STATUS.md",
+      "sha256": "32970e55761443ae51f26966630e3e1f1e891752cd4b2678bbf39d1ccae9b928",
+      "bytes": 1582,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/sign_mechanism/check_conditional_transport.py",
+      "path": "math_discovery_2026_09_13/sign_mechanism/check_conditional_transport.py",
+      "sha256": "dbc016ae50c96976009597b5a8f51200140b93e214730436962a7ebe1621f712",
+      "bytes": 1687,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/sign_mechanism/conditional_transport_results.json",
+      "path": "math_discovery_2026_09_13/sign_mechanism/conditional_transport_results.json",
+      "sha256": "9fcfdbb5c520c4c4e880be215dd0ddddaa93d59346120329647a666febabd9a4",
+      "bytes": 1229,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/sign_mechanism/results.json",
+      "path": "math_discovery_2026_09_13/sign_mechanism/results.json",
+      "sha256": "cfcdc1c4a3979a4af46489fe4960208ec1b59d093f14107389bc400d7aa1e351",
+      "bytes": 2047,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/math_discovery_2026_09_13/sign_mechanism/verify.py",
+      "path": "math_discovery_2026_09_13/sign_mechanism/verify.py",
+      "sha256": "4c3c6d859242b89e12b8de7d96ee7a809607d451a995c48dd204adb6a007559d",
+      "bytes": 10843,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/PLAN.md",
+      "path": "theory_benchmark_test_v1/PLAN.md",
+      "sha256": "a0f9e8e6eb214e0129cb5b8e31d35bdb75599eb130332a7eed7780bdc8981a21",
+      "bytes": 6402,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_locomo_provenance/COORDINATOR_REVIEW.md",
+      "path": "theory_benchmark_test_v1/audit_locomo_provenance/COORDINATOR_REVIEW.md",
+      "sha256": "3d44d31561d040f776cf3a97e35cd1e92bc8d411008321ea1963fe8bc677f0de",
+      "bytes": 2092,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_locomo_provenance/REPORT.md",
+      "path": "theory_benchmark_test_v1/audit_locomo_provenance/REPORT.md",
+      "sha256": "be64e345055e88cedc3d0b3d3ee455e909aa2485bb0bfbe3d1f94a2e41469b5e",
+      "bytes": 12688,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_locomo_provenance/STATUS.md",
+      "path": "theory_benchmark_test_v1/audit_locomo_provenance/STATUS.md",
+      "sha256": "5589271a464ac2f6eb01b68e836994ec51c00c2ee8d9fd846bd56e4b7d067629",
+      "bytes": 4651,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_locomo_provenance/results.json",
+      "path": "theory_benchmark_test_v1/audit_locomo_provenance/results.json",
+      "sha256": "8073dfacc054e4e5e2d185c485f46d1ee8a5bcb5e2e15b99304a222fea206c0d",
+      "bytes": 4630,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_locomo_provenance/verify.py",
+      "path": "theory_benchmark_test_v1/audit_locomo_provenance/verify.py",
+      "sha256": "3a79cd611db653b3d6cface7f544e5df721b21942f229cac3793e22c608ea83a",
+      "bytes": 10425,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_mapping/COORDINATOR_REVIEW.md",
+      "path": "theory_benchmark_test_v1/audit_mapping/COORDINATOR_REVIEW.md",
+      "sha256": "42fb5e6bd8107b50339215b0c91ec9767ea525c0c8fb456ef1fa91e36607cafb",
+      "bytes": 2772,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_mapping/REPORT.md",
+      "path": "theory_benchmark_test_v1/audit_mapping/REPORT.md",
+      "sha256": "ef7811836ece4e07a0fbd0977249a1cbe9bec22da156a0865906dda65680ba74",
+      "bytes": 16524,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_mapping/STATUS.md",
+      "path": "theory_benchmark_test_v1/audit_mapping/STATUS.md",
+      "sha256": "c18d58331d7841d177a6debde29cac9a9e3401b7b8236d9d9cd3311c78bce3f1",
+      "bytes": 3047,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_mapping/results.json",
+      "path": "theory_benchmark_test_v1/audit_mapping/results.json",
+      "sha256": "ddae3eecb3f4fa087302594e2873fdd5bbc621a63b255369ad96dcf258093546",
+      "bytes": 8265,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_mapping/verify.py",
+      "path": "theory_benchmark_test_v1/audit_mapping/verify.py",
+      "sha256": "6f822923cd3a1687ac678cbf1c69f7c3d9979c20e58acf65ed77f3aa51094b4e",
+      "bytes": 11026,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_real_geometry/COORDINATOR_LME_WITNESS.json",
+      "path": "theory_benchmark_test_v1/audit_real_geometry/COORDINATOR_LME_WITNESS.json",
+      "sha256": "0332b5c535c38f829f688eee70242a16c494ae7cc5cb10a37ff569729da86857",
+      "bytes": 730,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_real_geometry/COORDINATOR_REVIEW.md",
+      "path": "theory_benchmark_test_v1/audit_real_geometry/COORDINATOR_REVIEW.md",
+      "sha256": "cb3dc5a01e4c4470aac9d62583628157663e775237b834d9bf2219824f888f33",
+      "bytes": 3111,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_real_geometry/REPORT.md",
+      "path": "theory_benchmark_test_v1/audit_real_geometry/REPORT.md",
+      "sha256": "82e63254df7d731cbdb5398cb62b9672138197d8f649f098fdfb5f7a1a8b166f",
+      "bytes": 10194,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_real_geometry/STATUS.md",
+      "path": "theory_benchmark_test_v1/audit_real_geometry/STATUS.md",
+      "sha256": "b30f28c96331b02e8fea7c9072b8d18a4bec75f930546bda3a2b31c8762d4d8c",
+      "bytes": 3104,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_real_geometry/results.json",
+      "path": "theory_benchmark_test_v1/audit_real_geometry/results.json",
+      "sha256": "6eda80c69e08c2c2f47652a858605f1ca4d24de01854c0078a433e650c1d8ddb",
+      "bytes": 104875,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_real_geometry/selected_ids.json",
+      "path": "theory_benchmark_test_v1/audit_real_geometry/selected_ids.json",
+      "sha256": "01b021d0d7177e2634f12c450ad4e158af685e85422290bea3c0cdd90687ed24",
+      "bytes": 2120,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/audit_real_geometry/verify.py",
+      "path": "theory_benchmark_test_v1/audit_real_geometry/verify.py",
+      "sha256": "68e6df75c412bb5254ec1d4a00b39a35d0a137498a4044e706ddb4bc5bcd064e",
+      "bytes": 29728,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/COORDINATOR_AGGREGATE.json",
+      "path": "theory_benchmark_test_v1/lme/COORDINATOR_AGGREGATE.json",
+      "sha256": "2f16a8a87e6399b5d02ef34ddd6d9e4e94122157d5774290a1f91fff76d20b91",
+      "bytes": 296,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/COORDINATOR_REVIEW.md",
+      "path": "theory_benchmark_test_v1/lme/COORDINATOR_REVIEW.md",
+      "sha256": "537960d5210e9091828d352da9c476e1c9a544dca76a95c1994fd4ef0e302e44",
+      "bytes": 2559,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/PLAN.md",
+      "path": "theory_benchmark_test_v1/lme/PLAN.md",
+      "sha256": "a0f9e8e6eb214e0129cb5b8e31d35bdb75599eb130332a7eed7780bdc8981a21",
+      "bytes": 6402,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/PLAN.sha256",
+      "path": "theory_benchmark_test_v1/lme/PLAN.sha256",
+      "sha256": "2f8ffbad9afaade5578cafd85a9d09d0c963501a4667798da573b187dd15cffb",
+      "bytes": 74,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/PRE_RUN.json",
+      "path": "theory_benchmark_test_v1/lme/PRE_RUN.json",
+      "sha256": "287e34e34f5e714c77dcc293009010b655f93804cad17df0fcc54b5a586d03d6",
+      "bytes": 7471,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/REPORT.md",
+      "path": "theory_benchmark_test_v1/lme/REPORT.md",
+      "sha256": "20a279784715ca14d7ca61167db8da28f7ff96d7f158c101c79acb64145e84b3",
+      "bytes": 3965,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/STATUS.md",
+      "path": "theory_benchmark_test_v1/lme/STATUS.md",
+      "sha256": "165bc0bfe58d58f5f85b49e1c0caa1b9bdf17c7e9343601eba60dcf8be2d4066",
+      "bytes": 2717,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_050.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_050.json",
+      "sha256": "d8432e473f7979cad1c593d7891b8243f5d41554e592bfe3ce66ba3863294f73",
+      "bytes": 58,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_100.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_100.json",
+      "sha256": "65dd3f6e2b2d5a903768b9abb0462c47ef793d4b4315869e074242817d67f824",
+      "bytes": 59,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_150.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_150.json",
+      "sha256": "1dbc3224346f4e383fa575cbca4a148497edd3879f5346629fb91c1ec0dd3c47",
+      "bytes": 58,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_200.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_200.json",
+      "sha256": "256e2599e785ee5649333e9f13a6b2d3fbeecf388f7304bc718b767b6c3f7a68",
+      "bytes": 59,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_250.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_250.json",
+      "sha256": "e9c6c50dd019c6dc76e0d4598339331f7519eeda84b5f2c9784c713821750144",
+      "bytes": 59,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_300.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_300.json",
+      "sha256": "4f0f937763841ff3c1c96a5858cf8ad50377234768e0f9e41bbb5316d9446abf",
+      "bytes": 60,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_350.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_350.json",
+      "sha256": "5855d8e2a7ba2aeb88d7aadfeea496e22941679b2247e71cd8f918b5db465429",
+      "bytes": 60,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_400.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_400.json",
+      "sha256": "40d8962ba9f0af9fdc31c35f35cf449ec4da76ee08fb055f215d36be9482837b",
+      "bytes": 60,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_450.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_450.json",
+      "sha256": "ffcc47472aa0933de3454713e28a88dfa87892872c9e4c4725cbf6642b73eef2",
+      "bytes": 60,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/ckpt_470.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/ckpt_470.json",
+      "sha256": "2ce57ecf560edb4e948f96aa1724025b564189d7e68c41468056d139916f61af",
+      "bytes": 60,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/checkpoints/pkl_manifest.json",
+      "path": "theory_benchmark_test_v1/lme/checkpoints/pkl_manifest.json",
+      "sha256": "e65f8d60b75316619974fee4553f33eb9152d0e48dbdb9dac7225837152be37f",
+      "bytes": 40462,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/gate.json",
+      "path": "theory_benchmark_test_v1/lme/gate.json",
+      "sha256": "4748d91f5a734ff8893c8a79060ecb6d5e7779be1aee09e929ec2f57c00085fa",
+      "bytes": 1280,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/groups.json",
+      "path": "theory_benchmark_test_v1/lme/groups.json",
+      "sha256": "fd1fa5254956dd8f41317ae7f4ae84be57a4984fc49e60c6b904cef9f37b3145",
+      "bytes": 336562,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/per_query.csv",
+      "path": "theory_benchmark_test_v1/lme/per_query.csv",
+      "sha256": "7c984716860c7959efb2b5113e96ab89863b1b0799be49d374cd1d822ce7f15e",
+      "bytes": 989187,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/per_query.jsonl",
+      "path": "theory_benchmark_test_v1/lme/per_query.jsonl",
+      "sha256": "61319ccb5fdb72bc42b80fa489d8b1b05e7afded09a272a584cc146fa8feddde",
+      "bytes": 2714862,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/receipts/run.log",
+      "path": "theory_benchmark_test_v1/lme/receipts/run.log",
+      "sha256": "bfecb23507cb167b9dad9ffe2618e0d67205443867fd6819970c069944215c0f",
+      "bytes": 1406,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/receipts/source_hashes_after.txt",
+      "path": "theory_benchmark_test_v1/lme/receipts/source_hashes_after.txt",
+      "sha256": "576533d3ae154225e18708e340b8a517fb6123b9928a046a57f0543499de6a47",
+      "bytes": 2497,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/receipts/verification.log",
+      "path": "theory_benchmark_test_v1/lme/receipts/verification.log",
+      "sha256": "725f219cdcc6a91e63c19d370546f83e8bae21d98d5b13e233e0259a554e76d7",
+      "bytes": 2205,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/run_lme.py",
+      "path": "theory_benchmark_test_v1/lme/run_lme.py",
+      "sha256": "6785a7488755362275a467edacb03599d981492968a63124b8623a02ebf0b3b7",
+      "bytes": 18259,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/summary.json",
+      "path": "theory_benchmark_test_v1/lme/summary.json",
+      "sha256": "4443d5012cfed9bbf1f88618c30baf3769544ad0081700d18718469cace3c2b4",
+      "bytes": 5774,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/lme/verification.py",
+      "path": "theory_benchmark_test_v1/lme/verification.py",
+      "sha256": "578c209d1cc8f7bf053d46e05d2816ec56c2b23c3be4823fbf72704cebde7165",
+      "bytes": 8070,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/COORDINATOR_AGGREGATE.json",
+      "path": "theory_benchmark_test_v1/locomo/COORDINATOR_AGGREGATE.json",
+      "sha256": "5784352d74cd997688baf14decd5c2045ce9c3a883e5a1be0360b5f92a8455f2",
+      "bytes": 200,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/COORDINATOR_REVIEW.md",
+      "path": "theory_benchmark_test_v1/locomo/COORDINATOR_REVIEW.md",
+      "sha256": "dba3a662463bdedb60648af29ddad2eadfd17edcfce8acb05c71021a928959db",
+      "bytes": 2430,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/PLAN.md",
+      "path": "theory_benchmark_test_v1/locomo/PLAN.md",
+      "sha256": "a0f9e8e6eb214e0129cb5b8e31d35bdb75599eb130332a7eed7780bdc8981a21",
+      "bytes": 6402,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/PRE_RUN.json",
+      "path": "theory_benchmark_test_v1/locomo/PRE_RUN.json",
+      "sha256": "3ba760f17e821894d9b25630b8c05385c7c2e9e7dd7a40ce58b9c6d13fbcf193",
+      "bytes": 6296,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/REPORT.md",
+      "path": "theory_benchmark_test_v1/locomo/REPORT.md",
+      "sha256": "7af4c3bf53bcc6c6b46d0984b7f4feb6d6d232c1535fe1c5866245dc4418e5fb",
+      "bytes": 4242,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/STATUS.md",
+      "path": "theory_benchmark_test_v1/locomo/STATUS.md",
+      "sha256": "874b7f2489b2d4629dc282f2e4601dbda477cf6d662c72639a1b814fe96903f2",
+      "bytes": 1324,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_0.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_0.json",
+      "sha256": "f34f075c4293561b91ed0d772ba42d383285e30c4802628492b3f1d87bdd5f23",
+      "bytes": 284535,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_1.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_1.json",
+      "sha256": "a4f4f13a1770f6b9f5c8f9b3123abebbe42c000494512376eaee41ad8d7760ac",
+      "bytes": 155948,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_2.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_2.json",
+      "sha256": "dbb32675c52958c139272cb895cd6c416ffc9db3f7869b2608cc4c8fd61f37dc",
+      "bytes": 288775,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_3.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_3.json",
+      "sha256": "3b376316ef9d742c527a585e3035030f3aeb3aea031e809ae63f9f9f0d57bbaa",
+      "bytes": 384455,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_4.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_4.json",
+      "sha256": "0f17b7a48ab8dc0e75ef27fb96f25c79fd88e0f7e2c21b8c9ea17173cb0ee05d",
+      "bytes": 340759,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_5.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_5.json",
+      "sha256": "e6ff6a41c2178d2436d9beaeaae8383e164c35e2d50a2fe7734f13f2f1361483",
+      "bytes": 234362,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_6.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_6.json",
+      "sha256": "9be67f2938b677c2e41ad93312bee229ca1c54aecf5a70b424ebbedc8d2b4805",
+      "bytes": 285331,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_7.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_7.json",
+      "sha256": "2ecdb6d170e8692146a1d9c2e12c94aa11737fc6ceb4d87fd8eeae4fa8fa6054",
+      "bytes": 369136,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_8.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_8.json",
+      "sha256": "167b5bffd61a9fb61d932f294fc80fdb2dc4af0712b8855996aab85836d2869f",
+      "bytes": 301843,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/ckpt/ci_9.json",
+      "path": "theory_benchmark_test_v1/locomo/ckpt/ci_9.json",
+      "sha256": "d585ea1fc550216fa5e1479123291a6dd2d67415583ee476b8caf8193db2b1fa",
+      "bytes": 299313,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/gate.json",
+      "path": "theory_benchmark_test_v1/locomo/gate.json",
+      "sha256": "a62955ea7c89f0a034ddb003388c0086e2d7f9f7230285ebfb0114fc7a1f0edf",
+      "bytes": 852,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/gate_native_arrays.npz",
+      "path": "theory_benchmark_test_v1/locomo/gate_native_arrays.npz",
+      "sha256": "01a366a3be6f105059723bd6649c081687dc6186212e04bb352dd9f556697b89",
+      "bytes": 8645,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/per_query.jsonl",
+      "path": "theory_benchmark_test_v1/locomo/per_query.jsonl",
+      "sha256": "c638168e78c8b722fa8efff2f61f201e54f68914def3b351dd9bd5a506e91cff",
+      "bytes": 2942922,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/receipt_bootstrap.txt",
+      "path": "theory_benchmark_test_v1/locomo/receipt_bootstrap.txt",
+      "sha256": "6d478f9bfb63975e6c229c47b322ceedc756d2ee9d51607aa81feff958f120e8",
+      "bytes": 1673,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/receipt_gate.txt",
+      "path": "theory_benchmark_test_v1/locomo/receipt_gate.txt",
+      "sha256": "79b2329fbdc27acbe237c28c39c3925147139bdef8eefde32c270339aeada6dd",
+      "bytes": 462,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/receipt_intervene.txt",
+      "path": "theory_benchmark_test_v1/locomo/receipt_intervene.txt",
+      "sha256": "8fef0d7ceac87a5680840ac535afe11e95a817af6981c997a22d655854918db9",
+      "bytes": 422,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/receipt_verify.txt",
+      "path": "theory_benchmark_test_v1/locomo/receipt_verify.txt",
+      "sha256": "2a1dde7aaaf467ea68605958c990081df6dcf38f7219729f72d4f26cd852e6f4",
+      "bytes": 1814,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/run_locomo.py",
+      "path": "theory_benchmark_test_v1/locomo/run_locomo.py",
+      "sha256": "0c924486e1e4f5fed8b949699860611a9ceadf7460f3646c6a8b2b413c8e4190",
+      "bytes": 17621,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/summary.json",
+      "path": "theory_benchmark_test_v1/locomo/summary.json",
+      "sha256": "2f4be7b1b0631a3ee19eceb39752436256e09b717ba666db164b3aefd0849cd2",
+      "bytes": 5582,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/verification.py",
+      "path": "theory_benchmark_test_v1/locomo/verification.py",
+      "sha256": "4b0eda3fde8442603abc4b67a29c883c8a6caa38fb486c46d2e645fab63d17d4",
+      "bytes": 10597,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/COORDINATOR_AGGREGATE.json",
+      "path": "theory_benchmark_test_v1/perltqa/COORDINATOR_AGGREGATE.json",
+      "sha256": "b79481141f791ea09eecbc5b9a96a57c808943da8cf90e68fda1700bdf0fe2b4",
+      "bytes": 509,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/COORDINATOR_REVIEW.md",
+      "path": "theory_benchmark_test_v1/perltqa/COORDINATOR_REVIEW.md",
+      "sha256": "a80f3bcd8dc0f1598738e93c0786de3f1e54c37966db62c853c931a4c650e4ba",
+      "bytes": 2660,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/PLAN.md",
+      "path": "theory_benchmark_test_v1/perltqa/PLAN.md",
+      "sha256": "a0f9e8e6eb214e0129cb5b8e31d35bdb75599eb130332a7eed7780bdc8981a21",
+      "bytes": 6402,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/PRE_RUN.json",
+      "path": "theory_benchmark_test_v1/perltqa/PRE_RUN.json",
+      "sha256": "537d34c637931a6114839dbc20c1c248366bb3370476b8aed577e23900a8d72b",
+      "bytes": 6356,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/REPORT.md",
+      "path": "theory_benchmark_test_v1/perltqa/REPORT.md",
+      "sha256": "716dc824479bdf30c6ae56354af8b2e2db7d408289bf2477d53c8056d1ec3196",
+      "bytes": 6315,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/STATUS.md",
+      "path": "theory_benchmark_test_v1/perltqa/STATUS.md",
+      "sha256": "b53b279c6fd05a6183479daa598969156c249c6b363de9738ce95dd3cb9ee2a1",
+      "bytes": 1142,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/boot_receipt.txt",
+      "path": "theory_benchmark_test_v1/perltqa/boot_receipt.txt",
+      "sha256": "6114a230b277474954d56dce21a899f24d8ab2e08bf42a4b747730111307b39a",
+      "bytes": 143,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_00_Cai_Xiuying.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_00_Cai_Xiuying.jsonl",
+      "sha256": "93dadb899e80798d22df4601e650999e7ec858beb4bee1ba65516a85867f4a9a",
+      "bytes": 246218,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_01_Cao_Lili.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_01_Cao_Lili.jsonl",
+      "sha256": "101bc7c3cc1caa0dc6bb58ea2bc7fc8a5e48f6a2951ea035d56319cd5cb0785d",
+      "bytes": 181804,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_02_Feng_Wei.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_02_Feng_Wei.jsonl",
+      "sha256": "1457a2e12c95bf83dc989d75d1316c5782d54686b137457e3ffcf39059ed3cd4",
+      "bytes": 195048,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_03_Han_Gang.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_03_Han_Gang.jsonl",
+      "sha256": "1b6cbfe62771527c826277e13f29ec5d4870982aafa6da9f652ac85368703c08",
+      "bytes": 155918,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_04_He_Feng.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_04_He_Feng.jsonl",
+      "sha256": "4fc8197fea458c4b95ba08d121aece9824249256cc6190717bc4d96058804685",
+      "bytes": 187222,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_05_Huang_Xin.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_05_Huang_Xin.jsonl",
+      "sha256": "ba121a12a214565768b02edcb88ae0bbd0cc276f2f2412ab3ead7fe85752c59a",
+      "bytes": 154112,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_06_Kong_Tingting.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_06_Kong_Tingting.jsonl",
+      "sha256": "4f6fabc712eea3b77b0efd109bc4407e95bcb225e2f5ae491534848d45a73e76",
+      "bytes": 130032,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_07_Li_Hua.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_07_Li_Hua.jsonl",
+      "sha256": "7d4666ca408a429240b08d97122d75950670109a2dfa241e91c883c6bc316b79",
+      "bytes": 134848,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_08_Liang_Xin.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_08_Liang_Xin.jsonl",
+      "sha256": "6bb9db35515bbfee2f556e9907183801372cd8cd266ef8f41aff14cc87df256e",
+      "bytes": 237188,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_09_Lin_Wen.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_09_Lin_Wen.jsonl",
+      "sha256": "3631953840d5db1651c4c9d5ffe17d1278396776a2e3215b3beb03aed9ac1209",
+      "bytes": 163744,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_10_Liu_Liang.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_10_Liu_Liang.jsonl",
+      "sha256": "1b7b65f21ca7350f7fa131db947aaee1025aaa85b166083984833d42a5423314",
+      "bytes": 139062,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_11_Lu_Yun.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_11_Lu_Yun.jsonl",
+      "sha256": "78056c0de59ebc37abfa0c182781b9647e2f012ec710d3f0e99db0abb396c185",
+      "bytes": 173376,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_12_Madan.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_12_Madan.jsonl",
+      "sha256": "5806e1b96266456b6c429f1d2291f290ef0ea9a7397073bc7969413cd8970d94",
+      "bytes": 179998,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_13_Peng_Jie.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_13_Peng_Jie.jsonl",
+      "sha256": "fd664fd86476245a076b4f5013baf90f146ef672a2a9013e02f443ba100d655e",
+      "bytes": 170968,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_14_Qin_Meng.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_14_Qin_Meng.jsonl",
+      "sha256": "dcef17f846f48435996ddf83ab9ce2773c6b0504f8d2efb8ec12e9a6bc523f1b",
+      "bytes": 189028,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_15_Sun_Xiaoming.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_15_Sun_Xiaoming.jsonl",
+      "sha256": "c4010f79bc4da445f98be350baf24c5c2ec87781e7198906ffd5ffe278d74f68",
+      "bytes": 126420,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_16_Tayo.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_16_Tayo.jsonl",
+      "sha256": "f6958dc90bafaa2f8f3e2425df1bf8f3ebfa84a218bd907a8469dca073464d75",
+      "bytes": 170366,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_17_Wang_Ming.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_17_Wang_Ming.jsonl",
+      "sha256": "b3032a7d8b915b69f09ae142b2b284d7bfd2bd58bd8c669932e9f41147a5ef66",
+      "bytes": 131838,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_18_Wang_Xiaoming.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_18_Wang_Xiaoming.jsonl",
+      "sha256": "0d8796531aa4ad19bd5a555a3a76119d7e6a4e182b5782b5bc4d7e00966d3c9a",
+      "bytes": 145684,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_19_Xia_Tong.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_19_Xia_Tong.jsonl",
+      "sha256": "6333da2f29558491a72e176dfc21d930e22b825b678485f0d89a92a0c17d2ff3",
+      "bytes": 174580,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_20_Xiao_Ming.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_20_Xiao_Ming.jsonl",
+      "sha256": "ab912cfe6f8a227e91c9d3443327494b3954bc9519788bb0031ee7e831e10da2",
+      "bytes": 181202,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_21_Xiong_Fei.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_21_Xiong_Fei.jsonl",
+      "sha256": "c51a669935ee1bb36bb18b85413f4a6b7bbbdc3e97830b0c600b24fa0c3311be",
+      "bytes": 217924,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_22_Xu_Hui.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_22_Xu_Hui.jsonl",
+      "sha256": "109e03e43bababfaa59e3829ebdedda4595f2f43834f480b76bdc73388352607",
+      "bytes": 169162,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_23_Xu_Jia.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_23_Xu_Jia.jsonl",
+      "sha256": "8311833367b417d529a2747f480a0f840a3f7d6b7044da9e1491f5efaf68e3c1",
+      "bytes": 123410,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_24_Yang_Wei.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_24_Yang_Wei.jsonl",
+      "sha256": "12ce9bcf3b2d326797f675c0871b3515c9411576f9b7176a465498489b0fc2c5",
+      "bytes": 140266,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_25_Zhang_Xiaohong.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_25_Zhang_Xiaohong.jsonl",
+      "sha256": "473adb6de0f932fc9d4d5c37c8995b9188aeefbb599784827e3e1558e0e8fe4d",
+      "bytes": 121604,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_26_Zhao_Li.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_26_Zhao_Li.jsonl",
+      "sha256": "7c197ab7231d0f4824be4bd277c9c46f71c1e9e8de5b94c5398642910a88b6f1",
+      "bytes": 143878,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_27_Zheng_Yong.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_27_Zheng_Yong.jsonl",
+      "sha256": "f9e301d450a4c6fd80cbf78c5a930b15e06b8f9b07da703b4f64c37e30daf922",
+      "bytes": 167356,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_28_Zhou_Ting.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_28_Zhou_Ting.jsonl",
+      "sha256": "55a8851f5b01ce347937fcb5c3836e0bf917023dc05413c2ec156ccaf96453cd",
+      "bytes": 128828,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/ckpt_29_Zhu_Xiaolong.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/ckpt_29_Zhu_Xiaolong.jsonl",
+      "sha256": "789f389e31dbfb164d617bb83369d88391f9040b48203306ff7a4947523739c1",
+      "bytes": 194446,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/gate.json",
+      "path": "theory_benchmark_test_v1/perltqa/gate.json",
+      "sha256": "d9677a327468192b0960c75920d4194c098fd2c44d8a90c25fac5b50b19ebb32",
+      "bytes": 1371,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/gate_receipt.txt",
+      "path": "theory_benchmark_test_v1/perltqa/gate_receipt.txt",
+      "sha256": "24e5e5994cf45b85445ba15a9043bdc80740c9586e705a65039eb5f83fd8c926",
+      "bytes": 223,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/per_query.jsonl",
+      "path": "theory_benchmark_test_v1/perltqa/per_query.jsonl",
+      "sha256": "778fcc85120caffda49b02c2409dfad1d8c6139e1651fa4cf43bb37de3cc210b",
+      "bytes": 48710077,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/run_diag.json",
+      "path": "theory_benchmark_test_v1/perltqa/run_diag.json",
+      "sha256": "2a791ff15ac8c0d09b5ec20288fbe307e4c1c0e8f4c42d4985cca225e0031043",
+      "bytes": 230,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/run_receipt.txt",
+      "path": "theory_benchmark_test_v1/perltqa/run_receipt.txt",
+      "sha256": "17a1d4c9718b5665478177d5ebe42a74652ef635ba4e2e4a6137dd7cb5a88da0",
+      "bytes": 1497,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/runner.py",
+      "path": "theory_benchmark_test_v1/perltqa/runner.py",
+      "sha256": "f53072af252b93fb8741a3edfaa0d0e51acce523f66da9b3ee3ca2d5d32db4cc",
+      "bytes": 19642,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/source_hashes_after.txt",
+      "path": "theory_benchmark_test_v1/perltqa/source_hashes_after.txt",
+      "sha256": "25d9211000038fa791fe6a6b7621f3e7b1f75028eaa4b6505eb77a176acfeec4",
+      "bytes": 1836,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/summary.json",
+      "path": "theory_benchmark_test_v1/perltqa/summary.json",
+      "sha256": "8bfb32a6c0c7aca1465454bb5ab35a35b66be798adc3a729025abdc488c1ed3a",
+      "bytes": 5439,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/verification.py",
+      "path": "theory_benchmark_test_v1/perltqa/verification.py",
+      "sha256": "bd4a6387add0ed916ccdd59b5c81035e39894e0f8a4852f27248ffa1a9be5188",
+      "bytes": 12738,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/perltqa/verification_receipt.txt",
+      "path": "theory_benchmark_test_v1/perltqa/verification_receipt.txt",
+      "sha256": "be2ddbdd8490106a3a5ce61e70a4c137ee909d940663cc2fdf12c0b852a3776d",
+      "bytes": 1893,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/COORDINATOR_AGGREGATE.json",
+      "path": "theory_benchmark_test_v1/realtalk/COORDINATOR_AGGREGATE.json",
+      "sha256": "a4596e1b32465eee82842b345868fe66f5c0362310ecdb276d527a8bc4417af6",
+      "bytes": 600,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/COORDINATOR_REVIEW.md",
+      "path": "theory_benchmark_test_v1/realtalk/COORDINATOR_REVIEW.md",
+      "sha256": "3aaabbc7860d7667bdb5befe9f64ef7dae4cf7824948102bbce66f17f9ee1d97",
+      "bytes": 2896,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/PLAN.md",
+      "path": "theory_benchmark_test_v1/realtalk/PLAN.md",
+      "sha256": "a0f9e8e6eb214e0129cb5b8e31d35bdb75599eb130332a7eed7780bdc8981a21",
+      "bytes": 6402,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/PRE_RUN.json",
+      "path": "theory_benchmark_test_v1/realtalk/PRE_RUN.json",
+      "sha256": "bb621db41101e61642786b4faafed82494dea42252c68c63efb915dfe1ee121e",
+      "bytes": 4513,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/REPORT.md",
+      "path": "theory_benchmark_test_v1/realtalk/REPORT.md",
+      "sha256": "0ef36161c52c5018461ac75e29df489ffd506fefe1b27a7cc5490e4c02e6aac4",
+      "bytes": 6477,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/STATUS.md",
+      "path": "theory_benchmark_test_v1/realtalk/STATUS.md",
+      "sha256": "a33068ca932d2ca0bb93c672e83bd3145c00d8efeef1b904876e29c3fbfee1fd",
+      "bytes": 2088,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/excluded_ids.json",
+      "path": "theory_benchmark_test_v1/realtalk/excluded_ids.json",
+      "sha256": "25459bd3a015fba424918fff4f302a96dcc23609dc14f0dc176735fbc39678b8",
+      "bytes": 425,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/gate.json",
+      "path": "theory_benchmark_test_v1/realtalk/gate.json",
+      "sha256": "2aa6799e0660bfcd13fcb73c31773ee0bb51eeac20ca66c5cff668ac2dce0229",
+      "bytes": 2556,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/gate_receipt.txt",
+      "path": "theory_benchmark_test_v1/realtalk/gate_receipt.txt",
+      "sha256": "9158ca54b82c77bd99ff843234572b5fbd2f91f7f6259da1b9952fe739e6288c",
+      "bytes": 304,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/gate_runner.py",
+      "path": "theory_benchmark_test_v1/realtalk/gate_runner.py",
+      "sha256": "da1db2823a1eac000dc8dcfac5934820e38eec10a052e6d772b6e7c32ae50335",
+      "bytes": 8322,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/per_query.jsonl",
+      "path": "theory_benchmark_test_v1/realtalk/per_query.jsonl",
+      "sha256": "4feb5a9e0454909e4f332c6c3e14f85ee0842cb0783eb04d3d36ac7ebec3a48a",
+      "bytes": 4154887,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/producer_adapter.py",
+      "path": "theory_benchmark_test_v1/realtalk/producer_adapter.py",
+      "sha256": "a1dec27c1070e1ecb062c4481c6015e5091c1ac95c517ea381425e32c8ca3aa1",
+      "bytes": 8475,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/producer_run_realtalk.py",
+      "path": "theory_benchmark_test_v1/realtalk/producer_run_realtalk.py",
+      "sha256": "34f174f0f8b0f755d7a7a1d7a4d0e1ed9d4f606ad57873b5f0b775e6c7eeab65",
+      "bytes": 8325,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/run_receipt.txt",
+      "path": "theory_benchmark_test_v1/realtalk/run_receipt.txt",
+      "sha256": "c458cc563a6bd598f0c3eef55f88054246cb024edec9a96ba9d72c7260d0693b",
+      "bytes": 1977,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/source_hashes_after.txt",
+      "path": "theory_benchmark_test_v1/realtalk/source_hashes_after.txt",
+      "sha256": "7b0a38ee538533260445aa5538f1bc3d506b6a55262b9c1a9f4aa16af611b44e",
+      "bytes": 2719,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/summary.json",
+      "path": "theory_benchmark_test_v1/realtalk/summary.json",
+      "sha256": "ed1e6e80c5f326c3578a54c3ec3af3f767c740e96d3e9da6d1bff5ef763b3e2a",
+      "bytes": 5620,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/transfer_runner.py",
+      "path": "theory_benchmark_test_v1/realtalk/transfer_runner.py",
+      "sha256": "4fc0266cb90f90f8f96e7167d449e3f826c4026ea2fde90e28132849e4063667",
+      "bytes": 13480,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/verification.py",
+      "path": "theory_benchmark_test_v1/realtalk/verification.py",
+      "sha256": "2bd8037dfd27948233b808c9ed4b81ef6bcafc52575070aca2df7d73ba73f148",
+      "bytes": 9677,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/realtalk/verify_receipt.txt",
+      "path": "theory_benchmark_test_v1/realtalk/verify_receipt.txt",
+      "sha256": "add30b2fa5eddd03be9a4fb7b59a707694dc3eb01d25dd73f3d035d19ea1c005",
+      "bytes": 1056,
+      "kind": "coordinator_preserved"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math-ranking-bounds.txt",
+      "path": "tasking/muse-math-ranking-bounds.txt",
+      "sha256": "580b3537d460d46a16088ccb20561d5bc0f6355bb8bdec1ec6daa6bc37dc6ba6",
+      "bytes": 4532,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math-ranking-bounds.log",
+      "path": "worker_logs/math-ranking-bounds.log",
+      "sha256": "18cdb9700fd966fbb455fa1c2e3e9f1bbbc509e748c5e565074c9c24ff97fdaa",
+      "bytes": 2854,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math-sign-mechanism.txt",
+      "path": "tasking/muse-math-sign-mechanism.txt",
+      "sha256": "0c7cede10dd2259763408daaca91ffcbc05ee0dd81cf62010c830d5d3b485c1f",
+      "bytes": 4627,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math-sign-mechanism.log",
+      "path": "worker_logs/math-sign-mechanism.log",
+      "sha256": "f30e7cf319aac48660fbbd366795ea61025f8ae18b2fcb029197ed37472dda93",
+      "bytes": 2272,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math-bit-allocation.txt",
+      "path": "tasking/muse-math-bit-allocation.txt",
+      "sha256": "6766068f31cb243140f7cf99e0b2017ff6dfb0965d25652e986acd776b12e4f6",
+      "bytes": 4703,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math-bit-allocation.log",
+      "path": "worker_logs/math-bit-allocation.log",
+      "sha256": "dd04e40ba8aa387ff5b90b1b1ab070597ddee538adb2c70f63bf2c88405ccf00",
+      "bytes": 2444,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math2-sharp-bounds.txt",
+      "path": "tasking/muse-math2-sharp-bounds.txt",
+      "sha256": "b82bb2555ba126706c29dafa8c287c8e7241cd6875d314d980ecbea306cc1a5b",
+      "bytes": 4274,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math2-sharp-bounds.log",
+      "path": "worker_logs/math2-sharp-bounds.log",
+      "sha256": "272bd916ccf41af4ef04dd22b603c1b0fa1a7adbf2fe1ca63d2ce3a7b8b76a84",
+      "bytes": 1822,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math2-allocation-optimality.txt",
+      "path": "tasking/muse-math2-allocation-optimality.txt",
+      "sha256": "fe77c0a8ba282b17266ced3988159cadd473cd5da3da9983a5708301d050e1fd",
+      "bytes": 4441,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math2-allocation-optimality.log",
+      "path": "worker_logs/math2-allocation-optimality.log",
+      "sha256": "7747a8c3aa85d5b5e6eb5f5cb8eb7d506d499d5307723c0b2497cad2f8953626",
+      "bytes": 2040,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math3-joint-gold-bounds.txt",
+      "path": "tasking/muse-math3-joint-gold-bounds.txt",
+      "sha256": "33fbaf5ca20993ab8e94b0334d7cdda7e2dce320715e162bbcedf2f28c7fb837",
+      "bytes": 3542,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math3-joint-gold-bounds.log",
+      "path": "worker_logs/math3-joint-gold-bounds.log",
+      "sha256": "cb1505ea605307b2954458dacc7ba4821a140cbe5a2e97df3447c23a936da532",
+      "bytes": 1342,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math3-all-n-ranking.txt",
+      "path": "tasking/muse-math3-all-n-ranking.txt",
+      "sha256": "e0d9356c01b99f537f622c8421f8cb19f2e1d81768784a07f673b59cb7f31148",
+      "bytes": 3557,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math3-all-n-ranking.log",
+      "path": "worker_logs/math3-all-n-ranking.log",
+      "sha256": "8784524841fbc444ade517d06272be56d6b1f3e8c5b964af3562fcb1cc6cf4d0",
+      "bytes": 3548,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math4-norm-aware-sign-bounds.txt",
+      "path": "tasking/muse-math4-norm-aware-sign-bounds.txt",
+      "sha256": "b0aa9232dc9a5826b85503c0d22ae03213c44a504f8a3cea81b395f0f0a7f662",
+      "bytes": 4225,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math4-norm-aware-sign-bounds-resume.WAPzC8.log",
+      "path": "worker_logs/math4-norm-aware-sign-bounds-resume.WAPzC8.log",
+      "sha256": "e90d256adb2bc81dc4e074ecae63768c7a5e84135c1b3c08d97e991c5ad031c7",
+      "bytes": 2344,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/home/mdp/muse-work/math4-norm-aware-sign-bounds.log",
+      "path": "worker_logs/math4-norm-aware-sign-bounds.log",
+      "sha256": "128c0ee67c6864af86c6bd62fae73b74f88a8dfecab9160425a86f11a90a2a5f",
+      "bytes": 132,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math4-rank-crossing-certificates.txt",
+      "path": "tasking/muse-math4-rank-crossing-certificates.txt",
+      "sha256": "aea3b2e387e246763690d6ae4f40e2b26e2859557e8ef95004719e002f797532",
+      "bytes": 4196,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math4-rank-crossing-certificates-resume.JOHdS9.log",
+      "path": "worker_logs/math4-rank-crossing-certificates-resume.JOHdS9.log",
+      "sha256": "dccfc3546961d7cd30f1f088dde2614f8005e5177c283b86cc4fe78091e1d82e",
+      "bytes": 2507,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/home/mdp/muse-work/math4-rank-crossing-certificates.log",
+      "path": "worker_logs/math4-rank-crossing-certificates.log",
+      "sha256": "673245faf3889c8e67fc22f0e9e5a21002282dccc63875063fd32c60dd82d9d4",
+      "bytes": 136,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-theorybench-lme.txt",
+      "path": "tasking/muse-theorybench-lme.txt",
+      "sha256": "bad3401ea8c5cd6ab36ee59ba3ddbbacc9e2d87a873c12aca039e59287147bec",
+      "bytes": 3031,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-lme.log",
+      "path": "worker_logs/theorybench-lme.log",
+      "sha256": "c756bfa436da31e6943303cf3862d2f01b7d2c77d2f6420c26f0ea05b2f3591d",
+      "bytes": 2881,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-theorybench-locomo.txt",
+      "path": "tasking/muse-theorybench-locomo.txt",
+      "sha256": "b200d7f6d8f6f4fcce90e913adbd15d2d97a89221abb685744e07dcca23f1e25",
+      "bytes": 2975,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-locomo.log",
+      "path": "worker_logs/theorybench-locomo.log",
+      "sha256": "b2c480b3dc129160d878c3af0d84accc2dacbe1dbe59bb33c49d3b9b05384844",
+      "bytes": 3215,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-theorybench-realtalk.txt",
+      "path": "tasking/muse-theorybench-realtalk.txt",
+      "sha256": "051dbea975780e20cc2d640e6501602f0a0cfd1a0e0464dd1676320bb6fa7935",
+      "bytes": 3050,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk.log",
+      "path": "worker_logs/theorybench-realtalk.log",
+      "sha256": "8930fa34cb1b44210e2b7060ac98b3cffbd506686cef3b172ba9c66959ad9075",
+      "bytes": 3421,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-theorybench-perltqa.txt",
+      "path": "tasking/muse-theorybench-perltqa.txt",
+      "sha256": "4d9022b9bbf6549c28d5a303794bee12c25b4adafdabff109d57e1192e04ac1e",
+      "bytes": 3343,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-perltqa.log",
+      "path": "worker_logs/theorybench-perltqa.log",
+      "sha256": "d00e58659754b53610f4ca620ff4686fce48d8fec4a312ae1002888316e7c50e",
+      "bytes": 2883,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-theory-audit-locomo-provenance.txt",
+      "path": "tasking/muse-theory-audit-locomo-provenance.txt",
+      "sha256": "fc7dbc9191092307ad83275dba9c8aa81a76b4a8db32dd5828fe9a89920332d2",
+      "bytes": 4705,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/theory-audit-locomo-provenance.log",
+      "path": "worker_logs/theory-audit-locomo-provenance.log",
+      "sha256": "72b4d16341d7e02d67eef6a13c002067cd6c0b18ed8ffe87dc87f7e6c68fa242",
+      "bytes": 2414,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-theory-audit-mapping.txt",
+      "path": "tasking/muse-theory-audit-mapping.txt",
+      "sha256": "b47c0579bd18aceeae1f9e1393540ef39a0b56cafafb029605aca074b7f55e18",
+      "bytes": 4661,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/theory-audit-mapping.log",
+      "path": "worker_logs/theory-audit-mapping.log",
+      "sha256": "62f7f8883946b96af93bef83934cbcb3aac8420ef66f224d253f9da5f51dfa9b",
+      "bytes": 2319,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-theory-audit-real-geometry.txt",
+      "path": "tasking/muse-theory-audit-real-geometry.txt",
+      "sha256": "ef58fb5424077f60fb2a57c4836bed95a4db341cdd8e52165b717543682a587f",
+      "bytes": 4887,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/theory-audit-real-geometry.log",
+      "path": "worker_logs/theory-audit-real-geometry.log",
+      "sha256": "db3240fb262ace28f1b58c1dc2282a7c8ad778cec56ac3493f2e383a2379ad1d",
+      "bytes": 1918,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/AppData/Local/Temp/muse-math2-conditional-ranking.txt",
+      "path": "tasking/muse-math2-conditional-ranking.txt",
+      "sha256": "70bebe91b341d5a67248892a5e550d79abc59ccc730d6dff8bd4bd6fe3fa82cd",
+      "bytes": 4239,
+      "kind": "prompt"
+    },
+    {
+      "source": "/home/mdp/muse-work/math2-conditional-ranking-retry1.log",
+      "path": "worker_logs/math2-conditional-ranking-retry1.log",
+      "sha256": "0fa3b989127b90d83dde86bac331db9ab2e21b8228b89ea8267aacb4213c5bfd",
+      "bytes": 203,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/home/mdp/muse-work/math2-conditional-ranking.log",
+      "path": "worker_logs/math2-conditional-ranking.log",
+      "sha256": "0fa3b989127b90d83dde86bac331db9ab2e21b8228b89ea8267aacb4213c5bfd",
+      "bytes": 203,
+      "kind": "worker_stdout"
+    },
+    {
+      "source": "/mnt/c/Users/MDP/dev/llmzip-work/archive_math_research.py",
+      "path": "ops/archive_math_research.py",
+      "sha256": "bbe39f122ff43cf5f8e8d8538ffd7b600c80b3bfaa7db152e8e869ecca53530d",
+      "bytes": 4550,
+      "kind": "preservation_tool"
+    }
+  ],
+  "excluded": [
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat00.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "e4b8f47867cdde0489978f433a7a0ce082f072f9458434605ce2000a7a51b5bd",
+      "bytes": 182016
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat01.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "3ff2e5c117df4b7e7e87519cf114f35694aa2aebd3350bef23a54169aaac5c42",
+      "bytes": 149850
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat02.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "52677243206867cde06e6288653bf2b904e41a909051b919433aaee995199b13",
+      "bytes": 156284
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat03.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "5598dc3e3e9fa979bf39d4cf372ad980825e695464dd721b7ecd815766eb6d9b",
+      "bytes": 151996
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat04.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "4727f16cc165320cd692c6c285fff346e703c1a2e6db69e989b40ad55ec52c64",
+      "bytes": 149850
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat05.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "fcde0600ff2f0b3187afcddfc2ff8622dac3a6612da1f0c55e805156e120aa4d",
+      "bytes": 158432
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat06.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "b1bdf20a7955c62b5edada55589efc08c36242efe2ee10a270f40104fc2b3ded",
+      "bytes": 149856
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat07.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "897ce20deb9f7010e734a12f211855439c2358ed60f94d176ade385d69894d57",
+      "bytes": 149856
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat08.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "94fe28950722e835de360c972023d127f73c03a36d5e00de6875ab9142966d46",
+      "bytes": 134844
+    },
+    {
+      "source": "/home/mdp/muse-work/theorybench-realtalk/checkpoints/chat09.pkl",
+      "reason": "derived cache/bytecode; tabular outcomes preserved",
+      "sha256": "9336e8516602ae976a3cbe43cf2109825ed228f12dcc7bf9d493652900c109f5",
+      "bytes": 126256
+    }
+  ]
+}

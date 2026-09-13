@@ -1,0 +1,14 @@
+muse: workspace root: /home/mdp/muse-work/theory-audit-mapping (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Audit complete — first pass delivered in `/home/mdp/muse-work/theory-audit-mapping` (STATUS.md, verify.py, results.json, REPORT.md; all narrative files carry the four required labels).
+
+**Verdict: the error is ours (experimental identification), not a theorem error.** The benchmark never tested Model H's parameter. Model H fixes `q=(1,1,1)` and scales document-only nuisance (gap linear in `t`, shared doc norm). All four runners scale BOTH document and query group coords, giving rank-score `(a+z·b)/√(u+z·v)` with `z=t²` — a different parameter with query reweighting and unequal norms. Outcomes therefore falsify only the unlicensed proxy mapping: LME −6.44pp (opposite), REALTALK −0.09pp (inconclusive, worker estimator bug corrected by coordinator), PerLTQA +2.46pp (aggregate direction only; float degradation, not a codec), LoCoMo −2.58pp CONDITIONAL (float gate not met).
+
+**Two independent findings:** an exact rational counterexample proves joint-scaling pairwise ranking can be nonmonotone (C1 leads→loses→leads, fixed group, shared query), with matched ablations showing doc-only/query-only/joint are three different behaviors on identical vectors; and HIGH48(1/t)≡LOW48(t) up to global positive scale, so it is a mirror, not corroboration.
+
+**Scoped "theorem remains true":** the all-N H theorem holds (strictness wording corrected); but sign_mechanism's top-3 transport numbers were false (shared gold ignored) and replaced — only corrected values may be quoted. Ranked ledger R1–R7 in REPORT.md maps each claim to evidence, correction, and a minimal next test.
+
+**Verification:** `verify.py` 87/87 PASS, exit 0 (Fractions oracle, numpy cross-check, threads=1, ml-python 3.14.4/numpy 2.5.3); 13 sources hashed (after-read; missing before-hash disclosed); zero source bytes modified, zero new empirical arms. Two honest gaps: the 1+1-dim monotonicity sweep didn't finish (UNRESOLVED, unclaimed), and Fractions-vs-numpy agreement is one author's two routes, not independent review.

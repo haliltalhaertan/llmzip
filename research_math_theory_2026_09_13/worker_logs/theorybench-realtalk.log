@@ -1,0 +1,24 @@
+muse: workspace root: /home/mdp/muse-work/theorybench-realtalk (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 3/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 3/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Complete. Exploratory Model-H transfer test on REALTALK, all inside [STATUS](/home/mdp/muse-work/theorybench-realtalk/STATUS.md)'s workspace.
+
+**Outcome: NEGATIVE for the LOW48 proxy transfer.** Primary endpoint contrast mean[delta(t=4)−delta(t=.25)] = −0.001137, 95% archive-cluster bootstrap CI [−0.01933, +0.01849] (10 clusters, 2000 reps, seed 20260913). Nonpositive with CI covering zero → falsifies the proxy/transfer per the pre-sealed rule, not the conditional Model-H theorem. HIGH48 comparison +0.000755, also inconclusive; 41/705 LOW48 QAs (5.8%) show decreasing adjacent deltas, so pointwise monotonicity cannot transfer unconditionally.
+
+**How it was run (protocol-first):**
+- [PLAN](/home/mdp/muse-work/theorybench-realtalk/PLAN.md) copied byte-exact (sha `a0f9e8e6…`, `cmp` OK) and sealed in [PRE_RUN](/home/mdp/muse-work/theorybench-realtalk/PRE_RUN.json) before any intervention metric.
+- **Cache producer determined:** eval caches are adapter-format from `bench3_realtalk_adapter.py` via frozen T4D `build_representation` (T4D hash `3f7f091f…` matches the port report); `RT05_rebuild331.pkl` is a scratch raw-T4D rebuild, not the eval input (sign-identical, maxabs 1.41e-13).
+- **Gate BEFORE intervention: PASS** — per-QA recomputation bit-identical to stored details (0.0/0.0 diffs, means exactly 0.22477507598784194 / 0.17253405381064957 at 1e-12 tolerance; 728/705/23 counts from code).
+- Exact tie-bucket expectations (shared-gold formula, no pair-average multinomial) over the full t grid × LOW48/HIGH48/FULL96 → [per_query.jsonl](/home/mdp/muse-work/theorybench-realtalk/per_query.jsonl) (10575 rows) + [summary](/home/mdp/muse-work/theorybench-realtalk/summary.json). Sign invariance (0 violations) treated as construction tautology, not evidence. FULL96 exactly flat (maxabs 0.0).
+- [verification.py](/home/mdp/muse-work/theorybench-realtalk/verification.py): `CHECKS: 23/23 pass; gate=728/705/23 outcomes=10575 rows` — includes t=1 identity, MC-t1-vs-details bit match, group remapping for all 705 QAs, 3 independent `sorted()`-path recomputes (incl. discriminating RT03_q003: native 1.0 vs float 0.0), bootstrap determinism, and before/after source-hash stability.
+- Full narrative: [REPORT.md](/home/mdp/muse-work/theorybench-realtalk/REPORT.md) (opens with the exact four-label banner). Receipts: `gate_receipt.txt`, `run_receipt.txt`, `verify_receipt.txt`, `source_hashes_after.txt`, `excluded_ids.json`, `checkpoints/`.
+
+Notes: sources stayed read-only (hashes identical before/after); no embeddings regenerated, no network/installs, no Git writes; ~10 min wall time. Per-category contrasts are secondary and mixed (cat1 +0.0156, cat2 −0.0064, cat3 −0.0300). This is NOT preregistered and NOT yet independently audited.

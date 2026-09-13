@@ -1,0 +1,11 @@
+ci 0: computed 150 rows (4s elapsed)
+ci 1: computed 81 rows (7s elapsed)
+ci 2: computed 152 rows (18s elapsed)
+ci 3: computed 199 rows (29s elapsed)
+ci 4: computed 178 rows (36s elapsed)
+ci 5: computed 123 rows (41s elapsed)
+ci 6: computed 149 rows (48s elapsed)
+ci 7: computed 191 rows (59s elapsed)
+ci 8: computed 156 rows (66s elapsed)
+ci 9: computed 156 rows (73s elapsed)
+INTERVENE done: 1535 rows -> per_query.jsonl

@@ -1,0 +1,63 @@
+{
+  "A(1, 1)": {
+    "error": "1/14",
+    "counts": {
+      "true_tie": 8,
+      "correct": 48,
+      "estimated_tie": 8
+    },
+    "error_patterns": {}
+  },
+  "A(2, 0)": {
+    "error": "2/7",
+    "counts": {
+      "true_tie": 8,
+      "estimated_tie": 8,
+      "correct": 36,
+      "flip": 12
+    },
+    "error_patterns": {}
+  },
+  "A(0, 2)": {
+    "error": "3/14",
+    "counts": {
+      "true_tie": 8,
+      "correct": 32,
+      "estimated_tie": 24
+    },
+    "error_patterns": {}
+  },
+  "B(1, 1, 1)": {
+    "error": "1/10",
+    "counts": {
+      "true_tie": 16,
+      "correct": 208,
+      "estimated_tie": 16,
+      "flip": 16
+    },
+    "error_patterns": {
+      "('-2', '0', '0', 'estimated_tie')": 8,
+      "('-2', '0', '1/5', 'flip')": 4,
+      "('2', '0', '0', 'estimated_tie')": 8,
+      "('2', '0', '-1/5', 'flip')": 4,
+      "('-2', '3', '0', 'flip')": 2,
+      "('-2', '3', '-1/5', 'flip')": 1,
+      "('-2', '3', '1/5', 'flip')": 1,
+      "('2', '-3', '0', 'flip')": 2,
+      "('2', '-3', '-1/5', 'flip')": 1,
+      "('2', '-3', '1/5', 'flip')": 1
+    }
+  },
+  "B(2, 1, 0)": {
+    "error": "1/30",
+    "counts": {
+      "true_tie": 16,
+      "estimated_tie": 16,
+      "correct": 224
+    },
+    "error_patterns": {
+      "('0', '0', '-1/5', 'estimated_tie')": 8,
+      "('0', '0', '1/5', 'estimated_tie')": 8
+    }
+  }
+}

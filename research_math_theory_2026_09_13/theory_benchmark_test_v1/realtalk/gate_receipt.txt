@@ -1,0 +1,14 @@
+{
+  "n_total": 728,
+  "n_valid": 705,
+  "n_excluded": 23,
+  "mean_nat": 0.22477507598784194,
+  "mean_flt": 0.17253405381064957,
+  "max_nat_diff": 0.0,
+  "max_flt_diff": 0.0,
+  "d_mean_nat": 0.0,
+  "d_mean_flt": 0.0,
+  "sign_match": true,
+  "maxabs_rebuild": 1.4137302439820587e-13,
+  "GATE_PASS": true
+}

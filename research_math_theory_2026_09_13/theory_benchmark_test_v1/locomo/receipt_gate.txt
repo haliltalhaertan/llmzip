@@ -1,0 +1,18 @@
+GATE {
+ "counts_cat14": 1540,
+ "counts_valid": 1535,
+ "counts_excluded": 5,
+ "sign_mc_mean": 0.23654714666441054,
+ "anchor_diff": 0.0,
+ "gate_anchor_1e12": true,
+ "maxabs_mc_vs_npz": 1.1102230246251565e-16,
+ "gate_npz_1e12": true,
+ "maxabs_exp_vs_perq": 0.0,
+ "gate_perq_1e12": true,
+ "maxabs_mc_vs_perq_mc": 0.0,
+ "float_exp_mean": 0.16826334541318252,
+ "float_mc_mean": 0.16826334541318252,
+ "sign_exp_mean": 0.2369591212262222,
+ "GATE_PASS": true
+}
+GATE PASS

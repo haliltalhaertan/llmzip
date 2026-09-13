@@ -1,0 +1,229 @@
+{
+  "label": "[LOCAL EXPLORATORY PILOT]",
+  "n_valid": 705,
+  "n_total": 728,
+  "n_excluded": 23,
+  "n_clusters": 10,
+  "clusters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "t_grid": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "groups": [
+    "LOW48",
+    "HIGH48",
+    "FULL96"
+  ],
+  "curves_exact": {
+    "LOW48@t=0.25": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.1738185297759766,
+      "delta_mean": 0.05171629329430748
+    },
+    "LOW48@t=0.5": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.1736294044804683,
+      "delta_mean": 0.051905418589815754
+    },
+    "LOW48@t=1.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17253405381064957,
+      "delta_mean": 0.053000769259634505
+    },
+    "LOW48@t=2.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.1734543510075425,
+      "delta_mean": 0.052080472062741565
+    },
+    "LOW48@t=4.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17475458741416186,
+      "delta_mean": 0.050780235656122184
+    },
+    "HIGH48@t=0.25": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17475458741416186,
+      "delta_mean": 0.050780235656122184
+    },
+    "HIGH48@t=0.5": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.1734543510075425,
+      "delta_mean": 0.052080472062741565
+    },
+    "HIGH48@t=1.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17253405381064957,
+      "delta_mean": 0.053000769259634505
+    },
+    "HIGH48@t=2.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.1736294044804683,
+      "delta_mean": 0.051905418589815754
+    },
+    "HIGH48@t=4.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.1738185297759766,
+      "delta_mean": 0.05171629329430748
+    },
+    "FULL96@t=0.25": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17253405381064957,
+      "delta_mean": 0.053000769259634505
+    },
+    "FULL96@t=0.5": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17253405381064957,
+      "delta_mean": 0.053000769259634505
+    },
+    "FULL96@t=1.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17253405381064957,
+      "delta_mean": 0.053000769259634505
+    },
+    "FULL96@t=2.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17253405381064957,
+      "delta_mean": 0.053000769259634505
+    },
+    "FULL96@t=4.0": {
+      "n": 705,
+      "sign_mean": 0.22553482307028402,
+      "float_mean": 0.17253405381064957,
+      "delta_mean": 0.053000769259634505
+    }
+  },
+  "primary": {
+    "group": "LOW48",
+    "effect": -0.0011366087481871467,
+    "ci95": [
+      -0.019330018939393942,
+      0.018490314014998684
+    ],
+    "rule": "effect>0 with CI excluding zero = consistent with proxy transfer",
+    "assessment": "negative"
+  },
+  "high48_comparison": {
+    "effect": 0.0007548610841800461,
+    "ci95": [
+      -0.017992808680049346,
+      0.01879923960858759
+    ]
+  },
+  "decreasing_adjacent_frac": {
+    "LOW48": {
+      "n_qa": 705,
+      "n_decreasing": 41,
+      "frac": 0.05815602836879433
+    },
+    "HIGH48": {
+      "n_qa": 705,
+      "n_decreasing": 40,
+      "frac": 0.05673758865248227
+    },
+    "FULL96": {
+      "n_qa": 705,
+      "n_decreasing": 0,
+      "frac": 0.0
+    }
+  },
+  "invariance": {
+    "sign_t_invariance_violations": 0,
+    "t1_identity_violations": 0,
+    "full96_float_maxabs_vs_t1": 0.0
+  },
+  "per_category_low48_contrast_secondary": {
+    "1": {
+      "n": 288,
+      "contrast_mean": 0.015590553350970019
+    },
+    "2": {
+      "n": 312,
+      "contrast_mean": -0.00641025641025641
+    },
+    "3": {
+      "n": 105,
+      "contrast_mean": -0.03
+    }
+  },
+  "mc_sensitivity": {
+    "LOW48@t=0.25": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.1738185297759766,
+      "delta_mc_mean": 0.05095654621186535
+    },
+    "LOW48@t=1.0": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.17253405381064957,
+      "delta_mc_mean": 0.05224102217719237
+    },
+    "LOW48@t=4.0": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.17475458741416186,
+      "delta_mc_mean": 0.05002048857368008
+    },
+    "HIGH48@t=0.25": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.17475458741416186,
+      "delta_mc_mean": 0.05002048857368008
+    },
+    "HIGH48@t=1.0": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.17253405381064957,
+      "delta_mc_mean": 0.05224102217719237
+    },
+    "HIGH48@t=4.0": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.1738185297759766,
+      "delta_mc_mean": 0.05095654621186535
+    },
+    "FULL96@t=0.25": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.17253405381064957,
+      "delta_mc_mean": 0.05224102217719237
+    },
+    "FULL96@t=1.0": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.17253405381064957,
+      "delta_mc_mean": 0.05224102217719237
+    },
+    "FULL96@t=4.0": {
+      "sign_mc_mean": 0.22477507598784194,
+      "float_mc_mean": 0.17253405381064957,
+      "delta_mc_mean": 0.05224102217719237
+    }
+  },
+  "bootstrap": {
+    "reps": 2000,
+    "seed": 20260913,
+    "note": "10 clusters: few-cluster bootstrap is approximate; raw effects reported"
+  },
+  "elapsed_s": 7.458223581314087
+}

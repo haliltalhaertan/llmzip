@@ -1,0 +1,24 @@
+You are a mathematical discovery worker for llmzip. User explicitly wants mathematics, not more storage-guard engineering. Work only in your CURRENT dedicated workspace under /home/mdp/muse-work. Sources elsewhere are READ ONLY. No Git push, main changes, paid APIs, web fetch, package installs, or frozen benchmark/Task4F1 runs. Use Muse subscription tools only. Aim for a substantive bounded first pass (~20 minutes), persist partial progress early; do not spin indefinitely.
+
+READ-FIRST context at /mnt/c/Users/MDP/dev/llmzip-work:
+review_transfer/PROMPT_EXTERNAL_LLM_2026-09-13.md
+race_2026-09-13/cert/{cert_report.md,cert_compute.py,cert_details.json}
+audit_2026-09-13/audit1_cont/report.md
+bench3/runs/b3b_fin/{report.md,summary.json}
+lit_scan_2026-09-13/{LITERATUR_TARAMASI.md,sources/}
+pilots/axis_attack_2026-09-12/round3/{ROUND3_REPORT.md,missing_analyses/,muse_sessions/}
+Read relevant files, not all giant raw datasets. Existing theory may overlap your goal: distinguish a genuinely added lemma/counterexample from restating earlier findings. Prior statements about literature novelty are provisional, not proven priority.
+
+Protocol: document C and query qC -> bits >=0; Hamming ranking, top3, fractional evidence recall, frozen tie rules. Native anchor LME 0.5419751773049645 and LoCoMo 0.23654714666441054. SIGN96 12-byte payload versus float96 384-byte payload; these EXCLUDE global/shared costs. Observed sign-float recall difference LME ~+10pp, LoCoMo ~+12pp, REALTALK +5.2241pp, PerLTQA -6.275pp. Float anchor was ALREADY centered: do not resurrect disproved centering confound. Empirical comparisons and certified array-specific bounds are not universal losslessness proofs. Learned selection/adaptive routing were closed by earlier gates; don't silently revive them. Benchmarks remain separate.
+
+Rules for mathematical integrity:
+- Separate THEOREM (full proof with explicit assumptions), CONJECTURE, EMPIRICAL OBSERVATION, and COUNTEREXAMPLE. Finite computation is not a universal proof.
+- Try to falsify every proposed lemma first. Record counterexamples rather than hiding them. Avoid circular assumptions that encode the desired retrieval outcome.
+- Do not infer retrieval lower bounds from distance-preservation/JL bounds. Do not assert 'new in literature' without an actual priority review.
+- No Lean installation for this exploratory empirical-theory phase. Use analytic reasoning plus exact rational / exhaustive small-case Python checks. Existing numpy/scipy available via /home/mdp/muse-work/ml-python if needed; verify environment before imports. Synthetic examples must be clearly marked and NEVER presented as benchmark output.
+- Existing benchmark validation is optional and read-only; if you recompute, reproduce its gate first and never replace frozen artifacts. A structural model under stated assumptions is preferable to an ungrounded fit.
+
+Deliver in current workspace: REPORT.md (clear statements, proofs, failed attempts, citations to source file+section, scope/novelty limits), verify.py (stdlib if possible, runnable), results.json (raw deterministic checks), STATUS.md (checkpoint early). Label all reports [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]. Final report must state one useful result or honest negative result, exact commands/output, and what is not proven. Keep report self-contained for another LLM. Do not claim completion until verify.py was actually executed.
+
+TARGET: MATHEMATICAL BASIS FOR 96x1 VS 48x2 OR MIXED BIT ALLOCATION.
+Read the local coordinate-heterogeneity paper copy and earlier allocation/selector failures first. Under a clearly stated independent-coordinate or finite probabilistic model, derive the expected PAIRWISE RANKING ERROR effect (not merely reconstruction MSE) of spending a second magnitude bit on a coordinate versus retaining first sign bits on more coordinates. Explicit quantizer thresholds, decoder/scoring rule, query encoding, tie convention, and payload budget are mandatory. Seek a computable marginal-value criterion and counterexamples to 'always allocate to highest variance'. If a theorem is only optimal for an additive surrogate, name that surrogate and do not claim retrieval optimality. Produce exact toy distributions/exhaustive searches showing one gain regime and one loss regime, or demonstrate the proposed gain cannot occur under chosen assumptions. Charges for thresholds/shared metadata must be exposed separately; no fake 12-byte claim through omitted costs. This is analysis plus toy computation only, NOT a new preregistered benchmark or revival of learned routing. End with one falsifiable future experiment specification, not an unrun result.

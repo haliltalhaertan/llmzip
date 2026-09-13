@@ -1,0 +1,17 @@
+# Coordinator review — normalization-aware sign bounds (candidate, corrections required)
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+Worker verify.py rerun:272/272 checks pass. This does not validate every prose claim: coordinator independently produced exact rational boundary counterexamples missed by the checks.
+
+VALID CORE: For a fixed full-precision unit query and arbitrary unit vectors within a sign orthant, closure support extrema have the stated projected-query-norm formula (or negative axis value when projection is zero). Sign patterns alone can fail to determine cosine ordering. Given exact rho=x dot c(s), decomposition along the sign centroid gives q dot x in u*rho +/- sqrt((1-u^2)*(1-rho^2)); this is standard Cauchy-Schwarz, not a new inequality. Strict separation of valid score intervals is a sufficient top-K guarantee. An additional stored scalar has extra per-document cost.
+
+ERRORS / LIMITS:
+1. Theorem1 table contradicts sign(0)=positive. For q=(3/5,4/5): (++):[3/5,1], BOTH attained (x=(1,0) attains lower). (+,-):[-4/5,3/5), lower attained upper not. (-,+):[-3/5,4/5), lower attained by(-1,0), upper not. (--):[-1,-3/5), lower attained by -q, upper not. Its displayed table and endpoint flags are wrong. Similarly the d4 all-positive range is [1/2,1], not (1/2,1].
+2. Degenerate axis attainment rule is false when optimal coefficient is zero and several negative-sign coordinates can share that zero face. Exact counterexample: q=(0,0,-1), s=(-,-,+), x=(-3/5,-4/5,0) is feasible unit vector with maximum0, but NO single axis obeys both strict negative signs. If maximum<0, axis rule applies; at maximum0, any unit vector supported on zero coefficients is an optimizer, and feasibility depends on covering required strict-negative coordinates there. Mirror correction for inf.
+3. 'Certified iff L_i>U_j' is an algorithmic sufficient criterion, not necessary truth about actual ordering: scalar-cap bounds can be conservative, sign constraints can tighten them, and endpoint nonattainment matters. 1+count(U_j>=L_i) is a safe rank upper bound, not automatically an attained exact worst rank.
+4. Spherical formula with exact rho describes a latitude constraint, not an arbitrary filled cap; code with quantized rho must optimize over its entire conservative bin. Added1e-12 float slack is not a rigorous roundoff proof for arbitrary inputs; distinguish analytic bound validity from numerically certified implementation. Worker alternate check routes are same-author, not independent proof audit.
+5. The all-positive top3 example sets q=c, making actual cosine exactly rho; an extra byte directly measures the target query score in this specially aligned example. Useful existence example, not evidence that one byte generally suffices or will certify nontrivial real-data coverage. rho does not capture ALL document direction/magnitude structure; it leaves perpendicular direction unresolved.
+6. 'Exact cross-pattern tie' supported only by float bisection with1e-9 equality should be called approximate numerical witness unless an analytic/exact construction is supplied. Equal cosine scores also do not establish 'equal relevance'.
+
+Verdict: valid elementary uncertainty bound + synthetic side-information example, but endpoint theorem/wording and numerical-certification claims need correction before acceptance. No benchmark improvement/novelty established. Original files retained unchanged with this note.

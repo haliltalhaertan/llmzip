@@ -1,0 +1,17 @@
+muse: workspace root: /home/mdp/muse-work/theorybench-lme (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Complete first pass in ~8 minutes, no fabrication — full 470/470 run with all deliverables.
+
+**Outcome: gate PASS, proxy-transfer result NEGATIVE.** Native SIGN96 MC-20 reproduces the anchor exactly (0.5419751773049645) and centered FLOAT96 MC-20 reproduces the stored T4C2 array (0.54159574468085105-scale mean 0.44159574468085105), all 5 gate checks within 1.1e-16 (tolerance 1e-12). Primary LOW48 endpoint contrast mean[delta(t=4)−delta(t=.25)] = **−0.0644, 95% CI [−0.0927,−0.0369]** — excludes zero on the negative side, so the predeclared LOW48-as-nuisance prediction (contrast > 0) is not supported. This falsifies only the query-magnitude proxy mapping, not the conditional Model-H theorem. Sign held bitwise (0 mismatches, reported as protocol check only).
+
+Verification actually run: `verification.py` → **45 gate/artifact checks + 24 manual outcome recomputes, all PASS** (3 representative QAs via an independent `sorted()`-tuple code path, full `groups.json` rule recompute, sign/FULL96 constancy over all 470, bootstrap reproduction). Counts: **gate_checks=5, archives=470, rows=7050, manual_recomputes=24**. Source hashes before==after (18 files, all identical).
+
+Supporting observations: HIGH48 is the exact mirror (+0.0644, mathematically required — kept as predeclared comparison, groups never redefined); FULL96 contrast 0.0 with bitwise cosine invariance; 114/470 LOW48 QAs show some adjacent delta decrease, so pointwise monotonicity doesn't transfer unconditionally.
+
+Artifacts (all in [/home/mdp/muse-work/theorybench-lme](/home/mdp/muse-work/theorybench-lme)): [run_lme.py](/home/mdp/muse-work/theorybench-lme/run_lme.py), [PRE_RUN.json](/home/mdp/muse-work/theorybench-lme/PRE_RUN.json) (sealed before intervention metrics), [PLAN.md](/home/mdp/muse-work/theorybench-lme/PLAN.md) (byte-exact, sha256 `a0f9e8e6…`), [gate.json](/home/mdp/muse-work/theorybench-lme/gate.json), per-query table (7050 rows) + [groups.json](/home/mdp/muse-work/theorybench-lme/groups.json), [summary.json](/home/mdp/muse-work/theorybench-lme/summary.json), [REPORT.md](/home/mdp/muse-work/theorybench-lme/REPORT.md), [verification.py](/home/mdp/muse-work/theorybench-lme/verification.py), receipts + local checkpoints. STATUS.md updated to DONE. No pushes, no API/model costs, no installs; sources elsewhere read-only and unchanged. This remains NOT preregistered and NOT independently audited.

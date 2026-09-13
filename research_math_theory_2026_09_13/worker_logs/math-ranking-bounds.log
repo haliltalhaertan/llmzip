@@ -1,0 +1,14 @@
+muse: workspace root: /home/mdp/muse-work/math-ranking-bounds (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done. Deliverables are in `/home/mdp/muse-work/math-ranking-bounds/`: [REPORT.md](/home/mdp/muse-work/math-ranking-bounds/REPORT.md), [verify.py](/home/mdp/muse-work/math-ranking-bounds/verify.py), [results.json](/home/mdp/muse-work/math-ranking-bounds/results.json), [STATUS.md](/home/mdp/muse-work/math-ranking-bounds/STATUS.md) — all labeled [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]. No sources outside the workspace were written; no push, installs, or benchmark runs.
+
+**Useful result.** For subset codes (retain S, drop r bits), the full-code profile + the integer r alone give distribution-free, tie-exact guarantees: a tight pairwise perturbation bound (T1) with a sharp integer trichotomy — gap > r preserves order, gap = r can tie but never strictly reverse, gap < r can reverse (T1′); exact top-K set invariance when the boundary gap exceeds r (T2); per-gold deeply-free/deeply-buried survival checkable from full distances only (T3); an array-specific expected-recall sandwich bounding subset-code loss (T4); and the exact hypergeometric tie law with variance, replacing pessimistic/optimistic prose (T5). Distinct from the cert bootstrap and MATH-1/MATH-2: no Binomial shell, no JL content, no independence assumptions.
+
+**Honest negative (T6).** For *every* retained set with r ≥ 1 there *exists* a 2-doc archive+query with full-code recall 1 but subset recall 1/2 (pessimistic 1→0). So no uniform preservation guarantee below 96 bits exists for subset codes — margin-conditional bounds are the ceiling. Fenced explicitly: subset family + adversarial pair only, not all codecs.
+
+**Verification actually executed.** `python3 verify.py results.json` — stdlib only, fully exhaustive: 122,368 T1/T2 checks, 604,160 T3, 424,448 T4, 171 exact-rational T5 distribution checks over 1,372 permutations — zero violations, with tightness/sharpness instances recorded. Notably the sweep **falsified my first-draft lemma** ("r=1 preserves optimistic recall"); the corrected restricted-entry lemma plus minimal counterexample C1 are in the report's failed-attempts section (§5) instead of being hidden.
+
+**Not proven.** T2–T4's practical bite on real 96-bit profiles is unmeasured (lower bound is vacuous on 92.7% of tiny synthetic cases); no benchmark artifacts touched. Novelty is claimed only relative to the programme's own cert/MATH-1/MATH-2 artifacts — no literature priority checked. Suggested read-only next step (T3/T4 applied to frozen LME profiles vs cert gaps) is in REPORT §8.

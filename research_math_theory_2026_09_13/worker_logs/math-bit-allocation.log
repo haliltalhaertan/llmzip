@@ -1,0 +1,15 @@
+muse: workspace root: /home/mdp/muse-work/math-bit-allocation (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done — useful result, not a negative one. All work is in `/home/mdp/muse-work/math-bit-allocation` (sources elsewhere read-only; no push, no installs, no benchmark runs).
+
+**Result.** Under an explicit finite independent-coordinate model (M-IND: fixed full-precision query, asymmetric inner-product scoring, ½-error tie convention, true-ties excluded, payload budget + separately-charged thresholds), pairwise ranking error — not MSE — decides bit allocation, and the answer is instance-dependent already at d=2:
+
+- Loss regime / counterexample to "always allocate to highest variance" (Setup A, budget 2): MSE prefers concentrating on the high-variance coord (MSE(2,0)=1/4 < MSE(1,1)=1), but ranking prefers spreading (P(1,1)=1/14 < P(0,2)=3/14 < P(2,0)=2/7). Even *dropping* the high-variance coord beats upgrading it.
+- Gain regime (Setup B, budget 3): P(2,1,0)=1/30 < P(1,1,1)=1/10 — the magnitude bit pays when the sacrificed coord is margin-negligible.
+- Computable marginal-value/swap-value criterion (MV/SV) gets both toys right where variance-ordering fails; surrogates named honestly (query-weighted MSE tracks ranking on these toys; pair-sum union-bound is optimal for the bound only, not retrieval). Greedy-MV general optimality left OPEN.
+
+**Verification actually executed.** `python3 verify.py` → `ALL_PASS = True`, 9/9 exact-rational checks, exit 0, stdlib only; wrote [results.json](/home/mdp/muse-work/math-bit-allocation/results.json). An independent seed-fixed Monte Carlo (separate /tmp script, n=400k) corroborates 1/14, 2/7, 3/14 to ≤5e-4. Notably the machine caught two of my hand-derivation errors first (predicted 0 and 1/15; true 1/14 and 1/10) — recorded as F1/F2 in [REPORT.md](/home/mdp/muse-work/math-bit-allocation/REPORT.md) with corrected proofs, plus failed/abandoned attempts, metadata accounting (no fake 12-byte claim), and one falsifiable E2-RANK experiment spec (not run).
+
+**Not proven:** greedy-MV optimality, threshold sensitivity on continuous laws, symmetric-query behavior, anything about real benchmark data (M-IND independence is known-false there per MATH-1 — stated as toy scope). No priority, JL, losslessness, or routing-revival claims.

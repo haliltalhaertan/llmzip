@@ -1,0 +1,9 @@
+muse: workspace root: /home/mdp/muse-work/math3-joint-gold-bounds (cwd default)
+muse: workspace trust: trusted source=run-flag
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+New result: the coordinator's corner conjecture is **proved** (REPORT.md §1). For fixed tie priorities, improving one gold displaces at most one doc — at worst a gold, so gold count never drops; worsening one nongold is symmetric. Stepping every doc to its category corner dominates all feasible profiles under every priority at once, so averaging preserves it. Covers m>1, K≥m, K=n, s=0/r=0, simultaneous ties. Sharp via interval realization; evaluation is an O(n log n) bucket formula, no DP needed.
+
+Also proved: nonnegative gold weights do **not** preserve it — smallest counterexample n=2, m=2, K=1, weights (1,2): corner gives 3/2, moving the light gold down gives 2. Witness reproduced exactly: joint max 3/4 vs avg-of-maxima 1, recall change ∈ [0,1/4].
+
+Verification: `verify.py` (4400 cells, exit 0) + independent permutation/codebook checker (2478 cells, exit 0), both rejecting the false avg-is-sharp variant. Artifacts in workspace only: STATUS.md, REPORT.md, verify.py, results.json, check_independent.py. No priority, security, or benchmark claims; proof is universal, sweeps are bounded (n≤4, b≤4).

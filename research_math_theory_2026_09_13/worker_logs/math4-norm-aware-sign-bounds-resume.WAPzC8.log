@@ -1,0 +1,13 @@
+muse: workspace root: /home/mdp/muse-work/math4-norm-aware-sign-bounds (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done. One rigorous result, fully checked, honestly scoped.
+
+**Result:** sharp sign-pattern cosine extrema with correct open-boundary semantics (Theorem 1: `sup = ‖P_K q‖`, degenerate axis case, attainment iff the closure maximizer has strictly negative N-coords), plus one scalar payload (`ρ = x·c(s)`, 8-bit with stated rounding interval) tightening the bound to the elementary cap `[cos(β+α), cos(|β−α|)]` — explicitly identified as Cauchy–Schwarz/angle-addition, not a discovery. Sign-only insufficiency is proved by saved witnesses: a 1-agreement doc scoring 0.794 beats a 2-agreement doc at 0.6, and a cross-pattern exact tie at 0.7.
+
+**Commands/results (exact):**
+- `cd /home/mdp/muse-work/math4-norm-aware-sign-bounds && PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /home/mdp/muse-work/ml-python -B verify.py` → `272/272 checks passed`, exit 0, writes `results.json`. First run caught 3 of my own errors (checker sign typo, wrong flip pattern, bad bisection bracket); fixed and re-greened.
+- Negative control: naive closed membership says feasible (`True`), exact open-boundary says infeasible (`False`) — the checker discriminates; seeded falses fail for the named reasons (OPEN_BOUNDARY, RANK_FLIP, ROUNDING).
+- Certified top-3: `L₁..₃=[0.9961,0.9961,0.9882]` vs `U₄..₆=[0.5020,0.7137,0.8706]`, worst-ranks `[3,3,3,6,5,4]` under adversarial ties, where sign-only gives all six the identical vacuous `(0.5,1]`. Saved failure case stays vacuous (width 1.4).
+
+**Scope:** [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]. Deliverables in-workspace only: [STATUS.md](/home/mdp/muse-work/math4-norm-aware-sign-bounds/STATUS.md), [verify.py](/home/mdp/muse-work/math4-norm-aware-sign-bounds/verify.py), `results.json`, [REPORT.md](/home/mdp/muse-work/math4-norm-aware-sign-bounds/REPORT.md). Old sources untouched; no sweeps, arms, push, Task4F1, installs, or network. Real-data content is one read-only LME t4 transcription used as illustration only. The only unproved item is labeled Conjecture (8-bit `ρ` certifying top-K on real queries at nontrivial rates).

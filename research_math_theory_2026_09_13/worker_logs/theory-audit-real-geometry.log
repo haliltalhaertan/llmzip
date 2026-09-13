@@ -1,0 +1,11 @@
+muse: workspace root: /home/mdp/muse-work/theory-audit-real-geometry (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+First pass done. The theorems survive; the transfer doesn't.
+
+**Outcome:** independently recomputed all four primaries from frozen per-query tables (109,075 rows) — LME −6.44326pp, LoCoMo −2.58291pp (CONDITIONAL, gate deviation stands), REALTALK −0.093606pp with CI covering ±~1.9pp (no support, *not* falsification), PerLTQA +2.46415pp. Pointwise monotonicity fails on every benchmark (114/470, 151/1535, 41/705, 961/8265). Reciprocal identity LOW48(t)==HIGH48(1/t) is exact (maxdiff 0.0 ×4) — HIGH48 is algebra, not corroboration. My derived scaled-cosine decomposition matches direct cosine ordering and exact FR@3 on all 52 subset queries × 5 t (0 rank/FR mismatches, exact-`==` ties). The flip witness names the reversing term: the amplified LOW48 group-dot numerator favors gold (LME `15745da0`: +0.298 vs +0.256 overcomes complement deficit) — the "nuisance" label is false on real arrays. All witnesses labeled oracle/descriptive; no causal claims.
+
+Deliverables in `/home/mdp/muse-work/theory-audit-real-geometry`: [STATUS.md](/home/mdp/muse-work/theory-audit-real-geometry/STATUS.md), [REPORT.md](/home/mdp/muse-work/theory-audit-real-geometry/REPORT.md) (EN summary + Türkçe özet, 9-entry ranked ledger), [verify.py](/home/mdp/muse-work/theory-audit-real-geometry/verify.py) (exit 0, **27/27**), results.json, selected_ids.json (persisted before computation; one disclosed overlap).
+
+Two of my own bugs caught by execution and disclosed in REPORT: uncommented header banner, and a mixed D-convention gap formula (fixed to 2+t·D, re-ran green). Sources hashed before/after, all unchanged; no old artifact edited; other-worker dirs never read.

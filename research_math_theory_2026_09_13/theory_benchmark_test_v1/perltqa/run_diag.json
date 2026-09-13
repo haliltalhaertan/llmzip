@@ -1,0 +1,9 @@
+{
+  "rows": 90915,
+  "expected_rows": 90915,
+  "sign_invariance_mismatches": 0,
+  "t1_max_abs_score_diff": 0.0,
+  "full96_t4_max_abs_score_diff": 0.0,
+  "full96_rank_order_changes": 0,
+  "full96_top3_gold_count_changes_seed0": 0
+}

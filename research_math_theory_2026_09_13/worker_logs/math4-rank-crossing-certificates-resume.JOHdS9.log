@@ -1,0 +1,12 @@
+muse: workspace root: /home/mdp/muse-work/math4-rank-crossing-certificates (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done — one rigorous result, proved and machine-checked, in `/home/mdp/muse-work/math4-rank-crossing-certificates`.
+
+**Result.** Under joint doc+query scaling (`f_i(z)=(a_i+b_i·z)/√(u_i+v_i·z)`, `z=t²`): pairwise equality needs numerator-sign discipline before squaring (cubic `P_ij` + spurious-root filter + `P≡0` persistent-tie/strict case); ranking is constant between genuine events (a root may touch, not reverse); top-K-set stability is necessary-and-sufficient over only `K·(n−K)` cross pairs, with fixed-priority sets and expected-tie recall as separate objects; the finite procedure (exact Sturm + rational-root split, honest `UNRESOLVED`, numpy never certified) outputs certified safe intervals — e.g. LME15745da0 gold/rival rival-above certified on `z∈[1/16,1]`. Full proofs in [REPORT.md](/home/mdp/muse-work/math4-rank-crossing-certificates/REPORT.md), checks in [verify.py](/home/mdp/muse-work/math4-rank-crossing-certificates/verify.py:1), data in [results.json](/home/mdp/muse-work/math4-rank-crossing-certificates/results.json), state in [STATUS.md](/home/mdp/muse-work/math4-rank-crossing-certificates/STATUS.md).
+
+**Exact command / result.**
+`cd /home/mdp/muse-work/math4-rank-crossing-certificates && OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 /home/mdp/muse-work/ml-python -B verify.py` → `checks=49 fail=0 / ALL PASS` (observed twice, final run plus pre-handoff rerun; python 3.14.4, threads 1/1, bytecode off, no `__pycache__`). Proof arithmetic is dual-formulation (`cmp_rank` vs integer-only `audit_cmp`; expansion vs interpolation `P` agree everywhere), and the seeded `naive_cmp` mutant fails exactly as intended (reads the fake root `P(1)=0` as a tie where truth is strict).
+
+**Honest incompletes.** Same-sign Sturm≥1 interiors stay `UNRESOLVED` (LME `(1,16)`); 1+1-dim search `UNRESOLVED` in-grid (18048/18048 evals, budget 40000), no minimality claim; LME is post-hoc bracket-endpoint illustration only (numerator alone does not explain the flip — norms essential); certs cover exact rational readings, not BLAS float order. No codec, no benchmark, no novelty claim. Labels on all narrative: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE].

@@ -1,0 +1,15 @@
+muse: workspace root: /home/mdp/muse-work/theorybench-perltqa (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 3/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Done. Full pass completed honestly in ~10 minutes, all in `/home/mdp/muse-work/theorybench-perltqa`, sources read-only and hash-verified unchanged (17/17).
+
+**Outcome.** Gate **PASS** before any intervention: per-QA reproduction max diff 2.2e-16 (native) / 1.1e-16 (float) at 1e-12 tolerance, 0 violations, exact gates 0.488941994930817 / 0.551692074528853 from `results_rerun.json` (rounded summaries never used). Primary LOW48 endpoint contrast (exact tie-bucket expectation, delta = sign−float): **+0.02464, cluster-bootstrap 95% CI [0.01554, 0.03443]** (2000 reps, seed 20260913, 30 archives) → sealed verdict "consistent with this proxy transfer" (compatibility only, not confirmation of Model H). Verification: **32/32 checks pass**, 90,915 rows = 8265×11 with no subsampling.
+
+**On your key question — the negative headline vs theory.** The −6.275pp baseline has no direct Model-H counterpart (the theorem's t=1 equality lives inside its toy law; real t is unidentified), so it neither confirms nor refutes the theorem. The comparative static matches on aggregate (amplifying LOW48 closes the sign/float gap), but three predeclared evidence kinds limit it: aggregate LOW48 curve is non-monotone (only the t=4 step rises); 961/8265 QAs (11.6%) violate pointwise monotonicity; sections split — events +0.049 and social +0.086 carry the primary while **profile reverses (−0.186)** and dialogues sit at −0.008. Nuisance was fixed gold-free before outcomes and never redefined. Also disclosed: HIGH48 is the exact algebraic negation of LOW48 (verified bit-identical via global-scale invariance), so it adds zero independent information; sign invariance (0/82,650 mismatches) is a verified tautology, not theory evidence.
+
+**Artifacts.** [runner.py](/home/mdp/muse-work/theorybench-perltqa/runner.py), [gate.json](/home/mdp/muse-work/theorybench-perltqa/gate.json), [PRE_RUN.json](/home/mdp/muse-work/theorybench-perltqa/PRE_RUN.json), per_query.jsonl, [summary.json](/home/mdp/muse-work/theorybench-perltqa/summary.json), [REPORT.md](/home/mdp/muse-work/theorybench-perltqa/REPORT.md) (starts with the exact four-label banner), [verification.py](/home/mdp/muse-work/theorybench-perltqa/verification.py), receipts (`gate/run/boot/verification_receipt.txt`), checkpoints, `source_hashes_after.txt`. No network, no API costs, no pushes. This is NOT preregistered and NOT yet independently audited.

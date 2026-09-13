@@ -1,0 +1,16 @@
+# Coordinator review — rank-crossing certificates
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+Reran worker verify.py:49 checks,0 failures. Valid core: normalized joint-scaling scores have form (a+b*z)/sqrt(u+v*z), z=t^2. Numerator signs must be checked before squared comparisons. Equality candidates solve a polynomial of degree at most3 (unless identically zero); continuity gives constant strict order on connected intervals without genuine equalities. Strict top-K membership stability is characterized by all inside/outside pairs keeping strict order. These are analytical facts, not evidence of a new codec or literature priority.
+
+Concrete delivered guarantee is limited: for the selected LME15745da0 gold56/rival368, exact rational reading of stored coefficients gives rival-above on z in[1/16,1] (t in[1/4,1]); later same-sign root-containing region remains UNRESOLVED in this implementation. This is one pair certificate, NOT a complete top3 stability guarantee for that real query. Endpoint reversal is separately checkable. Distinguish binary-exact rational coefficients from true exact dot products of all stored vector entries and from BLAS floating evaluation; neither transfer is automatic.
+
+CORRECTIONS / REVIEW LIMITS:
+1. 'Exactly one numerator zero can be a spurious P-root in the positive-denominator domain' is impossible: if N_i=0,N_j!=0, then P=-N_j^2*D_i!=0. The single-zero comparator case remains necessary, but it is not a candidate-root pathology. Opposite nonzero signs can generate genuine spurious squared roots.
+2. Tangent example(a,b,u,v)=(1,1,0,4) vs(1,0,1,0) is valid for the abstract rational-function family but NOT realizable from actual document/query blocks: u=0 forces the complementary document vector zero and hence a=0. Claims about cosine-realizable tangent events need a realizable example satisfying Cauchy-Schwarz and shared-query constraints. The abstract continuity theorem and sign-filter logic are not invalidated.
+3. Necessary-and-sufficient fixed-priority condition is simply that ALL cross-pair total-order comparisons favor the inside member for EVERY z, including endpoints and persistent tie intervals. A finite certificate with UNRESOLVED/SAMPLE_TIED can be incomplete; don't confuse characterization with a complete decision algorithm.
+4. Complexity O(K(n-K)+n log n) treats bounded-degree arithmetic as unit cost and omits rational-root candidate enumeration/coefficient bit complexity. Rational-root enumeration may be budget-skipped. Report this as an arithmetic-operation sketch with a capped helper, not a general polynomial-bit-time theorem.
+5. 'Machine-checked' here means executable assertions and two same-author arithmetic formulations, not proof-assistant/kernel certification or externally independent code audit. General soundness of the entire Sturm/interval implementation has not been independently established by49 example tests. No irrational root isolation implemented; UNRESOLVED must remain a real outcome.
+
+Original worker artifacts preserved unchanged with this note. No benchmark-wide safety rate measured; no method selection using these outcomes authorized; no main changes.

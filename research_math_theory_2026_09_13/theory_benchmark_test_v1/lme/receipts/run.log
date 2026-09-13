@@ -1,0 +1,24 @@
+loaded 470 archives (9.3s); pkl manifest saved
+GATE native_mc_vs_pilot: max_abs_diff=1.110e-16 -> PASS
+GATE native_mc_vs_t4c2_sign: max_abs_diff=1.110e-16 -> PASS
+GATE native_mc_vs_race_fr: max_abs_diff=0.000e+00 -> PASS
+GATE float_mc_vs_t4c2_float: max_abs_diff=1.110e-16 -> PASS
+GATE sign_exact_vs_race_model: max_abs_diff=0.000e+00 -> PASS
+GATE overall: PASS (native_mc=np.float64(0.5419751773049645) anchor=0.5419751773049645; float_mc=np.float64(0.44159574468085105) stored=np.float64(0.44159574468085105))
+  interventions 50/470 rows=750 (1s)
+  interventions 100/470 rows=1500 (4s)
+  interventions 150/470 rows=2250 (5s)
+  interventions 200/470 rows=3000 (7s)
+  interventions 250/470 rows=3750 (10s)
+  interventions 300/470 rows=4500 (11s)
+  interventions 350/470 rows=5250 (13s)
+  interventions 400/470 rows=6000 (15s)
+  interventions 450/470 rows=6750 (17s)
+  interventions 470/470 rows=7050 (17s)
+DIAG t1 identity: sign=0.000e+00 float=0.000e+00 float_mc=0.000e+00
+DIAG sign invariance mismatches=0; FULL96 t=4 score maxabsdiff=0.000e+00 changed_qas=0
+PRIMARY LOW48 contrast mean[delta(t=4)-delta(t=.25)] = -0.064433 95%CI [-0.092734,-0.036871]
+  LOW48: contrast=-0.064433 CI=[-0.092734,-0.036871] decreasing_frac=0.2426
+  HIGH48: contrast=+0.064433 CI=[+0.036871,+0.092734] decreasing_frac=0.1404
+  FULL96: contrast=+0.000000 CI=[+0.000000,+0.000000] decreasing_frac=0.0000
+DONE 7050 rows in 28s

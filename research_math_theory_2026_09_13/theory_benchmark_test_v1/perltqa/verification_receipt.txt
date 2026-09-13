@@ -1,0 +1,37 @@
+PASS gate_result_PASS :: PASS
+PASS gate_tol_is_1e-12 :: 1e-12
+PASS gate_maxdiff_native_le_tol :: 2.220e-16
+PASS gate_maxdiff_float_le_tol :: 1.110e-16
+PASS gate_no_violations :: 0
+PASS gate_native_mean_exact :: 0.4889419949308161
+PASS gate_float_mean_exact :: 0.551692074528852
+PASS gate_counts :: qa=8265 arch=30
+PASS gate_sections :: {"profile": 333, "social_relationship": 844, "events": 4346, "dialogues": 2742}
+PASS per_query_row_count :: 90915 vs 90915
+PASS per_query_n_qid :: 8265
+PASS per_query_cells_complete :: 0 incomplete
+PASS per_query_schema :: 0 bad
+PASS per_query_sections_from_ids :: {"profile": 333, "social_relationship": 844, "events": 4346, "dialogues": 2742}
+PASS per_query_30_archives :: 30
+PASS per_query_group_idx_sizes :: 0 bad
+PASS per_query_mc20_null_pattern :: 0 bad
+PASS gold_size_denominators_original :: 0 mismatched
+PASS sign_invariant_across_all_cells :: spread=0.000e+00
+PASS run_diag_sign_mismatch_zero :: 0
+PASS t1_identity_exact :: t1_gap=0.000e+00 score=0.000e+00
+PASS FULL96_t4_drift_zero :: 0.000e+00
+PASS LOW_HIGH_mirror_identity :: 0.000e+00
+PASS delta_is_native_minus_float :: all rows
+representatives: {"events": "PQ000_EVE_q000", "social_relationship": "PQ000_SOC_q000", "dialogues": "PQ000_DLG_q000"}
+PASS manual_exact_matches_stored :: max_gap=0.000e+00
+PASS permutation_MC_within_0.03_of_exact :: 0 arms off
+PASS summary_primary_obs_reproduced :: 0.024642
+PASS bootstrap_ci_reproduced :: [0.01554,0.03443]
+PASS bootstrap_excludes_zero :: lo=0.01554
+PASS summary_cluster_count :: 30/8265
+PASS source_files_unchanged :: 17/17 unchanged
+PASS plan_copy_still_byte_exact :: PLAN.md sha256
+CHECKS 32/32 passed
+GATE maxd_nat=2.220e-16 maxd_flt=1.110e-16 violations=0
+OUTCOME LOW48 contrast obs=0.02464 CI=[0.01554,0.03443] verdict=consistent with this proxy transfer
+QUERIES qids=8265 rows=90915 archives=30 excluded=Chen Zhi(40, N=35) unresolved=288

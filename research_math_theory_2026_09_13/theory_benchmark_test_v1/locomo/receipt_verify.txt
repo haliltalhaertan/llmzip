@@ -1,0 +1,41 @@
+[PASS] gate_pass_flag 
+[PASS] gate_anchor_exact 0.0
+[PASS] gate_npz_1e12 1.1102230246251565e-16
+[PASS] gate_perq_1e12 0.0
+[PASS] gate_mc_bitwise_vs_official 
+[PASS] raw_cat14_is_1540 1540
+[PASS] table_rows_1535 1535
+[PASS] gate_counts 
+[PASS] ten_archives_cover_rows {0: 150, 1: 81, 2: 152, 3: 199, 4: 178, 5: 123, 6: 149, 7: 191, 8: 156, 9: 156}
+[PASS] excluded_five_have_no_gold 
+[PASS] row_schema 
+[PASS] cfg_schema 
+[PASS] low48_valid 
+[PASS] t1_identity_maxabs_zero 0.0
+[PASS] sign_invariance_zero 
+[PASS] full96_invariance_zero 0.0
+[PASS] contrast_LOW48_matches_summary -0.025829067783465175
+[PASS] contrast_HIGH48_matches_summary 0.025829067783465175
+[PASS] contrast_FULL96_matches_summary 0.0
+[PASS] primary_ci_ordered 
+[PASS] primary_not_positive negative verdict is data, sealed rule applied
+[PASS] groups_match_sorted_key 
+[PASS] spot_qas_found 3
+[PASS] manual_locomo_0_qa0_exact 1.0 vs 1.0
+[PASS] manual_locomo_0_qa0_mc 1.0 vs 1.0
+[PASS] manual_locomo_5_qa10_exact 0.0 vs 0.0
+[PASS] manual_locomo_5_qa10_mc 0.0 vs 0.0
+[PASS] manual_locomo_9_qa100_exact 1.0 vs 1.0
+[PASS] manual_locomo_9_qa100_mc 1.0 vs 1.0
+[PASS] brute_force_tie_law enum 1.0 vs law 1.0
+[PASS] pkl_hashes_unchanged 
+[PASS] producer_hashes_unchanged 
+[PASS] plan_hash_unchanged 
+hash gate.json a62955ea7c89f0a034ddb003388c0086e2d7f9f7230285ebfb0114fc7a1f0edf
+hash summary.json 2f4be7b1b0631a3ee19eceb39752436256e09b717ba666db164b3aefd0849cd2
+hash per_query.jsonl c638168e78c8b722fa8efff2f61f201e54f68914def3b351dd9bd5a506e91cff
+hash run_locomo.py 0c924486e1e4f5fed8b949699860611a9ceadf7460f3646c6a8b2b413c8e4190
+hash verification.py 4b0eda3fde8442603abc4b67a29c883c8a6caa38fb486c46d2e645fab63d17d4
+hash PRE_RUN.json 3ba760f17e821894d9b25630b8c05385c7c2e9e7dd7a40ce58b9c6d13fbcf193
+CHECKS total=33 pass=33 fail=0
+GATE_OUTCOMES pass=True

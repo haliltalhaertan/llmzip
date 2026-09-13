@@ -1,0 +1,16 @@
+muse: workspace root: /home/mdp/muse-work/theory-audit-locomo-provenance (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done — first pass complete, no fabrication, all sources untouched.
+
+**Verdict: the +12pp LoCoMo gap is UNSUPPORTED — retract pending a primary source.** The LoCoMo pilot stays CONDITIONAL / PROTOCOL-DEVIATION. Current arithmetic is confirmed correct but is not history.
+
+What failed was provenance, not mathematics:
+
+- The shared plan ([PLAN.md](/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/PLAN.md:15)) demanded native **and** float replication before intervening. The worker reproduced SIGN `.23654714666441054` exactly but found no historical float arrays, substituted a fresh `.16826334541318252`, and continued ([REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/REPORT.md:29)). Current gap: **+6.82838pp**, not +12.
+- The coordinator already flagged this as gate bypass ([COORDINATOR_REVIEW.md](/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/locomo/COORDINATOR_REVIEW.md:7)); my audit confirms and closes the +12 side.
+- +12pp traces only to prompt briefs asserting it "as given" — the one report repeating it disclaims it explicitly: "programme-reported; not recomputed here — stated as given" (`bench3/runs/b3a_realtalk/report.md:28-30`). An earlier certificate states no LoCoMo float anchor ever existed in frozen artefacts (`race_2026-09-13/cert/cert_report.md:213`). The only sourced historical LoCoMo gap is Haar−Native = **−9.8839pp** — wrong estimand, wrong sign, so it can't rescue +12 either.
+- My independent recompute from the original `regen/locomo` cache matches the worker per-QA bitwise (maxabs 0.0) and confirms no float arm exists in `taskC_LoCoMo_perq.json`. Agreement is expected (same cache) — it validates current numbers, not history. No algebra or numerical bugs found; sign-invariance identities are correct construction, not evidence.
+
+Deliverables in `/home/mdp/muse-work/theory-audit-locomo-provenance/`: `STATUS.md`, `REPORT.md` (summary + evidence + ranked 5-item error ledger + commands/counts), `verify.py` (exit 0, threads=1, no-bytecode), `results.json`. All narrative files carry the four required labels; 24 source hashes stable before/after; cited-md hashes identical.
+
+Minimal next test: produce a frozen pre-theory per-QA float array for LoCoMo, or keep +12 retracted.
