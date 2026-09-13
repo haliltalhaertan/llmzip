@@ -1,0 +1,29 @@
+{
+  "schema": "LLMZIP_E1_MECHANISM_PACKAGE_V1",
+  "files": {
+    "E1_BRIDGE_INPUT.json": {
+      "bytes": 2656,
+      "sha256": "788ee038fecfa310ce250933bf23541e419a58bf402c018332815caf6cbdfe68"
+    },
+    "E1_BRIDGE_OUTPUT.json": {
+      "bytes": 449,
+      "sha256": "424dade563be5ef75fb1bfc4315e0ec0d44329c59a5b95f5bcd5ffb8eb90959e"
+    },
+    "E1_BRIDGE_REPORT.md": {
+      "bytes": 2660,
+      "sha256": "6e471e8698e23513ea97b15cf523443bac59cda69b7656456000980d8a7aa9d1"
+    },
+    "E1_PREANALYSIS_SPEC.md": {
+      "bytes": 3846,
+      "sha256": "f3bd6d74cc88abb9fc87bf70088e9fc6b831b4c861d3aee8bd6ffee2a18ed8df"
+    },
+    "e1_bridge_analysis.py": {
+      "bytes": 1543,
+      "sha256": "77eecc08db50efc044c5737189ecf6dca08ace33914d8702ab366b067a2dd014"
+    },
+    "e1_geometry_core.py": {
+      "bytes": 1182,
+      "sha256": "c8de145da5ca52c7d3a1f282c047fa222d8ff0bcdf651d939cc2eaaacefaf04b"
+    }
+  }
+}
