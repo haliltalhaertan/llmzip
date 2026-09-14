@@ -8,7 +8,7 @@ Research archive for compact long-term memory retrieval for LLM/agent systems.
 
 The project studies whether a memory system can keep a very small active routing representation while preserving evidence retrieval, exact provenance, and an auditable path back to the raw archive.
 
-## Current research state — 2026-09-01
+## Current research state — 2026-09-01 (section frozen at that date; superseded by ledger L-003 through L-096 — see `docs/CONTINUITY_LEDGER.md` and `ops/CURRENT_STATE.json`)
 
 The project has progressed from V1 synthetic routing experiments through V51 full-LoCoMo preparation and V52 LongMemEval validation.
 
@@ -43,7 +43,7 @@ Current accepted state under the independent-audit workflow:
 
 Head Researcher decision: accept the superseding Task 4F0 restricted-refreeze audit and seal the exact 1,712-question cohort/protocol boundary. Task 4F1 remains blocked until its outcome-bearing fitting/ranking implementation is separately byte-bound and independently audited. See `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
 
-Task 4F1 implementation governance update: the V1 audit was contaminated by an auditor-side accidental outcome-capable execution; V2 then received an outcome-free `BLOCKED` verdict for three synthetic finalization/checkpoint defects. V3 repairs those defects and has passed only implementer-side outcome-free preflight and synthetic regressions. A fresh cold-start V3 audit is still required; no Task 4F1 result has been accessed.
+Task 4F1 implementation governance update: the V1 audit was contaminated by an auditor-side accidental outcome-capable execution; V2 then received an outcome-free `BLOCKED` verdict for three synthetic finalization/checkpoint defects. V3 repairs those defects and had, at the time of writing, passed only implementer-side outcome-free preflight and synthetic regressions. [SUPERSEDED 2026-09-01: the cold-start V3 independent audit closed the same day with verdict BLOCKED (branch `audit/v52-t4f1-v3-independent-2026-09-01`, commit `a590f629`; ledger L-003). The programme has since proceeded through the V4, V5 and V6 audits, the V7 package (audit incomplete, no verdict), the V8 prepared profile (unaudited), and Seal V3 (2026-09-04).] No Task 4F1 result has been accessed.
 
 ## Repository map
 

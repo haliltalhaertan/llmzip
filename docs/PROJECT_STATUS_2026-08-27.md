@@ -22,6 +22,8 @@ Paired fixed-benchmark gaps:
 - ITQ vs centered float `I - Fc`: -6.545461 pp.
 - SIGN vs ITQ `S - I`: +16.583404 pp.
 
+> **Concentration caveat (audit-mandated — `audit_v52_t4c2/AUDIT_REPORT.md:24-33`).** The `S - Fc` lead is concentrated, not broad: W/T/L = 122/304/44 with a median paired gap of 0.000000 pp (64.7% ties), and removing the 50 largest positive contributors leaves about +1.28 pp of the +10.04 pp. Descriptive composition sensitivity on a frozen benchmark only — no population inference and no causal mechanism is licensed. This caveat must accompany any further communication of this result.
+
 Frozen Task 4C2 decision: `[LEAD — SIGN/HAMMING ADVANTAGE SURVIVES CENTERED FLOAT CONTROL]`.
 
 Same-input proof passed with maximum absolute difference `0.000e+00` between the centered 96D inputs used by centered FLOAT, SIGN and pre-rotation ITQ.

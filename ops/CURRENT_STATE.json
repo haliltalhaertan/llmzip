@@ -1,7 +1,7 @@
 {
   "schema": "LLMZIP_CONTINUITY_STATE_V1",
-  "state_id": "V52_4F1_SCIENTIFIC_PREREGISTRATION_SEALED_V3",
-  "issued_at_utc": "2026-09-12T14:52:03.160952+00:00",
+  "state_id": "V52_GOVERNANCE_RECORD_CONSOLIDATED_L096",
+  "issued_at_utc": "2026-09-14T00:00:00+00:00",
   "state_release_tag": "PENDING (tag pushes refused by environment; see pushed_state_anchor)",
   "predecessor_anchor": {
     "canonical_branch": "main",
@@ -15,9 +15,9 @@
     "START_HERE_V52_4F1.md",
     "ops/CURRENT_STATE.json",
     "docs/CONTINUITY_LEDGER.md",
-    "docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md",
+    "docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md [FROZEN SNAPSHOT 2026-09-03 (6ed812f) — historical context, not authoritative]",
     "CHAIN_OF_CUSTODY.md",
-    "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V6_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-03.md"
+    "prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V6_INDEPENDENT_DELTA_AUDIT_PROMPT_2026-09-03.md [CLOSED — the V6 delta audit returned BLOCKED 2026-09-03; retained as historical record, not pending work]"
   ],
   "task_state": {
     "sealed_prerequisite": "Task 4F0 restricted cohort: 1712 questions / 96 archives",
@@ -338,7 +338,7 @@
     "sha256": "3f6b08e13324df0a709d8a0821db14ec947acb04d0484f9559aa0697ed5902b5",
     "purpose": "hand the Continuity Lead seat to a fresh session without inheriting chat memory; the prompt declares the repository authoritative over its own contents and requires the successor to re-verify every anchor before acting"
   },
-  "ledger_entry": "L-095",
+  "ledger_entry": "L-096",
   "pushed_state_anchor": {
     "type": "branch",
     "ref": "state/v52-4f1-v3-audit-blocked-2026-09-01",
@@ -2077,7 +2077,7 @@
     "g3_grant_state": "OPEN and UNSPENT; acceptance criterion of L-089 unchanged",
     "checkable_manifest_for_any_arriving_package": "origin/codex/v52-runner-ingest-repair-2026-09-08 : drafts/v52/membership_runner_ingest_codex_v5_2026_09_08/PAYLOAD_HASHES.json"
   },
-  "next_single_action": null,
+  "next_single_action": "Commission TWO cold-start independent audits, in this order and by a party with no prior contact with the artifacts: (1) the V8 prepared execution profile (candidate/v52-t4f1-v8-single-authority-2026-09-04 @ 5a609e39), which is currently SELF-REVIEWED ONLY; (2) the exact-rational D_t implementation (impl/t4f1-exact-rational-analysis-2026-09-04 @ 4e13ac83) against Seal V3 binding 8. Until both return hash-bound verdicts, Task 4F1 run stays BLOCKED and retrieval-quality outcome access stays FORBIDDEN. Do not merge the V8 branch as-is: it is based on an L-037-era main and would delete 37 files including 17 sidecar-hashed documents; it must be re-prepared onto current main first.",
   "pr_2_disposition_2026_09_12": {
     "status": "CLOSED_WITHOUT_MERGE",
     "url": "https://github.com/haliltalhaertan/llmzip/pull/2",
@@ -2193,5 +2193,35 @@
     "acceptance": "L-094",
     "ledger": "L-095",
     "preservation": "No branch deletion, checkout or original user index/worktree change. Legacy HEAD is historical main, not current main."
+  },
+  "governance_consolidation_2026_09_14": {
+    "decision": "Head Researcher consolidation of the 2026-09-14 governance audit. Bookkeeping and pointer corrections ADOPTED; no scientific claim, seal, authorization or run status changed.",
+    "adopted": [
+      "C1-C6, C8a: dated superseded-by annotations in README.md, START_HERE_V52_4F1.md, PROJECT_DOCUMENTATION_MANIFEST.md, docs/CONTINUITY_PROTOCOL.md. History preserved; no narrative rewritten.",
+      "C7: authority_order annotated - the V6 delta-audit prompt is marked CLOSED, and RESEARCH_PROGRAM_STATUS is marked a frozen snapshot.",
+      "S4: the audit-mandated concentration caveat added to the two documents that quoted +10.037943 pp without it (docs/PROJECT_STATUS_2026-08-27.md, docs/v52/task4c2/V52_T4C2_COMPUTE_REPORT.md).",
+      "Top-level next_single_action set (was null while only task_state carried direction)."
+    ],
+    "not_adopted_and_why": {
+      "v7_verdict": "NO VERDICT ISSUED. The V7 audit stopped after 16 evidence files with no report, gate table, hash manifest or verdict. The 2026-09-14 gate-completion package is evidence prepared by a NON-INDEPENDENT session and cannot close Gate 3.5.",
+      "binding_8": "NOT DISCHARGED. The exact-rational implementation behaved correctly on synthetic inputs (31/31, and coordinator mutation testing confirmed the tests fail a float-based classifier), but it is unfrozen, unmerged and unaudited, and the session that tested it read it.",
+      "g3_acceptance_L094": "NOT RATIFIED HERE. L-094 concentrates preparation and acceptance in one role. An independent audit (5753243) and a separate hr/ decision commit (4278cb2) exist, but explicit Head Researcher ratification is still owed before the G3 acceptance is relied upon.",
+      "v8_merge": "REFUSED. Stale base (L-037 vs L-096); would delete 37 files, 17 of them sidecar-hashed, and overwrite the ledger and this state file."
+    },
+    "findings_registered_existence_only": [
+      "E1 mechanism line (10 branches, 2026-09-13) incl. two independent audits; audit/e1-v2-raw-cache-recovery-independent-2026-09-13 returned REQUEST_CHANGES.",
+      "Static-storage V8/V9/V10 line (12+ branches, 2026-09-12/13) incl. four independent audits.",
+      "findings/representation-geometry-2026-09-13 (75b7e05); findings/rank-cert-repair-2026-09-14 (dbb3ee0); findings/campaign-2026-09-13 (493f173); findings/governance-repair-2026-09-14 (8ed1351).",
+      "No scientific result from any of these lines is accepted or restated by this entry."
+    ],
+    "v7_structural_limits_recorded": [
+      "File-name set equality is CONTENT-BLIND: narrative content placed under a functional file name plus a full reseal passes the checker (demonstrated on synthetic fixtures, 2026-09-14).",
+      "Unpinned seal prose (status_semantics) can be deleted with no check firing.",
+      "Nothing inside the V7 package hashes the seal bytes; the only root of trust is the externally pinned hashes in the audit prompt."
+    ],
+    "v5_v6_defects_registered": "29 audit findings from the V5 and V6 independent audits were never recorded in L-014/L-018, including F5 attestation redirect, C1/C3 smuggling classes, E8 must_not_appear_as_requirement=false, B7 non-UTF-8 silent skip, and the missing REAL_CANARY_QUERY / TIERS concepts (0 hits verified in both the ledger and V6's NORMATIVE_SOURCE_MAP.json). Register: findings/governance-repair-2026-09-14 :: research_governance_repair_2026_09_14/VANISHED_DEFECT_REGISTER.md",
+    "evasion_count_scope": "V6: 25 evasions of 36 auditor-constructed probes (batches 2-3); 31 evasion rows across the full 52-fixture table once regression and declaration-integrity checks are included (32 unblocked minus G1, the positive control whose passing is correct). Both figures are correct in their own scope; quote with the scope.",
+    "integrity_reverified_2026_09_14": "From raw git blobs: 20/20 sidecars, 32/32 CURRENT_STATE anchors, 73/73 representation-geometry manifest. Ledger L-001..L-095 contiguous with zero deletion lines across its entire history.",
+    "authorizes": "NOTHING. No execution, seal, pilot, run, preregistration change or outcome access."
   }
 }

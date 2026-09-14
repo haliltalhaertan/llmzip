@@ -41,4 +41,4 @@ If a hard stop is crossed, immediately stop the affected activity; preserve comm
 
 ## Task 4F1-specific boundary
 
-The active state is V3 independent audit pending. Permitted work is limited to the V3 prompt's outcome-free static, synthetic and representation-canary checks. `--mode run`, `--mode finalize`, real ranking, real scoring, valid authorization/HMAC construction and outcome interpretation remain prohibited until separately authorized after a passing independent audit and preregistration decision.
+[SUPERSEDED 2026-09-01 by L-003 — retained as the historical boundary that governed the V3 audit window.] The active state is V3 independent audit pending. Permitted work is limited to the V3 prompt's outcome-free static, synthetic and representation-canary checks. `--mode run`, `--mode finalize`, real ranking, real scoring, valid authorization/HMAC construction and outcome interpretation remain prohibited until separately authorized after a passing independent audit and preregistration decision.

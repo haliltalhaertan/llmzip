@@ -39,6 +39,8 @@ Bit balance, collision, tie, gold/non-gold distance, continuous cosine separatio
 - SIGN vs centered float: W/T/L = 122/304/44; median gap +0.000000 pp.
 - Centered vs uncentered float: W/T/L = 7/458/5; median gap +0.000000 pp.
 
+> **Concentration caveat (audit-mandated — `audit_v52_t4c2/AUDIT_REPORT.md:24-33`).** The `S - Fc` lead is concentrated, not broad: W/T/L = 122/304/44 with a median paired gap of 0.000000 pp (64.7% ties), and removing the 50 largest positive contributors leaves about +1.28 pp of the +10.04 pp. Descriptive composition sensitivity on a frozen benchmark only — no population inference and no causal mechanism is licensed. This caveat must accompany any further communication of this result.
+
 ## Interpretation boundary
 
 This is a controlled fixed-benchmark method comparison. It isolates the effect of archive-mean centering relative to the frozen uncentered continuous reference and asks whether a residual SIGN/Hamming gap remains. It does not establish population causality or cross-benchmark generalization.

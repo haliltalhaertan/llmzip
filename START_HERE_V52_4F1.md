@@ -4,9 +4,9 @@ This is the single operational entry point for a new Head Researcher, Compute Ex
 
 ## Exact starting point
 
-- **Repository state:** canonical branch `main`. Tag pushes are refused by the current environment, so the pushed anchor is branch `state/v52-4f1-v3-audit-blocked-2026-09-01`; use the current `main` head or a descendant explicitly reviewed by the Head Researcher.
+- **Repository state:** canonical branch `main` (ledger L-096). Tag pushes are refused by the current environment; the L-004-era pushed anchor `state/v52-4f1-v3-audit-blocked-2026-09-01` is **historical**. Later state anchors exist (e.g. `state/v52-4f1-v6-audit-pending-2026-09-03`, `state/v52-t4f1-prereg-SEALED-V3-2026-09-04`). Use the current `main` head or a descendant explicitly reviewed by the Head Researcher.
 - **Current task:** Execution track only. The scientific preregistration is SEALED as of 2026-09-04; the science track is closed. The V6 audit is COMPLETE and returned BLOCKED; do not re-run it.
-- **Authoritative operational ledger:** `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md`.
+- **Authoritative operational ledger:** `docs/CONTINUITY_LEDGER.md` with live state `ops/CURRENT_STATE.json` (both sole-writer, Head Researcher). `docs/RESEARCH_PROGRAM_STATUS_2026-08-31.md` is a frozen 2026-09-03 snapshot (commit `6ed812f`) — historical context only, **not** authoritative.
 - **Byte-preservation and provenance rules:** `CHAIN_OF_CUSTODY.md` and `DATASETS_AND_LARGE_ARTIFACTS.md`.
 - **Preregistration draft under review:** `docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md`.
 - **Audit prompts** under `prompts/` are historical records of completed audits, not pending work.

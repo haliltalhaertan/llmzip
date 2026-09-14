@@ -22,7 +22,7 @@ A 104-file documentation snapshot was assembled from the Drive archive during mi
 ## GitHub documents migrated directly
 
 ### Project-level
-- `START_HERE_V52_4F1.md` — single operational handoff for a cold-start researcher/LLM; defines the current V3 independent-audit task, byte anchors, required external corpus, safety boundary and completion condition.
+- `START_HERE_V52_4F1.md` — single operational handoff for a cold-start researcher/LLM; [SUPERSEDED 2026-09-01: the V3 independent audit it was written to define closed BLOCKED (L-003); the file now tracks the V4 through V8 chain and the sealed preregistration] defines byte anchors, byte anchors, required external corpus, safety boundary and completion condition.
 - `ops/CURRENT_STATE.json`, `docs/CONTINUITY_PROTOCOL.md`, `docs/CONTINUITY_LEDGER.md`, and `tools/verify_continuity_state.py` — crash-safe, hash-checked operational state and append-only multi-agent handoff controls.
 - `README.md`
 - `docs/PROJECT_STATUS_2026-08-27.md`
@@ -77,7 +77,7 @@ The canonical Task 4C2 Drive folder additionally contains the raw trial table, q
 - `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_INDEPENDENT_AUDIT_PROMPT_2026-08-31.md` — cold-start audit prompt for the exact execution-candidate bytes.
 - `audit_v52_t4f1_execution_candidate_independent_audit_2026_08_31/` — V1 technical audit; its disclosed A1 outcome-capable execution prevents using it as a clean seal sign-off.
 - `task4f1_execution_candidate_v2_2026_09_01/` and `audit_v52_t4f1_execution_candidate_v2_independent_audit_2026_09_01/` — V2 candidate and outcome-free independent `BLOCKED` audit; B1–B3 finalization/checkpoint defects are preserved as evidence.
-- `task4f1_execution_candidate_v3_2026_09_01/` and `task4f1_execution_candidate_v3_preflight_2026_09_01/` — V3 remediation candidate and outcome-free synthetic preparation evidence; independent audit pending.
+- `task4f1_execution_candidate_v3_2026_09_01/` and `task4f1_execution_candidate_v3_preflight_2026_09_01/` — V3 remediation candidate and outcome-free synthetic preparation evidence; [SUPERSEDED 2026-09-01: independent audit closed BLOCKED (`a590f629`; L-003). Preserved byte-unchanged as evidence.]
 - `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V2_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md` and `prompts/V52_TASK_4F1_EXECUTION_CANDIDATE_V3_INDEPENDENT_AUDIT_PROMPT_2026-09-01.md` — fresh cold-start audit prompts; both forbid execution and outcome access.
 - `remediation_v52_t4f0_env_2026_08_31/` — isolated environment recovery record; only small human-readable reports are versioned, while its local runtime and copied corpus are ignored.
 - `remediation_v52_t4f0_env_2026_08_31/REPRESENTATION_SELFTEST_REPORT.md` — exact-lock pre-outcome 100K/500K/1M/10M representation self-test results.
