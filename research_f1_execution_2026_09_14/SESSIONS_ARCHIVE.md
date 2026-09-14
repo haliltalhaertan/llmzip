@@ -2,7 +2,15 @@
 
 # Archive of every llmzip session output produced on this machine
 
-**2294 files across 57 sessions, 58.7 MB.**
+**2,265 files across 48 sessions, 58.7 MB.**
+
+A note on the counts, because three different numbers appear in the history of this
+archive. The staging scan selected **2,294** paths. Of those, **29 were `.git` pointer
+files** (one per session directory that was a git worktree); git refuses to track a
+file named `.git`, and it is not session output in any case. Nine directories contained
+nothing except that pointer, so they carry no content and do not appear here. What
+remains is **2,265 files across 48 sessions**, and a file-by-file comparison of the
+working tree against the committed tree shows **zero missing and zero extra**.
 
 ## Two wrong commits this archive supersedes
 
