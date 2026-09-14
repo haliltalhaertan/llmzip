@@ -1,0 +1,69 @@
+--- 07ec929243068914676a0f30efd10c9f294c7e71:corpus_ingest_v4.py
++++ current/corpus_ingest_g3.py
+@@ -23,12 +23,11 @@
+ from pathlib import Path
+ 
+ _HERE = Path(__file__).resolve().parent
+-_CORE = Path(__file__).resolve().parents[1] / "membership_impl_v3_2026_09_07"
+-for _p in (str(_HERE), str(_CORE)):
++for _p in (str(_HERE),):
+     if _p not in sys.path:
+         sys.path.insert(0, _p)
+ 
+-import membership_runner_v4 as runner                                            # noqa: E402
++import membership_runner_g3 as runner                                            # noqa: E402
+ import membership_scaling_core as core                                           # noqa: E402
+ import safe_report                                                               # noqa: E402
+ import errors                                                                    # noqa: E402
+@@ -107,7 +106,7 @@
+     "reasoning and recorded there - it is not produced in code."
+ )
+ 
+-INGEST_VERSION = "corpus_ingest Codex v5 2026-09-08"
++INGEST_VERSION = "corpus_ingest G-3 remediation 2026-09-11"
+ 
+ LOCOMO_QID = re.compile(r"^locomo_(\d+)_qa(\d+)$")
+ _DIA_ID = re.compile(r"D\d+:\d+")
+@@ -116,6 +115,14 @@
+ # --------------------------------------------------------------------------------------------
+ # 1. Source byte identity - checked BEFORE any parsing
+ # --------------------------------------------------------------------------------------------
++def _manifest_n_questions(mapping):
++    """Return the exact builtin count or refuse before it reaches a diagnostic."""
++    value = mapping.get("n_questions") if isinstance(mapping, dict) else None
++    if type(value) is not int:
++        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_FIELD_TYPE, field_index=2)
++    return value
++
++
+ def _check_accepted_mapping(mapping, benchmark: str) -> None:
+     """Refuse a mapping that did not come through the accepted-resolution path.
+ 
+@@ -417,10 +424,11 @@
+                                cohort_size=len(bound))
+ 
+     resolved = sum(len(c["questions"]) for c in conversations.values())
+-    if resolved != len(bound) or resolved != mapping["n_questions"]:
++    manifest_n_questions = _manifest_n_questions(mapping)
++    if resolved != len(bound) or resolved != manifest_n_questions:
+         errors.raise_violation(DesignViolation, errors.Code.COHORT_SIZE_MISMATCH,
+                                resolved=resolved, cohort_size=len(bound),
+-                               manifest_n_questions=mapping["n_questions"])
++                               manifest_n_questions=manifest_n_questions)
+ 
+     return {"benchmark": runner.LOCOMO, "identity": identity, "mapping": mapping,
+             "conversations": conversations,
+@@ -529,10 +537,11 @@
+     if missing:
+         errors.raise_violation(DesignViolation, errors.Code.COHORT_RESOLUTION_FAILED,
+                                missing_ids=len(missing), cohort_size=len(bound))
+-    if len(questions) != mapping["n_questions"]:
++    manifest_n_questions = _manifest_n_questions(mapping)
++    if len(questions) != manifest_n_questions:
+         errors.raise_violation(DesignViolation, errors.Code.COHORT_SIZE_MISMATCH,
+                                resolved=len(questions), cohort_size=len(bound),
+-                               manifest_n_questions=mapping["n_questions"])
++                               manifest_n_questions=manifest_n_questions)
+ 
+     return {"benchmark": runner.LONGMEMEVAL, "identity": identity, "mapping": mapping,
+             "questions": questions, "cohort_ids": list(bound),

@@ -1,0 +1,10 @@
+{
+  "namespace": "drafts/v52/static_storage_plan_prep_v4_2026_09_12",
+  "base": "3fab24bce46203348935492ba8276b9920aea898",
+  "audit_source": "b06247df2124edc6953aacf0f7eb69eed99ac1e0",
+  "files": {
+    "V4_REPAIR_DISPOSITION.md": "cff4068ad883fea13a2fe0030d8f626f1994779bc0a8b5abbe66fca7146e3337",
+    "storage_adapter_preflight_v4.py": "0d28a57f3e5f65af295808c833cbe0b30af5bc8da6e37c83ce0344034ce3a068",
+    "test_storage_adapter_preflight_v4.py": "e457495038f94a3905914bc74f3a96e869a65ed0646c85e0ab34d8a4778a5340"
+  }
+}

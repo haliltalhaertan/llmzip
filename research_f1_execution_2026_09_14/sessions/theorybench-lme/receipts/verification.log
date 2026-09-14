@@ -1,0 +1,49 @@
+[PASS] gate.json pass flag 
+[PASS] gate 5 checks present ['float_mc_vs_t4c2_float', 'native_mc_vs_pilot', 'native_mc_vs_race_fr', 'native_mc_vs_t4c2_sign', 'sign_exact_vs_race_model']
+[PASS] gate native_mc_vs_pilot within 1e-12 maxdiff=1.110e-16
+[PASS] gate native_mc_vs_t4c2_sign within 1e-12 maxdiff=1.110e-16
+[PASS] gate native_mc_vs_race_fr within 1e-12 maxdiff=0.000e+00
+[PASS] gate float_mc_vs_t4c2_float within 1e-12 maxdiff=1.110e-16
+[PASS] gate sign_exact_vs_race_model within 1e-12 maxdiff=0.000e+00
+[PASS] gate counts 470/470/0/0 
+[PASS] gate native anchor 
+[PASS] per_query row count 7050 7050
+[PASS] per_query schema 
+[PASS] 470 archives in table 
+[PASS] all archives have 15 group/t rows 
+[PASS] mc20 present exactly for t in {.25,1,4} 4230
+[PASS] delta_exact == sign-float 
+[PASS] groups 470 entries 
+[PASS] 470 source pkls 
+representative QAs: [('001be529', 1), ('a89d7624', 2), ('gpt4_fe651585', 2)]
+[PASS] manual sign_exact 001be529 1.0
+[PASS] manual float_exact 001be529 1.0
+[PASS] manual sign_mc 001be529 1.0
+[PASS] manual float_mc 001be529 1.0
+[PASS] manual LOW48@t4 sign 001be529 
+[PASS] manual LOW48@t4 float 001be529 
+[PASS] manual LOW48@t4 signmc 001be529 
+[PASS] group rule 001be529 
+[PASS] manual sign_exact a89d7624 0.0
+[PASS] manual float_exact a89d7624 0.0
+[PASS] manual sign_mc a89d7624 0.0
+[PASS] manual float_mc a89d7624 0.0
+[PASS] manual LOW48@t4 sign a89d7624 
+[PASS] manual LOW48@t4 float a89d7624 
+[PASS] manual LOW48@t4 signmc a89d7624 
+[PASS] group rule a89d7624 
+[PASS] manual sign_exact gpt4_fe651585 0.7
+[PASS] manual float_exact gpt4_fe651585 0.5
+[PASS] manual sign_mc gpt4_fe651585 0.6
+[PASS] manual float_mc gpt4_fe651585 0.5
+[PASS] manual LOW48@t4 sign gpt4_fe651585 
+[PASS] manual LOW48@t4 float gpt4_fe651585 
+[PASS] manual LOW48@t4 signmc gpt4_fe651585 
+[PASS] group rule gpt4_fe651585 
+[PASS] group rule + sign constancy + FULL96 constancy over all 470 
+[PASS] bootstrap LOW48 contrast reproduced -0.06443262411347517
+[PASS] bootstrap LOW48 CI reproduced 
+[PASS] summary row count 
+
+VERIFICATION COMPLETE: 45 gate/artifact checks + 24 manual outcome recomputes, all PASS
+counts: gate_checks=5 archives=470 rows=7050 manual_recomputes=24 bootstrap_repro=1

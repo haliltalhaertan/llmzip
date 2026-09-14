@@ -1,0 +1,388 @@
+{
+ "ancestry": {
+  "PHASE_B3_FROZEN_RUN_MATRIX.csv": {
+   "id": "1ctFOnrpczo3TmnsFQngCcrbDtLSYStMl",
+   "path": "Drive'\u0131m / PROJECT_AUTOGENESIS / 02_PHASES / 11_PHASE_B3 / 02_FROZEN_PREPRODUCTION_CHECKPOINT_2026-08-16",
+   "name": "Drive'\u0131m"
+  },
+  "PHASE_B3_FROZEN_RUN_MATRIX_DRAFT.csv": {
+   "id": "19jLwl6NYBTlDkhp77mb3Lj2BAevUVr1Q",
+   "path": "Drive'\u0131m / PROJECT_AUTOGENESIS / 02_PHASES / 11_PHASE_B3 / 00_PREREGISTRATION_DRAFT_2026-08-16",
+   "name": "Drive'\u0131m"
+  },
+  "PHASE_B2B_PERTURBATION_MATRIX.csv": {
+   "id": "1ruD61B5Vke6SU_nYNO6IFNTFy1Qf8i71",
+   "path": "Drive'\u0131m / PROJECT_AUTOGENESIS / 02_PHASES / 06_PHASE_B2B_ORIGINAL",
+   "name": "Drive'\u0131m"
+  },
+  "C909A_THEOREM_TRANSFER_MATRIX.csv": {
+   "id": "1S6dBnh0P-msqOGioh7ujKtOSbamXHsBx",
+   "path": "Drive'\u0131m / Riemann Hipotezi \u2014 Ara\u015ft\u0131rma Ar\u015fivi / 02_COMPUTATION",
+   "name": "Drive'\u0131m"
+  },
+  "CP20_TASK2_SHELL_MATRIX_TABLE.csv": {
+   "id": "1y6QynFCffPj63XH1BHMaGLvK4sLmqSlQ",
+   "path": "Drive'\u0131m / Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi / CP20 / Task 2 \u2014 Superlinear State-Growth Barrier / RESULTS_AND_ALL_ARTIFACTS / ALL_ARTIFACTS",
+   "name": "Drive'\u0131m"
+  },
+  "THREE_ENGINE_CONTRACT_MATRIX.csv": {
+   "id": "11cZnxc5el2hM8j8t1cfoWgCHgvXJWw3N",
+   "path": "Drive'\u0131m / PROJECT_AUTOGENESIS / CURRENT_RESEARCH_2026_08_25 / ENGINE_RETENTION_SUPPORT_EQUIVALENCE_VERIFY_001 / RESULTS",
+   "name": "Drive'\u0131m"
+  },
+  "astype_copy.pkl": {
+   "id": "1UF09ig7rFPSvnmzHnd084s1LVcYHOxDJ",
+   "path": "Drive'\u0131m / autogenesis-meta / .venv / Lib / site-packages / numpy / _core / tests / data",
+   "name": "Drive'\u0131m"
+  },
+  "bivariate_normal.npy": {
+   "id": "1BVBMpxKWDbRhY1EBROV0g-YDrYQAmuQL",
+   "path": "Drive'\u0131m / autogenesis-meta / .venv / Lib / site-packages / matplotlib / mpl-data / sample_data / axes_grid",
+   "name": "Drive'\u0131m"
+  },
+  "C0V9_RESULTS_zip_parent_probe": {
+   "id": "1OYVWe7hv_gihkO_D9ixJCwbChsjpyLpp",
+   "path": "1",
+   "name": "1"
+  },
+  "PHASE_B3_FROZEN_RUN_MATRIX.csv:file": {
+   "path": "Drive'\u0131m / PROJECT_AUTOGENESIS / 02_PHASES / 11_PHASE_B3 / 02_FROZEN_PREPRODUCTION_CHECKPOINT_2026-08-16 / PHASE_B3_FROZEN_RUN_MATRIX.csv"
+  }
+ },
+ "listings": {
+  "FUNCTION_PRESERVING_QUANTIZATION_RESEARCH_CHECKPOINT_2026-08-24": {
+   "id": "1e-BJkm9FKJUIJOZmnDybO2DaSGu2dPa5",
+   "count": 45,
+   "children": [
+    {
+     "id": "1P_s-v_j5rBlIpOKuyjKPj5-r8x-ZBwl-",
+     "name": "quantization_migration_payload_2026-08-27.tar.gz",
+     "mimeType": "application/gzip"
+    },
+    {
+     "id": "1JYU9JlVnIgJT_T5sLfj-w7-QviHQAZ_KDjUHCpxHNsU",
+     "name": "00_MASTER_CHECKPOINT_TASK1_TO_TASK14A",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1_PmExJxdxzks4cyvxpyMhuhM4Esqv-eGx_Ilwu33l9A",
+     "name": "29_TASK15A_QSA_SUPPORT_SELECTION_QUANTIZATION_NOVELTY_FIRST_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1w6lNn39ZUE6YCnW4AFz4YcvBtDZmpSzRm9h0YIlVyEg",
+     "name": "28_TASK14A_RESULTS_CONDITIONAL_MEMORY_RUNTIME_QUANTIZATION_OFFLOAD_SYSTEM_RESULT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1nzzMpIxKrt2FI3F1YpmmWGGJb_O5IkG3QOYGe1oNCTs",
+     "name": "27_TASK14A_CONDITIONAL_MEMORY_RUNTIME_QUANTIZATION_OFFLOAD_WHITE_SPACE_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1P34UnN73a04fkeuLpEHmD_aaGht0yzTc",
+     "name": "26D_TASK13R_EMULATED_REPRO.py",
+     "mimeType": "text/x-python"
+    },
+    {
+     "id": "1cGT1Ptnl9pxAT7HSy6HnpFmSxPtLz9yT",
+     "name": "26C_TASK13R_M0_M5_REGRESSION.csv",
+     "mimeType": "text/csv"
+    },
+    {
+     "id": "1uTvmyosdWV3wH3lUBAbvvhNctdH7S96W",
+     "name": "26B_TASK13R_CLEAN_SUMMARY.csv",
+     "mimeType": "text/csv"
+    },
+    {
+     "id": "1CiRt1P9OqhuHGl3JrlLbG6dNMTD3SoxP",
+     "name": "26A_TASK13R_REPRO_BUNDLE.json",
+     "mimeType": "application/json"
+    },
+    {
+     "id": "1skQ7nUxFZGTIxXrhv5sY41plX1FYFb57aBi30k-u5ZA",
+     "name": "26_TASK13R_RESULTS_FP4_WGRAD_TRANSFORM_ANOMALY_PARK",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1dw0F2Hd4PdLx7jqqRTE_3XSlhcq1Wh1BAAm03v1MpOQ",
+     "name": "19_TASK12A_OPEN_ENDED_QUANTIZATION_WHITE_SPACE_DISCOVERY_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1f6Or9wrZTIOoPWKhSekcQ3DACtjLDB6j6wP57MoG6lY",
+     "name": "21_LITERATURE_NOTE_QWEN38_FLASH_NEXT_QWEN4_ARCH_TRIGGER",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1aqj4Igl6OW_ze-2FjU3oNQTsy7DyRHdS69hfT_aUQY0",
+     "name": "25_TASK13R_FP4_WGRAD_TRANSFORM_ANOMALY_TRACE_MINING_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "14CZEpuWI8X3B3xl6bMZl6qnBWqUTEBdJlKqYi5c-VqA",
+     "name": "24_TASK13A_RESULTS_FP4_TRAINING_TRAJECTORY_NOVELTY_AUDIT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1J_Uju4YItz62gfKtwKlJi62TTTo7kr1xcQLMIjC8Q5g",
+     "name": "23_TASK13A_FP4_TRAINING_TRAJECTORY_PRESERVATION_NOVELTY_FIRST_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1wlBIDDNON2oqiPKIE4vUOn7cH7zY4pvAIxs3Yfc8pVM",
+     "name": "22_TASK12R_RESULTS_QUANTIZATION_CELL_DLM_REUSE_CLOSURE",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1ly6snTfiKdIT-AxfaUy0Bb3zTl8stu30XqC81BL-Sdg",
+     "name": "20_LITERATURE_NOTE_NVFP4_PRETRAINING_2509.25149",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "14NieQIpCfrWR-eAiSFbAjcjxncYRsNpr2nD_5RTD4Nk",
+     "name": "21_TASK12R_QUANTIZATION_CELL_CERTIFIED_DLM_REUSE_FALSIFICATION_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1LZj5897mbQ2c12FyFJk8fTyOXTszBQyeKlPPAEibyCw",
+     "name": "20_TASK12A_RESULTS_OPEN_ENDED_WHITE_SPACE_DISCOVERY",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1zec0AjUVY4BShyzSMHmLx5MwkeaL5NnwvTpDoNDLs0A",
+     "name": "18_TASK11A_RESULTS_NOVELTY_FIRST_WHITE_SPACE_AUDIT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1cnoD6d-yVGZwKRaAVG0SuRPAx0qwUPZ6VvxnJw4fYMg",
+     "name": "18_TASK11A_RESULTS_NOVELTY_FIRST_WHITE_SPACE_AUDIT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1rLOmuVXeUuDSVHzWxaelb4vwScmEg3VgCAeWyNfxQ3A",
+     "name": "18_TASK11B_SOUND_LOWBIT_KV_RUNTIME_CERTIFICATES_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1LaXzWHZDfR4hUGOH1nrFsizhdV1vDsPbxJWaYe1YSco",
+     "name": "17_TASK11A_NOVELTY_FIRST_WHITE_SPACE_AUDIT_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1x0oC__redX2LLCaz0SwQoJ6PQ1Jx__ydL0hA6ajleRs",
+     "name": "17_TASK11A_ENTROPY_AWARE_EQUIVALENT_TRANSFORM_QUANTIZATION_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1cX3R8BHLOn_My6zBNlkkTjM7DOaVPMKXAnx6EJ0v6Do",
+     "name": "17_TASK11A_LOWBIT_KV_RUNTIME_CERTIFICATE_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "19PvjIC1OVynNNIHBIW65bASRQ7Z8lLrXkdtPh8nPR0E",
+     "name": "16_TASK10A_RESULTS_HARDWARE_REALIZABLE_LOWBIT_CODESIGN",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1UbXAe2gA2jlRPNn1dqbMIQSfgn05F2IaXvPDdGZsV3I",
+     "name": "15_TASK10A_HARDWARE_REALIZABLE_LOWBIT_CODESIGN_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1DeTWmhlP5I--eaDlqQXFJzqNFTJO0pZQag_t3OO3Iw8",
+     "name": "14_TASK9A_RESULTS_ULTRALOWBIT_COMPUTATION_COLLAPSE_CLOSURE",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1Wtf7JambX15KaUJAG7wdasKfSxvMDzsVRl9mRZ39ZXk",
+     "name": "13_TASK9A_NOVELTY_FIRST_ULTRALOWBIT_COMPUTATION_COLLAPSE_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1MCB8WPT0lROjGdkYr6JSnplfjU96TI6K6IlyKkZDMw0",
+     "name": "12_TASK6A_ZERO_TRUST_AUDIT_RESULT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1uCK0fhZt_nLZNvyRR74NTsCGsv3kfHDC5Tq4p-9hFac",
+     "name": "11_TASK6A_ZERO_TRUST_THEOREM_NOVELTY_AUDIT_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1k5Y1l5i-Mw1i9OO3AOjrtlvVMSm5n2loLXXu20Er3Ro",
+     "name": "10_TASK8A_RESULTS_RECURRENT_STATE_STABILITY",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1xmpSQ7aBrqAgNBSSsCc2zN0iR9OA10Hl4sCOdhIptuA",
+     "name": "09_TASK8A_RECURRENT_STATE_QUANTIZATION_STABILITY_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "15-G6HErnRkFOPYsLR9iXyB-5tcJLt4tvA47ltv_ts_I",
+     "name": "08_LITERATURE_NOTE_KIMI_LINEAR_2510.26692",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "19FbHGVrJ2wZwmHT4TRnM7ne4DhbUWKb5Kmk43kiqn4s",
+     "name": "08_TASK7R_RESULTS_REPAIR_CLOSURE",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1HS1oFFt62GyB1ZYhWuLamcG8pm__rhOVgjOYpVGmhkA",
+     "name": "07_TASK7R_REPAIR_CLOSURE_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1kNta8VaNX-zYKPbX1XzkVqBEpKxW2D8VyeCvGsREIis",
+     "name": "06A_TASK7A_AUDIT_DECISION",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1CkcRGjB8hp0D0P_Z9IE_mzQ2BNoBZJ6WfCKIdHdqwuQ",
+     "name": "06_TASK7A_ZERO_TRUST_AUDIT_PROMPT",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "16wHJx9yxzct8ZYjMeZNuzItARSeVn3c3MvdpBm0NcdA",
+     "name": "05A_TASK7A_REPRODUCIBILITY_NOTES",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1UmWN8AX3aOdSunweeAIdXwmBR-aTwRRqQ1dJ4ZuoBSM",
+     "name": "05_TASK7A_RESULTS_TRUE_STORAGE_FUNCTIONAL_RD",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1H5o_vtA-YfpV-ov2RNE9abviRdIYT6-ZTTaOsdwaB3Y",
+     "name": "04_TASK7A_HESAPLAYICI_PROMPTU_TRUE_STORAGE_FUNCTIONAL_RD",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1s2yboAQfmk6pt8-IORPTLn-QGHdgYznU_41m5EGMdVQ",
+     "name": "03_TASK6B_RESULTS_NONLOCAL_PATH_GEOMETRY",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1ylmPyg6zzHdhGr5Doj7t4Oc548Ej_kM2fseUDih2hzI",
+     "name": "02_TASK6B_NONLOCAL_FUNCTIONAL_SURROGATE_SPEC",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1WmLL6xKa7ZwTsEREaMmSDSUN83phT0CISREZSkrWKMw",
+     "name": "02_TASK6B_HESAPLAYICI_PROMPTU",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1LGJ524iUFzYb1Kaywt1qWwsthCdXKy8mvCGcoobOGeU",
+     "name": "01_BAS_ARASTIRMACI_DEVIR_RAPORU_TASK6A",
+     "mimeType": "application/vnd.google-apps.document"
+    }
+   ]
+  },
+  "CP20_PUBLICATION_FACTOR_PRESSURE_V1_2026-09-04": {
+   "id": "19y_ZYCGCL8wEn3WkruQOkCuVlxnYwaaE",
+   "count": 11,
+   "children": [
+    {
+     "id": "18J_zksCxcG-j-Jf3oDObPGlAE9A8xU44fdG8SnPe840",
+     "name": "CP20_JNT_SUBMISSION_READY_2026-09-04",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1ONXIr5Qsdw5v9-VG3RIMpARJH3Ooegom",
+     "name": "CP20_JNT_SUBMISSION_ARTIFACT_2026-09-04.zip",
+     "mimeType": "application/zip"
+    },
+    {
+     "id": "1mv7NvhGwC0ceCugA0DDrsqVKwZxnpN4iteJVBjMbiHY",
+     "name": "CP20_SPECIALIST_AUDIT_CLOSEOUT_2026-09-04",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "16MzFAtlrAxYwi_zmUBvas2pYFufvpErf",
+     "name": "CP20_MANUSCRIPT_FINAL_AFTER_SPECIALIST_CITATION_REPAIRS_2026-09-04.pdf",
+     "mimeType": "application/pdf"
+    },
+    {
+     "id": "1zpLYYrjUrWKMQcggFvFgtsZcIgSzWIUkaLRqhnvM-_4",
+     "name": "CP20_FINAL_MANUSCRIPT_FREEZE_STATUS_2026-09-04",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1eMuiwumi5X6fc0s_tlJYHorv74x9hzSl",
+     "name": "CP20_MANUSCRIPT_FINAL_FREEZE_CANDIDATE_2026-09-04.pdf",
+     "mimeType": "application/pdf"
+    },
+    {
+     "id": "1XLlqt4QFpwSDo5xdeW2ZXmNjfenbV226QJKVSmGdMco",
+     "name": "CP20_MANUSCRIPT_V1_ZERO_TRUST_AUDIT_HANDOFF",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1cCVuX2vjIe5TgA6g4nOJBMbvWbsTYAN3",
+     "name": "CP20_MANUSCRIPT_V1_PREFLIGHT_2026-09-04.pdf",
+     "mimeType": "application/pdf"
+    },
+    {
+     "id": "1wZzlpyTz87iQ500-yEk46SKH2Fw69TNUMkWNELE9fo4",
+     "name": "CP20_MANUSCRIPT_V1_STATUS_2026-09-04",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1UrNiIB-ZY0LAddGEt1kx8Ka9mvJ3r4YvZBjdLegWvIc",
+     "name": "CP20_PUBLICATION_ZERO_TRUST_AUDIT_VERDICT_2026-09-04",
+     "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+     "id": "1yAY1UAXWLE-0hmwu-eBI19lvpHMzr-TDEHllJgkh3gs",
+     "name": "CP20_PUBLICATION_ZERO_TRUST_AUDIT_HANDOFF_V1",
+     "mimeType": "application/vnd.google-apps.document"
+    }
+   ]
+  },
+  "PROJECT_AUTOGENESIS": {
+   "id": "1CLm7sbHoQNGK_SnQkRRaS4GJFh88DGJV",
+   "count": 7,
+   "children": [
+    {
+     "id": "1ee-fGwZNojQivOq1uYQki9-npYfIvkya",
+     "name": "CURRENT_RESEARCH_2026_08_25",
+     "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+     "id": "1rPoVpRttVRdI0mPv9uPnvG8cy4U58tQV",
+     "name": "04_HANDOFFS_AND_EXTERNAL_AUDIT",
+     "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+     "id": "1uOztAE8wNGiqJuqVdjlzIIGBqjaSr7rl",
+     "name": "03_MANIFESTS_AND_HASHES",
+     "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+     "id": "1bcRyTFdP0KeBEWwMhdhNyKkqCqw3oy8q",
+     "name": "90_LEGACY_ARCHIVE",
+     "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+     "id": "1xCLU_QBK3ZT2FHQ-NgxfsQUZMwGgK4kH",
+     "name": "02_PHASES",
+     "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+     "id": "1bUgKEcIhaaKCGRYcl6t66aYqtjeexFhq",
+     "name": "01_HISTORY",
+     "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+     "id": "19ZSuAk2pZjPrGBpvgzG3qHmkfsIw4zQD",
+     "name": "00_PROJECT_INDEX",
+     "mimeType": "application/vnd.google-apps.folder"
+    }
+   ]
+  }
+ },
+ "api_calls": 56
+}

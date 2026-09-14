@@ -1,0 +1,33 @@
+{
+  "closure": "RECURSIVE_ALL_FILES_EXCLUDING_INVENTORY_AND_SEAL",
+  "file_count_excluding_inventory_and_seal": 4,
+  "files": [
+    {
+      "bytes": 330,
+      "name": "DEPENDENCY_LOCK.txt",
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "bytes": 1056,
+      "name": "RUN_AUTHORIZATION_TEMPLATE.json",
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "bytes": 7344,
+      "name": "candidate_package_preflight.py",
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "bytes": 61860,
+      "name": "v52_t4f1_beam_retrieval.py",
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "bytes": 32,
+      "name": "V6_ACCEPTANCE_ATTESTATION_2026-09-03.json",
+      "sha256": "8abc2176d710e86bdb2d8f2907b3da4539ca96e00f9e237babb2fd5a9b41355d"
+    }
+  ],
+  "schema": "V52_T4F1_EXECUTION_CANDIDATE_PAYLOADS_V4",
+  "status_note": "Inventory carries no status field. Submission status lives only in CANDIDATE_EXECUTION_SEAL.json; acceptance state lives only in the detached attestation."
+}

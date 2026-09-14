@@ -1,0 +1,1 @@
+[{"question_id": "q0", "question": "q", "answer": "a", "haystack_session_ids": ["s0"], "haystack_dates": ["d0"], "haystack_sessions": [[{"role": "user", "content": "c", "has_answer": true}]]}]

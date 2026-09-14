@@ -1,0 +1,83 @@
+RB2 start: DATA_ROOT=/mnt/c/Users/MDP/dev/llmzip-work (exists=True) OUT_DIR=/tmp/rb2_official
+GATE LME NATIVE anchor (pre-pass, before arms): recomputed=0.5419751773049645 expected=0.5419751773049645 diff=0.0 -> PASS
+GATE LoCoMo NATIVE anchor (pre-pass, before arms): recomputed=0.23654714666441054 expected=0.23654714666441054 diff=0.0 -> PASS
+GATE S1-DEMO(tampered anchor): recomputed=0.5419751773049645 expected=0.5419761773049645 diff=-1.0000000000287557e-06 -> ABORT
+S1 abort demo: tampered anchor correctly raised GateAbort (gate S1-DEMO(tampered anchor) breached: diff=-1.0000000000287557e-06 > tol=1e-12)
+LME: 470 archives; lex over 500 cleaned questions
+LME SPREAD64_GLOBAL subset head: [0, 1, 3, 4, 6, 7, 9, 10] ... (k=64, benchmark-global)
+LME construction asserts: 470 archives x 3 widths x 3 fams = 1410 per-archive subset triples, all eff_k==k
+  LME 100/470
+  LME 200/470
+  LME 300/470
+  LME 400/470
+LME native vs stored pilot per-q max abs diff = 1.1102230246251565e-16
+LME pre-pass native == full-run native exactly (determinism pin holds)
+LoCoMo: 1540 Cat1-4 questions, 1535 audit-valid
+LoCoMo SPREAD64_GLOBAL subset head: [1, 3, 4, 6, 7, 9, 10, 12] ... (k=64, benchmark-global)
+LoCoMo construction asserts: 10 convs x 3 widths x 3 fams = 30 per-archive subset triples, all eff_k==k
+  LoCoMo conv 1/10
+  LoCoMo conv 2/10
+  LoCoMo conv 3/10
+  LoCoMo conv 4/10
+  LoCoMo conv 5/10
+  LoCoMo conv 6/10
+  LoCoMo conv 7/10
+  LoCoMo conv 8/10
+  LoCoMo conv 9/10
+  LoCoMo conv 10/10
+LoCoMo pre-pass native == full-run native exactly (determinism pin holds)
+GATE LME TOP48 pilot spot: recomputed=0.34949468085106383 expected=0.34949468085106383 diff=0.0 -> PASS
+GATE LME RAND48 seed-12000 pilot spot: recomputed=0.47292553191489356 expected=0.47292553191489356 diff=0.0 -> PASS
+GATE LME BOT48 pilot spot: recomputed=0.4284574468085106 expected=0.4284574468085106 diff=0.0 -> PASS
+GATE LoCoMo TOP48 vs R2C: recomputed=0.13182630371268042 expected=0.13182630371268042 diff=0.0 -> PASS
+GATE LoCoMo BOT48 vs R2C: recomputed=0.18112226499522918 expected=0.18112226499522918 diff=0.0 -> PASS
+GATE LoCoMo RAND48 pilot seed 12000 vs R2C: recomputed=0.15912137829171744 expected=0.15912137829171744 diff=0.0 -> PASS
+GATE LoCoMo RAND48 pilot seed 12001 vs R2C: recomputed=0.15982848141724365 expected=0.15982848141724365 diff=0.0 -> PASS
+GATE LoCoMo RAND48 pilot seed 12002 vs R2C: recomputed=0.16834543640770885 expected=0.16834543640770885 diff=0.0 -> PASS
+CONTROL LME k=48: TOP48=0.34949468085106383 random-mean=0.44644592198581556 diff=-9.6951pp (expect <= -5.0pp) -> expectation_met=True validity=OK
+CONTROL LME k=64 (optional): TOP48=0.4324716312056737 random-mean=0.4913913120567376 diff=-5.8920pp (expect <= -5.0pp) -> expectation_met=True validity=OK
+CONTROL LoCoMo k=48: TOP48=0.13182630371268042 random-mean=0.15965807808283503 diff=-2.7832pp (expect <= -5.0pp) -> expectation_met=False validity=OK
+S6 tie demo on archive qid=001be529 (N=514): same-seed redraw identical=True; 20 trial priorities pairwise-distinct=True
+S6 tie demo on archive qid=locomo_0_qa0 (N=419): same-seed redraw identical=True; 20 trial priorities pairwise-distinct=True
+S8 broken-construction control: eff_k assert fired as designed ('eff_k != k', 'SPREAD-broken', 64, 48)
+S10 hardcode scan: {'c:/': 0, 'c:\\': 0, '/mnt/c': 0} (all must be 0); thread pins: {'OMP_NUM_THREADS': '1', 'MKL_NUM_THREADS': '1', 'OPENBLAS_NUM_THREADS': '1', 'NUMEXPR_NUM_THREADS': '1'}
+DETAILS_WRITTEN /tmp/rb2_official/race_sign_details.json (2000854 bytes)
+S9-lite hashes: race_sign.py sha256=6dbb6240453409177470b4bfad38f1a55ba3ed7f03f689e983c5b09ae864b74a
+S9-lite hashes: race_sign_details.json sha256=993086d70aa08622d4b119d92882c5dc3400e58fc81dc52110c287a39dbe6979
+MANIFEST_WRITTEN /tmp/rb2_official/rb2_manifest.sha256
+RB2_VERDICT:
+gates: LMEanchor diff=0.0 LoCoMoanchor diff=0.0 (tol 1e-12, all PASS else abort)
+-- LME arm aggregates (mean | gap_pp vs SIGN | W/T/L | tie_frac | model_MAE | model_r) --
+  NATIVE96        0.541975 | +0.000pp | 0/470/0 | 1.000 | 0.0041 | 0.9990352517918005
+  TOP48           0.349495 | -19.248pp | 27/259/184 | 0.551 | 0.0087 | 0.996821822744772
+  BOT48           0.428457 | -11.352pp | 47/292/131 | 0.621 | 0.0050 | 0.9988074266649991
+  SPREAD48        0.442725 | -9.925pp | 30/316/124 | 0.672 | 0.0061 | 0.9984574772779986
+  TOP64           0.432472 | -10.950pp | 33/309/128 | 0.657 | 0.0051 | 0.9981942355367819
+  BOT64           0.500383 | -4.159pp | 51/330/89 | 0.702 | 0.0037 | 0.9993226977268128
+  SPREAD64        0.496406 | -4.557pp | 39/350/81 | 0.745 | 0.0036 | 0.9992633994653703
+  TOP80           0.491117 | -5.086pp | 38/359/73 | 0.764 | 0.0039 | 0.9989324339469633
+  BOT80           0.522851 | -1.912pp | 30/385/55 | 0.819 | 0.0032 | 0.9993804330165789
+  SPREAD80        0.525259 | -1.672pp | 36/373/61 | 0.794 | 0.0022 | 0.9995989879969751
+  SPREAD64_GLOBAL 0.502138 | -3.984pp | 41/347/82 | 0.738 | 0.0039 | 0.9989566155338183
+  RAND48_x10      mean=0.446446 min=0.432793 max=0.459215 | gap_pp=-9.553
+  RAND64_x10      mean=0.491391 min=0.459113 max=0.517869 | gap_pp=-5.058
+  RAND80_x10      mean=0.517035 min=0.505184 max=0.524454 | gap_pp=-2.494
+-- LoCoMo arm aggregates (mean | gap_pp vs SIGN | W/T/L | tie_frac | model_MAE | model_r) --
+  NATIVE96        0.236547 | +0.000pp | 0/1535/0 | 1.000 | 0.0029 | 0.9988003318320239
+  TOP48           0.131826 | -10.472pp | 51/1216/268 | 0.792 | 0.0031 | 0.9982425154105697
+  BOT48           0.181122 | -5.542pp | 95/1224/216 | 0.797 | 0.0036 | 0.9983519142731399
+  SPREAD48        0.162362 | -7.419pp | 73/1232/230 | 0.803 | 0.0043 | 0.9977386047053336
+  TOP64           0.165291 | -7.126pp | 59/1262/214 | 0.822 | 0.0039 | 0.9977532951521492
+  BOT64           0.217183 | -1.936pp | 102/1278/155 | 0.833 | 0.0048 | 0.9980524808027177
+  SPREAD64        0.193724 | -4.282pp | 66/1305/164 | 0.850 | 0.0029 | 0.9987084111756241
+  TOP80           0.200362 | -3.618pp | 58/1333/144 | 0.868 | 0.0032 | 0.9986604519157743
+  BOT80           0.235461 | -0.109pp | 86/1359/90 | 0.885 | 0.0021 | 0.9993897403718037
+  SPREAD80        0.224329 | -1.222pp | 69/1366/100 | 0.890 | 0.0028 | 0.9989523065848789
+  SPREAD64_GLOBAL 0.191811 | -4.474pp | 63/1295/177 | 0.844 | 0.0040 | 0.9981879648801892
+  RAND48_x10      mean=0.159658 min=0.146982 max=0.173910 | gap_pp=-7.689
+  RAND64_x10      mean=0.197768 min=0.177359 max=0.206013 | gap_pp=-3.878
+  RAND80_x10      mean=0.218395 min=0.207983 max=0.225126 | gap_pp=-1.815
+TOP-control LME TOP48: diff=-9.695pp expectation_met=True validity=OK
+TOP-control LME TOP64: diff=-5.892pp expectation_met=True validity=OK
+TOP-control LoCoMo TOP48: diff=-2.783pp expectation_met=False validity=OK
+asserts: LME 1410 + LoCoMo 30 per-archive triples eff_k==k; S1 abort demo fired=True; S8 broken-control fired=True; S10 clean=True

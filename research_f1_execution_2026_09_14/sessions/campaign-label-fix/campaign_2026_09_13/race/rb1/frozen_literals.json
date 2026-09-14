@@ -1,0 +1,115 @@
+{
+ "random_panels": {
+  "formula": "93000 + 10*width_idx + j, j=0..9",
+  "width_idx": {
+   "0": "48b (6B)",
+   "1": "64b (8B)",
+   "2": "80b (10B)"
+  },
+  "namespace_note": "disjoint from Deney-1 91000s (deliberate, N1)"
+ },
+ "rabitq_rotation_seeds": [
+  94101,
+  94102,
+  94103
+ ],
+ "random32_axes_seeds": [
+  94201,
+  94202,
+  94203
+ ],
+ "bootstrap": {
+  "B": 5000,
+  "base_seed": 94301,
+  "offsets": {
+   "LME_primary": 0,
+   "LOCOMO_primary": 1,
+   "secondaries": 10
+  },
+  "note": "seed = 94301 + offset per metric; argmax re-selected inside each resample"
+ },
+ "tie_draws": {
+  "n_trials": 20,
+  "formula": "rng(5_100_000+lex*100_000+t*100+99); LoCoMo stable_archive_seed(ci,t)+99",
+  "float_rule": "exact equality only (Delta=0.0); lexsort((distance, trial_priority))"
+ },
+ "primary_contrast": "SIGN12B - max_aggregate(sealed competitor set, per-seed aggregates; per-question oracle excluded)",
+ "competitor_K": {
+  "LME": 40,
+  "LOCOMO": 41,
+  "enumeration": {
+   "LME_K40": "RANDOM30 + SPREAD3 + BOT48(1) + TOP48/TOP64(2) + RQ32-primary3 + PQ1; excluded from max: random-32 secondary(3), A5 wrapper, TOP32 curve, A7-44B curve",
+   "LOCOMO_K41": "RANDOM30 + SPREAD3 + BOT80/64/48(3) + TOP48(1) + RQ32-primary3 + PQ1; exclusions as LME",
+   "note": "v2 \"~27+\" shorthand used >=7 seeds; frozen K uses the sealed 10-seed panels (C2)"
+  }
+ },
+ "kill_line_pp": {
+  "LME": -6.4,
+  "LOCOMO": -3.7,
+  "basis": "full-set null 2.5th pct per benchmark, rounded outward (Bonferroni family-wise <=5%)"
+ },
+ "promote_line_pp": {
+  "LME": 2.0,
+  "LOCOMO": 2.0,
+  "basis": "max(full null 97.5th, +2.0 floor); floor binds; margin over p97.5 >2.0pp both benches"
+ },
+ "zones_pp": {
+  "KILL": "gap < kill_line",
+  "LOW": "kill_line <= gap < -0.5",
+  "MID": "-0.5 <= gap < +2.0",
+  "PRO": "gap >= +2.0"
+ },
+ "null_summary": {
+  "LME": {
+   "K": 40,
+   "mean": -3.137175496526665,
+   "sd": 1.5946893640321396,
+   "min": -12.050716988253404,
+   "max": 4.8055276974196595,
+   "percentiles": {
+    "1": -6.953036111811463,
+    "2.5": -6.326158330481387,
+    "5": -5.791793572856204,
+    "20": -4.46923231734702,
+    "25": -4.1962797035567805,
+    "50": -3.116452112402456,
+    "75": -2.05524194377919,
+    "90": -1.1119715196353797,
+    "95": -0.5509454556500206,
+    "97.5": -0.06627058128671356,
+    "99": 0.49624124019789195
+   },
+   "P_contrast_gt0": 0.0225755
+  },
+  "LOCOMO": {
+   "K": 41,
+   "mean": -1.8227104235988878,
+   "sd": 0.926721791787595,
+   "min": -6.91514041456787,
+   "max": 2.854724488682182,
+   "percentiles": {
+    "1": -4.017699189061547,
+    "2.5": -3.6658198857669864,
+    "5": -3.361642100916393,
+    "20": -2.5975397397893647,
+    "25": -2.441319075834222,
+    "50": -1.8141592049197215,
+    "75": -1.1953988737559529,
+    "90": -0.641498504697275,
+    "95": -0.3125229157926424,
+    "97.5": -0.029172964788944062,
+    "99": 0.3008894237289678
+   },
+   "P_contrast_gt0": 0.0231425
+  }
+ },
+ "premium_to_clear_pp": {
+  "LME": 3.07,
+  "LOCOMO": 1.79
+ },
+ "anchors": {
+  "LME_native": 0.5419751773049645,
+  "LOCOMO_native": 0.23654714666441054,
+  "tol": 1e-12
+ }
+}

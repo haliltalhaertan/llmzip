@@ -1,0 +1,69 @@
+{
+  "label": "[LOCAL EXPLORATORY PILOT]",
+  "benchmark": "PerLTQA en_v2 (perltqa_en_v2.json / perltmem_en_v2.json, CC BY-NC 4.0)",
+  "gate": {"result": "PASS", "n_sampled": 6, "threshold": 1e-10,
+    "max_abs_diff_C": 7.375e-12, "max_abs_diff_qC": 8.366e-13},
+  "salvage": {"n_files": 19, "sha_match_readonly_copy": true,
+    "rerun_sha256": "ec9b8b2c7f384fe2f56c72fdc7a7216930a9db35eda2c4441496c8ad401bf958",
+    "rerun_byte_identical": true, "rerun_time_s": 258},
+  "units": {
+    "documented_diff": "brief '1905 (357/294/628/626)' was a top-level-keys miscount; nested groups expand larger",
+    "expanded": {"profile": 357, "social": 897, "events": 4501, "dialogues": 2838, "total": 8593},
+    "resolved": {"profile": 345, "social_relationship": 867, "events": 4349, "dialogues": 2744, "total": 8305},
+    "unresolved": {"keymiss_events": 7, "keymiss_social": 4, "nobank_total": 277,
+      "nobank_profile": 12, "nobank_social": 26, "nobank_events": 145, "nobank_dialogues": 94,
+      "nobank_char": "dragon beautiful"},
+    "evaluated": {"profile": 333, "social_relationship": 844, "events": 4346, "dialogues": 2742, "total": 8265},
+    "excluded": {"Chen Zhi": {"N": 35, "C_shape": [35, 35], "qa_dropped": 40,
+      "by_section": {"profile": 12, "social_relationship": 23, "events": 3, "dialogues": 2}}},
+    "archives": {"qa_chars": 32, "built": 31, "evaluated": 30},
+    "one_unit": "one resolved QA (qid,char,section,question,gold_idx_list non-empty), fractional R@3 = mean over 20 tie-draws of |top3 cap gold|/|gold|",
+    "itemization": "profile: 1 item/field + 1 profile_description item; social: 1 item/entry sorted keys; events: 1 item/narrative sorted keys; dialogues: 1 item/TURN sorted dlg/ts; qid per-section running index; gold: profile by field name, social/events by group key, dialogues by group key narrowed by anchor-substring hits else full-dialogue fallback (anchor-hit 1632, mean gold 5.69; fallback 1112, mean gold 16.13)"
+  },
+  "headline": {"n": 8265, "native": 0.488942, "float": 0.551692, "delta_pp": -6.275,
+    "native_any": 0.590496, "float_any": 0.646824, "native_all": 0.469673, "float_all": 0.528857,
+    "bug": false, "verification": ["verbatim rerun byte-identical", "5-QA pure-python sorted() spot-check <=5.6e-17", "code lines: native=Hamming sign(C) all-96 (eval L30,55,56), float=cosine centered C (L22-24)", "top-5 eyeball 3 QAs", "tie-shift +7919: delta -6.256pp"]},
+  "by_section": {
+    "profile": {"n": 333, "native": 0.507658, "float": 0.303303, "delta_pp": 20.435},
+    "social_relationship": {"n": 844, "native": 0.749052, "float": 0.757109, "delta_pp": -0.806},
+    "events": {"n": 4346, "native": 0.691578, "float": 0.815693, "delta_pp": -12.411},
+    "dialogues": {"n": 2742, "native": 0.085432, "float": 0.100195, "delta_pp": -1.476}
+  },
+  "ladder": {
+    "TOP80": 0.47306, "SPREAD80": 0.46444, "RANDOM80": 0.46413, "RANDOM80_sd": 0.00841, "BOT80": 0.40397,
+    "TOP64": 0.44706, "SPREAD64": 0.42778, "RANDOM64": 0.42196, "RANDOM64_sd": 0.01413, "BOT64": 0.33301,
+    "TOP48": 0.41865, "SPREAD48": 0.37552, "RANDOM48": 0.37003, "RANDOM48_sd": 0.01994, "BOT48": 0.29135
+  },
+  "section_64": {
+    "profile": {"TOP64": 0.3059, "SPREAD64": 0.4294, "BOT64": 0.4883, "note": "INVERTED: BOT best"},
+    "social_relationship": {"TOP64": 0.7134, "SPREAD64": 0.6721, "BOT64": 0.4775},
+    "events": {"TOP64": 0.6399, "SPREAD64": 0.6041, "BOT64": 0.4635},
+    "dialogues": {"TOP64": 0.0765, "SPREAD64": 0.0729, "BOT64": 0.0629}
+  },
+  "ties": {"native_tie_rate": 0.291954, "native_tie_n": 2413, "native_mean_gap": 1.564307,
+    "float_tie_rate": 0.0, "float_tie_n": 0, "float_mean_gap": 0.033335, "n": 8265},
+  "structure": {
+    "per_char_negative": "29/30 (only Cao Lili +1.53pp); worst Kong Tingting -13.46pp, Han Gang -13.31pp",
+    "corr_N_delta": 0.182,
+    "gold1_delta_pp": -8.2, "gold1_n": 5943,
+    "win_rate": {"native_gt_float": 0.0916, "tie": 0.7302, "float_gt_native": 0.1782},
+    "gold_size": {"profile_mean": 1.0, "social_mean": 1.0, "events_mean": 1.0, "dialogues_mean": 9.92}
+  },
+  "conventions": {
+    "as_run": "deney1 split-0 verbatim: RANDOM 91000+j, tie 5_100_000+ORD*100_000+t*100+99, SPREAD round(linspace(0,95,k))",
+    "deviation": "none",
+    "realtalk_deviation": "global 93000-series (not used here)",
+    "sensitivity": {"RANDOM64_93000": 0.42591, "RANDOM64_91000": 0.42196, "tie_shift_delta_pp": -6.256, "headline_robust": true}
+  },
+  "sizes": {"min_N": 293, "max_N": 546, "median_N": 407,
+    "note": "no small-N instability beyond excluded Chen Zhi (N=35); ladder k=80/64/48 all < min N; no cap effect"},
+  "checklist": {
+    "sign_vs_float": "FAIL (negative): -6.275pp",
+    "ladder_costs": "monotone; native96 beats all 80b arms",
+    "spread_vs_random_vs_top": "HOLDS aggregate; profile section INVERTED (BOT64 best)",
+    "bot": "worst every k aggregate; profile exception",
+    "section_profile": "sign wins only profile (+20.44); events drives loss (-12.41); dialogues floor",
+    "anomalies": ["headline reversal", "profile BOT64 inversion", "dialogue K=3 vs gold<=30 floor", "29.2% native ties", "untested itemization sensitivity", "single benchmark/seed"]
+  },
+  "generalization": "One benchmark fails sign>float on n=8265 with clean methodology: the SIGN96 advantage does not generalize unconditionally; concentrated in events (-12.4pp, majority section) while profile counter-wins (+20.4pp). A general sign>=float claim must bound its domain or explain PerLTQA events."
+}

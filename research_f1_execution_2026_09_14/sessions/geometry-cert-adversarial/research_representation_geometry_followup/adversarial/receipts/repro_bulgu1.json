@@ -1,0 +1,61 @@
+{
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ],
+  "archived_v2_file": "/home/mdp/muse-work/geometry-cert-adversarial/research_representation_geometry_2026_09_13/repairs/rank_cert/certify_v2.py",
+  "archived_orig_file": "/home/mdp/muse-work/geometry-cert-adversarial/research_representation_geometry_2026_09_13/repairs/rank_cert/verify_orig_copy.py",
+  "inputs": {
+    "p": [
+      "-100",
+      "100",
+      "0",
+      "10000"
+    ],
+    "q": [
+      "-200",
+      "200",
+      "70000",
+      "0"
+    ],
+    "J": [
+      "1",
+      "4"
+    ]
+  },
+  "independent_truth": {
+    "5/4": 1,
+    "3/2": 1,
+    "7/4": 0,
+    "5/2": -1,
+    "4": -1
+  },
+  "poly_Q": [
+    "700000000",
+    "-1800000000",
+    "1500000000",
+    "-400000000"
+  ],
+  "rational_roots_skipped": true,
+  "v2_certificate": {
+    "status": "ISOLATED_TIES",
+    "direction": -1,
+    "ties": [
+      "1",
+      "7/4"
+    ]
+  },
+  "v2_unscaled_twin": {
+    "status": "ISOLATED_TIES",
+    "direction": "VARIES",
+    "ties": [
+      "1",
+      "7/4"
+    ]
+  },
+  "original_conservative": {
+    "status": "UNRESOLVED"
+  }
+}

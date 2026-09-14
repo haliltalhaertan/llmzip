@@ -1,0 +1,14 @@
+PASS truth_point_agreement_all_cases -- replayed 157 frozen points
+PASS oracle_closure_replay -- reclosed 57 subintervals
+PASS M1_forged_single_direction_POC_rejected -- stable -1 certified despite crossing evidence; stable -1 certified on VARIES case (false stabilization)
+PASS M2_omitted_classification_rejected -- exact root 7/4 unaccounted (omitted classification); VARIES without crossing evidence (no cross bracket/tie)
+PASS M3_crossing_as_touch_rejected -- touch bracket touch(5/4,5/2) without same signs
+PASS M4_endpoint_tie_masking_rejected -- endpoint tie 1 masked (not listed)
+PASS M5_unresolved_to_strict_flip_rejected -- exact root 7/4 unaccounted (omitted classification); endpoint tie 1 masked (not listed)
+PASS positive_controls_sound_certs_accepted -- 13 sound certs accepted, unknown accepted
+PASS canary_always_STRICT_fails_safety -- 32/41 safety FAIL (incl poc_K100)
+PASS canary_always_UNRESOLVED_splits_bars -- safety all-PASS, completeness FAIL on 14 must_resolve
+PASS collector_invariants_and_honest_budget_cover -- 41 cases; honest skipped={'poc-scale-family': 4, 'poc-reversed': 1, 'tangent-realizable': 1, 'tangent-abstract': 1, 'common-zero': 1, 'endpoint-root': 2, 'persistent': 1, 'robustness': 3, 'strict': 1, 'strict-negative-numerators': 1, 'two-exact-roots': 1, 'fuzz-supplemental': 24} on K100/K1000
+PASS results_v2_documents_failures -- results_v2: safety_fail=5
+tests=12 ran=12 pass=12 fail=0 skipped=0
+ALL SOUNDNESS TESTS PASS

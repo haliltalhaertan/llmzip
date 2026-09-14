@@ -1,0 +1,17 @@
+check,observed,expected,status,detail
+dataset_sha256,79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4,79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4,PASS,
+conversation_count,10,10,PASS,
+primary_question_count,1540,1540,PASS,
+category_counts,"{""1"": 282, ""2"": 321, ""3"": 96, ""4"": 841}","{""1"": 282, ""2"": 321, ""3"": 96, ""4"": 841}",PASS,
+audit_correction_count,156,156,PASS,
+audit_unmatched_corrections,0,0,PASS,
+explicit_empty_correction_semantics,1,>=1 preserved,PASS,
+audit_layer_file_count,20,20,PASS,
+BLIP_caption_inclusion,1226,1226,PASS,
+raw_evidence_valid_questions,1535,1535,PASS,
+audit_evidence_valid_questions,1535,1535,PASS,
+common_raw_audit_valid_questions,1534,recorded,PASS,
+leakage_fit_input_payload,PASS,PASS,PASS,forbidden AST names=[]
+leakage_fit_archive_representation,PASS,PASS,PASS,forbidden AST names=[]
+leakage_sp_spec,PASS,PASS,PASS,forbidden AST names=[]
+leakage_hspec,PASS,PASS,PASS,forbidden AST names=[]

@@ -1,0 +1,14 @@
+{
+  "base_commit": "07ec929243068914676a0f30efd10c9f294c7e71",
+  "status": "PREPARATION_NOT_SEALED_NOT_EXECUTION_READY",
+  "sha256": {
+    "CLAUDE_REVIEW_REQUEST.md": "7aa9d96715b7b045688811063869bdcb44027f85d607a59a715b454f215e3c98",
+    "pipeline.py": "db417ade3a4e2e1ceca342dbf5b4a0fde2562296b91932126ebeca01652be5ae",
+    "README.md": "9959f57723a5ec510fa436728b1337fbef7719aba4f3eb38921b119dff1e8a8a",
+    "replay.py": "30be19caef5c2cfd642478f7e6515a8069ae42a7d70006ddcb81f9d5762162f9",
+    "test_pipeline.py": "cfd3263686de93bf87ca8b5336ac080fd7f3d759bfe1341bfd2e49e735a9bd81",
+    "evidence/RESULTS.json": "178ec719013005c41cd127beef187b0dfcac37bda1a123a2f47bc36dd08adcb3",
+    "evidence/stderr.txt": "4c3f8e9e43fee2b5b886f885d3a62800bf10bf69a82bba0ea668ea19bbbcbf02",
+    "evidence/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,71 @@
+chat 0: computed 1275 rows (2.8s)
+chat 1: computed 1050 rows (4.0s)
+chat 2: computed 1095 rows (5.4s)
+chat 3: computed 1065 rows (6.6s)
+chat 4: computed 1050 rows (7.6s)
+chat 5: computed 1110 rows (13.1s)
+chat 6: computed 1050 rows (17.6s)
+chat 7: computed 1050 rows (20.7s)
+chat 8: computed 945 rows (23.5s)
+chat 9: computed 885 rows (26.4s)
+Traceback (most recent call last):
+  File "/home/mdp/muse-work/theorybench-realtalk/transfer_runner.py", line 317, in <module>
+    main()
+    ~~~~^^
+  File "/home/mdp/muse-work/theorybench-realtalk/transfer_runner.py", line 201, in main
+    arr[(r["group"], r["t"])].append(r)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^
+KeyError: ('LOW48', 0.25)
+chat 0: loaded 1275 rows from checkpoint
+chat 1: loaded 1050 rows from checkpoint
+chat 2: loaded 1095 rows from checkpoint
+chat 3: loaded 1065 rows from checkpoint
+chat 4: loaded 1050 rows from checkpoint
+chat 5: loaded 1110 rows from checkpoint
+chat 6: loaded 1050 rows from checkpoint
+chat 7: loaded 1050 rows from checkpoint
+chat 8: loaded 945 rows from checkpoint
+chat 9: loaded 885 rows from checkpoint
+{
+  "rows": 10575,
+  "primary": {
+    "group": "LOW48",
+    "effect": -0.0011366087481871467,
+    "ci95": [
+      -0.019330018939393942,
+      0.018490314014998684
+    ],
+    "rule": "effect>0 with CI excluding zero = consistent with proxy transfer",
+    "assessment": "negative"
+  },
+  "high48": {
+    "effect": 0.0007548610841800461,
+    "ci95": [
+      -0.017992808680049346,
+      0.01879923960858759
+    ]
+  },
+  "decreasing": {
+    "LOW48": {
+      "n_qa": 705,
+      "n_decreasing": 41,
+      "frac": 0.05815602836879433
+    },
+    "HIGH48": {
+      "n_qa": 705,
+      "n_decreasing": 40,
+      "frac": 0.05673758865248227
+    },
+    "FULL96": {
+      "n_qa": 705,
+      "n_decreasing": 0,
+      "frac": 0.0
+    }
+  },
+  "invariance": {
+    "sign_t_invariance_violations": 0,
+    "t1_identity_violations": 0,
+    "full96_float_maxabs_vs_t1": 0.0
+  },
+  "elapsed_s": 7.458223581314087
+}

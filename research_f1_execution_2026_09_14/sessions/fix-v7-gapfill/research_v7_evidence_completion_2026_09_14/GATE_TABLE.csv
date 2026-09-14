@@ -1,0 +1,31 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+gate,check,result,evidence
+G1,six candidate files match prompt anchor hashes (6/6 recomputed),PASS,evidence/g4_status_attestation.json (candidate_hashes_reverified)
+G1,declared payload equals on-disk payload (pristine checker run rc=0),PASS,evidence/g4_status_attestation.json (g4_00_pristine)
+G1,nested unbound file rejected in temporary copy,EVIDENCE-ONLY,branch evidence/g35_fixture_results.json F01 (relayed; not re-run)
+G1,real candidate byte-identical after all probing (git status shows only own namespace untracked),PASS,COMMAND_LOG.txt
+G2,runner byte-identical to accepted V4 runner (sha=f96cba2c... matches prompt anchor),PASS,evidence/g4_status_attestation.json (candidate_hashes_reverified)
+G2,runner AST equal to V4 with docstrings stripped,EVIDENCE-ONLY,branch evidence/g2_change_isolation.json (relayed; not re-run)
+G2,only executable delta is candidate_package_preflight.py,EVIDENCE-ONLY,branch evidence/g2_change_isolation.json (relayed; not re-run)
+G2,runner never imports or references the checker (static grep: no import),PASS,evidence/g4_status_attestation.json (static_findings)
+G2,no change to fitting/ranking/seeds/thresholds/metrics/aggregation/authorization,EVIDENCE-ONLY,branch evidence/g2_change_isolation.json (relayed; not re-run)
+G3,"3.1 bound payload is four functional files; check is name set-equality (not prose)",PASS,evidence/g5_checker_fixtures.json (g5_00 plus static_findings)
+G3,3.2 replay of V6 text-evasion corpus (9 classes x sites),EVIDENCE-ONLY,branch evidence/g32_evasion_replay.json (relayed; not re-run)
+G3,"3.3 attack the set equality (rename/embed/symlink/case/unicode/declared-vs-disk)",EVIDENCE-ONLY,branch evidence/g35_fixture_results.json F05-F14 (relayed) + evidence/g5_checker_fixtures.json (g5_06 content-embed SURVIVES verified-mine)
+G3,3.4 unbound-document misdirection risk (0 contradictions CLAIM),EVIDENCE-ONLY,branch evidence/g34_cross_document_consistency.json (relayed; sufficiency NOT-VERIFIED below)
+G3,3.4 labelling of unbound docs as non-normative is sufficient,NOT-VERIFIED,reason: sufficiency is an operator-risk judgment; this non-independent session cannot decide it
+G3,3.5 claim ESTABLISHED vs NOT-YET-FALSIFIED: NOT-YET-FALSIFIED (3 surviving paths + 2 untested),EVIDENCE-ONLY,evidence/g35_synthesis.json (prepared-not-accepted synthesis)
+G4,seal records submission status only (no bare status/acceptance/accepted/sealed keys),PASS,evidence/g4_status_attestation.json (static_findings + g4_01-g4_05)
+G4,inventory carries no status field (dedicated check fires when planted),PASS,evidence/g4_status_attestation.json (g4_07)
+G4,candidate makes no post-audit acceptance claim; nothing redirects acceptance state (F5 analog blocked incl full reseal; no attestation pointer exists),PASS,evidence/g4_status_attestation.json (g4_08a/b/c + static_findings)
+G4,seal bytes themselves hash-bound against silent rewrite,NOT-VERIFIED,reason: no in-package hash covers the seal; root of trust is external prompt anchors only (see evidence/g4_status_attestation.json static_findings.nothing_binds_seal_bytes)
+G5,positive control: unmodified copy passes,PASS,evidence/g5_checker_fixtures.json (g5_00)
+G5,"negative fixtures: extra/missing/renamed/mutated/hash-mismatch/case-variant all BLOCKED",PASS,evidence/g5_checker_fixtures.json (g5_01-g5_05+g5_07)
+G5,content embedded under functional name + full reseal SURVIVES (coverage limit disclosed),PASS,evidence/g5_checker_fixtures.json (g5_06; PASS=checker passes = attack survives)
+G6,"B1/B2/B3 aggregation authorization leakage on byte-identical runner",EVIDENCE-ONLY,branch evidence/g6_preflight_guardrails.json + evidence/g1_corpus_verification.json (relayed; not re-run)
+G6,cited-vs-rederived conclusions itemized,NOT-VERIFIED,reason: citation relies on V4 audit bytes not re-derived by this session
+G7,inert template not actually inert (template safety enforced in all 19 checker runs),PASS,evidence/g5_checker_fixtures.json + evidence/g4_status_attestation.json (every run asserts template fields)
+G7,dependency lock digest checked and content matches,EVIDENCE-ONLY,branch evidence/g2_change_isolation.json (dependency_lock_identical) + pristine checker run (relayed in part)
+G7,checker passes vacuously on malformed inventory (empty/duplicate/declared-mismatch),EVIDENCE-ONLY,branch evidence/g35_fixture_results.json F12/F14/F15 (relayed; not re-run)
+G7,bound-file-as-requirement scan (21 pairs 0 disagreements CLAIM),EVIDENCE-ONLY,branch evidence/g7_bound_payload_restatements.json + evidence/g7_failclosed_authorization.json (relayed; not re-run)
+PRE,outcome boundary: 0 run / 0 finalize / HMAC unset / no authorization / no retrieval outcome / candidate unmodified,PASS,COMMAND_LOG.txt

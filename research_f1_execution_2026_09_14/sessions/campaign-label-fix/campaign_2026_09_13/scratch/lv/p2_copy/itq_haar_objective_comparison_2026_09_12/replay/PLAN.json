@@ -1,0 +1,84 @@
+{
+  "status": "POST_HOC_VERIFICATION_OF_PREVIOUSLY_KNOWN_RESULTS_NOT_PREREGISTRATION_OR_SEAL",
+  "created_utc": "2026-09-12T14:44:23.782260+00:00",
+  "source_commit": "4001fc9d8ea2c932042de7823713c6efce8e56d0",
+  "source_pins": {
+    "itq_feasibility_synthetic.py": "18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d",
+    "PLAN.json": "e56ea0d6858e06211fa9eb82d6d255724a3d0e23016b77d28f8d8ff10923c53f",
+    "RESULTS.json": "0c2cf96553dbf448d22def0538c8993ada038d1fdac52665f759c08e5a304214"
+  },
+  "replay_source_sha256": "3f87cc5c8a573fae578f9cba9741d04b66142d481017677028403effc8a8b74b",
+  "data_seeds": [
+    [
+      100,
+      5212100
+    ],
+    [
+      250,
+      5212250
+    ],
+    [
+      500,
+      5212500
+    ],
+    [
+      1000,
+      5213000
+    ]
+  ],
+  "initialization_seeds": [
+    7312001,
+    7312002,
+    7312003,
+    7312004,
+    7312005,
+    7312006,
+    7312007,
+    7312008,
+    7312009,
+    7312010,
+    7312011,
+    7312012,
+    7312013,
+    7312014,
+    7312015,
+    7312016,
+    7312017,
+    7312018,
+    7312019,
+    7312020
+  ],
+  "haar_null_seeds": [
+    8312001,
+    8312002,
+    8312003,
+    8312004,
+    8312005,
+    8312006,
+    8312007,
+    8312008,
+    8312009,
+    8312010,
+    8312011,
+    8312012,
+    8312013,
+    8312014,
+    8312015,
+    8312016,
+    8312017,
+    8312018,
+    8312019,
+    8312020
+  ],
+  "objective": "mean((abs(Y @ R)-1)**2), per matrix entry; sign convention >=0",
+  "replay_criterion": "exact equality of all 480 stored initial/null objectives and input/rotation raw identities",
+  "new_data_or_seeds": false,
+  "fit_itq": false,
+  "historical_final_objectives": "read from pinned RESULTS, not refitted",
+  "limitations": [
+    "training quantization only",
+    "one realization per n",
+    "shared seed panels; no statistical test or arm decision",
+    "no held-out or retrieval measurement"
+  ]
+}

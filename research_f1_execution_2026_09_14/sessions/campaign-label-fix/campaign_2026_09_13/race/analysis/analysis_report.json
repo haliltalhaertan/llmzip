@@ -1,0 +1,95 @@
+{
+ "labels": [
+  "[LOCAL]",
+  "[NOT PUSHED]"
+ ],
+ "seeds": {
+  "bootstrap": {
+   "B": 5000
+  },
+  "note": "frozen literals"
+ },
+ "benchmarks": {
+  "LME": {
+   "n": 470,
+   "K": 40,
+   "sign_mean": 0.5419751773049645,
+   "best_competitor": "SPREAD80",
+   "best_competitor_mean": 0.525258865248227,
+   "obs_gap_pp": 1.6716312056737515,
+   "kill_line_pp": -6.4,
+   "promote_line_pp": 2.0,
+   "zone": "MID",
+   "bootstrap_seed": 94301,
+   "primary_CI95_pp": [
+    -0.5958421985815371,
+    2.1220124113475145
+   ],
+   "argmax_win_freq_top": {
+    "SPREAD80": 1011,
+    "RAND80_s2": 932,
+    "RAND80_s8": 866,
+    "RAND80_s6": 640,
+    "RAND80_s7": 609,
+    "RAND64_s4": 298
+   },
+   "fixed_argmax_CI95_pp": [
+    -0.2571010638297816,
+    3.6033067375886603
+   ],
+   "cluster_CI95_pp": null,
+   "comp_means_top5": {
+    "SPREAD80": 0.525258865248227,
+    "RAND80_s2": 0.5244539007092198,
+    "RAND80_s8": 0.5238847517730496,
+    "RAND80_s6": 0.5235815602836879,
+    "RAND80_s7": 0.5229875886524823
+   }
+  },
+  "LoCoMo": {
+   "n": 1535,
+   "K": 41,
+   "sign_mean": 0.23654714666441054,
+   "best_competitor": "BOT80",
+   "best_competitor_mean": 0.23546142203796927,
+   "obs_gap_pp": 0.10857246264412701,
+   "kill_line_pp": -3.7,
+   "promote_line_pp": 2.0,
+   "zone": "MID",
+   "bootstrap_seed": 94302,
+   "primary_CI95_pp": [
+    -0.9112010754355969,
+    1.0191506385398736
+   ],
+   "argmax_win_freq_top": {
+    "BOT80": 4518,
+    "SPREAD80": 163,
+    "RAND80_s3": 159,
+    "RAND80_s6": 87,
+    "RAND80_s7": 24,
+    "RAND80_s4": 22
+   },
+   "fixed_argmax_CI95_pp": [
+    -0.8899850059459172,
+    1.0900091773951726
+   ],
+   "cluster_CI95_pp": [
+    -1.1729725504757884,
+    1.1494090886614166
+   ],
+   "comp_means_top5": {
+    "BOT80": 0.23546142203796927,
+    "RAND80_s3": 0.22512586904271134,
+    "SPREAD80": 0.22432854604678706,
+    "RAND80_s6": 0.22286543195898437,
+    "RAND80_s4": 0.22100774476210383
+   }
+  }
+ },
+ "disposition": {
+  "zone_LME": "MID",
+  "zone_LoCoMo": "MID",
+  "cell": "HOLD-parity",
+  "action": "retain SIGN12B; no kill, no promote"
+ }
+}

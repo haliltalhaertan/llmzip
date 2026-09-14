@@ -1,0 +1,28 @@
+{
+  "files": {
+    "V8_LEAD_FOLLOWUP.md": {
+      "bytes": 1304,
+      "sha256": "77a8c467142d40a9bc73a2f08858b0d0d4a1c5c43f0bcdcaf46a05bd05f35ba6"
+    },
+    "V9_DISPOSITION.md": {
+      "bytes": 1395,
+      "sha256": "5ac726968416e372f64655204fede921338d56ea956c0c75056088152f505f1d"
+    },
+    "V9_TEST_RECEIPT.md": {
+      "bytes": 1053,
+      "sha256": "f1f6861c3834694c6bf5ff9fd5dbb0936b1e3bdc9411df5a9dd44177e13c871b"
+    },
+    "consumption_gate_v9.py": {
+      "bytes": 6373,
+      "sha256": "a5c98065c66df4c3ccb114f61d4e4f30f73b99a3a7d6443cddd3e0b092e66dc6"
+    },
+    "test_consumption_gate_v9.py": {
+      "bytes": 2819,
+      "sha256": "d6adf5f3186fe32ed5766fead62c1523d36182fd346621a94a7969e4794ee489"
+    }
+  },
+  "namespace": "drafts/v52/static_storage_integration_v9_2026_09_13",
+  "parent_commit": "0cb4aba586d85974dc9d9a4ea4215abc6d30cbac",
+  "schema": "V52_STATIC_STORAGE_INTEGRATION_V9_HASHES_V2",
+  "self_excluded": "HASHES.json"
+}

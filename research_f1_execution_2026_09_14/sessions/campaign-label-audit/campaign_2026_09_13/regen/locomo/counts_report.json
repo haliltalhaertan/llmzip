@@ -1,0 +1,192 @@
+[
+  {
+    "conv_id": "locomo_0",
+    "N": 419,
+    "archive_fit_docs": 419,
+    "query_count": 152,
+    "source_word_features": 5704,
+    "source_char_features": 14154,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 19890,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "78d91b89e5fc65df83a39930a1b89bc798d0a4685837ee3fa35e0e99ee0edadd",
+    "C_shape": [
+      419,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_1",
+    "N": 369,
+    "archive_fit_docs": 369,
+    "query_count": 81,
+    "source_word_features": 4377,
+    "source_char_features": 11734,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 16143,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "0b44b0e19b730426746208f17470fc18d3e20f8979aa76b8db4d3b0b65950694",
+    "C_shape": [
+      369,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_2",
+    "N": 663,
+    "archive_fit_docs": 663,
+    "query_count": 152,
+    "source_word_features": 7636,
+    "source_char_features": 16004,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 23672,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "b3e0cf2eafc02f3617716b954c0f3283ad4ac93e955efe0c8dab9bfb72680101",
+    "C_shape": [
+      663,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_3",
+    "N": 629,
+    "archive_fit_docs": 629,
+    "query_count": 199,
+    "source_word_features": 6885,
+    "source_char_features": 15624,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 22541,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "5b97c6499f2336f0cff547939ac7075d000ff02b878ecd5115504b6ebc40817c",
+    "C_shape": [
+      629,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_4",
+    "N": 680,
+    "archive_fit_docs": 680,
+    "query_count": 178,
+    "source_word_features": 8121,
+    "source_char_features": 17336,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 25489,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "d42159a2c1a6d88d7372fd8ca7f70e5536aa6014c514e5385b4802df42ecf900",
+    "C_shape": [
+      680,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_5",
+    "N": 675,
+    "archive_fit_docs": 675,
+    "query_count": 123,
+    "source_word_features": 7449,
+    "source_char_features": 15811,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 23292,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "d1382787b04b394ee24cbcd0b7d1477e214de67fc230758d3cee9c48b4f0c614",
+    "C_shape": [
+      675,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_6",
+    "N": 689,
+    "archive_fit_docs": 689,
+    "query_count": 150,
+    "source_word_features": 7672,
+    "source_char_features": 17343,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 25047,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "4aa9fc755115d943ea632c43de3e8aa4ff82b7c2bdb0f540d97f7995ba1f7769",
+    "C_shape": [
+      689,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_7",
+    "N": 681,
+    "archive_fit_docs": 681,
+    "query_count": 191,
+    "source_word_features": 7289,
+    "source_char_features": 16771,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 24092,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "e53a020e35608ff865f9c70f58331d014fae90483946cdae62783beeb3dd8dd2",
+    "C_shape": [
+      681,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_8",
+    "N": 509,
+    "archive_fit_docs": 509,
+    "query_count": 156,
+    "source_word_features": 6107,
+    "source_char_features": 15337,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 21476,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "afa62c30937f2de4ed19c1b5447c51164a71051c51dc630f22ec5cfaf95c697d",
+    "C_shape": [
+      509,
+      96
+    ]
+  },
+  {
+    "conv_id": "locomo_9",
+    "N": 568,
+    "archive_fit_docs": 568,
+    "query_count": 158,
+    "source_word_features": 7137,
+    "source_char_features": 15265,
+    "source_latent_dim": 32,
+    "mixed_concat_features": 22434,
+    "mixed96_dim": 96,
+    "no_nan": true,
+    "counts_match_transfer_proof": true,
+    "counts_mismatch_keys": [],
+    "C_sha256": "632c64ae76b55cd518eb5eb00488aa33022dcca22bc8c9baad27c28feaf63e2c",
+    "C_shape": [
+      568,
+      96
+    ]
+  }
+]

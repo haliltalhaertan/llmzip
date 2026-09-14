@@ -1,0 +1,98 @@
+{
+  "LME": {
+    "strict_gap": {
+      "attempted": 2000,
+      "interval_95": [
+        0.05652136148690275,
+        0.22204372562643684
+      ],
+      "invalid": 0,
+      "invalid_reasons": {},
+      "label": "descriptive/post-hoc percentile interval",
+      "valid": 2000
+    },
+    "tie_gap": {
+      "attempted": 2000,
+      "interval_95": [
+        0.05848375023531011,
+        0.2239291588567509
+      ],
+      "invalid": 0,
+      "invalid_reasons": {},
+      "label": "descriptive/post-hoc percentile interval",
+      "valid": 2000
+    }
+  },
+  "LOCOMO": {
+    "strict_gap": {
+      "attempted": 2000,
+      "interval_95": [
+        0.07016847874888302,
+        0.11952052999720467
+      ],
+      "invalid": 0,
+      "invalid_reasons": {},
+      "label": "descriptive/post-hoc percentile interval",
+      "valid": 2000
+    },
+    "tie_gap": {
+      "attempted": 2000,
+      "interval_95": [
+        0.07422601884525443,
+        0.1364085429028403
+      ],
+      "invalid": 0,
+      "invalid_reasons": {},
+      "label": "descriptive/post-hoc percentile interval",
+      "valid": 2000
+    }
+  },
+  "PERLTQA": {
+    "strict_gap": {
+      "attempted": 2000,
+      "interval_95": [
+        0.22301103637815595,
+        0.28397868212250343
+      ],
+      "invalid": 0,
+      "invalid_reasons": {},
+      "label": "descriptive/post-hoc percentile interval",
+      "valid": 2000
+    },
+    "tie_gap": {
+      "attempted": 2000,
+      "interval_95": [
+        0.2567290509860181,
+        0.3033619716936583
+      ],
+      "invalid": 0,
+      "invalid_reasons": {},
+      "label": "descriptive/post-hoc percentile interval",
+      "valid": 2000
+    }
+  },
+  "REALTALK": {
+    "strict_gap": {
+      "attempted": 2000,
+      "interval_95": [
+        0.02436605981593378,
+        0.1463464505928141
+      ],
+      "invalid": 0,
+      "invalid_reasons": {},
+      "label": "descriptive/post-hoc percentile interval",
+      "valid": 2000
+    },
+    "tie_gap": {
+      "attempted": 2000,
+      "interval_95": [
+        0.06787140475306298,
+        0.18086170806802082
+      ],
+      "invalid": 0,
+      "invalid_reasons": {},
+      "label": "descriptive/post-hoc percentile interval",
+      "valid": 2000
+    }
+  }
+}

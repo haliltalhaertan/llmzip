@@ -1,0 +1,123 @@
+{
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ],
+  "native_FR": 0.5419751773049645,
+  "extra_arms2": {
+    "RAND48_s3": 0.4500957446808511,
+    "RAND48_s4": 0.4470886524822695,
+    "RAND64_s1": 0.4892624113475177,
+    "RAND64_s2": 0.48531382978723403,
+    "RANKSPREAD64": 0.49109929078014186,
+    "RANKSPREAD32": 0.3669166666666666
+  },
+  "E4_seeds5": {
+    "43001": {
+      "random": {
+        "FR": 0.5071312056737588,
+        "gap_pp": -3.4843971631205672
+      },
+      "matched": {
+        "FR": 0.5388280141843972,
+        "gap_pp": -0.3147163120567287
+      },
+      "antimatched": {
+        "FR": 0.47773936170212766,
+        "gap_pp": -6.423581560283681
+      }
+    },
+    "43002": {
+      "random": {
+        "FR": 0.49134751773049645,
+        "gap_pp": -5.062765957446802
+      },
+      "matched": {
+        "FR": 0.5225035460992908,
+        "gap_pp": -1.9471631205673634
+      },
+      "antimatched": {
+        "FR": 0.46804609929078017,
+        "gap_pp": -7.39290780141843
+      }
+    },
+    "43003": {
+      "random": {
+        "FR": 0.5187765957446808,
+        "gap_pp": -2.319858156028365
+      },
+      "matched": {
+        "FR": 0.5173581560283688,
+        "gap_pp": -2.4617021276595707
+      },
+      "antimatched": {
+        "FR": 0.5038031914893617,
+        "gap_pp": -3.817198581560277
+      }
+    },
+    "43004": {
+      "random": {
+        "FR": 0.4909343971631206,
+        "gap_pp": -5.104078014184388
+      },
+      "matched": {
+        "FR": 0.5233687943262411,
+        "gap_pp": -1.8606382978723413
+      },
+      "antimatched": {
+        "FR": 0.47750886524822694,
+        "gap_pp": -6.446631205673753
+      }
+    },
+    "43005": {
+      "random": {
+        "FR": 0.5114645390070922,
+        "gap_pp": -3.051063829787226
+      },
+      "matched": {
+        "FR": 0.5269326241134752,
+        "gap_pp": -1.5042553191489283
+      },
+      "antimatched": {
+        "FR": 0.5110460992907802,
+        "gap_pp": -3.092907801418432
+      }
+    }
+  },
+  "TOP48_vs_native": {
+    "W_T_L": [
+      27,
+      259,
+      184
+    ],
+    "median_gap": 0.0
+  },
+  "BOT48_vs_native": {
+    "W_T_L": [
+      47,
+      292,
+      131
+    ],
+    "median_gap": 0.0
+  },
+  "analysis_only_gold_informed": {
+    "fields": [
+      "E2.*",
+      "E3.* (delta_gold_mean, gold_agree_mean, delta_positive_axes, goldrate_overall)",
+      "per_axis.alone_FR_mean / drop_loss_mean / drop_FR_mean",
+      "per_axis_v2.alone_fr_norm",
+      "TOP48_vs_native / BOT48_vs_native (derived from gold-scored FRs)"
+    ],
+    "gold_free": [
+      "E0 (pure reproduction)",
+      "E1 arms (variance/seed selection only)",
+      "E4 arms (variance ordering only; gold only inside the metric)",
+      "extra_arms2",
+      "diagnostics.json (dup/tie/phi need no gold; gold_gap column uses gold)"
+    ],
+    "note": "alone_fr_norm is tie-pool-normalized (alone_FR * pool / K, approx P(gold agrees)); corr(delta_vs_alone)=0.77 in pilot_results.json is inflated by shared pool-size term.",
+    "pkl_provenance": "cache_repr pkls are byte-governed by certification_report.json pkl_sha256_manifest (470 entries), verified in the closure review."
+  }
+}

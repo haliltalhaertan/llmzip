@@ -1,0 +1,169 @@
+{"_labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "_refit_notice": "BEYAN EDILMIS YENIDEN-UYARLAMA (declared re-fit): bu cikti, dondurulmus uretim yapitinin geri kazanimi DEGILDIR; gercek derlem uzerinde temsil hattinin yeniden uyarlanmasindan okunan TANIMLAYICI bag-geometrisi istatistikleridir. Hicbir retrieval/recall/dogruluk/gold/benchmark sonucu hesaplanmamistir; bag cozumlemek dogru cozumlemek demek DEGILDIR.",
+
+  "gate": "ozellik geometrisi birebir eslesme",
+  "boundary": "Mühürlü Task4F1: gold/evidence etiketleri acilmadi ve kullanilmadi; recall/dogruluk hesaplanmadi; getirimin dogrulugu degerlendirilmedi; benchmark calistirilmadi. Tum olcumler kod GEOMETRISI (cozunurluk kapasitesi) hakkindadir.",
+  "overall_pass": true,
+  "rows": [
+    {
+      "question_id": "001be529",
+      "expected": {
+        "N_archive": 514,
+        "word_columns": 39940,
+        "char_columns": 59943,
+        "combined_columns": 99915
+      },
+      "measured": {
+        "N_archive": 514,
+        "word_columns": 39940,
+        "char_columns": 59943,
+        "combined_columns": 99915
+      },
+      "pass": true
+    },
+    {
+      "question_id": "00ca467f",
+      "expected": {
+        "N_archive": 486,
+        "word_columns": 38846,
+        "char_columns": 54711,
+        "combined_columns": 93589
+      },
+      "measured": {
+        "N_archive": 486,
+        "word_columns": 38846,
+        "char_columns": 54711,
+        "combined_columns": 93589
+      },
+      "pass": true
+    },
+    {
+      "question_id": "0100672e",
+      "expected": {
+        "N_archive": 486,
+        "word_columns": 41054,
+        "char_columns": 57162,
+        "combined_columns": 98248
+      },
+      "measured": {
+        "N_archive": 486,
+        "word_columns": 41054,
+        "char_columns": 57162,
+        "combined_columns": 98248
+      },
+      "pass": true
+    },
+    {
+      "question_id": "01493427",
+      "expected": {
+        "N_archive": 487,
+        "word_columns": 39327,
+        "char_columns": 56463,
+        "combined_columns": 95822
+      },
+      "measured": {
+        "N_archive": 487,
+        "word_columns": 39327,
+        "char_columns": 56463,
+        "combined_columns": 95822
+      },
+      "pass": true
+    },
+    {
+      "question_id": "031748ae",
+      "expected": {
+        "N_archive": 494,
+        "word_columns": 39940,
+        "char_columns": 57039,
+        "combined_columns": 97011
+      },
+      "measured": {
+        "N_archive": 494,
+        "word_columns": 39940,
+        "char_columns": 57039,
+        "combined_columns": 97011
+      },
+      "pass": true
+    },
+    {
+      "question_id": "06878be2",
+      "expected": {
+        "N_archive": 443,
+        "word_columns": 40797,
+        "char_columns": 61852,
+        "combined_columns": 102681
+      },
+      "measured": {
+        "N_archive": 443,
+        "word_columns": 40797,
+        "char_columns": 61852,
+        "combined_columns": 102681
+      },
+      "pass": true
+    },
+    {
+      "question_id": "06db6396",
+      "expected": {
+        "N_archive": 479,
+        "word_columns": 39011,
+        "char_columns": 56009,
+        "combined_columns": 95052
+      },
+      "measured": {
+        "N_archive": 479,
+        "word_columns": 39011,
+        "char_columns": 56009,
+        "combined_columns": 95052
+      },
+      "pass": true
+    },
+    {
+      "question_id": "06f04340",
+      "expected": {
+        "N_archive": 503,
+        "word_columns": 40212,
+        "char_columns": 60496,
+        "combined_columns": 100740
+      },
+      "measured": {
+        "N_archive": 503,
+        "word_columns": 40212,
+        "char_columns": 60496,
+        "combined_columns": 100740
+      },
+      "pass": true
+    },
+    {
+      "question_id": "07741c44",
+      "expected": {
+        "N_archive": 513,
+        "word_columns": 38768,
+        "char_columns": 53232,
+        "combined_columns": 92032
+      },
+      "measured": {
+        "N_archive": 513,
+        "word_columns": 38768,
+        "char_columns": 53232,
+        "combined_columns": 92032
+      },
+      "pass": true
+    },
+    {
+      "question_id": "07741c45",
+      "expected": {
+        "N_archive": 527,
+        "word_columns": 38354,
+        "char_columns": 61140,
+        "combined_columns": 99526
+      },
+      "measured": {
+        "N_archive": 527,
+        "word_columns": 38354,
+        "char_columns": 61140,
+        "combined_columns": 99526
+      },
+      "pass": true
+    }
+  ]
+}

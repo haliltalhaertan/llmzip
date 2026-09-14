@@ -2,23 +2,32 @@
 
 # Archive of every llmzip session output produced on this machine
 
-## Correction to the previous commit
+**2294 files across 57 sessions, 58.7 MB.**
 
-Commit `40c49b4` claimed to "archive 0 genuine session outputs". That commit was
-**empty and its message was wrong**: the file-collection step had failed silently
-because a shell quoting layer mangled the file list, and the failure was not detected
-before committing. The commit is left in history (this project does not rewrite
-published history) and is superseded by this one, which archives **6 files across
-4 sessions**.
+## Two wrong commits this archive supersedes
 
-The earlier classification pass also under-counted: it scanned only three directory
-levels, so it reported 343 genuine files where the full scan finds 6. Both numbers
-were produced by the same rule; only the depth differed.
+Getting this archive onto the branch took several failed attempts, and two of those
+failures were committed and pushed before being detected. Both are left in history --
+this project does not rewrite published history -- and both are corrected here:
+
+- **`40c49b4`** - message claims "archive 0 genuine session outputs". The commit is
+  empty. The file-collection step had failed silently because a Windows-to-WSL quoting
+  layer mangled the file list, and the result was committed without checking.
+- **`490716c`** - archived **6 files** while claiming to archive the session corpus. A
+  temporary file list had been cleared by WSL between runs, so the tar was empty and
+  only a handful of stragglers were picked up.
+
+Root cause of both: committing without verifying the staged count. The staging script
+now refuses to proceed if fewer than 2000 files are staged, and the publish
+script re-checks before committing.
+
+An earlier classification pass also under-counted, reporting 343 genuine files where
+the full scan finds 2294; it scanned only three directory levels. Same rule, wrong depth.
 
 ## What this is
 
 `sessions/` holds the raw deliverables of every Muse Code session run against this
-programme, one directory per session, byte-for-byte as the session wrote them. Nothing
+programme, one directory per session, byte-for-byte as each session wrote them. Nothing
 has been edited, summarised or curated.
 
 ## Selection rule, stated so a reader can check it
@@ -28,31 +37,90 @@ Publishing those copies would bloat the archive and hide what was actually produ
 every candidate file was hashed with `git hash-object` and compared against the blobs
 already present in `main` and in this findings branch:
 
-- files whose hash matches an existing repo blob are **excluded as copies**;
-- files whose hash is new are **genuine session output** and are archived here;
+- **12,027 files scanned**, of which **2294 did not match any existing repo blob** and are
+  archived here as genuine session output;
+- the remaining ~9,700 matched a repo blob and were excluded as copies;
 - Collatz work and local infrastructure (virtualenvs, scratch dirs) belong to other
   projects and are **not** published here;
 - caches (`*.pkl`, `*.npz`, `*.npy`), bytecode, archives and files above 2 MB are
   excluded; the analyses that consume them record their hashes instead.
 
-The comparison ran inside WSL so that no cross-platform quoting layer could corrupt the
-file list -- the failure mode that produced the empty commit above.
+Selection, packing and unpacking all run **inside WSL**, writing directly onto
+`/mnt/c`. Every attempt that crossed the Windows boundary corrupted something: a raw
+tar piped through stdout arrived damaged, base64 likewise, a quoting layer emptied the
+file list, Windows' 260-character path limit broke both `git add` and Python's
+`extractall` on the deeply nested `campaign-label-*` trees (236-character paths), and
+`/tmp` was cleared between runs. `core.longpaths` is now enabled for git.
 
 ## Contents
 
 | session | files |
 |---|---|
-| `audit_norm` | 2 |
-| `fix_norm_tests` | 2 |
-| `audit_rank` | 1 |
-| `fix_rank_cover` | 1 |
+| `campaign-label-fix` | 560 |
+| `campaign-label-audit` | 557 |
+| `static-integrated` | 114 |
+| `geometry-cert-adversarial` | 98 |
+| `static-tests` | 97 |
+| `static-race` | 93 |
+| `static-denom` | 92 |
+| `geometry-cert-repair-v3` | 91 |
+| `projread-audits` | 75 |
+| `projread-ledger` | 75 |
+| `projread-task4f1` | 75 |
+| `theorybench-perltqa` | 45 |
+| `fix-v7-gapfill` | 36 |
+| `theorybench-lme` | 26 |
+| `theorybench-locomo` | 23 |
+| `theorybench-realtalk` | 17 |
+| `spectrum` | 14 |
+| `fix-exact-rational` | 12 |
+| `fix-ledger-record` | 12 |
+| `fix-stale-pointers` | 12 |
+| `fix_rank_cert` | 11 |
+| `audit_rank` | 10 |
+| `fix_norm_tests` | 8 |
+| `track1-storage-cost` | 8 |
+| `track1-storage-framing` | 8 |
+| `audit_norm` | 7 |
+| `fix_rank_cover` | 7 |
+| `track2-e1-audit` | 7 |
+| `track2-e1-mechanism` | 7 |
+| `math2-sharp-bounds` | 6 |
+| `math3-joint-gold-bounds` | 6 |
+| `theory-audit-real-geometry` | 6 |
+| `ultra-f1-exec` | 6 |
+| `audit_meas` | 5 |
+| `math-ranking-bounds` | 5 |
+| `math2-allocation-optimality` | 5 |
+| `roles` | 5 |
+| `tails` | 5 |
+| `ties` | 5 |
+| `fix_norm_math` | 4 |
+| `math-bit-allocation` | 4 |
+| `math-sign-mechanism` | 4 |
+| `math3-all-n-ranking` | 4 |
+| `math4-norm-aware-sign-bounds` | 4 |
+| `math4-rank-crossing-certificates` | 4 |
+| `theory-audit-locomo-provenance` | 4 |
+| `theory-audit-mapping` | 4 |
+| `audit_rep` | 2 |
+| `deep-branch-ledger` | 1 |
+| `deep-contradictions` | 1 |
+| `deep-t4f1-audits` | 1 |
+| `deep-v8-lineage` | 1 |
+| `gap-t4f0-evidence` | 1 |
+| `gap-v1-v50-history` | 1 |
+| `ultra-commonmode` | 1 |
+| `ultra-f1-repair` | 1 |
+| `ultra-perltqa-mechanism` | 1 |
 
-The larger blocks: `campaign-label-*` are the labelling campaign's two sides
+The larger blocks: `campaign-label-*` are the two sides of the labelling campaign
 (audit and fix); `static-*` and `geometry-cert-*` are the static-layer and
-geometry-certificate work; `projread-*` are the project-history reads;
-`theorybench-*` are the four benchmark theory tests; `math*` are the mathematics
-rounds; `spectrum`, `tails`, `ties`, `roles` are the four measurement probes whose
-results refuted earlier claims (spectral exponent, kurtosis, tie rate, speaker role).
+geometry-certificate work; `projread-*` are the project-history reads; `theorybench-*`
+are the four benchmark theory tests; `math*`, `math2-*`, `math3-*`, `math4-*` are the
+mathematics rounds; `spectrum`, `tails`, `ties`, `roles` are the four measurement probes
+whose results refuted earlier claims (spectral exponent, kurtosis, tie rate, speaker
+role); `track1-*` and `track2-*` are the storage-accounting and E1-mechanism tracks.
 
 ## Status of this material
 

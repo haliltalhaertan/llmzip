@@ -1,0 +1,18 @@
+{
+  "schema": "V52_STATIC_STORAGE_INVENTORY_IDENTITY_V1",
+  "status": "PREPARATION_IDENTITY_ONLY_NOT_INDEPENDENT_REVIEW",
+  "inventory_content_commit": "fdc923d24478ef907cf062af2394632dd17eae7f",
+  "files": {
+    "SOURCE_INVENTORY_TR.md": {
+      "git_blob": "d29cec437493d1836bb80550e6a9cbbc15ee21d2"
+    },
+    "SOURCE_INVENTORY.json": {
+      "git_blob": "efed8884ff18477f59b33bb27ab711cd3e00e3d4"
+    }
+  },
+  "notes": [
+    "Git object identity is recorded here so the preparation bytes are addressable without changing the independently reviewed contract package.",
+    "This is not a scientific seal, not a SHA256 review receipt, and not an independent audit.",
+    "A separate reviewer must verify content claims and may add SHA256 sidecars or a review manifest without modifying these inventory bytes."
+  ]
+}

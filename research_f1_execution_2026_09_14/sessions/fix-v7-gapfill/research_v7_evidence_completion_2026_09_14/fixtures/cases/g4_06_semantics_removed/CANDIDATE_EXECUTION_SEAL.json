@@ -1,0 +1,75 @@
+{
+  "authority_note": "Prepared under Continuity Lead authority on an explicit Head Researcher instruction to close packaging by removing restated values and to build no further scanner. Sealing requires independent audit plus Head Researcher approval.",
+  "authorization": {
+    "independent_execution_code_audit": "PENDING",
+    "retrieval_quality_outcome_access": "FORBIDDEN",
+    "task_4f1_preregistration": "BLOCKED",
+    "task_4f1_run": "BLOCKED"
+  },
+  "authorization_control": {
+    "candidate_state": "FAIL_CLOSED_NO_VALID_KEY_COMMITMENT",
+    "key_bytes": 32,
+    "key_commitment_sha256": "PENDING_HEAD_RESEARCHER_PREREGISTRATION",
+    "key_environment_variable": "V52_T4F1_AUTH_HMAC_KEY_HEX",
+    "scheme": "HMAC-SHA256",
+    "secret_storage": "FORBIDDEN_IN_REPOSITORY_CANDIDATE_AUDIT_PREREGISTRATION_LOGS_AND_OUTPUTS",
+    "signed_fields": [
+      "schema",
+      "status",
+      "retrieval_quality_outcome_access",
+      "execution_script_sha256",
+      "execution_candidate_seal_sha256",
+      "cohort_sha256",
+      "required_archive_count",
+      "output_namespace_basename",
+      "preregistration_seal_sha256",
+      "authorization_id",
+      "authorization_nonce"
+    ]
+  },
+  "consistency_claim": "The bound payload contains only functional files: the runner, the dependency lock, the inert authorization template and this checker. No narrative document is bound, so no bound document can state a requirement, so there is nothing to restate and nothing to reconcile. The property is a set equality over file names, established structurally rather than by scanning prose.",
+  "environment": {
+    "lock_path": "DEPENDENCY_LOCK.txt",
+    "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "single_process_single_worker": true
+  },
+  "implementation": {
+    "bytes": 61860,
+    "name": "v52_t4f1_beam_retrieval.py",
+    "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+  },
+  "package_version_note": "V6 is a package version, not a schema version. The runner is byte-identical to the accepted V4 runner, so every schema literal it verifies remains at its V4 value.",
+  "parent_llmzip_commit": "d3c7aa09c9553cd5ac100e668923abab602e4257",
+  "payload_inventory": {
+    "bytes": 1010,
+    "name": "PAYLOAD_HASHES.json",
+    "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+  },
+  "pinned_beam_commit": "3e12035532eb85768f1a7cd779832b650c4b2ef9",
+  "prepared_at_utc": "2026-09-03T21:30:00Z",
+  "required_independent_gates": {
+    "fail_closed_authorization": "PENDING",
+    "independent_signoff": "PENDING",
+    "narrative_payload_prohibition": "PENDING",
+    "recursive_payload_closure": "PENDING",
+    "runner_byte_identity_proof": "PENDING",
+    "v6_to_v7_declarative_change_isolation": "PENDING"
+  },
+  "schema": "V52_T4F1_EXECUTION_CANDIDATE_SEAL_V4",
+  "self_audit_prohibited": "V5 was prepared by the Continuity Lead and cannot be audited by it. A different cold-start auditor must derive the declarative classification from the bytes, not import it.",
+  "status_at_audit_submission": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+  "stop_rule": "No Task 4F1 run, finalize, valid authorization construction, metric access, sealing, or preregistration before a fresh outcome-free independent V4 audit. After outcome access, no cohort, occurrence, seed, trial, threshold, centering, dimension, tie priority, metric, denominator, arm, rotation, ITQ, cache, checkpoint, authorization, validation, finalization, or aggregation change.",
+  "supersedes_candidate": {
+    "disposition": "PRESERVED_UNMODIFIED; BLOCKED by independent delta audit. Full provenance is in the continuity ledger, not here.",
+    "namespace": "../task4f1_execution_candidate_v6_2026_09_03"
+  },
+  "task": "V52 Task 4F1 - BEAM Restricted-Cohort Axis Probe",
+  "v7_change": {
+    "executable_behaviour_change": "NONE",
+    "narrative_documents": "UNBOUND - moved to docs/ and labelled non-normative",
+    "normative_source_map": "REMOVED",
+    "post_audit_state_claims_in_candidate": "REMOVED",
+    "runner_byte_identity_with_accepted_v4": "HELD",
+    "sweep_gate": "REMOVED"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "excluded_archives": {
+    "Chen Zhi": {
+      "N": 35,
+      "C_shape": [
+        35,
+        35
+      ],
+      "reason": "TruncatedSVD(n_components=96, seed=5204) silently capped output dim at N samples (no warning); archive cannot support frozen SVD96; excluded per port rule (do not silently shrink)",
+      "n_qa_dropped": 40,
+      "qa_dropped_by_section": {
+        "profile": 12,
+        "social_relationship": 23,
+        "events": 3,
+        "dialogues": 2
+      }
+    }
+  },
+  "n_qa_dropped_total": 40,
+  "qa_dropped_by_section": {
+    "profile": 12,
+    "social_relationship": 23,
+    "events": 3,
+    "dialogues": 2
+  }
+}

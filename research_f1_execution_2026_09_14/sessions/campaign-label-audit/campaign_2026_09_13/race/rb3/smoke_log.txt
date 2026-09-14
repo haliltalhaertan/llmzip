@@ -1,0 +1,17 @@
+[13:06:14] faiss=1.15.0 threads=1
+[13:06:14] loading frozen benchmarks...
+[13:06:24] LME archives=470 LoCoMo convs=10 valid_q=1535 corrections=156
+[13:06:27] S1 native LME=0.5419751773049645 diff=0.0; LoCoMo=0.23654714666441054 diff=0.0 (2.7s)
+[13:06:27] S3 nb_bits trap PASS: PASS: IndexRaBitQ lacks nb_bits; (96,2)=METRIC_L1@20B; attr-assign reads 2/stores 20B; only ctor-form yields 44B
+[13:06:27] S2 byte replay PASS: RQ96=20 RQ32=12 PQ=12 EXT2=44 S0=202/458/98390
+[13:06:27] S7 rotation chain PASS 8/8
+[13:06:27] S4 min-N: LME min=396 (OK); LoCoMo min=369 @ locomo_1 (OK)
+[13:06:27] S5 determinism PASS (in-process A4/A6 + cross-process A4)
+[13:06:31] A4_spread_94101: done LME=0.297624 LoCoMo=0.086831 (3.2s)
+[13:06:33] A4_spread_94102: done LME=0.311667 LoCoMo=0.088787 (2.7s)
+[13:06:36] A4_spread_94103: done LME=0.294468 LoCoMo=0.095496 (2.9s)
+[13:06:39] A4_random_94201: done LME=0.280851 LoCoMo=0.080028 (2.6s)
+[13:06:42] A4_random_94202: done LME=0.301543 LoCoMo=0.100463 (2.7s)
+[13:06:45] A4_random_94203: done LME=0.290957 LoCoMo=0.085913 (3.1s)
+[13:06:49] A5_wrapper: done LME=0.338316 LoCoMo=0.083523 (4.7s)
+[13:07:12] A6_PQ: done LME=0.430745 (masked_q=0) LoCoMo=0.153676 masked_arch=0 (22.6s)

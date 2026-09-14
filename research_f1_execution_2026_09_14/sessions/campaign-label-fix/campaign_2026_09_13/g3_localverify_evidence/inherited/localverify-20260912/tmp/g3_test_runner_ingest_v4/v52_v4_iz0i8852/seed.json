@@ -1,0 +1,8 @@
+{
+  "benchmark": "LoCoMo",
+  "bootstrap_seed": 52001107,
+  "frozen_before_any_result": true,
+  "replicates": 10000,
+  "runner_version": "membership_runner G-3 remediation 2026-09-11",
+  "scheme": "question"
+}

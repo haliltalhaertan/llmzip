@@ -1,0 +1,190 @@
+{
+  "banner": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE] PREPARED NOT ACCEPTED",
+  "gate": 4,
+  "method": "candidate_package_preflight.py on pristine + 10 synthetic mutated copies in own namespace; static key analysis of seal/inventory/runner bytes",
+  "candidate_hashes_reverified": {
+    "CANDIDATE_EXECUTION_SEAL.json": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61",
+    "DEPENDENCY_LOCK.txt": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e",
+    "PAYLOAD_HASHES.json": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90",
+    "RUN_AUTHORIZATION_TEMPLATE.json": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca",
+    "candidate_package_preflight.py": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699",
+    "v52_t4f1_beam_retrieval.py": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+  },
+  "static_findings": {
+    "seal_top_level_keys": [
+      "authority_note",
+      "authorization",
+      "authorization_control",
+      "consistency_claim",
+      "environment",
+      "implementation",
+      "package_version_note",
+      "parent_llmzip_commit",
+      "payload_inventory",
+      "pinned_beam_commit",
+      "prepared_at_utc",
+      "required_independent_gates",
+      "schema",
+      "self_audit_prohibited",
+      "status_at_audit_submission",
+      "status_semantics",
+      "stop_rule",
+      "supersedes_candidate",
+      "task",
+      "v7_change"
+    ],
+    "seal_has_bare_status": false,
+    "seal_has_acceptance_state": false,
+    "seal_has_accepted": false,
+    "seal_has_sealed": false,
+    "seal_status_at_audit_submission": "PREPARED_NOT_INDEPENDENTLY_AUDITED",
+    "seal_has_status_semantics": true,
+    "seal_has_attestation_pointer": false,
+    "manifest_top_level_keys": [
+      "closure",
+      "file_count_excluding_inventory_and_seal",
+      "files",
+      "schema",
+      "status_note"
+    ],
+    "manifest_has_status_key": false,
+    "signed_fields_include_status": true,
+    "runner_imports_checker": false,
+    "runner_mentions_current_state_or_ledger": false,
+    "runner_mentions_attestation": false,
+    "runner_status_read_context": "runner line ~1219 execution_seal.get(\"status\") reads the RUNTIME execution seal supplied at run time, not CANDIDATE_EXECUTION_SEAL.json; runner AUTH_SIGNED_FIELDS (lines ~79-88) and line ~245 expected runtime value AUTHORIZED_FOR_TASK_4F1_EXECUTION concern runtime authorization, not package acceptance",
+    "nothing_binds_seal_bytes": "PAYLOAD_HASHES.json covers 4 files; seal asserts payload_inventory.sha256 but no in-package hash covers CANDIDATE_EXECUTION_SEAL.json itself; root of trust is external prompt anchors only",
+    "conclusion": "Status/attestation binding is sound against a non-resealing adversary (exact submission value pinned; four post-audit field names forbidden; inventory status forbidden; F5-style acceptance file blocked at all reseal levels by set equality) and vacuous against a full-reseal adversary (seal bytes unbound; status_semantics prose unpinned). No attestation pointer exists, so F5 redirection is inapplicable BY CONSTRUCTION; the residual risk is prose misdirection, not package misbinding."
+  },
+  "cases": [
+    {
+      "id": "g4_00_pristine",
+      "description": "Unmodified copy (positive control)",
+      "expected": "PASSED",
+      "observed": "PASSED",
+      "agrees": true,
+      "checker_returncode": 0,
+      "checker_stdout": "PASS: recursive payload closure, fail-closed HMAC authorization, script binding, and archive-fit AST boundary\nPASS: bound payload is functional-only - 4 files, 0 narrative documents bound; runner byte-identical to the accepted V4 runner; candidate asserts no post-audit acceptance state\nBLOCKED: independent execution-code audit and Head Researcher authorization are still required\n",
+      "checker_error": "",
+      "note": ""
+    },
+    {
+      "id": "g4_01_bare_status",
+      "description": "Seal gains bare \"status\":\"ACCEPTED\"",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "42, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_01_bare_status/candidate_package_preflight.py\", line 124, in main\n    gate_report = bound_payload_is_functional_only()\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_01_bare_status/candidate_package_preflight.py\", line 65, in bound_payload_is_functional_only\n    raise RuntimeError(f\"[BLOCKED - SEAL CLAIMS POST-AUDIT STATE] {forbidden}\")\nRuntimeError: [BLOCKED - SEAL CLAIMS POST-AUDIT STATE] status\n",
+      "note": ""
+    },
+    {
+      "id": "g4_02_acceptance_state",
+      "description": "Seal gains \"acceptance_state\"",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_02_acceptance_state/candidate_package_preflight.py\", line 124, in main\n    gate_report = bound_payload_is_functional_only()\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_02_acceptance_state/candidate_package_preflight.py\", line 65, in bound_payload_is_functional_only\n    raise RuntimeError(f\"[BLOCKED - SEAL CLAIMS POST-AUDIT STATE] {forbidden}\")\nRuntimeError: [BLOCKED - SEAL CLAIMS POST-AUDIT STATE] acceptance_state\n",
+      "note": ""
+    },
+    {
+      "id": "g4_03_accepted",
+      "description": "Seal gains \"accepted\":true",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "ne 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_03_accepted/candidate_package_preflight.py\", line 124, in main\n    gate_report = bound_payload_is_functional_only()\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_03_accepted/candidate_package_preflight.py\", line 65, in bound_payload_is_functional_only\n    raise RuntimeError(f\"[BLOCKED - SEAL CLAIMS POST-AUDIT STATE] {forbidden}\")\nRuntimeError: [BLOCKED - SEAL CLAIMS POST-AUDIT STATE] accepted\n",
+      "note": ""
+    },
+    {
+      "id": "g4_04_sealed",
+      "description": "Seal gains \"sealed\":true",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "y\", line 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_04_sealed/candidate_package_preflight.py\", line 124, in main\n    gate_report = bound_payload_is_functional_only()\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_04_sealed/candidate_package_preflight.py\", line 65, in bound_payload_is_functional_only\n    raise RuntimeError(f\"[BLOCKED - SEAL CLAIMS POST-AUDIT STATE] {forbidden}\")\nRuntimeError: [BLOCKED - SEAL CLAIMS POST-AUDIT STATE] sealed\n",
+      "note": ""
+    },
+    {
+      "id": "g4_05_submission_mutated",
+      "description": "status_at_audit_submission rewritten",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "Traceback (most recent call last):\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_05_submission_mutated/candidate_package_preflight.py\", line 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_05_submission_mutated/candidate_package_preflight.py\", line 81, in main\n    raise RuntimeError(\"candidate submission status must remain prepared\")\nRuntimeError: candidate submission status must remain prepared\n",
+      "note": ""
+    },
+    {
+      "id": "g4_06_semantics_removed",
+      "description": "status_semantics prose deleted from seal",
+      "expected": "PASSED",
+      "observed": "PASSED",
+      "agrees": true,
+      "checker_returncode": 0,
+      "checker_stdout": "PASS: recursive payload closure, fail-closed HMAC authorization, script binding, and archive-fit AST boundary\nPASS: bound payload is functional-only - 4 files, 0 narrative documents bound; runner byte-identical to the accepted V4 runner; candidate asserts no post-audit acceptance state\nBLOCKED: independent execution-code audit and Head Researcher authorization are still required\n",
+      "checker_error": "",
+      "note": "Finding: the sentence locating acceptance state is unbound prose; checker does not pin it."
+    },
+    {
+      "id": "g4_07_inventory_status",
+      "description": "Inventory gains top-level \"status\"",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": " 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_07_inventory_status/candidate_package_preflight.py\", line 124, in main\n    gate_report = bound_payload_is_functional_only()\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_07_inventory_status/candidate_package_preflight.py\", line 67, in bound_payload_is_functional_only\n    raise RuntimeError(\"[BLOCKED - INVENTORY CARRIES A STATUS FIELD]\")\nRuntimeError: [BLOCKED - INVENTORY CARRIES A STATUS FIELD]\n",
+      "note": "Seal binding re-pointed at edited manifest; dedicated inventory check fires."
+    },
+    {
+      "id": "g4_08a_f5_undeclared",
+      "description": "F5 analog: acceptance file inside pkg, undeclared",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08a_f5_undeclared/candidate_package_preflight.py\", line 97, in main\n    raise RuntimeError(f\"payload closure mismatch declared={sorted(declared)} actual={sorted(actual)}\")\nRuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'V6_ACCEPTANCE_ATTESTATION_2026-09-03.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py']\n",
+      "note": ""
+    },
+    {
+      "id": "g4_08b_f5_declared",
+      "description": "F5 analog: acceptance file declared, manifest-only reseal",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "Traceback (most recent call last):\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/candidate_package_preflight.py\", line 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/candidate_package_preflight.py\", line 90, in main\n    raise RuntimeError(\"payload inventory binding mismatch\")\nRuntimeError: payload inventory binding mismatch\n",
+      "note": "Expect BLOCKED via seal binding or set-equality."
+    },
+    {
+      "id": "g4_08c_f5_fullreseal",
+      "description": "F5 analog: acceptance file declared + full reseal",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "\"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/candidate_package_preflight.py\", line 124, in main\n    gate_report = bound_payload_is_functional_only()\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/candidate_package_preflight.py\", line 50, in bound_payload_is_functional_only\n    raise RuntimeError(\n    ...<3 lines>...\n    )\nRuntimeError: [BLOCKED - BOUND PAYLOAD IS NOT FUNCTIONAL-ONLY] unexpected=['V6_ACCEPTANCE_ATTESTATION_2026-09-03.json'] missing=[]\n",
+      "note": "Set-equality should still fire: narrative name not in EXPECTED set."
+    }
+  ],
+  "boundary": {
+    "mode_run_count": 0,
+    "mode_finalize_count": 0,
+    "hmac_env_set": 0,
+    "real_authorization_constructed": false,
+    "retrieval_outcome": false,
+    "candidate_bytes_modified": false
+  }
+}

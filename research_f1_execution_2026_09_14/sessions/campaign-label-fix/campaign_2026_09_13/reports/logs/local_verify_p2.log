@@ -1,0 +1,44 @@
+== P2 CHECK 1: sha256 of FILE_HASHES.json vs claimed manifest hash ==
+claimed = 70d4ef2c7e8f9bbffb2ef7d4a8265d0a81dd011701c4fbcdf8f3ca4a84ce9f3f
+actual  = 70d4ef2c7e8f9bbffb2ef7d4a8265d0a81dd011701c4fbcdf8f3ca4a84ce9f3f
+RESULT: PASS MATCH
+
+== P2 CHECK 2: recompute all declared file hashes (sha256 + bytes) ==
+manifest keys=['files', 'self_excluded'] self_excluded='FILE_HASHES.json' declared_files=18
+entries=18 matched=18 mismatched=0 absent=0
+
+-- per-entry results (OK lines) --
+OK  19ea49dcaddf6335454bac0d8cf53a97c4bf4c07f2e91217b2b8fd58f522340d  CONFIGURATION_PROPOSAL.md
+OK  0b6a9f3a3e9340058158469c0b6416ce7950c31064cd49c91e8a8ab66b0f3f30  INDEPENDENT_REPLAY_REVIEW.md
+OK  c900b138c6a57c8c8d2c31616ed9c129bf706ccf34daf2f7a8b91582ed1d89cb  LEDGER_RECEIPT_BODY.txt
+OK  d46d37ba5229327da994e63696613202583914dd24c4ad7cc89501ded593f993  README_TR.md
+OK  9b5516a8f0acdd353d81030883a56d34c89c0f1a5319081cb0cedb9c0212a4a6  replay/ENVIRONMENT.json
+OK  b61d78357077102b37ad4c44d17b3bec453c7bccf9c2c912cb5becf29e328c2e  replay/PLAN.json
+OK  f0ac1ef0dab530fe44c15ffbe7025f1fc8d1a66c3fe71a5fb6555a60feda50ca  replay/RESULTS.json
+OK  e98ce727da8ef93ab25aa66996967c3a5bb29fa6f2277f3935f8b4a76f504b44  replay/objectives.csv
+OK  3f87cc5c8a573fae578f9cba9741d04b66142d481017677028403effc8a8b74b  replay_objectives.py
+OK  9b5516a8f0acdd353d81030883a56d34c89c0f1a5319081cb0cedb9c0212a4a6  review_agent/ENVIRONMENT.json
+OK  8e65140f1a44b7fc0817446f97869d19ac69440b9c53bb9992c2ef0007b64394  review_agent/PLAN.json
+OK  f0ac1ef0dab530fe44c15ffbe7025f1fc8d1a66c3fe71a5fb6555a60feda50ca  review_agent/RESULTS.json
+OK  d92478a13f56cb8e555608cbf59d2658dcf1e49c6c3f50c7851ab55f05774631  review_agent/VALIDATION.json
+OK  e98ce727da8ef93ab25aa66996967c3a5bb29fa6f2277f3935f8b4a76f504b44  review_agent/objectives.csv
+OK  e56ea0d6858e06211fa9eb82d6d255724a3d0e23016b77d28f8d8ff10923c53f  source/PLAN.json
+OK  0c2cf96553dbf448d22def0538c8993ada038d1fdac52665f759c08e5a304214  source/RESULTS.json
+OK  18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d  source/itq_feasibility_synthetic.py
+OK  09ccbabfa768bd46c27b83204918c42561d45c92780848fb382b03efc6081713  verify_package.py
+
+== P2 CHECK 3: inventory coverage (byte manifest vs package dir) ==
+files_on_disk=19 declared=18 other_than_manifest=18
+missing_on_disk=[]
+extra_not_declared=[]
+RESULT: PASS
+
+== P2 CHECK 4: cross-links to P1 namespace bytes ==
+source/itq_feasibility_synthetic.py: p1_expected=18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d actual=18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d MATCH
+source/PLAN.json: p1_expected=e56ea0d6858e06211fa9eb82d6d255724a3d0e23016b77d28f8d8ff10923c53f actual=e56ea0d6858e06211fa9eb82d6d255724a3d0e23016b77d28f8d8ff10923c53f MATCH
+source/RESULTS.json: p1_expected=0c2cf96553dbf448d22def0538c8993ada038d1fdac52665f759c08e5a304214 actual=0c2cf96553dbf448d22def0538c8993ada038d1fdac52665f759c08e5a304214 MATCH
+
+== P2 CHECK 5: declared duplicate-content groups ==
+replay/objectives.csv vs review_agent/objectives.csv: e98ce727da8ef93ab25aa66996967c3a5bb29fa6f2277f3935f8b4a76f504b44 e98ce727da8ef93ab25aa66996967c3a5bb29fa6f2277f3935f8b4a76f504b44 IDENTICAL
+replay/RESULTS.json vs review_agent/RESULTS.json: f0ac1ef0dab530fe44c15ffbe7025f1fc8d1a66c3fe71a5fb6555a60feda50ca f0ac1ef0dab530fe44c15ffbe7025f1fc8d1a66c3fe71a5fb6555a60feda50ca IDENTICAL
+replay/ENVIRONMENT.json vs review_agent/ENVIRONMENT.json: 9b5516a8f0acdd353d81030883a56d34c89c0f1a5319081cb0cedb9c0212a4a6 9b5516a8f0acdd353d81030883a56d34c89c0f1a5319081cb0cedb9c0212a4a6 IDENTICAL

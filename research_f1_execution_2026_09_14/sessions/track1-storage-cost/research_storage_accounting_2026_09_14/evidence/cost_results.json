@@ -1,0 +1,175 @@
+{
+ "inputs": {
+  "marginal": 12,
+  "S_median": {
+   "a_raw_f32_struct": 44220235.0,
+   "b_raw_f16_struct": 22686111.0,
+   "a_zlib_f32": 23733327.0,
+   "b_zlib_f16": 16941200.0
+  },
+  "N_programme": {
+   "min": 396,
+   "max": 616,
+   "mean": 492.77872340425535,
+   "n_archives": 470
+  },
+  "baselines": {
+   "float32": 384,
+   "float16": 192,
+   "float16_zlib": null
+  },
+  "beam_tiers_declared_only": [
+   100000,
+   500000,
+   1000000,
+   10000000
+  ],
+  "S0": {
+   "SIGN96_BinaryFlat": 33.0,
+   "PQ96_m12x8": 98390.0,
+   "OPQ_PQ96": 135325.0
+  },
+  "total_vectors_longmemeval": 231606.0
+ },
+ "checks": [
+  {
+   "name": "median effective a_raw == 12 + cited shared/vec",
+   "pass": true,
+   "detail": 88886.36234817814
+  },
+  {
+   "name": "round(S_med_f32/12) == cited breakeven.to_12",
+   "pass": true,
+   "detail": 3685020
+  },
+  {
+   "name": "f32-projector beats raw f32 only above ~118.9K",
+   "pass": true,
+   "detail": 118871.59946236559
+  },
+  {
+   "name": "BEAM-100K tier below f32 break-even; 500K above",
+   "pass": true,
+   "detail": 118871.59946236559
+  },
+  {
+   "name": "at mean N, f32 effective exceeds raw f32 by >200x",
+   "pass": true,
+   "detail": 233.72003669036351
+  },
+  {
+   "name": "whole-LongMemEval SIGN96+projector >> raw float32",
+   "pass": true,
+   "detail": 233.72003669036351
+  },
+  {
+   "name": "global-shared (forbidden) case beats raw f32",
+   "pass": true,
+   "detail": 202.92871082787147
+  },
+  {
+   "name": "10x archives still leave f32 effective above raw",
+   "pass": true,
+   "detail": 8985.649408909958
+  },
+  {
+   "name": "index-only: SIGN96(33B) << PQ(98390B) at mean N",
+   "pass": true,
+   "detail": {
+    "SIGN96_BinaryFlat": 12.066967177016139,
+    "PQ96_m12x8": 211.66365292781705,
+    "OPQ_PQ96": 286.6161584760326
+   }
+  }
+ ],
+ "tables": {
+  "breakeven_N": {
+   "a_raw_f32_struct": {
+    "vs_float32": 118871.59946236559,
+    "vs_float16": 245667.97222222222,
+    "vs_float16_zlib": null,
+    "marginal_parity_S_over_12": 3685019.5833333335
+   },
+   "b_raw_f16_struct": {
+    "vs_float32": 60984.16935483871,
+    "vs_float16": 126033.95,
+    "vs_float16_zlib": null,
+    "marginal_parity_S_over_12": 1890509.25
+   },
+   "a_zlib_f32": {
+    "vs_float32": 63799.26612903226,
+    "vs_float16": 131851.81666666668,
+    "vs_float16_zlib": null,
+    "marginal_parity_S_over_12": 1977777.25
+   },
+   "b_zlib_f16": {
+    "vs_float32": 45540.86021505376,
+    "vs_float16": 94117.77777777778,
+    "vs_float16_zlib": null,
+    "marginal_parity_S_over_12": 1411766.6666666667
+   }
+  },
+  "effective_at_programme_N": {
+   "396": {
+    "a_raw_f32_struct": 111679.2601010101,
+    "b_raw_f16_struct": 57300.15909090909,
+    "a_zlib_f32": 59944.643939393936,
+    "b_zlib_f16": 42792.80808080808
+   },
+   "492.77872340425535": {
+    "a_raw_f32_struct": 89748.4940890996,
+    "b_raw_f16_struct": 46049.11548923603,
+    "a_zlib_f32": 48174.23970881583,
+    "b_zlib_f16": 34390.919371691576
+   },
+   "616": {
+    "a_raw_f32_struct": 71798.09577922078,
+    "b_raw_f16_struct": 36840.10227272727,
+    "a_zlib_f32": 38540.128246753244,
+    "b_zlib_f16": 27513.948051948053
+   }
+  },
+  "longmemeval_totals_bytes": {
+   "shared_approx_470x_median_S": 20783510450.0,
+   "codes_12B": 2779272.0,
+   "sign_total": 20786289722.0,
+   "raw_float32_total": 88936704.0,
+   "ratio_sign_over_raw": 233.72003669036351,
+   "note": "shared uses median S x 470 (approximation; per-archive S varies 41785637..46272067 B). Codes and raw totals are exact."
+  },
+  "beam_projection_ceteris_paribus_S": {
+   "100000": 454.20235,
+   "500000": 100.44047,
+   "1000000": 56.220235,
+   "10000000": 16.4220235
+  },
+  "beam_projection_caveat": "BEAM tiers are DECLARED SIZES ONLY (old prereg L41-42: scale not approached). A BEAM-fit projector would have its own S; reusing the LongMemEval median S is a ceteris-paribus projection, not a measurement.",
+  "sensitivity": {
+   "projector_float16": {
+    "S": 22686111.0,
+    "vs_float32": 60984.16935483871,
+    "vs_float16": 126033.95,
+    "effective_at_mean_N": 46049.11548923603
+   },
+   "global_shared_forbidden": {
+    "effective_over_all_vectors": 202.92871082787147,
+    "beats_raw_float32": true,
+    "status": "PREREG-EXCLUDED deployment (archive-local fitting required; never amortize across questions). Shown to test the assumption most damaging to the headline."
+   },
+   "archives_10x_larger": {
+    "4927.787234042554": {
+     "a_raw_f32_struct": 8985.649408909958,
+     "b_raw_f16_struct": 4615.711548923602,
+     "a_zlib_f32": 4828.223970881583,
+     "b_zlib_f16": 3449.8919371691577
+    }
+   },
+   "index_only_arms_at_mean_N": {
+    "SIGN96_BinaryFlat": 12.066967177016139,
+    "PQ96_m12x8": 211.66365292781705,
+    "OPQ_PQ96": 286.6161584760326
+   }
+  }
+ },
+ "pass": true
+}

@@ -1,0 +1,110 @@
+{
+  "status": "LOCAL SESSION \u2014 Task1 extension computed from certified regeneration",
+  "source": "cache_repr from frozen producer re-execution; certification_report.json beside it",
+  "labels": [
+    "[LOCAL SESSION \u2014 NOT AN AUDIT]",
+    "[CERTIFIED REGENERATION]",
+    "Strict >0 and zero-mass resolved by bit-faithful re-execution, not assumed."
+  ],
+  "controls": {
+    "status": "PASS",
+    "cases": [
+      "exact zero_mass",
+      "gt vs ge separation (hand values)",
+      "D4 definition replication",
+      "zero-free equivalence"
+    ]
+  },
+  "cross_checks_vs_published": {
+    "D1_ge_regen_mean": 0.9970337299075775,
+    "D1_ge_published_mean": 0.9970337299075775,
+    "D1_ge_abs_diff": 0.0,
+    "D2_regen_mean": 0.4974774992684583,
+    "D2_published_mean": 0.4974774992684583,
+    "D2_abs_diff": 0.0
+  },
+  "archive_count": 470,
+  "dimensions": 96,
+  "D1_gt": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.9970337299075775,
+    "sd_ddof1": 0.0009689546162983155,
+    "min": 0.9910369335593018,
+    "max": 0.9985525937037742
+  },
+  "D1_ge": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.9970337299075775,
+    "sd_ddof1": 0.0009689546162983155,
+    "min": 0.9910369335593018,
+    "max": 0.9985525937037742
+  },
+  "zero_mass": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.0,
+    "sd_ddof1": 0.0,
+    "min": 0.0,
+    "max": 0.0
+  },
+  "D2_cv_sigma": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.4974774992684583,
+    "sd_ddof1": 0.008836428595739187,
+    "min": 0.47551345862128686,
+    "max": 0.552632578553556
+  },
+  "D3_top32_share": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.7598736235405326,
+    "sd_ddof1": 0.004814472432846057,
+    "min": 0.7441002171946898,
+    "max": 0.7787693898072809
+  },
+  "D3_first32_share": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.7598736235405325,
+    "sd_ddof1": 0.004814472432846052,
+    "min": 0.7441002171946898,
+    "max": 0.7787693898072809
+  },
+  "D4_off_mass": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.15188848165900984,
+    "sd_ddof1": 0.004794137366943121,
+    "min": 0.14136795136168,
+    "max": 0.1836027950192535
+  },
+  "D4_median_abs": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.004568877386692503,
+    "sd_ddof1": 0.0005389887508335258,
+    "min": 0.0032450178521927662,
+    "max": 0.006478731378590945
+  },
+  "D4_p95_abs": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.01644504773681544,
+    "sd_ddof1": 0.0023304207234860984,
+    "min": 0.010925721125563274,
+    "max": 0.028766378907234897
+  },
+  "active_coordinates": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 96.0,
+    "sd_ddof1": 0.0,
+    "min": 96.0,
+    "max": 96.0
+  },
+  "zero_variance_coordinates_total": 0
+}
+wrote C:\Users\MDP\dev\llmzip-work\regen\lme\task1_extension_lme.json

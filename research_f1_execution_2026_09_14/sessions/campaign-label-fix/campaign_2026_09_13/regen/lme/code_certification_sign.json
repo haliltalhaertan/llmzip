@@ -1,0 +1,15 @@
+{
+  "zip_sha256": "40026fe6e773c20b284e926efda6e5e72f9193b5a4c98710687e1a162913c96d",
+  "questions": 470,
+  "sign_doc_packed_bit_exact": 470,
+  "sign_doc_mismatch_count": 0,
+  "sign_doc_mismatches": [],
+  "sign_query_packed_bit_exact": 470,
+  "gold_rows_match": 470,
+  "N_archive_match": 470,
+  "bitorder_field_values": [
+    "big"
+  ],
+  "total_docs": 231606,
+  "exact_zero_entries_in_regenerated_C": 0
+}

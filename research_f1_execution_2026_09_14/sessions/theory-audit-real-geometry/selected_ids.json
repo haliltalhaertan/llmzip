@@ -1,0 +1,86 @@
+{
+ "LME": {
+  "deterministic_first10": [
+   "001be529|001be529",
+   "00ca467f|00ca467f",
+   "0100672e|0100672e",
+   "01493427|01493427",
+   "031748ae|031748ae",
+   "06878be2|06878be2",
+   "06db6396|06db6396",
+   "06f04340|06f04340",
+   "07741c44|07741c44",
+   "07741c45|07741c45"
+  ],
+  "illustrative_violators": [
+   "15745da0|15745da0",
+   "195a1a1b|195a1a1b",
+   "3d86fd0a|3d86fd0a"
+  ],
+  "reason_det": "lexicographic first 10 valid qids (outcome-blind)",
+  "reason_ill": "largest |LOW48 endpoint contrast| among adjacent-decrease violators; ORACLE/ILLUSTRATIVE only"
+ },
+ "REALTALK": {
+  "deterministic_first10": [
+   "RT01_q000",
+   "RT01_q001",
+   "RT01_q002",
+   "RT01_q003",
+   "RT01_q004",
+   "RT01_q005",
+   "RT01_q006",
+   "RT01_q007",
+   "RT01_q008",
+   "RT01_q009"
+  ],
+  "illustrative_violators": [
+   "RT01_q002",
+   "RT01_q026",
+   "RT01_q055"
+  ],
+  "reason_det": "lexicographic first 10 valid qids (outcome-blind)",
+  "reason_ill": "largest |LOW48 endpoint contrast| among adjacent-decrease violators; ORACLE/ILLUSTRATIVE only"
+ },
+ "PerLTQA": {
+  "deterministic_first10": [
+   "PQ000_DLG_q000",
+   "PQ000_DLG_q001",
+   "PQ000_DLG_q002",
+   "PQ000_DLG_q003",
+   "PQ000_DLG_q004",
+   "PQ000_DLG_q005",
+   "PQ000_DLG_q006",
+   "PQ000_DLG_q007",
+   "PQ000_DLG_q008",
+   "PQ000_DLG_q009"
+  ],
+  "illustrative_violators": [
+   "PQ000_PRF_q001",
+   "PQ000_PRF_q005",
+   "PQ000_PRF_q006"
+  ],
+  "reason_det": "lexicographic first 10 valid qids (outcome-blind)",
+  "reason_ill": "largest |LOW48 endpoint contrast| among adjacent-decrease violators; ORACLE/ILLUSTRATIVE only"
+ },
+ "LoCoMo": {
+  "deterministic_first10": [
+   "locomo_0_qa0",
+   "locomo_0_qa1",
+   "locomo_0_qa10",
+   "locomo_0_qa100",
+   "locomo_0_qa101",
+   "locomo_0_qa102",
+   "locomo_0_qa103",
+   "locomo_0_qa104",
+   "locomo_0_qa105",
+   "locomo_0_qa106"
+  ],
+  "illustrative_violators": [
+   "locomo_0_qa33",
+   "locomo_0_qa45",
+   "locomo_0_qa58"
+  ],
+  "reason_det": "lexicographic first 10 valid qids (outcome-blind)",
+  "reason_ill": "largest |LOW48 endpoint contrast| among adjacent-decrease violators; ORACLE/ILLUSTRATIVE only"
+ }
+}

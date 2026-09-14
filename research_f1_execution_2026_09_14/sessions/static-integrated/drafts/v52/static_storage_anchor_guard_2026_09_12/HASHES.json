@@ -1,0 +1,19 @@
+{
+  "namespace": "drafts/v52/static_storage_anchor_guard_2026_09_12",
+  "closes": [
+    "PLANPREP3-AUD-001",
+    "PLANPREP3-AUD-008"
+  ],
+  "audit_source": "b06247df2124edc6953aacf0f7eb69eed99ac1e0",
+  "anchor_table": {
+    "path": "docs/v52/task4c2/V52_T4C2_feature_geometry.csv",
+    "blob": "b4336dd47fcf14e4b39f65bed3377d56ea9e77c7",
+    "sha256": "d4c9ce62b0f1b66611611bb014a887d2e7e5fcfaee0af94f53ffb70dc84d7d32",
+    "rows": 470
+  },
+  "files": {
+    "ANCHOR_GUARD_DISPOSITION.md": "2ccf5f84fc34b4776759f51162d39ca2acb43f6690aa884cb7351abcd44cfe17",
+    "archive_anchor_guard.py": "876f70b66b64f63b48688f9859411609ff59a27404af39e8e51b1c22abe0bcaa",
+    "test_archive_anchor_guard.py": "d7b03c7b555febd3d5cd704fa4ea9fa22f24af93cc52e7e291024a33fc6681f7"
+  }
+}

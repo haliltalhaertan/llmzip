@@ -1,0 +1,43 @@
+test_Decision2_each_member_has_own_negative_both_directions_and_joint_zero (test_certificate.CertificateTests.test_Decision2_each_member_has_own_negative_both_directions_and_joint_zero) ... ok
+test_Decision2_exact_images_every_member_every_bit (test_certificate.CertificateTests.test_Decision2_exact_images_every_member_every_bit) ... ok
+test_Decision2_exact_zero_semantics_explicit (test_certificate.CertificateTests.test_Decision2_exact_zero_semantics_explicit) ... ok
+test_Decision2_legacy_canary_retained_half_coverage_regression (test_certificate.CertificateTests.test_Decision2_legacy_canary_retained_half_coverage_regression) ... ok
+test_F3_gap8_family_literal_seed_and_total_coverage (test_certificate.CertificateTests.test_F3_gap8_family_literal_seed_and_total_coverage) ... ok
+test_N1_exact_adopted_centered_96_by_96_witness (test_certificate.CertificateTests.test_N1_exact_adopted_centered_96_by_96_witness) ... ok
+test_mutation_each_member_skipped_assertion_is_detected (test_certificate.CertificateTests.test_mutation_each_member_skipped_assertion_is_detected) ... ok
+test_mutation_wrong_sign_and_wrong_permutation_are_detected (test_certificate.CertificateTests.test_mutation_wrong_sign_and_wrong_permutation_are_detected) ... ok
+test_F1_F2_record_boundary_before_immutable_core (test_delivery_g2.RelatedG2Tests.test_F1_F2_record_boundary_before_immutable_core) ... ok
+test_F6_exact_blob_refuses_crlf_and_byte_mutation (test_delivery_g2.RelatedG2Tests.test_F6_exact_blob_refuses_crlf_and_byte_mutation) ... ok
+test_L080_F1_and_F3_exact_count_gates (test_delivery_g2.RelatedG2Tests.test_L080_F1_and_F3_exact_count_gates) ... ok
+test_L080_F1_gate_regression_mutant_is_killed (test_delivery_g2.RelatedG2Tests.test_L080_F1_gate_regression_mutant_is_killed) ... ok
+test_L080_F2_historical_surviving_mutant_is_killed (test_delivery_g2.RelatedG2Tests.test_L080_F2_historical_surviving_mutant_is_killed) ... ok
+test_L080_F2_spoof_exception_type_discriminates (test_delivery_g2.RelatedG2Tests.test_L080_F2_spoof_exception_type_discriminates) ... ok
+test_L080_F3_missing_local_gate_mutant_is_killed (test_delivery_g2.RelatedG2Tests.test_L080_F3_missing_local_gate_mutant_is_killed) ... ok
+setUpModule (test_delivery_pipeline) ... ERROR
+test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly (test_delivery_integration.DeliveryIntegration.test_A1_longmemeval_diagnostics_follow_actual_sorted_assembly)
+Independent audit A1: observe real assembly, not bridge's own lookup. ... ok
+test_builder_refuses_source_swap_and_raw_diag_subclass (test_delivery_integration.DeliveryIntegration.test_builder_refuses_source_swap_and_raw_diag_subclass) ... ok
+test_diagnostics_mapping_and_provenance_negatives (test_delivery_integration.DeliveryIntegration.test_diagnostics_mapping_and_provenance_negatives) ... ok
+test_exclusive_create_race_and_unchanged_sentinel (test_delivery_integration.DeliveryIntegration.test_exclusive_create_race_and_unchanged_sentinel) ... ok
+test_library_and_path_error_surfaces (test_delivery_integration.DeliveryIntegration.test_library_and_path_error_surfaces) ... ok
+test_malformed_records_refused_before_numerics (test_delivery_integration.DeliveryIntegration.test_malformed_records_refused_before_numerics) ... ok
+test_production_entry_names_refuse (test_delivery_integration.DeliveryIntegration.test_production_entry_names_refuse) ... ok
+test_real_fixture_ingress_assemble_bootstrap_output (test_delivery_integration.DeliveryIntegration.test_real_fixture_ingress_assemble_bootstrap_output) ... ok
+test_seed_single_snapshot (test_delivery_integration.DeliveryIntegration.test_seed_single_snapshot) ... ok
+test_shared_cluster_delegation_and_nonzero_point_estimates (test_delivery_integration.DeliveryIntegration.test_shared_cluster_delegation_and_nonzero_point_estimates) ... ok
+test_stale_binding_and_detached_inputs (test_delivery_integration.DeliveryIntegration.test_stale_binding_and_detached_inputs) ... ok
+test_strict_output_negatives_before_open (test_delivery_integration.DeliveryIntegration.test_strict_output_negatives_before_open) ... ok
+test_undefined_cv_has_explicit_json_null_status (test_delivery_integration.DeliveryIntegration.test_undefined_cv_has_explicit_json_null_status) ... ok
+
+======================================================================
+ERROR: setUpModule (test_delivery_pipeline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\MDP\dev\llmzip-work\verify\g3\drafts\v52\membership_g3_remediation_2026_09_11\test_delivery_pipeline.py", line 64, in setUpModule
+    raise RuntimeError("Use the exact g3-lock-20260912 interpreter")
+RuntimeError: Use the exact g3-lock-20260912 interpreter
+
+----------------------------------------------------------------------
+Ran 28 tests in 89.514s
+
+FAILED (errors=1)

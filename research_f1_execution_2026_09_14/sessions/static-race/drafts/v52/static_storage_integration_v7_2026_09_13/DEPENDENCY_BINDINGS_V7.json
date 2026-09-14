@@ -1,0 +1,29 @@
+{
+  "schema": "V52_STATIC_STORAGE_V7_DEPENDENCY_BINDINGS_V1",
+  "parent_commit": "695e3c78aee16a719bcfdd622a6527d448f71a47",
+  "main_observed": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+  "dependencies": {
+    "measurement_plan_guard": {
+      "path": "drafts/v52/static_storage_contract_2026_09_12/measurement_plan_guard.py",
+      "sha256": "19724919c9085e49a531e94bdb269cba96c81739f7d9449b717db982becde4c9"
+    },
+    "measurement_contract": {
+      "path": "drafts/v52/static_storage_contract_2026_09_12/MEASUREMENT_CONTRACT_TR.md",
+      "sha256": "e395451d026f176b875856244abe73b54a7d54cdf2649eec272f14cfc609c510"
+    },
+    "v6_preflight": {
+      "path": "drafts/v52/static_storage_integration_v6_2026_09_12/storage_adapter_preflight_v6.py",
+      "sha256": "eb7165bcbe633c0a9d233e3b7167fb67590ca8b8db6076d6b205a6e1c7648b75"
+    },
+    "longmemeval_anchor": {
+      "path": "docs/v52/task4c2/V52_T4C2_feature_geometry.csv",
+      "sha256": "d4c9ce62b0f1b66611611bb014a887d2e7e5fcfaee0af94f53ffb70dc84d7d32",
+      "id_column": "question_id",
+      "value_column": "N_archive",
+      "expected_rows": 470,
+      "source_identity": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00:docs/v52/task4c2/V52_T4C2_feature_geometry.csv"
+    }
+  },
+  "scope": "LongMemEval semantic anchor only; LoCoMo intentionally unsupported pending separate reviewed anchor profile",
+  "task4f1": "SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN"
+}

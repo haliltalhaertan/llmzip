@@ -1,0 +1,108 @@
+{
+  "label": "[LOCAL EXPLORATORY PILOT]",
+  "task": "REAL TALK gate BEFORE intervention (recompute originals from read-only caches)",
+  "conventions": "K=3 NT=20 tie_seed=5_100_000+ci*100_000+t*100+99; sign Hamming lexsort((p,d)); float cosine_centered lexsort((p,-s)); invalid FR=null excluded",
+  "n_total": 728,
+  "n_valid": 705,
+  "n_excluded": 23,
+  "expected": {
+    "n_total": 728,
+    "n_valid": 705,
+    "n_excluded": 23,
+    "native": 0.22477507598784194,
+    "float": 0.17253405381064957
+  },
+  "recomputed": {
+    "native_mean": 0.22477507598784194,
+    "float_mean": 0.17253405381064957
+  },
+  "stored_details_means": {
+    "native": 0.22477507598784194,
+    "float": 0.17253405381064957
+  },
+  "max_per_qa_abs_diff": {
+    "native": 0.0,
+    "float": 0.0
+  },
+  "mean_abs_diff_vs_anchor": {
+    "native": 0.0,
+    "float": 0.0
+  },
+  "tolerance": 1e-12,
+  "file_order": [
+    "Chat_10_Fahim_Muhhamed.json",
+    "Chat_1_Emi_Elise.json",
+    "Chat_2_Kevin_Elise.json",
+    "Chat_3_Kevin_Paola.json",
+    "Chat_4_Emi_Paola.json",
+    "Chat_5_Nicolas_Nebraas.json",
+    "Chat_6_Vanessa_Nicolas.json",
+    "Chat_7_Nebraas_Vanessa.json",
+    "Chat_8_Akib_Muhhamed.json",
+    "Chat_9_Fahim_Akib.json"
+  ],
+  "provenance": {
+    "rt05_cache_keys": [
+      "C",
+      "N",
+      "QC",
+      "cats",
+      "chat_no",
+      "conv_id",
+      "file",
+      "gold_rows",
+      "id_to_row",
+      "qa_diag",
+      "qids",
+      "questions"
+    ],
+    "rt05_rebuild_keys": [
+      "C",
+      "N",
+      "QC",
+      "archive_fit_docs",
+      "id_to_row",
+      "mixed96_dim",
+      "mixed_concat_features",
+      "no_nan",
+      "qas",
+      "query_count",
+      "source_char_features",
+      "source_latent_dim",
+      "source_word_features"
+    ],
+    "cache_is_adapter_format": true,
+    "rebuild_is_raw_frozen_t4d": true,
+    "rt05_cache_vs_rebuild_sign_identical": true,
+    "rt05_cache_vs_rebuild_maxabs": 1.4137302439820587e-13,
+    "conclusion": "eval caches (rt_repr/RT*.pkl) produced by bench3_realtalk_adapter.py via frozen T4D build_representation; RT05_rebuild331.pkl is a scratch raw-T4D rebuild, not the eval input"
+  },
+  "worst_5_qa": [
+    {
+      "qid": "RT01_q000",
+      "dnat": 0.0,
+      "dflt": 0.0
+    },
+    {
+      "qid": "RT01_q001",
+      "dnat": 0.0,
+      "dflt": 0.0
+    },
+    {
+      "qid": "RT01_q002",
+      "dnat": 0.0,
+      "dflt": 0.0
+    },
+    {
+      "qid": "RT01_q003",
+      "dnat": 0.0,
+      "dflt": 0.0
+    },
+    {
+      "qid": "RT01_q004",
+      "dnat": 0.0,
+      "dflt": 0.0
+    }
+  ],
+  "gate_pass": true
+}

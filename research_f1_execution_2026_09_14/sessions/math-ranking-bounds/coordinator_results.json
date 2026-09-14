@@ -1,0 +1,138 @@
+{
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ],
+  "ranges": {
+    "A": "b=3, n=3, K in {1,2}: all 8^4=4096 (docs,q) x 7 proper subsets",
+    "B": "b=3, n=2, K=1: all 8^3=512 (docs,q) x 7 proper subsets",
+    "C": "b=4, n=2, K=1: all 16^3=4096 (docs,q) x 15 proper subsets",
+    "gold_sets": "all singletons + full set per config",
+    "T5": "T=1..5, K=1..3, all S<=K, all c=1..T, full permutation enum"
+  },
+  "T1_checks": 122368,
+  "T1_tight_hits": 119264,
+  "T2_applicable": 122368,
+  "T2_premise_hits": 9856,
+  "T2_sharp_instances": 11072,
+  "T2_sharp_example": {
+    "b": 3,
+    "n": 3,
+    "K": 1,
+    "docs": [
+      0,
+      0,
+      1
+    ],
+    "q": 1,
+    "sub": 6,
+    "d": [
+      1,
+      1,
+      0
+    ],
+    "ds": [
+      0,
+      0,
+      0
+    ]
+  },
+  "T3_checks": 604160,
+  "T3_free_hits": 32384,
+  "T3_buried_hits": 32384,
+  "T4_checks": 424448,
+  "T4_vacuous_lo": 393504,
+  "T4_lo_attained": 104064,
+  "T4_hi_attained": 104064,
+  "T5_checks": 171,
+  "T5_perm_count": 1372,
+  "opt_r1_cases": 71264,
+  "opt_r1_kills": 6720,
+  "opt_r1_kill_example": {
+    "b": 3,
+    "n": 3,
+    "K": 1,
+    "docs": [
+      0,
+      0,
+      3
+    ],
+    "q": 1,
+    "sub": 5,
+    "gold": 0,
+    "d": [
+      1,
+      1,
+      1
+    ],
+    "ds": [
+      1,
+      1,
+      0
+    ]
+  },
+  "C1": {
+    "docs": [
+      1,
+      2
+    ],
+    "q": 0,
+    "b": 2,
+    "K": 1,
+    "sub": 1,
+    "d": [
+      1,
+      1
+    ],
+    "ds": [
+      1,
+      0
+    ],
+    "opt": "1->0 via tied-doc entry"
+  },
+  "W1": {
+    "docs": [
+      0,
+      2
+    ],
+    "q": 0,
+    "b": 2,
+    "K": 1,
+    "sub": 1,
+    "full_f": "1",
+    "sub_f": "1/2",
+    "pess": "1->0",
+    "opt": "1->1"
+  },
+  "W2": {
+    "docs": [
+      1,
+      6,
+      6,
+      6
+    ],
+    "q": 0,
+    "b": 3,
+    "K": 3,
+    "sub": 1,
+    "d": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "ds": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "opt": "1->0"
+  },
+  "W3": {
+    "note": "global bit-complement (reversible) preserves distance multiset; projection need not"
+  },
+  "verdict": "ALL THEOREM CHECKS PASSED: T1 bound+corollary, T2 set invariance under gap>r, T3 deep-free/buried, T4 sandwich, T5 hypergeometric, W1/W2/C1 impossibility witnesses, r=1 restricted-entry (opt CAN break via tied docs)."
+}

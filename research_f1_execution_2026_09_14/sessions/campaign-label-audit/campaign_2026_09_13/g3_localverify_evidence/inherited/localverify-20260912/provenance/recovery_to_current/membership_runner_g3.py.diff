@@ -1,0 +1,90 @@
+--- verified_pre_edit/membership_runner_g3.py
++++ current/membership_runner_g3.py
+@@ -21,6 +21,7 @@
+ from pathlib import Path
+ 
+ import numpy as np
++import record_boundary
+ 
+ sys.path.insert(0, str(Path(__file__).resolve().parent))
+ import membership_scaling_core as core                                           # noqa: E402
+@@ -338,7 +339,8 @@
+     benchmark, scheme = require_benchmark(benchmark), require_scheme(scheme)
+     if not path.exists():
+         errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_ABSENT)
+-    record = json.loads(path.read_text(encoding="utf-8"))
++    raw = path.read_bytes()
++    record = json.loads(raw.decode("utf-8"))
+     if not isinstance(record, dict):
+         errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_MALFORMED, is_mapping=False)
+     if record.get("benchmark") != benchmark or record.get("scheme") != scheme:
+@@ -353,7 +355,7 @@
+                                accepted_seed=want["seed"], accepted_replicates=want["replicates"],
+                                seed_matches=record["bootstrap_seed"] == want["seed"],
+                                replicates_matches=record.get("replicates") == want["replicates"])
+-    record["sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
++    record["sha256"] = hashlib.sha256(raw).hexdigest()
+     return record
+ 
+ 
+@@ -440,6 +442,8 @@
+     Reads no corpus. `records` are already-computed per-question scores, whoever produced them.
+     """
+     # N-2 / F13, F14: canonicalised before anything else, so no caller string reaches a message.
++    if not record_boundary.valid_records(records, question_ids, core.ROTATION_SEEDS, core.ARMS):
++        raise DesignViolation('E-G3-R01: invalid record set')
+     benchmark, scheme = require_benchmark(benchmark), require_scheme(scheme)
+     # N-2 / F12 - the ORDERING defect. v2 compared mapping["benchmark"] and printed it one line
+     # BEFORE this stamp check, so an arbitrary caller dict reached a message. The stamp check now
+@@ -471,16 +475,9 @@
+                                requested_replicates=int(replicates))
+ 
+     qs = list(question_ids)
+-    g, gs = core.paired_matrices(records, qs)
+-    estimates = core.aggregate(g, gs)
+-
+-    if scheme == "question":
+-        uncertainty = core.question_bootstrap(g, gs, seed_record["bootstrap_seed"], replicates)
+-        n_clusters = identity["n_clusters"]
+-    else:
+-        uncertainty = core.cluster_bootstrap(
+-            g, gs, list(cluster_ids), seed_record["bootstrap_seed"], replicates)
+-        n_clusters = uncertainty["n_clusters"]
++    estimates, uncertainty = _compute_numerical_results(
++        records, qs, list(cluster_ids), seed_record["bootstrap_seed"], replicates, scheme)
++    n_clusters = identity["n_clusters"] if scheme == "question" else uncertainty["n_clusters"]
+ 
+     result = {
+         "benchmark": benchmark, "estimates": estimates, "uncertainty": uncertainty,
+@@ -515,3 +512,31 @@
+     """
+     core.require_real_data_authorization()
+     errors.raise_violation(DesignViolation, errors.Code.NO_INGESTION_PATH)
++
++
++def _compute_numerical_results(records, question_ids, cluster_ids, seed, replicates, scheme):
++    """Shared arithmetic only; callers own input validation and provenance."""
++    g, gs = core.paired_matrices(records, question_ids)
++    estimates = core.aggregate(g, gs)
++    if scheme == "question":
++        uncertainty = core.question_bootstrap(g, gs, seed, replicates)
++    else:
++        uncertainty = core.cluster_bootstrap(g, gs, cluster_ids, seed, replicates)
++    return estimates, uncertainty
++
++
++def compute_synthetic_results(records, question_ids, cluster_ids, *, benchmark, scheme):
++    """Internal numerical helper for integration_g3's validated SYNTHETIC ONLY envelope.
++
++    No mapping stamp, accepted-source claim, file access, seed freeze or authorization.
++    This primitive is not an access-control boundary; use compute_synthetic_result.
++    """
++    benchmark, scheme = require_benchmark(benchmark), require_scheme(scheme)
++    cfg = dict(accepted_bootstrap_for(benchmark, scheme))
++    estimates, uncertainty = _compute_numerical_results(
++        records, question_ids, cluster_ids, cfg["seed"], cfg["replicates"], scheme)
++    return {"estimates": estimates, "uncertainty": uncertainty,
++            "bootstrap_configuration": {
++                "provenance": "SYNTHETIC_ONLY", "seed_origin": "shared_configuration",
++                "benchmark": benchmark, "scheme": scheme,
++                "seed": cfg["seed"], "replicates": cfg["replicates"]}}

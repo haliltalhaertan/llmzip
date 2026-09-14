@@ -1,0 +1,33 @@
+{
+  "questions": 470,
+  "itq_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "bitorder_values": [
+    "big"
+  ],
+  "itq_query_exact_per_seed": {
+    "101": 470,
+    "202": 470,
+    "303": 470,
+    "404": 470,
+    "505": 470
+  },
+  "itq_query_all_seeds_exact": 470,
+  "itq_query_mismatches": [],
+  "itq_doc_exact_per_seed_recheck": {
+    "101": 470,
+    "202": 470,
+    "303": 470,
+    "404": 470,
+    "505": 470
+  },
+  "itq_doc_all_seeds_exact_recheck": 470,
+  "adapter_sha256": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+  "zip_sha256": "40026fe6e773c20b284e926efda6e5e72f9193b5a4c98710687e1a162913c96d",
+  "note": "Supplement to code_cert_v2 phase itq: certifies itq_query_packed (5 seeds) -- the one NPZ channel previously uncovered -- and re-derives itq_doc_packed in the same pass."
+}

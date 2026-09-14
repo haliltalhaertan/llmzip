@@ -1,0 +1,542 @@
+"""Corpus-bound membership runner: Codex v5 implementation preparation.
+
+NOT AUTHORIZED TO RUN ON REAL DATA; independent review remains pending.
+The legacy v4 filename is retained for import compatibility. The accepted manifests,
+bootstrap configuration, archive-only transform and core scientific behavior remain bound
+to the inherited design. Identifier kinds and code-based errors use errors.py. Source
+identity diagnostics and transform checks retain safe_report or fixed numeric messages;
+these paths are not a total conversion to errors.message.
+
+Error formatting tests exercise named synthetic cases. They do not establish provenance
+confidentiality for arbitrary returned data, filesystem/library errors, caller behavior,
+or programmatic inspection of exception context. The structural output policy limits
+types and string length; it cannot identify short source content. See the adjacent Codex
+fix package and predecessor lineage for the review history and verification evidence.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+import numpy as np
+import record_boundary
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import membership_scaling_core as core                                           # noqa: E402
+import safe_report                                                               # noqa: E402
+import errors                                                                    # noqa: E402
+from authoritative import accepted_configuration as accepted                     # noqa: E402
+from authoritative import resolve_sources                                        # noqa: E402
+
+DesignViolation = core.DesignViolation
+
+# --------------------------------------------------------------------------------------------
+# Benchmarks and the LongMemEval inheritance tag (N-3)
+# --------------------------------------------------------------------------------------------
+LOCOMO = accepted.LOCOMO
+LONGMEMEVAL = accepted.LONGMEMEVAL
+BENCHMARKS = accepted.BENCHMARKS
+
+# Carried into every output for LongMemEval. The single-component structure is INHERITED from Task
+# 3A.1 and was provenance-verified, not recomputed here; a conversation-cluster bootstrap over one
+# component is ill-posed, which is why it is refused rather than computed and caveated.
+LONGMEMEVAL_INHERITANCE_TAG = {
+    "dependency_structure": "single connected component covering all 470 questions",
+    "provenance": "inherited from Task 3A.1; provenance-verified, NOT recomputed in this experiment",
+    "consequence": "the conversation-cluster bootstrap is ILL-POSED for this benchmark and is refused",
+    "authority": "V52_MEMBERSHIP_UNDER_SCALING_DESIGN_REVISION_R2_2026-09-07.md line 141: "
+                 "'No conversation-cluster bootstrap is defined for LongMemEval.'",
+}
+
+# --------------------------------------------------------------------------------------------
+# Input schema - stated, not implied (Head Researcher instruction 1)
+# --------------------------------------------------------------------------------------------
+# Identifiers are STRINGS ONLY. This is narrower than the core, deliberately: accepting integers is
+# what makes NEW-5 reachable, because integer labels are keyed by int() and two distinct objects
+# equal under int() would merge. A source whose ids are integers must render them as strings at the
+# adapter, where the choice is visible, rather than here where it would be silent.
+SUPPORTED_ID_TYPES = (str,)
+
+# Designated missing-value indicators. Detection is done on a case-folded, stripped COPY; the value
+# itself is never modified, and a valid id is never stripped, re-cased or coerced.
+MISSING_VALUE_TOKENS = frozenset({"", "nan", "none", "null", "na", "n/a", "nil", "-", "--", "?"})
+
+RECORD_FIELDS = frozenset({"question_id", "rotation_seed", "arm", "fractional_R3"})
+
+MAPPING_FIELDS = frozenset({
+    "source_id", "source_sha256", "benchmark",
+    "expected_cluster_ids", "expected_question_to_cluster", "n_questions"})
+
+RESULT_KEYS = frozenset({
+    "benchmark", "estimates", "uncertainty", "scheme", "n_questions", "n_clusters",
+    "bootstrap_seed_record", "source_identity", "longmemeval_inheritance_tag",
+    "scaling_diagnostics", "runner_version", "core_identity"})
+
+RUNNER_VERSION = "membership_runner G-3 remediation 2026-09-11"
+
+# The core this runner is bound to, by RAW GIT BLOB hash. It is recorded here and carried into every
+# result; the test suite checks the checked-out core against it. It is NOT verified at import time,
+# because a Windows checkout hashes differently from the blob and an import-time check would either
+# fail spuriously or have to be weakened - so the claim is kept to what is actually done.
+BOUND_CORE = accepted.BOUND_CORE
+
+
+# --------------------------------------------------------------------------------------------
+# 0. Validate-before-you-format. N-2 / D-5.
+# --------------------------------------------------------------------------------------------
+def require_benchmark(value) -> str:
+    """Return the CANONICAL benchmark name, or refuse without echoing the caller's value."""
+    for canonical in BENCHMARKS:
+        if value == canonical:
+            return canonical
+    errors.raise_violation(DesignViolation, errors.Code.UNKNOWN_BENCHMARK,
+                           accepted_benchmarks=len(BENCHMARKS))
+
+
+IdentifierKind = errors.IdentifierKind
+
+
+def require_identifier_kind(value) -> IdentifierKind:
+    """Accept an IdentifierKind, or refuse without echoing what was passed."""
+    if type(value) is IdentifierKind and any(value is member for member in IdentifierKind):
+        return value
+    errors.raise_violation(DesignViolation, errors.Code.IDENTIFIER_KIND_UNKNOWN,
+                           declared_kinds=len(IdentifierKind))
+
+
+def require_scheme(value) -> str:
+    """Return the CANONICAL scheme name, or refuse without echoing the caller's value."""
+    for canonical in accepted.SCHEMES:
+        if value == canonical:
+            return canonical
+    errors.raise_violation(DesignViolation, errors.Code.UNKNOWN_SCHEME,
+                           accepted_schemes=len(accepted.SCHEMES))
+
+
+# --------------------------------------------------------------------------------------------
+# 1. Identifier validation - NEW-4 and NEW-5, at the ingestion boundary
+# --------------------------------------------------------------------------------------------
+# D-5: v1 had `_describe(value) -> f"{type(value).__name__}({value!r})"` here, with no length cap
+# and no policy check. It was reached from the two validators whose whole purpose is to fire when
+# something that is not an identifier appears in an identifier column - so the error path that
+# existed to catch a malformed id column was also the path that printed it. It is replaced by
+# errors.message, which reports the validated identifier kind and numeric diagnostics.
+
+
+def validate_identifier(value, kind, position) -> str:
+    """Accept one identifier or raise a named DesignViolation. Never transform a valid one.
+
+    Rejected, each by name: an unsupported type (NEW-5 - no int() keying is possible if no integer
+    ever arrives); a designated missing-value indicator, including the empty string and the literal
+    strings "nan" and "None" (NEW-4); a whitespace-only string; and a string carrying leading or
+    trailing whitespace, because stripping it would silently merge " c1" with "c1" and the Head
+    Researcher's instruction is that valid identifiers are not silently altered or merged.
+    """
+    kind = require_identifier_kind(kind)
+    if isinstance(value, bool) or not isinstance(value, SUPPORTED_ID_TYPES):
+        errors.raise_violation(DesignViolation, errors.Code.UNSUPPORTED_ID_TYPE,
+                               kind=kind, position=position)
+    probe = value.strip().casefold()
+    if probe in MISSING_VALUE_TOKENS:
+        errors.raise_violation(DesignViolation, errors.Code.MISSING_VALUE_INDICATOR,
+                               kind=kind, position=position, length=len(value))
+    if value != value.strip():
+        errors.raise_violation(DesignViolation, errors.Code.IDENTIFIER_WHITESPACE,
+                               kind=kind, position=position, length=len(value))
+    return value
+
+
+def validate_identifier_columns(question_ids, cluster_ids) -> tuple[list[str], list[str]]:
+    """Validate both id columns and their alignment. Nothing is coerced, sorted or de-duplicated."""
+    q = list(question_ids)
+    c = list(cluster_ids)
+    if len(q) != len(c):
+        errors.raise_violation(DesignViolation, errors.Code.COLUMNS_NOT_ALIGNED,
+                               question_ids=len(q), cluster_ids=len(c))
+    if not q:
+        errors.raise_violation(DesignViolation, errors.Code.EMPTY_COHORT)
+    qs = [validate_identifier(v, IdentifierKind.QUESTION_ID, i) for i, v in enumerate(q)]
+    cs = [validate_identifier(v, IdentifierKind.CLUSTER_ID, i) for i, v in enumerate(c)]
+    seen, dupes = set(), []
+    for i, v in enumerate(qs):
+        if v in seen:
+            dupes.append((i, v))
+        seen.add(v)
+    if dupes:
+        errors.raise_violation(DesignViolation, errors.Code.DUPLICATE_QUESTION_ID,
+                               duplicates=len(dupes), first_position=dupes[0][0])
+    return qs, cs
+
+
+# --------------------------------------------------------------------------------------------
+# 2. Source identity - the mapping contract (Head Researcher instruction 1)
+# --------------------------------------------------------------------------------------------
+def load_accepted_mapping(benchmark: str, *, raw: bytes | None = None, path=None) -> dict:
+    """Load the ACCEPTED manifest for `benchmark`. The expected hash is NOT a caller argument.
+
+    D-4 and the source-trust item. v1 took `expected_sha256` from the caller, so "accepted" meant
+    whatever the caller said it meant, and it hashed the file ON DISK - which on a default Windows
+    checkout differs from the accepted blob hash. Here the expected hash comes from
+    `authoritative.accepted_configuration`, and the bytes are checked by
+    `authoritative.resolve_sources`, which refuses a mismatch, names a SUPERSEDED manifest as
+    superseded, and diagnoses a line-ending-translated checkout WITHOUT normalising it.
+
+    Pass `raw` (bytes already in hand, e.g. from `git cat-file blob`) or `path` to a
+    byte-preservingly materialised file. There is no third option and no override.
+    """
+    benchmark = require_benchmark(benchmark)                                   # N-2 / F16
+    if (raw is None) == (path is None):
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_ARGUMENTS)
+    if raw is None:
+        raw = Path(path).read_bytes()
+    try:
+        resolve_sources.verify_manifest_bytes(raw, benchmark)
+    except resolve_sources.SourceResolutionError as exc:
+        # The message is already code-built and safe; re-raised with no chain so no library
+        # context can travel with it.
+        raise DesignViolation(str(exc)) from None
+    mapping = json.loads(raw.decode("utf-8"))
+    extra = set(mapping) - MAPPING_FIELDS
+    missing = MAPPING_FIELDS - set(mapping)
+    if extra or missing:
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_SCHEMA,
+                               missing_fields=len(missing), unexpected_fields=len(extra))
+    if mapping["benchmark"] != benchmark:
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_BENCHMARK_MISMATCH)
+    # Stamped AFTER the closed-schema check, so the declared schema stays exactly what it was. This
+    # is how compute_results knows a mapping came through here and not from a caller-chosen file.
+    mapping["_accepted_manifest_sha256"] = accepted.ACCEPTED_MANIFESTS[benchmark]["blob_sha256"]
+    return mapping
+
+
+def verify_source_identity(question_ids, cluster_ids, mapping: dict) -> dict:
+    """Prove the cohort IS the bound source, on six checks, not on the cluster count.
+
+    A count check is explicitly not sufficient. Several distinct corruptions leave `n_clusters`
+    unchanged - a missing id absorbed into an existing conversation, two ids swapped between
+    conversations, a whole conversation relabelled - and every one of them changes which questions
+    are resampled together, which is the only thing the cluster bootstrap depends on.
+    """
+    qs, cs = validate_identifier_columns(question_ids, cluster_ids)
+
+    # v3 closure check: `int(mapping["n_questions"])` raised an uncaught ValueError here, in a public
+    # entry with no stamp check, carrying the caller's value out in the library message. The manifest
+    # field types the source contract requires are validated explicitly - no silent conversion, and
+    # no new value accepted by coercion.
+    if not isinstance(mapping.get("expected_question_to_cluster"), dict):
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_FIELD_TYPE, field_index=0)
+    if not isinstance(mapping.get("expected_cluster_ids"), (list, tuple)):
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_FIELD_TYPE, field_index=1)
+    n_declared = mapping.get("n_questions")
+    # L-080 F1: errors._safe accepts only an exact builtin int. Match that contract here
+    # so an int subclass receives the intended named refusal rather than UnsafeErrorField.
+    if type(n_declared) is not int:
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_FIELD_TYPE, field_index=2)
+    expected_map = dict(mapping["expected_question_to_cluster"])
+    expected_clusters = set(mapping["expected_cluster_ids"])
+    if len(mapping["expected_cluster_ids"]) != len(expected_clusters):
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_INTERNALLY_INCONSISTENT, reason_index=0)
+    if set(expected_map.values()) != expected_clusters:
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_INTERNALLY_INCONSISTENT, reason_index=1)
+    if len(expected_map) != n_declared:
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_INTERNALLY_INCONSISTENT,
+                               reason_index=2, declared=n_declared, mapped=len(expected_map))
+
+    got_map = dict(zip(qs, cs))
+    missing_q = sorted(set(expected_map) - set(got_map))
+    extra_q = sorted(set(got_map) - set(expected_map))
+    misrouted = sorted(
+        (q, got_map[q], expected_map[q]) for q in set(got_map) & set(expected_map)
+        if got_map[q] != expected_map[q])
+    got_clusters = set(cs)
+
+    problems = []
+    if missing_q:
+        problems.append(f"{len(missing_q)} question id(s) missing against the accepted cohort: "
+                        f"{safe_report.describe_many(missing_q)}")
+    if extra_q:
+        problems.append(f"{len(extra_q)} question id(s) not in the accepted cohort: "
+                        f"{safe_report.describe_many(extra_q)}")
+    if misrouted:
+        problems.append(f"{len(misrouted)} question(s) mapped to the WRONG conversation: "
+                        f"{safe_report.describe_many([q for q, _, _ in misrouted])}")
+    if got_clusters != expected_clusters:
+        problems.append(
+            "conversation id SET mismatch: "
+            + safe_report.counts(missing=len(expected_clusters - got_clusters),
+                                 unexpected=len(got_clusters - expected_clusters)))
+    if problems:
+        raise DesignViolation("source identity check failed: " + "; ".join(problems))
+
+    return {
+        "source_id": mapping["source_id"], "source_sha256": mapping["source_sha256"],
+        "benchmark": mapping["benchmark"], "n_questions": len(qs),
+        "n_clusters": len(got_clusters),
+        "cluster_id_set_matches": True, "question_to_cluster_matches": True,
+        "duplicate_question_ids": 0, "missing_question_ids": 0, "extra_question_ids": 0,
+        "checks_performed": ["identifier type and missing-value validation",
+                             "duplicate question ids", "missing question ids", "extra question ids",
+                             "per-question conversation mapping", "conversation id set equality"],
+        "count_check_alone_is_not_accepted": True,
+    }
+
+
+# --------------------------------------------------------------------------------------------
+# 3. N-2 - the bootstrap seed is frozen to a record before any result exists
+# --------------------------------------------------------------------------------------------
+def accepted_bootstrap_for(benchmark: str, scheme: str) -> dict:
+    """The ACCEPTED seed and replicate count, or a named refusal saying why there is none."""
+    benchmark, scheme = require_benchmark(benchmark), require_scheme(scheme)   # N-2 / F15
+    try:
+        return accepted.accepted_bootstrap(benchmark, scheme)
+    except KeyError:
+        errors.raise_violation(DesignViolation, errors.Code.NO_ACCEPTED_BOOTSTRAP,
+                               accepted_combinations=len(accepted.ACCEPTED_BOOTSTRAP))
+
+
+def freeze_bootstrap_seed(path: Path, seed: int, benchmark: str, scheme: str, replicates: int) -> dict:
+    """Write the ACCEPTED bootstrap seed to a NEW file and return the record. Refuses to overwrite.
+
+    N-2 as before: written before any quantity is computed, and re-reading it is the only way a run
+    obtains a seed, so a seed cannot be chosen after seeing a result.
+
+    D-3 is new. v1 accepted ANY int - the review froze seed 999 where the accepted value is
+    52001107 and read it straight back, so a transposed digit passed every check in the system. The
+    seed and the replicate count are now checked against `authoritative.accepted_configuration`,
+    which is the same file the acceptance record binds. The arguments remain, so a caller states
+    what it believes it is freezing and is contradicted if it is wrong, rather than being handed a
+    value silently.
+    """
+    benchmark, scheme = require_benchmark(benchmark), require_scheme(scheme)
+    want = accepted_bootstrap_for(benchmark, scheme)
+    if isinstance(seed, bool) or not isinstance(seed, int):
+        errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_MALFORMED, seed_is_int=False)
+    if isinstance(replicates, bool) or not isinstance(replicates, int):
+        errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_MALFORMED,
+                               replicates_is_int=False)
+    if int(seed) != want["seed"]:
+        errors.raise_violation(DesignViolation, errors.Code.SEED_NOT_ACCEPTED,
+                               accepted_seed=want["seed"])
+    if int(replicates) != want["replicates"]:
+        errors.raise_violation(DesignViolation, errors.Code.REPLICATES_NOT_ACCEPTED,
+                               accepted_replicates=want["replicates"])
+    record = {"bootstrap_seed": int(seed), "benchmark": benchmark, "scheme": scheme,
+              "replicates": int(replicates), "frozen_before_any_result": True,
+              "runner_version": RUNNER_VERSION}
+    core.safe_write_json(Path(path), record)
+    return record
+
+
+def read_bootstrap_seed(path: Path, benchmark: str, scheme: str) -> dict:
+    """Load the frozen seed record and check it is the one this run is entitled to use."""
+    path = Path(path)
+    # N-2 / F20 - the ONLY file-derived leak the closure check found. v2 printed
+    # record.get("benchmark") and record.get("scheme") straight out of this JSON file, uncapped. A
+    # file the pipeline writes is not a trusted string source: anything that can write it can put
+    # anything in it. Nothing read from the record reaches a message now.
+    benchmark, scheme = require_benchmark(benchmark), require_scheme(scheme)
+    if not path.exists():
+        errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_ABSENT)
+    raw = path.read_bytes()
+    record = json.loads(raw.decode("utf-8"))
+    if not isinstance(record, dict):
+        errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_MALFORMED, is_mapping=False)
+    if record.get("benchmark") != benchmark or record.get("scheme") != scheme:
+        errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_WRONG_ARM,
+                               benchmark_matches=record.get("benchmark") == benchmark,
+                               scheme_matches=record.get("scheme") == scheme)
+    if not isinstance(record.get("bootstrap_seed"), int) or isinstance(record.get("bootstrap_seed"), bool):
+        errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_MALFORMED, seed_is_int=False)
+    want = accepted_bootstrap_for(benchmark, scheme)
+    if record["bootstrap_seed"] != want["seed"] or record.get("replicates") != want["replicates"]:
+        errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_DRIFT,
+                               accepted_seed=want["seed"], accepted_replicates=want["replicates"],
+                               seed_matches=record["bootstrap_seed"] == want["seed"],
+                               replicates_matches=record.get("replicates") == want["replicates"])
+    record["sha256"] = hashlib.sha256(raw).hexdigest()
+    return record
+
+
+# --------------------------------------------------------------------------------------------
+# 4. N-4 - the archive-learned transform is applied to the query, unchanged
+# --------------------------------------------------------------------------------------------
+def fit_archive_transform(archive_repr: np.ndarray) -> tuple[np.ndarray, np.ndarray, dict]:
+    """Learn the centering vector and D from the ARCHIVE ONLY. Returns (mu, D, diagnostics).
+
+    N-4: nothing here sees a query. The caller receives the two objects and must pass those same
+    objects to `apply_archive_transform`; `assert_query_transform_is_inherited` proves it did.
+    """
+    A = np.asarray(archive_repr, dtype=float)
+    if A.ndim != 2 or A.shape[1] != core.DIM:
+        raise DesignViolation(f"archive representation must be (n, {core.DIM}), got {A.shape}")
+    mu = A.mean(axis=0)
+    D, diagnostics = core.scale_matrix(A - mu)
+    return mu, D, diagnostics
+
+
+def transform_stamp(mu, D) -> str:
+    """A digest of the exact bytes of the parameters a transform used. D-6.
+
+    Not object identity - `id()` is reused after garbage collection and says nothing across
+    processes - but a fingerprint of the VALUES ACTUALLY CONSUMED, recorded by the function that
+    consumed them rather than reported by the caller.
+    """
+    h = hashlib.sha256()
+    for arr in (np.ascontiguousarray(np.asarray(mu, dtype=float)),
+                np.ascontiguousarray(np.asarray(D, dtype=float))):
+        h.update(str(arr.shape).encode("ascii"))
+        h.update(arr.tobytes())
+    return h.hexdigest()
+
+
+def apply_archive_transform(X: np.ndarray, mu: np.ndarray, D: np.ndarray):
+    """Centre by the ARCHIVE mean, rescale by the ARCHIVE D, and STAMP what was used.
+
+    Returns (transformed, stamp). D-6: v1 returned only the array and recorded nothing, so the
+    inheritance assertion could only compare echoes the caller handed it - a caller that
+    transformed the query with a query-derived mu and then passed the archive mu to the assertion
+    passed cleanly. The stamp is produced HERE, by the code that actually did the arithmetic.
+    """
+    X = np.asarray(X, dtype=float)
+    if X.ndim != 2 or X.shape[1] != core.DIM:
+        raise DesignViolation(f"representation must be (n, {core.DIM}), got {X.shape}")
+    return (X - mu) @ D, transform_stamp(mu, D)
+
+
+def assert_query_transform_is_inherited(mu_archive, D_archive, query_stamp: str) -> None:
+    """N-4: the query must have been transformed by the ARCHIVE-learned parameters.
+
+    D-6. v1 took `mu_used` and `D_used` from the caller and compared them to the archive pair with
+    `np.array_equal`. Two problems, both demonstrated by the review: `np.array_equal` is VALUE
+    equality, so passing `mu.copy()` and `D.copy()` passed while the docstring claimed "IDENTICAL
+    objects"; and the assertion was connected to nothing, so a caller could transform the query one
+    way and report another.
+
+    Now the caller cannot report anything. It passes the STAMP that `apply_archive_transform`
+    returned when it transformed the query, and that stamp is a digest of the parameter bytes the
+    arithmetic actually consumed. Bytes, not tolerance, is right here: this asserts the same numbers
+    were reused, not that two summation orders agree.
+    """
+    expected = transform_stamp(mu_archive, D_archive)
+    if not isinstance(query_stamp, str):
+        raise DesignViolation(
+            f"the query transform stamp must be the string returned by apply_archive_transform, got "
+            f"{safe_report.describe(query_stamp)}")
+    if query_stamp != expected:
+        raise DesignViolation(
+            "N-4 VIOLATION: the query was NOT transformed by the archive-learned centering vector "
+            "and D - the stamp recorded by apply_archive_transform does not match the archive "
+            "parameters, so something was estimated from the query")
+
+
+# --------------------------------------------------------------------------------------------
+# 5. The integration entry points
+# --------------------------------------------------------------------------------------------
+def compute_results(records, question_ids, cluster_ids, mapping, seed_record_path, *,
+                    benchmark: str, scheme: str, replicates: int = core.BOOTSTRAP_REPLICATES,
+                    scaling_diagnostics: dict | None = None) -> dict:
+    """The whole chain: identity, mapping, frozen seed, core estimates, core bootstrap, output.
+
+    Reads no corpus. `records` are already-computed per-question scores, whoever produced them.
+    """
+    # N-2 / F13, F14: canonicalised before anything else, so no caller string reaches a message.
+    if not record_boundary.valid_records(records, question_ids, core.ROTATION_SEEDS, core.ARMS):
+        raise DesignViolation('E-G3-R01: invalid record set')
+    benchmark, scheme = require_benchmark(benchmark), require_scheme(scheme)
+    # N-2 / F12 - the ORDERING defect. v2 compared mapping["benchmark"] and printed it one line
+    # BEFORE this stamp check, so an arbitrary caller dict reached a message. The stamp check now
+    # runs FIRST: nothing from the mapping is read, compared or formatted until the mapping has
+    # been shown to be the accepted one.
+    if not isinstance(mapping, dict) or mapping.get("_accepted_manifest_sha256") != \
+            accepted.ACCEPTED_MANIFESTS[benchmark]["blob_sha256"]:
+        errors.raise_violation(DesignViolation, errors.Code.MAPPING_NOT_FROM_ACCEPTED_PATH)
+    if benchmark == LONGMEMEVAL and scheme == "cluster":
+        raise DesignViolation(
+            "N-3: the conversation-cluster bootstrap is REFUSED for LongMemEval. Its dependency "
+            "structure is a single connected component over all 470 questions, inherited from Task "
+            "3A.1, so a cluster resample is ill-posed rather than merely wide. R2 line 141: 'No "
+            "conversation-cluster bootstrap is defined for LongMemEval.'")
+    if mapping["benchmark"] != benchmark:
+        errors.raise_violation(DesignViolation, errors.Code.MANIFEST_BENCHMARK_MISMATCH)
+
+    identity = verify_source_identity(question_ids, cluster_ids, mapping)
+    seed_record = read_bootstrap_seed(seed_record_path, benchmark, scheme)
+    # D-2: v1 never compared the caller's replicate count to the frozen record, so a run of 7
+    # replicates was persisted claiming 10000 and write_results could not catch it - the schema was
+    # satisfied. The result must state how it was actually computed.
+    if isinstance(replicates, bool) or not isinstance(replicates, int):
+        errors.raise_violation(DesignViolation, errors.Code.SEED_RECORD_MALFORMED,
+                               replicates_is_int=False)
+    if int(replicates) != int(seed_record["replicates"]):
+        errors.raise_violation(DesignViolation, errors.Code.REPLICATES_CONTRADICT_RECORD,
+                               record_replicates=int(seed_record["replicates"]),
+                               requested_replicates=int(replicates))
+
+    qs = list(question_ids)
+    estimates, uncertainty = _compute_numerical_results(
+        records, qs, list(cluster_ids), seed_record["bootstrap_seed"], replicates, scheme)
+    n_clusters = identity["n_clusters"] if scheme == "question" else uncertainty["n_clusters"]
+
+    result = {
+        "benchmark": benchmark, "estimates": estimates, "uncertainty": uncertainty,
+        "scheme": scheme, "n_questions": len(qs), "n_clusters": n_clusters,
+        "bootstrap_seed_record": seed_record, "source_identity": identity,
+        "longmemeval_inheritance_tag": LONGMEMEVAL_INHERITANCE_TAG if benchmark == LONGMEMEVAL else None,
+        "scaling_diagnostics": scaling_diagnostics, "runner_version": RUNNER_VERSION,
+        "core_identity": BOUND_CORE,
+    }
+    if set(result) != RESULT_KEYS:
+        errors.raise_violation(DesignViolation, errors.Code.RESULT_SCHEMA,
+                               missing_fields=len(RESULT_KEYS - set(result)),
+                               unexpected_fields=len(set(result) - RESULT_KEYS))
+    return result
+
+
+def write_results(path: Path, result: dict) -> Path:
+    """Persist through the core's refusal-to-overwrite path, after re-checking the schema."""
+    if set(result) != RESULT_KEYS:
+        errors.raise_violation(DesignViolation, errors.Code.RESULT_SCHEMA,
+                               missing_fields=len(RESULT_KEYS - set(result)),
+                               unexpected_fields=len(set(result) - RESULT_KEYS))
+    return core.safe_write_json(Path(path), result)
+
+
+def run_on_real_corpus(*_args, **_kwargs):
+    """The only entry point that would touch a corpus. It refuses, and there is nothing behind it.
+
+    This is deliberately a stub. Writing a real ingestion path is not authorized at this stage, and a
+    stub that refuses is honest where an unreachable implementation would invite a later reader to
+    flip a flag and believe it had been reviewed.
+    """
+    core.require_real_data_authorization()
+    errors.raise_violation(DesignViolation, errors.Code.NO_INGESTION_PATH)
+
+
+def _compute_numerical_results(records, question_ids, cluster_ids, seed, replicates, scheme):
+    """Shared arithmetic only; callers own input validation and provenance."""
+    g, gs = core.paired_matrices(records, question_ids)
+    estimates = core.aggregate(g, gs)
+    if scheme == "question":
+        uncertainty = core.question_bootstrap(g, gs, seed, replicates)
+    else:
+        uncertainty = core.cluster_bootstrap(g, gs, cluster_ids, seed, replicates)
+    return estimates, uncertainty
+
+
+def compute_synthetic_results(records, question_ids, cluster_ids, *, benchmark, scheme):
+    """Internal numerical helper for integration_g3's validated SYNTHETIC ONLY envelope.
+
+    No mapping stamp, accepted-source claim, file access, seed freeze or authorization.
+    This primitive is not an access-control boundary; use compute_synthetic_result.
+    """
+    benchmark, scheme = require_benchmark(benchmark), require_scheme(scheme)
+    cfg = dict(accepted_bootstrap_for(benchmark, scheme))
+    estimates, uncertainty = _compute_numerical_results(
+        records, question_ids, cluster_ids, cfg["seed"], cfg["replicates"], scheme)
+    return {"estimates": estimates, "uncertainty": uncertainty,
+            "bootstrap_configuration": {
+                "provenance": "SYNTHETIC_ONLY", "seed_origin": "shared_configuration",
+                "benchmark": benchmark, "scheme": scheme,
+                "seed": cfg["seed"], "replicates": cfg["replicates"]}}

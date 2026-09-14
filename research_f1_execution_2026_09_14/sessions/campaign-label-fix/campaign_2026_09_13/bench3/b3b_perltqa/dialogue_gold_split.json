@@ -1,0 +1,16 @@
+{
+  "split": {
+    "fallback-full-dialogue": 1112,
+    "anchor-hit": 1632
+  },
+  "hit_gold": {
+    "mean": 5.685049019607843,
+    "min": 1,
+    "max": 21
+  },
+  "fallback_gold": {
+    "mean": 16.131294964028775,
+    "min": 10,
+    "max": 30
+  }
+}

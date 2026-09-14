@@ -1,0 +1,19 @@
+{
+ "anchors": {
+  "LME": {
+   "recomputed": 0.5419751773049645,
+   "expected": 0.5419751773049645,
+   "diff": 0.0
+  },
+  "LoCoMo": {
+   "recomputed": 0.23654714666441054,
+   "expected": 0.23654714666441054,
+   "diff": 0.0,
+   "n": 1535
+  }
+ },
+ "spot": [],
+ "agg": [],
+ "model": [],
+ "validity": {}
+}

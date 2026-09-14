@@ -1,0 +1,1689 @@
+{"_labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "_refit_notice": "BEYAN EDILMIS YENIDEN-UYARLAMA (declared re-fit): bu cikti, dondurulmus uretim yapitinin geri kazanimi DEGILDIR; gercek derlem uzerinde temsil hattinin yeniden uyarlanmasindan okunan TANIMLAYICI bag-geometrisi istatistikleridir. Hicbir retrieval/recall/dogruluk/gold/benchmark sonucu hesaplanmamistir; bag cozumlemek dogru cozumlemek demek DEGILDIR.",
+
+  "boundary": "Mühürlü Task4F1: gold/evidence etiketleri acilmadi ve kullanilmadi; recall/dogruluk hesaplanmadi; getirimin dogrulugu degerlendirilmedi; benchmark calistirilmadi. Tum olcumler kod GEOMETRISI (cozunurluk kapasitesi) hakkindadir.",
+  "svd_seed": 5204,
+  "n_components": 96,
+  "probe_turu": "arsivin KENDI merkezlenmis vektorleri (leave-one-out); gold-baglantili sorgu yok",
+  "aggregate_fullN": {
+    "n_archives": 10,
+    "boundary_pooled_probes": {
+      "median": 1.0,
+      "p90": 2.0,
+      "max": 7,
+      "mean": 1.306772100567721,
+      "frac_gt1": 0.2575020275750203,
+      "frac_gt3": 0.007502027575020276,
+      "frac_gt10": 0.0,
+      "n_probes": 4932
+    }
+  },
+  "bc_histogram_fullN": {
+    "bins_1_to_20": [
+      3662,
+      1073,
+      160,
+      31,
+      4,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "gt_20": 0
+  },
+  "per_archive": [
+    {
+      "question_id": "001be529",
+      "N_archive": 514,
+      "hamming": {
+        "pooled": {
+          "mean": 47.97315706039851,
+          "sd": 5.12267571097896,
+          "min": 0,
+          "max": 67,
+          "n_pairs": 263682
+        },
+        "d3_3rd_nearest": {
+          "mean": 25.844357976653697,
+          "median": 26.0,
+          "min": 10.0,
+          "max": 38.0
+        },
+        "per_probe_mean": {
+          "mean": 47.973157060398506,
+          "median": 47.955165692007796,
+          "min": 47.23391812865497,
+          "max": 48.71150097465887
+        },
+        "per_probe_sd": {
+          "mean": 5.113056737702614,
+          "median": 5.108442180485024,
+          "min": 4.505695205580614,
+          "max": 5.663397749944292
+        },
+        "per_probe_min": {
+          "mean": 16.058365758754864,
+          "median": 16.0,
+          "min": 0.0,
+          "max": 31.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.809338521400779,
+          "median": 10.0,
+          "min": 5.0,
+          "max": 14.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 5,
+          "mean": 1.3307392996108949,
+          "frac_gt1": 0.2782101167315175,
+          "frac_gt3": 0.009727626459143969,
+          "frac_gt10": 0.0,
+          "n_probes": 514
+        }
+      },
+      "continuous": {
+        "n_probes": 514,
+        "n_tied_probes": 143,
+        "full_resolve_frac": 0.993006993006993,
+        "mean_distinct_coverage": 0.9982517482517482,
+        "total_tied_slots": 313,
+        "total_distinct_scores": 312,
+        "total_remaining_slots": 1,
+        "probes_with_remaining": 1,
+        "remaining_pairs": 1,
+        "continuous_d3_boundary_tie_frac": 0.0019455252918287938,
+        "containment": {
+          "M10": {
+            "mean": 0.9727626459143969,
+            "frac_full_3of3": 0.9377431906614786
+          },
+          "M50": {
+            "mean": 0.9915693904020751,
+            "frac_full_3of3": 0.980544747081712
+          },
+          "M200": {
+            "mean": 0.9980544747081712,
+            "frac_full_3of3": 0.9941634241245136
+          }
+        }
+      }
+    },
+    {
+      "question_id": "00ca467f",
+      "N_archive": 486,
+      "hamming": {
+        "pooled": {
+          "mean": 47.90460311399601,
+          "sd": 5.080026040215179,
+          "min": 4,
+          "max": 70,
+          "n_pairs": 235710
+        },
+        "d3_3rd_nearest": {
+          "mean": 27.19341563786008,
+          "median": 27.0,
+          "min": 15.0,
+          "max": 37.0
+        },
+        "per_probe_mean": {
+          "mean": 47.904603113996004,
+          "median": 47.90103092783505,
+          "min": 46.91340206185567,
+          "max": 48.99175257731959
+        },
+        "per_probe_sd": {
+          "mean": 5.0658303542838325,
+          "median": 5.075380750662559,
+          "min": 4.321496023087837,
+          "max": 5.653014173183614
+        },
+        "per_probe_min": {
+          "mean": 18.257201646090536,
+          "median": 18.0,
+          "min": 4.0,
+          "max": 34.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.705761316872428,
+          "median": 10.0,
+          "min": 5.0,
+          "max": 14.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 3,
+          "mean": 1.2736625514403292,
+          "frac_gt1": 0.2345679012345679,
+          "frac_gt3": 0.0,
+          "frac_gt10": 0.0,
+          "n_probes": 486
+        }
+      },
+      "continuous": {
+        "n_probes": 486,
+        "n_tied_probes": 114,
+        "full_resolve_frac": 1.0,
+        "mean_distinct_coverage": 1.0,
+        "total_tied_slots": 247,
+        "total_distinct_scores": 247,
+        "total_remaining_slots": 0,
+        "probes_with_remaining": 0,
+        "remaining_pairs": 0,
+        "continuous_d3_boundary_tie_frac": 0.0,
+        "containment": {
+          "M10": {
+            "mean": 0.9828532235939642,
+            "frac_full_3of3": 0.9506172839506173
+          },
+          "M50": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          },
+          "M200": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "0100672e",
+      "N_archive": 486,
+      "hamming": {
+        "pooled": {
+          "mean": 47.9237283102117,
+          "sd": 5.061990998011254,
+          "min": 0,
+          "max": 69,
+          "n_pairs": 235710
+        },
+        "d3_3rd_nearest": {
+          "mean": 26.242798353909464,
+          "median": 27.0,
+          "min": 3.0,
+          "max": 38.0
+        },
+        "per_probe_mean": {
+          "mean": 47.9237283102117,
+          "median": 47.90309278350515,
+          "min": 47.09896907216495,
+          "max": 48.78556701030928
+        },
+        "per_probe_sd": {
+          "mean": 5.048339302452905,
+          "median": 5.035695584221809,
+          "min": 4.326746030771212,
+          "max": 5.946280222583928
+        },
+        "per_probe_min": {
+          "mean": 16.66460905349794,
+          "median": 17.0,
+          "min": 0.0,
+          "max": 30.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.539094650205762,
+          "median": 10.0,
+          "min": 5.0,
+          "max": 14.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 4,
+          "mean": 1.2757201646090535,
+          "frac_gt1": 0.23045267489711935,
+          "frac_gt3": 0.00411522633744856,
+          "frac_gt10": 0.0,
+          "n_probes": 486
+        }
+      },
+      "continuous": {
+        "n_probes": 486,
+        "n_tied_probes": 112,
+        "full_resolve_frac": 0.9910714285714286,
+        "mean_distinct_coverage": 0.9940476190476192,
+        "total_tied_slots": 246,
+        "total_distinct_scores": 244,
+        "total_remaining_slots": 2,
+        "probes_with_remaining": 1,
+        "remaining_pairs": 3,
+        "continuous_d3_boundary_tie_frac": 0.00411522633744856,
+        "containment": {
+          "M10": {
+            "mean": 0.9862825788751715,
+            "frac_full_3of3": 0.9670781893004116
+          },
+          "M50": {
+            "mean": 0.9986282578875171,
+            "frac_full_3of3": 0.9958847736625515
+          },
+          "M200": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "01493427",
+      "N_archive": 487,
+      "hamming": {
+        "pooled": {
+          "mean": 47.93893916732156,
+          "sd": 5.095094366312202,
+          "min": 3,
+          "max": 68,
+          "n_pairs": 236682
+        },
+        "d3_3rd_nearest": {
+          "mean": 26.82751540041068,
+          "median": 27.0,
+          "min": 15.0,
+          "max": 38.0
+        },
+        "per_probe_mean": {
+          "mean": 47.93893916732154,
+          "median": 47.952674897119344,
+          "min": 47.01440329218107,
+          "max": 48.66460905349794
+        },
+        "per_probe_sd": {
+          "mean": 5.080767961140771,
+          "median": 5.072109949972723,
+          "min": 4.541260410309463,
+          "max": 5.807640050676441
+        },
+        "per_probe_min": {
+          "mean": 17.04312114989733,
+          "median": 17.0,
+          "min": 3.0,
+          "max": 30.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.75564681724846,
+          "median": 10.0,
+          "min": 5.0,
+          "max": 14.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 4,
+          "mean": 1.320328542094456,
+          "frac_gt1": 0.2669404517453799,
+          "frac_gt3": 0.008213552361396304,
+          "frac_gt10": 0.0,
+          "n_probes": 487
+        }
+      },
+      "continuous": {
+        "n_probes": 487,
+        "n_tied_probes": 130,
+        "full_resolve_frac": 1.0,
+        "mean_distinct_coverage": 1.0,
+        "total_tied_slots": 286,
+        "total_distinct_scores": 286,
+        "total_remaining_slots": 0,
+        "probes_with_remaining": 0,
+        "remaining_pairs": 0,
+        "continuous_d3_boundary_tie_frac": 0.0,
+        "containment": {
+          "M10": {
+            "mean": 0.9897330595482546,
+            "frac_full_3of3": 0.9691991786447639
+          },
+          "M50": {
+            "mean": 0.997946611909651,
+            "frac_full_3of3": 0.9938398357289527
+          },
+          "M200": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "031748ae",
+      "N_archive": 494,
+      "hamming": {
+        "pooled": {
+          "mean": 47.93394979100114,
+          "sd": 5.128083899946015,
+          "min": 1,
+          "max": 68,
+          "n_pairs": 243542
+        },
+        "d3_3rd_nearest": {
+          "mean": 25.728744939271255,
+          "median": 26.0,
+          "min": 10.0,
+          "max": 38.0
+        },
+        "per_probe_mean": {
+          "mean": 47.93394979100114,
+          "median": 47.92089249492901,
+          "min": 47.10953346855984,
+          "max": 48.76470588235294
+        },
+        "per_probe_sd": {
+          "mean": 5.116050793342747,
+          "median": 5.104013390318677,
+          "min": 4.387199333310448,
+          "max": 5.665051858582605
+        },
+        "per_probe_min": {
+          "mean": 16.510121457489877,
+          "median": 17.0,
+          "min": 1.0,
+          "max": 34.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.700404858299596,
+          "median": 10.0,
+          "min": 5.0,
+          "max": 14.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 5,
+          "mean": 1.2935222672064777,
+          "frac_gt1": 0.2388663967611336,
+          "frac_gt3": 0.012145748987854251,
+          "frac_gt10": 0.0,
+          "n_probes": 494
+        }
+      },
+      "continuous": {
+        "n_probes": 494,
+        "n_tied_probes": 118,
+        "full_resolve_frac": 1.0,
+        "mean_distinct_coverage": 1.0,
+        "total_tied_slots": 263,
+        "total_distinct_scores": 263,
+        "total_remaining_slots": 0,
+        "probes_with_remaining": 0,
+        "remaining_pairs": 0,
+        "continuous_d3_boundary_tie_frac": 0.0,
+        "containment": {
+          "M10": {
+            "mean": 0.9817813765182186,
+            "frac_full_3of3": 0.9534412955465587
+          },
+          "M50": {
+            "mean": 0.9959514170040485,
+            "frac_full_3of3": 0.9878542510121457
+          },
+          "M200": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "06878be2",
+      "N_archive": 443,
+      "hamming": {
+        "pooled": {
+          "mean": 47.9110956763327,
+          "sd": 5.049276782706938,
+          "min": 1,
+          "max": 67,
+          "n_pairs": 195806
+        },
+        "d3_3rd_nearest": {
+          "mean": 28.056433408577877,
+          "median": 28.0,
+          "min": 16.0,
+          "max": 37.0
+        },
+        "per_probe_mean": {
+          "mean": 47.91109567633269,
+          "median": 47.886877828054295,
+          "min": 47.13800904977376,
+          "max": 48.796380090497735
+        },
+        "per_probe_sd": {
+          "mean": 5.034556773133535,
+          "median": 5.032097381209062,
+          "min": 4.441536049690773,
+          "max": 5.7122301699122575
+        },
+        "per_probe_min": {
+          "mean": 17.501128668171557,
+          "median": 18.0,
+          "min": 1.0,
+          "max": 34.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.395033860045146,
+          "median": 9.0,
+          "min": 5.0,
+          "max": 13.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 5,
+          "mean": 1.2934537246049662,
+          "frac_gt1": 0.24604966139954854,
+          "frac_gt3": 0.006772009029345372,
+          "frac_gt10": 0.0,
+          "n_probes": 443
+        }
+      },
+      "continuous": {
+        "n_probes": 443,
+        "n_tied_probes": 109,
+        "full_resolve_frac": 1.0,
+        "mean_distinct_coverage": 1.0,
+        "total_tied_slots": 239,
+        "total_distinct_scores": 239,
+        "total_remaining_slots": 0,
+        "probes_with_remaining": 0,
+        "remaining_pairs": 0,
+        "continuous_d3_boundary_tie_frac": 0.0,
+        "containment": {
+          "M10": {
+            "mean": 0.9774266365688488,
+            "frac_full_3of3": 0.9367945823927766
+          },
+          "M50": {
+            "mean": 0.9962377727614747,
+            "frac_full_3of3": 0.9887133182844243
+          },
+          "M200": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "06db6396",
+      "N_archive": 479,
+      "hamming": {
+        "pooled": {
+          "mean": 47.91565412601218,
+          "sd": 5.1375040592229775,
+          "min": 1,
+          "max": 66,
+          "n_pairs": 228962
+        },
+        "d3_3rd_nearest": {
+          "mean": 26.34864300626305,
+          "median": 27.0,
+          "min": 14.0,
+          "max": 38.0
+        },
+        "per_probe_mean": {
+          "mean": 47.91565412601218,
+          "median": 47.90376569037657,
+          "min": 47.17991631799163,
+          "max": 48.80962343096234
+        },
+        "per_probe_sd": {
+          "mean": 5.121937731427885,
+          "median": 5.105305956743322,
+          "min": 4.557071725931985,
+          "max": 6.253627997622502
+        },
+        "per_probe_min": {
+          "mean": 16.171189979123174,
+          "median": 16.0,
+          "min": 1.0,
+          "max": 33.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.695198329853863,
+          "median": 10.0,
+          "min": 5.0,
+          "max": 14.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 4,
+          "mean": 1.3277661795407099,
+          "frac_gt1": 0.2860125260960334,
+          "frac_gt3": 0.0041753653444676405,
+          "frac_gt10": 0.0,
+          "n_probes": 479
+        }
+      },
+      "continuous": {
+        "n_probes": 479,
+        "n_tied_probes": 137,
+        "full_resolve_frac": 1.0,
+        "mean_distinct_coverage": 1.0,
+        "total_tied_slots": 294,
+        "total_distinct_scores": 294,
+        "total_remaining_slots": 0,
+        "probes_with_remaining": 0,
+        "remaining_pairs": 0,
+        "continuous_d3_boundary_tie_frac": 0.0,
+        "containment": {
+          "M10": {
+            "mean": 0.9874739039665971,
+            "frac_full_3of3": 0.9686847599164927
+          },
+          "M50": {
+            "mean": 0.9979123173277662,
+            "frac_full_3of3": 0.9937369519832986
+          },
+          "M200": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "06f04340",
+      "N_archive": 503,
+      "hamming": {
+        "pooled": {
+          "mean": 47.908564548961216,
+          "sd": 5.07206778505035,
+          "min": 0,
+          "max": 66,
+          "n_pairs": 252506
+        },
+        "d3_3rd_nearest": {
+          "mean": 27.131212723658052,
+          "median": 27.0,
+          "min": 13.0,
+          "max": 39.0
+        },
+        "per_probe_mean": {
+          "mean": 47.908564548961216,
+          "median": 47.88446215139442,
+          "min": 47.123505976095615,
+          "max": 49.07768924302789
+        },
+        "per_probe_sd": {
+          "mean": 5.059197327421418,
+          "median": 5.050545691070495,
+          "min": 4.418605550926931,
+          "max": 5.593098024527735
+        },
+        "per_probe_min": {
+          "mean": 17.31013916500994,
+          "median": 18.0,
+          "min": 0.0,
+          "max": 35.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.455268389662027,
+          "median": 10.0,
+          "min": 5.0,
+          "max": 13.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 7,
+          "mean": 1.3220675944333995,
+          "frac_gt1": 0.2544731610337972,
+          "frac_gt3": 0.015904572564612324,
+          "frac_gt10": 0.0,
+          "n_probes": 503
+        }
+      },
+      "continuous": {
+        "n_probes": 503,
+        "n_tied_probes": 128,
+        "full_resolve_frac": 1.0,
+        "mean_distinct_coverage": 1.0,
+        "total_tied_slots": 290,
+        "total_distinct_scores": 290,
+        "total_remaining_slots": 0,
+        "probes_with_remaining": 0,
+        "remaining_pairs": 0,
+        "continuous_d3_boundary_tie_frac": 0.0,
+        "containment": {
+          "M10": {
+            "mean": 0.9774685222001326,
+            "frac_full_3of3": 0.9423459244532804
+          },
+          "M50": {
+            "mean": 0.9946984758117959,
+            "frac_full_3of3": 0.9840954274353877
+          },
+          "M200": {
+            "mean": 0.9993373094764744,
+            "frac_full_3of3": 0.9980119284294234
+          }
+        }
+      }
+    },
+    {
+      "question_id": "07741c44",
+      "N_archive": 513,
+      "hamming": {
+        "pooled": {
+          "mean": 47.92326084307992,
+          "sd": 5.1122918551395955,
+          "min": 1,
+          "max": 68,
+          "n_pairs": 262656
+        },
+        "d3_3rd_nearest": {
+          "mean": 25.906432748538013,
+          "median": 26.0,
+          "min": 12.0,
+          "max": 37.0
+        },
+        "per_probe_mean": {
+          "mean": 47.92326084307992,
+          "median": 47.94140625,
+          "min": 46.99609375,
+          "max": 48.6796875
+        },
+        "per_probe_sd": {
+          "mean": 5.100084419140213,
+          "median": 5.093072951553291,
+          "min": 4.563984250629074,
+          "max": 5.8452485962826035
+        },
+        "per_probe_min": {
+          "mean": 16.22222222222222,
+          "median": 16.0,
+          "min": 1.0,
+          "max": 31.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.709551656920079,
+          "median": 10.0,
+          "min": 6.0,
+          "max": 15.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 3,
+          "mean": 1.3235867446393763,
+          "frac_gt1": 0.2884990253411306,
+          "frac_gt3": 0.0,
+          "frac_gt10": 0.0,
+          "n_probes": 513
+        }
+      },
+      "continuous": {
+        "n_probes": 513,
+        "n_tied_probes": 148,
+        "full_resolve_frac": 1.0,
+        "mean_distinct_coverage": 1.0,
+        "total_tied_slots": 314,
+        "total_distinct_scores": 314,
+        "total_remaining_slots": 0,
+        "probes_with_remaining": 0,
+        "remaining_pairs": 0,
+        "continuous_d3_boundary_tie_frac": 0.0,
+        "containment": {
+          "M10": {
+            "mean": 0.9857050032488628,
+            "frac_full_3of3": 0.9590643274853801
+          },
+          "M50": {
+            "mean": 0.9974009096816113,
+            "frac_full_3of3": 0.9922027290448343
+          },
+          "M200": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "07741c45",
+      "N_archive": 527,
+      "hamming": {
+        "pooled": {
+          "mean": 47.84930844654801,
+          "sd": 5.148525720205016,
+          "min": 0,
+          "max": 68,
+          "n_pairs": 277202
+        },
+        "d3_3rd_nearest": {
+          "mean": 25.485768500948765,
+          "median": 26.0,
+          "min": 0.0,
+          "max": 37.0
+        },
+        "per_probe_mean": {
+          "mean": 47.849308446548,
+          "median": 47.863117870722434,
+          "min": 46.96958174904943,
+          "max": 48.846007604562736
+        },
+        "per_probe_sd": {
+          "mean": 5.132230971531504,
+          "median": 5.124778881619532,
+          "min": 4.44630636610782,
+          "max": 5.880595384243263
+        },
+        "per_probe_min": {
+          "mean": 15.430740037950665,
+          "median": 16.0,
+          "min": 0.0,
+          "max": 30.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.747628083491461,
+          "median": 10.0,
+          "min": 5.0,
+          "max": 15.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 4,
+          "mean": 1.3036053130929792,
+          "frac_gt1": 0.24857685009487665,
+          "frac_gt3": 0.013282732447817837,
+          "frac_gt10": 0.0,
+          "n_probes": 527
+        }
+      },
+      "continuous": {
+        "n_probes": 527,
+        "n_tied_probes": 131,
+        "full_resolve_frac": 0.9389312977099237,
+        "mean_distinct_coverage": 0.9650127226463103,
+        "total_tied_slots": 291,
+        "total_distinct_scores": 277,
+        "total_remaining_slots": 14,
+        "probes_with_remaining": 8,
+        "remaining_pairs": 21,
+        "continuous_d3_boundary_tie_frac": 0.017077798861480076,
+        "containment": {
+          "M10": {
+            "mean": 0.976597090449083,
+            "frac_full_3of3": 0.937381404174573
+          },
+          "M50": {
+            "mean": 0.9993674889310562,
+            "frac_full_3of3": 0.9981024667931688
+          },
+          "M200": {
+            "mean": 1.0,
+            "frac_full_3of3": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "subsample": {
+    "N50": {
+      "N_target": 50,
+      "pooled": {
+        "median": 2.0,
+        "p90": 3.0,
+        "max": 7,
+        "mean": 1.856,
+        "frac_gt1": 0.542,
+        "frac_gt3": 0.074,
+        "frac_gt10": 0.0,
+        "n_probes": 500
+      },
+      "per_archive": [
+        {
+          "question_id": "001be529",
+          "N_used": 50,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 5,
+            "mean": 1.78,
+            "frac_gt1": 0.52,
+            "frac_gt3": 0.08,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "00ca467f",
+          "N_used": 50,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 4,
+            "mean": 2.0,
+            "frac_gt1": 0.68,
+            "frac_gt3": 0.08,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "0100672e",
+          "N_used": 50,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 4,
+            "mean": 1.78,
+            "frac_gt1": 0.52,
+            "frac_gt3": 0.08,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "01493427",
+          "N_used": 50,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 7,
+            "mean": 2.02,
+            "frac_gt1": 0.6,
+            "frac_gt3": 0.04,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "031748ae",
+          "N_used": 50,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 4,
+            "mean": 1.56,
+            "frac_gt1": 0.42,
+            "frac_gt3": 0.02,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "06878be2",
+          "N_used": 50,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 5,
+            "mean": 1.9,
+            "frac_gt1": 0.56,
+            "frac_gt3": 0.06,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "06db6396",
+          "N_used": 50,
+          "boundary": {
+            "median": 1.0,
+            "p90": 4.0,
+            "max": 6,
+            "mean": 1.9,
+            "frac_gt1": 0.48,
+            "frac_gt3": 0.12,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "06f04340",
+          "N_used": 50,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 5,
+            "mean": 1.74,
+            "frac_gt1": 0.48,
+            "frac_gt3": 0.06,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "07741c44",
+          "N_used": 50,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.1000000000000014,
+            "max": 4,
+            "mean": 1.94,
+            "frac_gt1": 0.58,
+            "frac_gt3": 0.1,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        },
+        {
+          "question_id": "07741c45",
+          "N_used": 50,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.1000000000000014,
+            "max": 5,
+            "mean": 1.94,
+            "frac_gt1": 0.58,
+            "frac_gt3": 0.1,
+            "frac_gt10": 0.0,
+            "n_probes": 50,
+            "N_used": 50
+          }
+        }
+      ]
+    },
+    "N100": {
+      "N_target": 100,
+      "pooled": {
+        "median": 2.0,
+        "p90": 3.0,
+        "max": 6,
+        "mean": 1.752,
+        "frac_gt1": 0.504,
+        "frac_gt3": 0.05,
+        "frac_gt10": 0.0,
+        "n_probes": 1000
+      },
+      "per_archive": [
+        {
+          "question_id": "001be529",
+          "N_used": 100,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 5,
+            "mean": 1.9,
+            "frac_gt1": 0.6,
+            "frac_gt3": 0.08,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "00ca467f",
+          "N_used": 100,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 5,
+            "mean": 1.54,
+            "frac_gt1": 0.4,
+            "frac_gt3": 0.01,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "0100672e",
+          "N_used": 100,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 5,
+            "mean": 1.73,
+            "frac_gt1": 0.48,
+            "frac_gt3": 0.04,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "01493427",
+          "N_used": 100,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 4,
+            "mean": 1.75,
+            "frac_gt1": 0.55,
+            "frac_gt3": 0.04,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "031748ae",
+          "N_used": 100,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 5,
+            "mean": 1.74,
+            "frac_gt1": 0.44,
+            "frac_gt3": 0.08,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "06878be2",
+          "N_used": 100,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 6,
+            "mean": 1.79,
+            "frac_gt1": 0.52,
+            "frac_gt3": 0.05,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "06db6396",
+          "N_used": 100,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 4,
+            "mean": 1.75,
+            "frac_gt1": 0.54,
+            "frac_gt3": 0.05,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "06f04340",
+          "N_used": 100,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 4,
+            "mean": 1.59,
+            "frac_gt1": 0.41,
+            "frac_gt3": 0.01,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "07741c44",
+          "N_used": 100,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 5,
+            "mean": 1.89,
+            "frac_gt1": 0.58,
+            "frac_gt3": 0.07,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        },
+        {
+          "question_id": "07741c45",
+          "N_used": 100,
+          "boundary": {
+            "median": 2.0,
+            "p90": 3.0,
+            "max": 6,
+            "mean": 1.84,
+            "frac_gt1": 0.52,
+            "frac_gt3": 0.07,
+            "frac_gt10": 0.0,
+            "n_probes": 100,
+            "N_used": 100
+          }
+        }
+      ]
+    },
+    "N200": {
+      "N_target": 200,
+      "pooled": {
+        "median": 1.0,
+        "p90": 3.0,
+        "max": 9,
+        "mean": 1.525,
+        "frac_gt1": 0.363,
+        "frac_gt3": 0.0345,
+        "frac_gt10": 0.0,
+        "n_probes": 2000
+      },
+      "per_archive": [
+        {
+          "question_id": "001be529",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 6,
+            "mean": 1.455,
+            "frac_gt1": 0.305,
+            "frac_gt3": 0.05,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "00ca467f",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 6,
+            "mean": 1.515,
+            "frac_gt1": 0.35,
+            "frac_gt3": 0.035,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "0100672e",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 9,
+            "mean": 1.58,
+            "frac_gt1": 0.34,
+            "frac_gt3": 0.055,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "01493427",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 7,
+            "mean": 1.48,
+            "frac_gt1": 0.325,
+            "frac_gt3": 0.035,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "031748ae",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 6,
+            "mean": 1.495,
+            "frac_gt1": 0.37,
+            "frac_gt3": 0.02,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "06878be2",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 5,
+            "mean": 1.515,
+            "frac_gt1": 0.4,
+            "frac_gt3": 0.02,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "06db6396",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 7,
+            "mean": 1.485,
+            "frac_gt1": 0.33,
+            "frac_gt3": 0.025,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "06f04340",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 7,
+            "mean": 1.615,
+            "frac_gt1": 0.415,
+            "frac_gt3": 0.04,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "07741c44",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 6,
+            "mean": 1.555,
+            "frac_gt1": 0.405,
+            "frac_gt3": 0.03,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        },
+        {
+          "question_id": "07741c45",
+          "N_used": 200,
+          "boundary": {
+            "median": 1.0,
+            "p90": 3.0,
+            "max": 6,
+            "mean": 1.555,
+            "frac_gt1": 0.39,
+            "frac_gt3": 0.035,
+            "frac_gt10": 0.0,
+            "n_probes": 200,
+            "N_used": 200
+          }
+        }
+      ]
+    },
+    "N400": {
+      "N_target": 400,
+      "pooled": {
+        "median": 1.0,
+        "p90": 2.0,
+        "max": 7,
+        "mean": 1.3265,
+        "frac_gt1": 0.2585,
+        "frac_gt3": 0.012,
+        "frac_gt10": 0.0,
+        "n_probes": 4000
+      },
+      "per_archive": [
+        {
+          "question_id": "001be529",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 5,
+            "mean": 1.365,
+            "frac_gt1": 0.2825,
+            "frac_gt3": 0.0175,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "00ca467f",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 6,
+            "mean": 1.28,
+            "frac_gt1": 0.2325,
+            "frac_gt3": 0.0075,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "0100672e",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 5,
+            "mean": 1.34,
+            "frac_gt1": 0.2475,
+            "frac_gt3": 0.0175,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "01493427",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 5,
+            "mean": 1.3475,
+            "frac_gt1": 0.2875,
+            "frac_gt3": 0.0075,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "031748ae",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 6,
+            "mean": 1.2925,
+            "frac_gt1": 0.235,
+            "frac_gt3": 0.0125,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "06878be2",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 6,
+            "mean": 1.3225,
+            "frac_gt1": 0.26,
+            "frac_gt3": 0.0075,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "06db6396",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 4,
+            "mean": 1.2975,
+            "frac_gt1": 0.2525,
+            "frac_gt3": 0.0075,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "06f04340",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 5,
+            "mean": 1.31,
+            "frac_gt1": 0.245,
+            "frac_gt3": 0.0125,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "07741c44",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 6,
+            "mean": 1.39,
+            "frac_gt1": 0.295,
+            "frac_gt3": 0.02,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        },
+        {
+          "question_id": "07741c45",
+          "N_used": 400,
+          "boundary": {
+            "median": 1.0,
+            "p90": 2.0,
+            "max": 7,
+            "mean": 1.32,
+            "frac_gt1": 0.2475,
+            "frac_gt3": 0.01,
+            "frac_gt10": 0.0,
+            "n_probes": 400,
+            "N_used": 400
+          }
+        }
+      ]
+    },
+    "Nfull": {
+      "N_target": "full",
+      "pooled": {
+        "median": 1.0,
+        "p90": 2.0,
+        "max": 7,
+        "mean": 1.306772100567721,
+        "frac_gt1": 0.2575020275750203,
+        "frac_gt3": 0.007502027575020276,
+        "frac_gt10": 0.0,
+        "n_probes": 4932
+      }
+    }
+  },
+  "pooling": {
+    "caveat": "DIKKAT: her arsiv ayri uyarlandi; havuzlanmis vektorler ortak bir koordinat sistemi paylasmaz. Havuz figuru, bu genislik ve yogunluktaki bir kodun bag davranisina olcek siniri verir; TEK bir ~5000 turluk arsivin olcumu DEGILDIR.",
+    "steps": [
+      {
+        "k_archives": 2,
+        "N_pooled": 1000,
+        "pooled_hamming": {
+          "mean": 47.969945945945945,
+          "sd": 4.999919284341604,
+          "min": 0,
+          "max": 71,
+          "n_pairs": 999000
+        },
+        "d3_3rd_nearest": {
+          "mean": 26.373,
+          "median": 27.0,
+          "min": 10.0,
+          "max": 36.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 9.079,
+          "median": 9.0,
+          "min": 5.0,
+          "max": 14.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 5,
+          "mean": 1.332,
+          "frac_gt1": 0.279,
+          "frac_gt3": 0.009,
+          "frac_gt10": 0.0,
+          "n_probes": 1000
+        }
+      },
+      {
+        "k_archives": 4,
+        "N_pooled": 1973,
+        "pooled_hamming": {
+          "mean": 47.985270728876344,
+          "sd": 4.944568431672281,
+          "min": 0,
+          "max": 73,
+          "n_pairs": 3890756
+        },
+        "d3_3rd_nearest": {
+          "mean": 26.271160669031932,
+          "median": 27.0,
+          "min": 3.0,
+          "max": 35.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 8.534718702483527,
+          "median": 9.0,
+          "min": 4.0,
+          "max": 13.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 8,
+          "mean": 1.3801317790167258,
+          "frac_gt1": 0.2965027876330461,
+          "frac_gt3": 0.01469842878864673,
+          "frac_gt10": 0.0,
+          "n_probes": 1973
+        }
+      },
+      {
+        "k_archives": 6,
+        "N_pooled": 2910,
+        "pooled_hamming": {
+          "mean": 47.98843404578042,
+          "sd": 4.931980164925073,
+          "min": 0,
+          "max": 73,
+          "n_pairs": 8465190
+        },
+        "d3_3rd_nearest": {
+          "mean": 26.250515463917527,
+          "median": 27.0,
+          "min": 3.0,
+          "max": 34.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 8.227835051546391,
+          "median": 8.0,
+          "min": 4.0,
+          "max": 13.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 7,
+          "mean": 1.3848797250859106,
+          "frac_gt1": 0.29759450171821306,
+          "frac_gt3": 0.016494845360824743,
+          "frac_gt10": 0.0,
+          "n_probes": 2910
+        }
+      },
+      {
+        "k_archives": 8,
+        "N_pooled": 3892,
+        "pooled_hamming": {
+          "mean": 47.988155130703234,
+          "sd": 4.925112065683607,
+          "min": 0,
+          "max": 73,
+          "n_pairs": 15143772
+        },
+        "d3_3rd_nearest": {
+          "mean": 26.22327852004111,
+          "median": 27.0,
+          "min": 3.0,
+          "max": 34.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 8.011562178828365,
+          "median": 8.0,
+          "min": 3.0,
+          "max": 12.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 9,
+          "mean": 1.422918807810894,
+          "frac_gt1": 0.31449126413155193,
+          "frac_gt3": 0.020041109969167522,
+          "frac_gt10": 0.0,
+          "n_probes": 3892
+        }
+      },
+      {
+        "k_archives": 10,
+        "N_pooled": 4932,
+        "pooled_hamming": {
+          "mean": 47.98838644831522,
+          "sd": 4.92059353728003,
+          "min": 0,
+          "max": 73,
+          "n_pairs": 24319692
+        },
+        "d3_3rd_nearest": {
+          "mean": 25.990875912408757,
+          "median": 27.0,
+          "min": 0.0,
+          "max": 34.0
+        },
+        "distinct_among_20nearest": {
+          "mean": 7.909975669099757,
+          "median": 8.0,
+          "min": 3.0,
+          "max": 13.0
+        },
+        "boundary": {
+          "median": 1.0,
+          "p90": 2.0,
+          "max": 9,
+          "mean": 1.4422141119221412,
+          "frac_gt1": 0.32339821573398214,
+          "frac_gt3": 0.025141930251419302,
+          "frac_gt10": 0.0,
+          "n_probes": 4932
+        }
+      }
+    ]
+  },
+  "not_checked": [
+    "Bagli adaylarin dogru cevabi icerme sikligi (gold gerekir; bakilmadi).",
+    "Surekli skorun bagi DOGRU cozme orani (gold gerekir; bakilmadi).",
+    "Tek bir gercek ~5000 turluk arsivde bag yapisi (derlemde yok; olculmedi).",
+    "Farkli tohum/uyarlamalarda sonuclarin kararliligi (tek uyum; bakilmadi)."
+  ]
+}

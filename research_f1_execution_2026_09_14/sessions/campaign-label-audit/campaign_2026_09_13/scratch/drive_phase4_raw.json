@@ -1,0 +1,150 @@
+{
+ "drives": [],
+ "shared_root_children": [
+  {
+   "mimeType": "application/vnd.google-apps.folder",
+   "id": "19y_ZYCGCL8wEn3WkruQOkCuVlxnYwaaE",
+   "name": "CP20_PUBLICATION_FACTOR_PRESSURE_V1_2026-09-04",
+   "modifiedTime": "2026-09-04T09:34:00.695Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.document",
+   "size": "3784",
+   "id": "1oay0CIfyZfvml0e7d-5IP7ozP3u7XSn3JnFTyN2F1cw",
+   "name": "CP20_TASK8B3_E3_QUASIPERIODIC_CRITICAL_RAY_TRANSFER_PROMPT_2026-08-30",
+   "modifiedTime": "2026-08-30T19:36:58.374Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.document",
+   "size": "3898",
+   "id": "12igKVeH8ysohQ2pHmwWezOhY4KbOP0oJXsYP_4-BFWo",
+   "name": "CP20_TASK8B3_E2_STRUCTURED_PRIMITIVE_RESONANCE_ASYMPTOTIC_FALSIFICATION_PROMPT_2026-08-29",
+   "modifiedTime": "2026-08-28T21:21:10.544Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.folder",
+   "id": "1mRJGjUsali3eOYtRyMnvO19afK_M4SY5",
+   "name": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi",
+   "modifiedTime": "2026-08-28T09:33:47.653Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.document",
+   "size": "3820",
+   "id": "1Rwfq-6xsJXrvbGRA-sy-SjEDMf1IICenK5e1jJwCuR4",
+   "name": "CP20_TASK8B2_HEAD_RESEARCHER_DEEP_ANALYSIS_V3_TERRAS_WANG_CRITICAL_STOPPING_2026-08-28",
+   "modifiedTime": "2026-08-27T21:47:29.921Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.folder",
+   "id": "1uM2bLBC3XQmvbdkTpjhvR6_N6OO7Qyxv",
+   "name": "LLM_TOKEN_ZIP_RESEARCH_MASTER",
+   "modifiedTime": "2026-08-25T16:16:23.114Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.folder",
+   "id": "1JJtfG-LQu8kmfm415GfgWQ4V_1t26dXn",
+   "name": "autogenesis-meta_guncellemeler_2026-08-24",
+   "modifiedTime": "2026-08-24T20:44:16.475Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.folder",
+   "id": "1e-BJkm9FKJUIJOZmnDybO2DaSGu2dPa5",
+   "name": "FUNCTION_PRESERVING_QUANTIZATION_RESEARCH_CHECKPOINT_2026-08-24",
+   "modifiedTime": "2026-08-24T20:27:01.497Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.folder",
+   "id": "1weLXROsx7hysUXDqj8bqwRXjk-F0l5df",
+   "name": "autogenesis-meta",
+   "modifiedTime": "2026-08-24T20:06:27.383Z"
+  },
+  {
+   "mimeType": "application/zip",
+   "size": "33841",
+   "id": "1_lF9qwH8ShVUGqPgIdvBWV3xatLCyJA1",
+   "name": "PHASE_C0V9_PREINTERACTION_PROGRESS_CHECKPOINT_2026-08-22.zip",
+   "modifiedTime": "2026-08-22T17:19:46.072Z"
+  },
+  {
+   "mimeType": "application/json",
+   "size": "4910",
+   "id": "1jemMogON3H85yXr6hUp_HnzDwNjT9MR_",
+   "name": "PROJECT_AUTOGENESIS_MASTER_PROGRESS_LEDGER_2026-08-22.json",
+   "modifiedTime": "2026-08-22T17:19:39.744Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.document",
+   "size": "4549",
+   "id": "1Jir9KwanMCzYFEKIjcRI7bIsEGVYzHe3gisG4Em7L6E",
+   "name": "DEHB TESTI",
+   "modifiedTime": "2026-08-15T16:09:33.872Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.document",
+   "size": "3170",
+   "id": "18VcPHn2uDc7N8GCv3-TUFl8TF8Cs2f7DZzYXh17NCoE",
+   "name": "Corex_MII",
+   "modifiedTime": "2026-08-15T16:08:55.215Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.folder",
+   "id": "1CLm7sbHoQNGK_SnQkRRaS4GJFh88DGJV",
+   "name": "PROJECT_AUTOGENESIS",
+   "modifiedTime": "2026-08-15T15:35:14.588Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.folder",
+   "id": "1mWXHPt5nZEAxToZQO-4aDQ65lqlOdgix",
+   "name": "Riemann Hipotezi \u2014 Ara\u015ft\u0131rma Ar\u015fivi",
+   "modifiedTime": "2026-08-15T15:18:31.745Z"
+  },
+  {
+   "mimeType": "text/plain",
+   "size": "97380",
+   "id": "1je2SkZVbRyP5lzBR_KaVgMu0cUlj6wwt",
+   "name": "tampermonkey-backup-chrome-2026-07-23T19-06-58-379Z.txt",
+   "modifiedTime": "2026-07-23T19:07:00.000Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.spreadsheet",
+   "size": "3109",
+   "id": "1bLVLfErjx4C6Cyc0b5o_cgEQVXWYif06ryKIXBSjOJ8",
+   "name": "X Kuyruk Veritaban\u0131",
+   "modifiedTime": "2026-03-13T20:31:17.856Z"
+  },
+  {
+   "mimeType": "application/vnd.google-apps.script",
+   "id": "10rAe8fnFI8kkRvQce2I1N2St9IC47MKTEH4V1t12T0DUQ72zziH377aI",
+   "name": "X BOT",
+   "modifiedTime": "2026-03-13T19:44:11.126Z"
+  },
+  {
+   "mimeType": "image/png",
+   "size": "97616",
+   "id": "15c662wdDqMYl9NWF2xhbd_LeAS_mGIZj",
+   "name": "Screenshot_2.png",
+   "modifiedTime": "2026-02-20T11:26:42.000Z"
+  },
+  {
+   "mimeType": "application/pdf",
+   "size": "591111",
+   "id": "1y79WQUMvgHfyhDlgm6sEnm0SlTwjKSeP",
+   "name": "ilide.info-adhd-test-diva-5-0-pr_25c802ae6fc789da833b16c7e48a8064.en.tr.pdf",
+   "modifiedTime": "2026-02-18T15:48:20.000Z"
+  },
+  {
+   "mimeType": "application/pdf",
+   "size": "279333",
+   "id": "1D9N0PUS-5nc498c5m9ItC9h5qWE3ETYy",
+   "name": "ilide.info-adhd-test-diva-5-0-pr_25c802ae6fc789da833b16c7e48a8064.pdf",
+   "modifiedTime": "2026-02-18T15:47:32.000Z"
+  },
+  {
+   "mimeType": "application/pdf",
+   "size": "951483",
+   "id": "1wrKmH-vt7DQVxhDxCJgfaPq9u2ATyvpU",
+   "name": "ilide.info-diva-2-0-yetis-kinlerde-dehb-i-c-in-tansal-go-ru-s-me-tu-rkc-e-d-iagnostisch-i--pr_4a1b347b6c6a12285cf030fc98109587.pdf",
+   "modifiedTime": "2026-02-18T14:33:58.000Z"
+  }
+ ]
+}

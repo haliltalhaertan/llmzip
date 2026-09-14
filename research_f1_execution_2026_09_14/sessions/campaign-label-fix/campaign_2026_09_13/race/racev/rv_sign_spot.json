@@ -1,0 +1,110 @@
+[
+ {
+  "bench": "LME",
+  "qid": "001be529",
+  "arm": "NATIVE96",
+  "mine": 1.0,
+  "stored": 1.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LME",
+  "qid": "06f04340",
+  "arm": "SPREAD80",
+  "mine": 0.0,
+  "stored": 0.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LME",
+  "qid": "3fe836c9",
+  "arm": "BOT80",
+  "mine": 0.5,
+  "stored": 0.5,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LME",
+  "qid": "8464fc84",
+  "arm": "RAND80_s2",
+  "mine": 1.0,
+  "stored": 1.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LME",
+  "qid": "caf03d32",
+  "arm": "TOP48",
+  "mine": 1.0,
+  "stored": 1.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LME",
+  "qid": "gpt4_fe651585",
+  "arm": "BOT48",
+  "mine": 0.5,
+  "stored": 0.5,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LoCoMo",
+  "qid": "locomo_0_qa0",
+  "arm": "NATIVE96",
+  "mine": 1.0,
+  "stored": 1.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LoCoMo",
+  "qid": "locomo_0_qa52",
+  "arm": "SPREAD80",
+  "mine": 0.0,
+  "stored": 0.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LoCoMo",
+  "qid": "locomo_3_qa117",
+  "arm": "BOT80",
+  "mine": 0.0,
+  "stored": 0.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LoCoMo",
+  "qid": "locomo_6_qa18",
+  "arm": "RAND80_s2",
+  "mine": 0.0,
+  "stored": 0.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LoCoMo",
+  "qid": "locomo_7_qa168",
+  "arm": "TOP48",
+  "mine": 0.0,
+  "stored": 0.0,
+  "diff": 0.0,
+  "ok": true
+ },
+ {
+  "bench": "LoCoMo",
+  "qid": "locomo_9_qa157",
+  "arm": "BOT48",
+  "mine": 1.0,
+  "stored": 1.0,
+  "diff": 0.0,
+  "ok": true
+ }
+]

@@ -1,0 +1,527 @@
+{
+  "banner": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "prominence_lines": 40,
+  "counts": {
+    "files_total": 582,
+    "in_scope": 63,
+    "pass": 63,
+    "missing_or_nonprominent": 0,
+    "excluded": {
+      "manifest-self": 1,
+      "machine-data": 187,
+      "code": 155,
+      "hash-file": 10,
+      "raw-log": 33,
+      "other-ext": 33,
+      "md-non-narrative": 66,
+      "txt-non-narrative": 34
+    }
+  },
+  "in_scope": [
+    {
+      "path": "campaign_2026_09_13/README.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 6787
+    },
+    {
+      "path": "campaign_2026_09_13/audits/AUDIT_KAPSAM.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 2356
+    },
+    {
+      "path": "campaign_2026_09_13/audits/audit1_cont/report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 10484
+    },
+    {
+      "path": "campaign_2026_09_13/bench3/b3a_realtalk/report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 12507
+    },
+    {
+      "path": "campaign_2026_09_13/bench3/b3b_fin/report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 16612
+    },
+    {
+      "path": "campaign_2026_09_13/disclosure_fix/DISCLOSURE_CORRECTION_REPORT.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 6486
+    },
+    {
+      "path": "campaign_2026_09_13/g3_localverify_evidence/inherited/localverify-20260912/g3/membership_execution_prep_v1_2026_09_08/README.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 6134
+    },
+    {
+      "path": "campaign_2026_09_13/g3_localverify_evidence/inherited/localverify-20260912/g3/membership_impl_v3_2026_09_07/README_IMPL_V3.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 7568
+    },
+    {
+      "path": "campaign_2026_09_13/muse_prompts/muse_prompt_audit1.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 5418
+    },
+    {
+      "path": "campaign_2026_09_13/muse_prompts/muse_prompt_audit1_cont.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 3883
+    },
+    {
+      "path": "campaign_2026_09_13/muse_prompts/muse_prompt_coldstart_review.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 4656
+    },
+    {
+      "path": "campaign_2026_09_13/muse_prompts/muse_prompt_d5_review.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 3878
+    },
+    {
+      "path": "campaign_2026_09_13/muse_prompts/muse_prompt_pilot_review.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 3936
+    },
+    {
+      "path": "campaign_2026_09_13/muse_prompts/muse_prompt_prereg_review.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 4221
+    },
+    {
+      "path": "campaign_2026_09_13/muse_prompts/muse_prompt_r2d_review.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 3174
+    },
+    {
+      "path": "campaign_2026_09_13/muse_prompts/muse_prompt_verify_receipts.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 3677
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round1/REPORT.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 10487
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round1/muse_pilot_review.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 5757
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round2/ROUND2_REPORT.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 10945
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round2/r2a_flip_analysis.md",
+      "rule": "R1+NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 5611
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round2/r2d_design_review.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 10153
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round2/r2v_verification.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 6038
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/DENEY1_REPORT.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 7817
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/ROUND3_REPORT.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 9551
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/missing_analyses/m2_d2multi/d2x_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 4152
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/missing_analyses/m3_c2ablation/c2x_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 7010
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/muse_sessions/c2/c2_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 7220
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/muse_sessions/d1v/d1v_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 5206
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/muse_sessions/d2/d2_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 5197
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/muse_sessions/d3/d3_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 5041
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/muse_sessions/d4/d4_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 4572
+    },
+    {
+      "path": "campaign_2026_09_13/pilots_round3/muse_sessions/d5/d5_review.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 18824
+    },
+    {
+      "path": "campaign_2026_09_13/prereg/README.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 2056
+    },
+    {
+      "path": "campaign_2026_09_13/prereg/math1/math1_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 10908
+    },
+    {
+      "path": "campaign_2026_09_13/prereg/math2/math2_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 17083
+    },
+    {
+      "path": "campaign_2026_09_13/prereg/pre1/pre1_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 19455
+    },
+    {
+      "path": "campaign_2026_09_13/prereg/pre2/pre2_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 16883
+    },
+    {
+      "path": "campaign_2026_09_13/race/CAMPAIGN.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 11187
+    },
+    {
+      "path": "campaign_2026_09_13/race/RACE_REPORT.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 5247
+    },
+    {
+      "path": "campaign_2026_09_13/race/analysis/ANALYSIS.md",
+      "rule": "R1+NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 3062
+    },
+    {
+      "path": "campaign_2026_09_13/race/cert/cert_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 14870
+    },
+    {
+      "path": "campaign_2026_09_13/race/racev/racev_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 4860
+    },
+    {
+      "path": "campaign_2026_09_13/regen/lme/itq_crossstack_sample_result.txt",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 176
+    },
+    {
+      "path": "campaign_2026_09_13/regen/muse_independent/muse_task1_independent_report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 5280
+    },
+    {
+      "path": "campaign_2026_09_13/regen/muse_independent/report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 5233
+    },
+    {
+      "path": "campaign_2026_09_13/reports/drive_inventory.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 24685
+    },
+    {
+      "path": "campaign_2026_09_13/reports/local_verification_receipts.md",
+      "rule": "R1+NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 28626
+    },
+    {
+      "path": "campaign_2026_09_13/reports/muse_closure_verification_2026-09-12.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 4680
+    },
+    {
+      "path": "campaign_2026_09_13/reports/muse_coldstart_review_2026-09-12.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 10315
+    },
+    {
+      "path": "campaign_2026_09_13/reports/muse_redteam_certification_2026-09-12.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 29129
+    },
+    {
+      "path": "campaign_2026_09_13/reports/muse_twelve_byte_audit_2026-09-12.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 11660
+    },
+    {
+      "path": "campaign_2026_09_13/reports/report.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 5233
+    },
+    {
+      "path": "campaign_2026_09_13/reports/verification_receipts.md",
+      "rule": "R1+NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 14351
+    },
+    {
+      "path": "campaign_2026_09_13/review/README_review_transfer.txt",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 3830
+    },
+    {
+      "path": "campaign_2026_09_13/review/ed3_docs/02_INDEPENDENT_REVIEW_PROMPT.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 5713
+    },
+    {
+      "path": "campaign_2026_09_13/scratch/lv/p1_copy_ns/README.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 9049
+    },
+    {
+      "path": "campaign_2026_09_13/scratch/lv/p1_copy_ns/task3/README.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 7245
+    },
+    {
+      "path": "campaign_2026_09_13/scratch/lv/p2_copy/itq_haar_objective_comparison_2026_09_12/INDEPENDENT_REPLAY_REVIEW.md",
+      "rule": "NARR_MD",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 5646
+    },
+    {
+      "path": "campaign_2026_09_13/scratch/lv/p2_copy/itq_haar_objective_comparison_2026_09_12/LEDGER_RECEIPT_BODY.txt",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 3691
+    },
+    {
+      "path": "campaign_2026_09_13/scratch/lv/p2_copy/itq_haar_objective_comparison_2026_09_12/README_TR.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 6666
+    },
+    {
+      "path": "campaign_2026_09_13/scratch/mech/V52_BOUNDARY_LOCALIZATION_COLD_START_AUDIT_HANDOFF_2026-09-04.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 92
+    },
+    {
+      "path": "campaign_2026_09_13/scratch/t4dzip/V52_T4D_COMPUTE_REPORT.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": true,
+      "bytes": 1809
+    },
+    {
+      "path": "campaign_2026_09_13/task1/TASK1_COMPLETION_RECEIPT.md",
+      "rule": "R1",
+      "prominent": true,
+      "anywhere": true,
+      "first_nonempty": false,
+      "bytes": 22640
+    }
+  ],
+  "missing_or_nonprominent": []
+}

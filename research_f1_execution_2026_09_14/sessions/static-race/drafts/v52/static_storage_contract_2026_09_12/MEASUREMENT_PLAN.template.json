@@ -1,0 +1,23 @@
+{
+  "schema": "v52.static-storage-plan",
+  "version": 1,
+  "status": "NOT_READY",
+  "contract_sha256": "UNKNOWN",
+  "run_id": "UNKNOWN",
+  "analysis_mode": "PREDECLARED",
+  "parent_plan_sha256": null,
+  "weighting": {
+    "primary": "archive_weighted_mean_i(C_i/N_i)",
+    "secondary": "vector_weighted_sum_i(C_i)/sum_i(N_i)"
+  },
+  "archives": [],
+  "formats": [],
+  "configurations": [],
+  "probes": [],
+  "items": [],
+  "populations": [],
+  "physical_copies": [],
+  "fixtures": [],
+  "operations": [],
+  "controls": []
+}

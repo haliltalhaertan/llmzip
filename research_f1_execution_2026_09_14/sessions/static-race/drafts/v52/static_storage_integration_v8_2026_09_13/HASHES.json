@@ -1,0 +1,15 @@
+{
+  "files": {
+    "V7_LEAD_ZERO_TRUST_VERIFICATION.md": {"bytes":3160,"sha256":"6daa79ae6d2c158d9e286514b76bf14b1cc38f4203d42ae94ea815cc1c9f92b3"},
+    "V8_DISPOSITION.md": {"bytes":2258,"sha256":"ebfd1362298f9b9accdac7c6dcfd8f138abf488071bfd1ba401c091145d6c54d"},
+    "V8_TEST_RECEIPT.md": {"bytes":1265,"sha256":"34adf4c91db700a3083ef91c110cc83c867c739c5e322d6537c7b68bf813e411"},
+    "storage_semantic_gate_v8.py": {"bytes":3617,"sha256":"68fbac5bc6b5cef7858a7d585b7be514a6b8fc5aadd12ad5cc25e1ac45b36d99"},
+    "test_storage_semantic_gate_v8.py": {"bytes":2861,"sha256":"d3af081fe019fa90f53dc7f036cfb5f5b16678ed5700063ef98de8e1d803d5f5"},
+    "v8_runtime.py": {"bytes":4196,"sha256":"a0f2432fcd381a2d58bc7837d01ef3ab74f2b61f95e1a307b93c987696486f2f"},
+    "v8_snapshot.py": {"bytes":2858,"sha256":"23296fa6b9b454f78798ddae0d94066fc43c43aec797cc2a432c9dd67693f20a"}
+  },
+  "namespace":"drafts/v52/static_storage_integration_v8_2026_09_13",
+  "parent_commit":"5eac888b5be36d96fd8219b91bcca8c402c34d16",
+  "schema":"V52_STATIC_STORAGE_INTEGRATION_V8_HASHES_V2",
+  "self_excluded":"HASHES.json"
+}

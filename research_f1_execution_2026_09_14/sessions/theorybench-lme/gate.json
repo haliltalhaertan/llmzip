@@ -1,0 +1,46 @@
+{
+  "n_expected": 470,
+  "n_evaluated": 470,
+  "n_unresolved": 0,
+  "n_excluded": 0,
+  "native_anchor": 0.5419751773049645,
+  "native_mc_mean": 0.5419751773049645,
+  "float_mc_mean": 0.44159574468085105,
+  "float_t4c2_mean": 0.44159574468085105,
+  "sign_exact_mean": 0.5421335697399526,
+  "float_exact_mean": 0.4415957446808511,
+  "checks": {
+    "native_mc_vs_pilot": {
+      "max_abs_diff": 1.1102230246251565e-16,
+      "mean_recomp": 0.5419751773049645,
+      "mean_stored": 0.5419751773049645,
+      "pass": true
+    },
+    "native_mc_vs_t4c2_sign": {
+      "max_abs_diff": 1.1102230246251565e-16,
+      "mean_recomp": 0.5419751773049645,
+      "mean_stored": 0.5419751773049645,
+      "pass": true
+    },
+    "native_mc_vs_race_fr": {
+      "max_abs_diff": 0.0,
+      "mean_recomp": 0.5419751773049645,
+      "mean_stored": 0.5419751773049645,
+      "pass": true
+    },
+    "float_mc_vs_t4c2_float": {
+      "max_abs_diff": 1.1102230246251565e-16,
+      "mean_recomp": 0.44159574468085105,
+      "mean_stored": 0.44159574468085105,
+      "pass": true
+    },
+    "sign_exact_vs_race_model": {
+      "max_abs_diff": 0.0,
+      "mean_exact": 0.5421335697399526,
+      "mean_stored_model": 0.5421335697399526,
+      "pass": true
+    }
+  },
+  "pass": true,
+  "tolerance": 1e-12
+}

@@ -1,0 +1,13 @@
+gaussian                 n= 100 Haar=0.403721418 ITQ=0.150117285 reduction=62.816616%
+heterogeneous            n= 100 Haar=0.406219550 ITQ=0.169813814 reduction=58.196543%
+rotated_heterogeneous    n= 100 Haar=0.407360184 ITQ=0.171517125 reduction=57.895462%
+gaussian                 n= 250 Haar=0.399566817 ITQ=0.211210254 reduction=47.140192%
+heterogeneous            n= 250 Haar=0.402167760 ITQ=0.225467448 reduction=43.936966%
+rotated_heterogeneous    n= 250 Haar=0.401478049 ITQ=0.225638029 reduction=43.798165%
+gaussian                 n= 500 Haar=0.402896587 ITQ=0.254419285 reduction=36.852460%
+heterogeneous            n= 500 Haar=0.408987465 ITQ=0.266277022 reduction=34.893598%
+rotated_heterogeneous    n= 500 Haar=0.408245089 ITQ=0.267171777 reduction=34.556034%
+gaussian                 n=1000 Haar=0.403134840 ITQ=0.290041743 reduction=28.053417%
+heterogeneous            n=1000 Haar=0.408419700 ITQ=0.299033856 reduction=26.782705%
+rotated_heterogeneous    n=1000 Haar=0.407764019 ITQ=0.298511123 reduction=26.793167%
+PASS: 480 exact objective replays; 12 exact input identities; no ITQ refit
