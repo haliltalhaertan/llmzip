@@ -1,0 +1,42 @@
+  LME done
+  PerLTQA done
+  REALTALK done
+  LoCoMo done
+
+=== CONTROL: 1-bit minus cosine must reproduce the frozen headlines ===
+  LME        +10.053783  (ref +10.053783)  PASS
+  PerLTQA     -6.274728  (ref -6.274728)  PASS
+  REALTALK    +5.300077  (ref +5.300077)  PASS
+  LoCoMo      +6.655046  (ref +6.655046)  PASS
+
+=== XIAO PREDICTION 1: rotation equalizes variances and destroys the signal ===
+  bench      CV before  CV after rot  1bit before  1bit after   cost pp
+  LME           0.4975        0.0853     0.542134    0.373475  -16.8658
+  PerLTQA       0.5191        0.0881     0.488945    0.465315   -2.3630
+  REALTALK      0.5222        0.1014     0.225535    0.149579   -7.5956
+  LoCoMo        0.4877        0.0821     0.237907    0.137912   -9.9995
+  his Corollary 3: rotation HARMS heterogeneity-aware BQ. Negative cost = confirmed.
+
+=== XIAO PREDICTION 2: magnitude-bit gain is monotone in heterogeneity ===
+  bench      CV(sigma)     1-bit     2-bit   gain pp
+  LME           0.4975  0.542134  0.490887   -5.1247
+  PerLTQA       0.5191  0.488945  0.492322   +0.3377
+  REALTALK      0.5222  0.225535  0.179028   -4.6507
+  LoCoMo        0.4877  0.237907  0.220945   -1.6961
+
+  r(CV, 2bit-1bit gain) = +0.0818  (n=4 benchmarks)
+  his Appendix reports rho = +1.00 on an intervention ladder.
+  PerLTQA  across  30 archives: r = -0.1315
+  LME      across 470 archives: r = +0.0181
+
+=== WHICH STORY DOES THE 2-BIT ARM SUPPORT? ===
+  MY story says sign wins by EQUALIZING; adding a magnitude bit restores
+  magnitude, so it should HURT (like the AQS arm did, -3.56 pp).
+  XIAO says the magnitude bit ADDS information proportional to heterogeneity,
+  so it should HELP. The sign of the gain decides between the two.
+  LME       gain  -5.1247 pp  -> MINE (hurts)
+  PerLTQA   gain  +0.3377 pp  -> XIAO (helps)
+  REALTALK  gain  -4.6507 pp  -> MINE (hurts)
+  LoCoMo    gain  -1.6961 pp  -> MINE (hurts)
+
+WROTE xiao_test.json
