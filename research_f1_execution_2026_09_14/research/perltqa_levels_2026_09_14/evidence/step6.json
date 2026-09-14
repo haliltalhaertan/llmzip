@@ -1,0 +1,304 @@
+{
+  "LongMemEval": {
+    "n": 470,
+    "delta_pp": 10.053782505910167,
+    "strict_gap": -19.166524822695035,
+    "tie_gap": -2.460851063829787,
+    "gap_frac": -0.038877653153344224,
+    "rho_delta_strictgap": 0.1416251737011647,
+    "whole": "FAIL"
+  },
+  "REALTALK": {
+    "n": 705,
+    "delta_pp": 5.300076925963451,
+    "strict_gap": 0.2478555336077911,
+    "tie_gap": 0.10700897323649479,
+    "gap_frac": -0.015434458661450916,
+    "rho_delta_strictgap": 0.09793425648573494,
+    "whole": "PASS"
+  },
+  "PerLTQA": {
+    "n": 8265,
+    "delta_pp": -6.274727836521104,
+    "strict_gap": -38.702532310128,
+    "tie_gap": -4.486745505453441,
+    "gap_frac": -0.09359664259591793,
+    "rho_delta_strictgap": 0.25413844391463014,
+    "whole": "PASS"
+  },
+  "levels_rule_strata": {
+    "rows": [
+      {
+        "stratum": "PerLTQA/dialogues",
+        "n": 2742,
+        "strict_gap": -74.82546664595475,
+        "delta_pp": -1.5016521993988667,
+        "pred": "-",
+        "obs": "-",
+        "ok": true
+      },
+      {
+        "stratum": "PerLTQA/events",
+        "n": 4346,
+        "strict_gap": -21.87965945697193,
+        "delta_pp": -12.39371726601363,
+        "pred": "-",
+        "obs": "-",
+        "ok": true
+      },
+      {
+        "stratum": "PerLTQA/profile",
+        "n": 333,
+        "strict_gap": 4.732732732732733,
+        "delta_pp": 20.355355355355353,
+        "pred": "+",
+        "obs": "+",
+        "ok": true
+      },
+      {
+        "stratum": "PerLTQA/social_relationship",
+        "n": 844,
+        "strict_gap": -25.10900473933649,
+        "delta_pp": -0.7800157977883101,
+        "pred": "-",
+        "obs": "-",
+        "ok": true
+      },
+      {
+        "stratum": "REALTALK/chat1",
+        "n": 85,
+        "strict_gap": -15.33372549019608,
+        "delta_pp": 9.248366013071896,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "REALTALK/chat10",
+        "n": 59,
+        "strict_gap": 11.57033898305085,
+        "delta_pp": 9.548022598870055,
+        "pred": "+",
+        "obs": "+",
+        "ok": true
+      },
+      {
+        "stratum": "REALTALK/chat2",
+        "n": 70,
+        "strict_gap": 6.971984126984125,
+        "delta_pp": 7.738095238095238,
+        "pred": "+",
+        "obs": "+",
+        "ok": true
+      },
+      {
+        "stratum": "REALTALK/chat3",
+        "n": 73,
+        "strict_gap": -8.349315068493151,
+        "delta_pp": -1.0045662100456623,
+        "pred": "-",
+        "obs": "-",
+        "ok": true
+      },
+      {
+        "stratum": "REALTALK/chat4",
+        "n": 71,
+        "strict_gap": -56.915258215962446,
+        "delta_pp": -5.093896713615023,
+        "pred": "-",
+        "obs": "-",
+        "ok": true
+      },
+      {
+        "stratum": "REALTALK/chat5",
+        "n": 70,
+        "strict_gap": -21.680238095238092,
+        "delta_pp": 1.2244897959183672,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "REALTALK/chat6",
+        "n": 74,
+        "strict_gap": 57.83334140199466,
+        "delta_pp": 6.86936936936937,
+        "pred": "+",
+        "obs": "+",
+        "ok": true
+      },
+      {
+        "stratum": "REALTALK/chat7",
+        "n": 70,
+        "strict_gap": 32.07976190476191,
+        "delta_pp": 8.748015873015873,
+        "pred": "+",
+        "obs": "+",
+        "ok": true
+      },
+      {
+        "stratum": "REALTALK/chat8",
+        "n": 70,
+        "strict_gap": 9.055476190476192,
+        "delta_pp": 4.7023809523809526,
+        "pred": "+",
+        "obs": "+",
+        "ok": true
+      },
+      {
+        "stratum": "REALTALK/chat9",
+        "n": 63,
+        "strict_gap": -10.851079387984143,
+        "delta_pp": 11.823297220122617,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec1",
+        "n": 46,
+        "strict_gap": -18.49202898550725,
+        "delta_pp": 4.43840579710145,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec2",
+        "n": 46,
+        "strict_gap": -6.88949275362319,
+        "delta_pp": 16.1231884057971,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec3",
+        "n": 49,
+        "strict_gap": -21.9812925170068,
+        "delta_pp": 5.850340136054421,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec4",
+        "n": 41,
+        "strict_gap": -3.2113821138211387,
+        "delta_pp": 7.235772357723577,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec5",
+        "n": 48,
+        "strict_gap": -26.114583333333332,
+        "delta_pp": 21.006944444444446,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec6",
+        "n": 52,
+        "strict_gap": -27.031410256410254,
+        "delta_pp": 8.205128205128204,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec7",
+        "n": 45,
+        "strict_gap": -9.168518518518518,
+        "delta_pp": 9.876543209876544,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec8",
+        "n": 46,
+        "strict_gap": -30.08695652173913,
+        "delta_pp": 11.594202898550723,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec9",
+        "n": 50,
+        "strict_gap": -39.33500000000001,
+        "delta_pp": 7.166666666666666,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      },
+      {
+        "stratum": "LME/Ndec10",
+        "n": 47,
+        "strict_gap": -4.457446808510638,
+        "delta_pp": 9.042553191489363,
+        "pred": "-",
+        "obs": "+",
+        "ok": false
+      }
+    ],
+    "acc": 0.4583333333333333,
+    "majority": 0.7916666666666666,
+    "beats": false
+  },
+  "cross_rho": {
+    "align": [
+      -0.057412260776606105,
+      0.011418488924009863,
+      -0.020794649016892847
+    ],
+    "qnorm": [
+      -0.01194034438687016,
+      -0.03809068055902549,
+      -0.0031176532615525216
+    ],
+    "gold_norm_rel": [
+      -0.09436480904850973,
+      0.002548805525306191,
+      0.04041910465852856
+    ],
+    "float_margin": [
+      -0.1784218244717653,
+      -0.04421653403605722,
+      -0.20151996286790777
+    ],
+    "STRICT_GAP": [
+      0.1416251737011647,
+      0.09793425648573494,
+      0.25413844391463014
+    ],
+    "TIE_GAP": [
+      0.14069387548880735,
+      0.12307477776090332,
+      0.27982715404990666
+    ],
+    "strict_TOP64": [
+      -0.12863226744374054,
+      -0.11313360369722086,
+      -0.07341608991672363
+    ],
+    "strict_BOT64": [
+      -0.1849883649984574,
+      -0.1789866536464173,
+      -0.1948572755659235
+    ],
+    "N": [
+      0.007494891319836243,
+      0.15455068535365427,
+      0.010818453689048413
+    ],
+    "gold_n": [
+      0.05300255936635442,
+      -0.046808496505201816,
+      0.031658592775357146
+    ]
+  }
+}

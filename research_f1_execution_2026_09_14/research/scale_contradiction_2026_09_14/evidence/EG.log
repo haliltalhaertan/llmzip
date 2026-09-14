@@ -1,0 +1,55 @@
+  E q0/470
+  E q150/470
+  E q300/470
+  E q450/470
+
+=== E: DEFINITION SWEEP on POOLED LME ladder (n=470 queries each rung) ===
+definition                                N=493    N=986   N=1971   N=4928   N=9856  N=24640   trend
+D01_frozen_bc_gt_slots                    0.234    0.260    0.260    0.285    0.294    0.345   RISE
+D02_bc_gt_1_shared                        0.385    0.396    0.421    0.445    0.457    0.504   RISE
+D03_gap_eq_0                              0.234    0.260    0.260    0.285    0.294    0.345   RISE
+D04_strictly_eq_0_allK_tied               0.023    0.019    0.028    0.034    0.049    0.047   RISE
+D05_d1_eq_d2                              0.128    0.138    0.138    0.155    0.162    0.162   RISE
+D06_d1_eq_d3                              0.023    0.019    0.028    0.034    0.049    0.047   RISE
+D07_consequential_gold_at_boundary        0.074    0.074    0.072    0.070    0.074    0.085   flat
+D08_bc_over_N                             0.003    0.002    0.001    0.000    0.000    0.000   flat
+D09_gap_le_1                              0.547    0.547    0.596    0.640    0.666    0.715   RISE
+D10_frac_random_slots                     0.090    0.099    0.101    0.118    0.131    0.157   RISE
+D11_thr_ge_40                             0.000    0.000    0.000    0.000    0.000    0.000   flat
+D12_thr_ge_44                             0.000    0.000    0.000    0.000    0.000    0.000   flat
+D13_thr_ge_48                             0.000    0.000    0.000    0.000    0.000    0.000   flat
+D14_float_bc_gt_slots                     0.000    0.000    0.000    0.000    0.000    0.000   flat
+D15_shortlistM20_bc_gt_slots              0.234    0.260    0.260    0.285    0.294    0.345   RISE
+D15_shortlistM50_bc_gt_slots              0.234    0.260    0.260    0.285    0.294    0.345   RISE
+D16_shortlistM20_float_rerank_tie         0.000    0.000    0.000    0.000    0.000    0.000   flat
+D16_shortlistM50_float_rerank_tie         0.000    0.000    0.000    0.000    0.000    0.000   flat
+D17_K100_bc_gt_slots                      0.955    0.966    0.974    0.987    0.968    0.998   RISE
+D17_K10_bc_gt_slots                       0.626    0.677    0.747    0.766    0.779    0.804   RISE
+D17_K1_bc_gt_slots                        0.128    0.138    0.138    0.155    0.162    0.162   RISE
+D17_K20_bc_gt_slots                       0.836    0.891    0.874    0.879    0.911    0.911   RISE
+D17_K2_bc_gt_slots                        0.185    0.174    0.204    0.226    0.247    0.268   RISE
+D17_K50_bc_gt_slots                       0.928    0.936    0.974    0.949    0.972    0.972   RISE
+D17_K5_bc_gt_slots                        0.355    0.396    0.423    0.449    0.498    0.532   RISE
+D18_K100_strictly_eq_0                    0.000    0.000    0.000    0.000    0.000    0.000   flat
+D18_K10_strictly_eq_0                     0.000    0.000    0.000    0.000    0.000    0.000   flat
+D18_K1_strictly_eq_0                      1.000    1.000    1.000    1.000    1.000    1.000   flat
+D18_K20_strictly_eq_0                     0.000    0.000    0.000    0.000    0.000    0.000   flat
+D18_K2_strictly_eq_0                      0.128    0.138    0.138    0.155    0.162    0.162   RISE
+D18_K50_strictly_eq_0                     0.000    0.000    0.000    0.000    0.000    0.000   flat
+D18_K5_strictly_eq_0                      0.000    0.000    0.002    0.002    0.002    0.011   flat
+
+=== G: PAIRED delta-vs-N test, pooled LME ladder ===
+delta(N=493) - delta(N=   986) =  +1.07 pp  +- 0.32 (SE)   t=+3.31  n=470
+delta(N=493) - delta(N=  1971) =  +2.03 pp  +- 0.50 (SE)   t=+4.09  n=470
+delta(N=493) - delta(N=  4928) =  +4.34 pp  +- 0.75 (SE)   t=+5.81  n=470
+delta(N=493) - delta(N=  9856) =  +5.63 pp  +- 0.89 (SE)   t=+6.33  n=470
+delta(N=493) - delta(N= 24640) =  +7.38 pp  +- 1.05 (SE)   t=+7.05  n=470
+
+absolute arm levels along the pooled ladder:
+  N=   493  sign=0.5421  float=0.4416  delta=+10.05 pp
+  N=   986  sign=0.5314  float=0.4416  delta=+8.98 pp
+  N=  1971  sign=0.5218  float=0.4416  delta=+8.02 pp
+  N=  4928  sign=0.4970  float=0.4398  delta=+5.72 pp
+  N=  9856  sign=0.4820  float=0.4377  delta=+4.43 pp
+  N= 24640  sign=0.4588  float=0.4320  delta=+2.67 pp
+DONE

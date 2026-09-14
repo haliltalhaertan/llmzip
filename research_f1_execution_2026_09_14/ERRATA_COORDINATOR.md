@@ -19,7 +19,28 @@ The frozen metric is FR@3 (fractional recall: |gold ∩ top3| / |gold|), read fr
 where `met()` returns (any, all, frac) and the third element is used. The first coordinator scripts
 used ALL@3 (all golds inside top-3), a strictly harsher metric.
 
-## Effect of the two errors
+## CORRECTION (appended after independent audit finding F-6)
+
+An audit session isolated each error separately and found that **E1 (double centering) has
+literally no effect**; the entire shift is E2 (the wrong metric). The coordinator confirmed this
+first-hand (`coordinator/coord_errata_check.py`, VERIFIED):
+
+| variant | LongMemEval delta |
+|---|---:|
+| FR@3, no re-centering (correct) | +10.053783 pp |
+| FR@3, WITH re-centering | +10.053783 pp |
+| ALL@3, no re-centering | +9.677305 pp |
+| ALL@3, WITH re-centering | +9.677305 pp |
+
+Effect of E1 alone: **+0.000000 pp**. Effect of E2 alone: **-0.376478 pp**.
+
+Reason: the cached matrices are already centered to ~1e-16, so subtracting a ~1e-16 column mean
+changes no sign bit and no cosine ordering. E1 was a real methodological error (it would corrupt
+any cache that was NOT pre-centered) but it moved no number here. The original text below, which
+attributed the shift to "the two errors" jointly, was therefore **wrong in its attribution** and
+is superseded by this section. It is kept unedited above, per the project's own convention.
+
+## Effect of the two errors (ORIGINAL TEXT - attribution superseded by the section above)
 
 | quantity | wrong (ALL@3, double-centered) | corrected (FR@3) | frozen reference |
 |---|---:|---:|---:|

@@ -1,0 +1,138 @@
+{
+  "LME": {
+    "benchmark": "LME",
+    "n": 470,
+    "column_mean_abs_max": 7.095054637350397e-16,
+    "headline_sign": 0.5421335697399526,
+    "headline_float": 0.4415957446808511,
+    "headline_delta_pp": 10.053782505910167,
+    "multi_gold_n": 296,
+    "multi_gold_rate": 0.6297872340425532,
+    "rho_strict": 0.1416251737011647,
+    "rho_tie": 0.14069387548880735,
+    "rho_strict_nongold": 0.1411410420423395,
+    "rho_tie_nongold": 0.1490845367749897,
+    "rho_strict_MINGOLD_BUG": 0.09920150310037373,
+    "rho_tie_MINGOLD_BUG": 0.09863003060835299,
+    "n_clusters": 470,
+    "bootstrap": {
+      "seed": 96013,
+      "B_attempted": 2000,
+      "B_valid": 2000,
+      "B_invalid": 0,
+      "invalid_reasons": {
+        "nan_rho": 0,
+        "degenerate_constant": 0
+      },
+      "strict_ci": [
+        0.06238792814020837,
+        0.22518502178382113
+      ],
+      "tie_ci": [
+        0.05658330000330699,
+        0.2228041356853288
+      ],
+      "note": "descriptive/post-hoc, NOT preregistered inference; cluster-level resample"
+    }
+  },
+  "REALTALK": {
+    "benchmark": "REALTALK",
+    "n": 705,
+    "column_mean_abs_max": 7.683883675760834e-16,
+    "headline_sign": 0.22553482307028402,
+    "headline_float": 0.17253405381064957,
+    "headline_delta_pp": 5.300076925963451,
+    "multi_gold_n": 386,
+    "multi_gold_rate": 0.5475177304964539,
+    "rho_strict": 0.09793425648573494,
+    "rho_tie": 0.12307477776090332,
+    "rho_strict_nongold": 0.09813121163764911,
+    "rho_tie_nongold": 0.12256908387438058,
+    "rho_strict_MINGOLD_BUG": 0.061255512317713624,
+    "rho_tie_MINGOLD_BUG": 0.08752108650096173,
+    "n_clusters": 10,
+    "bootstrap": {
+      "seed": 96013,
+      "B_attempted": 2000,
+      "B_valid": 2000,
+      "B_invalid": 0,
+      "invalid_reasons": {
+        "nan_rho": 0,
+        "degenerate_constant": 0
+      },
+      "strict_ci": [
+        0.027079003462290467,
+        0.14777803227571418
+      ],
+      "tie_ci": [
+        0.06369998882251122,
+        0.17767097805692783
+      ],
+      "note": "descriptive/post-hoc, NOT preregistered inference; cluster-level resample"
+    }
+  },
+  "PERLTQA": {
+    "benchmark": "PERLTQA",
+    "n": 8265,
+    "column_mean_abs_max": 4.4106372056494666e-16,
+    "headline_sign": 0.48894479616364206,
+    "headline_float": 0.551692074528853,
+    "headline_delta_pp": -6.274727836521104,
+    "multi_gold_n": 2322,
+    "multi_gold_rate": 0.2809437386569873,
+    "rho_strict": 0.25413844391463014,
+    "rho_tie": 0.27982715404990666,
+    "rho_strict_nongold": 0.25429895729431806,
+    "rho_tie_nongold": 0.2798102912113063,
+    "rho_strict_MINGOLD_BUG": 0.2774184734053319,
+    "rho_tie_MINGOLD_BUG": 0.28506408072939843,
+    "n_clusters": 30,
+    "sections": {
+      "dialogues": {
+        "n": 2742,
+        "strict": 0.13059437038567112,
+        "tie": 0.11123863113109236
+      },
+      "events": {
+        "n": 4346,
+        "strict": 0.3980235604927669,
+        "tie": 0.3892597323356448
+      },
+      "profile": {
+        "n": 333,
+        "strict": 0.057497403356242496,
+        "tie": 0.018965472076063236
+      },
+      "social_relationship": {
+        "n": 844,
+        "strict": 0.30422818141655533,
+        "tie": 0.29916699086757836
+      }
+    },
+    "bootstrap": {
+      "seed": 96013,
+      "B_attempted": 2000,
+      "B_valid": 2000,
+      "B_invalid": 0,
+      "invalid_reasons": {
+        "nan_rho": 0,
+        "degenerate_constant": 0
+      },
+      "strict_ci": [
+        0.2248040498710948,
+        0.2838761921738789
+      ],
+      "tie_ci": [
+        0.2573206982247258,
+        0.304526327261728
+      ],
+      "note": "descriptive/post-hoc, NOT preregistered inference; cluster-level resample"
+    }
+  },
+  "_meta": {
+    "note": "INDEPENDENT AUDIT reimplementation. FR@3 uses EXACT tie expectation (NT->inf limit).",
+    "K": 3,
+    "topbot_rule": "v_j = mean_i(C_ij^2), stable descending, first64 / last64",
+    "locomo": "NOT RUN: no committed per-query float96 surface in the local caches (checked)."
+  }
+}
