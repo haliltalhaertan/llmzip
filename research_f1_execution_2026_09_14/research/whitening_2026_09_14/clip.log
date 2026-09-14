@@ -1,0 +1,34 @@
+  LME done
+  PerLTQA done
+  REALTALK done
+  LoCoMo done
+
+=== STEP 1: threshold selected on LongMemEval ALONE ===
+  t=1e-06    FR@3=0.545106
+  t=0.0002   FR@3=0.545426
+  t=0.0005   FR@3=0.548227
+  t=0.001    FR@3=0.562589  <-- selected
+  t=0.002    FR@3=0.560284
+  t=0.005    FR@3=0.544149
+  t=0.01     FR@3=0.528546
+  sign=0.542134  cosine=0.441596  softsign=0.568085
+
+=== STEP 2: apply the FROZEN t=0.001 to the three HELD-OUT benchmarks ===
+  bench          sign    clip@t  clip-sign pp               95% CI   sig?
+  LME        0.542134  0.562589       +2.0455 [+0.145,+4.046]    YES (tuned)
+  PerLTQA    0.692934  0.750237       +5.7303 [+4.591,+6.863]    YES 
+  REALTALK   0.225535  0.226701       +0.1167 [-0.523,+0.792]     no 
+  LoCoMo     0.211889  0.230522       +1.8633 [+0.619,+2.870]    YES 
+
+=== STEP 3: does the SOFT clip (tanh) agree? independent parameterisation ===
+  bench      softsign-sign pp               95% CI  agrees w/ clip?
+  LME                 +2.5952 [+0.090,+5.218]             True
+  PerLTQA            +10.3692 [+9.252,+11.568]             True
+  REALTALK            +1.6294 [+0.317,+2.936]             True
+  LoCoMo              +3.5198 [+1.754,+4.971]             True
+
+=== VERDICT INPUT ===
+  held-out benchmarks where clip STRICTLY beats sign: 2/3
+  if 0/3, the +2.05 pp was selection bias on the tuning benchmark.
+
+WROTE clip_heldout.json

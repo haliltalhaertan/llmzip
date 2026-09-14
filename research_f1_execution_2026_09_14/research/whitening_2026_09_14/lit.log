@@ -1,0 +1,44 @@
+  LME done
+  PerLTQA done
+  REALTALK done
+  LoCoMo done
+
+=== CONTROL: sign - cosine must reproduce the frozen headlines ===
+  LME        +10.053783  (ref +10.053783)  PASS
+  PerLTQA     -6.274728  (ref -6.274728)  PASS
+  REALTALK    +5.300077  (ref +5.300077)  PASS
+  LoCoMo      +6.655046  (ref +6.655046)  PASS
+
+=== THE PAPER'S DIAGNOSTIC vs the gain of each alternative ===
+  f1 = fraction of variance in the single most dominant direction (their number)
+  bench       f1(svd)  f1(coord)   rank-cos   whit-cos   sign-cos
+  LME          0.0469     0.0429   +11.7447   +11.5851   +10.0538
+  PerLTQA      0.0475     0.0468    +1.2501    +1.4063    -6.2747
+  REALTALK     0.0843     0.0772    +6.0312    +5.6566    +5.3001
+  LoCoMo       0.0459     0.0448   +10.9463    +9.1142    +6.6550
+
+  PAPER PREDICTS: strong POSITIVE correlation (linear 0.95, rank 0.86)
+    r(f1_svd, rank-cos gain) = -0.2259   (n=4 benchmarks)
+    r(f1_svd, whitened-cos gain) = -0.2153   (n=4 benchmarks)
+    r(f1_svd, sign-cos gain) = +0.1054   (n=4 benchmarks)
+    r(f1_coord, rank-cos gain) = -0.2862   (n=4 benchmarks)
+    r(f1_coord, whitened-cos gain) = -0.2857   (n=4 benchmarks)
+    r(f1_coord, sign-cos gain) = +0.0349   (n=4 benchmarks)
+
+  Per-archive, the unit with real sample size:
+    PerLTQA  n= 30  r(f1_svd, rank-cos) = -0.1289
+    PerLTQA  n= 30  r(f1_svd, whitened-cos) = +0.2305
+    PerLTQA  n= 30  r(f1_svd, sign-cos) = -0.4405
+    LME      n=470  r(f1_svd, rank-cos) = +0.0595
+    LME      n=470  r(f1_svd, whitened-cos) = +0.0763
+    LME      n=470  r(f1_svd, sign-cos) = +0.0190
+
+=== THEIR CAUSAL CONTROL: project out the top-3 directions ===
+  paper: cosine recovers and the alternatives' advantage nearly vanishes
+  bench      gain before  gain after  collapsed?   (whitening)
+  LME           +11.5851     +6.9574          no
+  PerLTQA        +1.4063     +0.2710         YES
+  REALTALK       +5.6566     +2.9243          no
+  LoCoMo         +9.1142     +7.4589          no
+
+WROTE lit_replication.json
