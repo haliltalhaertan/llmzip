@@ -1,0 +1,90 @@
+name: SIGN96 BIRCO complex-objective wave
+
+on:
+  push:
+    branches:
+      - bench/sign96-heavy-retrieval-2026-09-14
+    paths:
+      - .github/workflows/sign96-birco-wave1.yml
+
+permissions:
+  contents: read
+
+jobs:
+  sweep:
+    name: ${{ matrix.task }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        task:
+          - doris-mae
+          - arguana
+          - clinical-trial
+          - wtb
+          - relic
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install frozen stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install \
+            "numpy==2.3.5" \
+            "pandas==2.2.3" \
+            "scipy==1.17.0" \
+            "scikit-learn==1.8.0" \
+            "pyarrow==25.0.1" \
+            "huggingface_hub==1.31.0"
+          python -m pip freeze > benchmarks/sign96_birco_2026_09_14/ENV_FREEZE_${{ matrix.task }}.txt
+      - name: Run outcome-blind BIRCO task
+        env:
+          PYTHONUNBUFFERED: '1'
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: |
+          mkdir -p benchmarks/sign96_birco_2026_09_14/out
+          python benchmarks/sign96_birco_2026_09_14/run_birco.py \
+            --task "${{ matrix.task }}" \
+            --outdir benchmarks/sign96_birco_2026_09_14/out
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sign96-birco-${{ matrix.task }}
+          if-no-files-found: warn
+          retention-days: 30
+          path: |
+            benchmarks/sign96_birco_2026_09_14/out/${{ matrix.task }}.json
+            benchmarks/sign96_birco_2026_09_14/out/${{ matrix.task }}.queries.jsonl
+            benchmarks/sign96_birco_2026_09_14/out/${{ matrix.task }}.pre_score_manifest.json
+            benchmarks/sign96_birco_2026_09_14/out/${{ matrix.task }}.frozen_rankings.npz
+            benchmarks/sign96_birco_2026_09_14/ENV_FREEZE_${{ matrix.task }}.txt
+
+  summarize:
+    needs: sweep
+    if: ${{ always() }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install "numpy==2.3.5"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: sign96-birco-*
+          path: downloaded
+      - name: Build summary
+        run: |
+          mkdir -p summary
+          python benchmarks/sign96_birco_2026_09_14/summarize.py --root downloaded --outdir summary
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sign96-birco-wave1-summary
+          retention-days: 30
+          if-no-files-found: warn
+          path: summary/
