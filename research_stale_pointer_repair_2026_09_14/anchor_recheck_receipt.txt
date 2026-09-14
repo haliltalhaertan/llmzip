@@ -1,0 +1,2 @@
+anchors: 32
+anchor ok=32 bad=0

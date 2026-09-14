@@ -1,0 +1,44 @@
+gate,item,requirement,result,basis,evidence
+P1,delta_precondition_1,V5 runner bytes equal the accepted V4 runner bytes exactly,PASS,own re-derivation,evidence/G1_recursive_closure.json; evidence/G2_v4_to_v5_change_isolation.json
+P2,delta_precondition_2,runner ASTs equal with docstrings stripped,PASS,own re-derivation,evidence/G2_v4_to_v5_change_isolation.json
+P3,delta_precondition_3,retrieval-execution inputs and estimand anchors unchanged,PASS,own re-derivation,evidence/G3_corpus_manifest_verification.json; evidence/G3_cohort_anchor_verification.json; evidence/cli_preflight/auditor_cli_preflight.json
+P4,delta_precondition_4,V4 independent-audit package and 30/30 manifest authentic,PASS,own re-derivation,evidence/G6_v4_audit_manifest_verification.json
+P5,delta_precondition_5,V5 changes limited to declarative payloads and package preflight,PASS,own re-derivation,evidence/G2_v4_to_v5_change_isolation.json; evidence/G2_checker_diff.txt
+P6,delta_precondition_6,single-source gate passes against the complete V5 payload closure,FAIL,own re-derivation,evidence/G3_single_source_rederivation.json; evidence/G5_fixture_experiments.json
+G1,recursive_closure,nine files; no nested file; no __pycache__; all declared sizes and hashes match,PASS,own re-derivation,evidence/G1_recursive_closure.json
+G1,bindings,inventory/seal/source-map bindings resolve and agree,PASS,own re-derivation,evidence/G1_recursive_closure.json; evidence/G3_single_source_rederivation.json
+G1,nested_unbound_rejected,nested unbound file rejected in a temporary copy,PASS,own fixture,evidence/G5_fixture_experiments.json F1/F1b/F1c/F1d
+G1,candidate_unchanged,real candidate byte-identical after all experiments,PASS,own re-derivation,evidence/G1_candidate_bytes_after_audit.json
+G2,change_isolation,only executable delta is the out-of-band package checker,PASS,own re-derivation,evidence/G2_v4_to_v5_change_isolation.json
+G2,runner_never_imports_checker,runner does not import or reference candidate_package_preflight,PASS,own re-derivation,evidence/G2_v4_to_v5_change_isolation.json
+G2,numerical_core_unchanged,45 runner definition digests and all module constants identical,PASS,own re-derivation,evidence/G2_v4_to_v5_change_isolation.json
+G3,item_3_1,every recursively bound payload enumerated,PASS,own re-derivation,evidence/G3_single_source_rederivation.json
+G3,item_3_2,each load-bearing concept names one authoritative path plus locator; no concept declared twice,PASS,own re-derivation,evidence/G3_single_source_rederivation.json
+G3,item_3_3,every repetition in the bound closure typed as a derived mirror and equal,FAIL,own re-derivation,evidence/G3_single_source_rederivation.json; evidence/G3_repetition_census.json
+G3,item_3_4,no superseded V3 raw-float digest or stale V3 schema label survives as a requirement,PASS,own re-derivation,evidence/G3_single_source_rederivation.json
+G3,item_3_5,registry exemption is exact and not widenable by a line-level trick,PASS,own re-derivation,evidence/G3_single_source_rederivation.json
+G3,item_3_6,EXECUTION_SPEC.md contains exactly one normative canary definition (CC-01 gone),PASS,own re-derivation,evidence/G3_single_source_rederivation.json
+G3,item_3_7,gate blocks a reintroduced CC-01,PARTIAL,own fixture,evidence/G5_fixture_experiments.json F3 blocks; F3b and F3c evade
+G3,item_3_8,coverage list not under-declared against the required concept set,FAIL,own re-derivation,evidence/G3_single_source_rederivation.json
+G4,submission_status_immutable,seal records status at audit submission only,PASS,own re-derivation,evidence/G4_status_and_attestation.json
+G4,seal_cannot_claim_acceptance,gate blocks a seal claiming acceptance,PARTIAL,own fixture,evidence/G5_fixture_experiments.json F4 and F4b block; F4c evades
+G4,detached_attestation_sole_authority,detached hash-bound attestation is the sole authority for current state,FAIL,own re-derivation,evidence/G4_status_and_attestation.json
+G5,package_preflight_positive,untouched package passes,PASS,own fixture,evidence/G5_fixture_experiments.json F0
+G5,package_preflight_negative,changed checker blocks own negative fixtures,PARTIAL,own fixture,evidence/G5_fixture_experiments.json 12 of 18 as expected
+G5,implementer_fixture_coverage,implementer fixtures read only for coverage; six adversary classes absent,OBSERVED,read-only inspection,task4f1_execution_candidate_v5_preflight_2026_09_02/SINGLE_SOURCE_GATE_FIXTURES.json
+G6,runner_byte_identity_established,byte identity established so V4 audit results may be cited,PASS,own re-derivation,evidence/G2_v4_to_v5_change_isolation.json
+G6,b1_no_replace_finalization,no-replace finalization and crash-temp behaviour,PASS,CITED from V4 audit,evidence/G6_v4_audit_manifest_verification.json
+G6,b2_exact_gold_metric_recomputation,exact frozen-gold metric recomputation,PASS,CITED from V4 audit,evidence/G6_v4_audit_manifest_verification.json
+G6,b3_native_signed_exact_top3_and_distance,exact Native/signed-control top-three and distance equality,PASS,CITED from V4 audit,evidence/G6_v4_audit_manifest_verification.json
+G6,aggregation_schema,output schema and aggregation,PASS,CITED from V4 audit,evidence/G6_v4_audit_manifest_verification.json
+G6,static_leakage,static leakage audit,PASS,CITED from V4 audit,evidence/G6_v4_audit_manifest_verification.json
+G6,authorization_fail_closed,authorization fail-closed behaviour,PASS,own re-derivation plus citation,evidence/G7_authorization_failclosed.json
+G6,canary_anchors_reproduced,canary sign digests reproduced on an independent BLAS build,PASS,own re-derivation,evidence/cli_preflight/auditor_cli_preflight.json
+G7,literal_scan_line_split,deprecated-literal scan defeated by prose line wrapping,DEFECT,own fixture,evidence/G5_fixture_experiments.json F3b
+G7,literal_scan_case,deprecated-literal scan defeated by uppercase hex,DEFECT,own fixture,evidence/G5_fixture_experiments.json F3c
+G7,acceptance_reenters_under_alias,acceptance state re-enters the seal under a different field name,DEFECT,own fixture,evidence/G5_fixture_experiments.json F4c
+G7,vacuous_empty_registry,emptied deprecated registry makes the scan vacuous,DEFECT,own fixture,evidence/G5_fixture_experiments.json F6
+G7,vacuous_dropped_concept,deleting a load-bearing concept from the map is not detected,DEFECT,own fixture,evidence/G5_fixture_experiments.json F7
+G7,new_untyped_normative_source,a new contradictory normative statement is not detected,DEFECT,own fixture,evidence/G5_fixture_experiments.json F10
+G7,runner_reads_removed_seal_field,byte-identical runner reads seal[status] which V5 removed; provenance emits null,DEFECT,own re-derivation,evidence/cli_preflight/auditor_cli_preflight.json
+BOUNDARY,outcome_boundary,no outcome-capable execution and no valid authorization,HELD,own re-derivation,evidence/OUTCOME_BOUNDARY_TALLY.json; COMMAND_LOG.txt

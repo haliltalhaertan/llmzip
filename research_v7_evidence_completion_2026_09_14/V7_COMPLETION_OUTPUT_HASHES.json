@@ -1,0 +1,656 @@
+{
+  "banner": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE] PREPARED NOT ACCEPTED",
+  "file_count": 130,
+  "files": [
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/COMMAND_LOG.txt",
+      "bytes": 5427,
+      "sha256": "a276985fcbe62ded8dd91f8ab10ea87c312ef9d57000d4d3f5621156fac90031"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/EVIDENCE_INVENTORY.md",
+      "bytes": 5739,
+      "sha256": "51d5e4812ab5e5c7672766f1c2306fb5e7debd78439c2ee7cf4cce6bf9a927f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/GATE_TABLE.csv",
+      "bytes": 4792,
+      "sha256": "75d55dde496186e18905017f132fe898b052e94bb1220d0418ccb469673f16e3"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/PROPOSED_LEDGER_ENTRY.md",
+      "bytes": 1291,
+      "sha256": "368dc1c3395e52f770d67ba973d35128b3b7e0a71a30fff927437e0d574fa148"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/REPORT.md",
+      "bytes": 4894,
+      "sha256": "13db9b1b81c8360256a115bd0588ee20de896ee4af848aed1ca9a5e3a57a61f0"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/STATUS.md",
+      "bytes": 3240,
+      "sha256": "1516dc8042eb99174301a952fa995a20a43dbe6b4dff84992b3f4e73194e6ff7"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/V7_BRANCH_EVIDENCE_MANIFEST.json",
+      "bytes": 4053,
+      "sha256": "1725dad0cca6219bbd495b5676552d95c6da7f296cc592983aa7fe20f719368d"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/evidence/g35_synthesis.json",
+      "bytes": 9333,
+      "sha256": "63cca135cbadffe5d3f2cfa00390c13a09f5101670875de3b33aad50b715ceca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/evidence/g4_status_attestation.json",
+      "bytes": 13156,
+      "sha256": "ef6642ad44f878a8ee188a6e9086ca9e1fb0d56c8b9d5904e0ff11d3619a8b28"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/evidence/g5_checker_fixtures.json",
+      "bytes": 8351,
+      "sha256": "9b3f4a5d7abfb5074c7b1616ded9ca567bc49a46115810e8c532a707d8addabb"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/build_envelopes.py",
+      "bytes": 6001,
+      "sha256": "5b212fb1110bb43823e51ca021df40895dbb67d12c1050a28aaf640a2842f110"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_00_pristine/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_00_pristine/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_00_pristine/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_00_pristine/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_00_pristine/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_00_pristine/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_01_bare_status/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4496,
+      "sha256": "c1f9b5bc87fa2f9c992a3fd82057002edd8603455de3f69543c06cf8d2d304d0"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_01_bare_status/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_01_bare_status/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_01_bare_status/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_01_bare_status/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_01_bare_status/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_02_acceptance_state/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4506,
+      "sha256": "3582db255f7ba2a3458c4453c5fe4d1ba59861fc847c437a31fbcaf8ef142fa2"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_02_acceptance_state/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_02_acceptance_state/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_02_acceptance_state/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_02_acceptance_state/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_02_acceptance_state/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_03_accepted/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4492,
+      "sha256": "12c8addbb79b377a8ec625b52da309e3a433d3b282176ffd393ed7c441806846"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_03_accepted/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_03_accepted/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_03_accepted/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_03_accepted/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_03_accepted/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_04_sealed/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4490,
+      "sha256": "ec8b3334878446ae953e9841f2ad8007cdb4c3df4a5c4032827d65e89673c290"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_04_sealed/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_04_sealed/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_04_sealed/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_04_sealed/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_04_sealed/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_05_submission_mutated/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4465,
+      "sha256": "460d4fbb620b19e21eb80c3fe2913553ea79380e02bfeffa649b364604666d5a"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_05_submission_mutated/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_05_submission_mutated/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_05_submission_mutated/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_05_submission_mutated/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_05_submission_mutated/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_06_semantics_removed/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4147,
+      "sha256": "2a672db1ad7657e1c7d205c4ad7ff923ec7f096c776791446dbac814f1c0f07c"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_06_semantics_removed/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_06_semantics_removed/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_06_semantics_removed/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_06_semantics_removed/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_06_semantics_removed/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_07_inventory_status/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "1616df70b3abe60911bab4251f2959bacd0ef62124e40f8047711bdabb25e742"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_07_inventory_status/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_07_inventory_status/PAYLOAD_HASHES.json",
+      "bytes": 1034,
+      "sha256": "f77829ffe3983cac78c4864d6d2b2a5eeeaad7c0b7b22be56075f80ad64ae694"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_07_inventory_status/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_07_inventory_status/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_07_inventory_status/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08a_f5_undeclared/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08a_f5_undeclared/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08a_f5_undeclared/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08a_f5_undeclared/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08a_f5_undeclared/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json",
+      "bytes": 32,
+      "sha256": "8abc2176d710e86bdb2d8f2907b3da4539ca96e00f9e237babb2fd5a9b41355d"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08a_f5_undeclared/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08a_f5_undeclared/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/PAYLOAD_HASHES.json",
+      "bytes": 1183,
+      "sha256": "474ac401702638e809fad080b1d39be6f0cf273205e4be9d2abcc82de16a0304"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json",
+      "bytes": 32,
+      "sha256": "8abc2176d710e86bdb2d8f2907b3da4539ca96e00f9e237babb2fd5a9b41355d"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08b_f5_declared/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "2e2204b40dd087a313aa354182bfa353127da3c78f372b0d4976cc44695be8ee"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/PAYLOAD_HASHES.json",
+      "bytes": 1184,
+      "sha256": "259920c5ac81989669e63966425a8e60203e180f5d62369ef4f40d01c5434760"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/V6_ACCEPTANCE_ATTESTATION_2026-09-03.json",
+      "bytes": 32,
+      "sha256": "8abc2176d710e86bdb2d8f2907b3da4539ca96e00f9e237babb2fd5a9b41355d"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g4_08c_f5_fullreseal/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_00_pristine/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_00_pristine/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_00_pristine/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_00_pristine/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_00_pristine/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_00_pristine/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_01_extra/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_01_extra/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_01_extra/EXTRA.md",
+      "bytes": 9,
+      "sha256": "b3c903c9c4a4065db673be60723d152a64cd8a181f35163670645e96ddd183e4"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_01_extra/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_01_extra/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_01_extra/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_01_extra/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_02_missing/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_02_missing/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_02_missing/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_02_missing/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_02_missing/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_03_renamed/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_03_renamed/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_03_renamed/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_03_renamed/RENAMED.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_03_renamed/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_03_renamed/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_04_mutated_noreseal/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_04_mutated_noreseal/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_04_mutated_noreseal/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_04_mutated_noreseal/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_04_mutated_noreseal/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_04_mutated_noreseal/v52_t4f1_beam_retrieval.py",
+      "bytes": 61861,
+      "sha256": "b7b702ed3c19e89ba78fff984cbd2e25aec44a934c3e6321fb6576a8858ddd2f"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_05_hash_mismatch/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_05_hash_mismatch/DEPENDENCY_LOCK.txt",
+      "bytes": 336,
+      "sha256": "bf949252a43d3c8d7e4afd1c3e174972f1dff3c0ca139ac67a7b25d5749f245a"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_05_hash_mismatch/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "dfb7b7c6634ab0904fc49d8287c0c4715cbdce06aba9d1b59202710b39d4b77d"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_05_hash_mismatch/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_05_hash_mismatch/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_05_hash_mismatch/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_06_embed_resealed/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "a6dd94c81fd6183baf25815e8e3b1a887a3f70e93f3607733e73768d0bd2d98d"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_06_embed_resealed/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_06_embed_resealed/PAYLOAD_HASHES.json",
+      "bytes": 1009,
+      "sha256": "ba72541d2e63308355b9e565825d4386a1648e6a28e98ed96cb6be4385cdf746"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_06_embed_resealed/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 857,
+      "sha256": "540fa6ce8c170a52837e2772d1396b60296545f194057cd1cf512fbacb19cb93"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_06_embed_resealed/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_06_embed_resealed/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_07_case_extra/CANDIDATE_EXECUTION_SEAL.json",
+      "bytes": 4472,
+      "sha256": "18e85f5ef508d790d9023c55bd8341afff545e5839064597b128fbd62c2e6a61"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_07_case_extra/DEPENDENCY_LOCK.txt",
+      "bytes": 330,
+      "sha256": "86a4db447ea3f9403231f53556be19ed07763c6e2eb0de42c83807505066655e"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_07_case_extra/PAYLOAD_HASHES.json",
+      "bytes": 1010,
+      "sha256": "30b633470cbcf9ad1fd1b79bb76278ea44d87e3efabf2275fa705a2dab8e8a90"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_07_case_extra/RUN_AUTHORIZATION_TEMPLATE.json",
+      "bytes": 1056,
+      "sha256": "5adace1077804c5d3bbb0256cf4f24cbd0f7d4aade8aa1f0fb73f90c5f1117ca"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_07_case_extra/candidate_package_preflight.py",
+      "bytes": 7344,
+      "sha256": "43b8fdab81f4c76cb3aea34012a99dd7b4c25a2f860a74f3c1fc1912edbda699"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_07_case_extra/dependency_lock.txt",
+      "bytes": 1,
+      "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_07_case_extra/v52_t4f1_beam_retrieval.py",
+      "bytes": 61860,
+      "sha256": "f96cba2c1f10a5f873e9f6cfa395dbce5432aa9d3940791ab8aa2d2f273621f8"
+    },
+    {
+      "path": "research_v7_evidence_completion_2026_09_14/fixtures/run_gates.py",
+      "bytes": 9840,
+      "sha256": "c2dabb3c8fa3ad63cb93a83df23737de30913fdb2fb2e7a38cc3f7a2d9d7d081"
+    }
+  ]
+}

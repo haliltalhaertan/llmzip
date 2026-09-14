@@ -1,0 +1,5 @@
+S-Fc = 10.037944 (frozen claim +10.037943; manifest full-precision 10.037943262411343)
+S-F0 = 10.186880 (~+10.1869 as quoted in audit_v52_t4c1/AUDIT_REPORT.md:82)
+Fc-F0 = 0.148936 (frozen claim +0.148936)
+No contradiction: different subtrahends (centered vs uncentered float reference).
+S-F0 - S+Fc check: 0.148936 = Fc-F0 = 0.148936

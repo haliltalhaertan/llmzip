@@ -1,0 +1,208 @@
+{
+  "pilot": "LOCAL EXPLORATORY PILOT, NOT PREREGISTERED, NOT FOR CITATION",
+  "status": "PREPARED, NOT ACCEPTED",
+  "inputs": "synthetic only; authored in test_exact_rational.py; no real data",
+  "module": "/home/mdp/muse-work/fix-exact-rational/research_exact_rational_verification_2026_09_14/vendored/t4f1_exact_rational_outcome_analysis.py",
+  "module_sha256": "bda67f03ea3efd989204d2943b0aca485b9eaeeb45084cbdbe82a126ed6367c9",
+  "python": "3.14.4",
+  "run_at_utc": "2026-09-14T07:13:17.508458+00:00",
+  "summary": {
+    "total": 31,
+    "passed": 31,
+    "float_control_exposed": 3
+  },
+  "cases": [
+    {
+      "label": "T1 tiny-positive D_t all tiers -> FULL_REPLICATION",
+      "expected": "FULL_REPLICATION",
+      "observed": "FULL_REPLICATION",
+      "pass": true,
+      "float_control_observed": "NO_REPLICATION",
+      "float_control_differs": true
+    },
+    {
+      "label": "T1b sign(tiny_pos) == +1",
+      "expected": "1",
+      "observed": "1",
+      "pass": true,
+      "float_control_observed": "0",
+      "float_control_differs": true
+    },
+    {
+      "label": "T2 tiny-negative D_t all tiers -> NO_REPLICATION",
+      "expected": "NO_REPLICATION",
+      "observed": "NO_REPLICATION",
+      "pass": true
+    },
+    {
+      "label": "T2b sign(tiny_neg) == -1",
+      "expected": "-1",
+      "observed": "-1",
+      "pass": true
+    },
+    {
+      "label": "T3a sign(0) == 0",
+      "expected": "0",
+      "observed": "0",
+      "pass": true
+    },
+    {
+      "label": "T3b mixed profile incl. exact zero -> HETEROGENEOUS_PARTIAL_REPLICATION",
+      "expected": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "observed": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "pass": true
+    },
+    {
+      "label": "T3c all-zero tiers -> NO_REPLICATION (zero is not positive)",
+      "expected": "NO_REPLICATION",
+      "observed": "NO_REPLICATION",
+      "pass": true
+    },
+    {
+      "label": "T3d three positives + one exact zero -> HETEROGENEOUS (zero flips Full)",
+      "expected": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "observed": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "pass": true
+    },
+    {
+      "label": "T3e canceling pair mean is exactly 0",
+      "expected": "0",
+      "observed": "0",
+      "pass": true
+    },
+    {
+      "label": "T4a exact rationals below float resolution are distinguished",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T4b float cannot distinguish them (hazard is real)",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T4c sub-float-resolution positives -> FULL_REPLICATION",
+      "expected": "FULL_REPLICATION",
+      "observed": "FULL_REPLICATION",
+      "pass": true,
+      "float_control_observed": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "float_control_differs": true
+    },
+    {
+      "label": "T5a exact mean order-invariant == 1/30",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T5b float mean differs by order (hazard is real)",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T5c exact sign of order-sensitive mean == +1",
+      "expected": "1",
+      "observed": "1",
+      "pass": true
+    },
+    {
+      "label": "T5d cancellation order-invariant == 1/9",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T7a all-positive -> FULL_REPLICATION",
+      "expected": "FULL_REPLICATION",
+      "observed": "FULL_REPLICATION",
+      "pass": true
+    },
+    {
+      "label": "T7b all-non-positive (zeros + negatives) -> NO_REPLICATION",
+      "expected": "NO_REPLICATION",
+      "observed": "NO_REPLICATION",
+      "pass": true
+    },
+    {
+      "label": "T7c mixed signs -> HETEROGENEOUS_PARTIAL_REPLICATION",
+      "expected": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "observed": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "pass": true
+    },
+    {
+      "label": "T7d single negative among positives -> HETEROGENEOUS",
+      "expected": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "observed": "HETEROGENEOUS_PARTIAL_REPLICATION",
+      "pass": true
+    },
+    {
+      "label": "T8a hand-computed exact mean == 1/12",
+      "expected": "1/12",
+      "observed": "1/12",
+      "pass": true
+    },
+    {
+      "label": "T8b hand-computed bound == 180",
+      "expected": "180",
+      "observed": "180",
+      "pass": true
+    },
+    {
+      "label": "T8c denominator divides bound (prereg divisibility rule)",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T9a fraction from discrete IDs == 1/3 exactly",
+      "expected": "1/3",
+      "observed": "1/3",
+      "pass": true
+    },
+    {
+      "label": "T9b no float-derived value leaks into exact fraction",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T10a payload sign of tiny positive == +1",
+      "expected": "1",
+      "observed": "1",
+      "pass": true
+    },
+    {
+      "label": "T10b display decimal is all zeros yet sign stays +1 (display-only)",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T11a exact W/T/L == 1/1/1",
+      "expected": "(1, 1, 1)",
+      "observed": "(1, 1, 1)",
+      "pass": true
+    },
+    {
+      "label": "T11b float W-count misses the tiny win (hazard is real)",
+      "expected": "True",
+      "observed": "True",
+      "pass": true
+    },
+    {
+      "label": "T11c tie-excluded W/(W+L) == 1/2 exactly",
+      "expected": "1/2",
+      "observed": "1/2",
+      "pass": true
+    },
+    {
+      "label": "T12 mean(1/3, -1/6) == 1/12",
+      "expected": "1/12",
+      "observed": "1/12",
+      "pass": true
+    }
+  ]
+}

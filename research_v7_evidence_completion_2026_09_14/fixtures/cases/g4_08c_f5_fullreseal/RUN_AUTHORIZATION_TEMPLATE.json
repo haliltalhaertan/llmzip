@@ -1,0 +1,15 @@
+{
+  "schema": "V52_T4F1_RUN_AUTHORIZATION_V4_TEMPLATE_ONLY",
+  "status": "NOT_AUTHORIZED",
+  "retrieval_quality_outcome_access": "FORBIDDEN",
+  "execution_script_sha256": "REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT",
+  "execution_candidate_seal_sha256": "REPLACE_ONLY_AFTER_INDEPENDENT_AUDIT",
+  "cohort_sha256": "REPLACE_WITH_COHORT_SHA256_AT_PREREGISTRATION",
+  "required_archive_count": 96,
+  "output_namespace_basename": "REPLACE_ONLY_AFTER_PREREGISTRATION",
+  "preregistration_seal_sha256": "REPLACE_ONLY_AFTER_PREREGISTRATION",
+  "authorization_id": "REPLACE_ONLY_AFTER_PREREGISTRATION",
+  "authorization_nonce": "REPLACE_ONLY_AFTER_PREREGISTRATION",
+  "authorization_hmac_sha256": "NOT_PRESENT_TEMPLATE_CANNOT_AUTHORIZE",
+  "note": "This template cannot authorize execution: status is NOT_AUTHORIZED and no signature is present. Every value here is a placeholder. A real authorization is constructed at preregistration and must satisfy the schema and signed fields the runner verifies; see the runner's module constants, which are their single source."
+}

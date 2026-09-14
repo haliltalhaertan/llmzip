@@ -1,0 +1,17 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+# Receipts — PREPARED, NOT ACCEPTED
+
+Recorded from live tool output this session (2026-09-14 UTC). All VERIFIED.
+
+- `git branch --show-current` → `muse/fix-exact-rational`
+- Base `git log -1 --format='%an <%ae>' 5ec3db60c03edde490374bf9cd7c3e56dd6bcd00` → `Codex <codex@openai.com>`
+- Seal V3 `docs/v52/task4f1/TASK4F1_PREREGISTRATION_SEAL_V3_2026-09-04.json` sha256 → `e906c6d2b68b103c6c21906cbdf44acba10e31b7e5e17ffd2c7d1bbfb7a95cf4`
+- Draft `docs/v52/task4f1/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md` sha256 → `5e61898193421a3a18791202668c0974f23d2fb4080a107069e7b7127e35ea44`
+- Vendored module (`origin/impl/t4f1-exact-rational-analysis-2026-09-04:tools/t4f1_exact_rational_outcome_analysis.py`, tip 4e13ac8, 565 lines) sha256 → `bda67f03ea3efd989204d2943b0aca485b9eaeeb45084cbdbe82a126ed6367c9` (vendored copy digest identical)
+- Vendored branch test (189 lines) sha256 → `55a83165b1848dfc2e5a46beb01dece6eba9f18009411ef22b8f9e6d1670fa54` (identical)
+- `python3 --version` → Python 3.14.4
+- `python3 test_exact_rational.py` → exit 0; `31/31 exact checks passed; 3 cases expose the float control`
+- Branch's own controls (unmodified, real-file mirror in /tmp) → `10/10 outcome-free controls behaved correctly`, module sha256 re-confirmed `bda67f03…` at execution
+- Float-order probe (naive left fold): order means `[0.0, 0.03333333333333333, 0.03333333333333333]` vs exact `1/30` all orders
+- Seal compliance: no `--mode run/finalize`, no `run_archives`/`evaluate_archive`/`finalize_results`, no HMAC key set or constructed, no real IDs/distances/metrics/recall compared, no corpora/queries/gold/embeddings opened, no fetch of the BEAM corpus, no network/installs, no existing file modified (verified via `git status` before commit — only the new namespace is untracked).

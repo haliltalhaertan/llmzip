@@ -1,0 +1,110 @@
+{
+  "banner": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE] PREPARED NOT ACCEPTED",
+  "gate": 5,
+  "method": "candidate_package_preflight.py on pristine + 7 synthetic fixtures of own construction in own namespace (branch implementer fixtures read for coverage only, never as evidence)",
+  "static_findings": {
+    "check_mechanism": "set equality over file NAMES (declared manifest set vs EXPECTED_BOUND_PAYLOAD vs on-disk set) + per-file bytes+sha256 + runner V4 constant pin + template safety fields",
+    "content_blindness": "g5_06 embeds a planted operator requirement inside RUN_AUTHORIZATION_TEMPLATE.json under its functional name, reseals manifest+seal, checker PASSES: set-equality sees names only. Corroborates branch g35 F06/F08.",
+    "runner_pin": "runner sha pinned to V4 constant IN the checker; runner substitution fails even when resealed (branch g35 F21 BLOCKED).",
+    "case_sensitivity": "g5_07: POSIX set-equality is case-sensitive; case-variant extra file BLOCKED by closure mismatch (branch g35 F09 agrees).",
+    "conclusion": "All five mandated defeat classes (extra/missing/renamed/mutated/hash-mismatch) BLOCKED without reseal. With full reseal, name-level attacks still BLOCKED but content-under-functional-name SURVIVES: the claim is ESTABLISHED for file-set integrity, NOT-YET-FALSIFIED at best for content integrity of the three non-runner bound files."
+  },
+  "cases": [
+    {
+      "id": "g5_00_pristine",
+      "description": "Unmodified copy (positive control)",
+      "expected": "PASSED",
+      "observed": "PASSED",
+      "agrees": true,
+      "checker_returncode": 0,
+      "checker_stdout": "PASS: recursive payload closure, fail-closed HMAC authorization, script binding, and archive-fit AST boundary\nPASS: bound payload is functional-only - 4 files, 0 narrative documents bound; runner byte-identical to the accepted V4 runner; candidate asserts no post-audit acceptance state\nBLOCKED: independent execution-code audit and Head Researcher authorization are still required\n",
+      "checker_error": "",
+      "note": ""
+    },
+    {
+      "id": "g5_01_extra",
+      "description": "Extra file EXTRA.md",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "  main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_01_extra/candidate_package_preflight.py\", line 97, in main\n    raise RuntimeError(f\"payload closure mismatch declared={sorted(declared)} actual={sorted(actual)}\")\nRuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'EXTRA.md', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py']\n",
+      "note": ""
+    },
+    {
+      "id": "g5_02_missing",
+      "description": "Missing DEPENDENCY_LOCK.txt",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "ght.py\", line 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_02_missing/candidate_package_preflight.py\", line 97, in main\n    raise RuntimeError(f\"payload closure mismatch declared={sorted(declared)} actual={sorted(actual)}\")\nRuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py']\n",
+      "note": ""
+    },
+    {
+      "id": "g5_03_renamed",
+      "description": "Template renamed to RENAMED.json",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "py\", line 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_03_renamed/candidate_package_preflight.py\", line 97, in main\n    raise RuntimeError(f\"payload closure mismatch declared={sorted(declared)} actual={sorted(actual)}\")\nRuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'RENAMED.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py']\n",
+      "note": ""
+    },
+    {
+      "id": "g5_04_mutated_noreseal",
+      "description": "Runner appended byte, no reseal",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "Traceback (most recent call last):\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_04_mutated_noreseal/candidate_package_preflight.py\", line 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_04_mutated_noreseal/candidate_package_preflight.py\", line 101, in main\n    raise RuntimeError(f\"payload mismatch {item['name']}\")\nRuntimeError: payload mismatch v52_t4f1_beam_retrieval.py\n",
+      "note": ""
+    },
+    {
+      "id": "g5_05_hash_mismatch",
+      "description": "Name matches, bytes updated, sha stale",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "Traceback (most recent call last):\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_05_hash_mismatch/candidate_package_preflight.py\", line 142, in <module>\n    main()\n    ~~~~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_05_hash_mismatch/candidate_package_preflight.py\", line 90, in main\n    raise RuntimeError(\"payload inventory binding mismatch\")\nRuntimeError: payload inventory binding mismatch\n",
+      "note": ""
+    },
+    {
+      "id": "g5_06_embed_resealed",
+      "description": "Narrative embedded under functional name + full reseal",
+      "expected": "PASSED",
+      "observed": "PASSED",
+      "agrees": true,
+      "checker_returncode": 0,
+      "checker_stdout": "PASS: recursive payload closure, fail-closed HMAC authorization, script binding, and archive-fit AST boundary\nPASS: bound payload is functional-only - 4 files, 0 narrative documents bound; runner byte-identical to the accepted V4 runner; candidate asserts no post-audit acceptance state\nBLOCKED: independent execution-code audit and Head Researcher authorization are still required\n",
+      "checker_error": "",
+      "note": "Expected SURVIVE: set-equality is name-only; template safety fields kept. Demonstrates the coverage given up."
+    },
+    {
+      "id": "g5_07_case_extra",
+      "description": "Extra file dependency_lock.txt (case variant)",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "agrees": true,
+      "checker_returncode": 1,
+      "checker_stdout": "",
+      "checker_error": "~^^\n  File \"/home/mdp/muse-work/fix-v7-gapfill/research_v7_evidence_completion_2026_09_14/fixtures/cases/g5_07_case_extra/candidate_package_preflight.py\", line 97, in main\n    raise RuntimeError(f\"payload closure mismatch declared={sorted(declared)} actual={sorted(actual)}\")\nRuntimeError: payload closure mismatch declared=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'v52_t4f1_beam_retrieval.py'] actual=['DEPENDENCY_LOCK.txt', 'RUN_AUTHORIZATION_TEMPLATE.json', 'candidate_package_preflight.py', 'dependency_lock.txt', 'v52_t4f1_beam_retrieval.py']\n",
+      "note": ""
+    }
+  ],
+  "boundary": {
+    "mode_run_count": 0,
+    "mode_finalize_count": 0,
+    "hmac_env_set": 0,
+    "real_authorization_constructed": false,
+    "retrieval_outcome": false,
+    "candidate_bytes_modified": false
+  }
+}
