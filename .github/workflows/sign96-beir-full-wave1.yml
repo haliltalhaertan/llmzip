@@ -45,7 +45,7 @@ jobs:
           PYTHONUNBUFFERED: '1'
         run: |
           mkdir -p benchmarks/sign96_beir_full_2026_09_14/out
-          python benchmarks/sign96_beir_full_2026_09_14/run_beir_full.py \
+          python benchmarks/sign96_beir_full_2026_09_14/run_beir_full_v2.py \
             --task "${{ matrix.task }}" \
             --outdir benchmarks/sign96_beir_full_2026_09_14/out
       - uses: actions/upload-artifact@v4
