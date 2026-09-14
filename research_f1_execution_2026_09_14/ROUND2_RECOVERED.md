@@ -39,6 +39,124 @@ All four benchmarks reproduced, independently, in three separate packages:
 | REALTALK | 0.225534823070 | 0.172534053811 | +5.300077 pp | +5.2241 |
 | LoCoMo | 0.237906719592 | 0.171356256845 | +6.655046 pp | +6.82838 (candidate) |
 
+## CORRECTION NOTICE (appended after independent audit, 2026-09-14)
+
+An independent cold-start audit (Muse Code 1.2.1, `audit/muse_axis_audit_2026_09_14/`)
+returned **REQUEST_CHANGES** on the two axis-budget findings below. It wrote its own
+implementation before reading any of this code and reproduced **all six of its
+frozen step-1 numbers exactly** (LME and PerLTQA at m=8/32/48/64/96, matching to 6
+decimals), plus the full LoCoMo and REALTALK grids to 4 dp. It also proved the FR@3
+tie expectation exact by brute-force enumeration, confirmed m=96 matched == full-96
+on 4/4 benchmarks, and confirmed every semantics-changing mutation moves the numbers.
+
+**The arithmetic is not in dispute. The interpretations were wrong, and the
+coordinator has verified each finding against his own stored data
+(`research/axis_budget_2026_09_14/coord_audit_check.py`).** Dispositions:
+
+**C-1 (MAJOR, ACCEPTED) - FINDING 2 was mis-attributed to the sign arm.**
+The audit checked `float_bot - float_top`, a column the coordinator stored in the
+sweep and never examined. The same effect is present in the FLOAT arm and is
+*larger* in **9 of 12** cells:
+
+| benchmark | m | sign bot-top | float bot-top | ratio |
+|---|---|---|---|---|
+| LME | 48 | +7.7511 | **+21.8794** | 2.82 |
+| LoCoMo | 48 | +4.8137 | **+15.4642** | 3.21 |
+| REALTALK | 48 | +0.1786 | **+9.0020** | 50.41 |
+| PerLTQA | 48 | -12.7279 | -8.5551 | 0.67 |
+
+So "low-variance axes retrieve better" is a property of **the axes**, which both
+arms agree on - not a fact about sign quantization. FINDING 2's framing is
+withdrawn. The underlying axis effect is real (it survives on the overlap-free
+m=48 contrast) but it is not sign-specific.
+
+**C-2 (MAJOR, ACCEPTED) - the "4/4 alignment" compared different budgets.**
+It set `bot-top` at m=48 against Delta at m=96. Compared at the SAME m it fails:
+
+| benchmark | m=24 | m=32 | m=48 | m=64 | m=80 |
+|---|---|---|---|---|---|
+| LME | MISMATCH | MISMATCH | OK | OK | OK |
+| LoCoMo | MISMATCH | MISMATCH | MISMATCH | OK | OK |
+| REALTALK | OK | OK | OK | OK | OK |
+| PerLTQA | OK | OK | OK | OK | OK |
+
+5 of 20 same-budget cells mismatch. "4/4 aligned" is withdrawn.
+
+**C-3 (MAJOR, ACCEPTED) - TOP/BOT overlap was never disclosed.**
+TOP-m and BOT-m are disjoint only while 2m <= 96. At m=64 they share **32** axes,
+at m=80 **64**, and at m=96 they are the identical set, so `bot - top = 0` by
+construction. The apparent decline of the bot-top gap toward m=96 is therefore
+substantially **dilution**, not a finding. Only m<=48 is a clean contrast. Neither
+the code nor the writeup said so.
+
+**C-4 (MAJOR, ACCEPTED) - "same curve shape" contradicted the coordinator's own output.**
+The readout script computes monotonicity and prints it. LoCoMo and REALTALK are
+**not** monotone (LoCoMo dips at 8->12, 12->16, 24->32; REALTALK at 8->12, 12->16),
+and LME's total rise (+21.90 pp) is ~2.4x LoCoMo's (+8.95) and REALTALK's (+8.88).
+The published sentence "all four show the SAME qualitative shape" overstated a
+correlated rise. Withdrawn; the shared feature that does survive is that all four
+rise overall and share their largest jump around m=32->48.
+
+**C-5 (MAJOR, ACCEPTED) - the PerLTQA crossover estimate is unidentified.**
+"~243 axes" came from the m=80..96 window alone. Across standard windows:
+
+| window | slope pp/axis | implied m* |
+|---|---|---|
+| 8..96 | +0.09668 | 153 |
+| 24..96 | +0.08341 | 166 |
+| 48..96 | +0.06809 | 186 |
+| 64..96 | +0.06224 | 195 |
+| 80..96 | +0.04265 | **243** |
+
+Segment slopes run +0.776, +0.340, +0.010, +0.020, +0.140, +0.075, +0.082, +0.043 -
+clearly non-constant and concave, so a linear crossover is not identified at all.
+The point estimate is **withdrawn**; the honest statement is "beyond 96, not
+estimable from these data".
+
+**C-6 (MAJOR, ACCEPTED) - crossover precision is indefensible.**
+47.3 / 42.5 / 53.4 were linear interpolations on a grid whose spacing at the crossing
+is **16** (48->64), giving a +-8 floor before sampling error; the audit's resampling
+put LME's bracketing pair on opposite sides of zero only ~57% of the time. Correct
+reporting: LME and REALTALK cross **between m=32 and m=48**, LoCoMo **between m=48
+and m=64**, PerLTQA **not within 96**. Decimals withdrawn.
+
+**C-7 (ACCEPTED, terminology) - "budget-matched" is wrong.** The sign arm uses m
+BITS, the float arm m FLOAT32 = 32m bits: a **32:1** storage asymmetry per axis. The
+correct term is **dimension-matched**. It isolates quantization at equal
+dimensionality, which is the intended contrast, but it is not a storage-matched
+comparison and must not be read as one.
+
+**C-8 (ACCEPTED, no rule survives).** At m=48, RANDOM-48 beats BOT-48 on LongMemEval
+(0.446970 vs 0.429568) and on REALTALK (0.166890 vs 0.162415). So "select the
+low-variance axes" is not a usable retrieval rule even where the contrast is clean.
+
+### What survives the audit
+
+- Every number: the audit's independent implementation reproduced all six frozen
+  step-1 values exactly and the remaining grids to 4 dp.
+- **FINDING 1's core**: sign quantization loses at small dimension and gains at large
+  on all four benchmarks, with PerLTQA crossing (if at all) beyond the available 96.
+  The crossover ORDER and the existence of a per-benchmark offset stand; only the
+  precision, the extrapolation and the "same shape" wording were wrong.
+- A real per-axis variance effect, confirmed on the overlap-free m=48 contrast -
+  but as a property of the representation that both arms share.
+
+### What this costs the programme
+
+FINDING 2 as published is withdrawn. It is not a tenth dead mechanism candidate -
+it was never a mechanism, it was a mis-attribution. The axis effect it pointed at is
+real and now correctly located in the geometry rather than in the quantizer.
+
+### Audit independence, stated by the auditor
+
+Not fully independent: same commissioning party, and the brief quoted the
+coordinator's numbers before the auditor computed its own. The auditor recorded this
+in MY_NUMBERS.md and VERDICT.md. It could not write into the shared output directory
+(/mnt/c mounted read-only in that session), so its deliverables were produced in the
+WSL home and copied here unmodified.
+
+---
+
 ## FINDING 1 (axis budget): the per-benchmark offset is a POSITION ON A SHARED CURVE
 
 Budget-matched sweep: at each budget m, SIGN on the top-m axes vs FLOAT cosine on
