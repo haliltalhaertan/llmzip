@@ -1,0 +1,124 @@
+{
+ "agreement_statement": "On hand-computed fixtures my implementation matches the SPEC arithmetic exactly (verify_f1.py A1-A9, all PASS); auditor-vs-mine agreement on REAL data is UNTESTED (caches absent) \u2014 any future mismatch on real data is a major finding per the task, not to be explained away.",
+ "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "synthetic_demonstration": {
+  "fixture_bug_effect": [
+   {
+    "correct": [
+     1.0,
+     0.5
+    ],
+    "min_gold": [
+     0.0,
+     0.0
+    ],
+    "qid": "FIX:Q1"
+   },
+   {
+    "correct": [
+     0.0,
+     2.0
+    ],
+    "min_gold": [
+     0.0,
+     2.0
+    ],
+    "qid": "FIX:Q2"
+   },
+   {
+    "correct": [
+     -2.0,
+     0.5
+    ],
+    "min_gold": [
+     -3.0,
+     0.0
+    ],
+    "qid": "FIX:Q3"
+   }
+  ],
+  "fixture_summary": {
+   "multi_gold_n": 2,
+   "multi_gold_rate": 0.6666666666666666,
+   "n": 3,
+   "rho_strict": 0.5,
+   "rho_tie": -0.8660254037844387
+  },
+  "synth_bootstrap_descriptive_posthoc": {
+   "strict_gap": {
+    "attempted": 2000,
+    "interval_95": [
+     -0.43432641036977465,
+     0.5554296281838572
+    ],
+    "invalid": 0,
+    "invalid_reasons": {},
+    "label": "descriptive/post-hoc percentile interval",
+    "valid": 2000
+   },
+   "tie_gap": {
+    "attempted": 2000,
+    "interval_95": [
+     0.2361062062966601,
+     0.5927990171495291
+    ],
+    "invalid": 0,
+    "invalid_reasons": {},
+    "label": "descriptive/post-hoc percentile interval",
+    "valid": 2000
+   }
+  },
+  "synth_summary_mingold_control": {
+   "multi_gold_n": 9,
+   "multi_gold_rate": 0.375,
+   "n": 24,
+   "rho_strict": 0.014439144238362057,
+   "rho_tie": 0.5312378359641596
+  },
+  "synth_summary_nongold_sensitivity": {
+   "multi_gold_n": 9,
+   "multi_gold_rate": 0.375,
+   "n": 24,
+   "rho_strict": 0.034024173356043165,
+   "rho_tie": 0.44936260279916457
+  },
+  "synth_summary_primary": {
+   "multi_gold_n": 9,
+   "multi_gold_rate": 0.375,
+   "n": 24,
+   "rho_strict": 0.034024173356043165,
+   "rho_tie": 0.44936260279916457
+  }
+ },
+ "three_reference_comparison": {
+  "LME": {
+   "auditor_per_gold_strict": 0.14168629605302735,
+   "auditor_per_gold_tie": 0.14045379360271315,
+   "lead_min_gold_strict": 0.09965709814218833,
+   "lead_min_gold_tie": 0.0989586520264074,
+   "mine_real_data": "UNAVAILABLE-UNDER-MISSING-CACHES"
+  },
+  "LOCOMO": {
+   "auditor_per_gold_strict": 0.09491957131277647,
+   "auditor_per_gold_tie": 0.10376015063205302,
+   "lead_min_gold_strict": 0.09370604039357276,
+   "lead_min_gold_tie": 0.09533237242284638,
+   "mine_real_data": "UNAVAILABLE-UNDER-MISSING-CACHES"
+  },
+  "PERLTQA": {
+   "auditor_per_gold_strict": 0.25416826537535475,
+   "auditor_per_gold_tie": 0.2797878341571222,
+   "lead_min_gold_strict": 0.27738722348615524,
+   "lead_min_gold_tie": 0.285059265942642,
+   "mine_real_data": "UNAVAILABLE-UNDER-MISSING-CACHES"
+  },
+  "REALTALK": {
+   "auditor_per_gold_strict": 0.097939128891117,
+   "auditor_per_gold_tie": 0.12281952421315011,
+   "lead_min_gold_strict": 0.06118332620206951,
+   "lead_min_gold_tie": 0.0871527005507532,
+   "mine_real_data": "UNAVAILABLE-UNDER-MISSING-CACHES"
+  },
+  "note": "Lead (buggy min-gold) and auditor (corrected per-gold) values are CLAIM re-extracted live from branch bytes (see verify_f1.py checks D1-D6, all PASS). Mine (real data) is UNAVAILABLE: caches absent, no network \u2014 exact inputs that would be needed are listed in CACHE_INVENTORY.md."
+ }
+}

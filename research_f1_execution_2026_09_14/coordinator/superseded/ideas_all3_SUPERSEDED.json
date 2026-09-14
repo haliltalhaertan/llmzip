@@ -1,0 +1,110 @@
+{
+ "cohort": {
+  "n_archives": 470,
+  "N_min": 396,
+  "N_max": 616,
+  "N_median": 490.0,
+  "dim": 96
+ },
+ "native": {
+  "n": 470,
+  "sign_all3": 0.38400709219858153,
+  "float_all3": 0.2872340425531915,
+  "aqs_all3": 0.34893617021276596,
+  "delta_sign_minus_float_pp": 9.677304964539001,
+  "delta_aqs_minus_sign_pp": -3.5070921985815575,
+  "hamming_boundary_tie_rate": 0.23404255319148937,
+  "aqs_boundary_tie_rate": 0.0,
+  "aqs_resolves_frac_of_hamming_ties": 1.0
+ },
+ "tails": {
+  "per_coord_median_excess_kurtosis": 0.933011507514272,
+  "per_coord_median_skew": 0.0791501847139432,
+  "per_coord_p90_excess_kurtosis": 3.7885002600133366,
+  "pooled_excess_kurtosis": 5.650296112859449,
+  "pooled_skew": 0.21425098700565273,
+  "claim_kurtosis_9_71": "REFUTED"
+ },
+ "spectrum": {
+  "n_archives_sampled": 60,
+  "p_median": 0.463409234841221,
+  "p_p10": 0.4550243509111353,
+  "p_p90": 0.4719364197452487,
+  "mass_first12_median": 0.3865038562793921,
+  "claim_p_range_0_25_0_55": "INSIDE",
+  "claim_mass12_20_30pct": "OUTSIDE"
+ },
+ "scale_probe": [
+  {
+   "pool_archives": 1,
+   "n_queries": 120,
+   "N_mean": 491.85833333333335,
+   "sign_all3": 0.35888888888888887,
+   "float_all3": 0.30833333333333335,
+   "aqs_all3": 0.3333333333333333,
+   "delta_pp": 5.055555555555553,
+   "hamming_tie_rate": 0.25833333333333336
+  },
+  {
+   "pool_archives": 2,
+   "n_queries": 120,
+   "N_mean": 985.875,
+   "sign_all3": 0.4125,
+   "float_all3": 0.30833333333333335,
+   "aqs_all3": 0.35,
+   "delta_pp": 10.416666666666666,
+   "hamming_tie_rate": 0.25833333333333336
+  },
+  {
+   "pool_archives": 4,
+   "n_queries": 120,
+   "N_mean": 1972.6583333333333,
+   "sign_all3": 0.38125,
+   "float_all3": 0.3,
+   "aqs_all3": 0.35,
+   "delta_pp": 8.125,
+   "hamming_tie_rate": 0.26666666666666666
+  },
+  {
+   "pool_archives": 10,
+   "n_queries": 120,
+   "N_mean": 4938.283333333334,
+   "sign_all3": 0.39194444444444443,
+   "float_all3": 0.3416666666666667,
+   "aqs_all3": 0.38333333333333336,
+   "delta_pp": 5.027777777777776,
+   "hamming_tie_rate": 0.31666666666666665
+  },
+  {
+   "pool_archives": 20,
+   "n_queries": 120,
+   "N_mean": 9866.083333333334,
+   "sign_all3": 0.29236111111111107,
+   "float_all3": 0.275,
+   "aqs_all3": 0.35833333333333334,
+   "delta_pp": 1.7361111111111072,
+   "hamming_tie_rate": 0.2833333333333333
+  },
+  {
+   "pool_archives": 50,
+   "n_queries": 60,
+   "N_mean": 24666.366666666665,
+   "sign_all3": 0.3,
+   "float_all3": 0.25,
+   "aqs_all3": 0.3333333333333333,
+   "delta_pp": 5.0,
+   "hamming_tie_rate": 0.4
+  }
+ ],
+ "role_separation": {
+  "status": "UNAVAILABLE",
+  "reason": "LME cache_repr keys are question_id/C/qC/gold/hetero; no speaker-role labels"
+ },
+ "l3_hierarchy_arithmetic": {
+  "float32_768d_bytes_per_turn": 3072,
+  "one_million_turns_GB": 3.072,
+  "sign96_bytes_per_turn": 12,
+  "one_million_turns_MiB": 11.444091796875,
+  "note": "arithmetic checks out; but query-time embedding needs the fitted pipeline (44,220,235 B measured this session, VERIFIED) which is ~3.7x the 12 MB code set and does not fit L3 either"
+ }
+}
