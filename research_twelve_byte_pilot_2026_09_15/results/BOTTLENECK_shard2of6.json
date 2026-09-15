@@ -836,5 +836,6 @@
         1
       ]
     ]
-  }
+  },
+  "INVALID_SEED_DEFECT": "built with random_state=5101 for the final SVD96; production uses 5204 (5101 is the LSA32 seed). Not the production representation. See AUDIT_SEED.json. Re-run required before citation."
 }

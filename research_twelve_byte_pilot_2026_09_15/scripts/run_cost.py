@@ -153,6 +153,16 @@ def main():
     Z = sparse.hstack([sparse.csr_matrix(Xl), Xw, Xc], format="csr")
     t0 = time.perf_counter()
     sv = TruncatedSVD(n_components=96, random_state=5101)
+
+# !!! SEED DEFECT (found 2026-09-15, after this script's results were
+# published): the producer uses random_state=5101 for the LSA32 stage and
+# 5204 for the FINAL SVD96 (v52_t4f1_beam_retrieval.py:51-54,
+# v52_t4c2_centering_geometry.py:37).  This script used 5101 for the final
+# SVD96, so it did NOT build the production representation.  audit_seed.py
+# shows 5204 reproduces the frozen cache bit-exactly (12/12 archives) while
+# 5101 differs on 21.71 % of bits.  The seed is left as-is so the committed
+# results still match the code that produced them; re-run under 5204 before
+# citing anything here.
     normalize(sv.fit_transform(Z))
     t_svd = time.perf_counter() - t0
     res["build"] = {"N": len(texts), "tfidf_seconds": t_tfidf,

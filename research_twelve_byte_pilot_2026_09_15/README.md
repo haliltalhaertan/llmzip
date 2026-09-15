@@ -57,7 +57,17 @@ This directory publishes its own corrections rather than only its results.
 | binary vs float32 "1.3–7.3×" | **withdrawn** — conflated synthetic large-N runs with real archives. |
 | binary vs float32 "1.31×" | **withdrawn by the audit** — `reps = min(nq, 60)` timed 50 of 90 archives with a single call. Correct value ≈ 1.51× at N ≈ 500. |
 | "median 80 % of a top-10 is forced" | **corrected** — 90 %; the genuinely ambiguous share is 14.7 %, not 23 %. |
+| **"the sign code is numerically fragile" (±0.5 pp band)** | **withdrawn — my own seed bug.** The producer seeds LSA32 with 5101 and the final SVD96 with **5204**; every rebuild script here used 5101. Under 5204 the rebuild is **bit-exact** (12/12 archives, `audit/AUDIT_SEED.json`). The consequence drawn from that band — that R8 +0.11, sign88 −0.28 and b8−sign88 +0.90 sit in noise — is withdrawn with it. |
+| Gram-SVD quality verdict (+0.21 float / −1.67 sign) | **invalid** — compared the exact path against a non-production randomized draw (seed 5101). Re-run required. |
 | pooled hit@10 "73.54 %" | **should not have been computed** — the programme forbids pooling benchmarks, and this pool is 92 % PerLTQA by weight. Read the per-benchmark rows instead. |
+
+**Artifacts built with the wrong seed** — `run_bottleneck.py`,
+`run_chunksweep.py`, `run_svdopt.py::method_A`, `run_svdvalidate.py` and their
+results — are flagged in place rather than deleted or silently re-run, so the
+committed results still match the code that produced them. Everything that
+reads the frozen caches instead of rebuilding (`run_hit10.py` and the whole
+quality table, `run_ksweep`, `run_dropsweep`, `run_codesize`, `run_costfull*`,
+`run_faster`, all faiss scripts) is unaffected.
 
 `results/FAISS.json` is kept deliberately although its protocol is flawed and
 superseded by `FAISS_DEEP.json`; the record of the wrong measurement is part

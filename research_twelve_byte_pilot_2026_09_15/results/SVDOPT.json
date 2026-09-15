@@ -241,5 +241,6 @@
       "top10_overlap_float": 1.0,
       "top10_overlap_sym": 0.4
     }
-  ]
+  ],
+  "INVALID_SEED_DEFECT": "built with random_state=5101 for the final SVD96; production uses 5204 (LSA32 uses 5101). Not the production representation. See AUDIT_SEED.json. Re-run required before citation."
 }

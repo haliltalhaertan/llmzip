@@ -74,5 +74,6 @@
       "0.95": 2
     }
   },
-  "elapsed_seconds": 221.2413350000279
+  "elapsed_seconds": 221.2413350000279,
+  "INVALID_SEED_DEFECT": "built with random_state=5101 for the final SVD96; production uses 5204 (LSA32 uses 5101). Not the production representation. See AUDIT_SEED.json. Re-run required before citation."
 }

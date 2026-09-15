@@ -35,6 +35,11 @@ sys.path.insert(0, HERE)
 import run_ksweep as KS  # noqa: E402
 import run_bottleneck as BN  # noqa: E402
 import run_svdopt as OPT  # noqa: E402
+# !!! SEED DEFECT: OPT.method_A uses random_state=5101, which is the LSA32
+# seed, not the production SVD96 seed 5204.  This script therefore compared
+# the exact Gram path against a NON-PRODUCTION randomized draw.  Its
+# published numbers (+0.21 pp float, -1.67 pp sign) are INVALID as a
+# statement about production and must be re-run.  See audit_seed.py.
 
 
 def main():

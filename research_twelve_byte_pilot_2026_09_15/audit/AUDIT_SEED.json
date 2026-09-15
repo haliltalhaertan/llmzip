@@ -1,0 +1,242 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "question": "which seed reproduces the frozen SIGN96 cache",
+  "n_archives": 12,
+  "rows": [
+    {
+      "tag": "001be529",
+      "N": 514,
+      "5101": {
+        "doc_bit_diff": 11099,
+        "doc_bits": 49344,
+        "doc_bit_frac": 0.22493109597924774,
+        "query_bit_diff": 20,
+        "max_abs_coord_diff": 0.6697609781024163
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 49344,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 2.4625440575576363e-13
+      }
+    },
+    {
+      "tag": "00ca467f",
+      "N": 486,
+      "5101": {
+        "doc_bit_diff": 11221,
+        "doc_bits": 46656,
+        "doc_bit_frac": 0.24050497256515774,
+        "query_bit_diff": 26,
+        "max_abs_coord_diff": 0.6039796866981473
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 46656,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 1.1488726636699198e-13
+      }
+    },
+    {
+      "tag": "0100672e",
+      "N": 486,
+      "5101": {
+        "doc_bit_diff": 10336,
+        "doc_bits": 46656,
+        "doc_bit_frac": 0.2215363511659808,
+        "query_bit_diff": 26,
+        "max_abs_coord_diff": 0.4660495400231064
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 46656,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 9.020562075079397e-14
+      }
+    },
+    {
+      "tag": "01493427",
+      "N": 487,
+      "5101": {
+        "doc_bit_diff": 10481,
+        "doc_bits": 46752,
+        "doc_bit_frac": 0.22418292265571527,
+        "query_bit_diff": 24,
+        "max_abs_coord_diff": 0.663103299027832
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 46752,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 1.265099136560366e-13
+      }
+    },
+    {
+      "tag": "031748ae",
+      "N": 494,
+      "5101": {
+        "doc_bit_diff": 9918,
+        "doc_bits": 47424,
+        "doc_bit_frac": 0.2091346153846154,
+        "query_bit_diff": 19,
+        "max_abs_coord_diff": 0.5596510635182983
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 47424,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 2.3064883336587627e-13
+      }
+    },
+    {
+      "tag": "06878be2",
+      "N": 443,
+      "5101": {
+        "doc_bit_diff": 9732,
+        "doc_bits": 42528,
+        "doc_bit_frac": 0.22883747178329572,
+        "query_bit_diff": 27,
+        "max_abs_coord_diff": 0.5184322009570064
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 42528,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 2.620542671749604e-13
+      }
+    },
+    {
+      "tag": "06db6396",
+      "N": 479,
+      "5101": {
+        "doc_bit_diff": 9264,
+        "doc_bits": 45984,
+        "doc_bit_frac": 0.20146137787056367,
+        "query_bit_diff": 15,
+        "max_abs_coord_diff": 0.5874598269481114
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 45984,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 2.1249668691325496e-13
+      }
+    },
+    {
+      "tag": "06f04340",
+      "N": 503,
+      "5101": {
+        "doc_bit_diff": 10543,
+        "doc_bits": 48288,
+        "doc_bit_frac": 0.21833581842279656,
+        "query_bit_diff": 25,
+        "max_abs_coord_diff": 0.5907909104999316
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 48288,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 2.2670754162845697e-13
+      }
+    },
+    {
+      "tag": "07741c44",
+      "N": 513,
+      "5101": {
+        "doc_bit_diff": 10557,
+        "doc_bits": 49248,
+        "doc_bit_frac": 0.21436403508771928,
+        "query_bit_diff": 19,
+        "max_abs_coord_diff": 0.43481875358451083
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 49248,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 4.5008441418303846e-13
+      }
+    },
+    {
+      "tag": "07741c45",
+      "N": 527,
+      "5101": {
+        "doc_bit_diff": 10391,
+        "doc_bits": 50592,
+        "doc_bit_frac": 0.2053882036685642,
+        "query_bit_diff": 18,
+        "max_abs_coord_diff": 0.6217940526218085
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 50592,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 5.957526139077629e-13
+      }
+    },
+    {
+      "tag": "078150f1",
+      "N": 551,
+      "5101": {
+        "doc_bit_diff": 10162,
+        "doc_bits": 52896,
+        "doc_bit_frac": 0.1921128251663642,
+        "query_bit_diff": 17,
+        "max_abs_coord_diff": 0.45863733970224796
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 52896,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 1.7469359292476838e-13
+      }
+    },
+    {
+      "tag": "07b6f563",
+      "N": 524,
+      "5101": {
+        "doc_bit_diff": 11465,
+        "doc_bits": 50304,
+        "doc_bit_frac": 0.22791428117048346,
+        "query_bit_diff": 26,
+        "max_abs_coord_diff": 0.644783923240623
+      },
+      "5204": {
+        "doc_bit_diff": 0,
+        "doc_bits": 50304,
+        "doc_bit_frac": 0.0,
+        "query_bit_diff": 0,
+        "max_abs_coord_diff": 1.9856338795420925e-13
+      }
+    }
+  ],
+  "seed_5101": {
+    "archives_bit_exact": 0,
+    "archives": 12,
+    "total_bit_diff": 125169,
+    "total_bits": 576672,
+    "bit_diff_frac": 0.21705406192775095
+  },
+  "seed_5204": {
+    "archives_bit_exact": 12,
+    "archives": 12,
+    "total_bit_diff": 0,
+    "total_bits": 576672,
+    "bit_diff_frac": 0.0
+  }
+}
