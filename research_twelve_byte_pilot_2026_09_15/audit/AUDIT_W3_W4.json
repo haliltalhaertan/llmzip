@@ -1,0 +1,68 @@
+{
+  "W3_monte_carlo": {
+    "cases": 311,
+    "sims_per_case": 4000,
+    "all_cases_have_straddling_tie_and_gold_in_bucket": true,
+    "mean_claimed": 0.48638465857115376,
+    "mean_montecarlo": 0.4861889067524116,
+    "mean_abs_error": 0.005650956135682824,
+    "max_abs_error": 0.022692307692307734,
+    "mean_z": -0.026678962183335927,
+    "max_abs_z": 3.1095730324989117,
+    "cases_with_abs_z_gt_4": 0,
+    "expected_cases_gt_4_by_chance": 0.019593
+  },
+  "W4_why_faiss_wins": {
+    "queries_where_tiebreak_decides": 311,
+    "expected_hits_if_tiebreak_uniform": 151.26562881562882,
+    "observed_hits_with_faiss_ascending_index": 188.0,
+    "excess_hits": 36.734371184371184,
+    "z_vs_uniform_null": 4.663554838436521,
+    "delta_pp_on_9020": 0.4072546694497914,
+    "positional_hypothesis": {
+      "P_lowest_index_bucket_member_is_gold_observed": 0.37942122186495175,
+      "P_expected_if_gold_position_random": 0.2178997494110034,
+      "gold_rank_within_bucket_normalised_mean": 0.37614147064448267,
+      "uniform_expectation": 0.5,
+      "mean_min_gold_rank_observed": 1.630225080385852
+    },
+    "structure": {
+      "bucket_size_mean": 5.588424437299035,
+      "slots_mean": 2.5112540192926045,
+      "gold_in_bucket_mean": 1.067524115755627,
+      "gold_contiguity_span_over_count_mean": 7.467414454623758
+    },
+    "per_bench": {
+      "lme": {
+        "n": 1,
+        "obs": 0.0,
+        "exp": 0.5,
+        "z": -1.0
+      },
+      "perltqa": {
+        "n": 284,
+        "obs": 174.0,
+        "exp": 137.66562881562882,
+        "z": 4.8424454372170365
+      },
+      "realtalk": {
+        "n": 26,
+        "obs": 14.0,
+        "exp": 13.100000000000001,
+        "z": 0.3839029742793676
+      }
+    },
+    "per_archive_excess_top5": {
+      "pq02": 5.2458791208791204,
+      "pq11": 3.8964285714285714,
+      "pq14": 3.8333333333333335,
+      "pq27": 3.334126984126984,
+      "pq12": 2.662698412698413,
+      "pq20": 2.5797619047619045,
+      "pq00": 2.4948412698412694,
+      "pq15": -2.3108225108225104
+    },
+    "archives_with_positive_excess": 29,
+    "archives_with_negative_excess": 11
+  }
+}

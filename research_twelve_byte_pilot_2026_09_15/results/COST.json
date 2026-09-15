@@ -1,0 +1,106 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "numpy": "2.3.5",
+  "has_native_popcount": true,
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "real": {
+    "lme_one_archive": {
+      "N": 514,
+      "ram_bytes": {
+        "float96": 398864,
+        "sign_naive": 394752,
+        "sign_packed": 6168,
+        "dot_pm1": 394752
+      },
+      "score_ms": {
+        "float96": 0.007900060154497623,
+        "sign_naive": 0.07130001904442906,
+        "sign_packed": 0.03024999750778079,
+        "dot_pm1": 0.006849993951618671
+      },
+      "packed_matches_frozen": true
+    },
+    "perltqa_one_archive": {
+      "N": 459,
+      "ram_bytes": {
+        "float96": 356184,
+        "sign_naive": 352512,
+        "sign_packed": 5508,
+        "dot_pm1": 352512
+      },
+      "score_ms": {
+        "float96": 0.0071999384090304375,
+        "sign_naive": 0.06155000301077962,
+        "sign_packed": 0.02619996666908264,
+        "dot_pm1": 0.006100046448409557
+      },
+      "packed_matches_frozen": true
+    }
+  },
+  "synthetic": {
+    "10000": {
+      "N": 10000,
+      "ram_bytes": {
+        "float96": 7760000,
+        "sign_naive": 7680000,
+        "sign_packed": 120000,
+        "dot_pm1": 7680000
+      },
+      "score_ms": {
+        "float96": 0.23105001309886575,
+        "sign_naive": 2.506549935787916,
+        "sign_packed": 0.4060500068590045,
+        "dot_pm1": 0.21399999968707561
+      },
+      "packed_matches_frozen": true
+    },
+    "100000": {
+      "N": 100000,
+      "ram_bytes": {
+        "float96": 77600000,
+        "sign_naive": 76800000,
+        "sign_packed": 1200000,
+        "dot_pm1": 76800000
+      },
+      "score_ms": {
+        "float96": 7.1766499895602465,
+        "sign_naive": 26.25229995464906,
+        "sign_packed": 7.396150031127036,
+        "dot_pm1": 5.25079999351874
+      },
+      "packed_matches_frozen": true
+    },
+    "1000000": {
+      "N": 1000000,
+      "ram_bytes": {
+        "float96": 776000000,
+        "sign_naive": 768000000,
+        "sign_packed": 12000000,
+        "dot_pm1": 768000000
+      },
+      "score_ms": {
+        "float96": 62.58740008343011,
+        "sign_naive": 192.64239992480725,
+        "sign_packed": 52.164900000207126,
+        "dot_pm1": 50.0635999487713
+      },
+      "packed_matches_frozen": true
+    }
+  },
+  "build": {
+    "N": 514,
+    "tfidf_seconds": 1.0442232999484986,
+    "svd96_seconds": 3.8084056000225246,
+    "total_seconds": 4.852628899971023,
+    "note": "per archive, identical for every arm; the frozen protocol refits this per question"
+  }
+}

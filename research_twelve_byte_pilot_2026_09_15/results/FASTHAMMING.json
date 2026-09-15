@@ -1,0 +1,77 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "numpy": "2.3.5",
+  "native_popcount": true,
+  "all_variants_bit_identical_to_frozen_scorer": true,
+  "sizes": {
+    "500": {
+      "N": 500,
+      "v0_uint8": 0.03260001540184021,
+      "v1_uint64": 0.016700010746717453,
+      "v2_prealloc": 0.01650000922381878,
+      "v3_table": 0.062400009483098984,
+      "ref_float_pm1_matches": true,
+      "ref_float_pm1": 0.009899958968162537,
+      "float96_cosine": 0.010699965059757233,
+      "ram_bytes": {
+        "packed12": 6000,
+        "packed16": 8000,
+        "pm1_float": 384000,
+        "float96": 384000
+      }
+    },
+    "5000": {
+      "N": 5000,
+      "v0_uint8": 0.2542000147514045,
+      "v1_uint64": 0.09950005915015936,
+      "v2_prealloc": 0.09535002755001187,
+      "v3_table": 0.28865004424005747,
+      "ref_float_pm1_matches": true,
+      "ref_float_pm1": 0.13539998326450586,
+      "float96_cosine": 0.13289996422827244,
+      "ram_bytes": {
+        "packed12": 60000,
+        "packed16": 80000,
+        "pm1_float": 3840000,
+        "float96": 3840000
+      }
+    },
+    "50000": {
+      "N": 50000,
+      "v0_uint8": 3.7524999352172017,
+      "v1_uint64": 0.940849946346134,
+      "v2_prealloc": 0.915899989195168,
+      "v3_table": 3.650899976491928,
+      "ref_float_pm1_matches": true,
+      "ref_float_pm1": 2.494649961590767,
+      "float96_cosine": 2.477400004863739,
+      "ram_bytes": {
+        "packed12": 600000,
+        "packed16": 800000,
+        "pm1_float": 38400000,
+        "float96": 38400000
+      }
+    },
+    "500000": {
+      "N": 500000,
+      "v0_uint8": 29.948649986181408,
+      "v1_uint64": 19.61994997691363,
+      "v2_prealloc": 10.745100036729127,
+      "v3_table": 58.94730001455173,
+      "ref_float_pm1_matches": true,
+      "ref_float_pm1": 35.220000019762665,
+      "float96_cosine": 31.049599987454712,
+      "ram_bytes": {
+        "packed12": 6000000,
+        "packed16": 8000000,
+        "pm1_float": 384000000,
+        "float96": 384000000
+      }
+    }
+  }
+}

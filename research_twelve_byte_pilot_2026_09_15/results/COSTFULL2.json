@@ -1,0 +1,73 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "numpy": "2.3.5",
+  "native_popcount": true,
+  "note": "uint32 layout is exactly 12 B/doc, no padding; the uint64 layout needs 16 B/doc (+33 % RAM) and is kept only as a labelled comparison",
+  "benchmarks": {
+    "perltqa": {
+      "n_archives": 30,
+      "n_queries": 8265,
+      "bit_identical_every_archive": true,
+      "total_index_bytes": {
+        "float96": 9535488,
+        "sign_v0": 147456,
+        "sign_u32": 147456,
+        "sign_u64pad": 196608,
+        "sign80_u32": 122880
+      },
+      "mean_score_ms": {
+        "float96": 0.009766671185692152,
+        "sign_v0": 0.03623334147656957,
+        "sign_u32": 0.017660002534588177,
+        "sign_u64pad": 0.016866667040934168,
+        "sign80_u32": 0.01751333475112915
+      },
+      "build_seconds_total": 145.5
+    },
+    "lme": {
+      "n_archives": 470,
+      "n_queries": 470,
+      "bit_identical_every_archive": true,
+      "total_index_bytes": {
+        "float96": 179726256,
+        "sign_v0": 2779272,
+        "sign_u32": 2779272,
+        "sign_u64pad": 3705696,
+        "sign80_u32": 2316060
+      },
+      "mean_score_ms": {
+        "float96": 0.015461705179211306,
+        "sign_v0": 0.0489968120397881,
+        "sign_u32": 0.025012130363586734,
+        "sign_u64pad": 0.025547022852016255,
+        "sign80_u32": 0.027599786111014955
+      },
+      "build_seconds_total": 2279.5
+    },
+    "realtalk": {
+      "n_archives": 10,
+      "n_queries": 705,
+      "bit_identical_every_archive": true,
+      "total_index_bytes": {
+        "float96": 6940544,
+        "sign_v0": 107328,
+        "sign_u32": 107328,
+        "sign_u64pad": 143104,
+        "sign80_u32": 89440
+      },
+      "mean_score_ms": {
+        "float96": 0.02207000507041812,
+        "sign_v0": 0.06667000707238913,
+        "sign_u32": 0.031099992338567976,
+        "sign_u64pad": 0.03130000550299883,
+        "sign80_u32": 0.03150997217744589
+      },
+      "build_seconds_total": 48.5
+    }
+  }
+}

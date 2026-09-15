@@ -1,0 +1,98 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "faiss": "1.15.0",
+  "numpy": "2.5.3",
+  "isolation": "venv_faiss; the frozen venv (numpy 2.3.5) was not modified and has no faiss",
+  "operation": "end-to-end top-10",
+  "tags": {
+    "lme": {
+      "N": 514,
+      "n_queries": 1,
+      "build_index_ms": 0.047200010158121586,
+      "index_bytes": 6168,
+      "faiss_matches_frozen_top10": true,
+      "faiss_matches_frozen_all": true,
+      "numpy_matches_frozen_top10": true,
+      "single_ms": {
+        "faiss_1thread": 0.008500006515532732,
+        "numpy_1thread": 0.036100042052567005,
+        "faiss_20thread": 0.10725000174716115,
+        "faiss_float32_1thread": 0.010999967344105244
+      },
+      "float_index_bytes": 197376
+    },
+    "realtalk": {
+      "N": 662,
+      "n_queries": 85,
+      "build_index_ms": 0.028999987989664078,
+      "index_bytes": 7944,
+      "faiss_matches_frozen_top10": true,
+      "faiss_matches_frozen_all": true,
+      "numpy_matches_frozen_top10": true,
+      "single_ms": {
+        "faiss_1thread": 0.007200054824352264,
+        "numpy_1thread": 0.0313500058837235,
+        "faiss_20thread": 0.07119996007531881,
+        "faiss_float32_1thread": 0.014849996659904718
+      },
+      "float_index_bytes": 254208,
+      "batch_ms_per_query_faiss_1thread": 0.004811765050844235,
+      "batch_ms_per_query_faiss_20thread": 0.006701176821747246
+    },
+    "perltqa": {
+      "N": 459,
+      "n_queries": 409,
+      "build_index_ms": 0.016700010746717453,
+      "index_bytes": 5508,
+      "faiss_matches_frozen_top10": true,
+      "faiss_matches_frozen_all": true,
+      "numpy_matches_frozen_top10": true,
+      "single_ms": {
+        "faiss_1thread": 0.006449990905821323,
+        "numpy_1thread": 0.02570002106949687,
+        "faiss_20thread": 0.10260002454742789,
+        "faiss_float32_1thread": 0.013999990187585354
+      },
+      "float_index_bytes": 176256,
+      "batch_ms_per_query_faiss_1thread": 0.003951344659556532,
+      "batch_ms_per_query_faiss_20thread": 0.005949511048144918
+    },
+    "synth100000": {
+      "N": 100000,
+      "n_queries": 1,
+      "build_index_ms": 0.3993998980149627,
+      "index_bytes": 1200000,
+      "faiss_matches_frozen_top10": true,
+      "faiss_matches_frozen_all": true,
+      "numpy_matches_frozen_top10": true,
+      "single_ms": {
+        "faiss_1thread": 0.4908499540761113,
+        "numpy_1thread": 2.178850001655519,
+        "faiss_20thread": 0.5442999536171556,
+        "faiss_float32_1thread": 3.0073000234551728
+      },
+      "float_index_bytes": 38400000
+    },
+    "synth1000000": {
+      "N": 1000000,
+      "n_queries": 1,
+      "build_index_ms": 2.7053999947384,
+      "index_bytes": 12000000,
+      "faiss_matches_frozen_top10": true,
+      "faiss_matches_frozen_all": null,
+      "numpy_matches_frozen_top10": true,
+      "single_ms": {
+        "faiss_1thread": 4.261149966623634,
+        "numpy_1thread": 24.14000005228445,
+        "faiss_20thread": 25.706999993417412,
+        "faiss_float32_1thread": 31.059950008057058
+      },
+      "float_index_bytes": 384000000
+    }
+  }
+}

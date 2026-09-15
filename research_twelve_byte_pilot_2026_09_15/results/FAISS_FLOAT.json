@@ -1,0 +1,964 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "faiss": "1.15.0",
+  "threads": 1,
+  "withdrawn": "the earlier 1.3x-7.3x binary-vs-float figure, which used one archive per corpus and a repeated query",
+  "not_a_quality_comparison": true,
+  "n_archives": 90,
+  "overall_speedup": {
+    "median": 1.309664280255015,
+    "p25": 1.1696736166821942,
+    "p75": 1.4327965470369006,
+    "min": 0.9075621209156721,
+    "max": 1.9562610696129876
+  },
+  "ram_ratio": 32.0,
+  "per_benchmark": {
+    "lme": {
+      "archives": 50,
+      "N_median": 484.0,
+      "binary_ms_median": 0.009400013368576765,
+      "float32_ms_median": 0.01144997077062726,
+      "speedup": {
+        "median": 1.1914455958140016,
+        "p25": 1.1434132294473038,
+        "p75": 1.2464985835876061,
+        "min": 0.9075621209156721,
+        "max": 1.7349500673249552
+      }
+    },
+    "perltqa": {
+      "archives": 30,
+      "N_median": 407.0,
+      "binary_ms_median": 0.006809166128126283,
+      "float32_ms_median": 0.00962416622011612,
+      "speedup": {
+        "median": 1.4162571920097453,
+        "p25": 1.3898157217649492,
+        "p75": 1.4427951387042794,
+        "min": 1.0669562124589977,
+        "max": 1.7325355449642998
+      }
+    },
+    "realtalk": {
+      "archives": 10,
+      "N_median": 853.0,
+      "binary_ms_median": 0.009347500357155999,
+      "float32_ms_median": 0.015836665988899767,
+      "speedup": {
+        "median": 1.681756049613798,
+        "p25": 1.4716442925133024,
+        "p75": 1.923097992026789,
+        "min": 1.3877367638587639,
+        "max": 1.9562610696129876
+      }
+    }
+  },
+  "rows": [
+    {
+      "tag": "lme00",
+      "bench": "lme",
+      "N": 514,
+      "binary_ms": 0.011699972674250603,
+      "float32_ms": 0.012900098226964474,
+      "speedup": 1.102575073132873,
+      "binary_bytes": 6168,
+      "float32_bytes": 197376
+    },
+    {
+      "tag": "lme01",
+      "bench": "lme",
+      "N": 486,
+      "binary_ms": 0.010599964298307896,
+      "float32_ms": 0.012699980288743973,
+      "speedup": 1.19811538334816,
+      "binary_bytes": 5832,
+      "float32_bytes": 186624
+    },
+    {
+      "tag": "lme02",
+      "bench": "lme",
+      "N": 486,
+      "binary_ms": 0.011699972674250603,
+      "float32_ms": 0.013599987141788006,
+      "speedup": 1.1623947782133688,
+      "binary_bytes": 5832,
+      "float32_bytes": 186624
+    },
+    {
+      "tag": "lme03",
+      "bench": "lme",
+      "N": 487,
+      "binary_ms": 0.008299946784973145,
+      "float32_ms": 0.014399993233382702,
+      "speedup": 1.7349500673249552,
+      "binary_bytes": 5844,
+      "float32_bytes": 187008
+    },
+    {
+      "tag": "lme04",
+      "bench": "lme",
+      "N": 494,
+      "binary_ms": 0.008300063200294971,
+      "float32_ms": 0.009599956683814526,
+      "speedup": 1.1566124801885072,
+      "binary_bytes": 5928,
+      "float32_bytes": 189696
+    },
+    {
+      "tag": "lme05",
+      "bench": "lme",
+      "N": 443,
+      "binary_ms": 0.009400071576237679,
+      "float32_ms": 0.010699965059757233,
+      "speedup": 1.1382854878260222,
+      "binary_bytes": 5316,
+      "float32_bytes": 170112
+    },
+    {
+      "tag": "lme06",
+      "bench": "lme",
+      "N": 479,
+      "binary_ms": 0.008499948307871819,
+      "float32_ms": 0.009899958968162537,
+      "speedup": 1.1647081381652833,
+      "binary_bytes": 5748,
+      "float32_bytes": 183936
+    },
+    {
+      "tag": "lme07",
+      "bench": "lme",
+      "N": 503,
+      "binary_ms": 0.012199976481497288,
+      "float32_ms": 0.014899997040629387,
+      "speedup": 1.2213135872210081,
+      "binary_bytes": 6036,
+      "float32_bytes": 193152
+    },
+    {
+      "tag": "lme08",
+      "bench": "lme",
+      "N": 513,
+      "binary_ms": 0.009399955160915852,
+      "float32_ms": 0.010999967344105244,
+      "speedup": 1.1702148739860054,
+      "binary_bytes": 6156,
+      "float32_bytes": 196992
+    },
+    {
+      "tag": "lme09",
+      "bench": "lme",
+      "N": 527,
+      "binary_ms": 0.00909995287656784,
+      "float32_ms": 0.010699965059757233,
+      "speedup": 1.1758264251356054,
+      "binary_bytes": 6324,
+      "float32_bytes": 202368
+    },
+    {
+      "tag": "lme10",
+      "bench": "lme",
+      "N": 551,
+      "binary_ms": 0.00900006853044033,
+      "float32_ms": 0.012499978765845299,
+      "speedup": 1.3888759539516233,
+      "binary_bytes": 6612,
+      "float32_bytes": 211584
+    },
+    {
+      "tag": "lme11",
+      "bench": "lme",
+      "N": 524,
+      "binary_ms": 0.008999952115118504,
+      "float32_ms": 0.010899966582655907,
+      "speedup": 1.2111138418554115,
+      "binary_bytes": 6288,
+      "float32_bytes": 201216
+    },
+    {
+      "tag": "lme12",
+      "bench": "lme",
+      "N": 490,
+      "binary_ms": 0.009300070814788342,
+      "float32_ms": 0.01279998105019331,
+      "speedup": 1.3763315683402806,
+      "binary_bytes": 5880,
+      "float32_bytes": 188160
+    },
+    {
+      "tag": "lme13",
+      "bench": "lme",
+      "N": 484,
+      "binary_ms": 0.00870006624609232,
+      "float32_ms": 0.010399962775409222,
+      "speedup": 1.1953889178809896,
+      "binary_bytes": 5808,
+      "float32_bytes": 185856
+    },
+    {
+      "tag": "lme14",
+      "bench": "lme",
+      "N": 480,
+      "binary_ms": 0.009300070814788342,
+      "float32_ms": 0.01079996582120657,
+      "speedup": 1.1612778048994203,
+      "binary_bytes": 5760,
+      "float32_bytes": 184320
+    },
+    {
+      "tag": "lme15",
+      "bench": "lme",
+      "N": 484,
+      "binary_ms": 0.009499955922365189,
+      "float32_ms": 0.010999967344105244,
+      "speedup": 1.1578966717317778,
+      "binary_bytes": 5808,
+      "float32_bytes": 185856
+    },
+    {
+      "tag": "lme16",
+      "bench": "lme",
+      "N": 466,
+      "binary_ms": 0.01209997572004795,
+      "float32_ms": 0.01379998866468668,
+      "speedup": 1.1404972194962382,
+      "binary_bytes": 5592,
+      "float32_bytes": 178944
+    },
+    {
+      "tag": "lme17",
+      "bench": "lme",
+      "N": 479,
+      "binary_ms": 0.009599956683814526,
+      "float32_ms": 0.015700003132224083,
+      "speedup": 1.635424372142658,
+      "binary_bytes": 5748,
+      "float32_bytes": 183936
+    },
+    {
+      "tag": "lme18",
+      "bench": "lme",
+      "N": 481,
+      "binary_ms": 0.008699949830770493,
+      "float32_ms": 0.01070008147507906,
+      "speedup": 1.2299015147460257,
+      "binary_bytes": 5772,
+      "float32_bytes": 184704
+    },
+    {
+      "tag": "lme19",
+      "bench": "lme",
+      "N": 485,
+      "binary_ms": 0.06480002775788307,
+      "float32_ms": 0.062400009483098984,
+      "speedup": 0.9629626968100778,
+      "binary_bytes": 5820,
+      "float32_bytes": 186240
+    },
+    {
+      "tag": "lme20",
+      "bench": "lme",
+      "N": 484,
+      "binary_ms": 0.009300070814788342,
+      "float32_ms": 0.011499971151351929,
+      "speedup": 1.2365466221037216,
+      "binary_bytes": 5808,
+      "float32_bytes": 185856
+    },
+    {
+      "tag": "lme21",
+      "bench": "lme",
+      "N": 463,
+      "binary_ms": 0.00809994526207447,
+      "float32_ms": 0.010600080713629723,
+      "speedup": 1.308660783581017,
+      "binary_bytes": 5556,
+      "float32_bytes": 177792
+    },
+    {
+      "tag": "lme22",
+      "bench": "lme",
+      "N": 443,
+      "binary_ms": 0.009599956683814526,
+      "float32_ms": 0.013299984857439995,
+      "speedup": 1.385421340479973,
+      "binary_bytes": 5316,
+      "float32_bytes": 170112
+    },
+    {
+      "tag": "lme23",
+      "bench": "lme",
+      "N": 486,
+      "binary_ms": 0.009499955922365189,
+      "float32_ms": 0.010800082236528397,
+      "speedup": 1.1368560364688005,
+      "binary_bytes": 5832,
+      "float32_bytes": 186624
+    },
+    {
+      "tag": "lme24",
+      "bench": "lme",
+      "N": 462,
+      "binary_ms": 0.00900006853044033,
+      "float32_ms": 0.010599964298307896,
+      "speedup": 1.1777648428405123,
+      "binary_bytes": 5544,
+      "float32_bytes": 177408
+    },
+    {
+      "tag": "lme25",
+      "bench": "lme",
+      "N": 483,
+      "binary_ms": 0.009699957445263863,
+      "float32_ms": 0.011699972674250603,
+      "speedup": 1.2061880415736541,
+      "binary_bytes": 5796,
+      "float32_bytes": 185472
+    },
+    {
+      "tag": "lme26",
+      "bench": "lme",
+      "N": 481,
+      "binary_ms": 0.011899974197149277,
+      "float32_ms": 0.01079996582120657,
+      "speedup": 0.9075621209156721,
+      "binary_bytes": 5772,
+      "float32_bytes": 184704
+    },
+    {
+      "tag": "lme27",
+      "bench": "lme",
+      "N": 450,
+      "binary_ms": 0.009299954399466515,
+      "float32_ms": 0.011200085282325745,
+      "speedup": 1.204316150514483,
+      "binary_bytes": 5400,
+      "float32_bytes": 172800
+    },
+    {
+      "tag": "lme28",
+      "bench": "lme",
+      "N": 460,
+      "binary_ms": 0.01309998333454132,
+      "float32_ms": 0.014199991710484028,
+      "speedup": 1.0839702118583818,
+      "binary_bytes": 5520,
+      "float32_bytes": 176640
+    },
+    {
+      "tag": "lme29",
+      "bench": "lme",
+      "N": 475,
+      "binary_ms": 0.009599956683814526,
+      "float32_ms": 0.011399970389902592,
+      "speedup": 1.1875022737470138,
+      "binary_bytes": 5700,
+      "float32_bytes": 182400
+    },
+    {
+      "tag": "lme30",
+      "bench": "lme",
+      "N": 489,
+      "binary_ms": 0.008499948307871819,
+      "float32_ms": 0.010499963536858559,
+      "speedup": 1.2352973402361191,
+      "binary_bytes": 5868,
+      "float32_bytes": 187776
+    },
+    {
+      "tag": "lme31",
+      "bench": "lme",
+      "N": 466,
+      "binary_ms": 0.009199953638017178,
+      "float32_ms": 0.01200009137392044,
+      "speedup": 1.3043643311779518,
+      "binary_bytes": 5592,
+      "float32_bytes": 178944
+    },
+    {
+      "tag": "lme32",
+      "bench": "lme",
+      "N": 472,
+      "binary_ms": 0.009999959729611874,
+      "float32_ms": 0.011299969628453255,
+      "speedup": 1.1300015134052783,
+      "binary_bytes": 5664,
+      "float32_bytes": 181248
+    },
+    {
+      "tag": "lme33",
+      "bench": "lme",
+      "N": 485,
+      "binary_ms": 0.008900067768990993,
+      "float32_ms": 0.01109996810555458,
+      "speedup": 1.2471779309623157,
+      "binary_bytes": 5820,
+      "float32_bytes": 186240
+    },
+    {
+      "tag": "lme34",
+      "bench": "lme",
+      "N": 467,
+      "binary_ms": 0.01179997343569994,
+      "float32_ms": 0.01379998866468668,
+      "speedup": 1.1694931975809237,
+      "binary_bytes": 5604,
+      "float32_bytes": 179328
+    },
+    {
+      "tag": "lme35",
+      "bench": "lme",
+      "N": 451,
+      "binary_ms": 0.021799933165311813,
+      "float32_ms": 0.027799978852272034,
+      "speedup": 1.275232297340596,
+      "binary_bytes": 5412,
+      "float32_bytes": 173184
+    },
+    {
+      "tag": "lme36",
+      "bench": "lme",
+      "N": 478,
+      "binary_ms": 0.01650000922381878,
+      "float32_ms": 0.017400016076862812,
+      "speedup": 1.0545458393892786,
+      "binary_bytes": 5736,
+      "float32_bytes": 183552
+    },
+    {
+      "tag": "lme37",
+      "bench": "lme",
+      "N": 474,
+      "binary_ms": 0.008999952115118504,
+      "float32_ms": 0.011200085282325745,
+      "speedup": 1.2444605414634777,
+      "binary_bytes": 5688,
+      "float32_bytes": 182016
+    },
+    {
+      "tag": "lme38",
+      "bench": "lme",
+      "N": 503,
+      "binary_ms": 0.009800074622035027,
+      "float32_ms": 0.011299969628453255,
+      "speedup": 1.1530493454657766,
+      "binary_bytes": 6036,
+      "float32_bytes": 193152
+    },
+    {
+      "tag": "lme39",
+      "bench": "lme",
+      "N": 509,
+      "binary_ms": 0.00870006624609232,
+      "float32_ms": 0.013299984857439995,
+      "speedup": 1.528722251214323,
+      "binary_bytes": 6108,
+      "float32_bytes": 195456
+    },
+    {
+      "tag": "lme40",
+      "bench": "lme",
+      "N": 473,
+      "binary_ms": 0.009200070053339005,
+      "float32_ms": 0.010599964298307896,
+      "speedup": 1.152161259300501,
+      "binary_bytes": 5676,
+      "float32_bytes": 181632
+    },
+    {
+      "tag": "lme41",
+      "bench": "lme",
+      "N": 436,
+      "binary_ms": 0.00909995287656784,
+      "float32_ms": 0.010200077667832375,
+      "speedup": 1.1208934602394842,
+      "binary_bytes": 5232,
+      "float32_bytes": 167424
+    },
+    {
+      "tag": "lme42",
+      "bench": "lme",
+      "N": 503,
+      "binary_ms": 0.008299946784973145,
+      "float32_ms": 0.01179997343569994,
+      "speedup": 1.4216926615798924,
+      "binary_bytes": 6036,
+      "float32_bytes": 193152
+    },
+    {
+      "tag": "lme43",
+      "bench": "lme",
+      "N": 486,
+      "binary_ms": 0.009399955160915852,
+      "float32_ms": 0.01309998333454132,
+      "speedup": 1.3936218960926374,
+      "binary_bytes": 5832,
+      "float32_bytes": 186624
+    },
+    {
+      "tag": "lme44",
+      "bench": "lme",
+      "N": 515,
+      "binary_ms": 0.009899958968162537,
+      "float32_ms": 0.011899974197149277,
+      "speedup": 1.2020225776105362,
+      "binary_bytes": 6180,
+      "float32_bytes": 197760
+    },
+    {
+      "tag": "lme45",
+      "bench": "lme",
+      "N": 482,
+      "binary_ms": 0.009999959729611874,
+      "float32_ms": 0.011399970389902592,
+      "speedup": 1.140001629821069,
+      "binary_bytes": 5784,
+      "float32_bytes": 185088
+    },
+    {
+      "tag": "lme46",
+      "bench": "lme",
+      "N": 532,
+      "binary_ms": 0.010499963536858559,
+      "float32_ms": 0.013999990187585354,
+      "speedup": 1.3333370290706699,
+      "binary_bytes": 6384,
+      "float32_bytes": 204288
+    },
+    {
+      "tag": "lme47",
+      "bench": "lme",
+      "N": 501,
+      "binary_ms": 0.009399955160915852,
+      "float32_ms": 0.010699965059757233,
+      "speedup": 1.1382995851136293,
+      "binary_bytes": 6012,
+      "float32_bytes": 192384
+    },
+    {
+      "tag": "lme48",
+      "bench": "lme",
+      "N": 466,
+      "binary_ms": 0.013499986380338669,
+      "float32_ms": 0.016400008462369442,
+      "speedup": 1.2148166672415577,
+      "binary_bytes": 5592,
+      "float32_bytes": 178944
+    },
+    {
+      "tag": "lme49",
+      "bench": "lme",
+      "N": 548,
+      "binary_ms": 0.010899966582655907,
+      "float32_ms": 0.012399978004395962,
+      "speedup": 1.137616148670298,
+      "binary_bytes": 6576,
+      "float32_bytes": 210432
+    },
+    {
+      "tag": "pq00",
+      "bench": "perltqa",
+      "N": 459,
+      "binary_ms": 0.007259999013816317,
+      "float32_ms": 0.010525000592072805,
+      "speedup": 1.4497247963867417,
+      "binary_bytes": 5508,
+      "float32_bytes": 176256
+    },
+    {
+      "tag": "pq01",
+      "bench": "perltqa",
+      "N": 377,
+      "binary_ms": 0.0067616677066932125,
+      "float32_ms": 0.009498333868881067,
+      "speedup": 1.404732424144253,
+      "binary_bytes": 4524,
+      "float32_bytes": 144768
+    },
+    {
+      "tag": "pq02",
+      "bench": "perltqa",
+      "N": 422,
+      "binary_ms": 0.006831666299452384,
+      "float32_ms": 0.010018332007651528,
+      "speedup": 1.466455117758691,
+      "binary_bytes": 5064,
+      "float32_bytes": 162048
+    },
+    {
+      "tag": "pq03",
+      "bench": "perltqa",
+      "N": 448,
+      "binary_ms": 0.007073332866032918,
+      "float32_ms": 0.010186666622757912,
+      "speedup": 1.4401508900670623,
+      "binary_bytes": 5376,
+      "float32_bytes": 172032
+    },
+    {
+      "tag": "pq04",
+      "bench": "perltqa",
+      "N": 442,
+      "binary_ms": 0.007071668126930793,
+      "float32_ms": 0.010301665558169285,
+      "speedup": 1.4567518403384632,
+      "binary_bytes": 5304,
+      "float32_bytes": 169728
+    },
+    {
+      "tag": "pq05",
+      "bench": "perltqa",
+      "N": 418,
+      "binary_ms": 0.006829999620094895,
+      "float32_ms": 0.009871666164447863,
+      "speedup": 1.4453391967115083,
+      "binary_bytes": 5016,
+      "float32_bytes": 160512
+    },
+    {
+      "tag": "pq06",
+      "bench": "perltqa",
+      "N": 293,
+      "binary_ms": 0.006428333775450786,
+      "float32_ms": 0.0080933328717947,
+      "speedup": 1.2590094345602265,
+      "binary_bytes": 3516,
+      "float32_bytes": 112512
+    },
+    {
+      "tag": "pq07",
+      "bench": "perltqa",
+      "N": 422,
+      "binary_ms": 0.006641666792954007,
+      "float32_ms": 0.009508333945026,
+      "speedup": 1.431618634514031,
+      "binary_bytes": 5064,
+      "float32_bytes": 162048
+    },
+    {
+      "tag": "pq08",
+      "bench": "perltqa",
+      "N": 546,
+      "binary_ms": 0.007314999432613453,
+      "float32_ms": 0.011600001016631722,
+      "speedup": 1.5857829003942048,
+      "binary_bytes": 6552,
+      "float32_bytes": 209664
+    },
+    {
+      "tag": "pq09",
+      "bench": "perltqa",
+      "N": 392,
+      "binary_ms": 0.006798334652557969,
+      "float32_ms": 0.009644999712084731,
+      "speedup": 1.4187297632451301,
+      "binary_bytes": 4704,
+      "float32_bytes": 150528
+    },
+    {
+      "tag": "pq10",
+      "bench": "perltqa",
+      "N": 401,
+      "binary_ms": 0.006786665956800183,
+      "float32_ms": 0.009701666810239354,
+      "speedup": 1.4295188347259622,
+      "binary_bytes": 4812,
+      "float32_bytes": 153984
+    },
+    {
+      "tag": "pq11",
+      "bench": "perltqa",
+      "N": 392,
+      "binary_ms": 0.006586666374156873,
+      "float32_ms": 0.00944500012944142,
+      "speedup": 1.4339575732117493,
+      "binary_bytes": 4704,
+      "float32_bytes": 150528
+    },
+    {
+      "tag": "pq12",
+      "bench": "perltqa",
+      "N": 381,
+      "binary_ms": 0.006548332748934627,
+      "float32_ms": 0.00938499967257182,
+      "speedup": 1.433189184544524,
+      "binary_bytes": 4572,
+      "float32_bytes": 146304
+    },
+    {
+      "tag": "pq13",
+      "bench": "perltqa",
+      "N": 459,
+      "binary_ms": 0.007440000384425124,
+      "float32_ms": 0.010328332427889109,
+      "speedup": 1.3882166524494288,
+      "binary_bytes": 5508,
+      "float32_bytes": 176256
+    },
+    {
+      "tag": "pq14",
+      "bench": "perltqa",
+      "N": 402,
+      "binary_ms": 0.006601666488374272,
+      "float32_ms": 0.009333334552745026,
+      "speedup": 1.4137846207743605,
+      "binary_bytes": 4824,
+      "float32_bytes": 154368
+    },
+    {
+      "tag": "pq15",
+      "bench": "perltqa",
+      "N": 406,
+      "binary_ms": 0.0065099991237123804,
+      "float32_ms": 0.00939833310743173,
+      "speedup": 1.4436765549166852,
+      "binary_bytes": 4872,
+      "float32_bytes": 155904
+    },
+    {
+      "tag": "pq16",
+      "bench": "perltqa",
+      "N": 437,
+      "binary_ms": 0.006809999467805028,
+      "float32_ms": 0.009593332652002573,
+      "speedup": 1.4087126874761209,
+      "binary_bytes": 5244,
+      "float32_bytes": 167808
+    },
+    {
+      "tag": "pq17",
+      "bench": "perltqa",
+      "N": 408,
+      "binary_ms": 0.006808332788447538,
+      "float32_ms": 0.009584999255215127,
+      "speedup": 1.407833540610569,
+      "binary_bytes": 4896,
+      "float32_bytes": 156672
+    },
+    {
+      "tag": "pq18",
+      "bench": "perltqa",
+      "N": 438,
+      "binary_ms": 0.008569999287525814,
+      "float32_ms": 0.01077833391415576,
+      "speedup": 1.2576820081939006,
+      "binary_bytes": 5256,
+      "float32_bytes": 168192
+    },
+    {
+      "tag": "pq19",
+      "bench": "perltqa",
+      "N": 380,
+      "binary_ms": 0.006936667098974189,
+      "float32_ms": 0.009091666045909127,
+      "speedup": 1.3106677769290132,
+      "binary_bytes": 4560,
+      "float32_bytes": 145920
+    },
+    {
+      "tag": "pq20",
+      "bench": "perltqa",
+      "N": 376,
+      "binary_ms": 0.006373333356653651,
+      "float32_ms": 0.008888333104550838,
+      "speedup": 1.3946129297115097,
+      "binary_bytes": 4512,
+      "float32_bytes": 144384
+    },
+    {
+      "tag": "pq21",
+      "bench": "perltqa",
+      "N": 412,
+      "binary_ms": 0.006630000037451586,
+      "float32_ms": 0.009529998836417993,
+      "speedup": 1.437405547901188,
+      "binary_bytes": 4944,
+      "float32_bytes": 158208
+    },
+    {
+      "tag": "pq22",
+      "bench": "perltqa",
+      "N": 359,
+      "binary_ms": 0.006193333926300208,
+      "float32_ms": 0.008643333179255327,
+      "speedup": 1.395586493818961,
+      "binary_bytes": 4308,
+      "float32_bytes": 137856
+    },
+    {
+      "tag": "pq23",
+      "bench": "perltqa",
+      "N": 371,
+      "binary_ms": 0.00967833329923451,
+      "float32_ms": 0.010771667196725806,
+      "speedup": 1.1129671673507846,
+      "binary_bytes": 4452,
+      "float32_bytes": 142464
+    },
+    {
+      "tag": "pq24",
+      "bench": "perltqa",
+      "N": 416,
+      "binary_ms": 0.0066099998851617174,
+      "float32_ms": 0.009796667533616226,
+      "speedup": 1.482097988474707,
+      "binary_bytes": 4992,
+      "float32_bytes": 159744
+    },
+    {
+      "tag": "pq25",
+      "bench": "perltqa",
+      "N": 391,
+      "binary_ms": 0.007176666986197233,
+      "float32_ms": 0.009948333414892357,
+      "speedup": 1.386205244583011,
+      "binary_bytes": 4692,
+      "float32_bytes": 150144
+    },
+    {
+      "tag": "pq26",
+      "bench": "perltqa",
+      "N": 491,
+      "binary_ms": 0.01304333369868497,
+      "float32_ms": 0.013916665920987725,
+      "speedup": 1.0669562124589977,
+      "binary_bytes": 5892,
+      "float32_bytes": 188544
+    },
+    {
+      "tag": "pq27",
+      "bench": "perltqa",
+      "N": 385,
+      "binary_ms": 0.006966667327408989,
+      "float32_ms": 0.012069998774677515,
+      "speedup": 1.7325355449642998,
+      "binary_bytes": 4620,
+      "float32_bytes": 147840
+    },
+    {
+      "tag": "pq28",
+      "bench": "perltqa",
+      "N": 421,
+      "binary_ms": 0.00683000156035026,
+      "float32_ms": 0.009603332728147507,
+      "speedup": 1.40605132272547,
+      "binary_bytes": 5052,
+      "float32_bytes": 161664
+    },
+    {
+      "tag": "pq29",
+      "bench": "perltqa",
+      "N": 343,
+      "binary_ms": 0.0064116669818758965,
+      "float32_ms": 0.008818334511791667,
+      "speedup": 1.3753575375512779,
+      "binary_bytes": 4116,
+      "float32_bytes": 131712
+    },
+    {
+      "tag": "rt00",
+      "bench": "realtalk",
+      "N": 662,
+      "binary_ms": 0.008765000772352021,
+      "float32_ms": 0.012988333279887835,
+      "speedup": 1.4818405174427058,
+      "binary_bytes": 7944,
+      "float32_bytes": 254208
+    },
+    {
+      "tag": "rt01",
+      "bench": "realtalk",
+      "N": 476,
+      "binary_ms": 0.007444998482242227,
+      "float32_ms": 0.010931666474789381,
+      "speedup": 1.4683235330220064,
+      "binary_bytes": 5712,
+      "float32_bytes": 182784
+    },
+    {
+      "tag": "rt02",
+      "bench": "realtalk",
+      "N": 453,
+      "binary_ms": 0.007393333362415433,
+      "float32_ms": 0.010260000514487427,
+      "speedup": 1.3877367638587639,
+      "binary_bytes": 5436,
+      "float32_bytes": 173952
+    },
+    {
+      "tag": "rt03",
+      "bench": "realtalk",
+      "N": 422,
+      "binary_ms": 0.0069316651206463575,
+      "float32_ms": 0.010270000590632359,
+      "speedup": 1.4816065709871904,
+      "binary_bytes": 5064,
+      "float32_bytes": 162048
+    },
+    {
+      "tag": "rt04",
+      "bench": "realtalk",
+      "N": 410,
+      "binary_ms": 0.0069500005338341,
+      "float32_ms": 0.009648333070799708,
+      "speedup": 1.3882492560726498,
+      "binary_bytes": 4920,
+      "float32_bytes": 157440
+    },
+    {
+      "tag": "rt05",
+      "bench": "realtalk",
+      "N": 1548,
+      "binary_ms": 0.011966666594768563,
+      "float32_ms": 0.023238333718230326,
+      "speedup": 1.941922049402577,
+      "binary_bytes": 18576,
+      "float32_bytes": 594432
+    },
+    {
+      "tag": "rt06",
+      "bench": "realtalk",
+      "N": 1511,
+      "binary_ms": 0.012188333009059232,
+      "float32_ms": 0.023590001122405134,
+      "speedup": 1.9354575482037926,
+      "binary_bytes": 18132,
+      "float32_bytes": 580224
+    },
+    {
+      "tag": "rt07",
+      "bench": "realtalk",
+      "N": 1162,
+      "binary_ms": 0.010455000059058268,
+      "float32_ms": 0.01971833213853339,
+      "speedup": 1.8860193234957778,
+      "binary_bytes": 13944,
+      "float32_bytes": 446208
+    },
+    {
+      "tag": "rt08",
+      "bench": "realtalk",
+      "N": 1044,
+      "binary_ms": 0.009929999941959977,
+      "float32_ms": 0.0186849986979117,
+      "speedup": 1.8816715817848901,
+      "binary_bytes": 12528,
+      "float32_bytes": 400896
+    },
+    {
+      "tag": "rt09",
+      "bench": "realtalk",
+      "N": 1256,
+      "binary_ms": 0.010733897166358211,
+      "float32_ms": 0.020998305151775733,
+      "speedup": 1.9562610696129876,
+      "binary_bytes": 15072,
+      "float32_bytes": 482304
+    }
+  ]
+}

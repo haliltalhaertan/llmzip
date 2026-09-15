@@ -1,0 +1,87 @@
+{
+  "C1_correctness": {
+    "archives": 90,
+    "queries": 9020,
+    "faiss_vs_refdist_FULL_matrix_elementwise_mismatches": 0,
+    "total_distance_cells_compared": 4056452,
+    "refdist_vs_independent_popcount_mismatches": 0,
+    "faiss_label_distance_inconsistencies": 0,
+    "bridge_provenance_float_archives_checked": 90,
+    "repacked_sign_docs_vs_bridge_byte_mismatches": 0,
+    "repacked_sign_queries_vs_bridge_byte_mismatches": 0
+  },
+  "C2_ties": {
+    "straddle_count": 6340,
+    "straddle_rate": 0.7028824833702882,
+    "claimed_forced_fraction_median": 0.8,
+    "claimed_forced_fraction_mean": 0.7707095343680711,
+    "TRUE_determined_fraction_median": 0.9,
+    "TRUE_determined_fraction_mean": 0.853248337028825,
+    "TRUE_ambiguous_slots_fraction_mean": 0.1467516629711752,
+    "boundary_bucket_size_median": 4.0,
+    "boundary_bucket_size_p95": 8.0,
+    "faiss_tiebreak_is_ascending_index_ok": 6340,
+    "faiss_tiebreak_is_ascending_index_violations": 0
+  },
+  "C3_hit": {
+    "hit10_frozen_expected_pct": 73.53953025294489,
+    "hit10_frozen_via_run_hit10_port_pct": 73.53953025294489,
+    "max_abs_diff_claimed_vs_frozen_port": 0.0,
+    "hit10_faiss_pct": 73.94678492239468,
+    "delta_pp": 0.4072546694497914,
+    "ci95_iid_queries": [
+      0.22581520664903934,
+      0.5886941322505435
+    ],
+    "ci95_cluster_bootstrap_90_archives": [
+      0.20963555912330403,
+      0.6070070431711518
+    ],
+    "queries_where_conventions_differ": 311,
+    "per_bench": {
+      "lme": {
+        "queries": 50,
+        "archives": 50,
+        "frozen_pct": 85.0,
+        "faiss_pct": 84.0,
+        "delta_pp": -1.0,
+        "ci95_cluster": [
+          -3.0,
+          0.0
+        ]
+      },
+      "perltqa": {
+        "queries": 8265,
+        "archives": 30,
+        "frozen_pct": 75.76122962874324,
+        "faiss_pct": 76.20084694494858,
+        "delta_pp": 0.4396173162053379,
+        "ci95_cluster": [
+          0.23001660939836982,
+          0.6297282000246167
+        ]
+      },
+      "realtalk": {
+        "queries": 705,
+        "archives": 10,
+        "frozen_pct": 46.68085106382979,
+        "faiss_pct": 46.808510638297875,
+        "delta_pp": 0.12765957446808504,
+        "ci95_cluster": [
+          -0.5426633727680819,
+          0.8115618914699847
+        ]
+      }
+    }
+  },
+  "W4_position": {
+    "straddling_buckets_with_gold_docs": 790,
+    "gold_norm_index_in_bucket_mean": 0.45412950884751124,
+    "nongold_norm_index_in_bucket_mean": 0.44794319090513,
+    "gold_minus_nongold": 0.006186317942381225,
+    "gold_rank_within_bucket_mean_0is_first": 0.49929451701603594,
+    "expected_if_no_bias": 0.5,
+    "global_gold_norm_index_mean_all_queries": 0.47894227047467286,
+    "mc_cases_available": 680
+  }
+}

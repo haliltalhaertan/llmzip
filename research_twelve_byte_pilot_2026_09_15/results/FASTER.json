@@ -1,0 +1,75 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "numpy": "2.3.5",
+  "cases": {
+    "lme_archive": {
+      "N": 514,
+      "n_queries": 1,
+      "bit_identical": {
+        "s1_4call": true,
+        "s2_3call": true,
+        "s3_2call": true,
+        "batch_packed": true
+      },
+      "single_ms": {
+        "float96_matvec": 0.02929999027401209,
+        "s1_4call": 0.055150012485682964,
+        "s2_3call": 0.052799994591623545,
+        "s3_2call": 0.07930002175271511
+      }
+    },
+    "perltqa_archive": {
+      "N": 459,
+      "n_queries": 409,
+      "bit_identical": {
+        "s1_4call": true,
+        "s2_3call": true,
+        "s3_2call": true,
+        "batch_packed": true
+      },
+      "single_ms": {
+        "float96_matvec": 0.012600095942616463,
+        "s1_4call": 0.02004997804760933,
+        "s2_3call": 0.019149971194565296,
+        "s3_2call": 0.028749986086040735
+      },
+      "batch_ms_per_query": {
+        "packed": 0.007081662719126581,
+        "float96": 0.003616136844864247
+      },
+      "batch_total_ms": {
+        "packed": 2.8964000521227717,
+        "float96": 1.478999969549477
+      }
+    },
+    "realtalk_archive": {
+      "N": 662,
+      "n_queries": 85,
+      "bit_identical": {
+        "s1_4call": true,
+        "s2_3call": true,
+        "s3_2call": true,
+        "batch_packed": true
+      },
+      "single_ms": {
+        "float96_matvec": 0.0073999399319291115,
+        "s1_4call": 0.011000025551766157,
+        "s2_3call": 0.010600080713629723,
+        "s3_2call": 0.10920001659542322
+      },
+      "batch_ms_per_query": {
+        "packed": 0.012958823593662065,
+        "float96": 0.010492941638564362
+      },
+      "batch_total_ms": {
+        "packed": 1.1015000054612756,
+        "float96": 0.8919000392779708
+      }
+    }
+  }
+}
