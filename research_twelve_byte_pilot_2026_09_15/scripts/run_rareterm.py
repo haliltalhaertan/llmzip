@@ -54,6 +54,31 @@ RNG = np.random.default_rng(20260916)
 B_REPS = 20000
 
 
+def bucket_qonly(qtext, texts):
+    """GOLD-FREE control bucketing.
+
+    The main bucketing below uses the rarest term shared between the question
+    and its gold, which is CIRCULAR for BM25: its score IS the IDF-weighted
+    overlap, so "gold shares a rare term" and "BM25 ranks gold highly" are
+    close to the same statement.  This variant looks only at the QUESTION's
+    own rarest in-archive term and never touches gold, so if the pattern
+    survives here the mechanism is not an artifact of the split.
+    """
+    n = len(texts)
+    dfs = Counter()
+    for t in texts:
+        dfs.update(set(M.toks(t)))
+    seen = [dfs[w] for w in set(M.toks(qtext)) if w in dfs]
+    if not seen:
+        return "none"
+    frac = min(seen) / max(n, 1)
+    if frac > 0.10:
+        return "common"
+    if frac > 0.02:
+        return "medium"
+    return "rare"
+
+
 def bucket_of(qtext, gold_rows, texts):
     """Rarest term shared between the question and ANY gold document."""
     n = len(texts)
@@ -97,7 +122,7 @@ def main():
 
     for name in which:
         rows = {"sym": [], "qscale": [], "bm25": []}
-        buck, cl = [], []
+        buck, buck_q, cl = [], [], []
 
         def collect(C, texts, questions, golds, qvecs, tag, acc_, cluster_):
             C = np.asarray(C, float)
@@ -115,6 +140,7 @@ def main():
                 rows["bm25"].append(B.exact_frac(bm.score(qt), g, True))
                 b, _ = bucket_of(qt, g, texts)
                 buck.append(b)
+                buck_q.append(bucket_qonly(qt, texts))
                 cl.append(tag)
 
         real_score, M.score = M.score, collect
@@ -124,6 +150,7 @@ def main():
         finally:
             M.score = real_score
 
+        buck_q = np.asarray(buck_q)
         buck = np.asarray(buck)
         cl = np.asarray(cl)
         sym = np.asarray(rows["sym"])
@@ -133,21 +160,24 @@ def main():
         print(f"\n=== {name}  n={len(buck)} ===")
         print(f"  {'kova':>8s}{'sorgu':>7s}{'sym':>8s}{'qscale':>8s}"
               f"{'bm25':>8s}{'sym-bm25':>10s}{'kume CI95':>22s}")
-        for b in BUCKETS:
-            m = buck == b
+        for tagname, BK in (("GOLD-BAGIMLI (dongusel olabilir)", buck),
+                            ("SADECE-SORU (gold'a bakmaz)", buck_q)):
+          print(f"  -- {tagname} --")
+          for b in BUCKETS:
+            m = BK == b
             if not m.any():
                 continue
             d = sym[m] - bm[m]
             lo, hi = boot(d, cl[m])
             sig = "SIG" if (lo > 0 or hi < 0) else "ns"
-            rec["by_bucket"][b] = {
+            rec["by_bucket"].setdefault(tagname, {})[b] = {
                 "n": int(m.sum()),
                 "sym": float(sym[m].mean() * 100),
                 "qscale": float(qs[m].mean() * 100),
                 "bm25": float(bm[m].mean() * 100),
                 "sym_minus_bm25": float(d.mean() * 100),
                 "ci95": [lo, hi], "significant": sig == "SIG"}
-            v = rec["by_bucket"][b]
+            v = rec["by_bucket"][tagname][b]
             print(f"  {b:>8s}{v['n']:>7d}{v['sym']:8.2f}{v['qscale']:8.2f}"
                   f"{v['bm25']:8.2f}{v['sym_minus_bm25']:+10.2f}"
                   f"{f'[{lo:+.2f}, {hi:+.2f}]':>19s} {sig}")
