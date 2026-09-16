@@ -1,0 +1,126 @@
+{
+  "schema": "LLMZIP_LATE_FINDINGS_ARCHIVE_V1",
+  "date": "2026-09-16",
+  "new_original_count": 12,
+  "new_original_bytes": 293375705,
+  "files": [
+    {
+      "path": "LLMZIP_AUDIT3_INCELEME_2026-09-16/INCELEME.md",
+      "bytes": 13380,
+      "sha256": "8dfb6d9a214bc27b88aa7609b9a56235937f69637a0196b8b9a4a55c6ebd53d1",
+      "basename": "INCELEME.md"
+    },
+    {
+      "path": "LLMZIP_AUDIT3_KARSI_INCELEME_2026-09-16.zip",
+      "bytes": 13363,
+      "sha256": "274c1f037d43873124920ac33687b15f069fde5462bea662a5758a25f35ec6a7",
+      "basename": "LLMZIP_AUDIT3_KARSI_INCELEME_2026-09-16.zip",
+      "zip_member_count": 5,
+      "zip_crc_pass": true
+    },
+    {
+      "path": "LLMZIP_GERCEK_12_24_48_BAYT_RAPORU_2026-09-16.md",
+      "bytes": 19942,
+      "sha256": "f19cd3c1e6facf629c1daea9e48baeabf1ab6a3e0acdad11c84ad6fed6dd91bf",
+      "basename": "LLMZIP_GERCEK_12_24_48_BAYT_RAPORU_2026-09-16.md"
+    },
+    {
+      "path": "LLMZIP_GERCEK_12_24_48_BAYT_OZET_2026-09-16.json",
+      "bytes": 89229,
+      "sha256": "5e0dae6e824b4b97bad52ef14d8aa6a4c7d7f333e386022cf6fc650ddb66a8f5",
+      "basename": "LLMZIP_GERCEK_12_24_48_BAYT_OZET_2026-09-16.json"
+    },
+    {
+      "path": "LLMZIP_GERCEK_12_24_48_BAYT_2026-09-16.zip",
+      "bytes": 161331200,
+      "sha256": "3848f7cb35be20eca019c9832944b1e6e90e7b94904dbc582d15658adef5d6c3",
+      "basename": "LLMZIP_GERCEK_12_24_48_BAYT_2026-09-16.zip",
+      "zip_member_count": 2722,
+      "zip_crc_pass": true,
+      "transport_parts": [
+        {
+          "name": "LLMZIP_GERCEK_12_24_48_BAYT_2026-09-16.zip.part001",
+          "bytes": 67108864,
+          "sha256": "8582a2c0ee6e610385c8c6df7087effc8bc62da2fc2e444e0e3f160a8663ae71"
+        },
+        {
+          "name": "LLMZIP_GERCEK_12_24_48_BAYT_2026-09-16.zip.part002",
+          "bytes": 67108864,
+          "sha256": "8b44d2e3ea2948790c4fc32925974f1e87fa7a918f2dd4033f5f6db4a0297ff1"
+        },
+        {
+          "name": "LLMZIP_GERCEK_12_24_48_BAYT_2026-09-16.zip.part003",
+          "bytes": 27113472,
+          "sha256": "d8f3fedbf2eb38110c87b3206a95b5a46219cdce7102c9399da4005dc04ce4f4"
+        }
+      ]
+    },
+    {
+      "path": "LLMZIP_YOL_HARITASI_2026-09-16/ARASTIRMA_PLANI.md",
+      "bytes": 13227,
+      "sha256": "179e5cdb834d3842cce5d0a7746f35c243cb508d96babb367912cd3e51b7b8d8",
+      "basename": "ARASTIRMA_PLANI.md"
+    },
+    {
+      "path": "LLMZIP_YOL_HARITASI_VE_GOREVLER_2026-09-16.zip",
+      "bytes": 10909,
+      "sha256": "a2782bb8b03a1f0c4a1db77b4afebbdbf607bffb5625512491d8aa07e0201002",
+      "basename": "LLMZIP_YOL_HARITASI_VE_GOREVLER_2026-09-16.zip",
+      "zip_member_count": 5,
+      "zip_crc_pass": true
+    },
+    {
+      "path": "LLMZIP_SONRAKI_ADIM_2026-09-16/ONERI_VE_DENEY_PLANI.md",
+      "bytes": 9692,
+      "sha256": "0f9a3915f64f5f68f7e5c41c9c66c7ba14039ea4db0a8b028cd18117849cfa05",
+      "basename": "ONERI_VE_DENEY_PLANI.md"
+    },
+    {
+      "path": "LLMZIP_IKI_FIKIR_RAPORU_2026-09-16.md",
+      "bytes": 16378,
+      "sha256": "15c4408eba703779236d8d486c3e42488f27ba02a4b93f3bf90527e8a4176294",
+      "basename": "LLMZIP_IKI_FIKIR_RAPORU_2026-09-16.md"
+    },
+    {
+      "path": "LLMZIP_IKI_FIKIR_OZET_2026-09-16.json",
+      "bytes": 45782,
+      "sha256": "b454924b87875a13121486974b33219215427dfccc1e64685f6e068270376006",
+      "basename": "LLMZIP_IKI_FIKIR_OZET_2026-09-16.json"
+    },
+    {
+      "path": "LLMZIP_IKI_FIKIR_DENEY_PAKETI_2026-09-16.zip",
+      "bytes": 131812225,
+      "sha256": "224257016cbaa9a80e846967eb02a14663c44d63f78bd79d12e90df2ac565e52",
+      "basename": "LLMZIP_IKI_FIKIR_DENEY_PAKETI_2026-09-16.zip",
+      "zip_member_count": 1758,
+      "zip_crc_pass": true,
+      "transport_parts": [
+        {
+          "name": "LLMZIP_IKI_FIKIR_DENEY_PAKETI_2026-09-16.zip.part001",
+          "bytes": 67108864,
+          "sha256": "66984eb356fcc1d85dc9b0017fd1e6d151182ec0323f2396a65eae3944b60b68"
+        },
+        {
+          "name": "LLMZIP_IKI_FIKIR_DENEY_PAKETI_2026-09-16.zip.part002",
+          "bytes": 64703361,
+          "sha256": "0d35aff72fdd2de4eeb905cc9bd6166a10f1311f329c04765cdec14887cf8306"
+        }
+      ]
+    },
+    {
+      "path": "LLMZIP_IKI_FIKIR_2026-09-16/results/FINAL_SELF_AUDIT.json",
+      "bytes": 378,
+      "sha256": "effb7127387faed6fd876fecc71848d87b46eb1214b9c9078ce046ed45afcc02",
+      "basename": "FINAL_SELF_AUDIT.json"
+    }
+  ],
+  "previous_archive": {
+    "path": "LLMZIP_ARCHIVE_DELIVERY_2026-09-16/drive_readback/LLMZIP_TUM_BULGULAR_2026-09-15_16.zip",
+    "bytes": 45402141,
+    "sha256": "f8bd13f4798b27a7bc5ef27dce98d25ddf39d04d6fb31d910c66c27ce209ea74",
+    "drive_id": "17wX4aScWOOM_p3duhXvThtC1F9GQRbir",
+    "original_file_count": 28
+  },
+  "scientific_rerun_in_this_archival_task": false,
+  "claims_source": "Original reports, preserved without edits; archival hashing is not scientific independent audit."
+}
