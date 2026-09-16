@@ -154,3 +154,26 @@ Three results worth the reader's attention, each with its limit stated in
 
 Section 16 of the handoff lists every claim withdrawn or narrowed. Most were
 found by an independent auditor or an external reviewer, not by the author.
+
+## Added 2026-09-16 (second pass)
+
+Four more directions measured, all negative, all recorded so they are not
+retried — handoff sections 17-18:
+
+- **Run-length encoding makes the code bigger** (110 bits vs 96). Mean run
+  length is 1.98, which is what coin flips give; adjacent bits are
+  uncorrelated to ±0.003. The pipeline destroys the repetition while building
+  the code.
+- **A bigger alphabet loses** at a fixed 96-bit budget — except on PerLTQA,
+  where ternary beats binary. Many coarse questions beat few precise ones.
+- **The query should not be quantised**: keeping it exact gains 1.70–5.43 pp
+  on all three benchmarks, at zero index cost, since a query is one vector.
+- **Learned per-coordinate thresholds do not help, and the reason matters.**
+  The optimiser hit its objective in **480 of 480 archives** and improved
+  near/far separation in code space — and retrieval fell anyway. The proxy
+  failed, not the optimiser. Any method tuned on document-to-document
+  geometry inherits this risk; a future learned encoder should be trained on
+  question-evidence pairs, not document neighbourhoods.
+
+The threshold proposal came from outside this session, as did the criticism
+that corrected how its failure was first reported.

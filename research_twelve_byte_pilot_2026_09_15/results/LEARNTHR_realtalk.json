@@ -1,0 +1,29 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "benchmark": "realtalk",
+  "lambda_not_held_out": "LAMBDA is chosen by looking at the same queries, so any winning learn arm is an upper bound, not an honest estimate",
+  "n_queries": 705,
+  "mean_abs_learned_threshold": 0.007559822171178954,
+  "hit_percent": {
+    "zero_hit1": 15.62647754137116,
+    "zero_hit3": 29.737588652482273,
+    "zero_hit10": 46.68085106382979,
+    "learn_L0.5_hit1": 15.981087470449173,
+    "learn_L0.5_hit3": 29.18439716312057,
+    "learn_L0.5_hit10": 43.664978047956765,
+    "learn_L1.0_hit1": 15.437352245862884,
+    "learn_L1.0_hit3": 28.08274231678487,
+    "learn_L1.0_hit10": 43.87279072385456,
+    "learn_L2.0_hit1": 14.177304964539008,
+    "learn_L2.0_hit3": 25.516548463356976,
+    "learn_L2.0_hit10": 40.51107836214219,
+    "shuffled_hit1": 15.41371158392435,
+    "shuffled_hit3": 28.55555555555556,
+    "shuffled_hit10": 44.44264836818028
+  }
+}

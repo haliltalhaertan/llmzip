@@ -1,0 +1,58 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "budget_bits": 96,
+  "coords_per_alphabet": {
+    "2": 96,
+    "3": 60,
+    "4": 48,
+    "8": 32,
+    "16": 24,
+    "256": 12
+  },
+  "quantiser": "per-coordinate quantile bins, conditional-mean reconstruction (equiprobable levels, MSE-optimal centres)",
+  "benchmarks": {
+    "perltqa": {
+      "L2_float_query_hit1": 35.027223230490016,
+      "L2_float_query_hit3": 59.87900786448881,
+      "L2_float_query_hit10": 77.31397459165154,
+      "L2_quant_query_hit1": 30.88929219600726,
+      "L2_quant_query_hit3": 53.018753781004236,
+      "L2_quant_query_hit10": 71.88142770719904,
+      "L3_float_query_hit1": 33.74470659407138,
+      "L3_float_query_hit3": 59.35874168179068,
+      "L3_float_query_hit10": 78.26981246218996,
+      "L3_quant_query_hit1": 31.869328493647913,
+      "L3_quant_query_hit3": 55.99516031457955,
+      "L3_quant_query_hit10": 75.45069570477919,
+      "L4_float_query_hit1": 33.502722323049,
+      "L4_float_query_hit3": 58.923169993950395,
+      "L4_float_query_hit10": 77.7858439201452,
+      "L4_quant_query_hit1": 32.35329703569268,
+      "L4_quant_query_hit3": 56.49122807017544,
+      "L4_quant_query_hit10": 76.05565638233514,
+      "L8_float_query_hit1": 32.58318209316394,
+      "L8_float_query_hit3": 57.21718088324259,
+      "L8_float_query_hit10": 76.69691470054445,
+      "L8_quant_query_hit1": 32.256503327283724,
+      "L8_quant_query_hit3": 56.28554143980641,
+      "L8_quant_query_hit10": 76.47912885662433,
+      "L16_float_query_hit1": 28.989715668481548,
+      "L16_float_query_hit3": 54.010889292196005,
+      "L16_float_query_hit10": 74.61584996975196,
+      "L16_quant_query_hit1": 29.401088929219597,
+      "L16_quant_query_hit3": 53.974591651542646,
+      "L16_quant_query_hit10": 73.95039322444042,
+      "L256_float_query_hit1": 21.464004839685423,
+      "L256_float_query_hit3": 42.62552934059286,
+      "L256_float_query_hit10": 61.633393829401086,
+      "L256_quant_query_hit1": 21.35511191772535,
+      "L256_quant_query_hit3": 42.722323049001815,
+      "L256_quant_query_hit10": 61.633393829401086
+    }
+  }
+}

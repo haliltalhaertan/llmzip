@@ -1,0 +1,36 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "benchmark": "lme",
+  "lambda": 1.0,
+  "n_shuffles": 20,
+  "n_queries": 470,
+  "objective_J": {
+    "zero": 137456.97021276597,
+    "learned": 140615.67234042555,
+    "shuffled": 135242.32680851064,
+    "archives_where_learned_beats_zero": 470,
+    "n_archives": 470
+  },
+  "hamming_separation": {
+    "near_zero": 29.035503116269076,
+    "far_zero": 48.88167393617021,
+    "sep_zero": 19.846170819901136,
+    "near_learn": 27.873742940038685,
+    "far_learn": 49.09047819148935,
+    "sep_learn": 21.216735251450675
+  },
+  "hit10_percent": {
+    "zero": 86.0773387369132,
+    "learned": 85.33282674772036,
+    "shuffled_mean": 85.25899841883884,
+    "shuffled_sd": 0.6857441402659945,
+    "shuffled_min": 84.22441742654507,
+    "shuffled_max": 86.7142857142857,
+    "shuffles_worse_than_learned": 11
+  }
+}
