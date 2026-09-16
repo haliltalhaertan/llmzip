@@ -1,1 +1,10 @@
-{"mode":"DIAGNOSE_SOURCE","purpose":"Check fresh authorized source URL; no archive mutation or research execution","url":"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-8fc4-8210-8adb-07f6c6e04c70/raw?se=2026-09-16T18%3A02%3A43Z&sp=r&sv=2026-02-06&sr=b&scid=ecb411f2-1436-54bf-8280-ab81c3985b56&skoid=5bfb38a5-43fb-4c63-80a1-6ae1e97e2e16&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-16T06%3A22%3A02Z&ske=2026-09-17T06%3A22%3A02Z&sks=b&skv=2026-02-06&sig=ZtqfiIuMa2k%2BZ8/UOs2IWuTQYFUUTAUyNC3/nYkqkr4%3D"}
+{
+  "status": "CLOSED_FAILED_TRANSPORT",
+  "date": "2026-09-16",
+  "reason": "GitHub-hosted runner received HTTP403 from the source download service, including a freshly renewed source URL. No full-payload GitHub release was created.",
+  "failed_runs": [35131003396, 35131501913],
+  "temporary_workflow_removed": true,
+  "expiring_source_urls_removed_from_current_file": true,
+  "complete_payload_location": "https://drive.google.com/drive/folders/1q2JVwmA_LKBmLaZtMqJTXsLWBWhT4O_m",
+  "research_code_executed": false
+}
