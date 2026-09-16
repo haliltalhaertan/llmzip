@@ -1,0 +1,6 @@
+# Research artifacts must survive a round-trip byte-for-byte.
+# Without this, git's autocrlf rewrites LF->CRLF on Windows checkout and every
+# sha256 in FILE_MANIFEST.json fails verification on a fresh clone even though
+# the content is identical. Verified: 684 of 756 files mismatched on the first
+# clone check for exactly this reason; content was equal after CRLF normalization.
+research_top10_comparison_2026_09_16/** -text
