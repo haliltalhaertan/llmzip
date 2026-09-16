@@ -1,0 +1,17 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/quant (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. All deliverables are in `math_r1/quant/`: `quant_math.py`, `FIDELITY_GATE.json` (PASS, written before any new arm), `per_query.jsonl` (107,640 rows = 8,970 queries × 6 arms × 2 scorers, exact), `RESULTS.json`, `REPORT.md`.
+
+**Fidelity gate: PASS.** RealTalk G1 0/858,624 differing bits; G2 all four references match (qscale 49.6454/22.41, sym det 46.5248 / exp 46.6809). PerLTQA G1 0/1,179,648 bits; G2 all four match (80.0000/53.24, 75.6806/75.7612). One self-caught defect worth disclosing: run 1 transposed the sym score matrix in the arms stage (gate untouched); fixed, re-ran, and added an assertion that arms-stage FULL reproduces gate G2 to <1e-9 on both benchmarks.
+
+**Sign-invariance proof (verified, RT01):** rescaling changed 0 bits — per-axis scaling cannot change a code bit, so only rotations/thresholds were tested.
+
+**Verdicts** (paired archive-clustered bootstrap, 20000 reps, seed 20260916; pp vs FULL):
+- **Family C (ITQ): REJECT both.** RealTalk qscale Hit@10 −16.88 [−24.21,−9.42], sym −14.18; PerLTQA qscale Hit@10 −1.09 (ns) but FR@3 −2.61 [−4.10,−1.10], sym FR@3 −1.77. Loss decreased on all 40 archives, so the optimizer worked — quantization fidelity just isn't retrieval quality.
+- **Family D (random, all 3 seeds): uniformly harmful**, consistent across seeds — RT ≈ −14 to −15pp, PQ qscale FR@3 −1.5 to −2.6pp. The axis-aligned SVD frame is load-bearing.
+- **ITQ minus random:** on RealTalk ITQ is *significantly worse* than every random rotation on qscale (−1.8 to −2.6pp, all CIs exclude 0) — the optimization bought negative value. On PerLTQA it's ≈0 with mixed-tiny FR@3 wiggles.
+- **Family E (median): neutral/tiny-hurt** — RT −0.43 (ns), PQ −0.53 significant but ≤0.9pp. Bits perfectly balanced (0.500) with no retrieval gain.
+
+**No cross-benchmark reversal this round** — rotations hurt on both (very different magnitudes: ~−15pp vs ~−1pp); MED neutral-to-tiny-hurt on both. The rare-term gap persists untouched under the best arm on each benchmark, as predicted.
+
+**Cost:** rotation state R is 3.4× (f32) / 6.9× (f64) larger than RealTalk's entire 107,328 B payload (8,944 docs counted), and 7.5×/15× larger than PerLTQA's 147,456 B payload — shared state dwarfs the payload it damages. Median thresholds cost 3.6–7.8% of payload. Fit ~1.3 s/archive; query overhead ~4–7 µs/query.

@@ -1,0 +1,15 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Master ledger built in [inventory/results](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results).
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+**Deliverables (all labeled, all inside your directory):**
+- `ledger.csv` — 817 rows (136 VERIFIED, 681 CLAIM, 0 RELAYED), one row per measured quantity, exact source metric names kept (FR@3 never converted to Hit@10).
+- `MASTER_LEDGER.md` — grouped by benchmark with per-group settled notes.
+- `DO_NOT_REPEAT.md` — every experiment already run with proof file.
+- `OPEN_QUESTIONS.md` — 10 genuinely open items, strict CLAIM-vs-missing split.
+
+**Verified this session** (re-derived from raw per-query data, counts stated): baseline 4 arms × 3 benches × 4 metrics from 9440 rows (8265/470/705) — matches REPORT.md at 4dp, FR@3 gate maxdev 0.0; lexical BM25/TFIDF overall + per-archive from 705-row corrected files (also confirming the producer expected_hit mislabel); PQ12B overall + per-archive from 705 rows; baseline tie fractions. No input file modified; no pip installs, web, or git used.
+
+**Headline facts:** REALTALK lexical controls (BM25 .5418) beat every 12-byte arm; PQ12B collapses on RT06/RT08 (~0.05); B8/MAG8 add nothing over their ablations; qscale reproduced exactly but qsign_dstd did not; PPLX semantic arms genuinely unmeasured (encoder still on RT01 docs). Weak-evidence flags: LoCoMo n=1531-vs-1535 inconsistency unresolved; all CIs exploratory; incoming per-query CSVs cited but uninspected (item 10).

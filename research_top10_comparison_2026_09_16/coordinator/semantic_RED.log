@@ -1,0 +1,89 @@
+test_int8_matches_official_torch_fp32_boundaries (__main__.Fidelity.test_int8_matches_official_torch_fp32_boundaries) ... FAIL
+test_missing_complete_mask_is_not_complete (__main__.Fidelity.test_missing_complete_mask_is_not_complete) ... ERROR
+test_partial_resume_does_not_mark_missing_rows_done (__main__.Fidelity.test_partial_resume_does_not_mark_missing_rows_done) ... ERROR
+test_pool_is_official_fp32_reduction (__main__.Fidelity.test_pool_is_official_fp32_reduction) ... FAIL
+
+======================================================================
+ERROR: test_missing_complete_mask_is_not_complete (__main__.Fidelity.test_missing_complete_mask_is_not_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/test_semantic_fidelity.py", line 33, in test_missing_complete_mask_is_not_complete
+    _,have=s.load_checkpoint(p,['a'],4);self.assertFalse(have.any())
+           ^^^^^^^^^^^^^^^^^
+AttributeError: module 'pplx_scorer' has no attribute 'load_checkpoint'
+
+======================================================================
+ERROR: test_partial_resume_does_not_mark_missing_rows_done (__main__.Fidelity.test_partial_resume_does_not_mark_missing_rows_done)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/test_semantic_fidelity.py", line 25, in test_partial_resume_does_not_mark_missing_rows_done
+    x,have=s.load_checkpoint(p,h,4)
+           ^^^^^^^^^^^^^^^^^
+AttributeError: module 'pplx_scorer' has no attribute 'load_checkpoint'
+
+======================================================================
+FAIL: test_int8_matches_official_torch_fp32_boundaries (__main__.Fidelity.test_int8_matches_official_torch_fp32_boundaries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/test_semantic_fidelity.py", line 19, in test_int8_matches_official_torch_fp32_boundaries
+    np.testing.assert_array_equal(s.official_int8(x),expected)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mdp/muse-work/fpylibs/numpy/testing/_private/utils.py", line 1128, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/home/mdp/muse-work/fpylibs/numpy/testing/_private/utils.py", line 988, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 166 / 756 (22%)
+First 5 mismatches are at indices:
+ [0]: -125 (ACTUAL), -126 (DESIRED)
+ [4]: -121 (ACTUAL), -122 (DESIRED)
+ [10]: -115 (ACTUAL), -116 (DESIRED)
+ [11]: -115 (ACTUAL), -114 (DESIRED)
+ [12]: -113 (ACTUAL), -114 (DESIRED)
+Max absolute difference among violations: 1
+Max relative difference among violations: 0.25
+ ACTUAL: array([-125, -124, -124, -122, -121, -120, -120, -118, -118, -116, -115,
+       -115, -113, -112, -112, -110, -110, -108, -108, -106, -105, -104,
+       -103, -102, -101, -101,  -99,  -99,  -98,  -96,  -96,  -95,  -93,...
+ DESIRED: array([-126, -124, -124, -122, -122, -120, -120, -118, -118, -116, -116,
+       -114, -114, -112, -112, -110, -110, -108, -108, -106, -105, -104,
+       -103, -102, -102, -101, -100,  -98,  -98,  -96,  -96,  -94,  -94,...
+
+======================================================================
+FAIL: test_pool_is_official_fp32_reduction (__main__.Fidelity.test_pool_is_official_fp32_reduction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/test_semantic_fidelity.py", line 13, in test_pool_is_official_fp32_reduction
+    np.testing.assert_array_equal(s.masked_mean_pool(h,m),expected)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mdp/muse-work/fpylibs/numpy/testing/_private/utils.py", line 1128, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/home/mdp/muse-work/fpylibs/numpy/testing/_private/utils.py", line 988, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Mismatch at index:
+ [0, 0]: 0.3333333432674408 (ACTUAL), 0.0 (DESIRED)
+Max absolute difference among violations: 0.33333334
+Max relative difference among violations: inf
+ ACTUAL: array([[0.333333]], dtype=float32)
+ DESIRED: array([[0.]], dtype=float32)
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.161s
+
+FAILED (failures=2, errors=2)

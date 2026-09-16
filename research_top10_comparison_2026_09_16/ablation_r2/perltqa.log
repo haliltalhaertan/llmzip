@@ -1,0 +1,11 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ablation_r2/perltqa (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. All deliverables are in `ablation_r2/perltqa/`, independently verified.
+
+**Fidelity gate (passed before any ablation number):** recovered the exact item-text recipe verbatim from `bench3/runs/b3b_perltqa/step2_build.py` — 0 differing sign bits out of 1,179,648 across all 30 archives, and replayed production metrics exactly (qscale Hit@10 80.00%, sym det 75.6806% / expected 75.7612%, qscale FR@3 53.24%).
+
+**Verdict on the LSA-redundancy hypothesis: REFUTED on PerLTQA.** Dropping LSA32 gives no benefit in any of 8 metric×scorer cells and significantly hurts qscale recall (FR@3 −1.23pp [−2.16,−0.30], Hit@3 −1.42pp). The RealTalk direction (+2.41pp Hit@10, all CIs including zero) does not replicate — with 30 clusters the CIs are much tighter and point flat-to-negative.
+
+**Second reversal:** the char channel, clearly valuable on RealTalk, is significantly harmful here — NO_CHAR gains +1.4/+0.8pp Hit@10 and +3.1/+2.3pp FR@3, and WORD_ONLY is the best arm overall under both scorers (all 16 NO_CHAR/WORD_ONLY contrast CIs exclude zero). Channel value is benchmark-dependent.
+
+**Verification (not just exit 0):** per-query rows re-derived from `per_query.jsonl` (66,120 = 8265×4×2) match `RESULTS.json` exactly; a fresh independent rebuild of one archive reproduces top10/metrics/expected-Hit@10 on all 1,728 of its rows via the library path; a second-method bootstrap agrees within 0.02pp. Fast ranking was proven element-equal to `det_top10` on tied samples. Cost: WORD_ONLY uses ~6.8k vs ~24k Z-features at ~5s vs ~28s build; payload confirmed 12 B/doc on every archive×arm.

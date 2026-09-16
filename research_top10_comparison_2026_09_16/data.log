@@ -1,0 +1,13 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done — full GREEN, well inside the 20-minute budget.
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+**Export (my job's first half):** all 10 REALTALK archives canonicalized into [top10_comparison_r1/data](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data) as `RT01.json`…`RT10.json` (`{archive_id, source_file, docs:[{row,id,text}], queries:[{qid,text,gold,category}]}`), 705 valid queries, row IDs preserved. Doc texts use the verbatim frozen `message_text` format (`speaker: clean_text [+ IMAGE: caption]`, no date, no events), bound via each cache's `file` field. Verified: EVERY dia_id ↔ cached `id_to_row` (8944 messages), EVERY question/category exact, EVERY gold recomputed via the old `norm_evidence` — 728/728 stable, zero mismatches. `exclusions.json` holds exactly the 23 original empty-gold qids, byte-identical to the frozen excluded list (no new exclusions). `manifest.json` has counts + sha256 of all 10 caches, 10 raw chats, and exports; `EXPORT_DONE.json` was written before lexical work started.
+
+**Lexical controls (second half):** BM25 (k1=1.5, b=0.75) and TFIDF-cosine on the SAME 705, per-archive documents-only fit, `\w+` lowercased tokenizer, declared zero-vector/nonfinite handling (none observed), exact protocol tie rule (score ↓, SHA256(`top10-r1|archive|row`) ↑, row ↑; exactly 10 IDs). Overall: BM25 Hit@10 0.5418 / Recall 0.4316 / nDCG 0.3428; TFIDF 0.5291 / 0.4191 / 0.3166. Per-query rows in `per_query_bm25.jsonl`, `per_query_tfidf.jsonl` (plus combined `per_query.jsonl`), each with top10, scores, hit/recall/nDCG/expected-hit. No model downloads, no old-encoder refit.
+
+**TDD + verification (all observed this session):** RED export assertion → exporter → GREEN (40108 checks); RED lexical assertion → `run_lexical.py` → GREEN (8464 checks); final full run GREEN, 48572 checks. Independent audit re-derived RT01_q000's BM25 top10 with a second code path — exact match. Durable checks kept as `test_top10_data.py`; repro code `export_realtalk.py`, `run_lexical.py`; logs `tdd_export.log`, `tdd_lexical.log`; details in `REPORT.md`. Prior `run.py` used read-only as a library reference only.
+
+**Blockers:** none — no missing inputs, nothing invented. Semantic PPLX arms and PerLTQA/LME baselines are NOT RUN here (other workers' scope).

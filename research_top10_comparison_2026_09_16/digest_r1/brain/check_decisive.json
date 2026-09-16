@@ -1,0 +1,115 @@
+{
+ "_label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "A_float_dot": {
+  "n": 705,
+  "hit10_pct": 42.7,
+  "per_archive": {
+   "RT01": 51.76,
+   "RT02": 40.0,
+   "RT03": 65.75,
+   "RT04": 64.79,
+   "RT05": 62.86,
+   "RT06": 18.92,
+   "RT07": 27.14,
+   "RT08": 10.0,
+   "RT09": 42.86,
+   "RT10": 40.68
+  },
+  "compare": {
+   "float_std_cosine": 48.51,
+   "sign96": 46.68,
+   "qscale": 49.65,
+   "BM25": 54.18,
+   "note": "float_std/qscale/BM25 are coordinator re-derived values from the digest"
+  }
+ },
+ "B_loo": {
+  "n_rare": 412,
+  "full_mean_diff_pp": 4.78,
+  "rows": [
+   {
+    "dropped": "RT01",
+    "n_dropped": 47,
+    "kept_diff_pp": 5.05,
+    "dropped_arch_diff_pp": 2.66
+   },
+   {
+    "dropped": "RT02",
+    "n_dropped": 36,
+    "kept_diff_pp": 5.18,
+    "dropped_arch_diff_pp": 0.56
+   },
+   {
+    "dropped": "RT03",
+    "n_dropped": 43,
+    "kept_diff_pp": 4.26,
+    "dropped_arch_diff_pp": 9.22
+   },
+   {
+    "dropped": "RT04",
+    "n_dropped": 37,
+    "kept_diff_pp": 4.72,
+    "dropped_arch_diff_pp": 5.41
+   },
+   {
+    "dropped": "RT05",
+    "n_dropped": 36,
+    "kept_diff_pp": 4.17,
+    "dropped_arch_diff_pp": 11.11
+   },
+   {
+    "dropped": "RT06",
+    "n_dropped": 43,
+    "kept_diff_pp": 4.77,
+    "dropped_arch_diff_pp": 4.84
+   },
+   {
+    "dropped": "RT07",
+    "n_dropped": 52,
+    "kept_diff_pp": 3.9,
+    "dropped_arch_diff_pp": 10.9
+   },
+   {
+    "dropped": "RT08",
+    "n_dropped": 36,
+    "kept_diff_pp": 6.04,
+    "dropped_arch_diff_pp": -8.43
+   },
+   {
+    "dropped": "RT09",
+    "n_dropped": 44,
+    "kept_diff_pp": 5.7,
+    "dropped_arch_diff_pp": -2.93
+   },
+   {
+    "dropped": "RT10",
+    "n_dropped": 38,
+    "kept_diff_pp": 3.97,
+    "dropped_arch_diff_pp": 12.76
+   }
+  ]
+ },
+ "C_perltqa_text": {
+  "n_arch": 31,
+  "n_docs": 12323,
+  "doc_mean_tok": 36.0,
+  "doc_median_tok": 28,
+  "doc_p10_tok": 21,
+  "doc_p90_tok": 36,
+  "vocab": 11159,
+  "sample_texts": [
+   "[profile] Protagonist: Zhang Xiaohong",
+   "[profile] Gender: female",
+   "[profile] Nickname: Xiaohong",
+   "[profile] Title: Chemical pharmaceutical engineer",
+   "[profile] Age: 28",
+   "[profile] Occupation: Chemical pharmaceutical engineer"
+  ],
+  "compare_realtalk": {
+   "doc_mean_tok": 21.2,
+   "doc_median_tok": 14,
+   "query_mean_tok": 9.1,
+   "vocab_per_archive": "2006-2816"
+  }
+ }
+}

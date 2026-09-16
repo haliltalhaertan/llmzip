@@ -1,0 +1,15 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/incoming (cwd default)
+muse: workspace trust: trusted source=run-flag
+Inventory complete — all four deliverables are in `inventory/incoming/`. Every output is labeled [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE].
+
+**1. Discrepancy resolved (VERIFIED, dev +0.000000 pp).** No bug either side — same name, different arms. Their `query_sign_doc_std` (`readout_diagnostic.py:87,97`) is `Qb @ unit(C/σ).T / √96`: each scaled document row is L2-normalized. The coordinator's `qsign_dstd` (`verify_incoming.py:42`) is `(C/σ) @ qb`: raw dot, no per-doc norm. Sigma, signs, and metric are identical; the per-doc divisor varies per document, so rankings must differ. I re-derived their formula from the raw caches: LME 87.6596, PerLTQA 79.7338, RealTalk 50.3546 — exact. Corollary: their qscale needs no per-doc norm on the query side (a per-query positive scalar), so it is rank-identical to the coordinator's — which is why qscale reproduced exactly.
+
+**2. Headlines confirmed from their raw CSVs (VERIFIED).** HATA: 94,400 rows match their summaries to 2.2e-16. HIZ: 65,826 rows match FINAL_SUMMARY to 0.0 pp. qscale−Hamming: LME +2.43, PerLTQA +4.24, RealTalk +2.96. LoCoMo (n=1531): 52.64 / 56.83 / 57.22 / 61.01, with paired win/loss splits re-derived exactly.
+
+**3. Critical comparison (VERIFIED, both their sources agree):** qscale minus old asym = LME +2.77, PerLTQA −0.19, RealTalk +6.10, LoCoMo +0.39 (CI [−1.66, 2.25], covers zero). This digit-matches the coordinator's independent-data finding. Their own report concedes the LoCoMo asym-gap is "small and uncertain." On PerLTQA, qscale's Hamming gain was already available via old asym — qscale trails it.
+
+**4. LoCoMo cohort (VERIFIED from file):** 1986→1531 (446 cat-5 + 4 no-evidence + 5 invalid, logged pre-score in `locomo_adapter_before_scores.json`, built by `new_data.py:5-32`). Flags: text-only adaptation (not official answer-F1), 23% exclusion, 10 clusters only, previously-tested corpus (transfer, not blind) — all declared in their own report.
+
+**5. Uncheckable from shipment:** AVX-512 timings, end-to-end ms, total RSS (explicitly not measured), float32==float64 replay, nDCG script (ships but unrunnable-here; tests only the quoted formula), RealTalk raw rebuild (absent by declaration). Full list in INCOMING_AUDIT.md §5.
+
+**Bottom line:** don't re-run old-arm quality, the tie metric, the FR@3 gate, or qscale on old benchmarks. Genuinely new: the frozen qscale definition, the reusable LoCoMo adapter cohort, the kernel code (needs our own machine), and the open PerLTQA-asym question. One naming hazard: never merge their normalized `query_sign_doc_std` with the coordinator's unnormalized series.

@@ -1,0 +1,26 @@
+{
+  "started": 1789479183.7349017,
+  "load_s": 5.176359176635742,
+  "weight_bytes": 2400127479,
+  "archives": {
+    "RT01": {
+      "docs": {
+        "done": 120,
+        "total": 662
+      }
+    }
+  },
+  "first_batch": {
+    "archive": "RT01",
+    "kind": "docs",
+    "batch": 8,
+    "seconds": 124.45469284057617,
+    "texts_per_s": 0.0642804205884613,
+    "est_total_s": 150107.91640233994
+  },
+  "done_texts": 120,
+  "total_texts": 9649,
+  "encode_s_so_far": 268.6245086193085,
+  "elapsed_s": 291.31528306007385,
+  "peak_rss_bytes": 2480451584
+}

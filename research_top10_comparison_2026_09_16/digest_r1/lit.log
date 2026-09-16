@@ -1,0 +1,14 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/lit (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Both deliverables are in `digest_r1/lit/`, labelled, no experiments run, nothing written outside my directory.
+
+**Files:** `LITERATURE_MAP.md` (per-question verdicts + evidence tags + rediscovering/open lists), `VERIFY_QUEUE.md` (11 ranked fetches, one settle-line each).
+
+**Verdicts:**
+- **Q1 (rotation hurts, ITQ≤random): PARTIALLY KNOWN / OPEN, medium confidence.** Reconstruction≠retrieval (ScaNN direction) and ITQ's dense-embedding scope are recalled support; axis-aligned/sparse and balance-as-bad-proxy are our conjecture; the −14pp-vs-−1pp split with balance improving is OPEN. Our bit-balance numbers are the strongest novel instance.
+- **Q2 (all-but-the-top): technique KNOWN / reversal OPEN, medium-high on existence.** Recalled as word-embedding postprocessing; our replace-top-96 variant plus SIG-win/SIG-loss across benchmarks has no recalled precedent.
+- **Q3 (IDF^p): tradeoff PARTIALLY KNOWN / dial+reversal OPEN, medium.** Rarity-vs-noise with BM25 saturation as the institutional answer is old folklore; IDF^p-to-2 with rare-band-only SIG gain one place and SIG loss the other is OPEN (subgroup caveat preserved).
+- **Q4 (RRF hybrid): WHY known / ACCOUNTING open.** Complementarity is recalled folklore our 49/67 split instantiates; whether published hybrids charge for the BM25 index is UNVERIFIED — I refused to generalize, the queue asks for a per-paper audit. Our varint-vs-pickle honest accounting stands on its own bytes.
+- **Q5 (55% oracle ceiling): OPEN, medium-high.** No recalled bits→recall bound; the 2^96 counting argument is vacuous (~900 docs/archive), so the ceiling is query-generalization, not codebook capacity.
+
+**Honesty note:** all four starter items are outside the already-scanned set, so every paper claim I make is tagged RECALLED-FROM-MEMORY with its fetch condition — including Husbands (rank 1, most decision-relevant: confirms or kills the IDF^p prior-art question) and the ITQ original (rank 2: confirms whether our rotation regime is novel). The leverage identity itself I proved from orthonormality, so only its Drineas attribution needs fetching (rank 6, lowest weight).

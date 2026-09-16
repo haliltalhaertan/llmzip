@@ -1,0 +1,182 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "note": "Archive-clustered paired bootstrap; RealTalk has only 10 clusters, PerLTQA 30. LME has one archive per question so clusters=questions and independence is assumed, not established. Exploratory, not a preregistered confirmation.",
+  "nboot": 20000,
+  "seed": 20260916,
+  "results": {
+    "LME": {
+      "n": 470,
+      "n_archives": 470,
+      "means": {
+        "sign96": {
+          "realized": 86.38297872340426,
+          "expected": 86.0773387369132
+        },
+        "asym": {
+          "realized": 85.74468085106382,
+          "expected": 85.74468085106382
+        },
+        "qscale": {
+          "realized": 88.51063829787233,
+          "expected": 88.51063829787233
+        }
+      },
+      "contrasts": {
+        "qscale-sign96": {
+          "point_pp": 2.4332995609591355,
+          "ci95": [
+            0.6484295845997974,
+            4.300911854103344
+          ],
+          "clusters": 470,
+          "better": 17,
+          "worse": 4,
+          "same": 449,
+          "ci_excludes_zero": true
+        },
+        "asym-sign96": {
+          "point_pp": -0.33265788584937517,
+          "ci95": [
+            -2.7558257345491386,
+            2.01789935832489
+          ],
+          "clusters": 470,
+          "better": 17,
+          "worse": 17,
+          "same": 436,
+          "ci_excludes_zero": false
+        },
+        "qscale-asym": {
+          "point_pp": 2.765957446808511,
+          "ci95": [
+            1.0638297872340425,
+            4.680851063829787
+          ],
+          "clusters": 470,
+          "better": 16,
+          "worse": 3,
+          "same": 451,
+          "ci_excludes_zero": true
+        }
+      }
+    },
+    "PerLTQA": {
+      "n": 8265,
+      "n_archives": 30,
+      "means": {
+        "sign96": {
+          "realized": 75.68058076225044,
+          "expected": 75.76122962874324
+        },
+        "asym": {
+          "realized": 80.1935874168179,
+          "expected": 80.1935874168179
+        },
+        "qscale": {
+          "realized": 80.0,
+          "expected": 80.0
+        }
+      },
+      "contrasts": {
+        "qscale-sign96": {
+          "point_pp": 4.238770371256761,
+          "ci95": [
+            3.372722904713792,
+            5.037947339487835
+          ],
+          "clusters": 30,
+          "better": 684,
+          "worse": 278,
+          "same": 7303,
+          "ci_excludes_zero": true
+        },
+        "asym-sign96": {
+          "point_pp": 4.432357788074667,
+          "ci95": [
+            3.1769960136968582,
+            5.597713201580647
+          ],
+          "clusters": 30,
+          "better": 796,
+          "worse": 368,
+          "same": 7101,
+          "ci_excludes_zero": true
+        },
+        "qscale-asym": {
+          "point_pp": -0.19358741681790684,
+          "ci95": [
+            -0.8243433287563119,
+            0.42304416948918117
+          ],
+          "clusters": 30,
+          "better": 244,
+          "worse": 260,
+          "same": 7761,
+          "ci_excludes_zero": false
+        }
+      }
+    },
+    "REALTALK": {
+      "n": 705,
+      "n_archives": 10,
+      "means": {
+        "sign96": {
+          "realized": 46.52482269503546,
+          "expected": 46.68085106382979
+        },
+        "asym": {
+          "realized": 43.54609929078014,
+          "expected": 43.54609929078014
+        },
+        "qscale": {
+          "realized": 49.645390070921984,
+          "expected": 49.645390070921984
+        }
+      },
+      "contrasts": {
+        "qscale-sign96": {
+          "point_pp": 2.9645390070921986,
+          "ci95": [
+            0.8223953169886409,
+            4.949462186783926
+          ],
+          "clusters": 10,
+          "better": 56,
+          "worse": 33,
+          "same": 616,
+          "ci_excludes_zero": true
+        },
+        "asym-sign96": {
+          "point_pp": -3.1347517730496453,
+          "ci95": [
+            -8.1500085999312,
+            2.061491263171936
+          ],
+          "clusters": 10,
+          "better": 52,
+          "worse": 72,
+          "same": 581,
+          "ci_excludes_zero": false
+        },
+        "qscale-asym": {
+          "point_pp": 6.099290780141844,
+          "ci95": [
+            1.6483516483516483,
+            10.159651669085632
+          ],
+          "clusters": 10,
+          "better": 57,
+          "worse": 14,
+          "same": 634,
+          "ci_excludes_zero": true
+        }
+      }
+    }
+  },
+  "elapsed_s": 30.889184951782227
+}

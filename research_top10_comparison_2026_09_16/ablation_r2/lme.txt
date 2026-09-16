@@ -1,0 +1,90 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn available).
+NO paid APIs, NO web, NO git, NO pip installs. Write ONLY inside YOUR directory (below).
+Everything else READ-ONLY - never modify an input file.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+EVIDENCE DISCIPLINE (the coordinator re-derives your numbers from your own per_query.jsonl; errors WILL be caught):
+- Report the metric actually computed. Never rename FR@3 into Hit@10.
+- exit 0 is not proof. A test that cannot fail proves nothing.
+- If a gate fails: STOP, report it, do NOT loosen the gate and do NOT drop queries to make it pass.
+  Any exclusion needs a count + reason fixed BEFORE seeing scores.
+- Missing/impossible -> declare a blocker. NEVER invent data.
+- Save partial artifacts as you go. Budget ~25 min.
+
+SHARED DEFINITIONS (use exactly; do not re-invent):
+- Deterministic top-K: score DESC, then ascending SHA256("top10-r1|"+archive_id+"|"+str(row)), then ascending row.
+  Exactly K ids, no duplicates, gold-unaware.
+- Hit@10 = 1 if any gold row in the 10 returned ids. FR@3 = |gold INTERSECT top3| / |gold|.
+- Also report exact expected-Hit@10 under uniform ties (ties matter: the symmetric Hamming arm is tie-heavy).
+- Paired archive-clustered bootstrap, 20000 reps, seed 20260916, for every contrast CI.
+Read-only reference implementation you may import:
+/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/audit_baseline_lib.py
+  det_top10(scores, archive_id, k), hrn(top, gold, k), expected_hit(scores, gold, k), pack_signs_bool, decode_pm1
+
+THE FROZEN BUILDER (ground truth for the representation):
+/mnt/c/Users/MDP/dev/llmzip-work/drive/v52_t4d_locomo_frozen_cross_benchmark.py
+Read fit_archive_representation / fit_input_payload / build_representation.
+Seeds: LSA32 random_state=5101, final SVD96 random_state=5204. A wrong seed invalidates the run
+(this already happened once in this programme: see hit10/BOTTLENECK.json INVALID_SEED_DEFECT).
+
+WHY THIS RUN EXISTS:
+On RealTalk (n=705, only 10 archive clusters) an ablation found that DROPPING the LSA32 channel was
+directionally better in 6/6 metric-scorer cells (qscale Hit@10 +2.41pp, FR@3 +3.44pp) but EVERY 95% CI
+included zero - inconclusive. The char channel was clearly valuable (-5.8pp when removed).
+Your benchmark has different/more clusters, so it can actually settle the question.
+This programme has previously seen effects REVERSE between benchmarks, so a negative result here is a
+genuinely useful finding, not a failure. Do not try to reproduce the RealTalk direction.
+
+ARMS (everything else identical: same SVD96 seed, 96 dims, same 12-byte sign coding):
+  FULL      Z = [LSA32 | word | char]   (production control)
+  NO_LSA    Z = [word | char]
+  NO_CHAR   Z = [LSA32 | word]
+  WORD_ONLY Z = [word]
+Keep final SVD at 96 components; assert min(Z.shape) > 96 (LSA_ONLY is impossible under this protocol
+and must NOT be attempted - it was correctly blocked on RealTalk).
+
+SCORERS (report every arm under both):
+  sym    = -Hamming(doc bits, query bits)
+  qscale = dot(doc bits as +-1, qC / sigma); sigma = per-archive std of DOCUMENT C columns, ddof=0,
+           floor 1e-12, DOCUMENTS ONLY - never fit sigma on queries or gold.
+
+METRICS: Hit@10, FR@3, Hit@3, expected-Hit@10. Per-archive breakdown too.
+CONTRASTS: each arm MINUS FULL with the clustered bootstrap CI.
+COST: per-arm Z feature count, build time, and confirm payload stays 12 B/doc.
+
+DELIVERABLES: `ablation.py`, `FIDELITY_GATE.json` (written BEFORE any ablation number),
+`per_query.jsonl` (one row per query x arm x scorer, including top10 ids + gold, so the coordinator can
+replay you), `RESULTS.json`, `REPORT.md`. In REPORT.md state whether the LSA-redundancy hypothesis is
+SUPPORTED / REFUTED / INCONCLUSIVE on YOUR benchmark, with the CIs, and compare to the RealTalk direction.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ablation_r2/lme
+YOUR BENCHMARK: LongMemEval (LME) - 470 archives, 470 queries (one question per archive).
+NOTE ON CLUSTERS: because each question has its own archive, cluster==question; the bootstrap therefore
+assumes archive independence, which is NOT established (LME questions may share source sessions).
+State this caveat explicitly rather than presenting the CI as confirmatory.
+
+RAW SOURCE (read-only): per-archive JSON, one file per question_id:
+  /mnt/c/Users/MDP/dev/llmzip-work/regen/lme/items/001be529.json ... (470 files)
+  keys include question_id, question_type, question, question_date, answer, answer_session_ids,
+  haystack_dates, and the haystack sessions themselves - inspect one file fully before coding.
+CACHED PRODUCTION (must reproduce, read-only):
+  /mnt/c/Users/MDP/dev/llmzip-work/regen/lme/cache_repr/<question_id>.pkl  {question_id, C, qC, gold, hetero}
+Also available if useful: /mnt/c/Users/MDP/dev/llmzip-work/drive/longmemeval_s_cleaned.json (277 MB - the
+full haystack; prefer the small per-item files unless you need it).
+Adapters that likely encode the exact text recipe (READ them before writing your own):
+  /mnt/c/Users/MDP/dev/llmzip-work/github-publish-static/adapters/longmemeval_v52_adapter.py
+  /mnt/c/Users/MDP/dev/llmzip-work/github-publish-static/adapters/longmemeval_v52_adapter_v2.py
+  /mnt/c/Users/MDP/dev/llmzip-work/hr-consolidation/adapters/  (same names)
+Determine which adapter version produced cache_repr and say how you determined it.
+
+*** BLOCKING FIDELITY GATE - BEFORE ANY ABLATION NUMBER ***
+  G1. For every one of the 470 archives: sign(C_rebuilt) == sign(C_cached) elementwise. Report exact
+      differing-bit count (target 0) and max abs diff. If only a subset rebuilds bit-exactly, report the
+      exact count of clean archives and RESTRICT the ablation to those, declaring the restricted n and
+      the reason BEFORE computing ablation scores.
+  G2. Rebuilt FULL arm must reproduce cached production metrics over the 470 queries:
+      qscale Hit@10 = 88.5106%, sym deterministic Hit@10 = 86.3830%, sym expected-Hit@10 = 86.0773%,
+      qscale FR@3 = 54.27% (approx - recompute and report yours).
+      NOTE: for LME the DETERMINISTIC sym value (86.3830) is HIGHER than the expected one (86.0773);
+      that ordering is real, not a typo - do not "correct" it.
+  A near-miss rebuild is NOT a licence to report ablation numbers. Declaring a blocker is acceptable.

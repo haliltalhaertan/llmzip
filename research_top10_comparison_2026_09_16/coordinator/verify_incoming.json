@@ -1,0 +1,49 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "partA_max_dev_pp": 0.0,
+  "partB_max_dev_pp": 0.851063829787229,
+  "partB": {
+    "PerLTQA|qscale": {
+      "n": 8265,
+      "realized": 80.0,
+      "expected": 80.0,
+      "theirs": 80.0
+    },
+    "PerLTQA|qsign_dstd": {
+      "n": 8265,
+      "realized": 79.46763460375075,
+      "expected": 79.46763460375075,
+      "theirs": 79.73381730187538
+    },
+    "LME|qscale": {
+      "n": 470,
+      "realized": 88.51063829787233,
+      "expected": 88.51063829787233,
+      "theirs": 88.51063829787233
+    },
+    "LME|qsign_dstd": {
+      "n": 470,
+      "realized": 88.29787234042553,
+      "expected": 88.29787234042553,
+      "theirs": 87.65957446808511
+    },
+    "REALTALK|qscale": {
+      "n": 705,
+      "realized": 49.645390070921984,
+      "expected": 49.645390070921984,
+      "theirs": 49.645390070921984
+    },
+    "REALTALK|qsign_dstd": {
+      "n": 705,
+      "realized": 49.50354609929078,
+      "expected": 49.50354609929078,
+      "theirs": 50.35460992907801
+    }
+  },
+  "elapsed_s": 19.83094549179077
+}

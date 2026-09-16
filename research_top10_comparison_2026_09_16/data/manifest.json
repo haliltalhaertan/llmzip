@@ -1,0 +1,174 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "n_total_qa": 728,
+  "n_valid": 705,
+  "n_excluded": 23,
+  "format": "memory_text = '{speaker}: {clean_text}' + ' [IMAGE: {caption}]' if caption; no date; no events",
+  "gold": "cache gold_rows verified stable + recomputed via old norm_evidence; valid-only exports preserve row IDs",
+  "cache_files": [
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT01.pkl",
+      "sha256": "4afb6d6f101c77e080f51746576a2aa5911ddaf4f1929b6cdebb43bd03176828",
+      "bytes": 593382
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT02.pkl",
+      "sha256": "cb67a8fc488ef032c8bf07687522ea3ea93acfc4628d519ca761cfa63d2a655b",
+      "bytes": 433018
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT03.pkl",
+      "sha256": "5c04ae97f9e8fc19e9b0c1894d1737e706be82491095aec1e5e451c22982021e",
+      "bytes": 417355
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT04.pkl",
+      "sha256": "d0b5320cf5366cfbfe9ff68729e3eadeabdd085719a252fea2173873b6a9b836",
+      "bytes": 391448
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT05.pkl",
+      "sha256": "c03358253eb5f2618a6acdee8377b7d3d0f0fd5580ea6ead8e9848ab8347c62a",
+      "bytes": 380955
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT06.pkl",
+      "sha256": "e690eed70061f65a2f001ee38ca04744abbff4f85d79204c6627da480c58f005",
+      "bytes": 1274604
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT07.pkl",
+      "sha256": "98650a410e20bdaf5f9348e4a20ad28cef3312d246a8c03a09c103a3cb63b405",
+      "bytes": 1239758
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT08.pkl",
+      "sha256": "7c2a49ec171f4eb3a9d78228f91c2b0f57646851e5c20392de255af8fbc02056",
+      "bytes": 970058
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT09.pkl",
+      "sha256": "4689673d77d277e82e3faabfa3604040bf41ba0c268b994790f31090a4b2f4fe",
+      "bytes": 878334
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT10.pkl",
+      "sha256": "7ac5333f97b55a2945b850664d8bb042f92563d7d8af406196a59d840edbcfa6",
+      "bytes": 1041707
+    }
+  ],
+  "raw_chats": [
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_10_Fahim_Muhhamed.json",
+      "sha256": "31016b894b8fa05ba792f1811bebc1a52787897eaa9c1f01a490d63bce2cbe4a",
+      "bytes": 290256
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_1_Emi_Elise.json",
+      "sha256": "0185439c2496303bf7d01e273c6913f485dd146d7d6f4e5fcc87c16e69154a3e",
+      "bytes": 242018
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_2_Kevin_Elise.json",
+      "sha256": "177f585e120c9a7bfb0f79cded941dbb4cddbee75c0075110d3e7b9cfae4855f",
+      "bytes": 233199
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_3_Kevin_Paola.json",
+      "sha256": "6a89002f75e633d23cac0d2036164d3495272919f5ac9d0a16b38350f36d0ab9",
+      "bytes": 236204
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_4_Emi_Paola.json",
+      "sha256": "d276953cb99ad362073aab1590b0ebd4e14f89b8984d8b0b790704215bf03889",
+      "bytes": 237103
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_5_Nicolas_Nebraas.json",
+      "sha256": "05a7a06727a144ee28ae685a9242fe1f7165fd6c242b3698f78e970af6cea00d",
+      "bytes": 480709
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_6_Vanessa_Nicolas.json",
+      "sha256": "987a79ce4711c2d61944a3f34c39f437dd6b6952c8b40651c540e741c2e52b54",
+      "bytes": 480584
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_7_Nebraas_Vanessa.json",
+      "sha256": "cf00a5326d4684170dc3ea68afee6687c2204506d278e6977ff084fdfbc25715",
+      "bytes": 394708
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_8_Akib_Muhhamed.json",
+      "sha256": "9f86834fed648000e3acacb4f809c2ecfaf7b55ebd4de36e4627a84237b3b8df",
+      "bytes": 374328
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/bench3/REALTALK/data/Chat_9_Fahim_Akib.json",
+      "sha256": "6e4447c54b32344671ac7f72dbb8855e9ac669c6db134b1eca2daf2bff9d06a7",
+      "bytes": 411576
+    }
+  ],
+  "exports": [
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT01.json",
+      "sha256": "d653e0f34b28335c463031eef253597de798f1f9b35179169e6ddbe0aec44e98",
+      "bytes": 136993
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT02.json",
+      "sha256": "57fdb71812af3228a3da88f641f2d9bbc9fe4bd61916d62928e8798976720c7c",
+      "bytes": 128726
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT03.json",
+      "sha256": "89171c99d5572b7d2aa3c1641495fc1185d4495842c5a66eada75ce44b7bb98a",
+      "bytes": 122247
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT04.json",
+      "sha256": "598ad2bf887cadc80252aabf024174eef38e40ae816fbcdc328e91c654274614",
+      "bytes": 131606
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT05.json",
+      "sha256": "1a8293f0dd48e80c02fddc9bbabd56f36c492873d1242715751d4edd23ea3aea",
+      "bytes": 130763
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT06.json",
+      "sha256": "06ab534e6361203cfd3106e8f7fda4758b2bd98cddb33389ce23b02db1349125",
+      "bytes": 171441
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT07.json",
+      "sha256": "63f97ef2415f6213daf14ca9c22a5eaddb382a9fb3bf801b0edffb865b5d1883",
+      "bytes": 174834
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT08.json",
+      "sha256": "fd18aa1436aadabec39e8cbd01043d8e4e9fed9a3349d3a07fc1e49defeff7db",
+      "bytes": 148360
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT09.json",
+      "sha256": "39e7507f17d92c9eac0b950a32fba8568e8f518137992602fd44af8817a91da0",
+      "bytes": 147837
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT10.json",
+      "sha256": "49239d159dd73ef9045c219150fe9f3bc2416a161be45445d24762113d99f467",
+      "bytes": 162573
+    },
+    {
+      "path": "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/exclusions.json",
+      "sha256": "92701bed18303a5df995e034db193714476b92be0c0b9c0fe1d972fba0c28bb8",
+      "bytes": 7350
+    }
+  ]
+}

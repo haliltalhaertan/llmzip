@@ -1,0 +1,216 @@
+{
+  "n_total": 728,
+  "n_valid": 705,
+  "n_excluded": 23,
+  "excluded_qids": [
+    "RT06_q009",
+    "RT06_q072",
+    "RT08_q042",
+    "RT08_q043",
+    "RT09_q005",
+    "RT09_q011",
+    "RT09_q012",
+    "RT09_q014",
+    "RT09_q036",
+    "RT09_q037",
+    "RT09_q041",
+    "RT09_q042",
+    "RT10_q004",
+    "RT10_q005",
+    "RT10_q010",
+    "RT10_q016",
+    "RT10_q019",
+    "RT10_q046",
+    "RT10_q048",
+    "RT10_q049",
+    "RT10_q050",
+    "RT10_q051",
+    "RT10_q052"
+  ],
+  "excluded": [
+    {
+      "qid": "RT06_q009",
+      "archive_id": "RT06",
+      "source_file": "Chat_5_Nicolas_Nebraas.json",
+      "category": 3,
+      "question": "What genre does Nebraas prefer?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT06_q072",
+      "archive_id": "RT06",
+      "source_file": "Chat_5_Nicolas_Nebraas.json",
+      "category": 3,
+      "question": "What brand of console does Nicolas have?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT08_q042",
+      "archive_id": "RT08",
+      "source_file": "Chat_7_Nebraas_Vanessa.json",
+      "category": 2,
+      "question": "Which part of the day does Vanessa often pick for her gym sessions?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT08_q043",
+      "archive_id": "RT08",
+      "source_file": "Chat_7_Nebraas_Vanessa.json",
+      "category": 1,
+      "question": "Does Vanessa visit the gym in the morning often?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT09_q005",
+      "archive_id": "RT09",
+      "source_file": "Chat_8_Akib_Muhhamed.json",
+      "category": 2,
+      "question": "When did Akim check the servers last time before they broken up again?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT09_q011",
+      "archive_id": "RT09",
+      "source_file": "Chat_8_Akib_Muhhamed.json",
+      "category": 1,
+      "question": "How many photos of moon did Akib send to Muhhamed?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT09_q012",
+      "archive_id": "RT09",
+      "source_file": "Chat_8_Akib_Muhhamed.json",
+      "category": 1,
+      "question": "How many photos with a some kind of water on them did Akib send Muhhamed?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT09_q014",
+      "archive_id": "RT09",
+      "source_file": "Chat_8_Akib_Muhhamed.json",
+      "category": 3,
+      "question": "Based on their correspondence, what kind of photos do Akim and Muhammed prefer to take, of nature and animals or of people?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT09_q036",
+      "archive_id": "RT09",
+      "source_file": "Chat_8_Akib_Muhhamed.json",
+      "category": 1,
+      "question": "How many photos of cats did Akib send to Muhhamed?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT09_q037",
+      "archive_id": "RT09",
+      "source_file": "Chat_8_Akib_Muhhamed.json",
+      "category": 1,
+      "question": "How many photos of mountains did Akib sent to Muhhamed?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT09_q041",
+      "archive_id": "RT09",
+      "source_file": "Chat_8_Akib_Muhhamed.json",
+      "category": 1,
+      "question": "What astronomical object did Akib share photographs of with Mohammed?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT09_q042",
+      "archive_id": "RT09",
+      "source_file": "Chat_8_Akib_Muhhamed.json",
+      "category": 1,
+      "question": "What animals did Akib share photographs of with Mohammed?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q004",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 2,
+      "question": "When did Akib send the first photo of the food?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q005",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 2,
+      "question": "When did Fahim send the first photo of the food?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q010",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 2,
+      "question": "When did Fahim send the first photo of the pagodas he wants to visit?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q016",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 2,
+      "question": "When Faheem sent a photo of Ducks, Newburyport book to Akib?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q019",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 2,
+      "question": "When did Akib send the photo of the drill to Fahim?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q046",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 1,
+      "question": "How many photos taken from a plane did Akin send to Fahim?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q048",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 1,
+      "question": "How many photos of food did Fahim send to Akib?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q049",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 1,
+      "question": "How many photographs of landscapes did Akib send to Fahim?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q050",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 1,
+      "question": "How many photos of food did Akib send to Fahim?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q051",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 1,
+      "question": "How many photos of animals did Akib send to Fahim?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    },
+    {
+      "qid": "RT10_q052",
+      "archive_id": "RT10",
+      "source_file": "Chat_9_Fahim_Akib.json",
+      "category": 1,
+      "question": "How many photos of cats did Akib send to Fahim?",
+      "reason": "empty-gold (original exclusion, no retrievable evidence dia_id)"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn).
+NO paid APIs, NO git, NO pip. Write ONLY in YOUR directory. Everything else READ-ONLY.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+*** READ THIS FIRST, FULLY, BEFORE ANYTHING ELSE ***
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/FINDINGS_DIGEST.md
+It is the coordinator's re-derived summary of every measured result to date. Your job builds
+on it. Do not restate it back to me; use it.
+
+ALREADY-SCANNED SOURCES — do not rescan, do not re-report as new:
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/DO_NOT_RESCAN.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/GAP_TO_100.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/DO_NOT_REPEAT.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/MASTER_LEDGER.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_literature_20260915/REPORT.md  (+ sources/, citations.json)
+
+HONESTY RULES (violations are caught — the coordinator re-derives everything):
+  - Never invent a citation, a number, an author, a year, or a result. If you cannot verify
+    it from a file on this disk or from your own reasoning, mark it UNVERIFIED and say so.
+  - You have NO web access. Anything you "recall" about a paper is from memory and MUST be
+    labelled RECALLED-FROM-MEMORY, with an explicit statement of what would have to be
+    checked before it could be cited. Never present recalled content as a verified quote.
+  - Distinguish: MEASURED HERE / RECALLED-FROM-MEMORY / CONJECTURE. Tag every claim.
+  - "exit 0" is not evidence. An argument that cannot be wrong is not an argument.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/brain
+YOUR ROLE: adversarial research partner to the coordinator. Not a cheerleader. Your value is
+in finding what is WRONG with our reasoning and what the data says that we have not noticed.
+You may run SMALL read-only computations to check your own claims (the data listed in the
+digest is on disk); do not launch a big benchmark.
+
+PART 1 — ATTACK OUR CONCLUSIONS. For each, argue the strongest case that we are wrong:
+  a) "The bottleneck is the representation, not the 12-byte budget." The evidence is that
+     float_std (384 B, uncompressed) = 48.51 < BM25 54.18. But float_std and our sign arm
+     are not the same pipeline end-to-end. What confound could produce this without the
+     representation being the bottleneck? What single measurement would settle it?
+  b) "Our unbalanced axis-aligned bits are a feature, since rotation destroys performance."
+     Give the competing explanation for the rotation collapse that does NOT require our axes
+     to be meaningful. Note the asymmetry that any theory must explain: rotation costs
+     RealTalk 14-17 pp but PerLTQA only ~1 pp. What differs between these two corpora?
+     Check something concrete about them on disk before answering.
+  c) "IDF^p works via the rare-term mechanism." It is a subgroup contrast chosen after the
+     fact, Hit@10 did not move, and the same arm significantly HURTS PerLTQA. Make the case
+     that the +4.78 rare-band FR@3 gain is noise or an artifact. Then state the cheapest
+     experiment that could kill or confirm it — including what a preregistered version would
+     have to fix in advance.
+  d) The programme has now seen benchmark sign reversals in channel ablation, IDF power,
+     component shift, and the old asym arm. At what point does "it depends on the archive"
+     stop being a finding and start being evidence that our per-archive fitting is
+     overfitting to tiny archives? RealTalk has 10 archives; PerLTQA has 30.
+
+PART 2 — WHAT HAVE WE NOT ASKED? Study the digest for structure we have ignored. Concrete
+leads worth your attention, plus any you find yourself:
+  - Per-query: our two scorers (sym, qscale) disagree, and an oracle over just those two
+    saturates at ~55% on RealTalk. What does the 45% both miss look like? Is the gold even
+    reachable — i.e. is it in the top-100 pool at all? The digest says pool@100 = 75.60 for
+    CODE. So ~24% of queries have gold OUTSIDE the top 100. Those cannot be fixed by ANY
+    reranker. Does our whole reranking programme address only the reachable 76%?
+  - The reranking ceiling is enormous (RealTalk FR@3 22.41 -> 61.30 @100). But the oracle
+    knows gold. What is the ceiling under a REALISTIC reranker that only sees the raw text
+    of 100 candidates plus the query — and what would that cost in bytes and time, honestly
+    accounted, versus simply storing more bits per document?
+  - The honest framing nobody has run: at equal TOTAL storage, how many bits per document
+    could we afford if we dropped the BM25 index? Would 12 bytes -> N bytes at the same
+    total budget beat CODE+BM25 fusion? The digest has the byte numbers to reason about it.
+PART 3 — PRIORITIZE. Produce a ranked shortlist of the next 5 experiments. For each: the
+question, the arm, the prespecified success criterion (decided BEFORE running), the honest
+cost, the strongest reason it will FAIL, and what we learn if it fails. Rank by information
+gained per CPU-hour, not by hoped-for gain. Explicitly mark any experiment whose positive
+result would NOT change what we should recommend — those are worthless, drop them.
+
+DELIVERABLE: `CRITIQUE.md` (parts 1-2, adversarial, no hedging, every claim tagged) and
+`NEXT_5.md` (part 3, the ranked plan). If you ran any check, put the code and its output in
+your directory and reference it. If you conclude the honest answer is "this programme cannot
+reach its stated goal with 12 bytes", say that plainly and support it.

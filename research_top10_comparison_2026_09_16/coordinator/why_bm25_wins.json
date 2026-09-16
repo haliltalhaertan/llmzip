@@ -1,0 +1,68 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "hypothesis": "SVD maximizes variance; IDF says rare=informative; rare terms are low-variance so SVD discards exactly the discriminative signal.",
+  "anchor_facts": {
+    "float_std_no_compression": 48.51,
+    "sign96_12B": 46.68,
+    "bm25": 54.18,
+    "reading": "compression costs 1.83pp; BM25 beats the UNCOMPRESSED representation by 5.67pp"
+  },
+  "test1_rarity_strata": {
+    "no_shared": {
+      "n": 24,
+      "code": 20.833333333333336,
+      "bm25": 16.666666666666664,
+      "gap": -4.166666666666671
+    },
+    "common": {
+      "n": 224,
+      "code": 20.982142857142858,
+      "bm25": 15.625,
+      "gap": -5.357142857142858
+    },
+    "mid": {
+      "n": 116,
+      "code": 49.137931034482754,
+      "bm25": 45.689655172413794,
+      "gap": -3.448275862068961
+    },
+    "rare": {
+      "n": 341,
+      "code": 70.67448680351906,
+      "bm25": 85.04398826979472,
+      "gap": 14.369501466275665
+    }
+  },
+  "test2_same_budget_split": {
+    "96": {
+      "hit10": 49.645390070921984,
+      "fr3": 22.409863310759164
+    },
+    "80": {
+      "hit10": 33.33333333333333,
+      "fr3": 10.91005291005291
+    },
+    "64": {
+      "hit10": 34.60992907801418,
+      "fr3": 14.195598333896204
+    },
+    "48": {
+      "hit10": 33.47517730496454,
+      "fr3": 15.286389733198243
+    }
+  },
+  "bloom_terms_per_doc": 8,
+  "rrf_k": 60,
+  "caveats": [
+    "RealTalk only, 10 clusters, exploratory",
+    "Bloom/IDF fitted on DOCUMENTS ONLY, no gold or query fitting",
+    "split arms keep total payload at exactly 12 bytes",
+    "no CI computed here; this is a direction-finding probe"
+  ],
+  "elapsed_s": 81.35355520248413
+}

@@ -1,0 +1,126 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn).
+NO paid APIs, NO web, NO git, NO pip. Write ONLY in YOUR directory. All else READ-ONLY.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+DISCIPLINE (coordinator re-derives your numbers from your per_query.jsonl; errors WILL be caught):
+- Never average across benchmarks. Report n per benchmark.
+- exit 0 is not proof. A gate that cannot fail proves nothing.
+- Gate fails -> STOP and report. NEVER loosen a gate or drop queries to make numbers look better.
+- Missing/impossible -> declare a blocker. NEVER invent numbers.
+- Save partial artifacts as you go. Budget ~25 min. Partial honest > late perfect.
+
+SHARED DEFINITIONS (use exactly):
+- Deterministic top-K: score DESC, then ascending SHA256("top10-r1|"+archive_id+"|"+str(row)), then row.
+- Hit@10 = any gold in the 10 ids. FR@3 = |gold INTERSECT top3|/|gold|. Also exact expected-Hit@10
+  under uniform ties (the symmetric Hamming arm is tie-heavy - this matters).
+- Paired archive-clustered bootstrap, 20000 reps, seed 20260916, for every contrast.
+Read-only helpers: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/audit_baseline_lib.py
+  det_top10(scores, archive_id, k), hrn(top, gold, k), expected_hit(scores, gold, k), pack_signs_bool, decode_pm1
+
+SCORERS (report both for every arm):
+  sym    = -Hamming(doc bits, query bits)
+  qscale = dot(doc bits as +-1, qC/sigma), sigma = per-archive std of DOCUMENT C columns, ddof=0,
+           floor 1e-12, DOCUMENTS ONLY. Never fit anything on queries or gold.
+
+*** YOU MUST RUN ON BOTH BENCHMARKS ***
+RealTalk (10 archives, 705 queries) AND PerLTQA (30 archives, 8265 queries).
+Reason: this programme just measured a CROSS-BENCHMARK SIGN REVERSAL - dropping the char channel
+was significantly HARMFUL on RealTalk (-5.8pp) yet significantly HELPFUL on PerLTQA (+0.8pp Hit@10,
++2.3pp FR@3). A single-benchmark result is therefore NOT a finding here. If your idea helps on one
+and hurts on the other, that IS the result - report it plainly, do not pick the flattering one.
+
+BUILDERS (ground truth, read-only) and the CACHES you must reproduce:
+  RealTalk texts: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT01.json .. RT10.json
+      {archive_id, docs:[{row,id,text}], queries:[{qid,text,gold:[row...],category}]}
+    cache: /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT01.pkl .. RT10.pkl
+    frozen builder: /mnt/c/Users/MDP/dev/llmzip-work/drive/v52_t4d_locomo_frozen_cross_benchmark.py
+  PerLTQA raw: /mnt/c/Users/MDP/dev/llmzip-work/bench3/PerLTQA/Dataset/en_v2/perltmem_en_v2.json
+    cache: /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/cache_arch_eval.pkl  {char:{N,C,zero_mass}}
+           /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/cache_q_eval.pkl     {qid:{char,section,gold,qC}}
+    builder: /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/step2_build.py  (build_items + fit_archive)
+      A previous worker already rebuilt PerLTQA BIT-EXACTLY from this script (0 of 1,179,648 sign bits
+      differed) - see /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ablation_r2/perltqa/
+      (fidelity_gate.py, ablation.py). READ AND REUSE that code rather than re-deriving the recipe.
+    A RealTalk bit-exact rebuild also exists: top10_comparison_r1/ideas_r1/ablation/ablation.py
+  Seeds: LSA32 random_state=5101, final SVD96 random_state=5204. A wrong seed invalidates everything
+  (this happened before: hit10/BOTTLENECK.json INVALID_SEED_DEFECT).
+
+*** BLOCKING FIDELITY GATE, BEFORE ANY NEW ARM ***
+Rebuild the production FULL representation and verify against cache:
+  G1 sign(C_rebuilt) == sign(C_cached) elementwise, all archives. Report exact differing-bit count (0 expected).
+  G2 the rebuilt FULL arm reproduces the cached production metrics:
+     RealTalk n=705: qscale Hit@10 49.6454, sym deterministic Hit@10 46.5248, sym expected-Hit@10 46.6809, qscale FR@3 22.41
+     PerLTQA  n=8265: qscale Hit@10 80.0000, sym deterministic Hit@10 75.6806, sym expected-Hit@10 75.7612, qscale FR@3 53.24
+     (deterministic and expected are DIFFERENT numbers - do not confuse or "correct" them.)
+A near-miss rebuild is NOT a licence to report new arms; they would measure your reimplementation.
+
+WHY THIS ROUND EXISTS - the diagnosis your work builds on (already measured, RealTalk n=705):
+  float_std (96 dims, FULL float, 384 B/doc, NO compression) = 48.51%
+  sign96    (96 dims, 1 bit each,  12 B/doc)                 = 46.68%
+  BM25      (plain lexical)                                  = 54.18%
+  => compression costs only 1.83pp, but BM25 beats the UNCOMPRESSED representation by 5.67pp.
+     The bottleneck is the 96-dim REPRESENTATION, not the 12-byte budget.
+  Stratifying the 705 queries by the rarity (IDF) of the term shared between query and gold:
+     common-term queries (n=224): CODE 20.98 vs BM25 15.62  -> WE WIN
+     rare-term queries   (n=341): CODE 70.67 vs BM25 85.04  -> WE LOSE BY 14.37pp
+  Mathematical reading: TruncatedSVD keeps maximum-VARIANCE directions (optimal rank-96 Frobenius
+  reconstruction), but retrieval needs DISCRIMINATION, and IDF says the discriminative terms are the
+  RARE ones - which are low-variance and get discarded first. The two objectives point opposite ways.
+  Already tested and FAILED (do not repeat): splitting the 96 bits between SVD dims and a Bloom sketch
+  of rare terms. Cause diagnosed: SVD-only at 48 bits already drops to 36.45% (from 49.65%), i.e. every
+  SVD bit is valuable and truncation is the killer; and a 32-bit Bloom score has only ~5 distinct values
+  per query so it ranks almost entirely by tie-break. Evidence: coordinator/split_failure_diag.json,
+  coordinator/why_bm25_wins.json.
+  THEREFORE: every arm you test MUST keep all 96 bits / 12 bytes of payload. Do not truncate dimensions.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/quant
+YOUR LEVEL: keep the production 96-dim representation EXACTLY as is; fix only the SIGN QUANTIZATION.
+Payload stays exactly 96 bits / 12 B per document.
+
+FIRST, a fact you must verify yourself and then respect (it is why naive rescaling is pointless):
+  for any sigma_j > 0, sign(C_ij / sigma_j) == sign(C_ij). So per-axis scaling CANNOT change a single
+  code bit. Only a ROTATION (or a shifted threshold) changes the bits. Prove this numerically on one
+  archive and state it in the report; then test rotations.
+
+ARM FAMILY C - ITQ (Iterative Quantization, Gong & Lazebnik-style alternating minimization).
+  Find an orthogonal R (96x96) minimizing the quantization loss || sign(C R) - C R ||_F^2, then code
+  bits = sign(C R), and rotate the query the same way before scoring.
+  Alternate to convergence: B <- sign(C R); then R <- U V^T from the SVD of C^T B. Fix iterations = 50
+  and init from a random orthogonal matrix with seed 20260916, DECIDED NOW, not tuned afterwards.
+  Fit R on DOCUMENTS ONLY, per archive. Never use queries or gold.
+  Rationale: sign() is cheapest when the mass sits away from the axis-aligned hyperplanes; ITQ
+  rotates the cloud to minimize exactly the information destroyed by thresholding at zero.
+
+ARM FAMILY D - random rotation control (the honest control for C).
+  Same pipeline but R is a random orthogonal matrix (seeds 20260916, 20260917, 20260918 - report all
+  three separately, never only the best). If ITQ does not beat random rotation, then ITQ's optimization
+  bought nothing and the effect is just "any rotation". This control is mandatory.
+
+ARM FAMILY E - balanced (median) thresholding.
+  bit = 1 if C_ij >= median_i(column j of DOCUMENTS) else 0, i.e. maximize per-bit entropy so each of
+  the 96 bits splits the archive ~50/50. Query uses the same per-column thresholds.
+  NOTE the difference from a known negative result: this programme already found that arbitrary
+  quantile thresholds HURT (hit10/THRESHOLD_*.json: PerLTQA zero-threshold .76 vs q0.1 .31). Median on
+  centered data is near zero, so expect a SMALL effect - the point is to measure it exactly, and to
+  check whether the tie-heavy symmetric arm benefits from better-balanced bits. Report the per-bit
+  balance (mean fraction of 1s, min and max across bits) for production vs each arm.
+
+*** COST ACCOUNTING IS MANDATORY - a rotation is not free ***
+  The 12-byte payload is unchanged, but ITQ/random rotation require storing R per archive:
+  96x96 floats. Report bytes at float32 and float64, per archive and total, for BOTH benchmarks, and
+  compare against the total document payload (RealTalk 8944 docs x 12 B = 107,328 B; PerLTQA: count it).
+  State plainly whether the rotation's shared state is larger or smaller than the payload it improves.
+  Median thresholding needs 96 floats per archive - also count it.
+  Also report fit time per archive and query-time overhead (the query must be rotated too).
+
+REPORT for both benchmarks: Hit@10, FR@3, Hit@3, expected-Hit@10, per-archive, and each arm MINUS the
+production control with clustered bootstrap CIs. Report ITQ MINUS random-rotation as a separate
+contrast - that is the one that says whether the optimization did anything.
+Also report the rare-term stratification (bands no_shared / common idf<2 / mid 2-4 / rare >=4 by the
+max IDF among terms shared between query and gold) for the best arm vs production: a rotation that
+helps should NOT be expected to fix the rare-term gap, since it cannot add information the 96 dims
+already lost. If it does fix it, that is surprising and must be flagged, not quietly accepted.
+
+DELIVERABLES: `quant_math.py`, `FIDELITY_GATE.json` (before any new arm), `per_query.jsonl`,
+`RESULTS.json`, `REPORT.md` with per-family per-benchmark verdicts, the sign-invariance proof, the
+ITQ-vs-random contrast, full byte accounting, and any cross-benchmark reversal stated explicitly.

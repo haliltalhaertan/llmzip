@@ -1,0 +1,46 @@
+PerLTQA 1/30 Cai Xiuying nq=409 fit=0.00s score=1.43s rank=4.46s rss=108MB
+PerLTQA 2/30 Cao Lili nq=302 fit=0.00s score=0.78s rank=2.40s rss=109MB
+PerLTQA 3/30 Feng Wei nq=324 fit=0.00s score=0.91s rank=3.10s rss=110MB
+PerLTQA 4/30 Han Gang nq=259 fit=0.00s score=0.77s rank=2.64s rss=112MB
+PerLTQA 5/30 He Feng nq=311 fit=0.00s score=1.13s rank=3.63s rss=113MB
+PerLTQA 6/30 Huang Xin nq=256 fit=0.00s score=0.70s rank=2.36s rss=114MB
+PerLTQA 7/30 Kong Tingting nq=216 fit=0.00s score=0.59s rank=1.65s rss=116MB
+PerLTQA 8/30 Li Hua nq=224 fit=0.00s score=0.68s rank=2.22s rss=117MB
+PerLTQA 9/30 Liang Xin nq=394 fit=0.00s score=1.00s rank=3.48s rss=119MB
+PerLTQA 10/30 Lin Wen nq=272 fit=0.00s score=0.60s rank=2.02s rss=120MB
+PerLTQA 11/30 Liu Liang nq=231 fit=0.00s score=0.50s rank=1.69s rss=121MB
+PerLTQA 12/30 Lu Yun nq=288 fit=0.00s score=0.63s rank=2.10s rss=123MB
+PerLTQA 13/30 Madan nq=299 fit=0.00s score=0.56s rank=1.80s rss=124MB
+PerLTQA 14/30 Peng Jie nq=284 fit=0.00s score=0.61s rank=2.10s rss=126MB
+PerLTQA 15/30 Qin Meng nq=314 fit=0.00s score=0.65s rank=2.15s rss=127MB
+PerLTQA 16/30 Sun Xiaoming nq=210 fit=0.00s score=0.40s rank=1.34s rss=129MB
+PerLTQA 17/30 Tayo nq=283 fit=0.00s score=0.58s rank=1.91s rss=130MB
+PerLTQA 18/30 Wang Ming nq=219 fit=0.00s score=0.42s rank=1.41s rss=132MB
+PerLTQA 19/30 Wang Xiaoming nq=242 fit=0.00s score=0.48s rank=1.58s rss=133MB
+PerLTQA 20/30 Xia Tong nq=290 fit=0.00s score=0.66s rank=1.87s rss=135MB
+PerLTQA 21/30 Xiao Ming nq=301 fit=0.00s score=0.59s rank=1.93s rss=137MB
+PerLTQA 22/30 Xiong Fei nq=362 fit=0.00s score=0.79s rank=2.61s rss=139MB
+PerLTQA 23/30 Xu Hui nq=281 fit=0.00s score=0.57s rank=1.94s rss=141MB
+PerLTQA 24/30 Xu Jia nq=205 fit=0.00s score=0.39s rank=1.27s rss=142MB
+PerLTQA 25/30 Yang Wei nq=233 fit=0.00s score=0.58s rank=2.06s rss=144MB
+PerLTQA 26/30 Zhang Xiaohong nq=202 fit=0.00s score=0.41s rank=1.40s rss=145MB
+PerLTQA 27/30 Zhao Li nq=239 fit=0.00s score=0.56s rank=1.92s rss=147MB
+PerLTQA 28/30 Zheng Yong nq=278 fit=0.00s score=0.63s rank=1.95s rss=148MB
+PerLTQA 29/30 Zhou Ting nq=214 fit=0.00s score=0.48s rank=1.63s rss=150MB
+PerLTQA 30/30 Zhu Xiaolong nq=323 fit=0.00s score=0.75s rank=2.23s rss=152MB
+LME 100/470 rss=154MB
+LME 200/470 rss=156MB
+LME 300/470 rss=157MB
+LME 400/470 rss=157MB
+LME 470/470 rss=158MB
+REALTALK RT01 nq=85 rss=159MB
+REALTALK RT02 nq=70 rss=159MB
+REALTALK RT03 nq=73 rss=160MB
+REALTALK RT04 nq=71 rss=160MB
+REALTALK RT05 nq=70 rss=161MB
+REALTALK RT06 nq=74 rss=163MB
+REALTALK RT07 nq=70 rss=163MB
+REALTALK RT08 nq=70 rss=164MB
+REALTALK RT09 nq=63 rss=164MB
+REALTALK RT10 nq=59 rss=165MB
+DONE n=9440 gates={'perltqa': 'PASS', 'lme': 'PASS', 'realtalk': 'PASS'} wall=199.9s rss=165MB
