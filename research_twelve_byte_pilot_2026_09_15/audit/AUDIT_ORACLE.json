@@ -1,0 +1,52 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "arms": [
+    "sym",
+    "float_std"
+  ],
+  "k": 10,
+  "oracle_is_not_a_system_score": "computed with the gold labels; it is the ceiling on choosing between two arms per question, not a reachable result and not a fusion of two ranked lists",
+  "benchmarks": {
+    "perltqa": {
+      "n_queries": 8265,
+      "sym_pct": 75.76122962874324,
+      "float_std_pct": 83.95644283121597,
+      "oracle_pct": 86.0679240769985,
+      "anti_oracle_pct": 73.64974838296072,
+      "fixed_better_arm_pct": 83.95644283121597,
+      "oracle_headroom_over_fixed_pp": 2.111481245782528,
+      "queries_sym_strictly_better": 210,
+      "queries_float_std_strictly_better": 961,
+      "queries_equal": 7094
+    },
+    "lme": {
+      "n_queries": 470,
+      "sym_pct": 86.0773387369132,
+      "float_std_pct": 88.29787234042553,
+      "oracle_pct": 90.2127659574468,
+      "anti_oracle_pct": 84.16244511989193,
+      "fixed_better_arm_pct": 88.29787234042553,
+      "oracle_headroom_over_fixed_pp": 1.9148936170212778,
+      "queries_sym_strictly_better": 9,
+      "queries_float_std_strictly_better": 21,
+      "queries_equal": 440
+    },
+    "realtalk": {
+      "n_queries": 705,
+      "sym_pct": 46.68085106382979,
+      "float_std_pct": 48.51063829787234,
+      "oracle_pct": 54.983451536643024,
+      "anti_oracle_pct": 40.20803782505911,
+      "fixed_better_arm_pct": 48.51063829787234,
+      "oracle_headroom_over_fixed_pp": 6.472813238770684,
+      "queries_sym_strictly_better": 51,
+      "queries_float_std_strictly_better": 66,
+      "queries_equal": 588
+    }
+  }
+}

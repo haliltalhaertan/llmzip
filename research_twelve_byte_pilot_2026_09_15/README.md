@@ -59,6 +59,13 @@ This directory publishes its own corrections rather than only its results.
 | "median 80 % of a top-10 is forced" | **corrected** — 90 %; the genuinely ambiguous share is 14.7 %, not 23 %. |
 | **"the sign code is numerically fragile" (±0.5 pp band)** | **withdrawn — my own seed bug.** The producer seeds LSA32 with 5101 and the final SVD96 with **5204**; every rebuild script here used 5101. Under 5204 the rebuild is **bit-exact** (12/12 archives, `audit/AUDIT_SEED.json`). The consequence drawn from that band — that R8 +0.11, sign88 −0.28 and b8−sign88 +0.90 sit in noise — is withdrawn with it. |
 | Gram-SVD quality verdict (+0.21 float / −1.67 sign) | **invalid** — compared the exact path against a non-production randomized draw (seed 5101). Re-run required. |
+| "float_std is best or tied-best on every benchmark" | **narrowed** — raw float wins on PerLTQA en_v1 (+1.67) and zh (+4.32). |
+| "standardization only hurts on Chinese" | **wrong** — en_v1 shows it too. A PerLTQA property, not a language one. |
+| "six conditions" written as seven | **corrected** — 6 conditions over 4 dataset families. |
+| "the oracle bounds the value of combining two scorings" | **withdrawn** — it bounds picking one of two finished lists, nothing more. |
+| "the char channel carries the Chinese representation" | **withdrawn** — feature counts are not channel contribution; an ablation is owed. |
+| "PerLTQA's b8 gain comes from dropping coordinates" (external hypothesis) | **refuted** — dropping hurts monotonically; the gain is the float query. |
+| "MHR 2026 / 32 B / Recall@100 = 0.65" as the bar to beat | **unverified** — no primary source found, and cross-corpus recall is not comparable. |
 | pooled hit@10 "73.54 %" | **should not have been computed** — the programme forbids pooling benchmarks, and this pool is 92 % PerLTQA by weight. Read the per-benchmark rows instead. |
 
 **Artifacts built with the wrong seed** — `run_bottleneck.py`,
@@ -117,3 +124,33 @@ breaks them uniformly at random — and document storage order carries signal
 (permutation test, p < 1/60, z = 5.78). It is valid for production and
 **invalid for measurement**. Anyone benchmarking with such an index will
 report a number that is too high without doing anything visibly wrong.
+
+## Added 2026-09-16
+
+**Six conditions over four dataset families**, not three benchmarks:
+LongMemEval, PerLTQA (en_v2 / en_v1 / zh), RealTalk, LoCoMo. Every one runs
+through the same scorer, which asserts `frac@3 == lib_b8.exact_frac` on every
+query. The PerLTQA releases are **not matched cohorts** (30 archives / 8,265
+queries vs 31 / 8,548), so differences between them are not a clean language
+or release effect.
+
+Three results worth the reader's attention, each with its limit stated in
+[`HANDOFF_2026-09-15.md`](HANDOFF_2026-09-15.md) §12-14:
+
+- **The projector identity `V = Z^T A`** (§13). The same transform, without
+  storing the wide projector: zero query sign-bit change on six archives,
+  projector 451 MB → 2.2 MB, projection 3.47× faster. Proposed by an external
+  reviewer, measured here. Unlike the exact-Gram path in §7, it selects no new
+  factorization. But `Z` (46.5 MB sparse) is still needed, the speedup is the
+  projection step alone, and the gain belongs to any arm over this
+  representation — including float.
+- **The PerLTQA outlier is the scorer, not the bits** (§12c). `sign88` is not
+  a Hamming arm: it keeps the query in float. Dropping coordinates *hurts*
+  monotonically on PerLTQA; it is simply outweighed. The open question is why
+  binarising the query costs 4.43 pp there and nothing elsewhere.
+- **LoCoMo does not reproduce its own historical anchor** (§12b) on an exactly
+  matching query set. Flagged, unexplained, `ANCHOR_MISMATCH` in
+  `LOCOMO.json`.
+
+Section 16 of the handoff lists every claim withdrawn or narrowed. Most were
+found by an independent auditor or an external reviewer, not by the author.

@@ -1,0 +1,118 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "benchmark": "locomo",
+  "gold": "raw_evidence only; the 156 audited corrections are an OPEN Head-Researcher obligation and are NOT applied here",
+  "float_anchor": "no historical LoCoMo float baseline exists in the frozen artifacts; float columns are fresh",
+  "n_archives": 10,
+  "n_queries": 1535,
+  "queries_skipped_no_retrievable_gold": 5,
+  "pool_mean": 588.2,
+  "hit_percent": {
+    "1": {
+      "sym": 15.192182410423452,
+      "asym": 13.811074918566776,
+      "b8": 12.703583061889251,
+      "sign88": 13.485342019543975,
+      "float": 11.205211726384364,
+      "float_std": 17.980456026058633
+    },
+    "3": {
+      "sym": 27.43756786102063,
+      "asym": 23.843648208469055,
+      "b8": 22.019543973941367,
+      "sign88": 22.475570032573287,
+      "float": 20.0,
+      "float_std": 29.77198697068404
+    },
+    "5": {
+      "sym": 33.814151284835326,
+      "asym": 29.967426710097723,
+      "b8": 27.42671009771987,
+      "sign88": 28.403908794788276,
+      "float": 25.407166123778502,
+      "float_std": 38.56677524429967
+    },
+    "10": {
+      "sym": 43.844837392068655,
+      "asym": 38.56677524429967,
+      "b8": 36.48208469055375,
+      "sign88": 37.32899022801303,
+      "float": 34.65798045602606,
+      "float_std": 50.03257328990228
+    },
+    "20": {
+      "sym": 53.69426549690968,
+      "asym": 50.814332247557005,
+      "b8": 46.840390879478825,
+      "sign88": 49.31596091205211,
+      "float": 46.840390879478825,
+      "float_std": 63.71335504885993
+    }
+  },
+  "frac_percent": {
+    "1": {
+      "sym": 13.006723822684732,
+      "asym": 11.720621759709706,
+      "b8": 10.720621759709708,
+      "sign88": 11.35580091280417,
+      "float": 9.50292360552947,
+      "float_std": 15.560469751023495
+    },
+    "3": {
+      "sym": 23.790671959238733,
+      "asym": 20.470154284199122,
+      "b8": 18.884811352238064,
+      "sign88": 19.454378592815072,
+      "float": 17.135625684485618,
+      "float_std": 26.249862515334826
+    },
+    "5": {
+      "sym": 29.5062721071056,
+      "asym": 25.31207042090353,
+      "b8": 23.334279482200536,
+      "sign88": 23.94833535032807,
+      "float": 21.571549812304745,
+      "float_std": 34.03519745673415
+    },
+    "10": {
+      "sym": 38.4715054563924,
+      "asym": 33.15655293802449,
+      "b8": 31.160029247114903,
+      "sign88": 31.73759838551944,
+      "float": 29.71622736548968,
+      "float_std": 44.281186899792
+    },
+    "20": {
+      "sym": 47.2641915754581,
+      "asym": 44.21763649690455,
+      "b8": 40.625762870541564,
+      "sign88": 42.70377992278739,
+      "float": 41.04897953134155,
+      "float_std": 56.79078153296344
+    }
+  },
+  "ANCHOR_MISMATCH": {
+    "what": "the historical LoCoMo gate and lib_b8.exact_frac do not agree on the same query set",
+    "query_set_matches_exactly": {
+      "cat1_4": 1540,
+      "valid": 1535,
+      "excluded": 5,
+      "archives": 10,
+      "source": "theory_benchmark_test_v1/locomo/gate.json"
+    },
+    "frac_at_3": {
+      "sym_here": 23.790671959238733,
+      "sign_historical_gate": 23.654714666441055,
+      "delta_pp": 0.1359572927976771,
+      "float_here": 17.135625684485618,
+      "float_historical_gate": 16.826334541318253,
+      "delta_pp_float": 0.30929114316736417
+    },
+    "why_this_matters": "run_hit10.score_archive asserts frac@3 == lib_b8.exact_frac for every arm on every query and did NOT raise, so the numbers here ARE the frozen scorer's. The historical LoCoMo anchor therefore used a different metric implementation. UNEXPLAINED: do not treat these LoCoMo numbers as a replication of the frozen anchor until the gap is accounted for."
+  }
+}

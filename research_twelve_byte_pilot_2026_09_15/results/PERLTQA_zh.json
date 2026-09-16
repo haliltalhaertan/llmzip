@@ -1,0 +1,114 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "variant": "zh",
+  "n_archives": 31,
+  "n_queries": 8548,
+  "pool_mean": 235.3548387096774,
+  "resolution": {
+    "profile_resolved": 345,
+    "social_relationship_resolved": 874,
+    "events_resolved": 4498,
+    "dialogues_resolved": 2831,
+    "excluded_cannot_support_svd96": 1,
+    "dialogues_miss": 5
+  },
+  "excluded_archives": [
+    {
+      "ordinal": 27,
+      "N": 31,
+      "dim": 31,
+      "finite": true
+    }
+  ],
+  "exclusion_rule": "archives whose SVD96 silently capped below 96 dims are excluded, not shrunk -- per bench3/runs/b3b_perltqa/step2_exclude.py",
+  "confound": "the frozen word channel is whitespace-tokenised with English stop words; on Chinese it nearly collapses and char_wb 3-5-grams carry the representation alone",
+  "hit_percent": {
+    "1": {
+      "sym": 45.323467477772574,
+      "asym": 47.426298549368276,
+      "b8": 48.069723912026205,
+      "sign88": 47.61347683668695,
+      "float": 50.596630790828264,
+      "float_std": 49.49695835283107
+    },
+    "3": {
+      "sym": 62.24107003587584,
+      "asym": 65.03275620028077,
+      "b8": 65.85166120729995,
+      "sign88": 65.41881141787552,
+      "float": 69.7473093121198,
+      "float_std": 68.44875994384651
+    },
+    "5": {
+      "sym": 66.676819417519,
+      "asym": 69.43144595226953,
+      "b8": 70.3673373888629,
+      "sign88": 69.65372016846045,
+      "float": 75.31586335985025,
+      "float_std": 73.38558727187646
+    },
+    "10": {
+      "sym": 71.43167291944785,
+      "asym": 73.80673841834347,
+      "b8": 75.25737014506318,
+      "sign88": 74.22788956481048,
+      "float": 82.21806270472625,
+      "float_std": 77.9012634534394
+    },
+    "20": {
+      "sym": 76.07578658862585,
+      "asym": 77.74918109499298,
+      "b8": 79.29340196537201,
+      "sign88": 78.15863359850258,
+      "float": 86.72204024333178,
+      "float_std": 81.0832943378568
+    }
+  },
+  "frac_percent": {
+    "1": {
+      "sym": 37.51300137434691,
+      "asym": 39.80022820453829,
+      "b8": 40.73157652151697,
+      "sign88": 40.2616995986686,
+      "float": 43.44718394612065,
+      "float_std": 42.497375260291854
+    },
+    "3": {
+      "sym": 53.20737758231573,
+      "asym": 55.6659229497687,
+      "b8": 56.58989135435193,
+      "sign88": 56.10570461366711,
+      "float": 60.715531339916986,
+      "float_std": 59.092006970033765
+    },
+    "5": {
+      "sym": 57.39849571337512,
+      "asym": 60.13186700856937,
+      "b8": 61.28206961307174,
+      "sign88": 60.400181220255256,
+      "float": 67.61005832691006,
+      "float_std": 64.02484167280468
+    },
+    "10": {
+      "sym": 62.21892295826398,
+      "asym": 64.48099462538241,
+      "b8": 66.42030996498455,
+      "sign88": 65.14388774036829,
+      "float": 77.0566681161978,
+      "float_std": 68.59451390020793
+    },
+    "20": {
+      "sym": 66.8973945858163,
+      "asym": 68.55325698208338,
+      "b8": 70.7451980370708,
+      "sign88": 69.22815729920127,
+      "float": 82.78870239479375,
+      "float_std": 71.9030265593693
+    }
+  }
+}
