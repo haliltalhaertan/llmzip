@@ -1,0 +1,16 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/rate (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Two deliverables in your directory, both labelled [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE], every claim tagged:
+
+- [RATE_MAP.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/rate/RATE_MAP.md) (481 lines)
+- [FETCH_QUEUE.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/rate/FETCH_QUEUE.md) (137 lines, 8 ranked fetches + explicit not-queued list)
+
+Verdicts: Q2 PARTIALLY KNOWN (LSI hump-shape is old folklore; our exact regime is not recalled anywhere). Q1 OPEN (round-1 "no plug-and-play bound" survives harder probing — each theory bounds something adjacent, stated per theory). Q3 OPEN (no recalled k(n) law; computed comparison delivered). Q4 PARTIALLY KNOWN, split by era (early float-LSI was on ~10^3 docs; modern sign/PQ work is 10^5+; our per-archive sign regime has no recalled counterpart).
+
+Three findings that shape the fetch order:
+
+1. Non-monotonicity is scorer-dependent (audit tables): standardised readouts (qscale, hamming, float_std) peak at 192 then fall; unstandardised ones (asym +4.31, float_raw +5.39 over the ladder) rise monotonically on identical subspaces. Any explanation must survive that filter — it points at /sigma-whitened tail voting, my strongest conjecture, with stated falsifiers.
+2. Rank-cap confound quantified: 26.82% of PerLTQA queries sit in archives where 384-dim directions don't exist (constant-filled, full 48 B charged). But it can't be the whole story — LME Hit@10 falls to worst-of-three with no reported cap, and float_std also falls.
+3. Scaling comparison computed: sqrt(n) predicts k ~20-30 vs measured best 192 (off ~7-10x); only "fixed low-hundreds k" folklore contains 192, and it wrongly predicts LoCoMo should also peak.
+
+Top fetches: F1 LSI dimensionality plots + F2 collection-size table (minimum useful set, often co-occur in one review), then F3 Hughes/Raudys-Jain (k/n framing), F5 PQ/OPQ curves. Nothing from DO_NOT_RESCAN re-queued.

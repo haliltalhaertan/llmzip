@@ -1,0 +1,77 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn).
+NO paid APIs, NO web, NO git, NO pip. Write ONLY in YOUR OWN directory. Everything else READ-ONLY.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+INCOMING PACKAGE (produced by a DIFFERENT LLM working on the same programme, gpt-6-pro lineage):
+  /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/
+  - *.md / *.json at top level: their reports and summaries
+  - extracted/<NAME>/ : the full evidence archive behind each report (5660 files total)
+  - CHAT_TRANSCRIPT.md : 1.4 MB transcript of their session
+
+OUR OWN RE-DERIVED STATE (read this before judging theirs; the coordinator recomputed every
+number in it from stored per-query ids, production anchors reproduce to 0.0000 pp):
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/FINDINGS_DIGEST.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/MASTER_LEDGER.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/DO_NOT_REPEAT.md
+
+FROZEN ANCHORS (any package claiming to measure our system MUST reproduce these; a mismatch
+means they measured something else and you must say so):
+  RealTalk n=705 : qscale Hit@10 49.6454 | sym deterministic Hit@10 46.5248 | qscale FR@3 22.41
+  PerLTQA  n=8265: qscale Hit@10 80.0000 | sym deterministic Hit@10 75.6806 | qscale FR@3 53.24
+  LME      n=470 : qscale FR@3 54.27
+  RealTalk BM25 Hit@10 54.18 ; float_std Hit@10 48.51 ; sign96 Hit@10 46.68
+
+HONESTY RULES (the coordinator re-derives everything; errors WILL be caught):
+  - NEVER invent a number. If a claim has no artifact behind it, write NO-ARTIFACT and name the file
+    you looked for. A missing artifact is a finding, not a gap to fill with a plausible value.
+  - Tag every claim: THEIR-CLAIM / VERIFIED-BY-ME (say how) / CONTRADICTS-OURS / NO-ARTIFACT.
+  - Distinguish "they measured X" from "X is true". Their self-audit is not independent verification.
+  - exit 0 is not evidence. A check that cannot fail proves nothing.
+  - If their numbers are RIGHT and ours are WRONG, say so plainly. That is the most valuable output.
+  - Budget ~25 min. Save partial artifacts as you go. Partial and honest beats late and complete.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/a_ladder
+YOUR TARGET: the 12/24/48-byte ladder package. THIS IS THE HIGHEST-PRIORITY ITEM IN THE WHOLE
+DELIVERY, because the coordinator is running the SAME experiment right now on RealTalk, and this
+package claims to have run it on the other three benchmarks.
+  report : LLMZIP_GERCEK_12_24_48_BAYT_RAPORU_2026-09-16.md
+  summary: LLMZIP_GERCEK_12_24_48_BAYT_OZET_2026-09-16.json
+  evidence: extracted/LLMZIP_GERCEK_12_24_48_BAYT_2026-09-16/   (2722 files, 161 MB)
+Also relevant: REAL_COORDINATE_STAGES.json, LLMZIP_KISITLI_CEZA_* (constrained-penalty pilot),
+LLMZIP_NADIRLIK_MATEMATIK_2026-09-16.zip (their rarity mathematics).
+
+WHY THIS MATTERS. A previous review of ours concluded "384 dimensions closes the gap, so 48 bytes
+is enough". We RETRACTED that: 384 COORDINATES equal 48 bytes only if stored as 384 SIGN BITS and
+scored as such; at float32 the same 384 coordinates are 1536 B/doc. This package claims to have
+built REAL packed 96/192/384-BIT codes. Your central job is to establish whether that is true.
+
+QUESTIONS, in priority order:
+ Q1. BITS OR FLOATS? For every headline number, determine from the ARTIFACTS (not the prose)
+     whether the arm was scored from PACKED BITS or from float coordinates. Find the packed
+     payload files; check their size in bytes equals n_docs x k/8. State bytes/doc per arm.
+     If any "48 byte" number is actually a float arm, that is the single most important finding
+     you can report.
+ Q2. THE EXACT-VS-RANDOMIZED SWITCH. They state they switched from our randomized SVD96 to an
+     EXACT Gram eigendecomposition for the ladder, keeping original96 as a separate control.
+     This is a confound: exact96 vs original96 is a SOLVER change, not a dimension change.
+     Extract all four levels (original96, exact96, exact192, exact384) per benchmark and
+     SEPARATE the solver effect from the dimension effect. Report both, never merged.
+ Q3. DOES THE LADDER ACTUALLY RISE? Per benchmark, per metric (FR@3 and Hit@10), give the
+     12 -> 24 -> 48 byte progression with their CIs. Their own abstract says PerLTQA gets WORSE
+     at 48 than at 24. Verify that from the per-query artifacts if they exist. A non-monotone
+     ladder is a much weaker result than "more bits is better" and must be reported as such.
+ Q4. REPRODUCE ONE CELL YOURSELF. Pick the smallest benchmark cohort with per-query artifacts,
+     recompute FR@3 and Hit@10 from their stored top-k ids and gold, and compare to their
+     reported value. Report the exact deviation. This is the only way to know their pipeline
+     computes what ours computes.
+ Q5. THE REALTALK HOLE. They say RealTalk 24/48 could NOT be produced (Drive 413 download limit)
+     and that they refused to estimate it. Verify that no RealTalk 24/48 number appears anywhere
+     in their artifacts. If they kept that promise, say so explicitly - it is evidence about how
+     much to trust the rest.
+ Q6. ANCHOR CHECK. Does their original96 reproduce our frozen anchors above? Give the deviation
+     per benchmark to 4 decimals.
+
+DELIVERABLE: `LADDER_AUDIT.md` with a verdict table (per benchmark x per arm: their number,
+my re-derivation, deviation, bytes/doc, VERIFIED / CONTRADICTS / NO-ARTIFACT), the solver-vs-
+dimension separation, and a closing section "WHAT THE COORDINATOR MUST NOT QUOTE" listing any
+number that does not survive. Put any code you run in your directory.

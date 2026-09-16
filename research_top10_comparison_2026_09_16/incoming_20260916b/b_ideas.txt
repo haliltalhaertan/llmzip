@@ -1,0 +1,69 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn).
+NO paid APIs, NO web, NO git, NO pip. Write ONLY in YOUR OWN directory. Everything else READ-ONLY.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+INCOMING PACKAGE (produced by a DIFFERENT LLM working on the same programme, gpt-6-pro lineage):
+  /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/
+  - *.md / *.json at top level: their reports and summaries
+  - extracted/<NAME>/ : the full evidence archive behind each report (5660 files total)
+  - CHAT_TRANSCRIPT.md : 1.4 MB transcript of their session
+
+OUR OWN RE-DERIVED STATE (read this before judging theirs; the coordinator recomputed every
+number in it from stored per-query ids, production anchors reproduce to 0.0000 pp):
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/FINDINGS_DIGEST.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/MASTER_LEDGER.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/DO_NOT_REPEAT.md
+
+FROZEN ANCHORS (any package claiming to measure our system MUST reproduce these; a mismatch
+means they measured something else and you must say so):
+  RealTalk n=705 : qscale Hit@10 49.6454 | sym deterministic Hit@10 46.5248 | qscale FR@3 22.41
+  PerLTQA  n=8265: qscale Hit@10 80.0000 | sym deterministic Hit@10 75.6806 | qscale FR@3 53.24
+  LME      n=470 : qscale FR@3 54.27
+  RealTalk BM25 Hit@10 54.18 ; float_std Hit@10 48.51 ; sign96 Hit@10 46.68
+
+HONESTY RULES (the coordinator re-derives everything; errors WILL be caught):
+  - NEVER invent a number. If a claim has no artifact behind it, write NO-ARTIFACT and name the file
+    you looked for. A missing artifact is a finding, not a gap to fill with a plausible value.
+  - Tag every claim: THEIR-CLAIM / VERIFIED-BY-ME (say how) / CONTRADICTS-OURS / NO-ARTIFACT.
+  - Distinguish "they measured X" from "X is true". Their self-audit is not independent verification.
+  - exit 0 is not evidence. A check that cannot fail proves nothing.
+  - If their numbers are RIGHT and ours are WRONG, say so plainly. That is the most valuable output.
+  - Budget ~25 min. Save partial artifacts as you go. Partial and honest beats late and complete.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/b_ideas
+YOUR TARGET: the experiment packages other than the ladder.
+  LLMZIP_IKI_FIKIR_RAPORU_2026-09-16.md + extracted/LLMZIP_IKI_FIKIR_DENEY_PAKETI_2026-09-16/ (1758 files, 132 MB)
+  LLMZIP_FIKIR1_RAPORU_2026-09-16.md   + extracted/LLMZIP_FIKIR1_METIN_YENIDEN_SIRALAMA_2026-09-16/ (576 files)
+  LLMZIP_KISITLI_CEZA_RAPORU_2026-09-16.md + extracted/LLMZIP_KISITLI_CEZA_PILOT_2026-09-16/ (428 files)
+  LLMZIP_HATA_YERI_*, LLMZIP_HIZ_GENELLEME_*, KONTROL_VE_DENEY_EKI.md, ONERI_VE_DENEY_PLANI.md
+
+CONTEXT YOU NEED. The coordinator already verified their earlier text-rerank result and found the
+decisive line in it: once BM25 text reranking is available, our 12-byte code contributes
+-0.33 pp (LME), +0.33 (PerLTQA), +1.06 (LoCoMo) over PLAIN BM25 alone. I.e. on two of three
+benchmarks the code adds nothing measurable. Check whether the NEW packages confirm, refine, or
+contradict that, and whether any of them finally shows the code earning its place.
+
+QUESTIONS:
+ Q1. For EACH package: what is the single claim, what is the prespecified success criterion (was
+     there one?), and did it pass? Quote their own criterion, not a paraphrase.
+ Q2. THE CONTROL QUESTION. For every arm that shows a gain, is there a control where the SAME
+     enhancement is given to the COMPETITOR (plain BM25, float_std, full-rank)? Our standing rule:
+     "if we only see the gain by adding a tool to ours and leaving the rival on the old setup, we
+     have not built a superior system". Which packages honour this and which do not?
+ Q3. The constrained-penalty pilot (KISITLI_CEZA) is the idea a reviewer proposed to us as
+     Z'Z + lambda*D (additive penalty protecting chosen directions). The coordinator verified this
+     is mathematically DIFFERENT from our multiplicative IDF^p arm (subspace distance 2.78), so it
+     is a genuinely new test. What did it actually measure, did it keep the payload at 12 bytes,
+     what did the zero-penalty control (lambda=0) reproduce, and did it work? This is directly
+     relevant to a live question in our programme.
+ Q4. HONEST COST. For every winning arm, what is the TOTAL storage and latency including auxiliary
+     state? Their earlier LME accounting showed IDF dictionaries at 112x the code size and latency
+     rising 14.9 -> 17.6 ms. Do the new packages account for cost at all, or only quality?
+ Q5. CROSS-BENCHMARK SIGN. Our programme-level regularity: NO arm has ever won on both benchmarks
+     simultaneously. Does anything here break that regularity? If an arm wins everywhere, that is
+     the most important thing in the package and must be flagged loudly.
+
+DELIVERABLE: `IDEAS_AUDIT.md`: one section per package (claim / criterion / result / controls
+present or missing / cost accounted / verdict), then a ranked list "WHAT IS WORTH OUR CPU NEXT"
+with the reason each item earns its rank, and a list of anything that duplicates work already in
+our DO_NOT_REPEAT.md.

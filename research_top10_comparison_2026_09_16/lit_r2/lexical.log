@@ -1,0 +1,10 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/lexical (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Both deliverables are in `lit_r2/lexical/`, labeled, with every claim tagged.
+
+- [LEXICAL_MAP.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/lexical/LEXICAL_MAP.md) — per-question verdicts; Q3 answered most fully (measured washout, two-line pool-bound mechanism, field recall, four conditions when washout fails, implication for the 12-byte premise).
+- [FETCH_QUEUE.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/lexical/FETCH_QUEUE.md) — 8 ranked items with search terms and pass/fail criteria. Limited round: F4 (monoBERT) → F5 (BEIR) → F7 (storage audit).
+
+Verdicts: Q1 regime OPEN (BEIR zero-shot is the nearest anchor, an order of magnitude above our n); Q2 no recalled size study, but small-N harm derived in three checkable steps (k/n 0.11–0.23, ~0.19 singleton retention, ~400-sample estimation); Q3 practice KNOWN, stated-with-conditions OPEN; Q4 UNVERIFIED, per-paper audit specified; Q5 three pre-registrable non-circular splits (overlap / query-type / archive-composition) with falsifiers.
+
+Notes: BM25-handicap numbers from the brief flagged UNASSESSED (artifacts not on my disk); one small Python sanity check run (rank ratios, pool arithmetic); no web, no writes outside my directory.

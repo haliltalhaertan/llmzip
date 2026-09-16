@@ -1,0 +1,12 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/quant (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Two labeled deliverables in your directory (`lit_r2/quant/`):
+
+- [QUANT_MAP.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/quant/QUANT_MAP.md:1) — per-fact verdicts + Q1–Q5 analysis, every claim tagged.
+- [FETCH_QUEUE.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/quant/FETCH_QUEUE.md:1) — 8 ranked fetches with search terms, what each settles, and stop rules.
+
+Verdicts: F1 OPEN (instance; objective-mismatch only analogy), F2 OPEN (most interesting; overfitting story disfavored — damage grows with n while a 4560-DOF rotation is scalar-over-constrained, [PROOF-SKETCH]), F3 OPEN — stated explicitly as genuine contribution (no recalled balanced-worse report), F4 KNOWN trivial identity (no fetch), F5 PARTIALLY KNOWN practice / OPEN magnitude, F6 principle PARTIALLY KNOWN via ScaNN-analogy / exact equal-error shape OPEN (cite reviewer's pair as internal artifact, not literature).
+
+Q2 cheapest discriminator: per-archive partial correlations of damage vs spectral-mass share / hubness skew / distance-concentration, conditioning on n, from stored matrices — no refits; subsample-to-400 refit only as confirmation. Q5 shortlist surviving F4/F5: per-dim learned thresholds, post-rotation scale+threshold, block-diagonal rotation, fixed-budget reallocation, BPR-style rescore; global rotation/threshold sweeps go to DO_NOT_REPEAT.
+
+No web/git/pip used; one small synthetic Python sanity check only ([PROOF-SKETCH]); nothing already-scanned re-reported; no recalled content presented as verified, no numbers invented.

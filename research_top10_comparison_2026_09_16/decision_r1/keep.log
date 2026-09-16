@@ -1,0 +1,9 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/decision_r1/keep (cwd default)
+muse: workspace trust: trusted source=run-flag
+Delivered `CASE_FOR.md` in your directory, labelled [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE].
+
+Verdict: CONDITIONAL CONTINUE — fund one cheap kill-experiment, else STOP as a retrieval chase. The original 12-byte claim is dead (48 B code 57.87 loses to fair BM25 61.70 by 3.83 pp [BRIEF, delta [CHECKED] via `python3 -c` against keep.txt]).
+
+Top direction: word-only, rank-safe (k_eff=min(k,n−1,rank)), unstandardized (asym) code ladder with float ceilings measured alongside — the only option combining the brief's three solved defects (bad mix −8.23 pp, rank-overflow/sigma-division, coarse-baseline audit). Prespecified gate: GREEN iff 48 B asym Hit@10 ≥ 60.70 with monotone rise and no PerLTQA SIG decline; AMBER/RED → stop retrieval, publish negatives. Full action/criterion/cost/failure-mode specified per option; ranked #1–#4 plus do-not-fund list; weakest-link paragraph included (word float 56.03 trails fair BM25 by 5.67 pp [CHECKED], so the code must beat its own ceiling — likely AMBER, real payoff is the negatives paper).
+
+Small read-only checks only: recomputed deltas (+5.67, +2.55, +6.38, −3.83, −8.23, +0.71, −2.95) with python3; no benchmarks run.

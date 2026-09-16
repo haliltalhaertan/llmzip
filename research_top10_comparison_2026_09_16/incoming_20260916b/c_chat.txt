@@ -1,0 +1,73 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn).
+NO paid APIs, NO web, NO git, NO pip. Write ONLY in YOUR OWN directory. Everything else READ-ONLY.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+INCOMING PACKAGE (produced by a DIFFERENT LLM working on the same programme, gpt-6-pro lineage):
+  /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/
+  - *.md / *.json at top level: their reports and summaries
+  - extracted/<NAME>/ : the full evidence archive behind each report (5660 files total)
+  - CHAT_TRANSCRIPT.md : 1.4 MB transcript of their session
+
+OUR OWN RE-DERIVED STATE (read this before judging theirs; the coordinator recomputed every
+number in it from stored per-query ids, production anchors reproduce to 0.0000 pp):
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/FINDINGS_DIGEST.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/MASTER_LEDGER.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/DO_NOT_REPEAT.md
+
+FROZEN ANCHORS (any package claiming to measure our system MUST reproduce these; a mismatch
+means they measured something else and you must say so):
+  RealTalk n=705 : qscale Hit@10 49.6454 | sym deterministic Hit@10 46.5248 | qscale FR@3 22.41
+  PerLTQA  n=8265: qscale Hit@10 80.0000 | sym deterministic Hit@10 75.6806 | qscale FR@3 53.24
+  LME      n=470 : qscale FR@3 54.27
+  RealTalk BM25 Hit@10 54.18 ; float_std Hit@10 48.51 ; sign96 Hit@10 46.68
+
+HONESTY RULES (the coordinator re-derives everything; errors WILL be caught):
+  - NEVER invent a number. If a claim has no artifact behind it, write NO-ARTIFACT and name the file
+    you looked for. A missing artifact is a finding, not a gap to fill with a plausible value.
+  - Tag every claim: THEIR-CLAIM / VERIFIED-BY-ME (say how) / CONTRADICTS-OURS / NO-ARTIFACT.
+  - Distinguish "they measured X" from "X is true". Their self-audit is not independent verification.
+  - exit 0 is not evidence. A check that cannot fail proves nothing.
+  - If their numbers are RIGHT and ours are WRONG, say so plainly. That is the most valuable output.
+  - Budget ~25 min. Save partial artifacts as you go. Partial and honest beats late and complete.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/c_chat
+YOUR TARGET: the 1.4 MB session transcript and the argumentative/planning documents.
+  CHAT_TRANSCRIPT.md  (1.4 MB - read it in chunks; do NOT try to load it all at once)
+  INCELEME.md, DENETIM_KARSI_INCELEME.md, MATEMATIK_INCELEME.md, ARASTIRMA_PLANI.md,
+  KAYNAKLAR_VE_DENEY_ONCELIKLERI.md, extracted/LLMZIP_AUDIT3_KARSI_INCELEME_2026-09-16/,
+  extracted/LLMZIP_NADIRLIK_MATEMATIK_2026-09-16/, extracted/LLMZIP_YOL_HARITASI_VE_GOREVLER_2026-09-16/
+
+YOU ARE THE READER, NOT THE EXPERIMENTER. Your product is an accurate map of what they ARGUED,
+what they DECIDED, and where their reasoning is load-bearing for conclusions we have adopted.
+
+LIVE DISPUTES IN OUR PROGRAMME THAT THIS TRANSCRIPT MAY SETTLE:
+  D1. We claimed "no better choice of 96 directions exists for rare terms" from sum_i rho_i = k.
+      We RETRACTED it: the identity fixes the MEAN at k/n and caps no individual rho_i
+      (coordinator-verified counterexample: 96 chosen coordinate axes give rho=1.0 for those and
+      0.0 for the rest, mean still 0.1920). Find every place their material discusses this and
+      report what THEY concluded. Did they make the same error, avoid it, or correct us first?
+  D2. The rare/common bucket split is circular: the bucket is defined by BM25's own scoring
+      quantity, and BM25 scores exactly zero on 97.8-100% of the "common" bucket by construction.
+      Do they acknowledge this? Do any of their conclusions depend on the degenerate half?
+  D3. They found our BM25 baseline was HANDICAPPED (frozen tokenizer makes BM25 ~3 pp BETTER;
+      textbook k1/b is not neutral). Find the full argument and the numbers behind it.
+  D4. The tie convention: our LME row moves from -2.79 to -0.45 under the friendliest tie-break.
+      What do they say about tie handling, and is their position consistent with ours?
+
+QUESTIONS:
+ Q1. Timeline of DECISIONS: what did they decide to do, in what order, and WHY (the stated reason,
+     not your reconstruction). Mark any decision made AFTER seeing results - that is where
+     post-hoc selection hides.
+ Q2. What did they try that FAILED or was abandoned? Failures are the most useful part of a
+     transcript and are usually absent from the polished reports. List each with its cause.
+ Q3. Where do they disagree with US, and on each point: who has the better evidence? Be specific
+     and do not default to deference - but where they are right, say it clearly.
+ Q4. What obligations/promises did they make that are NOT yet discharged ("we will verify X
+     later", "this needs a blind test")? These are open items we may inherit.
+ Q5. Any claim in the transcript that does NOT appear in the polished reports, or vice versa -
+     especially a number in a report with no transcript history, or a transcript result that got
+     quietly dropped from the reports.
+
+DELIVERABLE: `CHAT_MAP.md` - decision timeline, failure list, disagreement adjudication (D1-D4
+answered explicitly), undischarged obligations, and report-vs-transcript discrepancies. Quote
+sparingly and always with the file and approximate location.

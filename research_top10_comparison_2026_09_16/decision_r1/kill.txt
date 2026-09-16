@@ -1,0 +1,147 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python. NO web, NO paid APIs, NO git, NO pip.
+Write ONLY in YOUR directory. Label artifacts: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED]
+[NOT FOR CITATION] [DISCLOSE-BEFORE-USE]. You may run SMALL read-only checks on files listed in the
+brief; do not launch a long benchmark.
+
+Tag every claim: [BRIEF] (from the decision brief) / [CHECKED] (you recomputed it - say how and cite
+the file) / [RECALLED] (memory of literature, with confidence; you have NO web access) /
+[CONJECTURE] (your hypothesis + its falsifier). Never invent a number or a citation.
+
+THIS IS A DECISION ROUND, NOT A RESEARCH ROUND. The owner will read a single recommendation and say
+yes or no. Vague advice is worthless. Every option you name must carry: the concrete next action,
+the prespecified success criterion decided BEFORE running, the honest cost, and the strongest reason
+it fails. If your honest answer is "stop the programme", say it plainly and defend it.
+
+# DECISION BRIEF — llmzip, 2026-09-16. Everything below is coordinator-re-derived.
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+THE PROGRAMME'S ORIGINAL CLAIM: "a 12-byte-per-document code gives competitive retrieval."
+The owner must now decide whether to continue, pivot, or stop. Your job feeds that decision.
+
+## A. THE LADDER (coordinator's own run; fidelity gate 0 differing bits of 858,624;
+##    k=96 reproduces frozen production anchors to -0.0000)
+RealTalk, 10 archives, 705 queries, 8944 docs, archives 410-1548 docs so k<n holds everywhere:
+    bytes/doc   qscale Hit@10   qscale FR@3
+        12          49.65          22.41
+        24          55.32  (+5.67) 29.75
+        48          57.87  (+2.55) 32.79
+Monotone rise. Diminishing but not exhausted.
+
+Incoming package (independently verified by our worker: payload files really are
+12/24/48 bytes, scored by a C kernel reading only packed bytes; 66 cells re-derived,
+worst deviation 2.2e-14):
+    LME     52.47 -> 61.48 -> 61.75 FR@3   (Hit@10 88.72 -> 89.15 -> 86.60, 384 WORST)
+    PerLTQA 52.98 -> 54.82 -> 51.87 FR@3   (192->384 = -2.95, CI [-3.87,-2.01] SIG)
+    LoCoMo  35.11 -> 41.21 -> 44.15 FR@3   (rises; but LoCoMo gold is disputed)
+
+## B. WHY THOSE TWO DISAGREE — solved this round
+The PerLTQA decline is SCORER-dependent. On identical subspaces:
+    arm         standardized?   96      192     384
+    qscale          yes       52.98   54.82   51.87   falls
+    hamming         yes       49.01   50.68   47.74   falls
+    float_std       yes       56.24   57.78   54.49   falls
+    asym            NO        53.71   57.30   58.03   RISES
+    float_raw       NO        55.03   58.55   60.43   RISES
+Cause: PerLTQA archives are small (median 407 docs, min 293) and 8 of 30 hold FEWER than
+384 documents. Surplus dimensions are constant-filled (effective ranks 293-381, covering
+26.8% of PerLTQA queries) while full 48 bytes are charged. A constant dimension has
+sigma ~ 0, and qscale divides by sigma. Unstandardized arms never divide, so they are immune.
+=> "bits beyond 24 B do not help" was measured under a DEFECT, not a law.
+=> Honest rule: k < n per archive. A fixed global k is wrong for heterogeneous archives.
+
+## C. THE COMPETITOR IS STRONGER THAN WE REPORTED
+Giving BM25 our own frozen tokenizer (stopwords removed, \b\w\w+\b, 1-2 grams) is worth
++6.38 pp Hit@10 on RealTalk (55.32 -> 61.70). An external audit measured ~+3 pp on
+PerLTQA/LoCoMo, and found textbook k1=1.2/b=0.75 is not neutral either (k1->0,b=0 gives
+42.11 vs 37.67 on LoCoMo).
+    48 B code 57.87  vs coarse BM25 55.32   -> we win  +2.55
+    48 B code 57.87  vs fair   BM25 61.70   -> we LOSE -3.83
+Every historical "we beat BM25" line in this programme used the coarse baseline.
+
+## D. THE FEATURE MIX COSTS MORE THAN THE COMPRESSION
+RealTalk, NO projection at all, float cosine:
+    word channel only   Hit@10 56.03   FR@3 31.19
+    full Z (LSA+word+char) 47.80       FR@3 28.07   -> char+LSA cost 8.23 pp
+Independently reproduces the external auditor's LoCoMo finding (char channel -12.25 pp in
+the rare bucket) on a benchmark they could not run.
+Note the scale: word-only-no-projection (56.03) beats our 24-byte code (55.32) outright.
+
+## E. RERANKING DISSOLVES FIRST-STAGE QUALITY (external, verified by our worker)
+Apply the same BM25 text reranker to the top-50 of each first stage:
+    LME: WORSE first stage hamming96 (FR@3 53.86) ends BETTER after rerank (58.23)
+         than the better first stage qscale96 (54.27 -> 57.70).
+    Code's net contribution over PLAIN BM25 alone: -0.33 / +0.33 / +1.07 pp.
+    Reranking needs raw text (76x the code) plus an index (0.9-1.5x the text again);
+    latency 14.9 -> 17.6 ms vs 0.14 ms for a plain inverted index.
+
+## F. NEGATIVE RESULTS, ALL WITH CONTROLS
+- Quantization layer: 4 of 4 failed. ITQ does NOT beat a RANDOM rotation (-2.27 pp
+  RealTalk, -0.13 PerLTQA). Rotation damage tracks archive size (Pearson r = -0.78;
+  small archives -6.56 pp, large -23.13 pp). Rotation makes bits MORE balanced and
+  retrieval WORSE. Rotation costs 3.4-7.5x the payload it fails to improve.
+- sign(C/sigma) == sign(C) exactly (0 of 63,552 doc bits change) - per-axis scaling can
+  NEVER change a bit. Only rotation or a shifted threshold can.
+- Budget splitting (SVD dims + rare-term Bloom sketch): failed at every ratio.
+- Constrained additive penalty Z'Z + lambda*D (a reviewer's idea, mathematically distinct
+  from our multiplicative IDF^p - subspace distance 2.78): safety gates passed, retrieval
+  did NOT improve. vs production the CI includes zero; loses to BM25 and float everywhere.
+- IDF^p: +4.78 pp FR@3 SIG in the rare band on RealTalk, but significantly HURTS PerLTQA
+  (-1.76). Component shift: +1.58 SIG on PerLTQA, harmful on RealTalk.
+- PROGRAMME-LEVEL REGULARITY: no arm has EVER won on both benchmarks simultaneously.
+
+## G. RETRACTED CLAIMS (ours, corrected by external review, coordinator-verified)
+- "No better choice of 96 directions exists" - WRONG. sum_i rho_i = k fixes the MEAN at
+  k/n and caps no individual rho_i. Counterexample verified: 96 chosen coordinate axes give
+  rho=1.0000 to those and 0.0000 to the rest, mean still 0.1920.
+- "12 bytes isn't enough, 48 is" - WRONG twice over: dimensions are not bytes, and the
+  PerLTQA evidence behind it was the rank-overflow artifact.
+- "The SVD discards rare terms" - OVERSTATED: rare (df=1) terms survive at 0.94x a
+  random-96-dim-subspace null; common (df>=50) at 3.79x. The SVD lifts common terms above
+  chance rather than singling rare ones out.
+- "CODE wins the common band" - DEGENERATE: BM25 scores exactly zero on 97.8-100% of that
+  bucket by construction, and both methods fail on ~93% of it.
+
+## H. WHAT THE LITERATURE SAYS (round-2 workers, no web access, all recalled-and-ranked;
+##    the coordinator verified the round-1 items with web access)
+- ITQ = Gong & Lazebnik, dense IMAGE descriptors, Euclidean-neighbour ground truth.
+  Our regime (per-archive TF-IDF/SVD sign codes, gold retrieval) is a scope mismatch.
+- all-but-the-top = Mu/Bhat/Viswanath, word vectors. RRF = Cormack et al. SIGIR 2009.
+- BEIR (Thakur et al. 2021): dense models without in-domain training routinely lose to
+  BM25 zero-shot. Our per-archive SVD has NO cross-archive training - we are squarely in
+  the regime where BM25 is expected to win.
+- No recalled source bounds gold Hit@K from bits/doc. No recalled source reports gold
+  Hit@10 at K=10 from <=12-16 B/doc codes. Our few-hundred-document per-archive regime
+  appears UNSTUDIED in the modern literature.
+- Genuinely ours (nothing recalled covers them): ITQ <= random rotation; rotation damage
+  scaling with archive size; bit balance anti-correlating with retrieval.
+
+## I. STATE
+Published to branch findings/top10-comparison-2026-09-15 (main untouched). RealTalk ladder,
+lit maps, incoming audits all committed. LME channel ablation still running (322/470).
+Cost constraint: the owner pays for compute; prefer cheap decisive experiments over big ones.
+
+---
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/decision_r1/kill
+YOUR ROLE: **build the strongest honest case for STOPPING or radically narrowing**. Attack the
+programme's premise. If continuing is indefensible, say so and show why.
+
+The strongest ammunition in the brief, which you should press hard:
+ - Fact C: every "we beat BM25" claim used a handicapped baseline. Against a fairly tokenized
+   BM25 we LOSE by 3.83 pp even at 48 bytes. What survives if every comparison is re-run fairly?
+ - Fact E: a text reranker dissolves first-stage differences - the WORSE first stage wins after
+   reranking. If true, optimizing a compact first-stage code is optimizing something that does
+   not matter. Is there any reading of E that leaves the programme's premise intact?
+ - Fact D: our own feature mix costs 8.23 pp - more than our compression does. We have been
+   tuning the wrong layer for months.
+ - Fact F: no arm has EVER won on both benchmarks. At what point is "it depends on the archive"
+   evidence that per-archive fitting on 300-1500 documents is overfitting rather than a finding?
+ - Fact G: four of our headline claims were retracted this week, all after external review, all
+   in the direction of over-claiming. What does that say about the reliability of what remains?
+ - Fact H: BEIR predicts exactly our result. Are we spending compute to rediscover a known law?
+
+Then answer the question the owner actually needs: IF WE STOP, what is the honest deliverable from
+the work already done, and what is its real value? Is there a narrow version worth finishing
+(e.g. only the negative results, only the rank-overflow trap) that costs almost nothing?
+Be specific about what to ABANDON: name the directions that should never get another CPU-hour.
+DELIVERABLE: `CASE_AGAINST.md` - the argument, the honest salvage plan, the explicit abandon list,
+and a paragraph "the strongest point against my own case".

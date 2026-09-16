@@ -1,0 +1,99 @@
+llmzip programme literature analyst. Python available ($HOME/muse-work/ml-python) for SMALL
+sanity computations only. NO web access, NO paid APIs, NO git, NO pip. Write ONLY in YOUR directory.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+*** YOU HAVE NO WEB ACCESS. THIS IS THE CENTRAL CONSTRAINT OF YOUR JOB. ***
+Everything you "know" about a paper is RECALLED FROM MEMORY and may be wrong in title, authors,
+venue, year, numbers, or existence. The coordinator HAS web access and will fetch what you rank.
+So your product is NOT a set of citations. It is:
+   (a) a map of which of our measured phenomena are already-known vs genuinely new, and
+   (b) a RANKED FETCH QUEUE telling the coordinator exactly what to look up and what each
+       source would settle.
+A confidently-worded fake citation is the worst possible output. An honest "I recall something in
+this area but cannot pin it down; here is what to search for" is a good output.
+
+TAG EVERY CLAIM, no exceptions:
+  [MEASURED HERE]        - a number from our own artifacts (cite the file)
+  [RECALLED-FROM-MEMORY] - your memory of literature; add a confidence: low / medium / high
+  [PROOF-SKETCH]         - something you can derive or check numerically right now
+  [CONJECTURE]           - your hypothesis; state what would falsify it
+Never present recalled content as a verified quote. Never invent a number, table or result.
+
+ALREADY SCANNED - DO NOT RE-REPORT AS NEW (read these first so you do not waste the round):
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/DO_NOT_RESCAN.md
+      (11 full + 13 partial sources: PPLX, Nemotron, Qwen3, Anthropic contextual retrieval,
+       BPR, Extended RaBitQ, MUVERA, MuSiQue panel, BGE-M3, ConvMemory v2, hashing/KV snippets)
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/GAP_TO_100.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/lit/LITERATURE_MAP.md
+      (round 1 of this same job: ITQ, all-but-the-top, RRF, Husbands term-norm, leverage scores.
+       The coordinator has since VERIFIED with web access that ITQ = Gong & Lazebnik, "Iterative
+       Quantization: A Procrustean Approach to Learning Binary Codes for Large-scale IMAGE
+       Retrieval", evaluated on dense visual descriptors with Euclidean-neighbour ground truth;
+       all-but-the-top = Mu, Bhat, Viswanath arXiv:1702.01417, word vectors; RRF = Cormack,
+       Clarke, Buettcher SIGIR 2009; Husbands et al. 2005 exists. Do not re-derive these.)
+
+OUR MEASURED STATE (re-derived by the coordinator from stored per-query ids; anchors reproduce
+to 0.0000 pp). Read before answering anything:
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/FINDINGS_DIGEST.md
+  /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/a_ladder/LADDER_AUDIT.md   (NEW, decisive)
+  /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/b_ideas/IDEAS_AUDIT.md     (NEW)
+
+THE SYSTEM: per archive, Z = [LSA32(word) | word-tfidf | char-tfidf] -> TruncatedSVD(k)
+-> row-normalize -> center -> sign -> k bits = k/8 bytes per document. Archives are SMALL:
+RealTalk 410-1548 docs, PerLTQA 293-546 docs, LME ~500 docs. Each archive is fitted separately.
+Queries are 8-13 tokens; documents average 21-36 tokens. Metric: Hit@10 (any gold in exactly 10)
+and FR@3 (fraction of gold in top 3).
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/lit_r2/rate
+YOUR CLUSTER: bits versus retrieval quality. Is there theory, and is our curve's SHAPE known?
+
+THE NEW FACT THAT MOTIVATES THIS ROUND. We finally measured a real byte ladder with genuinely
+packed codes (independently verified: payload files are exactly 12/24/48 bytes per document,
+scored by a C kernel reading only packed bytes). It is NOT monotone:
+
+  FR@3      12 B    24 B    48 B    BM25
+  LME      52.47   61.48   61.75   57.14
+  PerLTQA  52.98   54.82   51.87   60.14     <- 48 B is worse than 12 B, SIG (-2.95 CI [-3.87,-2.01])
+  LoCoMo   35.11   41.21   44.15   42.87
+  Hit@10 LME: 88.72 -> 89.15 -> 86.60        <- 48 B is the WORST of the three, SIG
+
+So doubling from 12 to 24 bytes helps a lot; doubling again from 24 to 48 HURTS on two of three
+benchmarks. Same recipe, same data, same metric, only k changes (96 -> 192 -> 384 dimensions,
+sign-coded). Note each width re-fits its own SVD, so the 12 B code is NOT a prefix of the 24 B one.
+
+QUESTIONS:
+ Q1. Is there ANY established theory relating bits-per-document to achievable Recall@K / Hit@K for
+     retrieval (as opposed to reconstruction distortion)? Round 1 concluded "no plug-and-play
+     bound exists" - test that conclusion harder. Consider and assess: rate-distortion theory and
+     why its distortion measure is the wrong one; Fano-type bounds via I(code; gold); LSH / binary
+     hashing theory (what it actually bounds - approximation ratio and query time, not gold recall);
+     similarity-preserving-hashing generalization bounds; any "bits vs recall" empirical curve
+     published for product quantization or binary embeddings. For each: does it bound what we need,
+     and if not, exactly what does it bound instead?
+ Q2. THE HEADLINE QUESTION. Is NON-MONOTONE quality in the code-length / dimension budget a KNOWN
+     phenomenon? Candidate explanations to assess against recalled literature, each marked known /
+     plausible / our conjecture:
+       - the classic LSI "optimal number of dimensions" effect (too many components re-introduce
+         noise); if this is the explanation, what did prior work report about where the optimum
+         sits and how it scales with corpus size?
+       - peaking / Hughes phenomenon (performance falls once dimensions grow relative to samples).
+         Our archives have 293-1548 documents and we are going to 384 dimensions - i.e. k is a
+         LARGE fraction of n. Does prior work treat k/n as the governing ratio?
+       - dimension-vs-sample: with n ~ 500 docs, a rank-384 decomposition is nearly full rank;
+         the trailing components are fitting archive-specific noise. Is there a named result here?
+       - concentration of distances / hubness in higher dimensions harming nearest-neighbour
+         retrieval at fixed n.
+     If more than one applies, say which our data could distinguish, and how.
+ Q3. Does prior work report a SWEET SPOT in dimension or bit budget for retrieval, and does it
+     scale with corpus size (k ~ sqrt(n)? k ~ n/c?)? Our best rung is 24 B (192 dims) on 2 of 3
+     benchmarks, with n ~ 400-1500. If a scaling rule exists in the literature, compute what it
+     would predict for our n and compare to what we measured. That comparison is the deliverable.
+ Q4. Our archives are fitted INDEPENDENTLY and are tiny (hundreds of documents). Does the
+     literature on very small collections say anything about the usable dimensionality, or is
+     essentially all published work on corpora of 10^5+ documents? If the latter, say so plainly:
+     it would mean our regime is unstudied and our results cannot be checked against anyone.
+
+DELIVERABLE: `RATE_MAP.md` (verdict KNOWN / PARTIALLY KNOWN / OPEN per question, with the
+non-monotonicity question answered first and most thoroughly) and `FETCH_QUEUE.md` - a RANKED list
+for the coordinator's web access: search terms, likely source, and one line on what it would settle
+and which of our decisions it would change. Rank by decision-relevance, not by interest.

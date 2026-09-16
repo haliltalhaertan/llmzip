@@ -1,0 +1,13 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/b_ideas (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Deliverable written to `IDEAS_AUDIT.md` in my directory (`b_ideas/`), labeled per instructions.
+
+Headline results:
+
+- **FIKIR1 (text rerank)** confirms the coordinator's decisive line: I recomputed code-contribution over plain BM25 from their OZET.json as −0.33 / +0.33 / +1.07 pp (LME/PerLTQA/LoCoMo). It is the only package that honours the standing control rule (same BM25 on all first stages + full-BM25 arm), and the controls show the gain belongs to the reranker — LME hamming+BM25 even beats qscale+BM25. Honest cost accounting included (351 MB IDF objects vs 3.1 MB codes on LME).
+- **KISITLI_CEZA (Z'Z+λD)**: genuinely new, payload kept at 96 bits (358,860 B / 29,905 docs), λ=0 exact control reproduces production within ~0.3–0.7 pp FR@3. Verdict: safe but negative — vs production all CIs include 0, never beats float/BM25. Answers the live reviewer question: no.
+- **IKI-A 96×2**: clean negative (−7.07/＋0.67ns/−3.75). **B1 compact**: only pass in the batch (claimed 10,266 top-10 identity, 28–46% file shrink, but serving RSS barely moves and build peak rises). **B2 shared**: fails by ~25 pp, correctly rejected.
+- **Q5 regularity survives**: nothing new wins everywhere; the only everywhere-win is our own production qscale vs old Hamming (already known), and FIKIR1's everywhere-positive first-stage deltas vanish against the BM25-full control.
+- **Ranked next-CPU list**: (1) PerLTQA SVD-stage −3.47 pp loss re-derivation, (2) FIKIR1 control harness reuse, (3) conditional B1 replay, (4) HIZ SIMD recipe, (5) KISITLI pairs as reading only, (6) untested E4 tau-damping last. Duplicates vs DO_NOT_REPEAT.md listed.
+
+Caveats: I verified levels/deltas from their OZET JSONs against frozen anchors (all baselines reproduce; tie-convention deltas noted), but did not row-check per-query CSVs, gate files, or the 1.4 MB transcript — their self-audit is treated as their claim throughout.

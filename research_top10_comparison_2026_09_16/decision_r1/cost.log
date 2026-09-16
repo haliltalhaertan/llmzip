@@ -1,0 +1,7 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/decision_r1/cost (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Deliverable written to [REFEREE.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/decision_r1/cost/REFEREE.md:1).
+
+It contains the open-question table (Q1–Q9 with cheap/expensive and decision-relevance), costings for the fair-baseline re-run, the k<n PerLTQA redo, and the top-50 rerank-reuse experiment — each with next action, prespecified gate, honest cost, and strongest failure reason — plus the worthless list and a numeric stop/continue/narrow rule.
+
+Current readout on brief numbers alone: STOP under that rule, unless you affirm a text-free deployment. No benchmark was run; verified only file existence and label/tag counts.
