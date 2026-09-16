@@ -176,3 +176,84 @@ and it points away from everything we were doing:
 The honest question is therefore no longer "how do we make 96 bits smarter" but "what is
 the right operating point on the bits-vs-quality curve, and is 12 bytes anywhere near
 it". That reframes the programme's premise rather than advancing it.
+
+
+---
+
+# RETRACTION (same day) — the impossibility claim was wrong
+
+A further external review challenged two conclusions in this file. **On the first it is
+right and the claim is retracted.**
+
+## Retracted: "no other choice of 96 directions would do better on rare terms"
+
+We wrote that the dimension budget makes rare-term loss unavoidable, so no better
+96-dimensional projection exists. That does not follow from `sum_i rho_i = k`.
+
+The identity fixes the **mean** at k/n. It places no cap on any individual `rho_i`.
+
+**Coordinator-verified counterexample.** A 96-dim subspace spanned by 96 chosen
+coordinate axes:
+
+    chosen 96 directions  rho = 1.0000
+    all other directions  rho = 0.0000
+    sum = 96.0000 = k,  mean = 0.1920 = k/n
+
+Their 50-direction version reproduces exactly: preserved 1.000, rest 0.102, mean 0.192.
+Some directions can be protected in full; the cost is paid by others. Whether the
+*retrieval-useful* directions can be identified from documents alone is an **open
+empirical question**, not a settled impossibility.
+
+Consequence for the programme: our failed 96-bit arms (IDF^p, component shift, ITQ,
+median threshold) stay shelved **because they failed in experiments**, not because of an
+impossibility proof. The reviewer's formulation is the correct one.
+
+They also note that 95,119 singleton columns are not 95,119 independent directions —
+several unique terms in the same record can share a direction over documents. Correct;
+the "96 directions vs 95,119 details" phrasing was loose.
+
+## Also retracted: "12 bytes isn't enough, 48 bytes is"
+
+Two conflations, both real:
+
+1. **Dimensions are not bytes.** 384 *coordinates* equal 48 bytes only if they are stored
+   as 384 **sign bits** and scored as such. At float32 the same 384 coordinates are
+   1,536 B/doc — 32× more. The audit's ladder does not state which scorer produced each
+   row, so "384 dims closes the gap" cannot be rewritten as "48 bytes closes the gap"
+   without the sign-coded arm.
+2. **Scope.** The PerLTQA row is the **rare-term bucket only**, not all queries. And
+   +0.46 ns is a failure to detect a difference, not a demonstration of equivalence, and
+   certainly not proof that 48 B is the minimum sufficient budget.
+
+Their third point stands too: on LoCoMo the **unprojected** mixed representation still
+scores 45.17 against BM25's 58.70, so the deficit there cannot be attributed to the
+dimension budget alone.
+
+## One correction we do not accept
+
+The reviewer objects to reading the friendly-tie result as evidence that the LME row is
+an artifact. They are right that an expectation-over-ties metric is unbiased and that a
+gold-aware tie-break is an oracle control — we should not call the expectation "wrong".
+What the friendly-tie number legitimately shows is **sensitivity**: on LME the gap moves
+from −2.79 to −0.45 under the most favourable tie-break, i.e. the LME conclusion is not
+robust to tie convention. That is how it will be stated. PerLTQA (−6.14) and LoCoMo
+(−12.18) survive even the friendliest ties.
+
+On memory, the scope difference is noted: our earlier ~64 MB was the BM25 statistics
+JSON total, while the 213 MB figure counts full postings (int32 docid + float32 weight)
+plus vocabulary and idf. Both should be labelled by scope rather than compared directly.
+
+## What this changes in the running experiment
+
+The coordinator's dimension ladder (`coordinator/ladder.py`, running on RealTalk at the
+time of this retraction) was already designed to separate exactly what the reviewer asks
+for, and this is preserved:
+
+    k in {96, 192, 384, 768}  x  { sym (sign bits, Hamming)
+                                   qscale (same sign bits, numeric query)
+                                   float (no quantization) }
+
+with bytes/doc charged honestly per arm (sign = k/8 B; float = 4k B), plus unprojected
+word-only and full-Z controls and BM25 under **both** the coarse and the frozen
+tokenizer. Headline decisions will be taken on **all queries**, with the rare-term band
+reported as diagnosis only.

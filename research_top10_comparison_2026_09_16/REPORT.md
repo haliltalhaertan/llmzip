@@ -55,14 +55,25 @@ exactly the discriminative ones.
 
 > **CORRECTED 2026-09-16 after external audit 3 — see `EXTERNAL_AUDIT3_RESPONSE.md`.**
 > An earlier version of this report said the SVD *discards* rare terms, implying a
-> targeted defect a better 96-dimensional projection could fix. That is wrong. Against a
-> random-96-dim-subspace null, rare (df=1) terms survive at **0.94× chance** while common
-> (df≥50) terms survive at **3.79× chance**. The SVD does not single rare terms out; it
-> lifts common ones above baseline and leaves rare ones at it. Coordinator-verified: a
-> random 96-dim subspace retains a singleton column at 0.1934 versus k/n = 0.1920.
-> The limit is the **dimension budget**, and no other choice of 96 directions does better
-> on singleton columns. Raising the budget does work: on PerLTQA the rare-bucket gap to
-> BM25 closes monotonically (96 → 384 dims: −6.98 SIG → +0.46 ns).
+> targeted defect a better 96-dimensional projection could fix. That framing was wrong.
+> Against a random-96-dim-subspace null, rare (df=1) terms survive at **0.94× chance**
+> while common (df≥50) terms survive at **3.79× chance**. The SVD does not single rare
+> terms out; it lifts common ones above baseline and leaves rare ones at it.
+> Coordinator-verified: a random 96-dim subspace retains a singleton column at 0.1934
+> versus k/n = 0.1920.
+>
+> **SECOND CORRECTION, same day — the impossibility claim is RETRACTED.**
+> A further review pointed out that we over-read our own identity, and it is right.
+> `sum_i rho_i = k` constrains the *mean* to k/n; it does **not** cap any individual
+> `rho_i`. Coordinator-verified counterexample: a 96-dim subspace spanned by 96 chosen
+> coordinate axes gives those directions `rho = 1.0000` and all others `0.0000`, with the
+> mean still exactly 0.1920. Preserving 50 chosen directions fully gives
+> 1.000 / 0.102 / 0.192 (chosen / rest / mean).
+> So "no other choice of 96 directions would do better on rare terms" **does not follow**
+> and must not be quoted. Some directions can be protected — others pay for it. Whether
+> the *useful* directions can be identified from documents alone is an open empirical
+> question, not a settled impossibility. Our failed 96-bit arms are shelved because they
+> failed in experiments, **not** because of an impossibility proof.
 
 For a feature present in exactly one record `i`, the energy retained by a rank-k
 projection is the leverage score
