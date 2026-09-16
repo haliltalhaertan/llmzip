@@ -2043,3 +2043,24 @@ Delivery-route disposition only: legacy refs/heads/fix/g3-membership-remediation
 
 No real inputs, corpus/query/gold or outcome files were accessed; no real experiment, ITQ fit, commit or push occurred. This authored body reserves no number. Parent may attach it under the actual next ledger number at landing, with the published package commit/manifest anchor outside this body. Its verification claims apply to the exact tested bytes above, not to unreviewed later changes.
 ```
+
+### L-097
+
+```text
+timestamp_utc: 2026-09-16T07:37:21.689849Z
+actor_role: Continuity Lead preparing; Head Researcher approved the correction on 2026-09-16 and assigned this number
+predecessor_commit_or_tag: L-095 / 5ec3db60
+numbering: L-096 is NOT skipped by accident. It is carried by the unmerged branch hr/consolidation-l096-2026-09-14 (907750f) and has not landed on main. The Head Researcher assigned 097 to this entry; if L-096 lands later the sequence closes.
+scope: A correction of INTERPRETATION only. No frozen number is disputed, no sealed byte is touched, no Task 4F1 / BEAM surface is run or read. The frozen G = +10.037943 pp is arithmetically correct and stands.
+finding: The programme headline "SIGN96 beats FLOAT by about +10 pp" is measured against FLOAT96_UNCENTERED, an unstandardized reference. Standardizing the same float reverses the sign of the comparison. On hit@10 - a metric added by the 2026-09-15 local pilot, not the frozen task's FR@3 - SIGN96 is BEHIND standardized float on every benchmark family measured.
+numbers_hit10_pct: LongMemEval sym 86.08 / float 82.55 / float_std 88.30. PerLTQA en_v2 sym 75.76 / float 80.81 / float_std 83.96. RealTalk sym 46.68 / float 36.60 / float_std 48.51. LoCoMo sym 43.84 / float 34.66 / float_std 50.03. sym minus float_std: -2.22, -8.20, -1.83, -6.19 pp.
+narrowing: float_std is NOT universally the strongest reference. On two further PerLTQA releases raw float wins: en_v1 float 91.16 vs float_std 89.48, and zh float 82.22 vs float_std 77.90. The correct statement is that the comparison depends on the reference chosen, not that standardized float is best everywhere.
+cost_caveat: float_std costs 768 B/doc against 12 B for SIGN96, i.e. 64x. It is a CEILING, not a competitor at the byte budget. Nothing here says the 12-byte code should be replaced. What it says is that "sign quantization beats float" holds only against a weak reference, and that every round built on the old headline inherits the error.
+metric_caveat: These are hit@k numbers from a local exploratory pilot carrying [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]. The frozen tasks measure expected fractional R@3. This entry corrects how the comparison is FRAMED; it is not a re-measurement of any frozen estimand and does not license reading any frozen outcome.
+evidence: branch findings/top10-comparison-2026-09-15, directory research_twelve_byte_pilot_2026_09_15/. HANDOFF_2026-09-15.md sections 6a and 12a; results/HIT10.json, results/LOCOMO.json, results/PERLTQA_en_v1.json, results/PERLTQA_zh.json. Every script self-checks frac@3 against lib_b8.exact_frac on every arm and every query before reporting. Authored body and sidecar: docs/v52/V52_STANDARDIZED_FLOAT_CORRECTION_2026-09-16.md, sha256 2307d5734003e04b1d8441406d1114e45fbf474092b5bdf01f0efa2048297695, prepared on hr/standardized-float-correction-2026-09-16 (7501991).
+related_correction: The same pilot resolved the LoCoMo anchor gap. The historical exact_exp and lib_b8.exact_frac are the same estimator (max per-query difference 0.000e+00 over 1535 queries); the 0.136 pp gap is entirely the gold convention, theory_benchmark_test_v1/locomo/run_locomo.py:189 using correct_evidence (the 156 audited corrections) where the local caches hold raw_evidence. That gap is therefore a direct readout of the still-open Head-Researcher obligation, not a metric defect.
+disposition: RECORDED AS A FRAMING CORRECTION. No arm winner is declared, no representation change is authorized, no benchmark is pooled, no frozen number is changed.
+next: Before any future round quotes the +10 pp gap it must state which float reference it is measured against. Separately unresolved and sharpened by the pilot: binarising the QUERY costs 4.43 pp on PerLTQA and is beneficial on RealTalk, and the cause is unknown.
+outcome_boundary: Task 4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN. Unchanged by this entry.
+status: FRAMING CORRECTION RECORDED; NO FROZEN NUMBER CHANGED
+```
