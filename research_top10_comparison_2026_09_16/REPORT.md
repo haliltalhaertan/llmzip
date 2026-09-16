@@ -50,8 +50,19 @@ The entire deficit lives in the rare-term band (341/705 = 48.37%, the largest ba
 
 **Why this happens, mathematically.** TruncatedSVD minimizes Frobenius reconstruction
 error, which rewards high-variance directions. Rare terms are low-variance by
-construction, so they are discarded first — while IDF says those are exactly the
-discriminative ones. The two objectives point in opposite directions.
+construction, so they are retained no better than chance — while IDF says those are
+exactly the discriminative ones.
+
+> **CORRECTED 2026-09-16 after external audit 3 — see `EXTERNAL_AUDIT3_RESPONSE.md`.**
+> An earlier version of this report said the SVD *discards* rare terms, implying a
+> targeted defect a better 96-dimensional projection could fix. That is wrong. Against a
+> random-96-dim-subspace null, rare (df=1) terms survive at **0.94× chance** while common
+> (df≥50) terms survive at **3.79× chance**. The SVD does not single rare terms out; it
+> lifts common ones above baseline and leaves rare ones at it. Coordinator-verified: a
+> random 96-dim subspace retains a singleton column at 0.1934 versus k/n = 0.1920.
+> The limit is the **dimension budget**, and no other choice of 96 directions does better
+> on singleton columns. Raising the budget does work: on PerLTQA the rare-bucket gap to
+> BM25 closes monotonically (96 → 384 dims: −6.98 SIG → +0.46 ns).
 
 For a feature present in exactly one record `i`, the energy retained by a rank-k
 projection is the leverage score
