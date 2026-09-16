@@ -1,0 +1,33 @@
+name: LLMZIP verified archive transfer
+on:
+  push:
+    branches: ['archive/latest-findings-b1-2026-09-16']
+    paths: ['findings/archive_2026_09_16_b1/transfer_request.json']
+permissions:
+  contents: write
+concurrency:
+  group: llmzip-archive-b1-20260916
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: github.repository == 'haliltalhaertan/llmzip'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Copy and hash-verify authorized archive files only
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARCHIVE_REPO: ${{ github.repository }}
+          ARCHIVE_SHA: ${{ github.sha }}
+          ARCHIVE_BRANCH: archive/latest-findings-b1-2026-09-16
+        run: |
+          python - <<'PY'
+          import base64, json, os, pathlib, urllib.request
+          repo=os.environ['ARCHIVE_REPO']; sha=os.environ['ARCHIVE_SHA']
+          p='findings/archive_2026_09_16_b1/archive_transfer.py'
+          req=urllib.request.Request(f'https://api.github.com/repos/{repo}/contents/{p}?ref={sha}',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'})
+          with urllib.request.urlopen(req,timeout=60) as r: obj=json.load(r)
+          data=base64.b64decode(obj['content'])
+          pathlib.Path('archive_transfer.py').write_bytes(data)
+          PY
+          python archive_transfer.py
