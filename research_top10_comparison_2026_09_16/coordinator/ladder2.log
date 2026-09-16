@@ -1,0 +1,29 @@
+  RT01 done n=85 gate_diff=0 14s
+  RT02 done n=70 gate_diff=0 28s
+  RT03 done n=73 gate_diff=0 40s
+  RT04 done n=71 gate_diff=0 51s
+  RT05 done n=70 gate_diff=0 68s
+  RT06 done n=74 gate_diff=0 79s
+  RT07 done n=70 gate_diff=0 91s
+  RT08 done n=70 gate_diff=0 101s
+  RT09 done n=63 gate_diff=0 112s
+  RT10 done n=59 gate_diff=0 124s
+
+=== FIDELITY GATE: 0 differing of 858624 bits ===
+
+arm                     bytes/doc   Hit@10     FR@3
+k96/sym                        12    46.52    22.87
+k96/qscale                     12    49.65    22.41
+k96/float                     384    36.60    17.25
+k192/sym                       24    51.77    28.56
+k192/qscale                    24    55.32    29.75
+k192/float                    768    40.43    19.74
+k384/sym                       48    54.18    31.48
+k384/qscale                    48    57.87    32.79
+k384/float                   1536    43.69    24.30
+NOPROJ_WORD/float               —    56.03    31.19
+NOPROJ_FULL/float               —    47.80    28.07
+BM25_coarse/-                   —    55.32    33.91
+BM25_frozen/-                   —    61.70    36.05
+
+WROTE LADDER.json  elapsed 124s
