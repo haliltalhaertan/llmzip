@@ -1,0 +1,14 @@
+{
+  "same_author_separate_implementation": true,
+  "independent_external_audit": false,
+  "archives": 510,
+  "queries": 10266,
+  "top10_checks": 82128,
+  "scalar_metric_checks": 492768,
+  "max_metric_error": 0.0,
+  "packed_byte_checks": 2550,
+  "plan_hash_unchanged": true,
+  "profile_top10_checks": 780,
+  "service_code_hash_checks": 132,
+  "fresh_build_code_hash_checks": 44
+}
