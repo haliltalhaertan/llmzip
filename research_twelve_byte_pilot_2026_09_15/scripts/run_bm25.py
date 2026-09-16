@@ -129,7 +129,16 @@ def run_lme(acc, cluster, limit):
               [np.asarray(d["qC"], float).reshape(-1)], tag, acc, cluster)
 
 
+QTEXT = json.load(open(os.path.join(HERE, "perltqa_qtext.json"),
+                      encoding="utf-8")) if os.path.exists(
+    os.path.join(HERE, "perltqa_qtext.json")) else {}
+
+
 def run_perltqa(acc, cluster, limit):
+    """Question text is NOT in the cached query pickle (it stores only
+    char/section/gold/qC), so it is reconstructed from the raw en_v2 dataset
+    by replaying step2_build.py's exact qid construction. All 8,265 cached
+    qids matched, 0 unmatched."""
     items = json.load(open(os.path.join(
         H.SRC, "bench3", "runs", "b3b_perltqa", "cache_items.json"),
         encoding="utf-8"))
@@ -146,10 +155,72 @@ def run_perltqa(acc, cluster, limit):
         if len(texts) != C.shape[0]:
             continue
         ids = sorted(by[ch])
-        score(C, texts, [str(Q[q]["question"]) for q in ids],
+        ids = [q for q in ids if q in QTEXT]
+        if not ids:
+            continue
+        score(C, texts, [QTEXT[q] for q in ids],
               [np.asarray(Q[q]["gold"]).ravel().astype(int) for q in ids],
               [np.asarray(Q[q]["qC"], float) for q in ids], ch, acc, cluster)
     del arch, Q
+
+
+def _locomo_message_text(msg):
+    """VERBATIM from drive/v52_t4d_locomo_frozen_cross_benchmark.py:105-112."""
+    speaker = str(msg.get("speaker", "")).strip()
+    text = str(msg.get("text", "")).strip()
+    cap = str(msg.get("blip_caption", "") or "").strip()
+    if cap:
+        text = f"{text} [IMAGE: {cap}]".strip()
+    return f"{speaker}: {text}".strip(": ")
+
+
+def run_locomo(acc, cluster, limit):
+    """LoCoMo document text, reconstructed to the frozen recipe.
+
+    The cached pickles carry C, QC, qas and id_to_row but no document text.
+    drive/locomo10.json has it: conv_id is the list index, sessions are sorted
+    numerically, and each turn is "speaker: text" with a BLIP caption appended
+    when present -- raw_item_to_conv at :115-128 of the frozen cross-benchmark
+    script.  Alignment is ASSERTED against the cached id_to_row rather than
+    assumed, and any archive that fails the check is skipped loudly.
+
+    Gold here is raw_evidence, as everywhere else in this pilot; the 156
+    audited corrections remain an open Head-Researcher obligation.
+    """
+    raw = json.load(open(os.path.join(H.SRC, "drive", "locomo10.json"),
+                         encoding="utf-8"))
+    for idx, item in enumerate(raw[:limit]):
+        tag = f"locomo_{idx}"
+        cp = os.path.join(H.SRC, "regen", "locomo", tag + ".pkl")
+        if not os.path.exists(cp):
+            continue
+        d = pickle.load(open(cp, "rb"))
+        C = np.asarray(d["C"], float)
+        i2r = d["id_to_row"]
+        c = item.get("conversation", {})
+        texts = [None] * C.shape[0]
+        for sk in sorted([k for k in c if k.startswith("session_")
+                          and not k.endswith("_date_time")],
+                         key=lambda x: int(x.split("_")[1])):
+            for msg in c.get(sk, []) or []:
+                did = str(msg.get("dia_id", ""))
+                if did in i2r:
+                    texts[int(i2r[did])] = _locomo_message_text(msg)
+        missing = sum(1 for t in texts if t is None)
+        if missing:
+            print(f"  ATLANDI {tag}: {missing} satirin metni yok", flush=True)
+            continue
+        QC = np.asarray(d["QC"], float)
+        qs, gs, qv = [], [], []
+        for j, qa in enumerate(d["qas"]):
+            rows = sorted({int(i2r[x]) for x in qa["raw_evidence"]
+                           if x in i2r})
+            if rows:
+                qs.append(str(qa["question"]))
+                gs.append(np.asarray(rows, dtype=int))
+                qv.append(QC[j])
+        if qs:
+            score(C, texts, qs, gs, qv, tag, acc, cluster)
 
 
 def score(C, texts, questions, golds, qvecs, tag, acc, cluster):
@@ -181,8 +252,9 @@ def main():
            "bm25": {"k1": K1, "b": BB,
                     "note": "textbook parameters, fixed before any result"},
            "benchmarks": {}}
-    jobs = ([("lme", run_lme)] if which in ("lme", "both") else []) + \
-           ([("perltqa", run_perltqa)] if which in ("perltqa", "both") else [])
+    ALL = {"lme": run_lme, "perltqa": run_perltqa, "locomo": run_locomo}
+    jobs = ([(k, ALL[k]) for k in ALL] if which in ("both", "all")
+            else [(which, ALL[which])])
     for name, fn in jobs:
         acc, cluster = defaultdict(list), []
         fn(acc, cluster, limit)

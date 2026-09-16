@@ -1,0 +1,117 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "buckets": "df of the rarest question/gold shared term, cut at 10 % and 2 % of the archive, fixed in advance",
+  "benchmarks": {
+    "lme": {
+      "n_queries": 470,
+      "by_bucket": {
+        "none": {
+          "n": 1,
+          "sym": 0.0,
+          "qscale": 0.0,
+          "bm25": 0.0,
+          "sym_minus_bm25": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "significant": false
+        },
+        "common": {
+          "n": 31,
+          "sym": 8.46774193548387,
+          "qscale": 5.913978494623655,
+          "bm25": 0.0,
+          "sym_minus_bm25": 8.46774193548387,
+          "ci95": [
+            1.6129032258064515,
+            17.473118279569892
+          ],
+          "significant": true
+        },
+        "medium": {
+          "n": 82,
+          "sym": 32.981029810298104,
+          "qscale": 33.35365853658537,
+          "bm25": 25.04065040650406,
+          "sym_minus_bm25": 7.940379403794037,
+          "ci95": [
+            -0.16937669376693787,
+            16.029979674796735
+          ],
+          "significant": false
+        },
+        "rare": {
+          "n": 356,
+          "sym": 63.239700374531836,
+          "qscale": 63.45505617977528,
+          "bm25": 69.48501872659176,
+          "sym_minus_bm25": -6.245318352059925,
+          "ci95": [
+            -9.676966292134832,
+            -2.8792134831460676
+          ],
+          "significant": true
+        }
+      }
+    },
+    "perltqa": {
+      "n_queries": 8265,
+      "by_bucket": {
+        "none": {
+          "n": 113,
+          "sym": 1.0619469026548671,
+          "qscale": 0.0,
+          "bm25": 0.0,
+          "sym_minus_bm25": 1.0619469026548671,
+          "ci95": [
+            0.0,
+            3.2
+          ],
+          "significant": false
+        },
+        "common": {
+          "n": 601,
+          "sym": 11.33644330898295,
+          "qscale": 12.712113408868817,
+          "bm25": 2.1630615640599005,
+          "sym_minus_bm25": 9.173381744923049,
+          "ci95": [
+            5.876565320960242,
+            12.952207613462903
+          ],
+          "significant": true
+        },
+        "medium": {
+          "n": 1857,
+          "sym": 30.803268955554426,
+          "qscale": 36.41033706915084,
+          "bm25": 30.52924782176996,
+          "sym_minus_bm25": 0.2740211337844593,
+          "ci95": [
+            -3.5993153296393503,
+            4.427153973971071
+          ],
+          "significant": false
+        },
+        "rare": {
+          "n": 5694,
+          "sym": 59.70811400598646,
+          "qscale": 64.05935497199684,
+          "bm25": 72.14874424457919,
+          "sym_minus_bm25": -12.44063023859274,
+          "ci95": [
+            -14.05315906535715,
+            -10.853052509755106
+          ],
+          "significant": true
+        }
+      }
+    }
+  }
+}

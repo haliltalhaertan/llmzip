@@ -210,3 +210,33 @@ reach only 7-8 % of it.
 
 §26 lists everything withdrawn or narrowed in this pass, including one
 bootstrap error I made twice in the same day.
+
+## Added 2026-09-16 (fourth pass) — the mechanism
+
+The BM25 control of the third pass was a result without an explanation.
+Section 27 of the handoff supplies one, and it replicates on all three
+benchmarks with the sign never flipping.
+
+Split queries by how rare the rarest term shared between the question and its
+gold evidence is, with the cuts fixed in advance. FR@3, `sym − bm25`:
+
+| | common hinge | rare hinge |
+|---|---|---|
+| LongMemEval | **+8.47** SIG (n=31) | **−6.25** SIG (n=356) |
+| PerLTQA | **+9.17** SIG (n=601) | **−12.44** SIG (n=5,694) |
+| LoCoMo | **+1.22** SIG (n=322) | **−23.32** SIG (n=950) |
+
+A truncated SVD keeps the directions along which the archive varies most. A
+term in three documents out of nine hundred carries almost no variance, so the
+projection discards it — and that term is exactly what pins the answer to one
+turn. "Keep what varies most" and "keep what discriminates most" are opposite
+instructions.
+
+So "BM25 beats us" is the wrong summary. The two methods are good at different
+things; the rare case is 62–76 % of every benchmark, which is where the
+aggregate goes. It also explains the fusion result mechanically: BM25 keeps
+precisely what the projection throws away.
+
+The proposed *remedy* — splitting the 12-byte budget between SVD bits and
+explicit rare-term bits — was reported elsewhere to fail badly. That half is
+**not verified here**; only the diagnosis is.
