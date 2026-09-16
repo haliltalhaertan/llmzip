@@ -177,3 +177,36 @@ retried — handoff sections 17-18:
 
 The threshold proposal came from outside this session, as did the criticism
 that corrected how its failure was first reported.
+
+## Added 2026-09-16 (third pass) — the session's two largest results
+
+Both are in [`HANDOFF_2026-09-15.md`](HANDOFF_2026-09-15.md) §20-24 with their
+limits attached.
+
+**A defect in the FROZEN scorer.** `lib_b8.ndcg3_expected` divides a tie
+bucket's expected discount by the slots it can fill rather than by the bucket
+size, over-crediting whenever the bucket is larger. Verified by brute-force
+Monte Carlo: mean absolute error 0.0840 against 0.00123 for the corrected
+form, 119 of 300 cases off by more than 0.02. The error is exactly zero
+without ties, so it inflates the Hamming arms (+0.88 to +1.37 pp) and leaves
+every float arm untouched — and it is called from the frozen Task B
+entrypoint.
+
+**BM25, the control the programme never had.** Two days of work compared one
+compression of an SVD representation against another. Nobody asked whether
+that representation beats plain lexical search. On LongMemEval it does not do
+so significantly (FR@3 `sym − bm25` = −2.79 ns), it IS significantly better at
+hit@10 (+4.89 SIG), and the parameter-free fusion of the two beats everything:
+FR@3 59.14 against qscale's 54.27, **+4.87 pp, significant** — roughly eighty
+times the +0.06 pp qscale itself gains on that metric. Only LongMemEval has
+been run; the PerLTQA cache has no question text.
+
+Also here: the pipeline ladder showing that taking the sign acts as a per-axis
+**normaliser** rather than only a compressor (which explains the programme's
++10 pp headline and why it vanishes against a standardised float); the
+second-stage ceiling (+12 to +24 pp of FR@3, ten times anything available from
+reading the same bits better); and the screen showing cheap lexical signals
+reach only 7-8 % of it.
+
+§26 lists everything withdrawn or narrowed in this pass, including one
+bootstrap error I made twice in the same day.

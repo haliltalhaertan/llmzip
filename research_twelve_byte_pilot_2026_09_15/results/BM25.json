@@ -1,0 +1,149 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "bm25": {
+    "k1": 1.2,
+    "b": 0.75,
+    "note": "textbook parameters, fixed before any result"
+  },
+  "benchmarks": {
+    "lme": {
+      "n_queries": 470,
+      "n_archives": 470,
+      "levels": {
+        "fr3": {
+          "sym": 54.21335697399526,
+          "qscale": 54.27304964539007,
+          "float_std": 55.74468085106383,
+          "bm25": 56.99999999999999,
+          "bm25_rrf_sym": 59.13829787234043
+        },
+        "hit10": {
+          "sym": 86.0773387369132,
+          "qscale": 88.51063829787233,
+          "float_std": 88.29787234042553,
+          "bm25": 83.61702127659575,
+          "bm25_rrf_sym": 87.87234042553192
+        }
+      },
+      "contrasts": {
+        "fr3:sym-bm25": {
+          "delta_pp": -2.786643026004728,
+          "ci95": [
+            -5.888327423167849,
+            0.29438534278959283
+          ],
+          "significant": false
+        },
+        "fr3:qscale-bm25": {
+          "delta_pp": -2.726950354609929,
+          "ci95": [
+            -5.804964539007091,
+            0.3617021276595742
+          ],
+          "significant": false
+        },
+        "fr3:float_std-bm25": {
+          "delta_pp": -1.2553191489361701,
+          "ci95": [
+            -4.3120567375886525,
+            1.69867021276595
+          ],
+          "significant": false
+        },
+        "fr3:bm25_rrf_sym-sym": {
+          "delta_pp": 4.924940898345154,
+          "ci95": [
+            2.5992612293144206,
+            7.280732860520094
+          ],
+          "significant": true
+        },
+        "fr3:bm25_rrf_sym-qscale": {
+          "delta_pp": 4.865248226950355,
+          "ci95": [
+            2.3616134751773052,
+            7.411347517730498
+          ],
+          "significant": true
+        },
+        "fr3:bm25_rrf_sym-bm25": {
+          "delta_pp": 2.138297872340426,
+          "ci95": [
+            -0.02836879432624129,
+            4.3546099290780145
+          ],
+          "significant": false
+        },
+        "fr3:bm25_rrf_sym-float_std": {
+          "delta_pp": 3.393617021276596,
+          "ci95": [
+            0.7659574468085107,
+            6.053191489361702
+          ],
+          "significant": true
+        },
+        "hit10:sym-bm25": {
+          "delta_pp": 2.4603174603174605,
+          "ci95": [
+            -0.5540780141843968,
+            5.501773049645369
+          ],
+          "significant": false
+        },
+        "hit10:qscale-bm25": {
+          "delta_pp": 4.8936170212765955,
+          "ci95": [
+            2.127659574468085,
+            7.872340425531915
+          ],
+          "significant": true
+        },
+        "hit10:float_std-bm25": {
+          "delta_pp": 4.680851063829787,
+          "ci95": [
+            1.702127659574468,
+            7.659574468085106
+          ],
+          "significant": true
+        },
+        "hit10:bm25_rrf_sym-sym": {
+          "delta_pp": 1.79500168861871,
+          "ci95": [
+            -0.10638297872340426,
+            3.792637622424857
+          ],
+          "significant": false
+        },
+        "hit10:bm25_rrf_sym-qscale": {
+          "delta_pp": -0.6382978723404255,
+          "ci95": [
+            -2.7659574468085104,
+            1.4893617021276597
+          ],
+          "significant": false
+        },
+        "hit10:bm25_rrf_sym-bm25": {
+          "delta_pp": 4.25531914893617,
+          "ci95": [
+            1.9148936170212765,
+            6.808510638297872
+          ],
+          "significant": true
+        },
+        "hit10:bm25_rrf_sym-float_std": {
+          "delta_pp": -0.425531914893617,
+          "ci95": [
+            -2.553191489361702,
+            1.702127659574468
+          ],
+          "significant": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "benchmark": "lme",
+  "n_queries": 240,
+  "bootstrap": 20000,
+  "note": "one query per archive on LongMemEval, so query-level and cluster-level bootstrap coincide",
+  "levels_pct": {
+    "S1_Z": 85.41666666666666,
+    "S2_svd": 83.33333333333334,
+    "S3_norm": 83.33333333333334,
+    "S4_center": 82.91666666666667,
+    "S5_sign_fq": 85.0,
+    "S6_sign": 87.29166666666667
+  },
+  "steps": {
+    "S1_Z->S2_svd": {
+      "delta_pp": -2.083333333333333,
+      "ci95": [
+        -4.177083333333323,
+        0.0
+      ],
+      "significant": false,
+      "queries_up": 1,
+      "queries_down": 6,
+      "queries_unchanged": 233
+    },
+    "S2_svd->S3_norm": {
+      "delta_pp": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "significant": false,
+      "queries_up": 0,
+      "queries_down": 0,
+      "queries_unchanged": 240
+    },
+    "S3_norm->S4_center": {
+      "delta_pp": -0.4166666666666667,
+      "ci95": [
+        -1.25,
+        0.0
+      ],
+      "significant": false,
+      "queries_up": 0,
+      "queries_down": 1,
+      "queries_unchanged": 239
+    },
+    "S4_center->S5_sign_fq": {
+      "delta_pp": 2.083333333333333,
+      "ci95": [
+        -1.25,
+        5.416666666666667
+      ],
+      "significant": false,
+      "queries_up": 10,
+      "queries_down": 5,
+      "queries_unchanged": 225
+    },
+    "S5_sign_fq->S6_sign": {
+      "delta_pp": 2.2916666666666665,
+      "ci95": [
+        -0.4166666666666667,
+        5.208333333333334
+      ],
+      "significant": false,
+      "queries_up": 9,
+      "queries_down": 4,
+      "queries_unchanged": 227
+    },
+    "S1_Z->S6_sign": {
+      "delta_pp": 1.875,
+      "ci95": [
+        -1.875,
+        5.625
+      ],
+      "significant": false,
+      "queries_up": 13,
+      "queries_down": 9,
+      "queries_unchanged": 218
+    },
+    "S4_center->S6_sign": {
+      "delta_pp": 4.375,
+      "ci95": [
+        0.625,
+        8.333333333333332
+      ],
+      "significant": true,
+      "queries_up": 17,
+      "queries_down": 7,
+      "queries_unchanged": 216
+    }
+  }
+}

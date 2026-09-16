@@ -1,0 +1,166 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "k": 10,
+  "bootstrap": 20000,
+  "why": "run_qscale.py used a query-level bootstrap where queries share archives; the cluster bootstrap over archives is the correct one and is what run_hit10.py has always used",
+  "benchmarks": {
+    "perltqa": {
+      "n_queries": 8265,
+      "n_archives": 30,
+      "levels_pct": {
+        "sym": 75.76122962874324,
+        "asym": 80.1935874168179,
+        "qscale": 80.0,
+        "float_std": 83.95644283121597
+      },
+      "contrasts": {
+        "qscale-sym": {
+          "delta_pp": 4.238770371256759,
+          "ci95_query_level_WRONG_when_clustered": [
+            3.5877765727584237,
+            4.878938669047561
+          ],
+          "ci95_cluster_level": [
+            3.401690938989092,
+            5.0332507578830885
+          ],
+          "significant_cluster": true,
+          "width_ratio_cluster_over_query": 1.2636367064857144
+        },
+        "qscale-float_std": {
+          "delta_pp": -3.9564428312159707,
+          "ci95_query_level_WRONG_when_clustered": [
+            -4.549304295220811,
+            -3.363581367211131
+          ],
+          "ci95_cluster_level": [
+            -4.743602124577499,
+            -3.1884324913017807
+          ],
+          "significant_cluster": true,
+          "width_ratio_cluster_over_query": 1.3115792876554906
+        },
+        "asym-sym": {
+          "delta_pp": 4.4323577880746665,
+          "ci95_query_level_WRONG_when_clustered": [
+            3.704471198459402,
+            5.163569003927442
+          ],
+          "ci95_cluster_level": [
+            3.1994363968855506,
+            5.620699123377313
+          ],
+          "significant_cluster": true,
+          "width_ratio_cluster_over_query": 1.6594245549667488
+        }
+      }
+    },
+    "lme": {
+      "n_queries": 470,
+      "n_archives": 470,
+      "levels_pct": {
+        "sym": 86.0773387369132,
+        "asym": 85.74468085106382,
+        "qscale": 88.51063829787233,
+        "float_std": 88.29787234042553
+      },
+      "contrasts": {
+        "qscale-sym": {
+          "delta_pp": 2.4332995609591355,
+          "ci95_query_level_WRONG_when_clustered": [
+            0.6484295845997973,
+            4.314420803782506
+          ],
+          "ci95_cluster_level": [
+            0.6484295845997973,
+            4.265450861195542
+          ],
+          "significant_cluster": true,
+          "width_ratio_cluster_over_query": 0.9866421004145556
+        },
+        "qscale-float_std": {
+          "delta_pp": 0.2127659574468085,
+          "ci95_query_level_WRONG_when_clustered": [
+            -1.702127659574468,
+            2.127659574468085
+          ],
+          "ci95_cluster_level": [
+            -1.702127659574468,
+            2.127659574468085
+          ],
+          "significant_cluster": false,
+          "width_ratio_cluster_over_query": 1.0
+        },
+        "asym-sym": {
+          "delta_pp": -0.33265788584937517,
+          "ci95_query_level_WRONG_when_clustered": [
+            -2.683215130023641,
+            1.9976359338061467
+          ],
+          "ci95_cluster_level": [
+            -2.696724079702803,
+            2.021276595744681
+          ],
+          "significant_cluster": false,
+          "width_ratio_cluster_over_query": 1.0079365079365081
+        }
+      }
+    },
+    "realtalk": {
+      "n_queries": 705,
+      "n_archives": 10,
+      "levels_pct": {
+        "sym": 46.68085106382979,
+        "asym": 43.54609929078014,
+        "qscale": 49.645390070921984,
+        "float_std": 48.51063829787234
+      },
+      "contrasts": {
+        "qscale-sym": {
+          "delta_pp": 2.964539007092198,
+          "ci95_query_level_WRONG_when_clustered": [
+            0.6257683215130022,
+            5.3171732522796304
+          ],
+          "ci95_cluster_level": [
+            0.7896920452413904,
+            4.975856577401198
+          ],
+          "significant_cluster": true,
+          "width_ratio_cluster_over_query": 0.892305097073712
+        },
+        "qscale-float_std": {
+          "delta_pp": 1.1347517730496455,
+          "ci95_query_level_WRONG_when_clustered": [
+            -1.276595744680851,
+            3.546099290780142
+          ],
+          "ci95_cluster_level": [
+            -2.083405771905424,
+            4.213483146067416
+          ],
+          "significant_cluster": false,
+          "width_ratio_cluster_over_query": 1.3056784374031918
+        },
+        "asym-sym": {
+          "delta_pp": -3.1347517730496453,
+          "ci95_query_level_WRONG_when_clustered": [
+            -5.940965889902061,
+            -0.27620736237757965
+          ],
+          "ci95_cluster_level": [
+            -8.071680202693322,
+            2.057759216156356
+          ],
+          "significant_cluster": false,
+          "width_ratio_cluster_over_query": 1.7881502573555026
+        }
+      }
+    }
+  }
+}

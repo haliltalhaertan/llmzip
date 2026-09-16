@@ -1,0 +1,117 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "document_side": "UNCHANGED -- packed sign(C), 12 B/doc",
+  "extra_state": "one float32 array of 96 per archive (st['std']), already fitted by lib_b8 for the float_std arm",
+  "benchmarks": {
+    "perltqa": {
+      "n_queries": 8265,
+      "hit_percent": {
+        "sym_hit1": 35.36237144585602,
+        "sym_hit3": 59.03652810186386,
+        "sym_hit10": 75.76122962874324,
+        "asym_hit1": 38.35450695704779,
+        "asym_hit3": 63.72655777374471,
+        "asym_hit10": 80.1935874168179,
+        "qscale_hit1": 38.77797943133696,
+        "qscale_hit3": 64.24682395644284,
+        "qscale_hit10": 80.0,
+        "qscale_dot_hit1": 38.77797943133696,
+        "qscale_dot_hit3": 64.24682395644284,
+        "qscale_dot_hit10": 80.0,
+        "float_std_hit1": 41.74228675136116,
+        "float_std_hit3": 67.86448880822746,
+        "float_std_hit10": 83.95644283121597
+      },
+      "index_bytes": {
+        "doc_bits": 147456,
+        "std_array": 11520,
+        "float64_docs": 9437184
+      },
+      "std_overhead_pct_of_doc_bits": 7.8125,
+      "qscale_minus_sym_hit10": {
+        "delta_pp": 4.238770371256759,
+        "ci95": [
+          3.5877765727584237,
+          4.878938669047561
+        ],
+        "queries_up": 684,
+        "queries_down": 278
+      }
+    },
+    "lme": {
+      "n_queries": 470,
+      "hit_percent": {
+        "sym_hit1": 43.90070921985816,
+        "sym_hit3": 71.38297872340425,
+        "sym_hit10": 86.0773387369132,
+        "asym_hit1": 40.21276595744681,
+        "asym_hit3": 67.87234042553192,
+        "asym_hit10": 85.74468085106382,
+        "qscale_hit1": 44.25531914893617,
+        "qscale_hit3": 72.12765957446808,
+        "qscale_hit10": 88.51063829787233,
+        "qscale_dot_hit1": 44.25531914893617,
+        "qscale_dot_hit3": 72.12765957446808,
+        "qscale_dot_hit10": 88.51063829787233,
+        "float_std_hit1": 47.65957446808511,
+        "float_std_hit3": 73.82978723404256,
+        "float_std_hit10": 88.29787234042553
+      },
+      "index_bytes": {
+        "doc_bits": 2779272,
+        "std_array": 180480,
+        "float64_docs": 177873408
+      },
+      "std_overhead_pct_of_doc_bits": 6.493786862171101,
+      "qscale_minus_sym_hit10": {
+        "delta_pp": 2.4332995609591355,
+        "ci95": [
+          0.6484295845997973,
+          4.300911854103344
+        ],
+        "queries_up": 17,
+        "queries_down": 4
+      }
+    },
+    "realtalk": {
+      "n_queries": 705,
+      "hit_percent": {
+        "sym_hit1": 15.62647754137116,
+        "sym_hit3": 29.737588652482273,
+        "sym_hit10": 46.68085106382979,
+        "asym_hit1": 13.900709219858157,
+        "asym_hit3": 26.382978723404253,
+        "asym_hit10": 43.54609929078014,
+        "qscale_hit1": 16.595744680851062,
+        "qscale_hit3": 29.50354609929078,
+        "qscale_hit10": 49.645390070921984,
+        "qscale_dot_hit1": 16.595744680851062,
+        "qscale_dot_hit3": 29.50354609929078,
+        "qscale_dot_hit10": 49.645390070921984,
+        "float_std_hit1": 17.4468085106383,
+        "float_std_hit3": 29.361702127659573,
+        "float_std_hit10": 48.51063829787234
+      },
+      "index_bytes": {
+        "doc_bits": 107328,
+        "std_array": 3840,
+        "float64_docs": 6868992
+      },
+      "std_overhead_pct_of_doc_bits": 3.5778175313059033,
+      "qscale_minus_sym_hit10": {
+        "delta_pp": 2.964539007092198,
+        "ci95": [
+          0.6335612968591691,
+          5.288086795001688
+        ],
+        "queries_up": 56,
+        "queries_down": 33
+      }
+    }
+  }
+}
