@@ -1,0 +1,45 @@
+{
+ "model": "jev-1.13.0",
+ "n_queries": 120,
+ "reps": 4,
+ "runs": [
+  {
+   "rep": 1,
+   "sign96_fr3": 73.319,
+   "bm25_fr3": 68.25,
+   "delta": 5.069,
+   "tokens": 1248677
+  },
+  {
+   "rep": 2,
+   "sign96_fr3": 73.319,
+   "bm25_fr3": 68.528,
+   "delta": 4.792,
+   "tokens": 1248677
+  },
+  {
+   "rep": 3,
+   "sign96_fr3": 73.319,
+   "bm25_fr3": 67.556,
+   "delta": 5.764,
+   "tokens": 1248677
+  },
+  {
+   "rep": 4,
+   "sign96_fr3": 73.042,
+   "bm25_fr3": 67.944,
+   "delta": 5.097,
+   "tokens": 1248677
+  }
+ ],
+ "delta_mean": 5.181,
+ "delta_sd_run_to_run": 0.413,
+ "delta_range": [
+  4.792,
+  5.764
+ ],
+ "sign96_sd": 0.139,
+ "bm25_sd": 0.417,
+ "tokens_total": 4994708,
+ "elapsed_s": 457.8
+}

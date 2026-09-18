@@ -1,0 +1,10 @@
+sabit altkume: 120 sorgu | 4 bagimsiz tekrar | jev-1.13.0
+havuzlar hazir (6s)
+  tekrar 1/4: sign96=73.32 bm25=68.25 delta=+5.069  (118s)
+  tekrar 2/4: sign96=73.32 bm25=68.53 delta=+4.792  (224s)
+  tekrar 3/4: sign96=73.32 bm25=67.56 delta=+5.764  (344s)
+  tekrar 4/4: sign96=73.04 bm25=67.94 delta=+5.097  (458s)
+
+delta ortalama +5.181 | run-to-run SD 0.413 pp | aralik [+4.79,+5.76]
+sign96 SD 0.139 | bm25 SD 0.417
+token 4,994,708 | 457.8s
