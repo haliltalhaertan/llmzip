@@ -2,8 +2,9 @@
 
 Research archive for compact long-term memory retrieval for LLM/agent systems.
 
-**Twelve-byte pilot (2026-09-15/16 round): STOPPED.** A fairly configured BM25 outperforms the
-best 48-byte code. Read [`TWELVE_BYTE_PILOT_README.md`](TWELVE_BYTE_PILOT_README.md) before opening
+**Twelve-byte pilot (2026-09-15/16 round): LINE STOPPED.** A fairly configured BM25 outperforms
+the best 48-byte code. This closes that one line only — it is not a project-wide STOP, and the other
+research lines (including sealed Task 4F1) are unaffected. Read [`TWELVE_BYTE_PILOT_README.md`](TWELVE_BYTE_PILOT_README.md) before opening
 the 3,475 files that round added, or ledger entry L-098 for the formal record.
 
 **New researcher or LLM? Start with [`START_HERE_V52_4F1.md`](START_HERE_V52_4F1.md).** It binds the current branch, exact next task, source order, external corpus requirement and the hard no-outcome boundary for Task 4F1.

@@ -2074,6 +2074,12 @@ predecessor_commit_or_tag: L-097 / 59b891e
 scope: Landing record for the twelve-byte pilot / top-10 comparison round, plus fourteen reporting
   corrections applied to that round before merge. No frozen number is changed. No Task 4F1 surface is
   run or read. The frozen G = +10.037943 pp is untouched and still stands as arithmetic.
+closure_scope: LINE CLOSURE, NOT PROGRAMME CLOSURE. What stops is the twelve-byte TF-IDF/SVD-sign
+  document-code line on the benchmarks and protocol below. NO PROJECT-WIDE STOP IS ESTABLISHED and
+  none may be inferred. Other lines - the sealed Task 4F1 surface and the dense / E1 / residual / KV /
+  inverse / storage directions raised in earlier rounds - were neither run nor read by this round and
+  are untouched by this merge; landing one line's evidence does not mark the others failed or closed.
+  Winding down the programme as a whole would be a separate owner-level decision, not licensed here.
 verdict: STOP for the 12/24/48-byte document-code line. A fairly configured BM25 (textbook
   k1=1.2/b=0.75, frozen tokenizer) scores RealTalk 61.70 Hit@10 / 36.05 FR@3 against 57.87 / 32.79
   for the best 48 B code arm. Gap -3.83 pp Hit@10, -3.26 pp FR@3.
@@ -2103,8 +2109,10 @@ withdrawn: (a) "transductive leakage" as a label for per-archive projector fitti
   build an interval was computed and discarded.
 numbers_that_stand: 12/24/48 B as DOCUMENT-CODE PAYLOAD (not total system state); the width ladder,
   which is the round's most durable result - under a fixed encoder fitted on other archives, 96->384
-  bits gains +19.86 pp, about twice the gain under per-archive fitting, so dimension budget is an
-  independent lever and not an artifact of corpus adaptation; the fidelity gates (0 differing bits of
+  bits gains +19.86 pp, about twice the gain under per-archive fitting, so within this protocol the
+  dimension budget is a lever that is not an artifact of corpus adaptation. SCOPE: RealTalk, qscale,
+  k in {96,192,384}, under the specific R4 fixed-encoder (INDEP) construction, with no CI. It is a
+  benchmark-and-protocol result, NOT a general law about representation width; the fidelity gates (0 differing bits of
   858,624); the directly audited producer code, reproduced bit-identically on four archives with 54/54
   gold mappings correct and zero question-in-corpus overlap.
 open: no held-out split exists anywhere in this package, so positive and mechanistic findings remain

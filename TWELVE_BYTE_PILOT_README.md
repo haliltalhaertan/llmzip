@@ -47,8 +47,13 @@ but "we stopped by prespecified gates exactly as written" is not a claim this pa
   headline figure.
 - **The width ladder.** More bits genuinely help, and this is the round's most durable result.
   Under a *fixed encoder fitted on other archives*, 96 → 192 → 384 bits gains **+19.86 pp** —
-  roughly twice the gain measured with a per-archive fit. Dimension budget is an independent
-  lever, not an artifact of corpus adaptation.
+  roughly twice the gain measured with a per-archive fit. Within this protocol the dimension
+  budget acts as a lever that is not an artifact of corpus adaptation.
+
+  **Scope:** RealTalk, `qscale`, the k∈{96,192,384} ladder, under the specific fixed-encoder
+  (INDEP) construction of audit round R4. It is a benchmark-and-protocol result, not a general
+  law about representation width, and it carries no confidence interval. Do not quote it as
+  "more bits always help."
 - **Per-archive projector fitting** is a preregistered design rule of this programme, documented
   in `COMMON_MODE_CLASSIFICATION.md`. Queries and gold labels never enter the fit.
 - The per-query result files, the fidelity gates (0 differing bits of 858,624), and the
@@ -96,6 +101,23 @@ corrections that get written and never reach the file a reader opens.
    candidate budget — was never stored.
 3. **The mechanism** behind the high-k scorer-dependent decline is unknown.
 4. **Twelve open defect records** inside the round were read but not re-executed.
+
+## What this does NOT close
+
+**This is a line closure, not a programme closure.** What stopped is the twelve-byte
+TF-IDF/SVD-sign document-code line, on the benchmarks and under the protocol described above.
+
+No project-wide STOP is established by this round, and none should be inferred from it. Other
+lines in this repository — including the sealed Task 4F1 surface, and the dense / E1 / residual /
+KV / inverse / storage directions raised in earlier rounds — are **untouched** by this merge.
+This round neither ran nor read them, so it cannot pronounce on them. A merge that lands one
+line's evidence does not mark the others failed, closed, or superseded.
+
+If the programme as a whole is to be wound down, that is an **owner-level decision** about where
+to spend effort, separate from and not licensed by the technical verdict recorded here.
+
+Task 4F1 remains **SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN**,
+unchanged by this round.
 
 ## Where things are
 
