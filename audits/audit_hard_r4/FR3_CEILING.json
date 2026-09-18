@@ -10,8 +10,6 @@
  },
  "queries_over_3_golds": 30,
  "fr3_structural_ceiling": 97.77,
- "best_measured_fr3": 72.09,
- "gap_to_ceiling": 25.68,
  "note": "FR@3 = |top3 cap gold|/|gold|; with >3 golds full credit is structurally impossible",
  "over3_by_section": {
   "multi-session": 24,
@@ -30,5 +28,23 @@
   "all_three": 3,
   "none": 0,
   "warning": "these are overlapping failure modes, NOT disjoint sets; do not sum them"
- }
+ },
+ "measured_arms_L107": {
+  "bm25_jev_fr3": 72.09,
+  "rrf_jev_fr3": 73.67,
+  "delta": 1.585,
+  "ci95": [
+   -0.507,
+   3.695
+  ],
+  "verdict": "INDISTINGUISHABLE"
+ },
+ "gap_to_ceiling_pp": {
+  "from_bm25_jev": 25.68,
+  "from_rrf_jev": 24.1,
+  "reported_as": "24.1-25.7 pp"
+ },
+ "no_best_label": "The two arms are statistically indistinguishable, so naming the higher one 'best measured' would be post-selection - the same error class the project retracted in L-098 (frozen_idfonly=65.67 was chosen by max() over test data). Both arms are named; the gap is a range.",
+ "ceiling_formula": "(174 + 228 + 38 + 14*(3/4) + 10*(3/5) + 6*(3/6)) / 470 = 459.5/470 = 97.766",
+ "wording_correction": "Earlier draft said the metric 'breaks'. Too strong. FR@3 is not faulty; it has a natural ceiling for multi-evidence retrieval. Correct statement: FR@3 cannot reach 1.0 on queries with more than three golds."
 }
