@@ -2,6 +2,10 @@
 
 Research archive for compact long-term memory retrieval for LLM/agent systems.
 
+**Twelve-byte pilot (2026-09-15/16 round): STOPPED.** A fairly configured BM25 outperforms the
+best 48-byte code. Read [`TWELVE_BYTE_PILOT_README.md`](TWELVE_BYTE_PILOT_README.md) before opening
+the 3,475 files that round added, or ledger entry L-098 for the formal record.
+
 **New researcher or LLM? Start with [`START_HERE_V52_4F1.md`](START_HERE_V52_4F1.md).** It binds the current branch, exact next task, source order, external corpus requirement and the hard no-outcome boundary for Task 4F1.
 
 **Crash-safe continuation:** [`ops/CURRENT_STATE.json`](ops/CURRENT_STATE.json) and [`docs/CONTINUITY_PROTOCOL.md`](docs/CONTINUITY_PROTOCOL.md) define the machine-readable state, append-only handoff process and multi-agent isolation rule. Verify them with `python -B tools/verify_continuity_state.py` before resuming work.

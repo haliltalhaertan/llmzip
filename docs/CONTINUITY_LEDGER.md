@@ -2064,3 +2064,60 @@ next: Before any future round quotes the +10 pp gap it must state which float re
 outcome_boundary: Task 4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN. Unchanged by this entry.
 status: FRAMING CORRECTION RECORDED; NO FROZEN NUMBER CHANGED
 ```
+
+### L-098
+
+```text
+timestamp_utc: 2026-09-18T11:05:00Z
+actor_role: Continuity Lead recording a landing; corrections verified against source before this entry
+predecessor_commit_or_tag: L-097 / 59b891e
+scope: Landing record for the twelve-byte pilot / top-10 comparison round, plus fourteen reporting
+  corrections applied to that round before merge. No frozen number is changed. No Task 4F1 surface is
+  run or read. The frozen G = +10.037943 pp is untouched and still stands as arithmetic.
+verdict: STOP for the 12/24/48-byte document-code line. A fairly configured BM25 (textbook
+  k1=1.2/b=0.75, frozen tokenizer) scores RealTalk 61.70 Hit@10 / 36.05 FR@3 against 57.87 / 32.79
+  for the best 48 B code arm. Gap -3.83 pp Hit@10, -3.26 pp FR@3.
+status_of_the_stop: EXPLORATORY ENGINEERING DECISION, NOT A PREREGISTERED GATE RESULT. The referee
+  contract (decision_r1/cost/REFEREE.md) requires C1 on both benchmarks with a CI, plus C2 and C4;
+  the implementation evaluates C1 on RealTalk only without a CI and never implements C2/C4, and C3's
+  equal-rerank-budget control was not stored. The direction survives regardless: the code loses the
+  primary comparison outright, so an AND-gate requiring a +2 pp win on both benchmarks cannot pass.
+corrections_applied: fourteen, each marked in place with a CORRECTION/RETRACTION note quoting the
+  original wording. Eight originated in four internal audit rounds (34 Muse roles); six came from an
+  external reviewer reading the same public repository afterwards.
+most_consequential_correction: the published headline gap of -7.80 pp was measured against
+  frozen_idfonly (65.67 Hit@10), selected as max() over four BM25 builds ON THE EVALUATION COHORT
+  (coordinator/decision_tests.py:179). The referee contract names textbook k1=1.2/b=0.75 as primary
+  (REFEREE.md:63-64,75-76,172) = 61.70. Post-hoc selection of the strongest rival roughly doubled the
+  reported deficit. Separately, C1 is an FR@3 gate but the gate row quoted a Hit@10 figure. Both
+  readings still FAIL; the verdict is unchanged and the numbers a reader takes away were wrong twice.
+withdrawn: (a) "transductive leakage" as a label for per-archive projector fitting - that fitting is a
+  documented preregistered design rule (COMMON_MODE_CLASSIFICATION.md) and queries/gold never enter it;
+  correct framing is corpus-adaptation dependence, a portability limit of ~28-30 pp. (b) rank overflow
+  as the explanation of the PerLTQA high-k decline - disproved by this project's own T3 test. (c)
+  sigma-division as its mechanism - the sym arm never divides by sigma and declines anyway 53.88 ->
+  48.71; mechanism UNRESOLVED. (d) "BM25 needs an inverted index AND raw text at query time" - false;
+  BM25.score reads postings, IDF and document lengths only, and the code arm's own fitted query encoder
+  was never charged against the 12/24/48 B figure. (e) "all contrasts use a paired archive-clustered
+  bootstrap" - false; several headline numbers are point estimates and the per-question data needed to
+  build an interval was computed and discarded.
+numbers_that_stand: 12/24/48 B as DOCUMENT-CODE PAYLOAD (not total system state); the width ladder,
+  which is the round's most durable result - under a fixed encoder fitted on other archives, 96->384
+  bits gains +19.86 pp, about twice the gain under per-archive fitting, so dimension budget is an
+  independent lever and not an artifact of corpus adaptation; the fidelity gates (0 differing bits of
+  858,624); the directly audited producer code, reproduced bit-identically on four archives with 54/54
+  gold mappings correct and zero question-in-corpus overlap.
+open: no held-out split exists anywhere in this package, so positive and mechanistic findings remain
+  exploratory; C3's required same-budget BM25+reranker control is not stored; the high-k mechanism is
+  unknown; twelve open defect records inside the round were read but not re-executed.
+evidence: branch findings/top10-comparison-2026-09-15 landed here by merge; audit evidence published
+  separately on audit/hard-rounds-2026-09-18 (551 files, audits/); plain-language summary at repository
+  root, TWELVE_BYTE_PILOT_README.md; correction ledger audits/CORRECTION_LEDGER_2026-09-17.md; the
+  external review prompt used, audits/EXTERNAL_REVIEW_PROMPT_2026-09-18.md.
+labels: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+disposition: ROUND LANDED AND CLOSED. No arm winner is declared, no representation change is
+  authorized, no benchmark is pooled, no frozen number is changed.
+outcome_boundary: Task 4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+  Unchanged by this entry.
+status: LANDING AND FOURTEEN CORRECTIONS RECORDED; NO FROZEN NUMBER CHANGED
+```
