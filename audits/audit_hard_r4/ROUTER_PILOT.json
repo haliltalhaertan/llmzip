@@ -1,0 +1,61 @@
+{
+ "n": 470,
+ "n_features": 13,
+ "model_calls": 0,
+ "always_sign96": 70.37,
+ "always_bm25": 72.48,
+ "oracle": 78.43,
+ "oracle_gain_raw": 5.95,
+ "noise_floor_same_system": 0.46,
+ "oracle_gain_noise_adjusted": 5.49,
+ "queries_where_methods_differ": 112,
+ "label_balance": {
+  "sign96_wins": 50,
+  "bm25_wins_or_tie": 420
+ },
+ "router": {
+  "splits": 200,
+  "train_frac": 0.7,
+  "accuracy_mean": 0.8894,
+  "accuracy_sd": 0.0229,
+  "gain_mean_pp": -0.205,
+  "gain_sd_pp": 0.618,
+  "gain_p2.5": -2.121,
+  "gain_p97.5": 0.0,
+  "splits_with_positive_gain": 1,
+  "test_oracle_gain_mean": 5.917,
+  "fraction_of_oracle_captured": -0.035
+ },
+ "additional_models": {
+  "logreg_balanced": {
+   "mean": -2.432,
+   "sd": 1.426,
+   "ci": [
+    -5.31,
+    -0.029
+   ],
+   "pos": 5
+  },
+  "tree_d3": {
+   "mean": -1.489,
+   "sd": 1.481,
+   "ci": [
+    -4.47,
+    1.068
+   ],
+   "pos": 29
+  },
+  "rf_100": {
+   "mean": -0.795,
+   "sd": 1.023,
+   "ci": [
+    -2.648,
+    1.126
+   ],
+   "pos": 42
+  }
+ },
+ "accuracy_is_misleading": "the first model scored 0.889 accuracy, which sounds good, but only 50/470 queries are sign96 wins so the majority baseline ('always say BM25') is 0.894 - the router is worse than doing nothing. Accuracy is also the wrong metric: in 358 queries both methods score identically and the choice is irrelevant. The decision metric is FR@3 gain.",
+ "verdict": "the ceiling is real (+5.49 pp noise-adjusted) but unreachable with these signals. All four model families produce NEGATIVE routing gain on held-out splits.",
+ "consistent_with": "L-109 measured r=0.02 between lexical overlap and the method gap"
+}
