@@ -1,0 +1,34 @@
+sorgu: 470 | kollar: BM25-top10, RRF-top10 | jev-1.13.0
+  hazirlik 100/470 (4s)
+  hazirlik 200/470 (9s)
+  hazirlik 300/470 (13s)
+  hazirlik 400/470 (17s)
+model cagrisi: 9400 | sign/bm25 ortak belge ort: 4.62/10
+  500/9400 (41s)
+  1000/9400 (61s)
+  1500/9400 (81s)
+  2000/9400 (101s)
+  2500/9400 (121s)
+  3000/9400 (142s)
+  3500/9400 (164s)
+  4000/9400 (184s)
+  4500/9400 (204s)
+  5000/9400 (224s)
+  5500/9400 (245s)
+  6000/9400 (265s)
+  6500/9400 (286s)
+  7000/9400 (306s)
+  7500/9400 (327s)
+  8000/9400 (348s)
+  8500/9400 (370s)
+  9000/9400 (391s)
+
+           tavan   Hit@1    FR@3
+BM25       87.87   68.30   72.09
+RRF        90.00   67.45   73.67
+
+Delta FR@3  = +1.585 pp  CI95 [-0.507, +3.695]  AYIRT EDILEMEZ
+Delta Hit@1 = -0.851 pp  CI95 [-3.617, +1.915]  AYIRT EDILEMEZ
+
+kurtardi 21 | bozdu 25 | ortak belge 4.62/10
+token 4,916,100 | kol basina sorgu 5230 | hata 0 | 422.2s
