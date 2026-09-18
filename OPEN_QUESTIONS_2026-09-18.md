@@ -656,9 +656,62 @@ ama farklılık kaliteye dönüşmüyor.
 Hibrit hat bu ölçümle büyük ölçüde **kapanıyor**: kapsam kazancı gerçek ama küçük, kaliteye
 dönüşümü ölçülemiyor, ve iki getirim sistemi birden çalıştırmayı gerektiriyor.
 
-> **Sınır:** `sign96` sıralaması yalnız **top-10** saklanmış, daha derini yok. RRF ve backfill
-> sign tarafında 10 ile sınırlı; BM25 tarafı 20'ye kadar açılabiliyor. Daha derin bir sign
-> sıralaması kapsamı **daha da** yükseltebilir — ölçülmedi.
+##### %100'e en büyük engel: 38 kurtarılamaz sorgu — **TEMSİL PROBLEMİ, DERİNLİK DEĞİL**
+
+`evidence_path`: `audit_hard_r4/UNREACHABLE_38.json`, `unreachable_38.py` (sıfır model çağrısı)
+
+470 sorgunun **38'inde (%8,1)** gold ne `sign96` ne BM25 top-10'unda. Soru: bu "top-10 biraz
+küçük" problemi mi, yoksa "temsil doğru hafızayı bulamıyor" problemi mi?
+
+**Skorlama kurtarıldı.** `sign96` sıralaması yalnız derinlik 10'a kadar saklıydı, ama
+`cache_repr/*.pkl` ham `C` (N×96) ve `qC` taşıyor. Saklanan skor = **negatif Hamming mesafesi**
+`−(96 − sign(C)·sign(qC))/2`; **470/470 sorguda skor dizisi birebir yeniden üretildi**, yani tam
+derinlik güvenle hesaplanabilir.
+
+**Eşitlik dürüstlüğü.** Hamming skorları çok sayıda eşitlik üretiyor (bir vakada gold'un skoruna
+eşit 22 belge). Gold'un eşitlik grubu içindeki yeri **bilinmiyor** — tek bir rank uydurmak yerine
+iyimser (grup başı) ve kötümser (grup sonu) bant birlikte verilir.
+
+| gold'un en iyi rank'ı | iyimser | kötümser |
+|---|---:|---:|
+| 11–20 | 7 | 6 |
+| 21–50 | 20 | 12 |
+| 51–100 | 7 | 7 |
+| **101+** | 4 | **13** |
+| **medyan** | **35** | **56** |
+
+**Teşhis: temsil problemi.** "Top-10 biraz küçük" açıklaması vakaların yalnız **%16–18'ini**
+karşılıyor. Medyan rank 35–56 — ortanca vaka, top-10'u üç-beş kat genişletmeyi gerektirir.
+Kötümser bantta **13 vaka rank 101+**, yani listenin çok derininde.
+
+**Eşlik eden gözlemler:**
+
+| | |
+|---|---|
+| Soru–gold sözlüksel örtüşme medyanı | **0,000** — ortanca vakada soru ile gold **ortak kelime yok** |
+| Birden fazla gold gerektiren | 19/38 (**%50**) |
+| Medyan korpus boyutu | 487 belge |
+| Bölüm dağılımı | temporal-reasoning 16, multi-session 11, preference 9 |
+
+Sözlüksel örtüşmenin sıfır olması BM25'in neden çaresiz kaldığını açıklıyor. Ama `sign96` de
+bulamıyor — yani bu, tek bir yöntemin değil, **her iki temsilin birden** yetersiz kaldığı bölge.
+Vakaların yarısı birden fazla belgeyi birlikte gerektiriyor; bu, tek-belge sıralamasının
+yapısal olarak çözemeyeceği bir biçim.
+
+**Sonuç:** top-10'u genişletmek bu %8,1'in ancak altıda birini kurtarır. Geri kalanı gerçek bir
+temsil/görev-biçimi problemi — ve `sign96` Hit@10'unu yükseltme sorusunun asıl zorluğu burada.
+
+> **Yan bulgu — RRF gold eleyebiliyor.** RRF havuzuna göre sayılınca kurtarılamaz küme 40 çıkıyor,
+> 38 değil: **2 sorguda `sign96`'nın top-10'unda bulunan gold, RRF birleştirmesinde eleniyor.**
+> Bu, L-107'deki "kurtardı 21 / bozdu 25" tablosunun mekanizmasının bir parçası ve füzyonun
+> bedava olmadığının bir başka kanıtı.
+
+> **Sınır (kısmen aşıldı).** `sign96` sıralaması yalnız **top-10** saklanmıştı, bu yüzden RRF ve
+> backfill sign tarafında 10 ile sınırlıydı. Ancak skorlama fonksiyonu sonradan kurtarıldı
+> (negatif Hamming, 470/470 doğrulandı), yani **tam derinlik artık hesaplanabilir** — nitekim
+> 38-sorgu analizi bunu kullandı. Daha derin bir sign havuzuyla füzyonun kapsamı ne kadar
+> yükselttiği **hâlâ ölçülmedi**; eşitlik yoğunluğu (bir vakada 22 belge aynı skorda) derin
+> sıralamanın ne kadar anlamlı olduğunu da sınırlayabilir.
 
 Ulaşılamaz: 38 sorgu (%8,1) hiçbir havuzda gold içermiyor; hiçbir yeniden sıralayıcı bunları
 kurtaramaz.

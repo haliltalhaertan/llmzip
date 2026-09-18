@@ -2508,3 +2508,44 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/RRF_VS_BM25.
 status: HYBRID DECIDING TEST RUN; RESULT INDISTINGUISHABLE; MECHANISM CONFIRMED NON-HARMFUL; NO
   FROZEN NUMBER CHANGED
 ```
+
+### L-108
+
+```text
+timestamp_utc: 2026-09-18T19:10:00Z
+actor_role: Continuity Lead diagnosing the unreachable band
+predecessor_commit_or_tag: L-107 / 1e7872d
+scope: Zero model calls; pure arithmetic over stored artefacts. No frozen number touched. Task 4F1
+  remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+question: on the 38 of 470 queries (8.1%) where the gold is in NEITHER top-10, is this a "top-10 is
+  a bit small" problem or a "the representation cannot find the memory" problem?
+scoring_recovered: the sign96 ranking was stored only to depth 10, but cache_repr/*.pkl carries the
+  raw C (N x 96) and qC. The stored score is negative Hamming distance, -(96 - sign(C).sign(qC))/2.
+  Reproduced EXACTLY on 470/470 queries before any conclusion was drawn, so full-depth ranks are
+  trustworthy rather than reverse-engineered guesses.
+tie_honesty: Hamming produces heavy ties (in one case 22 documents share the gold's score), so the
+  gold's position inside its tie group is unknown. Both an optimistic rank (head of group) and a
+  pessimistic rank (tail) are reported; no single invented rank.
+result_rank_bands: 11-20: 7 optimistic / 6 pessimistic. 21-50: 20 / 12. 51-100: 7 / 7.
+  101+: 4 / 13. Median best rank 35 optimistic, 56 pessimistic.
+verdict: REPRESENTATION PROBLEM, NOT DEPTH. "Top-10 is a bit small" accounts for only 16-18% of the
+  cases. The median case would need the cut widened three- to five-fold, and pessimistically 13 of
+  38 sit beyond rank 100.
+supporting_observations: median question-to-gold lexical overlap is 0.000 - the median unreachable
+  query shares NO content word with its gold, which explains BM25's helplessness; but sign96 fails
+  too, so this is a band where BOTH representations fail. 19 of 38 (50%) require more than one gold
+  document, a task shape single-document ranking cannot satisfy structurally. Median corpus 487
+  documents. Sections: temporal-reasoning 16, multi-session 11, preference 9.
+consequence: widening top-10 would recover at most a sixth of the 8.1%. The rest is a genuine
+  representation / task-shape problem, and it is the real difficulty behind "raise sign96's Hit@10".
+side_finding_rrf_drops_golds: counted against the RRF pool the unreachable set is 40, not 38 - in 2
+  queries a gold that WAS inside sign96's top-10 is eliminated by the RRF merge. This is part of the
+  mechanism behind L-107's "rescued 21 / broke 25" and further evidence that fusion is not free.
+correction_to_L107: the note that "sign96 rankings are stored only to depth 10" is now partly
+  superseded - full depth is computable via the recovered scorer. Whether a deeper sign pool raises
+  fusion coverage is still UNMEASURED, and the tie density may limit how meaningful deep ranks are.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/UNREACHABLE_38.json,
+  unreachable_38.py.
+status: UNREACHABLE BAND DIAGNOSED AS REPRESENTATION-LIMITED; SCORER RECOVERED AND VERIFIED
+  470/470; RRF SHOWN TO DROP GOLDS; NO FROZEN NUMBER CHANGED
+```
