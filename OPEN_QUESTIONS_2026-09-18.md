@@ -470,16 +470,46 @@ Koşu varyansı aralığı yalnız **%4** genişletiyor: düzeltilmiş CI95 ≈ 
 Varyans koşusu ilk 120 soruda **Δ = +5,18 pp** verdi — tam koşudaki **−2,10**'un **tersi işaret**.
 
 Bu model kararsızlığı **değil**: aynı 120 soru tam koşunun kendi verisinden çekildiğinde de
-**+4,38 pp** çıkıyor. Yani altkümenin kendisi farklı davranıyor; LME içinde sign96'nın BM25'i
-geçtiği sorular var ve bunlar dosya sırasında öne yığılmış.
+**+4,38 pp** çıkıyor.
+
+**Dosya sırasında dilimler** (her biri n=120):
+
+| dilim | Δ |
+|---|---:|
+| 0–119 | **+4,38** |
+| 120–239 | −5,29 |
+| 240–359 | −2,96 |
+| 360–469 | −4,76 |
+
+Rastgele 120'lik örnekler (2000 tekrar) ortalama −2,03, %95 aralığı **[−6,60, +2,72]**.
+İlk-120'nin +4,38 değeri bu aralığın **dışında** → gerçek bir sıra etkisi, rastgele örnekleme
+dalgalanması değil.
+
+#### Kesim analizi: bölüm başına Δ çok değişiyor
+
+| bölüm | n | Δ |
+|---|---:|---:|
+| single-session-preference | 30 | **−8,33** |
+| temporal-reasoning | 127 | −5,49 |
+| single-session-user | 64 | −4,69 |
+| multi-session | 121 | −1,58 |
+| knowledge-update | 72 | +2,08 |
+| single-session-assistant | 56 | **+5,36** |
+
+**sign96, soru tipine göre BM25'i geçiyor ya da kaybediyor** — aradaki fark 13,7 puan.
+Bu, "hangi rejimde hangi yöntem" sorusunun ilk somut kanıtı.
+
+> **Ama sıra etkisini bölüm karışımı AÇIKLAMIYOR.** Tam-veri bölüm Δ'ları ilk-120'nin bölüm
+> ağırlıklarıyla birleştirildiğinde tahmin **−1,45 pp**; gerçek değer **+4,38 pp**. Yani
+> 6,48 puanlık farkın yalnız ~0,65'i kompozisyondan geliyor, **+5,83 puanı bölüm-içi** ve
+> **sebebi bilinmiyor**. Koordinatör bir kez "işaret dönmesinin büyük kısmı bölüm karışımı"
+> yazdı; bu **doğrulanmadı ve geri çekildi**.
 
 **Sonuçları:**
-- Tek bir altkümeden çıkan sonuç bu hat için **genellenemez**;
 - `−2,10 pp` yalnızca **LME'nin tamamı** için geçerlidir;
 - Alt-küme seçilerek raporlanan herhangi bir sayı, bu programın daha önce düzelttiği
-  "10/30 arşiv sonucunu tüm veri kümesi gibi sunmak" hatasının aynısı olur.
-- Ayrıca **gerçek bir açık soru** doğuruyor: hangi soru tipinde sign96 öne geçiyor?
-  Bu, bir sonraki adımın kalite değil **kesim analizi** olabileceğini gösteriyor.
+  "10/30 arşiv sonucunu tüm veri kümesi gibi sunmak" hatasının aynısı olur;
+- Açık soru: bölüm-içi sıra etkisinin kaynağı nedir (arşiv boyutu? kaynak dosya?).
 
 #### Ölçülen maliyet (kol başına, düzeltilmiş)
 
