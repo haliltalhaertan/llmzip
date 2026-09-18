@@ -752,10 +752,64 @@ Yani "yapısal zor" tek bir küme değil — **12 vaka sıfır örtüşmeli ama 
 
 ##### Düzeltilmiş ders
 
-> **%100'e giden yol yalnız `sign96`'nın Hit@10'unu yükseltmek değil.** Üç ayrı müdahale gerekiyor:
-> derinlik (22 vaka), temsil (12 vaka sıfır örtüşme + tek gold), ve **getirim görevini tek-belge
-> aramasından çok-adımlı hafıza çağırmaya çevirmek** (19 vaka çoklu kanıt, bunların %79'u
-> derinlikle çözülmüyor).
+> **Uyarı — bu sayılar TOPLANAMAZ.** "Derinlik 22 / temsil 12 / çoklu 19" üç **ayrık** küme
+> değil, üç **örtüşen failure mode**'dur. Ölçülen örtüşme (38 sorgu üzerinde):
+
+| kip | n |
+|---|---:|
+| derinlik (rank ≤ 100, kötümser) | 25 |
+| temsil (sıfır sözlüksel örtüşme) | 20 |
+| çoklu kanıt (n_gold > 1) | 19 |
+| naif toplam | **64** ← yanlış |
+| **gerçek birleşim** | **38** |
+
+| kesişim | n |
+|---|---:|
+| derinlik ∩ temsil | 7 |
+| derinlik ∩ çoklu | 14 |
+| temsil ∩ çoklu | 8 |
+| üçü birden | 3 |
+| hiçbirine girmeyen | 0 |
+
+Üç kip 38 vakanın tamamını kaplıyor ama ağır örtüşerek. Bir vakayı "derinlik vakası" diye
+etiketleyip kapatmak yanlış olur — aynı vaka aynı anda temsil vakası da olabilir.
+
+> **%100'e giden yol yalnız `sign96`'nın Hit@10'unu yükseltmek değil.** Üç **ayrı failure mode**
+> var: derinlik, temsil, ve **getirim görevini tek-belge aramasından çok-adımlı hafıza çağırmaya
+> çevirmek** (çoklu kanıt vakalarının %79'u derinlikle çözülmüyor).
+
+##### Ve "%100" zaten ulaşılamaz — FR@3'ün yapısal tavanı %97,77
+
+`evidence_path`: `audit_hard_r4/DEPTH_RECOVERY.json` + gold sayısı dağılımı (470 sorgu)
+
+Dış değerlendirmenin sorduğu kontrol yapıldı: **üçten fazla gold gerektiren sorgular var mı?**
+
+| gold sayısı | sorgu | pay |
+|---:|---:|---:|
+| 1 | 174 | 37,0% |
+| 2 | 228 | 48,5% |
+| 3 | 38 | 8,1% |
+| **4** | 14 | 3,0% |
+| **5** | 10 | 2,1% |
+| **6** | 6 | 1,3% |
+
+**30 sorguda (%6,4) dörtten fazla gold var** — bu sorgularda FR@3 tam kredi **yapısal olarak
+imkânsız**, çünkü ilk üçe dört veya daha fazla belge sığmaz.
+
+Mükemmel sıralama varsayımıyla FR@3'ün erişilebilir en yüksek değeri:
+
+| | |
+|---|---:|
+| **FR@3 yapısal tavanı** | **97,77** |
+| Ölçülen en iyi (BM25+Jev, L-107) | 72,09 |
+| Tavana uzaklık | 25,68 pp |
+
+Bu sorguların **24'ü multi-session**, 6'sı temporal-reasoning — yani tam olarak çok-adımlı
+hafıza çağırma gerektiren bölümler. 38 kurtarılamaz sorgunun 6'sı da bu gruptan.
+
+> **Sonuç:** "%100" hedefi FR@3 metriği altında ulaşılamaz bir hedeftir. Doğru referans **97,77**
+> ve asıl açık **25,68 pp**. Bundan sonra "%100'e ne kadar kaldı" yerine "yapısal tavana ne kadar
+> kaldı" denmelidir.
 
 Bu, önceki "temsil problemi" teşhisinden daha nüanslı: temsil tek suçlu değil, ve derinlik de
 tamamen değersiz değil.

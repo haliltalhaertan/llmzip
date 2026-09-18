@@ -2586,3 +2586,34 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/DEPTH_RECOVE
 status: L-108 DEPTH CLAIM CORRECTED; ANY-VS-ALL GOLD DISTINCTION ADDED; FAILURE MODES SPLIT INTO
   INDEPENDENT AXES; NO FROZEN NUMBER CHANGED
 ```
+
+### L-110
+
+```text
+timestamp_utc: 2026-09-18T19:55:00Z
+actor_role: Continuity Lead recording the metric's structural ceiling and the overlap warning
+predecessor_commit_or_tag: L-109 / 7fc82ab
+scope: Zero model calls; arithmetic over stored artefacts. No frozen number touched. Task 4F1
+  remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+overlap_warning_adopted: external review is right that the failure-mode counts must NOT be summed.
+  Measured over the 38 unreachable queries: depth (rank <= 100 pessimistic) 25, representation
+  (zero lexical overlap) 20, multi-evidence 19 - naive sum 64, TRUE UNION 38. Intersections:
+  depth&repr 7, depth&multi 14, repr&multi 8, all three 3, none 0. These are three overlapping
+  failure modes covering the same 38 queries, not three disjoint populations. Labelling a query as
+  "a depth case" and closing it is therefore wrong; the same query is often also a representation
+  case.
+structural_ceiling_found: external review asked whether any query has more than three golds. It
+  does. Across all 470 queries the gold-count distribution is 1:174, 2:228, 3:38, 4:14, 5:10, 6:6.
+  So 30 queries (6.4%) carry MORE THAN THREE golds, and for those FR@3 full credit is structurally
+  impossible - four or more documents cannot fit in a top-3.
+ceiling_value: assuming perfect ranking, the highest attainable FR@3 on this benchmark is 97.77,
+  not 100. Best measured is 72.09 (BM25+Jev, L-107), so the real gap is 25.68 pp against 97.77.
+  The over-3-gold queries are concentrated in exactly the sections that need multi-step recall:
+  multi-session 24, temporal-reasoning 6. Six of the 38 unreachable queries are in this group.
+consequence_for_language: "how far from 100%" is a malformed question under FR@3. Future reporting
+  must say "how far from the structural ceiling of 97.77".
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/FR3_CEILING.json,
+  DEPTH_RECOVERY.json.
+status: FAILURE MODES RECORDED AS OVERLAPPING; FR@3 STRUCTURAL CEILING ESTABLISHED AT 97.77;
+  NO FROZEN NUMBER CHANGED
+```
