@@ -2627,3 +2627,45 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/FR3_CEILING.
 status: FAILURE MODES RECORDED AS OVERLAPPING; FR@3 STRUCTURAL CEILING ESTABLISHED AT 97.77;
   NO FROZEN NUMBER CHANGED
 ```
+
+### L-111
+
+```text
+timestamp_utc: 2026-09-18T20:30:00Z
+actor_role: Continuity Lead opening the multi-step recall line with measured preconditions
+predecessor_commit_or_tag: L-110 / e036161
+scope: Brainstorm grounded in three zero-cost precondition measurements, plus one mechanism tested
+  and failed. No frozen number touched. Task 4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION /
+  OUTCOME ACCESS FORBIDDEN.
+precondition_A_first_step_works: multi-step recall assumes "find one evidence first". Of 296
+  multi-gold queries, 277 (93.6%) have at least one gold in the sign96-or-BM25 pool; 19 (6.4%) have
+  none and are unreachable by ANY multi-step method. The precondition holds.
+precondition_B_oracle_expansion: appending the FULL TEXT of a found gold to the query and
+  re-running BM25 for the REMAINING golds is the upper bound of the "expand the query" family.
+  Result on 379 remaining golds: 160 improved (42.2%), 61 entered the top-10, but 23 FELL OUT of
+  it - net +38, about 10%. Median rank unchanged at 4. The mechanism works and harms at the same
+  time. LIMIT: lexical side only; sign96 query expansion cannot be tested because the encoder was
+  never stored, only the per-query qC vector.
+precondition_C_coverage_headroom: on the 215 queries whose pool holds 2+ golds, 450 golds are in
+  the pool but only 303 reach the top-3 - 147 pooled golds are missed across 114 queries, with no
+  additional retrieval required.
+mechanisms_catalogued: 14 mechanisms in four families (anchor-to-hint, stopping rules, selection
+  and merging, query-side), each tagged MEASURED BASIS / HYPOTHESIS / COST / FAILURE MODE. Most
+  have NO measured basis and are explicitly marked as speculation.
+M10_tested_and_failed: the single mechanism with a direct measured basis - diversity-aware top-3
+  selection, motivated by the 147 pooled-but-unselected golds - was run immediately (MMR,
+  lambda=0.7, Jaccard diversity, 470 queries, zero model calls). BM25 top-3 FR@3 59.93 vs
+  diversity-aware 58.74, delta -1.19 pp, 4 queries improved and 16 worsened, net -12. FAILED.
+lesson_recorded: "present in the pool but not selected" is a HEADROOM measurement, not an
+  attainable gain. Converting headroom into gain requires the selection rule to know WHY the gold
+  was missed; blind diversity does not carry that information and evicts relevant near-duplicate
+  golds instead.
+pattern_now_fourfold: every intervention measured today is two-sided - Jev rerank rescued 21 and
+  broke 25; RRF fusion drops golds that sign96 had found; oracle query expansion puts 61 golds into
+  the top-10 and knocks 23 out; diversity selection improves 4 and worsens 16. Three of the four
+  are net negative or indistinguishable.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/MULTISTEP_PRECONDITIONS.json,
+  multistep_preconditions.py, M10_DIVERSITY_TEST.json; main MULTISTEP_BRAINSTORM_2026-09-18.md.
+status: MULTI-STEP LINE OPENED WITH MEASURED PRECONDITIONS; TOP-RANKED MECHANISM TESTED AND
+  FAILED; NO FROZEN NUMBER CHANGED
+```
