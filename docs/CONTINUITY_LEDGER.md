@@ -2212,3 +2212,44 @@ governing_principle: LITERATURE CAN PRODUCE A HYPOTHESIS; ONLY THE REPOSITORY AN
 disposition: RETRACTION APPLIED IN PLACE; RULE RECORDED. No line reopened, no work authorized.
 status: E3 WITHDRAWN; EVIDENCE-FIELD RULE ADOPTED; NO FROZEN NUMBER CHANGED
 ```
+
+### L-101
+
+```text
+timestamp_utc: 2026-09-18T13:05:00Z
+actor_role: Continuity Lead recording an open-question entry and a terminology correction
+predecessor_commit_or_tag: L-100 / 8ec509e
+scope: Adds entry C5 to OPEN_QUESTIONS_2026-09-18.md. No experiment run, no frozen number touched,
+  no line reopened. Task 4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS
+  FORBIDDEN.
+proposal: use the 96-bit code purely as a cheap candidate generator and let a semantic judgment
+  model rerank only the top-10, rather than asking the code to rank correctly by itself.
+status_assigned: PARTIALLY TESTED / CURRENTLY LOW PRIORITY - deliberately NOT "tested and negative".
+observed_fact: the two-stage architecture was already tested as T2/C3. On LME (n=470, FR@3) the
+  96-bit candidate generators did not beat BM25 alone after reranking: asym96_bm25 57.65 vs
+  BM25_full 58.03 (-0.38); qscale96_bm25 57.70 (-0.33); no arm passes the C3 gate and every CI
+  includes zero. RealTalk candidate ceiling is also lower: 96-bit qscale Hit@10 49.65 vs
+  referee-primary BM25 61.70; at depth 100, CODE 75.60 / BM25 78.16 / RRF60 81.28. REPORT.md:307-310
+  records that an oracle picking the better of the two scorers per query saturates near 55% on
+  RealTalk with 328/705 missed by both - the gap is REPRESENTATIONAL, not a ranking-order problem.
+not_yet_tested: a SEMANTIC reranker has never been run on the 96-bit candidate pool. Verified by
+  grep: T2_rerank operators are only bm25 and rrf60; zero hits for jev/typesafe/LLM-rerank; the five
+  files mentioning cross-encoder are all LITERATURE INVENTORY, not our measurements. BM25 reranking
+  uses lexical signal, so its negative result does not by itself establish that semantic reranking
+  cannot add value. The earlier framing "tested and negative" was too strong and is not used.
+reopen_conditions: (1) materially better total RAM/CPU/latency trade-off than BM25; (2) complementary
+  candidates that raise hybrid candidate recall; (3) a semantic reranker demonstrably recovering
+  ranking errors lexical reranking does not; (4) a deployment regime that cannot hold a conventional
+  inverted index. The earlier single gate "only reopen if 96-bit Hit@10 beats BM25" was too strict
+  and is withdrawn.
+required_comparison_if_reopened: 96-bit -> Jev, BM25 -> Jev and preferably hybrid -> Jev at MATCHED
+  candidate depth, reporting candidate recall, final quality, local CPU, resident memory, latency,
+  reranker tokens and total cost per 1000 queries.
+terminology_correction: in relaying this the coordinator described PerLTQA's 75.68 as coming from
+  "per-archive tailoring" in a pejorative sense. That wording is withdrawn. Per-archive adaptation is
+  part of the INDEXED-CORPUS PROTOCOL; queries and gold never enter the fit. The fixed-encoder drop
+  measures PORTABILITY/GENERALISATION to a different deployment regime, not leakage. This is the
+  third time this framing has had to be corrected in the programme.
+disposition: ENTRY RECORDED WITH REOPEN CONDITIONS. The idea is neither pursued now nor locked out.
+status: OPEN-QUESTION C5 RECORDED; TERMINOLOGY CORRECTED; NO FROZEN NUMBER CHANGED
+```

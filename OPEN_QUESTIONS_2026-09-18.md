@@ -312,6 +312,46 @@ var olmadı.
 
 ---
 
+### C5. Aday üretimi + semantik yeniden sıralama
+`status`: **PARTIALLY TESTED / CURRENTLY LOW PRIORITY**
+
+`evidence_path`: `research_top10_comparison_2026_09_16/coordinator/DECISION_TESTS.json` (`T2_rerank`),
+`coordinator/LADDER.json`, `REPORT.md:307-310`
+
+`observed_fact`: İki aşamalı mimari **zaten sınandı** — kompakt kod aday üretir, pahalı bir
+operatör yeniden sıralar. LME'de (n=470, FR@3) sınanan 96-bit aday üreticiler yeniden sıralama
+sonrası **BM25'i tek başına geçemedi**: `asym96_bm25` 57,65 vs `BM25_full` 58,03 (−0,38);
+`qscale96_bm25` 57,70 (−0,33); hiçbiri C3 kapısını geçmiyor, güven aralıkları sıfırı içeriyor.
+RealTalk'ta aday tavanı da düşük: 96-bit qscale Hit@10 **49,65** vs hakem-birincil BM25 **61,70**.
+100 aday derinliğinde havuz kalitesi CODE 75,60 | BM25 78,16 | RRF(k=60) **81,28**.
+Ayrıca `REPORT.md:307-310`: iki skorlayıcının soru başına en iyisini seçen oracle RealTalk'ta
+~%55'te doyuyor (ikisi birden 328/705 soruyu kaçırıyor) — açık **temsilsel**, sıralama-düzeni
+sorunu değil.
+
+`open_question`: **Semantik bir yeniden sıralayıcı 96-bit aday havuzunda hiç denenmedi.**
+Doğrulandı: `T2_rerank` operatörleri yalnızca `bm25` ve `rrf60`; depoda `jev`/`typesafe`/
+`LLM rerank` için sıfır isabet (`cross-encoder` geçen 5 dosyanın hepsi **literatür envanteri**,
+bizim ölçümümüz değil). BM25 sözlüksel sinyal kullanır; semantik bir yeniden sıralayıcı aday
+metnini doğrudan değerlendirebilir. Dolayısıyla T2'nin olumsuz sonucu, **semantik yeniden
+sıralamanın değer katamayacağını kendi başına kurmaz.**
+
+`Yeniden açma koşulları` (en az biri):
+1. Kompakt aday üretici, BM25'e göre **belirgin biçimde daha iyi** toplam RAM/CPU/gecikme dengesi sunuyorsa;
+2. BM25'ten **tamamlayıcı** adaylar getirip hibrit aday geri çağırmasını yükseltiyorsa;
+3. Semantik yeniden sıralayıcı, sözlüksel BM25 yeniden sıralamasının **düzeltemediği** sıralama hatalarını gösterilebilir şekilde düzeltiyorsa;
+4. Konuşlandırma rejimi geleneksel bir ters indeks **tutamıyorsa**.
+
+`Yeniden açılırsa zorunlu karşılaştırma`: `96-bit → Jev`, `BM25 → Jev` ve tercihen `hibrit → Jev`,
+**eşleşmiş aday derinliğinde**; raporlanacaklar: aday geri çağırma, nihai getirim kalitesi, yerel
+CPU, yerleşik bellek, gecikme, Jev token sayısı, 1000 sorgu başına toplam maliyet.
+
+> **Terminoloji uyarısı:** PerLTQA'daki %75,68 gibi değerler için "her arşive özel uydurma"
+> denmez. Arşiv-başına uyarlama, **indekslenmiş-korpus protokolünün parçasıdır** (sorgu ve altın
+> etiketler fit'e girmez). Sabit kodlayıcıda düşmesi **taşınabilirlik/genelleme** sınırını ölçer,
+> sızıntıyı değil. Bkz. B bölümü başındaki çekinceler.
+
+---
+
 ## Öncelik sırası
 
 | # | Madde | Neden burada |
