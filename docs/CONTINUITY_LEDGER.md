@@ -2768,3 +2768,45 @@ status: DECOMPOSITION PILOTED; JEV CANNOT GENERATE TEXT (SCOPE FINDING); SEMANTI
   BASELINE BUT NOT BLIND EXPANSION; MERGE IDENTIFIED AS THE REAL BOTTLENECK; NO FROZEN NUMBER
   CHANGED
 ```
+
+### L-114
+
+```text
+timestamp_utc: 2026-09-18T22:40:00Z
+actor_role: Continuity Lead testing evidence-preserving two-round merges
+predecessor_commit_or_tag: L-113 / 9b3758f
+scope: Zero model calls. No frozen number touched. Task 4F1 remains SEALED / RUN BLOCKED / NO
+  AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+question: L-113 showed the second round finds new golds (4.65% -> 22.09%) while end-to-end FR@3
+  drops, because round two overwrites round one. Does PRESERVING round-one evidence inside a fixed
+  three-slot budget turn this positive?
+arms: six, all at exactly three documents - base (turn1 top-3), replace (turn2 top-3),
+  merge_2_1 (turn1 rank1+rank2 plus turn2's best new), merge_1_2, rrf_2turn, anchor_2 (anchor
+  preserved plus two RRF slots).
+result_all_470: base 59.93. replace 53.50 (-6.43 SIG). merge_1_2 53.50 (-6.43 SIG). merge_2_1
+  57.65 (-2.28 SIG). rrf_2turn 59.10 (-0.82, CI95 [-2.11,+0.44], indistinguishable). anchor_2
+  59.10 (-0.82, indistinguishable).
+result_multi_gold_296: base 53.26, best preserving arm 52.29 (-0.97, indistinguishable).
+verdict: the predicted 62-65 did NOT occur. Preservation removes M2's damage but produces NO gain;
+  the best rule merely ties the baseline.
+root_cause_measured: the discovery slot is worse than the slot it displaces. Turn-2's best NEW
+  candidate is gold 10.4% of the time; turn-1's rank-3, which it replaces, is gold 15.1% of the
+  time. Spending slot three on discovery costs 4.7 pp of precision, which is why no preserving
+  rule can turn positive.
+structural_finding: merge_1_2 equalled replace on 470/470 queries. Not a coincidence and not a bug
+  - turn-2's top-1 is the ANCHOR in 470/470 cases, because expanding the query with the anchor's
+  own terms makes the anchor win its own expanded query. This also explains M2's topic drift.
+wording_correction: my earlier claim "the bottleneck is not finding, it is merging" was too
+  strong and is narrowed. There are TWO bottlenecks - finding the second evidence (best method
+  reaches only 22.09%) and merging without damage (preservation nets -0.82) - plus a third fact
+  now measured: what IS found is of lower quality than what it displaces.
+closed: the "turn1 -> lexical expansion -> turn2" family together with all six merge rules; and
+  the hypothesis that preservation rescues M2.
+still_open: genuine question decomposition with a GENERATIVE model (Jev cannot, L-113);
+  anchor-VECTOR neighbour search; conditional second round; wider slot budgets. The sign96 side
+  remains unmeasurable without the encoder.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/SLOT_MERGE.json, slot_merge.py,
+  DISCOVERY_SLOT.json; main SLOT_MERGE_RESULT_2026-09-18.md.
+status: PRESERVING MERGES MEASURED; NO RULE BEATS BASELINE; DISCOVERY-SLOT PRECISION IDENTIFIED AS
+  ROOT CAUSE; NO FROZEN NUMBER CHANGED
+```
