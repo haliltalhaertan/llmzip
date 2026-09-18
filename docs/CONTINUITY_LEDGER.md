@@ -2253,3 +2253,54 @@ terminology_correction: in relaying this the coordinator described PerLTQA's 75.
 disposition: ENTRY RECORDED WITH REOPEN CONDITIONS. The idea is neither pursued now nor locked out.
 status: OPEN-QUESTION C5 RECORDED; TERMINOLOGY CORRECTED; NO FROZEN NUMBER CHANGED
 ```
+
+### L-102
+
+```text
+timestamp_utc: 2026-09-18T14:20:00Z
+actor_role: Continuity Lead recording a pilot result; every number recomputed from stored artifacts
+predecessor_commit_or_tag: L-101 / da65122
+scope: Updates entry C5 of OPEN_QUESTIONS_2026-09-18.md with a DIRECTLY RUN pilot. No frozen number
+  touched, no closed line reopened. Task 4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION /
+  OUTCOME ACCESS FORBIDDEN.
+experiment: the C5 proposal was executed -- use the 96-bit code purely as a candidate generator and
+  let a semantic judgment model (jev-1.13.0, pinned) rerank the stored top-10. LME, n=470.
+  Pipeline validated before measuring: base FR@3 reproduces the published values exactly
+  (float_raw 44.16, float_std 55.74, asym 50.65 against DECISION_TESTS.json T2_rerank).
+result_a_mechanism: SUPPORTED. Semantic reranking adds +16.06 pp FR@3 to the sign96 pool; Hit@1
+  +22.98 pp with paired bootstrap CI95 [+17.45, +28.51], 20000 reps, excluding zero. sign96 alone:
+  152 queries rescued, 44 broken. The mechanism is the proposed one -- the code places the right
+  document in the top-10 86.4% of the time but not at rank 1 (43.83 -> 66.81). This is decisive
+  against the LEXICAL result: BM25 reranking added nothing to the same pools (-0.38, -0.33, -0.27).
+  Generalising the lexical failure to semantic reranking was wrong and that generalisation is
+  withdrawn.
+result_b_matched: STATISTICALLY INDISTINGUISHABLE. With the same reranker applied to both pools,
+  sign96+Jev FR@3 70.37 vs BM25+Jev 72.48, delta -2.103 pp, CI95 [-4.968, +0.702] spanning zero;
+  Hit@1 delta -1.915 pp, CI95 [-5.532, +1.702] spanning zero. BM25+Jev superiority is NOT supported
+  on this data. A 12-byte sign PAYLOAD lands in the same statistical bracket as an inverted index.
+  The decision therefore moves to the RAM/CPU/latency axis, which is unmeasured.
+reranker_nondeterminism: two runs over identical input produced sign96 FR@3 70.66 then 70.37, and
+  BM25 71.87 then 72.48, moving the point estimate from -1.21 to -2.10. Candidate pools were
+  bit-identical across runs (ceilings 86.38 and 87.87 both times), so the variation is entirely in
+  the model's scores. The 0.89 pp drift sits inside the 5.67 pp CI width. Consequence recorded as a
+  rule: no number from this line may be quoted as a single-run point estimate.
+defect_repeated_and_fixed: the first pilot computed per-query outcomes and DISCARDED them - the exact
+  defect the audits identified in decision_tests.py:156-191, reproduced in new code on the same day.
+  Both scripts now persist per_query; matched_ci.py reruns only the two deciding arms.
+reporting_errors_corrected: "600 improved / 169 broken" was the POOLED total across four arms
+  (sign96 alone 152/44); "~20,900 tokens per query" was the four-arm total (per arm ~5,234 sign96,
+  ~5,245 BM25). Both corrected in place.
+payload_scope: the sign96-vs-float_std equivalence (70.66 vs 70.71) compares a 12-B SIGN PAYLOAD
+  against a 1536-B FLOAT PAYLOAD. Total encoder/index RAM is NOT equalised. This qualifier travels
+  with every citation so the old twelve-byte error is not reproduced.
+limits: single dataset (LME only); BM25 was rebuilt here (referee-primary textbook k1=1.2/b=0.75,
+  frozen tokenizer) because LME had no stored BM25 top-10, so it is not a byte-copy of the published
+  BM25 arm; no held-out split exists, so this remains exploratory.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/ -- JEV_RERANK_FINDING.md,
+  JEV_RERANK_PILOT.json, JEV_RERANK_BM25.json, MATCHED_CI.json, jev_rerank_pilot.py,
+  jev_rerank_bm25.py, matched_ci.py, and the three run logs.
+disposition: C5 STATUS UPDATED. The closed twelve-byte line is NOT reopened; what changed is that
+  the candidate-generator role now has a measured result instead of an assumption.
+status: PILOT RUN AND RECORDED; MECHANISM SUPPORTED; MATCHED COMPARISON INDISTINGUISHABLE; NO FROZEN
+  NUMBER CHANGED
+```

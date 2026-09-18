@@ -352,6 +352,113 @@ CPU, yerleşik bellek, gecikme, Jev token sayısı, 1000 sorgu başına toplam m
 
 ---
 
+### C5. Aday üretimi + semantik yeniden sıralama
+`status`: **DIRECTLY TESTED — SEMANTIC RERANK BENEFIT CONFIRMED (SIG);
+MATCHED BM25+JEV COMPARISON STATISTICALLY INDISTINGUISHABLE (CI95 spans zero)**
+
+`evidence_path`: `audit_hard_r4/JEV_RERANK_FINDING.md`, `JEV_RERANK_PILOT.json`,
+`JEV_RERANK_BM25.json`, `jev_rerank_pilot.py`, `jev_rerank_bm25.py` (denetim dalı);
+önceki sözlüksel sonuç: `coordinator/DECISION_TESTS.json` (`T2_rerank`)
+
+İki ayrı sonuç, karıştırılmamalı:
+
+#### (a) Semantik yeniden sıralama mekanizması — **SUPPORTED**
+
+`observed_fact`: LME, n=470, aynı `jev-1.13.0`. Kod havuzuna semantik yeniden sıralama
+**+16,06 pp FR@3** katıyor; Hit@1 **+22,98 pp**, eşleştirilmiş bootstrap **CI95
+[+17,45, +28,51]** (20.000 tekrar, seed 20260918), sıfırı dışlıyor. `sign96` kolunda
+**152 sorgu düzeldi, 44 bozuldu** (net +108).
+
+> *Not: daha önce raporladığım "600 düzeltti / 169 bozdu" **dört kod kolunun toplamıdır**
+> (470 sorgu × 4 kol = 1880 satır), tek kola ait değildir. Kol başına: sign96 152/44,
+> float_raw 158/38, asym 155/38, float_std 135/49.*
+
+Mekanizma öngörüldüğü gibi: kod doğru belgeyi %86,4 oranında top-10'a sokuyor ama ilk sıraya
+koyamıyor (H@1 43,83 → **66,81**).
+
+**Sözlükselden farkı belirleyici:** BM25 yeniden sıralaması aynı havuzlara hiçbir şey katmamıştı
+(`asym96_bm25` −0,38; `qscale96_bm25` −0,33; `float_raw32_bm25` −0,27). Sözlüksel sonucu
+semantik olana genellemek **yanlıştı** ve bu genelleme geri çekildi.
+
+#### (b) Eşleşmiş sistem karşılaştırması — **STATISTICALLY INDISTINGUISHABLE**
+
+`evidence_path`: `audit_hard_r4/MATCHED_CI.json`, `matched_ci.py` (denetim dalı)
+
+`observed_fact`: Aynı Jev her iki havuza uygulandı; yalnız iki karar kolu yeniden koşuldu ve
+soru-bazlı sonuçlar **kalıcı saklandı** (n=470, 9.400 yargı, 0 hata).
+
+| | tavan H@10 | Hit@1 | FR@3 |
+|---|---:|---:|---:|
+| sign96 + Jev | 86,38 | 66,60 | 70,37 |
+| BM25 + Jev | 87,87 | 68,51 | 72,48 |
+
+Eşleştirilmiş bootstrap (20.000 tekrar, seed 20260918):
+
+| ölçüt | Δ | CI95 | sonuç |
+|---|---:|---|---|
+| FR@3 | **−2,10 pp** | **[−4,97, +0,70]** | sıfırı içeriyor → **ayırt edilemez** |
+| Hit@1 | −1,92 pp | [−5,53, +1,70] | sıfırı içeriyor → **ayırt edilemez** |
+
+**`BM25+Jev` üstünlüğü bu veride desteklenmiyor.** 12 baytlık işaret yükü, ters indeksle aynı
+istatistiksel kefeye giriyor: üstün değil, ölçülebilir şekilde geride de değil.
+
+`open_question`: Fark **yön olarak** BM25 lehine ama aralık sıfırı kapsıyor; ayırt etmek için
+daha büyük n veya ek veri kümesi gerekir. Karar bu haliyle **RAM/CPU/gecikme** eksenine kayar —
+yani yeniden açma koşulu (1), ki ölçülmedi.
+
+#### Yeniden sıralayıcı deterministik değil
+
+Aynı girdiyle iki koşu farklı sonuç verdi. Aday havuzları **birebir aynı** (tavan 86,38 / 87,87
+her iki koşuda özdeş), dolayısıyla fark yalnız Jev skorlarından:
+
+| | koşu 1 | koşu 2 |
+|---|---:|---:|
+| sign96 FR@3 | 70,66 | 70,37 |
+| BM25 FR@3 | 71,87 | 72,48 |
+| **Δ** | **−1,21** | **−2,10** |
+
+Oynama (0,89 pp) CI genişliğinin (5,67 pp) içinde — tutarlı, ama **tek koşunun nokta tahminini
+alıntılamak yanlıştır**. Bu hattın her sayısı aralıkla verilmelidir.
+
+#### Ölçülen maliyet (kol başına, düzeltilmiş)
+
+| hat | token / sorgu / kol |
+|---|---:|
+| `sign96 → Jev` | **~5.234** |
+| `BM25 → Jev` | **~5.245** |
+
+> *Not: daha önce verdiğim "~20.900 token/sorgu" **dört kolun toplamıdır**; tek kolun maliyeti
+> gibi sunmak yanlış olurdu.*
+
+#### Kayda değer ama fazla okunmamalı
+
+`sign96` **12 baytlık işaret yükü** ile, `float_std`'nin **1536 baytlık float yükü** ile aynı
+sonucu veriyor (70,66 vs 70,71).
+
+> **Bu yalnızca belge yükü karşılaştırmasıdır.** Toplam kodlayıcı/indeks RAM'i eşitlenmiş
+> **değildir**. Eski 12-bayt hatasını yeniden üretmemek için bu ayrım her alıntıda korunur.
+
+#### Yeniden açma koşullarından ikisi artık canlı
+
+- **(1)** daha iyi toplam RAM/CPU/gecikme dengesi — 12 B yük vs ters indeks, **ölçülmedi**;
+- **(4)** ters indeks tutulamayan konuşlandırma — orada 12 B + reranker, BM25 + reranker'a
+  1,21 puan farkla rakip (aralık beklemede).
+
+Sonraki adım bu iki koşulu ölçmek; yeni bir getirim yöntemi aramak değil.
+
+#### Bu bulgunun kanıtlamadıkları
+
+Tek veri kümesi (yalnız LME); BM25 bu pilotta yeniden kuruldu (hakem birincil yapılandırması,
+textbook k1=1,2 b=0,75, frozen tokenizer) çünkü LME için BM25 top-10 saklanmamıştı — yayınlanmış
+BM25 kolunun birebir kopyası değildir; ayrılmış sınav verisi yok, dolayısıyla keşifseldir.
+
+> **Terminoloji uyarısı:** PerLTQA'daki %75,68 gibi değerler için "her arşive özel uydurma"
+> denmez. Arşiv-başına uyarlama, **indekslenmiş-korpus protokolünün parçasıdır** (sorgu ve altın
+> etiketler fit'e girmez). Sabit kodlayıcıda düşmesi **taşınabilirlik/genelleme** sınırını ölçer,
+> sızıntıyı değil.
+
+---
+
 ## Öncelik sırası
 
 | # | Madde | Neden burada |
