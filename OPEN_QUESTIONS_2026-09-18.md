@@ -698,8 +698,67 @@ bulamıyor — yani bu, tek bir yöntemin değil, **her iki temsilin birden** ye
 Vakaların yarısı birden fazla belgeyi birlikte gerektiriyor; bu, tek-belge sıralamasının
 yapısal olarak çözemeyeceği bir biçim.
 
-**Sonuç:** top-10'u genişletmek bu %8,1'in ancak altıda birini kurtarır. Geri kalanı gerçek bir
-temsil/görev-biçimi problemi — ve `sign96` Hit@10'unu yükseltme sorusunun asıl zorluğu burada.
+**Sonuç (düzeltildi):** "top-10 biraz küçük" **tek başına** açıklama değil — ama daha derin
+getirim de **değersiz değil**. Tam kümülatif eğri:
+
+| derinlik | en az bir gold (iyimser/kötümser) | **tüm** gold'lar (iyimser/kötümser) |
+|---|---:|---:|
+| top-20 | 7 (18%) / 6 (16%) | 4 (11%) / 4 (11%) |
+| top-30 | 18 (47%) / 13 (34%) | 11 (29%) / 6 (16%) |
+| top-50 | 27 (71%) / 18 (47%) | 20 (53%) / 11 (29%) |
+| top-100 | 34 (89%) / 25 (66%) | 32 (84%) / 15 (39%) |
+| top-200 | 35 (92%) / 29 (76%) | 35 (92%) / 22 (58%) |
+
+> **Önceki ifadem dar kapsamlıydı:** *"top-10'u genişletmek %8,1'in ancak altıda birini kurtarır"*
+> yalnız **top-20** için doğru. Top-50'de kötümser bile %47'ye, top-100'de %66'ya çıkıyor.
+> Düzeltildi.
+
+**Ama "kurtarma" kelimesi çoklu-kanıt vakalarında yanıltıcı.** FR@3 = `|top3 ∩ gold| / |gold|`,
+yani **tam kredi tüm gold'ları gerektirir**. "En az bir gold" ile "tüm gold'lar" sütunları
+arasındaki uçurum bunu gösteriyor — kötümser top-100'de 25 vakada bir gold erişilebilir ama
+yalnız **15**'inde hepsi.
+
+**19/38 vaka çoklu kanıt gerektiriyor** ve derinlik onlarda çalışmıyor:
+
+| kötümser, top-100 | |
+|---|---:|
+| tek gold vakaları kurtarılan | 11/19 |
+| çoklu: **en az bir** gold | 14/19 |
+| çoklu: **tüm** gold'lar | **4/19** |
+
+Yani çoklu-kanıt vakalarının **%79'u** top-100'e kadar inseniz bile tam krediyi alamıyor.
+Derinlik tek-belge vakalarını kurtarıyor, çoklu-kanıt vakalarını kurtarmıyor.
+
+##### Üçlü tasnif — veriye karşı sınandı
+
+Dış değerlendirmenin önerdiği tasnif ölçüldü (kötümser, derinlik 100):
+
+| grup | n | çözüm yönü |
+|---|---:|---|
+| 2 — derin getirim (rank ≤ 100, yapısal değil) | 22 | daha derin/ucuz aday üretimi |
+| 3 — yapısal zor (sıfır örtüşme **ve** çoklu kanıt) | 8 | tek-belge getirimi yetersiz |
+| ikisine de girmeyen | 8 | — |
+
+Çapraz tablo tasnifi inceltiyor:
+
+| | çoklu kanıt | tek gold |
+|---|---:|---:|
+| **sıfır sözlüksel örtüşme** | 8 | 12 |
+| örtüşme > 0 | 11 | 7 |
+
+İki zorluk **bağımsız eksenler**: sıfır örtüşme 20 vakada, çoklu kanıt 19 vakada, kesişim yalnız 8.
+Yani "yapısal zor" tek bir küme değil — **12 vaka sıfır örtüşmeli ama tek belgeyle çözülebilir**
+(temsil sorunu), **11 vaka örtüşmeli ama çoklu kanıt gerektiriyor** (görev-biçimi sorunu).
+
+##### Düzeltilmiş ders
+
+> **%100'e giden yol yalnız `sign96`'nın Hit@10'unu yükseltmek değil.** Üç ayrı müdahale gerekiyor:
+> derinlik (22 vaka), temsil (12 vaka sıfır örtüşme + tek gold), ve **getirim görevini tek-belge
+> aramasından çok-adımlı hafıza çağırmaya çevirmek** (19 vaka çoklu kanıt, bunların %79'u
+> derinlikle çözülmüyor).
+
+Bu, önceki "temsil problemi" teşhisinden daha nüanslı: temsil tek suçlu değil, ve derinlik de
+tamamen değersiz değil.
 
 > **Yan bulgu — RRF gold eleyebiliyor.** RRF havuzuna göre sayılınca kurtarılamaz küme 40 çıkıyor,
 > 38 değil: **2 sorguda `sign96`'nın top-10'unda bulunan gold, RRF birleştirmesinde eleniyor.**

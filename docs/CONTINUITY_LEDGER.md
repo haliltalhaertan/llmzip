@@ -2549,3 +2549,40 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/UNREACHABLE_
 status: UNREACHABLE BAND DIAGNOSED AS REPRESENTATION-LIMITED; SCORER RECOVERED AND VERIFIED
   470/470; RRF SHOWN TO DROP GOLDS; NO FROZEN NUMBER CHANGED
 ```
+
+### L-109
+
+```text
+timestamp_utc: 2026-09-18T19:35:00Z
+actor_role: Continuity Lead correcting L-108's depth claim and splitting the failure modes
+predecessor_commit_or_tag: L-108 / 1a561d6
+scope: Zero model calls; arithmetic over stored artefacts. No frozen number touched. Task 4F1
+  remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+correction: L-108 said "widening top-10 recovers at most a sixth of the 8.1%". That holds only for
+  top-20 and is WITHDRAWN as a general statement. External review supplied the fuller arithmetic and
+  it verifies exactly: at top-50 the pessimistic recovery is 18/38 (47%), at top-100 it is 25/38
+  (66%). Deeper retrieval is NOT worthless.
+new_distinction_any_vs_all: FR@3 = |top3 cap gold| / |gold|, so full credit needs EVERY gold, not
+  one. Recovery counted as "at least one gold reachable" is therefore optimistic in a second,
+  previously unreported way. Pessimistic top-100: 25/38 have one gold reachable but only 15/38 have
+  all of them.
+multi_evidence_is_depth_resistant: 19 of 38 queries need multiple golds. Pessimistic top-100 -
+  single-gold cases recovered 11/19; multi-gold with at least one gold 14/19; multi-gold with ALL
+  golds only 4/19. So 79% of multi-evidence cases stay unrecoverable even at depth 100. Depth
+  rescues single-document cases and does not rescue multi-evidence ones.
+taxonomy_tested: the three-way split proposed in review was measured (pessimistic, depth 100):
+  22 cases are "deep retrieval" (rank <= 100, not structural); 8 are structural (zero lexical
+  overlap AND multi-evidence); 8 fall in neither.
+cross_tab_refines_it: zero-overlap and multi-evidence are INDEPENDENT axes, not one cluster.
+  zero-overlap & multi 8; zero-overlap & single 12; overlap>0 & multi 11; overlap>0 & single 7.
+  So 12 cases are representation-limited but single-document solvable, and 11 are lexically findable
+  but task-shape-limited.
+revised_lesson: the path to 100% is not only raising sign96's Hit@10. Three distinct interventions
+  are implied - depth (22 cases), representation (12 zero-overlap single-gold cases), and
+  converting retrieval from single-document search into multi-step memory recall (19 multi-evidence
+  cases, 79% of which depth does not fix).
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/DEPTH_RECOVERY.json,
+  depth_recovery.py.
+status: L-108 DEPTH CLAIM CORRECTED; ANY-VS-ALL GOLD DISTINCTION ADDED; FAILURE MODES SPLIT INTO
+  INDEPENDENT AXES; NO FROZEN NUMBER CHANGED
+```
