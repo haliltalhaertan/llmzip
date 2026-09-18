@@ -2669,3 +2669,53 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/MULTISTEP_PR
 status: MULTI-STEP LINE OPENED WITH MEASURED PRECONDITIONS; TOP-RANKED MECHANISM TESTED AND
   FAILED; NO FROZEN NUMBER CHANGED
 ```
+
+### L-112
+
+```text
+timestamp_utc: 2026-09-18T21:15:00Z
+actor_role: Continuity Lead testing the multi-step recall pipeline end to end
+predecessor_commit_or_tag: L-111 / 22be469
+scope: Zero model calls; arithmetic over stored artefacts. No frozen number touched. Task 4F1
+  remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+design: the proposed pipeline - question, first retrieval, extract distinguishing hints from the
+  first evidence, second retrieval, collect the missing evidence - measured end to end on FR@3
+  rather than on rank movement. Two axes: anchor selection (oracle = the actual pooled gold, which
+  no deployed system can know; real = BM25 top-1) x hint extraction (M1 full text, M2 high-IDF
+  only, M4 terms absent from the question, M2M4 both).
+result: baseline BM25 top-3 FR@3 59.93. Oracle arms +10.46 to +11.73 pp, all significant. REAL arms
+  -6.43 to -8.81 pp, all significant. Best real arm is M2 at 53.50, i.e. 6.43 pp BELOW baseline.
+  Oracle-minus-real gap 18.2-19.3 pp across all four hint methods.
+why_it_fails_1: anchor accuracy is not the bottleneck, contrary to the obvious reading. BM25 top-1
+  is gold in 255/470 (54.3%). But conditioning the M2 pipeline on anchor correctness gives -4.87 pp
+  WHEN THE ANCHOR IS CORRECT and -8.27 pp when it is wrong. Break-even anchor accuracy is 243%,
+  which is impossible, so NO anchor selector can rescue this design - a hypothetical Jev-selected
+  anchor at 66.6% Hit@1 would still land near -6.0 pp.
+why_it_fails_2: the oracle gain is not the mechanism. Decomposing the oracle arm (n=432 with a
+  findable anchor): baseline 65.20, oracle anchor with NO expansion 81.69, oracle anchor with M2
+  expansion 77.96. So hand-placing a gold in slot 1 is worth +16.49 pp while the expansion itself
+  costs -3.73 pp. The headline "+11.5 pp for multi-step recall" was really "knowing the answer
+  helps".
+mechanism_explanation: appending anchor text pulls the second retrieval toward the anchor's topic.
+  In multi-evidence questions the remaining golds carry DIFFERENT information by definition, so the
+  expanded query surfaces the anchor's neighbours instead of them.
+metric_lesson: an intermediate metric can disagree in SIGN with the final metric. L-111 measured
+  rank movement and found net +38 golds entering the top-10, which read as positive; end-to-end
+  FR@3 shows the same mechanism is net negative. Validating a mechanism on an intermediate metric
+  is insufficient.
+fifth_two_sided_result: Jev rerank 21/25, RRF drops golds, expansion 61/23 on rank, diversity 4/16,
+  and now the multi-step pipeline at -6.43. Five interventions, four net negative, one
+  indistinguishable.
+closed: the "append anchor text to the query" family - M1, M2, M4, M2M4 - under both oracle and
+  real anchors.
+still_open: anchor-VECTOR neighbour search (M5/M6, not text expansion); conditional second round
+  (M7); question decomposition (M14); a judgment model extracting hints semantically rather than
+  lexically; and the same pipeline on the sign96 side, which is UNMEASURABLE because the encoder
+  was never stored.
+scope_note: this does NOT show that multi-step recall fails. It shows that LEXICALLY APPENDING
+  ANCHOR TEXT fails. Other forms of the line remain untouched.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/MULTISTEP_PIPELINE.json,
+  multistep_pipeline.py, ANCHOR_DECOMPOSITION.json; main MULTISTEP_PIPELINE_RESULT_2026-09-18.md.
+status: QUERY-EXPANSION FORM OF MULTI-STEP RECALL MEASURED AND CLOSED; ORACLE ILLUSION EXPOSED;
+  NO FROZEN NUMBER CHANGED
+```
