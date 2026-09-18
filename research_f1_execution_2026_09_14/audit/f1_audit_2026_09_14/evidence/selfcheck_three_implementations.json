@@ -1,0 +1,38 @@
+{
+  "LME": {
+    "n": 470,
+    "mine": [
+      0.1416251737011647,
+      0.14069387548880735
+    ],
+    "naive_pure_python": [
+      0.1416251737011647,
+      0.14069387548880735
+    ],
+    "auditor_verbatim_metrics": [
+      0.1416251737011647,
+      0.14069387548880735
+    ],
+    "per_row_mismatch_vs_naive": 0,
+    "per_row_mismatch_vs_auditor": 0,
+    "all_three_agree": true
+  },
+  "REALTALK": {
+    "n": 300,
+    "mine": [
+      0.17482308904405694,
+      0.18544214267070636
+    ],
+    "naive_pure_python": [
+      0.17482308904405694,
+      0.18544214267070636
+    ],
+    "auditor_verbatim_metrics": [
+      0.17482308904405694,
+      0.18544214267070636
+    ],
+    "per_row_mismatch_vs_naive": 0,
+    "per_row_mismatch_vs_auditor": 0,
+    "all_three_agree": true
+  }
+}

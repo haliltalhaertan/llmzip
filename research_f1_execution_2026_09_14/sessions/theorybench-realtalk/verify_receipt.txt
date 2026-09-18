@@ -1,0 +1,24 @@
+[PASS] gate_pass_flag 
+[PASS] gate_counts 728/705/23
+[PASS] gate_perqa_tol {'native': 0.0, 'float': 0.0}
+[PASS] gate_means {'native': 0.0, 'float': 0.0}
+[PASS] details_counts_code 728/705/23
+[PASS] excluded_ids_match_gate 
+[PASS] excluded_ids_persisted 23 ids
+[PASS] prerun_before_outputs pre=1789322585.025416 pq=1789322670.2574072 sum=1789322677.5656512
+[PASS] per_query_count 10575
+[PASS] per_query_schema 
+[PASS] per_query_qa_groups 
+[PASS] t1_identity viol=0
+[PASS] sign_invariance viol=0
+[PASS] full96_float_invariance maxabs=0.0
+[PASS] mc_t1_matches_details maxabs=0.0
+[PASS] group_mapping_reproducible checked=705 bad=0
+[PASS] manual_sorted_RT01_q002 mn=1.0 mf=1.0
+[PASS] manual_sorted_RT02_q002 mn=0.5 mf=0.5
+[PASS] manual_sorted_RT03_q003 mn=1.0 mf=0.0
+[PASS] bootstrap_deterministic eff=-0.0011366087481871467 ci=[-0.019330018939393942, 0.018490314014998684]
+[PASS] plan_hash_stable 
+[PASS] details_hash_stable 
+[PASS] caches_stable 10 caches hashed
+CHECKS: 23/23 pass; gate=728/705/23 outcomes=10575 rows; primary_effect=-0.0011366087481871467

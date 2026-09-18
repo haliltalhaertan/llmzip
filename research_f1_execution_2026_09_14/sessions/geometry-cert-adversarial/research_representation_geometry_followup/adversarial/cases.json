@@ -1,0 +1,2452 @@
+{
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ],
+  "cases": [
+    {
+      "id": "poc_K1",
+      "kind": "poc-scale-family",
+      "p": [
+        "-1",
+        "1",
+        "0",
+        "1"
+      ],
+      "q": [
+        "-2",
+        "2",
+        "7",
+        "0"
+      ],
+      "J": [
+        "1",
+        "4"
+      ],
+      "known_roots": [
+        "1",
+        "7/4"
+      ],
+      "must_resolve": true,
+      "notes": "score-preserving scaling; rational-root budget skips at K>=100",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "7",
+          "-18",
+          "15",
+          "-4"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1",
+          "7/4",
+          "4"
+        ],
+        "exact_roots_in_range": [
+          "1",
+          "7/4"
+        ],
+        "subintervals": [
+          {
+            "lo": "1",
+            "hi": "7/4",
+            "count": 0,
+            "mid": "11/8",
+            "mid_truth": 1
+          },
+          {
+            "lo": "7/4",
+            "hi": "4",
+            "count": 0,
+            "mid": "23/8",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1": 0,
+          "7/4": 0,
+          "4": -1,
+          "11/8": 1,
+          "23/8": -1
+        },
+        "plus": true,
+        "minus": true
+      }
+    },
+    {
+      "id": "poc_K10",
+      "kind": "poc-scale-family",
+      "p": [
+        "-10",
+        "10",
+        "0",
+        "100"
+      ],
+      "q": [
+        "-20",
+        "20",
+        "700",
+        "0"
+      ],
+      "J": [
+        "1",
+        "4"
+      ],
+      "known_roots": [
+        "1",
+        "7/4"
+      ],
+      "must_resolve": true,
+      "notes": "score-preserving scaling; rational-root budget skips at K>=100",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "70000",
+          "-180000",
+          "150000",
+          "-40000"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1",
+          "7/4",
+          "4"
+        ],
+        "exact_roots_in_range": [
+          "1",
+          "7/4"
+        ],
+        "subintervals": [
+          {
+            "lo": "1",
+            "hi": "7/4",
+            "count": 0,
+            "mid": "11/8",
+            "mid_truth": 1
+          },
+          {
+            "lo": "7/4",
+            "hi": "4",
+            "count": 0,
+            "mid": "23/8",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1": 0,
+          "7/4": 0,
+          "4": -1,
+          "11/8": 1,
+          "23/8": -1
+        },
+        "plus": true,
+        "minus": true
+      }
+    },
+    {
+      "id": "poc_K100",
+      "kind": "poc-scale-family",
+      "p": [
+        "-100",
+        "100",
+        "0",
+        "10000"
+      ],
+      "q": [
+        "-200",
+        "200",
+        "70000",
+        "0"
+      ],
+      "J": [
+        "1",
+        "4"
+      ],
+      "known_roots": [
+        "1",
+        "7/4"
+      ],
+      "must_resolve": true,
+      "notes": "score-preserving scaling; rational-root budget skips at K>=100",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "700000000",
+          "-1800000000",
+          "1500000000",
+          "-400000000"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1",
+          "7/4",
+          "4"
+        ],
+        "exact_roots_in_range": [
+          "1",
+          "7/4"
+        ],
+        "subintervals": [
+          {
+            "lo": "1",
+            "hi": "7/4",
+            "count": 0,
+            "mid": "11/8",
+            "mid_truth": 1
+          },
+          {
+            "lo": "7/4",
+            "hi": "4",
+            "count": 0,
+            "mid": "23/8",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1": 0,
+          "7/4": 0,
+          "4": -1,
+          "11/8": 1,
+          "23/8": -1
+        },
+        "plus": true,
+        "minus": true
+      }
+    },
+    {
+      "id": "poc_K1000",
+      "kind": "poc-scale-family",
+      "p": [
+        "-1000",
+        "1000",
+        "0",
+        "1000000"
+      ],
+      "q": [
+        "-2000",
+        "2000",
+        "7000000",
+        "0"
+      ],
+      "J": [
+        "1",
+        "4"
+      ],
+      "known_roots": [
+        "1",
+        "7/4"
+      ],
+      "must_resolve": true,
+      "notes": "score-preserving scaling; rational-root budget skips at K>=100",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "7000000000000",
+          "-18000000000000",
+          "15000000000000",
+          "-4000000000000"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1",
+          "7/4",
+          "4"
+        ],
+        "exact_roots_in_range": [
+          "1",
+          "7/4"
+        ],
+        "subintervals": [
+          {
+            "lo": "1",
+            "hi": "7/4",
+            "count": 0,
+            "mid": "11/8",
+            "mid_truth": 1
+          },
+          {
+            "lo": "7/4",
+            "hi": "4",
+            "count": 0,
+            "mid": "23/8",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1": 0,
+          "7/4": 0,
+          "4": -1,
+          "11/8": 1,
+          "23/8": -1
+        },
+        "plus": true,
+        "minus": true
+      }
+    },
+    {
+      "id": "poc_reversed_K100",
+      "kind": "poc-reversed",
+      "p": [
+        "-200",
+        "200",
+        "70000",
+        "0"
+      ],
+      "q": [
+        "-100",
+        "100",
+        "0",
+        "10000"
+      ],
+      "J": [
+        "1",
+        "4"
+      ],
+      "known_roots": [
+        "1",
+        "7/4"
+      ],
+      "must_resolve": true,
+      "notes": "docs swapped: signs negate, ties identical",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-700000000",
+          "1800000000",
+          "-1500000000",
+          "400000000"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1",
+          "7/4",
+          "4"
+        ],
+        "exact_roots_in_range": [
+          "1",
+          "7/4"
+        ],
+        "subintervals": [
+          {
+            "lo": "1",
+            "hi": "7/4",
+            "count": 0,
+            "mid": "11/8",
+            "mid_truth": -1
+          },
+          {
+            "lo": "7/4",
+            "hi": "4",
+            "count": 0,
+            "mid": "23/8",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1": 0,
+          "7/4": 0,
+          "4": 1,
+          "11/8": -1,
+          "23/8": 1
+        },
+        "plus": true,
+        "minus": true
+      }
+    },
+    {
+      "id": "tangent_realizable",
+      "kind": "tangent-realizable",
+      "p": [
+        "3/2",
+        "1",
+        "2",
+        "4"
+      ],
+      "q": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1/4",
+        "1"
+      ],
+      "known_roots": [
+        "1/2"
+      ],
+      "must_resolve": true,
+      "notes": "from rank_cover/realizable_tangent.py; Q=(z-1/2)^2; touch, stable +1",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "1/4",
+          "-1",
+          "1",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/4",
+          "1/2",
+          "1"
+        ],
+        "exact_roots_in_range": [
+          "1/2"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/4",
+            "hi": "1/2",
+            "count": 0,
+            "mid": "3/8",
+            "mid_truth": 1
+          },
+          {
+            "lo": "1/2",
+            "hi": "1",
+            "count": 0,
+            "mid": "3/4",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/4": 1,
+          "1/2": 0,
+          "1": 1,
+          "3/8": 1,
+          "3/4": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "tangent_abstract_only",
+      "kind": "tangent-abstract",
+      "p": [
+        "1",
+        "1",
+        "0",
+        "4"
+      ],
+      "q": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1/4",
+        "4"
+      ],
+      "known_roots": [
+        "1"
+      ],
+      "must_resolve": true,
+      "notes": "Q=(z-1)^2 touch, stable +1; p violates single_ok (u=0,a=1): abstract-only, kept separate",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "1",
+          "-2",
+          "1",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/4",
+          "1",
+          "4"
+        ],
+        "exact_roots_in_range": [
+          "1"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/4",
+            "hi": "1",
+            "count": 0,
+            "mid": "5/8",
+            "mid_truth": 1
+          },
+          {
+            "lo": "1",
+            "hi": "4",
+            "count": 0,
+            "mid": "5/2",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/4": 1,
+          "1": 0,
+          "4": 1,
+          "5/8": 1,
+          "5/2": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "common_zero",
+      "kind": "common-zero",
+      "p": [
+        "-1",
+        "1",
+        "1",
+        "0"
+      ],
+      "q": [
+        "-2",
+        "2",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1/2",
+        "2"
+      ],
+      "known_roots": [
+        "1"
+      ],
+      "must_resolve": true,
+      "notes": "shared numerator zero flips verdict +1->-1 with Q=-3(z-1)^2 touch (no Q crossing)",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-3",
+          "6",
+          "-3",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/2",
+          "1",
+          "2"
+        ],
+        "exact_roots_in_range": [
+          "1"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/2",
+            "hi": "1",
+            "count": 0,
+            "mid": "3/4",
+            "mid_truth": 1
+          },
+          {
+            "lo": "1",
+            "hi": "2",
+            "count": 0,
+            "mid": "3/2",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/2": 1,
+          "1": 0,
+          "2": -1,
+          "3/4": 1,
+          "3/2": -1
+        },
+        "plus": true,
+        "minus": true
+      }
+    },
+    {
+      "id": "endpoint_tie_L",
+      "kind": "endpoint-root",
+      "p": [
+        "0",
+        "1",
+        "1",
+        "0"
+      ],
+      "q": [
+        "0",
+        "2",
+        "1",
+        "0"
+      ],
+      "J": [
+        "0",
+        "2"
+      ],
+      "known_roots": [
+        "0"
+      ],
+      "must_resolve": true,
+      "notes": "Q=-3z^2; tie exactly at L=0; stable -1 inside",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "0",
+          "0",
+          "-3",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "0",
+          "2"
+        ],
+        "exact_roots_in_range": [
+          "0"
+        ],
+        "subintervals": [
+          {
+            "lo": "0",
+            "hi": "2",
+            "count": 0,
+            "mid": "1",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "0": 0,
+          "2": -1,
+          "1": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "endpoint_tie_R",
+      "kind": "endpoint-root",
+      "p": [
+        "-2",
+        "1",
+        "1",
+        "0"
+      ],
+      "q": [
+        "-4",
+        "2",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1",
+        "2"
+      ],
+      "known_roots": [
+        "2"
+      ],
+      "must_resolve": true,
+      "notes": "Q=-3(z-2)^2; tie exactly at R=2; stable +1 inside",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-12",
+          "12",
+          "-3",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1",
+          "2"
+        ],
+        "exact_roots_in_range": [
+          "2"
+        ],
+        "subintervals": [
+          {
+            "lo": "1",
+            "hi": "2",
+            "count": 0,
+            "mid": "3/2",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1": 1,
+          "2": 0,
+          "3/2": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "P_identically_zero",
+      "kind": "persistent",
+      "p": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "q": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "J": [
+        "1",
+        "2"
+      ],
+      "known_roots": [],
+      "must_resolve": true,
+      "notes": "p==q: Q identically 0; only PERSISTENT_TIE/UNRESOLVED sound",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "identically_zero": true,
+        "crit": [
+          "1",
+          "2"
+        ],
+        "truth": {
+          "1": 0,
+          "2": 0,
+          "3/2": 0
+        },
+        "plus": false,
+        "minus": false
+      }
+    },
+    {
+      "id": "invalidJ_empty",
+      "kind": "robustness",
+      "p": [
+        "-1",
+        "1",
+        "0",
+        "1"
+      ],
+      "q": [
+        "-2",
+        "2",
+        "7",
+        "0"
+      ],
+      "J": [
+        "2",
+        "2"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "degenerate J (L==R): no crash; no interior order may be certified",
+      "oracle": {
+        "domain": "ok",
+        "robustness": "degenerate-J",
+        "truth": {
+          "2": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "invalidJ_inverted",
+      "kind": "robustness",
+      "p": [
+        "-1",
+        "1",
+        "0",
+        "1"
+      ],
+      "q": [
+        "-2",
+        "2",
+        "7",
+        "0"
+      ],
+      "J": [
+        "4",
+        "1"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "L>R: no crash; must not certify as if normal",
+      "oracle": {
+        "domain": "ok",
+        "robustness": "inverted-J",
+        "truth": {
+          "4": -1,
+          "1": 0
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "invalidJ_domain",
+      "kind": "robustness",
+      "p": [
+        "1",
+        "1",
+        "-1",
+        "1"
+      ],
+      "q": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1/4",
+        "1/2"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "D1=-1+z<0 on J: resolving verdicts unsound; only non-resolving sound",
+      "oracle": {
+        "domain": "fail",
+        "robustness": "domain-fail"
+      }
+    },
+    {
+      "id": "search_strict_pos_Jq",
+      "kind": "strict",
+      "p": [
+        "-3",
+        "-3",
+        "0",
+        "2"
+      ],
+      "q": [
+        "-3",
+        "-3",
+        "0",
+        "1"
+      ],
+      "J": [
+        "1/4",
+        "4"
+      ],
+      "known_roots": [
+        "-1",
+        "0"
+      ],
+      "must_resolve": true,
+      "notes": "found by deterministic small-int search; oracle-closed",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "0",
+          "-9",
+          "-18",
+          "-9"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/4",
+          "4"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/4",
+            "hi": "4",
+            "count": 0,
+            "mid": "17/8",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/4": 1,
+          "4": 1,
+          "17/8": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "search_strict_neg_Jq",
+      "kind": "strict-negative-numerators",
+      "p": [
+        "-3",
+        "-3",
+        "0",
+        "1"
+      ],
+      "q": [
+        "-3",
+        "-3",
+        "0",
+        "2"
+      ],
+      "J": [
+        "1/4",
+        "4"
+      ],
+      "known_roots": [
+        "-1",
+        "0"
+      ],
+      "must_resolve": true,
+      "notes": "found by deterministic small-int search; oracle-closed",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "0",
+          "9",
+          "18",
+          "9"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/4",
+          "4"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/4",
+            "hi": "4",
+            "count": 0,
+            "mid": "17/8",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/4": -1,
+          "4": -1,
+          "17/8": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "search_two_roots_Jq",
+      "kind": "two-exact-roots",
+      "p": [
+        "-3",
+        "-2",
+        "0",
+        "3"
+      ],
+      "q": [
+        "3",
+        "0",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1/4",
+        "4"
+      ],
+      "known_roots": [
+        "3/4",
+        "3"
+      ],
+      "must_resolve": true,
+      "notes": "found by deterministic small-int search; oracle-closed",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "9",
+          "-15",
+          "4",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/4",
+          "3/4",
+          "3",
+          "4"
+        ],
+        "exact_roots_in_range": [
+          "3",
+          "3/4"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/4",
+            "hi": "3/4",
+            "count": 0,
+            "mid": "1/2",
+            "mid_truth": -1
+          },
+          {
+            "lo": "3/4",
+            "hi": "3",
+            "count": 0,
+            "mid": "15/8",
+            "mid_truth": -1
+          },
+          {
+            "lo": "3",
+            "hi": "4",
+            "count": 0,
+            "mid": "7/2",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/4": -1,
+          "3/4": -1,
+          "3": -1,
+          "4": -1,
+          "1/2": -1,
+          "15/8": -1,
+          "7/2": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_00",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-2",
+        "1",
+        "3",
+        "0"
+      ],
+      "q": [
+        "-2",
+        "-1",
+        "0",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "6"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-12",
+          "-4",
+          "-11",
+          "2"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "2",
+          "6",
+          "16"
+        ],
+        "exact_roots_in_range": [
+          "6"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "2",
+            "count": 0,
+            "mid": "33/32",
+            "mid_truth": 1
+          },
+          {
+            "lo": "2",
+            "hi": "6",
+            "count": 0,
+            "mid": "4",
+            "mid_truth": 1
+          },
+          {
+            "lo": "6",
+            "hi": "16",
+            "count": 0,
+            "mid": "11",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "2": 1,
+          "6": 1,
+          "16": 1,
+          "33/32": 1,
+          "4": 1,
+          "11": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "fuzz_01",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "3",
+        "3",
+        "3",
+        "2"
+      ],
+      "q": [
+        "1",
+        "2",
+        "2",
+        "1"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "15",
+          "31",
+          "16",
+          "1"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "16": 1,
+          "257/32": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "fuzz_02",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-2",
+        "-3",
+        "3",
+        "3"
+      ],
+      "q": [
+        "2",
+        "0",
+        "3",
+        "3"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-4/3",
+        "-1",
+        "0"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "0",
+          "36",
+          "63",
+          "27"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_03",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-2",
+        "-2",
+        "0",
+        "3"
+      ],
+      "q": [
+        "-1",
+        "-1",
+        "1",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-1",
+        "-4/5"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "4",
+          "13",
+          "14",
+          "5"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_04",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "3",
+        "1",
+        "1",
+        "1"
+      ],
+      "q": [
+        "1",
+        "1",
+        "1",
+        "3"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "8",
+          "30",
+          "16",
+          "2"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "16": 1,
+          "257/32": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "fuzz_05",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-1",
+        "-1",
+        "1",
+        "0"
+      ],
+      "q": [
+        "0",
+        "0",
+        "0",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-1",
+        "0"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "0",
+          "2",
+          "4",
+          "2"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_06",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "3",
+        "2",
+        "2",
+        "0"
+      ],
+      "q": [
+        "0",
+        "-3",
+        "3",
+        "1"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "27",
+          "45",
+          "6",
+          "4"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "16": 1,
+          "257/32": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "fuzz_07",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-2",
+        "0",
+        "2",
+        "0"
+      ],
+      "q": [
+        "2",
+        "2",
+        "0",
+        "3"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-8",
+          "-4",
+          "-8",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_08",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-1",
+        "1",
+        "1",
+        "1"
+      ],
+      "q": [
+        "-3",
+        "3",
+        "0",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-9/7",
+        "1"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-9",
+          "11",
+          "5",
+          "-7"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "1",
+          "16"
+        ],
+        "exact_roots_in_range": [
+          "1"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "1",
+            "count": 0,
+            "mid": "17/32",
+            "mid_truth": 1
+          },
+          {
+            "lo": "1",
+            "hi": "16",
+            "count": 0,
+            "mid": "17/2",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "1": 0,
+          "16": -1,
+          "17/32": 1,
+          "17/2": -1
+        },
+        "plus": true,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_09",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-2",
+        "-2",
+        "3",
+        "1"
+      ],
+      "q": [
+        "0",
+        "-2",
+        "1",
+        "1"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-1/3"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "4",
+          "12",
+          "0",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_10",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-1",
+        "0",
+        "3",
+        "3"
+      ],
+      "q": [
+        "-1",
+        "-3",
+        "0",
+        "3"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-3",
+          "-18",
+          "-45",
+          "-27"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "16": 1,
+          "257/32": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "fuzz_11",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-1",
+        "-1",
+        "2",
+        "0"
+      ],
+      "q": [
+        "3",
+        "3",
+        "1",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-1",
+        "17/2"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-17",
+          "-32",
+          "-13",
+          "2"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "17/2",
+          "16"
+        ],
+        "exact_roots_in_range": [
+          "17/2"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "17/2",
+            "count": 0,
+            "mid": "137/32",
+            "mid_truth": -1
+          },
+          {
+            "lo": "17/2",
+            "hi": "16",
+            "count": 0,
+            "mid": "49/4",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "17/2": -1,
+          "16": -1,
+          "137/32": -1,
+          "49/4": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_12",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-1",
+        "0",
+        "1",
+        "0"
+      ],
+      "q": [
+        "0",
+        "-1",
+        "3",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-1",
+        "3"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "3",
+          "2",
+          "-1",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "3",
+          "16"
+        ],
+        "exact_roots_in_range": [
+          "3"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "3",
+            "count": 0,
+            "mid": "49/32",
+            "mid_truth": -1
+          },
+          {
+            "lo": "3",
+            "hi": "16",
+            "count": 0,
+            "mid": "19/2",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "3": 0,
+          "16": 1,
+          "49/32": -1,
+          "19/2": 1
+        },
+        "plus": true,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_13",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-3",
+        "-3",
+        "3",
+        "3"
+      ],
+      "q": [
+        "3",
+        "3",
+        "0",
+        "3"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-1"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-27",
+          "-54",
+          "-27",
+          "0"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_14",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "3",
+        "2",
+        "0",
+        "1"
+      ],
+      "q": [
+        "2",
+        "0",
+        "0",
+        "1"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "-5/2",
+        "-1/2",
+        "0"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "0",
+          "5",
+          "12",
+          "4"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "16": 1,
+          "257/32": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "fuzz_15",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-1",
+        "-3",
+        "1",
+        "2"
+      ],
+      "q": [
+        "-2",
+        "2",
+        "3",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-1",
+          "20",
+          "51",
+          "10"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "1",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "1",
+            "count": 0,
+            "mid": "17/32",
+            "mid_truth": -1
+          },
+          {
+            "lo": "1",
+            "hi": "16",
+            "count": 0,
+            "mid": "17/2",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "1": -1,
+          "16": -1,
+          "17/32": -1,
+          "17/2": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_16",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-2",
+        "-1",
+        "3",
+        "3"
+      ],
+      "q": [
+        "-2",
+        "-2",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-8",
+          "-32",
+          "-35",
+          "-12"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "16": 1,
+          "257/32": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "fuzz_17",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-3",
+        "-2",
+        "3",
+        "0"
+      ],
+      "q": [
+        "1",
+        "0",
+        "3",
+        "1"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "24",
+          "45",
+          "24",
+          "4"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_18",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-3",
+        "-1",
+        "3",
+        "0"
+      ],
+      "q": [
+        "-2",
+        "3",
+        "3",
+        "3"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "15",
+          "81",
+          "-6",
+          "3"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "2/3",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "2/3",
+            "count": 0,
+            "mid": "35/96",
+            "mid_truth": -1
+          },
+          {
+            "lo": "2/3",
+            "hi": "16",
+            "count": 0,
+            "mid": "25/3",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "2/3": -1,
+          "16": -1,
+          "35/96": -1,
+          "25/3": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_19",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-2",
+        "1",
+        "0",
+        "2"
+      ],
+      "q": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "2/9"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "4",
+          "-12",
+          "-23",
+          "-18"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "2/9",
+          "2",
+          "16"
+        ],
+        "exact_roots_in_range": [
+          "2/9"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "2/9",
+            "count": 0,
+            "mid": "41/288",
+            "mid_truth": -1
+          },
+          {
+            "lo": "2/9",
+            "hi": "2",
+            "count": 0,
+            "mid": "10/9",
+            "mid_truth": -1
+          },
+          {
+            "lo": "2",
+            "hi": "16",
+            "count": 0,
+            "mid": "9",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "2/9": -1,
+          "2": -1,
+          "16": -1,
+          "41/288": -1,
+          "10/9": -1,
+          "9": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_20",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-1",
+        "-3",
+        "2",
+        "1"
+      ],
+      "q": [
+        "-3",
+        "-3",
+        "1",
+        "0"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-17",
+          "-39",
+          "-27",
+          "-9"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": 1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "16": 1,
+          "257/32": 1
+        },
+        "plus": true,
+        "minus": false
+      }
+    },
+    {
+      "id": "fuzz_21",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-1",
+        "0",
+        "2",
+        "3"
+      ],
+      "q": [
+        "1",
+        "2",
+        "1",
+        "3"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "-1",
+          "-8",
+          "-20",
+          "-12"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_22",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "-2",
+        "-2",
+        "2",
+        "3"
+      ],
+      "q": [
+        "-1",
+        "0",
+        "2",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "6",
+          "21",
+          "24",
+          "8"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "16"
+        ],
+        "exact_roots_in_range": [],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "16",
+            "count": 0,
+            "mid": "257/32",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": -1,
+          "16": -1,
+          "257/32": -1
+        },
+        "plus": false,
+        "minus": true
+      }
+    },
+    {
+      "id": "fuzz_23",
+      "kind": "fuzz-supplemental",
+      "p": [
+        "0",
+        "-2",
+        "3",
+        "1"
+      ],
+      "q": [
+        "0",
+        "-1",
+        "0",
+        "2"
+      ],
+      "J": [
+        "1/16",
+        "16"
+      ],
+      "known_roots": [
+        "0",
+        "3/7"
+      ],
+      "must_resolve": false,
+      "notes": "supplemental fuzz evidence only; not proof of absence",
+      "oracle": {
+        "domain": "ok",
+        "Q": [
+          "0",
+          "0",
+          "-3",
+          "7"
+        ],
+        "identically_zero": false,
+        "crit": [
+          "1/16",
+          "3/7",
+          "16"
+        ],
+        "exact_roots_in_range": [
+          "3/7"
+        ],
+        "subintervals": [
+          {
+            "lo": "1/16",
+            "hi": "3/7",
+            "count": 0,
+            "mid": "55/224",
+            "mid_truth": 1
+          },
+          {
+            "lo": "3/7",
+            "hi": "16",
+            "count": 0,
+            "mid": "115/14",
+            "mid_truth": -1
+          }
+        ],
+        "truth": {
+          "1/16": 1,
+          "3/7": 0,
+          "16": -1,
+          "55/224": 1,
+          "115/14": -1
+        },
+        "plus": true,
+        "minus": true
+      }
+    }
+  ]
+}

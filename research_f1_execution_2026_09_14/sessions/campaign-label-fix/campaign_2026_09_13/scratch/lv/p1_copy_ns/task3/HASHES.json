@@ -1,0 +1,62 @@
+{
+  "self_excluded": true,
+  "includes_supplement": true,
+  "files": {
+    "actual_binary_artifacts/R_converted_float32.npy": {
+      "sha256": "47801c7c2441953c375e661c3da6f8140f9133cd80ba5533401ff3790b77ebe5",
+      "bytes": 36992
+    },
+    "actual_binary_artifacts/R_fitted_float64.npy": {
+      "sha256": "71aed99e903f6e1ec206fb2c3342fc2168052b968eb906a31eb9684adbe15baf",
+      "bytes": 73856
+    },
+    "CONTROL_RESULTS.json": {
+      "sha256": "860f94e6e99320ff89a8e98fb6ac13ee522194f17aaa9e1ed1296ac5fd8c27cd",
+      "bytes": 2175
+    },
+    "ENVIRONMENT.json": {
+      "sha256": "868909919f55933a3e4d84285f6ee1f8aef6075413ad3923655690a0ceb708bc",
+      "bytes": 1281
+    },
+    "fits.csv": {
+      "sha256": "6c7956dc8b27edb34e202e50aad62c28e9255b90cdf15e077211428b9f9e09c7",
+      "bytes": 116788
+    },
+    "FITTED_STATE.json": {
+      "sha256": "2370ad22d2c4b6fc4254120a5a57dcc1d959b05ce13176cda8ca265fcb795e84",
+      "bytes": 5967
+    },
+    "measure_fitted_state.py": {
+      "sha256": "9f9c5ce0617a66c2a5c4f2d6c21b74cfd78a2159d23b0d2238e601fcabe1cbbe",
+      "bytes": 6420
+    },
+    "objective_history.csv": {
+      "sha256": "588facf1fd088e7c8c810ce4aec1c8bbd178ce24ec01813d995db0fde3afd364",
+      "bytes": 1651054
+    },
+    "pairwise_distances.csv": {
+      "sha256": "87723b1d7fc979e3887ce3092989db93f417a1a88ec5fa475acd4034d00dee94",
+      "bytes": 290937
+    },
+    "PLAN.json": {
+      "sha256": "e56ea0d6858e06211fa9eb82d6d255724a3d0e23016b77d28f8d8ff10923c53f",
+      "bytes": 3190
+    },
+    "README.md": {
+      "sha256": "edf08a6029dc9a9f8999e106e33f8ccfc6b7144f4c12749d53aa741b786dac6c",
+      "bytes": 7157
+    },
+    "RESULTS.json": {
+      "sha256": "0c2cf96553dbf448d22def0538c8993ada038d1fdac52665f759c08e5a304214",
+      "bytes": 531107
+    },
+    "VERIFICATION.json": {
+      "sha256": "ad4769f42a7331a8e7416eb783eba76ca99d561f00446ed0b7660f0c3229649b",
+      "bytes": 6988
+    },
+    "../itq_feasibility_synthetic.py": {
+      "sha256": "18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d",
+      "bytes": 26828
+    }
+  }
+}

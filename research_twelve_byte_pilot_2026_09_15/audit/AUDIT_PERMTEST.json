@@ -1,0 +1,22 @@
+{
+  "real_document_order": {
+    "delta_pp": 0.40725466944983424,
+    "n_decisive_queries": 311,
+    "P_lowest_bucket_member_is_gold": 0.37942122186495175,
+    "P_expected_gb_over_b": 0.2178997494110034
+  },
+  "permuted_document_order": {
+    "n_permutations": 60,
+    "delta_pp_mean": -0.02068324629295954,
+    "delta_pp_sd": 0.07399684206324468,
+    "delta_pp_p2.5": -0.1418029802175715,
+    "delta_pp_p97.5": 0.1142945807580382,
+    "delta_pp_min": -0.19141495361003272,
+    "delta_pp_max": 0.14117928142322672,
+    "n_decisive_mean": 311.0,
+    "P_lowest_is_gold_mean": 0.2107181136120043,
+    "P_expected_gb_over_b_mean": 0.2178997494110034
+  },
+  "permutation_p_value_two_sided": 0.0,
+  "z_of_real_vs_permutation_null": 5.783191604001663
+}

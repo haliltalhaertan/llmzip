@@ -1,0 +1,128 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "v1_bugs_were_in_the_audit_not_the_workers": [
+    "anchored sym to expected-hit while worker reported realized",
+    "treated gold_size_dist histogram as an M-curve",
+    "assumed flat schema; firststage is nested"
+  ],
+  "firststage": {
+    "pool": {
+      "CODE": {
+        "hit": {
+          "10": 49.645390070921984,
+          "20": 58.156028368794324,
+          "50": 67.37588652482269,
+          "100": 75.60283687943262,
+          "200": 85.2482269503546,
+          "500": 95.177304964539
+        },
+        "ceiling": {
+          "10": 36.947800944441475,
+          "20": 44.287187719998464,
+          "50": 53.6994150969515,
+          "100": 61.30262524999366,
+          "200": 70.45041831136291,
+          "500": 83.84499221657511
+        }
+      },
+      "BM25": {
+        "hit": {
+          "10": 54.184397163120565,
+          "20": 64.39716312056738,
+          "50": 72.19858156028369,
+          "100": 78.15602836879432,
+          "200": 86.09929078014184,
+          "500": 96.02836879432624
+        },
+        "ceiling": {
+          "10": 43.15994774169466,
+          "20": 50.438963839859696,
+          "50": 57.052895066201174,
+          "100": 62.255137771737466,
+          "200": 69.78987214689737,
+          "500": 83.55691386466697
+        }
+      },
+      "RRF": {
+        "hit": {
+          "10": 55.74468085106383,
+          "20": 62.12765957446808,
+          "50": 72.76595744680851,
+          "100": 81.27659574468085,
+          "200": 88.08510638297872,
+          "500": 97.16312056737588
+        },
+        "ceiling": {
+          "10": 42.80145398958389,
+          "20": 49.010730135030244,
+          "50": 58.641027718789395,
+          "100": 66.14993682611099,
+          "200": 73.01364967582607,
+          "500": 85.60993649215769
+        }
+      }
+    },
+    "own_fr3": {
+      "CODE": 22.409863310759164,
+      "BM25": 33.07287130355439,
+      "RRF": 31.453992546377762
+    },
+    "oracle_union": {
+      "10": 61.702127659574465,
+      "100": 85.1063829787234
+    },
+    "rrf_rebuild_mismatches": 0
+  },
+  "ablation": {
+    "FULL": {
+      "sym_hit10": 46.52482269503546,
+      "qscale_hit10": 49.645390070921984,
+      "qscale_fr3": 22.409863310759164
+    },
+    "NO_CHAR": {
+      "sym_hit10": 42.12765957446808,
+      "qscale_hit10": 43.829787234042556,
+      "qscale_fr3": 21.232804232804234
+    },
+    "NO_LSA": {
+      "sym_hit10": 48.08510638297872,
+      "qscale_hit10": 52.05673758865248,
+      "qscale_fr3": 25.854307755203614
+    },
+    "WORD_ONLY": {
+      "sym_hit10": 43.68794326241135,
+      "qscale_hit10": 46.241134751773046,
+      "qscale_fr3": 22.126513091238735
+    }
+  },
+  "passed": [
+    "coverage 705 rows / unique qids",
+    "recomputed pool metrics match worker's to 0.00e+00 pp (all arms/M)",
+    "independently rebuilt RRF(k=60) top10: 0/705 mismatches",
+    "CODE pool-hit monotonic in M",
+    "CODE ceiling monotonic in M",
+    "BM25 pool-hit monotonic in M",
+    "BM25 ceiling monotonic in M",
+    "RRF pool-hit monotonic in M",
+    "RRF ceiling monotonic in M",
+    "CODE pool-Hit@10 49.6454 == qscale anchor 49.6454",
+    "BM25 pool-Hit@10 54.1844 == audited lexical anchor 54.1844",
+    "CODE ceiling@10 36.95 >= own FR@3 22.41",
+    "BM25 ceiling@10 43.16 >= own FR@3 33.07",
+    "RRF ceiling@10 42.80 >= own FR@3 31.45",
+    "RRF pool-Hit@10 55.74 <= oracle-union bound 61.70",
+    "RRF pool-Hit@100 81.28 <= oracle-union bound 85.11",
+    "FULL/sym EXPECTED-Hit@10 46.6809 == anchor 46.6809",
+    "FULL/sym REALIZED-Hit@10 46.5248 == baseline realized 46.5248",
+    "FULL/qscale Hit@10 49.6454 == anchor 49.6454",
+    "per-query hit10/fr3 recomputed from stored ids: 0 mismatches"
+  ],
+  "failed": [],
+  "notes": [],
+  "verdict": "ACCEPT"
+}

@@ -1,0 +1,98 @@
+{
+  "_labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "provenance": {
+    "projector": "/tmp/cmc/PROJECTOR_BYTES.json (bytes of origin/findings/representation-geometry-2026-09-13:research_representation_geometry_2026_09_13/measurements/projector/PROJECTOR_BYTES.json)",
+    "geometry": "docs/v52/task4c2/V52_T4C2_feature_geometry.csv (local docs/v52/task4c2/V52_T4C2_feature_geometry.csv)",
+    "t4c2_script": "/tmp/cmc/t4c2_centering_geometry.py",
+    "adapter": "adapters/longmemeval_v52_adapter.py (local adapters/longmemeval_v52_adapter.py)",
+    "e1core": "/tmp/cmc/e1_geometry_core.py (bytes of origin/research/e1-sign-float-mechanism-frozen-2026-09-13:campaign_2026_09_13/e1_mechanism/e1_geometry_core.py)"
+  },
+  "source_assertions": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "A4": true,
+    "A5": true,
+    "A6": true
+  },
+  "projector_recompute": {
+    "median_effective_a_raw": 88886.36234817814,
+    "median_shared_total": 44220235,
+    "min_effective": 80266.50998185118,
+    "max_effective": 104463.61851015802,
+    "median_archive_components_a_raw": {
+      "question_id": "078150f1",
+      "N": 551,
+      "total": 44220235,
+      "s96": 37634304,
+      "sv": 5041664,
+      "vocab_struct": 1151987,
+      "idf_f32": 391896,
+      "mu_f32": 384,
+      "shares_pct": {
+        "s96": 85.11,
+        "sv": 11.4,
+        "vocab": 2.61,
+        "idf": 0.89,
+        "mu": 0.0
+      }
+    },
+    "shapes": {
+      "sv": [
+        32,
+        39388
+      ],
+      "s96": [
+        96,
+        98006
+      ],
+      "lexical_d": 32
+    }
+  },
+  "comparison": {
+    "frozen_N": {
+      "n": 470,
+      "min": 396,
+      "max": 616,
+      "mean": 492.77872340425535,
+      "total_vectors": 231606
+    },
+    "index_only_panel_mean_over_470": {
+      "SIGN96": {
+        "mean_of_costs": 12.067228790342595,
+        "min": 12.053571428571429,
+        "max": 12.083333333333334
+      },
+      "PQ96": {
+        "mean_of_costs": 212.44365702448107,
+        "min": 171.72402597402598,
+        "max": 260.45959595959596
+      },
+      "OPQ_PQ96": {
+        "mean_of_costs": 287.6889713064122,
+        "min": 231.68344155844156,
+        "max": 353.729797979798
+      },
+      "FLOAT96_CENTERED_payload": {
+        "per_vector": 384
+      }
+    },
+    "full_pipeline_at_N500_Pmedian": {
+      "SIGN96": 88452.536,
+      "FLOAT96": 88824.47,
+      "PQ96": 88649.25,
+      "OPQ_PQ96": 88723.12
+    },
+    "full_pipeline_at_Nstar_bare": {
+      "SIGN96": 383.9990241604415,
+      "FLOAT96": 755.9987465509118,
+      "PQ96": 384.8264435695538,
+      "OPQ_PQ96": 385.13715593243154
+    },
+    "N_star_bare_float_parity": 118872,
+    "claimed_234x_recomputed_as_median_eff_over_384": 231.47490194838056,
+    "honest_SIGN_vs_FLOAT_gap_B_per_vector_all_N": 372,
+    "global_sharing_estimate_SIGN_effective": 202.92871082787147,
+    "global_sharing_vectors": 231606
+  }
+}

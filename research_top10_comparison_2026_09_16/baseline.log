@@ -1,0 +1,17 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/baseline (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Baseline Top10-r1 executed for all 9440 queries in `top10_comparison_r1/baseline`.
+
+Gates (FR3 SIGN/FLOAT vs original per-query, tol 1e-12): PerLTQA 8265 PASS, LME 470 PASS, REALTALK 705 PASS, all max diff 0.0, caches unchanged. Zero vectors: none found; nonfinite cosine maps to worst, `sign(0)>=0`.
+
+Results (separate, not averaged; Hit10 / Recall10 / nDCG10 / expHit10):
+
+- PerLTQA 8265: sign96 0.7568/0.6182/0.4907/0.7576; float_raw 0.8081/0.7095/0.5822/0.8081; float_std 0.8396/0.7024/0.5775/0.8396; asym 0.8019/0.6760/0.5466/0.8019.
+- LME 470: sign96 0.8638/0.7626/0.5914/0.8608; float_raw 0.8255/0.6895/0.5095/0.8255; float_std 0.8830/0.7955/0.6207/0.8830; asym 0.8574/0.7338/0.5559/0.8574.
+- REALTALK 705: sign96 0.4652/0.3434/0.2455/0.4668; float_raw 0.3660/0.2783/0.2020/0.3660; float_std 0.4851/0.3747/0.2622/0.4851; asym 0.4355/0.3306/0.2277/0.4355.
+
+Artifacts: `per_query_top10.jsonl` (9440 rows with qid, archive_id, N, gold, per-arm top10 IDs/scores/tie metadata, FR3 + control), `ckpt_top10_*.jsonl` per archive, `state_*.npz` (510, packed+std for replay), `summary_top10.json`, `gates_top10.json`, `REPORT.md` (with all four protocol labels), `metrics_top10.py`, `tests_top10.py` (10 passed, incl. brute-force tie-permutation checks), `audit_top10.py` (independent audit PASS: 9440 structural, 30/30 spot rescore), `run_top10.log`, `tdd_log_01_failing.txt` / `tdd_log_02_green.txt`.
+
+Bytes: packed resident 3,034,056 B (12/doc), float64 mem 194,179,584 B, std overhead 391,680 B, states 3,682,776 B. Timing: wall 199.9s, fit 0.38s, score 25.1s, rank 81.9s, RSS 165MB. No truncation. Model/lexical arms and raw-text export labeled NOT RUN (not owned); no inputs invented.
+
+Key files: [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/baseline/REPORT.md), [per_query_top10.jsonl](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/baseline/per_query_top10.jsonl), [metrics_top10.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/baseline/metrics_top10.py)

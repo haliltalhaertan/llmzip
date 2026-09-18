@@ -1,0 +1,28 @@
+{
+  "files": {
+    "V10_DISPOSITION.md": {
+      "bytes": 3508,
+      "sha256": "53b583f3dd7812d0406e307721d8210d0ed9cba6045002bfd63b606fb783c0e3"
+    },
+    "V10_RACE_REPRO.md": {
+      "bytes": 2456,
+      "sha256": "5f1b4d7d8e4437a179ccc3f8b06626b4bddaa5b2535bd53e687b940aca815635"
+    },
+    "V10_TEST_RECEIPT.md": {
+      "bytes": 1808,
+      "sha256": "709f599f236ce53132d064b2e4c81b4e60c556a917273d93f4819c889176246c"
+    },
+    "consumption_gate_v10.py": {
+      "bytes": 8283,
+      "sha256": "29a4e4cf073c13bbfadc4a90b5560bc4922d08938226f72b952a75f967b45150"
+    },
+    "test_consumption_gate_v10.py": {
+      "bytes": 19463,
+      "sha256": "3744951d691b46a6251790ade13021b31fae9edbe724b2f5ec51be2ff9ff87e6"
+    }
+  },
+  "namespace": "drafts/v52/static_storage_integration_v10_2026_09_13",
+  "parent_commit": "b300cbf70b158bc075d45e4bfb8e0105a970596b",
+  "schema": "V52_STATIC_STORAGE_INTEGRATION_V10_HASHES_V2",
+  "self_excluded": "HASHES.json"
+}

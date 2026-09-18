@@ -1,0 +1,242 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "elapsed_s": 142.92151975631714,
+  "alignment_errors": 0,
+  "n_valid": 705,
+  "n_excluded": 23,
+  "n_partial_valid_with_unresolved": 46,
+  "partial_examples": [
+    {
+      "qid": "RT01_q071",
+      "archive_id": "RT01",
+      "unresolved": [
+        "D18:8"
+      ],
+      "n_tokens": 4,
+      "n_resolved": 3,
+      "gold": [
+        512,
+        568,
+        570
+      ]
+    },
+    {
+      "qid": "RT02_q008",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D2:7"
+      ],
+      "n_tokens": 3,
+      "n_resolved": 2,
+      "gold": [
+        67,
+        69
+      ]
+    },
+    {
+      "qid": "RT02_q009",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D2:7"
+      ],
+      "n_tokens": 5,
+      "n_resolved": 4,
+      "gold": [
+        61,
+        62,
+        73,
+        75
+      ]
+    },
+    {
+      "qid": "RT02_q010",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D3:64"
+      ],
+      "n_tokens": 5,
+      "n_resolved": 4,
+      "gold": [
+        83,
+        84,
+        132,
+        171
+      ]
+    },
+    {
+      "qid": "RT02_q012",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D2:10",
+        "D3:11"
+      ],
+      "n_tokens": 5,
+      "n_resolved": 3,
+      "gold": [
+        63,
+        89,
+        469
+      ]
+    },
+    {
+      "qid": "RT02_q019",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D4:22"
+      ],
+      "n_tokens": 3,
+      "n_resolved": 2,
+      "gold": [
+        101,
+        161
+      ]
+    },
+    {
+      "qid": "RT02_q020",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D1:41",
+        "D3:59",
+        "D4:27",
+        "D6:28"
+      ],
+      "n_tokens": 6,
+      "n_resolved": 2,
+      "gold": [
+        35,
+        132
+      ]
+    },
+    {
+      "qid": "RT02_q026",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D4:27",
+        "D5:46",
+        "D6:28"
+      ],
+      "n_tokens": 6,
+      "n_resolved": 3,
+      "gold": [
+        171,
+        223,
+        253
+      ]
+    },
+    {
+      "qid": "RT02_q030",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D3:59",
+        "D4:27",
+        "D6:28"
+      ],
+      "n_tokens": 6,
+      "n_resolved": 3,
+      "gold": [
+        38,
+        237,
+        253
+      ]
+    },
+    {
+      "qid": "RT02_q032",
+      "archive_id": "RT02",
+      "unresolved": [
+        "D1:42",
+        "D3:41",
+        "D6:25"
+      ],
+      "n_tokens": 7,
+      "n_resolved": 4,
+      "gold": [
+        36,
+        115,
+        249,
+        252
+      ]
+    }
+  ],
+  "partial_qids": [
+    "RT01_q071",
+    "RT02_q008",
+    "RT02_q009",
+    "RT02_q010",
+    "RT02_q012",
+    "RT02_q019",
+    "RT02_q020",
+    "RT02_q026",
+    "RT02_q030",
+    "RT02_q032",
+    "RT02_q038",
+    "RT02_q054",
+    "RT02_q056",
+    "RT02_q058",
+    "RT02_q067",
+    "RT03_q062",
+    "RT03_q071",
+    "RT04_q032",
+    "RT04_q033",
+    "RT05_q025",
+    "RT06_q012",
+    "RT06_q013",
+    "RT06_q025",
+    "RT06_q028",
+    "RT06_q029",
+    "RT06_q047",
+    "RT06_q049",
+    "RT06_q060",
+    "RT06_q063",
+    "RT06_q070",
+    "RT08_q002",
+    "RT08_q009",
+    "RT08_q014",
+    "RT08_q067",
+    "RT09_q001",
+    "RT09_q004",
+    "RT09_q018",
+    "RT09_q020",
+    "RT09_q031",
+    "RT09_q061",
+    "RT10_q015",
+    "RT10_q035",
+    "RT10_q039",
+    "RT10_q044",
+    "RT10_q062",
+    "RT10_q063"
+  ],
+  "hashes_unchanged": true,
+  "arms": {
+    "bm25": {
+      "n": 705,
+      "top_mismatch": 0,
+      "actual_mismatch": 0,
+      "producer_exp_equals_recall_deviations": 0,
+      "tie_at_cut": 27,
+      "hit_at_10": 0.5418439716312057,
+      "recall_at_10": 0.43159947741694654,
+      "ndcg_at_10": 0.3427775553126067,
+      "expected_hit_corrected": 0.5418439716312057,
+      "expected_hit_producer_mean": 0.43159947741694654,
+      "elapsed_s": 52.383540391922
+    },
+    "tfidf": {
+      "n": 705,
+      "top_mismatch": 0,
+      "actual_mismatch": 0,
+      "producer_exp_equals_recall_deviations": 0,
+      "tie_at_cut": 28,
+      "hit_at_10": 0.5290780141843971,
+      "recall_at_10": 0.41906204636887723,
+      "ndcg_at_10": 0.31664654209835624,
+      "expected_hit_corrected": 0.5290780141843971,
+      "expected_hit_producer_mean": 0.41906204636887723,
+      "elapsed_s": 56.42196297645569
+    }
+  }
+}

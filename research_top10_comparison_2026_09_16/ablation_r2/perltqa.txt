@@ -1,0 +1,91 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn available).
+NO paid APIs, NO web, NO git, NO pip installs. Write ONLY inside YOUR directory (below).
+Everything else READ-ONLY - never modify an input file.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+EVIDENCE DISCIPLINE (the coordinator re-derives your numbers from your own per_query.jsonl; errors WILL be caught):
+- Report the metric actually computed. Never rename FR@3 into Hit@10.
+- exit 0 is not proof. A test that cannot fail proves nothing.
+- If a gate fails: STOP, report it, do NOT loosen the gate and do NOT drop queries to make it pass.
+  Any exclusion needs a count + reason fixed BEFORE seeing scores.
+- Missing/impossible -> declare a blocker. NEVER invent data.
+- Save partial artifacts as you go. Budget ~25 min.
+
+SHARED DEFINITIONS (use exactly; do not re-invent):
+- Deterministic top-K: score DESC, then ascending SHA256("top10-r1|"+archive_id+"|"+str(row)), then ascending row.
+  Exactly K ids, no duplicates, gold-unaware.
+- Hit@10 = 1 if any gold row in the 10 returned ids. FR@3 = |gold INTERSECT top3| / |gold|.
+- Also report exact expected-Hit@10 under uniform ties (ties matter: the symmetric Hamming arm is tie-heavy).
+- Paired archive-clustered bootstrap, 20000 reps, seed 20260916, for every contrast CI.
+Read-only reference implementation you may import:
+/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/audit_baseline_lib.py
+  det_top10(scores, archive_id, k), hrn(top, gold, k), expected_hit(scores, gold, k), pack_signs_bool, decode_pm1
+
+THE FROZEN BUILDER (ground truth for the representation):
+/mnt/c/Users/MDP/dev/llmzip-work/drive/v52_t4d_locomo_frozen_cross_benchmark.py
+Read fit_archive_representation / fit_input_payload / build_representation.
+Seeds: LSA32 random_state=5101, final SVD96 random_state=5204. A wrong seed invalidates the run
+(this already happened once in this programme: see hit10/BOTTLENECK.json INVALID_SEED_DEFECT).
+
+WHY THIS RUN EXISTS:
+On RealTalk (n=705, only 10 archive clusters) an ablation found that DROPPING the LSA32 channel was
+directionally better in 6/6 metric-scorer cells (qscale Hit@10 +2.41pp, FR@3 +3.44pp) but EVERY 95% CI
+included zero - inconclusive. The char channel was clearly valuable (-5.8pp when removed).
+Your benchmark has different/more clusters, so it can actually settle the question.
+This programme has previously seen effects REVERSE between benchmarks, so a negative result here is a
+genuinely useful finding, not a failure. Do not try to reproduce the RealTalk direction.
+
+ARMS (everything else identical: same SVD96 seed, 96 dims, same 12-byte sign coding):
+  FULL      Z = [LSA32 | word | char]   (production control)
+  NO_LSA    Z = [word | char]
+  NO_CHAR   Z = [LSA32 | word]
+  WORD_ONLY Z = [word]
+Keep final SVD at 96 components; assert min(Z.shape) > 96 (LSA_ONLY is impossible under this protocol
+and must NOT be attempted - it was correctly blocked on RealTalk).
+
+SCORERS (report every arm under both):
+  sym    = -Hamming(doc bits, query bits)
+  qscale = dot(doc bits as +-1, qC / sigma); sigma = per-archive std of DOCUMENT C columns, ddof=0,
+           floor 1e-12, DOCUMENTS ONLY - never fit sigma on queries or gold.
+
+METRICS: Hit@10, FR@3, Hit@3, expected-Hit@10. Per-archive breakdown too.
+CONTRASTS: each arm MINUS FULL with the clustered bootstrap CI.
+COST: per-arm Z feature count, build time, and confirm payload stays 12 B/doc.
+
+DELIVERABLES: `ablation.py`, `FIDELITY_GATE.json` (written BEFORE any ablation number),
+`per_query.jsonl` (one row per query x arm x scorer, including top10 ids + gold, so the coordinator can
+replay you), `RESULTS.json`, `REPORT.md`. In REPORT.md state whether the LSA-redundancy hypothesis is
+SUPPORTED / REFUTED / INCONCLUSIVE on YOUR benchmark, with the CIs, and compare to the RealTalk direction.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ablation_r2/perltqa
+YOUR BENCHMARK: PerLTQA en_v2 - 30 archives, 8265 queries. 30 clusters (3x RealTalk) so your CIs are the
+most informative in the programme for this question.
+
+RAW SOURCE (read-only):
+  /mnt/c/Users/MDP/dev/llmzip-work/bench3/PerLTQA/Dataset/en_v2/perltmem_en_v2.json  (memories, dict keyed
+     by protagonist name; 141 protagonists, of which the evaluated cohort is 30)
+  /mnt/c/Users/MDP/dev/llmzip-work/bench3/PerLTQA/Dataset/en_v2/perltqa_en_v2.json   (questions/answers)
+CACHED PRODUCTION (the thing you must reproduce, read-only):
+  /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/cache_arch_eval.pkl  {char: {N, C, zero_mass}}
+  /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/cache_q_eval.pkl     {qid: {char, section, gold, qC}}
+The 30 evaluated protagonists are exactly the keys of cache_arch_eval.pkl. Use those, in sorted order.
+
+*** BLOCKING FIDELITY GATE - BEFORE ANY ABLATION NUMBER ***
+You must first find the exact item-text recipe that reproduces the cached C. The cache does NOT store the
+raw texts, so you must recover how each memory record was serialized into a document string and in what
+order (the row order must match the cached row indexing used by the gold rows). Search the programme for
+the PerLTQA adapter/builder that produced these caches before writing your own - likely places:
+  /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/   (any .py next to the caches)
+  /mnt/c/Users/MDP/dev/llmzip-work/github-publish-static/adapters/
+  /mnt/c/Users/MDP/dev/llmzip-work/hr-consolidation/adapters/
+  grep for 'perltqa' across /mnt/c/Users/MDP/dev/llmzip-work (exclude huge json/csv)
+Then:
+  G1. For every one of the 30 archives: sign(C_rebuilt) == sign(C_cached) elementwise. Report the exact
+      count of differing bits (target 0) and max abs diff.
+  G2. The rebuilt FULL arm must reproduce the cached production metrics over all 8265 queries:
+      qscale Hit@10 = 80.0000%, sym deterministic Hit@10 = 75.6806%, sym expected-Hit@10 = 75.7612%,
+      qscale FR@3 = 53.24% (approx - recompute and report yours).
+      NOTE: 75.7612 is the EXPECTED-hit value and 75.6806 the DETERMINISTIC one; do not confuse them.
+  If you cannot find the exact recipe, report precisely how close you got (bit-difference rate, metric
+  deltas) and STOP. A near-miss rebuild is NOT a licence to report ablation numbers - they would measure
+  your reimplementation, not our system. Declaring this blocker is a fully acceptable outcome.

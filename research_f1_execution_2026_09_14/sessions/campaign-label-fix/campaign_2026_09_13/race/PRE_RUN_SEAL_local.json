@@ -1,0 +1,53 @@
+{
+ "labels": [
+  "[LOCAL]",
+  "[NOT PUSHED]",
+  "[PRE-RUN SEAL (lite) \u2014 local pattern]"
+ ],
+ "frozen_at": "2026-09-13T13:10+03:00",
+ "runners": {
+  "race_sign.py": "6dbb6240453409177470b4bfad38f1a55ba3ed7f03f689e983c5b09ae864b74a",
+  "race_faiss.py": "67a4b5e47cfd3dc6b3f24f3423e18f64a6dfcb5e585c733a70435f81cda8aec3"
+ },
+ "calibration": {
+  "frozen_literals.json": "d89676bab460e4d0e16112dd608ca55a5887851b447b2131c39a5b2309054d01",
+  "calib_details.json": "c687efa9d052cd3f7646d2a5b9bd7eefea9362251bae6ebf457b5f4fc60db322",
+  "d1_decision_memo.md": "0367abe92fe14a2facc2533f06bc435c4713d7a034e0a7e87fa46c69717341f8",
+  "d2_calibration_notebook.md": "e9761e55f44a19bdac0b1aedaaa6b4f9d225655dcf399e7a5d8a78c62ecf2dda"
+ },
+ "prereg_draft_v2": "6e91e3962f9e616a1d81ee842b3c121129b489ddb8b33e30d1c6ecd355c39499",
+ "kill_lines_pp": {
+  "LME": -6.4,
+  "LoCoMo": -3.7
+ },
+ "promote_line_pp": 2.0,
+ "null": {
+  "LME": {
+   "mean": -3.14,
+   "sd": 1.6,
+   "K": 40
+  },
+  "LoCoMo": {
+   "mean": -1.82,
+   "sd": 0.93,
+   "K": 41
+  }
+ },
+ "seeds": {
+  "panels": "93000+10*width_idx+j (j=0..9)",
+  "rabitq_rot": [
+   94101,
+   94102,
+   94103
+  ],
+  "random32": [
+   94201,
+   94202,
+   94203
+  ],
+  "bootstrap": {
+   "B": 5000,
+   "seed": 94301
+  }
+ }
+}

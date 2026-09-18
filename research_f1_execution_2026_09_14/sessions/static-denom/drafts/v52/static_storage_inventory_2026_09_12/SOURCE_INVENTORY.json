@@ -1,0 +1,246 @@
+{
+  "schema": "V52_STATIC_STORAGE_SOURCE_INVENTORY_V1",
+  "status": "DRAFT_PARTIAL_NOT_READY",
+  "created_date": "2026-09-12",
+  "scope": "existing-source inventory only; no real measurement or retrieval",
+  "canonical_main_observed": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+  "contract_package_commit_before_inventory": "d29c7b1d668f8abf47889e132e084c4abd72615b",
+  "task4f1_boundary": "SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN",
+  "budget": {
+    "decision_object": "marginal persistent bytes per vector",
+    "cap_bytes": 12,
+    "shared_state_reported_separately": true,
+    "effective_cost_reported_separately": true
+  },
+  "archive_rosters": [
+    {
+      "benchmark": "LongMemEval",
+      "archive_identity": "question_id",
+      "n_i_field": "N_archive",
+      "source_type": "git_file",
+      "source_commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "source_path": "docs/v52/task4c2/V52_T4C2_feature_geometry.csv",
+      "source_sha256_from_post_run_manifest": "d4c9ce62b0f1b66611611bb014a887d2e7e5fcfaee0af94f53ffb70dc84d7d32",
+      "expected_primary_archives": 470,
+      "access": "AVAILABLE",
+      "status": "FOUND_MANIFEST_BOUND_ROSTER_SOURCE",
+      "notes": "Do not replace per-archive N_i with a single 493-like constant; the real adapter must verify all 470 source rows before measurement."
+    },
+    {
+      "benchmark": "LoCoMo",
+      "archive_identity": "conversation id",
+      "n_i_field": "archive_fit_docs / N",
+      "source_type": "google_drive_file",
+      "drive_file_id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+      "title": "V52_T4D_REPRESENTATION_TRANSFER_PROOF.txt",
+      "access": "AVAILABLE",
+      "sha256_status": "UNKNOWN_IN_THIS_INVENTORY",
+      "status": "FOUND_ACCESSIBLE_HASH_NOT_BOUND_HERE",
+      "n_i": {
+        "locomo_0": 419,
+        "locomo_1": 369,
+        "locomo_2": 663,
+        "locomo_3": 629,
+        "locomo_4": 680,
+        "locomo_5": 675,
+        "locomo_6": 689,
+        "locomo_7": 681,
+        "locomo_8": 509,
+        "locomo_9": 568
+      },
+      "notes": "Drive proof states one conversation is one archive-fit unit. Hash must be bound before a real measurement plan relies on it."
+    }
+  ],
+  "procedure_sources": [
+    {
+      "id": "LME_ADAPTER_V1",
+      "commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "path": "adapters/longmemeval_v52_adapter.py",
+      "git_blob": "16c1349336e143d27d9cac68198cbb50a1e6340b",
+      "role": "archive-local word/char TF-IDF plus latent SVD fit procedure"
+    },
+    {
+      "id": "LME_ADAPTER_V2",
+      "commit": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+      "path": "adapters/longmemeval_v52_adapter_v2.py",
+      "git_blob": "aa0b6f956a9bbc7f27778760c2c6fc708ae72ba1",
+      "role": "accepted identity construction; representation fit aliases V1"
+    },
+    {
+      "id": "T4D_TRANSFER_PROOF",
+      "source_type": "google_drive_file",
+      "drive_file_id": "11cKt4hDPBazhrOSZxSgcT5Dw-w5kdpNi",
+      "role": "mixed96 SVD, centering and LoCoMo archive-fit provenance",
+      "hash_status": "UNKNOWN_IN_THIS_INVENTORY"
+    }
+  ],
+  "state_items": [
+    {
+      "item": "word_tfidf_vocabulary",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "reason": "fit procedure found; serialized fitted vocabulary not located"
+    },
+    {
+      "item": "word_tfidf_idf",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "reason": "fitted transform state required; physical bytes not located"
+    },
+    {
+      "item": "char_tfidf_vocabulary",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "char_tfidf_idf",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "source_latent_svd_components_random_state_5101",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "mixed96_svd_components_random_state_5204",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "mu96_centering_vector",
+      "fit_scope": "archive-local",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "l2_normalization_rule",
+      "fit_scope": "algorithm configuration",
+      "physical_artifact": "SOURCE_CODE_PRESENT",
+      "hash_status": "SOURCE_BOUND_ONLY",
+      "classification": "SCOPE_UNKNOWN",
+      "reason": "not learned state; storage-boundary treatment not yet bound"
+    },
+    {
+      "item": "itq96_fitted_rotation",
+      "fit_scope": "archive-local method state",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "simhash_haar_rotation_or_regeneration_state",
+      "fit_scope": "method state",
+      "physical_artifact": "NOT_BOUND",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "reason": "matrix-storage versus deterministic-regeneration policy not yet bound for real measurement"
+    },
+    {
+      "item": "pq96_codebooks_centroids",
+      "fit_scope": "archive-local candidate arm",
+      "physical_artifact": "REAL_ARCHIVE_ARTIFACT_NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "reason": "synthetic Faiss serializer evidence is not a frozen real-archive codebook"
+    },
+    {
+      "item": "opq_pq96_rotation_and_codebooks",
+      "fit_scope": "archive-local candidate arm",
+      "physical_artifact": "REAL_ARCHIVE_ARTIFACT_NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "rabitq32_index_shared_state",
+      "fit_scope": "archive-local candidate arm",
+      "physical_artifact": "REAL_ARCHIVE_ARTIFACT_NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "persistent_row_or_memory_id_mapping",
+      "fit_scope": "package interface",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "reason": "runtime IDs exist but stored mapping versus implicit/external ordinal has not been bound"
+    },
+    {
+      "item": "offset_lookup_metadata",
+      "fit_scope": "package interface",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN"
+    },
+    {
+      "item": "optional_per_vector_metadata",
+      "fit_scope": "package interface",
+      "physical_artifact": "NOT_LOCATED",
+      "hash_status": "UNKNOWN",
+      "classification": "UNKNOWN",
+      "reason": "if actually stored in package it cannot be subtracted from persistent marginal cost"
+    }
+  ],
+  "physical_copy_policy": {
+    "fit_scope_established": "archive-local",
+    "physical_copy_count": "UNKNOWN",
+    "sharing_population": "N_i_CANDIDATE_NOT_PHYSICALLY_VERIFIED",
+    "effective_cost_status": "NOT_READY"
+  },
+  "search_log": {
+    "drive_root_id": "1uM2bLBC3XQmvbdkTpjhvR6_N6OO7Qyxv",
+    "namespaces_inspected": [
+      "V52_TASK_4C2_CENTERING_GEOMETRY/FINAL_2026-08-27_FULL_470",
+      "V52_TASK_4C3_COORDINATE_AXIS_CAUSAL_PROBE/FINAL_2026-08-28_FULL_470",
+      "V52_TASK_4D_LOCOMO_FROZEN_CROSS_BENCHMARK_REPLICATION_2026-08-29",
+      "canonical main git tree",
+      "research/v52-sign-mechanism-locomo-2026-09-04 git tree",
+      "twelve-byte prereg revision/evidence namespaces"
+    ],
+    "search_terms_or_extensions": [
+      "pkl",
+      "npz",
+      "joblib",
+      "model",
+      "svd",
+      "vectorizer",
+      "idf",
+      "OPQ",
+      "RaBitQ",
+      "codebook",
+      "centroid",
+      "faiss"
+    ],
+    "finding": "No fitted model serialization artifact was positively identified in the inspected stage folders/trees. This is NOT evidence of absence.",
+    "correct_status": "SEARCHED_NOT_LOCATED_UNKNOWN"
+  },
+  "ready_gate": {
+    "ready": false,
+    "blockers": [
+      "fitted model/projector physical artifact identities unresolved or explicitly UNKNOWN",
+      "persistent id/offset/metadata necessity not functionally bound",
+      "physical copy count and sharing population not file/serializer verified",
+      "real adapter and pre-bound serialization/probe plan do not yet exist"
+    ],
+    "forbidden_shortcuts": [
+      "do not refit from raw corpus to fill missing state",
+      "do not infer not-found means absent",
+      "do not create a filled READY plan from placeholders",
+      "do not choose panel points or serialization after seeing candidate measurements"
+    ]
+  }
+}

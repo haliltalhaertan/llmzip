@@ -1,0 +1,114 @@
+{
+ "_label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "realtalk_docs": {
+  "n": 8944,
+  "mean_tok": 21.237477638640428,
+  "median_tok": 14,
+  "p10_tok": 5,
+  "p90_tok": 46,
+  "mean_chars": 111.40731216457961
+ },
+ "realtalk_queries": {
+  "n": 705,
+  "mean_tok": 9.060992907801419,
+  "median_tok": 8,
+  "p10_tok": 5,
+  "p90_tok": 13,
+  "mean_chars": 49.65673758865248
+ },
+ "realtalk_per_archive": {
+  "RT01": {
+   "n_docs": 662,
+   "n_queries": 85
+  },
+  "RT02": {
+   "n_docs": 476,
+   "n_queries": 70
+  },
+  "RT03": {
+   "n_docs": 453,
+   "n_queries": 73
+  },
+  "RT04": {
+   "n_docs": 422,
+   "n_queries": 71
+  },
+  "RT05": {
+   "n_docs": 410,
+   "n_queries": 70
+  },
+  "RT06": {
+   "n_docs": 1548,
+   "n_queries": 74
+  },
+  "RT07": {
+   "n_docs": 1511,
+   "n_queries": 70
+  },
+  "RT08": {
+   "n_docs": 1162,
+   "n_queries": 70
+  },
+  "RT09": {
+   "n_docs": 1044,
+   "n_queries": 63
+  },
+  "RT10": {
+   "n_docs": 1256,
+   "n_queries": 59
+  }
+ },
+ "RT05_vocab": 2630,
+ "RT05_df": {
+  "N": 410,
+  "df1": 1198,
+  "df_le2": 1677,
+  "df_le5": 2143,
+  "frac_vocab_df1": 0.4555133079847909,
+  "median_df": 2
+ },
+ "RT06_vocab": 2348,
+ "RT06_df": {
+  "N": 1548,
+  "df1": 1187,
+  "df_le2": 1552,
+  "df_le5": 1933,
+  "frac_vocab_df1": 0.5055366269165247,
+  "median_df": 1
+ },
+ "perltqa_n_archives": 30,
+ "perltqa_docs_per_archive": {
+  "n_arch": 30,
+  "total_docs": 12288,
+  "min": 293,
+  "median": 408,
+  "max": 546,
+  "mean": 409.6
+ },
+ "perltqa_C_shape_example": [
+  391,
+  96
+ ],
+ "perltqa_n_query_rows": 8265,
+ "perltqa_query_key_sample": "PQ026_PRF_q000",
+ "perltqa_query_val_type": "<class 'dict'>",
+ "perltqa_query_val_keys": [
+  "char",
+  "section",
+  "gold",
+  "qC"
+ ],
+ "perltqa_cache_keys_sample": [
+  "Zhang Xiaohong",
+  "Wang Xiaoming",
+  "Liang Xin",
+  "Cao Lili",
+  "Xu Jia"
+ ],
+ "perltqa_arch_val_type": "<class 'dict'>",
+ "perltqa_arch_val_keys": [
+  "N",
+  "C",
+  "zero_mass"
+ ]
+}

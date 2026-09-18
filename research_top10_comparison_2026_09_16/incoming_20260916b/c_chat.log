@@ -1,0 +1,12 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/c_chat (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Deliverable: `c_chat/CHAT_MAP.md` (only file I wrote; everything else read-only).
+
+Key results:
+
+- **D1**: Their authored work never made the error — MATEMATIK_INCELEME derives sum rho=k with the mean-only caveat inline. The error ("no 96-choice beats chance", "door mathematically closed") appears only in a human-pasted other-agent message (transcript ~21326-21376), and their assistant refuted it same-turn in INCELEME.md with three counterexamples, one identical to ours (coordinate axes, mean still 0.192). Positions converged.
+- **D2**: Fully acknowledged ("sıfırdan büyüğüz demişiz. Anlamsız") and fenced out of conclusions; final decisions use all-question FR@3.
+- **D3**: Direction right — matched-tokenizer BM25 measured (PerLTQA 60.14 beats their 24B 54.82), k1=1.2/1.5 mismatch documented. But "+3pp / −17.2" exist only in one human message: NO-ARTIFACT, no report landing. Cost-profile half still open.
+- **D4**: Their tie position matches ours exactly (uniform-tie unbiased; oracle break is a harsher estimand, not bias proof). Our specific −2.79→−0.45 has no artifact on their side — don't cite them as confirming it.
+- **Anchors reproduce** to 4dp (46.68/49.65/48.51/80.00/88.51) except one definitional mismatch: their qsign_dstd 50.35 vs our replay 49.50 — different scorer definitions, resolve before citing either.
+- Three post-result decisions (shelve thresholds, add penalty family, 24B/48B picks) were all explicitly labeled exploratory; three human over-claims were quietly and correctly dropped from polished reports. Failure log and 11-item obligation list are in the map.

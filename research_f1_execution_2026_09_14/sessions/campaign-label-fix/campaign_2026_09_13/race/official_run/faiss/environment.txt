@@ -1,0 +1,1 @@
+python=3.14.4 numpy=2.5.3 faiss=1.15.0 threads=1 BLAS=0.3.34.106.0 OS=Linux-6.18.33.2-microsoft-standard-WSL2 faiss_path=/home/mdp/muse-work/fpylibs/faiss/__init__.py

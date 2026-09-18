@@ -1,0 +1,52 @@
+{
+  "E": {
+    "LME": {
+      "n": 470,
+      "dnn_median": 18.0,
+      "dnn_mean": 17.948936170212765,
+      "dnn_pct": {
+        "p0": 1.0,
+        "p5": 9.0,
+        "p25": 14.0,
+        "p50": 18.0,
+        "p75": 22.0,
+        "p95": 26.0,
+        "p100": 35.0
+      },
+      "delta_overall_pp": 10.053782505910167,
+      "delta_close_neighbour_pp": 4.834444444444444,
+      "delta_far_neighbour_pp": 15.984848484848488,
+      "effect_close_minus_far_pp": -11.150404040404045,
+      "n_close": 250,
+      "n_far": 220,
+      "sign_FR3_close": 0.5029444444444444,
+      "float_FR3_close": 0.4546,
+      "sign_FR3_far": 0.5866666666666667,
+      "float_FR3_far": 0.42681818181818176,
+      "n_dnn_le16": 181,
+      "delta_dnn_le16_pp": 3.3164518109269494,
+      "delta_dnn_gt16_pp": 14.273356401384083,
+      "effect_le16_minus_gt16_pp": -10.956904590457134,
+      "pearson_r_delta_vs_dnn": 0.17373201572713887,
+      "ols_slope_pp_per_bit": 1.12939564586699,
+      "effect_close_minus_far_CI95": [
+        -17.793890670137415,
+        -4.119428327746694
+      ],
+      "archive_control_note": "LME has 1 question per archive -> within-archive control is degenerate/undefined."
+    }
+  },
+  "D": {
+    "adjacent_pairs": 209187,
+    "gold_gold_adjacent_pairs": 3,
+    "gold_gold_adjacent_rate": 1.4341235354013395e-05,
+    "all_within_archive_pairs": 57176172,
+    "gold_gold_all_pairs": 616,
+    "null_gold_gold_rate_all_pairs": 1.0773718814194136e-05,
+    "enrichment_vs_all_pairs_x": 1.331131394957063,
+    "marginal_p_gold": 0.003825462207369412,
+    "naive_iid_expected_rate": 1.4634161100011655e-05,
+    "enrichment_vs_iid_x": 0.9799834275435149,
+    "note": "LME only; each archive has ~1-2 gold rows so absolute counts are small."
+  }
+}

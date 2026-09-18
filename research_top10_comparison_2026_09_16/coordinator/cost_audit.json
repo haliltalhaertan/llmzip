@@ -1,0 +1,90 @@
+{
+  "n_docs": 8944,
+  "code_total_B": 115008,
+  "raw_text_B": 998654,
+  "bm25_pickle_B": 1450229,
+  "bm25_compact_B": 670511,
+  "per_archive": {
+    "RT01": {
+      "docs": 662,
+      "pickle_index_B": 140402,
+      "compact_index_B": 64558,
+      "raw_text_B": 97839,
+      "vocab": 2462
+    },
+    "RT02": {
+      "docs": 476,
+      "pickle_index_B": 143725,
+      "compact_index_B": 67458,
+      "raw_text_B": 101005,
+      "vocab": 2816
+    },
+    "RT03": {
+      "docs": 453,
+      "pickle_index_B": 136323,
+      "compact_index_B": 64157,
+      "raw_text_B": 95570,
+      "vocab": 2676
+    },
+    "RT04": {
+      "docs": 422,
+      "pickle_index_B": 133730,
+      "compact_index_B": 63453,
+      "raw_text_B": 106365,
+      "vocab": 2382
+    },
+    "RT05": {
+      "docs": 410,
+      "pickle_index_B": 140177,
+      "compact_index_B": 66420,
+      "raw_text_B": 105956,
+      "vocab": 2630
+    },
+    "RT06": {
+      "docs": 1548,
+      "pickle_index_B": 151742,
+      "compact_index_B": 68846,
+      "raw_text_B": 97609,
+      "vocab": 2348
+    },
+    "RT07": {
+      "docs": 1511,
+      "pickle_index_B": 160580,
+      "compact_index_B": 73137,
+      "raw_text_B": 103565,
+      "vocab": 2561
+    },
+    "RT08": {
+      "docs": 1162,
+      "pickle_index_B": 134946,
+      "compact_index_B": 60822,
+      "raw_text_B": 91668,
+      "vocab": 2006
+    },
+    "RT09": {
+      "docs": 1044,
+      "pickle_index_B": 148980,
+      "compact_index_B": 68457,
+      "raw_text_B": 96053,
+      "vocab": 2519
+    },
+    "RT10": {
+      "docs": 1256,
+      "pickle_index_B": 159624,
+      "compact_index_B": 73203,
+      "raw_text_B": 103024,
+      "vocab": 2576
+    }
+  },
+  "ratio_compact_index_over_code": 5.830124860879243,
+  "ratio_compact_plus_text_over_code": 14.513468628269338,
+  "note": "A compact varint index is the fairer BM25 number; pickle inflates it. Either way BM25 costs far more than 12-byte codes, so the worker's qualitative conclusion is unchanged.",
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "failures": [],
+  "verdict": "ACCEPT"
+}

@@ -1,0 +1,12 @@
+{"_labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "_refit_notice": "BEYAN EDILMIS YENIDEN-UYARLAMA (declared re-fit): bu cikti, dondurulmus uretim yapitinin geri kazanimi DEGILDIR; gercek derlem uzerinde temsil hattinin yeniden uyarlanmasindan okunan SERILESMIS BOYUTLARDIR. Dondurulmus yapitin fiziksel serilesmesi hic bulunamadi. Task4F1: sonuc sayisi YOK.",
+
+  "task_boundary": "Task4F1: yalnizca boyut; retrieval/recall/gold/siralama/benchmark yok.",
+  "sha256": {
+    "measure_projector.py": "2bf4603ac61c423d51b6953033b5723dc4676aa9586242145ae3ee68f7c6e04c",
+    "GATE.json": "c2816bc7b8eb8a4922cbae92f2c3d9c984e01797eb9968ed34b586173f1f95bb",
+    "PROJECTOR_BYTES.json": "df7196f259c205e124699ee263026599621e5108d28386531b840690289bb2a2",
+    "PROJECTOR_REPORT_TR.md": "e6a1de5398244204556541f78f08d1736ea6a981a4da71ed39b251a2f034b17d",
+    "README.md": "05885bcf33fca13e21f7d595301f5d06fd4c91118a15e562f002667bb52077d6"
+  }
+}

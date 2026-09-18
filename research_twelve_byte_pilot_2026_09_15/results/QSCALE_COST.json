@@ -1,0 +1,70 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "benchmarks": {
+    "perltqa": {
+      "n_archives": 30,
+      "identity_holds_every_archive": true,
+      "mean_ms": {
+        "sym": 0.007381689889977376,
+        "qscale": 0.003953345973665516,
+        "qscale_bits": 0.022313334435845416,
+        "float64": 0.004330009687691927
+      },
+      "total_index_bytes": {
+        "packed_bits": 147456,
+        "std_array_f32": 11520,
+        "pm1_matrix": 9437184,
+        "float64_docs": 9437184
+      },
+      "index_bits_plus_std_MB": 0.158976,
+      "ram_ratio_vs_float64": 59.36231884057971,
+      "cpu_ratio_qscale_bits_over_sym": 3.0227948841554224,
+      "cpu_ratio_qscale_bits_over_float64": 5.153183490390605
+    },
+    "lme": {
+      "n_archives": 470,
+      "identity_holds_every_archive": true,
+      "mean_ms": {
+        "sym": 0.009761068306149954,
+        "qscale": 0.005404585774274583,
+        "qscale_bits": 0.03155404924751913,
+        "float64": 0.005645008678448961
+      },
+      "total_index_bytes": {
+        "packed_bits": 2779272,
+        "std_array_f32": 180480,
+        "pm1_matrix": 177873408,
+        "float64_docs": 177873408
+      },
+      "index_bits_plus_std_MB": 2.959752,
+      "ram_ratio_vs_float64": 60.09740275536599,
+      "cpu_ratio_qscale_bits_over_sym": 3.2326430117939577,
+      "cpu_ratio_qscale_bits_over_float64": 5.589725551350084
+    },
+    "realtalk": {
+      "n_archives": 10,
+      "identity_holds_every_archive": true,
+      "mean_ms": {
+        "sym": 0.01577999209985137,
+        "qscale": 0.009875016985461116,
+        "qscale_bits": 0.14704500208608806,
+        "float64": 0.010819989256560802
+      },
+      "total_index_bytes": {
+        "packed_bits": 107328,
+        "std_array_f32": 3840,
+        "pm1_matrix": 6868992,
+        "float64_docs": 6868992
+      },
+      "index_bits_plus_std_MB": 0.111168,
+      "ram_ratio_vs_float64": 61.78929188255613,
+      "cpu_ratio_qscale_bits_over_sym": 9.318445862052938,
+      "cpu_ratio_qscale_bits_over_float64": 13.590124592492172
+    }
+  }
+}

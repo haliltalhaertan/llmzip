@@ -1,0 +1,5 @@
+analysis,questions,native_minus_haar_mean_pp,native_minus_haar_median_pp,W_native_better,T,L_native_worse
+all,1535,9.883887612305337,0.0,361,992,182
+remove_top_10_native_positive_contributors,1525,9.292962285172914,0.0,351,992,182
+remove_top_25_native_positive_contributors,1510,8.391898996615028,0.0,336,992,182
+remove_top_50_native_positive_contributors,1485,6.849675073999119,0.0,311,992,182

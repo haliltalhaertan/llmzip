@@ -1,0 +1,27 @@
+{
+  "status": "DESIGN_DRAFT_NOT_MEASUREMENT_OR_AUTHORIZATION",
+  "base_main": "5ec3db60c03edde490374bf9cd7c3e56dd6bcd00",
+  "sources": [
+    {
+      "commit": "89d3169adb65a9a2ab7f289997d7c49eb8ccf25c",
+      "git_path": "docs/v52/V52_TWELVE_BYTE_BUDGET_HR_DECISION_2026-09-11.md",
+      "local_path": "source/V52_TWELVE_BYTE_BUDGET_HR_DECISION_2026-09-11.md",
+      "sha256": "1832f4b368024edba4a7f5d2d3f925e9c9b1c53367f1a4ed54b7586b2ec8cc26",
+      "bytes": 4893
+    },
+    {
+      "commit": "89d3169adb65a9a2ab7f289997d7c49eb8ccf25c",
+      "git_path": "docs/v52/V52_TWELVE_BYTE_BUDGET_HR_DECISION_2026-09-11.md.sha256",
+      "local_path": "source/V52_TWELVE_BYTE_BUDGET_HR_DECISION_2026-09-11.md.sha256",
+      "sha256": "5f12f9cfa2bf1e5d22dcf2084d5453d68899b75daa6979c6816655be6616ca0e",
+      "bytes": 115
+    }
+  ],
+  "revision_base_commit": "d936455e2938a37da2b1a934f912cc2705b07ad3",
+  "revision_base_contract_sha256": "8155bf9a22284697404c0a1770facaced96878be327d2e846e5a57e20e68d040",
+  "reporting_selection": {
+    "headline": "archive_weighted",
+    "secondary": "vector_weighted",
+    "selection_phase": "design_revision_before_new_measurements"
+  }
+}

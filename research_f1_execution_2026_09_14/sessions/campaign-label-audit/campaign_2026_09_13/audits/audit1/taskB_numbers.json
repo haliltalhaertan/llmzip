@@ -1,0 +1,24 @@
+{
+  "n": 470,
+  "mean_floatY_uncentered": 0.4401063829787234,
+  "mean_floatC_centered": 0.4415957446808511,
+  "mean_signC_native": 0.5419751773049645,
+  "mean_itq": 0.3761411347517731,
+  "native_minus_anchor_abs": 0.0,
+  "centering_gain_pp": 0.14893617021277117,
+  "binarization_gain_pp": 10.037943262411336,
+  "total_vs_uncentered_pp": 10.186879432624107,
+  "wtl_sign_vs_floatC": [
+    122,
+    304,
+    44,
+    0.0
+  ],
+  "wtl_floatC_vs_floatU": [
+    7,
+    458,
+    5,
+    0.0
+  ],
+  "D96_from_constants": -15.925851063829777
+}

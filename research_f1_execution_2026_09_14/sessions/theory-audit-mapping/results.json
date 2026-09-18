@@ -1,0 +1,526 @@
+{
+ "status": "ALL-PASS",
+ "n_pass": 87,
+ "n_total": 87,
+ "failures": [],
+ "checks": [
+  {
+   "name": "A.sign-table A=0 B=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.sign-table A=0 B=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.sign-table A=0 B=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.sign-table A=1 B=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.sign-table A=1 B=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.sign-table A=1 B=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.sign-table A=2 B=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.sign-table A=2 B=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.sign-table A=2 B=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.cos-table t=1/4 D=-2",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/4 D=-1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/4 D=0",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/4 D=1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/4 D=2",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/2 D=-2",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/2 D=-1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/2 D=0",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/2 D=1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1/2 D=2",
+   "pass": true,
+   "detail": "got T"
+  },
+  {
+   "name": "A.cos-table t=3/4 D=-2",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=3/4 D=-1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=3/4 D=0",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=3/4 D=1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=3/4 D=2",
+   "pass": true,
+   "detail": "got L"
+  },
+  {
+   "name": "A.cos-table t=1 D=-2",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1 D=-1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1 D=0",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=1 D=1",
+   "pass": true,
+   "detail": "got T"
+  },
+  {
+   "name": "A.cos-table t=1 D=2",
+   "pass": true,
+   "detail": "got L"
+  },
+  {
+   "name": "A.cos-table t=3/2 D=-2",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=3/2 D=-1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=3/2 D=0",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=3/2 D=1",
+   "pass": true,
+   "detail": "got L"
+  },
+  {
+   "name": "A.cos-table t=3/2 D=2",
+   "pass": true,
+   "detail": "got L"
+  },
+  {
+   "name": "A.cos-table t=10 D=-2",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=10 D=-1",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=10 D=0",
+   "pass": true,
+   "detail": "got W"
+  },
+  {
+   "name": "A.cos-table t=10 D=1",
+   "pass": true,
+   "detail": "got L"
+  },
+  {
+   "name": "A.cos-table t=10 D=2",
+   "pass": true,
+   "detail": "got L"
+  },
+  {
+   "name": "A.dominance t=1/4 D=-2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/4 D=-1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/4 D=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/4 D=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/4 D=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/2 D=-2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/2 D=-1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/2 D=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/2 D=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1/2 D=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/4 D=-2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/4 D=-1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/4 D=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/4 D=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/4 D=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1 D=-2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1 D=-1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1 D=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1 D=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=1 D=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/2 D=-2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/2 D=-1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/2 D=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/2 D=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=3/2 D=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=10 D=-2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=10 D=-1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=10 D=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=10 D=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.dominance t=10 D=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "A.equal-norms",
+   "pass": true,
+   "detail": "1+2t^2 coin-free"
+  },
+  {
+   "name": "B.params-C1",
+   "pass": true,
+   "detail": "(Fraction(-3, 1), Fraction(4, 1), Fraction(5, 1), Fraction(10, 1))"
+  },
+  {
+   "name": "B.params-C2",
+   "pass": true,
+   "detail": "(Fraction(-2, 1), Fraction(2, 1), Fraction(2, 1), Fraction(10, 1))"
+  },
+  {
+   "name": "C.exact-nonmonotone-pattern",
+   "pass": true,
+   "detail": "(1, -1, -1, 1, 1, 1, 1)"
+  },
+  {
+   "name": "C.contains-both-directions",
+   "pass": true,
+   "detail": "(1, -1, -1, 1, 1, 1, 1)"
+  },
+  {
+   "name": "C.not-monotone",
+   "pass": true,
+   "detail": "(1, -1, -1, 1, 1, 1, 1)"
+  },
+  {
+   "name": "C.zero-case",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C.zero-verdict",
+   "pass": true,
+   "detail": "positive beats exact-zero"
+  },
+  {
+   "name": "C.n1-root",
+   "pass": true,
+   "detail": "n1=0 iff z=3/4"
+  },
+  {
+   "name": "D.doc-only-pattern",
+   "pass": true,
+   "detail": "(1, 1, 1, 1, 1, 1, 1)"
+  },
+  {
+   "name": "D.query-only-single-flip",
+   "pass": true,
+   "detail": "(-1, -1, 1, 1, 1, 1, 1)"
+  },
+  {
+   "name": "D.three-arms-differ",
+   "pass": true,
+   "detail": "joint=(1, -1, -1, 1, 1, 1, 1) doc=(1, 1, 1, 1, 1, 1, 1) qry=(-1, -1, 1, 1, 1, 1, 1)"
+  },
+  {
+   "name": "E.global-scale-proportionality",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "E.positive-global-scale",
+   "pass": true,
+   "detail": "cosine invariant under common +scale"
+  },
+  {
+   "name": "F.sign-invariant",
+   "pass": true,
+   "detail": "t>0 preserves every coordinate sign"
+  },
+  {
+   "name": "G.identity-form",
+   "pass": true,
+   "detail": "raw(t)=s(t)/||q(t)||, common +factor"
+  },
+  {
+   "name": "H.numpy-pattern-matches-exact",
+   "pass": true,
+   "detail": "(1, -1, -1, 1, 1, 1, 1)"
+  },
+  {
+   "name": "H.numpy-version",
+   "pass": true,
+   "detail": "numpy 2.5.3 python 3.14.4"
+  }
+ ],
+ "counterexample": {
+  "qc": [
+   -1,
+   -1
+  ],
+  "qg": [
+   -1,
+   -1
+  ],
+  "C1": [
+   2,
+   1
+  ],
+  "G1": [
+   -3,
+   -1
+  ],
+  "C2": [
+   1,
+   1
+  ],
+  "G2": [
+   -3,
+   1
+  ],
+  "params_C1": [
+   "-3",
+   "4",
+   "5",
+   "10"
+  ],
+  "params_C2": [
+   "-2",
+   "2",
+   "2",
+   "10"
+  ],
+  "z_grid": [
+   "1/64",
+   "1/16",
+   "1/4",
+   "1",
+   "4",
+   "16",
+   "64"
+  ],
+  "joint_pattern_C1_minus_C2": [
+   1,
+   -1,
+   -1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "doc_only_pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "query_only_pattern": [
+   -1,
+   -1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "env": {
+  "threads": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1"
+  },
+  "dont_write_bytecode": null,
+  "python": "3.14.4",
+  "numpy": "2.5.3"
+ }
+}

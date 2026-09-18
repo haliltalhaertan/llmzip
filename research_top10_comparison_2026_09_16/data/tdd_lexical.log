@@ -1,0 +1,3 @@
+[16:10:58] bm25: n=705 hit@10=0.5418 recall@10=0.4316 ndcg@10=0.3428 expHit@10=0.4316
+[16:11:24] tfidf: n=705 hit@10=0.5291 recall@10=0.4191 ndcg@10=0.3166 expHit@10=0.4191
+[16:11:24] LEXICAL DONE elapsed=49.1s

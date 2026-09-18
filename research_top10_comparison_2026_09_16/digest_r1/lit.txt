@@ -1,0 +1,75 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn).
+NO paid APIs, NO git, NO pip. Write ONLY in YOUR directory. Everything else READ-ONLY.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+*** READ THIS FIRST, FULLY, BEFORE ANYTHING ELSE ***
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/FINDINGS_DIGEST.md
+It is the coordinator's re-derived summary of every measured result to date. Your job builds
+on it. Do not restate it back to me; use it.
+
+ALREADY-SCANNED SOURCES — do not rescan, do not re-report as new:
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/DO_NOT_RESCAN.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/GAP_TO_100.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/DO_NOT_REPEAT.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/results/MASTER_LEDGER.md
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_literature_20260915/REPORT.md  (+ sources/, citations.json)
+
+HONESTY RULES (violations are caught — the coordinator re-derives everything):
+  - Never invent a citation, a number, an author, a year, or a result. If you cannot verify
+    it from a file on this disk or from your own reasoning, mark it UNVERIFIED and say so.
+  - You have NO web access. Anything you "recall" about a paper is from memory and MUST be
+    labelled RECALLED-FROM-MEMORY, with an explicit statement of what would have to be
+    checked before it could be cited. Never present recalled content as a verified quote.
+  - Distinguish: MEASURED HERE / RECALLED-FROM-MEMORY / CONJECTURE. Tag every claim.
+  - "exit 0" is not evidence. An argument that cannot be wrong is not an argument.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/lit
+YOUR ROLE: literature analyst. No experiments. Your product is a map of what is already known
+about the SPECIFIC phenomena we just measured, so we stop rediscovering old results.
+
+A second reviewer has already pointed us at four items. Treat these as STARTING POINTS,
+state what you actually know about each, and flag what must be verified:
+  1. Husbands, Simon, Ding — "Term norm distribution and its effects on Latent Semantic
+     Indexing" (2005). Directly about low-norm/rare terms being weak in LSI and about
+     term normalization as the remedy. This is the closest known prior art to our IDF^p arm.
+  2. Ando & Lee — "Iterative Residual Rescaling" (SIGIR 2001). LSI distorted by imbalanced
+     topic distributions; compensates for that imbalance.
+  3. Guo et al. — ScaNN anisotropic quantization (ICML 2020). Optimizes the inner-product
+     error that MATTERS FOR RETRIEVAL rather than generic reconstruction error.
+  4. Drineas et al. — statistical leverage scores (JMLR 2012), the identity rho_i = sum_j U_ij^2.
+
+QUESTIONS TO ANSWER, each with its own verdict and confidence:
+  Q1. Our strongest negative result is that ITQ does NOT beat a RANDOM rotation, and that
+      BOTH rotations are catastrophic on RealTalk (-14 to -17 pp) while nearly free on
+      PerLTQA (-1 pp). ITQ is a well-known method that normally HELPS binary codes. What in
+      the literature explains a regime where rotation HURTS? Candidate directions to assess:
+      axis-aligned/sparse data where coordinates are individually meaningful; the difference
+      between reconstruction-optimal and retrieval-optimal objectives; bit-balance being a
+      bad proxy for retrieval; the fact that our features come from TF-IDF/SVD rather than
+      from a dense neural embedding (ITQ's usual setting). Which of these is supported by
+      prior work, and which is our own conjecture?
+  Q2. Is "all-but-the-top" (discarding leading components) a known technique, what is it
+      normally applied to, and does prior work report benchmark-dependent sign reversals?
+  Q3. Term normalization / IDF power: what does prior work say about how far you can push
+      rare-term weighting before it backfires? We measured a SIGNIFICANT gain on RealTalk's
+      rare band (+4.78 FR@3) and a SIGNIFICANT LOSS on PerLTQA (-1.76 FR@3) from the SAME
+      arm. Is this reversal predicted by anything known?
+  Q4. Hybrid lexical+dense fusion (RRF) is beating both of its inputs for us (+5.67 pp over
+      our codes). What is the established understanding of WHY, and — critically — what is
+      the known honest storage accounting for a BM25 inverted index in such comparisons? Do
+      published hybrid results typically charge themselves for the index? This matters: our
+      whole claim is a 12-byte code, and the fusion partner costs ~5.8x that.
+  Q5. Our most uncomfortable number: an ORACLE that knows gold and picks the better of our
+      two scorers per query saturates at ~55% on RealTalk. Is there prior work on the
+      intrinsic ceiling of extremely-low-bit codes for retrieval — a rate-distortion or
+      information-theoretic bound relating bits/document to achievable recall at K? If such
+      a bound exists, what does it say about 96 bits over ~900 documents per archive?
+
+DELIVERABLE: `LITERATURE_MAP.md` with, per question: a verdict (KNOWN / PARTIALLY KNOWN /
+OPEN), the evidence with its tag (MEASURED HERE / RECALLED-FROM-MEMORY / CONJECTURE), and
+what we would have to read to settle it. Then two closing lists:
+  - "WE ARE REDISCOVERING": phenomena we measured that are already established.
+  - "GENUINELY OPEN": what our data shows that is not obviously covered by prior work.
+Also `VERIFY_QUEUE.md`: the ranked list of sources the coordinator should fetch (with web
+access) to confirm your recalled claims, most decision-relevant first, with one line on
+what each would settle.

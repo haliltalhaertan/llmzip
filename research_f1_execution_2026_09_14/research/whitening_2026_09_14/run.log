@@ -1,0 +1,40 @@
+  LME done (n=470)
+  PerLTQA done (n=8265)
+  REALTALK done (n=705)
+  LoCoMo done (n=1535)
+
+=== CONTROL: sign - cosine must reproduce the frozen headlines ===
+  LME        +10.053783  (ref +10.053783)  diff -4.94e-07  PASS
+  PerLTQA     -6.274728  (ref -6.274728)  diff +1.63e-07  PASS
+  REALTALK    +5.300077  (ref +5.300077)  diff -7.40e-08  PASS
+  LoCoMo      +6.655046  (ref +6.655046)  diff +2.75e-07  PASS
+
+=== ALL ARMS, FR@3 ===
+  bench           sign     cosine     rawdot   whitened   softsign       rank
+  LME         0.542134   0.441596   0.456312   0.557447   0.568085   0.559043
+  PerLTQA     0.488945   0.551692   0.554134   0.565755   0.562048   0.564193
+  REALTALK    0.225535   0.172534   0.170879   0.229100   0.241829   0.232846
+  LoCoMo      0.237907   0.171356   0.163322   0.262499   0.280045   0.280819
+
+=== THE QUESTION: does any 384-byte float arm beat the 12-byte sign arm? ===
+  bench           sign    cosine vs sign    rawdot vs sign  whitened vs sign  softsign vs sign      rank vs sign
+  LME         0.542134          -10.0538           -8.5822           +1.5313           +2.5952           +1.6909
+  PerLTQA     0.488945           +6.2747           +6.5190           +7.6811           +7.3104           +7.5249
+  REALTALK    0.225535           -5.3001           -5.4656           +0.3565           +1.6294           +0.7311
+  LoCoMo      0.237907           -6.6550           -7.4585           +2.4592           +4.2138           +4.2913
+  positive => that FLOAT arm BEATS the sign arm (sign advantage erased)
+
+=== WHITENING: how much of the sign advantage does it explain? ===
+  LME       sign-cos=+10.0538 pp  whit-cos=+11.5851 pp  closed=  115.2%  whit-sign= +1.5313 pp
+  PerLTQA   sign-cos= -6.2747 pp  whit-cos= +1.4063 pp  closed=  -22.4%  whit-sign= +7.6811 pp
+  REALTALK  sign-cos= +5.3001 pp  whit-cos= +5.6566 pp  closed=  106.7%  whit-sign= +0.3565 pp
+  LoCoMo    sign-cos= +6.6550 pp  whit-cos= +9.1142 pp  closed=  137.0%  whit-sign= +2.4592 pp
+
+=== PerLTQA sections ===
+  section                      sign     cosine     rawdot   whitened   softsign       rank
+  profile                  0.506857   0.303303   0.345345   0.474474   0.615616   0.579580
+  social_relationship      0.749309   0.757109   0.787915   0.793839   0.838863   0.838863
+  dialogues                0.085179   0.100195   0.096980   0.105022   0.098589   0.101043
+  events                   0.691755   0.815693   0.813162   0.819144   0.796595   0.801887
+
+WROTE baseline_strength.json

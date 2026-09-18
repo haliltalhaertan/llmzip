@@ -1,0 +1,36 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "benchmark": "realtalk",
+  "lambda": 1.0,
+  "n_shuffles": 20,
+  "n_queries": 705,
+  "objective_J": {
+    "zero": 123557.1,
+    "learned": 126663.9,
+    "shuffled": 121528.81999999999,
+    "archives_where_learned_beats_zero": 10,
+    "n_archives": 10
+  },
+  "hamming_separation": {
+    "near_zero": 36.374750000000006,
+    "far_zero": 49.07665,
+    "sep_zero": 12.7019,
+    "near_learn": 35.160349999999994,
+    "far_learn": 49.24614999999999,
+    "sep_learn": 14.085799999999997
+  },
+  "hit10_percent": {
+    "zero": 46.68085106382979,
+    "learned": 44.53956996510189,
+    "shuffled_mean": 44.061549030166056,
+    "shuffled_sd": 0.7860473669669268,
+    "shuffled_min": 42.9272205336035,
+    "shuffled_max": 45.49003714961161,
+    "shuffles_worse_than_learned": 14
+  }
+}

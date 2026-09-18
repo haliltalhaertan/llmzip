@@ -1,0 +1,226 @@
+{
+  "expectations": {
+    "EXPECTED_V9_FAIL": [
+      "test_ambient_hashlib_substitution_is_refused"
+    ],
+    "NEW_SUITE_ACCEPTANCE": [
+      "test_ambient_sysmodules_cannot_substitute_code",
+      "test_concurrent_consumption_is_isolated",
+      "test_consumption_revalidates_after_corruption",
+      "test_duplicate_physical_copy_rows_are_refused",
+      "test_inflated_denominator_plan_is_refused",
+      "test_valid_plan_end_to_end"
+    ],
+    "OLD_SUITE_EXPECTED": [
+      "test_context_exposes_no_snapshot_field",
+      "test_exact_loader_ignores_preloaded_same_name",
+      "test_exact_v8_chain_loads",
+      "test_fresh_snapshot_reruns_each_access",
+      "test_preflight_discards_validation_snapshot",
+      "test_public_signature",
+      "test_v8_hashes_match"
+    ],
+    "TARGET_EXPECTED_FAIL": {
+      "integrated-v10": [],
+      "v9": [
+        "test_ambient_hashlib_substitution_is_refused"
+      ],
+      "variant-retained-snapshot": [
+        "test_ambient_hashlib_substitution_is_refused",
+        "test_consumption_revalidates_after_corruption"
+      ],
+      "variant-unsafe-loader": [
+        "test_ambient_hashlib_substitution_is_refused",
+        "test_ambient_sysmodules_cannot_substitute_code"
+      ]
+    }
+  },
+  "surprises": [],
+  "targets": {
+    "integrated-v10": {
+      "gate": "/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_integration_v10_2026_09_13/static_storage_preflight_v10.py",
+      "new_suite": {
+        "crashed": false,
+        "gate_sha256": "f84e7db87fa477ddabd76f3852f9fc02e76d6410bbb070f56bc0f80200be7428",
+        "outcomes": {
+          "test_ambient_hashlib_substitution_is_refused": "pass",
+          "test_ambient_sysmodules_cannot_substitute_code": "pass",
+          "test_concurrent_consumption_is_isolated": "pass",
+          "test_consumption_revalidates_after_corruption": "pass",
+          "test_duplicate_physical_copy_rows_are_refused": "pass",
+          "test_inflated_denominator_plan_is_refused": "pass",
+          "test_valid_plan_end_to_end": "pass"
+        },
+        "returncode": 0,
+        "run_counts": {
+          "test_ambient_hashlib_substitution_is_refused": 1,
+          "test_ambient_sysmodules_cannot_substitute_code": 1,
+          "test_concurrent_consumption_is_isolated": 1,
+          "test_consumption_revalidates_after_corruption": 1,
+          "test_duplicate_physical_copy_rows_are_refused": 1,
+          "test_inflated_denominator_plan_is_refused": 1,
+          "test_valid_plan_end_to_end": 1
+        },
+        "stderr": "test_ambient_hashlib_substitution_is_refused (test_security_regression.SecurityRegression.test_ambient_hashlib_substitution_is_refused)\n[EXPECTED-V9-FAIL] Ambient hashlib must not vouch for swapped bytes. ... ok\ntest_ambient_sysmodules_cannot_substitute_code (test_security_regression.SecurityRegression.test_ambient_sysmodules_cannot_substitute_code)\n[V10-ACCEPTANCE] Planted v8_runtime/v8_snapshot must be inert. ... ok\ntest_concurrent_consumption_is_isolated (test_security_regression.SecurityRegression.test_concurrent_consumption_is_isolated)\n[V10-ACCEPTANCE] Barrier-started threads must not cross-bind. ... ok\ntest_consumption_revalidates_after_corruption (test_security_regression.SecurityRegression.test_consumption_revalidates_after_corruption)\n[V10-ACCEPTANCE] No validated snapshot may survive file corruption. ... ok\ntest_duplicate_physical_copy_rows_are_refused (test_security_regression.SecurityRegression.test_duplicate_physical_copy_rows_are_refused)\n[V10-ACCEPTANCE] A repeated physical_copy_id must not double-count. ... ok\ntest_inflated_denominator_plan_is_refused (test_security_regression.SecurityRegression.test_inflated_denominator_plan_is_refused)\n[V10-ACCEPTANCE] Guard-shaped but anchor-violating N must refuse. ... ok\ntest_valid_plan_end_to_end (test_security_regression.SecurityRegression.test_valid_plan_end_to_end)\n[V10-ACCEPTANCE] Real entrypoint accepts a realistic valid set. ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 2.832s\n\nOK\n",
+        "stdout": ""
+      },
+      "old_tests": {
+        "crashed": false,
+        "gate_sha256": "f84e7db87fa477ddabd76f3852f9fc02e76d6410bbb070f56bc0f80200be7428",
+        "outcomes": {
+          "test_context_exposes_no_snapshot_field": "pass",
+          "test_exact_loader_ignores_preloaded_same_name": "pass",
+          "test_exact_v8_chain_loads": "pass",
+          "test_fresh_snapshot_reruns_each_access": "pass",
+          "test_preflight_discards_validation_snapshot": "pass",
+          "test_public_signature": "pass",
+          "test_v8_hashes_match": "pass"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"test_context_exposes_no_snapshot_field (test_consumption_gate_v9_frozen.Tests.test_context_exposes_no_snapshot_field)\": \"pass\",\n  \"test_exact_loader_ignores_preloaded_same_name (test_consumption_gate_v9_frozen.Tests.test_exact_loader_ignores_preloaded_same_name)\": \"pass\",\n  \"test_exact_v8_chain_loads (test_consumption_gate_v9_frozen.Canonical.test_exact_v8_chain_loads)\": \"pass\",\n  \"test_fresh_snapshot_reruns_each_access (test_consumption_gate_v9_frozen.Tests.test_fresh_snapshot_reruns_each_access)\": \"pass\",\n  \"test_preflight_discards_validation_snapshot (test_consumption_gate_v9_frozen.Tests.test_preflight_discards_validation_snapshot)\": \"pass\",\n  \"test_public_signature (test_consumption_gate_v9_frozen.Tests.test_public_signature)\": \"pass\",\n  \"test_v8_hashes_match (test_consumption_gate_v9_frozen.Canonical.test_v8_hashes_match)\": \"pass\"\n}\n",
+        "unparsed": false
+      },
+      "preflight_fn": "preflight_longmemeval_v10"
+    },
+    "v9": {
+      "gate": "/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_integration_v9_2026_09_13/consumption_gate_v9.py",
+      "new_suite": {
+        "crashed": false,
+        "gate_sha256": "a5c98065c66df4c3ccb114f61d4e4f30f73b99a3a7d6443cddd3e0b092e66dc6",
+        "outcomes": {
+          "test_ambient_hashlib_substitution_is_refused": "fail",
+          "test_ambient_sysmodules_cannot_substitute_code": "pass",
+          "test_concurrent_consumption_is_isolated": "pass",
+          "test_consumption_revalidates_after_corruption": "pass",
+          "test_duplicate_physical_copy_rows_are_refused": "pass",
+          "test_inflated_denominator_plan_is_refused": "pass",
+          "test_valid_plan_end_to_end": "pass"
+        },
+        "returncode": 1,
+        "run_counts": {
+          "test_ambient_hashlib_substitution_is_refused": 1,
+          "test_ambient_sysmodules_cannot_substitute_code": 1,
+          "test_concurrent_consumption_is_isolated": 1,
+          "test_consumption_revalidates_after_corruption": 1,
+          "test_duplicate_physical_copy_rows_are_refused": 1,
+          "test_inflated_denominator_plan_is_refused": 1,
+          "test_valid_plan_end_to_end": 1
+        },
+        "stderr": "test_ambient_hashlib_substitution_is_refused (test_security_regression.SecurityRegression.test_ambient_hashlib_substitution_is_refused)\n[EXPECTED-V9-FAIL] Ambient hashlib must not vouch for swapped bytes. ... FAIL\ntest_ambient_sysmodules_cannot_substitute_code (test_security_regression.SecurityRegression.test_ambient_sysmodules_cannot_substitute_code)\n[V10-ACCEPTANCE] Planted v8_runtime/v8_snapshot must be inert. ... ok\ntest_concurrent_consumption_is_isolated (test_security_regression.SecurityRegression.test_concurrent_consumption_is_isolated)\n[V10-ACCEPTANCE] Barrier-started threads must not cross-bind. ... ok\ntest_consumption_revalidates_after_corruption (test_security_regression.SecurityRegression.test_consumption_revalidates_after_corruption)\n[V10-ACCEPTANCE] No validated snapshot may survive file corruption. ... ok\ntest_duplicate_physical_copy_rows_are_refused (test_security_regression.SecurityRegression.test_duplicate_physical_copy_rows_are_refused)\n[V10-ACCEPTANCE] A repeated physical_copy_id must not double-count. ... ok\ntest_inflated_denominator_plan_is_refused (test_security_regression.SecurityRegression.test_inflated_denominator_plan_is_refused)\n[V10-ACCEPTANCE] Guard-shaped but anchor-violating N must refuse. ... ok\ntest_valid_plan_end_to_end (test_security_regression.SecurityRegression.test_valid_plan_end_to_end)\n[V10-ACCEPTANCE] Real entrypoint accepts a realistic valid set. ... ok\n\n======================================================================\nFAIL: test_ambient_hashlib_substitution_is_refused (test_security_regression.SecurityRegression.test_ambient_hashlib_substitution_is_refused)\n[EXPECTED-V9-FAIL] Ambient hashlib must not vouch for swapped bytes.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_security_regression_2026_09_13/test_security_regression.py\", line 183, in test_ambient_hashlib_substitution_is_refused\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 7 tests in 3.645s\n\nFAILED (failures=1)\n",
+        "stdout": ""
+      },
+      "old_tests": {
+        "crashed": false,
+        "gate_sha256": "a5c98065c66df4c3ccb114f61d4e4f30f73b99a3a7d6443cddd3e0b092e66dc6",
+        "outcomes": {
+          "test_context_exposes_no_snapshot_field": "pass",
+          "test_exact_loader_ignores_preloaded_same_name": "pass",
+          "test_exact_v8_chain_loads": "pass",
+          "test_fresh_snapshot_reruns_each_access": "pass",
+          "test_preflight_discards_validation_snapshot": "pass",
+          "test_public_signature": "pass",
+          "test_v8_hashes_match": "pass"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"test_context_exposes_no_snapshot_field (test_consumption_gate_v9_frozen.Tests.test_context_exposes_no_snapshot_field)\": \"pass\",\n  \"test_exact_loader_ignores_preloaded_same_name (test_consumption_gate_v9_frozen.Tests.test_exact_loader_ignores_preloaded_same_name)\": \"pass\",\n  \"test_exact_v8_chain_loads (test_consumption_gate_v9_frozen.Canonical.test_exact_v8_chain_loads)\": \"pass\",\n  \"test_fresh_snapshot_reruns_each_access (test_consumption_gate_v9_frozen.Tests.test_fresh_snapshot_reruns_each_access)\": \"pass\",\n  \"test_preflight_discards_validation_snapshot (test_consumption_gate_v9_frozen.Tests.test_preflight_discards_validation_snapshot)\": \"pass\",\n  \"test_public_signature (test_consumption_gate_v9_frozen.Tests.test_public_signature)\": \"pass\",\n  \"test_v8_hashes_match (test_consumption_gate_v9_frozen.Canonical.test_v8_hashes_match)\": \"pass\"\n}\n",
+        "unparsed": false
+      },
+      "preflight_fn": "preflight_longmemeval_v9"
+    },
+    "variant-retained-snapshot": {
+      "gate": "/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_security_regression_2026_09_13/mutation_variants/variant_retained_snapshot.py",
+      "new_suite": {
+        "crashed": false,
+        "gate_sha256": "a195bc8c14877bc9a2ddb403786f7139fc017fbdb5b9e890ee16ac454a9bdec1",
+        "outcomes": {
+          "test_ambient_hashlib_substitution_is_refused": "fail",
+          "test_ambient_sysmodules_cannot_substitute_code": "pass",
+          "test_concurrent_consumption_is_isolated": "pass",
+          "test_consumption_revalidates_after_corruption": "fail",
+          "test_duplicate_physical_copy_rows_are_refused": "pass",
+          "test_inflated_denominator_plan_is_refused": "pass",
+          "test_valid_plan_end_to_end": "pass"
+        },
+        "returncode": 1,
+        "run_counts": {
+          "test_ambient_hashlib_substitution_is_refused": 1,
+          "test_ambient_sysmodules_cannot_substitute_code": 1,
+          "test_concurrent_consumption_is_isolated": 1,
+          "test_consumption_revalidates_after_corruption": 1,
+          "test_duplicate_physical_copy_rows_are_refused": 1,
+          "test_inflated_denominator_plan_is_refused": 1,
+          "test_valid_plan_end_to_end": 1
+        },
+        "stderr": "test_ambient_hashlib_substitution_is_refused (test_security_regression.SecurityRegression.test_ambient_hashlib_substitution_is_refused)\n[EXPECTED-V9-FAIL] Ambient hashlib must not vouch for swapped bytes. ... FAIL\ntest_ambient_sysmodules_cannot_substitute_code (test_security_regression.SecurityRegression.test_ambient_sysmodules_cannot_substitute_code)\n[V10-ACCEPTANCE] Planted v8_runtime/v8_snapshot must be inert. ... ok\ntest_concurrent_consumption_is_isolated (test_security_regression.SecurityRegression.test_concurrent_consumption_is_isolated)\n[V10-ACCEPTANCE] Barrier-started threads must not cross-bind. ... ok\ntest_consumption_revalidates_after_corruption (test_security_regression.SecurityRegression.test_consumption_revalidates_after_corruption)\n[V10-ACCEPTANCE] No validated snapshot may survive file corruption. ... FAIL\ntest_duplicate_physical_copy_rows_are_refused (test_security_regression.SecurityRegression.test_duplicate_physical_copy_rows_are_refused)\n[V10-ACCEPTANCE] A repeated physical_copy_id must not double-count. ... ok\ntest_inflated_denominator_plan_is_refused (test_security_regression.SecurityRegression.test_inflated_denominator_plan_is_refused)\n[V10-ACCEPTANCE] Guard-shaped but anchor-violating N must refuse. ... ok\ntest_valid_plan_end_to_end (test_security_regression.SecurityRegression.test_valid_plan_end_to_end)\n[V10-ACCEPTANCE] Real entrypoint accepts a realistic valid set. ... ok\n\n======================================================================\nFAIL: test_ambient_hashlib_substitution_is_refused (test_security_regression.SecurityRegression.test_ambient_hashlib_substitution_is_refused)\n[EXPECTED-V9-FAIL] Ambient hashlib must not vouch for swapped bytes.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_security_regression_2026_09_13/test_security_regression.py\", line 183, in test_ambient_hashlib_substitution_is_refused\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_consumption_revalidates_after_corruption (test_security_regression.SecurityRegression.test_consumption_revalidates_after_corruption)\n[V10-ACCEPTANCE] No validated snapshot may survive file corruption.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_security_regression_2026_09_13/test_security_regression.py\", line 107, in test_consumption_revalidates_after_corruption\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 7 tests in 2.531s\n\nFAILED (failures=2)\n",
+        "stdout": ""
+      },
+      "old_tests": {
+        "crashed": false,
+        "gate_sha256": "a195bc8c14877bc9a2ddb403786f7139fc017fbdb5b9e890ee16ac454a9bdec1",
+        "outcomes": {
+          "test_context_exposes_no_snapshot_field": "pass",
+          "test_exact_loader_ignores_preloaded_same_name": "pass",
+          "test_exact_v8_chain_loads": "pass",
+          "test_fresh_snapshot_reruns_each_access": "pass",
+          "test_preflight_discards_validation_snapshot": "pass",
+          "test_public_signature": "pass",
+          "test_v8_hashes_match": "pass"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"test_context_exposes_no_snapshot_field (test_consumption_gate_v9_frozen.Tests.test_context_exposes_no_snapshot_field)\": \"pass\",\n  \"test_exact_loader_ignores_preloaded_same_name (test_consumption_gate_v9_frozen.Tests.test_exact_loader_ignores_preloaded_same_name)\": \"pass\",\n  \"test_exact_v8_chain_loads (test_consumption_gate_v9_frozen.Canonical.test_exact_v8_chain_loads)\": \"pass\",\n  \"test_fresh_snapshot_reruns_each_access (test_consumption_gate_v9_frozen.Tests.test_fresh_snapshot_reruns_each_access)\": \"pass\",\n  \"test_preflight_discards_validation_snapshot (test_consumption_gate_v9_frozen.Tests.test_preflight_discards_validation_snapshot)\": \"pass\",\n  \"test_public_signature (test_consumption_gate_v9_frozen.Tests.test_public_signature)\": \"pass\",\n  \"test_v8_hashes_match (test_consumption_gate_v9_frozen.Canonical.test_v8_hashes_match)\": \"pass\"\n}\n",
+        "unparsed": false
+      },
+      "preflight_fn": "preflight_longmemeval_v9"
+    },
+    "variant-unsafe-loader": {
+      "gate": "/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_security_regression_2026_09_13/mutation_variants/variant_unsafe_loader.py",
+      "new_suite": {
+        "crashed": false,
+        "gate_sha256": "59c0d0d67af26694e7cddb76c2462f23eb70b572af0ead1b70d718c2ab2a243a",
+        "outcomes": {
+          "test_ambient_hashlib_substitution_is_refused": "fail",
+          "test_ambient_sysmodules_cannot_substitute_code": "fail",
+          "test_concurrent_consumption_is_isolated": "pass",
+          "test_consumption_revalidates_after_corruption": "pass",
+          "test_duplicate_physical_copy_rows_are_refused": "pass",
+          "test_inflated_denominator_plan_is_refused": "pass",
+          "test_valid_plan_end_to_end": "pass"
+        },
+        "returncode": 1,
+        "run_counts": {
+          "test_ambient_hashlib_substitution_is_refused": 1,
+          "test_ambient_sysmodules_cannot_substitute_code": 1,
+          "test_concurrent_consumption_is_isolated": 1,
+          "test_consumption_revalidates_after_corruption": 1,
+          "test_duplicate_physical_copy_rows_are_refused": 1,
+          "test_inflated_denominator_plan_is_refused": 1,
+          "test_valid_plan_end_to_end": 1
+        },
+        "stderr": "test_ambient_hashlib_substitution_is_refused (test_security_regression.SecurityRegression.test_ambient_hashlib_substitution_is_refused)\n[EXPECTED-V9-FAIL] Ambient hashlib must not vouch for swapped bytes. ... FAIL\ntest_ambient_sysmodules_cannot_substitute_code (test_security_regression.SecurityRegression.test_ambient_sysmodules_cannot_substitute_code)\n[V10-ACCEPTANCE] Planted v8_runtime/v8_snapshot must be inert. ... FAIL\ntest_concurrent_consumption_is_isolated (test_security_regression.SecurityRegression.test_concurrent_consumption_is_isolated)\n[V10-ACCEPTANCE] Barrier-started threads must not cross-bind. ... ok\ntest_consumption_revalidates_after_corruption (test_security_regression.SecurityRegression.test_consumption_revalidates_after_corruption)\n[V10-ACCEPTANCE] No validated snapshot may survive file corruption. ... ok\ntest_duplicate_physical_copy_rows_are_refused (test_security_regression.SecurityRegression.test_duplicate_physical_copy_rows_are_refused)\n[V10-ACCEPTANCE] A repeated physical_copy_id must not double-count. ... ok\ntest_inflated_denominator_plan_is_refused (test_security_regression.SecurityRegression.test_inflated_denominator_plan_is_refused)\n[V10-ACCEPTANCE] Guard-shaped but anchor-violating N must refuse. ... ok\ntest_valid_plan_end_to_end (test_security_regression.SecurityRegression.test_valid_plan_end_to_end)\n[V10-ACCEPTANCE] Real entrypoint accepts a realistic valid set. ... ok\n\n======================================================================\nFAIL: test_ambient_hashlib_substitution_is_refused (test_security_regression.SecurityRegression.test_ambient_hashlib_substitution_is_refused)\n[EXPECTED-V9-FAIL] Ambient hashlib must not vouch for swapped bytes.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_security_regression_2026_09_13/test_security_regression.py\", line 183, in test_ambient_hashlib_substitution_is_refused\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_ambient_sysmodules_cannot_substitute_code (test_security_regression.SecurityRegression.test_ambient_sysmodules_cannot_substitute_code)\n[V10-ACCEPTANCE] Planted v8_runtime/v8_snapshot must be inert.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/mdp/muse-work/static-integrated/drafts/v52/static_storage_security_regression_2026_09_13/test_security_regression.py\", line 131, in test_ambient_sysmodules_cannot_substitute_code\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 7 tests in 2.762s\n\nFAILED (failures=2)\n",
+        "stdout": ""
+      },
+      "old_tests": {
+        "crashed": false,
+        "gate_sha256": "59c0d0d67af26694e7cddb76c2462f23eb70b572af0ead1b70d718c2ab2a243a",
+        "outcomes": {
+          "test_context_exposes_no_snapshot_field": "pass",
+          "test_exact_loader_ignores_preloaded_same_name": "pass",
+          "test_exact_v8_chain_loads": "pass",
+          "test_fresh_snapshot_reruns_each_access": "pass",
+          "test_preflight_discards_validation_snapshot": "pass",
+          "test_public_signature": "pass",
+          "test_v8_hashes_match": "pass"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"test_context_exposes_no_snapshot_field (test_consumption_gate_v9_frozen.Tests.test_context_exposes_no_snapshot_field)\": \"pass\",\n  \"test_exact_loader_ignores_preloaded_same_name (test_consumption_gate_v9_frozen.Tests.test_exact_loader_ignores_preloaded_same_name)\": \"pass\",\n  \"test_exact_v8_chain_loads (test_consumption_gate_v9_frozen.Canonical.test_exact_v8_chain_loads)\": \"pass\",\n  \"test_fresh_snapshot_reruns_each_access (test_consumption_gate_v9_frozen.Tests.test_fresh_snapshot_reruns_each_access)\": \"pass\",\n  \"test_preflight_discards_validation_snapshot (test_consumption_gate_v9_frozen.Tests.test_preflight_discards_validation_snapshot)\": \"pass\",\n  \"test_public_signature (test_consumption_gate_v9_frozen.Tests.test_public_signature)\": \"pass\",\n  \"test_v8_hashes_match (test_consumption_gate_v9_frozen.Canonical.test_v8_hashes_match)\": \"pass\"\n}\n",
+        "unparsed": false
+      },
+      "preflight_fn": "preflight_longmemeval_v9"
+    }
+  },
+  "verdict": "MATRIX-AS-EXPECTED"
+}

@@ -1,0 +1,78 @@
+{
+  "cells": 1344,
+  "violations": [],
+  "witnesses": {
+    "prior_example": {
+      "d": [
+        2,
+        2,
+        0,
+        0
+      ],
+      "s": 2,
+      "K": 3,
+      "golds": [
+        0,
+        1
+      ],
+      "emax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "emin": [
+        2,
+        2,
+        0,
+        0
+      ],
+      "joint_max": "3/4",
+      "joint_min": "1/2",
+      "avg_individual_max": "1",
+      "baseline_original": "1/2",
+      "recall_change_interval": [
+        "0",
+        "1/4"
+      ]
+    },
+    "weighted_counterexample": {
+      "n": 2,
+      "m": 2,
+      "K": 1,
+      "weights": {
+        "0": "1",
+        "1": "2"
+      },
+      "corner_all_golds_at_L": "3/2",
+      "deviation_e10": "2",
+      "corner_optimal": false
+    }
+  },
+  "edge": {
+    "K_equals_n": "1",
+    "all_gold": "2/3",
+    "s_zero_singleton": "3/4"
+  },
+  "sweep_A": {
+    "b": 2,
+    "s": 1,
+    "n": 3,
+    "cells": 1344
+  },
+  "sweep_B": {
+    "b": 3,
+    "s": 2,
+    "n": 3,
+    "cells": 3024
+  },
+  "sweep_C": {
+    "cells": 32
+  },
+  "negative_control": {
+    "claim": "avg of per-gold maxima is always jointly attainable",
+    "verdict": "REJECTED"
+  },
+  "total_cells": 4400,
+  "status": "PASS"
+}

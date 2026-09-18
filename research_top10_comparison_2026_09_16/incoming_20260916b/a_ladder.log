@@ -1,0 +1,9 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/a_ladder (cwd default)
+muse: workspace trust: trusted source=run-flag
+Audit complete. Deliverable: `a_ladder/LADDER_AUDIT.md` (+ `q4_repro.py`, `q4_result.json`), all labelled [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]. Everything else was treated read-only; no invented numbers.
+
+Central finding (Q1): the "48 byte" numbers are **real packed bits — VERIFIED**. Their pipeline `packbits` the codes, gates `nbytes == n·bits/8` per shard, and scores qscale/hamming/asym through a C scorer that reads only packed planes. On-disk payloads are exactly 12/24/48 B/doc on all benchmarks; float arms are correctly labelled and never presented as ladder rungs.
+
+Other results: Q2 — solver confound is real but disclosed, control kept; dimension effects separated (solver cost ≈ 0 to −1.8pp). Q3 — ladder rises only on LoCoMo; PerLTQA 48 is worse than 24 *and* 12 on FR@3 (−2.95pp, SIG), LME 48 is worst-of-three on Hit@10 (−2.55pp, SIG) — "more bits is better" is contradicted on 2/3 benches. Q4 — independent pure-numpy re-scoring: 0 top-10 diffs, 0.0 metric diffs; all 66 cells re-aggregate to ≤2.2e-14. Q5 — zero RealTalk 24/48 numbers anywhere; promise kept, which is trust evidence. Q6 — original96 reproduces frozen anchors to +0.0000pp (FR@3 diffs are 2-decimal rounding). Nothing in the package contradicts our anchors or the retraction — the 384-bit-vs-float gap persists (SIG on LME/PerLTQA).
+
+Must-not-quote list includes: any general "48 beats 24" claim, the un-retraction, any RealTalk 24/48 number, payload bytes as total system cost (~10GB LME service bytes, encoder-dominated), and LoCoMo values as confirmed findings (gold disputed).

@@ -1,0 +1,33 @@
+{
+  "schema": "V52_STATIC_STORAGE_INTEGRATION_V7_HASHES_V1",
+  "parent_commit": "695e3c78aee16a719bcfdd622a6527d448f71a47",
+  "target_branch": "fix/v52-static-storage-plan-prep-v7-2026-09-13",
+  "namespace": "drafts/v52/static_storage_integration_v7_2026_09_13",
+  "self_excluded": "HASHES.json",
+  "files": {
+    "DEPENDENCY_BINDINGS_V7.json": {
+      "sha256": "ddecb760cc4e078de11b3190fd169fda3b36cc49b4f1548834c12724b02aac0f",
+      "bytes": 1447
+    },
+    "V7_DISPOSITION.md": {
+      "sha256": "cc522040f71c1b4a61d13469758e3d6c58108886292a0caefcbf2ef46e8ea079",
+      "bytes": 5228
+    },
+    "V7_GITHUB_APPLY_RECEIPT.md": {
+      "sha256": "8aef7467eaaff5ae601c9146644921f4cec69c1b75c57d8357b40ed6fbfbf16c",
+      "bytes": 1125
+    },
+    "V7_TEST_RECEIPT.md": {
+      "sha256": "8662a7c62ce2eda718ea5abff5742112404185768210ab0c146aa540573a4b17",
+      "bytes": 1238
+    },
+    "storage_semantic_gate_v7.py": {
+      "sha256": "f7c6749f4648e6fc0f4034dca1823bfe03a2f70429533407217d43cfbbdff4e5",
+      "bytes": 19068
+    },
+    "test_storage_semantic_gate_v7.py": {
+      "sha256": "6201245d6d866662a0ff5e60142ad8888e59932c7393aa577d322daaa5eaa8ef",
+      "bytes": 4677
+    }
+  }
+}

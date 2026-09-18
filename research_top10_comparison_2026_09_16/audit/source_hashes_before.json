@@ -1,0 +1,78 @@
+{
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/EXPORT_DONE.json": {
+    "bytes": 335,
+    "sha256": "77f500b75410aaa5d0d6c4ce74d702384796867244bc01053d51a88a08085e02"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT01.json": {
+    "bytes": 136993,
+    "sha256": "d653e0f34b28335c463031eef253597de798f1f9b35179169e6ddbe0aec44e98"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT02.json": {
+    "bytes": 128726,
+    "sha256": "57fdb71812af3228a3da88f641f2d9bbc9fe4bd61916d62928e8798976720c7c"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT03.json": {
+    "bytes": 122247,
+    "sha256": "89171c99d5572b7d2aa3c1641495fc1185d4495842c5a66eada75ce44b7bb98a"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT04.json": {
+    "bytes": 131606,
+    "sha256": "598ad2bf887cadc80252aabf024174eef38e40ae816fbcdc328e91c654274614"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT05.json": {
+    "bytes": 130763,
+    "sha256": "1a8293f0dd48e80c02fddc9bbabd56f36c492873d1242715751d4edd23ea3aea"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT06.json": {
+    "bytes": 171441,
+    "sha256": "06ab534e6361203cfd3106e8f7fda4758b2bd98cddb33389ce23b02db1349125"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT07.json": {
+    "bytes": 174834,
+    "sha256": "63f97ef2415f6213daf14ca9c22a5eaddb382a9fb3bf801b0edffb865b5d1883"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT08.json": {
+    "bytes": 148360,
+    "sha256": "fd18aa1436aadabec39e8cbd01043d8e4e9fed9a3349d3a07fc1e49defeff7db"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT09.json": {
+    "bytes": 147837,
+    "sha256": "39e7507f17d92c9eac0b950a32fba8568e8f518137992602fd44af8817a91da0"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/RT10.json": {
+    "bytes": 162573,
+    "sha256": "49239d159dd73ef9045c219150fe9f3bc2416a161be45445d24762113d99f467"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/exclusions.json": {
+    "bytes": 7350,
+    "sha256": "92701bed18303a5df995e034db193714476b92be0c0b9c0fe1d972fba0c28bb8"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/export_realtalk.py": {
+    "bytes": 8992,
+    "sha256": "07dfc0d1a5a4edbe741d27ae8e0a17b0245b7271b2fa4accde5f2f0f293a8055"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/lexical_summary.json": {
+    "bytes": 1223,
+    "sha256": "1fc41139f9702bf7ad39e4891efb47cd2f0632d753c97fbdea3bcbaeec085d6d"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/manifest.json": {
+    "bytes": 6990,
+    "sha256": "0f8b952d621bc3f1b65a056ed8e12c63520ea84b994952393c2c512badf10342"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/per_query.jsonl": {
+    "bytes": 748881,
+    "sha256": "2289b12932313fad6875701cfc4792d12aaac8aa35270547af4f5ea68d456fa9"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/per_query_bm25.jsonl": {
+    "bytes": 368868,
+    "sha256": "144c193e5610bb7aa0476bb2ce4c4603b54f8690f7e3e1dd23a6dc0e43b778e9"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/per_query_tfidf.jsonl": {
+    "bytes": 380013,
+    "sha256": "56d5985a168217e8e3f7618839f5004b65df63a788f770aa9addf87fd8d6e793"
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/../data/run_lexical.py": {
+    "bytes": 8138,
+    "sha256": "182663ebe53c11789fd7b79cec0253125a19961cfd7d2db308ee7fc625fec6ac"
+  }
+}

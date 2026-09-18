@@ -1,0 +1,7 @@
+rows=9440
+counts {'LME': 470, 'PerLTQA': 8265, 'REALTALK': 705}
+structural mismatches=0
+tie-order mismatches=0
+spot sample=30
+spot mismatches=0
+AUDIT PASS

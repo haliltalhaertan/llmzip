@@ -1,0 +1,76 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn/faiss available).
+NO paid APIs, NO web, NO git, NO pip installs. Write ONLY inside YOUR directory (below).
+Everything else is READ-ONLY - never modify an input file.
+
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+EVIDENCE DISCIPLINE (the coordinator will independently re-derive your numbers; wrong claims will be caught):
+- Never average across benchmarks. PerLTQA / LME / RealTalk stay separate. Always report n.
+- Report the metric the analysis actually computes; never rename FR@3 into Hit@10 or vice versa.
+- exit code 0 is NOT proof of correctness. A test that cannot fail proves nothing.
+- If a gate fails, STOP and report the failure. Do NOT adjust the gate to pass. Do NOT quietly
+  drop queries/archives to make numbers look better. Any exclusion must be declared with a count
+  and a reason, decided BEFORE seeing the resulting scores.
+- If something is missing or impossible, write it down as a blocker. NEVER invent data or numbers.
+- Save partial artifacts as you go. Budget ~25 minutes.
+
+SHARED DEFINITIONS (use exactly these; do not re-invent):
+- Deterministic top-K tie rule: sort by score DESC, then ascending SHA256("top10-r1|"+archive_id+"|"+str(row)),
+  then ascending row. Return exactly K ids, no duplicates. Gold-unaware.
+- Hit@K = 1 if any gold row is in the K returned ids, else 0. Mean over queries.
+- FR@3 (fractional evidence recall @3) = |gold INTERSECT top3| / |gold|. Mean over queries.
+- Paired archive-clustered bootstrap, 20000 reps, seed 20260916, for any contrast CI.
+  RealTalk has only 10 archive clusters -> CIs are wide and exploratory, say so.
+A reference implementation of the tie rule + metrics you may import READ-ONLY:
+/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/audit_baseline_lib.py
+(functions: det_top10(scores, archive_id, k), hrn(top, gold, k), expected_hit, pack_signs_bool, decode_pm1)
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ideas_r1/firststage
+
+TASK: A proposal says "let the small code fetch candidates, then re-read the ORIGINAL TEXT of those
+candidates to pick the final order". Before anyone writes a reranker we must answer the prior question:
+WHICH first stage should feed it? The coordinator already measured the perfect-reranker ceiling and it is
+high (RealTalk FR@3 22.41% now vs 61.30% ceiling at 100 candidates), so the pool matters enormously.
+An uncomfortable fact must be tested head-on: plain BM25 currently beats every 12-byte arm on RealTalk
+(Hit@10 54.18% vs 49.65%), so our code may not be the right first stage at all.
+
+DATA (read-only): RealTalk canonical export WITH texts, 10 archives / 705 valid queries:
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT01.json .. RT10.json
+Cached 96-dim C/QC for the code arms:
+  /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT01.pkl .. RT10.pkl
+Existing lexical per-query results you may use as a cross-check (do not just copy them - re-derive):
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/per_query_bm25_corrected.jsonl
+
+FIRST-STAGE ARMS (all on the same 705 queries, same deterministic tie rule):
+  CODE     qscale on the existing 12-byte codes (sigma = per-archive doc-column std, ddof=0, floor 1e-12)
+  BM25     k1=1.5, b=0.75, idf=log((N-df+0.5)/(df+0.5)+1), lowercase \w+ tokens, per-archive DOCUMENTS-ONLY fit
+  RRF      Reciprocal Rank Fusion of CODE and BM25: score = 1/(60+rank_code) + 1/(60+rank_bm25).
+           Fix k=60 BEFORE running (standard default); do NOT tune it afterwards.
+  UNION    take top-(M/2) from each of CODE and BM25, dedupe (a pool, not a ranking - report pool recall only)
+
+PRIMARY MEASUREMENT - pool quality at M in {10, 20, 50, 100, 200, 500}:
+  (a) POOL HIT@M  = is at least one gold row inside the M candidates
+  (b) POOL EVIDENCE RECALL@M = |gold INTERSECT pool| / |gold|   (multi-gold matters here)
+  (c) PERFECT-RERANKER CEILING on FR@3 = min(3, |gold INTERSECT pool|)/|gold|
+      -> the maximum FR@3 any reranker over that pool could ever reach.
+  Also report each arm's OWN achieved Hit@10 and FR@3 (no reranker), for reference.
+
+SECONDARY - complementarity (this is the real decision input):
+  Per query, does CODE find gold that BM25 misses, and vice versa? Report the 2x2 table at M=10 and M=100:
+  both-find / code-only / bm25-only / neither. An ORACLE-UNION upper bound (either one finds it) is a
+  gold-using bound, NOT a deployable method - label it as such.
+
+COST ACCOUNTING (mandatory, or the comparison is dishonest):
+  - CODE: 12 bytes/doc + per-archive sigma array. Report totals for all 8944 RealTalk docs.
+  - BM25: measure the ACTUAL inverted-index size you build (postings + vocabulary + doc lengths) in bytes,
+    per archive and total. Do not estimate - measure the real serialized structure and say how you serialized it.
+  - Report query-time cost for each arm (wall time per query, mean and p95).
+  State clearly that BM25 also needs the raw text kept, while the 12-byte code does not.
+
+CONTRASTS: BM25 minus CODE, RRF minus CODE, RRF minus BM25 on pool Hit@100 and on ceiling-FR@3,
+with the paired archive-clustered bootstrap (10 clusters - wide CIs, exploratory only).
+
+DELIVERABLES: `firststage.py`, `per_query.jsonl` (all arms, all M, replayable), `RESULTS.json`, `REPORT.md`.
+REPORT.md must answer one question directly: for a reranking architecture on RealTalk, is the best first
+stage the 12-byte CODE, BM25, or their fusion - and at what true storage cost for each. If fusion wins on
+quality but loses on bytes, say both facts side by side. Do not declare a winner without the byte column.

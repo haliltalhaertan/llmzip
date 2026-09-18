@@ -1,0 +1,9 @@
+{
+  "archive": "RT01",
+  "kind": "docs",
+  "done_texts": 495,
+  "encode_s": 271.7969391345978,
+  "elapsed_s": 272.0575633049011,
+  "rate_texts_per_s": 1.8212125624964042,
+  "peak_rss_bytes": 3459530752
+}

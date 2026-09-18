@@ -1,0 +1,67 @@
+{
+ "term_C96": [],
+ "term_mixed96": [],
+ "term_cache_results": [],
+ "term_Frozen_Representation": [],
+ "term_fitted": [],
+ "term_npz": [
+  {
+   "mimeType": "application/x-zip",
+   "parents": [
+    "165dg6bpCg61j44iZIjUDJ8vjI-h1Mk1X"
+   ],
+   "size": "45224",
+   "id": "1wAZzK5XmaIXWp4rdkQR6szqZpusWahs_",
+   "name": "topobathy.npz",
+   "modifiedTime": "2026-08-20T21:23:02.000Z"
+  },
+  {
+   "mimeType": "application/x-zip",
+   "parents": [
+    "165dg6bpCg61j44iZIjUDJ8vjI-h1Mk1X"
+   ],
+   "size": "174061",
+   "id": "1BOZ2py4V7cK2F33yleUG3m68iOwcD91D",
+   "name": "jacksboro_fault_dem.npz",
+   "modifiedTime": "2026-08-20T21:23:02.000Z"
+  },
+  {
+   "mimeType": "application/x-zip",
+   "parents": [
+    "165dg6bpCg61j44iZIjUDJ8vjI-h1Mk1X"
+   ],
+   "size": "22845",
+   "id": "1EqEEKmL3LNzHWjfz-GBC7nMo-ZNgOvYh",
+   "name": "goog.npz",
+   "modifiedTime": "2026-08-20T21:23:02.000Z"
+  },
+  {
+   "mimeType": "application/x-zip",
+   "parents": [
+    "172M5geE_yqofiHIr63IJY41j5tAVubbg"
+   ],
+   "size": "366",
+   "id": "1fElre6PZ9UonlUpH790oirJCdqQUHkRF",
+   "name": "py2-objarr.npz",
+   "modifiedTime": "2026-08-20T21:22:31.000Z"
+  },
+  {
+   "mimeType": "application/x-zip",
+   "parents": [
+    "172M5geE_yqofiHIr63IJY41j5tAVubbg"
+   ],
+   "size": "453",
+   "id": "173uygyvn1fZz8DboJixWxwIF-V6zZiNp",
+   "name": "py3-objarr.npz",
+   "modifiedTime": "2026-08-20T21:22:31.000Z"
+  }
+ ],
+ "shared_folder_1_children": [
+  {
+   "id": "1BmytjWFbMf07nXVJzcCt4pJDOknBcD-P",
+   "name": "Stellaris Galaxy Edition.(v.3.14.15)-Oyunindirvip.zip",
+   "mimeType": "application/x-zip-compressed",
+   "size": "7082271855"
+  }
+ ]
+}

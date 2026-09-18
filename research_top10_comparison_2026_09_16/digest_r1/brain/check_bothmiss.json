@@ -1,0 +1,37 @@
+{
+ "_label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "total": 705,
+ "both_miss": 328,
+ "both_miss_rate": 46.52,
+ "by_band": {
+  "common": {
+   "n": 133,
+   "both_miss": 124,
+   "miss_in100": 41,
+   "miss_out100": 83
+  },
+  "rare": {
+   "n": 412,
+   "both_miss": 111,
+   "miss_in100": 72,
+   "miss_out100": 39
+  },
+  "mid": {
+   "n": 153,
+   "both_miss": 86,
+   "miss_in100": 43,
+   "miss_out100": 43
+  },
+  "no_shared": {
+   "n": 7,
+   "both_miss": 7,
+   "miss_in100": 2,
+   "miss_out100": 5
+  }
+ },
+ "bothmiss_reachability": {
+  "in_top100": 158,
+  "outside_top100": 170,
+  "frac_unreachable_at_100": 0.518
+ }
+}

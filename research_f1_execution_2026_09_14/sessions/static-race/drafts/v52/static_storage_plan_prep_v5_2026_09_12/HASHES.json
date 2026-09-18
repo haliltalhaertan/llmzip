@@ -1,0 +1,10 @@
+{
+  "namespace": "drafts/v52/static_storage_plan_prep_v5_2026_09_12",
+  "repairs": "81928414eaeb0e442d0750a56fd268025bc05722",
+  "files": {
+    "CONSUMPTION_BOUNDARY_V5.md": "94e96438b56e2b6efc1f06eafa5ab572cfc085c33ad397c5285b7e17641e9075",
+    "V5_REPAIR_DISPOSITION.md": "756c3039e03da7fc63f0dc8f829b202c91e6120e268c29f8bd6ef04b9bf17e4f",
+    "storage_adapter_preflight_v5.py": "cea4b9ffface08866f1a02c69acc81b353af09707f069aeb8603e08aff849cd1",
+    "test_storage_adapter_preflight_v5.py": "379a573640ae40385120d81a742fd6cd4ba2083bb87cb4d505480e66b08f8212"
+  }
+}

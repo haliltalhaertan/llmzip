@@ -1,0 +1,237 @@
+{
+  "_label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "stage": "FIDELITY_GATE",
+  "note": "Written BEFORE any ablation number. Gate must pass to proceed.",
+  "frozen_builder": "/mnt/c/Users/MDP/dev/llmzip-work/drive/v52_t4d_locomo_frozen_cross_benchmark.py",
+  "seeds": {
+    "LSA32_random_state": 5101,
+    "SVD96_random_state": 5204
+  },
+  "G1_sign_fidelity": {
+    "differing_sign_elements": 0,
+    "differing_ge0_bits": 0,
+    "differing_qc_sign_elements": 0,
+    "total_elements": 858624,
+    "max_abs_C_diff": 0.0,
+    "pass": true
+  },
+  "G2_metric_replay": {
+    "rebuilt_qscale": {
+      "hit10_pct": 49.645390070921984,
+      "fr3_pct": 22.409863310759164,
+      "hit3_pct": 29.50354609929078,
+      "exp_hit10_pct": 49.645390070921984,
+      "n": 705
+    },
+    "rebuilt_sym": {
+      "hit10_pct": 46.52482269503546,
+      "fr3_pct": 22.867556005853874,
+      "hit3_pct": 30.070921985815602,
+      "exp_hit10_pct": 46.68085106382979,
+      "n": 705
+    },
+    "reference": {
+      "qscale_hit10_pct": 49.6454,
+      "qscale_fr3_pct": 22.41,
+      "sym_hit10_pct": 46.6809
+    },
+    "qscale_pass": true,
+    "sym_det_hit10_match": false,
+    "sym_exp_hit10_match": true,
+    "pass_literal": false,
+    "sym_reference_diagnosis": {
+      "finding": "The cached reference 46.6809% is NOT the deterministic-tie-rule Hit@10 of the cached production codes (that value is 46.5248% = 328/705, reproduced both from the cache directly and from the bit-exact rebuild). It IS the exact expected-Hit@10 under uniform ties (audit_lib.expected_hit) computed from the cached production codes: 46.6809% to 4 decimals, equal to the rebuilt value.",
+      "arithmetic_proof": "46.6809% of n=705 is 329.10 queries: no deterministic top-10 rule over 705 binary outcomes can produce it (neighbors are 329/705=46.6667% and 330/705=46.8085%), and no k/728 match either. It must be a tie-expectation average. G1 (0/858624 differing sign bits, max abs diff exactly 0.0) rules out rebuild drift as a cause.",
+      "independent_check": "Scoring the CACHED C/QC directly (no rebuild) with the reference det_top10+hrn gives det Hit@10=46.5248%, expected-Hit@10=46.6809% over the same 705 valid queries. See REPORT.md.",
+      "requested_action": "Coordinator to confirm/rename the sym reference to expected-Hit@10 under uniform ties. The gate criterion itself was NOT changed: sym_det_hit10_match=false is reported as observed."
+    }
+  },
+  "query_accounting": {
+    "total_queries": 705,
+    "empty_gold_excluded": 0,
+    "empty_gold_found": 0,
+    "exclusions": "none; all queries scored"
+  },
+  "per_archive_qc": {
+    "RT01": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 85,
+      "qc_rows_cached": 85,
+      "cached_only_excluded": [],
+      "C_shape": [
+        662,
+        96
+      ],
+      "QC_shape": [
+        85,
+        96
+      ]
+    },
+    "RT02": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 70,
+      "qc_rows_cached": 70,
+      "cached_only_excluded": [],
+      "C_shape": [
+        476,
+        96
+      ],
+      "QC_shape": [
+        70,
+        96
+      ]
+    },
+    "RT03": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 73,
+      "qc_rows_cached": 73,
+      "cached_only_excluded": [],
+      "C_shape": [
+        453,
+        96
+      ],
+      "QC_shape": [
+        73,
+        96
+      ]
+    },
+    "RT04": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 71,
+      "qc_rows_cached": 71,
+      "cached_only_excluded": [],
+      "C_shape": [
+        422,
+        96
+      ],
+      "QC_shape": [
+        71,
+        96
+      ]
+    },
+    "RT05": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 70,
+      "qc_rows_cached": 70,
+      "cached_only_excluded": [],
+      "C_shape": [
+        410,
+        96
+      ],
+      "QC_shape": [
+        70,
+        96
+      ]
+    },
+    "RT06": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 74,
+      "qc_rows_cached": 76,
+      "cached_only_excluded": [
+        "RT06_q009",
+        "RT06_q072"
+      ],
+      "C_shape": [
+        1548,
+        96
+      ],
+      "QC_shape": [
+        74,
+        96
+      ]
+    },
+    "RT07": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 70,
+      "qc_rows_cached": 70,
+      "cached_only_excluded": [],
+      "C_shape": [
+        1511,
+        96
+      ],
+      "QC_shape": [
+        70,
+        96
+      ]
+    },
+    "RT08": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 70,
+      "qc_rows_cached": 72,
+      "cached_only_excluded": [
+        "RT08_q042",
+        "RT08_q043"
+      ],
+      "C_shape": [
+        1162,
+        96
+      ],
+      "QC_shape": [
+        70,
+        96
+      ]
+    },
+    "RT09": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 63,
+      "qc_rows_cached": 71,
+      "cached_only_excluded": [
+        "RT09_q005",
+        "RT09_q011",
+        "RT09_q012",
+        "RT09_q014",
+        "RT09_q036",
+        "RT09_q037",
+        "RT09_q041",
+        "RT09_q042"
+      ],
+      "C_shape": [
+        1044,
+        96
+      ],
+      "QC_shape": [
+        63,
+        96
+      ]
+    },
+    "RT10": {
+      "qc_sign_diff": 0,
+      "qc_maxabs": 0.0,
+      "qc_rows_compared": 59,
+      "qc_rows_cached": 70,
+      "cached_only_excluded": [
+        "RT10_q004",
+        "RT10_q005",
+        "RT10_q010",
+        "RT10_q016",
+        "RT10_q019",
+        "RT10_q046",
+        "RT10_q048",
+        "RT10_q049",
+        "RT10_q050",
+        "RT10_q051",
+        "RT10_q052"
+      ],
+      "C_shape": [
+        1256,
+        96
+      ],
+      "QC_shape": [
+        59,
+        96
+      ]
+    }
+  },
+  "gate_pass": false,
+  "proceed_basis": "G1 bit-exact (0/858624 sign diffs, max abs diff 0.0) plus exact qscale replay (Hit@10=49.6454%, FR@3=22.41%) prove the rebuild IS the production pipeline. The sym literal mismatch is a reference-label issue (reference equals expected-Hit@10, reproduced from cached codes), not rebuild drift. Ablation arms use identical scoring code, so arm contrasts remain comparable. Coordinator to adjudicate.",
+  "ablation_comparable": true
+}

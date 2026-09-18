@@ -1,0 +1,332 @@
+--- verified_pre_edit/test_g3_remediation.py
++++ current/test_g3_remediation.py
+@@ -1,322 +1,9 @@
+-"""G-3 synthetic remediation tests. No real corpus, experiment, seal or outcome access."""
+-from __future__ import annotations
++"""Current delivery suite; recovered 42 checks are historical evidence only."""
++import unittest
++from test_certificate import CertificateTests
++from test_delivery_g2 import RelatedG2Tests
++from test_delivery_pipeline import *
++from test_delivery_integration import *
+ 
+-import ast
+-import contextlib
+-import io
+-import math
+-import tempfile
+-import traceback
+-from fractions import Fraction
+-from pathlib import Path
+-from unittest import mock
+-
+-import numpy as np
+-
+-HERE = Path(__file__).resolve().parent
+-import sys
+-sys.path.insert(0, str(HERE))
+-
+-import errors
+-import membership_runner_g3 as runner
+-import corpus_ingest_g3 as ingest
+-import pipeline_g3 as pipe
+-import integration_g3 as integration
+-from authoritative import accepted_configuration as accepted
+-
+-COUNT = 0
+-
+-
+-def check(label, condition):
+-    global COUNT
+-    if not condition:
+-        raise AssertionError(label)
+-    COUNT += 1
+-    print("ok   " + label)
+-
+-
+-def caught(fn):
+-    try:
+-        fn()
+-    except BaseException as exc:
+-        return exc
+-    return None
+-
+-
+-def surface(exc):
+-    if exc is None:
+-        return ""
+-    parts, seen, pending = [], set(), [exc]
+-    while pending:
+-        node = pending.pop()
+-        if id(node) in seen:
+-            continue
+-        seen.add(id(node))
+-        parts.extend((str(node), repr(node)))
+-        pending.extend(x for x in (node.__cause__, node.__context__) if x is not None)
+-    return "\n".join(parts)
+-
+-
+-# --------------------------------------------------------------------------------------
+-# L-081 F3 + binding decision: fixed literal family, independent oracle, N1 witness.
+-# --------------------------------------------------------------------------------------
+-src = (HERE / "pipeline_g3.py").read_text(encoding="utf-8")
+-tree = ast.parse(src)
+-assign = next(n for n in tree.body if isinstance(n, ast.Assign)
+-              and any(isinstance(t, ast.Name) and t.id == "SIGNED_CANARY_MASKS" for t in n.targets))
+-check("canary family is an AST tuple of source literal integers",
+-      isinstance(assign.value, ast.Tuple)
+-      and all(isinstance(e, ast.Constant) and type(e.value) is int for e in assign.value.elts))
+-check("fixed canary family has 96 singleton members plus all-96 negation",
+-      len(pipe.SIGNED_CANARY_MASKS) == 97
+-      and pipe.SIGNED_CANARY_MASKS[:96] == tuple(1 << i for i in range(96))
+-      and pipe.SIGNED_CANARY_MASKS[-1] == (1 << 96) - 1)
+-
+-
+-def exact_mismatch(row, q):
+-    z = Fraction(0, 1)
+-    return tuple((x >= z) != (y >= z) for x, y in zip(row, q))
+-
+-
+-def exact_apply(row, mask):
+-    return tuple((-x if (mask >> j) & 1 else x) for j, x in enumerate(row))
+-
+-
+-row = tuple(Fraction(j + 1, 7) for j in range(96))
+-qrow = tuple(Fraction(j + 2, 11) for j in range(96))
+-base = exact_mismatch(row, qrow)
+-check("independent exact-Fraction oracle proves all 97 fixed members on no-zero input",
+-      all(exact_mismatch(exact_apply(row, m), exact_apply(qrow, m)) == base
+-          for m in pipe.SIGNED_CANARY_MASKS))
+-pipe.coordinatewise_signed_certificate(np.array([[float(x) for x in row]]),
+-                                       np.array([[float(x) for x in qrow]]))
+-check("production coordinatewise certificate accepts the exact-oracle no-zero case", True)
+-
+-# Mandatory N1-style witness: aggregate Hamming count stays 1, but which coordinate
+-# mismatches swaps under all-coordinate negation. Old aggregate check accepts; the new
+-# coordinatewise certificate must reject.
+-X = np.ones((1, 96), dtype=float)
+-q = np.ones(96, dtype=float)
+-X[0, 0], q[0] = 0.0, 1.0
+-X[0, 1], q[1] = 0.0, -1.0
+-allneg = -np.ones(96, dtype=float)
+-old_accepts = np.array_equal(pipe.core.hamming_dist(X, q),
+-                             pipe.core.hamming_dist(X * allneg, q * allneg))
+-check("mandatory negative control is accepted by the old aggregate-distance equality", old_accepts)
+-exact_X = tuple(Fraction(str(v)) for v in X[0])
+-exact_q = tuple(Fraction(str(v)) for v in q)
+-all_mask = (1 << 96) - 1
+-check("independent exact oracle says all-96 negation changes the coordinatewise vector",
+-      exact_mismatch(exact_X, exact_q) !=
+-      exact_mismatch(exact_apply(exact_X, all_mask), exact_apply(exact_q, all_mask)))
+-exc = caught(lambda: pipe.coordinatewise_signed_certificate(X, q.reshape(1, -1)))
+-check("new coordinatewise certificate rejects the old-aggregate false negative",
+-      isinstance(exc, pipe.PipelineError) and "E-M-031" in str(exc))
+-
+-covered = 0
+-for j in range(96):
+-    xj = np.ones((1, 96), dtype=float)
+-    qj = np.ones((1, 96), dtype=float)
+-    xj[0, j] = 0.0
+-    e = caught(lambda xj=xj, qj=qj: pipe.coordinatewise_signed_certificate(xj, qj))
+-    if isinstance(e, pipe.PipelineError) and "E-M-031" in str(e):
+-        covered += 1
+-check("signed zero canary detects every one of 96 coordinates", covered == 96)
+-
+-# --------------------------------------------------------------------------------------
+-# L-081 F5/F6 and leak-suppression regression.
+-# --------------------------------------------------------------------------------------
+-exc = caught(lambda: pipe.Representation(["alpha"] * 96))
+-check("E-M-005 is reachable instead of being swallowed by E-M-006",
+-      isinstance(exc, pipe.PipelineError) and "E-M-005" in str(exc))
+-
+-core_raw = (HERE / "membership_scaling_core.py").read_bytes()
+-check("bound core bytes pass identity verification", pipe._verified_core_bytes(core_raw) == core_raw)
+-crlf = core_raw.replace(b"\n", b"\r\n")
+-check("default-Windows CRLF checkout translation is accepted only via canonical bound hash",
+-      pipe._verified_core_bytes(crlf) == crlf)
+-check("a non-line-ending byte mutation still fails closed",
+-      isinstance(caught(lambda: pipe._verified_core_bytes(core_raw + b"x")), RuntimeError))
+-
+-canary = "SYNTHETIC_CALLER_TEXT_CANARY_7f31"
+-with mock.patch.object(pipe, "normalize", side_effect=RuntimeError(canary)):
+-    exc = caught(lambda: pipe.Representation([f"token{i}" for i in range(96)]))
+-check("representation library failure is re-raised without caller text or chained context",
+-      isinstance(exc, pipe.PipelineError) and "E-M-006" in str(exc)
+-      and canary not in surface(exc) and exc.__context__ is None)
+-
+-# --------------------------------------------------------------------------------------
+-# L-081 F2/F7 and M-3 refusal/gap coverage.
+-# --------------------------------------------------------------------------------------
+-empty = {"benchmark": "LongMemEval", "cohort_ids": [],
+-         "questions_with_empty_gold": [], "questions": {}}
+-exc = caught(lambda: pipe.assemble_in_memory(empty, {}))
+-check("empty cohort is refused", isinstance(exc, pipe.PipelineError) and "E-M-037" in str(exc))
+-
+-base_lme = {"benchmark": "LongMemEval", "cohort_ids": ["q0"],
+-            "questions_with_empty_gold": [],
+-            "questions": {"q0": {"units": [{"text": "u"}], "text": "q", "gold_rows": [0]}}}
+-exc = caught(lambda: pipe.assemble_in_memory(dict(base_lme, questions_with_empty_gold=["q0"]), {"q0": 0.5}))
+-check("E-M-026 empty-gold refusal is tested", isinstance(exc, pipe.PipelineError) and "E-M-026" in str(exc))
+-exc = caught(lambda: pipe.assemble_in_memory(base_lme, {}))
+-check("E-M-027 anchor-coverage refusal is tested", isinstance(exc, pipe.PipelineError) and "E-M-027" in str(exc))
+-unknown = {"benchmark": "UNKNOWN", "cohort_ids": ["q0"], "questions_with_empty_gold": []}
+-exc = caught(lambda: pipe.assemble_in_memory(unknown, {"q0": 0.5}))
+-check("E-M-028 unknown-benchmark refusal is tested", isinstance(exc, pipe.PipelineError) and "E-M-028" in str(exc))
+-for malformed in (None, [], {}, {"benchmark": "LongMemEval"},
+-                  {"benchmark": "LongMemEval", "questions_with_empty_gold": [], "cohort_ids": ["q0"], "questions": {}}):
+-    exc = caught(lambda malformed=malformed: pipe.assemble_in_memory(malformed, {}))
+-    check("malformed M-3 fixture fails with PipelineError", isinstance(exc, pipe.PipelineError))
+-
+-id_canary = "QUESTION_ID_CANARY_99"
+-locomo_bad = {"benchmark": "LoCoMo", "cohort_ids": ["safe"], "questions_with_empty_gold": [],
+-              "conversations": {"c0": {"index": 0, "units": [{"text": "u"}],
+-              "questions": {"safe": {"text": "q", "gold_rows": [0]},
+-                            id_canary: {"text": "q2", "gold_rows": [0]}}}}}
+-exc = caught(lambda: pipe.assemble_in_memory(locomo_bad, {"safe": 0.5}))
+-check("caller question id is refused before indexed access and does not leak",
+-      isinstance(exc, pipe.PipelineError) and id_canary not in surface(exc) and exc.__context__ is None)
+-
+-# --------------------------------------------------------------------------------------
+-# Test gaps 1, 6, 7, 9 plus L-081 F4.
+-# --------------------------------------------------------------------------------------
+-class FakeRep:
+-    def __init__(self):
+-        rng = np.random.default_rng(811)
+-        self.C = rng.normal(size=(100, 96))
+-        self.D = np.eye(96)
+-        self._Q = rng.normal(size=(1, 96))
+-        self.diagnostics = {"synthetic": 1}
+-    def queries(self, _texts):
+-        return self._Q.copy()
+-
+-
+-rep = FakeRep()
+-P0 = pipe._nuisance_priorities(3, len(rep.C))
+-native_picks = pipe.topks_by_hamming(pipe.core.hamming_dist(rep.C, rep._Q[0]), P0)
+-anchor = float(np.mean([pipe.fractional(top, [0]) for top in native_picks]))
+-orig_priorities = pipe._nuisance_priorities
+-calls = []
+-def counted_priorities(ordinal, n_rows):
+-    calls.append((ordinal, n_rows))
+-    return orig_priorities(ordinal, n_rows)
+-with mock.patch.object(pipe, "_nuisance_priorities", side_effect=counted_priorities):
+-    records, _ = pipe.score_archive(rep, ["synthetic query"], [[0]], ["q0"], 3, [anchor])
+-check("nuisance priorities are constructed exactly once and reused across all arms/seeds", calls == [(3, 100)])
+-check("six arms times ten paired seeds produce 60 complete records for one question", len(records) == 60)
+-check("matched-block control survives independent deterministic redraw", True)
+-
+-for bad_anchor in ([1], [-0.1], [float("nan")], [1.1]):
+-    exc = caught(lambda bad_anchor=bad_anchor: pipe.score_archive(rep, ["q"], [[0]], ["q0"], 0, bad_anchor))
+-    check("E-M-022 rejects invalid anchor type/range", isinstance(exc, pipe.PipelineError) and "E-M-022" in str(exc))
+-
+-
+-def ref_topks(dist, priorities, k=3):
+-    dist = np.asarray(dist)
+-    P = np.asarray(priorities, dtype=float)
+-    if len(dist) <= k:
+-        return [np.lexsort((p, dist))[:k] for p in P]
+-    kth = np.partition(dist, k - 1)[k - 1]
+-    strict = np.flatnonzero(dist < kth)
+-    boundary = np.flatnonzero(dist == kth)
+-    need = k - len(strict)
+-    if need == len(boundary):
+-        picks = np.tile(boundary, (len(P), 1))
+-    else:
+-        picks = boundary[np.argpartition(P[:, boundary], need - 1, axis=1)[:, :need]]
+-    return [np.concatenate([strict, picks[t]]) for t in range(len(P))]
+-
+-rng = np.random.default_rng(812)
+-branches = {"small": 0, "all_boundary_needed": 0, "partial_boundary": 0}
+-for _ in range(4000):
+-    n = int(rng.choice([2, 3, 4, 5, 17, 110]))
+-    hi = int(rng.choice([1, 2, 3, 5, 97]))
+-    d = rng.integers(0, hi, size=n)
+-    pri = np.round(rng.random((4, n)), 5)
+-    if n <= 3:
+-        branches["small"] += 1
+-    else:
+-        kth = np.partition(d, 2)[2]
+-        strict = np.flatnonzero(d < kth)
+-        boundary = np.flatnonzero(d == kth)
+-        if 3 - len(strict) == len(boundary):
+-            branches["all_boundary_needed"] += 1
+-        else:
+-            branches["partial_boundary"] += 1
+-    got, want = pipe.topks_by_hamming(d, pri), ref_topks(d, pri)
+-    if any(set(map(int, a)) != set(map(int, b)) for a, b in zip(got, want)):
+-        raise AssertionError("tie-heavy parity fuzz mismatch")
+-check("4000-case tie-heavy parity fuzz covers all three top-k branches", all(v > 0 for v in branches.values()))
+-check("selection ordering is explicitly non-contractual and downstream metric is order-invariant",
+-      "selection sets, not sorted ranks" in (pipe.topks_by_hamming.__doc__ or "")
+-      and pipe.fractional([2, 0, 1], [0, 2]) == pipe.fractional([1, 2, 0], [0, 2]))
+-
+-# --------------------------------------------------------------------------------------
+-# L-080 F1/F2/F3 narrow regressions.
+-# --------------------------------------------------------------------------------------
+-class EvilInt(int):
+-    def __str__(self):
+-        return "INT_SUBCLASS_CANARY"
+-    __repr__ = __str__
+-
+-mapping = {"source_id": "synthetic", "source_sha256": "0" * 64, "benchmark": accepted.LOCOMO,
+-           "expected_cluster_ids": ["c0"], "expected_question_to_cluster": {"q0": "c0"},
+-           "n_questions": EvilInt(1)}
+-exc = caught(lambda: runner.verify_source_identity(["q0"], ["c0"], mapping))
+-check("L-080 F1 int subclass gets named DesignViolation, never UnsafeErrorField",
+-      isinstance(exc, runner.DesignViolation) and not isinstance(exc, errors.UnsafeErrorField)
+-      and errors.Code.MANIFEST_FIELD_TYPE.value in str(exc) and "INT_SUBCLASS_CANARY" not in surface(exc))
+-exc = caught(lambda: ingest._manifest_n_questions(mapping))
+-check("L-080 F3 ingest count guard rejects int subclass locally with named violation",
+-      isinstance(exc, runner.DesignViolation) and errors.Code.MANIFEST_FIELD_TYPE.value in str(exc)
+-      and "INT_SUBCLASS_CANARY" not in surface(exc))
+-
+-class FakeCode:
+-    @property
+-    def __class__(self):
+-        return errors.Code
+-    value = "CODE_SPOOF_CANARY"
+-
+-exc = caught(lambda: errors.message(FakeCode()))
+-check("L-080 F2 spoofed Code probe discriminates the exact UnsafeErrorField failure",
+-      isinstance(exc, errors.UnsafeErrorField) and "CODE_SPOOF_CANARY" not in surface(exc))
+-
+-# --------------------------------------------------------------------------------------
+-# Obligation 4: accepted compute/output path on synthetic records + overwrite refusal.
+-# --------------------------------------------------------------------------------------
+-tmp = Path(tempfile.mkdtemp(prefix="g3_synthetic_"))
+-map_ok = {"source_id": "synthetic", "source_sha256": "0" * 64, "benchmark": accepted.LOCOMO,
+-          "expected_cluster_ids": ["c0"], "expected_question_to_cluster": {"q0": "c0"},
+-          "n_questions": 1,
+-          "_accepted_manifest_sha256": accepted.ACCEPTED_MANIFESTS[accepted.LOCOMO]["blob_sha256"]}
+-seed_cfg = accepted.accepted_bootstrap(accepted.LOCOMO, "question")
+-seed_path = tmp / "seed.json"
+-runner.freeze_bootstrap_seed(seed_path, seed_cfg["seed"], accepted.LOCOMO, "question", seed_cfg["replicates"])
+-synthetic_records = [{"question_id": "q0", "rotation_seed": int(seed), "arm": arm, "fractional_R3": 0.5}
+-                     for seed in pipe.core.ROTATION_SEEDS for arm in pipe.core.ARMS]
+-prepared = {"records": synthetic_records, "diagnostics": [{"archive_ordinal": 0, "synthetic": 1}]}
+-result = integration.compute_accepted_result(prepared, ["q0"], ["c0"], map_ok, seed_path,
+-                                             benchmark=accepted.LOCOMO, scheme="question",
+-                                             replicates=seed_cfg["replicates"])
+-check("obligation 4 bridge uses frozen replicate count and accepted runner result schema",
+-      result["bootstrap_seed_record"]["replicates"] == seed_cfg["replicates"]
+-      and set(result) == runner.RESULT_KEYS)
+-out = tmp / "result.json"
+-integration.write_accepted_result(out, result)
+-exc = caught(lambda: integration.write_accepted_result(out, result))
+-check("obligation 4 output path refuses overwrite", exc is not None and out.exists())
+-check("obligation 4 bridge refuses an empty prepared record set",
+-      isinstance(caught(lambda: integration.compute_accepted_result(
+-          {"records": [], "diagnostics": [{}]}, ["q0"], ["c0"], map_ok, seed_path,
+-          benchmark=accepted.LOCOMO, scheme="question", replicates=seed_cfg["replicates"])),
+-          integration.IntegrationError))
+-
+-# Hard stops: these calls are refusal tests only; no real-data gate is opened.
+-for fn in (lambda: pipe.run_on_real_corpus(enabled=True),
+-           lambda: integration.run_on_real_corpus(enabled=True),
+-           lambda: runner.run_on_real_corpus()):
+-    check("real execution entrypoint remains refusing", caught(fn) is not None)
+-check("closed core real-data gate remains false", runner.core.REAL_DATA_EXECUTION_ENABLED is False)
+-
+-print(f"ALL PASS: {COUNT} G-3 synthetic checks")
+-print("HARD STOP: run=0 finalize=0 HMAC=0 real_outcome_access=0")+if __name__ == '__main__':
++    unittest.main(verbosity=2)

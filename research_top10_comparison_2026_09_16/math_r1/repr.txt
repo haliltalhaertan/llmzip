@@ -1,0 +1,110 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn).
+NO paid APIs, NO web, NO git, NO pip. Write ONLY in YOUR directory. All else READ-ONLY.
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+DISCIPLINE (coordinator re-derives your numbers from your per_query.jsonl; errors WILL be caught):
+- Never average across benchmarks. Report n per benchmark.
+- exit 0 is not proof. A gate that cannot fail proves nothing.
+- Gate fails -> STOP and report. NEVER loosen a gate or drop queries to make numbers look better.
+- Missing/impossible -> declare a blocker. NEVER invent numbers.
+- Save partial artifacts as you go. Budget ~25 min. Partial honest > late perfect.
+
+SHARED DEFINITIONS (use exactly):
+- Deterministic top-K: score DESC, then ascending SHA256("top10-r1|"+archive_id+"|"+str(row)), then row.
+- Hit@10 = any gold in the 10 ids. FR@3 = |gold INTERSECT top3|/|gold|. Also exact expected-Hit@10
+  under uniform ties (the symmetric Hamming arm is tie-heavy - this matters).
+- Paired archive-clustered bootstrap, 20000 reps, seed 20260916, for every contrast.
+Read-only helpers: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/audit_baseline_lib.py
+  det_top10(scores, archive_id, k), hrn(top, gold, k), expected_hit(scores, gold, k), pack_signs_bool, decode_pm1
+
+SCORERS (report both for every arm):
+  sym    = -Hamming(doc bits, query bits)
+  qscale = dot(doc bits as +-1, qC/sigma), sigma = per-archive std of DOCUMENT C columns, ddof=0,
+           floor 1e-12, DOCUMENTS ONLY. Never fit anything on queries or gold.
+
+*** YOU MUST RUN ON BOTH BENCHMARKS ***
+RealTalk (10 archives, 705 queries) AND PerLTQA (30 archives, 8265 queries).
+Reason: this programme just measured a CROSS-BENCHMARK SIGN REVERSAL - dropping the char channel
+was significantly HARMFUL on RealTalk (-5.8pp) yet significantly HELPFUL on PerLTQA (+0.8pp Hit@10,
++2.3pp FR@3). A single-benchmark result is therefore NOT a finding here. If your idea helps on one
+and hurts on the other, that IS the result - report it plainly, do not pick the flattering one.
+
+BUILDERS (ground truth, read-only) and the CACHES you must reproduce:
+  RealTalk texts: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT01.json .. RT10.json
+      {archive_id, docs:[{row,id,text}], queries:[{qid,text,gold:[row...],category}]}
+    cache: /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT01.pkl .. RT10.pkl
+    frozen builder: /mnt/c/Users/MDP/dev/llmzip-work/drive/v52_t4d_locomo_frozen_cross_benchmark.py
+  PerLTQA raw: /mnt/c/Users/MDP/dev/llmzip-work/bench3/PerLTQA/Dataset/en_v2/perltmem_en_v2.json
+    cache: /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/cache_arch_eval.pkl  {char:{N,C,zero_mass}}
+           /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/cache_q_eval.pkl     {qid:{char,section,gold,qC}}
+    builder: /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/step2_build.py  (build_items + fit_archive)
+      A previous worker already rebuilt PerLTQA BIT-EXACTLY from this script (0 of 1,179,648 sign bits
+      differed) - see /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ablation_r2/perltqa/
+      (fidelity_gate.py, ablation.py). READ AND REUSE that code rather than re-deriving the recipe.
+    A RealTalk bit-exact rebuild also exists: top10_comparison_r1/ideas_r1/ablation/ablation.py
+  Seeds: LSA32 random_state=5101, final SVD96 random_state=5204. A wrong seed invalidates everything
+  (this happened before: hit10/BOTTLENECK.json INVALID_SEED_DEFECT).
+
+*** BLOCKING FIDELITY GATE, BEFORE ANY NEW ARM ***
+Rebuild the production FULL representation and verify against cache:
+  G1 sign(C_rebuilt) == sign(C_cached) elementwise, all archives. Report exact differing-bit count (0 expected).
+  G2 the rebuilt FULL arm reproduces the cached production metrics:
+     RealTalk n=705: qscale Hit@10 49.6454, sym deterministic Hit@10 46.5248, sym expected-Hit@10 46.6809, qscale FR@3 22.41
+     PerLTQA  n=8265: qscale Hit@10 80.0000, sym deterministic Hit@10 75.6806, sym expected-Hit@10 75.7612, qscale FR@3 53.24
+     (deterministic and expected are DIFFERENT numbers - do not confuse or "correct" them.)
+A near-miss rebuild is NOT a licence to report new arms; they would measure your reimplementation.
+
+WHY THIS ROUND EXISTS - the diagnosis your work builds on (already measured, RealTalk n=705):
+  float_std (96 dims, FULL float, 384 B/doc, NO compression) = 48.51%
+  sign96    (96 dims, 1 bit each,  12 B/doc)                 = 46.68%
+  BM25      (plain lexical)                                  = 54.18%
+  => compression costs only 1.83pp, but BM25 beats the UNCOMPRESSED representation by 5.67pp.
+     The bottleneck is the 96-dim REPRESENTATION, not the 12-byte budget.
+  Stratifying the 705 queries by the rarity (IDF) of the term shared between query and gold:
+     common-term queries (n=224): CODE 20.98 vs BM25 15.62  -> WE WIN
+     rare-term queries   (n=341): CODE 70.67 vs BM25 85.04  -> WE LOSE BY 14.37pp
+  Mathematical reading: TruncatedSVD keeps maximum-VARIANCE directions (optimal rank-96 Frobenius
+  reconstruction), but retrieval needs DISCRIMINATION, and IDF says the discriminative terms are the
+  RARE ones - which are low-variance and get discarded first. The two objectives point opposite ways.
+  Already tested and FAILED (do not repeat): splitting the 96 bits between SVD dims and a Bloom sketch
+  of rare terms. Cause diagnosed: SVD-only at 48 bits already drops to 36.45% (from 49.65%), i.e. every
+  SVD bit is valuable and truncation is the killer; and a 32-bit Bloom score has only ~5 distinct values
+  per query so it ranks almost entirely by tie-break. Evidence: coordinator/split_failure_diag.json,
+  coordinator/why_bm25_wins.json.
+  THEREFORE: every arm you test MUST keep all 96 bits / 12 bytes of payload. Do not truncate dimensions.
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/repr
+YOUR LEVEL: fix the REPRESENTATION before quantization. Payload stays exactly 96 bits / 12 B.
+
+ARM FAMILY A - IDF-power reweighting (attacks the variance/informativeness mismatch head-on).
+  Production builds Z = [LSA32 | word-tfidf | char-tfidf] then TruncatedSVD(96).
+  TF-IDF already contains one factor of idf. Multiply the WORD block's column j by idf_j^p (extra
+  power beyond the built-in one), then L2-renormalize rows exactly as production does, then the
+  identical SVD96/normalize/center/sign chain.
+  p in {0 (=production control), 0.5, 1.0, 2.0}.
+  Rationale: raising the idf power inflates the VARIANCE of rare-term columns, so the SVD objective
+  is pulled toward exactly the directions retrieval needs. p=0 must reproduce FULL bit-exactly - use
+  that as an internal self-check and report it.
+  Fit idf from DOCUMENTS ONLY, per archive. Queries get the identical transform at query time.
+
+ARM FAMILY B - "all-but-the-top" (drop dominant components).
+  The leading principal direction typically encodes length/common-topic mass shared by every document,
+  contributing little discrimination while dominating the variance the SVD maximizes.
+  Compute SVD with 96+m components and USE components m+1 .. m+96 (so you always keep exactly 96 dims
+  and 12 bytes - you are shifting the window, NOT truncating it).
+  m in {0 (=production control), 1, 2, 4}. m=0 must reproduce FULL bit-exactly.
+  Apply the same shift to queries. Keep normalize/center/sign identical to production.
+
+REPORT for both benchmarks: Hit@10, FR@3, Hit@3, expected-Hit@10, per-archive breakdown, and each
+arm MINUS the production control with the clustered bootstrap CI.
+ALSO REPORT the mechanism check that makes this science rather than a sweep: for the best and worst
+arm, recompute the rare-term stratification described above (bands: no_shared / common idf<2 /
+mid 2-4 / rare >=4, using the max IDF among terms shared by the query and its gold document). If the
+idea works FOR THE STATED REASON, the gain must concentrate in the rare band. If an arm gains overall
+but NOT in the rare band, say so - that means the stated mechanism is wrong even if the number moved.
+Confirm payload stays 12 B/doc for every arm, and report build time per arm.
+
+DELIVERABLES: `repr_math.py`, `FIDELITY_GATE.json` (before any new arm), `per_query.jsonl`
+(query x arm x scorer x benchmark, with top10 ids + gold), `RESULTS.json`, `REPORT.md`.
+REPORT.md verdict per family per benchmark: SUPPORTED / REFUTED / INCONCLUSIVE, with CIs, plus the
+mechanism check, plus an explicit statement of any cross-benchmark reversal.

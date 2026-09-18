@@ -1,0 +1,221 @@
+{
+  "label": "[LOCAL EXPLORATORY PILOT]",
+  "n_chats": 10,
+  "n_qa": 728,
+  "cats": {
+    "1": 301,
+    "2": 319,
+    "3": 108
+  },
+  "chats": [
+    {
+      "chat_no": 1,
+      "file": "Chat_10_Fahim_Muhhamed.json",
+      "N": 662,
+      "n_qa": 85,
+      "cats": {
+        "1": 30,
+        "2": 45,
+        "3": 10
+      },
+      "zero_gold_qa": 0,
+      "C_shape": [
+        662,
+        96
+      ]
+    },
+    {
+      "chat_no": 2,
+      "file": "Chat_1_Emi_Elise.json",
+      "N": 476,
+      "n_qa": 70,
+      "cats": {
+        "1": 30,
+        "2": 30,
+        "3": 10
+      },
+      "zero_gold_qa": 0,
+      "C_shape": [
+        476,
+        96
+      ]
+    },
+    {
+      "chat_no": 3,
+      "file": "Chat_2_Kevin_Elise.json",
+      "N": 453,
+      "n_qa": 73,
+      "cats": {
+        "1": 30,
+        "2": 31,
+        "3": 12
+      },
+      "zero_gold_qa": 0,
+      "C_shape": [
+        453,
+        96
+      ]
+    },
+    {
+      "chat_no": 4,
+      "file": "Chat_3_Kevin_Paola.json",
+      "N": 422,
+      "n_qa": 71,
+      "cats": {
+        "1": 30,
+        "2": 30,
+        "3": 11
+      },
+      "zero_gold_qa": 0,
+      "C_shape": [
+        422,
+        96
+      ]
+    },
+    {
+      "chat_no": 5,
+      "file": "Chat_4_Emi_Paola.json",
+      "N": 410,
+      "n_qa": 70,
+      "cats": {
+        "1": 30,
+        "2": 30,
+        "3": 10
+      },
+      "zero_gold_qa": 0,
+      "C_shape": [
+        410,
+        96
+      ]
+    },
+    {
+      "chat_no": 6,
+      "file": "Chat_5_Nicolas_Nebraas.json",
+      "N": 1548,
+      "n_qa": 76,
+      "cats": {
+        "1": 31,
+        "2": 31,
+        "3": 14
+      },
+      "zero_gold_qa": 2,
+      "C_shape": [
+        1548,
+        96
+      ]
+    },
+    {
+      "chat_no": 7,
+      "file": "Chat_6_Vanessa_Nicolas.json",
+      "N": 1511,
+      "n_qa": 70,
+      "cats": {
+        "1": 30,
+        "2": 30,
+        "3": 10
+      },
+      "zero_gold_qa": 0,
+      "C_shape": [
+        1511,
+        96
+      ]
+    },
+    {
+      "chat_no": 8,
+      "file": "Chat_7_Nebraas_Vanessa.json",
+      "N": 1162,
+      "n_qa": 72,
+      "cats": {
+        "1": 30,
+        "2": 30,
+        "3": 12
+      },
+      "zero_gold_qa": 2,
+      "C_shape": [
+        1162,
+        96
+      ]
+    },
+    {
+      "chat_no": 9,
+      "file": "Chat_8_Akib_Muhhamed.json",
+      "N": 1044,
+      "n_qa": 71,
+      "cats": {
+        "1": 30,
+        "2": 31,
+        "3": 10
+      },
+      "zero_gold_qa": 8,
+      "C_shape": [
+        1044,
+        96
+      ]
+    },
+    {
+      "chat_no": 10,
+      "file": "Chat_9_Fahim_Akib.json",
+      "N": 1256,
+      "n_qa": 70,
+      "cats": {
+        "1": 30,
+        "2": 31,
+        "3": 9
+      },
+      "zero_gold_qa": 11,
+      "C_shape": [
+        1256,
+        96
+      ]
+    }
+  ],
+  "anomalies": [
+    {
+      "chat": 1,
+      "zero_gold_qa": 0,
+      "partial_qa": 1
+    },
+    {
+      "chat": 2,
+      "zero_gold_qa": 0,
+      "partial_qa": 14
+    },
+    {
+      "chat": 3,
+      "zero_gold_qa": 0,
+      "partial_qa": 2
+    },
+    {
+      "chat": 4,
+      "zero_gold_qa": 0,
+      "partial_qa": 2
+    },
+    {
+      "chat": 5,
+      "zero_gold_qa": 0,
+      "partial_qa": 1
+    },
+    {
+      "chat": 6,
+      "zero_gold_qa": 2,
+      "partial_qa": 10
+    },
+    {
+      "chat": 8,
+      "zero_gold_qa": 2,
+      "partial_qa": 4
+    },
+    {
+      "chat": 9,
+      "zero_gold_qa": 8,
+      "partial_qa": 6
+    },
+    {
+      "chat": 10,
+      "zero_gold_qa": 11,
+      "partial_qa": 6
+    }
+  ],
+  "gold_resolution": "100% (all listed evidence dia_ids resolved; zero-evidence QAs reported, no stop triggered)",
+  "leakage": "fit input = archive memory_text strings only (inside frozen build_representation via fit_input_payload); questions transformed post-fit; events_session_* never read"
+}

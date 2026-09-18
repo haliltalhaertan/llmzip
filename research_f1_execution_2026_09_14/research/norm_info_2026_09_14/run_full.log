@@ -1,0 +1,10 @@
+[longmemeval] n=470 sign=0.542134 cos=0.441596 D=+10.0538pp normonly=0.001064 rand=0.006112 AUC=0.4310
+[perltqa] n=8265 sign=0.488945 cos=0.551692 D=-6.2747pp normonly=0.008832 rand=0.007369 AUC=0.6553
+   [dialogues] n=2742 D=-1.5017pp normonly=0.000000 rand=0.007313 AUC=0.4698
+   [events] n=4346 D=-12.3937pp normonly=0.000000 rand=0.007414 AUC=0.6940
+   [profile] n=333 D=+20.3554pp normonly=0.198198 rand=0.007342 AUC=0.9828
+   [social_relationship] n=844 D=-0.7800pp normonly=0.008294 rand=0.007323 AUC=0.9293
+[realtalk] n=705 sign=0.225535 cos=0.172534 D=+5.3001pp normonly=0.001891 rand=0.004414 AUC=0.4832
+[locomo] n=1535 sign=0.237907 cos=0.171356 D=+6.6550pp normonly=0.000326 rand=0.005169 AUC=0.3751
+
+wrote /mnt/c/Users/MDP/dev/llmzip-work/agent_out/norm-info/evidence/results.json

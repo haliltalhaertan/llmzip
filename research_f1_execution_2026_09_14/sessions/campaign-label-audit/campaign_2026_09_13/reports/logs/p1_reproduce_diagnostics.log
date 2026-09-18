@@ -1,0 +1,78 @@
+{
+  "archive_count": 470,
+  "dimensions": 96,
+  "D1_ge": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.9970337299075775,
+    "sd_ddof1": 0.0009689546162983155,
+    "min": 0.9910369335593018,
+    "max": 0.9985525937037742
+  },
+  "fraction_H_ge_below_local_075": 0.0,
+  "count_H_ge_equal_local_075": 0,
+  "D1_gt": null,
+  "D1_gt_reason": "Zero mass unavailable; >=0 is not silently substituted for >0.",
+  "D2_cv_sigma": {
+    "valid_archives": 470,
+    "missing_archives": 0,
+    "mean": 0.4974774992684583,
+    "sd_ddof1": 0.008836428595739187,
+    "min": 0.47551345862128686,
+    "max": 0.552632578553556
+  },
+  "D3_top_variance_fraction": {
+    "16": {
+      "valid_archives": 470,
+      "missing_archives": 0,
+      "mean": 0.46908940151024364,
+      "sd_ddof1": 0.010548540293837358,
+      "min": 0.44634437428430507,
+      "max": 0.5236494598597504
+    },
+    "32": {
+      "valid_archives": 470,
+      "missing_archives": 0,
+      "mean": 0.7598736235405326,
+      "sd_ddof1": 0.004814472432846057,
+      "min": 0.7441002171946898,
+      "max": 0.7787693898072809
+    },
+    "48": {
+      "valid_archives": 470,
+      "missing_archives": 0,
+      "mean": 0.8394569933305279,
+      "sd_ddof1": 0.0038187504641524752,
+      "min": 0.8270883364500035,
+      "max": 0.853781695944763
+    }
+  },
+  "D3_ordered_prefix_fraction": {
+    "16": {
+      "valid_archives": 470,
+      "missing_archives": 0,
+      "mean": 0.45821306966180203,
+      "sd_ddof1": 0.011455034238454214,
+      "min": 0.4355584813365248,
+      "max": 0.5225394874598913
+    },
+    "32": {
+      "valid_archives": 470,
+      "missing_archives": 0,
+      "mean": 0.7598736235405325,
+      "sd_ddof1": 0.004814472432846052,
+      "min": 0.7441002171946898,
+      "max": 0.7787693898072809
+    },
+    "48": {
+      "valid_archives": 470,
+      "missing_archives": 0,
+      "mean": 0.8394042012232642,
+      "sd_ddof1": 0.0038240101823757396,
+      "min": 0.8269531913577485,
+      "max": 0.853781695944763
+    }
+  },
+  "D4": null,
+  "D4_reason": "Full correlation matrix cannot be reconstructed from diagonal variances and published covariance-energy/mean-correlation aggregates."
+}

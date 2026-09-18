@@ -1,0 +1,13 @@
+[16:09:56] caches: 10
+[16:09:56] RT01 Chat_10_Fahim_Muhhamed.json: N=662 valid=85 excluded=0
+[16:09:56] RT02 Chat_1_Emi_Elise.json: N=476 valid=70 excluded=0
+[16:09:56] RT03 Chat_2_Kevin_Elise.json: N=453 valid=73 excluded=0
+[16:09:56] RT04 Chat_3_Kevin_Paola.json: N=422 valid=71 excluded=0
+[16:09:56] RT05 Chat_4_Emi_Paola.json: N=410 valid=70 excluded=0
+[16:09:56] RT06 Chat_5_Nicolas_Nebraas.json: N=1548 valid=74 excluded=2
+[16:09:56] RT07 Chat_6_Vanessa_Nicolas.json: N=1511 valid=70 excluded=0
+[16:09:56] RT08 Chat_7_Nebraas_Vanessa.json: N=1162 valid=70 excluded=2
+[16:09:57] RT09 Chat_8_Akib_Muhhamed.json: N=1044 valid=63 excluded=8
+[16:09:57] RT10 Chat_9_Fahim_Akib.json: N=1256 valid=59 excluded=11
+[16:09:57] wrote exclusions.json (23 original empty-gold, no new exclusions)
+[16:09:57] EXPORT DONE valid=705/728 elapsed=1.0s

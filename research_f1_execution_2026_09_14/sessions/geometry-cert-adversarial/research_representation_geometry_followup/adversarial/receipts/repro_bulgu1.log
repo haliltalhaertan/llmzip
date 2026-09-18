@@ -1,0 +1,7 @@
+stray POC path /home/mdp/muse-work/fix_rank_cert/out/certify_v2.py present=True (never imported; archived path enforced below)
+independent truth: {'5/4': 1, '3/2': 1, '7/4': 0, '5/2': -1, '4': -1}
+rational_roots skipped: True
+v2 scaled:   ISOLATED_TIES -1 ['1', '7/4']
+v2 unscaled: ISOLATED_TIES VARIES ['1', '7/4']
+orig scaled: UNRESOLVED
+POC CONFIRMED: v2 issues false ISOLATED_TIES/-1; truth VARIES; orig UNRESOLVED.

@@ -1,0 +1,56 @@
+=== T2 rerank dissolution (164k stored paired rows) ===
+
+LME (n=470, 470 clusters)
+  asym96_bm25             -0.38 pp [ -1.45, +0.57] ns  C3=FAIL
+  float_raw32_bm25        -0.27 pp [ -1.17, +0.48] ns  C3=FAIL
+  float_std32_bm25        +0.02 pp [ -0.53, +0.46] ns  C3=FAIL
+  hamming96_bm25          +0.20 pp [ -0.94, +1.30] ns  C3=FAIL
+  qscale96_bm25           -0.33 pp [ -1.38, +0.62] ns  C3=FAIL
+  first-stage order after rerank: 4 inversions of 10 pairs
+     float_std32       55.74 ->  58.05
+     qscale96          54.27 ->  57.70
+     hamming96         53.86 ->  58.23
+     asym96            50.65 ->  57.65
+     float_raw32       44.16 ->  57.76
+
+LoCoMo (n=1531, 10 clusters)
+  asym96_bm25             +0.66 pp [ -0.13, +1.48] ns  C3=FAIL
+  float_raw32_bm25        +2.32 pp [ +1.35, +3.50] SIG  C3=PASS
+  float_std32_bm25        +1.47 pp [ +0.99, +1.92] SIG  C3=PASS
+  hamming96_bm25          +0.43 pp [ -0.80, +1.54] ns  C3=FAIL
+  qscale96_bm25           +1.07 pp [ +0.44, +1.72] SIG  C3=PASS
+  first-stage order after rerank: 3 inversions of 10 pairs
+     float_std32       38.91 ->  43.22
+     qscale96          35.84 ->  42.81
+     asym96            34.27 ->  42.41
+     float_raw32       33.68 ->  44.06
+     hamming96         31.46 ->  42.17
+
+PerLTQA (n=8265, 30 clusters)
+  asym96_bm25             +0.38 pp [ -0.02, +0.76] ns  C3=FAIL
+  float_raw32_bm25        +1.13 pp [ +0.85, +1.44] SIG  C3=PASS
+  float_std32_bm25        +0.29 pp [ +0.10, +0.47] SIG  C3=FAIL
+  hamming96_bm25          +0.40 pp [ -0.01, +0.81] ns  C3=FAIL
+  qscale96_bm25           +0.33 pp [ -0.02, +0.67] ns  C3=FAIL
+  first-stage order after rerank: 6 inversions of 10 pairs
+     float_std32       56.58 ->  57.42
+     float_raw32       55.17 ->  58.26
+     asym96            53.53 ->  57.51
+     qscale96          53.24 ->  57.46
+     hamming96         49.84 ->  57.52
+
+=== T1 fair baseline (RealTalk) ===
+  BM25 coarse_textbook    Hit@10  55.32  FR@3  33.91
+  BM25 frozen_textbook    Hit@10  61.70  FR@3  36.05
+  BM25 coarse_idfonly     Hit@10  57.30  FR@3  34.05
+  BM25 frozen_idfonly     Hit@10  65.67  FR@3  40.02
+  -> strongest BM25: frozen_idfonly Hit@10 65.67
+  code 12B/sym      Hit@10  46.52 (-19.15)  FR@3  22.87 (-17.16)
+  code 12B/qscale   Hit@10  49.65 (-16.03)  FR@3  22.41 (-17.61)
+  code 24B/sym      Hit@10  51.77 (-13.90)  FR@3  28.56 (-11.46)
+  code 24B/qscale   Hit@10  55.32 (-10.35)  FR@3  29.75 (-10.27)
+  code 48B/sym      Hit@10  54.18 (-11.49)  FR@3  31.48 ( -8.54)
+  code 48B/qscale   Hit@10  57.87 ( -7.80)  FR@3  32.79 ( -7.23)
+  C1 gate: FAIL
+
+WROTE /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/DECISION_TESTS.json  elapsed 14s

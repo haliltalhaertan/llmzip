@@ -1,0 +1,401 @@
+{
+ "labels": [
+  "[LOCAL EXPLORATORY PILOT]",
+  "[NOT PREREGISTERED]",
+  "[NOT FOR CITATION]",
+  "[DISCLOSE-BEFORE-USE]"
+ ],
+ "synthetic_note": "All distributions SYNTHETIC toy PMFs. NOT benchmark output.",
+ "model": "M-IND: independent coords, fixed full-precision query, asymmetric inner-product scoring, tie=1/2, true ties excluded.",
+ "main_instance": {
+  "desc": "C1={+-10 w.p.1/20, +-1 w.p.9/20} (sparse); C2={+-3/2}; C3={+-1/10}; q=(1,1,1); t=2. docs=16, ordered pairs=256.",
+  "allocs": {
+   "(0, 0, 0)": {
+    "P_num": "359/800",
+    "P_den": "359/400",
+    "P_err": "1/2"
+   },
+   "(1, 0, 0)": {
+    "P_num": "3/10",
+    "P_den": "359/400",
+    "P_err": "120/359"
+   },
+   "(0, 1, 0)": {
+    "P_num": "49/200",
+    "P_den": "359/400",
+    "P_err": "98/359"
+   },
+   "(0, 0, 1)": {
+    "P_num": "159/400",
+    "P_den": "359/400",
+    "P_err": "159/359"
+   },
+   "(0, 2, 0)": {
+    "P_num": "49/200",
+    "P_den": "359/400",
+    "P_err": "98/359"
+   },
+   "(1, 1, 0)": {
+    "P_num": "79/400",
+    "P_den": "359/400",
+    "P_err": "79/359"
+   },
+   "(0, 1, 1)": {
+    "P_num": "31/160",
+    "P_den": "359/400",
+    "P_err": "155/718"
+   },
+   "(0, 1, 2)": {
+    "P_num": "31/160",
+    "P_den": "359/400",
+    "P_err": "155/718"
+   },
+   "(0, 2, 1)": {
+    "P_num": "31/160",
+    "P_den": "359/400",
+    "P_err": "155/718"
+   },
+   "(1, 0, 2)": {
+    "P_num": "199/800",
+    "P_den": "359/400",
+    "P_err": "199/718"
+   },
+   "(1, 1, 1)": {
+    "P_num": "117/800",
+    "P_den": "359/400",
+    "P_err": "117/718"
+   },
+   "(1, 2, 0)": {
+    "P_num": "79/400",
+    "P_den": "359/400",
+    "P_err": "79/359"
+   },
+   "(2, 0, 1)": {
+    "P_num": "163/800",
+    "P_den": "359/400",
+    "P_err": "163/718"
+   },
+   "(2, 1, 0)": {
+    "P_num": "41/800",
+    "P_den": "359/400",
+    "P_err": "41/718"
+   }
+  }
+ },
+ "greedy_trace": [
+  {
+   "from": "(0, 0, 0)",
+   "pick": 1,
+   "MV": "163/718",
+   "contenders": [
+    [
+     1,
+     "163/718"
+    ],
+    [
+     0,
+     "119/718"
+    ],
+    [
+     2,
+     "41/718"
+    ]
+   ],
+   "strict": true
+  },
+  {
+   "from": "(0, 1, 0)",
+   "pick": 2,
+   "MV": "41/718",
+   "contenders": [
+    [
+     2,
+     "41/718"
+    ],
+    [
+     0,
+     "19/359"
+    ],
+    [
+     1,
+     "0"
+    ]
+   ],
+   "strict": true
+  },
+  {
+   "from": "(0, 1, 1)",
+   "pick": 0,
+   "MV": "19/359",
+   "contenders": [
+    [
+     0,
+     "19/359"
+    ],
+    [
+     1,
+     "0"
+    ],
+    [
+     2,
+     "0"
+    ]
+   ],
+   "strict": true
+  }
+ ],
+ "budget3_table": {
+  "(0, 1, 2)": "155/718",
+  "(0, 2, 1)": "155/718",
+  "(1, 0, 2)": "199/718",
+  "(1, 1, 1)": "117/718",
+  "(1, 2, 0)": "79/359",
+  "(2, 0, 1)": "163/718",
+  "(2, 1, 0)": "41/718"
+ },
+ "secondary_d2": {
+  "desc": "Q4={+-3,+-1} uniform; S10 sparse as above; q=(3,2); t=2; B=3.",
+  "greedy": "(2, 1)",
+  "steps": [
+   {
+    "from": "(0, 0)",
+    "pick": 0,
+    "MV": "661/2854",
+    "strict": true
+   },
+   {
+    "from": "(1, 0)",
+    "pick": 0,
+    "MV": "163/1427",
+    "strict": true
+   },
+   {
+    "from": "(2, 0)",
+    "pick": 1,
+    "MV": "7/1427",
+    "strict": true
+   }
+  ],
+  "table": {
+   "(1, 2)": "163/1427",
+   "(2, 1)": "213/1427"
+  }
+ },
+ "mse_gains": {
+  "quat_e": [
+   "5",
+   "1",
+   "0"
+  ],
+  "sparse_e": [
+   "109/10",
+   "729/100",
+   "0"
+  ],
+  "quat_gains": [
+   "4",
+   "1"
+  ],
+  "sparse_gains": [
+   "361/100",
+   "729/100"
+  ]
+ },
+ "realizable_S_failure": {
+  "(0, 2)": "5",
+  "(1, 1)": "829/100",
+  "(2, 0)": "109/10"
+ },
+ "decoder_ledger": {
+  "C1_1bit_levels": [
+   "-19/10",
+   "19/10"
+  ],
+  "C1_2bit_region_means": [
+   "-10",
+   "-1",
+   "1",
+   "10"
+  ],
+  "C2_C3_binary_exact_at_1bit": true,
+  "alloc_(2,1,0)": {
+   "payload_bits": 3,
+   "thresholds": [
+    "t_C1"
+   ],
+   "level_values": 6,
+   "index_map": "which coord upgraded (2-of-3 subset)"
+  },
+  "alloc_(1,1,1)": {
+   "payload_bits": 3,
+   "thresholds": [],
+   "level_values": 3,
+   "index_map": "none (uniform 1 bit)"
+  }
+ },
+ "corruption_test": {
+  "corrupted_rejected": true,
+  "true_accepted": true
+ },
+ "model_spec": {
+  "supports": [
+   [
+    [
+     "-10",
+     "1/20"
+    ],
+    [
+     "-1",
+     "9/20"
+    ],
+    [
+     "1",
+     "9/20"
+    ],
+    [
+     "10",
+     "1/20"
+    ]
+   ],
+   [
+    [
+     "-3/2",
+     "1/2"
+    ],
+    [
+     "3/2",
+     "1/2"
+    ]
+   ],
+   [
+    [
+     "-1/10",
+     "1/2"
+    ],
+    [
+     "1/10",
+     "1/2"
+    ]
+   ]
+  ],
+  "query": [
+   "1",
+   "1",
+   "1"
+  ],
+  "threshold": "2",
+  "quat_support": [
+   [
+    "-3",
+    "1/4"
+   ],
+   [
+    "-1",
+    "1/4"
+   ],
+   [
+    "1",
+    "1/4"
+   ],
+   [
+    "3",
+    "1/4"
+   ]
+  ]
+ },
+ "coverage": {
+  "main_nodes_double_path": 14,
+  "main_ordered_pairs_per_alloc": 256,
+  "budget3_allocs_enumerated": 7,
+  "d2_witness_allocs": 2,
+  "S_allocs_enumerated": 3
+ },
+ "checks": [
+  {
+   "name": "G0_paths_agree_all_14_nodes",
+   "pass": true,
+   "detail": "PathA (pair loop) == PathB (gap convolution) on all 14 allocations"
+  },
+  {
+   "name": "G1_denom_true_ties",
+   "pass": true,
+   "detail": "denominator mass = 359/400 (true-tie mass 41/400)"
+  },
+  {
+   "name": "G2_P000_is_half",
+   "pass": true,
+   "detail": "P(0,0,0)=1/2, got 1/2"
+  },
+  {
+   "name": "G3_P210_is_41_over_718",
+   "pass": true,
+   "detail": "P(2,1,0)=41/718, got 41/718"
+  },
+  {
+   "name": "G4_P111_is_117_over_718",
+   "pass": true,
+   "detail": "P(1,1,1)=117/718, got 117/718"
+  },
+  {
+   "name": "G5_greedy_path_strict_to_111",
+   "pass": true,
+   "detail": "picks [C2,C3,C1] MVs 163/718,41/718,19/359 all strict; final=(1,1,1)"
+  },
+  {
+   "name": "G6_unique_global_opt_210",
+   "pass": true,
+   "detail": "opts=[(2, 1, 0)] value=41/718"
+  },
+  {
+   "name": "G7_greedy_strictly_suboptimal",
+   "pass": true,
+   "detail": "P(greedy)-P(opt)=117/718-41/718=38/359 > 0"
+  },
+  {
+   "name": "G8_d2_witness_paths_agree",
+   "pass": true,
+   "detail": "PathA==PathB on d=2 witness"
+  },
+  {
+   "name": "G9_d2_greedy_suboptimal",
+   "pass": true,
+   "detail": "greedy=(2,1) P=213/1427; opt=(1,2) P=163/1427; steps0-1 strict, step2 forced"
+  },
+  {
+   "name": "S1_quat_diminishing",
+   "pass": true,
+   "detail": "e=(5,1,0) gains 4>=1"
+  },
+  {
+   "name": "S2_sparse_increasing_REALIZABLE",
+   "pass": true,
+   "detail": "e=(109/10,729/100,0) gains 361/100 < 729/100: diminishing FAILS for a real conditional-mean quantizer"
+  },
+  {
+   "name": "S3_abstract_separable_failure",
+   "pass": true,
+   "detail": "abstract gains A=(5,100) B=(6,6): greedy step1 B(6>5), step2 B(6>5) -> (0,2)=12 < OPT (2,0)=105"
+  },
+  {
+   "name": "S4_realizable_S_greedy_fails_strict",
+   "pass": true,
+   "detail": "greedy: step0 Q(4>361/100 strict), step1 S(361/100>1 strict) -> (1,1)=829/100; OPT (0,2)=5"
+  },
+  {
+   "name": "C1_ledger_levels",
+   "pass": true,
+   "detail": "1-bit C1 needs +-19/10 stored; 2-bit needs 4 region means + t"
+  },
+  {
+   "name": "C2_corrupt_table_rejected",
+   "pass": true,
+   "detail": "perturbed P(2,1,0)=42/718 rejected by validator"
+  },
+  {
+   "name": "C3_true_table_accepted",
+   "pass": true,
+   "detail": "true table accepted"
+  }
+ ],
+ "all_pass": true
+}

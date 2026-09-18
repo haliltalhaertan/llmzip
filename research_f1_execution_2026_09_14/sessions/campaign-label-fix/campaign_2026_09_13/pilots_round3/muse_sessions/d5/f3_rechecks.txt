@@ -1,0 +1,18 @@
+B1 s=0: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=1: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=2: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=3: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=4: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=5: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=6: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=7: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=8: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 s=9: derived_test=767 stored_n_test=767 OK test_cats={1: 141, 2: 160, 3: 46, 4: 420}
+B1 all-counts-match: True
+B2: stored test FR zero-count = 561/767; using first 5 nonzero for spot-check
+B2 s=0 test[6] locomo_0_qa107: recomputed=0.5 stored=0.5 EXACT
+B2 s=0 test[10] locomo_0_qa114: recomputed=1.0 stored=1.0 EXACT
+B2 s=0 test[11] locomo_0_qa115: recomputed=1.0 stored=1.0 EXACT
+B2 s=0 test[24] locomo_0_qa131: recomputed=1.0 stored=1.0 EXACT
+B2 s=0 test[26] locomo_0_qa133: recomputed=1.0 stored=1.0 EXACT
+C delta64 s=0: recomputed==stored: True (n=64; stored n=64)

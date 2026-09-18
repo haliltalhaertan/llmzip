@@ -1,0 +1,32 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "anchors": {
+    "qscale_hit10": 49.64539007092199,
+    "sym_hit10": 46.680851063829785,
+    "qscale_fr3": 22.41,
+    "bm25_hit10": 54.18439716312057
+  },
+  "tol_pp": 0.01,
+  "passed": [
+    "A1 unique qids = 705 (expect 705)",
+    "A2/A3 FULL/qscale Hit@10 49.6454 vs anchor 49.6454",
+    "A3b FULL/qscale FR@3 22.4099 vs anchor ~22.41",
+    "A4 recomputed Hit@10 from stored ids: 0 mismatches",
+    "A5 RESULTS.json mentions payload bytes (manual read required)",
+    "B1 unique qids = 705 (expect 705)"
+  ],
+  "failed": [
+    "A2/A3 FULL/sym Hit@10 46.5248 vs anchor 46.6809",
+    "B4/B5 NOT monotonic in M at .gold_size_dist: [(1, 319), (2, 178), (3, 92), (4, 49), (5, 24), (6, 15), (7, 7), (8, 4), (9, 7), (10, 4), (14, 1), (17, 1), (19, 2), (21, 1), (22, 1)]"
+  ],
+  "warnings": [
+    "B2/B3 arm CODE absent",
+    "B2/B3 arm BM25 absent"
+  ],
+  "verdict": "REJECT"
+}

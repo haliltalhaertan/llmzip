@@ -1,0 +1,77 @@
+{
+  "self_excluded": "FILE_HASHES.json",
+  "files": {
+    "CONFIGURATION_PROPOSAL.md": {
+      "sha256": "19ea49dcaddf6335454bac0d8cf53a97c4bf4c07f2e91217b2b8fd58f522340d",
+      "bytes": 3152
+    },
+    "INDEPENDENT_REPLAY_REVIEW.md": {
+      "sha256": "0b6a9f3a3e9340058158469c0b6416ce7950c31064cd49c91e8a8ab66b0f3f30",
+      "bytes": 5554
+    },
+    "LEDGER_RECEIPT_BODY.txt": {
+      "sha256": "c900b138c6a57c8c8d2c31616ed9c129bf706ccf34daf2f7a8b91582ed1d89cb",
+      "bytes": 3603
+    },
+    "README_TR.md": {
+      "sha256": "d46d37ba5229327da994e63696613202583914dd24c4ad7cc89501ded593f993",
+      "bytes": 6578
+    },
+    "replay/ENVIRONMENT.json": {
+      "sha256": "9b5516a8f0acdd353d81030883a56d34c89c0f1a5319081cb0cedb9c0212a4a6",
+      "bytes": 1053
+    },
+    "replay/objectives.csv": {
+      "sha256": "e98ce727da8ef93ab25aa66996967c3a5bb29fa6f2277f3935f8b4a76f504b44",
+      "bytes": 39707
+    },
+    "replay/PLAN.json": {
+      "sha256": "b61d78357077102b37ad4c44d17b3bec453c7bccf9c2c912cb5becf29e328c2e",
+      "bytes": 1875
+    },
+    "replay/RESULTS.json": {
+      "sha256": "f0ac1ef0dab530fe44c15ffbe7025f1fc8d1a66c3fe71a5fb6555a60feda50ca",
+      "bytes": 14722
+    },
+    "replay_objectives.py": {
+      "sha256": "3f87cc5c8a573fae578f9cba9741d04b66142d481017677028403effc8a8b74b",
+      "bytes": 9680
+    },
+    "review_agent/ENVIRONMENT.json": {
+      "sha256": "9b5516a8f0acdd353d81030883a56d34c89c0f1a5319081cb0cedb9c0212a4a6",
+      "bytes": 1053
+    },
+    "review_agent/objectives.csv": {
+      "sha256": "e98ce727da8ef93ab25aa66996967c3a5bb29fa6f2277f3935f8b4a76f504b44",
+      "bytes": 39707
+    },
+    "review_agent/PLAN.json": {
+      "sha256": "8e65140f1a44b7fc0817446f97869d19ac69440b9c53bb9992c2ef0007b64394",
+      "bytes": 1875
+    },
+    "review_agent/RESULTS.json": {
+      "sha256": "f0ac1ef0dab530fe44c15ffbe7025f1fc8d1a66c3fe71a5fb6555a60feda50ca",
+      "bytes": 14722
+    },
+    "review_agent/VALIDATION.json": {
+      "sha256": "d92478a13f56cb8e555608cbf59d2658dcf1e49c6c3f50c7851ab55f05774631",
+      "bytes": 2564
+    },
+    "source/itq_feasibility_synthetic.py": {
+      "sha256": "18ddc99dfe57e93f949ea55b2e1c9cae402c9204d1db99bb82d0a2014a30973d",
+      "bytes": 26828
+    },
+    "source/PLAN.json": {
+      "sha256": "e56ea0d6858e06211fa9eb82d6d255724a3d0e23016b77d28f8d8ff10923c53f",
+      "bytes": 3190
+    },
+    "source/RESULTS.json": {
+      "sha256": "0c2cf96553dbf448d22def0538c8993ada038d1fdac52665f759c08e5a304214",
+      "bytes": 531107
+    },
+    "verify_package.py": {
+      "sha256": "09ccbabfa768bd46c27b83204918c42561d45c92780848fb382b03efc6081713",
+      "bytes": 1409
+    }
+  }
+}

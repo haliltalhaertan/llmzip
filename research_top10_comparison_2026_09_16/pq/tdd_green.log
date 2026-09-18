@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq
+plugins: anyio-4.15.1, typeguard-4.4.4
+collecting ... collected 9 items
+
+test_pq_top10.py::test_l2_normalize_unit_and_rejects PASSED              [ 11%]
+test_pq_top10.py::test_packed_code_shape_12B PASSED                      [ 22%]
+test_pq_top10.py::test_bit_roundtrip_pack_unpack PASSED                  [ 33%]
+test_pq_top10.py::test_lut_adc_matches_bruteforce_1e5 PASSED             [ 44%]
+test_pq_top10.py::test_no_leaked_training_queries PASSED                 [ 55%]
+test_pq_top10.py::test_top10_determinism_ties_gold_at_cutoff PASSED      [ 66%]
+test_pq_top10.py::test_metrics_multigold_and_expected_tie PASSED         [ 77%]
+test_pq_top10.py::test_canonical_705_gold_binding PASSED                 [ 88%]
+test_pq_top10.py::test_codebook_bytes_98304 PASSED                       [100%]
+
+============================== 9 passed in 23.95s ==============================
+pytest exit:0

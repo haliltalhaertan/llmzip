@@ -1,0 +1,59 @@
+env: python 3.13.15 sklearn 1.8.0 numpy 2.3.5
+convs: 10 corrections: 156
+locomo_0: counts MATCH
+locomo_1: counts MATCH
+locomo_2: counts MATCH
+locomo_3: counts MATCH
+locomo_4: counts MATCH
+locomo_5: counts MATCH
+locomo_6: counts MATCH
+locomo_7: counts MATCH
+locomo_8: counts MATCH
+locomo_9: counts MATCH
+ALL COUNT FIELDS MATCH: True
+valid questions: 1535
+native audit fractional R@3 recomputed: 0.23654714666441054
+frozen expected                        : 0.23654714666441054
+EXACT MATCH: True  abs error: 0.0
+{
+ "locomo_0": {
+  "C_sha256_float64": "565582c92a5f595c39156e4e72caa28a78cbe36337d507345ccba12f06ffc931",
+  "QC_sha256_float64": "cb0b0b5236ce0ea10166b9c10a8b086d45ef8e88c7ea8949b80168b533b2f210"
+ },
+ "locomo_1": {
+  "C_sha256_float64": "5ac62ad91c1d5ca33a5a83beaa385c99035ac2a08dadd5b69a908ba0e1cda7c2",
+  "QC_sha256_float64": "e5049a06bfdd34bbee13a95862c4c92aba2723c20ab41cc34daa0ad1718d1026"
+ },
+ "locomo_2": {
+  "C_sha256_float64": "2b5f4d958b9e607919b297ec737069243defcf2886df6249776fd60fbe9c5471",
+  "QC_sha256_float64": "e719bdf5c829d399485ad4bbd9931ae3ea0971d40624b51711d542f76390c8db"
+ },
+ "locomo_3": {
+  "C_sha256_float64": "bf036ca67c7e025afc2a250820c48473eeb81f3447ec6fa7d1ab00666bad1d4a",
+  "QC_sha256_float64": "354a814e08ad211b3bc326c2eb6956f9c4c4a8bd0724c5dd3913af1a18656f0b"
+ },
+ "locomo_4": {
+  "C_sha256_float64": "9eb03dacca67b5964224edaad3ace7450c4cd50dc0c5fc9bb96f5f51f9cec40d",
+  "QC_sha256_float64": "01e94f36a98de73f32929560cb57c6e7320e62513904fe7b853ebbc3eafda01a"
+ },
+ "locomo_5": {
+  "C_sha256_float64": "896f3de3d7d20e9f54926d28084c7b5037b6172e82a03ea80dfdb39e5de546ec",
+  "QC_sha256_float64": "b564e77dd717d133ce4c4bd7d7da93cdf4b57b5c9d7eaa5598fbda126e5ca0ea"
+ },
+ "locomo_6": {
+  "C_sha256_float64": "668ddeb335e9fc16c03ed5c3c59cfecf71f8d51deaefe2a9c40718e476eb45f3",
+  "QC_sha256_float64": "a8a3ba5df7bf203c00a59970560fb00d8768c6808bd6459b61a9e28a10ab5920"
+ },
+ "locomo_7": {
+  "C_sha256_float64": "e0cf8e1fee62d5db3895c49ccee3590d221ffde0f0e82a9c8e4ba750f50e0c78",
+  "QC_sha256_float64": "1167fdd403c7cd0f17dc587525409250f3b279ec5b667ddfcb92a3584fd3050f"
+ },
+ "locomo_8": {
+  "C_sha256_float64": "6f543e5de070a4e2cfb654638e82cddbcbe2d0edd4f34cdaed4060478d71a3c4",
+  "QC_sha256_float64": "3075f779b5955b549f8e3cd0c741e2baadc36a22c219afcb719821522fcea6d8"
+ },
+ "locomo_9": {
+  "C_sha256_float64": "380a0ba50c52e8be0f794cd3669c7e656082f34240730c5d211db675780d8592",
+  "QC_sha256_float64": "79daf0a064c142702eafad50f28521967771336319c626ac76e897fb77e3d9b9"
+ }
+}

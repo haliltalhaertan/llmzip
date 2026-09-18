@@ -1,0 +1,84 @@
+llmzip programme worker. Python: $HOME/muse-work/ml-python (numpy/scipy/sklearn/faiss available).
+NO paid APIs, NO web, NO git, NO pip installs. Write ONLY inside YOUR directory (below).
+Everything else is READ-ONLY - never modify an input file.
+
+Label every artifact: [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+EVIDENCE DISCIPLINE (the coordinator will independently re-derive your numbers; wrong claims will be caught):
+- Never average across benchmarks. PerLTQA / LME / RealTalk stay separate. Always report n.
+- Report the metric the analysis actually computes; never rename FR@3 into Hit@10 or vice versa.
+- exit code 0 is NOT proof of correctness. A test that cannot fail proves nothing.
+- If a gate fails, STOP and report the failure. Do NOT adjust the gate to pass. Do NOT quietly
+  drop queries/archives to make numbers look better. Any exclusion must be declared with a count
+  and a reason, decided BEFORE seeing the resulting scores.
+- If something is missing or impossible, write it down as a blocker. NEVER invent data or numbers.
+- Save partial artifacts as you go. Budget ~25 minutes.
+
+SHARED DEFINITIONS (use exactly these; do not re-invent):
+- Deterministic top-K tie rule: sort by score DESC, then ascending SHA256("top10-r1|"+archive_id+"|"+str(row)),
+  then ascending row. Return exactly K ids, no duplicates. Gold-unaware.
+- Hit@K = 1 if any gold row is in the K returned ids, else 0. Mean over queries.
+- FR@3 (fractional evidence recall @3) = |gold INTERSECT top3| / |gold|. Mean over queries.
+- Paired archive-clustered bootstrap, 20000 reps, seed 20260916, for any contrast CI.
+  RealTalk has only 10 archive clusters -> CIs are wide and exploratory, say so.
+A reference implementation of the tie rule + metrics you may import READ-ONLY:
+/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/audit_baseline_lib.py
+(functions: det_top10(scores, archive_id, k), hrn(top, gold, k), expected_hit, pack_signs_bool, decode_pm1)
+
+YOUR DIRECTORY: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ideas_r1/ablation
+
+TASK: Does the LSA channel earn its place? The production representation concatenates THREE views of the
+SAME text: Z = [LSA32(word-tfidf) | word-tfidf | char-tfidf] -> TruncatedSVD(96) -> L2 normalize -> center
+-> sign = 12-byte code. The hypothesis to TEST (not to confirm): LSA is derived FROM the word channel, so
+general topic similarity may be counted multiple times while the detail that distinguishes the answer gets
+outvoted. Removing a redundant channel could improve ranking AND cut cost.
+
+THE FROZEN BUILDER (read-only, this is ground truth for the pipeline):
+/mnt/c/Users/MDP/dev/llmzip-work/drive/v52_t4d_locomo_frozen_cross_benchmark.py
+Read `fit_archive_representation`, `fit_input_payload`, `build_representation`, and the seed constants.
+Seeds: LSA32 random_state=5101, final SVD96 random_state=5204. Use them exactly; a wrong seed invalidates
+the run (this already happened once in the programme - see BOTTLENECK.json INVALID_SEED_DEFECT).
+
+DATA (read-only):
+- RealTalk canonical export, 10 archives, 705 valid queries, WITH doc texts and query texts:
+  /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/data/RT01.json .. RT10.json
+  schema {archive_id, source_file, docs:[{row,id,text}], queries:[{qid,text,gold:[row...],category}]}
+- Cached production C/QC to validate your rebuild against:
+  /mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3a_realtalk/rt_repr/RT01.pkl .. RT10.pkl
+  (keys: C, QC, qids, gold_rows, id_to_row, N, conv_id)
+
+*** BLOCKING FIDELITY GATE - RUN THIS FIRST, BEFORE ANY ABLATION NUMBER ***
+Rebuild the FULL production representation from the RealTalk raw texts using the frozen code path and
+compare to the cached C/QC:
+  G1. sign(C_rebuilt) must equal sign(C_cached) for EVERY element of all 10 archives. Report the exact
+      count of differing bits (expect 0).
+  G2. The rebuilt FULL arm's Hit@10 and FR@3 must equal the cached production values for all 705 queries.
+      Cached reference (already verified by the coordinator, qscale scorer): Hit@10 = 49.6454%, FR@3 = 22.41%.
+      For the plain sign/Hamming scorer the cached reference is Hit@10 = 46.6809%.
+  If G1/G2 fail, your rebuild is not the production pipeline -> STOP, report the mismatch with diagnostics,
+  and do NOT report ablation results as if they were comparable. This gate is the whole point: without it
+  an ablation measures your reimplementation, not our system.
+
+ARMS (identical everywhere else: same SVD96 seed, same 96 dims, same 12-byte sign coding, same scorers):
+  FULL          Z = [LSA32 | word | char]      (production control)
+  NO_LSA        Z = [word | char]
+  NO_CHAR       Z = [LSA32 | word]
+  WORD_ONLY     Z = [word]
+  LSA_ONLY      Z = [LSA32]
+Removing a channel changes Z's width; keep the final SVD at 96 components and assert min(Z.shape) > 96.
+
+SCORERS (report each arm under BOTH; they answer different questions):
+  sym    = -Hamming(doc bits, query bits)                      [pure 12-byte symmetric]
+  qscale = dot(doc bits as +-1, qC / sigma), sigma = per-archive std of DOCUMENT C columns,
+           ddof=0, floor 1e-12, DOCUMENTS ONLY (never fit sigma on queries or gold)  [current best]
+
+METRICS: Hit@10, FR@3, Hit@3, plus exact expected-Hit@10 under uniform ties. n=705, per-archive breakdown too.
+CONTRASTS: each ablation arm MINUS FULL, with the paired archive-clustered bootstrap CI (10 clusters - wide).
+
+ALSO REPORT (this decides cost, not just quality): per-arm index build time, Z feature-count, and the
+resulting per-document payload bytes (should stay 12 B for all arms - confirm it does).
+
+DELIVERABLES: `ablation.py`, `FIDELITY_GATE.json` (G1/G2 evidence, written BEFORE ablation runs),
+`per_query.jsonl` (every query, every arm, every scorer - so the coordinator can replay you),
+`RESULTS.json`, `REPORT.md`. In REPORT.md state plainly whether the redundancy hypothesis is supported,
+refuted, or inconclusive on THIS benchmark, and warn that RealTalk alone (10 clusters) cannot settle it.

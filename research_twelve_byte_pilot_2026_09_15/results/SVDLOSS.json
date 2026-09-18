@@ -1,0 +1,137 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "what": "fraction of each word-channel column's energy surviving the rank-96 truncation; no query, no gold, no BM25",
+  "n_archives": 12,
+  "spearman_df_vs_survival_pooled": 0.3698382485131566,
+  "spearman_per_archive_mean": 0.38349378623663477,
+  "by_df_bucket": [
+    {
+      "df_from": 1,
+      "df_to": 2,
+      "n_terms": 376559,
+      "mean_survival": 0.18237631701074847,
+      "median_survival": 0.17234296102949664
+    },
+    {
+      "df_from": 2,
+      "df_to": 3,
+      "n_terms": 50117,
+      "mean_survival": 0.32900275843110666,
+      "median_survival": 0.27337513401827357
+    },
+    {
+      "df_from": 3,
+      "df_to": 5,
+      "n_terms": 24195,
+      "mean_survival": 0.36376032896492283,
+      "median_survival": 0.32024447484564855
+    },
+    {
+      "df_from": 5,
+      "df_to": 10,
+      "n_terms": 14330,
+      "mean_survival": 0.42600593827517,
+      "median_survival": 0.38027597618604925
+    },
+    {
+      "df_from": 10,
+      "df_to": 20,
+      "n_terms": 6644,
+      "mean_survival": 0.5169772797596394,
+      "median_survival": 0.46081141964598427
+    },
+    {
+      "df_from": 20,
+      "df_to": 50,
+      "n_terms": 2499,
+      "mean_survival": 0.5640884490396316,
+      "median_survival": 0.5199719992406264
+    },
+    {
+      "df_from": 50,
+      "df_to": 1000000000,
+      "n_terms": 707,
+      "mean_survival": 0.757196387465794,
+      "median_survival": 0.8018429719038747
+    }
+  ],
+  "per_archive": [
+    {
+      "archive": "001be529",
+      "N": 514,
+      "n_word_terms": 39940,
+      "spearman_df_vs_survival": 0.3994770997324065
+    },
+    {
+      "archive": "00ca467f",
+      "N": 486,
+      "n_word_terms": 38846,
+      "spearman_df_vs_survival": 0.3631933117291797
+    },
+    {
+      "archive": "0100672e",
+      "N": 486,
+      "n_word_terms": 41054,
+      "spearman_df_vs_survival": 0.3894189463613712
+    },
+    {
+      "archive": "01493427",
+      "N": 487,
+      "n_word_terms": 39327,
+      "spearman_df_vs_survival": 0.37938179757487195
+    },
+    {
+      "archive": "031748ae",
+      "N": 494,
+      "n_word_terms": 39940,
+      "spearman_df_vs_survival": 0.3897709050765785
+    },
+    {
+      "archive": "06878be2",
+      "N": 443,
+      "n_word_terms": 40797,
+      "spearman_df_vs_survival": 0.3706762413536802
+    },
+    {
+      "archive": "06db6396",
+      "N": 479,
+      "n_word_terms": 39011,
+      "spearman_df_vs_survival": 0.3867418696012894
+    },
+    {
+      "archive": "06f04340",
+      "N": 503,
+      "n_word_terms": 40212,
+      "spearman_df_vs_survival": 0.3771268581802829
+    },
+    {
+      "archive": "07741c44",
+      "N": 513,
+      "n_word_terms": 38768,
+      "spearman_df_vs_survival": 0.37691616349608015
+    },
+    {
+      "archive": "07741c45",
+      "N": 527,
+      "n_word_terms": 38354,
+      "spearman_df_vs_survival": 0.36189247694116394
+    },
+    {
+      "archive": "078150f1",
+      "N": 551,
+      "n_word_terms": 39388,
+      "spearman_df_vs_survival": 0.4036578022568501
+    },
+    {
+      "archive": "07b6f563",
+      "N": 524,
+      "n_word_terms": 39414,
+      "spearman_df_vs_survival": 0.40367196253586235
+    }
+  ]
+}

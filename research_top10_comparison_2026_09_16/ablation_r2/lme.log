@@ -1,0 +1,3 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ablation_r2/lme (cwd default)
+muse: workspace trust: trusted source=run-flag
+received SIGTERM; flushed session logs

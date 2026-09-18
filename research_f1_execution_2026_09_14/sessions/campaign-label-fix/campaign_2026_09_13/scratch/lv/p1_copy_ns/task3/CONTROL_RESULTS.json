@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "seed": 9312099,
+  "signed_permutation_equivalent": {
+    "raw_frobenius": 13.856406460551018,
+    "raw_normalized": 1.4142135623730951,
+    "signed_permutation_frobenius": 0.0,
+    "signed_permutation_normalized": 0.0
+  },
+  "unrelated_Haar_control": {
+    "raw_frobenius": 13.782394916607819,
+    "raw_normalized": 1.4066597908007445,
+    "signed_permutation_frobenius": 11.837266778210154,
+    "signed_permutation_normalized": 1.2081359814922439
+  },
+  "assignment_vs_exhaustive_3d_abs_error": 0.0,
+  "sign_zero_rule": "+0.0 and -0.0 map to +1",
+  "procrustes_closed_form_abs_error": 4.996003610813204e-16,
+  "wrong_sign_objective_excess": 3.5459558248882894,
+  "nonincreasing_objective_control": {
+    "iterations": 13,
+    "converged": true,
+    "stop_reason": "relative_objective_stable_5",
+    "cap_hit": false,
+    "initial_objective_mean": 0.4056569727854947,
+    "final_objective_mean": 0.17266321687636701,
+    "initial_objective_sum": 4984.712881588159,
+    "final_objective_sum": 2121.685608976798,
+    "relative_training_objective_reduction": 0.5743615210389377,
+    "orthogonality_frobenius_error": 2.7231355062582522e-14,
+    "monotonicity_violations": 0,
+    "positive_half_step_increases_within_tolerance": 0,
+    "largest_positive_half_step_increase": 0.0,
+    "exact_zero_projection_entries_over_observed_steps": 0,
+    "elapsed_seconds": 0.02740979997906834,
+    "initial_rotation": {
+      "shape": [
+        96,
+        96
+      ],
+      "dtype": "<f8",
+      "order": "C",
+      "sha256_raw_c_bytes": "7a0fb9f0e35fdca0d64e5dba4d8e095228f8618dee65bb36204ae5504ec93dc5",
+      "bytes": 73728
+    },
+    "final_rotation": {
+      "shape": [
+        96,
+        96
+      ],
+      "dtype": "<f8",
+      "order": "C",
+      "sha256_raw_c_bytes": "e24bf0fce6fee65b903f598dfd6338ec583ca2060d4bf3e976aca52d7d14e3d9",
+      "bytes": 73728
+    },
+    "final_binary_codes": {
+      "shape": [
+        128,
+        96
+      ],
+      "dtype": "|i1",
+      "order": "C",
+      "sha256_raw_c_bytes": "49e09cd17c0cb9d9848c52865da12d79152c317f05a0c4ae18d87913a0aea1e2",
+      "bytes": 12288
+    }
+  },
+  "elapsed_seconds": 0.03597750002518296
+}

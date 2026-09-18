@@ -1,0 +1,103 @@
+{
+  "tie_formula_exact_bruteforce": {
+    "cases": [
+      {
+        "scores": [
+          5.0,
+          5.0,
+          5.0,
+          1.0,
+          0.0
+        ],
+        "gold": [
+          0
+        ],
+        "formula": 1.0,
+        "brute_force_all_perms": 1.0,
+        "abs_diff": 0.0
+      },
+      {
+        "scores": [
+          5.0,
+          4.0,
+          4.0,
+          4.0,
+          0.0
+        ],
+        "gold": [
+          1,
+          2
+        ],
+        "formula": 0.6666666666666666,
+        "brute_force_all_perms": 0.6666666666666666,
+        "abs_diff": 0.0
+      },
+      {
+        "scores": [
+          9.0,
+          4.0,
+          4.0,
+          4.0,
+          4.0
+        ],
+        "gold": [
+          1,
+          4
+        ],
+        "formula": 0.5,
+        "brute_force_all_perms": 0.5,
+        "abs_diff": 0.0
+      },
+      {
+        "scores": [
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0
+        ],
+        "gold": [
+          0,
+          1,
+          2
+        ],
+        "formula": 0.6,
+        "brute_force_all_perms": 0.5999999999999996,
+        "abs_diff": 3.3306690738754696e-16
+      },
+      {
+        "scores": [
+          7.0,
+          6.0,
+          5.0,
+          4.0,
+          3.0
+        ],
+        "gold": [
+          2,
+          3
+        ],
+        "formula": 0.5,
+        "brute_force_all_perms": 0.5,
+        "abs_diff": 0.0
+      }
+    ],
+    "max_abs_diff": 3.3306690738754696e-16,
+    "verdict": "EXACT MATCH - formula is provably the NT->inf limit"
+  },
+  "distances_are_python_ints": {
+    "sample": [
+      54,
+      53,
+      55,
+      54,
+      55
+    ],
+    "all_int": true
+  },
+  "recenter_in_arms": {
+    "no_recenter_delta_pp": 10.053782505910156,
+    "recenter_delta_pp": 10.053782505910156,
+    "abs_change_pp": 0.0
+  }
+}

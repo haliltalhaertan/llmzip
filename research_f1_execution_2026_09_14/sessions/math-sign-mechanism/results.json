@@ -1,0 +1,115 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "E1": {
+    "q": [
+      1,
+      1,
+      1
+    ],
+    "R": [
+      "1",
+      "0.1",
+      "0.1"
+    ],
+    "I": [
+      "-1",
+      "5",
+      "5"
+    ],
+    "hamming_gold": 0,
+    "hamming_distractor": 1,
+    "cos_cmp_gold_vs_distr": -1,
+    "certificate": "81*1.02=82.62 > 1.44*51=73.44, both dots positive"
+  },
+  "E2": {
+    "q": [
+      1,
+      1,
+      1
+    ],
+    "R": [
+      "1",
+      "-0.1",
+      "-0.1"
+    ],
+    "I": [
+      "-1",
+      "0.1",
+      "0.1"
+    ],
+    "hamming_gold": 2,
+    "hamming_distractor": 1,
+    "dots": [
+      "4/5",
+      "-4/5"
+    ],
+    "cos_cmp_gold_vs_distr": 1
+  },
+  "model_H": {
+    "t_lo": {
+      "t": "1/2",
+      "sign_win": "11/16",
+      "sign_tie": "1/4",
+      "sign_loss": "1/16",
+      "cos_win": "15/16",
+      "cos_tie": "1/16",
+      "cos_loss": "0",
+      "sign_exp": "13/16",
+      "cos_exp": "31/32",
+      "sign_pess": "11/16",
+      "cos_pess": "15/16",
+      "sign_opt": "15/16",
+      "cos_opt": "1"
+    },
+    "t_hi": {
+      "t": "10",
+      "sign_win": "11/16",
+      "sign_tie": "1/4",
+      "sign_loss": "1/16",
+      "cos_win": "11/16",
+      "cos_tie": "0",
+      "cos_loss": "5/16",
+      "sign_exp": "13/16",
+      "cos_exp": "11/16",
+      "sign_pess": "11/16",
+      "cos_pess": "11/16",
+      "sign_opt": "15/16",
+      "cos_opt": "11/16"
+    },
+    "reading": "sign exp 13/16 all t>0; cos exp 31/32 at t=1/2, 11/16 at t=10"
+  },
+  "transport": {
+    "6": {
+      "sign": "491159/524288",
+      "cos_lo": "1047983/1048576",
+      "cos_hi": "429913/524288"
+    },
+    "10": {
+      "sign": "64355864171/85899345920",
+      "cos_lo": "171096611457/171798691840",
+      "cos_hi": "7385637809/17179869184"
+    }
+  },
+  "model_V": {
+    "variances": [
+      "217/3",
+      "425/9",
+      "1",
+      "1"
+    ],
+    "rank_desc": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "FR_TOP2": "3/5",
+    "FR_BOT2": "1",
+    "FR_full": "1"
+  }
+}

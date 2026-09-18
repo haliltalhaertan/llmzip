@@ -1,0 +1,7 @@
+# Coordinator inspection notes (producer files preserved)
+- data expected_hit() returns expected fractional Recall, not probability any gold. Primary top10 metrics separately recompute. Already assigned to audit worker.
+- pq/run_pq.py expected_hit_uniform() returns EXPECTED NUMBER of golds, possibly >1, not Hit probability. Auxiliary column must be replaced/invalidated. Primary top10 can remain if independent replay passes.
+- semantic/encode_pplx.py initial resume logic ignores stored complete mask, sets have[:]=True for any matching hashes. An interrupted partial NPZ would falsely finalize zero rows as complete. Requires fix and regression before resume (and before final acceptance).
+- semantic/pplx_scorer initial masked_mean_pool uses float64 numpy reduction then float32, native int8 uses float64 tanh; official ST CPU FP32 uses torch FP32. Require exact faithful CPU reference, not silently claim native production using mathematically same but numerically different operations.
+- baseline loads/evaluates cached FLOAT96 in float64: 768 bytes/doc actually represented, 384B FP32 only an unevaluated storage alternative unless separate FP32 ranking replay passes. Do NOT say executed FP32 simply because typical embeddings are FP32.
+- PQ training declared normalized rawFLOAT96 docs globally across10archives. ArchiveSVD coordinate bases differ; globalPQ codebook is a specific reproducible control, not best-tuned PQ. Encodermodel/projector/sparse vocabulary missing cost NOT MEASURED, not zero.

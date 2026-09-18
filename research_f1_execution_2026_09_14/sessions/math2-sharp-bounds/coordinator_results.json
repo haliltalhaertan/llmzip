@@ -1,0 +1,151 @@
+{
+  "K": 3,
+  "banner": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "realizability_pairs_checked": 4432,
+  "pergold_checks_K3": 6492,
+  "pergold_checks_K3_old_lo_vacuous": 3772,
+  "pergold_checks_K3_strict_lo": {
+    "b": 2,
+    "s": 1,
+    "r": 1,
+    "K": 3,
+    "d": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "g": 0,
+    "old_lo": "0",
+    "new_min": "3/4"
+  },
+  "pergold_checks_K3_strict_hi": {
+    "b": 2,
+    "s": 1,
+    "r": 1,
+    "K": 3,
+    "d": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "g": 0,
+    "old_hi": "1",
+    "new_max": "3/4"
+  },
+  "pergold_checks_K1": 380,
+  "pergold_checks_K1_old_lo_vacuous": 335,
+  "pergold_checks_K1_strict_lo": {
+    "b": 2,
+    "s": 1,
+    "r": 1,
+    "K": 1,
+    "d": [
+      0,
+      0
+    ],
+    "g": 0,
+    "old_lo": "0",
+    "new_min": "1/2"
+  },
+  "pergold_checks_K1_strict_hi": {
+    "b": 2,
+    "s": 1,
+    "r": 1,
+    "K": 1,
+    "d": [
+      0,
+      0
+    ],
+    "g": 0,
+    "old_hi": "1",
+    "new_max": "1/2"
+  },
+  "monotonicity_cells": 36,
+  "showcase": {
+    "lo": {
+      "d": [
+        4,
+        0,
+        4,
+        4,
+        4
+      ],
+      "old_lo": "0",
+      "new": "1/2"
+    },
+    "hi": {
+      "d": [
+        4,
+        0,
+        0,
+        2,
+        2
+      ],
+      "old_hi": "1",
+      "new": "1/3"
+    }
+  },
+  "joint_witness": {
+    "b": 4,
+    "s": 2,
+    "r": 2,
+    "K": 3,
+    "d": [
+      2,
+      2,
+      0,
+      0
+    ],
+    "golds": [
+      0,
+      1
+    ],
+    "avg_of_pergold_max": "1",
+    "best_joint": "3/4",
+    "uniform_golds_at_L": "3/4",
+    "gamma_envelope_gap": "1/4"
+  },
+  "edge_cases": {
+    "s0_intervals": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "s0_f_gold0": "3/4",
+    "r0_intervals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "b0_ok": true
+  },
+  "broken_variant_rejected": true
+}

@@ -1,0 +1,12 @@
+{
+  "namespace": "drafts/v52/static_storage_integration_v6_2026_09_12",
+  "repairs": [
+    "61827088b99905e25c3a40679e1c5b483f3b83a9",
+    "f13969f2598bcb4a26cbfc9ffe35433851bc02c7"
+  ],
+  "files": {
+    "INTEGRATION_V6_DISPOSITION.md": "6c1390a88a596bc48625b267a741ceefc7e1905779c8a47abbaafd769133528d",
+    "storage_adapter_preflight_v6.py": "eb7165bcbe633c0a9d233e3b7167fb67590ca8b8db6076d6b205a6e1c7648b75",
+    "test_integration_v6.py": "13aa4c226a66b11e4de2978fb3ca345b37470227def69cc67b103a0bb5d8efad"
+  }
+}

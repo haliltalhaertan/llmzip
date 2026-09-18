@@ -1,0 +1,146 @@
+[init] [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+[rt] loading raw + cache
+[rt] 10 archives, 705 queries; rebuilding FULL...
+[gate/rt] G1 diffbits=0/858624 qc=0 maxabs=0.000e+00 pass=True
+[gate/rt] G2 rebuilt sym: Hit@10=46.5248 FR@3=22.8676 Hit@3=30.0709 expHit@10=46.6809 n=705
+[gate/rt] G2 rebuilt qscale: Hit@10=49.6454 FR@3=22.4099 Hit@3=29.5035 expHit@10=49.6454 n=705
+[pq] loading raw + caches
+[pq] 30 archives; rebuilding FULL C...
+[gate/pq] Cai Xiuying: N=459 diffbits=0/44064 maxabs=0.000e+00
+[gate/pq] Cao Lili: N=377 diffbits=0/36192 maxabs=0.000e+00
+[gate/pq] Feng Wei: N=422 diffbits=0/40512 maxabs=0.000e+00
+[gate/pq] Han Gang: N=448 diffbits=0/43008 maxabs=0.000e+00
+[gate/pq] He Feng: N=442 diffbits=0/42432 maxabs=0.000e+00
+[gate/pq] Huang Xin: N=418 diffbits=0/40128 maxabs=0.000e+00
+[gate/pq] Kong Tingting: N=293 diffbits=0/28128 maxabs=0.000e+00
+[gate/pq] Li Hua: N=422 diffbits=0/40512 maxabs=0.000e+00
+[gate/pq] Liang Xin: N=546 diffbits=0/52416 maxabs=0.000e+00
+[gate/pq] Lin Wen: N=392 diffbits=0/37632 maxabs=0.000e+00
+[gate/pq] Liu Liang: N=401 diffbits=0/38496 maxabs=0.000e+00
+[gate/pq] Lu Yun: N=392 diffbits=0/37632 maxabs=0.000e+00
+[gate/pq] Madan: N=381 diffbits=0/36576 maxabs=0.000e+00
+[gate/pq] Peng Jie: N=459 diffbits=0/44064 maxabs=0.000e+00
+[gate/pq] Qin Meng: N=402 diffbits=0/38592 maxabs=0.000e+00
+[gate/pq] Sun Xiaoming: N=406 diffbits=0/38976 maxabs=0.000e+00
+[gate/pq] Tayo: N=437 diffbits=0/41952 maxabs=0.000e+00
+[gate/pq] Wang Ming: N=408 diffbits=0/39168 maxabs=0.000e+00
+[gate/pq] Wang Xiaoming: N=438 diffbits=0/42048 maxabs=0.000e+00
+[gate/pq] Xia Tong: N=380 diffbits=0/36480 maxabs=0.000e+00
+[gate/pq] Xiao Ming: N=376 diffbits=0/36096 maxabs=0.000e+00
+[gate/pq] Xiong Fei: N=412 diffbits=0/39552 maxabs=0.000e+00
+[gate/pq] Xu Hui: N=359 diffbits=0/34464 maxabs=0.000e+00
+[gate/pq] Xu Jia: N=371 diffbits=0/35616 maxabs=0.000e+00
+[gate/pq] Yang Wei: N=416 diffbits=0/39936 maxabs=0.000e+00
+[gate/pq] Zhang Xiaohong: N=391 diffbits=0/37536 maxabs=0.000e+00
+[gate/pq] Zhao Li: N=491 diffbits=0/47136 maxabs=0.000e+00
+[gate/pq] Zheng Yong: N=385 diffbits=0/36960 maxabs=0.000e+00
+[gate/pq] Zhou Ting: N=421 diffbits=0/40416 maxabs=0.000e+00
+[gate/pq] Zhu Xiaolong: N=343 diffbits=0/32928 maxabs=0.000e+00
+[gate/pq] G1 diffbits=0/1179648 maxabs=0.000e+00 pass=True
+[gate/pq] G2 replay sym: Hit@10=75.6806 FR@3=49.0919 Hit@3=59.2619 expHit@10=75.7612 n=8265
+[gate/pq] G2 replay qscale: Hit@10=80.0000 FR@3=53.2375 Hit@3=64.2468 expHit@10=80.0000 n=8265
+[gate] OVERALL pass=True -> FIDELITY_GATE.json written
+[proof] rescale bit changes: docs 0/63552, queries 0/8160 -> holds=True
+[topk] verified equivalent on 100 samples
+[topk] verified equivalent on 30 samples
+[arms/RealTalk] RT01: N=662 nq=85 zero=0.00e+00 wall=2.5s
+[arms/RealTalk] RT02: N=476 nq=70 zero=0.00e+00 wall=3.5s
+[arms/RealTalk] RT03: N=453 nq=73 zero=0.00e+00 wall=2.7s
+[arms/RealTalk] RT04: N=422 nq=71 zero=0.00e+00 wall=3.8s
+[arms/RealTalk] RT05: N=410 nq=70 zero=0.00e+00 wall=3.4s
+[arms/RealTalk] RT06: N=1548 nq=74 zero=0.00e+00 wall=5.3s
+[arms/RealTalk] RT07: N=1511 nq=70 zero=0.00e+00 wall=5.8s
+[arms/RealTalk] RT08: N=1162 nq=70 zero=0.00e+00 wall=5.3s
+[arms/RealTalk] RT09: N=1044 nq=63 zero=0.00e+00 wall=5.3s
+[arms/RealTalk] RT10: N=1256 nq=59 zero=0.00e+00 wall=4.6s
+[arms/PerLTQA] Cai Xiuying: N=459 nq=409 zero=0.00e+00 wall=16.4s
+[arms/PerLTQA] Cao Lili: N=377 nq=302 zero=0.00e+00 wall=8.6s
+[arms/PerLTQA] Feng Wei: N=422 nq=324 zero=0.00e+00 wall=8.2s
+[arms/PerLTQA] Han Gang: N=448 nq=259 zero=0.00e+00 wall=6.9s
+[arms/PerLTQA] He Feng: N=442 nq=311 zero=0.00e+00 wall=10.1s
+[arms/PerLTQA] Huang Xin: N=418 nq=256 zero=0.00e+00 wall=7.4s
+[arms/PerLTQA] Kong Tingting: N=293 nq=216 zero=0.00e+00 wall=8.2s
+[arms/PerLTQA] Li Hua: N=422 nq=224 zero=0.00e+00 wall=7.8s
+[arms/PerLTQA] Liang Xin: N=546 nq=394 zero=0.00e+00 wall=16.3s
+[arms/PerLTQA] Lin Wen: N=392 nq=272 zero=0.00e+00 wall=7.6s
+[arms/PerLTQA] Liu Liang: N=401 nq=231 zero=0.00e+00 wall=8.6s
+[arms/PerLTQA] Lu Yun: N=392 nq=288 zero=0.00e+00 wall=6.4s
+[arms/PerLTQA] Madan: N=381 nq=299 zero=0.00e+00 wall=5.9s
+[arms/PerLTQA] Peng Jie: N=459 nq=284 zero=0.00e+00 wall=8.1s
+[arms/PerLTQA] Qin Meng: N=402 nq=314 zero=0.00e+00 wall=9.2s
+[arms/PerLTQA] Sun Xiaoming: N=406 nq=210 zero=0.00e+00 wall=8.3s
+[arms/PerLTQA] Tayo: N=437 nq=283 zero=0.00e+00 wall=9.6s
+[arms/PerLTQA] Wang Ming: N=408 nq=219 zero=0.00e+00 wall=7.3s
+[arms/PerLTQA] Wang Xiaoming: N=438 nq=242 zero=0.00e+00 wall=5.9s
+[arms/PerLTQA] Xia Tong: N=380 nq=290 zero=0.00e+00 wall=8.0s
+[arms/PerLTQA] Xiao Ming: N=376 nq=301 zero=0.00e+00 wall=9.8s
+[arms/PerLTQA] Xiong Fei: N=412 nq=362 zero=0.00e+00 wall=10.9s
+[arms/PerLTQA] Xu Hui: N=359 nq=281 zero=0.00e+00 wall=8.0s
+[arms/PerLTQA] Xu Jia: N=371 nq=205 zero=0.00e+00 wall=5.7s
+[arms/PerLTQA] Yang Wei: N=416 nq=233 zero=0.00e+00 wall=9.6s
+[arms/PerLTQA] Zhang Xiaohong: N=391 nq=202 zero=0.00e+00 wall=7.6s
+[arms/PerLTQA] Zhao Li: N=491 nq=239 zero=0.00e+00 wall=9.2s
+[arms/PerLTQA] Zheng Yong: N=385 nq=278 zero=0.00e+00 wall=9.7s
+[arms/PerLTQA] Zhou Ting: N=421 nq=214 zero=0.00e+00 wall=5.6s
+[arms/PerLTQA] Zhu Xiaolong: N=343 nq=323 zero=0.00e+00 wall=9.6s
+[arms] per_query.jsonl closed
+=== RealTalk (best non-FULL by qscale Hit@10: MED) ===
+  FULL           sym    Hit@10=46.5248 FR@3=22.8676 Hit@3=30.0709 expHit@10=46.6809 n=705
+  FULL           qscale Hit@10=49.6454 FR@3=22.4099 Hit@3=29.5035 expHit@10=49.6454 n=705
+  ITQ_C          sym    Hit@10=32.3404 FR@3=15.4316 Hit@3=20.7092 expHit@10=32.3263 n=705
+  ITQ_C          qscale Hit@10=32.7660 FR@3=15.4325 Hit@3=20.8511 expHit@10=32.8888 n=705
+  RAND_20260916  sym    Hit@10=32.1986 FR@3=14.4784 Hit@3=19.0071 expHit@10=31.9284 n=705
+  RAND_20260916  qscale Hit@10=35.1773 FR@3=15.4453 Hit@3=20.1418 expHit@10=35.1773 n=705
+  RAND_20260917  sym    Hit@10=32.4823 FR@3=15.2879 Hit@3=20.4255 expHit@10=32.0193 n=705
+  RAND_20260917  qscale Hit@10=35.3191 FR@3=15.9134 Hit@3=21.2766 expHit@10=35.3191 n=705
+  RAND_20260918  sym    Hit@10=33.0496 FR@3=15.4551 Hit@3=20.7092 expHit@10=33.0015 n=705
+  RAND_20260918  qscale Hit@10=34.6099 FR@3=16.2376 Hit@3=21.5603 expHit@10=34.6099 n=705
+  MED            sym    Hit@10=45.3901 FR@3=22.2948 Hit@3=30.3546 expHit@10=45.2480 n=705
+  MED            qscale Hit@10=49.2199 FR@3=21.7850 Hit@3=29.2199 expHit@10=49.2199 n=705
+  [RAND_20260916-FULL/sym] hit10=-14.33[-20.17,-8.59]; fr3=-8.39[-10.22,-6.51]
+  [RAND_20260916-FULL/qscale] hit10=-14.47[-20.58,-7.91]; fr3=-6.96[-8.84,-4.97]
+  [RAND_20260917-FULL/sym] hit10=-14.04[-20.92,-7.23]; fr3=-7.58[-10.21,-5.04]
+  [RAND_20260917-FULL/qscale] hit10=-14.33[-21.18,-7.12]; fr3=-6.50[-9.48,-3.31]
+  [RAND_20260918-FULL/sym] hit10=-13.48[-20.12,-7.05]; fr3=-7.41[-9.61,-5.09]
+  [RAND_20260918-FULL/qscale] hit10=-15.04[-21.63,-8.16]; fr3=-6.17[-8.67,-3.33]
+  [MED-FULL/sym] hit10=-1.13[-3.06,+0.73]; fr3=-0.57[-1.62,+0.42]
+  [MED-FULL/qscale] hit10=-0.43[-1.96,+1.12]; fr3=-0.62[-1.89,+0.81]
+  [ITQ_C-FULL/sym] hit10=-14.18[-22.35,-6.05]; fr3=-7.44[-10.46,-4.26]
+  [ITQ_C-FULL/qscale] hit10=-16.88[-24.21,-9.42]; fr3=-6.98[-9.17,-4.72]
+  [ITQ_C-RAND_20260916/sym] hit10=+0.14[-2.91,+3.31]; fr3=+0.95[-0.71,+2.91]
+  [ITQ_C-RAND_20260916/qscale] hit10=-2.41[-4.74,-0.14]; fr3=-0.01[-0.88,+1.01]
+  [ITQ_C-RAND_20260917/sym] hit10=-0.14[-2.82,+2.51]; fr3=+0.14[-1.88,+2.04]
+  [ITQ_C-RAND_20260917/qscale] hit10=-2.55[-4.73,-0.54]; fr3=-0.48[-2.21,+1.36]
+  [ITQ_C-RAND_20260918/sym] hit10=-0.71[-3.73,+2.53]; fr3=-0.02[-1.70,+1.77]
+  [ITQ_C-RAND_20260918/qscale] hit10=-1.84[-3.70,-0.28]; fr3=-0.81[-2.08,+0.52]
+=== PerLTQA (best non-FULL by qscale Hit@10: RAND_20260917) ===
+  FULL           sym    Hit@10=75.6806 FR@3=49.0919 Hit@3=59.2619 expHit@10=75.7612 n=8265
+  FULL           qscale Hit@10=80.0000 FR@3=53.2375 Hit@3=64.2468 expHit@10=80.0000 n=8265
+  ITQ_C          sym    Hit@10=76.1404 FR@3=47.3226 Hit@3=56.8905 expHit@10=76.3882 n=8265
+  ITQ_C          qscale Hit@10=78.9111 FR@3=50.6305 Hit@3=60.2299 expHit@10=78.9088 n=8265
+  RAND_20260916  sym    Hit@10=75.4991 FR@3=45.8996 Hit@3=55.5233 expHit@10=75.4472 n=8265
+  RAND_20260916  qscale Hit@10=78.7659 FR@3=50.6395 Hit@3=60.4356 expHit@10=78.7659 n=8265
+  RAND_20260917  sym    Hit@10=76.3702 FR@3=46.2866 Hit@3=55.8379 expHit@10=76.5184 n=8265
+  RAND_20260917  qscale Hit@10=79.4797 FR@3=50.6301 Hit@3=60.4840 expHit@10=79.4797 n=8265
+  RAND_20260918  sym    Hit@10=75.8984 FR@3=46.9653 Hit@3=56.2613 expHit@10=75.8403 n=8265
+  RAND_20260918  qscale Hit@10=78.8627 FR@3=51.7231 Hit@3=61.4156 expHit@10=78.8627 n=8265
+  MED            sym    Hit@10=74.8699 FR@3=48.7036 Hit@3=58.8990 expHit@10=74.7766 n=8265
+  MED            qscale Hit@10=79.4676 FR@3=52.7381 Hit@3=63.5935 expHit@10=79.4676 n=8265
+  [RAND_20260916-FULL/sym] hit10=-0.18[-1.49,+1.12]; fr3=-3.19[-5.03,-1.32]
+  [RAND_20260916-FULL/qscale] hit10=-1.23[-2.37,-0.10]; fr3=-2.60[-4.08,-1.13]
+  [RAND_20260917-FULL/sym] hit10=+0.69[-0.61,+2.00]; fr3=-2.81[-4.24,-1.31]
+  [RAND_20260917-FULL/qscale] hit10=-0.52[-1.47,+0.41]; fr3=-2.61[-3.80,-1.38]
+  [RAND_20260918-FULL/sym] hit10=+0.22[-1.19,+1.65]; fr3=-2.13[-3.63,-0.60]
+  [RAND_20260918-FULL/qscale] hit10=-1.14[-2.34,-0.02]; fr3=-1.51[-2.90,-0.12]
+  [MED-FULL/sym] hit10=-0.81[-1.38,-0.25]; fr3=-0.39[-0.89,+0.11]
+  [MED-FULL/qscale] hit10=-0.53[-0.92,-0.16]; fr3=-0.50[-0.85,-0.15]
+  [ITQ_C-FULL/sym] hit10=+0.46[-1.30,+2.08]; fr3=-1.77[-3.33,-0.20]
+  [ITQ_C-FULL/qscale] hit10=-1.09[-2.27,+0.05]; fr3=-2.61[-4.10,-1.10]
+  [ITQ_C-RAND_20260916/sym] hit10=+0.64[-0.19,+1.53]; fr3=+1.42[+0.46,+2.36]
+  [ITQ_C-RAND_20260916/qscale] hit10=+0.15[-0.74,+1.00]; fr3=-0.01[-0.77,+0.73]
+  [ITQ_C-RAND_20260917/sym] hit10=-0.23[-1.45,+0.92]; fr3=+1.04[+0.05,+2.03]
+  [ITQ_C-RAND_20260917/qscale] hit10=-0.57[-1.28,+0.18]; fr3=+0.00[-0.92,+0.96]
+  [ITQ_C-RAND_20260918/sym] hit10=+0.24[-0.92,+1.46]; fr3=+0.36[-0.89,+1.64]
+  [ITQ_C-RAND_20260918/qscale] hit10=+0.05[-0.65,+0.70]; fr3=-1.09[-2.01,-0.16]
+[check] arms-stage FULL reproduces gate G2 on both benchmarks exactly
+[done] total 780.8s

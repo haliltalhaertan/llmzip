@@ -1,0 +1,153 @@
+{
+  "arm": "PQ12B_FAISS_M12_NBITS8",
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ],
+  "params": {
+    "d": 96,
+    "M": 12,
+    "nbits": 8,
+    "ksub": 256,
+    "dsub": 8,
+    "seed": 20260915,
+    "niter": 20,
+    "threads": 1,
+    "normalize": "L2 docs+queries before train/code/score",
+    "score": "-sum_m ||q_m-c||^2 (LUT ADC, higher better)",
+    "tie": "score desc, SHA256(top10-r1|ARCH|row) asc, row asc",
+    "reconstruction": "kept unnormalized (no silent renorm)"
+  },
+  "counts": {
+    "n_archives": 10,
+    "n_docs_total": 8944,
+    "n_queries_total": 728,
+    "n_valid": 705,
+    "n_excluded_empty_gold": 23,
+    "per_archive_docs": {
+      "RT01": 662,
+      "RT02": 476,
+      "RT03": 453,
+      "RT04": 422,
+      "RT05": 410,
+      "RT06": 1548,
+      "RT07": 1511,
+      "RT08": 1162,
+      "RT09": 1044,
+      "RT10": 1256
+    }
+  },
+  "memory_bytes": {
+    "payload_per_doc": 12,
+    "payload_total": 107328,
+    "codebook_actual": 98304,
+    "codebook_expected": 98304,
+    "codebook_amortized_per_doc": 10.991055456171734,
+    "effective_per_doc_amortized": 22.991055456171736,
+    "note": "Equal 12B payload does NOT imply equal total memory; shared codebook charged separately.",
+    "original_SVD_encoder_projector": "NOT MEASURED (missing from old cache, not zero)"
+  },
+  "metrics_overall": {
+    "hit10": 0.3304964539007092,
+    "recall10": 0.24394911628954183,
+    "ndcg10": 0.17343215360960182,
+    "expected_hit10_uniform": 0.3304964539007092,
+    "n": 705
+  },
+  "per_archive_hit10": {
+    "RT01": {
+      "n_valid": 85,
+      "hit10": 0.4235294117647059
+    },
+    "RT02": {
+      "n_valid": 70,
+      "hit10": 0.34285714285714286
+    },
+    "RT03": {
+      "n_valid": 73,
+      "hit10": 0.6027397260273972
+    },
+    "RT04": {
+      "n_valid": 71,
+      "hit10": 0.5633802816901409
+    },
+    "RT05": {
+      "n_valid": 70,
+      "hit10": 0.5571428571428572
+    },
+    "RT06": {
+      "n_valid": 74,
+      "hit10": 0.05405405405405406
+    },
+    "RT07": {
+      "n_valid": 70,
+      "hit10": 0.14285714285714285
+    },
+    "RT08": {
+      "n_valid": 70,
+      "hit10": 0.04285714285714286
+    },
+    "RT09": {
+      "n_valid": 63,
+      "hit10": 0.2698412698412698
+    },
+    "RT10": {
+      "n_valid": 59,
+      "hit10": 0.2711864406779661
+    }
+  },
+  "verification": {
+    "lut_vs_brute_max_abs_diff": 1.7763568394002505e-15,
+    "lut_vs_brute_tol": 1e-05,
+    "packed_shape_ok": true,
+    "bit_roundtrip_ok": true,
+    "no_query_leak": {
+      "train_rows": 8944,
+      "queries_excluded": 728
+    },
+    "determinism_rerun_ok": true,
+    "canonical_gold_705_ok": true
+  },
+  "timing_s": {
+    "train": 18.01461287099994,
+    "encode_all": 47.62942087400006,
+    "query_all": 41.56186615499996,
+    "total": 111.70345686400003,
+    "per_query_ms": 58.95300163829781
+  },
+  "peak_rss_mb": 76.59765625,
+  "inputs": {
+    "rt_repr_shas": {
+      "RT01.pkl": "4afb6d6f101c77e080f51746576a2aa5911ddaf4f1929b6cdebb43bd03176828",
+      "RT02.pkl": "cb67a8fc488ef032c8bf07687522ea3ea93acfc4628d519ca761cfa63d2a655b",
+      "RT03.pkl": "5c04ae97f9e8fc19e9b0c1894d1737e706be82491095aec1e5e451c22982021e",
+      "RT04.pkl": "d0b5320cf5366cfbfe9ff68729e3eadeabdd085719a252fea2173873b6a9b836",
+      "RT05.pkl": "c03358253eb5f2618a6acdee8377b7d3d0f0fd5580ea6ead8e9848ab8347c62a",
+      "RT06.pkl": "e690eed70061f65a2f001ee38ca04744abbff4f85d79204c6627da480c58f005",
+      "RT07.pkl": "98650a410e20bdaf5f9348e4a20ad28cef3312d246a8c03a09c103a3cb63b405",
+      "RT08.pkl": "7c2a49ec171f4eb3a9d78228f91c2b0f57646851e5c20392de255af8fbc02056",
+      "RT09.pkl": "4689673d77d277e82e3faabfa3604040bf41ba0c268b994790f31090a4b2f4fe",
+      "RT10.pkl": "7ac5333f97b55a2945b850664d8bb042f92563d7d8af406196a59d840edbcfa6"
+    },
+    "adapter_sha": "a1dec27c1070e1ecb062c4481c6015e5091c1ac95c517ea381425e32c8ca3aa1"
+  },
+  "outputs": {
+    "centroids": "centroids.npy",
+    "codes": [
+      "RT01_codes.npz",
+      "RT02_codes.npz",
+      "RT03_codes.npz",
+      "RT04_codes.npz",
+      "RT05_codes.npz",
+      "RT06_codes.npz",
+      "RT07_codes.npz",
+      "RT08_codes.npz",
+      "RT09_codes.npz",
+      "RT10_codes.npz"
+    ],
+    "per_query": "per_query.jsonl"
+  },
+  "tuning": "none (no hyperparameter search; no other workers' scores read)"
+}

@@ -1,0 +1,40 @@
+{
+  "LME_frozenDelta_dedupe=False": {
+    "n": 470,
+    "strict": 0.14182013142373143,
+    "tie": 0.14044429655330729,
+    "strict_minus_auditor": 0.00013383537070407736,
+    "tie_minus_auditor": -9.497049405865488e-06,
+    "hits_1e_12": false
+  },
+  "LME_frozenDelta_dedupe=True": {
+    "n": 470,
+    "strict": 0.14182013142373143,
+    "tie": 0.14044429655330729,
+    "strict_minus_auditor": 0.00013383537070407736,
+    "tie_minus_auditor": -9.497049405865488e-06,
+    "hits_1e_12": false
+  },
+  "REALTALK_frozenDelta_dedupe=False": {
+    "n": 705,
+    "strict": 0.0979394409176499,
+    "tie": 0.12281981175104122,
+    "strict_minus_auditor": 3.120265329031868e-07,
+    "tie_minus_auditor": 2.875378911082471e-07,
+    "hits_1e_12": false
+  },
+  "REALTALK_frozenDelta_dedupe=True": {
+    "n": 705,
+    "strict": 0.0979394409176499,
+    "tie": 0.12281981175104122,
+    "strict_minus_auditor": 3.120265329031868e-07,
+    "tie_minus_auditor": 2.875378911082471e-07,
+    "hits_1e_12": false
+  },
+  "axis_order_check": {
+    "archives": 480,
+    "archives_with_tied_v": 0,
+    "archives_where_auditor_and_contract_arms_differ": 0
+  },
+  "duplicate_gold_queries_lme_plus_rt": 0
+}

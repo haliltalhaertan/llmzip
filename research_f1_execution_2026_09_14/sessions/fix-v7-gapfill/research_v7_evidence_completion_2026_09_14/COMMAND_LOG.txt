@@ -1,0 +1,64 @@
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+# COMMAND_LOG.txt — every command run (PREPARED, NOT ACCEPTED)
+# Worktree: /home/mdp/muse-work/fix-v7-gapfill, branch muse/fix-v7-gapfill @ 5ec3db60. No push/fetch/network/pip. No --mode run/finalize. HMAC env unset (verified).
+
+[01] git branch --show-current; git rev-parse HEAD; git log --oneline -3; git status --short | head -20; git log -1 --format='%an <%ae>' 5ec3db60c03edde490374bf9cd7c3e56dd6bcd00
+  -> muse/fix-v7-gapfill; 5ec3db60c03edde490374bf9cd7c3e56dd6bcd00; L-095/L-094/L-093; clean; Codex <codex@openai.com>; rc=0
+[02] git ls-tree -r --name-only origin/audit/v52-t4f1-v7-independent-2026-09-03 | head -50 (+ wc -l; git rev-parse branch)
+  -> 288 files repo-wide; branch = 16dc61313acd0e9086c852eccb9100023898fd27; rc=0
+[03] git diff --name-only 5ec3db60 origin/audit/v52-t4f1-v7-independent-2026-09-03 -- | head -40; git log --oneline 5ec3db60..origin/audit/v52-t4f1-v7-independent-2026-09-03
+  -> audit namespace + later-main docs drift; 2 audit commits (16dc6131, f2b8384); rc=0
+[04] git diff --name-status 5ec3db60 origin/... -- audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/; git show --stat --oneline origin/...
+  -> exactly 16 added files (A); rc=0
+[05] for f in REPORT/GATE_TABLE/HASHES/COMMAND_LOG + g4/g5/g35/g3 variants: git cat-file -e origin/...:<path>
+  -> REPORT/GATE_TABLE/HASHES ABSENT; COMMAND_LOG EXISTS; all g4/g5/g35/g31/g33 ABSENT; rc=0
+[06] git ls-tree -r --name-only origin/... -- audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/
+  -> the 16 files; no verdict/report file present; rc=0
+[07] ls task4f1_execution_candidate_v7_2026_09_03/; ls task4f1_execution_candidate_v7_preflight_2026_09_03/; git ls-tree V6 '*GATE_TABLE*'
+  -> 6-file V7 candidate; preflight dir exists; V6 glob empty (namespace path differs); rc=0
+[08] git ls-tree V6 | grep -i gate|verdict|report; git log 5ec3db60..origin/audit/v52-t4f1-v6-independent-2026-09-03
+  -> V6 GATE_TABLE + report paths found; rc=0
+[09] git show V6:.../GATE_TABLE.csv; git show V6:.../evidence/gate4_attestation.json | head -80
+  -> 31-evasion class list + F5 NOT-BOUND/REDIRECTION-UNDETECTED finding; rc=0
+[10] git show V7:.../evidence/g32_evasion_replay.json | head -120; git show V7:.../evidence/g35_fixture_results.json | head -60
+  -> replay/fixture formats understood; rc=0
+[11] mkdir -p research_v7_evidence_completion_2026_09_14/evidence research_v7_evidence_completion_2026_09_14/fixtures
+  -> rc=0
+[12] loop git show V7:<7 evidence files> | head -25
+  -> gate mapping for inventory (g1/g2/g34/g6/g7x2/g1corpus); rc=0
+[13] loop git show V7:<16 files> | sha256sum; wc -c
+  -> 16 hashes recorded in EVIDENCE_INVENTORY.md; rc=0
+[14] (in candidate dir) sha256sum <6 files>; PYTHONDONTWRITEBYTECODE=1 python3 -B candidate_package_preflight.py
+  -> 6/6 match prompt anchors; pristine PASS rc=0; rc=0
+[15] git status --short; grep -n -i status/attestation/CURRENT_STATE/docs runner; grep preflight|checker runner; python3 key listings (template/seal/manifest)
+  -> only ?? namespace untracked; runner status refs are runtime-auth only; no checker import; seal 20 keys (no bare status); manifest 5 keys (no status); rc=0
+[16] sed -n runner regions 70-90/240-250/1200-1232; grep imports runner
+  -> AUTH_SIGNED_FIELDS + runtime seal.get(status) context; stdlib+numpy/scipy/sklearn imports only; rc=0
+[17] echo HMAC (unset); git show g32 | python3 mechanism counter; git show g35 | python3 id/expected/observed list
+  -> HMAC unset; 45 replay rows (9 classes); 29 fixtures 1 disagreement (F15); rc=0
+[18] python3 fixtures/run_gates.py g4 && python3 fixtures/run_gates.py g5
+  -> SyntaxError (stray triple-quote); rc=1. Fixed via edits (comment banner/header).
+[19] re-run run_gates g4+g5
+  -> SyntaxError line 1 (bare banner); rc=1. Fixed: banner as `#` comment.
+[20] re-run run_gates g4+g5
+  -> g4 11/11 agree; g5 8/8 agree; rc=0
+[21] python3 mechanism inspection of both JSONs; git status --short | grep -v '^??'
+  -> per-case RuntimeError lines recorded; no tracked modifications; rc=0
+[22] python3 final-error-line inspection
+  -> g4_07 fired via binding-mismatch (not dedicated check); fixed harness with rebind_seal; rc=0
+[23] python3 fixtures/run_gates.py g4 (re-run after fix)
+  -> 11/11 agree; g4_07 now fires [BLOCKED - INVENTORY CARRIES A STATUS FIELD]; rc=0
+[24] wrote fixtures/build_envelopes.py; python3 fixtures/build_envelopes.py + agreement check
+  -> envelopes written; disagreements none; rc=0
+[25] python3 manifest generator (git show x16 | sha256) -> V7_BRANCH_EVIDENCE_MANIFEST.json
+  -> 16 entries; rc=0
+[26] python3 json.load evidence/g35_synthesis.json
+  -> JSONDecodeError (banner first line); rc=1. Fixed: banner as first JSON key (convention for all .json outputs).
+[27] python3 json.load all 4 JSONs
+  -> all parse; rc=0
+[28] du/find namespace inspection
+  -> 1.9M, 127 files, no __pycache__; rc=0
+[29] python3 hash generator -> V7_COMPLETION_OUTPUT_HASHES.json (130 files); git add research_v7_evidence_completion_2026_09_14; git commit -m evidence(v7-gapfill)...; git rev-parse HEAD; git status
+  -> 131 files committed as 614cea10a149b921e75d75271a6e14b600f4d9a6; status clean; rc=0
+[30] (this line + REPORT sha fill + hash regen) git add + git commit -m evidence(v7-gapfill): record commit sha in REPORT; git rev-parse HEAD
+  -> (executed next; sha printed to stdout summary)

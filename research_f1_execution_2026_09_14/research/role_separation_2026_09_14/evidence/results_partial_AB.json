@@ -1,0 +1,24 @@
+{
+  "A_mapping": {
+    "lme_items": 470,
+    "lme_count_match": 470,
+    "lme_gold_index_match": 470,
+    "lme_role_counts": {
+      "user": 114902,
+      "assistant": 116704
+    },
+    "lme_sessions_total": 22419,
+    "lme_sessions_strictly_alternating_user_first": 20588,
+    "proof": "count match 470/470 AND cached gold row indices == flatten positions of has_answer turns 470/470 (886 gold rows). Gold match is an INDEPENDENT check: it constrains order, not just length.",
+    "locomo_files": 10,
+    "locomo_id_to_row_contiguous": true
+  },
+  "B_control": {
+    "n_questions": 470,
+    "LME_sign_FR3": 0.5421335697399526,
+    "LME_float_FR3": 0.4415957446808511,
+    "LME_delta_pp": 10.053782505910153,
+    "frozen_delta_pp": 10.037943,
+    "expectation_target_pp": 10.053783
+  }
+}

@@ -1,0 +1,45 @@
+  F a0/470
+  F a150/470
+  F a300/470
+  F a450/470
+
+=== F: WITHIN-ARCHIVE SUBSAMPLE, all 470 LME archives (gold forced in) ===
+      N       n   frozen    shared   strict0    K1_ovf   K20_ovf      thr    delta       SE
+     25    9400    0.219     0.309     0.005     0.050     0.481    39.08    -3.01     0.26
+     50    9400    0.230     0.328     0.005     0.055     0.753    36.97     0.04     0.29
+    100    9400    0.219     0.321     0.006     0.069     0.818    34.69     4.63     0.33
+    200    9400    0.223     0.342     0.009     0.089     0.829    32.00     8.08     0.35
+    300    9400    0.224     0.360     0.012     0.104     0.846    30.20     9.15     0.37
+    396    9400    0.237     0.378     0.017     0.118     0.837    29.04     9.77     0.37
+   FULL     470    0.234     0.385     0.023     0.128     0.836    28.13    10.05     1.66
+
+-- F definition sweep trend (N=25 -> FULL~493) --
+D01_frozen_bc_gt_slots                    0.219 ->    0.234   flat
+D02_bc_gt_1_shared                        0.309 ->    0.385   RISE
+D03_gap_eq_0                              0.219 ->    0.234   flat
+D04_strictly_eq_0_allK_tied               0.005 ->    0.023   flat
+D05_d1_eq_d2                              0.050 ->    0.128   RISE
+D06_d1_eq_d3                              0.005 ->    0.023   flat
+D07_consequential_gold_at_boundary        0.036 ->    0.074   RISE
+D08_bc_over_N                             0.056 ->    0.003   FALL
+D09_gap_le_1                              0.518 ->    0.547   RISE
+D10_frac_random_slots                     0.080 ->    0.090   flat
+D11_thr_ge_40                             0.555 ->    0.000   FALL
+D12_thr_ge_44                             0.051 ->    0.000   FALL
+D13_thr_ge_48                             0.000 ->    0.000   flat
+D14_float_bc_gt_slots                     0.000 ->    0.000   flat
+D15_shortlistM20_bc_gt_slots              0.219 ->    0.234   flat
+D15_shortlistM50_bc_gt_slots              0.219 ->    0.234   flat
+D16_shortlistM20_float_rerank_tie         0.000 ->    0.000   flat
+D16_shortlistM50_float_rerank_tie         0.000 ->    0.000   flat
+D17_K10_bc_gt_slots                       0.547 ->    0.626   RISE
+D17_K1_bc_gt_slots                        0.050 ->    0.128   RISE
+D17_K20_bc_gt_slots                       0.481 ->    0.836   RISE
+D17_K2_bc_gt_slots                        0.111 ->    0.185   RISE
+D17_K5_bc_gt_slots                        0.376 ->    0.355   FALL
+D18_K10_strictly_eq_0                     0.000 ->    0.000   flat
+D18_K1_strictly_eq_0                      1.000 ->    1.000   flat
+D18_K20_strictly_eq_0                     0.000 ->    0.000   flat
+D18_K2_strictly_eq_0                      0.050 ->    0.128   RISE
+D18_K5_strictly_eq_0                      0.000 ->    0.000   flat
+DONE

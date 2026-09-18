@@ -1,0 +1,9 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/decision_r1/kill (cwd default)
+muse: workspace trust: trusted source=run-flag
+Recommendation: STOP. Deliverable written to [CASE_AGAINST.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/decision_r1/kill/CASE_AGAINST.md).
+
+Core of the case: the 48-byte code loses to fair-tokenizer BM25 by 3.83pp (recomputed from the brief's numbers), the 12-byte claim trails by 12.05pp; the 8.23pp feature-mix loss cancels the entire 12→48B ladder gain; reranking inverts first-stage rankings; no arm ever won on both benchmarks; four retractions all pointed toward over-claiming.
+
+Salvage plan: a writing-only negative-results/traps note (fair-baseline rule, k<n rank-overflow rule, quantization negatives, rerank warning, retractions appendix). Abandon list names 8 dead directions, including all rotation learning, rescaling-as-bit-change, budget splitting, the additive penalty, fixed-global-k, coarse-baseline comparisons, and reranked-path first-stage tuning. Includes the required "strongest point against my own case" (clean monotone ladder + B showing the ceiling was a defect) with a binding prespecified criterion for anyone who wants to continue.
+
+Every claim is tagged [BRIEF]/[CHECKED]/[RECALLED]/[CONJECTURE]; [CHECKED] items are same-session arithmetic on the brief's numbers citing kill.txt lines — no benchmarks launched, no invented numbers or citations.

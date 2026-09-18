@@ -1,0 +1,15 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "n_queries": 1535,
+  "gold_used_here": "raw_evidence (the only gold in our caches)",
+  "historical_metric_exact_exp_pct": 23.790671959238733,
+  "frozen_metric_exact_frac_pct": 23.790671959238733,
+  "max_per_query_abs_difference": 0.0,
+  "historical_gate_value_pct": 23.654714666441055,
+  "verdict": "METRICS ARE IDENTICAL on the same gold; the anchor gap is entirely the gold convention (raw_evidence here vs correct_evidence = the 156 audited corrections at run_locomo.py:189). ANCHOR_MISMATCH explained."
+}

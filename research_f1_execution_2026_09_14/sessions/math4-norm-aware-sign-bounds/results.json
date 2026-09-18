@@ -1,0 +1,1389 @@
+{
+ "labels": [
+  "LOCAL EXPLORATORY PILOT",
+  "NOT PREREGISTERED",
+  "NOT FOR CITATION",
+  "DISCLOSE-BEFORE-USE"
+ ],
+ "passed": 272,
+ "total": 272,
+ "failed": 0,
+ "key_numbers": {
+  "d2_sup_s(1,1)_q(3/5,4/5)": 1.0,
+  "d2_inf_s(1,1)_q(3/5,4/5)": 0.6,
+  "d2_sup_s(1,-1)_q(3/5,4/5)": 0.6,
+  "d2_inf_s(1,-1)_q(3/5,4/5)": -0.8,
+  "flip_1agree_vs_2agree": [
+   0.7939603029772521,
+   0.6
+  ],
+  "lme_t4": {
+   "gold_dot": 1.0299795949628008,
+   "rival_dot": 1.0467211966244094,
+   "gold_cos": 0.5457381205243765,
+   "rival_cos": 0.539025678888817
+  }
+ },
+ "checks": [
+  {
+   "name": "B2.upper.s=(1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gridmax=0.999999996035 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gridmin=0.600000000000 inf=0.600000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-sup2.s=(1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "[0.6, 0.8]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "gridmax=1.000000000000 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "gridmin=0.000000000000 inf=0.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-sup2.s=(1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "[1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "gridmax=-0.000000000000 sup=0.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "gridmin=-1.000000000000 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "[0.0, 1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmax=0.600000000000 sup=0.600000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.800000000000 inf=-0.800000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-sup2.s=(1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "9/25"
+  },
+  {
+   "name": "B2.exact-inf2.s=(1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "16/25"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "[1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmax=-0.600000000000 sup=-0.600000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.999999996035 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "[1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "gridmax=1.000000000000 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "gridmin=0.000000000000 inf=0.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-sup2.s=(1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "[0.0, 1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gridmax=0.598253244239 sup=0.600000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.798689100241 inf=-0.800000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gap=0.00175"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gap=0.00131"
+  },
+  {
+   "name": "B2.exact-sup2.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "9/25"
+  },
+  {
+   "name": "B2.exact-inf2.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "16/25"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "[1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "score=0.599919997 sup=0.600000000"
+  },
+  {
+   "name": "B2.upper.s=(1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "gridmax=0.999997620177 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "gridmin=0.002181659834 inf=0.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "gap=0.00218"
+  },
+  {
+   "name": "B2.exact-sup2.s=(1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "[1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "score=0.999999995 sup=1.000000000"
+  },
+  {
+   "name": "B2.upper.s=(1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "gridmax=-0.002181659834 sup=0.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "gridmin=-0.999997620177 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "gap=0.00218"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "[0.0, -1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmax=0.999999996035 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmin=0.601743899974 inf=0.600000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00174"
+  },
+  {
+   "name": "B2.exact-sup2.s=(1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "[0.6, -0.8]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmax=0.798689100241 sup=0.800000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.598253244239 inf=-0.600000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00131"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00175"
+  },
+  {
+   "name": "B2.exact-sup2.s=(1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "16/25"
+  },
+  {
+   "name": "B2.exact-inf2.s=(1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "9/25"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "[0.0, -1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "gridmax=-0.002181659834 sup=0.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "gridmin=-0.999997620177 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "gap=0.00218"
+  },
+  {
+   "name": "B2.reach-inf.s=(1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "[1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "score=-0.000100000 sup=0.000000000"
+  },
+  {
+   "name": "B2.upper.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gridmax=0.798689100241 sup=0.800000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.600000000000 inf=-0.600000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gap=0.00131"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-sup2.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "16/25"
+  },
+  {
+   "name": "B2.exact-inf2.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "9/25"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "[0.0, 1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(-1, 1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "score=0.799939996 sup=0.800000000"
+  },
+  {
+   "name": "B2.upper.s=(-1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "gridmax=-0.002181659834 sup=0.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "gridmin=-1.000000000000 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "gap=0.00218"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(-1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "[0.0, 1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(-1, 1),q=(1,0)",
+   "pass": true,
+   "detail": "score=-0.000100000 sup=0.000000000"
+  },
+  {
+   "name": "B2.upper.s=(-1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "gridmax=1.000000000000 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "gridmin=0.002181659834 inf=0.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "gap=0.00218"
+  },
+  {
+   "name": "B2.exact-sup2.s=(-1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "[-1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, 1),q=(-1,0)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(-1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmax=-0.600000000000 sup=-0.600000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.999999996035 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(-1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "[-1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, 1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(-1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmax=0.600000000000 sup=0.600000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.798689100241 inf=-0.800000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00131"
+  },
+  {
+   "name": "B2.exact-sup2.s=(-1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "9/25"
+  },
+  {
+   "name": "B2.exact-inf2.s=(-1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "16/25"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "[-1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, 1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(-1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "gridmax=0.999997620177 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "gridmin=0.000000000000 inf=0.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-sup2.s=(-1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "[0.0, 1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(-1, 1),q=(0,1)",
+   "pass": true,
+   "detail": "score=0.999999995 sup=1.000000000"
+  },
+  {
+   "name": "B2.upper.s=(-1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gridmax=-0.601743899974 sup=-0.600000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.999999996035 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gap=0.00174"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(-1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "[-1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(-1, -1),q=(3/5,4/5)",
+   "pass": true,
+   "detail": "score=-0.600079997 sup=-0.600000000"
+  },
+  {
+   "name": "B2.upper.s=(-1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "gridmax=-0.000000000000 sup=0.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "gridmin=-0.999997620177 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(-1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "[0.0, -1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(-1, -1),q=(1,0)",
+   "pass": true,
+   "detail": "score=-0.000100000 sup=0.000000000"
+  },
+  {
+   "name": "B2.upper.s=(-1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "gridmax=0.999997620177 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "gridmin=0.000000000000 inf=0.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-sup2.s=(-1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "[-1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(-1, -1),q=(-1,0)",
+   "pass": true,
+   "detail": "score=0.999999995 sup=1.000000000"
+  },
+  {
+   "name": "B2.upper.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmax=0.800000000000 sup=0.800000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmin=-0.598253244239 inf=-0.600000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00175"
+  },
+  {
+   "name": "B2.exact-sup2.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "16/25"
+  },
+  {
+   "name": "B2.exact-inf2.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "9/25"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "[0.0, -1.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(-1, -1),q=(3/5,-4/5)",
+   "pass": true,
+   "detail": "score=0.799939996 sup=0.800000000"
+  },
+  {
+   "name": "B2.upper.s=(-1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmax=0.999999996035 sup=1.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gridmin=0.601743899974 inf=0.600000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "gap=0.00174"
+  },
+  {
+   "name": "B2.exact-sup2.s=(-1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "[-0.6, -0.8]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, -1),q=(-3/5,-4/5)",
+   "pass": true,
+   "detail": "member=True att=True"
+  },
+  {
+   "name": "B2.upper.s=(-1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "gridmax=-0.002181659834 sup=0.000000000000"
+  },
+  {
+   "name": "B2.lower.s=(-1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "gridmin=-1.000000000000 inf=-1.000000000000"
+  },
+  {
+   "name": "B2.reach-sup.s=(-1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "gap=0.00218"
+  },
+  {
+   "name": "B2.reach-inf.s=(-1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "gap=0.00000"
+  },
+  {
+   "name": "B2.exact-inf2.s=(-1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "B2.ys-closed.s=(-1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "[-1.0, 0.0]"
+  },
+  {
+   "name": "B2.att-consistency.s=(-1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "member=False att=False"
+  },
+  {
+   "name": "B2.approach.s=(-1, -1),q=(0,1)",
+   "pass": true,
+   "detail": "score=-0.000100000 sup=0.000000000"
+  },
+  {
+   "name": "B3.fence.s=(1, 1, 1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.999969 sup=1.000000 min=0.339138 inf=0.333333"
+  },
+  {
+   "name": "B3.reach.s=(1, 1, 1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0000 infgap=0.0058"
+  },
+  {
+   "name": "B3.fence.s=(1, 1, 1),q=(1,0,0)",
+   "pass": true,
+   "detail": "max=0.999962 sup=1.000000 min=0.000000 inf=0.000000"
+  },
+  {
+   "name": "B3.reach.s=(1, 1, 1),q=(1,0,0)",
+   "pass": true,
+   "detail": "supgap=0.0000 infgap=0.0000"
+  },
+  {
+   "name": "B3.fence.s=(1, 1, 1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.942773 sup=0.942809 min=-0.327503 inf=-0.333333"
+  },
+  {
+   "name": "B3.reach.s=(1, 1, 1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0000 infgap=0.0058"
+  },
+  {
+   "name": "B3.fence.s=(1, 1, -1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.739488 sup=0.745356 min=-0.663732 inf=-0.666667"
+  },
+  {
+   "name": "B3.reach.s=(1, 1, -1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0059 infgap=0.0029"
+  },
+  {
+   "name": "B3.fence.s=(1, 1, -1),q=(1,0,0)",
+   "pass": true,
+   "detail": "max=0.999962 sup=1.000000 min=0.000000 inf=0.000000"
+  },
+  {
+   "name": "B3.reach.s=(1, 1, -1),q=(1,0,0)",
+   "pass": true,
+   "detail": "supgap=0.0000 infgap=0.0000"
+  },
+  {
+   "name": "B3.fence.s=(1, 1, -1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.660824 sup=0.666667 min=-0.745356 inf=-0.745356"
+  },
+  {
+   "name": "B3.reach.s=(1, 1, -1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0058 infgap=0.0000"
+  },
+  {
+   "name": "B3.fence.s=(1, -1, 1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.740196 sup=0.745356 min=-0.654905 inf=-0.666667"
+  },
+  {
+   "name": "B3.reach.s=(1, -1, 1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0052 infgap=0.0118"
+  },
+  {
+   "name": "B3.fence.s=(1, -1, 1),q=(1,0,0)",
+   "pass": true,
+   "detail": "max=0.999810 sup=1.000000 min=0.000152 inf=0.000000"
+  },
+  {
+   "name": "B3.reach.s=(1, -1, 1),q=(1,0,0)",
+   "pass": true,
+   "detail": "supgap=0.0002 infgap=0.0002"
+  },
+  {
+   "name": "B3.fence.s=(1, -1, 1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.663631 sup=0.666667 min=-0.739488 inf=-0.745356"
+  },
+  {
+   "name": "B3.reach.s=(1, -1, 1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0030 infgap=0.0059"
+  },
+  {
+   "name": "B3.fence.s=(1, -1, -1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.315818 sup=0.333333 min=-0.938624 inf=-0.942809"
+  },
+  {
+   "name": "B3.reach.s=(1, -1, -1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0175 infgap=0.0042"
+  },
+  {
+   "name": "B3.fence.s=(1, -1, -1),q=(1,0,0)",
+   "pass": true,
+   "detail": "max=0.999810 sup=1.000000 min=0.000152 inf=0.000000"
+  },
+  {
+   "name": "B3.reach.s=(1, -1, -1),q=(1,0,0)",
+   "pass": true,
+   "detail": "supgap=0.0002 infgap=0.0002"
+  },
+  {
+   "name": "B3.fence.s=(1, -1, -1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=-0.350722 sup=-0.333333 min=-0.999969 inf=-1.000000"
+  },
+  {
+   "name": "B3.reach.s=(1, -1, -1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0174 infgap=0.0000"
+  },
+  {
+   "name": "B3.fence.s=(-1, 1, 1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.938624 sup=0.942809 min=-0.327503 inf=-0.333333"
+  },
+  {
+   "name": "B3.reach.s=(-1, 1, 1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0042 infgap=0.0058"
+  },
+  {
+   "name": "B3.fence.s=(-1, 1, 1),q=(1,0,0)",
+   "pass": true,
+   "detail": "max=-0.000152 sup=0.000000 min=-0.999962 inf=-1.000000"
+  },
+  {
+   "name": "B3.reach.s=(-1, 1, 1),q=(1,0,0)",
+   "pass": true,
+   "detail": "supgap=0.0002 infgap=0.0000"
+  },
+  {
+   "name": "B3.fence.s=(-1, 1, 1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.999969 sup=1.000000 min=0.339138 inf=0.333333"
+  },
+  {
+   "name": "B3.reach.s=(-1, 1, 1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0000 infgap=0.0058"
+  },
+  {
+   "name": "B3.fence.s=(-1, 1, -1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.654905 sup=0.666667 min=-0.745356 inf=-0.745356"
+  },
+  {
+   "name": "B3.reach.s=(-1, 1, -1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0118 infgap=0.0000"
+  },
+  {
+   "name": "B3.fence.s=(-1, 1, -1),q=(1,0,0)",
+   "pass": true,
+   "detail": "max=-0.000152 sup=0.000000 min=-0.999962 inf=-1.000000"
+  },
+  {
+   "name": "B3.reach.s=(-1, 1, -1),q=(1,0,0)",
+   "pass": true,
+   "detail": "supgap=0.0002 infgap=0.0000"
+  },
+  {
+   "name": "B3.fence.s=(-1, 1, -1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.739488 sup=0.745356 min=-0.663732 inf=-0.666667"
+  },
+  {
+   "name": "B3.reach.s=(-1, 1, -1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0059 infgap=0.0029"
+  },
+  {
+   "name": "B3.fence.s=(-1, -1, 1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.663631 sup=0.666667 min=-0.739488 inf=-0.745356"
+  },
+  {
+   "name": "B3.reach.s=(-1, -1, 1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0030 infgap=0.0059"
+  },
+  {
+   "name": "B3.fence.s=(-1, -1, 1),q=(1,0,0)",
+   "pass": true,
+   "detail": "max=-0.000000 sup=0.000000 min=-0.999810 inf=-1.000000"
+  },
+  {
+   "name": "B3.reach.s=(-1, -1, 1),q=(1,0,0)",
+   "pass": true,
+   "detail": "supgap=0.0000 infgap=0.0002"
+  },
+  {
+   "name": "B3.fence.s=(-1, -1, 1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.740196 sup=0.745356 min=-0.660824 inf=-0.666667"
+  },
+  {
+   "name": "B3.reach.s=(-1, -1, 1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0052 infgap=0.0058"
+  },
+  {
+   "name": "B3.fence.s=(-1, -1, -1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=-0.350722 sup=-0.333333 min=-0.999969 inf=-1.000000"
+  },
+  {
+   "name": "B3.reach.s=(-1, -1, -1),q=(1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0174 infgap=0.0000"
+  },
+  {
+   "name": "B3.fence.s=(-1, -1, -1),q=(1,0,0)",
+   "pass": true,
+   "detail": "max=-0.000000 sup=0.000000 min=-0.999810 inf=-1.000000"
+  },
+  {
+   "name": "B3.reach.s=(-1, -1, -1),q=(1,0,0)",
+   "pass": true,
+   "detail": "supgap=0.0000 infgap=0.0002"
+  },
+  {
+   "name": "B3.fence.s=(-1, -1, -1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "max=0.315818 sup=0.333333 min=-0.942773 inf=-0.942809"
+  },
+  {
+   "name": "B3.reach.s=(-1, -1, -1),q=(-1/3,2/3,2/3)",
+   "pass": true,
+   "detail": "supgap=0.0175 infgap=0.0000"
+  },
+  {
+   "name": "C.member-xA",
+   "pass": true,
+   "detail": "P-zeros allowed, N empty"
+  },
+  {
+   "name": "C.score-xA",
+   "pass": true,
+   "detail": "3/5"
+  },
+  {
+   "name": "C.supA-infA",
+   "pass": true,
+   "detail": "interval (3/5,1]: sup attained (N empty), inf 3/5 at axis e1"
+  },
+  {
+   "name": "C.supD-infD",
+   "pass": true,
+   "detail": "interval [-4/5,3/5): sup NOT attained, inf attained at (0,-1)"
+  },
+  {
+   "name": "C.supD-open",
+   "pass": true,
+   "detail": "maximizer (1,0) has x2=0"
+  },
+  {
+   "name": "C.infD-att",
+   "pass": true,
+   "detail": "minimizer (0,-1) strictly inside"
+  },
+  {
+   "name": "C.supE-infE",
+   "pass": true,
+   "detail": "interval [-3/5,4/5): sup NOT attained (maximizer (0,1) has x1=0)"
+  },
+  {
+   "name": "C.flip",
+   "pass": true,
+   "detail": "1-agreement (-,+) score 0.793960303 beats 2-agreement (1,0) score 0.6"
+  },
+  {
+   "name": "C.tie-A",
+   "pass": true,
+   "detail": "(0.991314274283428, 0.13151429428742906)"
+  },
+  {
+   "name": "C.tie-E",
+   "pass": true,
+   "detail": "(-0.15131427428342797, 0.988485705712571)"
+  },
+  {
+   "name": "D.agree.aligned",
+   "pass": true,
+   "detail": "cs=[0.990000000000,0.990000000000] angle=[0.990000000000,0.990000000000] gram=[0.990000000000,0.990000000000]"
+  },
+  {
+   "name": "D.contains.aligned",
+   "pass": true,
+   "detail": "t=0.990000 in [0.990000,0.990000] width=0.0000"
+  },
+  {
+   "name": "D.agree.orthogonal-center",
+   "pass": true,
+   "detail": "cs=[-0.866025403784,0.866025403784] angle=[-0.866025403784,0.866025403784] gram=[-0.866025403784,0.866025403784]"
+  },
+  {
+   "name": "D.contains.orthogonal-center",
+   "pass": true,
+   "detail": "t=0.100000 in [-0.866025,0.866025] width=1.7321"
+  },
+  {
+   "name": "D.agree.failure-wide",
+   "pass": true,
+   "detail": "cs=[-0.800000000000,0.600000000000] angle=[-0.800000000000,0.600000000000] gram=[-0.800000000000,0.600000000000]"
+  },
+  {
+   "name": "D.contains.failure-wide",
+   "pass": true,
+   "detail": "t=-0.800000 in [-0.800000,0.600000] width=1.4000"
+  },
+  {
+   "name": "D.agree.query-coded-doc",
+   "pass": true,
+   "detail": "cs=[-0.081892687071,0.452263057442] angle=[-0.081892687071,0.452263057442] gram=[-0.081892687071,0.452263057442]"
+  },
+  {
+   "name": "D.contains.query-coded-doc",
+   "pass": true,
+   "detail": "t=0.444444 in [-0.081893,0.452263] width=0.5342"
+  },
+  {
+   "name": "D.agree.negative-rho",
+   "pass": true,
+   "detail": "cs=[-0.976135582093,0.676135582093] angle=[-0.976135582093,0.676135582093] gram=[-0.976135582093,0.676135582093]"
+  },
+  {
+   "name": "D.contains.negative-rho",
+   "pass": true,
+   "detail": "t=0.050000 in [-0.976136,0.676136] width=1.6523"
+  },
+  {
+   "name": "E.signonly-vacuous",
+   "pass": true,
+   "detail": "all six share (0.5,1]: no pair certifiable from signs alone"
+  },
+  {
+   "name": "E.contain.d1",
+   "pass": true,
+   "detail": "true t=1.000000 exact-cap=[1.000000,1.000000] cert=[0.996078,1.000000] m=255"
+  },
+  {
+   "name": "E.contain.d2",
+   "pass": true,
+   "detail": "true t=0.997509 exact-cap=[0.997509,0.997509] cert=[0.996078,1.000000] m=255"
+  },
+  {
+   "name": "E.contain.d3",
+   "pass": true,
+   "detail": "true t=0.990148 exact-cap=[0.990148,0.990148] cert=[0.988235,0.996078] m=254"
+  },
+  {
+   "name": "E.contain.d4",
+   "pass": true,
+   "detail": "true t=0.500000 exact-cap=[0.500000,0.500000] cert=[0.494118,0.501961] m=191"
+  },
+  {
+   "name": "E.contain.d5",
+   "pass": true,
+   "detail": "true t=0.707107 exact-cap=[0.707107,0.707107] cert=[0.705882,0.713725] m=218"
+  },
+  {
+   "name": "E.contain.d6",
+   "pass": true,
+   "detail": "true t=0.866025 exact-cap=[0.866025,0.866025] cert=[0.862745,0.870588] m=238"
+  },
+  {
+   "name": "E.top3-certified",
+   "pass": true,
+   "detail": "L1..3=[['0.9961', '0.9961', '0.9882']] U4..6=[['0.5020', '0.7137', '0.8706']]"
+  },
+  {
+   "name": "E.worst-rank",
+   "pass": true,
+   "detail": "worst-ranks=[3, 3, 3, 6, 5, 4] (adversarial ties)"
+  },
+  {
+   "name": "E.true-order",
+   "pass": true,
+   "detail": "true scores=['1.00000', '0.99751', '0.99015', '0.50000', '0.70711', '0.86603']"
+  },
+  {
+   "name": "E.failure-wide",
+   "pass": true,
+   "detail": "width=1.4000: scalar adds nothing over sign-only here"
+  },
+  {
+   "name": "E.failure-cert",
+   "pass": true,
+   "detail": "quantized cert [-0.8010,0.6014] still vacuous"
+  },
+  {
+   "name": "F.joint-valid",
+   "pass": true,
+   "detail": "t=0.444444 in [-0.209877,0.777778]; th_q=15.79deg gam=70.53deg al=15.79deg"
+  },
+  {
+   "name": "F.hamming-identity",
+   "pass": true,
+   "detail": "code-cosine=0.333333 A=2/3"
+  },
+  {
+   "name": "F.info-split",
+   "pass": true,
+   "detail": "rho doc-side; theta_q query-side; gamma codes-only"
+  },
+  {
+   "name": "G.F1-closed-fallacy-refuted",
+   "pass": true,
+   "detail": "reason=OPEN_BOUNDARY: y*=(1,0) attains closure sup 3/5 but x2=0 violates s2=-1"
+  },
+  {
+   "name": "G.F2-hamming-fallacy-refuted",
+   "pass": true,
+   "detail": "reason=RANK_FLIP: 1-agreement 0.793960 beats 2-agreement 0.6"
+  },
+  {
+   "name": "G.F3-quant-not-exact",
+   "pass": true,
+   "detail": "reason=ROUNDING: decode(qenc(rho))!=rho; interval widening mandatory"
+  },
+  {
+   "name": "H.numerator-insufficient",
+   "pass": true,
+   "detail": "gold dot 1.02997959496280 < rival 1.04672119662441 yet gold cos 0.54573812052438 > rival 0.53902567888882: normalization essential"
+  }
+ ]
+}

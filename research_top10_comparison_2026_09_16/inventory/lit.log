@@ -1,0 +1,13 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. All four deliverables are in `/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/`, each labelled [LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]. No input file was modified; all reads were read-only.
+
+**Files**
+- [LIT_LEDGER.csv](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/LIT_LEDGER.csv) — 93 rows, 11 columns, machine-validated (every row parses to exactly 11 fields). Each row keeps its own metric/K/corpus; nothing converted, nothing averaged.
+- [LIT_ALREADY_COVERED.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/LIT_ALREADY_COVERED.md) — prior rounds' conclusions with locations, including all recorded cautions (RaBitQ >99% is neighbour preservation; Anthropic is Recall@10 with 150-candidate + rerank + raw text; BPR denominator unresolved; coordinator-rejected worker claims).
+- [GAP_TO_100.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/GAP_TO_100.md) — mechanism-by-mechanism cost table against the ~12 B constraint.
+- [DO_NOT_RESCAN.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/inventory/literature/DO_NOT_RESCAN.md) — 11 + 13 sources to skip, plus 8 specific gaps that would justify a new fetch.
+
+**Headline finding:** no stored source supports ~100% Hit@10 at ~12 B/doc. The stored bounds point the other way: full-float SOTA reaches only ~78% Recall@10 on hard multi-hop, and the incoming oracle-chooser caps at 55.0% expected Hit@10 on RealTalk — ~45 points short of 100 with gold labels doing the choosing. Every high-90s route in the files (Anthropic-style cascade) fundamentally requires raw text, large candidate pools, and reranking.
+
+**Honesty notes.** Status discipline: all 93 ledger rows are CLAIM (88) or RELAYED (5); **zero are VERIFIED**, since this inventory re-derived nothing from per-query data. Two gaps recorded as gaps: the Nemotron 78.46/75.45 figures could not be located in the stored card excerpt (CLAIM via prior review's citations, flagged for one targeted re-capture), and the BPR recall denominator stays unresolved. I also caught and fixed my own defect: the first ledger draft dropped a column from row 30 onward — rewritten fully-quoted and re-validated.

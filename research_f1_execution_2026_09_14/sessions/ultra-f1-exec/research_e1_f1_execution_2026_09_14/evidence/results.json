@@ -1,0 +1,106 @@
+{
+  "benchmarks": {
+    "LME": {
+      "headline_float": 0.44159574468085105,
+      "headline_sign": 0.5419751773049645,
+      "mismatch": {
+        "strict_max": 221.5,
+        "strict_n": 269,
+        "tie_max": 55.0,
+        "tie_n": 256
+      },
+      "multi_gold_n": 296,
+      "multi_gold_rate": 0.6297872340425532,
+      "n": 470,
+      "non_gold_sensitivity_strict": 0.141200412379537,
+      "non_gold_sensitivity_tie": 0.14883000714957909,
+      "r1_min_gold_strict": 0.09965709814218832,
+      "r1_min_gold_tie": 0.0989586520264074,
+      "rho_delta_vs_gold_tie_gap": 0.14045379360271315,
+      "rho_delta_vs_strict_gap": 0.14168629605302735
+    },
+    "LOCOMO": {
+      "headline_float": 0.16826334541318252,
+      "headline_sign": 0.23654714666441054,
+      "mismatch": {
+        "strict_max": 273.0,
+        "strict_n": 427,
+        "tie_max": 54.0,
+        "tie_n": 425
+      },
+      "multi_gold_n": 432,
+      "multi_gold_rate": 0.2814332247557003,
+      "n": 1535,
+      "non_gold_sensitivity_strict": 0.09478580583026315,
+      "non_gold_sensitivity_tie": 0.10401481252579545,
+      "r1_min_gold_strict": 0.09370604039357275,
+      "r1_min_gold_tie": 0.09533237242284637,
+      "rho_delta_vs_gold_tie_gap": 0.10376015063205302,
+      "rho_delta_vs_strict_gap": 0.09491957131277648
+    },
+    "PERLTQA": {
+      "headline_float": 0.551692074528853,
+      "headline_sign": 0.488941994930817,
+      "mismatch": {
+        "strict_max": 286.8333333333333,
+        "strict_n": 2316,
+        "tie_max": 46.0,
+        "tie_n": 2306
+      },
+      "multi_gold_n": 2322,
+      "multi_gold_rate": 0.2809437386569873,
+      "n": 8265,
+      "non_gold_sensitivity_strict": 0.25432876802474197,
+      "non_gold_sensitivity_tie": 0.27977272876920795,
+      "r1_min_gold_strict": 0.27738722348615524,
+      "r1_min_gold_tie": 0.285059265942642,
+      "rho_delta_vs_gold_tie_gap": 0.27978783415712216,
+      "rho_delta_vs_strict_gap": 0.25416826537535475
+    },
+    "REALTALK": {
+      "headline_float": 0.17253405381064954,
+      "headline_sign": 0.22477507598784194,
+      "mismatch": {
+        "strict_max": 482.5,
+        "strict_n": 385,
+        "tie_max": 98.2,
+        "tie_n": 382
+      },
+      "multi_gold_n": 386,
+      "multi_gold_rate": 0.5475177304964539,
+      "n": 705,
+      "non_gold_sensitivity_strict": 0.09813662381103017,
+      "non_gold_sensitivity_tie": 0.1223112318752268,
+      "r1_min_gold_strict": 0.06118332620206952,
+      "r1_min_gold_tie": 0.08715270055075319,
+      "rho_delta_vs_gold_tie_gap": 0.12281952421315011,
+      "rho_delta_vs_strict_gap": 0.09793912889111697
+    }
+  },
+  "sections": {
+    "dialogues": {
+      "multi_gold_n": 2322,
+      "n": 2742,
+      "rho_strict": 0.13054126734088975,
+      "rho_tie": 0.11123087254360414
+    },
+    "events": {
+      "multi_gold_n": 0,
+      "n": 4346,
+      "rho_strict": 0.39790634780463613,
+      "rho_tie": 0.3892283206957403
+    },
+    "profile": {
+      "multi_gold_n": 0,
+      "n": 333,
+      "rho_strict": 0.05732530287796931,
+      "rho_tie": 0.018738683422868593
+    },
+    "social_relationship": {
+      "multi_gold_n": 0,
+      "n": 844,
+      "rho_strict": 0.30428515802019,
+      "rho_tie": 0.2993013213223269
+    }
+  }
+}

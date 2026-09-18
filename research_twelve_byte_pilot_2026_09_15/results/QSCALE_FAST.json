@@ -1,0 +1,65 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "k": 10,
+  "benchmarks": {
+    "perltqa": {
+      "n_queries": 8265,
+      "n_archives": 30,
+      "mean_N": 409.6,
+      "identity_lut8_ok": true,
+      "identity_lut4_ok": true,
+      "hit10_percent": {
+        "sym": 75.76122962874324,
+        "qscale_full": 80.0,
+        "rerank10": 76.93889897156684,
+        "rerank20": 79.06836055656382,
+        "rerank50": 79.81851179673322,
+        "rerank100": 80.07259528130672,
+        "rerank200": 80.01209921355112
+      },
+      "mean_us": {
+        "sym": 7.62000175503393,
+        "qscale": 3.8466610324879484,
+        "lut8": 31.419992834950488,
+        "lut4": 37.93833311647177,
+        "rerank10": 13.781666833286485,
+        "rerank20": 14.153332449495792,
+        "rerank50": 15.03166276961565,
+        "rerank100": 16.546668484807014,
+        "rerank200": 19.308336777612567
+      }
+    },
+    "lme": {
+      "n_queries": 470,
+      "n_archives": 470,
+      "mean_N": 492.77872340425535,
+      "identity_lut8_ok": true,
+      "identity_lut4_ok": true,
+      "hit10_percent": {
+        "sym": 86.0773387369132,
+        "qscale_full": 88.51063829787233,
+        "rerank10": 86.17021276595744,
+        "rerank20": 87.44680851063829,
+        "rerank50": 88.29787234042553,
+        "rerank100": 88.08510638297872,
+        "rerank200": 88.51063829787233
+      },
+      "mean_us": {
+        "sym": 10.905531730423583,
+        "qscale": 6.0995835117361645,
+        "lut8": 46.445002056103434,
+        "lut4": 57.71244734902172,
+        "rerank10": 19.84468173295101,
+        "rerank20": 20.1586170736304,
+        "rerank50": 21.52074631204472,
+        "rerank100": 23.319046855210622,
+        "rerank200": 26.73277061710015
+      }
+    }
+  }
+}

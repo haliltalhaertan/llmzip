@@ -1,0 +1,6 @@
+=== CONTROL: reproduce frozen LongMemEval headline ===
+  n_queries        = 470
+  SIGN  FR@3       = 0.5421335697   (frozen 0.5419751773049645)
+  FLOAT FR@3       = 0.4415957447   (frozen 0.4415957446808511)
+  Delta pp         = 10.053783   (frozen +10.037943, exact-tie ref +10.053783)
+  CONTROL PASS

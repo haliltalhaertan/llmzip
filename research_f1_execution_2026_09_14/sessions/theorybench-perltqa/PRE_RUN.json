@@ -1,0 +1,84 @@
+{
+  "labels": ["LOCAL EXPLORATORY PILOT", "NOT PREREGISTERED", "NOT FOR CITATION", "DISCLOSE-BEFORE-USE"],
+  "benchmark": "PerLTQA en_v2",
+  "workspace": "/home/mdp/muse-work/theorybench-perltqa",
+  "plan": {
+    "source": "/mnt/c/Users/MDP/dev/llmzip-work/theory_benchmark_test_v1/PLAN.md",
+    "workspace_copy": "/home/mdp/muse-work/theorybench-perltqa/PLAN.md",
+    "sha256": "a0f9e8e6eb214e0129cb5b8e31d35bdb75599eb130332a7eed7780bdc8981a21",
+    "byte_exact": true,
+    "read_before_outcomes": true,
+    "no_protocol_tuning_after_outcomes": true
+  },
+  "source_hashes_before": {
+    "theory_benchmark_test_v1/PLAN.md": "a0f9e8e6eb214e0129cb5b8e31d35bdb75599eb130332a7eed7780bdc8981a21",
+    "math_discovery_2026_09_13/round3/all_n_ranking/REPORT.md": "137c7aaea3043c14bd726308c33bd80e227431aecc0c3b1fba4ad30bdb1f34aa",
+    "math_discovery_2026_09_13/round3/all_n_ranking/COORDINATOR_REVIEW.md": "2e3d7242849e4017b75da95a023ca95711fb8ab15c8cb30a6550b55033c1d838",
+    "bench3/runs/b3b_perltqa/resolution.json": "4d5ebb5fdddd6ed9d0de6bb2e83ec5efbdeb34e6d5de9680a998daac79373525",
+    "bench3/runs/b3b_perltqa/exclusions.json": "97408f03483ed7807b163e709796e075518de0cf624bc5ce2e8a4d16d6eb070d",
+    "bench3/runs/b3b_perltqa/port_gate.json": "9d0b8243504a6913ae9a6de9995f7ad8ae18f69c2a4a8308cd6aeb46e1e07bde",
+    "bench3/runs/b3b_perltqa/step2_eval.py": "902908418374566cb55dc93b7178f220c6904ae7fc4ab336c5af55a45ec3d972",
+    "bench3/runs/b3b_perltqa/step2_build.py": "be90032891faccf5af9fb7e23444df99a95726228012d62ebf8ce9cd08529df9",
+    "bench3/runs/b3b_perltqa/step2_exclude.py": "782de0eb186d50387970aa3167f2f38590c3adfb7f618ec6669c31c571011346",
+    "bench3/runs/b3b_perltqa/dialogue_gold_split.json": "3f5aa958422caec739653af49e9466cb79d9e69d77bb63879ff9ccef0ae78bfe",
+    "bench3/runs/b3b_perltqa/cache_arch_eval.pkl": "e4be4469bb97838738939c77734fb3ebd56e8b0b88f35e58e27cd3f374fa72f7",
+    "bench3/runs/b3b_perltqa/cache_q_eval.pkl": "ccfdc6025fea46f9becbb3783c080ff9fbb200f9c177b53eb39ad5e95bc69aac",
+    "bench3/runs/b3b_perltqa/cache_qmeta.json": "97097c377892e3c4637625c0f5be80e90dd64e4607e97dabd83efe73b0bd0185",
+    "bench3/runs/b3b_perltqa/cache_items.json": "a48b90ee8f51bbe55eb61723638af430f161b5ee36e1df6b7325fdcae963cbb6",
+    "bench3/runs/b3b_fin/results_rerun.json": "ec9b8b2c7f384fe2f56c72fdc7a7216930a9db35eda2c4441496c8ad401bf958",
+    "bench3/runs/b3b_fin/summary.json": "842f8148b5db9311074213268792a650d98225e8de04207d392b0bf1d459766e",
+    "bench3/runs/b3b_fin/report.md": "1a92ed66a901b072a803a9323df741b25cbcf88adf2d1b2ddc89faad093a2caa"
+  },
+  "exact_gates_derived_from_results_rerun_json": {
+    "n_qa": 8265,
+    "K": 3,
+    "NT": 20,
+    "native_mean_exact": 0.488941994930817,
+    "float_mean_exact": 0.551692074528853,
+    "note": "Rounded summary values 0.488942/0.551692 are NEVER used for the 1e-12 gate; per-QA arrays compared at 1e-12."
+  },
+  "unit_counts_from_sources": {
+    "expanded": 8593,
+    "resolved": 8305,
+    "measured_evaluated": 8265,
+    "unresolved_nobank_dragon_beautiful": 277,
+    "unresolved_keymiss": 11,
+    "excluded_Chen_Zhi_N35": 40,
+    "archives_evaluated": 30,
+    "sections_evaluated": {"profile": 333, "social_relationship": 844, "events": 4346, "dialogues": 2742}
+  },
+  "fixed_interventions": {
+    "t_grid": [0.25, 0.5, 1.0, 2.0, 4.0],
+    "groups": {
+      "LOW48": "first 48 coordinates in ascending (abs(q_j), j) order = low query-magnitude proxy, NOT proven nuisance",
+      "HIGH48": "last 48 coordinates in ascending (abs(q_j), j) order = high query-magnitude proxy",
+      "FULL96": "all 96 coordinates, t=4 only, cosine/sign invariance control"
+    },
+    "transform": "multiply BOTH document and query coordinates in group by positive t; no refit/recenter/SVD/mean recompute",
+    "gold_free": true
+  },
+  "scoring_conventions_verbatim_from_step2_eval": {
+    "K": 3,
+    "NT": 20,
+    "tie_priorities": "default_rng(5_100_000 + ORD[char]*100_000 + t*100 + 99).random(N), t=0..19; ORD=resolution.json ordinals",
+    "native": "Hamming distance count_nonzero((C>=0) != (qC>=0)); rank lexsort((priority, distance))",
+    "float": "cosine (C@q)/(||C||*||q||) on CENTERED C; rank lexsort((priority, -score)); exact == tie convention, no tolerance",
+    "fractional_R_at_3": "mean over 20 tie-draws of |top3 cap gold|/|gold| with ORIGINAL gold-size denominators",
+    "zero_norm": "producer cos() verbatim: nonfinite scores propagate; NaN sorts last under lexsort; positive-t scaling preserves zero/nonzero pattern exactly"
+  },
+  "exact_expectation_formula": "Uniform random tiebreak within each equal-score bucket. Partition docs into strictly-ordered buckets; expected gold in topK = gold in strictly-included buckets + slots_rem * gold_in_boundary / boundary_size; fractional = /|gold|. Single-gold special case matches plan recall(S,Tc,K). Float buckets use exact == equality; native buckets are integer distances.",
+  "primary_prediction": "LOW48 endpoint contrast mean[delta(t=4)-delta(t=0.25)] > 0 with delta = native_exact - float_exact; cluster-bootstrap (2000 reps, seed 20260913, resample 30 whole archives, question-weighted means) interval excluding zero = 'consistent with this proxy transfer'; nonpositive = negative; wide = inconclusive. Never redefine nuisance after seeing outcomes. HIGH48 predeclared comparison; FULL96 true invariance control. Four benchmarks exist but ONLY PerLTQA is run here; no familywise claims.",
+  "secondary": "Full curves; fraction of QAs with any decreasing adjacent delta as t rises (pointwise-monotonicity violation); sections (profile/social/events/dialogues) and single-vs-multi gold as exploratory; describe section curves without outcome-based nuisance redefinition.",
+  "environment": {
+    "python": "/home/mdp/muse-work/ml-python -B (system python3, verified 3.14.4/numpy 2.5.3)",
+    "threads": "OMP=OPENBLAS=MKL=NUMEXPR=1",
+    "no_network_install_embeddings_api": true,
+    "checkpoints": "workspace-local ckpt_*.jsonl, not /tmp",
+    "windows_venv_not_executed": true
+  },
+  "theory_caveats": [
+    "Theoretical t is not identified on real data; LOW48 proxy transfer may fail without refuting theorem.",
+    "Sign invariance under positive t is a mathematical tautology: verify byte-identity, do NOT call it evidence for the theory.",
+    "No unconditional multinomial from pair averages: gold is shared."
+  ]
+}

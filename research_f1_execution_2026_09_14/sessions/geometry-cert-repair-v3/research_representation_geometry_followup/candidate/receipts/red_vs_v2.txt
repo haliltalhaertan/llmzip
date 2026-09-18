@@ -1,0 +1,3 @@
+truth gate OK (independent comparator): {'5/4': 1, '3/2': 1, '7/4': 0, '5/2': -1, '4': -1}
+module outcome: status=ISOLATED_TIES direction=-1 ties=['1', '7/4']
+FALSE SINGLE-DIRECTION CERTIFICATE: POC truth VARIES (+1 on (1,7/4), -1 on (7/4,4]) but module certifies ISOLATED_TIES direction -1

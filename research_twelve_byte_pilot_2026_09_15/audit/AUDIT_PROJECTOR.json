@@ -1,0 +1,109 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "claim": "V lies in the row space of Z, so V = Z^T A and the wide projector need never be stored -- same representation, unlike the exact-Gram path",
+  "seed_note": "SVD96 uses 5204; 5101 is the LSA32 stage",
+  "n_archives": 6,
+  "max_relative_residual_V": 4.7117185116626626e-12,
+  "max_query_projection_diff": 9.199307982044047e-13,
+  "total_query_sign_bits_differing": 0,
+  "memory": {
+    "V_total_MB": 451.020288,
+    "A_total_MB": 2.23488,
+    "Z_total_MB": 46.489104
+  },
+  "query_projection_ms": {
+    "via_V_mean": 26.037858916582383,
+    "via_ZtA_mean": 7.5303172499601105
+  },
+  "rows": [
+    {
+      "tag": "001be529",
+      "N": 514,
+      "F": 99915,
+      "projector_V_bytes": 76734720,
+      "factor_A_bytes": 394752,
+      "Z_sparse_bytes": 7793960,
+      "max_abs_residual_V": 3.2544713451931884e-12,
+      "relative_residual_V": 4.7117185116626626e-12,
+      "max_abs_query_projection_diff": 9.199307982044047e-13,
+      "query_sign_bits_differing": 0,
+      "query_proj_ms_V": 33.72422499989625,
+      "query_proj_ms_ZtA": 7.494686999707483
+    },
+    {
+      "tag": "00ca467f",
+      "N": 486,
+      "F": 93589,
+      "projector_V_bytes": 71876352,
+      "factor_A_bytes": 373248,
+      "Z_sparse_bytes": 7633960,
+      "max_abs_residual_V": 3.7387627715990135e-14,
+      "relative_residual_V": 5.3136367076800985e-14,
+      "max_abs_query_projection_diff": 1.8617052344183094e-14,
+      "query_sign_bits_differing": 0,
+      "query_proj_ms_V": 26.966604499612004,
+      "query_proj_ms_ZtA": 7.512361499830149
+    },
+    {
+      "tag": "0100672e",
+      "N": 486,
+      "F": 98248,
+      "projector_V_bytes": 75454464,
+      "factor_A_bytes": 373248,
+      "Z_sparse_bytes": 7869004,
+      "max_abs_residual_V": 6.154018267201522e-14,
+      "relative_residual_V": 8.888850772476892e-14,
+      "max_abs_query_projection_diff": 1.1515094433534045e-14,
+      "query_sign_bits_differing": 0,
+      "query_proj_ms_V": 23.717255500378087,
+      "query_proj_ms_ZtA": 7.819269999745303
+    },
+    {
+      "tag": "01493427",
+      "N": 487,
+      "F": 95822,
+      "projector_V_bytes": 73591296,
+      "factor_A_bytes": 374016,
+      "Z_sparse_bytes": 7790372,
+      "max_abs_residual_V": 3.669330464473042e-14,
+      "relative_residual_V": 5.302698072625128e-14,
+      "max_abs_query_projection_diff": 1.887379141862766e-15,
+      "query_sign_bits_differing": 0,
+      "query_proj_ms_V": 23.126862500212155,
+      "query_proj_ms_ZtA": 7.242261000210419
+    },
+    {
+      "tag": "031748ae",
+      "N": 494,
+      "F": 97011,
+      "projector_V_bytes": 74504448,
+      "factor_A_bytes": 379392,
+      "Z_sparse_bytes": 7876860,
+      "max_abs_residual_V": 1.3468674960048777e-13,
+      "relative_residual_V": 1.9422017883451814e-13,
+      "max_abs_query_projection_diff": 8.555656183517613e-15,
+      "query_sign_bits_differing": 0,
+      "query_proj_ms_V": 23.6959899996873,
+      "query_proj_ms_ZtA": 7.976111500174738
+    },
+    {
+      "tag": "06878be2",
+      "N": 443,
+      "F": 102681,
+      "projector_V_bytes": 78859008,
+      "factor_A_bytes": 340224,
+      "Z_sparse_bytes": 7524948,
+      "max_abs_residual_V": 3.708144902248023e-14,
+      "relative_residual_V": 5.49753997277586e-14,
+      "max_abs_query_projection_diff": 1.382748082701113e-14,
+      "query_sign_bits_differing": 0,
+      "query_proj_ms_V": 24.99621599970851,
+      "query_proj_ms_ZtA": 7.1372125000925735
+    }
+  ]
+}

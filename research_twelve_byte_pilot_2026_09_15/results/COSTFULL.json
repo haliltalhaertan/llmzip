@@ -1,0 +1,74 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "numpy": "2.3.5",
+  "native_popcount": true,
+  "build_seconds_per_archive": 4.85,
+  "build_note": "measured on LongMemEval (TF-IDF 1.04 + SVD96 3.81); identical for every arm; the frozen protocol refits it per question",
+  "benchmarks": {
+    "perltqa": {
+      "n_archives": 30,
+      "n_queries": 8265,
+      "packed_matches_frozen": true,
+      "total_index_bytes": {
+        "float96": 9535488,
+        "sign_naive": 9437184,
+        "sign_packed": 147456,
+        "sign80_pkt": 122880,
+        "dot_pm1": 9437184
+      },
+      "mean_score_ms_per_query": {
+        "float96": 0.0103433383628726,
+        "sign_naive": 0.07087666308507323,
+        "sign_packed": 0.030276676019032795,
+        "sign80_pkt": 0.021910007732609905,
+        "dot_pm1": 0.007840005370477835
+      },
+      "build_seconds_total": 145.5
+    },
+    "lme": {
+      "n_archives": 470,
+      "n_queries": 470,
+      "packed_matches_frozen": true,
+      "total_index_bytes": {
+        "float96": 179726256,
+        "sign_naive": 177873408,
+        "sign_packed": 2779272,
+        "sign80_pkt": 2316060,
+        "dot_pm1": 177873408
+      },
+      "mean_score_ms_per_query": {
+        "float96": 0.009135116000679578,
+        "sign_naive": 0.0738268086508392,
+        "sign_packed": 0.03044106477395968,
+        "sign80_pkt": 0.021845961306640443,
+        "dot_pm1": 0.009303410943756078
+      },
+      "build_seconds_total": 2279.5
+    },
+    "realtalk": {
+      "n_archives": 10,
+      "n_queries": 705,
+      "packed_matches_frozen": true,
+      "total_index_bytes": {
+        "float96": 6940544,
+        "sign_naive": 6868992,
+        "sign_packed": 107328,
+        "sign80_pkt": 89440,
+        "dot_pm1": 6868992
+      },
+      "mean_score_ms_per_query": {
+        "float96": 0.013060017954558134,
+        "sign_naive": 0.11389999417588115,
+        "sign_packed": 0.042399996891617775,
+        "sign80_pkt": 0.02817001659423113,
+        "dot_pm1": 0.011270015966147184
+      },
+      "build_seconds_total": 48.5
+    }
+  }
+}

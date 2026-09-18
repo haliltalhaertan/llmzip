@@ -1,0 +1,23 @@
+{
+  "LOW48": {
+    "raw_effect": -0.0009360576381852989,
+    "raw_effect_pp": -0.09360576381852989,
+    "ci95_pp": [
+      -1.9330018939393943,
+      1.8490314014998683
+    ],
+    "bootstrap_mean_not_point_estimate": -0.0011366087481871467,
+    "decreasing_queries": 41
+  },
+  "HIGH48": {
+    "raw_effect": 0.0009360576381852989,
+    "raw_effect_pp": 0.09360576381852989,
+    "ci95_pp": [
+      -1.7992808680049346,
+      1.8799239608587588
+    ],
+    "bootstrap_mean_not_point_estimate": 0.0007548610841800461,
+    "decreasing_queries": 40
+  },
+  "complement_reciprocal_max_recall_difference": 0.0
+}

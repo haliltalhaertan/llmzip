@@ -1,0 +1,62 @@
+{
+  "LME_strict": {
+    "mine": 0.1416251737011647,
+    "coord": 0.1416251737011647,
+    "contract_full": 0.14168629605302735,
+    "rounded": 0.1417,
+    "mine_minus_contract": -6.112235186264692e-05,
+    "mine_minus_coord": 0.0,
+    "mine_minus_rounded": -7.48262988352899e-05,
+    "passes_1e_12": false
+  },
+  "LME_tie": {
+    "mine": 0.14069387548880735,
+    "coord": 0.14069387548880735,
+    "contract_full": 0.14045379360271315,
+    "rounded": 0.1405,
+    "mine_minus_contract": 0.0002400818860942011,
+    "mine_minus_coord": 0.0,
+    "mine_minus_rounded": 0.00019387548880733796,
+    "passes_1e_12": false
+  },
+  "PERLTQA_strict": {
+    "mine": 0.25413844391463014,
+    "coord": 0.25413844391463014,
+    "contract_full": 0.25416826537535475,
+    "rounded": 0.2542,
+    "mine_minus_contract": -2.982146072461056e-05,
+    "mine_minus_coord": 0.0,
+    "mine_minus_rounded": -6.155608536984047e-05,
+    "passes_1e_12": false
+  },
+  "PERLTQA_tie": {
+    "mine": 0.27982715404990666,
+    "coord": 0.27982715404990666,
+    "contract_full": 0.2797878341571222,
+    "rounded": 0.2798,
+    "mine_minus_contract": 3.931989278443959e-05,
+    "mine_minus_coord": 0.0,
+    "mine_minus_rounded": 2.715404990666359e-05,
+    "passes_1e_12": false
+  },
+  "REALTALK_strict": {
+    "mine": 0.09793425648573494,
+    "coord": 0.09793425648573494,
+    "contract_full": 0.097939128891117,
+    "rounded": 0.0979,
+    "mine_minus_contract": -4.872405382064238e-06,
+    "mine_minus_coord": 0.0,
+    "mine_minus_rounded": 3.425648573493478e-05,
+    "passes_1e_12": false
+  },
+  "REALTALK_tie": {
+    "mine": 0.12307477776090332,
+    "coord": 0.12307477776090332,
+    "contract_full": 0.12281952421315011,
+    "rounded": 0.1228,
+    "mine_minus_contract": 0.00025525354775321474,
+    "mine_minus_coord": 0.0,
+    "mine_minus_rounded": 0.0002747777609033164,
+    "passes_1e_12": false
+  }
+}

@@ -1,0 +1,33 @@
+  LME done
+  PerLTQA done
+  REALTALK done
+  LoCoMo done
+
+=== PAIRED, CLUSTER-BOOTSTRAPPED (clusters = archives) ===
+  bench          n  clus   whit-sign pp                 95% CI   sig?
+  LME          470   470        +1.5313 [-1.1719,+4.2499]  False
+  PerLTQA     8265    30        +7.6811 [+6.8288,+8.6202]   True
+  REALTALK     705    10        +0.3565 [-1.1884,+2.2045]  False
+  LoCoMo      1535    10        +2.4592 [+0.3061,+4.4105]   True
+
+=== How much of the sign advantage does whitening account for? ===
+  LME       sign-cos=+10.0538  whit-cos=+11.5851  ratio=   1.15x  CI(whit-cos)=[+9.042,+14.362]
+  PerLTQA   sign-cos= -6.2747  whit-cos= +1.4063  ratio=  -0.22x  CI(whit-cos)=[+0.756,+2.152]
+  REALTALK  sign-cos= +5.3001  whit-cos= +5.6566  ratio=   1.07x  CI(whit-cos)=[+3.157,+7.977]
+  LoCoMo    sign-cos= +6.6550  whit-cos= +9.1142  ratio=   1.37x  CI(whit-cos)=[+7.445,+10.629]
+
+=== ROBUSTNESS: sigma floor (is whitening exploiting tiny sigmas?) ===
+  bench         floor=0.0    floor=0.01    floor=0.05     floor=0.1
+  LME            0.557447      0.557447      0.557447      0.557447
+  PerLTQA        0.565755      0.565755      0.565755      0.565755
+  REALTALK       0.229100      0.229100      0.229100      0.229100
+  LoCoMo         0.262499      0.262499      0.262499      0.262499
+
+=== THE 12-BYTE QUESTION: does whitening help the SIGN arm too? ===
+  sign bits of the whitened vector -- still 12 bytes
+  LME       sign=0.542134  sign-on-whitened=0.542134   +0.0000 pp  CI[+0.000,+0.000]  sig=True
+  PerLTQA   sign=0.488945  sign-on-whitened=0.488945   +0.0000 pp  CI[+0.000,+0.000]  sig=True
+  REALTALK  sign=0.225535  sign-on-whitened=0.225535   +0.0000 pp  CI[+0.000,+0.000]  sig=True
+  LoCoMo    sign=0.237907  sign-on-whitened=0.237907   +0.0000 pp  CI[+0.000,+0.000]  sig=True
+
+WROTE whitening_significance.json

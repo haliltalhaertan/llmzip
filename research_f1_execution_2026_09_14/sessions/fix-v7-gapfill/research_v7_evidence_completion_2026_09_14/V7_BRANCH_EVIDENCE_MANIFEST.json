@@ -1,0 +1,88 @@
+{
+  "banner": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE] PREPARED NOT ACCEPTED",
+  "branch": "origin/audit/v52-t4f1-v7-independent-2026-09-03",
+  "commit": "16dc61313acd0e9086c852eccb9100023898fd27",
+  "file_count": 16,
+  "files": [
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/COMMAND_LOG.txt",
+      "bytes": 79363,
+      "sha256": "364a30814708026da67b282ee2241854fe88d6019b669da2dab828712109b46a"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g1_closure_and_bindings.json",
+      "bytes": 2118,
+      "sha256": "9afced0d2606a4dce5ce775ced81cc870e0cf75db0278af6d0c7304fd3bae5d4"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g1_corpus_verification.json",
+      "bytes": 324,
+      "sha256": "f1e63fe84bf0f2c75db9b47e891448872f80078fc549bc196641ddba92380680"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g2_change_isolation.json",
+      "bytes": 1653,
+      "sha256": "7a92b62cbea1caba587dbca30fa5e432dbe6d5fbbe4809717b0ffb2031982805"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g32_evasion_replay.json",
+      "bytes": 22006,
+      "sha256": "212f747f9b3b9af91db38a891b6f56a6f8636dd25a39557b4fb40d73831aa892"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g34_cross_document_consistency.json",
+      "bytes": 11102,
+      "sha256": "a76d2f1bd0d5aed83a3da6532d97ceee15117b68ca59779b0b356265c8bb7656"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g35_fixture_results.json",
+      "bytes": 15728,
+      "sha256": "934d78df18ec96d7a540dd4f0bd6c5840141cce74a18dcf1da039413654c5b67"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g6_preflight_guardrails.json",
+      "bytes": 1235,
+      "sha256": "d778d9d2b4c332841ce1512a1da21afd6f6742e661f12d3c66723bdd5b971600"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g7_bound_payload_restatements.json",
+      "bytes": 11400,
+      "sha256": "a7326406096ca4970c5b3800545cbe5e372c6781b233cc4bb04379a0703c6d03"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/evidence/g7_failclosed_authorization.json",
+      "bytes": 2337,
+      "sha256": "b4656a365845c147206b648e7a00a04cc444e2f6758c47347543028b73b07399"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/scripts/g1_verify_corpus.py",
+      "bytes": 1960,
+      "sha256": "b8db6f1f2fc224407199b660bcfd80977e2426a45a8e9fe44324a63b66a57942"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/scripts/g32_evasion_replay.py",
+      "bytes": 6548,
+      "sha256": "2cd7ffeda9f67fbdcc66eba9d9dfda46ab6b9e334a20013e62d64d9cfd188a77"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/scripts/g34_cross_document_consistency.py",
+      "bytes": 5768,
+      "sha256": "dd69782b38b71bbddfaab6e2ad893f26e12257f70de4859a3e561f6a911c7f2c"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/scripts/g35_fixtures.py",
+      "bytes": 12502,
+      "sha256": "7f91ba1659fc86a042ef846a1942480278773b5a874165c57c0de3285aeb58a1"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/scripts/g7_bound_payload_restatements.py",
+      "bytes": 7898,
+      "sha256": "7cba4f8f324127dd78893d825e12856679229c5cf83534ceff770a4ed3b80c27"
+    },
+    {
+      "path": "audit_v52_t4f1_execution_candidate_v7_independent_audit_2026_09_03/scripts/safe_harness.py",
+      "bytes": 3315,
+      "sha256": "f885ef52bc692066f091c90f3d318a6c4499c5b0ea9c6c41b7b474ae61672289"
+    }
+  ]
+}

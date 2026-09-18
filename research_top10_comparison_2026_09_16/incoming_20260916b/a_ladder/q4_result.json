@@ -1,0 +1,72 @@
+[
+ {
+  "shard": 500,
+  "arm": "qscale",
+  "bits": 96,
+  "n_docs": 419,
+  "n_queries": 150,
+  "dataset": "LoCoMo",
+  "max_top10_pos_diff": 0,
+  "max_metric_abs_diff": 0.0,
+  "my_hit10": 0.48,
+  "my_fr3": 0.27,
+  "their_hit10": 0.48,
+  "their_fr3": 0.27
+ },
+ {
+  "shard": 500,
+  "arm": "hamming",
+  "bits": 96,
+  "n_docs": 419,
+  "n_queries": 150,
+  "dataset": "LoCoMo",
+  "max_top10_pos_diff": 0,
+  "max_metric_abs_diff": 0.0,
+  "my_hit10": 0.44666666666666666,
+  "my_fr3": 0.28833333333333333,
+  "their_hit10": 0.44666666666666666,
+  "their_fr3": 0.28833333333333333
+ },
+ {
+  "shard": 500,
+  "arm": "qscale",
+  "bits": 384,
+  "n_docs": 419,
+  "n_queries": 150,
+  "dataset": "LoCoMo",
+  "max_top10_pos_diff": 0,
+  "max_metric_abs_diff": 0.0,
+  "my_hit10": 0.6066666666666667,
+  "my_fr3": 0.4272222222222223,
+  "their_hit10": 0.6066666666666667,
+  "their_fr3": 0.4272222222222223
+ },
+ {
+  "shard": 0,
+  "arm": "qscale",
+  "bits": 96,
+  "n_docs": 514,
+  "n_queries": 1,
+  "dataset": "LME",
+  "max_top10_pos_diff": 0,
+  "max_metric_abs_diff": 0.0,
+  "my_hit10": 1.0,
+  "my_fr3": 1.0,
+  "their_hit10": 1.0,
+  "their_fr3": 1.0
+ },
+ {
+  "shard": 470,
+  "arm": "qscale",
+  "bits": 96,
+  "n_docs": 459,
+  "n_queries": 409,
+  "dataset": "PerLTQA",
+  "max_top10_pos_diff": 0,
+  "max_metric_abs_diff": 0.0,
+  "my_hit10": 0.7897310513447433,
+  "my_fr3": 0.5435834516411246,
+  "their_hit10": 0.7897310513447433,
+  "their_fr3": 0.5435834516411246
+ }
+]

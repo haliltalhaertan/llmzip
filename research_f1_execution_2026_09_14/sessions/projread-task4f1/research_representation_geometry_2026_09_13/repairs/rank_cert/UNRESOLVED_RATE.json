@@ -1,0 +1,224 @@
+{
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ],
+  "artifact_cases": {
+    "n": 6,
+    "orig_unres": 1,
+    "disc_unres": 0,
+    "v2_unres": 0,
+    "details": [
+      {
+        "case": "S6a:0vs2",
+        "orig": "STRICT",
+        "disc": "STRICT",
+        "v2": "STRICT",
+        "v2dir": 1
+      },
+      {
+        "case": "S6a:1vs2",
+        "orig": "STRICT",
+        "disc": "STRICT",
+        "v2": "STRICT",
+        "v2dir": 1
+      },
+      {
+        "case": "S6c:t3",
+        "orig": "ISOLATED_TIES",
+        "disc": "ISOLATED_TIES",
+        "v2": "ISOLATED_TIES",
+        "v2dir": 1
+      },
+      {
+        "case": "S6c:t3b",
+        "orig": "ISOLATED_TIES",
+        "disc": "ISOLATED_TIES",
+        "v2": "ISOLATED_TIES",
+        "v2dir": 1
+      },
+      {
+        "case": "S8:cA",
+        "orig": "STRICT",
+        "disc": "STRICT",
+        "v2": "STRICT",
+        "v2dir": -1
+      },
+      {
+        "case": "S8:cB",
+        "orig": "UNRESOLVED",
+        "disc": "ISOLATED_TIES",
+        "v2": "ISOLATED_TIES",
+        "v2dir": "VARIES"
+      }
+    ]
+  },
+  "fuzz": {
+    "n": 2000,
+    "domain_fail": 241,
+    "orig_unres": 649,
+    "disc_unres": 6,
+    "v2_unres": 0,
+    "agree_viol": 0,
+    "mono_viol": 0,
+    "valid_fail": 0,
+    "recovered": 649,
+    "examples": [
+      {
+        "p": [
+          "0",
+          "3",
+          "1",
+          "0"
+        ],
+        "q": [
+          "2",
+          "-1",
+          "2",
+          "3"
+        ],
+        "v2": "ISOLATED_TIES",
+        "dir": "VARIES",
+        "ties": [
+          "cross(5567064941/17179869184,11134129913/34359738368)"
+        ]
+      },
+      {
+        "p": [
+          "-1",
+          "-1",
+          "1",
+          "3"
+        ],
+        "q": [
+          "-3",
+          "3",
+          "2",
+          "2"
+        ],
+        "v2": "ISOLATED_TIES",
+        "dir": "VARIES",
+        "ties": [
+          "cross(3958042817/8589934592,7916085649/17179869184)"
+        ]
+      },
+      {
+        "p": [
+          "2",
+          "-2",
+          "1",
+          "1"
+        ],
+        "q": [
+          "1",
+          "0",
+          "1",
+          "3"
+        ],
+        "v2": "ISOLATED_TIES",
+        "dir": "VARIES",
+        "ties": [
+          "cross(10720514119/17179869184,5360257067/8589934592)"
+        ]
+      },
+      {
+        "p": [
+          "2",
+          "1",
+          "3",
+          "1"
+        ],
+        "q": [
+          "2",
+          "-3",
+          "1",
+          "0"
+        ],
+        "v2": "ISOLATED_TIES",
+        "dir": "VARIES",
+        "ties": [
+          "cross(1614299951/6442450944,4304799879/17179869184)"
+        ]
+      },
+      {
+        "p": [
+          "-3",
+          "3",
+          "2",
+          "3"
+        ],
+        "q": [
+          "3",
+          "-2",
+          "2",
+          "1"
+        ],
+        "v2": "ISOLATED_TIES",
+        "dir": "VARIES",
+        "ties": [
+          "cross(82865351/67108864,1325845617/1073741824)"
+        ]
+      }
+    ],
+    "seed": 20260913,
+    "J": [
+      "1/16",
+      "16"
+    ],
+    "ranges": {
+      "a": [
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "b": [
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "u": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "v": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "effective_n": 1759,
+    "rates": {
+      "orig": [
+        649,
+        1759
+      ],
+      "disc_only": [
+        6,
+        1759
+      ],
+      "v2": [
+        0,
+        1759
+      ]
+    }
+  },
+  "recovery": {
+    "artifact": 1,
+    "fuzz": 649,
+    "total": 650
+  },
+  "elapsed_s": 6.7
+}

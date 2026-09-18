@@ -1,0 +1,32 @@
+{
+  "schema": "V52_STATIC_STORAGE_INVENTORY_REVISION_IDENTITY_V2",
+  "status": "FIX_PREPARED_NOT_INDEPENDENTLY_RE_REVIEWED",
+  "revision_content_commit_before_identity": "2f81d7fdf8cdeccc7211b88ee33ab925ee4d62f2",
+  "parent_audit_target_commit": "f9404f2b1e56e5a63878978c19f30283b18324fd",
+  "independent_audit": {
+    "branch": "audit/v52-static-storage-inventory-independent-2026-09-12",
+    "commit": "22b58b609f766c028a344813eacec4abab0a7804",
+    "verdict": "REQUEST_CHANGES",
+    "hashes_json_sha256": "a1ae82bb7114409aaf9fc58bb234f2ac93fa5934bbdfce47c86a57d07bf3579a"
+  },
+  "files": {
+    "INDEPENDENT_AUDIT_DISPOSITION.md": {
+      "git_blob": "18ff594c7d3e00d269f5b7762cda8ce38adec340"
+    },
+    "SEARCH_LOG_V2.json": {
+      "git_blob": "471bb70d6feffdd63b9a5b99fd524f3a9d2f66dc"
+    },
+    "SOURCE_INVENTORY_V2.json": {
+      "git_blob": "1e4d11438efb64705fb7f980b6c0ea0c26af0467"
+    },
+    "SOURCE_INVENTORY_TR_V2.md": {
+      "git_blob": "1752f794e279d6b2d1ec41682f6b088a9236db46"
+    }
+  },
+  "notes": [
+    "The original inventory files audited at f9404f2 remain preserved byte-unchanged; V2 is additive.",
+    "This identity binds Git objects only and is not a scientific seal or independent acceptance.",
+    "The corrected inventory remains NOT_READY and requires a fresh independent source-resolution review before a real adapter/measurement-plan stage.",
+    "Task4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN."
+  ]
+}

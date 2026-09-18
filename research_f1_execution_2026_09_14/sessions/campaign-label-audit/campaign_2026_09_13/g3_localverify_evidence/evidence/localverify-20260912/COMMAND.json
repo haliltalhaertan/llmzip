@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "C:\\Users\\MDP\\dev\\llmzip-work\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\MDP\\dev\\llmzip-work\\verify\\g3\\drafts\\v52\\membership_g3_remediation_2026_09_11\\verify_delivery.py",
+    "--child",
+    "--output",
+    "C:\\Users\\MDP\\dev\\llmzip-work\\verify\\g3\\drafts\\v52\\membership_g3_remediation_2026_09_11\\evidence\\localverify-20260912"
+  ],
+  "exit_code": 1
+}

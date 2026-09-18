@@ -1,0 +1,13 @@
+{
+  "schema": "V52_STATIC_STORAGE_PLAN_PREP_IDENTITY_V1",
+  "status": "IDENTITY_ONLY_NOT_INDEPENDENT_REVIEW",
+  "parent_v2_commit": "552088ae8907b13d0dcf44dfc26c0a2389503125",
+  "files": {
+    "PLAN_PREP_SCOPE_TR.md": "043aed768506836b82fd441e58e7ed7f98b97dbe",
+    "PROBE_POLICY.md": "c2e1d780a01ca054a071a7ab007b7ca135318bab",
+    "ADAPTER_INTERFACE.md": "90b0d9ba309cb3bb734951196a24ba59da65d4e6",
+    "PLAN_PREP_SPEC.json": "fc19fd273b472f48976dbebde726910654e790f1",
+    "SOURCE_LOCATOR_RECEIPT.md": "54214afa2559b26f0aa98a8e13cf726a778c7730"
+  },
+  "note": "Git blob identities only; not approval, not SHA256 seal, not measurement authorization."
+}

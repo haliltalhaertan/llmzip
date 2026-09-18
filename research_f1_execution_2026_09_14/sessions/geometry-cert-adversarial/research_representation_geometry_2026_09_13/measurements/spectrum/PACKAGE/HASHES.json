@@ -1,0 +1,19 @@
+{"_labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "_refit_notice": "BEYAN EDILMIS YENIDEN-UYARLAMA (declared re-fit): bu cikti, dondurulmus uretim yapitinin geri kazanimi DEGILDIR; gercek derlem uzerinde temsil hattinin yeniden uyarlanmasindan okunan TANIMLAYICI istatistiklerdir. Hicbir retrieval/recall/gold/benchmark sonucu hesaplanmamistir.",
+
+  "package_files": {
+    "GATE.json": "a6a735d28dec3a032410d98732e4317a3b1d7bfd510236c151edf0564cc860ca",
+    "MEASUREMENT_REPORT_TR.md": "a69f6403dabbb8b71548fd4f5db436073836f08427148804515b190166b6c583",
+    "REPRODUCE.md": "564b422ab353f53ad86ccaad29728291250539e197babc7e7b79b6cc24202626",
+    "SCOPE_AND_LIMITS_TR.md": "b6fa015d37bd53eaf0043060c986f3c9f6f79fe9acacefd56de60102ab7fa71e",
+    "SPECTRUM.json": "30a198fa3369bfc331d0c43bad51ef611b1c6b21bcd1422afcd2d3957253f7b4",
+    "TRUNCATION.json": "451563b853c7d0b137718cf891d120b4b0284c445665595eb19f298f1a6e11d2",
+    "measure_spectrum.py": "22e32e1fffde980308027d0a7cbc86c82f850dd23d1eddf21168d9c9cfebdb3c"
+  },
+  "inputs": {
+    "corpus_longmemeval_s_cleaned.json": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "adapter_longmemeval_v52_adapter.py": "0a1a39a8dc839ff969a3c90b747edd544bdae112bb59091e969ddecb00fab722",
+    "geometry_V52_T4C2_feature_geometry.csv": "d4c9ce62b0f1b66611611bb014a887d2e7e5fcfaee0af94f53ffb70dc84d7d32"
+  },
+  "not": "HASHES.json kendini kapsamaz; dogrulayan dosyanin karmasini yeniden hesaplar."
+}

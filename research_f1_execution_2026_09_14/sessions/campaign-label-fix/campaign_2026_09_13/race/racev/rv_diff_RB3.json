@@ -1,0 +1,29 @@
+[
+ [
+  "$/byte_worksheet",
+  "ONLY_BUILD",
+  "{'A0_SIGN_ref': {'BinaryFlat_S0_published': 33, 'aux_B': 0, 'code_B': 12, 'declared': 12, 'measured': 12, 'method': 'num",
+  null
+ ],
+ [
+  "$/arms_summary/A4_random_axes94203/LoCoMo_FR",
+  "FLOAT",
+  "0.0859125209133781",
+  "0.08591252091337809",
+  "1.3877787807814457e-17"
+ ],
+ [
+  "$/smokes/S1/eval_s",
+  "FLOAT",
+  "2.6558475494384766",
+  "3.285130500793457",
+  "-0.6292829513549805"
+ ],
+ [
+  "$/timing_s",
+  "FLOAT",
+  "58.40400815010071",
+  "14.67695140838623",
+  "43.72705674171448"
+ ]
+]

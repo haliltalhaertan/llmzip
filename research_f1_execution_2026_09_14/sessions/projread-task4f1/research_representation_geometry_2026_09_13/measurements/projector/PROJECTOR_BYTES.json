@@ -1,0 +1,2032 @@
+{"_labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "_refit_notice": "BEYAN EDILMIS YENIDEN-UYARLAMA (declared re-fit): bu cikti, dondurulmus uretim yapitinin geri kazanimi DEGILDIR; gercek derlem uzerinde temsil hattinin yeniden uyarlanmasindan okunan SERILESMIS BOYUTLARDIR. Dondurulmus yapitin fiziksel serilesmesi hic bulunamadi. Task4F1 muhru: retrieval/recall/gold/siralama/benchmark/sonuc sayisi YOK.",
+
+  "task_boundary": "Mühürlü görev Task4F1: retrieval sonucu, recall/dogruluk, gold/evidence etiketi, siralama, benchmark, sonuc sayisi hesaplanmadi; yalnizca yeniden-uydurulan (re-fit) temsilin kalici yapilarinin bayt boyutlari olculdu.",
+  "config": {
+    "corpus": "/mnt/c/Users/MDP/dev/llmzip-work/drive/longmemeval_s_cleaned.json",
+    "adapter": "/mnt/c/Users/MDP/dev/llmzip/adapters/longmemeval_v52_adapter.py",
+    "geometry": "/mnt/c/Users/MDP/dev/llmzip/docs/v52/task4c2/V52_T4C2_feature_geometry.csv",
+    "n_archives": 15,
+    "svd_seed": 5204,
+    "n_components": 96,
+    "marginal_bytes_per_vector": 12,
+    "query_path": "wv.transform -> cv.transform -> sv.transform(Qw) -> hstack -> s96.transform -> (.-mu)",
+    "svd_mean_offset": "yok (TruncatedSVD.transform yalnizca components_ kullanir; kaynakta dogrulandi)"
+  },
+  "vocab_encoding": {
+    "ana": "index sirasi + terim basi uint32 LE uzunluk + UTF-8 (cozulebilir)",
+    "alt_sinir_ref": "UTF-8 toplami + terim basi 1 ayrac (guvenlik her arsivde denetlendi)"
+  },
+  "numeric_encoding": {
+    "a": "yogun float32",
+    "b": "yogun float16 (olasi ucuz secim)",
+    "ref": "yerel float64 (sklearn ciktisi); karsilastirma icin"
+  },
+  "compression": "nesne basi zlib seviye 6; toplamlar sikistirilmis parcalarin toplami",
+  "unavoidable_vs_choices": {
+    "kacinilmaz": [
+      "word vocab + IDF",
+      "char vocab + IDF",
+      "sv.components_",
+      "s96.components_",
+      "mu"
+    ],
+    "secim": [
+      "float32/float16/float64 duyarligi",
+      "vocab yapisi (uzunluk-onek vs ayrac)",
+      "sikistirma acik/kapali",
+      "fazladan SVD alanlarini (singular_values_ vb.) saklamamak"
+    ]
+  },
+  "excluded_with_reason": {
+    "singular_values_/explained_variance_": "transform kullanmaz; sorgu icin gerekmez",
+    "stop_words listesi": "kod sabiti ('english'); arsiv-ozel uydurma degil",
+    "normalize/hstack/shape/skalerler": "durumsuz ya da ihmal edilebilir (<100 B)",
+    "ITQ/rastgele izdusumler/imza kontrolleri": "yerel SIGN96 sorgu yolunda yok; ayri analizler",
+    "oncelik (priority)": "cekirdekten uretilir, saklanmaz; ihmal edilebilir"
+  },
+  "per_archive": [
+    {
+      "question_id": "001be529",
+      "N_archive": 514,
+      "word_columns": 39940,
+      "char_columns": 59943,
+      "combined_columns": 99915,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 39940,
+          "utf8_sum": 505751,
+          "structured_bytes": 665511,
+          "delim1_bytes_ref": 545691,
+          "zlib_bytes": 205694,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 59943,
+          "utf8_sum": 265821,
+          "structured_bytes": 505593,
+          "delim1_bytes_ref": 325764,
+          "zlib_bytes": 158109,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 39940,
+          "raw64_ref": 319520,
+          "raw32": 159760,
+          "raw16": 79880,
+          "zlib32": 13155,
+          "zlib16": 11333
+        },
+        "char_idf": {
+          "n": 59943,
+          "raw64_ref": 479544,
+          "raw32": 239772,
+          "raw16": 119886,
+          "zlib32": 43793,
+          "zlib16": 38085
+        },
+        "sv_components": {
+          "n": 1278080,
+          "raw64_ref": 10224640,
+          "raw32": 5112320,
+          "raw16": 2556160,
+          "zlib32": 2564516,
+          "zlib16": 1982190,
+          "shape": [
+            32,
+            39940
+          ]
+        },
+        "s96_components": {
+          "n": 9591840,
+          "raw64_ref": 76734720,
+          "raw32": 38367360,
+          "raw16": 19183680,
+          "zlib32": 21197176,
+          "zlib16": 14890469,
+          "shape": [
+            96,
+            99915
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 45050700,
+        "b_raw_f16_struct": 23110902,
+        "a_zlib": 24182838,
+        "b_zlib": 17286083,
+        "native_f64_struct_ref": 88930296,
+        "vocab_struct": 1171104,
+        "vocab_zlib": 363803,
+        "numeric_f32": 43879596,
+        "numeric_f16": 21939798,
+        "numeric_f32_zlib": 23819035,
+        "numeric_f16_zlib": 16922280
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 45050700,
+          "shared_per_vector": 87647.27626459143,
+          "effective": 87659.27626459143
+        },
+        "b_raw": {
+          "shared_total": 23110902,
+          "shared_per_vector": 44962.84435797665,
+          "effective": 44974.84435797665
+        },
+        "a_zlib": {
+          "shared_total": 24182838,
+          "shared_per_vector": 47048.32295719844,
+          "effective": 47060.32295719844
+        },
+        "b_zlib": {
+          "shared_total": 17286083,
+          "shared_per_vector": 33630.51167315175,
+          "effective": 33642.51167315175
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3754225,
+          "to_1": 45050700
+        },
+        "b_raw": {
+          "to_12": 1925909,
+          "to_1": 23110902
+        },
+        "a_zlib": {
+          "to_12": 2015237,
+          "to_1": 24182838
+        },
+        "b_zlib": {
+          "to_12": 1440507,
+          "to_1": 17286083
+        }
+      }
+    },
+    {
+      "question_id": "00ca467f",
+      "N_archive": 486,
+      "word_columns": 38846,
+      "char_columns": 54711,
+      "combined_columns": 93589,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 38846,
+          "utf8_sum": 508693,
+          "structured_bytes": 664077,
+          "delim1_bytes_ref": 547539,
+          "zlib_bytes": 201076,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 54711,
+          "utf8_sum": 240237,
+          "structured_bytes": 459081,
+          "delim1_bytes_ref": 294948,
+          "zlib_bytes": 143073,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 38846,
+          "raw64_ref": 310768,
+          "raw32": 155384,
+          "raw16": 77692,
+          "zlib32": 12438,
+          "zlib16": 10762
+        },
+        "char_idf": {
+          "n": 54711,
+          "raw64_ref": 437688,
+          "raw32": 218844,
+          "raw16": 109422,
+          "zlib32": 41348,
+          "zlib16": 36011
+        },
+        "sv_components": {
+          "n": 1243072,
+          "raw64_ref": 9944576,
+          "raw32": 4972288,
+          "raw16": 2486144,
+          "zlib32": 2519909,
+          "zlib16": 1947503,
+          "shape": [
+            32,
+            38846
+          ]
+        },
+        "s96_components": {
+          "n": 8984544,
+          "raw64_ref": 71876352,
+          "raw32": 35938176,
+          "raw16": 17969088,
+          "zlib32": 20150693,
+          "zlib16": 14133953,
+          "shape": [
+            96,
+            93589
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 42408234,
+        "b_raw_f16_struct": 21765696,
+        "a_zlib": 23068932,
+        "b_zlib": 16472581,
+        "native_f64_struct_ref": 83693310,
+        "vocab_struct": 1123158,
+        "vocab_zlib": 344149,
+        "numeric_f32": 41285076,
+        "numeric_f16": 20642538,
+        "numeric_f32_zlib": 22724783,
+        "numeric_f16_zlib": 16128432
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 42408234,
+          "shared_per_vector": 87259.74074074074,
+          "effective": 87271.74074074074
+        },
+        "b_raw": {
+          "shared_total": 21765696,
+          "shared_per_vector": 44785.38271604938,
+          "effective": 44797.38271604938
+        },
+        "a_zlib": {
+          "shared_total": 23068932,
+          "shared_per_vector": 47466.93827160494,
+          "effective": 47478.93827160494
+        },
+        "b_zlib": {
+          "shared_total": 16472581,
+          "shared_per_vector": 33894.199588477364,
+          "effective": 33906.199588477364
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3534020,
+          "to_1": 42408234
+        },
+        "b_raw": {
+          "to_12": 1813808,
+          "to_1": 21765696
+        },
+        "a_zlib": {
+          "to_12": 1922411,
+          "to_1": 23068932
+        },
+        "b_zlib": {
+          "to_12": 1372716,
+          "to_1": 16472581
+        }
+      }
+    },
+    {
+      "question_id": "0100672e",
+      "N_archive": 486,
+      "word_columns": 41054,
+      "char_columns": 57162,
+      "combined_columns": 98248,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 41054,
+          "utf8_sum": 531380,
+          "structured_bytes": 695596,
+          "delim1_bytes_ref": 572434,
+          "zlib_bytes": 211526,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 57162,
+          "utf8_sum": 250749,
+          "structured_bytes": 479397,
+          "delim1_bytes_ref": 307911,
+          "zlib_bytes": 149319,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 41054,
+          "raw64_ref": 328432,
+          "raw32": 164216,
+          "raw16": 82108,
+          "zlib32": 13189,
+          "zlib16": 11387
+        },
+        "char_idf": {
+          "n": 57162,
+          "raw64_ref": 457296,
+          "raw32": 228648,
+          "raw16": 114324,
+          "zlib32": 43250,
+          "zlib16": 37570
+        },
+        "sv_components": {
+          "n": 1313728,
+          "raw64_ref": 10509824,
+          "raw32": 5254912,
+          "raw16": 2627456,
+          "zlib32": 2650551,
+          "zlib16": 2047984,
+          "shape": [
+            32,
+            41054
+          ]
+        },
+        "s96_components": {
+          "n": 9431808,
+          "raw64_ref": 75454464,
+          "raw32": 37727232,
+          "raw16": 18863616,
+          "zlib32": 21095016,
+          "zlib16": 14789353,
+          "shape": [
+            96,
+            98248
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 44550385,
+        "b_raw_f16_struct": 22862689,
+        "a_zlib": 24163246,
+        "b_zlib": 17247342,
+        "native_f64_struct_ref": 87925777,
+        "vocab_struct": 1174993,
+        "vocab_zlib": 360845,
+        "numeric_f32": 43375392,
+        "numeric_f16": 21687696,
+        "numeric_f32_zlib": 23802401,
+        "numeric_f16_zlib": 16886497
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 44550385,
+          "shared_per_vector": 91667.45884773662,
+          "effective": 91679.45884773662
+        },
+        "b_raw": {
+          "shared_total": 22862689,
+          "shared_per_vector": 47042.56995884774,
+          "effective": 47054.56995884774
+        },
+        "a_zlib": {
+          "shared_total": 24163246,
+          "shared_per_vector": 49718.61316872428,
+          "effective": 49730.61316872428
+        },
+        "b_zlib": {
+          "shared_total": 17247342,
+          "shared_per_vector": 35488.358024691355,
+          "effective": 35500.358024691355
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3712533,
+          "to_1": 44550385
+        },
+        "b_raw": {
+          "to_12": 1905225,
+          "to_1": 22862689
+        },
+        "a_zlib": {
+          "to_12": 2013604,
+          "to_1": 24163246
+        },
+        "b_zlib": {
+          "to_12": 1437279,
+          "to_1": 17247342
+        }
+      }
+    },
+    {
+      "question_id": "01493427",
+      "N_archive": 487,
+      "word_columns": 39327,
+      "char_columns": 56463,
+      "combined_columns": 95822,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 39327,
+          "utf8_sum": 511300,
+          "structured_bytes": 668608,
+          "delim1_bytes_ref": 550627,
+          "zlib_bytes": 200122,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 56463,
+          "utf8_sum": 247146,
+          "structured_bytes": 472998,
+          "delim1_bytes_ref": 303609,
+          "zlib_bytes": 148425,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 39327,
+          "raw64_ref": 314616,
+          "raw32": 157308,
+          "raw16": 78654,
+          "zlib32": 12879,
+          "zlib16": 11061
+        },
+        "char_idf": {
+          "n": 56463,
+          "raw64_ref": 451704,
+          "raw32": 225852,
+          "raw16": 112926,
+          "zlib32": 42059,
+          "zlib16": 36779
+        },
+        "sv_components": {
+          "n": 1258464,
+          "raw64_ref": 10067712,
+          "raw32": 5033856,
+          "raw16": 2516928,
+          "zlib32": 2582731,
+          "zlib16": 1991980,
+          "shape": [
+            32,
+            39327
+          ]
+        },
+        "s96_components": {
+          "n": 9198912,
+          "raw64_ref": 73591296,
+          "raw32": 36795648,
+          "raw16": 18397824,
+          "zlib32": 20452445,
+          "zlib16": 14384128,
+          "shape": [
+            96,
+            95822
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 43354654,
+        "b_raw_f16_struct": 22248130,
+        "a_zlib": 23439056,
+        "b_zlib": 16772698,
+        "native_f64_struct_ref": 85567702,
+        "vocab_struct": 1141606,
+        "vocab_zlib": 348547,
+        "numeric_f32": 42213048,
+        "numeric_f16": 21106524,
+        "numeric_f32_zlib": 23090509,
+        "numeric_f16_zlib": 16424151
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 43354654,
+          "shared_per_vector": 89023.93018480492,
+          "effective": 89035.93018480492
+        },
+        "b_raw": {
+          "shared_total": 22248130,
+          "shared_per_vector": 45684.04517453799,
+          "effective": 45696.04517453799
+        },
+        "a_zlib": {
+          "shared_total": 23439056,
+          "shared_per_vector": 48129.47843942505,
+          "effective": 48141.47843942505
+        },
+        "b_zlib": {
+          "shared_total": 16772698,
+          "shared_per_vector": 34440.85831622177,
+          "effective": 34452.85831622177
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3612888,
+          "to_1": 43354654
+        },
+        "b_raw": {
+          "to_12": 1854011,
+          "to_1": 22248130
+        },
+        "a_zlib": {
+          "to_12": 1953255,
+          "to_1": 23439056
+        },
+        "b_zlib": {
+          "to_12": 1397725,
+          "to_1": 16772698
+        }
+      }
+    },
+    {
+      "question_id": "031748ae",
+      "N_archive": 494,
+      "word_columns": 39940,
+      "char_columns": 57039,
+      "combined_columns": 97011,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 39940,
+          "utf8_sum": 512556,
+          "structured_bytes": 672316,
+          "delim1_bytes_ref": 552496,
+          "zlib_bytes": 204686,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 57039,
+          "utf8_sum": 250619,
+          "structured_bytes": 478775,
+          "delim1_bytes_ref": 307658,
+          "zlib_bytes": 149211,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 39940,
+          "raw64_ref": 319520,
+          "raw32": 159760,
+          "raw16": 79880,
+          "zlib32": 13415,
+          "zlib16": 11492
+        },
+        "char_idf": {
+          "n": 57039,
+          "raw64_ref": 456312,
+          "raw32": 228156,
+          "raw16": 114078,
+          "zlib32": 42875,
+          "zlib16": 37519
+        },
+        "sv_components": {
+          "n": 1278080,
+          "raw64_ref": 10224640,
+          "raw32": 5112320,
+          "raw16": 2556160,
+          "zlib32": 2608517,
+          "zlib16": 2015244,
+          "shape": [
+            32,
+            39940
+          ]
+        },
+        "s96_components": {
+          "n": 9313056,
+          "raw64_ref": 74504448,
+          "raw32": 37252224,
+          "raw16": 18626112,
+          "zlib32": 20877448,
+          "zlib16": 14661707,
+          "shape": [
+            96,
+            97011
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 43903935,
+        "b_raw_f16_struct": 22527513,
+        "a_zlib": 23896547,
+        "b_zlib": 17080062,
+        "native_f64_struct_ref": 86656779,
+        "vocab_struct": 1151091,
+        "vocab_zlib": 353897,
+        "numeric_f32": 42752844,
+        "numeric_f16": 21376422,
+        "numeric_f32_zlib": 23542650,
+        "numeric_f16_zlib": 16726165
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 43903935,
+          "shared_per_vector": 88874.36234817814,
+          "effective": 88886.36234817814
+        },
+        "b_raw": {
+          "shared_total": 22527513,
+          "shared_per_vector": 45602.25303643725,
+          "effective": 45614.25303643725
+        },
+        "a_zlib": {
+          "shared_total": 23896547,
+          "shared_per_vector": 48373.57692307692,
+          "effective": 48385.57692307692
+        },
+        "b_zlib": {
+          "shared_total": 17080062,
+          "shared_per_vector": 34575.024291497975,
+          "effective": 34587.024291497975
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3658662,
+          "to_1": 43903935
+        },
+        "b_raw": {
+          "to_12": 1877293,
+          "to_1": 22527513
+        },
+        "a_zlib": {
+          "to_12": 1991379,
+          "to_1": 23896547
+        },
+        "b_zlib": {
+          "to_12": 1423339,
+          "to_1": 17080062
+        }
+      }
+    },
+    {
+      "question_id": "06878be2",
+      "N_archive": 443,
+      "word_columns": 40797,
+      "char_columns": 61852,
+      "combined_columns": 102681,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 40797,
+          "utf8_sum": 528408,
+          "structured_bytes": 691596,
+          "delim1_bytes_ref": 569205,
+          "zlib_bytes": 211326,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 61852,
+          "utf8_sum": 270563,
+          "structured_bytes": 517971,
+          "delim1_bytes_ref": 332415,
+          "zlib_bytes": 162832,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 40797,
+          "raw64_ref": 326376,
+          "raw32": 163188,
+          "raw16": 81594,
+          "zlib32": 12840,
+          "zlib16": 10980
+        },
+        "char_idf": {
+          "n": 61852,
+          "raw64_ref": 494816,
+          "raw32": 247408,
+          "raw16": 123704,
+          "zlib32": 44208,
+          "zlib16": 38218
+        },
+        "sv_components": {
+          "n": 1305504,
+          "raw64_ref": 10444032,
+          "raw32": 5222016,
+          "raw16": 2611008,
+          "zlib32": 2597397,
+          "zlib16": 2021150,
+          "shape": [
+            32,
+            40797
+          ]
+        },
+        "s96_components": {
+          "n": 9857376,
+          "raw64_ref": 78859008,
+          "raw32": 39429504,
+          "raw16": 19714752,
+          "zlib32": 21442075,
+          "zlib16": 15145067,
+          "shape": [
+            96,
+            102681
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 46272067,
+        "b_raw_f16_struct": 23740817,
+        "a_zlib": 24471073,
+        "b_zlib": 17589776,
+        "native_f64_struct_ref": 91334567,
+        "vocab_struct": 1209567,
+        "vocab_zlib": 374158,
+        "numeric_f32": 45062500,
+        "numeric_f16": 22531250,
+        "numeric_f32_zlib": 24096915,
+        "numeric_f16_zlib": 17215618
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 46272067,
+          "shared_per_vector": 104451.61851015802,
+          "effective": 104463.61851015802
+        },
+        "b_raw": {
+          "shared_total": 23740817,
+          "shared_per_vector": 53591.009029345376,
+          "effective": 53603.009029345376
+        },
+        "a_zlib": {
+          "shared_total": 24471073,
+          "shared_per_vector": 55239.44243792325,
+          "effective": 55251.44243792325
+        },
+        "b_zlib": {
+          "shared_total": 17589776,
+          "shared_per_vector": 39706.04063205417,
+          "effective": 39718.04063205417
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3856006,
+          "to_1": 46272067
+        },
+        "b_raw": {
+          "to_12": 1978402,
+          "to_1": 23740817
+        },
+        "a_zlib": {
+          "to_12": 2039257,
+          "to_1": 24471073
+        },
+        "b_zlib": {
+          "to_12": 1465815,
+          "to_1": 17589776
+        }
+      }
+    },
+    {
+      "question_id": "06db6396",
+      "N_archive": 479,
+      "word_columns": 39011,
+      "char_columns": 56009,
+      "combined_columns": 95052,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 39011,
+          "utf8_sum": 502496,
+          "structured_bytes": 658540,
+          "delim1_bytes_ref": 541507,
+          "zlib_bytes": 199581,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 56009,
+          "utf8_sum": 245505,
+          "structured_bytes": 469541,
+          "delim1_bytes_ref": 301514,
+          "zlib_bytes": 146580,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 39011,
+          "raw64_ref": 312088,
+          "raw32": 156044,
+          "raw16": 78022,
+          "zlib32": 12930,
+          "zlib16": 11112
+        },
+        "char_idf": {
+          "n": 56009,
+          "raw64_ref": 448072,
+          "raw32": 224036,
+          "raw16": 112018,
+          "zlib32": 41941,
+          "zlib16": 36400
+        },
+        "sv_components": {
+          "n": 1248352,
+          "raw64_ref": 9986816,
+          "raw32": 4993408,
+          "raw16": 2496704,
+          "zlib32": 2509904,
+          "zlib16": 1937139,
+          "shape": [
+            32,
+            39011
+          ]
+        },
+        "s96_components": {
+          "n": 9124992,
+          "raw64_ref": 72999936,
+          "raw32": 36499968,
+          "raw16": 18249984,
+          "zlib32": 20195285,
+          "zlib16": 14197323,
+          "shape": [
+            96,
+            95052
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 43001921,
+        "b_raw_f16_struct": 22065001,
+        "a_zlib": 23106616,
+        "b_zlib": 16528338,
+        "native_f64_struct_ref": 84875761,
+        "vocab_struct": 1128081,
+        "vocab_zlib": 346161,
+        "numeric_f32": 41873840,
+        "numeric_f16": 20936920,
+        "numeric_f32_zlib": 22760455,
+        "numeric_f16_zlib": 16182177
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 43001921,
+          "shared_per_vector": 89774.36534446765,
+          "effective": 89786.36534446765
+        },
+        "b_raw": {
+          "shared_total": 22065001,
+          "shared_per_vector": 46064.72025052192,
+          "effective": 46076.72025052192
+        },
+        "a_zlib": {
+          "shared_total": 23106616,
+          "shared_per_vector": 48239.28183716075,
+          "effective": 48251.28183716075
+        },
+        "b_zlib": {
+          "shared_total": 16528338,
+          "shared_per_vector": 34505.924843423796,
+          "effective": 34517.924843423796
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3583494,
+          "to_1": 43001921
+        },
+        "b_raw": {
+          "to_12": 1838751,
+          "to_1": 22065001
+        },
+        "a_zlib": {
+          "to_12": 1925552,
+          "to_1": 23106616
+        },
+        "b_zlib": {
+          "to_12": 1377362,
+          "to_1": 16528338
+        }
+      }
+    },
+    {
+      "question_id": "06f04340",
+      "N_archive": 503,
+      "word_columns": 40212,
+      "char_columns": 60496,
+      "combined_columns": 100740,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 40212,
+          "utf8_sum": 520337,
+          "structured_bytes": 681185,
+          "delim1_bytes_ref": 560549,
+          "zlib_bytes": 208549,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 60496,
+          "utf8_sum": 264838,
+          "structured_bytes": 506822,
+          "delim1_bytes_ref": 325334,
+          "zlib_bytes": 158930,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 40212,
+          "raw64_ref": 321696,
+          "raw32": 160848,
+          "raw16": 80424,
+          "zlib32": 13021,
+          "zlib16": 11214
+        },
+        "char_idf": {
+          "n": 60496,
+          "raw64_ref": 483968,
+          "raw32": 241984,
+          "raw16": 120992,
+          "zlib32": 43819,
+          "zlib16": 38027
+        },
+        "sv_components": {
+          "n": 1286784,
+          "raw64_ref": 10294272,
+          "raw32": 5147136,
+          "raw16": 2573568,
+          "zlib32": 2592180,
+          "zlib16": 2007537,
+          "shape": [
+            32,
+            40212
+          ]
+        },
+        "s96_components": {
+          "n": 9671040,
+          "raw64_ref": 77368320,
+          "raw32": 38684160,
+          "raw16": 19342080,
+          "zlib32": 21248034,
+          "zlib16": 14965633,
+          "shape": [
+            96,
+            100740
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 45422519,
+        "b_raw_f16_struct": 23305263,
+        "a_zlib": 24264928,
+        "b_zlib": 17390093,
+        "native_f64_struct_ref": 89657031,
+        "vocab_struct": 1188007,
+        "vocab_zlib": 367479,
+        "numeric_f32": 44234512,
+        "numeric_f16": 22117256,
+        "numeric_f32_zlib": 23897449,
+        "numeric_f16_zlib": 17022614
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 45422519,
+          "shared_per_vector": 90303.21868787277,
+          "effective": 90315.21868787277
+        },
+        "b_raw": {
+          "shared_total": 23305263,
+          "shared_per_vector": 46332.53081510934,
+          "effective": 46344.53081510934
+        },
+        "a_zlib": {
+          "shared_total": 24264928,
+          "shared_per_vector": 48240.41351888668,
+          "effective": 48252.41351888668
+        },
+        "b_zlib": {
+          "shared_total": 17390093,
+          "shared_per_vector": 34572.74950298211,
+          "effective": 34584.74950298211
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3785210,
+          "to_1": 45422519
+        },
+        "b_raw": {
+          "to_12": 1942106,
+          "to_1": 23305263
+        },
+        "a_zlib": {
+          "to_12": 2022078,
+          "to_1": 24264928
+        },
+        "b_zlib": {
+          "to_12": 1449175,
+          "to_1": 17390093
+        }
+      }
+    },
+    {
+      "question_id": "07741c44",
+      "N_archive": 513,
+      "word_columns": 38768,
+      "char_columns": 53232,
+      "combined_columns": 92032,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 38768,
+          "utf8_sum": 512763,
+          "structured_bytes": 667835,
+          "delim1_bytes_ref": 551531,
+          "zlib_bytes": 199409,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 53232,
+          "utf8_sum": 233898,
+          "structured_bytes": 446826,
+          "delim1_bytes_ref": 287130,
+          "zlib_bytes": 139673,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 38768,
+          "raw64_ref": 310144,
+          "raw32": 155072,
+          "raw16": 77536,
+          "zlib32": 12707,
+          "zlib16": 10971
+        },
+        "char_idf": {
+          "n": 53232,
+          "raw64_ref": 425856,
+          "raw32": 212928,
+          "raw16": 106464,
+          "zlib32": 40951,
+          "zlib16": 35523
+        },
+        "sv_components": {
+          "n": 1240576,
+          "raw64_ref": 9924608,
+          "raw32": 4962304,
+          "raw16": 2481152,
+          "zlib32": 2553842,
+          "zlib16": 1977063,
+          "shape": [
+            32,
+            38768
+          ]
+        },
+        "s96_components": {
+          "n": 8835072,
+          "raw64_ref": 70680576,
+          "raw32": 35340288,
+          "raw16": 17670144,
+          "zlib32": 19858817,
+          "zlib16": 13949642,
+          "shape": [
+            96,
+            92032
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 41785637,
+        "b_raw_f16_struct": 21450149,
+        "a_zlib": 22805794,
+        "b_zlib": 16312484,
+        "native_f64_struct_ref": 82456613,
+        "vocab_struct": 1114661,
+        "vocab_zlib": 339082,
+        "numeric_f32": 40670976,
+        "numeric_f16": 20335488,
+        "numeric_f32_zlib": 22466712,
+        "numeric_f16_zlib": 15973402
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 41785637,
+          "shared_per_vector": 81453.48343079921,
+          "effective": 81465.48343079921
+        },
+        "b_raw": {
+          "shared_total": 21450149,
+          "shared_per_vector": 41813.1559454191,
+          "effective": 41825.1559454191
+        },
+        "a_zlib": {
+          "shared_total": 22805794,
+          "shared_per_vector": 44455.738791423,
+          "effective": 44467.738791423
+        },
+        "b_zlib": {
+          "shared_total": 16312484,
+          "shared_per_vector": 31798.214424951268,
+          "effective": 31810.214424951268
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3482137,
+          "to_1": 41785637
+        },
+        "b_raw": {
+          "to_12": 1787513,
+          "to_1": 21450149
+        },
+        "a_zlib": {
+          "to_12": 1900483,
+          "to_1": 22805794
+        },
+        "b_zlib": {
+          "to_12": 1359374,
+          "to_1": 16312484
+        }
+      }
+    },
+    {
+      "question_id": "07741c45",
+      "N_archive": 527,
+      "word_columns": 38354,
+      "char_columns": 61140,
+      "combined_columns": 99526,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 38354,
+          "utf8_sum": 485927,
+          "structured_bytes": 639343,
+          "delim1_bytes_ref": 524281,
+          "zlib_bytes": 197486,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 61140,
+          "utf8_sum": 267543,
+          "structured_bytes": 512103,
+          "delim1_bytes_ref": 328683,
+          "zlib_bytes": 160622,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 38354,
+          "raw64_ref": 306832,
+          "raw32": 153416,
+          "raw16": 76708,
+          "zlib32": 12647,
+          "zlib16": 10866
+        },
+        "char_idf": {
+          "n": 61140,
+          "raw64_ref": 489120,
+          "raw32": 244560,
+          "raw16": 122280,
+          "zlib32": 43539,
+          "zlib16": 37880
+        },
+        "sv_components": {
+          "n": 1227328,
+          "raw64_ref": 9818624,
+          "raw32": 4909312,
+          "raw16": 2454656,
+          "zlib32": 2463113,
+          "zlib16": 1898617,
+          "shape": [
+            32,
+            38354
+          ]
+        },
+        "s96_components": {
+          "n": 9554496,
+          "raw64_ref": 76435968,
+          "raw32": 38217984,
+          "raw16": 19108992,
+          "zlib32": 20862873,
+          "zlib16": 14635526,
+          "shape": [
+            96,
+            99526
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 44677102,
+        "b_raw_f16_struct": 22914274,
+        "a_zlib": 23740675,
+        "b_zlib": 16941200,
+        "native_f64_struct_ref": 88202758,
+        "vocab_struct": 1151446,
+        "vocab_zlib": 358108,
+        "numeric_f32": 43525656,
+        "numeric_f16": 21762828,
+        "numeric_f32_zlib": 23382567,
+        "numeric_f16_zlib": 16583092
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 44677102,
+          "shared_per_vector": 84776.28462998102,
+          "effective": 84788.28462998102
+        },
+        "b_raw": {
+          "shared_total": 22914274,
+          "shared_per_vector": 43480.59582542694,
+          "effective": 43492.59582542694
+        },
+        "a_zlib": {
+          "shared_total": 23740675,
+          "shared_per_vector": 45048.719165085386,
+          "effective": 45060.719165085386
+        },
+        "b_zlib": {
+          "shared_total": 16941200,
+          "shared_per_vector": 32146.489563567364,
+          "effective": 32158.489563567364
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3723092,
+          "to_1": 44677102
+        },
+        "b_raw": {
+          "to_12": 1909523,
+          "to_1": 22914274
+        },
+        "a_zlib": {
+          "to_12": 1978390,
+          "to_1": 23740675
+        },
+        "b_zlib": {
+          "to_12": 1411767,
+          "to_1": 16941200
+        }
+      }
+    },
+    {
+      "question_id": "078150f1",
+      "N_archive": 551,
+      "word_columns": 39388,
+      "char_columns": 58586,
+      "combined_columns": 98006,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 39388,
+          "utf8_sum": 502986,
+          "structured_bytes": 660538,
+          "delim1_bytes_ref": 542374,
+          "zlib_bytes": 202504,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 58586,
+          "utf8_sum": 257105,
+          "structured_bytes": 491449,
+          "delim1_bytes_ref": 315691,
+          "zlib_bytes": 153109,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 39388,
+          "raw64_ref": 315104,
+          "raw32": 157552,
+          "raw16": 78776,
+          "zlib32": 12816,
+          "zlib16": 11008
+        },
+        "char_idf": {
+          "n": 58586,
+          "raw64_ref": 468688,
+          "raw32": 234344,
+          "raw16": 117172,
+          "zlib32": 43032,
+          "zlib16": 37438
+        },
+        "sv_components": {
+          "n": 1260416,
+          "raw64_ref": 10083328,
+          "raw32": 5041664,
+          "raw16": 2520832,
+          "zlib32": 2533518,
+          "zlib16": 1943745,
+          "shape": [
+            32,
+            39388
+          ]
+        },
+        "s96_components": {
+          "n": 9408576,
+          "raw64_ref": 75268608,
+          "raw32": 37634304,
+          "raw16": 18817152,
+          "zlib32": 20787953,
+          "zlib16": 14598996,
+          "shape": [
+            96,
+            98006
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 44220235,
+        "b_raw_f16_struct": 22686111,
+        "a_zlib": 23733327,
+        "b_zlib": 16947003,
+        "native_f64_struct_ref": 87288483,
+        "vocab_struct": 1151987,
+        "vocab_zlib": 355613,
+        "numeric_f32": 43068248,
+        "numeric_f16": 21534124,
+        "numeric_f32_zlib": 23377714,
+        "numeric_f16_zlib": 16591390
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 44220235,
+          "shared_per_vector": 80254.50998185118,
+          "effective": 80266.50998185118
+        },
+        "b_raw": {
+          "shared_total": 22686111,
+          "shared_per_vector": 41172.615245009074,
+          "effective": 41184.615245009074
+        },
+        "a_zlib": {
+          "shared_total": 23733327,
+          "shared_per_vector": 43073.188747731394,
+          "effective": 43085.188747731394
+        },
+        "b_zlib": {
+          "shared_total": 16947003,
+          "shared_per_vector": 30756.811252268602,
+          "effective": 30768.811252268602
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3685020,
+          "to_1": 44220235
+        },
+        "b_raw": {
+          "to_12": 1890510,
+          "to_1": 22686111
+        },
+        "a_zlib": {
+          "to_12": 1977778,
+          "to_1": 23733327
+        },
+        "b_zlib": {
+          "to_12": 1412251,
+          "to_1": 16947003
+        }
+      }
+    },
+    {
+      "question_id": "07b6f563",
+      "N_archive": 524,
+      "word_columns": 39414,
+      "char_columns": 56424,
+      "combined_columns": 95870,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 39414,
+          "utf8_sum": 511307,
+          "structured_bytes": 668963,
+          "delim1_bytes_ref": 550721,
+          "zlib_bytes": 202890,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 56424,
+          "utf8_sum": 247868,
+          "structured_bytes": 473564,
+          "delim1_bytes_ref": 304292,
+          "zlib_bytes": 148139,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 39414,
+          "raw64_ref": 315312,
+          "raw32": 157656,
+          "raw16": 78828,
+          "zlib32": 13223,
+          "zlib16": 11376
+        },
+        "char_idf": {
+          "n": 56424,
+          "raw64_ref": 451392,
+          "raw32": 225696,
+          "raw16": 112848,
+          "zlib32": 42454,
+          "zlib16": 36969
+        },
+        "sv_components": {
+          "n": 1261248,
+          "raw64_ref": 10089984,
+          "raw32": 5044992,
+          "raw16": 2522496,
+          "zlib32": 2579591,
+          "zlib16": 1991874,
+          "shape": [
+            32,
+            39414
+          ]
+        },
+        "s96_components": {
+          "n": 9203520,
+          "raw64_ref": 73628160,
+          "raw32": 36814080,
+          "raw16": 18407040,
+          "zlib32": 20601536,
+          "zlib16": 14475684,
+          "shape": [
+            96,
+            95870
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 43385335,
+        "b_raw_f16_struct": 22263931,
+        "a_zlib": 23588228,
+        "b_zlib": 16867135,
+        "native_f64_struct_ref": 85628143,
+        "vocab_struct": 1142527,
+        "vocab_zlib": 351029,
+        "numeric_f32": 42242808,
+        "numeric_f16": 21121404,
+        "numeric_f32_zlib": 23237199,
+        "numeric_f16_zlib": 16516106
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 43385335,
+          "shared_per_vector": 82796.44083969465,
+          "effective": 82808.44083969465
+        },
+        "b_raw": {
+          "shared_total": 22263931,
+          "shared_per_vector": 42488.4179389313,
+          "effective": 42500.4179389313
+        },
+        "a_zlib": {
+          "shared_total": 23588228,
+          "shared_per_vector": 45015.70229007633,
+          "effective": 45027.70229007633
+        },
+        "b_zlib": {
+          "shared_total": 16867135,
+          "shared_per_vector": 32189.18893129771,
+          "effective": 32201.18893129771
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3615445,
+          "to_1": 43385335
+        },
+        "b_raw": {
+          "to_12": 1855328,
+          "to_1": 22263931
+        },
+        "a_zlib": {
+          "to_12": 1965686,
+          "to_1": 23588228
+        },
+        "b_zlib": {
+          "to_12": 1405595,
+          "to_1": 16867135
+        }
+      }
+    },
+    {
+      "question_id": "0862e8bf",
+      "N_archive": 490,
+      "word_columns": 37377,
+      "char_columns": 58769,
+      "combined_columns": 96178,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 37377,
+          "utf8_sum": 489240,
+          "structured_bytes": 638748,
+          "delim1_bytes_ref": 526617,
+          "zlib_bytes": 194653,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 58769,
+          "utf8_sum": 257521,
+          "structured_bytes": 492597,
+          "delim1_bytes_ref": 316290,
+          "zlib_bytes": 155341,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 37377,
+          "raw64_ref": 299016,
+          "raw32": 149508,
+          "raw16": 74754,
+          "zlib32": 12308,
+          "zlib16": 10578
+        },
+        "char_idf": {
+          "n": 58769,
+          "raw64_ref": 470152,
+          "raw32": 235076,
+          "raw16": 117538,
+          "zlib32": 42301,
+          "zlib16": 36825
+        },
+        "sv_components": {
+          "n": 1196064,
+          "raw64_ref": 9568512,
+          "raw32": 4784256,
+          "raw16": 2392128,
+          "zlib32": 2394652,
+          "zlib16": 1848581,
+          "shape": [
+            32,
+            37377
+          ]
+        },
+        "s96_components": {
+          "n": 9233088,
+          "raw64_ref": 73864704,
+          "raw32": 36932352,
+          "raw16": 18466176,
+          "zlib32": 20106409,
+          "zlib16": 14151407,
+          "shape": [
+            96,
+            96178
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 43232921,
+        "b_raw_f16_struct": 22182133,
+        "a_zlib": 22906059,
+        "b_zlib": 16397588,
+        "native_f64_struct_ref": 85334497,
+        "vocab_struct": 1131345,
+        "vocab_zlib": 349994,
+        "numeric_f32": 42101576,
+        "numeric_f16": 21050788,
+        "numeric_f32_zlib": 22556065,
+        "numeric_f16_zlib": 16047594
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 43232921,
+          "shared_per_vector": 88230.45102040816,
+          "effective": 88242.45102040816
+        },
+        "b_raw": {
+          "shared_total": 22182133,
+          "shared_per_vector": 45269.659183673466,
+          "effective": 45281.659183673466
+        },
+        "a_zlib": {
+          "shared_total": 22906059,
+          "shared_per_vector": 46747.05918367347,
+          "effective": 46759.05918367347
+        },
+        "b_zlib": {
+          "shared_total": 16397588,
+          "shared_per_vector": 33464.46530612245,
+          "effective": 33476.46530612245
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3602744,
+          "to_1": 43232921
+        },
+        "b_raw": {
+          "to_12": 1848512,
+          "to_1": 22182133
+        },
+        "a_zlib": {
+          "to_12": 1908839,
+          "to_1": 22906059
+        },
+        "b_zlib": {
+          "to_12": 1366466,
+          "to_1": 16397588
+        }
+      }
+    },
+    {
+      "question_id": "08e075c7",
+      "N_archive": 484,
+      "word_columns": 39962,
+      "char_columns": 57926,
+      "combined_columns": 97920,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 39962,
+          "utf8_sum": 518967,
+          "structured_bytes": 678815,
+          "delim1_bytes_ref": 558929,
+          "zlib_bytes": 204752,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 57926,
+          "utf8_sum": 253181,
+          "structured_bytes": 484885,
+          "delim1_bytes_ref": 311107,
+          "zlib_bytes": 152195,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 39962,
+          "raw64_ref": 319696,
+          "raw32": 159848,
+          "raw16": 79924,
+          "zlib32": 12816,
+          "zlib16": 11029
+        },
+        "char_idf": {
+          "n": 57926,
+          "raw64_ref": 463408,
+          "raw32": 231704,
+          "raw16": 115852,
+          "zlib32": 42377,
+          "zlib16": 37016
+        },
+        "sv_components": {
+          "n": 1278784,
+          "raw64_ref": 10230272,
+          "raw32": 5115136,
+          "raw16": 2557568,
+          "zlib32": 2582536,
+          "zlib16": 1990586,
+          "shape": [
+            32,
+            39962
+          ]
+        },
+        "s96_components": {
+          "n": 9400320,
+          "raw64_ref": 75202560,
+          "raw32": 37601280,
+          "raw16": 18800640,
+          "zlib32": 20624221,
+          "zlib16": 14507429,
+          "shape": [
+            96,
+            97920
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 44272052,
+        "b_raw_f16_struct": 22717876,
+        "a_zlib": 23619292,
+        "b_zlib": 16903210,
+        "native_f64_struct_ref": 87380404,
+        "vocab_struct": 1163700,
+        "vocab_zlib": 356947,
+        "numeric_f32": 43108352,
+        "numeric_f16": 21554176,
+        "numeric_f32_zlib": 23262345,
+        "numeric_f16_zlib": 16546263
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 44272052,
+          "shared_per_vector": 91471.18181818182,
+          "effective": 91483.18181818182
+        },
+        "b_raw": {
+          "shared_total": 22717876,
+          "shared_per_vector": 46937.760330578516,
+          "effective": 46949.760330578516
+        },
+        "a_zlib": {
+          "shared_total": 23619292,
+          "shared_per_vector": 48800.19008264463,
+          "effective": 48812.19008264463
+        },
+        "b_zlib": {
+          "shared_total": 16903210,
+          "shared_per_vector": 34923.98760330579,
+          "effective": 34935.98760330579
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3689338,
+          "to_1": 44272052
+        },
+        "b_raw": {
+          "to_12": 1893157,
+          "to_1": 22717876
+        },
+        "a_zlib": {
+          "to_12": 1968275,
+          "to_1": 23619292
+        },
+        "b_zlib": {
+          "to_12": 1408601,
+          "to_1": 16903210
+        }
+      }
+    },
+    {
+      "question_id": "08f4fc43",
+      "N_archive": 480,
+      "word_columns": 39853,
+      "char_columns": 59997,
+      "combined_columns": 99882,
+      "lexical_dim_d": 32,
+      "components": {
+        "word_vocab": {
+          "n_terms": 39853,
+          "utf8_sum": 520183,
+          "structured_bytes": 679595,
+          "delim1_bytes_ref": 560036,
+          "zlib_bytes": 208139,
+          "bad_delim_terms": 0
+        },
+        "char_vocab": {
+          "n_terms": 59997,
+          "utf8_sum": 263376,
+          "structured_bytes": 503364,
+          "delim1_bytes_ref": 323373,
+          "zlib_bytes": 157135,
+          "bad_delim_terms": 0
+        },
+        "word_idf": {
+          "n": 39853,
+          "raw64_ref": 318824,
+          "raw32": 159412,
+          "raw16": 79706,
+          "zlib32": 13026,
+          "zlib16": 11242
+        },
+        "char_idf": {
+          "n": 59997,
+          "raw64_ref": 479976,
+          "raw32": 239988,
+          "raw16": 119994,
+          "zlib32": 43908,
+          "zlib16": 38152
+        },
+        "sv_components": {
+          "n": 1275296,
+          "raw64_ref": 10202368,
+          "raw32": 5101184,
+          "raw16": 2550592,
+          "zlib32": 2549370,
+          "zlib16": 1976803,
+          "shape": [
+            32,
+            39853
+          ]
+        },
+        "s96_components": {
+          "n": 9588672,
+          "raw64_ref": 76709376,
+          "raw32": 38354688,
+          "raw16": 19177344,
+          "zlib32": 21044856,
+          "zlib16": 14796094,
+          "shape": [
+            96,
+            99882
+          ]
+        },
+        "mu": {
+          "n": 96,
+          "raw64_ref": 768,
+          "raw32": 384,
+          "raw16": 192,
+          "zlib32": 395,
+          "zlib16": 203
+        }
+      },
+      "totals": {
+        "a_raw_f32_struct": 45038615,
+        "b_raw_f16_struct": 23110787,
+        "a_zlib": 24016829,
+        "b_zlib": 17187768,
+        "native_f64_struct_ref": 88894271,
+        "vocab_struct": 1182959,
+        "vocab_zlib": 365274,
+        "numeric_f32": 43855656,
+        "numeric_f16": 21927828,
+        "numeric_f32_zlib": 23651555,
+        "numeric_f16_zlib": 16822494
+      },
+      "ratios": {
+        "a_raw": {
+          "shared_total": 45038615,
+          "shared_per_vector": 93830.44791666667,
+          "effective": 93842.44791666667
+        },
+        "b_raw": {
+          "shared_total": 23110787,
+          "shared_per_vector": 48147.472916666666,
+          "effective": 48159.472916666666
+        },
+        "a_zlib": {
+          "shared_total": 24016829,
+          "shared_per_vector": 50035.06041666667,
+          "effective": 50047.06041666667
+        },
+        "b_zlib": {
+          "shared_total": 17187768,
+          "shared_per_vector": 35807.85,
+          "effective": 35819.85
+        }
+      },
+      "breakeven": {
+        "a_raw": {
+          "to_12": 3753218,
+          "to_1": 45038615
+        },
+        "b_raw": {
+          "to_12": 1925899,
+          "to_1": 23110787
+        },
+        "a_zlib": {
+          "to_12": 2001403,
+          "to_1": 24016829
+        },
+        "b_zlib": {
+          "to_12": 1432314,
+          "to_1": 17187768
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "n_archives": 15,
+    "marginal_bytes_per_vector": 12,
+    "totals": {
+      "a_raw_f32_struct": {
+        "median": 44220235.0,
+        "min": 41785637,
+        "max": 46272067
+      },
+      "b_raw_f16_struct": {
+        "median": 22686111.0,
+        "min": 21450149,
+        "max": 23740817
+      },
+      "a_zlib": {
+        "median": 23733327.0,
+        "min": 22805794,
+        "max": 24471073
+      },
+      "b_zlib": {
+        "median": 16941200.0,
+        "min": 16312484,
+        "max": 17589776
+      },
+      "native_f64_struct_ref": {
+        "median": 87288483.0,
+        "min": 82456613,
+        "max": 91334567
+      }
+    },
+    "ratios_median": {
+      "a_raw": {
+        "shared_total": 44220235.0,
+        "shared_per_vector": 88874.36234817814,
+        "effective": 88886.36234817814
+      },
+      "b_raw": {
+        "shared_total": 22686111.0,
+        "shared_per_vector": 45602.25303643725,
+        "effective": 45614.25303643725
+      },
+      "a_zlib": {
+        "shared_total": 23733327.0,
+        "shared_per_vector": 48129.47843942505,
+        "effective": 48141.47843942505
+      },
+      "b_zlib": {
+        "shared_total": 16941200.0,
+        "shared_per_vector": 34440.85831622177,
+        "effective": 34452.85831622177
+      }
+    },
+    "breakeven_median": {
+      "a_raw": {
+        "to_12": 3685020,
+        "to_1": 44220235
+      },
+      "b_raw": {
+        "to_12": 1890510,
+        "to_1": 22686111
+      },
+      "a_zlib": {
+        "to_12": 1977778,
+        "to_1": 23733327
+      },
+      "b_zlib": {
+        "to_12": 1411767,
+        "to_1": 16941200
+      }
+    }
+  },
+  "not_checked": [
+    "float16/float32 duyarlik dusurmenin geri-getirim davranisina etkisi (Task4F1 yasagi: bakilmadi)",
+    "sikistirilmis saklamanin sorgu gecikmesine etkisi (bakilmadi)",
+    "arsivler-arasi/global projektor (farkli dagitim; bu olcumun sonucu degil)",
+    "dondurulmus uretim yapitinin boyutu (yapit bulunamadi; yalnizca re-fit olculdu)"
+  ]
+}

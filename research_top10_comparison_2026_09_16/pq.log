@@ -1,0 +1,60 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done — actual equal-12B conventional PQ arm finished and verified in `pq/`.
+
+Result: Faiss PQ96/M12/nbits8 (seed 20260915, niter 20, threads 1) trained once on all 8,944 L2-normalized documents, LUT ADC scoring of normalized queries. REALTALK705: Hit@10 0.3305, Recall@10 0.2439, nDCG@10 0.1734, expected Hit@10 uniform 0.3305. Highly archive-dependent (RT03 0.603 … RT08 0.043). Codebook actual 98,304 bytes as expected.
+
+What was saved in [/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq):
+
+- Code: [run_pq.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/run_pq.py) (normalize, LUT ADC, protocol tie rank, metrics, pipeline), durable tests [test_pq_top10.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/test_pq_top10.py), [tdd_red.log](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/tdd_red.log) (RED: missing module), [tdd_green.log](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/tdd_green.log) (GREEN: 9/9 passed).
+- `centroids.npy` (12,256,8) float32, 98,304 bytes; `RT01_codes.npz`…`RT10_codes.npz` each with 12B uint8 codes plus QC_norm/gold/row_to_id/input-SHA binding; [per_query.jsonl](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/per_query.jsonl) 705 lines with top10 rows/IDs/scores/gold/Hit/Recall/nDCG/expected-Hit; [SUMMARY.json](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/SUMMARY.json); [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/REPORT.md) with `[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]`.
+- Observed verification: LUT vs full-reconstruction brute force max diff 1.78e-15 (tol 1e-5); packed shape + byte roundtrip per archive; training 8,944 docs with 728 QC rows excluded; per-query determinism rerun; all 705 gold bindings match caches; independent RT06_q000 brute-path ranking reproduces stored Top10 exactly.
+- Costs: payload 12 B/doc (107,328 total); codebook amortized ~10.99 B/doc, effective ~22.99 B/doc. Equal 12B payload is NOT equal total memory. Original SVD encoder missing from cache: NOT MEASURED, not zero. Timing (artifact run): train 18.0s, encode 47.6s, query 41.6s (~59 ms/q), RSS ~76.6 MB. No tuning, no other workers' scores read, no paid APIs, no input/git changes.
+- Audit in REPORT.md covers frozen gold semantics (`D\d+:\d+` regex, dedupe, in-map-only, valid iff ≥1 resolved, 23 exclusions, no events/questions in fit), plus risks: inherited encoder bias, norm-discard choice, 8,944 < 9,984 faiss guideline with warnings, per-pool size skew, fixed hypergeometric expected-Hit bug found in TDD, and 10-cluster bootstrap limits with no unseen certification.
+Done — actual equal-12B conventional PQ comparison for REALTALK705 is finished and independently verified from the saved artifacts.
+
+Outcome: Faiss `ProductQuantizer(d=96, M=12, nbits=8)`, `cp.seed=20260915`, `cp.niter=20`, `omp_set_num_threads(1)`, trained once globally on all 8,944 L2-normalized FLOAT96 documents. Primary scorer is centroid-LUT ADC with no per-query reconstruction: `score=-sum_m ||q_m-c||^2`, higher better, reconstructions kept unnormalized. Deterministic Top10: score desc, `SHA256('top10-r1|RTxx|row')` asc, row asc.
+
+Fresh independent re-read of the artifacts just observed:
+
+- `per_query lines: 705`
+- `recomputed Hit=0.330496 Recall=0.243949 nDCG=0.173432 ExpHit=0.330496`
+- `summary matches: True True`
+- `centroids: (12, 256, 8) float32 98304`
+- `all 10 codes OK, payload total: 107328 docs: 8944`
+
+So overall: Hit@10 0.3305, Recall@10 0.2439, nDCG@10 0.1734, expected Hit@10 uniform 0.3305. Per-archive Hit@10 is wide: RT03 0.603, RT04 0.563, RT05 0.557, RT01 0.424, RT02 0.343, RT10 0.271, RT09 0.270, RT07 0.143, RT06 0.054, RT08 0.043.
+
+Deliverables in [pq](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq):
+
+- [run_pq.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/run_pq.py), [test_pq_top10.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/test_pq_top10.py), [tdd_red.log](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/tdd_red.log) (RED import error before implementation), [tdd_green.log](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/tdd_green.log) (GREEN 9/9).
+- `centroids.npy`, `RT01_codes.npz`…`RT10_codes.npz` with 12B uint8 codes plus QC_norm/gold/row_to_id/input-SHA binding, [per_query.jsonl](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/per_query.jsonl), [SUMMARY.json](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/SUMMARY.json), [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/REPORT.md) carrying `[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]`.
+
+Verification observed: LUT vs full-reconstruction brute force max diff 1.78e-15 (tol 1e-5); packed 12B shape and byte roundtrip per archive; 8,944 training rows with 728 QC rows excluded; determinism rerun per query; all 705 gold bindings match caches; RT06_q000 second-path brute ranking reproduces stored Top10 `[1095,255,1111,1054,1114,1118,341,414,138,512]`.
+
+Costs: 12 B/doc payload only; codebook 98,304 bytes actual = expected, ~10.99 B/doc amortized. Equal 12B payload does NOT mean equal total memory. Original SVD encoder missing from old cache: NOT MEASURED, not zero. Timing/RSS from artifact run: train ~18.0s, encode ~47.6s, query ~41.6s, RSS ~76.6 MB. No hyperparameter search, no other workers' scores read, no paid APIs, no input/git changes. REPORT.md audits frozen gold semantics, protocol risks, and 10-cluster/bootstrap plus 8,944-point training limits.
+
+Done — actual equal-12B conventional PQ comparison for REALTALK705 is complete in `pq/`, run to finish with artifacts verified from disk.
+
+Result: Faiss `ProductQuantizer(d=96, M=12, nbits=8)`, `cp.seed=20260915`, `cp.niter=20`, `omp_set_num_threads(1)`, trained once globally on all 8,944 L2-normalized FLOAT96 documents. Primary scorer is centroid-LUT ADC without per-query reconstruction: `score=-sum_m ||q_m-c||^2`, higher better; reconstructions kept unnormalized. Deterministic Top10: score desc, `SHA256('top10-r1|RTxx|row')` asc, row asc.
+
+Observed from a fresh independent re-read of saved artifacts:
+
+- `per_query lines: 705`
+- `recomputed Hit=0.330496 Recall=0.243949 nDCG=0.173432 ExpHit=0.330496`
+- `summary matches: True True`
+- `centroids: (12, 256, 8) float32 98304`
+- `all 10 codes OK, payload total: 107328 docs: 8944`
+
+So REALTALK705: Hit@10 0.3305, Recall@10 0.2439, nDCG@10 0.1734, expected Hit@10 uniform 0.3305. Per-archive Hit@10: RT03 0.603, RT04 0.563, RT05 0.557, RT01 0.424, RT02 0.343, RT10 0.271, RT09 0.270, RT07 0.143, RT06 0.054, RT08 0.043.
+
+Files in [pq](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq):
+
+- [run_pq.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/run_pq.py), [test_pq_top10.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/test_pq_top10.py), [tdd_red.log](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/tdd_red.log) with RED import error, [tdd_green.log](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/tdd_green.log) with GREEN 9/9.
+- `centroids.npy`, `RT01_codes.npz`…`RT10_codes.npz` with 12B uint8 codes plus QC_norm/gold/row_to_id/input-SHA binding, [per_query.jsonl](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/per_query.jsonl), [SUMMARY.json](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/SUMMARY.json), [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/REPORT.md).
+- Confirmed present: `REPORT.md`, `SUMMARY.json`, `per_query.jsonl`, `centroids.npy`, `RT01_codes.npz`, `run_pq.py`, `test_pq_top10.py`, `tdd_red.log`, `tdd_green.log`; REPORT.md opens with the four required labels `[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]`.
+
+Verification observed: LUT vs full-reconstruction brute-force max diff 1.78e-15 against 1e-5 tolerance; packed 12B shape and byte roundtrip per archive; 8,944 training rows with all 728 QC rows excluded; determinism rerun per query; all 705 gold bindings match caches; RT06_q000 second-path brute ranking reproduces stored Top10 `[1095,255,1111,1054,1114,1118,341,414,138,512]`.
+
+Costs: 12 B/doc payload only; codebook 98,304 bytes actual equals expected, ~10.99 B/doc amortized. Equal 12B payload does NOT imply equal total memory. Original SVD encoder missing from old cache: NOT MEASURED, not zero. Timing/RSS: train ~18.0s, encode ~47.6s, query ~41.6s, RSS ~76.6 MB. No hyperparameter search, no other workers' scores read, no paid APIs, no input-file or git changes. [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/pq/REPORT.md) audits frozen gold semantics, protocol risks, and 10-cluster plus 8,944-point training limits.
+

@@ -1,0 +1,11 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/ideas_r1/ablation (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. All five deliverables are in `ideas_r1/ablation/`, every artifact labeled `[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE`.
+
+**Fidelity gate:** G1 passes bit-exact — rebuilt FULL `sign(C)` vs cached: 0 differing bits out of 858,624, max abs diff exactly 0.0, seeds 5101/5204 via the frozen module. G2-qscale matches exactly (Hit@10 49.6454% = 350/705, FR@3 22.41%). One diagnosed reference issue, criterion unchanged: the sym reference 46.6809% is not the deterministic-tie-rule Hit@10 (that value is 46.5248% = 328/705, reproduced from the cached codes directly) — it is exactly the expected-Hit@10 under uniform ties. 46.6809% × 705 = 329.1 queries, which no deterministic rule over 705 binaries can produce. Coordinator to confirm/rename; full diagnosis is in FIDELITY_GATE.json.
+
+**Ablation result (RealTalk, n=705):** NO_LSA beats FULL in all 6 metric×scorer cells — qscale Hit@10 52.06 vs 49.65 (+2.41pp), FR@3 25.85 vs 22.41 (+3.44pp) — but every 95% paired archive-clustered bootstrap CI includes zero (e.g. Hit@10 [+5.15, −0.28]). Removing char clearly hurts (−5.8pp). Verdict: redundancy hypothesis **directionally supported, statistically inconclusive**; 10 clusters cannot settle it — needs PerLTQA/LME replication, do not ship on this.
+
+**Cost:** payload stays 12 B for all arms; dropping LSA saves ~0.1% of Z columns and no build time — quality-only case, currently non-significant.
+
+**Blockers declared:** LSA_ONLY impossible under the fixed-SVD96 protocol (Z would be 32 wide; the mandated assert fired before any score — no numbers invented); 23 cached queries excluded per the pre-declared canonical validity filter, zero further exclusions. per_query.jsonl (5,640 rows) replay-verified against RESULTS.json to 1e-9.

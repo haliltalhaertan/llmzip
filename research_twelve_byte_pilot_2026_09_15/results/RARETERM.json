@@ -1,0 +1,104 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "buckets": "df of the rarest question/gold shared term, cut at 10 % and 2 % of the archive, fixed in advance",
+  "benchmarks": {
+    "locomo": {
+      "n_queries": 1535,
+      "by_bucket": {
+        "GOLD-BAGIMLI (dongusel olabilir)": {
+          "none": {
+            "n": 21,
+            "sym": 2.380952380952381,
+            "qscale": 9.523809523809524,
+            "bm25": 0.0,
+            "sym_minus_bm25": 2.380952380952381,
+            "ci95": [
+              0.0,
+              6.0
+            ],
+            "significant": false
+          },
+          "common": {
+            "n": 322,
+            "sym": 1.2215320910973084,
+            "qscale": 0.5434782608695652,
+            "bm25": 0.0,
+            "sym_minus_bm25": 1.2215320910973084,
+            "ci95": [
+              0.23228578979730533,
+              2.5
+            ],
+            "significant": true
+          },
+          "medium": {
+            "n": 242,
+            "sym": 10.163567493112948,
+            "qscale": 11.267217630853994,
+            "bm25": 8.484848484848484,
+            "sym_minus_bm25": 1.6787190082644627,
+            "ci95": [
+              -1.2764656938044034,
+              5.507920110192837
+            ],
+            "significant": false
+          },
+          "rare": {
+            "n": 950,
+            "sym": 35.38501556922609,
+            "qscale": 37.33330295435559,
+            "bm25": 58.7009265588213,
+            "sym_minus_bm25": -23.3159109895952,
+            "ci95": [
+              -27.44066882416397,
+              -18.9401829086709
+            ],
+            "significant": true
+          }
+        },
+        "SADECE-SORU (gold'a bakmaz)": {
+          "common": {
+            "n": 4,
+            "sym": 0.0,
+            "qscale": 0.0,
+            "bm25": 0.0,
+            "sym_minus_bm25": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "significant": false
+          },
+          "medium": {
+            "n": 45,
+            "sym": 12.037037037037036,
+            "qscale": 10.555555555555555,
+            "bm25": 7.962962962962962,
+            "sym_minus_bm25": 4.074074074074074,
+            "ci95": [
+              -3.8461538461538463,
+              13.333333333333334
+            ],
+            "significant": false
+          },
+          "rare": {
+            "n": 1486,
+            "sym": 24.210642524067826,
+            "qscale": 25.634794396570975,
+            "bm25": 38.668156279192615,
+            "sym_minus_bm25": -14.45751375512479,
+            "ci95": [
+              -17.694120873839246,
+              -11.105645866476909
+            ],
+            "significant": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+test_int8_matches_official_torch_fp32_boundaries (__main__.Fidelity.test_int8_matches_official_torch_fp32_boundaries) ... ok
+test_missing_complete_mask_is_not_complete (__main__.Fidelity.test_missing_complete_mask_is_not_complete) ... ok
+test_partial_resume_does_not_mark_missing_rows_done (__main__.Fidelity.test_partial_resume_does_not_mark_missing_rows_done) ... ok
+test_pool_is_official_fp32_reduction (__main__.Fidelity.test_pool_is_official_fp32_reduction) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.879s
+
+OK
