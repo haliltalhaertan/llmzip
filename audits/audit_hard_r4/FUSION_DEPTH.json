@@ -1,0 +1,139 @@
+{
+ "n": 470,
+ "note": "zero model calls; stored sign96 ranking + deterministic BM25 rebuild",
+ "baseline": {
+  "sign96_top10": 86.38,
+  "bm25_top10": 87.87,
+  "union_10_10": 91.91
+ },
+ "grid_sum10": [
+  {
+   "sign": 0,
+   "bm25": 10,
+   "coverage": 87.87,
+   "mean_pool": 10.0,
+   "vs_union": -4.04
+  },
+  {
+   "sign": 1,
+   "bm25": 9,
+   "coverage": 88.3,
+   "mean_pool": 9.15,
+   "vs_union": -3.61
+  },
+  {
+   "sign": 2,
+   "bm25": 8,
+   "coverage": 88.3,
+   "mean_pool": 8.42,
+   "vs_union": -3.61
+  },
+  {
+   "sign": 3,
+   "bm25": 7,
+   "coverage": 87.45,
+   "mean_pool": 7.86,
+   "vs_union": -4.46
+  },
+  {
+   "sign": 4,
+   "bm25": 6,
+   "coverage": 87.66,
+   "mean_pool": 7.53,
+   "vs_union": -4.25
+  },
+  {
+   "sign": 5,
+   "bm25": 5,
+   "coverage": 87.23,
+   "mean_pool": 7.39,
+   "vs_union": -4.68
+  },
+  {
+   "sign": 6,
+   "bm25": 4,
+   "coverage": 87.23,
+   "mean_pool": 7.53,
+   "vs_union": -4.68
+  },
+  {
+   "sign": 7,
+   "bm25": 3,
+   "coverage": 87.23,
+   "mean_pool": 7.88,
+   "vs_union": -4.68
+  },
+  {
+   "sign": 8,
+   "bm25": 2,
+   "coverage": 87.02,
+   "mean_pool": 8.44,
+   "vs_union": -4.89
+  },
+  {
+   "sign": 9,
+   "bm25": 1,
+   "coverage": 87.45,
+   "mean_pool": 9.15,
+   "vs_union": -4.46
+  },
+  {
+   "sign": 10,
+   "bm25": 0,
+   "coverage": 86.38,
+   "mean_pool": 10.0,
+   "vs_union": -5.53
+  }
+ ],
+ "deeper": [
+  {
+   "sign": 5,
+   "bm25": 5,
+   "cap": 10,
+   "coverage": 87.23,
+   "mean_pool": 7.39
+  },
+  {
+   "sign": 7,
+   "bm25": 7,
+   "cap": 14,
+   "coverage": 90.0,
+   "mean_pool": 10.46
+  },
+  {
+   "sign": 10,
+   "bm25": 5,
+   "cap": 15,
+   "coverage": 90.0,
+   "mean_pool": 11.74
+  },
+  {
+   "sign": 5,
+   "bm25": 10,
+   "cap": 15,
+   "coverage": 90.43,
+   "mean_pool": 11.7
+  },
+  {
+   "sign": 10,
+   "bm25": 10,
+   "cap": 20,
+   "coverage": 91.91,
+   "mean_pool": 15.38
+  },
+  {
+   "sign": 10,
+   "bm25": 10,
+   "cap": null,
+   "coverage": 91.91,
+   "mean_pool": 15.38
+  }
+ ],
+ "best_sum10": {
+  "sign": 1,
+  "bm25": 9,
+  "coverage": 88.3,
+  "mean_pool": 9.15,
+  "vs_union": -3.61
+ }
+}
