@@ -547,44 +547,63 @@ içerdiği 387 sorguda Jev her iki havuzda **aynı** performansı gösteriyor. S
 **Bu, yeniden açma koşulu (2)'nin doğrudan karşılanmasıdır:** kompakt kod BM25'in kaçırdığı
 tamamlayıcı adaylar getiriyor.
 
-##### Ama sabit bütçede füzyon işe yaramıyor — **ÖLÇÜLDÜ, OLUMSUZ**
+##### Sabit bütçede füzyon — **İLK TEST HATALIYDI, DÜZELTİLDİ: POZİTİF**
 
-`evidence_path`: `audit_hard_r4/FUSION_DEPTH.json`, `fusion_depth.py` (sıfır model çağrısı)
+`evidence_path`: `audit_hard_r4/FUSION_EXACT10.json`, `fusion_exact10.py` (sıfır model çağrısı)
 
-Union tavanı 91,91 ama **ortalama 15,4 aday** demek — Jev maliyeti ~%50 artar. Asıl soru:
-`a+b=10` bütçesinde (tekrarsız, en fazla 10 aday) tavanın ne kadarı korunur?
+> **GERİ ÇEKME 2026-09-18.** İlk füzyon testi (`fusion_depth.py`) "sabit 10 aday bütçesinde
+> füzyon çalışmıyor, +0,43 pp" sonucuna vardı. **Test adil değildi:** `sign5+bm25₅` tekrarlar
+> silinince ortalama **7,39 aday** bırakıyordu, BM25 tek başına tam 10 kullanırken. Yani hibride
+> %26 daha küçük bir havuz verilmişti. Dış değerlendirme bunu yakaladı.
 
-| sign96 | BM25 | ort. havuz | kapsam | union'dan |
-|---:|---:|---:|---:|---:|
-| 0 | 10 | 10,00 | 87,87 | −4,04 |
-| **1** | **9** | **9,15** | **88,30** | **−3,61** |
-| 2 | 8 | 8,42 | 88,30 | −3,61 |
-| 5 | 5 | 7,39 | 87,23 | −4,68 |
-| 10 | 0 | 10,00 | 86,38 | −5,53 |
+Doğrusu: birleştir → tekrarları sil → **sıradaki görülmemiş belgelerle tam 10'a tamamla**.
 
-**En iyi sabit-bütçe füzyonu (sign1+bm25₉) yalnız +0,43 pp getiriyor** — tek başına BM25'in
-87,87'sine karşı 88,30. Union'ın +4,04 puanlık kazancının **yalnız %11'i** korunuyor.
+| füzyon kuralı | ort. havuz | kapsam | BM25'e göre |
+|---|---:|---:|---:|
+| **RRF k=60** | **10,00** | **90,00** | **+2,13** |
+| alternating merge | 10,00 | 89,79 | +1,91 |
+| min-rank | 10,00 | 89,79 | +1,91 |
+| kota 5/5 + backfill | 10,00 | 89,57 | +1,70 |
+| kota 3/7 + backfill | 10,00 | 89,57 | +1,70 |
+| kota 7/3 + backfill | 10,00 | 89,15 | +1,28 |
+| — BM25 tek başına | 10,00 | 87,87 | — |
+| — sign96 tek başına | 10,00 | 86,38 | −1,49 |
+| — union (referans) | 15,4 | 91,91 | +4,04 |
 
-Sebep mekanik: tekrarsız birleştirme havuzu **küçültüyor** (ortalama 7,4–9,2 aday), çünkü iki
-yöntem büyük ölçüde aynı belgeleri buluyor. Derinlik kırpıldığında tamamlayıcı belgeler zaten
-listenin altında kalıyor.
+**RRF, tam 10 adayla 90,00 kapsam veriyor: BM25 üzerine +2,13 pp, aynı reranker maliyetiyle.**
+Union'ın +4,04 puanlık kazancının **%53'ü** korunuyor — ilk testin bulduğu %11 değil.
 
-Daha geniş havuzlar kazancı geri getiriyor ama maliyetle birlikte:
+##### Tamamlayıcı belgeler derinde değil
 
-| yapılandırma | ort. havuz | kapsam |
-|---|---:|---:|
-| sign7+bm25₇ (cap 14) | 10,5 | 90,00 |
-| sign5+bm25₁₀ (cap 15) | 11,7 | 90,43 |
-| sign10+bm25₁₀ (cap 20) | 15,4 | **91,91** |
+| durum | n | ort. rank | rank 1–4 | rank 5–7 | rank 8–10 |
+|---|---:|---:|---:|---:|---:|
+| BM25'in kaçırdığı, gold'un sign96 rank'ı | 19 | 4,53 | **9** | 7 | 3 |
+| sign96'nın kaçırdığı, gold'un BM25 rank'ı | 26 | 4,23 | **15** | 6 | 5 |
 
-**Sonuç:** tamamlayıcılık gerçek ama **ucuz değil**. +4 puanlık tavan kazancı için aday sayısını
-~%50 artırmak gerekiyor; sabit bütçede kazanç %11'e iniyor. Hibrit havuz + Jev ölçülmedi ve
-bu tabloya göre **öncelikli değil**.
+> **İkinci geri çekme:** *"Tamamlayıcı belgeler her listenin altında duruyor"* yazmıştım.
+> **Yanlış.** Münhasır gold'ların çoğunluğu **ilk dörtte**: 19'un 9'u, 26'nın 15'i. Ortalama
+> rank 4,2–4,5. Bu yüzden akıllı füzyon (RRF) onları 10 adaylık bütçede yakalayabiliyor.
 
-> **Metodolojik not:** İlk füzyon koşusu BM25 tavanını 87,23 verdi (diğer koşularda 87,87).
-> Sebep: `text_of` bu betikte metni 1200 karakterde **kesmiyordu**. Aynı deneyin iki farklı
-> sayısı — düzeltildi ve kaynağa not düşüldü. Paylaşılan yardımcı fonksiyonlar betikler arası
-> birebir aynı olmalı.
+##### Ve "reranker tavana yakın" ifadesi de geri çekildi
+
+Aday kapsamı %86–92, nihai FR@3 ~%70. Bunlar **aynı metrik değil** — aradaki boşluk
+yeniden sıralayıcının hâlâ ciddi seçim hatası yaptığını gösterebilir. "Tavana yakın" iddiası
+ölçülmedi ve desteklenmiyor.
+
+##### Güncel durum
+
+| kaldıraç | durum |
+|---|---|
+| RRF füzyon, sabit bütçe | **+2,13 pp ölçüldü** — ucuz ve gerçek |
+| Kompakt kodun Hit@10'u | açık |
+| Yeniden sıralayıcı kalitesi | **açık** (tavana yakınlık gösterilmedi) |
+
+**Sonraki adım:** RRF havuzu + Jev'i gerçekten koşmak. Aday tavanı 90,00'a çıktığında nihai
+FR@3 ne oluyor? Bu, ~5.200 token/sorgu ile ölçülebilir.
+
+> **Sınır:** `sign96` sıralaması yalnız **top-10** saklanmış, daha derini yok. RRF ve backfill
+> sign tarafında 10 ile sınırlı; BM25 tarafı 20'ye kadar açılabiliyor. Daha derin bir sign
+> sıralaması kapsamı **daha da** yükseltebilir — ölçülmedi.
 
 Ulaşılamaz: 38 sorgu (%8,1) hiçbir havuzda gold içermiyor; hiçbir yeniden sıralayıcı bunları
 kurtaramaz.

@@ -2424,3 +2424,45 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/FUSION_DEPTH
 status: FIXED-BUDGET FUSION MEASURED AND NEGATIVE; TEXT-TRUNCATION INCONSISTENCY FIXED; NO FROZEN
   NUMBER CHANGED
 ```
+
+### L-106
+
+```text
+timestamp_utc: 2026-09-18T17:15:00Z
+actor_role: Continuity Lead retracting L-105's negative result after an unfair-test finding
+predecessor_commit_or_tag: L-105 / 6c144e7
+scope: Corrects L-105. Zero model calls. No frozen number touched. Task 4F1 remains SEALED / RUN
+  BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+retraction: L-105 concluded "fixed-budget fusion does not work, +0.43 pp". THE TEST WAS UNFAIR and
+  the conclusion is WITHDRAWN. Deduplicating sign5+bm25_5 left an average of 7.39 candidates while
+  BM25 alone used a full 10 - the hybrid was handed a 26% smaller pool and then judged against a
+  full-sized baseline. Caught by external review, not by this coordinator.
+corrected_method: merge, deduplicate, then BACKFILL from the next unseen documents until exactly 10
+  unique candidates. Every rule below produces exactly 10.00 candidates per query.
+corrected_result_positive: RRF k=60 reaches 90.00 coverage at exactly 10 candidates, +2.13 pp over
+  BM25 alone (87.87) at IDENTICAL reranker cost. Alternating merge and min-rank both give 89.79
+  (+1.91); quota 5/5 and 3/7 with backfill give 89.57 (+1.70). That retains 53% of the union's
+  +4.04 pp gain, not the 11% L-105 reported.
+second_retraction: L-105 also asserted that "the complementary documents sit low in each list".
+  FALSE. Of the 19 queries where only sign96 holds the gold, 9 have it at rank 1-4 (mean rank 4.53);
+  of the 26 where only BM25 holds it, 15 are at rank 1-4 (mean 4.23). The exclusive golds are mostly
+  SHALLOW, which is exactly why a rank-aware fusion recovers them inside a 10-candidate budget.
+third_retraction: the coordinator also wrote that the reranker is "already near the ceiling". NOT
+  SUPPORTED. Candidate coverage is 86-92% while final FR@3 is about 70%; these are different
+  metrics and the gap may well be reranker selection error. The claim was never measured.
+consequence: the earlier conclusion that "the only remaining lever is raising the compact code's
+  Hit@10" is withdrawn. Three levers are live: RRF fusion (+2.13 pp measured, free), the compact
+  code's own Hit@10 (open), and reranker quality (open, since near-ceiling was never shown).
+next_step: run RRF pool + reranker for real - with candidate ceiling at 90.00, what is the final
+  FR@3? Cost about 5,200 tokens per query, same as the existing arms.
+limit_recorded: the sign96 ranking is stored only to depth 10, so RRF and backfill are capped at 10
+  on the sign side while BM25 can extend to 20. A deeper sign ranking could raise coverage further;
+  unmeasured.
+lesson: when comparing a fused pool against a single-system baseline, the pools must be the SAME
+  SIZE after deduplication. Quota-only merging silently shrinks the hybrid and manufactures a
+  negative result.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/FUSION_EXACT10.json and
+  fusion_exact10.py.
+status: L-105 NEGATIVE RESULT RETRACTED; FIXED-BUDGET FUSION IS POSITIVE (+2.13 pp); TWO FURTHER
+  COORDINATOR CLAIMS WITHDRAWN; NO FROZEN NUMBER CHANGED
+```
