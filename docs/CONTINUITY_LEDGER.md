@@ -2607,7 +2607,17 @@ structural_ceiling_found: external review asked whether any query has more than 
   So 30 queries (6.4%) carry MORE THAN THREE golds, and for those FR@3 full credit is structurally
   impossible - four or more documents cannot fit in a top-3.
 ceiling_value: assuming perfect ranking, the highest attainable FR@3 on this benchmark is 97.77,
-  not 100. Best measured is 72.09 (BM25+Jev, L-107), so the real gap is 25.68 pp against 97.77.
+  not 100. Formula: (174 + 228 + 38 + 14*(3/4) + 10*(3/5) + 6*(3/6)) / 470 = 459.5/470.
+no_best_label_correction: an earlier draft of this entry called 72.09 "best measured". Wrong on two
+  counts. RRF+Jev scored 73.67 in the SAME run under the SAME protocol, so 72.09 was not the higher
+  number; and more importantly the two arms differ by +1.585 pp with CI95 [-0.507, +3.695], i.e.
+  INDISTINGUISHABLE, so naming either one "best" would be post-selection - the exact error class
+  retracted in L-098, where frozen_idfonly=65.67 had been picked by max() over test data. Both arms
+  are therefore named and the gap is reported as a RANGE: BM25+Jev 25.68 pp, RRF+Jev 24.10 pp,
+  i.e. 24.1-25.7 pp from the ceiling.
+wording_correction: an earlier draft said the metric "breaks". Too strong, and withdrawn. FR@3 is
+  not faulty; it has a natural ceiling for multi-evidence retrieval. The correct statement is that
+  FR@3 cannot reach 1.0 on queries carrying more than three golds.
   The over-3-gold queries are concentrated in exactly the sections that need multi-step recall:
   multi-session 24, temporal-reasoning 6. Six of the 38 unreachable queries are in this group.
 consequence_for_language: "how far from 100%" is a malformed question under FR@3. Future reporting

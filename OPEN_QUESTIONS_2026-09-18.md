@@ -778,9 +778,9 @@ etiketleyip kapatmak yanlış olur — aynı vaka aynı anda temsil vakası da o
 > var: derinlik, temsil, ve **getirim görevini tek-belge aramasından çok-adımlı hafıza çağırmaya
 > çevirmek** (çoklu kanıt vakalarının %79'u derinlikle çözülmüyor).
 
-##### Ve "%100" zaten ulaşılamaz — FR@3'ün yapısal tavanı %97,77
+##### Ve "%100" ulaşılamaz — FR@3'ün yapısal tavanı %97,77
 
-`evidence_path`: `audit_hard_r4/DEPTH_RECOVERY.json` + gold sayısı dağılımı (470 sorgu)
+`evidence_path`: `audit_hard_r4/FR3_CEILING.json` (470 sorgu, gold sayısı dağılımı)
 
 Dış değerlendirmenin sorduğu kontrol yapıldı: **üçten fazla gold gerektiren sorgular var mı?**
 
@@ -793,23 +793,38 @@ Dış değerlendirmenin sorduğu kontrol yapıldı: **üçten fazla gold gerekti
 | **5** | 10 | 2,1% |
 | **6** | 6 | 1,3% |
 
-**30 sorguda (%6,4) dörtten fazla gold var** — bu sorgularda FR@3 tam kredi **yapısal olarak
-imkânsız**, çünkü ilk üçe dört veya daha fazla belge sığmaz.
+**30 sorguda (%6,4) üçten fazla gold var.** Bu sorgularda FR@3 **1,0'a ulaşamaz**, çünkü dört
+veya daha fazla belge ilk üçe sığmaz.
 
-Mükemmel sıralama varsayımıyla FR@3'ün erişilebilir en yüksek değeri:
+Tavan (mükemmel sıralama varsayımıyla):
 
-| | |
-|---|---:|
-| **FR@3 yapısal tavanı** | **97,77** |
-| Ölçülen en iyi (BM25+Jev, L-107) | 72,09 |
-| Tavana uzaklık | 25,68 pp |
+```
+(174 + 228 + 38 + 14·(3/4) + 10·(3/5) + 6·(3/6)) / 470 = 459,5/470 = 97,766
+```
 
-Bu sorguların **24'ü multi-session**, 6'sı temporal-reasoning — yani tam olarak çok-adımlı
+> **İfade düzeltmesi:** Önceki taslakta *"metriğin kendisi kırılıyor"* yazmıştım — **fazla güçlü**.
+> Metrik hatalı değil; **çoklu-kanıt getirimi için doğal bir tavanı var**. Doğrusu: *FR@3, üçten
+> fazla gold bulunan sorgularda yapısal olarak 1,0'a ulaşamaz.* %100 yanlış hedef; **97,77** bu
+> gold dağılımındaki teorik maksimum.
+
+Ölçülen değerlerin tavana uzaklığı (ikisi de L-107, **aynı koşu, aynı protokol**):
+
+| kol | FR@3 | tavana uzaklık |
+|---|---:|---:|
+| BM25+Jev | 72,09 | 25,68 pp |
+| RRF+Jev | 73,67 | 24,10 pp |
+
+> **"Ölçülen en iyi" etiketi kullanılmıyor — bilerek.** İki kolun farkı `+1,585 pp,
+> CI95 [−0,507, +3,695]`, yani **ayırt edilemez**. Yüksek olanı seçip "en iyi" demek
+> **post-selection** olurdu — bu projenin L-098'de tam olarak geri çektiği hata sınıfı
+> (`frozen_idfonly = 65,67`, test verisi üzerinde `max(...)` ile seçilmişti). Bu yüzden her iki
+> kol adıyla raporlanır ve açık bir **aralık** olarak verilir: **24,1–25,7 pp**.
+
+Bu 30 sorgunun **24'ü multi-session**, 6'sı temporal-reasoning — yani tam olarak çok-adımlı
 hafıza çağırma gerektiren bölümler. 38 kurtarılamaz sorgunun 6'sı da bu gruptan.
 
-> **Sonuç:** "%100" hedefi FR@3 metriği altında ulaşılamaz bir hedeftir. Doğru referans **97,77**
-> ve asıl açık **25,68 pp**. Bundan sonra "%100'e ne kadar kaldı" yerine "yapısal tavana ne kadar
-> kaldı" denmelidir.
+> **Sonuç:** "%100'e ne kadar kaldı" FR@3 altında yanlış kurulmuş bir sorudur. Doğru referans
+> **97,77**, gerçek açık **24,1–25,7 pp**.
 
 Bu, önceki "temsil problemi" teşhisinden daha nüanslı: temsil tek suçlu değil, ve derinlik de
 tamamen değersiz değil.
