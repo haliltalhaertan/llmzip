@@ -112,3 +112,25 @@ güvenilir biçimde hizalanmıyor.
 - RAM ölçümü Python nesnelerinin gerçek boyutu; C/Rust uygulamasında sözlük çok daha küçük olurdu
   — bu, ölçümün **uygulama-bağımlı** olduğu anlamına gelir ve kriterin kendisi de öyle
 - **Ayrılmış sınav verisi yok**
+
+---
+
+## ⚠ Kapsam sınırı — 691 KB bir alt sınır DEĞİL
+
+> **691 KB sözlük maliyeti bir "bilgi-teorik minimum" değildir.** Bu, **Python/sklearn nesne
+> temsilinin** ölçülen maliyetidir. C/Rust, minimal perfect hash, succinct dictionary, FST gibi
+> yapılarla ciddi biçimde küçülebilir.
+
+| ❌ yanlış | ✅ doğru |
+|---|---|
+| "100 KB imkânsız" | **"Mevcut Python/sklearn temsili altında 100 KB mümkün değil."** |
+
+Bu ayrım açıkça kaydedilmiştir; aksi hâlde bu projenin L-098 (`−7,80` manşeti) ve L-105
+(`closure_scope`) düzeltmelerindeki **kapsam şişmesi** hatası tekrarlanır.
+
+## Bu turda AÇILMAYAN yeni soru
+
+> SVD matrisini değil, **sözlük + projeksiyonu birlikte** nasıl kompaktlaştırırız ve
+> korpus-uyarlamalı kaliteyi koruruz?
+
+Kayda geçirildi, **koşulmadı**.

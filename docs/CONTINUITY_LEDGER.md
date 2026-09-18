@@ -2990,3 +2990,40 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/ENCODER_COMP
 status: THREE COMPRESSION PATHS MEASURED AGAINST PRE-FROZEN CRITERIA; NONE PASSED; VOCABULARY
   IDENTIFIED AS THE STRUCTURAL BOTTLENECK; NO FROZEN NUMBER CHANGED
 ```
+
+### L-119
+
+```text
+timestamp_utc: 2026-09-19T01:10:00Z
+actor_role: Continuity Lead archiving the encoder-cost line and freezing it
+predecessor_commit_or_tag: L-118 / 51b932e
+scope: Archive synchronisation only. No new experiment. No frozen number touched. Task 4F1 remains
+  SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+package: LLMZIP_DELTA3_2026-09-19.zip, Drive id 1WtjFHBMoE2WVSsM6d_p8BNqJFmC2Voly, 18 members,
+  64,237 bytes, sha256 518fe90c5a54f80c70fc46eb843ec3b6ee06b4be6bfac5cf3dd3df71fc5d8d5b.
+  Verified by downloading it back: package hash identical, 17/17 manifest file hashes matched, no
+  corrupt member. All five prior packages left untouched.
+contents: L-115 to L-118 raw artefacts and scripts (router pilot, system cost, cheap encoder, hash
+  dimension sweep, encoder compression, RAM decomposition), the three result documents, the ledger
+  excerpt, current OPEN_QUESTIONS, and the seven methodological lessons written into the
+  llmzip-research skill.
+SCOPE_LIMIT_RECORDED: the 691 KB vocabulary cost is NOT an information-theoretic minimum. It is
+  the measured cost of the Python/sklearn object representation. A C/Rust implementation, a
+  minimal perfect hash, a succinct dictionary or an FST could shrink it substantially. The correct
+  claim is "under the current Python/sklearn representation, 100 KB is not achievable", NOT
+  "100 KB is impossible". This is written into the package manifest, the package README and the
+  repository result document, because leaving it implicit would repeat the scope inflation
+  corrected in L-098 and L-105.
+new_open_question_recorded_not_run: how to compact the VOCABULARY and the PROJECTION TOGETHER -
+  not the SVD matrix alone - while preserving corpus-adaptive quality. Deliberately not opened as
+  a new round.
+line_status: the encoder-cost line is FROZEN. Standing results: the 12-byte codes are a cheap and
+  effective data structure (5.7 KB, 0.103 ms, 4.6x faster to scan than BM25); the TF-IDF/SVD
+  encoder is expensive but is the component that produces the quality; random substitutes lose
+  27-37 pp; geometry-preserving compression loses 8 pp at best and no arm met the three
+  pre-frozen criteria.
+evidence: Drive folder 1skDWjlYAZ_qssgk5sOa7l3GJ_xDy8ybI; branch audit/hard-rounds-2026-09-18 at
+  b6d4e5c; main at 51b932e.
+status: DELTA3 UPLOADED AND HASH-VERIFIED; SCOPE LIMIT RECORDED IN THREE PLACES; ENCODER-COST LINE
+  FROZEN; NO FROZEN NUMBER CHANGED
+```
