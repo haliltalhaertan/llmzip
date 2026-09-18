@@ -645,6 +645,43 @@ Kazanç yalnızca 17 ek sorgudan geliyor ve orada Jev gold'u %70 oranında ilk �
 sign96 ve BM25 havuzları ortalama **4,62/10 belge** paylaşıyor — yani listeler gerçekten farklı,
 ama farklılık kaliteye dönüşmüyor.
 
+##### Router fırsatı — statü (dış değerlendirmenin formülasyonu benimsendi)
+
+`evidence_path`: `audit_hard_r4/ROUTER_PILOT.json`
+
+> **Router opportunity: REAL** (+5,49 pp oracle başlığı, gürültüden arındırılmış)
+> **Cheap router: FAILED** (denenen özellikler/modeller üzerinde)
+> **General impossibility: NOT ESTABLISHED**
+> **Priority: LOW** — bağımsız olarak gerekçelendirilmiş daha zengin bir öngörü sinyali çıkana dek
+
+Ayrıca metodolojik kural: router için **accuracy ölçülmez**. Doğru metrik
+`router'ın seçtiği sistemin FR@3'ü − always-BM25 FR@3`. (Sebep: %88,9 doğruluk, %89,4 çoğunluk
+tabanının altındaydı — "başarılı" görünen model hiçbir şey yapmayandan kötüydü.)
+
+##### Eşleşmiş sistem maliyeti — **ÖLÇÜLDÜ: sign96 her eksende pahalı**
+
+`evidence_path`: `audit_hard_r4/SYSTEM_COST.json`, `system_cost.py` (40 arşiv, ~484 belge medyan)
+
+| | BM25 | sign96 | oran |
+|---|---:|---:|---:|
+| indeks RAM | 2.600,7 KB | **5.141,9 KB** | **1,98×** |
+| — yalnız kodlar | — | 5,7 KB | 0,002× |
+| — kodlayıcı | — | 5.136,1 KB | |
+| sorgu gecikmesi | 0,471 ms | **2,943 ms** | **6,25×** |
+| — yalnız tarama | — | 0,103 ms | 0,219× |
+| — sorgu kodlama | — | 2,847 ms | |
+| indeks kurma | 0,033 s | **0,494 s** | **15,1×** |
+
+**"12 bayt" doğru ama sistemin tamamı değil.** Kod matrisi BM25 indeksinin 0,002 katı ve tarama
+4,6 kat hızlı — ama RAM'in **%99,9'u** ve gecikmenin **%96,5'i** kodlayıcıdan geliyor. Kodlayıcı
+kod matrisinden **900 kat büyük** ve bu depoda hiç saklanmamıştı; burada yeniden kurulup sayıldı.
+
+**Yeniden açma koşulu (1) karşılanmadı — tersi ölçüldü.**
+
+Kapanmayan: **paylaşılan kodlayıcı** rejiminde maliyet arşiv sayısına bölünür ve tablo tersine
+dönebilir; ama sabit kodlayıcının kalite bedeli zaten ölçülü (RealTalk k=96: 49,65 → 20,00).
+İkisinin birlikte ölçümü yapılmadı.
+
 ##### Güncel durum — kaldıraç sayısı yine daraldı
 
 | kaldıraç | durum |

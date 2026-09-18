@@ -2853,3 +2853,46 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/ROUTER_PILOT
 status: ROUTING CEILING ESTABLISHED AT +5.49 PP NOISE-ADJUSTED; FOUR MODEL FAMILIES FAIL TO REACH
   IT; ACCURACY TRAP DOCUMENTED; NO FROZEN NUMBER CHANGED
 ```
+
+### L-116
+
+```text
+timestamp_utc: 2026-09-18T23:55:00Z
+actor_role: Continuity Lead measuring matched system cost, the last unmeasured lever
+predecessor_commit_or_tag: L-115 / eaf06d3
+scope: Zero model calls. No frozen number touched. Task 4F1 remains SEALED / RUN BLOCKED / NO
+  AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+router_status_adopted: external review's four-line formulation is recorded verbatim in
+  OPEN_QUESTIONS - router opportunity REAL (+5.49 pp noise-adjusted headroom), cheap router FAILED
+  on tested features and models, general impossibility NOT ESTABLISHED, priority LOW until a
+  richer predictive signal is independently motivated. Plus the metric rule: never score a router
+  by accuracy; score it by routed FR@3 minus always-BM25 FR@3.
+cost_measured: 40 archives, median 484 documents, 5 reps, perf_counter.
+  index RAM   BM25 2600.7 KB vs sign96 5141.9 KB  = 1.98x
+  query       BM25 0.471 ms  vs sign96 2.943 ms   = 6.25x
+  build       BM25 0.0327 s  vs sign96 0.4938 s   = 15.1x
+decomposition_is_the_point: the code matrix really is tiny - 5.7 KB, 0.002x of the BM25 index -
+  and scanning alone is 4.6x FASTER than BM25 (0.103 ms vs 0.471 ms). But 99.9% of sign96's RAM
+  and 96.5% of its query latency come from the ENCODER, which is 900x larger than the code matrix.
+encoder_was_never_stored: this is why the cost could not be measured all day. The repo keeps only
+  per-query qC vectors, never the encoder. It was rebuilt here (TF-IDF vocabulary plus SVD
+  components) and counted explicitly. This is the precise root cause of the "12 bytes" overstatement
+  retracted in L-098: the claim is correct for DOCUMENT PAYLOAD and wrong for the whole system.
+reopen_condition_1_fails: "a materially better total RAM/CPU/latency trade-off than BM25" is not
+  met; the opposite is measured on all three axes.
+three_levers_now_all_closed: quality indistinguishable (L-107), routing headroom unreachable
+  (L-115), cost worse on every axis (this entry).
+still_open_shared_encoder: the measurement assumes a PER-ARCHIVE encoder, which is this project's
+  corpus-adaptive protocol. Under a shared/fixed encoder the cost amortises across archives - at
+  100 archives the encoder would be about 51 KB per archive and the table could invert. But the
+  quality price of a fixed encoder is already measured and severe (RealTalk k=96: 49.65 -> 20.00,
+  -29.65 pp). Neither the amortisation curve nor the quality in that regime has been measured
+  together, so "could invert" remains a hypothesis.
+limits: single machine, single-threaded Python; BM25 is pure Python and a compiled implementation
+  would be faster still, making the ratio conservative in BM25's favour; sklearn TF-IDF plus
+  TruncatedSVD stands in for an encoder that cannot be verified because it was never stored.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/SYSTEM_COST.json,
+  system_cost.py; main SYSTEM_COST_RESULT_2026-09-18.md.
+status: MATCHED SYSTEM COST MEASURED; SIGN96 COSTLIER ON RAM, LATENCY AND BUILD; "12 BYTES"
+  ROOT CAUSE QUANTIFIED AS ENCODER OMISSION; NO FROZEN NUMBER CHANGED
+```
