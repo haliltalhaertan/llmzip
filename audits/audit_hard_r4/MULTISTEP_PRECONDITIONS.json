@@ -1,0 +1,26 @@
+{
+ "A_precondition": {
+  "multi_gold_queries": 296,
+  "at_least_one_gold_in_pool": 277,
+  "none_in_pool": 19,
+  "pct_first_step_works": 93.6
+ },
+ "B_oracle_expansion": {
+  "n_remaining_golds": 379,
+  "improved": 160,
+  "pct_improved": 42.2,
+  "entered_top10": 61,
+  "in_top10_before": 248,
+  "in_top10_after": 286,
+  "median_rank_before": 4,
+  "median_rank_after": 4,
+  "limit": "lexical/BM25 side only; sign96 expansion needs the encoder, which is not stored"
+ },
+ "C_coverage_headroom": {
+  "queries_with_2plus_golds_in_pool": 215,
+  "queries_missing_a_pooled_gold_from_top3": 114,
+  "pooled_golds": 450,
+  "pooled_golds_in_top3": 303
+ },
+ "note": "zero model calls; oracle = upper bound, a real system cannot exceed it"
+}

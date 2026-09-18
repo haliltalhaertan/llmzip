@@ -1,0 +1,18 @@
+{
+ "mechanism": "M10 diversity-aware top-3 selection (MMR, lambda=0.7, Jaccard diversity)",
+ "n": 470,
+ "model_calls": 0,
+ "baseline_bm25_top3_fr3": 59.93,
+ "diversity_top3_fr3": 58.74,
+ "delta_pp": -1.19,
+ "improved_queries": 4,
+ "worsened_queries": 16,
+ "net": -12,
+ "headroom_that_motivated_it": {
+  "golds_in_pool_outside_top3": 147,
+  "queries_affected": 114
+ },
+ "verdict": "FAILED - headroom is not attainable gain",
+ "lesson": "'present in the pool but not selected' is a HEADROOM measurement, not an attainable gain. Converting headroom into gain requires the selection rule to know WHY the gold was missed; blind diversity does not carry that information and evicts relevant near-duplicate golds instead.",
+ "pattern": "fourth two-sided intervention measured today: Jev rerank 21 rescued / 25 broken, RRF fusion drops golds, oracle query expansion 61 in / 23 out, diversity 4 up / 16 down"
+}
