@@ -2810,3 +2810,46 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/SLOT_MERGE.j
 status: PRESERVING MERGES MEASURED; NO RULE BEATS BASELINE; DISCOVERY-SLOT PRECISION IDENTIFIED AS
   ROOT CAUSE; NO FROZEN NUMBER CHANGED
 ```
+
+### L-115
+
+```text
+timestamp_utc: 2026-09-18T23:20:00Z
+actor_role: Continuity Lead measuring the routing ceiling and then trying to reach it
+predecessor_commit_or_tag: L-114 / bd71fe7
+scope: Zero model calls. No frozen number touched. Task 4F1 remains SEALED / RUN BLOCKED / NO
+  AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+order_enforced: external review required ceiling first, prediction second. Followed exactly, so
+  the prediction attempt could not be rationalised after seeing it fail.
+ceiling_raw: choosing the better of sign96+Jev and BM25+Jev per query gives 78.43 FR@3 against
+  70.37 always-sign96 and 72.48 always-BM25 - a raw oracle gain of +5.95 pp. The two methods differ
+  on 112/470 queries (23.8%), sign96 winning 50 and BM25 62.
+noise_floor_measured: max(a,b) also harvests model instability, so the SAME system was oracled
+  across two independent runs (BM25+Jev in L-103 and L-107): 72.48 and 72.09 give a fake "oracle"
+  of 72.94, i.e. +0.46 pp of pure noise, with 14/470 queries differing under an identical system.
+ceiling_adjusted: +5.95 - 0.46 = +5.49 pp. Worth pursuing by the threshold external review set.
+prediction_attempt: 13 cheap runtime features (question length, digits, temporal words, BM25 top-1
+  score and margin, sign96 top-1 score and margin, whether both methods agree on top-1, top-10
+  overlap, archive size, score distribution stats). Train/test split, router learns from train
+  only, 200 random splits rather than one to avoid post-selection.
+result_all_negative: logistic regression -0.21 pp (1/200 splits positive); balanced logistic
+  -2.43 (5/200); depth-3 tree -1.49 (29/200); random forest -0.80 (42/200). Test-set oracle on the
+  same splits is +5.92 pp. No model captures any part of the ceiling.
+accuracy_trap_recorded: the first model reported 0.889 accuracy, which sounds successful. But only
+  50/470 queries are sign96 wins, so the majority baseline is 0.894 - the router is worse than
+  always answering BM25. Accuracy is the wrong metric anyway, since both methods tie on 358
+  queries where the choice does not matter.
+consistency: this agrees with L-109, where lexical overlap correlated with the method gap at
+  r=0.02. The method-disagreement signal that review flagged as most promising was IN the feature
+  set and did not help - disagreement indicates uncertainty but not which side is right.
+scope_of_claim: this does NOT show routing is impossible. It shows that with these 13 cheap
+  signals, on this dataset, between these two methods, the choice is not predictable. The ceiling
+  stands; the key was not found.
+still_open: a four-way router (BM25 / sign96 / both / hard); Jev itself as the router at one
+  judgment per query (costly); richer features such as entity types or question-type
+  classification; the same ceiling on another dataset.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/ROUTER_PILOT.json,
+  router_pilot.py; main ROUTER_PILOT_RESULT_2026-09-18.md.
+status: ROUTING CEILING ESTABLISHED AT +5.49 PP NOISE-ADJUSTED; FOUR MODEL FAMILIES FAIL TO REACH
+  IT; ACCURACY TRAP DOCUMENTED; NO FROZEN NUMBER CHANGED
+```
