@@ -1,0 +1,27 @@
+{
+ "model_calls": 0,
+ "n_with_findable_anchor": 432,
+ "baseline_top3_fr3": 65.2,
+ "oracle_anchor_no_expansion_fr3": 81.69,
+ "oracle_anchor_with_M2_expansion_fr3": 77.96,
+ "guaranteed_gold_slot_contribution_pp": 16.49,
+ "expansion_own_contribution_pp": -3.73,
+ "conditional_on_anchor_correctness": {
+  "anchor_correct": {
+   "n": 255,
+   "pipeline_fr3": 79.78,
+   "baseline_fr3": 84.65,
+   "delta": -4.87
+  },
+  "anchor_wrong": {
+   "n": 215,
+   "pipeline_fr3": 22.33,
+   "baseline_fr3": 30.6,
+   "delta": -8.27
+  }
+ },
+ "bm25_top1_gold_accuracy_pct": 54.3,
+ "breakeven_anchor_accuracy_pct": 243.1,
+ "verdict": "the pipeline is worse than baseline EVEN WHEN THE ANCHOR IS CORRECT, so no anchor selector can rescue it; break-even anchor accuracy is 243%, which is impossible. The entire oracle gain comes from hand-placing a gold in slot 1 (+16.49 pp), while the expansion itself costs -3.73 pp.",
+ "lesson": "an intermediate metric can disagree in SIGN with the final metric. Rank movement said query expansion was net +38 golds into the top-10; end-to-end FR@3 says the same mechanism is net negative. Validating a mechanism on an intermediate metric is not enough."
+}
