@@ -1,0 +1,107 @@
+{
+ "tolerance_pp": 0.005,
+ "claims": [
+  {
+   "claim": "+19.86 pp",
+   "description": "INDEP width ladder 96->384, qscale",
+   "claimed": 19.86,
+   "recomputed": 19.8582,
+   "abs_error": 0.0018,
+   "correctly_rounded": 19.86,
+   "verdict": "PRIMARY_RECOMPUTED",
+   "detail": {
+    "k96": 20.0,
+    "k384": 39.8582,
+    "n_q": 705,
+    "method": "question-weighted pooling over 10 per-archive JSONs"
+   }
+  },
+  {
+   "claim": "+16.88 pp",
+   "description": "INDEP width ladder 96->384, sym",
+   "claimed": 16.88,
+   "recomputed": 16.8794,
+   "abs_error": 0.0006,
+   "correctly_rounded": 16.88,
+   "verdict": "PRIMARY_RECOMPUTED",
+   "detail": {
+    "k96": 18.156,
+    "k384": 35.0355,
+    "n_q": 705,
+    "method": "question-weighted pooling over 10 per-archive JSONs"
+   }
+  },
+  {
+   "claim": "+8.22 pp",
+   "description": "TRANS width ladder 96->384, qscale",
+   "claimed": 8.22,
+   "recomputed": 8.227,
+   "abs_error": 0.007,
+   "correctly_rounded": 8.23,
+   "verdict": "PRIMARY_RECOMPUTED_TRUNCATED",
+   "detail": {
+    "k96": 49.6454,
+    "k384": 57.8723,
+    "n": 705,
+    "method": "k384 minus k96 from LADDER.json arms"
+   }
+  },
+  {
+   "claim": "+7.66 pp",
+   "description": "TRANS width ladder 96->384, sym",
+   "claimed": 7.66,
+   "recomputed": 7.6596,
+   "abs_error": 0.0004,
+   "correctly_rounded": 7.66,
+   "verdict": "PRIMARY_RECOMPUTED",
+   "detail": {
+    "k96": 46.5248,
+    "k384": 54.1844,
+    "n": 705,
+    "method": "k384 minus k96 from LADDER.json arms"
+   }
+  },
+  {
+   "claim": "-3.83 pp",
+   "description": "48B qscale vs referee-primary BM25, Hit@10",
+   "claimed": -3.83,
+   "recomputed": -3.8298,
+   "abs_error": 0.0002,
+   "correctly_rounded": -3.83,
+   "verdict": "PRIMARY_RECOMPUTED",
+   "detail": {
+    "code_48B_qscale": 57.8723,
+    "bm25_frozen_textbook": 61.7021,
+    "method": "code arm minus BM25 variant from DECISION_TESTS.json"
+   }
+  },
+  {
+   "claim": "-3.26 pp",
+   "description": "48B qscale vs referee-primary BM25, FR@3",
+   "claimed": -3.26,
+   "recomputed": -3.2564,
+   "abs_error": 0.0036,
+   "correctly_rounded": -3.26,
+   "verdict": "PRIMARY_RECOMPUTED",
+   "detail": {
+    "code_48B_qscale": 32.7919,
+    "bm25_frozen_textbook": 36.0483,
+    "method": "code arm minus BM25 variant from DECISION_TESTS.json"
+   }
+  },
+  {
+   "claim": "-7.80 pp",
+   "description": "48B qscale vs post-selected strongest BM25 (RETRACTED headline)",
+   "claimed": -7.8,
+   "recomputed": -7.8014,
+   "abs_error": 0.0014,
+   "correctly_rounded": -7.8,
+   "verdict": "PRIMARY_RECOMPUTED",
+   "detail": {
+    "code_48B_qscale": 57.8723,
+    "bm25_frozen_idfonly": 65.6738,
+    "method": "code arm minus BM25 variant from DECISION_TESTS.json"
+   }
+  }
+ ]
+}
