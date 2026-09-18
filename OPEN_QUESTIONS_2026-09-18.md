@@ -598,8 +598,63 @@ yeniden sıralayıcının hâlâ ciddi seçim hatası yaptığını gösterebili
 | Kompakt kodun Hit@10'u | açık |
 | Yeniden sıralayıcı kalitesi | **açık** (tavana yakınlık gösterilmedi) |
 
-**Sonraki adım:** RRF havuzu + Jev'i gerçekten koşmak. Aday tavanı 90,00'a çıktığında nihai
-FR@3 ne oluyor? Bu, ~5.200 token/sorgu ile ölçülebilir.
+##### KARAR DENEYİ: RRF+Jev vs BM25+Jev, eşleşmiş — **AYIRT EDİLEMEZ**
+
+`evidence_path`: `audit_hard_r4/RRF_VS_BM25.json`, `rrf_vs_bm25.py`
+
+İki kol **aynı koşuda**, aynı 470 soru, aynı model, her ikisi de **tam 10 aday**
+(eski BM25+Jev sayısıyla karşılaştırılmadı — Jev koşudan koşuya oynuyor).
+
+| kol | tavan H@10 | Hit@1 | FR@3 |
+|---|---:|---:|---:|
+| BM25 top-10 | 87,87 | 68,30 | 72,09 |
+| **RRF top-10** | **90,00** | 67,45 | **73,67** |
+
+| ölçüt | Δ | CI95 | sonuç |
+|---|---:|---|---|
+| FR@3 | **+1,59 pp** | **[−0,51, +3,70]** | sıfırı içeriyor |
+| Hit@1 | −0,85 pp | [−3,62, +1,92] | sıfırı içeriyor |
+
+**Senin üç senaryondan ikincisi:** +2,13 puanlık kapsam kazancı nihai kaliteye
+**ayırt edilebilir biçimde çevrilmiyor.** Kurtardı 21, bozdu 25 — net −4.
+
+##### Ama mekanizma sağlıklı: dönüşüm oranı %74
+
+Kapsam +2,13 → FR@3 +1,59. Yani kazanç **kayboluyor değil, ölçülemeyecek kadar küçük.**
+Ayrıştırma bunu doğruluyor:
+
+| durum | n | RRF FR@3 | BM25 FR@3 |
+|---|---:|---:|---:|
+| RRF yakaladı, BM25 kaçırdı | 17 | **70,10** | 0 (zorunlu) |
+| BM25 yakaladı, RRF kaçırdı | 7 | 0 (zorunlu) | 79,76 |
+| her ikisinde gold | 406 | 82,35 | 82,07 |
+
+Üçüncü satır önemli: **aynı adaylar verildiğinde iki kol özdeş** (fark 0,28 pp). Yani RRF
+distractor sokup yeniden sıralayıcıyı bozmuyor — senin üçüncü senaryon **gerçekleşmedi**.
+
+Kazanç yalnızca 17 ek sorgudan geliyor ve orada Jev gold'u %70 oranında ilk üçe koyabiliyor.
+470 sorguda bu, ayırt edilebilir bir etki için yeterli değil.
+
+##### Maliyet — "bedava" değil
+
+> **Düzeltme:** RRF için "bedava +2,13 pp" demek yanlış olurdu. **Jev maliyeti özdeş**
+> (her iki kol da 10 aday, ~5.230 token/sorgu). Ama getirim tarafında **hem sign96 hem BM25**
+> çalışıyor: CPU + RAM/indeks maliyeti = sign96 + BM25. Yani kalite kazancı ölçülemezken
+> sistem maliyeti **artıyor**.
+
+sign96 ve BM25 havuzları ortalama **4,62/10 belge** paylaşıyor — yani listeler gerçekten farklı,
+ama farklılık kaliteye dönüşmüyor.
+
+##### Güncel durum — kaldıraç sayısı yine daraldı
+
+| kaldıraç | durum |
+|---|---|
+| RRF füzyon | **ölçüldü: +1,59 pp, ayırt edilemez, maliyeti artırıyor** |
+| Kompakt kodun Hit@10'u | açık |
+| Reranker kalitesi | açık (%82 tavan-içi başarı; tavana yakın olduğu hâlâ gösterilmedi) |
+
+Hibrit hat bu ölçümle büyük ölçüde **kapanıyor**: kapsam kazancı gerçek ama küçük, kaliteye
+dönüşümü ölçülemiyor, ve iki getirim sistemi birden çalıştırmayı gerektiriyor.
 
 > **Sınır:** `sign96` sıralaması yalnız **top-10** saklanmış, daha derini yok. RRF ve backfill
 > sign tarafında 10 ile sınırlı; BM25 tarafı 20'ye kadar açılabiliyor. Daha derin bir sign

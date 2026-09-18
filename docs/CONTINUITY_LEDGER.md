@@ -2466,3 +2466,45 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/FUSION_EXACT
 status: L-105 NEGATIVE RESULT RETRACTED; FIXED-BUDGET FUSION IS POSITIVE (+2.13 pp); TWO FURTHER
   COORDINATOR CLAIMS WITHDRAWN; NO FROZEN NUMBER CHANGED
 ```
+
+### L-107
+
+```text
+timestamp_utc: 2026-09-18T18:05:00Z
+actor_role: Continuity Lead recording the deciding hybrid experiment
+predecessor_commit_or_tag: L-106 / b8e90ca
+scope: The deciding test for the hybrid candidate-generation line. No frozen number touched. Task
+  4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+design: both arms in the SAME run, same 470 queries, same model, both at EXACTLY 10 candidates, so
+  reranker cost is identical. Deliberately NOT compared against the earlier BM25+Jev figure, because
+  the reranker was shown to vary run to run (L-103).
+  arm A: BM25 top-10        -> Jev   (candidate ceiling 87.87)
+  arm B: RRF k=60 top-10    -> Jev   (candidate ceiling 90.00)
+result: BM25 Hit@1 68.30 / FR@3 72.09; RRF Hit@1 67.45 / FR@3 73.67.
+  delta FR@3  = +1.585 pp  CI95 [-0.507, +3.695]  spans zero
+  delta Hit@1 = -0.851 pp  CI95 [-3.617, +1.915]  spans zero
+  rescued 21, broke 25, net -4. Zero errors, 4.92M tokens, ~5,230 per query per arm.
+verdict: INDISTINGUISHABLE. The +2.13 pp candidate-coverage gain does not convert into a
+  measurable final-quality gain at n=470.
+mechanism_is_healthy: conversion rate is 74% (coverage +2.13 -> FR@3 +1.59), so the gain is not
+  destroyed, merely too small to resolve. Decomposition confirms this. On the 17 queries where only
+  RRF holds the gold, RRF scores FR@3 70.10 while BM25 is structurally 0; on the 7 where only BM25
+  holds it, BM25 scores 79.76. On the 406 where both pools contain the gold, RRF 82.35 vs BM25
+  82.07 - a 0.28 pp difference. So RRF does NOT inject distractors that damage the reranker; the
+  third of the three anticipated outcomes did not occur.
+cost_correction: calling RRF a "free +2.13 pp" would be wrong and is avoided. Reranker cost IS
+  identical (both arms send 10 candidates). But retrieval now runs BOTH sign96 AND BM25, so
+  CPU + RAM/index cost = sign96 + BM25. Quality gain unmeasurable, system cost up.
+pool_divergence: the sign96 and BM25 pools share on average only 4.62 of 10 documents, so the lists
+  genuinely differ - the difference just does not convert into quality.
+line_status: the hybrid candidate-generation line is now largely CLOSED. Coverage gain is real but
+  small, its conversion to quality is unresolvable at this sample size, and it requires running two
+  retrieval systems. Remaining live levers: the compact code's own Hit@10, and reranker quality
+  (still open - within-ceiling success is about 82%, and "near the ceiling" has never been shown).
+limit_recorded: sign96 rankings are stored only to depth 10, capping fusion on that side while BM25
+  extends to 20. A deeper sign ranking might raise coverage further; unmeasured.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/RRF_VS_BM25.json,
+  rrf_vs_bm25.py, RRF_VS_BM25.log.
+status: HYBRID DECIDING TEST RUN; RESULT INDISTINGUISHABLE; MECHANISM CONFIRMED NON-HARMFUL; NO
+  FROZEN NUMBER CHANGED
+```
