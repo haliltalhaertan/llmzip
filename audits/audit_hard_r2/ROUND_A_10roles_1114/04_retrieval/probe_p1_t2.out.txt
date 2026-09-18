@@ -1,0 +1,198 @@
+csv_data_rows=164256 (file lines incl header = 164257)
+columns=['dataset', 'archive', 'qid', 'section', 'method', 'n_docs', 'gold_count', 'actual_candidates', 'hit3', 'fr3', 'hit10', 'fr10']
+rows_per_dataset={"LME": 7520, "PerLTQA": 132240, "LoCoMo": 24496}
+LME methods(n distinct qids per method):
+  BM25_full              rows=470 n_qids=470
+  asym96                 rows=470 n_qids=470
+  asym96_bm25            rows=470 n_qids=470
+  asym96_rrf60           rows=470 n_qids=470
+  float_raw32            rows=470 n_qids=470
+  float_raw32_bm25       rows=470 n_qids=470
+  float_raw32_rrf60      rows=470 n_qids=470
+  float_std32            rows=470 n_qids=470
+  float_std32_bm25       rows=470 n_qids=470
+  float_std32_rrf60      rows=470 n_qids=470
+  hamming96              rows=470 n_qids=470
+  hamming96_bm25         rows=470 n_qids=470
+  hamming96_rrf60        rows=470 n_qids=470
+  qscale96               rows=470 n_qids=470
+  qscale96_bm25          rows=470 n_qids=470
+  qscale96_rrf60         rows=470 n_qids=470
+LoCoMo methods(n distinct qids per method):
+  BM25_full              rows=1531 n_qids=1531
+  asym96                 rows=1531 n_qids=1531
+  asym96_bm25            rows=1531 n_qids=1531
+  asym96_rrf60           rows=1531 n_qids=1531
+  float_raw32            rows=1531 n_qids=1531
+  float_raw32_bm25       rows=1531 n_qids=1531
+  float_raw32_rrf60      rows=1531 n_qids=1531
+  float_std32            rows=1531 n_qids=1531
+  float_std32_bm25       rows=1531 n_qids=1531
+  float_std32_rrf60      rows=1531 n_qids=1531
+  hamming96              rows=1531 n_qids=1531
+  hamming96_bm25         rows=1531 n_qids=1531
+  hamming96_rrf60        rows=1531 n_qids=1531
+  qscale96               rows=1531 n_qids=1531
+  qscale96_bm25          rows=1531 n_qids=1531
+  qscale96_rrf60         rows=1531 n_qids=1531
+PerLTQA methods(n distinct qids per method):
+  BM25_full              rows=8265 n_qids=8265
+  asym96                 rows=8265 n_qids=8265
+  asym96_bm25            rows=8265 n_qids=8265
+  asym96_rrf60           rows=8265 n_qids=8265
+  float_raw32            rows=8265 n_qids=8265
+  float_raw32_bm25       rows=8265 n_qids=8265
+  float_raw32_rrf60      rows=8265 n_qids=8265
+  float_std32            rows=8265 n_qids=8265
+  float_std32_bm25       rows=8265 n_qids=8265
+  float_std32_rrf60      rows=8265 n_qids=8265
+  hamming96              rows=8265 n_qids=8265
+  hamming96_bm25         rows=8265 n_qids=8265
+  hamming96_rrf60        rows=8265 n_qids=8265
+  qscale96               rows=8265 n_qids=8265
+  qscale96_bm25          rows=8265 n_qids=8265
+  qscale96_rrf60         rows=8265 n_qids=8265
+LME: BM25_full distinct qids=470 vs DECISION_TESTS n_queries=470 match=True
+LoCoMo: BM25_full distinct qids=1531 vs DECISION_TESTS n_queries=1531 match=True
+PerLTQA: BM25_full distinct qids=8265 vs DECISION_TESTS n_queries=8265 match=True
+
+--- level verification (CSV mean vs stored, pp) ---
+  LME/BM25_full: mine=58.028369 stored=58.028369 diff=0.00e+00 OK
+  LME/asym96: mine=50.648936 stored=50.648936 diff=0.00e+00 OK
+  LME/asym96_bm25: mine=57.645390 stored=57.645390 diff=0.00e+00 OK
+  LME/asym96_rrf60: mine=55.953901 stored=55.953901 diff=7.11e-15 OK
+  LME/float_raw32: mine=44.159574 stored=44.159574 diff=7.11e-15 OK
+  LME/float_raw32_bm25: mine=57.762411 stored=57.762411 diff=7.11e-15 OK
+  LME/float_raw32_rrf60: mine=53.560284 stored=53.560284 diff=7.11e-15 OK
+  LME/float_std32: mine=55.744681 stored=55.744681 diff=7.11e-15 OK
+  LME/float_std32_bm25: mine=58.046099 stored=58.046099 diff=7.11e-15 OK
+  LME/float_std32_rrf60: mine=59.514184 stored=59.514184 diff=1.42e-14 OK
+  LME/hamming96: mine=53.858156 stored=53.858156 diff=7.11e-15 OK
+  LME/hamming96_bm25: mine=58.230496 stored=58.230496 diff=7.11e-15 OK
+  LME/hamming96_rrf60: mine=60.255319 stored=60.255319 diff=7.11e-15 OK
+  LME/qscale96: mine=54.273050 stored=54.273050 diff=7.11e-15 OK
+  LME/qscale96_bm25: mine=57.698582 stored=57.698582 diff=7.11e-15 OK
+  LME/qscale96_rrf60: mine=58.808511 stored=58.808511 diff=7.11e-15 OK
+  LoCoMo/BM25_full: mine=41.745935 stored=41.745935 diff=7.11e-15 OK
+  LoCoMo/asym96: mine=34.268308 stored=34.268308 diff=0.00e+00 OK
+  LoCoMo/asym96_bm25: mine=42.408342 stored=42.408342 diff=0.00e+00 OK
+  LoCoMo/asym96_rrf60: mine=39.004176 stored=39.004176 diff=0.00e+00 OK
+  LoCoMo/float_raw32: mine=33.680327 stored=33.680327 diff=0.00e+00 OK
+  LoCoMo/float_raw32_bm25: mine=44.062925 stored=44.062925 diff=7.11e-15 OK
+  LoCoMo/float_raw32_rrf60: mine=40.539724 stored=40.539724 diff=0.00e+00 OK
+  LoCoMo/float_std32: mine=38.906958 stored=38.906958 diff=0.00e+00 OK
+  LoCoMo/float_std32_bm25: mine=43.216139 stored=43.216139 diff=0.00e+00 OK
+  LoCoMo/float_std32_rrf60: mine=43.016863 stored=43.016863 diff=7.11e-15 OK
+  LoCoMo/hamming96: mine=31.462854 stored=31.462854 diff=3.55e-15 OK
+  LoCoMo/hamming96_bm25: mine=42.174336 stored=42.174336 diff=0.00e+00 OK
+  LoCoMo/hamming96_rrf60: mine=37.931666 stored=37.931666 diff=0.00e+00 OK
+  LoCoMo/qscale96: mine=35.843722 stored=35.843722 diff=7.11e-15 OK
+  LoCoMo/qscale96_bm25: mine=42.811175 stored=42.811175 diff=7.11e-15 OK
+  LoCoMo/qscale96_rrf60: mine=40.385159 stored=40.385159 diff=7.11e-15 OK
+  PerLTQA/BM25_full: mine=57.128570 stored=57.128570 diff=1.42e-14 OK
+  PerLTQA/asym96: mine=53.525082 stored=53.525082 diff=2.13e-14 OK
+  PerLTQA/asym96_bm25: mine=57.508039 stored=57.508039 diff=7.11e-15 OK
+  PerLTQA/asym96_rrf60: mine=58.613380 stored=58.613380 diff=1.42e-14 OK
+  PerLTQA/float_raw32: mine=55.169207 stored=55.169207 diff=0.00e+00 OK
+  PerLTQA/float_raw32_bm25: mine=58.259736 stored=58.259736 diff=0.00e+00 OK
+  PerLTQA/float_raw32_rrf60: mine=59.925749 stored=59.925749 diff=1.42e-14 OK
+  PerLTQA/float_std32: mine=56.575549 stored=56.575549 diff=7.11e-15 OK
+  PerLTQA/float_std32_bm25: mine=57.415942 stored=57.415942 diff=7.11e-15 OK
+  PerLTQA/float_std32_rrf60: mine=59.698749 stored=59.698749 diff=7.11e-15 OK
+  PerLTQA/hamming96: mine=49.836840 stored=49.836840 diff=7.11e-15 OK
+  PerLTQA/hamming96_bm25: mine=57.524245 stored=57.524245 diff=1.42e-14 OK
+  PerLTQA/hamming96_rrf60: mine=56.713578 stored=56.713578 diff=7.11e-15 OK
+  PerLTQA/qscale96: mine=53.237501 stored=53.237501 diff=7.11e-15 OK
+  PerLTQA/qscale96_bm25: mine=57.456907 stored=57.456907 diff=0.00e+00 OK
+  PerLTQA/qscale96_rrf60: mine=57.960042 stored=57.960042 diff=7.11e-15 OK
+max_level_diff=2.13e-14
+
+--- _rrf60 point contrasts vs BM25_full (FR@3 pp; no CI recomputed here) ---
+  LME asym96_rrf60: -2.0745 (levels 55.9539 vs BM25 58.0284)
+  LME float_raw32_rrf60: -4.4681 (levels 53.5603 vs BM25 58.0284)
+  LME float_std32_rrf60: +1.4858 (levels 59.5142 vs BM25 58.0284)
+  LME hamming96_rrf60: +2.2270 (levels 60.2553 vs BM25 58.0284)
+  LME qscale96_rrf60: +0.7801 (levels 58.8085 vs BM25 58.0284)
+  LoCoMo asym96_rrf60: -2.7418 (levels 39.0042 vs BM25 41.7459)
+  LoCoMo float_raw32_rrf60: -1.2062 (levels 40.5397 vs BM25 41.7459)
+  LoCoMo float_std32_rrf60: +1.2709 (levels 43.0169 vs BM25 41.7459)
+  LoCoMo hamming96_rrf60: -3.8143 (levels 37.9317 vs BM25 41.7459)
+  LoCoMo qscale96_rrf60: -1.3608 (levels 40.3852 vs BM25 41.7459)
+  PerLTQA asym96_rrf60: +1.4848 (levels 58.6134 vs BM25 57.1286)
+  PerLTQA float_raw32_rrf60: +2.7972 (levels 59.9257 vs BM25 57.1286)
+  PerLTQA float_std32_rrf60: +2.5702 (levels 59.6987 vs BM25 57.1286)
+  PerLTQA hamming96_rrf60: -0.4150 (levels 56.7136 vs BM25 57.1286)
+  PerLTQA qscale96_rrf60: +0.8315 (levels 57.9600 vs BM25 57.1286)
+
+--- inversion + spread recomputation from stored levels ---
+  LME: stored_inv=4/10 recomputed=4 match=True; pre_spread=11.59 post_spread=0.59
+  LoCoMo: stored_inv=3/10 recomputed=3 match=True; pre_spread=7.44 post_spread=1.89
+  PerLTQA: stored_inv=6/10 recomputed=6 match=True; pre_spread=6.74 post_spread=0.84
+
+--- actual_candidates distribution (min/med/max per ds,method sample) ---
+  LME/BM25_full: n=470 min=396 med=490.0 max=616 n_docs_sample=514
+  LME/asym96: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/asym96_bm25: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/asym96_rrf60: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/float_raw32: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/float_raw32_bm25: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/float_raw32_rrf60: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/float_std32: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/float_std32_bm25: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/float_std32_rrf60: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/hamming96: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/hamming96_bm25: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/hamming96_rrf60: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/qscale96: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/qscale96_bm25: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LME/qscale96_rrf60: n=470 min=50 med=50.0 max=50 n_docs_sample=514
+  LoCoMo/BM25_full: n=1531 min=369 med=663 max=689 n_docs_sample=514
+  LoCoMo/asym96: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/asym96_bm25: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/asym96_rrf60: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/float_raw32: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/float_raw32_bm25: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/float_raw32_rrf60: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/float_std32: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/float_std32_bm25: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/float_std32_rrf60: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/hamming96: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/hamming96_bm25: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/hamming96_rrf60: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/qscale96: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/qscale96_bm25: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  LoCoMo/qscale96_rrf60: n=1531 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/BM25_full: n=8265 min=293 med=408 max=546 n_docs_sample=514
+  PerLTQA/asym96: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/asym96_bm25: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/asym96_rrf60: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/float_raw32: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/float_raw32_bm25: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/float_raw32_rrf60: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/float_std32: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/float_std32_bm25: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/float_std32_rrf60: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/hamming96: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/hamming96_bm25: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/hamming96_rrf60: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/qscale96: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/qscale96_bm25: n=8265 min=50 med=50 max=50 n_docs_sample=514
+  PerLTQA/qscale96_rrf60: n=8265 min=50 med=50 max=50 n_docs_sample=514
+
+--- n_docs vs actual_candidates check (first 2 rows per dataset) ---
+  LME/BM25_full: n_docs=514 actual_candidates=514 gold_count=1
+  LME/hamming96: n_docs=514 actual_candidates=50 gold_count=1
+  LME/hamming96_bm25: n_docs=514 actual_candidates=50 gold_count=1
+  LME/hamming96_rrf60: n_docs=514 actual_candidates=50 gold_count=1
+  LME/asym96: n_docs=514 actual_candidates=50 gold_count=1
+  LME/asym96_bm25: n_docs=514 actual_candidates=50 gold_count=1
+  LME/asym96_rrf60: n_docs=514 actual_candidates=50 gold_count=1
+  LME/qscale96: n_docs=514 actual_candidates=50 gold_count=1
+  LME/qscale96_bm25: n_docs=514 actual_candidates=50 gold_count=1
+  LME/qscale96_rrf60: n_docs=514 actual_candidates=50 gold_count=1
+  LME/float_std32: n_docs=514 actual_candidates=50 gold_count=1
+  LME/float_std32_bm25: n_docs=514 actual_candidates=50 gold_count=1
+  LME/float_std32_rrf60: n_docs=514 actual_candidates=50 gold_count=1
+  LME/float_raw32: n_docs=514 actual_candidates=50 gold_count=1
+  LME/float_raw32_bm25: n_docs=514 actual_candidates=50 gold_count=1
+  LME/float_raw32_rrf60: n_docs=514 actual_candidates=50 gold_count=1

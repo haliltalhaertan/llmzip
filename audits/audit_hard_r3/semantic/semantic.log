@@ -1,0 +1,115 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r3/semantic (cwd default)
+muse: workspace trust: trusted source=run-flag
+# SEMANTIC_AUDIT — the semantic/ tree (round 3, adversarial)
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+Independence disclosure (mandatory per brief): this round does not meet `implementer != auditor`. Do not describe it as an independent external audit. All probes were read-only on sources; writes only in this directory. Unit-test reruns used exact copies in /tmp; payload probes read stored arrays with numpy only (no model executed, no internet).
+
+## (1) VERDICT (3 lines)
+
+Nothing in semantic/ supports or contradicts the published STOP: the PPLX line never produced a single retrieval score (RT01 docs 615/662, zero queries encoded anywhere, scoring gate unpassable and never run).
+All checkable logic re-verified from stored inputs (hashes 662/662, int8 0/677888 mismatches, packed exact, 21+4 tests pass); no published number rests on this code (NOT RUN / ABANDONED recorded consistently).
+Deepest issues are a guarded latent trap (47 zero placeholders, MED), a declared-but-never-executed PCA96 transduction (LOW), and an unsourced "4.3 texts/s" figure (LOW) — none CRITICAL.
+
+## (2) Findings
+
+| ID | Sev | Claim / file | Probe | Result |
+| --- | --- | --- | --- | --- |
+| S1 | MED | Payload RT01_docs.npz incomplete | numpy read of stored arrays | 615/662 complete, 47 zero rows |
+| S2 | LOW | No semantic score exists anywhere | ls of 4 expected outputs | All absent, never run |
+| S3 | LOW | No published claim uses semantic/ | grep reports + decisions | Only NOT RUN / ABANDONED refs |
+| S4 | LOW | Scorer + fidelity tests | reran copies in /tmp | 21 passed, 4 passed |
+| S5 | LOW | Stored derivations recompute | numpy recompute from payload | int8 0 mismatch, pack exact |
+| S6 | LOW | Digest "4.3 texts/s" figure | grep logs for source | UNVERIFIED, no log shows it |
+| S7 | LOW | PCA96 leakage question | code read + artifact check | Declared, docs-only, never run |
+| S8 | LOW | Fidelity fix vs payload staleness | diff + schema + mtimes | Post-fix writer, no staleness |
+
+Per-finding detail follows in section (3). Severity scale per brief: CRITICAL = a published number or conclusion is wrong. None found.
+
+## (3) Detail
+
+### A. Inventory first (role task A)
+
+`top10_comparison_r1/semantic/` is a PPLX-0.6B local-CPU embedding line for RealTalk (10 archives, 705 queries). Goal: native INT8 docs+queries and packed sign bits, then 5 scoring arms (INT8 cosine, BIN Hamming, ASYM int8xbin, PREQUANT pooled cosine [declared extra, not a paper baseline], PCA96_SIGN [declared exploratory, docs-fit]). Files:
+
+- `encode_pplx.py` (207 lines): slow encoder, batch 8, threads 6, MAXLEN 1024.
+- `pplx_scorer.py` (145 lines): quant formulas, pooling, ranking, metrics.
+- `score_pplx.py` (143 lines): PCA96 fit + all-archive scoring. NEVER RAN.
+- `test_pplx_scorer.py` (216 lines): 21 TDD tests (pure, no weights).
+- `tokenizer_stats.json`: 20 untruncated-length stats (all 10 archives).
+- `payloads/`: 21 files = 1 embedding payload (RT01_docs.npz) + 20 `*_untrunc_len.npy` (lengths for all archives; embeddings for RT02–RT10 and ALL queries were never produced).
+- `checkpoints/`: 15 stale batch shards (RT01_docs_batch0000–0014).
+- `encode.log`: model weight-load bar only, no encode lines (aborted run).
+- `progress.json` (slow run: 120/662 RT01 docs, first batch 0.064 texts/s, est. total ~150k s) and `progress_fast.json` (fast run: 495 docs at 1.82 texts/s, peak RSS 3.46 GB).
+- `tdd_red.log` (21 failed: ModuleNotFoundError, no sys.path) → `tdd_green.log` (21 passed).
+- `__pycache__/` (4 .pyc), `.pytest_cache/`, `.hf_modules/`.
+
+Coordinator side (its audit trail, not semantic/ itself): `coordinator/test_semantic_fidelity.py` (4 regression tests), `semantic_RED.log` (4 fail: 2 float64-vs-fp32, 2 missing load_checkpoint) → `semantic_GREEN.log` (4 pass), `semantic_before_fidelity_fix/` (3 pre-fix sources), `encode_fast.py` (token-budget fast encoder, same payload schema minus `rows`), `diag_speed.py` / `diag_mask.py` (never run, no output logs).
+
+### S1. Incomplete payload with zero placeholders (MED)
+
+Read-only numpy probes (`/tmp/sem_probe2.py`, `/tmp/sem_probe3.py`):
+
+- `RT01_docs.npz` keys: pooled_f32 (662,1024) fp32, int8 (662,1024), packed (662,128) uint8, hashes, untrunc_len, complete (662,) bool. NO `rows` key — schema matches `coordinator/encode_fast.py:93-95` (omits `rows`), not `semantic/encode_pplx.py:167-172`.
+- `complete.sum()` = 615/662. The 47 missing indices (44, 83, 111, … 660) are ALL-ZERO pooled rows; int8 all 0; packed all 0xFF (zero >= 0 → bit 1). Placeholders, correctly flagged.
+- BUT: a zero pooled vector looks like a valid doc if the gate is bypassed (int8 0-vector, all-+1 bit vector). Guard: `score_pplx.py:48` `assert payload["complete"].all()` — scoring refuses. Gate never passed because payload never completed. Latent trap only, hence MED not CRITICAL.
+
+### S2. Scoring never ran (LOW, establishes D)
+
+`ls semantic/scores semantic/per_query_pplx.jsonl semantic/score_summary.json semantic/BLOCKER.json semantic/payloads/pca96*` → all absent (verified). Only RT01 docs partially encoded; 0/10 query payloads exist; PCA never fit. No score matrix, no per-query row, no summary was ever emitted. There is no earlier semantic result to have been "quietly dropped" — nothing exists to drop.
+
+### S3. Nothing published rests on semantic/ (LOW, role task B)
+
+- `decision_r1/`, `DECISION_TESTS.json`, `arm_decision.json`, `decision_tests.py`: ZERO hits for PPLX/pplx/PCA96/per_query_pplx. Decision arms are sign96/asym/qscale/float only.
+- `baseline/REPORT.md:21,171-172`: model arms "labeled NOT RUN" — twice.
+- `digest_r1/FINDINGS_DIGEST.md:124`: "PPLX-0.6B semantic arm was ABANDONED".
+- `PROTOCOL.md:8-9`: semantic comparison is specified future work with declared PCA-docs-only fit; `COORDINATOR_NOTES.md:4-5` records the two fidelity bugs as must-fix-before-acceptance (fixed, see S8).
+- `audit_hard_r1/repro/HARD_AUDIT_REPRO.md`: semantic/PPLX under NOT REVIEWED. `audit_hard_r2/.../code/CODE_AUDIT.md:273`: "Semantic PPLX arms … PCA-transduction note … is code-evident but its magnitude is UNVERIFIED" — overlaps S7, cited not duplicated.
+
+### S4. Tests pass (LOW)
+
+Copied (not run in place, to keep sources read-only) to /tmp/sem_ro, ran with PYTHONDONTWRITEBYTECODE=1:
+
+- `test_pplx_scorer.py`: 21 passed (matches committed `tdd_green.log`). `tdd_red.log` failures are pre-implementation import errors, expected.
+- `coordinator/test_semantic_fidelity.py`: 4 passed (matches GREEN log).
+
+### S5. Stored derivations recompute exactly (LOW, role task C)
+
+From stored `pooled_f32` (numpy float64 formula; fp32-torch exactness needs a model rerun — see section 4):
+
+- int8 `clip(round(127*tanh))`: 0/677,888 mismatches (0.000000%).
+- packed `packbits(pooled>=0)`: 0/84,736 mismatches.
+- hashes vs `data/RT01.json` texts: 662/662 match.
+- `tokenizer_stats.json` vs all 20 `*_untrunc_len.npy`: 20/20 match on (n, max, mean, trunc_gt1024); all trunc counts 0, all empty counts 0.
+- Reference formulas confirmed against `official_st_quantize.py` (Int8TanhQuantizer: round(tanh*127) clamp; BinaryTanhQuantizer: where(x>=0,1,-1); PackedBinaryQuantizer: packbits(x>=0)).
+- 15 checkpoints cover 120 unique rows; orphaned slow-run leftovers, superseded by the fast-run payload (615 rows, mtime Sep 16 14:21 vs checkpoints Sep 15 16:35–37).
+
+### S6. "4.3 texts/s (73 tok/s)" unsourced (LOW)
+
+`FINDINGS_DIGEST.md:124` attributes ~4.3 texts/s to the abandoned encoder. Observed: `progress.json` 0.064 texts/s (first cold batch), `progress_fast.json` 1.82 texts/s, `encode.log` no throughput lines, no diag output logs exist. No artifact shows 4.3 or 73 tok/s → UNVERIFIED figure. The ABANDONED conclusion itself is supported (S1–S2), so this dents a parenthetical, not a verdict. Not CRITICAL.
+
+### S7. Leakage question (LOW, role task E)
+
+- Encoder: pretrained PPLX weights, inference only (`inference_mode`, `model.eval`). Nothing fitted on eval data. No leak.
+- Scorers/ranking/metrics take no gold/qid params (signature test covers).
+- PCA96 (`score_pplx.py:56-63`): fit on concatenated RealTalk DOCUMENT INT8 across all 10 archives — transductive in the same sense as the round-2 main-pipeline finding — BUT: (a) declared in PROTOCOL.md:9 and the module docstring ("fit on REALTALK DOCUMENT INT8 ONLY … no query/gold fit"), (b) queries projected with the saved doc mean, (c) NEVER EXECUTED (S2). No hidden fitting; no quiet transductive number in any report. Forward caution only: if ever run, an inductive (held-out) PCA arm should accompany it per the round-2 lesson.
+
+### S8. Fidelity fix landed before the surviving payload (LOW)
+
+Diff `semantic_before_fidelity_fix/` vs `semantic/`:
+
+- `pplx_scorer.py`: int8/pool float64-numpy → torch-fp32 (matches official ST CPU FP32); added fail-closed `load_checkpoint` (old encoder marked `have[:]=True` on any hash match — would finalize zero rows as complete).
+- `encode_pplx.py`: adopts `load_checkpoint`. `score_pplx.py`: adds complete/finite/hash gates.
+- Mtimes: fix files Sep 15 16:26–27, GREEN log Sep 15 16:28, surviving payload Sep 16 14:21 via fast writer → payload postdates the fix. On this payload the fix is immaterial anyway: pooled |x| ≤ 1.04, int8 boundary-hit rate 0 (S5). The old resume bug never fired here (hashes 662/662, missings honestly flagged). No stale-fidelity finding.
+
+## (4) What could NOT be checked and why
+
+- Pooling fp32-exactness on real hidden states: needs the 2.4 GB model + hours of CPU encode; each probe kept <15 min per instructions, so no model run attempted. Mitigated by S5 (downstream int8/packed exact on stored poolings).
+- Counterfactual semantic scores (would PPLX contradict STOP?): unknowable — embeddings for 9.5 archives + all queries do not exist. Not a gap in this audit; it is why the line was abandoned.
+- `_wt_top10/*/semantic/` mirror: listed only (same filenames observed), not diffed — out of role scope, sources read-only regardless.
+- `diag_speed.py` / `diag_mask.py`: never run (no logs); slowness cause genuinely undiagnosed, consistent with digest wording.
+- Model provenance (MODEL_DOWNLOAD.json / weight_headers.txt / remote-code review claims in `encode_pplx.py:7-13`): not re-verified; no retrieval claim depends on them.
+- "1970 unaudited files" beyond semantic/: not my role; I name only what I opened (section A + S3 grep list).
+
+Report written to [SEMANTIC_AUDIT.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r3/semantic/SEMANTIC_AUDIT.md). No source tree was modified; all verification probes ran from /tmp copies or read-only numpy reads.

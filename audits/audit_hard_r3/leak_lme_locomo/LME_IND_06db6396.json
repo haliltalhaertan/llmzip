@@ -1,0 +1,14 @@
+{
+ "qid": "06db6396",
+ "N": 479,
+ "bg_docs": 4453,
+ "n_sibs": 9,
+ "gate_diff_bits": 0,
+ "gate_total_bits": 45984,
+ "gate_qc_diff_bits": 0,
+ "gate_max_abs": 9.85433956657289e-13,
+ "TRANS_sym_hit10": 1.0,
+ "TRANS_qscale_hit10": 1.0,
+ "INDEP_sym_hit10": 1.0,
+ "INDEP_qscale_hit10": 1.0
+}

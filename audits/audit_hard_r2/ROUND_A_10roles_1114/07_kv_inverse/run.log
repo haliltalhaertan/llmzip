@@ -1,0 +1,9 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/07_kv_inverse (cwd default)
+muse: workspace trust: trusted source=run-flag
+Audit complete. KV continuation + inverse-memory lines reviewed from source; both prior measurement bugs verified as repaired, with two new scoped caveats.
+
+Result: 35 items (26 reviewed, 3 sampled, 6 NOT RUN, mechanically counted). Both original decisive bugs check out as fixed — KV off-by-one (256/256 ΔNLL changed, max shift 24.875; KL bit-identical 256/256, top-1 0 mismatches) and inverse JVP double-count (synthetic fixture reproduces the exact [6,8] probe; repaired 0/12 is an honest bounded failure). New findings: the repaired "KV-only" inverse probe is full-sequence recompute, not stepwise DynamicCache, with an unmatched generic-4bit comparator (all-24 vs prefix-16); real cache consumption is proven only in the KV-predictor line. No resident savings anywhere; byte math exact (predictor 1,497,600 B, crossover 65 tokens, GQA 192 confirmed from config). Work is local-research-only (0 git pickaxe hits), never merged; chat-lit toy results don't transfer.
+
+Not run (stated as such): model-loaded re-execution, timing re-measurement, 40×100 Newton probe, BF16 numerics, segment residual replay (x_hat unsaved), chat CSV re-parse. `compute.sh` lock was read-only, so light probes ran directly with single-thread BLAS.
+
+Deliverables in [07_kv_inverse](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/07_kv_inverse): REPORT.md, STATUS.md, COVERAGE.csv, evidence/verify_jsons.json, evidence/verify_operators.json, scripts + outputs + originals.

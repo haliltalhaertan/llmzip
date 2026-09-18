@@ -1,0 +1,1881 @@
+{
+ "family_alphas": {
+  "T2_only_15": 0.0033333333333333335,
+  "per_experiment_50": 0.001,
+  "project_combos_267": 0.00018726591760299626
+ },
+ "contrasts": [
+  {
+   "claim": "quant/RealTalk/RAND_20260916-FULL_qscale/Hit@10",
+   "est_pp": -14.47,
+   "CI95": [
+    -20.58,
+    -7.91
+   ],
+   "z_approx": 4.48,
+   "p_approx": 7.5367314453162285e-06,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "quant/RealTalk/RAND_20260917-FULL_qscale/Hit@10",
+   "est_pp": -14.33,
+   "CI95": [
+    -21.18,
+    -7.12
+   ],
+   "z_approx": 3.99,
+   "p_approx": 6.482447502652444e-05,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "quant/RealTalk/RAND_20260918-FULL_qscale/Hit@10",
+   "est_pp": -15.04,
+   "CI95": [
+    -21.63,
+    -8.16
+   ],
+   "z_approx": 4.38,
+   "p_approx": 1.197264338539067e-05,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "quant/RealTalk/MED-FULL_qscale/Hit@10",
+   "est_pp": -0.43,
+   "CI95": [
+    -1.96,
+    1.12
+   ],
+   "z_approx": 0.54,
+   "p_approx": 0.5886337094823996,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "quant/RealTalk/ITQ-minus-RANDseed16/qscale/Hit@10",
+   "est_pp": -2.41,
+   "CI95": [
+    -4.74,
+    -0.14
+   ],
+   "z_approx": 2.05,
+   "p_approx": 0.040000947087330034,
+   "n": 705,
+   "clusters": 10,
+   "note": "worker REPORT.md; top-level -2.27 quoted WITHOUT any CI",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "quant/RealTalk/ITQ-minus-RANDseed17/qscale/Hit@10",
+   "est_pp": -2.55,
+   "CI95": [
+    -4.73,
+    -0.54
+   ],
+   "z_approx": 2.39,
+   "p_approx": 0.017047568671418392,
+   "n": 705,
+   "clusters": 10,
+   "note": "worker REPORT.md; top-level -2.27 quoted WITHOUT any CI",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "quant/RealTalk/ITQ-minus-RANDseed18/qscale/Hit@10",
+   "est_pp": -1.84,
+   "CI95": [
+    -3.7,
+    -0.28
+   ],
+   "z_approx": 2.11,
+   "p_approx": 0.03494407685983291,
+   "n": 705,
+   "clusters": 10,
+   "note": "worker REPORT.md; top-level -2.27 quoted WITHOUT any CI",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/IDF_p0.5/sym",
+   "est_pp": -0.36,
+   "CI95": [
+    -1.28,
+    0.51
+   ],
+   "z_approx": 0.78,
+   "p_approx": 0.4357058089369069,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/IDF_p0.5/qscale",
+   "est_pp": 1.33,
+   "CI95": [
+    -0.56,
+    3.16
+   ],
+   "z_approx": 1.41,
+   "p_approx": 0.1597578384600543,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/IDF_p1/sym",
+   "est_pp": 0.22,
+   "CI95": [
+    -1.94,
+    2.46
+   ],
+   "z_approx": 0.2,
+   "p_approx": 0.8416634511724517,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/IDF_p1/qscale",
+   "est_pp": 2.09,
+   "CI95": [
+    -0.19,
+    4.43
+   ],
+   "z_approx": 1.77,
+   "p_approx": 0.07603949821433378,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/IDF_p2/sym",
+   "est_pp": -1.02,
+   "CI95": [
+    -3.48,
+    1.47
+   ],
+   "z_approx": 0.81,
+   "p_approx": 0.41745552344544823,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/IDF_p2/qscale",
+   "est_pp": 2.61,
+   "CI95": [
+    -0.12,
+    5.3
+   ],
+   "z_approx": 1.88,
+   "p_approx": 0.05951933977600592,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/SHIFT_m1/sym",
+   "est_pp": -1.06,
+   "CI95": [
+    -2.02,
+    -0.03
+   ],
+   "z_approx": 2.08,
+   "p_approx": 0.03717729205905142,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/SHIFT_m1/qscale",
+   "est_pp": 1.71,
+   "CI95": [
+    -0.34,
+    3.85
+   ],
+   "z_approx": 1.6,
+   "p_approx": 0.10928267143541529,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/SHIFT_m2/sym",
+   "est_pp": -1.88,
+   "CI95": [
+    -2.88,
+    -0.72
+   ],
+   "z_approx": 3.41,
+   "p_approx": 0.0006422980762783318,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/SHIFT_m2/qscale",
+   "est_pp": -0.35,
+   "CI95": [
+    -2.34,
+    1.61
+   ],
+   "z_approx": 0.35,
+   "p_approx": 0.7255391395491018,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/SHIFT_m4/sym",
+   "est_pp": -1.84,
+   "CI95": [
+    -3.93,
+    0.32
+   ],
+   "z_approx": 1.7,
+   "p_approx": 0.08968909539697299,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/RealTalk/SHIFT_m4/qscale",
+   "est_pp": 0.41,
+   "CI95": [
+    -1.46,
+    2.35
+   ],
+   "z_approx": 0.42,
+   "p_approx": 0.6715736801049266,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/IDF_p0.5/sym",
+   "est_pp": -0.8,
+   "CI95": [
+    -2.4,
+    1.05
+   ],
+   "z_approx": 0.92,
+   "p_approx": 0.3600821220871826,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/IDF_p0.5/qscale",
+   "est_pp": -0.69,
+   "CI95": [
+    -1.49,
+    0.15
+   ],
+   "z_approx": 1.66,
+   "p_approx": 0.09762507274673181,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/IDF_p1/sym",
+   "est_pp": -2.01,
+   "CI95": [
+    -3.43,
+    -0.68
+   ],
+   "z_approx": 2.87,
+   "p_approx": 0.004108557336073415,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/IDF_p1/qscale",
+   "est_pp": -1.17,
+   "CI95": [
+    -2.16,
+    -0.29
+   ],
+   "z_approx": 2.44,
+   "p_approx": 0.014603653281308429,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/IDF_p2/sym",
+   "est_pp": -3.01,
+   "CI95": [
+    -5.49,
+    -1.0
+   ],
+   "z_approx": 2.62,
+   "p_approx": 0.00874130515901421,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/IDF_p2/qscale",
+   "est_pp": -1.76,
+   "CI95": [
+    -2.78,
+    -0.74
+   ],
+   "z_approx": 3.38,
+   "p_approx": 0.0007138769765065196,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/SHIFT_m1/sym",
+   "est_pp": -0.33,
+   "CI95": [
+    -1.1,
+    0.33
+   ],
+   "z_approx": 0.92,
+   "p_approx": 0.358867219100377,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/SHIFT_m1/qscale",
+   "est_pp": 0.71,
+   "CI95": [
+    -0.5,
+    2.01
+   ],
+   "z_approx": 1.11,
+   "p_approx": 0.2663055386113784,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/SHIFT_m2/sym",
+   "est_pp": 0.19,
+   "CI95": [
+    -1.61,
+    2.11
+   ],
+   "z_approx": 0.2,
+   "p_approx": 0.8441065370267081,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/SHIFT_m2/qscale",
+   "est_pp": 0.66,
+   "CI95": [
+    -0.45,
+    1.95
+   ],
+   "z_approx": 1.09,
+   "p_approx": 0.2778337786987157,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/SHIFT_m4/sym",
+   "est_pp": -0.91,
+   "CI95": [
+    -2.7,
+    0.78
+   ],
+   "z_approx": 1.03,
+   "p_approx": 0.30461233045688485,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr/fr3_contrasts/PerLTQA/SHIFT_m4/qscale",
+   "est_pp": 0.31,
+   "CI95": [
+    -0.6,
+    1.37
+   ],
+   "z_approx": 0.61,
+   "p_approx": 0.5413037589056624,
+   "n": null,
+   "clusters": null,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/A_this_round/contrasts/rare/fr3",
+   "est_pp": 4.78,
+   "CI95": [
+    0.69,
+    8.43
+   ],
+   "z_approx": 2.42,
+   "p_approx": 0.01539825733155583,
+   "n": 412,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/A_this_round/contrasts/rare/hit10",
+   "est_pp": 0.49,
+   "CI95": [
+    -4.75,
+    3.94
+   ],
+   "z_approx": 0.22,
+   "p_approx": 0.8265731779483769,
+   "n": 412,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/A_this_round/contrasts/mid/fr3",
+   "est_pp": -0.2,
+   "CI95": [
+    -4.24,
+    3.82
+   ],
+   "z_approx": 0.1,
+   "p_approx": 0.9216440475495493,
+   "n": 153,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/A_this_round/contrasts/mid/hit10",
+   "est_pp": -2.61,
+   "CI95": [
+    -7.91,
+    2.44
+   ],
+   "z_approx": 0.99,
+   "p_approx": 0.3220266483949167,
+   "n": 153,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/A_this_round/contrasts/common/fr3",
+   "est_pp": -0.75,
+   "CI95": [
+    -2.67,
+    0.78
+   ],
+   "z_approx": 0.85,
+   "p_approx": 0.39334548204081077,
+   "n": 133,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/A_this_round/contrasts/common/hit10",
+   "est_pp": 1.5,
+   "CI95": [
+    -1.34,
+    4.55
+   ],
+   "z_approx": 1.0,
+   "p_approx": 0.31673545186337426,
+   "n": 133,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/B_stricter/contrasts/rare/fr3",
+   "est_pp": 4.83,
+   "CI95": [
+    0.7,
+    8.5
+   ],
+   "z_approx": 2.43,
+   "p_approx": 0.01520917876121256,
+   "n": 408,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/B_stricter/contrasts/rare/hit10",
+   "est_pp": 0.25,
+   "CI95": [
+    -5.0,
+    3.8
+   ],
+   "z_approx": 0.11,
+   "p_approx": 0.9130935845229907,
+   "n": 408,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/B_stricter/contrasts/mid/fr3",
+   "est_pp": -0.22,
+   "CI95": [
+    -4.66,
+    4.16
+   ],
+   "z_approx": 0.1,
+   "p_approx": 0.9222204687614123,
+   "n": 141,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/B_stricter/contrasts/mid/hit10",
+   "est_pp": -1.42,
+   "CI95": [
+    -6.94,
+    3.73
+   ],
+   "z_approx": 0.52,
+   "p_approx": 0.6022112968566892,
+   "n": 141,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/B_stricter/contrasts/common/fr3",
+   "est_pp": -0.68,
+   "CI95": [
+    -2.55,
+    0.67
+   ],
+   "z_approx": 0.83,
+   "p_approx": 0.4042181045438048,
+   "n": 146,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "rarebad/rules/B_stricter/contrasts/common/hit10",
+   "est_pp": 0.68,
+   "CI95": [
+    -2.72,
+    4.29
+   ],
+   "z_approx": 0.38,
+   "p_approx": 0.701429467723049,
+   "n": 146,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/IDF_p0/sym/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    0.0,
+    0.0
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/IDF_p0/qscale/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    0.0,
+    0.0
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/IDF_p0.5/sym/hit10",
+   "est_pp": 0.24,
+   "CI95": [
+    -1.24,
+    1.89
+   ],
+   "z_approx": 0.3,
+   "p_approx": 0.7673502298668549,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/IDF_p0.5/qscale/hit10",
+   "est_pp": 0.34,
+   "CI95": [
+    -0.5,
+    1.06
+   ],
+   "z_approx": 0.85,
+   "p_approx": 0.39649073370597976,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/IDF_p1/sym/hit10",
+   "est_pp": -0.47,
+   "CI95": [
+    -1.54,
+    0.54
+   ],
+   "z_approx": 0.89,
+   "p_approx": 0.3745052074274966,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/IDF_p1/qscale/hit10",
+   "est_pp": -0.03,
+   "CI95": [
+    -1.02,
+    1.02
+   ],
+   "z_approx": 0.06,
+   "p_approx": 0.9485710896883359,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/IDF_p2/sym/hit10",
+   "est_pp": -1.92,
+   "CI95": [
+    -3.62,
+    -0.51
+   ],
+   "z_approx": 2.42,
+   "p_approx": 0.015399994880296582,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/IDF_p2/qscale/hit10",
+   "est_pp": 0.07,
+   "CI95": [
+    -0.96,
+    1.02
+   ],
+   "z_approx": 0.13,
+   "p_approx": 0.8936479270151255,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/SHIFT_m0/sym/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    0.0,
+    0.0
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/SHIFT_m0/qscale/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    0.0,
+    0.0
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/SHIFT_m1/sym/hit10",
+   "est_pp": 1.35,
+   "CI95": [
+    0.24,
+    2.62
+   ],
+   "z_approx": 2.22,
+   "p_approx": 0.026487469970902004,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/SHIFT_m1/qscale/hit10",
+   "est_pp": 1.58,
+   "CI95": [
+    0.69,
+    2.47
+   ],
+   "z_approx": 3.49,
+   "p_approx": 0.00048528891623747186,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/SHIFT_m2/sym/hit10",
+   "est_pp": 0.2,
+   "CI95": [
+    -1.57,
+    2.03
+   ],
+   "z_approx": 0.22,
+   "p_approx": 0.8259019524178914,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/SHIFT_m2/qscale/hit10",
+   "est_pp": 0.54,
+   "CI95": [
+    -0.61,
+    1.53
+   ],
+   "z_approx": 0.99,
+   "p_approx": 0.3221155478870493,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/SHIFT_m4/sym/hit10",
+   "est_pp": -0.51,
+   "CI95": [
+    -1.73,
+    0.58
+   ],
+   "z_approx": 0.86,
+   "p_approx": 0.38946969226302997,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/PerLTQA/contrasts_vs_FULL_pp/SHIFT_m4/qscale/hit10",
+   "est_pp": -0.2,
+   "CI95": [
+    -1.47,
+    0.85
+   ],
+   "z_approx": 0.34,
+   "p_approx": 0.7325162022484827,
+   "n": 2967,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/IDF_p0/sym/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    0.0,
+    0.0
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/IDF_p0/qscale/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    0.0,
+    0.0
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/IDF_p0.5/sym/hit10",
+   "est_pp": -1.99,
+   "CI95": [
+    -5.47,
+    1.69
+   ],
+   "z_approx": 1.09,
+   "p_approx": 0.276577450654944,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/IDF_p0.5/qscale/hit10",
+   "est_pp": -0.99,
+   "CI95": [
+    -3.54,
+    1.84
+   ],
+   "z_approx": 0.72,
+   "p_approx": 0.4696003109103476,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/IDF_p1/sym/hit10",
+   "est_pp": 0.14,
+   "CI95": [
+    -3.22,
+    3.82
+   ],
+   "z_approx": 0.08,
+   "p_approx": 0.9370467268466637,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/IDF_p1/qscale/hit10",
+   "est_pp": -0.43,
+   "CI95": [
+    -3.36,
+    3.11
+   ],
+   "z_approx": 0.26,
+   "p_approx": 0.7964197482360635,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/IDF_p2/sym/hit10",
+   "est_pp": 0.57,
+   "CI95": [
+    -4.01,
+    4.88
+   ],
+   "z_approx": 0.25,
+   "p_approx": 0.8023089003433168,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/IDF_p2/qscale/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    -3.19,
+    2.83
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/SHIFT_m0/sym/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    0.0,
+    0.0
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/SHIFT_m0/qscale/hit10",
+   "est_pp": 0.0,
+   "CI95": [
+    0.0,
+    0.0
+   ],
+   "z_approx": 0.0,
+   "p_approx": 1.0,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/SHIFT_m1/sym/hit10",
+   "est_pp": -0.71,
+   "CI95": [
+    -2.96,
+    1.19
+   ],
+   "z_approx": 0.67,
+   "p_approx": 0.5025543250161766,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/SHIFT_m1/qscale/hit10",
+   "est_pp": -0.28,
+   "CI95": [
+    -2.78,
+    1.93
+   ],
+   "z_approx": 0.24,
+   "p_approx": 0.8135689245742669,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/SHIFT_m2/sym/hit10",
+   "est_pp": -1.99,
+   "CI95": [
+    -4.63,
+    0.74
+   ],
+   "z_approx": 1.45,
+   "p_approx": 0.1475514963766415,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/SHIFT_m2/qscale/hit10",
+   "est_pp": 0.71,
+   "CI95": [
+    -1.36,
+    2.67
+   ],
+   "z_approx": 0.69,
+   "p_approx": 0.489992215170841,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/SHIFT_m4/sym/hit10",
+   "est_pp": -1.7,
+   "CI95": [
+    -4.64,
+    1.2
+   ],
+   "z_approx": 1.14,
+   "p_approx": 0.2531506966142558,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "repr_res/benchmarks/RealTalk/contrasts_vs_FULL_pp/SHIFT_m4/qscale/hit10",
+   "est_pp": -0.28,
+   "CI95": [
+    -2.4,
+    1.61
+   ],
+   "z_approx": 0.28,
+   "p_approx": 0.7817010880314603,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/LME/contrasts_vs_BM25_alone/asym96_bm25",
+   "est_pp": -0.38,
+   "CI95": [
+    -1.45,
+    0.57
+   ],
+   "z_approx": 0.74,
+   "p_approx": 0.45764101976660876,
+   "n": 470,
+   "clusters": 470,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/LME/contrasts_vs_BM25_alone/float_raw32_bm25",
+   "est_pp": -0.27,
+   "CI95": [
+    -1.17,
+    0.48
+   ],
+   "z_approx": 0.63,
+   "p_approx": 0.5272182610948148,
+   "n": 470,
+   "clusters": 470,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/LME/contrasts_vs_BM25_alone/float_std32_bm25",
+   "est_pp": 0.02,
+   "CI95": [
+    -0.53,
+    0.46
+   ],
+   "z_approx": 0.07,
+   "p_approx": 0.9441936596389578,
+   "n": 470,
+   "clusters": 470,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/LME/contrasts_vs_BM25_alone/hamming96_bm25",
+   "est_pp": 0.2,
+   "CI95": [
+    -0.94,
+    1.3
+   ],
+   "z_approx": 0.35,
+   "p_approx": 0.7228498702920818,
+   "n": 470,
+   "clusters": 470,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/LME/contrasts_vs_BM25_alone/qscale96_bm25",
+   "est_pp": -0.33,
+   "CI95": [
+    -1.38,
+    0.62
+   ],
+   "z_approx": 0.65,
+   "p_approx": 0.5180313609631323,
+   "n": 470,
+   "clusters": 470,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/LoCoMo/contrasts_vs_BM25_alone/asym96_bm25",
+   "est_pp": 0.66,
+   "CI95": [
+    -0.13,
+    1.48
+   ],
+   "z_approx": 1.61,
+   "p_approx": 0.10703751892356046,
+   "n": 1531,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/LoCoMo/contrasts_vs_BM25_alone/float_raw32_bm25",
+   "est_pp": 2.32,
+   "CI95": [
+    1.35,
+    3.5
+   ],
+   "z_approx": 4.22,
+   "p_approx": 2.4521657454017325e-05,
+   "n": 1531,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "T2/LoCoMo/contrasts_vs_BM25_alone/float_std32_bm25",
+   "est_pp": 1.47,
+   "CI95": [
+    0.99,
+    1.92
+   ],
+   "z_approx": 6.18,
+   "p_approx": 6.394420634372136e-10,
+   "n": 1531,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "T2/LoCoMo/contrasts_vs_BM25_alone/hamming96_bm25",
+   "est_pp": 0.43,
+   "CI95": [
+    -0.8,
+    1.54
+   ],
+   "z_approx": 0.72,
+   "p_approx": 0.47193291219271416,
+   "n": 1531,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/LoCoMo/contrasts_vs_BM25_alone/qscale96_bm25",
+   "est_pp": 1.07,
+   "CI95": [
+    0.44,
+    1.72
+   ],
+   "z_approx": 3.27,
+   "p_approx": 0.001078161911797919,
+   "n": 1531,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/PerLTQA/contrasts_vs_BM25_alone/asym96_bm25",
+   "est_pp": 0.38,
+   "CI95": [
+    -0.02,
+    0.76
+   ],
+   "z_approx": 1.9,
+   "p_approx": 0.05721658668575905,
+   "n": 8265,
+   "clusters": 30,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/PerLTQA/contrasts_vs_BM25_alone/float_raw32_bm25",
+   "est_pp": 1.13,
+   "CI95": [
+    0.85,
+    1.44
+   ],
+   "z_approx": 7.49,
+   "p_approx": 6.926222548670884e-14,
+   "n": 8265,
+   "clusters": 30,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "T2/PerLTQA/contrasts_vs_BM25_alone/float_std32_bm25",
+   "est_pp": 0.29,
+   "CI95": [
+    0.1,
+    0.47
+   ],
+   "z_approx": 3.01,
+   "p_approx": 0.0026085742058316354,
+   "n": 8265,
+   "clusters": 30,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/PerLTQA/contrasts_vs_BM25_alone/hamming96_bm25",
+   "est_pp": 0.4,
+   "CI95": [
+    -0.01,
+    0.81
+   ],
+   "z_approx": 1.91,
+   "p_approx": 0.05571464227029724,
+   "n": 8265,
+   "clusters": 30,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "T2/PerLTQA/contrasts_vs_BM25_alone/qscale96_bm25",
+   "est_pp": 0.33,
+   "CI95": [
+    -0.02,
+    0.67
+   ],
+   "z_approx": 1.87,
+   "p_approx": 0.06128377626327819,
+   "n": 8265,
+   "clusters": 30,
+   "note": "",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_PQ/NO_LSA-qscale/FR@3",
+   "est_pp": -1.23,
+   "CI95": [
+    -2.16,
+    -0.3
+   ],
+   "z_approx": 2.59,
+   "p_approx": 0.009534821870129854,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_PQ/NO_CHAR-sym/Hit@10",
+   "est_pp": 1.39,
+   "CI95": [
+    0.35,
+    2.48
+   ],
+   "z_approx": 2.56,
+   "p_approx": 0.010523914412237411,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_PQ/NO_CHAR-sym/FR@3",
+   "est_pp": 3.13,
+   "CI95": [
+    1.96,
+    4.27
+   ],
+   "z_approx": 5.31,
+   "p_approx": 1.0871752988906393e-07,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "abl_PQ/NO_CHAR-qscale/Hit@10",
+   "est_pp": 0.83,
+   "CI95": [
+    0.14,
+    1.49
+   ],
+   "z_approx": 2.41,
+   "p_approx": 0.01594928194140296,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_PQ/NO_CHAR-qscale/FR@3",
+   "est_pp": 2.26,
+   "CI95": [
+    1.6,
+    2.96
+   ],
+   "z_approx": 6.51,
+   "p_approx": 7.31181749596592e-11,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "abl_PQ/WORD_ONLY-sym/Hit@10",
+   "est_pp": 2.13,
+   "CI95": [
+    0.86,
+    3.48
+   ],
+   "z_approx": 3.19,
+   "p_approx": 0.0014382128823315337,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_PQ/WORD_ONLY-sym/FR@3",
+   "est_pp": 2.4,
+   "CI95": [
+    1.13,
+    3.69
+   ],
+   "z_approx": 3.67,
+   "p_approx": 0.00023784941465352215,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_PQ/WORD_ONLY-qscale/Hit@10",
+   "est_pp": 1.37,
+   "CI95": [
+    0.5,
+    2.21
+   ],
+   "z_approx": 3.14,
+   "p_approx": 0.0016861088868614757,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_PQ/WORD_ONLY-qscale/FR@3",
+   "est_pp": 2.09,
+   "CI95": [
+    1.24,
+    2.94
+   ],
+   "z_approx": 4.82,
+   "p_approx": 1.4406703627744328e-06,
+   "n": 8265,
+   "clusters": 30,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "abl_RT/NO_LSA-qscale/Hit@10",
+   "est_pp": 2.41,
+   "CI95": [
+    -0.28,
+    5.15
+   ],
+   "z_approx": 1.74,
+   "p_approx": 0.08189136055002391,
+   "n": 705,
+   "clusters": 10,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_RT/NO_LSA-qscale/FR@3",
+   "est_pp": 3.44,
+   "CI95": [
+    -0.56,
+    7.56
+   ],
+   "z_approx": 1.66,
+   "p_approx": 0.09677579211220154,
+   "n": 705,
+   "clusters": 10,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": false,
+    "per_experiment_50": false,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "abl_RT/NO_CHAR-qscale/Hit@10",
+   "est_pp": -5.82,
+   "CI95": [
+    -8.85,
+    -2.76
+   ],
+   "z_approx": 3.75,
+   "p_approx": 0.00017952854205250597,
+   "n": 705,
+   "clusters": 10,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  },
+  {
+   "claim": "abl_RT/WORD_ONLY-qscale/Hit@10",
+   "est_pp": -3.4,
+   "CI95": [
+    -5.36,
+    -1.63
+   ],
+   "z_approx": 3.57,
+   "p_approx": 0.0003526582129882483,
+   "n": 705,
+   "clusters": 10,
+   "note": "transcribed from worker REPORT.md table",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": false
+   }
+  },
+  {
+   "claim": "firststage/RRF-CODE/pool100",
+   "est_pp": 5.67,
+   "CI95": [
+    3.23,
+    8.2
+   ],
+   "z_approx": 4.47,
+   "p_approx": 7.74505972912201e-06,
+   "n": 705,
+   "clusters": 10,
+   "note": "",
+   "survives": {
+    "T2_only_15": true,
+    "per_experiment_50": true,
+    "project_combos_267": true
+   }
+  }
+ ]
+}

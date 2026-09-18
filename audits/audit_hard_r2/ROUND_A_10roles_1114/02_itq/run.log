@@ -1,0 +1,9 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/02_itq (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. ITQ-vs-rotation audit complete, all deliverables in `audit_hard_r2/02_itq/`.
+
+Outcome: the prior audit's flaws are real (own code documents changed ties and a single ITQ fit). Under the exact coordinator tie rule and pipeline, with 5 ITQ inits plus paired same-seed random controls: RealTalk full cohort (n=705) shows ITQ below its paired random rotation on qscale at all 5 seeds (−2.41/−1.13/−0.14/−1.42/−2.27pp), with the ITQ range entirely below the RAND range; sym is null-scale mixed. PerLTQA 5-archive subset is mixed-sign null — **no full-cohort PerLTQA claim**. Loss fell in 75/75 fits while RT retrieval moved against ITQ (objective≠retrieval). The codex Haar package measures the same per-entry quantity on synthetic data with non-refit finals and no retrieval — no retrieval/novelty implication, none claimed.
+
+Verification observed: 90/90 FULL gate matches at 0.0 diff, 36/36 tie-equivalence, published contrasts reproduced (−16.88/−2.41/−2.55/−1.84). 637 items reviewed / 25 NOT RUN, mechanically summed in [COVERAGE.csv](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/02_itq/COVERAGE.csv:1). Full detail in [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/02_itq/REPORT.md:1), rows in `per_archive_rows_*.csv`, analysis in `evidence_itq.json`.
+
+Two disclosed deviations: sandbox denies `timeout(1)`, so the compute gate is flock-only (`compute_local.sh`); and only a documented 5-archive PerLTQA subset was run.

@@ -1,0 +1,91 @@
+{
+ "status_D": "tested",
+ "status_C": "tested",
+ "parity_pass": "12/12",
+ "D2_success": "0/12",
+ "D3_success": "0/12",
+ "agg_parity_rel": {
+  "n": 12,
+  "median": 0.0,
+  "min": 0.0,
+  "max": 0.0
+ },
+ "agg_D2": {
+  "fevals": {
+   "n": 0,
+   "median": null,
+   "min": null,
+   "max": null
+  }
+ },
+ "wall_s": 74.64652212499999,
+ "peak_rss_mb": 1310.41015625,
+ "model": {
+  "n_layers": 30,
+  "d": 576,
+  "n_q": 9,
+  "n_kv": 3,
+  "head_dim": 64,
+  "kv_width": 192,
+  "native_dtype": "bfloat16",
+  "runtime_dtype": "torch.float32",
+  "k_proj_shape": [
+   192,
+   576
+  ],
+  "v_proj_shape": [
+   192,
+   576
+  ]
+ },
+ "env": {
+  "torch_version": "2.14.0+cpu",
+  "threads": 1,
+  "cmd": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=$HOME/muse-work/fpylibs:$HOME/muse-work/mlpy OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 run.py"
+ },
+ "protocol": "/mnt/c/Users/MDP/dev/llmzip-work/parallel_ideas_r1/inverse/PROTOCOL.md",
+ "note": "Exploratory pilot; fixtures are NOT a benchmark; timing exploratory (shared CPU).",
+ "timing": {
+  "t_direct_ms_med": 3.62455000001205,
+  "D2_wall_s_med": 0.02907505049998349,
+  "D3_wall_s_med": 1.9813287639999828,
+  "D3_n_jvp_med": 158.5
+ },
+ "C_recon_med": {
+  "C1_noledger": 0.8868258595466614,
+  "C3_ledger": 0.3293885439634323,
+  "C2_direct4bit": 0.3872744143009186
+ },
+ "cont_L14_means": {
+  "C1_noledger": {
+   "mean_nll_diff": -0.007591156056150794,
+   "mean_kl": 0.02120675409969408,
+   "top1_agree": 0.78125
+  },
+  "C2_direct4bit": {
+   "mean_nll_diff": 5.538437077892013,
+   "mean_kl": 4.832665860652924,
+   "top1_agree": 0.0625
+  },
+  "C3_ledger": {
+   "mean_nll_diff": -0.006653116666711867,
+   "mean_kl": 0.002693497710424708,
+   "top1_agree": 1.0
+  }
+ },
+ "seg": {
+  "D2_success": 0,
+  "D3_success": 0,
+  "n": 4,
+  "parity": [
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "status_detail": {
+  "D": "tested: 12/12 parity-pass cases inverted within budget, 0/12 met thresholds; failures retained",
+  "C": "tested: ledger+controls on 12/12; continuation tested on 4/4 (L14); segment ledger tested 4/4"
+ }
+}

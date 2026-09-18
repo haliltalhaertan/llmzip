@@ -1,0 +1,41 @@
+# Commands, environment, and source evidence (kv_repair)
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+Runtime: `$HOME/muse-work/ml-python` (shim: `PYTHONPATH=$HOME/muse-work/fpylibs:$HOME/muse-work/mlpy /usr/bin/python3 "$@"`).
+Observed env (also in `source_hashes.json:env`): python 3.14.4, torch 2.14.0+cpu, transformers 5.17.0, threads 1.
+Model/fixture paths (READ-ONLY, never written): `/mnt/c/Users/MDP/dev/llmzip-work/parallel_ideas_r1/model`, `/mnt/c/Users/MDP/dev/llmzip-work/parallel_ideas_r1/text_fixtures.json`.
+Torch: single thread, CPU only. No APIs, no nested workers, no network (local_files_only), no package installs.
+Session wall used: a few minutes total (repaired run wall_s 35.6 s + heavy tests 9.9 s + probes); within the 25 min / 1800 s budget.
+
+## Exact commands (cwd = kv_repair unless noted)
+
+1. Freeze originals:
+   `sha256sum /mnt/c/Users/MDP/dev/llmzip-work/parallel_ideas_r1/kv/* > ORIGINAL_SHA256_BEFORE.txt`
+2. RED probe (scratch logic kept at `/tmp/red_probe.py`, copy in `RED_probe_offbyone_scratch.py`; reads original module, never its main):
+   `cd /tmp && PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 ~/muse-work/ml-python red_probe.py > .../kv_repair/RED_probe_output.txt 2>&1`
+   Observed: max|cached[t]-fullseq[ctx+t]| = 2.8e-05..3.8e-05 (ALL_CLOSE True); old/new targets differ 8/8.
+3. RED acceptance (before repaired run.py existed):
+   `PYTHONDONTWRITEBYTECODE=1 ~/muse-work/ml-python tests.py` -> `ModuleNotFoundError: No module named 'run'` (log: `RED_ACCEPTANCE.txt`).
+4. Light GREEN after implementation (incl. one test-inequality fix, see below):
+   `PYTHONDONTWRITEBYTECODE=1 ~/muse-work/ml-python tests.py` -> 20 tests OK, 7 heavy skipped.
+5. Repaired execution (all 8 cases x 5 arms):
+   `PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 ~/muse-work/ml-python run.py`
+   Observed stdout tail: `{"status": "ok", "cases": [8 cases], "failures": [], "rope_post_rope": true, "peak_rss_kb": 1338976}`.
+   In-run assertions passed: exactly 320 unique shifted-v2 identity rows; summary recomputed from rows.
+6. Full GREEN (light + heavy):
+   `PYTHONDONTWRITEBYTECODE=1 ~/muse-work/ml-python tests.py` (20 OK, 7 skipped) and
+   `PYTHONDONTWRITEBYTECODE=1 KV_HEAVY=1 ~/muse-work/ml-python tests.py` (20 OK, 0 skipped) — log: `GREEN_LOG.txt`.
+   Observed: A1 worst logit diff 3.81e-05 / logprob 9.49e-06; A2 8/8; A3 delta 3.551 consumed; A3-neg 0.0 not consumed.
+7. Equality proof (ad-hoc, read-only over both per_case.jsonl): max|KL_old-KL_new| = 0.0 (256 rows), 0 top1 mismatches, 0/256 dnll unchanged.
+8. After-SHA:
+   `sha256sum .../kv/* > ORIGINAL_SHA256_AFTER.txt; diff ORIGINAL_SHA256_BEFORE.txt ORIGINAL_SHA256_AFTER.txt` -> identical (no output; ORIGINALS_UNCHANGED).
+
+## Fixes made during the repair session (disclosed, no retuning)
+
+- `tests.py::TestAccounting::test_crossover_is_equality_point`: first version asserted the N=66 inequality BACKWARDS (assertLess instead of assertGreater) and failed on the first light run; corrected the TEST (arithmetic: full(66)=3041280 > ridge(66)=3018240). Product code untouched.
+- `run.py` was written fresh in this directory (copy + v2-1..v2-6 deltas); original `../kv/run.py` never imported for execution and never modified (SHA proof above).
+
+## Source SHAs (repaired code + inputs; see `source_hashes.json` for full record)
+
+Model config/tokenizer/weights SHAs match the original `source_hashes.json` values (same read-only files).

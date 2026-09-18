@@ -1,0 +1,134 @@
+{
+ "RT05_k96": {
+  "archive": "RT05",
+  "k_requested": 96,
+  "k_eff": 96,
+  "N_docs": 410,
+  "V_word": 9820,
+  "V_char": 22378,
+  "d_lsa": 32,
+  "D_mixed": 32230,
+  "s96_components_shape": [
+   96,
+   32230
+  ],
+  "s96_components_nbytes_f64": 24752640,
+  "s96_components_nbytes_f32": 12376320,
+  "sv_components_shape": [
+   32,
+   9820
+  ],
+  "sv_components_nbytes_f64": 2513920,
+  "sv_components_nbytes_f32": 1256960,
+  "mu_shape": [
+   1,
+   96
+  ],
+  "mu_nbytes_f64": 768,
+  "mu_nbytes_f32": 384,
+  "sigma_nbytes_f64": 768,
+  "sigma_nbytes_f32": 384,
+  "packed_bits_per_doc": 12.0,
+  "packed_total": 4920,
+  "word_vocab": 9820,
+  "char_vocab": 22378,
+  "word_idf_nbytes_f64": 78560,
+  "char_idf_nbytes_f64": 179024,
+  "itq_R_nbytes_f64": 73728,
+  "itq_R_nbytes_f32": 36864,
+  "Z_shape": [
+   410,
+   32230
+  ],
+  "word_terms_utf8": 117803,
+  "char_terms_utf8": 96280
+ },
+ "RT05_k192": {
+  "archive": "RT05",
+  "k_requested": 192,
+  "k_eff": 192,
+  "N_docs": 410,
+  "V_word": 9820,
+  "V_char": 22378,
+  "d_lsa": 32,
+  "D_mixed": 32230,
+  "s96_components_shape": [
+   192,
+   32230
+  ],
+  "s96_components_nbytes_f64": 49505280,
+  "s96_components_nbytes_f32": 24752640,
+  "sv_components_shape": [
+   32,
+   9820
+  ],
+  "sv_components_nbytes_f64": 2513920,
+  "sv_components_nbytes_f32": 1256960,
+  "mu_shape": [
+   1,
+   192
+  ],
+  "mu_nbytes_f64": 1536,
+  "mu_nbytes_f32": 768,
+  "sigma_nbytes_f64": 1536,
+  "sigma_nbytes_f32": 768,
+  "packed_bits_per_doc": 24.0,
+  "packed_total": 9840,
+  "word_vocab": 9820,
+  "char_vocab": 22378,
+  "word_idf_nbytes_f64": 78560,
+  "char_idf_nbytes_f64": 179024,
+  "itq_R_nbytes_f64": 294912,
+  "itq_R_nbytes_f32": 147456,
+  "Z_shape": [
+   410,
+   32230
+  ],
+  "word_terms_utf8": 117803,
+  "char_terms_utf8": 96280
+ },
+ "RT05_k384": {
+  "archive": "RT05",
+  "k_requested": 384,
+  "k_eff": 384,
+  "N_docs": 410,
+  "V_word": 9820,
+  "V_char": 22378,
+  "d_lsa": 32,
+  "D_mixed": 32230,
+  "s96_components_shape": [
+   384,
+   32230
+  ],
+  "s96_components_nbytes_f64": 99010560,
+  "s96_components_nbytes_f32": 49505280,
+  "sv_components_shape": [
+   32,
+   9820
+  ],
+  "sv_components_nbytes_f64": 2513920,
+  "sv_components_nbytes_f32": 1256960,
+  "mu_shape": [
+   1,
+   384
+  ],
+  "mu_nbytes_f64": 3072,
+  "mu_nbytes_f32": 1536,
+  "sigma_nbytes_f64": 3072,
+  "sigma_nbytes_f32": 1536,
+  "packed_bits_per_doc": 48.0,
+  "packed_total": 19680,
+  "word_vocab": 9820,
+  "char_vocab": 22378,
+  "word_idf_nbytes_f64": 78560,
+  "char_idf_nbytes_f64": 179024,
+  "itq_R_nbytes_f64": 1179648,
+  "itq_R_nbytes_f32": 589824,
+  "Z_shape": [
+   410,
+   32230
+  ],
+  "word_terms_utf8": 117803,
+  "char_terms_utf8": 96280
+ }
+}

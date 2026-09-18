@@ -1,0 +1,38 @@
+def c1_gate(benchmark_results):
+    """Fail closed unless the SAME <=48 B arm meets C1 on both datasets.
+
+    Inputs are FR@3 percentage-point contrasts and their confidence intervals.
+    Missing evidence is not a pass. This validates supplied intervals; it does
+    not calculate them or establish their provenance/statistical adequacy.
+    """
+    import math
+
+    required = ("RealTalk", "PerLTQA")
+    if not isinstance(benchmark_results, dict):
+        return False
+    if any(not isinstance(benchmark_results.get(ds), dict) for ds in required):
+        return False
+    eligible = {f"{b}B/{sc}" for b in (12, 24, 48) for sc in ("sym", "qscale")}
+    common = eligible.intersection(*(set(benchmark_results[ds]) for ds in required))
+    for arm in common:
+        valid = True
+        for ds in required:
+            row = benchmark_results[ds][arm]
+            if not isinstance(row, dict):
+                valid = False
+                break
+            values = [row.get(k) for k in
+                      ("vs_strongest_bm25_fr3_pp", "ci_lo", "ci_hi")]
+            if any(isinstance(v, bool) or not isinstance(v, (int, float))
+                   or not math.isfinite(v) for v in values):
+                valid = False
+                break
+            estimate, lo, hi = values
+            if not (-100 <= lo <= estimate <= hi <= 100
+                    and estimate >= 2.0 and lo > 0):
+                valid = False
+                break
+        if valid:
+            return True
+    return False
+

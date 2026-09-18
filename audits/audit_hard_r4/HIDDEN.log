@@ -1,0 +1,7 @@
+acilacak dosya: 113
+islenen 113/113 | model={'jev-1.13.0'} | token in=435231 out=14456
+  H3_ABANDONED_UNRECORDED          60
+  H4_DEFECT_RECORD_CLOSED          21
+  H5_NO_ACTION                     19
+  H2_OPEN_DEFECT_RECORD            12
+  H1_CONTRADICTION_CANDIDATE       1

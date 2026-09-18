@@ -1,0 +1,10 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/08_storage_contracts (cwd default)
+muse: workspace trust: trusted source=run-flag
+Audit complete. All deliverables are in `audit_hard_r2/08_storage_contracts/`: [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/08_storage_contracts/REPORT.md), [COVERAGE.csv](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/08_storage_contracts/COVERAGE.csv) (35 rows, mechanically counted: 21 verified live, 5 sampled, 9 NOT RUN), `evidence.json`, two probe scripts with passing outputs, and 16 branch-file copies under `src/`.
+
+Key findings:
+
+- Denominator math is correct as specified. Re-executed on isolated copies: 2×231606=463212 (the 12→6 B/vector halving), unique-by-archive dedup, and rejection of conflicting/unknown/outside-roster/malformed rows (7/7 probe PASS). The five pure helpers are textually identical between candidate and integrated gate; both SHA pins match frozen blobs.
+- BULGU-1 reproduced exactly: archived v2 certifies ISOLATED_TIES/-1 on the POC while exact samples give VARIES; v3 gives VARIES, is scale-invariant at k=1/7/100/1000, and refuses invalid-J as UNRESOLVED (5/5 probe PASS). Validator independence verified (imports only `fractions`; no POC literals in v3).
+- Obligation count: 5 fixed executably but unaccepted (denominator, race, hashlib, BULGU-1, BULGU-5); **0 genuinely closed by acceptance**. Governance repair is explicitly PREPARED/NOT ACCEPTED with L-096 still unmerged; no repair branch is merged to main; BULGU-2/3/4/6/7/8 and F-01..F-07 remain OPEN with package REQUEST_CHANGES standing.
+- Limits: the 940-copy E2E, concurrency/security suites, and 684-case coordinator oracle are receipt-read only (NOT RUN — full chain materialization plus thread-timing exceed this slot's budget); anchor constants read, not re-derived; same-id refusal path not located. No exploit or deserialization probing performed. Out-of-scope for this role: metrics/ITQ/geometry/retrieval/F1/dense-residual/KV/portability/whole-project adjudication (roles 01–07, 09–10).

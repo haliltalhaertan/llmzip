@@ -1,0 +1,18 @@
+[topk] verified equivalent on 18 samples
+[pqsub5] Cai Xiuying: nq=409 FULL sym=72.3716 qscale=79.2176 gate_ok
+[pqsub5] Cao Lili: nq=302 FULL sym=85.4305 qscale=87.7483 gate_ok
+[pqsub5] Feng Wei: nq=324 FULL sym=69.7531 qscale=75.3086 gate_ok
+[pqsub5] Han Gang: nq=259 FULL sym=72.5869 qscale=79.9228 gate_ok
+[pqsub5] He Feng: nq=311 FULL sym=88.7460 qscale=90.6752 gate_ok
+[pqsub5] wrote 110 rows gate_maxdiff=0.000e+00
+  seed 20260916 sym: ITQ=78.5670 RAND=77.3209 ITQ-RAND=+1.2461
+  seed 20260916 qscale: ITQ=82.0561 RAND=81.2461 ITQ-RAND=+0.8100
+  seed 20260917 sym: ITQ=78.8785 RAND=78.1308 ITQ-RAND=+0.7477
+  seed 20260917 qscale: ITQ=82.4299 RAND=83.2399 ITQ-RAND=-0.8100
+  seed 20260918 sym: ITQ=76.5109 RAND=78.6916 ITQ-RAND=-2.1807
+  seed 20260918 qscale: ITQ=80.4984 RAND=81.1215 ITQ-RAND=-0.6231
+  seed 7 sym: ITQ=77.6947 RAND=79.0031 ITQ-RAND=-1.3084
+  seed 7 qscale: ITQ=80.9969 RAND=82.2430 ITQ-RAND=-1.2461
+  seed 42 sym: ITQ=79.1277 RAND=79.0654 ITQ-RAND=+0.0623
+  seed 42 qscale: ITQ=81.1215 RAND=81.9315 ITQ-RAND=-0.8100
+wall=6.4s

@@ -1,0 +1,42 @@
+{
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "tokenizer": "lowercased Unicode word regex \\w+",
+  "bm25": {
+    "k1": 1.5,
+    "b": 0.75,
+    "idf": "log((N-df+0.5)/(df+0.5)+1)",
+    "fit": "per-archive DOCUMENTS ONLY"
+  },
+  "tfidf": {
+    "tf": "raw count",
+    "idf": "log((1+N)/(1+df))+1 (smooth)",
+    "score": "cosine, zero-norm rows score 0",
+    "fit": "per-archive DOCUMENTS ONLY (idf from docs)"
+  },
+  "tie_rule": "desc score, asc SHA256('top10-r1|archive|row'), asc row; exactly 10; gold-unaware",
+  "zero_vector": "empty token seq -> zero vector; nonfinite -> -inf (none observed)",
+  "arms": {
+    "bm25": {
+      "n": 705,
+      "hit_at_10": 0.5418439716312057,
+      "recall_at_10": 0.43159947741694654,
+      "ndcg_at_10": 0.3427775553126067,
+      "expected_hit_at_10": 0.43159947741694654,
+      "elapsed_s": 23.23938536643982
+    },
+    "tfidf": {
+      "n": 705,
+      "hit_at_10": 0.5290780141843971,
+      "recall_at_10": 0.41906204636887723,
+      "ndcg_at_10": 0.31664654209835624,
+      "expected_hit_at_10": 0.41906204636887723,
+      "elapsed_s": 25.797457456588745
+    }
+  },
+  "elapsed_s": 49.09434413909912
+}

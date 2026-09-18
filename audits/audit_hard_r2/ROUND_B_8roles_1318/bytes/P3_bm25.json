@@ -1,0 +1,193 @@
+{
+ "per_archive": {
+  "RT01": {
+   "N": 662,
+   "raw_text_B": 97839,
+   "coarse": {
+    "vocab": 2462,
+    "pickle": 140402,
+    "compact": 64558,
+    "N": 662,
+    "ntok_total": 18802
+   },
+   "frozen": {
+    "vocab": 2331,
+    "pickle": 106319,
+    "compact": 50041,
+    "N": 662,
+    "ntok_total": 9807
+   }
+  },
+  "RT02": {
+   "N": 476,
+   "raw_text_B": 101005,
+   "coarse": {
+    "vocab": 2816,
+    "pickle": 143725,
+    "compact": 67458,
+    "N": 476,
+    "ntok_total": 18707
+   },
+   "frozen": {
+    "vocab": 2685,
+    "pickle": 114111,
+    "compact": 54559,
+    "N": 476,
+    "ntok_total": 9802
+   }
+  },
+  "RT03": {
+   "N": 453,
+   "raw_text_B": 95570,
+   "coarse": {
+    "vocab": 2676,
+    "pickle": 136323,
+    "compact": 64157,
+    "N": 453,
+    "ntok_total": 17429
+   },
+   "frozen": {
+    "vocab": 2548,
+    "pickle": 108620,
+    "compact": 52031,
+    "N": 453,
+    "ntok_total": 9303
+   }
+  },
+  "RT04": {
+   "N": 422,
+   "raw_text_B": 106365,
+   "coarse": {
+    "vocab": 2382,
+    "pickle": 133730,
+    "compact": 63453,
+    "N": 422,
+    "ntok_total": 18760
+   },
+   "frozen": {
+    "vocab": 2257,
+    "pickle": 103910,
+    "compact": 50014,
+    "N": 422,
+    "ntok_total": 9930
+   }
+  },
+  "RT05": {
+   "N": 410,
+   "raw_text_B": 105956,
+   "coarse": {
+    "vocab": 2630,
+    "pickle": 140177,
+    "compact": 66420,
+    "N": 410,
+    "ntok_total": 19009
+   },
+   "frozen": {
+    "vocab": 2501,
+    "pickle": 110406,
+    "compact": 53026,
+    "N": 410,
+    "ntok_total": 10037
+   }
+  },
+  "RT06": {
+   "N": 1548,
+   "raw_text_B": 97609,
+   "coarse": {
+    "vocab": 2348,
+    "pickle": 151742,
+    "compact": 68846,
+    "N": 1548,
+    "ntok_total": 19173
+   },
+   "frozen": {
+    "vocab": 2223,
+    "pickle": 110450,
+    "compact": 51726,
+    "N": 1548,
+    "ntok_total": 10262
+   }
+  },
+  "RT07": {
+   "N": 1511,
+   "raw_text_B": 103565,
+   "coarse": {
+    "vocab": 2561,
+    "pickle": 160580,
+    "compact": 73137,
+    "N": 1511,
+    "ntok_total": 19937
+   },
+   "frozen": {
+    "vocab": 2434,
+    "pickle": 119991,
+    "compact": 56296,
+    "N": 1511,
+    "ntok_total": 11073
+   }
+  },
+  "RT08": {
+   "N": 1162,
+   "raw_text_B": 91668,
+   "coarse": {
+    "vocab": 2006,
+    "pickle": 134946,
+    "compact": 60822,
+    "N": 1162,
+    "ntok_total": 18201
+   },
+   "frozen": {
+    "vocab": 1886,
+    "pickle": 96098,
+    "compact": 44661,
+    "N": 1162,
+    "ntok_total": 9435
+   }
+  },
+  "RT09": {
+   "N": 1044,
+   "raw_text_B": 96053,
+   "coarse": {
+    "vocab": 2519,
+    "pickle": 148980,
+    "compact": 68457,
+    "N": 1044,
+    "ntok_total": 19185
+   },
+   "frozen": {
+    "vocab": 2390,
+    "pickle": 109504,
+    "compact": 51819,
+    "N": 1044,
+    "ntok_total": 9655
+   }
+  },
+  "RT10": {
+   "N": 1256,
+   "raw_text_B": 103024,
+   "coarse": {
+    "vocab": 2576,
+    "pickle": 159624,
+    "compact": 73203,
+    "N": 1256,
+    "ntok_total": 20745
+   },
+   "frozen": {
+    "vocab": 2447,
+    "pickle": 117729,
+    "compact": 55567,
+    "N": 1256,
+    "ntok_total": 10906
+   }
+  }
+ },
+ "totals": {
+  "coarse_compact": 670511,
+  "frozen_compact": 519740,
+  "coarse_pickle": 1450229,
+  "frozen_pickle": 1097138,
+  "raw_text": 998654,
+  "coarse_compact_plus_text": 1669165,
+  "frozen_compact_plus_text": 1518394
+ }
+}

@@ -1,0 +1,32 @@
+n=705; distinct qids=705
+M= 10 CODE: hit mine=49.645 stored=49.645 | ceil mine=36.948 stored=36.948 OK
+M= 10 BM25: hit mine=54.184 stored=54.184 | ceil mine=43.160 stored=43.160 OK
+M= 10 RRF: hit mine=55.745 stored=55.745 | ceil mine=42.801 stored=42.801 OK
+M= 20 CODE: hit mine=58.156 stored=58.156 | ceil mine=44.287 stored=44.287 OK
+M= 20 BM25: hit mine=64.397 stored=64.397 | ceil mine=50.439 stored=50.439 OK
+M= 20 RRF: hit mine=62.128 stored=62.128 | ceil mine=49.011 stored=49.011 OK
+M= 50 CODE: hit mine=67.376 stored=67.376 | ceil mine=53.699 stored=53.699 OK
+M= 50 BM25: hit mine=72.199 stored=72.199 | ceil mine=57.053 stored=57.053 OK
+M= 50 RRF: hit mine=72.766 stored=72.766 | ceil mine=58.641 stored=58.641 OK
+M=100 CODE: hit mine=75.603 stored=75.603 | ceil mine=61.303 stored=61.303 OK
+M=100 BM25: hit mine=78.156 stored=78.156 | ceil mine=62.255 stored=62.255 OK
+M=100 RRF: hit mine=81.277 stored=81.277 | ceil mine=66.150 stored=66.150 OK
+M=200 CODE: hit mine=85.248 stored=85.248 | ceil mine=70.450 stored=70.450 OK
+M=200 BM25: hit mine=86.099 stored=86.099 | ceil mine=69.790 stored=69.790 OK
+M=200 RRF: hit mine=88.085 stored=88.085 | ceil mine=73.014 stored=73.014 OK
+M=500 CODE: hit mine=95.177 stored=95.177 | ceil mine=83.845 stored=83.845 OK
+M=500 BM25: hit mine=96.028 stored=96.028 | ceil mine=83.557 stored=83.557 OK
+M=500 RRF: hit mine=97.163 stored=97.163 | ceil mine=85.610 stored=85.610 OK
+max_abs_diff=1.42e-14
+
+CODE Hit@10 n=350 (REPORT 350); in-100-not-10 n=183 (REPORT 183); outside-100 n=172 (REPORT 172)
+sum check: 350+183+172=705 vs n=705
+WROTE realtalk_reachability_qids.json
+@100 both=484 CODE-only=49 (REPORT 49) BM25-only=67 (REPORT 67) neither=105 (REPORT 105)
+both-miss@10 n=270 (REPORT 328); of those outside BOTH top100: 105 (REPORT 170)
+REALTALK M=10: mine=36.9478 rerank_ceiling.json=36.9478 diff=0.00e+00
+REALTALK M=50: mine=53.6994 rerank_ceiling.json=53.6994 diff=0.00e+00
+REALTALK M=100: mine=61.3026 rerank_ceiling.json=61.3026 diff=7.11e-15
+RT_BM25 M=10: mine=43.1599 rerank_ceiling.json=43.1599 diff=0.00e+00
+RT_BM25 M=50: mine=57.0529 rerank_ceiling.json=57.0529 diff=0.00e+00
+RT_BM25 M=100: mine=62.2551 rerank_ceiling.json=62.2551 diff=0.00e+00

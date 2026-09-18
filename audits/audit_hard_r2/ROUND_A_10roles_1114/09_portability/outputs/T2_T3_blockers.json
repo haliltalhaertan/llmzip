@@ -1,0 +1,81 @@
+{
+ "t2": {
+  "package_csvs": [
+   "inventory/literature/LIT_LEDGER.csv",
+   "inventory/results/ledger.csv"
+  ],
+  "has_text_rerank_relative": false,
+  "relative_open": "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/cleanroom/incoming_20260916b/text_rerank_per_query.csv'",
+  "as_shipped_RERANK_CSV": "/mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/extracted/LLMZIP_FIKIR1_METIN_YENIDEN_SIRALAMA_2026-09-16/LLMZIP_FIKIR1_2026-09-16/results/text_rerank_per_query.csv",
+  "as_shipped_exists_here": true,
+  "cleanroom_t2": "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/cleanroom/incoming_20260916b/text_rerank_per_query.csv'",
+  "cleanroom_t2_trace_tail": "Traceback (most recent call last):\n  File \"/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/scripts/probe_t2_t3_blockers.py\", line 46, in <module>\n    dc.t2()\n    ~~~~~^^\n  File \"/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/cleanroom/coordinator/decision_tests_clean.py\", line 58, in t2\n    rows = list(csv.DictReader(open(RERANK_CSV, encoding=\"utf-8\")))\n                               ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/cleanroom/incoming_20260916b/text_rerank_per_query.csv'\n",
+  "ambient_csv_bytes": 13255069,
+  "ambient_csv_rows": 164256,
+  "ambient_csv_header": [
+   "dataset",
+   "archive",
+   "qid",
+   "section",
+   "method",
+   "n_docs",
+   "gold_count",
+   "actual_candidates",
+   "hit3",
+   "fr3",
+   "hit10",
+   "fr10"
+  ]
+ },
+ "t3": {
+  "package_hits": {
+   "perltqa_en_v2.json": [],
+   "perltmem_en_v2.json": [],
+   "cache_arch_eval.pkl": [],
+   "cache_q_eval.pkl": []
+  },
+  "t3_base/perltqa_en_v2.json": "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/cleanroom/t3_base/perltqa_en_v2.json'",
+  "t3_base/perltmem_en_v2.json": "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/cleanroom/t3_base/perltmem_en_v2.json'",
+  "t3_base/cache_arch_eval.pkl": "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/cleanroom/t3_base/cache_arch_eval.pkl'",
+  "t3_base/cache_q_eval.pkl": "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/cleanroom/t3_base/cache_q_eval.pkl'",
+  "t3_ladder_pkg.py_absolute_lines": [
+   "sys.path.insert(0, \"/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit\")",
+   "BASE = \"/mnt/c/Users/MDP/dev/llmzip-work/bench3/PerLTQA/Dataset/en_v2\"",
+   "ARCH_PKL = \"/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/cache_arch_eval.pkl\"",
+   "Q_PKL = \"/mnt/c/Users/MDP/dev/llmzip-work/bench3/runs/b3b_perltqa/cache_q_eval.pkl\"",
+   "json.dump(out, open(\"/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/T3_PERLTQA_KLTN.json\", \"w\"), indent=1)"
+  ],
+  "t3_perltqa_kltn_pkg.py_absolute_lines": [
+   "W = \"/mnt/c/Users/MDP/dev/llmzip-work\""
+  ],
+  "ladder_pkg.py_absolute_lines": [
+   "W = \"/mnt/c/Users/MDP/dev/llmzip-work\""
+  ],
+  "ambient_perltqa_en_v2.json": {
+   "exists": true,
+   "bytes": 6975743
+  },
+  "ambient_perltmem_en_v2.json": {
+   "exists": true,
+   "bytes": 12988820
+  },
+  "ambient_cache_arch_eval.pkl": {
+   "exists": true,
+   "bytes": 9439420
+  },
+  "ambient_cache_q_eval.pkl": {
+   "exists": true,
+   "bytes": 7211278
+  },
+  "ambient_rt_repr_dir": {
+   "exists": true,
+   "bytes": 4096
+  }
+ },
+ "deps": {
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "sentence_transformers": "absent (NOT needed for T1 cleanroom)"
+ }
+}

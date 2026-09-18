@@ -1,0 +1,63 @@
+item_id,area,status,source_or_test,notes
+M01_tie_contract_read,deterministic tie contract,REVIEWED,"orig/audit_baseline_lib.py:79-83, orig/PROTOCOL.md:6","det_top10 sorts (-score, sha256(top10-r1|arch|row), row); exactly 10; gold-unaware; nonfinite to -inf"
+M02_expected_hit_formula_read,exact expected ties vs seeded estimates,REVIEWED,"orig/run_lexical.py:55-76, orig/test_expected_hit.py","producer expected_hit returns exp/|gold| = expected RECALL, not any-gold probability; audit test file already proves with CE fixture"
+M03_gate_docs_read,CI and multiple comparisons,REVIEWED,"orig/PROTOCOL.md, orig/DECISION_TESTS.md, decision_r1/cost/REFEREE.md (read-only source)","PROTOCOL primary Hit@10 + exact expected Hit@10 + archive-cluster boot 2000/s20260915 exploratory; REFEREE primary FR@3 guardrail Hit@10 C1-C4/N/S3; DECISION_TESTS C1/C3/S3"
+M04_decision_code_read,bootstrap cluster unit,REVIEWED,"orig/decision_tests.py.txt:42-50,112-141","boot() paired archive-clustered 20000/s20260916; T1 C1 impl is point-only single-benchmark; strongest-BM25 selected on Hit@10"
+M05_firststage_gates_read,deterministic tie contract,REVIEWED,"published ideas_r1/firststage/firststage.py:159-183+405-460","boot_contrast same cluster method +10-cluster exploratory disclaimer; G6 704/705 PYTHONHASHSEED 1-ulp tie fragility zero-metric-impact disclosed; primary uses sorted-term order"
+M06_lexical_summary_read,exact expected ties vs seeded estimates,REVIEWED,"orig/lexical_summary.json","expected_hit_at_10 bit-identical to recall_at_10 both arms; tie_rule field matches contract"
+F1a_exact_ten_at_boundary,deterministic tie contract,EXACT,scripts/p1_fixtures.py F1,"N=20 12-tied cutoff returns exactly 10, all tied rows below top2"
+F1b_cutoff_all_tied,deterministic tie contract,EXACT,scripts/p1_fixtures.py F1,top[2:] all score 5.0
+F1c_repeat_deterministic,deterministic tie contract,EXACT,scripts/p1_fixtures.py F1,two calls identical
+F1d_archive_salt,deterministic tie contract,EXACT,scripts/p1_fixtures.py F1,RT99 order differs from RT07
+F2a_correct_eq_brute,exact expected ties vs seeded estimates,EXACT,scripts/p1_fixtures.py F2,"CE fixture: correct 0.7 == brute oracle 0.7"
+F2b_producer_eq_recall,exact expected ties vs seeded estimates,EXACT,scripts/p1_fixtures.py F2,"producer 0.4 == (take*gb/B)/|gold|"
+F2c_single_gold_coincide,exact expected ties vs seeded estimates,EXACT,scripts/p1_fixtures.py F2,"1/3 both; explains why single-gold queries never differ"
+F3_hit_vs_fr3,Hit@10 vs FR@3,EXACT,scripts/p1_fixtures.py F3,"same ranking: Hit@10 1.0 vs FR@3 0.25"
+F4a_code_impl_passes,CI and multiple comparisons,EXACT,scripts/p1_fixtures.py F4,"synthetic 10-cluster diff: point +2.78 passes code C1"
+F4b_documented_impl_fails,CI and multiple comparisons,EXACT,scripts/p1_fixtures.py F4,"same diff CI [-8.06,+13.63] fails documented C1"
+D01_export_total,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,"raw RT*.json export holds 705 queries total (pre-filtered)"
+D02_valid_mapping,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,mappable-gold rule keeps 705/705
+D03_RT01_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT01 85/85 n_docs 662
+D04_RT02_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT02 70/70 n_docs 476
+D05_RT03_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT03 73/73 n_docs 453
+D06_RT04_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT04 71/71 n_docs 422
+D07_RT05_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT05 70/70 n_docs 410
+D08_RT06_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT06 74/74 n_docs 1548
+D09_RT07_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT07 70/70 n_docs 1511
+D10_RT08_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT08 70/70 n_docs 1162
+D11_RT09_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT09 63/63 n_docs 1044
+D12_RT10_n,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,RT10 59/59 n_docs 1256
+D13_exclusions,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,"exclusions.json 728/705/23 self-consistent; raw export cannot re-derive the 23 (filter vacuous on export)"
+D14_gold_sizes,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,"319 single-gold; 54.75% multi-gold (max 22)"
+D15_stored_hit10,Hit@10 vs FR@3,EXACT,scripts/p2_realtalk.py,"stored bm25 Hit@10 54.1844 reproduces lexical_summary"
+D16_stored_recall10,Hit@10 vs FR@3,EXACT,scripts/p2_realtalk.py,"stored Recall@10 43.1599 < Hit@10 (partial multi-gold hits)"
+D17_tokenizer_hit_gap,Hit@10 vs FR@3,EXACT,scripts/p2_realtalk.py,"frozen_idfonly minus coarse_textbook Hit@10 +10.3546"
+D18_tokenizer_fr3_gap,Hit@10 vs FR@3,EXACT,scripts/p2_realtalk.py,"same pair FR@3 +6.1176 (headline is metric-specific)"
+D19_strongest_rank_agree,Hit@10 vs FR@3,EXACT,scripts/p2_realtalk.py,"frozen_idfonly top on both metrics here (selection-metric risk noted, not observed)"
+D20_four_bm25,denominator/gold mapping,EXACT,scripts/p2_realtalk.py,"54.18 PROTOCOL-k1.5 / 55.32 coarse / 61.70 frozen-textbook / 65.67 frozen-idfonly"
+D21_lex_expected_eq_recall,exact expected ties vs seeded estimates,MISMATCH,scripts/p2_realtalk.py,"lexical_summary expected_hit == recall bit-exact both arms"
+E01_bm25_tie_rate,exact expected ties vs seeded estimates,EXACT,own aggregation of audit/per_query_bm25_corrected.jsonl,"678/705 no tie at cut; 27 tied"
+E02_corrected_eq_det,exact expected ties vs seeded estimates,EXACT,own aggregation of audit/per_query_bm25_corrected.jsonl,"mean corrected expected-hit 0.541844 == deterministic Hit@10"
+E03_producer_eq_recall_mean,exact expected ties vs seeded estimates,EXACT,own aggregation of audit/per_query_bm25_corrected.jsonl,"mean producer 0.431599 == Recall@10"
+E04_differ_multigold,exact expected ties vs seeded estimates,EXACT,own aggregation of audit/per_query_bm25_corrected.jsonl,"129/705 differ per-query all multi-gold max abs 0.9524"
+T2_rowcount,bootstrap cluster unit,EXACT,scripts/p3_t2.py,164256 rows
+T2_LME_level,Hit@10 vs FR@3,EXACT,scripts/p3_t2.py,qscale96_bm25 level diff 0.0
+T2_LME_est,CI and multiple comparisons,EXACT,scripts/p3_t2.py,est diff 0.0 (-0.3298)
+T2_LME_ci,CI and multiple comparisons,CLOSE,scripts/p3_t2.py,"own 2k/s777 [-1.39,+0.61] vs pub 20k/s20260916 [-1.38,+0.62]; sig and C3 agree"
+T2_LME_clusters,bootstrap cluster unit,REVIEWED,scripts/p3_t2.py,"470 clusters of size 1: archive==query; clustering is a no-op (iid-equivalent)"
+T2_LoCoMo_level,Hit@10 vs FR@3,EXACT,scripts/p3_t2.py,level diff 0.0
+T2_LoCoMo_est,CI and multiple comparisons,EXACT,scripts/p3_t2.py,est diff 0.0 (+1.0652)
+T2_LoCoMo_ci,CI and multiple comparisons,CLOSE,scripts/p3_t2.py,"own [+0.43,+1.73] vs pub [+0.44,+1.72]; sig and C3 agree"
+T2_LoCoMo_clusters,bootstrap cluster unit,REVIEWED,scripts/p3_t2.py,"10 archives sizes 81-197; n=1531 (disputed gold per REPORT s7)"
+T2_PerLTQA_level,Hit@10 vs FR@3,EXACT,scripts/p3_t2.py,level diff 0.0
+T2_PerLTQA_est,CI and multiple comparisons,EXACT,scripts/p3_t2.py,est diff 0.0 (+0.3283)
+T2_PerLTQA_ci,CI and multiple comparisons,CLOSE,scripts/p3_t2.py,"own [-0.03,+0.67] vs pub [-0.02,+0.67]; sig and C3 agree"
+T2_PerLTQA_clusters,bootstrap cluster unit,REVIEWED,scripts/p3_t2.py,"30 archives sizes 202-409; full-8265 uncorrected (T3 corrected subset is 2217)"
+X01_rrf60_ci,CI and multiple comparisons,NOT RUN,none,"_rrf60 levels exist in CSV/JSON but no CIs in DECISION_TESTS.json; not recomputed"
+X02_hit10_ci,CI and multiple comparisons,NOT RUN,none,"no Hit@10 CIs in decision_tests.py; REFEREE C2 untestable from artifacts"
+X03_c1_both_bench,CI and multiple comparisons,NOT RUN,none,"T1 RealTalk-only point-only; no PerLTQA-corrected fair BM25 exists; documented C1 untestable"
+X04_c3_corrected,CI and multiple comparisons,NOT RUN,none,"T2 PerLTQA uncorrected; T3 has no BM25/rerank arms"
+X05_code_expected_hit,exact expected ties vs seeded estimates,NOT RUN,none,"tie-sensitivity for discrete Hamming code arms never published; BM25-only measurement"
+X06_ladder_svd,denominator/gold mapping,NOT RUN,none,"no fresh SVD; prior round covered RT04/RT05 + T3; not repeated"
+X07_multiplicity_correction,CI and multiple comparisons,REVIEWED,REPORT.md + DECISION_TESTS.json counts,"13 SIG / 23 ns / 6 CI brackets in REPORT; 15 T2 contrasts + 6 T1 arms; no correction anywhere; PROTOCOL + firststage label work exploratory"
+X08_locomo_gold,denominator/gold mapping,NOT RUN,none,"1531-vs-1535 dispute; no adjudication attempted"

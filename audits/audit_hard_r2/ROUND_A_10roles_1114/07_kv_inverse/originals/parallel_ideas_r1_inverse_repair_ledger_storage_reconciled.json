@@ -1,0 +1,291 @@
+{
+ "label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "ledger_cases": [
+  {
+   "case_id": "L0_t10_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 5.591277122497559,
+   "worker_recon": 5.591277122497559,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 14.16215705871582,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L0_t11_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 5.81146240234375,
+   "worker_recon": 5.81146240234375,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 15.789573669433594,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L0_t8_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 6.183307647705078,
+   "worker_recon": 6.183307647705078,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 15.036026000976562,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L0_t9_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 5.607706069946289,
+   "worker_recon": 5.607706069946289,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 15.789573669433594,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L14_t10_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 0.0018320713425055146,
+   "worker_recon": 0.0018320713425055146,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 4.399194717407227,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L14_t11_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 0.0014962459681555629,
+   "worker_recon": 0.0014962459681555629,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 4.376879692077637,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L14_t8_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 0.0018905897159129381,
+   "worker_recon": 0.0018905897159129381,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 4.386498928070068,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L14_t9_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 0.001736487029120326,
+   "worker_recon": 0.001736487029120326,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 4.376879692077637,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L29_t10_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 0.39137786626815796,
+   "worker_recon": 0.39137786626815796,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 2931.962646484375,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L29_t11_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 0.26739922165870667,
+   "worker_recon": 0.26739922165870667,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 2954.38427734375,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L29_t8_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 0.4342304468154907,
+   "worker_recon": 0.4342304468154907,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 2996.114013671875,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  },
+  {
+   "case_id": "L29_t9_T16",
+   "redecode_exact_vs_archived_xhC3": true,
+   "replay_recon": 0.2557024657726288,
+   "worker_recon": 0.2557024657726288,
+   "recon_match_1e6": true,
+   "M1_omit_equals_C1_bitexact_worker": true,
+   "M2_flip_maxabs_worker": 2954.38427734375,
+   "lossy_not_exact_reversible": true,
+   "decoder_inputs_only": [
+    "packed",
+    "scales(FP32)",
+    "mins(FP32)",
+    "y"
+   ],
+   "never_uses_original_x": true,
+   "cheap_inverse": "x_est=y (0 evals); c=x-y CHARGED"
+  }
+ ],
+ "ledger_all_redecode_exact": true,
+ "ledger_all_recon_match": true,
+ "ledger_construction": {
+  "x_est": "y (zero-order, 0 extra block evals)",
+  "correction": "c=x_true-x_est truth-derived at ENCODE, CHARGED (not branch bits)",
+  "quant": "uniform 4-bit per-token min/max, nibble-packed (2/byte, low first), FP32 per-token scales+mins side info",
+  "decode_uses_only": "(packed, scales, mins, y); NEVER original x",
+  "exact_reversible": false,
+  "verdict": "explicit lossy quantized residual; NOT branch-bit/exact construction"
+ },
+ "storage_measured_basis": {
+  "T": 16,
+  "d": 576,
+  "kv_width": 192,
+  "n_layers": 30,
+  "ledger_packed_B": 4608,
+  "ledger_side_FP32_B": 128,
+  "ledger_per_layer_B": 4736,
+  "kv_fp32_per_layer_B": 24576,
+  "note": "measured=array/packed bytes; RSS/working set separate"
+ },
+ "storage_same_dtype_FP32": {
+  "full_KV_FP32_all_layers_B": 737280,
+  "anchors_FP32_every2_B": 552960,
+  "ledger_layerwise_all30_B": 142080,
+  "anchors_plus_layerwise_ledger_B": 695040,
+  "headroom_B": 42240,
+  "ratio": 0.9427083333333334,
+  "verdict": "SAME-dtype logical backing payload leaves small headroom (42240 B, 5.7%), BUT this is backing bytes only: excludes transient workspace/RSS (~1200 MB), decoder state (0 learned), and boundary gaps below. NOT a deployment win claim."
+ },
+ "storage_hypothetical_BF16_NOT_MEASURED": {
+  "full_KV_BF16_hyp_B": 368640,
+  "anchors_BF16_hyp_B": 276480,
+  "ledger_with_FP32_metadata_B": 142080,
+  "anchorsBF16_plus_ledgerFP32meta_B": 418560,
+  "exceeds_BF16KV_by_B": 49920,
+  "verdict": "hypothetical BF16 anchors + FP32-metadata ledger (418560 B) still exceeds hypothetical BF16 KV (368640 B). Original gate-FAIL compared FP32 anchors+ledger (695040) vs BF16 KV (368640) as if matched dtype; correct accounting keeps dtype columns separate. NO BF16 numerics executed."
+ },
+ "schedule_boundary": {
+  "layerwise_30_ledgers_B": 142080,
+  "one_ledger_per_2layer_segment_15x_B": 71040,
+  "anchors_plus_15seg_B": 624000,
+  "initial_final_anchors": "15 anchors cover layers 0,2,...,28; final block-29 output has no trailing anchor in this schedule",
+  "missing_layers": "payload covers only tested layers/schedule; full 30-layer global stack NOT executed as one deployment (only 12 single + 4 segment cases)",
+  "unexecuted_global_stack": true,
+  "verdict": "schedule/boundary choices change backing bytes; reported both without re-designing for a win"
+ },
+ "stronger_comparator": {
+  "generic_4bit_KV_C5_bytes_median": 3328.0,
+  "generic_4bit_KV_C5_bytes_list": [
+   3328,
+   3328,
+   3328,
+   3328,
+   3328,
+   3328,
+   3328,
+   3328,
+   3328,
+   3328,
+   3328,
+   3328
+  ],
+  "ledger_per_layer_B": 4736,
+  "verdict": "direct generic 4-bit KV (~3328 B/layer median, K~0.18/V~0.13 rel-err) is a STRONGER (smaller) comparator than the ledger (4736 B/layer); retained, not KIVI replication"
+ },
+ "rss_vs_backing": {
+  "peak_rss_mb_repair": 1203.44140625,
+  "verdict": "RSS (~1.2 GB: weights+activations+workspace) is decode WORKING SET, not resident compressed size; expanded DynamicCache (Task 4) remains full-size \u2014 no resident compression claim"
+ }
+}

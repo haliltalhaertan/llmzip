@@ -1,0 +1,45 @@
+{
+ "summary": {
+  "LME": {
+   "n": 470,
+   "multi_gold_n": 296,
+   "multi_gold_rate": 0.6297872340425532,
+   "rho_strict": 0.11827429405425775,
+   "rho_tie": 0.12632087426323085,
+   "sign_all3": 0.38400709219858153,
+   "float_all3": 0.2872340425531915,
+   "delta_pp": 9.677304964539001,
+   "rho_strict_MINGOLD_BUG": 0.048042908239142104,
+   "rho_tie_MINGOLD_BUG": 0.09185109954881722
+  },
+  "PERLTQA": {
+   "n": 8265,
+   "multi_gold_n": 2322,
+   "multi_gold_rate": 0.2809437386569873,
+   "rho_strict": 0.23079753306891454,
+   "rho_tie": 0.30148041555755994,
+   "sign_all3": 0.4696816754530003,
+   "float_all3": 0.5288566243194193,
+   "delta_pp": -5.917494886641894,
+   "rho_strict_MINGOLD_BUG": 0.30076077492422176,
+   "rho_tie_MINGOLD_BUG": 0.298945696072055
+  },
+  "REALTALK": {
+   "n": 705,
+   "multi_gold_n": 386,
+   "multi_gold_rate": 0.5475177304964539,
+   "rho_strict": 0.08646741965923616,
+   "rho_tie": 0.09813243417156264,
+   "sign_all3": 0.18314420803782508,
+   "float_all3": 0.13900709219858157,
+   "delta_pp": 4.413711583924352,
+   "rho_strict_MINGOLD_BUG": 0.0672351497391715,
+   "rho_tie_MINGOLD_BUG": 0.08046416109656325
+  }
+ },
+ "cohort": {
+  "lme_n": 470,
+  "perltqa_n": 8265,
+  "realtalk_n": 705
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "ladder_gate_bits": 858624,
+ "ladder_gate_diff": 0,
+ "equals_8944x96": true,
+ "8944x96": 858624,
+ "t3_gate": {
+  "diff": 0,
+  "bits": 276480
+ },
+ "ladder_bytes_per_doc_claims": {
+  "k96/sym": 12.0,
+  "k96/qscale": 12.0,
+  "k96/float": 384,
+  "k192/sym": 24.0,
+  "k192/qscale": 24.0,
+  "k192/float": 768,
+  "k384/sym": 48.0,
+  "k384/qscale": 48.0,
+  "k384/float": 1536,
+  "NOPROJ_WORD/float": null,
+  "NOPROJ_FULL/float": null,
+  "BM25_coarse/-": null,
+  "BM25_frozen/-": null
+ },
+ "narrow_packed": {
+  "96": 107328,
+  "192": 214656,
+  "384": 429312
+ },
+ "narrow_sigma_f64": {
+  "96": 7680,
+  "192": 15360,
+  "384": 30720
+ },
+ "narrow_total_k96": 115008,
+ "narrow_perdoc_k96": 12.858676207513417,
+ "narrow_total_k192": 230016,
+ "narrow_perdoc_k192": 25.717352415026834,
+ "narrow_total_k384": 460032,
+ "narrow_perdoc_k384": 51.43470483005367,
+ "with_mu_total_k96": 122688,
+ "with_mu_perdoc_k96": 13.717352415026834,
+ "with_mu_total_k192": 245376,
+ "with_mu_perdoc_k192": 27.43470483005367,
+ "with_mu_total_k384": 490752,
+ "with_mu_perdoc_k384": 54.86940966010734,
+ "R_bytes": {
+  "k96_f32": 36864,
+  "k96_f64": 73728,
+  "k192_f32": 147456,
+  "k384_f32": 589824
+ },
+ "float_bytes_per_doc_claim": {
+  "k96": 384,
+  "k192": 768,
+  "k384": 1536
+ }
+}

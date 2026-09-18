@@ -1,0 +1,235 @@
+{
+  "G1_total_differing_bits": 0,
+  "G1_total_bits": 1179648,
+  "G1_max_abs_diff": 0.0,
+  "G1_pass": true,
+  "G1_target": "0/1179648",
+  "G1b_query_sign_diffs": 0,
+  "G1b_query_total": 793440,
+  "G1b_max_abs_diff": 0.0,
+  "G1_per_archive": [
+    {
+      "char": "Cai Xiuying",
+      "N": 459,
+      "differing_bits": 0,
+      "n_bits": 44064,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Cao Lili",
+      "N": 377,
+      "differing_bits": 0,
+      "n_bits": 36192,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Feng Wei",
+      "N": 422,
+      "differing_bits": 0,
+      "n_bits": 40512,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Han Gang",
+      "N": 448,
+      "differing_bits": 0,
+      "n_bits": 43008,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "He Feng",
+      "N": 442,
+      "differing_bits": 0,
+      "n_bits": 42432,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Huang Xin",
+      "N": 418,
+      "differing_bits": 0,
+      "n_bits": 40128,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Kong Tingting",
+      "N": 293,
+      "differing_bits": 0,
+      "n_bits": 28128,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Li Hua",
+      "N": 422,
+      "differing_bits": 0,
+      "n_bits": 40512,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Liang Xin",
+      "N": 546,
+      "differing_bits": 0,
+      "n_bits": 52416,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Lin Wen",
+      "N": 392,
+      "differing_bits": 0,
+      "n_bits": 37632,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Liu Liang",
+      "N": 401,
+      "differing_bits": 0,
+      "n_bits": 38496,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Lu Yun",
+      "N": 392,
+      "differing_bits": 0,
+      "n_bits": 37632,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Madan",
+      "N": 381,
+      "differing_bits": 0,
+      "n_bits": 36576,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Peng Jie",
+      "N": 459,
+      "differing_bits": 0,
+      "n_bits": 44064,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Qin Meng",
+      "N": 402,
+      "differing_bits": 0,
+      "n_bits": 38592,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Sun Xiaoming",
+      "N": 406,
+      "differing_bits": 0,
+      "n_bits": 38976,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Tayo",
+      "N": 437,
+      "differing_bits": 0,
+      "n_bits": 41952,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Wang Ming",
+      "N": 408,
+      "differing_bits": 0,
+      "n_bits": 39168,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Wang Xiaoming",
+      "N": 438,
+      "differing_bits": 0,
+      "n_bits": 42048,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Xia Tong",
+      "N": 380,
+      "differing_bits": 0,
+      "n_bits": 36480,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Xiao Ming",
+      "N": 376,
+      "differing_bits": 0,
+      "n_bits": 36096,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Xiong Fei",
+      "N": 412,
+      "differing_bits": 0,
+      "n_bits": 39552,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Xu Hui",
+      "N": 359,
+      "differing_bits": 0,
+      "n_bits": 34464,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Xu Jia",
+      "N": 371,
+      "differing_bits": 0,
+      "n_bits": 35616,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Yang Wei",
+      "N": 416,
+      "differing_bits": 0,
+      "n_bits": 39936,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Zhang Xiaohong",
+      "N": 391,
+      "differing_bits": 0,
+      "n_bits": 37536,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Zhao Li",
+      "N": 491,
+      "differing_bits": 0,
+      "n_bits": 47136,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Zheng Yong",
+      "N": 385,
+      "differing_bits": 0,
+      "n_bits": 36960,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Zhou Ting",
+      "N": 421,
+      "differing_bits": 0,
+      "n_bits": 40416,
+      "max_abs_diff": 0.0
+    },
+    {
+      "char": "Zhu Xiaolong",
+      "N": 343,
+      "differing_bits": 0,
+      "n_bits": 32928,
+      "max_abs_diff": 0.0
+    }
+  ],
+  "G2_recomputed": {
+    "n_queries": 8265,
+    "sym_hit10": 0.7568058076225045,
+    "qscale_hit10": 0.8,
+    "sym_fr3": 0.49091897652832456,
+    "qscale_fr3": 0.5323750070256421
+  },
+  "G2_targets": {
+    "qscale_hit10": 0.8,
+    "sym_hit10_det": 0.756806,
+    "qscale_fr3": 0.5324
+  },
+  "rebuild_time_s": 96.33298301696777
+}

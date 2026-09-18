@@ -1,0 +1,36 @@
+== rt n=705 ==
+  FULL_qscale_mine             49.645390070921984
+  FULL_qscale_publ             49.645390070921984
+  ITQ16_qscale_mine            32.765957446808514
+  ITQ16_qscale_publ            32.76595744680851
+  ITQ16-FULL_mine              -16.87943262411347
+  ITQ16-FULL_publ_-16.88       -16.879432624113477
+  ITQ16-RAND20260916_mine      -2.4113475177304906
+  ITQ16-RAND20260917_mine      -2.5531914893617014
+  ITQ16-RAND20260918_mine      -1.8439716312056689
+  seed 20260916 sym    ITQ-RAND=+0.1418 pp arch(-/0/+)=[5, 0, 5]
+  seed 20260916 qscale ITQ-RAND=-2.4113 pp arch(-/0/+)=[7, 1, 2]
+  seed 20260917 sym    ITQ-RAND=+0.0000 pp arch(-/0/+)=[6, 0, 4]
+  seed 20260917 qscale ITQ-RAND=-1.1348 pp arch(-/0/+)=[6, 2, 2]
+  seed 20260918 sym    ITQ-RAND=+0.4255 pp arch(-/0/+)=[5, 1, 4]
+  seed 20260918 qscale ITQ-RAND=-0.1418 pp arch(-/0/+)=[5, 1, 4]
+  seed 7 sym    ITQ-RAND=+0.0000 pp arch(-/0/+)=[4, 2, 4]
+  seed 7 qscale ITQ-RAND=-1.4184 pp arch(-/0/+)=[6, 2, 2]
+  seed 42 sym    ITQ-RAND=-1.1348 pp arch(-/0/+)=[5, 2, 3]
+  seed 42 qscale ITQ-RAND=-2.2695 pp arch(-/0/+)=[7, 1, 2]
+  spread: {'ITQ_min': 32.765957446808514, 'ITQ_max': 34.46808510638298, 'RAND_min': 34.326241134751776, 'RAND_max': 36.170212765957444}
+  objective: {'n_fits': 50, 'all_decreased': True, 'mean_rel_reduction': 0.01833742878688793, 'min_rel_reduction': 0.01595939445764002}
+== pqsub5 n=1605 ==
+  seed 20260916 sym    ITQ-RAND=+1.2461 pp arch(-/0/+)=[1, 0, 4]
+  seed 20260916 qscale ITQ-RAND=+0.8100 pp arch(-/0/+)=[2, 1, 2]
+  seed 20260917 sym    ITQ-RAND=+0.7477 pp arch(-/0/+)=[1, 0, 4]
+  seed 20260917 qscale ITQ-RAND=-0.8100 pp arch(-/0/+)=[3, 0, 2]
+  seed 20260918 sym    ITQ-RAND=-2.1807 pp arch(-/0/+)=[4, 0, 1]
+  seed 20260918 qscale ITQ-RAND=-0.6231 pp arch(-/0/+)=[4, 0, 1]
+  seed 7 sym    ITQ-RAND=-1.3084 pp arch(-/0/+)=[4, 1, 0]
+  seed 7 qscale ITQ-RAND=-1.2461 pp arch(-/0/+)=[5, 0, 0]
+  seed 42 sym    ITQ-RAND=+0.0623 pp arch(-/0/+)=[2, 0, 3]
+  seed 42 qscale ITQ-RAND=-0.8100 pp arch(-/0/+)=[3, 0, 2]
+  spread: {'ITQ_min': 80.49844236760124, 'ITQ_max': 82.42990654205607, 'RAND_min': 81.1214953271028, 'RAND_max': 83.2398753894081}
+  objective: {'n_fits': 25, 'all_decreased': True, 'mean_rel_reduction': 0.023249756037311057, 'min_rel_reduction': 0.022336555363339897}
+wrote evidence_itq.json

@@ -1,0 +1,168 @@
+# MATH_REPR_AUDIT — math_r1 dark corners (round 3, role math_repr)
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+Independence disclosure (mandatory): this audit was performed by the same model
+family as the implementer and prior auditors. It is NOT an independent external
+audit. All probe scripts and outputs below are preserved in this directory
+(`probe*.py`); source trees were read only, never modified.
+
+## 1. VERDICT
+
+The math_r1 numbers reproduce: quant aggregates match raw rows exactly, the
+sign-invariance proof re-verifies numerically, and self-checks are bit-exact.
+The load-bearing defect is downstream: digest_r1/brain/CRITIQUE.md describes
+two 10-archive subset contrasts (IDF_p2 -1.76, SHIFT_m1 +1.58) as "all 30
+clusters" and builds its "only well-powered results" conclusion on that claim.
+
+## 2. Findings
+
+ID | Sev | Claim checked | Outcome
+F1 | HIGH | "all 30 clusters" power claim | FALSE for 2 of 3 items; conclusion unsound
+F2 | MED | repr per_query PerLTQA completeness | Only 10/30 archives; no RESULTS.json
+F3 | LOW | REPORT bit-balance triple | Numbers traceable; aggregation mixed
+F4 | LOW | Proof "sigma verified > 0" | Holds; partly by construction (floor)
+F5 | LOW | "rescaling: nothing to test" | True for sign bits only, not qscale
+F6 | LOW | repr vs quant bootstrap CIs | Different resamplers; means match
+
+Passes (attack survived, §3): quant rows→RESULTS→REPORT exact; one bootstrap
+CI bit-exact under stream replication; ITQ loss down on all 40 archives; ITQ
+worse than random on RT qscale; cost/timing arithmetic; stratification bands;
+repr zero-arm self-checks bit-exact; repr↔quant FULL rows identical; RT01 proof
+rebuilt independently with identical counts.
+
+## 3. Per-finding detail
+
+### F1 — "all 30 clusters" is false for the two repr numbers (HIGH)
+
+- File: [CRITIQUE.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/digest_r1/brain/CRITIQUE.md:187)
+  states PerLTQA's "(IDF_p2 -1.76 SIG, WORD_ONLY +1.37 SIG, SHIFT_m1 +1.58 SIG,
+  all 30 clusters) are the only well-powered results in the building."
+- Recomputation from raw rows (`probeE_subset.py`): PerLTQA IDF_p2 qscale FR@3
+  diff = -1.7571 pp; SHIFT_m1 qscale Hit@10 diff = +1.5841 pp — the quoted
+  numbers are correct AS subset contrasts.
+- But the subset covers 10/30 archives (Cai Xiuying..Lin Wen, 2967/8265
+  queries), and the stored contrasts say `"clusters": 10`
+  ([repr_results.json](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/repr_results.json),
+  SHIFT_m1/qscale Hit@10 CI [+0.69,+2.47], clusters 10; same for IDF_p2; the
+  FR@3 file [repr_fr3_mechanism.json](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/repr_fr3_mechanism.json)
+  IDF_p2/qscale -1.7571 CI [-2.78,-0.74] is built by
+  [repr_fr3_mechanism.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/repr_fr3_mechanism.py:18,51-58)
+  from the same 10-archive per_query file).
+- "All 30 clusters" is therefore false for IDF_p2 and SHIFT_m1 (WORD_ONLY
+  +1.37 is a separate channel-ablation experiment at n=8265, not verified in
+  this role). The Bayesian-update conclusion built on it ("trust PerLTQA's
+  significant harms... the only well-powered results") loses 2 of its 3
+  exhibits. Related: §1d's own winner's-curse warning about "10
+  archive-clusters" and "lower bound +0.69" applies to its own SHIFT_m1
+  exhibit (CI [+0.69,+2.47], 10 clusters).
+- Secondary: SHIFT_m1 +1.58 is a gain, listed under "PerLTQA's harms";
+  and LITERATURE_MAP.md:181,343 quotes the +1.58 reversal with no subset
+  caveat anywhere in the file (grep subset|2967|clusters: no hits on topic).
+  FINDINGS_DIGEST.md:78 is honest ("PerLTQA(subset n=2967)"), so the error is
+  in the synthesis, not the digest table.
+
+### F2 — repr PerLTQA run died at 10/30 archives; RESULTS.json never written (MED)
+
+- [repr/per_query.jsonl](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/repr/per_query.jsonl):
+  66096 rows = (705 RT + 2967 PQ) x 9 arms x 2 scorers (`probeC_repr.py`).
+  PerLTQA archives present: exactly the 10 alphabetically-first of 30
+  (409+302+324+259+311+256+216+224+394+272 = 2967). RealTalk complete (705).
+- [repr.log](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/repr.log)
+  (188 bytes) ends in SIGTERM; no RESULTS.json exists in
+  [math_r1/repr/](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/repr/).
+- The coordinator's
+  [repr_compute.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/repr_compute.py:1-12)
+  discloses this plainly ("worker timed out", "PARTIAL", "is_subset", paired
+  contrasts stay valid within the same queries). Naively averaging the file's
+  PerLTQA FULL arm gives Hit@10 76.44/80.86, NOT the production 75.68/80.00 —
+  off-file use without the subset flag would be wrong. No such misuse found;
+  this finding is the trap label for future users.
+
+### F3 — REPORT bit-balance triple mixes aggregations without saying so (LOW)
+
+- [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/quant/REPORT.md:90-93):
+  "FULL 0.492 / RT-min 0.309, PQ-min 0.220, max 0.66 ... MED 0.500/0.500/0.502".
+- Stored [RESULTS.json](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/quant/RESULTS.json)
+  bit_balance: RT FULL mean_of_mean 0.4919 (->0.492), min_of_min 0.3094,
+  max_of_max 0.6584 (->0.66); PQ min_of_min 0.2202; MED min exactly 0.5.
+  All digits traceable (`probeD_claims.py`), but the sentence mixes
+  mean-of-means with global min/max, and the MED third number (0.502) matches
+  mean-of-max (RT 0.5018) while FULL's matches max-of-max (0.6584). MED RT
+  max_of_max is 0.5077, which the stated aggregation would render 0.508.
+  No conclusion depends on it; fix is one clarifying sentence.
+
+### F4 — proof premise "sigma > 0" holds, partly by construction (LOW)
+
+- Code: [quant_math.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/quant/quant_math.py:161-162)
+  `sigma_docs = max(std(ddof=0), 1e-12)` is positive by construction, so the
+  `assert all(sig0 > 0)` at line 706 cannot fail and the REPORT's "sigma_docs
+  > 0 on all 96 columns" is partly tautological.
+- Independent rebuild (`probeF_proof.py`, ml-python, frozen builder, RT01):
+  sigma min 5.115e-02, max 2.557e-01, 0 columns below floor; C==0 fraction
+  0.0; QC==0 fraction 0.0; rescale changed 0/63552 doc bits and 0/8160 query
+  bits — exactly the stored
+  [sign_invariance_proof](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/quant/RESULTS.json)
+  block. Zero-fraction is exactly 0.0 on all 40 archives
+  (per_archive_meta), so the `(>=0)` vs `sign(0)` convention ambiguity is
+  empirically moot. Numeric check ran on RT01 only, but the statement is a
+  universal theorem about positive scalars, so the generalization is valid.
+
+### F5 — "nothing to test" is true for sign bits, not for qscale scores (LOW)
+
+- Proof scope is bits: [quant_math.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/quant/quant_math.py:165-171)
+  `sym_scores_from_bits` takes no sigma, so sigma division cannot change sym —
+  verified. But `qscale_scores_from_bits` divides the query by sigma, and
+  sigma is refit per arm on rotated documents (lines 486, 501). A rescaling
+  proposal could still move qscale retrieval; REPORT.md:29-30 reads as closing
+  the whole rescaling question. No tested arm is affected; scope note only.
+  (The sigma-explanation incompleteness itself is already-known; not
+  re-reported.)
+
+### F6 — repr and quant bootstraps differ; means agree, CI widths not comparable (LOW)
+
+- quant [quant_math.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/math_r1/quant/quant_math.py:527-544,639-654):
+  single shared rng stream, Multinomial(K,1/K) cluster weighting, exact stream
+  order matters (naive single-contrast recompute gave [-24.15,-9.38] vs stored
+  [-24.21,-9.42]; full-order replication in `probeB2_exact.py` matches
+  bit-exact: -16.879432624113473 [-24.212034383954155,-9.418282548476455]).
+- repr [repr_compute.py](/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/repr_compute.py:115-130):
+  fresh rng per benchmark, `rng.integers` cluster resampling. Cross-pilot CI
+  comparisons (e.g. quant vs repr significance) are apples-to-oranges; mean
+  diffs are exact in both (all quant summary means match raw rows at <1e-9
+  over 107640 rows, `probeA_quant.py`, 0 mismatches; RT repr means match
+  coordinator ids-derived values to 4dp).
+
+### Passed attacks (no finding; what was run)
+
+- P1 quant aggregates: all 24 (arm,scorer) x 4 metrics recomputed from raw
+  rows equal RESULTS.json summary at <1e-9; REPORT Family C/D/E tables match
+  stored contrasts (RT ITQ-FULL qscale -16.88 [-24.21,-9.42], sym -14.18
+  [-22.35,-6.05]; PQ -1.09 ns / +0.46 ns; ITQ-minus-random RT -2.41/-2.55/
+  -1.84, all excluding 0).
+- P2 ITQ diagnostics: loss_final < loss_init on all 40 archives (RT01
+  54439.70 -> 53520.42, orth_err ~1e-15).
+- P3 cost/timing: 96x96x4=36864 B; RT 368640/107328 = 3.44x (f32), 6.87x
+  (f64); PQ 1105920/147456 = 7.5x, 15x; ITQ mean fit 1.356 s (RT) / 1.226 s
+  (PQ); qrot 7.01/4.21 us/q — all as REPORTed.
+- P4 stratification: FULL/qscale bands rare 70.67 (n=341) / common 20.98
+  (n=224) / mid 49.14 (n=116) / no_shared 20.83 (n=24); MED 71.26 — exact.
+- P5 repr zero-arms: IDF_p0 and SHIFT_m0 identical to FULL on all 7344
+  (bench,archive,qid,scorer) keys including full top10 ids (`probeC2`).
+- P6 cross-file: repr FULL rows identical to quant FULL rows (RT 1410 rows,
+  PQ-subset 5934 rows, 0 diffs) — two independent code paths (Hamming-count
+  vs `(Dpm@Qpm-96)/2`) agree exactly.
+
+## 4. What could NOT be checked and why
+
+- Per-column sigma / zero-fractions beyond RT01: would need full pipeline
+  rebuilds (read-only OK, but ~13 min for all 50 archive-fits); RT01 plus
+  stored zero_frac=0.0 everywhere was judged sufficient.
+- All 100+ bootstrap CIs: one replicated bit-exact; means verified for all
+  cells (CIs share the verified code path and stream discipline).
+- WORD_ONLY +1.37 (channel ablation, cited in F1): different experiment,
+  outside this role's files; taken as stated, flagged UNVERIFIED here.
+- Inductive-regime (round-2) interaction with quantization arms: out of role
+  scope; all math_r1 arms inherit the transductive pipeline fit.
+- Read-only compliance: no source file was written; probes and this report
+  live only in audit_hard_r3/math_repr/.

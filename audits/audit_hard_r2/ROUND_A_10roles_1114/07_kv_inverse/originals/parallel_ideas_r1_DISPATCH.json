@@ -1,0 +1,28 @@
+{
+  "created": "2026-09-15T14:28:44.750032+03:00",
+  "status": "authorized exploratory execution; not preregistered",
+  "tasks": {
+    "asymmetric": [
+      "A asymmetric retrieval",
+      "F exact lookup engineering tests"
+    ],
+    "b8": [
+      "B fixed bit-budget reallocation"
+    ],
+    "inverse": [
+      "C ledger and checkpoints",
+      "D matrix-free solver"
+    ],
+    "kv": [
+      "E partial KV reconstruction"
+    ]
+  },
+  "model_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+  "limits": "4 Muse sessions, 1800s each, single thread, no paid workers, no repo edits",
+  "prompts_sha256": {
+    "asymmetric": "cf7af70e5e3f50c9d971916300e76cc168fca3f539087019b91e345c68df892d",
+    "b8": "3a057a7a57cdb4db1a3dee98e7ccf1e6893f12d9c66d1c74578935e93e88aa5c",
+    "inverse": "4526c7c1653a200392b92e3a233e364e6b7773cf975f50ea6b0138bb4eaa1188",
+    "kv": "09f81f5499e25881a47ce60194640008cf6b38e5f42fbbcd345f0e5fc0e61471"
+  }
+}

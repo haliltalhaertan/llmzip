@@ -1,0 +1,17 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/01_metrics (cwd default)
+muse: workspace trust: trusted source=run-flag
+Audit complete. All deliverables are in `audit_hard_r2/01_metrics/`.
+
+**Outcome:** recomputed numbers reproduce (41 EXACT, 3 CLOSE). Findings concern test-vs-gate fidelity and labels, not arithmetic: two published claims are no longer supported as stated, three documented gates are untestable from built artifacts.
+
+Key findings ([REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/01_metrics/REPORT.md)):
+
+- **[HIGH] T1 code ≠ documented C1.** `coordinator/decision_tests.py:168-175` implements point-only, RealTalk-only (`any(gap ≥ 2.0)`); the documented gate needs CI excluding zero on both benchmarks, and selects strongest-BM25 on Hit@10 for an FR@3 gate. Fixture F4 (+2.78 pp, CI [-8.06,+13.63]) passes the code check, fails the documented one. Current FAIL agrees, but the variable must not be quoted as the gate.
+- **[HIGH] Published `expected_hit_at_10` is expected recall.** `data/run_lexical.py:55-76` returns `exp/|gold|`; fixture + brute oracle give 0.7 vs 0.4. Full-column check (n=705): mean corrected = deterministic Hit@10 (0.541844), mean producer = Recall@10 (0.431599); 129 multi-gold queries differ per-query. Gates don't consume the column, so verdicts stand; use the `..._corrected` column.
+- **[MEDIUM] C1-both-benchmarks, C2 Hit@10 CI, C3-on-corrected-data are untestable** — no PerLTQA-corrected fair BM25, no Hit@10 CIs, T2-PerLTQA uncorrected while T3 lacks BM25/rerank arms.
+- **[MEDIUM] Four BM25s under one name** (54.18 / 55.32 / 61.70 / 65.67); the "+10.35 pp correction" is Hit@10-only (+6.12 on FR@3).
+- **[MEDIUM] Cluster unit inconsistent** (LME 470×1 = i.i.d.-equivalent; LoCoMo 10; PerLTQA 30); T2 levels/estimates re-verify EXACT, CIs seed-stable (own seed 777/2k reps within 0.02 pp). Multiplicity: 13 SIG/23 ns, no correction.
+
+**Coverage:** [COVERAGE.csv](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/01_metrics/COVERAGE.csv) — 62 mechanically counted rows (EXACT 41, CLOSE 3, MISMATCH 1, REVIEWED 10, NOT RUN 7). Evidence JSON + scripts/outputs in `out/` and `scripts/`; originals copied to `orig/`.
+
+**Limits:** `compute.sh` was unusable (lock path read-only); light probes ran directly with the identical single-thread env. No SVD reruns, no downloads. Out of scope: roles 02–10 subject matter, plus NOT RUN items (notably code-arm tie-sensitivity and PerLTQA-corrected fair BM25).

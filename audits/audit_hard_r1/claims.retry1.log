@@ -1,0 +1,22 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/claims (cwd default)
+muse: workspace trust: trusted source=run-flag
+Hard audit complete. All six attacks were executed with my own code against read-only sources; report written incrementally to [HARD_AUDIT_CLAIMS.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/claims/HARD_AUDIT_CLAIMS.md) (8 audit scripts alongside it, no NOT RUN verdicts).
+
+Verdicts:
+
+| # | Claim | Verdict |
+|---|-------|---------|
+| 1 | ITQ < random | SAGLAM on RealTalk (my 7 fresh seeds reproduce −2.27 to 0.00 pp; ITQ beats 0/10 rotations on qscale) / PerLTQA half honestly null |
+| 2 | harm ~ size r=−0.78 | SAGLAM on Hit@10 (Spearman −0.76, LOO stable, drop-3 still −0.70); metric-fragile on FR@3 |
+| 3 | balance up, retrieval down | SAGLAM (MED perfects balance to [0.500,0.500] with zero rotation, retrieval never improves) |
+| 4 | sigma collapse at high k | SAGLAM observation (qscale +1.33 then −3.60; RealTalk control rises); mechanism wording incomplete — sym, which never divides by sigma, falls hardest |
+| 5 | sign beats float ~10 pp | ZAYIF — exact vs naive float, but REVERSED vs standardized float (my 48.51 > 46.81, confirming the hr branch's correction; REPORT §1 already printed 48.51) |
+| 6 | fair BM25 65.67 | SAGLAM on substance (my rerun: 65.53; genuine textbook BM25 61.70 still beats all code budgets; C1 gate fails either way); "BM25" label for IDF-only debatable |
+
+Key points:
+
+- No fabrication found. Eight anchors reproduced exactly to 0.00 pp, the rest within tie-break noise. The seed-cherry-picking attack fails: fresh seeds confirm the pattern.
+- The two partial hits came from seeking counter-evidence: the hr branch's standardized-float correction (validated on the ladder pipeline by my code) and sym's steeper-than-qscale fall (narrows the sigma mechanism).
+- On STOP scope: gates failed as written and outcomes survive my relabelings, so stopping this code-vs-BM25 race is justified. Closing the entire project is not — and the pilot doesn't ask for it (main untouched, Q9 owner-reserved, sibling branches unreviewed). No evidence that STOP was misrepresented as closure.
+
+Caveats: rerank CSV not re-derived (JSON arithmetic only); E1/geometry/F1/dense branch bodies, LoCoMo gold, and lit maps not reviewed — stated in the coverage ledger.

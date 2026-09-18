@@ -1,0 +1,14 @@
+{
+ "frozen_uni_idfonly": {
+  "hit10": 65.67375886524823,
+  "n": 705
+ },
+ "frozen_uniBI_idfonly": {
+  "hit10": 65.39007092198581,
+  "n": 705
+ },
+ "twins": {
+  "queries_with_nongold_twin": 6,
+  "twin_pairs": 20
+ }
+}

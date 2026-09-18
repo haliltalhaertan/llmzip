@@ -1,0 +1,222 @@
+# BENCH3 PRODUCER AUDIT (round 4) — first audit of bench3/ itself
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+Auditor: Muse Code. Quota-constrained single run; decisive checks prioritised.
+Rule compliance: all source trees read-only; writes only in
+`audit_hard_r4/bench3_producer/` (this file + `probe1_gold.py`, `probe2_recompute.py`).
+`python3` has numpy; sklearn/scipy via `~/muse-work/ml-python` (1.9.1/1.18.1/2.5.3). No network use.
+
+## 1. VERDICT (3 lines)
+
+Producer math is faithful: gold mapping 54/54 end-to-end, recomputed vectors
+bit-identical on 4 archives, centering axis / L2 order / leakage barrier all correct.
+One HIGH: `rt_validate.json` claims "100% gold resolution" while its own table lists 23
+zero-gold + 46 partial QAs (eval denominator 705/728 is correct, so no number changes).
+No CRITICAL: nothing found that makes a published number or the STOP verdict wrong.
+
+## 2. FINDINGS TABLE
+
+| ID | Sev | Area | Probe | Result |
+|----|-----|------|-------|--------|
+| B1 | — | RT+PQ gold mapping | 30 RT + 24 PQ QAs vs raw | 54/54 match, PASS |
+| B2 | LOW | Duplicate docs | exact-text scan, all archives | RT 1-8 fillers; PQ 0; neutral |
+| B3 | MED | Exclusions (Chen Zhi + 288) | cache + raw recount | method-neutral; difficulty effect UNVERIFIED |
+| B4 | — | Centering axis + L2 order | code + numeric col/row means | axis 0 correct, PASS |
+| B5 | — | Question-in-corpus leak | fit-entry review + overlap probe | 0/140 overlap, PASS |
+| B6 | HIGH | rt_validate "100%" string | artifact vs its own table | false string; numbers unaffected |
+| B7 | MED | Dialogue fallback gold | split file + means | 40.5% whole-dialogue gold; disclosed, neutral |
+| C1 | — | Own gates (port/step0/step1*) | gate files + raw recount | ports PASS; audits observational, resolved |
+| D1 | MED | RT vs PQ recipe parity | code diff + recompute | math identical; eval-arm defs diverge |
+| E1 | — | Cached-repr recompute | 2 RT + 2 PQ archives | bit-identical (0.0), PASS |
+
+(Cells short by design; detail below. "—" = clean, no severity.)
+
+## 3. DETAIL
+
+### A. Exact recipe (doc -> code, question -> query)
+
+RealTalk chain (`bench3/runs/b3a_realtalk/bench3_realtalk_adapter.py` ->
+frozen `drive/v52_t4d_locomo_frozen_cross_benchmark.py`):
+
+1. Doc text: frozen `message_text` (T4D lines 107-114) called directly with
+   `{"speaker", "text": clean_text, "blip_caption"}` ->
+   `"{speaker}: {clean_text}"[ + " [IMAGE: {cap}]" if cap]` (313/9944 msgs carry a
+   caption per `report.md`). NO date component (adapter lines 4-9 documents this
+   diff vs the brief's "[date] speaker: text" paraphrase; the code governs).
+   No truncation, no dedup, no lowercasing at this stage (lowercasing happens inside
+   the vectorizers). Archive = ALL `session_i` messages in numeric session sort,
+   file order within; `events_session_*` never read (adapter line 108 asserts).
+2. Per-archive fit (`build_representation`, T4D lines 639-660): TF-IDF word(1,2,
+   english-stop, sublinear) + char_wb(3,5, sublinear) -> L2 each ->
+   SVD(min(32, N-1, nfeat-1), seed 5101) on word block -> L2 latent ->
+   concat `[Xl, Xw, Xc]` -> SVD96 seed 5204 -> L2 -> column mean
+   `mu = Y.mean(axis=0, keepdims=True)` -> `C = (Y - mu)` float64.
+3. Query: each question transformed through the SAME fitted vectorizers/SVDs
+   (transform only, post-fit), L2 at each stage, minus the SAME `mu`
+   (`QC = (QY - mu)`). Questions/gold never enter the fit (fit entry is
+   `fit_input_payload`, T4D lines 191-193, strings only).
+4. Code: `sign(C)`, `sign(qC)`; retrieval = Hamming `count_nonzero(D0 != Q0)`,
+   rank `lexsort((priority, distance))`, K=3, NT=20, fractional R@3
+   (`run_realtalk.py` lines 47-71).
+
+PerLTQA chain (`bench3/runs/b3b_perltqa/step2_build.py`, reimplementation, NOT import):
+identical math (same vectorizer params, seeds 5101/5204, same concat order
+`[Xl, Xw, Xc]`, same `Y.mean(0, keepdims)` line 63, same query transform lines
+143-152). Doc assembly is dataset-specific (`build_items`, lines 25-45):
+`[profile] f: v`, `[profile_description] ...`, `[social k] ...`, `[event k] content`,
+`[dialogue k @ ts] turn` (one item PER TURN). Gold is section-key based, NOT regex:
+profile/social/event = single index by key; dialogue = anchor-substring hit turns,
+else ALL turns of the dialogue (lines 128-136).
+
+### B1. Gold mapping — highest-value check: PASS (54/54)
+
+- RealTalk: 30 sampled QAs (3 per chat, rng 7) recomputed independently from raw
+  `Chat_*.json` evidence via regex `D\d+:\d+` + dedupe + `id_to_row`, compared to
+  `rt_repr/RT*.pkl` `gold_rows`: 30/30 exact match, 0 errors. `id_to_row` verified
+  equal to raw dia_id order on all 10 chats. Resolved rows point at the correct
+  `dia_id` (asserted per token).
+- PerLTQA: 24 sampled QAs (rng 11, all sections) recomputed from raw
+  `perltqa_en_v2.json` + `perltmem_en_v2.json` via independent index rebuild
+  (profile/soc/ev key maps, dialogue anchor-substring vs full fallback):
+  24/24 exact match against `cache_qmeta.json`.
+- Command: `~/muse-work/ml-python .../bench3_producer/probe1_gold.py` (saved).
+  Sample disclosed; full-QA recheck NOT done (quota).
+
+### B2. Duplicates: LOW, method-neutral
+
+- RealTalk exact-text dupes per chat (distinct strings / extra rows): 1/1, 3/3,
+  3/5, 2/3, 2/3, 8/17, 5/6, 8/11, 4/4, 3/6. Top example (Chat_5): "Nicolas: Yeah"
+  x6; rest are short conversational filler ("What about you?", "?", greetings).
+  Identical texts -> identical vectors -> Hamming ties broken by the same random
+  priorities for every arm: cannot favour any method. Near-duplicates (paraphrase)
+  NOT systematically measured (sample eyeball only) — see section 4.
+- PerLTQA: 0 exact dupes in all 31 banked archives (section prefixes force
+  uniqueness).
+
+### B3. Exclusions: MED (neutral mechanism, UNVERIFIED difficulty effect)
+
+- `step2_exclude.py` drops archives with `C.shape[1] != 96`: exactly one,
+  Chen Zhi (N=35 -> SVD capped output to (35,35); verified in `cache_arch.pkl`).
+  40 QAs dropped (profile 12 / soc 23 / events 3 / dialogues 2).
+  Mechanism is correct (frozen T4D would have RAISED at `min(Z.shape) <= 96`,
+  line 644-645; the reimplementation silently caps, so post-hoc exclusion is the
+  only sound port rule) and method-neutral (same rows gone for every arm).
+- Further 11 resolved-but-keymiss QAs never enter caches (Cao Lili event
+  `'25_0_2'` x7, Yang Wei soc `'8_2'` x4; confirmed against raw) + 277 nobank QAs
+  (chars in QA file with no memory bank: 12/26/145/94 by section;
+  `resolution.json`). Same neutrality argument.
+- Whether dropping the smallest archive (N=35) flatters or hurts any method is
+  UNVERIFIED (needs an eval rerun with a backoff representation; out of quota).
+  Bound: 40/8345 QAs (~0.5%); headline impact necessarily small, direction unknown.
+
+### B4. Centering axis + L2 order: PASS
+
+- All three code paths use row-axis mean kept as row vector:
+  T4D line 648 `mu = Y.mean(axis=0, keepdims=True)`,
+  T4C3 line 109 `mu=Y.mean(0,keepdims=True)`, `step2_build.py` line 63,
+  `step0_gate.py` line 60. Correct axis (center each coordinate across docs).
+- Numeric: recomputed C column-means max ~1e-16 (RT02 3.5e-16, RT05 1.1e-16,
+  Kong 1.4e-16, Cai 3.3e-16) vs row-means ~3e-2 -> centering is over axis 0,
+  confirmed. L2 order (normalize -> SVD -> normalize -> center, no post-center
+  renormalize) matches the documented recipe on both producers.
+
+### B5. Leakage: PASS
+
+- Fit entries take document strings only (T4D `fit_input_payload` inside the
+  frozen fn; `step2_build` line 80-81 `fit_archive(texts)` with queries only at
+  lines 143-152). Exact question-in-corpus overlap probe: 0/70 + 0/70 on two RT
+  chats. Paraphrase-level leakage NOT checked (see section 4).
+
+### B6. HIGH: `rt_validate.json` "100% gold resolution" string is false
+
+- `rt_validate.json` line ~190: `"gold_resolution": "100% (all listed evidence
+  dia_ids resolved...)"`. Its OWN `anomalies` table lists 23 zero-gold QAs
+  (chats 6:2, 8:2, 9:8, 10:11) + 46 partial QAs; eval uses n_valid=705/728
+  (`rt_summary.json`, `run_realtalk.py` lines 15-17, 110-121 correctly exclude
+  FR=null). Independent recount: 143 unresolved evidence tokens corpus-wide.
+- Severity HIGH, not CRITICAL: the string is a validation-record falsehood, but
+  the metric denominator is correct, so no published number changes. Fix: restate
+  as "705/728 valid; 23 zero-gold excluded per frozen denominator rule".
+
+### B7. MED: dialogue fallback gold shapes difficulty (disclosed, neutral)
+
+- `dialogue_gold_split.json`: 1632 anchor-hit (mean gold 5.69, max 21) vs 1112
+  fallback-full-dialogue (mean 16.13, min 10, max 30). 40.5% of dialogue QAs have
+  the WHOLE dialogue (10-30 docs) as gold. Same gold for every arm (neutral), but
+  it inflates fractional-recall denominators and rewards retrieving any turn --
+  the largest difficulty-shaping producer choice, and it cuts against the
+  headline: even with generous multi-gold QAs, 48B codes lose to BM25.
+- Profile multi-ref truncation risk: 0 cases (`refkey()[0]` never drops a ref).
+  Grouped `Reference Memory != group key`: 0 cases. Clean.
+
+### C. Own gates: ports PASS; audits observational and resolved
+
+- b3a `port.py` STEP 0: PASS 5/5 (max|C-Cref| ~1e-12 <= 1e-10, 100% sign, gold
+  equal; `port_gate.json` `gate_pass: true`, re-read this run). Provenance hashes
+  pinned (producer/adapters/dataset + byte count).
+- b3b `step0_gate.py`: PASS 6/6, same tolerance, incl. adapter hashes
+  (`port_gate.json` `gate: PASS`; max diffs 4e-13..7e-12, re-read this run).
+- `step1_audit.py`: observational (no gate artifact). Flags the Cao Lili / Yang
+  Wei keymisses (7+4 QAs) -- resolved by exclusion from caches (B3). NOBANK
+  counts documented in `resolution.json`.
+- `step1b_audit.py`: SVD feasibility probe (N=35 fails) predicts exactly the Chen
+  Zhi exclusion; schema-uniformity counters; anchor-substring rates motivate the
+  dialogue fallback. Nothing flagged left open.
+- `step1c_anchors.py`: sampled diagnosis (normalization/summary-vs-content);
+  motivates fallback; no gate, nothing contradicting the build.
+- `step2_exclude.py`: applied and verified (Chen Zhi absent from
+  `cache_arch_eval.pkl`; final assert all C are 96-dim, line 37).
+
+### D. RT vs PQ parity: math identical; eval-arm defs diverge (MED)
+
+- Fit/query math: SAME (bit-identical recomputes both sides, same seeds/params/
+  concat order/centering). Necessary dataset-specific divergences: doc templates,
+  gold semantics (regex tokens vs section-key+anchor fallback), cohort filter
+  (RT cats {1,2,3} vs PQ sections). Small-N behaviour differs (frozen raises;
+  PQ reimplementation caps then excludes) -- moot for RealTalk (min N=410).
+- SILENT eval-level divergences (not the producer, but they make cross-dataset
+  arm comparisons bit-unequal): variance order `argsort(var,stable)[::-1]`
+  (`run_realtalk.py` lines 78-84) vs `argsort(-v,stable)` (`step2_eval.py` line
+  32) -- differ on exact variance ties; SPREAD `floor(linspace+0.5)` vs
+  `round(linspace)` (banker's) -- differ only on exact .5 positions; RANDOM
+  93000-series vs 91000+j; tie-seed ordinal (lexical file order vs BANKED
+  ordinal). No evidence of conclusion flips; report as caveat, not a finding
+  against any number.
+
+### E. Cached-repr recompute: PASS, bit-identical
+
+- RT02 (N=476), RT05 (N=410) via imported frozen `build_representation`:
+  max|C-Cached| = 0.0, sign 100%, max|QC-QCached| = 0.0, both archives.
+- Kong Tingting (N=293, latent d=32), Cai Xiuying (N=459) via verbatim
+  `fit_archive` replica + one query each: maxdiff 0.0, sign 100%.
+- Chen Zhi capping reproduced: cached C is (35,35).
+- Command: `~/muse-work/ml-python .../bench3_producer/probe2_recompute.py`.
+
+## 4. COULD NOT CHECK (and why)
+
+- Full-QA gold recheck (sampled 54/8900+; quota: one run, full recompute ~hours).
+- Near-duplicate / paraphrase-duplicate docs (exact-text only; needs embeddings
+  + thresholds, out of quota).
+- Paraphrase-level question leakage into docs (exact-overlap only, 140 QAs).
+- Chen Zhi exclusion difficulty effect (needs eval rerun with backoff repr).
+- BM25 rival implementation (not the producer; out of role scope).
+- LoCoMo/LME producers (role scoped to RealTalk/PerLTQA bench3 runs).
+- ITQ-1-init, sigma, expected_hit naming, gates co-commitment (established priors,
+  not re-litigated per brief).
+- Per-archive fitting as leakage (established as documented preregistered rule).
+
+## 5. PROVENANCE (paths:lines read)
+
+- `bench3/runs/b3a_realtalk/bench3_realtalk_adapter.py` (full), `run_realtalk.py`
+  (full), `port.py` (full), `rt_validate.json`, `rt_summary.json`, `report.md`,
+  `port_gate.json`, `rt_repr/RT*.pkl` (all 10 headers + 2 full recomputes).
+- `bench3/runs/b3b_perltqa/step0_gate.py`, `step1_audit.py`, `step1b_audit.py`,
+  `step1c_anchors.py`, `step2_build.py` (full), `step2_eval.py` (full),
+  `step2_exclude.py` (full), `exclusions.json`, `resolution.json`,
+  `dialogue_gold_split.json`, `port_gate.json`, `cache_arch.pkl`,
+  `cache_q.pkl` (headers + 2-archive recompute), `cache_qmeta.json`,
+  `cache_items.json` (spot).
+- `drive/v52_t4d_locomo_frozen_cross_benchmark.py` (lines 1-260, 630-700 + greps),
+  `drive/v52_t4c3_coordinate_axis_probe.py` (lines 100-112 + greps).
+- Raw: `bench3/REALTALK/data/Chat_*.json` (all 10), `bench3/PerLTQA/Dataset/en_v2/
+  perltmem_en_v2.json` + `perltqa_en_v2.json` (full parse).

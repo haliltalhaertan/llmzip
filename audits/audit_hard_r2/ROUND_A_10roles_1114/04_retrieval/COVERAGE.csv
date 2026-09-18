@@ -1,0 +1,26 @@
+item_id,area,status,evidence,notes
+R-T1-denominator,T1 comparator fairness,REVIEWED,"probe: RT*.json recount; 10 archives / 8944 docs / 705 valid queries; qid sha 9cedef56bf568828 identical across T1 filter/firststage/band file",denominator solid
+R-T1-gaps-vs-max,T1 comparator fairness,REVIEWED,"DECISION_TESTS.orig.json arithmetic; 48B/qscale -7.80 Hit@10 / -7.23 FR@3 vs frozen_idfonly 65.67/40.02; ladder copy exact",headline gaps exact
+R-T1-gaps-vs-textbook,T1 comparator fairness,REVIEWED,"own arithmetic on stored JSON; best code -3.83 Hit@10 / -3.26 FR@3 vs frozen_textbook 61.70/36.05; selection premium +3.97pp; C1 FAIL both ways",referee-primary comparator checked
+R-T1-contract-deviation,T1 comparator fairness,REVIEWED,"REFEREE.md s5 (textbook primary) vs decision_tests.py max-selection; no held-out split; unminuted in pilot",S3 finding; outcome-robust
+R-T1-no-CI,T1 comparator fairness,REVIEWED,"decision_tests.py t1(): point gaps only, no bootstrap; referee requires CI-excluding-zero",contract gap; moot at margins
+R-T1-rescore,T1 comparator fairness,SAMPLED-EXTERNAL,"prior round au_c6_bm25.py: 3 variants 0.00pp, 4th within 0.14pp; cited as explicit verification, NOT re-run here",no new measurement
+R-T1-tokenizer-doc,T1 comparator fairness,REVIEWED,"decision_tests.py toks()/score implement unigrams; docstring claims 1-2 grams",metric-neutral doc/code mismatch
+R-T2-levels,T2 cascade,REVIEWED,"probe_p1_t2.py: 164256 rows = 16 methods x 10266 qids; all 48 level means exact <=2.2e-14; denominators 470/8265/1531 match distinct qids",full census not sample
+R-T2-bm25-CI,T2 cascade,REVIEWED,"probe_p2_rrf60ci.py own boot() 20000 reps seed 20260916: all 15 stored _bm25 CIs bit-identical",pipeline trusted
+R-T2-rrf60-CI-new,T2 cascade,REVIEWED,"probe_p2_rrf60ci.py NEW: rrf60_ci.json; PerLTQA 3 SIG passes (>=+1.0), LME best +2.23ns (misses by 0.08pp), LoCoMo all fail",omitted-by-prior-audit gap closed
+R-T2-inversion,T2 cascade,REVIEWED,"stored first_stage_order recomputed: _bm25 4/3/6 of 10 exact; NEW _rrf60 2/2/1 — dissolution is operator-dependent",S2 finding
+R-T2-pass-count,T2 cascade,REVIEWED,"stored JSON: PerLTQA float_raw32_bm25 +1.13 SIG PASS contradicts '1 of 3 disputed-only' summary",S1 finding; STOP outcome unchanged via C1
+R-T2-depth,T2 cascade,REVIEWED,"probe_p1_t2: code arms actual_candidates=50 exactly; BM25_full=n_docs; no M-sensitivity run",M-conditional effects
+R-T2-no-RealTalk,T2 cascade,REVIEWED,"CSV datasets = LME/PerLTQA/LoCoMo only; incoming RAPOR p.29 states RealTalk text-rerank not produced (numeric caches only)",stated absence
+R-T2-qids,T2 cascade,REVIEWED,"t2_query_identities.json: full sorted qid lists + sha per dataset (LME 470/470arch, PerLTQA 8265/30arch, LoCoMo 1531/10arch)",identities persisted
+R-CEIL-firststage,recall/ceiling,REVIEWED,"probe_p3b_ceiling.py: 36/36 pool/ceiling cells exact <=1.5e-14 from per-query top-500 lists",full recomputation
+R-CEIL-decomposition,recall/ceiling,REVIEWED,"350/183/172 exact (sums 705); 484/49/67/105 exact; qid buckets in realtalk_reachability_qids.json",fully verified
+R-CEIL-328,recall/ceiling,NOT RUN,"needs unstored sym per-query rankings; qscale+BM25 readings give 270/303/371 never 328",S4 finding; time-boxed
+R-CEIL-cross-artifact,recall/ceiling,REVIEWED,"rerank_ceiling.json M=10/50/100 == firststage recomputation <=7.2e-15; anchors match RAPOR LME 54.27/PerLTQA 53.24/RT 22.41",consistent
+R-FUSION-preselected,fusion,REVIEWED,"firststage.py:10,60,284-285 (k=60 fixed pre-run); RAPOR p.21 + PLAN_BEFORE_RUN.json; no winner-shopping",preselected not post-hoc
+R-FUSION-pool,fusion,SAMPLED-STORED,"RESULTS.orig.json arithmetic cited (RRF@100 81.28 +3.12/+5.67 SIG; BM25-CODE covers zero); raw-score re-derivation NOT RUN",stored-arithmetic only
+R-TEXT-dep,text/index deps,REVIEWED,"memory_accounting.json: LME raw 237.87MB 76x codes+sigma; IDF objects 351MB 112x; pickle-vs-varint quoting inconsistent across artifacts",S5 finding
+R-OFFSET-nontransfer,scope,REVIEWED,"stored T2 levels: asym-qscale FR@3 = LME -3.62 / LoCoMo -1.58 / PerLTQA +0.29; no RealTalk delta applied",non-transfer confirmed
+R-BM25-heterogeneity,scope,REVIEWED,"three BM25 implementations (T1/firststage/T2) documented from source; within-artifact valid, cross-artifact mixing invalid",interpretation guard
+R-STOP-scope,scope,REVIEWED,"contract analysis: C1 failure justifies local STOP of code-vs-BM25 race; RRF fusion/danse-F1-residual/Q9 outside gate scope",local-only verdict

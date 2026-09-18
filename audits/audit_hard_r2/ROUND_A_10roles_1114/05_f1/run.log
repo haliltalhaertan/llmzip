@@ -1,0 +1,16 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/05_f1 (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. F1 execution + frozen-contracts audit complete as partial-complete within the time box.
+
+Result: F1 remains OPEN. The R2 metric implementation is proven correct on hand fixtures, and the six coefficients reproduce to rounding — but tarball identity is unverifiable from extracted trees, the 1e-12 headline gate fails on all benchmarks with the exact tie estimator, LoCoMo is absent, the per-query reference file is unpublished, and execution is same-family (not independent). Task4F1's BEAM scale profile is staged but never run (BLOCKED, no authorization).
+
+Key checks (all PASS as isolated fixtures through `f1_competition.py` entrypoints):
+- Hand oracle: `v=[2.0,3.8,3.8,3.0]`, gaps `(1.0,0.5)/(0.0,2.0)/(−2.0,0.5)`, Spearman `0.5`/`−√3/2`, single-gold theorem 20/20.
+- Tie fidelity: exact `E[FR@3]=0.5` vs NT=20 batch spread 0.275; auditor seed spread 2.7e-03 dwarfs LME residual 1.58e-04 — 1e-12 gate unmeetable by either estimator.
+- Budget: Task4F1 `D_t` is 12 B-vs-12 B matched; E1 `Delta_q` (SIGN vs float cosine) is 12 B vs 384–768 B unmatched.
+- Precision: 4 dp rounding error 4.6e-05 exceeds the 1e-12 contract by ~8 orders.
+- Gates: LME/REALTALK/PerLTQA FAIL at 1e-12 (float arm near-exact, sign arm off); local `f1_real_fr3/results.json` exactly equals branch evidence (explicit verification).
+
+Deliverables in [05_f1](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/05_f1): [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/05_f1/REPORT.md), [COVERAGE.csv](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/05_f1/COVERAGE.csv) (24 rows counted), [STATUS.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/05_f1/STATUS.md), `originals/`, `scripts/fixtures_f1.py`, `outputs/fixture_results.json`, `evidence/evidence.json`.
+
+Blockers preserved: `compute.sh` lock on read-only FS and `timeout(1)` denied — light fixtures run directly (single-thread BLAS, <10 s each). NOT RUN: LoCoMo leg, BEAM run/finalize, real-data C8 bootstrap, query-rows reuse, full 27-check rerun, heavy cache re-read. Whole-project areas outside scope are listed in REPORT §5 (metrics, ITQ, geometry, retrieval, dense, KV, storage, portability, governance-meta, twelve-byte race).

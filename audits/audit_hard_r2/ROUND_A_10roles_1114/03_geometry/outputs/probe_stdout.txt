@@ -1,0 +1,22 @@
+PASS T1_sign_sigma_invariance | sign(C/sig)==sign(C) elementwise on F1 (sig>0 everywhere: [0.7179 0.7062 0.5928 0.5737])
+PASS T2_sym_rank_invariant_under_sigma | Hamming vectors equal: [-0.0, -0.0, -1.0, -4.0, -4.0, -2.0]
+PASS T3_float_moves_under_sigma | max|cos_c - cos_std| = 0.063639
+PASS T3bF1_coherent_top3_agrees | top3 centered [0, 1, 2] vs standardized [0, 1, 2] (coherent fixture need not separate arms)
+PASS T4_centering_flips_bits | 6/24 bits differ between sign(Y) and sign(C); mu=[0.1917 0.1583 0.1833 0.15  ]
+PASS T5F1_coherent_top3_agrees | sym top3 [0, 1, 2] scores [-0.0, -0.0, -1.0] | asym top3 [0, 1, 2] (coherent fixture need not separate arms)
+PASS T6F1_coherent_top3_agrees | asym top3 [0, 1, 2] vs qscale top3 [0, 1, 2]
+PASS T6bF1_coherent_all_agree | 36/36 ordered pairs share top3 on coherent F1 (separation lives in F1b)
+PASS T7a_sym_tie_exists | sym scores [-0.0, -0.0, -4.0, -2.0]
+PASS T7b_expected_hit_matches_MC | exact 1.0000 vs MC(40000) 1.0000
+PASS T5_sym_vs_asym_disagree_F1b | witness docs (0, 1) sym [-1.0, -2.0, -3.0, -2.0] asym [-1.35  1.45  1.35 -1.45]
+PASS T6F1b_qscale_asym_agree_here | F1b orders coincide (values differ: qscale [-29.4  29.8  29.4 -29.8] vs asym [-1.35  1.45  1.35 -1.45])
+PASS T3bF1b_float_orders_agree_here | F1b float_c [-0.0573  0.0954  0.0573 -0.0954] vs float_std [-0.49    0.4966  0.49   -0.4966] coincide in order (magnitudes differ)
+PASS T6b_sym_vs_qscale_disagree_F1b | witness docs (0, 1)
+PASS T3c_float_rank_flips_F1c | sigma=[7.071 0.51 ] witness docs (0, 1) float_c [ 0.8944  0.4472 -0.8944 -0.8455  0.8455] float_std [ 0.1427  0.9898 -0.1427  0.7193 -0.7193]
+PASS T6c_qscale_vs_asym_disagree_F1c | witness docs (2, 4) qscale [ 2.244   2.244   1.6783  1.6783 -1.6783] asym [ 2.1213  2.1213 -0.7071 -0.7071  0.7071]
+PASS T8_zero_variance_column | quant floor -> 1e-12; baseline -> 1
+T9 cache keys: ['C', 'N', 'QC', 'cats', 'chat_no', 'conv_id', 'file', 'gold_rows', 'id_to_row', 'qa_diag', 'qids', 'questions'] | colmean|max|=4.95e-16 med=1.92e-18
+PASS T10a_D1_witness | m=0 unit=True inF=True q.x=0 axes_inF=[False, False]
+PASS T10b_D3_rho_support | rho(e1)=0.5000 rho(c)=1.0000; rho=-0.3 impossible since min is +1/sqrt(d)
+PASS T10c_D4_closed_endpoint | q.e1 = 1/2 -> interval [0.5,1] closed
+SUMMARY 20/20 checks passed

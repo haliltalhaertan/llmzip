@@ -1,0 +1,297 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/novelty (cwd default)
+muse: workspace trust: trusted source=run-flag
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+# NOVELTY AUDIT (round 2, prior-art role) — 2026-09-17
+
+Scope: novelty / prior-art claims only. Round-1 work (number reproduction,
+BM25/ladder/PerLTQA checks, LoCoMo gold dispute, portability) is not repeated.
+READ-ONLY on all source trees; writes only in this directory. No internet
+access was available: every novelty judgement below carries that limitation,
+and no paper was fetched, quoted, or numerically cited from memory.
+
+## 1. VERDICT (3 lines)
+
+1. No CRITICAL finding: every published number rechecked here reproduces
+   (ITQ −2.27/−0.13; k384 sym 54.18 vs float 43.69; asym 60.79→61.09), and
+   no fabricated citation was found in the lit_r2 maps.
+2. The flagship "ITQ worse than random" is NOT reviewer-ready as a general
+   claim: one ITQ init vs 3 production (+7 audit) random seeds, 50 fixed
+   iters with only ~2% loss drop and no convergence trace, per-archive fits
+   at n/k 3–16; RealTalk/qscale direction is solid (0/10 rotations), the
+   PerLTQA half is null.
+3. Every novelty claim must stay hedged (PLAUSIBLY NEW instance at best, else
+   CANNOT JUDGE without literature access); Sec. 5 gives safe wording per claim.
+
+## 2. Findings (short table; detail in Sec. 3)
+
+| ID | Sev | Claim audited | Check performed | Result |
+|----|-----|---------------|-----------------|--------|
+| F1 | HIGH | ITQ setup is reviewer-fair | Read impl, seeds, loss diags | Not fair: 1 init vs 3+7 |
+| N1 | HIGH | ITQ<random is new-to-field | Training recall, no web | Plausibly new instance only |
+| N2 | MED | Size-damage r=-0.78 is new | Recall + round-1 limits | Plausibly new, n=10, Hit@10-only |
+| N3 | MED | Balanced-but-worse is new | Recall + MED confound | Plausibly new instance, no causality |
+| N4 | MED | Sigma-collapse mechanism new | Textbook reasoning check | Principle likely known; split is new |
+| N5 | HIGH | sign() adds ~10pp, general | Traced 54.18/43.69 source | k384 RealTalk only; k96 contradicts |
+| N6 | HIGH | Few-hundred regime unstudied | Internal scan only | Cannot judge; null is not evidence |
+| N7 | LOW | Fair-baseline method is new | Recall of field practice | Likely known hygiene; honest use is real |
+| N8 | LOW | No arm wins both is a finding | Read REPORT Sec. 6 | Pipeline regularity, not a law |
+| C1 | LOW | lit_r2 cites fake papers | Scanned all cited names | No fabrication; 3 vague refs flagged |
+
+Limitation (applies to N1–N8, C1): NO internet. Each "likely known /
+plausibly new" below is training-recall only, stated without invented
+titles, authors, or years.
+
+## 3. Per-finding detail
+
+### F1. ITQ was given one draw against its rival's distribution (HIGH)
+
+- Impl: `top10_comparison_r1/math_r1/quant/quant_math.py`
+  lines 63/68-69 (`RAND_SEEDS`=3 seeds, `ITQ_ITERS`=50, `ITQ_SEED`=single),
+  lines 140-158 (`fit_itq`: init once via `random_orthogonal`, alternate
+  B/R 50x, store only init/final loss, no trace, no stopping rule),
+  line 492 (single `fit_itq(C)` call per archive; RAND loop varies 3 seeds).
+- Report: `math_r1/quant/REPORT.md` lines 35-42 (50 iters, init seed
+  20260916; `RAND_20260916` = same matrix ITQ starts from — paired start).
+- Production contrast is therefore 1 ITQ solution vs 3 RAND draws per
+  archive. Round-1 claims audit extended RAND to 7 fresh seeds but kept
+  exactly 1 ITQ solution (`audit_hard_r1/CONSOLIDATED_AUDIT.md` review
+  section: "does NOT vary seven ITQ initializations").
+- Convergence: from `math_r1/quant/RESULTS.json` `itq_diagnostics`,
+  relative loss improvement is 1.6–2.1% (RealTalk) and 2.2–2.4%
+  (PerLTQA) on all 40 archives — the optimizer moves ~2% from a random
+  start and stops at a fixed 50 with no per-iter curve. A reviewer cannot
+  tell "converged" from "stuck near init".
+- Sample regime: per-archive N is 410–1548 (RealTalk) and 293–546
+  (PerLTQA) for a 96x96 rotation (4560 free parameters), i.e. n/k of
+  ~3–16. Scalar count n*k exceeds 4560, so this is not naive
+  overfitting, but estimating a 96-dim rotation from ~400 points with
+  no held-out check and no multi-restart is below the bar for a
+  "method M fails" claim. ITQ is non-convex alternating minimization:
+  one init = one local optimum.
+- Commands run (read-only): grep for seed/iter lines above; python3 read
+  of `RESULTS.json` summaries (ITQ/qscale 32.77 vs RANDs
+  35.18/35.32/34.61 RealTalk; 78.91 vs 78.77/79.48/78.86 PerLTQA),
+  per-seed ITQ−RAND Hit@10 (−2.41/−2.55/−1.84 RealTalk, all CIs exclude
+  0; +0.15/−0.57/+0.05 PerLTQA, all ns), per-archive loss ratios.
+- New beyond round 1: round 1 showed RAND-side robustness (7 fresh
+  seeds); the gap I add is the ITQ side was never varied, convergence
+  was never shown, and the paired-start strength (ITQ worsened the
+  exact matrix it started from, −2.41 vs RAND_20260916) is the only
+  piece that survives strict review — and it is n=1 init.
+
+### N1. "ITQ worse than random — not in the literature" (HIGH, hedged)
+
+- Claims: `REPORT.md` lines 109-112 (−2.27/−0.13, "any rotation does
+  this damage"); `REPORT.md` lines 139-144 (scope: dense image
+  descriptors + Euclidean neighbours vs TF-IDF/SVD + gold retrieval);
+  `FINAL_STATE.md` lines 44-46 (claim 1 of "genuinely ours").
+- Numbers reproduce (see F1 command results; mean of the three
+  per-seed diffs = −2.27 RealTalk, −0.12 PerLTQA). Not a number dispute.
+- Training recall (UNVERIFIED, no web): I recall ITQ evaluated on dense
+  visual-descriptor ANN benchmarks, and I recall no evaluation of ITQ
+  on sparse TF-IDF/SVD sign codes, per-archive small-n fits, or gold
+  retrieval metrics. Negative recall is weak evidence by nature.
+- Judgement: PLAUSIBLY NEW as a measured instance on this pipeline;
+  CANNOT be upgraded to "new-to-field" without the fetch queue
+  (quant `FETCH_QUEUE.md` ranks 1/5/6/7) returning a documented null.
+  The explanatory principle (reconstruction-optimal ≠
+  retrieval-optimal, cf. score-aware quantization precedent in round-1
+  lit map) is LIKELY KNOWN by analogy and must be cited as analogy,
+  not coverage.
+- Safe wording: "On per-archive TF-IDF/SVD sign codes at 12 B/doc, one
+  ITQ solution (50 iters, single init) did not beat any of 3 (resp. 10
+  incl. audit) random rotations on RealTalk/qscale (−2.27 pp); PerLTQA
+  was null (−0.13 pp, inside seed noise). Whether this generalizes
+  beyond this pipeline is untested."
+
+### N2. "Rotation damage scales with archive size, r=−0.78" (MED)
+
+- Claims: `FINAL_STATE.md` lines 47-49; `REPORT.md` lines 122-130
+  (−6.56 vs −23.13 pp, PerLTQA gap "explained by size alone").
+- Training recall: I recall no reported "rotation damage grows with n
+  at fixed k" curve for sign codes. PLAUSIBLY NEW as a regularity;
+  CANNOT JUDGE field-novelty without the hubness/concentration +
+  small-sample fetches (quant `FETCH_QUEUE.md` ranks 4/5).
+- Internal limits (partly round-1, preserved not repeated: n=10
+  archives; association weakens to −0.56/−0.29 on FR@3; one archive
+  RT04 is helped by rotation yet r barely moves): my addition is that
+  "alone explains the cross-benchmark difference" is between-benchmark
+  accounting, not a within-mechanism causal finding — n may proxy
+  content (large archives = chattiest/multi-topic). The cheap
+  discriminator (partial correlations of spectral-Gini / hubness skew
+  vs damage conditioning on n; size-matched subsample refit) was never
+  run.
+- Safe wording: "Exploratory (n=10, Hit@10): damage correlates with
+  archive size; mechanism open (spectral concentration vs hubness vs
+  content confound)."
+
+### N3. "Bit balance anti-correlates with retrieval" (MED)
+
+- Claims: `FINAL_STATE.md` lines 50-52 (ranges 0.309–0.658 → 0.459–
+  0.545); `REPORT.md` lines 132-134; quant `REPORT.md` bit-balance
+  paragraph (FULL mean ~0.492, rotated ~0.500).
+- Training recall: balance/maximum-entropy as a design goal for
+  spectral hashing / ITQ-style methods is LIKELY KNOWN folklore; I
+  recall no "balanced-but-worse at fixed bits with gold retrieval"
+  report. PLAUSIBLY NEW as a measured instance; causality NOT
+  established — rotation changes far more than balance, and the MED
+  arm (balance 0.500 by construction, neutral/tiny-hurt) changes query
+  thresholds too, so it is not a pure balance intervention (as the
+  round-1 consolidated review also notes).
+- Safe wording: "Rotation tightened bit balance and retrieval fell;
+  a co-occurrence, not a causal finding. Do not claim balance hurts."
+
+### N4. "Sigma-division collapses at high k while asym rises" (MED)
+
+- Claims: `FINAL_STATE.md` lines 53-54; `DECISION_TESTS.md` T3 section
+  (k<n enforced, 0 constant dims, qscale −3.60 / sym −5.17 persist,
+  asym +0.30; lines for 60.79→61.09 verified in
+  `coordinator/T3_PERLTQA_KLTN.json` lines 79/94).
+- The scorer-split observation (standardized arms fall, unstandardized
+  rise on identical subspaces) is the durable, plausibly new-to-this-
+  pipeline part. The mechanism sentence ("dividing by the tiny σ of
+  genuine near-singular trailing directions") is standard whitening
+  reasoning — amplifying low-variance coordinates by 1/σ is textbook —
+  so LIKELY KNOWN as a principle. Per the already-known-issues list,
+  the sigma explanation is incomplete/partly wrong; I do not re-litigate
+  it, only its novelty: do not present the mechanism as a discovery.
+- Safe wording: "At high k the standardized scorers decline where the
+  unstandardized readouts keep rising (PerLTQA T3); consistent with
+  σ-whitening of tail directions, mechanism not isolated."
+
+### N5. "sign() adds ~10pp over its float source" (HIGH — scope)
+
+- Claim: `FINAL_STATE.md` lines 57-58 (k=384: sym 54.18 vs float 43.69).
+- Provenance traced: `coordinator/ladder2.log` lines 21/23 (RealTalk
+  k384/sym Hit@10 54.18, k384/float 43.69). So the comparison is
+  RealTalk-only, k=384-only, and the float is the ladder's cosine float
+  arm — while at k=96 the sign LOSES to the uncompressed float
+  (`REPORT.md` lines 24-26: float_std 48.51 vs sign96 46.68).
+- Judgement: PLAUSIBLY NEW as a high-k instance (sign equalizing per-dim
+  votes can beat raw cosine when tail variance is misleading), but the
+  "adds" framing inverts with k and is scorer/benchmark-specific.
+  Stated generally it is false on the project's own k=96 table.
+- Safe wording: "On RealTalk at k=384 only, the sign code beat the
+  ladder float arm (54.18 vs 43.69); at k=96 the float wins. Do not
+  quote without k, benchmark, and scorer."
+
+### N6. "Few-hundred-doc regime / ≤16B gold Hit@10 unstudied" (HIGH)
+
+- Claims: `FINAL_STATE.md` lines 111-113 ("appears unstudied"); `REPORT.md`
+  lines 282-283 ("Literature search found no source...").
+- What was actually searched: internal inventory
+  (`DO_NOT_RESCAN.md`, `GAP_TO_100.md`, round-1 `LITERATURE_MAP.md`) —
+  a local scan, not the field. An internal null ("we found none in our
+  scanned set") cannot support a field claim ("unstudied") without the
+  web fetches in the three `FETCH_QUEUE.md` files, none executed.
+- Training recall (weak): BEIR-era corpora I recall are ~10^3–10^6
+  (smallest recalled ~3–5K), an order above our 293–1548/archive; that
+  makes a gap plausible but proves nothing. CANNOT JUDGE WITHOUT
+  LITERATURE ACCESS.
+- Safe wording: "We found no source in our scanned set reporting gold
+  Hit@10@K=10 from ≤12–16 B/doc codes on few-hundred-document
+  per-archive collections; we did not survey the field."
+
+### N7. "Fair-baseline methodology" as novelty (LOW)
+
+- Claim: `FINAL_STATE.md` lines 55-56 ("give the competitor your own
+  tokenizer before claiming a win").
+- Judgement: LIKELY KNOWN as practice (tuned-baseline / ablation-hygiene
+  norms; BEIR-era "BM25 is a strong baseline" discussion; ANN framing of
+  first stage as recall/cost device). The real contribution is the
+  honest application (the +10.35 RealTalk correction reversing the
+  headline), not the method. Publish as conduct, not as invention.
+- Note: the +10.35 correction is RealTalk-only (already-known issue);
+  it must not travel as a cross-benchmark constant.
+
+### N8. "No arm has ever won on both benchmarks" (LOW)
+
+- Claim: `REPORT.md` lines 272-275.
+- Judgement: an honest pipeline-level regularity (channel ablation, IDF
+  power, component shift all reverse signs), PLAUSIBLY NEW as an
+  observation about this system. It is not a general law (2 benchmarks,
+  wide intervals on 10 RealTalk archives, exploratory) and reversals
+  across collections are common in IR. Keep as a caution, not a finding.
+
+### C1. lit_r2 citation hygiene (LOW — passes, 3 flags)
+
+- Checked: every `et al.`, arXiv, venue string in `lit_r2/*/`
+  (`QUANT_MAP.md`, `LEXICAL_MAP.md`, `RATE_MAP.md`, three
+  `FETCH_QUEUE.md`) plus round-1 `digest_r1/lit/LITERATURE_MAP.md`.
+- No fabricated paper found. The maps are exemplary: every
+  memory-sourced statement is tagged RECALLED-FROM-MEMORY + confidence
+  + UNVERIFIED, fetch queues prescribe verification before any citation.
+- Plausible from training recall (not verified, no web): Gong/Lazebnik
+  ITQ; Mu et al. arXiv:1702.01417 (all-but-the-top); Cormack/Clarke/
+  Buettcher RRF SIGIR 2009; Thakur et al. BEIR 2021; Karpukhin et al.
+  DPR 2020; Guo et al. ScaNN-anisotropic ICML 2020; Weiss et al.
+  spectral hashing; Jegou et al. PQ 2011 + Ge et al. OPQ 2013;
+  Deerwester et al. LSI 1990; Robertson/Zaragoza BM25 overview;
+  Indyk/Motwani, Charikar simhash, Datar p-stable LSH lines; Beyer et
+  al. 1999 concentration; Radovanovic hubness line; Hughes 1968
+  peaking; Nguyen et al. 2016 MS MARCO.
+- Flagged as vague/UNVERIFIED (do not cite without fetch): "Husbands
+  et al. 2005" (existence coordinator-verified per brief, but I cannot
+  confirm contents from recall); "Bajaj et al." MS MARCO overview
+  (`LEXICAL_MAP.md` line ~295); "Drineas et al. JMLR 2012" as the
+  canonical leverage-score reference (research line is real;
+  exact-paper attribution explicitly UNVERIFIED in the map itself).
+- One risk noted, not a fabrication: `RATE_MAP.md`/`QUANT_MAP.md`
+  recall fine-grained details (loss forms, venue/year) only to mark
+  them UNVERIFIED with fetch instructions — correct behavior, must be
+  preserved into any publication draft.
+
+## 4. What I could NOT check and why
+
+- Full field novelty (all N-claims): no internet; fetch queues
+  (7 quant + lexical + rate items) unexecuted. A documented null from
+  those searches is the missing evidence. Sampling: read 3 lit maps +
+  3 fetch queues + round-1 lit map fully; did not re-read every
+  inventory file line-by-line (boundaries taken from the maps' own
+  "already-scanned" lists, which I verified exist, not their contents).
+- ITQ rerun with multiple inits / iter sweep: read-only mandate plus
+  session cost; I recomputed from stored `RESULTS.json` only (sampled
+  per-archive diagnostics shown, all 40 same pattern). No new fits.
+- LME channel ablation (322/470 at publication) and LoCoMo gold: out
+  of role scope; LoCoMo numbers excluded from all verdicts above.
+- Clean-machine portability: already-known issue, not re-tested.
+
+## 5. Safe-to-state list (how to hedge each)
+
+- State as measured pipeline facts: RealTalk ITQ≤random on qscale with
+  the exact protocol (1 init/50 iters/3+7 RANDs); k384 sign>float on
+  RealTalk only; T3 scorer split; no-arm-wins-both in this system.
+- State as exploratory correlations: size-damage r (n=10, Hit@10);
+  balance co-occurrence (no causality); σ-whitening gloss (mechanism
+  not isolated).
+- State as internal nulls, never field claims: "no source in our
+  scanned set" for ≤16B gold Hit@10 and few-hundred-doc regime.
+- Cite for principle, not for instance: score-aware quantization for
+  "reconstruction ≠ retrieval"; BEIR for "BM25 strong zero-shot";
+  LSH/ANN framing for "first stage = recall device". Verify each from
+  primary source first; the maps' UNVERIFIED tags must survive until then.
+- Do not state publicly without new work: "ITQ fails on text codes"
+  (needs multi-init + iter sweep + second pipeline), "balance hurts
+  retrieval", "unstudied regime", "sign adds 10pp" (unscoped).
+
+## Commands run (read-only)
+
+- `ls` of package/working-tree/lit/ablation dirs; `cat` of
+  `lit_r2/quant/QUANT_MAP.md`, `FETCH_QUEUE.md`, `lexical/LEXICAL_MAP.md`
+  (head 250), `rate/RATE_MAP.md` (head 250).
+- `cat math_r1/quant/quant_math.py` (full); `sed` of
+  `math_r1/quant/REPORT.md` lines 1-160; `grep -n` seed/iter/loss lines.
+- python3 reads of `math_r1/quant/RESULTS.json`: per-bench summaries,
+  ITQ−RAND contrasts with CIs, `itq_diagnostics` loss ratios (all 40
+  archives), per-archive N lists.
+- `grep` citation scans across `lit_r2/` and `digest_r1/lit/`; `sed`
+  context windows for Nguyen/Bajaj, Hauff, Datar, ScaNN passages.
+- `grep` provenance for 54.18/43.69 → `coordinator/ladder2.log`
+  lines 21/23; 60.79/61.09 → `coordinator/T3_PERLTQA_KLTN.json`
+  lines 79/94; 54.1844 anchor → `coordinator/LADDER.json:45`.
+- Round-1 `HARD_AUDIT_CLAIMS.md` lines 1-70 and
+  `CONSOLIDATED_AUDIT.md` lines 20-45 read to avoid duplicating the
+  7-fresh-seed result.
+
+Report file: `/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/novelty/NOVELTY_AUDIT.md`. Source trees untouched (read-only commands only).

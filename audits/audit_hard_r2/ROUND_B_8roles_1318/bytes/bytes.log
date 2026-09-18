@@ -1,0 +1,80 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/bytes (cwd default)
+muse: workspace trust: trusted source=run-flag
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+# BYTES audit — is "12 bytes" really 12 bytes?
+
+## 1. VERDICT
+
+No headline byte figure survives: "12/24/48 B/doc" counts packed sign bits only, while the reported qscale accuracies additionally require per-archive sigma + mu + a ~122 MB (f32 lower bound) per-archive query encoder that is never charged. Under symmetric deployed accounting the codes are ~188x LARGER than the BM25 index they claim a 5.83x win over.
+
+The "858,624 bits / 0 difference" seal proves only doc-side sign equality at k=96 — not size, not the query path, not sigma, not k=192/384.
+
+Two narrow corrections are exact and machine-checked: true doc-side cost is 12.86/25.72/51.43 B/doc with sigma (13.72/27.43/54.87 with the uncounted mu); the fair BM25 rival is also 22.5% CHEAPER than the quoted index.
+
+Full report: `/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/bytes/BYTES_AUDIT.md`. Probes + JSON in the same dir. Source trees untouched (read-only imports only). Findings below use headings instead of a wide table so they stay readable; same content as the file.
+
+## 2. Findings
+
+### F1 — CRITICAL: headline bytes count bits only
+Claim: "12/24/48 B/doc" (`LADDER.json` bytes_per_doc; REPORT/LADDER/DECISION tables; `ladder.py` k/8).
+Check: read scorers (`ladder.py:144-154`; `arm_decision.py:27-32`); P4 JSON arithmetic; 8944 docs verified from source.
+Result: headline counts packed bits only. Even in the report's own narrow boundary (packed+sigma f64) truth is 12.86/25.72/51.43 B/doc (+7.15%). Published integers are wrong.
+
+### F2 — CRITICAL: encoder reverses the storage comparison
+Claim: "codes+sigma 115,008 B vs BM25 index 670,511 B (5.83x)" (REPORT sec 4; FINAL_STATE costs).
+Check: rebuilt RT05 pipeline k=96/192/384 (P1); all-10-archive dims (P2); BM25 both tokenizers (P3).
+Result: encoder matrices alone total ~122 MB f32 = 1137x payload. Full lower bound ~126 MB (~14.1 KB/doc, range 7.2-34.4 KB/doc) vs BM25 index 0.67 MB. Symmetric ratio: ~188x AGAINST codes (~243x vs fair frozen BM25). The 5.83x win is an asymmetric-boundary artifact. PQ worker flagged this (`pq/REPORT.md:58-61`); never followed up.
+
+### F3 — HIGH: mu counted nowhere
+Claim: sigma is the only side state (`cost_audit.py:7,76-78`; "codes + sigma 115,008 B").
+Check: `build()` centers docs AND queries by mu (`ladder.py:111-132`; frozen `:639-657`).
+Result: mu (k floats/archive = 7,680 B f64 at k=96, same as sigma) is load-bearing for ALL arms yet in no total. Adds +0.86/1.72/3.43 B/doc.
+
+### F4 — HIGH: byte label is scorer-blind
+Claim: one label per k covers sym/qscale/asym/MED/ITQ/RAND.
+Check: all scorers vs `LADDER.json` labels + `quant_math.py:517` assert.
+Result: same "12 B" needs mu+encoder (sym), +sigma (qscale), +96 medians (MED), +96x96 R (ITQ/RAND: 36,864 f32 / 73,728 f64 per archive). The 3 pp qscale-over-sym gain and T3 asym-over-qscale inversion (61.09 vs 54.11 at "48 B") are bought with uncharged state.
+
+### F5 — HIGH: mixed precisions flatter codes
+Claim: sigma f64, R quoted f32-silently, float arms f32.
+Check: `cost_audit.py:77` vs REPORT:136-137 (3.43x/7.50x = f32, unstated; worker gives both) vs `ladder.py:243` vs float64 caches.
+Result: main text prints the smaller rotation multiple (f64 doubles it: 6.87x/15x). No test shows f32 preserves the 0.0000pp anchors, esp. the 1e-12-floored tiny-sigma regime. UNVERIFIED.
+
+### F6 — MED: rival cheaper than quoted; LME scope inconsistent
+Claim: BM25 cost 670,511 B compact / 1,450,229 B pickle.
+Check: re-ran encoding exactly (P3, all 10 archives); added frozen-tokenizer variant.
+Result: reproduced coarse numbers to the byte; fair (frozen, 65.67) index is SMALLER: 519,740 B compact (-22.5%). True narrow ratio vs compared rival: 4.52x, not 5.83x. LME cites Python-object IDF (351 MB) after rejecting pickle inflation on RealTalk.
+
+### F7 — MED: gate seals less than it appears
+Claim: "0 differing bits of 858,624" (k=96); "0 of 276,480" (T3).
+Check: gate blocks (`ladder.py:194-200`; `t3:125-128`); P4: 858,624 = 8944x96.
+Result: seals ONLY doc-sign equality at k=96 (T3: n<384 subset only). Q96 built-but-uncompared; no sigma/mu/scores/k=192/384. No size proof.
+
+### F8 — LOW: hunted side channels came back clean
+Checked: per-doc scalars (none — all per-archive), doc-float residuals in bit scores (none — doc side +-1 only), ID/length/order leaks (none — hash(archive,row) tie-break, `audit_baseline_lib.py:79-83`; lens unused on code path). PQ's 98,304 B shared codebook (~22.99 B/doc) is properly charged — the package's one honest per-arm total.
+
+Sampling: P3/P4 EXHAUSTIVE (10 archives, both tokenizers, JSON math). P1 SAMPLE (RT05 x 3 k). P2 all-archive D dims, analytic SVD-k sizes. Round-1 left `cost_audit` explicitly unreviewed — this is new ground.
+
+## 3. Key evidence (paths, lines, commands)
+
+- Byte claim: `.../coordinator/ladder.py:24-25` (k/8), `:243-244` (bytes_per_doc), `:147-153` (scorers; sigma needed for qscale only); `.../coordinator/LADDER.json:11-54` (12/24/48 for sym AND qscale); `REPORT.md:21-27`; `LADDER_REALTALK.md:11-15`; `DECISION_TESTS.md:28-32`.
+- Missing state: `ladder.py:111-132` (`mu`, QC=QY-mu); frozen `drive/...benchmark.py:196-216` (per-archive fits), `:639-657` (s96/mu/C/QC); `cost_audit.py:76-78` (payload+sigma only); `quant_math.py:140-158` (R), `:506-513` (medians), `:517` (12 B assert for all arms).
+- Precision: `math_r1/quant/REPORT.md:118-124` (both precisions) vs `REPORT.md:136-137` (f32 only, unstated); cache probe: `RT01.pkl` C (662,96) float64 508,416 B.
+- Gate: `ladder.py:194-200`; `t3:125-128`; P4 confirms 858,624 = 8944 x 96.
+- Commands (outputs in bytes/ dir): `python3 P3_bm25.py` -> `P3_bm25.json`; `~/muse-work/ml-python P1_pipeline_sizes.py` -> `P1_pipeline_sizes.json`; same runner `P2_vocab_dims.py`; `python3 P4_gate.py` -> `P4_gate.json`.
+
+## 4. Corrected numbers (RealTalk, 705 queries / 8944 docs)
+
+Narrow doc-side truth (exact): k=96: 115,008 total = 12.86/doc (13.72 with mu). k=192: 230,016 = 25.72 (27.43). k=384: 460,032 = 51.43 (54.87).
+
+Deployed lower bound (f32 matrices + f64 idf + term bytes + mu/sigma + packed): k=96 ~14,120/doc (range 7,223 RT06 to 34,418 RT05). k=192 ~26,475. k=384 ~51,186. f64 doubles matrices (~28 KB/doc at k=96).
+
+Rivals from actual corpora (exact): coarse BM25 index 670,511 (74.97/doc), +text 1,669,165 (186.62/doc). Fair frozen BM25: 519,740 (58.11/doc). Accuracy: qscale 49.65/55.32/57.87 vs fair BM25 65.67 (-16.03/-10.35/-7.80).
+
+Ratios: published 5.83x -> 4.52x vs compared rival (4.24x with mu) -> ~1/188 symmetric deployed (~1/243 vs fair; ~1/76 vs index+text).
+
+## 5. NOT checked
+
+PerLTQA/LoCoMo/LME encoder MB (same omission by inspection, totals UNVERIFIED — need P1/P2 rerun there). f32 fidelity (no sensitivity run exists). Global-encoder alternative (new method, unmeasured). LME 3.14/237.87/351.18 MB (external method, not re-derived). k=768, NOPROJ arms, LoCoMo gold dispute, rerank energy (out of scope).
+

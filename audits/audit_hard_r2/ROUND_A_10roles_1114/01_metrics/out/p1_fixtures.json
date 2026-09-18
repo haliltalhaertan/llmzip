@@ -1,0 +1,46 @@
+{
+ "F1_exactly_ten_at_boundary": {
+  "n": 20,
+  "k": 10,
+  "len_top": 10,
+  "all_cutoff_tied": true,
+  "deterministic_repeat": true,
+  "archive_salt_matters": true,
+  "top": [
+   0,
+   1,
+   6,
+   7,
+   3,
+   4,
+   9,
+   13,
+   5,
+   8
+  ]
+ },
+ "F2_expected_hit_vs_producer": {
+  "correct_any_gold": 0.7,
+  "brute_oracle": 0.7,
+  "producer_value": 0.4,
+  "producer_equals_expected_recall": true,
+  "verdict": "producer formula returns expected RECALL (0.4), true expected HIT is 0.7"
+ },
+ "F2_single_gold_coincide": {
+  "correct": 0.33333333333333337,
+  "producer": 0.3333333333333333
+ },
+ "F3_hit_vs_fr3_diverge": {
+  "hit10": 1.0,
+  "fr3": 0.25,
+  "verdict": "same ranking reads 100% on Hit@10 but 25% on FR@3"
+ },
+ "F4_gate_mismatch_demo": {
+  "est_pp": 2.7822520203868217,
+  "ci_lo": -8.061428965993171,
+  "ci_hi": 13.625608791847169,
+  "code_impl_C1_point_only": true,
+  "documented_C1_point_plus_CI": false,
+  "verdict": "point passes while CI-including-zero fails"
+ }
+}

@@ -1,0 +1,11 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/06_dense_residual (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Dense/residual/alternate-line audit complete, all outputs in `audit_hard_r2/06_dense_residual/`.
+
+Result: byte budgets check out as active-code minima (96/100/104/112b → 12/13/13/14B); tie-only stride encoding verified non-inverting; no doc-float or qrel leakage on inspected paths; seed handling clean globally (per-query-max would inflate +1.58pp, correctly avoided in primary contrasts). Reaggregations verified digit-for-digit: residual8 MAG8−BASE +0.481pp with MAG8−SIGN8 ≈ 0 (90% of lift is sign reweight); B8≡asym on PerLTQA (+0.00058) and negative on LME/RealTalk. Asym/B8 need full float queries (not code-only); residual8 uses a narrower 8-axis quantized query channel. Dense-MRL proxy verdict is internally consistent and correctly scoped as non-retrieval.
+
+STOP logic: the TF-IDF/SVD STOP (C1/C3/S3, 7–16pp scale) does not dispose the dense-MRL line (different family) nor these residual micro-measurements (0.1–0.5pp tie effects, correctly self-disposed as small/fragile). It does dispose any "8 extra bits rescue the 12-byte programme vs fair BM25" claim.
+
+Coverage: 26 items — 14 REVIEWED, 8 SAMPLED, 4 NOT RUN (dense rerun, micro ranking rerun, Actions artifacts, oracle_repair/hit10/inverse/kv). Probes: `scripts/t_probe_synth.py` and `scripts/t_reaggregate.py` all PASS/VERIFIED (see `outputs/`). Blocker: `compute.sh` flock unavailable (read-only fs), so bounded single-thread direct runs were used. No source modified.
+
+Outside this role: metrics/F1 (01/05), ITQ-rotation (02), geometry/E1 (03), comparator/cascade (04), KV/inverse (07), storage/rank certs (08), portability (09), whole-project governance (10).

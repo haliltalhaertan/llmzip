@@ -1,0 +1,7 @@
+[21:23:20] R4 basladi
+[21:23:30] kota acik, ajanlar sirayla kosacak
+[21:23:30] bench3_producer basliyor
+[21:28:30] bench3_producer: TAMAM (13681B)
+[21:29:30] ladder_indep basliyor
+[21:40:30] ladder_indep: TAMAM (6392B)
+[21:41:30] R4 bitti

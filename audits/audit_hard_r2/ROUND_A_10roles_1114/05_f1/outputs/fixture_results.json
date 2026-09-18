@@ -1,0 +1,145 @@
+{
+ "fixtures": {
+  "FX1_hand_fixture": {
+   "detail": {
+    "bot": [
+     3,
+     0
+    ],
+    "dB": [
+     0,
+     2,
+     0,
+     2,
+     1
+    ],
+    "dT": [
+     0,
+     2,
+     2,
+     0,
+     2
+    ],
+    "r1gaps": [
+     1.0,
+     0.5,
+     0.0,
+     0.0
+    ],
+    "r2gaps": [
+     0.0,
+     2.0
+    ],
+    "r3gaps": [
+     -2.0,
+     0.5,
+     -3.0,
+     0.0
+    ],
+    "top": [
+     1,
+     2
+    ],
+    "v": [
+     2.0,
+     3.8,
+     3.8,
+     3.0
+    ]
+   },
+   "pass": true
+  },
+  "FX1b_spearman": {
+   "detail": {
+    "expect_tie": -0.8660254037844386,
+    "rho_strict": 0.5,
+    "rho_tie": -0.8660254037844387
+   },
+   "pass": true
+  },
+  "FX1c_single_gold_theorem_20trials": {
+   "detail": "gold_n==1 => per-gold == min-gold on 20 random 96-D rows",
+   "pass": true
+  },
+  "FX2_exact_vs_sampled": {
+   "detail": {
+    "NT20_batch_spread100": 0.275,
+    "exact": 0.5,
+    "mc2000_mean": 0.498,
+    "mc_sd": 0.2906819567843866,
+    "note": "NT=20 sampling noise >> 1e-12; exact expectation differs from any single NT=20 draw by construction"
+   },
+   "pass": true
+  },
+  "FX2b_residual_scale": {
+   "detail": {
+    "LME_sign_resid": 0.0001584,
+    "auditor_seed_spread": 0.0027,
+    "ratio": "residual < seed spread; 1e-12 gate unmeetable by exact estimator and by frozen estimator vs itself"
+   },
+   "pass": true
+  },
+  "FX3_matched_budget": {
+   "detail": {
+    "E1_float_cosine_float64B": 768,
+    "HAAR96/ITQ96_bytes": 12.0,
+    "SIGN96_bits": 96,
+    "SIGN96_bytes": 12.0,
+    "float32B": 384,
+    "verdict": "Task4F1 D_t (SIGN vs mean-of-5-Haar) is 12B-vs-12B matched; E1 F1 Delta_q (SIGN Hamming vs float cosine) is 12B vs 384-768B UNMATCHED (32-64x)"
+   },
+   "pass": true
+  },
+  "FX4_rounding_vs_1e-12": {
+   "detail": {
+    "contract_tol": 1e-12,
+    "max_rounding_error": 4.6206397286863155e-05,
+    "verdict": "coord compared against 4dp rounded targets; rounding error alone exceeds contract tolerance by ~8 orders of magnitude"
+   },
+   "pass": true
+  },
+  "FX5_C3_gate_1e-12": {
+   "detail": {
+    "gates": {
+     "LME": [
+      false,
+      "dsign=0.000158 dfloat=5.55e-17 tol=1e-12"
+     ],
+     "LOCOMO": [
+      false,
+      "missing benchmark mean"
+     ],
+     "PERLTQA": [
+      false,
+      "dsign=2.8e-06 dfloat=9.99e-16 tol=1e-12"
+     ],
+     "REALTALK": [
+      false,
+      "dsign=0.00076 dfloat=2.78e-17 tol=1e-12"
+     ]
+    },
+    "note": "AUDIT_RESPONSE admits all three FAIL at 1e-12; float arm near-exact, sign arm off by ~1.58e-04 (LME)"
+   },
+   "pass": true
+  },
+  "FX6_local_eq_branch_evidence": {
+   "detail": {
+    "deltas": {
+     "LME_diff": 0.015839505910157925,
+     "PERLTQA_diff": 0.0002721634789235594,
+     "REALTALK_diff": 0.07597692596345951
+    },
+    "match": true,
+    "sha_local": "c4682230..."
+   },
+   "pass": true
+  },
+  "FX7_dot17g_roundtrip": {
+   "detail": {
+    "max_abs_loss": 0.0,
+    "note": "trial-row fractional recall formatted .17g; round-trip loss sub-1e-15 but exact-rational D_t classification must parse decimal, not compare floats with tolerance"
+   },
+   "pass": true
+  }
+ }
+}

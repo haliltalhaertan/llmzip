@@ -1,0 +1,169 @@
+{
+ "n_archives": 10,
+ "per_archive": [
+  {
+   "arch": "RT01",
+   "N": 662,
+   "n_q": 85,
+   "full_pct": 56.47,
+   "rand_pct": 51.76,
+   "delta_pp": -4.71
+  },
+  {
+   "arch": "RT02",
+   "N": 476,
+   "n_q": 70,
+   "full_pct": 47.14,
+   "rand_pct": 32.86,
+   "delta_pp": -14.29
+  },
+  {
+   "arch": "RT03",
+   "N": 453,
+   "n_q": 73,
+   "full_pct": 73.97,
+   "rand_pct": 60.27,
+   "delta_pp": -13.7
+  },
+  {
+   "arch": "RT04",
+   "N": 422,
+   "n_q": 71,
+   "full_pct": 53.52,
+   "rand_pct": 60.56,
+   "delta_pp": 7.04
+  },
+  {
+   "arch": "RT05",
+   "N": 410,
+   "n_q": 70,
+   "full_pct": 60.0,
+   "rand_pct": 52.86,
+   "delta_pp": -7.14
+  },
+  {
+   "arch": "RT06",
+   "N": 1548,
+   "n_q": 74,
+   "full_pct": 29.73,
+   "rand_pct": 6.76,
+   "delta_pp": -22.97
+  },
+  {
+   "arch": "RT07",
+   "N": 1511,
+   "n_q": 70,
+   "full_pct": 41.43,
+   "rand_pct": 18.57,
+   "delta_pp": -22.86
+  },
+  {
+   "arch": "RT08",
+   "N": 1162,
+   "n_q": 70,
+   "full_pct": 30.0,
+   "rand_pct": 2.86,
+   "delta_pp": -27.14
+  },
+  {
+   "arch": "RT09",
+   "N": 1044,
+   "n_q": 63,
+   "full_pct": 53.97,
+   "rand_pct": 33.33,
+   "delta_pp": -20.63
+  },
+  {
+   "arch": "RT10",
+   "N": 1256,
+   "n_q": 59,
+   "full_pct": 49.15,
+   "rand_pct": 27.12,
+   "delta_pp": -22.03
+  }
+ ],
+ "pearson_r": -0.7775,
+ "pearson_p_two_sided": 0.008112804414629362,
+ "pearson_t_stat_df8": -3.497,
+ "pearson_95CI_fisher": [
+  -0.945,
+  -0.29
+ ],
+ "spearman_rho": -0.8303,
+ "spearman_p": 0.002940227023279509,
+ "leave_one_out_r": [
+  {
+   "dropped": "RT01",
+   "r": -0.775
+  },
+  {
+   "dropped": "RT02",
+   "r": -0.814
+  },
+  {
+   "dropped": "RT03",
+   "r": -0.813
+  },
+  {
+   "dropped": "RT04",
+   "r": -0.805
+  },
+  {
+   "dropped": "RT05",
+   "r": -0.76
+  },
+  {
+   "dropped": "RT06",
+   "r": -0.77
+  },
+  {
+   "dropped": "RT07",
+   "r": -0.767
+  },
+  {
+   "dropped": "RT08",
+   "r": -0.777
+  },
+  {
+   "dropped": "RT09",
+   "r": -0.775
+  },
+  {
+   "dropped": "RT10",
+   "r": -0.762
+  }
+ ],
+ "loo_min": -0.814,
+ "loo_max": -0.76,
+ "small_Nlt700_mean_delta": -6.56,
+ "large_Nge1000_mean_delta": -23.13,
+ "n_small": 5,
+ "n_large": 5,
+ "archives_in_gap_700_1000": [],
+ "claim_r": -0.78,
+ "claim_small": -6.56,
+ "claim_large": -23.13,
+ "seed_sensitivity": {
+  "RAND_20260916": {
+   "r": -0.778,
+   "p": 0.0081
+  },
+  "RAND_20260917": {
+   "r": -0.806,
+   "p": 0.0049
+  },
+  "RAND_20260918": {
+   "r": -0.768,
+   "p": 0.0094
+  },
+  "ITQ_C": {
+   "r": -0.852,
+   "p": 0.0018
+  },
+  "RAND_3seed_mean": {
+   "r": -0.801,
+   "p": 0.0053
+  }
+ },
+ "RT04_positive_on_all_seeds": true
+}

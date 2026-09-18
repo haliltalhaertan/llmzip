@@ -1,0 +1,2438 @@
+[
+  {
+    "item_id": "M01_tie_contract_read",
+    "area": "deterministic tie contract",
+    "status": "REVIEWED",
+    "source_or_test": "orig/audit_baseline_lib.py:79-83, orig/PROTOCOL.md:6",
+    "notes": "det_top10 sorts (-score, sha256(top10-r1|arch|row), row); exactly 10; gold-unaware; nonfinite to -inf",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "M02_expected_hit_formula_read",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "REVIEWED",
+    "source_or_test": "orig/run_lexical.py:55-76, orig/test_expected_hit.py",
+    "notes": "producer expected_hit returns exp/|gold| = expected RECALL, not any-gold probability; audit test file already proves with CE fixture",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "M03_gate_docs_read",
+    "area": "CI and multiple comparisons",
+    "status": "REVIEWED",
+    "source_or_test": "orig/PROTOCOL.md, orig/DECISION_TESTS.md, decision_r1/cost/REFEREE.md (read-only source)",
+    "notes": "PROTOCOL primary Hit@10 + exact expected Hit@10 + archive-cluster boot 2000/s20260915 exploratory; REFEREE primary FR@3 guardrail Hit@10 C1-C4/N/S3; DECISION_TESTS C1/C3/S3",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "M04_decision_code_read",
+    "area": "bootstrap cluster unit",
+    "status": "REVIEWED",
+    "source_or_test": "orig/decision_tests.py.txt:42-50,112-141",
+    "notes": "boot() paired archive-clustered 20000/s20260916; T1 C1 impl is point-only single-benchmark; strongest-BM25 selected on Hit@10",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "M05_firststage_gates_read",
+    "area": "deterministic tie contract",
+    "status": "REVIEWED",
+    "source_or_test": "published ideas_r1/firststage/firststage.py:159-183+405-460",
+    "notes": "boot_contrast same cluster method +10-cluster exploratory disclaimer; G6 704/705 PYTHONHASHSEED 1-ulp tie fragility zero-metric-impact disclosed; primary uses sorted-term order",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "M06_lexical_summary_read",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "REVIEWED",
+    "source_or_test": "orig/lexical_summary.json",
+    "notes": "expected_hit_at_10 bit-identical to recall_at_10 both arms; tie_rule field matches contract",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F1a_exact_ten_at_boundary",
+    "area": "deterministic tie contract",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F1",
+    "notes": "N=20 12-tied cutoff returns exactly 10, all tied rows below top2",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F1b_cutoff_all_tied",
+    "area": "deterministic tie contract",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F1",
+    "notes": "top[2:] all score 5.0",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F1c_repeat_deterministic",
+    "area": "deterministic tie contract",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F1",
+    "notes": "two calls identical",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F1d_archive_salt",
+    "area": "deterministic tie contract",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F1",
+    "notes": "RT99 order differs from RT07",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F2a_correct_eq_brute",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F2",
+    "notes": "CE fixture: correct 0.7 == brute oracle 0.7",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F2b_producer_eq_recall",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F2",
+    "notes": "producer 0.4 == (take*gb/B)/|gold|",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F2c_single_gold_coincide",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F2",
+    "notes": "1/3 both; explains why single-gold queries never differ",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F3_hit_vs_fr3",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F3",
+    "notes": "same ranking: Hit@10 1.0 vs FR@3 0.25",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F4a_code_impl_passes",
+    "area": "CI and multiple comparisons",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F4",
+    "notes": "synthetic 10-cluster diff: point +2.78 passes code C1",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "F4b_documented_impl_fails",
+    "area": "CI and multiple comparisons",
+    "status": "EXACT",
+    "source_or_test": "scripts/p1_fixtures.py F4",
+    "notes": "same diff CI [-8.06,+13.63] fails documented C1",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D01_export_total",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "raw RT*.json export holds 705 queries total (pre-filtered)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D02_valid_mapping",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "mappable-gold rule keeps 705/705",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D03_RT01_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT01 85/85 n_docs 662",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D04_RT02_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT02 70/70 n_docs 476",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D05_RT03_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT03 73/73 n_docs 453",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D06_RT04_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT04 71/71 n_docs 422",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D07_RT05_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT05 70/70 n_docs 410",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D08_RT06_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT06 74/74 n_docs 1548",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D09_RT07_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT07 70/70 n_docs 1511",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D10_RT08_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT08 70/70 n_docs 1162",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D11_RT09_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT09 63/63 n_docs 1044",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D12_RT10_n",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "RT10 59/59 n_docs 1256",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D13_exclusions",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "exclusions.json 728/705/23 self-consistent; raw export cannot re-derive the 23 (filter vacuous on export)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D14_gold_sizes",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "319 single-gold; 54.75% multi-gold (max 22)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D15_stored_hit10",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "stored bm25 Hit@10 54.1844 reproduces lexical_summary",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D16_stored_recall10",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "stored Recall@10 43.1599 < Hit@10 (partial multi-gold hits)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D17_tokenizer_hit_gap",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "frozen_idfonly minus coarse_textbook Hit@10 +10.3546",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D18_tokenizer_fr3_gap",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "same pair FR@3 +6.1176 (headline is metric-specific)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D19_strongest_rank_agree",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "frozen_idfonly top on both metrics here (selection-metric risk noted, not observed)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D20_four_bm25",
+    "area": "denominator/gold mapping",
+    "status": "EXACT",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "54.18 PROTOCOL-k1.5 / 55.32 coarse / 61.70 frozen-textbook / 65.67 frozen-idfonly",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "D21_lex_expected_eq_recall",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "MISMATCH",
+    "source_or_test": "scripts/p2_realtalk.py",
+    "notes": "lexical_summary expected_hit == recall bit-exact both arms",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "E01_bm25_tie_rate",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "EXACT",
+    "source_or_test": "own aggregation of audit/per_query_bm25_corrected.jsonl",
+    "notes": "678/705 no tie at cut; 27 tied",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "E02_corrected_eq_det",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "EXACT",
+    "source_or_test": "own aggregation of audit/per_query_bm25_corrected.jsonl",
+    "notes": "mean corrected expected-hit 0.541844 == deterministic Hit@10",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "E03_producer_eq_recall_mean",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "EXACT",
+    "source_or_test": "own aggregation of audit/per_query_bm25_corrected.jsonl",
+    "notes": "mean producer 0.431599 == Recall@10",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "E04_differ_multigold",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "EXACT",
+    "source_or_test": "own aggregation of audit/per_query_bm25_corrected.jsonl",
+    "notes": "129/705 differ per-query all multi-gold max abs 0.9524",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_rowcount",
+    "area": "bootstrap cluster unit",
+    "status": "EXACT",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "164256 rows",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_LME_level",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "qscale96_bm25 level diff 0.0",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_LME_est",
+    "area": "CI and multiple comparisons",
+    "status": "EXACT",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "est diff 0.0 (-0.3298)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_LME_ci",
+    "area": "CI and multiple comparisons",
+    "status": "CLOSE",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "own 2k/s777 [-1.39,+0.61] vs pub 20k/s20260916 [-1.38,+0.62]; sig and C3 agree",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_LME_clusters",
+    "area": "bootstrap cluster unit",
+    "status": "REVIEWED",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "470 clusters of size 1: archive==query; clustering is a no-op (iid-equivalent)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_LoCoMo_level",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "level diff 0.0",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_LoCoMo_est",
+    "area": "CI and multiple comparisons",
+    "status": "EXACT",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "est diff 0.0 (+1.0652)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_LoCoMo_ci",
+    "area": "CI and multiple comparisons",
+    "status": "CLOSE",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "own [+0.43,+1.73] vs pub [+0.44,+1.72]; sig and C3 agree",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_LoCoMo_clusters",
+    "area": "bootstrap cluster unit",
+    "status": "REVIEWED",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "10 archives sizes 81-197; n=1531 (disputed gold per REPORT s7)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_PerLTQA_level",
+    "area": "Hit@10 vs FR@3",
+    "status": "EXACT",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "level diff 0.0",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_PerLTQA_est",
+    "area": "CI and multiple comparisons",
+    "status": "EXACT",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "est diff 0.0 (+0.3283)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_PerLTQA_ci",
+    "area": "CI and multiple comparisons",
+    "status": "CLOSE",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "own [-0.03,+0.67] vs pub [-0.02,+0.67]; sig and C3 agree",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "T2_PerLTQA_clusters",
+    "area": "bootstrap cluster unit",
+    "status": "REVIEWED",
+    "source_or_test": "scripts/p3_t2.py",
+    "notes": "30 archives sizes 202-409; full-8265 uncorrected (T3 corrected subset is 2217)",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "X01_rrf60_ci",
+    "area": "CI and multiple comparisons",
+    "status": "NOT RUN",
+    "source_or_test": "none",
+    "notes": "_rrf60 levels exist in CSV/JSON but no CIs in DECISION_TESTS.json; not recomputed",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "X02_hit10_ci",
+    "area": "CI and multiple comparisons",
+    "status": "NOT RUN",
+    "source_or_test": "none",
+    "notes": "no Hit@10 CIs in decision_tests.py; REFEREE C2 untestable from artifacts",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "X03_c1_both_bench",
+    "area": "CI and multiple comparisons",
+    "status": "NOT RUN",
+    "source_or_test": "none",
+    "notes": "T1 RealTalk-only point-only; no PerLTQA-corrected fair BM25 exists; documented C1 untestable",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "X04_c3_corrected",
+    "area": "CI and multiple comparisons",
+    "status": "NOT RUN",
+    "source_or_test": "none",
+    "notes": "T2 PerLTQA uncorrected; T3 has no BM25/rerank arms",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "X05_code_expected_hit",
+    "area": "exact expected ties vs seeded estimates",
+    "status": "NOT RUN",
+    "source_or_test": "none",
+    "notes": "tie-sensitivity for discrete Hamming code arms never published; BM25-only measurement",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "X06_ladder_svd",
+    "area": "denominator/gold mapping",
+    "status": "NOT RUN",
+    "source_or_test": "none",
+    "notes": "no fresh SVD; prior round covered RT04/RT05 + T3; not repeated",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "X07_multiplicity_correction",
+    "area": "CI and multiple comparisons",
+    "status": "REVIEWED",
+    "source_or_test": "REPORT.md + DECISION_TESTS.json counts",
+    "notes": "13 SIG / 23 ns / 6 CI brackets in REPORT; 15 T2 contrasts + 6 T1 arms; no correction anywhere; PROTOCOL + firststage label work exploratory",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item_id": "X08_locomo_gold",
+    "area": "denominator/gold mapping",
+    "status": "NOT RUN",
+    "source_or_test": "none",
+    "notes": "1531-vs-1535 dispute; no adjudication attempted",
+    "audit_role": "01_metrics"
+  },
+  {
+    "item": "protocol recovery: quant_math.py arms/ties/sigma/bootstrap contract",
+    "status": "reviewed",
+    "count": "1",
+    "evidence": "quant_math_ORIG.py:1-859 + REPORT_ORIG.md",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "protocol recovery: FIDELITY_GATE.json G1/G2 refs",
+    "status": "reviewed",
+    "count": "1",
+    "evidence": "FIDELITY_GATE_ORIG.json",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "protocol recovery: codex/v52-itq-haar-objective PLAN+objective+historical-finals scope",
+    "status": "reviewed",
+    "count": "1",
+    "evidence": "git show b06bc04: replay/PLAN.json + replay_objectives.py:55-57,88 + INDEPENDENT_REPLAY_REVIEW.md",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "protocol recovery: published pilot copy equivalence",
+    "status": "reviewed",
+    "count": "1",
+    "evidence": "diff -q quant_math.py raw vs published: identical",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "protocol recovery: prior audit flaw citations (ties + single ITQ fit)",
+    "status": "reviewed",
+    "count": "2",
+    "evidence": "audit_hard_r1/claims/au_c1_itq.py:11-15 + HARD_AUDIT_CLAIMS.md:29-32",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "gate contract: det_top10/hrn/expected_hit + TIE_SALT",
+    "status": "reviewed",
+    "count": "1",
+    "evidence": "audit_baseline_lib_ORIG.py:30+79-119",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "skill/gate contracts: PROTOCOL tie/metric intent + DECISION_TESTS C1/C3/S3 gates",
+    "status": "sampled",
+    "count": "2",
+    "evidence": "top10_comparison_r1/PROTOCOL.md:6 + published DECISION_TESTS.md:5-9",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "P2 tie-equivalence fast_topk vs det_top10 (k=3,10)",
+    "status": "reviewed",
+    "count": "36",
+    "evidence": "probe_rt.log + probe_pq.log: 18+18 samples, 36/36 identical",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "P2 FULL gate vs RESULTS_ORIG per-archive (hit10/fr3/exp x sym/qscale)",
+    "status": "reviewed",
+    "count": "90",
+    "evidence": "summary_rt.json + summary_pqsub5.json gate_maxdiff=0.000e+00; 60 RT + 30 PQ-subset exact",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "P3 ITQ fits verified (loss decrease + orth<1e-10 + payload 12B)",
+    "status": "reviewed",
+    "count": "75",
+    "evidence": "itq_probe.py asserts; evidence_itq.json objective: 50 RT + 25 PQ-subset, all decreased",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "P3 paired ITQ_s-RAND_s cohort contrasts (5 seeds x 2 scorers x 2 benches)",
+    "status": "reviewed",
+    "count": "20",
+    "evidence": "evidence_itq.json benches rt+pqsub5 paired",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "P3 per-archive persisted rows (RT 10 arch x 11 arms x 2 scorers)",
+    "status": "reviewed",
+    "count": "220",
+    "evidence": "per_archive_rows_rt.csv (wc -l 221 incl header)",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "P3 per-archive persisted rows (PQ subset 5 arch x 11 arms x 2 scorers)",
+    "status": "reviewed",
+    "count": "110",
+    "evidence": "per_archive_rows_pqsub5.csv (wc -l 111 incl header)",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "P3 published single-fit contrast verification (ITQ16-FULL + ITQ16-RAND x3)",
+    "status": "reviewed",
+    "count": "4",
+    "evidence": "evidence_itq.json verify_vs_published; matches -16.88/-2.41/-2.55/-1.84",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "objective identity frob/haar integer-ratio check",
+    "status": "reviewed",
+    "count": "75",
+    "evidence": "report: max dev 1.5e-11 over 75 rows",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "MED arm re-test",
+    "status": "NOT RUN",
+    "count": "0",
+    "evidence": "out of role scope; published values cited not re-run",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "PerLTQA full 30-archive cohort rerun",
+    "status": "NOT RUN",
+    "count": "25",
+    "evidence": "budget: 5-arch deterministic subset run; NO FULL COHORT claim",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "bootstrap CIs (20000-rep paired archive-clustered)",
+    "status": "NOT RUN",
+    "count": "0",
+    "evidence": "raw diffs + archive signs reported instead; no significance claimed",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "convergence beyond 50 ITQ iters",
+    "status": "NOT RUN",
+    "count": "0",
+    "evidence": "would break protocol identity; noted as limit",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "text-rebuild G1 (frozen builder + SVD96)",
+    "status": "NOT RUN",
+    "count": "0",
+    "evidence": "cache==rebuilt via 90/90 exact gate matches",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "literature review / novelty verdict",
+    "status": "NOT RUN",
+    "count": "0",
+    "evidence": "no primary sources supplied; no novelty claim made",
+    "audit_role": "02_itq"
+  },
+  {
+    "item": "whole-project lines outside ITQ-vs-rotation (roles 01/03-10 subject matter)",
+    "status": "NOT RUN",
+    "count": "0",
+    "evidence": "see REPORT.md scope statement",
+    "audit_role": "02_itq"
+  },
+  {
+    "id": "G01",
+    "item": "hr standardized-float correction doc",
+    "source_ref": "git:75019912 docs/v52/V52_STANDARDIZED_FLOAT_CORRECTION_2026-09-16.md",
+    "status": "REVIEWED",
+    "note": "direction stands; FLOAT96_UNCENTERED label wrong (see F4)",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G02",
+    "item": "representation-geometry README + audit verdicts",
+    "source_ref": "git:75b7e057 research_representation_geometry_2026_09_13/README.md",
+    "status": "REVIEWED",
+    "note": "measurements PASS-obs; rank_cert BLOCKING preserved",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G03",
+    "item": "norm_math proofs + witnesses",
+    "source_ref": "git:75b7e057 repairs/norm_math/proofs_exact.py WITNESSES.json CORRECTIONS_NORM_MATH_TR.md",
+    "status": "REVIEWED",
+    "note": "D1-D7 read; D1/D3/D4 re-verified exactly (T10a/b/c PASS)",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G04",
+    "item": "BULGU-1 PoC script",
+    "source_ref": "git:75b7e057 AUDIT/poc_bulgu1.py",
+    "status": "REVIEWED",
+    "note": "read only; execution NOT RUN (needs worker modules)",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G05",
+    "item": "v3 cert repair verdict",
+    "source_ref": "representation_geometry_fix/COORDINATOR_VERDICT_V3.md",
+    "status": "REVIEWED",
+    "note": "v3 passes frozen bar per coordinator; package REQUEST_CHANGES stands",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G06",
+    "item": "E1 bridge report",
+    "source_ref": "origin/research/e1-sign-float-mechanism-2026-09-13 E1_BRIDGE_REPORT.md",
+    "status": "REVIEWED",
+    "note": "6/6 polarity concordance descriptive; tie-rate-only story refuted",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G07",
+    "item": "E1 V2 synthetic receipt",
+    "source_ref": "origin/research/e1-sign-float-mechanism-v2-2026-09-13 E1_V2_TEST_RECEIPT.md",
+    "status": "REVIEWED",
+    "note": "synthetic metric check only; no benchmark outcomes",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G08",
+    "item": "E1 mechanism checkpoint",
+    "source_ref": "origin/research/e1-lme-secondary-run-2026-09-13 E1_MECHANISM_CHECKPOINT.md",
+    "status": "REVIEWED",
+    "note": "V2 joint metrics NOT RUN (caches missing); P64 regime marker not cause",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G09",
+    "item": "Model-H transfer audit (mapping)",
+    "source_ref": "theory_benchmark_test_v1/audit_mapping/REPORT.md:0-3",
+    "status": "REVIEWED",
+    "note": "joint-scaling != Model-H parameter; monotonicity counterexample cited",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G10",
+    "item": "Model-H transfer audit (real geometry)",
+    "source_ref": "theory_benchmark_test_v1/audit_real_geometry/REPORT.md:0-2",
+    "status": "REVIEWED",
+    "note": "primaries quoted not recomputed; reciprocal identity quoted",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G11",
+    "item": "theory benchmark plan + RT/LME reports",
+    "source_ref": "theory_benchmark_test_v1/PLAN.md realtalk/REPORT.md lme/REPORT.md",
+    "status": "REVIEWED",
+    "note": "gates PASS; LOW48 transfer negative/inconclusive per benchmark",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G12",
+    "item": "baseline scorers + ties copy",
+    "source_ref": "_wt_top10/.../baseline/metrics_top10.py (scripts/metrics_top10_COPY.py)",
+    "status": "REVIEWED",
+    "note": "sym/asym/raw/std/tie-break/expectation definitions pinned",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G13",
+    "item": "baseline runner scorer wiring",
+    "source_ref": "_wt_top10/.../baseline/run_top10.py (scripts/run_top10_COPY.py)",
+    "status": "REVIEWED",
+    "note": "score_one_query + deterministic top10 read",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G14",
+    "item": "baseline REPORT arms section",
+    "source_ref": "_wt_top10/.../baseline/REPORT.md arms+zero-handling",
+    "status": "REVIEWED",
+    "note": "asym def differs from lib_b8 (see F3)",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G15",
+    "item": "published REPORT float arms + SVD corrections",
+    "source_ref": "_wt_top10/.../REPORT.md:1-2 arms table + correction boxes",
+    "status": "REVIEWED",
+    "note": "float_std ceiling framing; leverage-score correction noted",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G16",
+    "item": "quant REPORT sign-invariance + arms + ITQ tables",
+    "source_ref": "_wt_top10/.../math_r1/quant/REPORT.md",
+    "status": "REVIEWED",
+    "note": "sigma>0 premise sampled-verified on RT (G24)",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G17",
+    "item": "quant scorer/sigma/centering code",
+    "source_ref": "_wt_top10/.../math_r1/quant/quant_math.py:161-171+239-246",
+    "status": "REVIEWED",
+    "note": "qscale def; C/QC centered; sigma ddof=0 floor 1e-12",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G18",
+    "item": "repr_math builders (skim)",
+    "source_ref": "_wt_top10/.../math_r1/repr/repr_math.py:83-120",
+    "status": "SAMPLED",
+    "note": "IDF/shift families; not load-bearing for this role",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G19",
+    "item": "lib_b8 float scorers",
+    "source_ref": "llmzip-work/parallel_ideas_r1/b8/lib_b8.py:95-212",
+    "status": "REVIEWED",
+    "note": "float_raw plain cosine; float_std doc-fitted std 0->1; asym normalized variant",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G20",
+    "item": "twelve-byte hit10 arm wiring",
+    "source_ref": "research_twelve_byte_pilot_2026_09_15/scripts/run_hit10.py:112-123",
+    "status": "REVIEWED",
+    "note": "float arm runs on cached (centered) C -> F4",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G21",
+    "item": "HANDOFF float label + HATA_YERI correction",
+    "source_ref": "research_twelve_byte_pilot HANDOFF:48 via grep; incoming_20260916b transcripts:6062/6257 + HATA_YERI:154",
+    "status": "SAMPLED",
+    "note": "true-uncentered values quoted not recomputed",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G22",
+    "item": "gapfill matched-protocol commit message",
+    "source_ref": "git:9993f95 (commit text)",
+    "status": "REVIEWED",
+    "note": "sym~float_std ns under shared ties; numbers NOT recomputed",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G23",
+    "item": "probe suite 20 checks",
+    "source_ref": "scripts/probe_geometry.py -> outputs/probe_stdout.txt evidence/probe_results.json",
+    "status": "VERIFIED-PROBE",
+    "note": "20/20 PASS (F1/F1b/F1c fixtures + T10 Fractions witnesses)",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G24",
+    "item": "RealTalk sigma>0 scan (10 archives)",
+    "source_ref": "scripts/sigma_scan.py -> outputs/sigma_scan.json evidence/sigma_scan.json",
+    "status": "VERIFIED-PROBE",
+    "note": "min col std 0.0451; no exact-zero columns",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G25",
+    "item": "PerLTQA/LME sigma scan",
+    "source_ref": "bench caches for PQ/LME",
+    "status": "NOT RUN",
+    "note": "premise unverified beyond RealTalk",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G26",
+    "item": "BULGU-1 PoC execution + v3 fuzz rerun",
+    "source_ref": "worker modules/frozen bar",
+    "status": "NOT RUN",
+    "note": "needs worker env; verdicts cited only",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G27",
+    "item": "E1 V2 joint-geometry metrics",
+    "source_ref": "frozen C96/qC caches",
+    "status": "NOT RUN",
+    "note": "caches unavailable per checkpoint S8; refit forbidden",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G28",
+    "item": "full-cohort statistic recomputation",
+    "source_ref": "any benchmark caches at scale",
+    "status": "NOT RUN",
+    "note": "explicitly out of probe budget",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G29",
+    "item": "embedding/model/literature verification",
+    "source_ref": "model weights + primary lit sources",
+    "status": "NOT RUN",
+    "note": "no downloads; novelty NOT VERIFIED",
+    "audit_role": "03_geometry"
+  },
+  {
+    "id": "G30",
+    "item": "asym-def numeric gap quantification",
+    "source_ref": "baseline vs lib_b8 asym defs",
+    "status": "NOT RUN",
+    "note": "contract gap noted (F3) without effect size",
+    "audit_role": "03_geometry"
+  },
+  {
+    "item_id": "R-T1-denominator",
+    "area": "T1 comparator fairness",
+    "status": "REVIEWED",
+    "evidence": "probe: RT*.json recount; 10 archives / 8944 docs / 705 valid queries; qid sha 9cedef56bf568828 identical across T1 filter/firststage/band file",
+    "notes": "denominator solid",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T1-gaps-vs-max",
+    "area": "T1 comparator fairness",
+    "status": "REVIEWED",
+    "evidence": "DECISION_TESTS.orig.json arithmetic; 48B/qscale -7.80 Hit@10 / -7.23 FR@3 vs frozen_idfonly 65.67/40.02; ladder copy exact",
+    "notes": "headline gaps exact",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T1-gaps-vs-textbook",
+    "area": "T1 comparator fairness",
+    "status": "REVIEWED",
+    "evidence": "own arithmetic on stored JSON; best code -3.83 Hit@10 / -3.26 FR@3 vs frozen_textbook 61.70/36.05; selection premium +3.97pp; C1 FAIL both ways",
+    "notes": "referee-primary comparator checked",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T1-contract-deviation",
+    "area": "T1 comparator fairness",
+    "status": "REVIEWED",
+    "evidence": "REFEREE.md s5 (textbook primary) vs decision_tests.py max-selection; no held-out split; unminuted in pilot",
+    "notes": "S3 finding; outcome-robust",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T1-no-CI",
+    "area": "T1 comparator fairness",
+    "status": "REVIEWED",
+    "evidence": "decision_tests.py t1(): point gaps only, no bootstrap; referee requires CI-excluding-zero",
+    "notes": "contract gap; moot at margins",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T1-rescore",
+    "area": "T1 comparator fairness",
+    "status": "SAMPLED-EXTERNAL",
+    "evidence": "prior round au_c6_bm25.py: 3 variants 0.00pp, 4th within 0.14pp; cited as explicit verification, NOT re-run here",
+    "notes": "no new measurement",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T1-tokenizer-doc",
+    "area": "T1 comparator fairness",
+    "status": "REVIEWED",
+    "evidence": "decision_tests.py toks()/score implement unigrams; docstring claims 1-2 grams",
+    "notes": "metric-neutral doc/code mismatch",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T2-levels",
+    "area": "T2 cascade",
+    "status": "REVIEWED",
+    "evidence": "probe_p1_t2.py: 164256 rows = 16 methods x 10266 qids; all 48 level means exact <=2.2e-14; denominators 470/8265/1531 match distinct qids",
+    "notes": "full census not sample",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T2-bm25-CI",
+    "area": "T2 cascade",
+    "status": "REVIEWED",
+    "evidence": "probe_p2_rrf60ci.py own boot() 20000 reps seed 20260916: all 15 stored _bm25 CIs bit-identical",
+    "notes": "pipeline trusted",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T2-rrf60-CI-new",
+    "area": "T2 cascade",
+    "status": "REVIEWED",
+    "evidence": "probe_p2_rrf60ci.py NEW: rrf60_ci.json; PerLTQA 3 SIG passes (>=+1.0), LME best +2.23ns (misses by 0.08pp), LoCoMo all fail",
+    "notes": "omitted-by-prior-audit gap closed",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T2-inversion",
+    "area": "T2 cascade",
+    "status": "REVIEWED",
+    "evidence": "stored first_stage_order recomputed: _bm25 4/3/6 of 10 exact; NEW _rrf60 2/2/1 — dissolution is operator-dependent",
+    "notes": "S2 finding",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T2-pass-count",
+    "area": "T2 cascade",
+    "status": "REVIEWED",
+    "evidence": "stored JSON: PerLTQA float_raw32_bm25 +1.13 SIG PASS contradicts '1 of 3 disputed-only' summary",
+    "notes": "S1 finding; STOP outcome unchanged via C1",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T2-depth",
+    "area": "T2 cascade",
+    "status": "REVIEWED",
+    "evidence": "probe_p1_t2: code arms actual_candidates=50 exactly; BM25_full=n_docs; no M-sensitivity run",
+    "notes": "M-conditional effects",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T2-no-RealTalk",
+    "area": "T2 cascade",
+    "status": "REVIEWED",
+    "evidence": "CSV datasets = LME/PerLTQA/LoCoMo only; incoming RAPOR p.29 states RealTalk text-rerank not produced (numeric caches only)",
+    "notes": "stated absence",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-T2-qids",
+    "area": "T2 cascade",
+    "status": "REVIEWED",
+    "evidence": "t2_query_identities.json: full sorted qid lists + sha per dataset (LME 470/470arch, PerLTQA 8265/30arch, LoCoMo 1531/10arch)",
+    "notes": "identities persisted",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-CEIL-firststage",
+    "area": "recall/ceiling",
+    "status": "REVIEWED",
+    "evidence": "probe_p3b_ceiling.py: 36/36 pool/ceiling cells exact <=1.5e-14 from per-query top-500 lists",
+    "notes": "full recomputation",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-CEIL-decomposition",
+    "area": "recall/ceiling",
+    "status": "REVIEWED",
+    "evidence": "350/183/172 exact (sums 705); 484/49/67/105 exact; qid buckets in realtalk_reachability_qids.json",
+    "notes": "fully verified",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-CEIL-328",
+    "area": "recall/ceiling",
+    "status": "NOT RUN",
+    "evidence": "needs unstored sym per-query rankings; qscale+BM25 readings give 270/303/371 never 328",
+    "notes": "S4 finding; time-boxed",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-CEIL-cross-artifact",
+    "area": "recall/ceiling",
+    "status": "REVIEWED",
+    "evidence": "rerank_ceiling.json M=10/50/100 == firststage recomputation <=7.2e-15; anchors match RAPOR LME 54.27/PerLTQA 53.24/RT 22.41",
+    "notes": "consistent",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-FUSION-preselected",
+    "area": "fusion",
+    "status": "REVIEWED",
+    "evidence": "firststage.py:10,60,284-285 (k=60 fixed pre-run); RAPOR p.21 + PLAN_BEFORE_RUN.json; no winner-shopping",
+    "notes": "preselected not post-hoc",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-FUSION-pool",
+    "area": "fusion",
+    "status": "SAMPLED-STORED",
+    "evidence": "RESULTS.orig.json arithmetic cited (RRF@100 81.28 +3.12/+5.67 SIG; BM25-CODE covers zero); raw-score re-derivation NOT RUN",
+    "notes": "stored-arithmetic only",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-TEXT-dep",
+    "area": "text/index deps",
+    "status": "REVIEWED",
+    "evidence": "memory_accounting.json: LME raw 237.87MB 76x codes+sigma; IDF objects 351MB 112x; pickle-vs-varint quoting inconsistent across artifacts",
+    "notes": "S5 finding",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-OFFSET-nontransfer",
+    "area": "scope",
+    "status": "REVIEWED",
+    "evidence": "stored T2 levels: asym-qscale FR@3 = LME -3.62 / LoCoMo -1.58 / PerLTQA +0.29; no RealTalk delta applied",
+    "notes": "non-transfer confirmed",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-BM25-heterogeneity",
+    "area": "scope",
+    "status": "REVIEWED",
+    "evidence": "three BM25 implementations (T1/firststage/T2) documented from source; within-artifact valid, cross-artifact mixing invalid",
+    "notes": "interpretation guard",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "R-STOP-scope",
+    "area": "scope",
+    "status": "REVIEWED",
+    "evidence": "contract analysis: C1 failure justifies local STOP of code-vs-BM25 race; RRF fusion/danse-F1-residual/Q9 outside gate scope",
+    "notes": "local-only verdict",
+    "audit_role": "04_retrieval"
+  },
+  {
+    "item_id": "F1-CONTRACT-C1-C10",
+    "area": "F1 E1 contract",
+    "source": "689298e:research_f1_execution_2026_09_14/agent_packages/research_e1_f1_repair_2026_09_14/CONTRACT_CHECKLIST.md",
+    "status": "REVIEWED",
+    "method": "read full text via git show; cross-checked C3/C7 numbers against f1_competition.py HEADLINE_GATES",
+    "result": "C1 BLOCKED (tarballs absent); C3 gate defined at 1e-12; C7 full-precision targets recorded",
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-IMPL-ENTRYPOINTS",
+    "area": "F1 metric code",
+    "source": "originals/f1_competition.py:37/52/67/86/140/155/173/196/222/236",
+    "status": "REVIEWED+TESTED",
+    "method": "read all 278 lines; exercised via FX1/FX1b/FX1c/FX5 fixtures",
+    "result": "all fixture asserts PASS",
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-VERIFY27",
+    "area": "27 oracle checks",
+    "source": "originals/verify_f1.py",
+    "status": "SAMPLED",
+    "method": "did not rerun full file; ran equivalent hand fixture FX1 (same C/qC/k=2 oracle) PASS; theorem spot-check 20 trials PASS",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-COORD-ALL3",
+    "area": "superseded ALL@3 run",
+    "source": "originals/coord_f1_real_fr3.py + f1_real/results.json + ERRATA_COORDINATOR.md",
+    "status": "REVIEWED",
+    "method": "read script + log; confirmed superseded by FR@3 with disclosed E1/E2 errors and F-6 correction (E1 effect +0.000000pp)",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-COORD-FR3",
+    "area": "corrected FR@3 run",
+    "source": "originals/coord_f1_real_fr3.py + local_f1_real_fr3_results.json",
+    "status": "REVIEWED+TESTED",
+    "method": "read full 149 lines; verified output equality with branch evidence (FX6 PASS); applied C3 gate at 1e-12 (FX5: 3/3 FAIL + LoCoMo missing)",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-FROZEN-REPL",
+    "area": "frozen metric replication",
+    "source": "originals/coord_frozen_repl.py + coord_frozen_replication.json",
+    "status": "REVIEWED",
+    "method": "read script + JSON; deltas LME +10.0538/PerLTQA -6.2747/REALTALK +5.3001 vs frozen refs recorded",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-RESULTS-EQ",
+    "area": "local vs branch equality",
+    "source": "f1_real_fr3/results.json vs evidence/f1_results_fr3.json",
+    "status": "REVIEWED (explicit verification)",
+    "method": "byte-compare via json canonical equality + sha256 match c4682230 PASS (FX6)",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-PREREG-DRAFT",
+    "area": "governing estimands",
+    "source": "originals/TASK4F1_PREREGISTRATION_DRAFT_2026-09-03.md:106/114/123-146/190/233-241",
+    "status": "REVIEWED",
+    "method": "read full draft; extracted D_t definition / 5 Haar seeds / strata / exact-rational rule / stop rule",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-SEAL-V3",
+    "area": "governing seal",
+    "source": "originals/SEAL_V3.json + HEAD docs/v52/task4f1/*",
+    "status": "REVIEWED",
+    "method": "read seal bindings 1-8; seal states NO run authorization / outcome FORBIDDEN; runner hash f96cba2c bound",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-RUNNER-PROTOCOL",
+    "area": "BEAM decoder/protocol",
+    "source": "originals/v52_t4f1_beam_retrieval.py:38-39/55-62/76/461/503/528/535/542/555/570/577/615/628",
+    "status": "REVIEWED",
+    "method": "read decoder path TF-IDF->SVD32->mixed96->center->sign; Hamming + frozen tie priority; Haar/ITQ arms; trial-row .17g; no run executed",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-T4F1-AUDITS",
+    "area": "v3-v7 execution audits",
+    "source": "origin/audit/v52-t4f1-v*-independent-* + START_HERE_V52_4F1.md",
+    "status": "SAMPLED",
+    "method": "read v7 commit msg + START_HERE verdict table (V2-V6 BLOCKED; V4 seal withdrawn CC-01; V7 gates 2-7 evidence); full gate tables NOT RUN",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-PRIOR-COVERAGE",
+    "area": "prior audit scope",
+    "source": "audit_hard_r1/repro/HARD_AUDIT_REPRO.md:30-31 + integrity/PROJECT_COVERAGE.csv:6/12",
+    "status": "REVIEWED",
+    "method": "confirmed F1 internals explicitly NOT REVIEWED in R1; this role fills gap (partial: see NOT RUN rows)",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-TIE-EXACT-VS-NT20",
+    "area": "tie estimator fidelity",
+    "source": "contract C3 + AUDIT_RESPONSE.md + FX2",
+    "status": "TESTED",
+    "method": "synthetic tied case: exact E[FR@3]=0.5 vs NT=20 batch spread 0.275; auditor seed spread 2.7e-03 >> residual 1.58e-04; 1e-12 gate unmeetable by either estimator",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-ROUNDING-VS-TOL",
+    "area": "precision requirement",
+    "source": "contract C7 + coord AUD dict + FX4",
+    "status": "TESTED",
+    "method": "max 4dp-rounding error 4.6e-05 exceeds 1e-12 by ~8 orders; coord diffs larger (estimator substitution)",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-BUDGET-MATCH",
+    "area": "matched 12B budget",
+    "source": "prereg draft:106 + runner:55-58 + FX3",
+    "status": "CHECKED",
+    "method": "Task4F1 D_t 12B-vs-12B matched; E1 F1 Delta_q 12B vs 384-768B float UNMATCHED 32-64x (structural arithmetic)",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-DOT17G",
+    "area": "trial-row precision",
+    "source": "runner:577-613 (format .17g) + FX7",
+    "status": "TESTED",
+    "method": "round-trip loss 0.0 (<1e-15); exact-rational classification must parse decimal",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-FROZEN-LABELS",
+    "area": "claims labelled frozen",
+    "source": "branch README:27 + coord script:118 + results.json frozen_* fields",
+    "status": "REVIEWED",
+    "method": "labels are coordinator shorthand for auditor-recorded refs; NO seal/independent approval; contract C1/C3 unmet so NOT licensed as frozen-V2 values",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-LOCOMO-LEG",
+    "area": "LoCoMo benchmark",
+    "source": "contract C3/C7 + local results note",
+    "status": "NOT RUN",
+    "method": "per-query float surface absent; local JSON notes LoCoMo not run; branch evidence likewise absent",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-BEAM-RUN",
+    "area": "Task4F1 BEAM execution",
+    "source": "START_HERE boundary + Seal V3 what_this_seal_does_not_do",
+    "status": "NOT RUN",
+    "method": "run/finalize FORBIDDEN without fresh V4 authorization + HMAC key; no authorization constructed; correctly not attempted",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-CLUSTER-BOOTSTRAP-C8",
+    "area": "contract bootstrap",
+    "source": "contract C8 (seed 96013/B=2000/cluster) + f1_competition.py:236",
+    "status": "NOT RUN on real data",
+    "method": "implementation reviewed; real-data intervals not generated (blocked on C1); branch synthetic demo only",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-QUERY-ROWS-FILE",
+    "area": "original per-query refs",
+    "source": "contract C7/F-1 (INDEPENDENT_QUERY_ROWS.json)",
+    "status": "NOT REVIEWED",
+    "method": "unpublished; absent from every readable branch per AUDIT_RESPONSE; Delta_q recomputed not reused",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-BRANCH-SESSIONS",
+    "area": "scale/role/levels + whitening sessions",
+    "source": "branch research_f1_execution_2026_09_14/{RESEARCH_SUMMARY/SESSIONS_ARCHIVE/WHITENING_FINDING}",
+    "status": "SAMPLED",
+    "method": "read RESEARCH_SUMMARY + README + AUDIT_RESPONSE fully; session-level analyses sampled not re-verified",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-WT-F1EXEC",
+    "area": "worktree state",
+    "source": "_wt_f1exec/ listing",
+    "status": "SAMPLED",
+    "method": "listed top-level only; full 2879-file tree not walked",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "item_id": "F1-ENV-LOCK",
+    "area": "locked execution env",
+    "source": "runner:ENVIRONMENT_LOCK + THREAD_LOCK",
+    "status": "NOT RUN",
+    "method": "local ml-python is numpy 2.5.3/scipy 1.18.1/sklearn 1.9.1 vs lock 2.3.2/1.16.1/1.7.1; BEAM gates require lock so not attempted; numeric fixtures env-independent",
+    "result": null,
+    "audit_role": "05_f1"
+  },
+  {
+    "id": "01",
+    "line": "dense-MRL",
+    "item": "README verdict + thresholds (f12/f96/enrichment)",
+    "method": "read branch file via git show",
+    "status": "REVIEWED",
+    "evidence": "git show findings/dense-mrl-parity-2026-09-14:research_dense_mrl_parity_2026_09_14/README.md",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "02",
+    "line": "dense-MRL",
+    "item": "measure_mrl_parity.py parity (loglog_fit+archive_texts_only verbatim; rowL2-center-var; p=-slope)",
+    "method": "read first 120 lines + synthetic p check",
+    "status": "SAMPLED",
+    "evidence": "outputs/t_probe_synth.log T6",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "03",
+    "line": "dense-MRL",
+    "item": "MRL_PARITY 3 arm JSONs (arctic-m pB +0.3292 vs control -0.0169; f48 enrichment 1.70x vs 0.97x)",
+    "method": "read arctic-m + mxbai aggregates",
+    "status": "SAMPLED",
+    "evidence": "evidence.json",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "04",
+    "line": "dense-MRL",
+    "item": "audit MUSE_DENETIM_V55 FAIL-FIXABLE + 4 repairs",
+    "method": "read README summary only (full audit text not reopened)",
+    "status": "SAMPLED",
+    "evidence": "README audit table",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "05",
+    "line": "dense-MRL",
+    "item": "embedding recomputation / N-gate per-archive rerun",
+    "method": "NOT RUN (no model downloads; >180s; stated re-fit)",
+    "status": "NOT RUN",
+    "evidence": "",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "06",
+    "line": "sign96-nanobeir",
+    "item": "SIGN96_NANOBEIR_RUN_34866074513 report (13 tasks 649q Recall@3 +2.472pp W8/0/5; SciFact +18.1pp)",
+    "method": "read full git-show body",
+    "status": "REVIEWED",
+    "evidence": "exec-8 output",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "07",
+    "line": "sign96-nanobeir",
+    "item": "workflow/rankings/qrel-freeze protocol + 20 SHA-256 nuisance priorities",
+    "method": "read report protocol section only; workflow YAML not executed",
+    "status": "SAMPLED",
+    "evidence": "report text",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "08",
+    "line": "sign96-nanobeir",
+    "item": "13-task ranking recomputation",
+    "method": "NOT RUN (needs Actions artifacts/corpora)",
+    "status": "NOT RUN",
+    "evidence": "",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "09",
+    "line": "micro-residual",
+    "item": "PROTOCOL.md frozen design (Var(|C|) ranking; median>=; nested R4/R8/R16; lexicographic; 20 nuisance trials; qrels-after-freeze)",
+    "method": "read full PROTOCOL via git show",
+    "status": "REVIEWED",
+    "evidence": "exec-34 output",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "10",
+    "line": "micro-residual",
+    "item": "SIGN96_MICRO_RESIDUAL_RUN_34886350705 report (R8 +0.113pp Recall@3 +0.478pp nDCG@10; tie 39.7->14.5%; R16 -0.144pp; SciFact collision-zero falsifier)",
+    "method": "read full git-show body",
+    "status": "REVIEWED",
+    "evidence": "exec-8 output",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "11",
+    "line": "micro-residual",
+    "item": "packed budgets 96/100/104/112b -> 12/13/13/14B active-only",
+    "method": "verified arithmetically on copy (synthetic)",
+    "status": "REVIEWED",
+    "evidence": "outputs/t_probe_synth.log T1",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "12",
+    "line": "micro-residual",
+    "item": "run_micro_residual.py / summarize.py source logic",
+    "method": "NOT RUN (listed only; ranking code not re-executed)",
+    "status": "NOT RUN",
+    "evidence": "",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "13",
+    "line": "heavy-wave",
+    "item": "HEAVY_WAVE_STATUS report (BRIGHT -0.205pp; BIRCO -0.818pp WTB exception; full SciFact +1.924 vs Nano +18.1; FiQA/TREC-COVID infra failures unlicensed)",
+    "method": "read full git-show body",
+    "status": "REVIEWED",
+    "evidence": "exec-8 output",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "14",
+    "line": "residual8",
+    "item": "PROTOCOL.md + PROSPECTIVE_SNAPSHOT.json (top-8 var axes; strict >median; packed [N13]; arms BASE/SIGN_ONLY8/MAG8/RANDOM8-20; stride65/17/9; gates 1e-12; oracle bounds diagnostic)",
+    "method": "read full PROTOCOL + snapshot",
+    "status": "SAMPLED",
+    "evidence": "copies/residual8_PROTOCOL.md",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "15",
+    "line": "residual8",
+    "item": "lib_residual8.py pack/stride/tie/expectation logic",
+    "method": "read full copy + synthetic probes (roundtrip; non-inversion; signatures)",
+    "status": "REVIEWED",
+    "evidence": "outputs/t_probe_synth.log T1b/T2/T3/T5",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "16",
+    "line": "residual8",
+    "item": "perltqa REPORT (gate PASS maxd 0.0; MAG8-BASE +0.481pp CI excl 0; MAG8-SIGN8 +0.049pp CI incl 0; 90% lift from SIGN_ONLY8)",
+    "method": "read full REPORT + independent reaggregation digit-match",
+    "status": "REVIEWED",
+    "evidence": "outputs/t_reaggregate.log",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "17",
+    "line": "residual8",
+    "item": "coordinator FINDINGS + VERIFIED_RESULTS (packed replay maxdiff 0.0; random best-global correction; tie headroom +1.68pp vs FLOAT gap +6.27pp)",
+    "method": "read full FINDINGS head 150 + reaggregation",
+    "status": "REVIEWED",
+    "evidence": "outputs/t_reaggregate.log",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "18",
+    "line": "residual8",
+    "item": "seed handling (20 seeds 62001-62020; idx0=62001 best-global verified; per-query-max inflation +1.58pp demonstrated)",
+    "method": "verified mechanically",
+    "status": "REVIEWED",
+    "evidence": "outputs/t_reaggregate.log + copies/constants.json",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "19",
+    "line": "residual8",
+    "item": "preservation LME/REALTALK rows + oracle v1 REJECT + oracle_repair pending",
+    "method": "read FINDINGS + ORACLE_COORDINATOR_REVIEW head; repair rerun NOT RUN",
+    "status": "SAMPLED",
+    "evidence": "ORACLE_COORDINATOR_REVIEW.md",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "20",
+    "line": "asymmetric",
+    "item": "TASK A REPORT (asym=dot(q decode)/sqrt96; gates PASS; PerLTQA +0.046 asym-base; LME/REAL negative; float_std best; 18/18 green + red mutations)",
+    "method": "read full REPORT head 120 + fixture/mutation section",
+    "status": "SAMPLED",
+    "evidence": "asymmetric/REPORT.md",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "21",
+    "line": "asymmetric",
+    "item": "float-query oracle status (full float q consumed; doc side packed 12B)",
+    "method": "verified via lib_b8 source + synthetic fixture",
+    "status": "REVIEWED",
+    "evidence": "outputs/t_probe_synth.log T3",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "22",
+    "line": "B8",
+    "item": "TASK B REPORT+PROTOCOL+lib_b8.py (fixed 96-bit 88+8; 12B payload +80B shared; B8-asym +0.00058/-0.02436/-0.02214; gain=query-precision not reallocation)",
+    "method": "read REPORT head + full lib copy + reaggregation digit-match",
+    "status": "REVIEWED",
+    "evidence": "outputs/t_reaggregate.log",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "23",
+    "line": "alternate",
+    "item": "hit10/* audits + inverse/kv/chat_literature lines",
+    "method": "listed only; content NOT reviewed (other roles' scope)",
+    "status": "NOT RUN",
+    "evidence": "",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "24",
+    "line": "alternate",
+    "item": "next_route_round1 (COORDINATOR_DECISION fair-contest blockers; storage-accounting; literature-fidelity xiao correction)",
+    "method": "read COORDINATOR_DECISION head 80 + fair-contest/literature dirs listed",
+    "status": "SAMPLED",
+    "evidence": "next_route_round1/COORDINATOR_DECISION.md",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "25",
+    "line": "scope",
+    "item": "published top10 STOP gates C1/C3/S3 + FINAL_STATE verdict scope",
+    "method": "read REPORT/FINAL_STATE/DECISION_TESTS heads",
+    "status": "REVIEWED",
+    "evidence": "exec-13/20 outputs",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "26",
+    "line": "scope",
+    "item": "STOP-disposability logic per line (dense vs residual vs asym/B8)",
+    "method": "analysis in REPORT section 6",
+    "status": "REVIEWED",
+    "evidence": "REPORT.md section 6",
+    "audit_role": "06_dense_residual"
+  },
+  {
+    "id": "K01",
+    "item": "KV protocol scope/model/dtype/GQA anchors",
+    "source_path": "parallel_ideas_r1/kv/PROTOCOL.md",
+    "status": "reviewed",
+    "test_performed": "read + config cross-check",
+    "observed_result": "30 layers 3KVx64=192 FP32-exec/BF16-native confirmed; see K11",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K02",
+    "item": "ridge predictor fit 90x64-64 lam1e-3 480 toks",
+    "source_path": "parallel_ideas_r1/kv/run.py:fit_decoders+predict_odd",
+    "status": "reviewed",
+    "test_performed": "code read + byte arithmetic",
+    "observed_result": "formula gives 1497600 B exactly; train-only IDs 0-5 per code",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K03",
+    "item": "arms full/ridge/q4/zero/copy construction",
+    "source_path": "parallel_ideas_r1/kv/run.py:run_case_arm+install_prefix",
+    "status": "reviewed",
+    "test_performed": "code read",
+    "observed_result": "expanded full-float DynamicCache install; q4 dequantized before use",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K04",
+    "item": "original NLL off-by-one bug",
+    "source_path": "parallel_ideas_r1/kv/run.py:409-436",
+    "status": "reviewed",
+    "test_performed": "code read + row recomputation",
+    "observed_result": "256/256 non-full dNLL changed max shift 24.875; original means negative withdrawn",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K05",
+    "item": "repair shifted-v2 alignment + A1/A2 acceptance",
+    "source_path": "parallel_ideas_r1/kv_repair/run.py",
+    "status": "reviewed",
+    "test_performed": "rows verified 320/320 shifted-v2 unique keys",
+    "observed_result": "KL bit-identical 256/256 top1 0 mismatches; A1/A2 logs read not re-executed",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K06",
+    "item": "poison gate v1 vs-full confounded",
+    "source_path": "parallel_ideas_r1/kv/run.py:461-471",
+    "status": "reviewed",
+    "test_performed": "code read",
+    "observed_result": "confound confirmed (mixes approx error); superseded",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K07",
+    "item": "poison gate v2 ridge-vs-ridge + negative control",
+    "source_path": "parallel_ideas_r1/kv_repair/run.py:558-572",
+    "status": "reviewed",
+    "test_performed": "code read only NOT re-executed",
+    "observed_result": "deltas 3.1-15.8 consumed 8/8 per report; model re-run exceeds probe budget",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K08",
+    "item": "q4 nibble packing reality",
+    "source_path": "parallel_ideas_r1/kv/run.py:63-94",
+    "status": "reviewed",
+    "test_performed": "code read + synthetic fixture S3",
+    "observed_result": "packing logic real; payload formula verified; on-disk 165863 B incl overhead",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K09",
+    "item": "memory accounting N*=65 expanded-cache disclosure",
+    "source_path": "parallel_ideas_r1/kv_repair/REPORT.md Memory",
+    "status": "reviewed",
+    "test_performed": "arithmetic + on-disk sizes",
+    "observed_result": "65.0 equality confirmed; predictor.pt 1548427 B; no resident-savings claim stands",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K10",
+    "item": "timing arm E + matched pair",
+    "source_path": "parallel_ideas_r1/kv/run.py:485-512",
+    "status": "reviewed",
+    "test_performed": "code read only NOT re-executed",
+    "observed_result": "original pair non-comparable as disclosed; matched pair exploratory",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K11",
+    "item": "model config GQA/layers/dtype",
+    "source_path": "parallel_ideas_r1/model/config.json",
+    "status": "reviewed",
+    "test_performed": "direct read",
+    "observed_result": "30L 9Q/3KV d576 hd64 width192 native bfloat16",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "K12",
+    "item": "coordinator_kv CHECK + REPAIR_VERIFIED",
+    "source_path": "parallel_ideas_r1/coordinator_kv/",
+    "status": "reviewed",
+    "test_performed": "reaggregated rows independently",
+    "observed_result": "means match recomputation; alignment probe logic confirmed",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I01",
+    "item": "inverse protocol parity gate + cohort",
+    "source_path": "parallel_ideas_r1/inverse/PROTOCOL.md",
+    "status": "reviewed",
+    "test_performed": "read",
+    "observed_result": "parity gate 1e-5 12/12 claimed; hook-truth fix for L29 disclosed",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I02",
+    "item": "JVP identity double-count bug",
+    "source_path": "parallel_ideas_r1/inverse/inverse_lib.py:160-178",
+    "status": "reviewed",
+    "test_performed": "code read + synthetic fixture S1",
+    "observed_result": "(v+jv) on B(x)=x gives 2v exactly as coordinator probe [6 8]",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I03",
+    "item": "segment op identical defect",
+    "source_path": "parallel_ideas_r1/inverse/run.py:265 (via ERRATA)",
+    "status": "sampled",
+    "test_performed": "ERRATA + fixed-file diff read",
+    "observed_result": "fix mirrors single-block; line not opened directly",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I04",
+    "item": "inner_ok finite-only vs convergence",
+    "source_path": "parallel_ideas_r1/inverse/inverse_lib.py:181-235",
+    "status": "reviewed",
+    "test_performed": "code read + synthetic fixture S2",
+    "observed_result": "1-iter 5x5 finite yet relres 0.46 >> 1e-5; label confirmed misleading",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I05",
+    "item": "feval undercount 8 vs 9",
+    "source_path": "parallel_ideas_r1/inverse_repair/PROTOCOL_DELTA.md",
+    "status": "reviewed",
+    "test_performed": "read + replay row check",
+    "observed_result": "replay rows show fevals_charged 9; fix confirmed",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I06",
+    "item": "D2/D3 bounded failure 0/12+0/4 repaired",
+    "source_path": "parallel_ideas_r1/inverse_repair/per_case.jsonl",
+    "status": "reviewed",
+    "test_performed": "row count 20 cases reread",
+    "observed_result": "L14 closest res 6.8e-4-3.3e-3 still >1e-5; GMRES 20/20 saturated",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I07",
+    "item": "independent residual replay MATCH 12/12",
+    "source_path": "parallel_ideas_r1/inverse_repair/replay_residual.json",
+    "status": "reviewed",
+    "test_performed": "file read NOT re-executed",
+    "observed_result": "first-row match:true wrapper parity 0.0; segment x_hat unsaved so no segment replay",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I08",
+    "item": "ledger encode/decode M1/M2 mutations",
+    "source_path": "parallel_ideas_r1/inverse/inverse_lib.py:345-410",
+    "status": "reviewed",
+    "test_performed": "code read + reconciled JSON",
+    "observed_result": "M1 bit-exact C1 M2 changes output per ledger_storage_reconciled.json 12/12",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I09",
+    "item": "storage same-dtype vs mixed-dtype accounting",
+    "source_path": "parallel_ideas_r1/inverse_repair/ledger_storage_reconciled.json",
+    "status": "reviewed",
+    "test_performed": "file read + arithmetic",
+    "observed_result": "FP32 695040 vs 737280 headroom no-win; BF16-hypo exceeds by 49920; generic4bit stronger",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I10",
+    "item": "original continuation hidden-injection not KV-only",
+    "source_path": "parallel_ideas_r1/inverse/inverse_lib.py:439-478",
+    "status": "reviewed",
+    "test_performed": "code read",
+    "observed_result": "full hidden replace at L14 + downstream recompute confirmed; PATCH||FULL direction confirmed",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I11",
+    "item": "repair kv_continuation true KV-only parity",
+    "source_path": "parallel_ideas_r1/inverse_repair/kv_continuation.py + .json",
+    "status": "reviewed",
+    "test_performed": "code read + rows verified",
+    "observed_result": "parity bit-exact 4/4; BUT full-sequence recompute not stepwise cache",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I12",
+    "item": "generic4bit scope mismatch all-24 vs prefix-16",
+    "source_path": "parallel_ideas_r1/inverse_repair/kv_continuation.py:143-191",
+    "status": "reviewed",
+    "test_performed": "code read",
+    "observed_result": "confirmed: src_for patches 16 ledger/noledger/direct4bit generic4bit quantizes full 24",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I13",
+    "item": "coordinator_inverse CHECK DISPOSITION REPAIR_CLOSEOUT",
+    "source_path": "parallel_ideas_r1/coordinator_inverse/",
+    "status": "reviewed",
+    "test_performed": "read all four files",
+    "observed_result": "findings reproduced in this audit except model re-execution",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "I14",
+    "item": "chat-lit toy ledger/Newton limits",
+    "source_path": "chat_literature_review_20260915/inverse/REPORT.md",
+    "status": "reviewed",
+    "test_performed": "read-only no CSV re-parse",
+    "observed_result": "random-init MHA toys dense-Jacobian no-decode-metric; no transfer claim supported",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "P01",
+    "item": "published pilot KV/inverse substance",
+    "source_path": "_wt_top10/.../CASE_FOR.md+LITERATURE_MAP.md",
+    "status": "sampled",
+    "test_performed": "precise grep",
+    "observed_result": "only passing KV-cache mention; no KV/inverse experiment in pilot",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "P02",
+    "item": "git history contains KV/inverse code",
+    "source_path": "main repo object store via git log -S",
+    "status": "sampled",
+    "test_performed": "3 pickaxe identifiers",
+    "observed_result": "0 hits: local-research-only never merged",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "P03",
+    "item": "prior audit_hard_r1 KV/inverse coverage",
+    "source_path": "audit_hard_r1/CONSOLIDATED_AUDIT.md+repro",
+    "status": "reviewed",
+    "test_performed": "grep + read",
+    "observed_result": "explicitly lists KV/inverse as NOT REVIEWED; consistent with this role",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "N01",
+    "item": "model-loaded re-execution of any run.py/tests.py",
+    "source_path": "parallel_ideas_r1/{kv inverse} + repairs",
+    "status": "NOT RUN",
+    "test_performed": "none - exceeds 180s probe budget",
+    "observed_result": "requires local SmolLM2 load; rows/logs/code verified instead",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "N02",
+    "item": "timing re-measurement on CPU",
+    "source_path": "all lines",
+    "status": "NOT RUN",
+    "test_performed": "none",
+    "observed_result": "methodology code-reviewed only; contention caveat accepted",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "N03",
+    "item": "40x100 Newton probe (repair explicit non-follow)",
+    "source_path": "inverse line",
+    "status": "NOT RUN",
+    "test_performed": "none",
+    "observed_result": "proposed by original report but not run by repair; failure is budget-scoped",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "N04",
+    "item": "BF16 numerics",
+    "source_path": "all lines",
+    "status": "NOT RUN",
+    "test_performed": "none",
+    "observed_result": "all numbers FP32-executed; BF16 columns arithmetic-only as disclosed",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "N05",
+    "item": "segment final-residual independent replay",
+    "source_path": "inverse_repair (x_hat unsaved)",
+    "status": "NOT RUN",
+    "test_performed": "blocked",
+    "observed_result": "coordinator closeout confirms x_hat NOT saved; do not report 16/16 verified",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "id": "N06",
+    "item": "chat-lit raw CSV re-parse (180+45 rows)",
+    "source_path": "chat_literature_review_20260915/input",
+    "status": "NOT RUN",
+    "test_performed": "none",
+    "observed_result": "report's re-parsed medians accepted as read-only claims; toy scope undisputed",
+    "audit_role": "07_kv_inverse"
+  },
+  {
+    "item_id": "D01",
+    "area": "denominator",
+    "claim_or_check": "2x231606=463212 doubling arithmetic",
+    "source_ref": "denominator_integrity_v10.py:7-13; probe_denom.py",
+    "method": "isolated re-execution on branch copy",
+    "result": "PASS 2*231606==463212",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D02",
+    "area": "denominator",
+    "claim_or_check": "naive per-copy sum double-counts; logical dedups unique-by-archive",
+    "source_ref": "denominator_integrity_v10.py:229-252; probe_denom.py",
+    "method": "isolated fixture 2 archives x2 copies",
+    "result": "PASS naive=2400 logical=1200",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D03",
+    "area": "denominator",
+    "claim_or_check": "inconsistent duplicates reject never silently dedup",
+    "source_ref": "denominator_integrity_v10.py:203-226; probe_denom.py",
+    "method": "isolated conflicting-d_k fixture",
+    "result": "PASS V10ValidationError",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D04",
+    "area": "denominator",
+    "claim_or_check": "unknown copy and outside-roster archive reject",
+    "source_ref": "denominator_integrity_v10.py:215-224; probe_denom.py",
+    "method": "isolated ghost-copy fixture",
+    "result": "PASS both reject",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D05",
+    "area": "denominator",
+    "claim_or_check": "shape gate: zero/bool/empty d_k rejected",
+    "source_ref": "denominator_integrity_v10.py:185-200; probe_denom.py",
+    "method": "isolated malformed fixtures",
+    "result": "PASS all rejected",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D06",
+    "area": "denominator",
+    "claim_or_check": "no byte total offered; numerators never deduplicated",
+    "source_ref": "static_storage_preflight_v10.py:418-424; test test_no_byte_total_helpers; probe_denom.py",
+    "method": "API surface inspection + committed-test read",
+    "result": "PASS no byte-total helpers exist",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D07",
+    "area": "denominator",
+    "claim_or_check": "summary labels pilot/exploratory/not-authoritative",
+    "source_ref": "denominator_integrity_v10.py:255-264; probe_denom.py",
+    "method": "isolated call",
+    "result": "PASS labels present",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D08",
+    "area": "denominator",
+    "claim_or_check": "inlined pure math identical candidate vs integrated",
+    "source_ref": "denominator_integrity_v10.py vs static_storage_preflight_v10.py (9802b49)",
+    "method": "mechanical diff of 5 function bodies",
+    "result": "PASS all 5 IDENTICAL",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D09",
+    "area": "denominator",
+    "claim_or_check": "SHA pins match frozen blobs (V9 gate a5c98065; V8 gate 68fbac5b)",
+    "source_ref": "9802b49 pins vs b300cbf/35b5058 blobs",
+    "method": "git-show piped to sha256sum",
+    "result": "PASS both PIN-OK",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D10",
+    "area": "denominator",
+    "claim_or_check": "940 DISTINCT copies E2E: logical 231606 naive 463212",
+    "source_ref": "V10_INTEGRATION_TEST_RECEIPT.md s3 (9802b49)",
+    "method": "receipt read only; live rerun NOT attempted (needs full pinned chain + temp plan set)",
+    "result": "receipt claims 12/12 OK; NOT independently rerun",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D11",
+    "area": "denominator",
+    "claim_or_check": "denominator suite 18 tests OK",
+    "source_ref": "V10_INTEGRATION_TEST_RECEIPT.md s2",
+    "method": "receipt read only NOT rerun",
+    "result": "receipt claims 18 OK",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D12",
+    "area": "denominator",
+    "claim_or_check": "anchor constants 470 archives / N=231606",
+    "source_ref": "denominator_integrity_v10.py:40-41; static_storage_preflight_v10.py:62-63",
+    "method": "constant read; anchor-blob re-derivation NOT done",
+    "result": "constants present; blob content NOT re-verified",
+    "verdict": "SAMPLED",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "D13",
+    "area": "copies",
+    "claim_or_check": "contract note A: DISTINCT duplicate plan legitimate; same-id refused",
+    "source_ref": "V10_INTEGRATION_DISPOSITION.md sContract-note-A (9802b49)",
+    "method": "disposition + test read; same-id refusal test location NOT located",
+    "result": "claim read but refusal path NOT verified",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "C01",
+    "area": "concurrency",
+    "claim_or_check": "V9 sys.modules race reproduced (2 interference tests fail on V9)",
+    "source_ref": "V10_RACE_REPRO.md (9802b49)",
+    "method": "repro-note read; live rerun NOT attempted (thread-timing harness + chain materialization)",
+    "result": "receipt claims v9 FAILED(2) / v10 13/13 x5 runs",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "C02",
+    "area": "concurrency",
+    "claim_or_check": "hardened loader: scoped importer + _CHAIN_LOCK + frozen hashlib",
+    "source_ref": "static_storage_preflight_v10.py:182-256; consumption_gate_v10.py",
+    "method": "code read (both copies in src/)",
+    "result": "mechanism present as described; live thread test NOT run",
+    "verdict": "SAMPLED",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "C03",
+    "area": "concurrency",
+    "claim_or_check": "ambient-hashlib now IN MODEL and refused on integrated gate",
+    "source_ref": "V10_INTEGRATION_DISPOSITION.md sD; RECEIPT_V10.json (receipt)",
+    "method": "disposition+receipt read NOT rerun",
+    "result": "claims integrated-v10 7/7 and old suite 7/7",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "C04",
+    "area": "concurrency",
+    "claim_or_check": "security matrix MATRIX-AS-EXPECTED surprises empty",
+    "source_ref": "RECEIPT_V10.json via V10_INTEGRATION_TEST_RECEIPT.md s4",
+    "method": "receipt read NOT rerun",
+    "result": "verdict as claimed",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "C05",
+    "area": "concurrency",
+    "claim_or_check": "frozen V7/V8/V9 suites still green under V10",
+    "source_ref": "V10_INTEGRATION_TEST_RECEIPT.md s1",
+    "method": "receipt read NOT rerun",
+    "result": "claims 8+7+7 OK",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "B01",
+    "area": "byte-cost",
+    "claim_or_check": "12 B/vector marginal ceiling vs ~88886 effective (re-fit shared projector, median)",
+    "source_ref": "PROJECTOR_REPORT_TR.md:53-74; PROJECTOR_BYTES.json (75b7e05)",
+    "method": "report read + table grep",
+    "result": "marginal 12 vs median effective 88886 confirmed in text; re-fit NOT re-executed",
+    "verdict": "SAMPLED",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "B02",
+    "area": "byte-cost",
+    "claim_or_check": "12-vs-6 halving from denominator doubling (factor 2)",
+    "source_ref": "V10 disposition headline (9802b49); probe D01",
+    "method": "arithmetic consequence of D01",
+    "result": "halving factor confirmed arithmetically; no byte measurement run",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "B03",
+    "area": "byte-cost",
+    "claim_or_check": "shared state outside marginal ceiling but separately reported",
+    "source_ref": "L-088 via PROJECTOR_REPORT_TR.md:13-20",
+    "method": "report read",
+    "result": "marginal/effective split correctly labeled; NOT re-measured",
+    "verdict": "SAMPLED",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R01",
+    "area": "rank-cert",
+    "claim_or_check": "BULGU-1 POC v2 certifies ISOLATED_TIES/-1; truth is VARIES",
+    "source_ref": "certify_v2.py (dbb3ee0); probe_rankcert.py",
+    "method": "isolated re-execution + exact-comparator samples",
+    "result": "PASS v2=-1 vs samples +1/+1/0/-1/-1 (bug reproduced)",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R02",
+    "area": "rank-cert",
+    "claim_or_check": "v3 certifies POC as ISOLATED_TIES/VARIES",
+    "source_ref": "certify_v3.py (dbb3ee0); probe_rankcert.py",
+    "method": "isolated re-execution",
+    "result": "PASS VARIES",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R03",
+    "area": "rank-cert",
+    "claim_or_check": "v3 scale-invariant k=1/7/100/1000 on POC",
+    "source_ref": "certify_v3.py; probe_rankcert.py",
+    "method": "isolated re-execution",
+    "result": "PASS all identical",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R04",
+    "area": "rank-cert",
+    "claim_or_check": "v3 invalid-J (L==R L>R) refuses as UNRESOLVED",
+    "source_ref": "certify_v3.py; probe_rankcert.py",
+    "method": "isolated re-execution",
+    "result": "PASS both UNRESOLVED",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R05",
+    "area": "rank-cert",
+    "claim_or_check": "coordinator frozen bar: v2 5 safety FAIL / v3 0 safety 0 completeness FAIL",
+    "source_ref": "COORDINATOR_VERDICT_V3.md (dbb3ee0)",
+    "method": "verdict read; coordinator suite NOT rerun (688-case corpus run > budget as live rerun; receipts present)",
+    "result": "as claimed in verdict; NOT independently rerun",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R06",
+    "area": "rank-cert",
+    "claim_or_check": "coordinator independent oracle 684 cases 0 violations + scale sweep",
+    "source_ref": "COORDINATOR_VERDICT_V3.md; coord_check_v3.py",
+    "method": "verdict+oracle-code read NOT executed",
+    "result": "finite-sample check as claimed; generality NOT established by design",
+    "verdict": "NOT RUN",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R07",
+    "area": "rank-cert",
+    "claim_or_check": "BULGU-5 closed by construction: v3 and validator import only fractions",
+    "source_ref": "certify_v3.py:46; cert_validator_v3.py:40 (dbb3ee0)",
+    "method": "top-level import grep on branch blobs",
+    "result": "PASS only-fractions; no archived-code import",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R08",
+    "area": "rank-cert",
+    "claim_or_check": "POC literals absent from v3 code paths",
+    "source_ref": "certify_v3.py full-blob grep for 70000/-200/10000",
+    "method": "grep zero hits",
+    "result": "absent as claimed",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R09",
+    "area": "rank-cert",
+    "claim_or_check": "BULGU-2/3/4/6/7/8 and F-01..F-07 remain OPEN; package REQUEST_CHANGES stands",
+    "source_ref": "FIX_DISPOSITION.md s5; COORDINATOR_VERDICT_V3.md (dbb3ee0)",
+    "method": "disposition read",
+    "result": "explicitly OPEN per both documents",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "R10",
+    "area": "rank-cert",
+    "claim_or_check": "different-family independent review REMAINS OPEN",
+    "source_ref": "COORDINATOR_VERDICT_V3.md What-this-does-NOT-establish",
+    "method": "verdict read",
+    "result": "same-family-only independence acknowledged",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "G01",
+    "area": "governance",
+    "claim_or_check": "governance repair PREPARED NOT ACCEPTED; nothing sealed/ratified",
+    "source_ref": "GOVERNANCE_REPAIR_README/commit 8ed1351 message",
+    "method": "commit-message + manifest read; no merge",
+    "result": "explicitly NOT ACCEPTED",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "G02",
+    "area": "governance",
+    "claim_or_check": "L-096 carried by unmerged branch; not on main",
+    "source_ref": "main ledger 59b891e:2052-2053",
+    "method": "ledger grep",
+    "result": "PASS confirmed unmerged",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "G03",
+    "area": "governance",
+    "claim_or_check": "no repair branch merged to main (rank v10 gov)",
+    "source_ref": "merge-base --is-ancestor vs 59b891e for dbb3ee0/9802b49/8ed1351",
+    "method": "git ancestry check",
+    "result": "PASS all three NOT-in-main",
+    "verdict": "REVIEWED-verified",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "item_id": "G04",
+    "area": "governance",
+    "claim_or_check": "rank branch ledger stale (L-097 absent; base predates main)",
+    "source_ref": "git diff 59b891e..dbb3ee0 -- CONTINUITY_LEDGER.md",
+    "method": "diff read",
+    "result": "L-097 section missing on branch = stale base not malicious edit",
+    "verdict": "SAMPLED",
+    "audit_role": "08_storage_contracts"
+  },
+  {
+    "area": "T1 cleanroom rerun (path-only adaptation)",
+    "item": "35/35 cells bit-identical vs published DECISION_TESTS.json T1",
+    "status": "RAN",
+    "evidence": "outputs/T1_cleanroom_compare.json; outputs/T1_cleanroom_T1.json; outputs/T1_path_patch.diff",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "T1 as-shipped ambient behavior (reads /mnt/c absolute paths; succeeds on this machine only)",
+    "item": "T0 probe 3.6 s strongest=frozen_idfonly C1=FAIL",
+    "status": "RAN",
+    "evidence": "outputs/T0_ambient_T1.json",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "T2 cleanroom blocker (no in-package CSV; remapped t2() FileNotFoundError; ambient 164256 rows sized)",
+    "item": "relative open + t2() trace + header/row count",
+    "status": "RAN",
+    "evidence": "outputs/T2_T3_blockers.json (t2)",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "T3/ladder cleanroom blockers (4 opens FileNotFoundError; verbatim absolute lines; ambient sizes)",
+    "item": "4 opens + 3 script path-greps + 6 ambient stats",
+    "status": "RAN",
+    "evidence": "outputs/T2_T3_blockers.json (t3+deps)",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "Input inventory (relative equivalents + missing heavy inputs)",
+    "item": "13 rows: 3 IN_PACKAGE / 6 MISSING_HEAVY / 2 OUTSIDE / 1 EXCLUDED / 1 WRITE-OUTSIDE",
+    "status": "RAN",
+    "evidence": "INPUT_INVENTORY.csv",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "RT+lib identity package-vs-raw",
+    "item": "10/10 RT JSONs + audit_baseline_lib.py sha-identical",
+    "status": "RAN",
+    "evidence": "REPORT.md Totals; INPUT_INVENTORY.csv rows 1-2",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "Manifest vs workdir vs Git blobs",
+    "item": "sets full (756/800/800) + 12-file sample 24 checks + 1/5 gzip round-trip",
+    "status": "RAN (SAMPLED for hashes)",
+    "evidence": "outputs/manifest_verify.json; outputs/git_minus_manifest_full.txt",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "Setup-gap documentation (no SETUP/REQUIREMENTS; dep floor; fix list)",
+    "item": "search + dep versions recorded",
+    "status": "RAN",
+    "evidence": "SETUP_GAPS.md",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "T2 numeric recomputation (C3 verdicts per dataset)",
+    "item": "NOT RUN — inherited from published DECISION_TESTS.json",
+    "status": "NOT RUN",
+    "evidence": "evidence/DECISION_TESTS_published.json (reference only)",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "T3 numeric re-probe (multi-archive direction/shape)",
+    "item": "NOT RUN this round — prior round 2-archive probe stands as execution evidence",
+    "status": "NOT RUN",
+    "evidence": "REPORT.md Limits (role 04/02 scope)",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "Full-ladder rerun incl. k=768 and fidelity gate",
+    "item": "NOT RUN (hours; documented 3000 s timeout in ladder.py:56-62)",
+    "status": "NOT RUN",
+    "evidence": "SETUP_GAPS.md",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "Model-weight arms (2.4 GB PPLX; no downloads per rules)",
+    "item": "NOT RUN — sha record in MODEL_DOWNLOAD.json only",
+    "status": "NOT RUN",
+    "evidence": "INPUT_INVENTORY.csv row 12",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "Full 756-entry hash re-verification",
+    "item": "NOT RUN — bounded 12-file sample + 1 gzip only",
+    "status": "NOT RUN",
+    "evidence": "outputs/manifest_verify.json",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "Second-physical-machine replication",
+    "item": "NOT RUN — stranger failure shown via relative opens + static paths",
+    "status": "NOT RUN",
+    "evidence": "REPORT.md Finding 1 Limits",
+    "audit_role": "09_portability"
+  },
+  {
+    "area": "Whole-project lines outside pilot (F1/KV/dense-MRL/storage/metrics/geometry/retrieval/governance)",
+    "item": "NOT REVIEWED — other roles' scope",
+    "status": "NOT REVIEWED",
+    "evidence": "REPORT.md Scope section",
+    "audit_role": "09_portability"
+  },
+  {
+    "check_id": "G01",
+    "object": "REFS_BEFORE vs live refs",
+    "evidence": "REFS_BEFORE.txt + git for-each-ref (182 total; 26 local heads all match)",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G02",
+    "object": "HR twelve-byte budget decision (L-087)",
+    "evidence": "git show 89d3169 + docs/v52/V52_TWELVE_BYTE_BUDGET_HR_DECISION_2026-09-11.md head/tail",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G03",
+    "object": "hr standardized-float correction + L-097",
+    "evidence": "git log 7501991 + ledger tail on main 59b891e",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G04",
+    "object": "L-096 consolidation",
+    "evidence": "git log 907750f body",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G05",
+    "object": "pilot STOP verdict + FINAL_STATE gates",
+    "evidence": "git show FINAL_STATE.md + commit 8bcdef5 body",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G06",
+    "object": "REFEREE.md + decision_tests.py timing",
+    "evidence": "git log --diff-filter=A + name-only log; decision_tests.py:190-191",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G07",
+    "object": "postcheck commits 8f7beaa + 9993f95",
+    "evidence": "commit bodies + --stat (append-only)",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G08",
+    "object": "NOT PREREGISTERED labels",
+    "evidence": "head -3 of REPORT/PROTOCOL/FINAL_STATE/REFEREE + code _label",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G09",
+    "object": "r1 numbers 101-row claim",
+    "evidence": "HARD_AUDIT_NUMBERS.md TOTALS + COVERAGE LEDGER + token grep",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G10",
+    "object": "r1 ITQ-seed wording",
+    "evidence": "au_c1_itq.py:29/41/85/91/111-124 + HARD_AUDIT_CLAIMS.md:50",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G11",
+    "object": "r1 cleanroom/portability wording",
+    "evidence": "HARD_AUDIT_INTEGRITY.md:16/33-50/203-218 + CONSOLIDATED finding 9",
+    "status": "REVIEWED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G12",
+    "object": "r1 CONSOLIDATED + RUN_SCOPE + prior PROJECT_COVERAGE (17 rows)",
+    "evidence": "full read head + row count",
+    "status": "SAMPLED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G13",
+    "object": "research-line inventory (bench3/regen/incoming/parallel/residual/chat-lit)",
+    "evidence": "directory listings",
+    "status": "SAMPLED",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G14",
+    "object": "postcheck matched RealTalk numbers (9993f95 table)",
+    "evidence": "commit body read only",
+    "status": "NOT RUN",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G15",
+    "object": "prereg draft lineage (d2cfbaa/a73393a)",
+    "evidence": "names + L-092 note only",
+    "status": "NOT RUN",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G16",
+    "object": "F1/dense/KV/static/E1/T4F1-era/remote bodies",
+    "evidence": "listed for coverage; owned by r2 roles 03-08",
+    "status": "NOT RUN",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G17",
+    "object": "literature primary sources",
+    "evidence": "map/dir listing only; none opened",
+    "status": "NOT RUN",
+    "audit_role": "10_governance_meta"
+  },
+  {
+    "check_id": "G18",
+    "object": "model weights/caches (2.4GB model/ ARCHIVE_CACHE)",
+    "evidence": "manifest note only",
+    "status": "NOT RUN",
+    "audit_role": "10_governance_meta"
+  }
+]

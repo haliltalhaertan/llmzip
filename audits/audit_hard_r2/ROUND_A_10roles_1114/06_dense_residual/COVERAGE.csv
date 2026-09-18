@@ -1,0 +1,27 @@
+id,line,item,method,status,evidence
+01,dense-MRL,README verdict + thresholds (f12/f96/enrichment),read branch file via git show,REVIEWED,git show findings/dense-mrl-parity-2026-09-14:research_dense_mrl_parity_2026_09_14/README.md
+02,dense-MRL,measure_mrl_parity.py parity (loglog_fit+archive_texts_only verbatim; rowL2-center-var; p=-slope),read first 120 lines + synthetic p check,SAMPLED,outputs/t_probe_synth.log T6
+03,dense-MRL,MRL_PARITY 3 arm JSONs (arctic-m pB +0.3292 vs control -0.0169; f48 enrichment 1.70x vs 0.97x),read arctic-m + mxbai aggregates,SAMPLED,evidence.json
+04,dense-MRL,audit MUSE_DENETIM_V55 FAIL-FIXABLE + 4 repairs,read README summary only (full audit text not reopened),SAMPLED,README audit table
+05,dense-MRL,embedding recomputation / N-gate per-archive rerun,NOT RUN (no model downloads; >180s; stated re-fit),NOT RUN,
+06,sign96-nanobeir,SIGN96_NANOBEIR_RUN_34866074513 report (13 tasks 649q Recall@3 +2.472pp W8/0/5; SciFact +18.1pp),read full git-show body,REVIEWED,exec-8 output
+07,sign96-nanobeir,workflow/rankings/qrel-freeze protocol + 20 SHA-256 nuisance priorities,read report protocol section only; workflow YAML not executed,SAMPLED,report text
+08,sign96-nanobeir,13-task ranking recomputation,NOT RUN (needs Actions artifacts/corpora),NOT RUN,
+09,micro-residual,PROTOCOL.md frozen design (Var(|C|) ranking; median>=; nested R4/R8/R16; lexicographic; 20 nuisance trials; qrels-after-freeze),read full PROTOCOL via git show,REVIEWED,exec-34 output
+10,micro-residual,SIGN96_MICRO_RESIDUAL_RUN_34886350705 report (R8 +0.113pp Recall@3 +0.478pp nDCG@10; tie 39.7->14.5%; R16 -0.144pp; SciFact collision-zero falsifier),read full git-show body,REVIEWED,exec-8 output
+11,micro-residual,packed budgets 96/100/104/112b -> 12/13/13/14B active-only,verified arithmetically on copy (synthetic),REVIEWED,outputs/t_probe_synth.log T1
+12,micro-residual,run_micro_residual.py / summarize.py source logic,NOT RUN (listed only; ranking code not re-executed),NOT RUN,
+13,heavy-wave,HEAVY_WAVE_STATUS report (BRIGHT -0.205pp; BIRCO -0.818pp WTB exception; full SciFact +1.924 vs Nano +18.1; FiQA/TREC-COVID infra failures unlicensed),read full git-show body,REVIEWED,exec-8 output
+14,residual8,PROTOCOL.md + PROSPECTIVE_SNAPSHOT.json (top-8 var axes; strict >median; packed [N13]; arms BASE/SIGN_ONLY8/MAG8/RANDOM8-20; stride65/17/9; gates 1e-12; oracle bounds diagnostic),read full PROTOCOL + snapshot,SAMPLED,copies/residual8_PROTOCOL.md
+15,residual8,lib_residual8.py pack/stride/tie/expectation logic,read full copy + synthetic probes (roundtrip; non-inversion; signatures),REVIEWED,outputs/t_probe_synth.log T1b/T2/T3/T5
+16,residual8,perltqa REPORT (gate PASS maxd 0.0; MAG8-BASE +0.481pp CI excl 0; MAG8-SIGN8 +0.049pp CI incl 0; 90% lift from SIGN_ONLY8),read full REPORT + independent reaggregation digit-match,REVIEWED,outputs/t_reaggregate.log
+17,residual8,coordinator FINDINGS + VERIFIED_RESULTS (packed replay maxdiff 0.0; random best-global correction; tie headroom +1.68pp vs FLOAT gap +6.27pp),read full FINDINGS head 150 + reaggregation,REVIEWED,outputs/t_reaggregate.log
+18,residual8,seed handling (20 seeds 62001-62020; idx0=62001 best-global verified; per-query-max inflation +1.58pp demonstrated),verified mechanically,REVIEWED,outputs/t_reaggregate.log + copies/constants.json
+19,residual8,preservation LME/REALTALK rows + oracle v1 REJECT + oracle_repair pending,read FINDINGS + ORACLE_COORDINATOR_REVIEW head; repair rerun NOT RUN,SAMPLED,ORACLE_COORDINATOR_REVIEW.md
+20,asymmetric,TASK A REPORT (asym=dot(q decode)/sqrt96; gates PASS; PerLTQA +0.046 asym-base; LME/REAL negative; float_std best; 18/18 green + red mutations),read full REPORT head 120 + fixture/mutation section,SAMPLED,asymmetric/REPORT.md
+21,asymmetric,float-query oracle status (full float q consumed; doc side packed 12B),verified via lib_b8 source + synthetic fixture,REVIEWED,outputs/t_probe_synth.log T3
+22,B8,TASK B REPORT+PROTOCOL+lib_b8.py (fixed 96-bit 88+8; 12B payload +80B shared; B8-asym +0.00058/-0.02436/-0.02214; gain=query-precision not reallocation),read REPORT head + full lib copy + reaggregation digit-match,REVIEWED,outputs/t_reaggregate.log
+23,alternate,hit10/* audits + inverse/kv/chat_literature lines,listed only; content NOT reviewed (other roles' scope),NOT RUN,
+24,alternate,next_route_round1 (COORDINATOR_DECISION fair-contest blockers; storage-accounting; literature-fidelity xiao correction),read COORDINATOR_DECISION head 80 + fair-contest/literature dirs listed,SAMPLED,next_route_round1/COORDINATOR_DECISION.md
+25,scope,published top10 STOP gates C1/C3/S3 + FINAL_STATE verdict scope,read REPORT/FINAL_STATE/DECISION_TESTS heads,REVIEWED,exec-13/20 outputs
+26,scope,STOP-disposability logic per line (dense vs residual vs asym/B8),analysis in REPORT section 6,REVIEWED,REPORT.md section 6

@@ -1,0 +1,113 @@
+{
+ "LME": {
+  "asym96_rrf60": {
+   "vs_BM25_alone_pp": -2.07,
+   "ci_lo": -4.5,
+   "ci_hi": 0.33,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  },
+  "float_raw32_rrf60": {
+   "vs_BM25_alone_pp": -4.47,
+   "ci_lo": -7.08,
+   "ci_hi": -1.93,
+   "excludes_zero": true,
+   "passes_+1pp_gate": false
+  },
+  "float_std32_rrf60": {
+   "vs_BM25_alone_pp": 1.49,
+   "ci_lo": -0.57,
+   "ci_hi": 3.54,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  },
+  "hamming96_rrf60": {
+   "vs_BM25_alone_pp": 2.23,
+   "ci_lo": -0.08,
+   "ci_hi": 4.52,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  },
+  "qscale96_rrf60": {
+   "vs_BM25_alone_pp": 0.78,
+   "ci_lo": -1.51,
+   "ci_hi": 3.03,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  }
+ },
+ "LoCoMo": {
+  "asym96_rrf60": {
+   "vs_BM25_alone_pp": -2.74,
+   "ci_lo": -5.05,
+   "ci_hi": -0.58,
+   "excludes_zero": true,
+   "passes_+1pp_gate": false
+  },
+  "float_raw32_rrf60": {
+   "vs_BM25_alone_pp": -1.21,
+   "ci_lo": -4.17,
+   "ci_hi": 1.63,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  },
+  "float_std32_rrf60": {
+   "vs_BM25_alone_pp": 1.27,
+   "ci_lo": -0.72,
+   "ci_hi": 2.94,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  },
+  "hamming96_rrf60": {
+   "vs_BM25_alone_pp": -3.81,
+   "ci_lo": -5.3,
+   "ci_hi": -2.26,
+   "excludes_zero": true,
+   "passes_+1pp_gate": false
+  },
+  "qscale96_rrf60": {
+   "vs_BM25_alone_pp": -1.36,
+   "ci_lo": -3.22,
+   "ci_hi": 0.38,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  }
+ },
+ "PerLTQA": {
+  "asym96_rrf60": {
+   "vs_BM25_alone_pp": 1.48,
+   "ci_lo": 0.45,
+   "ci_hi": 2.47,
+   "excludes_zero": true,
+   "passes_+1pp_gate": true
+  },
+  "float_raw32_rrf60": {
+   "vs_BM25_alone_pp": 2.8,
+   "ci_lo": 2.02,
+   "ci_hi": 3.6,
+   "excludes_zero": true,
+   "passes_+1pp_gate": true
+  },
+  "float_std32_rrf60": {
+   "vs_BM25_alone_pp": 2.57,
+   "ci_lo": 1.83,
+   "ci_hi": 3.37,
+   "excludes_zero": true,
+   "passes_+1pp_gate": true
+  },
+  "hamming96_rrf60": {
+   "vs_BM25_alone_pp": -0.41,
+   "ci_lo": -1.5,
+   "ci_hi": 0.68,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  },
+  "qscale96_rrf60": {
+   "vs_BM25_alone_pp": 0.83,
+   "ci_lo": -0.14,
+   "ci_hi": 1.83,
+   "excludes_zero": false,
+   "passes_+1pp_gate": false
+  }
+ }
+}

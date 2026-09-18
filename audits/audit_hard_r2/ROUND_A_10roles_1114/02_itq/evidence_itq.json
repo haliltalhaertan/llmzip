@@ -1,0 +1,427 @@
+{
+  "seeds": [
+    20260916,
+    20260917,
+    20260918,
+    7,
+    42
+  ],
+  "benches": {
+    "rt": {
+      "n_rows": 220,
+      "archives": [
+        "RT01",
+        "RT02",
+        "RT03",
+        "RT04",
+        "RT05",
+        "RT06",
+        "RT07",
+        "RT08",
+        "RT09",
+        "RT10"
+      ],
+      "n_queries": 705,
+      "verify_vs_published": {
+        "FULL_qscale_mine": 49.645390070921984,
+        "FULL_qscale_publ": 49.645390070921984,
+        "ITQ16_qscale_mine": 32.765957446808514,
+        "ITQ16_qscale_publ": 32.76595744680851,
+        "ITQ16-FULL_mine": -16.87943262411347,
+        "ITQ16-FULL_publ_-16.88": -16.879432624113477,
+        "ITQ16-RAND20260916_mine": -2.4113475177304906,
+        "ITQ16-RAND20260917_mine": -2.5531914893617014,
+        "ITQ16-RAND20260918_mine": -1.8439716312056689
+      },
+      "paired": {
+        "seed20260916/sym_ITQ-RAND": {
+          "cohort_diff_pp": 0.14184397163121076,
+          "per_archive_neg_zero_pos": [
+            5,
+            0,
+            5
+          ],
+          "per_archive_diffs_pp": [
+            3.5294,
+            1.4286,
+            -5.4795,
+            7.0423,
+            8.5714,
+            -4.0541,
+            -7.1429,
+            -1.4286,
+            -3.1746,
+            1.6949
+          ]
+        },
+        "seed20260916/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -2.4113475177304906,
+          "per_archive_neg_zero_pos": [
+            7,
+            1,
+            2
+          ],
+          "per_archive_diffs_pp": [
+            -3.5294,
+            1.4286,
+            0.0,
+            -1.4085,
+            4.2857,
+            -2.7027,
+            -7.1429,
+            -1.4286,
+            -9.5238,
+            -5.0847
+          ]
+        },
+        "seed20260917/sym_ITQ-RAND": {
+          "cohort_diff_pp": 0.0,
+          "per_archive_neg_zero_pos": [
+            6,
+            0,
+            4
+          ],
+          "per_archive_diffs_pp": [
+            1.1765,
+            -2.8571,
+            -1.3699,
+            5.6338,
+            -1.4286,
+            -1.3514,
+            -2.8571,
+            1.4286,
+            -1.5873,
+            3.3898
+          ]
+        },
+        "seed20260917/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -1.1347517730496506,
+          "per_archive_neg_zero_pos": [
+            6,
+            2,
+            2
+          ],
+          "per_archive_diffs_pp": [
+            -2.3529,
+            2.8571,
+            0.0,
+            5.6338,
+            -7.1429,
+            -2.7027,
+            -2.8571,
+            0.0,
+            -1.5873,
+            -3.3898
+          ]
+        },
+        "seed20260918/sym_ITQ-RAND": {
+          "cohort_diff_pp": 0.4255319148936181,
+          "per_archive_neg_zero_pos": [
+            5,
+            1,
+            4
+          ],
+          "per_archive_diffs_pp": [
+            4.7059,
+            2.8571,
+            1.3699,
+            11.2676,
+            0.0,
+            -1.3514,
+            -5.7143,
+            -2.8571,
+            -1.5873,
+            -6.7797
+          ]
+        },
+        "seed20260918/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -0.14184397163120366,
+          "per_archive_neg_zero_pos": [
+            5,
+            1,
+            4
+          ],
+          "per_archive_diffs_pp": [
+            -3.5294,
+            2.8571,
+            6.8493,
+            7.0423,
+            0.0,
+            -4.0541,
+            -5.7143,
+            -1.4286,
+            1.5873,
+            -5.0847
+          ]
+        },
+        "seed7/sym_ITQ-RAND": {
+          "cohort_diff_pp": 0.0,
+          "per_archive_neg_zero_pos": [
+            4,
+            2,
+            4
+          ],
+          "per_archive_diffs_pp": [
+            2.3529,
+            2.8571,
+            -1.3699,
+            0.0,
+            1.4286,
+            -4.0541,
+            0.0,
+            -5.7143,
+            7.9365,
+            -3.3898
+          ]
+        },
+        "seed7/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -1.418439716312058,
+          "per_archive_neg_zero_pos": [
+            6,
+            2,
+            2
+          ],
+          "per_archive_diffs_pp": [
+            3.5294,
+            0.0,
+            -2.7397,
+            -4.2254,
+            2.8571,
+            -2.7027,
+            -5.7143,
+            -2.8571,
+            0.0,
+            -3.3898
+          ]
+        },
+        "seed42/sym_ITQ-RAND": {
+          "cohort_diff_pp": -1.1347517730496435,
+          "per_archive_neg_zero_pos": [
+            5,
+            2,
+            3
+          ],
+          "per_archive_diffs_pp": [
+            -2.3529,
+            0.0,
+            -4.1096,
+            2.8169,
+            2.8571,
+            -4.0541,
+            -4.2857,
+            -4.2857,
+            0.0,
+            3.3898
+          ]
+        },
+        "seed42/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -2.269503546099287,
+          "per_archive_neg_zero_pos": [
+            7,
+            1,
+            2
+          ],
+          "per_archive_diffs_pp": [
+            -7.0588,
+            -4.2857,
+            2.7397,
+            2.8169,
+            -4.2857,
+            -4.0541,
+            -4.2857,
+            -1.4286,
+            0.0,
+            -1.6949
+          ]
+        }
+      },
+      "spread_qscale_hit10": {
+        "ITQ_min": 32.765957446808514,
+        "ITQ_max": 34.46808510638298,
+        "RAND_min": 34.326241134751776,
+        "RAND_max": 36.170212765957444
+      },
+      "objective": {
+        "n_fits": 50,
+        "all_decreased": true,
+        "mean_rel_reduction": 0.01833742878688793,
+        "min_rel_reduction": 0.01595939445764002
+      }
+    },
+    "pqsub5": {
+      "n_rows": 110,
+      "archives": [
+        "Cai Xiuying",
+        "Cao Lili",
+        "Feng Wei",
+        "Han Gang",
+        "He Feng"
+      ],
+      "n_queries": 1605,
+      "paired": {
+        "seed20260916/sym_ITQ-RAND": {
+          "cohort_diff_pp": 1.2461059190031136,
+          "per_archive_neg_zero_pos": [
+            1,
+            0,
+            4
+          ],
+          "per_archive_diffs_pp": [
+            0.7335,
+            0.9934,
+            1.5432,
+            4.2471,
+            -0.6431
+          ]
+        },
+        "seed20260916/qscale_ITQ-RAND": {
+          "cohort_diff_pp": 0.8099688473520246,
+          "per_archive_neg_zero_pos": [
+            2,
+            1,
+            2
+          ],
+          "per_archive_diffs_pp": [
+            0.0,
+            1.6556,
+            4.0123,
+            -0.3861,
+            -1.2862
+          ]
+        },
+        "seed20260917/sym_ITQ-RAND": {
+          "cohort_diff_pp": 0.7476635514018852,
+          "per_archive_neg_zero_pos": [
+            1,
+            0,
+            4
+          ],
+          "per_archive_diffs_pp": [
+            1.956,
+            -3.3113,
+            1.2346,
+            2.7027,
+            0.9646
+          ]
+        },
+        "seed20260917/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -0.8099688473520246,
+          "per_archive_neg_zero_pos": [
+            3,
+            0,
+            2
+          ],
+          "per_archive_diffs_pp": [
+            -1.956,
+            -0.6623,
+            1.2346,
+            -3.0888,
+            0.3215
+          ]
+        },
+        "seed20260918/sym_ITQ-RAND": {
+          "cohort_diff_pp": -2.1806853582554595,
+          "per_archive_neg_zero_pos": [
+            4,
+            0,
+            1
+          ],
+          "per_archive_diffs_pp": [
+            -1.7115,
+            1.6556,
+            -5.2469,
+            -2.3166,
+            -3.2154
+          ]
+        },
+        "seed20260918/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -0.6230529595015639,
+          "per_archive_neg_zero_pos": [
+            4,
+            0,
+            1
+          ],
+          "per_archive_diffs_pp": [
+            -0.978,
+            -1.3245,
+            -0.3086,
+            -0.7722,
+            0.3215
+          ]
+        },
+        "seed7/sym_ITQ-RAND": {
+          "cohort_diff_pp": -1.3084112149532672,
+          "per_archive_neg_zero_pos": [
+            4,
+            1,
+            0
+          ],
+          "per_archive_diffs_pp": [
+            0.0,
+            -0.6623,
+            -1.2346,
+            -5.4054,
+            -0.3215
+          ]
+        },
+        "seed7/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -1.2461059190031278,
+          "per_archive_neg_zero_pos": [
+            5,
+            0,
+            0
+          ],
+          "per_archive_diffs_pp": [
+            -1.467,
+            -0.3311,
+            -2.7778,
+            -0.7722,
+            -0.6431
+          ]
+        },
+        "seed42/sym_ITQ-RAND": {
+          "cohort_diff_pp": 0.06230529595015355,
+          "per_archive_neg_zero_pos": [
+            2,
+            0,
+            3
+          ],
+          "per_archive_diffs_pp": [
+            -2.6895,
+            0.3311,
+            2.1605,
+            4.2471,
+            -2.2508
+          ]
+        },
+        "seed42/qscale_ITQ-RAND": {
+          "cohort_diff_pp": -0.8099688473520246,
+          "per_archive_neg_zero_pos": [
+            3,
+            0,
+            2
+          ],
+          "per_archive_diffs_pp": [
+            -1.2225,
+            0.3311,
+            0.3086,
+            -1.5444,
+            -1.9293
+          ]
+        }
+      },
+      "spread_qscale_hit10": {
+        "ITQ_min": 80.49844236760124,
+        "ITQ_max": 82.42990654205607,
+        "RAND_min": 81.1214953271028,
+        "RAND_max": 83.2398753894081
+      },
+      "objective": {
+        "n_fits": 25,
+        "all_decreased": true,
+        "mean_rel_reduction": 0.023249756037311057,
+        "min_rel_reduction": 0.022336555363339897
+      }
+    }
+  }
+}

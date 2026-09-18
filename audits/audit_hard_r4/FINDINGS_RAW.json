@@ -1,0 +1,802 @@
+[
+ {
+  "round": "R2",
+  "role": "bytes",
+  "file": "BYTES_AUDIT.md",
+  "id": "F1",
+  "claimed_sev": "CRITICAL",
+  "text": "\"12/24/48 B/doc\" headline sizes (LADDER.json bytes_per_doc; REPORT/LADDER/DECISION tables; ladder.py k/8) | Read scorer code (ladder.py:144-154; arm_decision.py:27-32); recomputed narrow totals in P4 (pure JSON arithmetic); verified doc counts + text bytes (8944 docs) | Headline counts packed bits only. Even inside the report's own narrow boundary (packed+sigma f64) truth is 12.86/25.72/51.43 B/doc (+7.15%). Published integers are wrong."
+ },
+ {
+  "round": "R2",
+  "role": "bytes",
+  "file": "BYTES_AUDIT.md",
+  "id": "F2",
+  "claimed_sev": "CRITICAL",
+  "text": "\"Honest storage: codes+sigma 115,008 B vs BM25 index 670,511 B (5.83x)\" (REPORT sec 4; FINAL_STATE \"Honest cost accounting\") | Rebuilt RT05 pipeline at k=96/192/384 (P1, ml-python); fit vectorizers for all 10 archives (P2); summed encoder matrices + idf + term bytes; recomputed BM25 both tokenizers (P3) | Query encoder (per-archive TF-IDF vocabs+IDF, LSA-32 SVD, SVD-k components) totals ~126 MB lower bound (~14.1 KB/doc avg, range 7.2-34.4 KB/doc) vs BM25 index 0.67 MB. Symmetric ratio is ~188x AGAINST codes (~243x vs the fair frozen BM25). The 5.83x win is an asymmetric-boundary artifact. PQ "
+ },
+ {
+  "round": "R2",
+  "role": "bytes",
+  "file": "BYTES_AUDIT.md",
+  "id": "F3",
+  "claimed_sev": "HIGH",
+  "text": "Sigma is the only side state (\"codes + sigma 115,008 B\", cost_audit.py:7,76-78) | Read build() (ladder.py:111-132; frozen build_representation:639-657): mu centering on both doc AND query path; checked cost_audit sums payload+sigma only | mu (k floats/archive, same size as sigma: 7,680 B f64 total at k=96) is load-bearing for ALL arms incl sym/asym yet counted nowhere. Adds +0.86/1.72/3.43 B/doc. MED medians (same size) disclosed only at worker level, never in headline."
+ },
+ {
+  "round": "R2",
+  "role": "bytes",
+  "file": "BYTES_AUDIT.md",
+  "id": "F4",
+  "claimed_sev": "HIGH",
+  "text": "One byte label per k (\"12 B\" covers sym/qscale/asym/MED/ITQ/RAND) | Read all scorers (ladder.py:147-153; t3:62-68; quant_math.py:464-518: MED thr, ITQ/R fits) vs LADDER.json bytes_per_doc + quant_math.py:517 assert | Label is scorer-blind. Same \"12 B\" needs: sym mu+encoder; qscale +sigma; MED +96 medians; ITQ/RAND +96x96 R (36,864 f32 / 73,728 f64 per archive). The 3 pp qscale-over-sym gain and T3 asym-over-qscale inversion (61.09 vs 54.11 at \"48 B\") are bought with uncharged state."
+ },
+ {
+  "round": "R2",
+  "role": "bytes",
+  "file": "BYTES_AUDIT.md",
+  "id": "F5",
+  "claimed_sev": "HIGH",
+  "text": "Mixed float precisions across the cost story (sigma f64, R f32-quoted, float arms f32) | Compared cost_audit.py:77 (10*96*8) vs REPORT:136-137 (3.43x/7.50x = f32, unstated; worker quant/REPORT:118-122 gives f32 AND f64) vs ladder.py:243 (4k) vs cache dtype float64 (probe: C (662,96) float64) | Main REPORT quotes the smaller f32 rotation multiple silently (f64 doubles it: 6.87x/15x). No test shows f32 sigma/R/mu reproduce the 0.0000pp anchors (floor 1e-12 lives in a regime f32 rounding can disturb). Precision boundary is UNVERIFIED."
+ },
+ {
+  "round": "R2",
+  "role": "bytes",
+  "file": "BYTES_AUDIT.md",
+  "id": "F6",
+  "claimed_sev": "MED",
+  "text": "BM25 rival cost 670,511 B compact / 1,450,229 B pickle (cost_audit; REPORT sec 4) | Re-ran cost_audit encoding exactly (P3): reproduced coarse 670,511 / 1,450,229 / 998,654 to the byte; added frozen-tokenizer variant (the 65.67 fair baseline) | Fair (frozen) BM25 index is SMALLER: 519,740 B compact (-22.5%), pickle 1,097,138. Rival is stronger AND cheaper than presented. Narrow ratio vs fair rival is 4.52x, not 5.83x. LME cites Python-object IDF (351 MB) after rejecting pickle inflation on RealTalk: inconsistent scope."
+ },
+ {
+  "round": "R2",
+  "role": "bytes",
+  "file": "BYTES_AUDIT.md",
+  "id": "F7",
+  "claimed_sev": "MED",
+  "text": "\"Fidelity gate: 0 differing bits of 858,624\" (LADDER_REALTALK.md:5-7); \"0 of 276,480\" (T3) | Read gate blocks (ladder.py:194-200; t3:125-128); verified 858,624 = 8944*96 in P4; checked Q96 built-but-uncompared | Gate seals ONLY (C96>=0)==(cached C>=0) at k=96 (T3: only n<384 subset). No QC, no sigma/mu, no scores, no k=192/384. Proves rebuild fidelity of doc bits, nothing about size or high-k validity."
+ },
+ {
+  "round": "R2",
+  "role": "bytes",
+  "file": "BYTES_AUDIT.md",
+  "id": "F8",
+  "claimed_sev": "LOW",
+  "text": "Hunt for per-doc scalars, float-residual scoring, ID/length/order leaks | Grep + reads: sigma axis=0 per-archive (ladder.py:150-151; quant_math.py:161-162); doc side +-1 only (arm_decision.py:27-32; ladder.py:147-152); det_top10 hash(archive,row) (audit_baseline_lib.py:79-83); lens unused on code path; PQ codebook properly charged (pq/REPORT:55-57) | No per-document sigma/norm/scale beyond bits. No doc-float residual in bit-arm scores (sigma/mu are float-DERIVED per-archive state, noted, not per-doc). No ID/length/order relevance leak. PQ's 98,304 B shared codebook (~22.99 B/doc amortized) is "
+ },
+ {
+  "round": "R2",
+  "role": "code",
+  "file": "CODE_AUDIT.md",
+  "id": "F1",
+  "claimed_sev": "CRITICAL",
+  "text": "\"12 B/doc\" storage; \"HONEST BYTE ACCOUNTING: sign coding costs k/8 bytes per document\" | Rebuilt RT05 projector exactly (ml-python/sklearn); weighed every decoder-side artifact in memory | Side info = 27,933,977 B/archive vs 4,920 B payload (5678x); amortized true cost 68,144 B/doc. PQ competitor arm discloses its codebook; own codes disclose nothing"
+ },
+ {
+  "round": "R2",
+  "role": "code",
+  "file": "CODE_AUDIT.md",
+  "id": "F2",
+  "claimed_sev": "CRITICAL",
+  "text": "All RealTalk code Hit@10/FR@3 numbers (ladder, gates, T1) | Held-out experiment: same recipe, projector fit on other 9 archives (bit-exact TRANS rebuild: 0/39360 bits differ); HYBRID vocab-vs-subspace split | INDEP qscale 24.29 vs TRANS 60.00 (\u221235.71 pp); sym 18.57 vs 55.71 (\u221237.14 pp), n=70. Subspace drives ~80% of the gap. All published code numbers are transductive-regime numbers, undisclosed"
+ },
+ {
+  "round": "R2",
+  "role": "code",
+  "file": "CODE_AUDIT.md",
+  "id": "F3",
+  "claimed_sev": "HIGH",
+  "text": "Bootstrap CIs / SIG claims on sym (integer-score) arms | Rescored all 705 RT queries from caches under 5 tie salts; det-vs-expected comparison | 69.8% of queries tie AT the top-10 cut; salt spread 0.71 pp; 20/705 queries flip. CIs hold the hash fixed, so tie luck (same order as the C3 +1.0 pp gate) is unmodeled"
+ },
+ {
+  "round": "R2",
+  "role": "code",
+  "file": "CODE_AUDIT.md",
+  "id": "F4",
+  "claimed_sev": "HIGH",
+  "text": "REPORT \"quantization costs only 1.83 pp\"; FINAL_STATE \"sign ADDS ~10 pp over the float source\" | Recomputed raw-cosine, standardized-cosine, qscale, sym Hit@10 from caches (anchors reproduced to 4 decimals) | Both slogans are reference-shopping the same data: vs raw float, sign wins by +9.93 pp; vs standardized float, sign loses by \u22121.99 pp. LADDER.json (36.60) vs REPORT (48.51) differ by ~12 pp with no disclosure"
+ },
+ {
+  "round": "R2",
+  "role": "code",
+  "file": "CODE_AUDIT.md",
+  "id": "F5",
+  "claimed_sev": "MED",
+  "text": "C1 gate readout (\"FAIL \u2014 behind by 7.80 pp\") | Arithmetic from DECISION_TESTS.json | C1 is FR@3-based (gap \u22127.23 pp); 7.80 is the Hit@10 gap. Wrong metric quoted in both readouts. Verdict unaffected"
+ },
+ {
+  "round": "R2",
+  "role": "code",
+  "file": "CODE_AUDIT.md",
+  "id": "F6",
+  "claimed_sev": "LOW",
+  "text": "REPORT \u00a71 evidence table Hit@10 column | Reproduced det (46.5248) and exp (46.6809) sym anchors | \"sign96 46.68\" is the tie-averaged (expected) number in a column of deterministic numbers (det = 46.52). 0.16 pp mix"
+ },
+ {
+  "round": "R2",
+  "role": "code",
+  "file": "CODE_AUDIT.md",
+  "id": "F7",
+  "claimed_sev": "MED",
+  "text": "\"The decline is specific to dividing by \u03c3\" (T3/LADDER); sym labeled \"standardized\" | Read t3_ladder.py scoring code (lines 186\u2013188, 231) | sym never divides by \u03c3, yet sym FR@3 falls 53.88\u219248.71 at 384. The mechanism as stated cannot explain its own table's sym row; the \"standardized\" label on sym is simply wrong. Sharpens (not duplicates) the known incomplete-\u03c3-explanation issue"
+ },
+ {
+  "round": "R2",
+  "role": "data",
+  "file": "DATA_AUDIT.md",
+  "id": "F1",
+  "claimed_sev": "HIGH",
+  "text": "RT gold complete | 46/705 partial, report says none"
+ },
+ {
+  "round": "R2",
+  "role": "data",
+  "file": "DATA_AUDIT.md",
+  "id": "F2",
+  "claimed_sev": "MED",
+  "text": "LoCoMo 1531 v 1535 | Resolved: 4 items named, <=0.26pp"
+ },
+ {
+  "round": "R2",
+  "role": "data",
+  "file": "DATA_AUDIT.md",
+  "id": "F3",
+  "claimed_sev": "MED",
+  "text": "Fair BM25 in final nrs | Headline uses 54.18, not 65.67"
+ },
+ {
+  "round": "R2",
+  "role": "data",
+  "file": "DATA_AUDIT.md",
+  "id": "F4",
+  "claimed_sev": "LOW",
+  "text": "T1 \"1-2 grams\" | Code is unigrams-only; no effect"
+ },
+ {
+  "round": "R2",
+  "role": "data",
+  "file": "DATA_AUDIT.md",
+  "id": "F5",
+  "claimed_sev": "LOW",
+  "text": "Dup docs inflate/deflate | RT 6 twin-q; LME 0; PQ sample 0"
+ },
+ {
+  "round": "R2",
+  "role": "data",
+  "file": "DATA_AUDIT.md",
+  "id": "F6",
+  "claimed_sev": "LOW",
+  "text": "D30:05 id format | Exact-match drops valid evidence"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "F1",
+  "claimed_sev": "HIGH",
+  "text": "ITQ setup is reviewer-fair | Read impl, seeds, loss diags | Not fair: 1 init vs 3+7"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "N1",
+  "claimed_sev": "HIGH",
+  "text": "ITQ<random is new-to-field | Training recall, no web | Plausibly new instance only"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "N2",
+  "claimed_sev": "MED",
+  "text": "Size-damage r=-0.78 is new | Recall + round-1 limits | Plausibly new, n=10, Hit@10-only"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "N3",
+  "claimed_sev": "MED",
+  "text": "Balanced-but-worse is new | Recall + MED confound | Plausibly new instance, no causality"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "N4",
+  "claimed_sev": "MED",
+  "text": "Sigma-collapse mechanism new | Textbook reasoning check | Principle likely known; split is new"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "N5",
+  "claimed_sev": "HIGH",
+  "text": "sign() adds ~10pp, general | Traced 54.18/43.69 source | k384 RealTalk only; k96 contradicts"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "N6",
+  "claimed_sev": "HIGH",
+  "text": "Few-hundred regime unstudied | Internal scan only | Cannot judge; null is not evidence"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "N7",
+  "claimed_sev": "LOW",
+  "text": "Fair-baseline method is new | Recall of field practice | Likely known hygiene; honest use is real"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "N8",
+  "claimed_sev": "LOW",
+  "text": "No arm wins both is a finding | Read REPORT Sec. 6 | Pipeline regularity, not a law"
+ },
+ {
+  "round": "R2",
+  "role": "novelty",
+  "file": "NOVELTY_AUDIT.md",
+  "id": "C1",
+  "claimed_sev": "LOW",
+  "text": "lit_r2 cites fake papers | Scanned all cited names | No fabrication; 3 vague refs flagged"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S1",
+  "claimed_sev": "CRITICAL",
+  "text": "T1 gaps: no CI, paired data discarded"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S2",
+  "claimed_sev": "CRITICAL",
+  "text": "Ladder/sign+10: no CI, no per-query store"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S3",
+  "claimed_sev": "HIGH",
+  "text": "ITQ-worse-than-random dies under correction"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S4",
+  "claimed_sev": "HIGH",
+  "text": "LoCoMo +1.07 borderline; story problem"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S5",
+  "claimed_sev": "HIGH",
+  "text": "No held-out set; all selection on test"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S6",
+  "claimed_sev": "MED",
+  "text": "S3 verdict rests on +0.30 with no CI"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S7",
+  "claimed_sev": "MED",
+  "text": "r=-0.78 replicates but overclaimed"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S8",
+  "claimed_sev": "MED",
+  "text": "Pattern: headlines lack inference"
+ },
+ {
+  "round": "R2",
+  "role": "stats",
+  "file": "STATS_AUDIT.md",
+  "id": "S9",
+  "claimed_sev": "LOW",
+  "text": "Minor reporting inconsistencies"
+ },
+ {
+  "round": "R3",
+  "role": "baseline_pq",
+  "file": "BASELINE_PQ_AUDIT.md",
+  "id": "F1",
+  "claimed_sev": "LOW",
+  "text": "`baseline/REPORT.md` ll.85-110 aggregates (3 benches x 4 arms x 4 metrics) vs `per_query_top10.jsonl` (9440 rows) and `summary_top10.json` | Streamed all 9440 rows, re-averaged hit/recall/nDCG/expHit per bench+arm; compared to summary full-precision and REPORT 4dp; recomputed tie-at-cut fractions | MATCH: Hit diffs 0.0; recall/nDCG diffs <=1.2e-14 (summation order); all 4dp roundings correct; tie fractions round correctly (e.g. 0.703206->0.7032)"
+ },
+ {
+  "round": "R3",
+  "role": "baseline_pq",
+  "file": "BASELINE_PQ_AUDIT.md",
+  "id": "F2",
+  "claimed_sev": "LOW",
+  "text": "30 `ckpt_top10_perltqa_*.jsonl` vs merged `per_query_top10.jsonl` vs source caches (missing/dup/stale check) | Union of all 510 ckpt files (30 PerLTQA + 470 LME + 10 RealTalk) by qid; sorted-row sha256 of ckpt-union vs merged; per-file archive-purity + dup check; mtime order; per-archive N and nq vs `cache_arch_eval.pkl` / `cache_q_eval.pkl` | MATCH: union 9440 unique qids, 0 dups, 0 missing; sorted-hash equal (`538973ee...`); 1 archive/file; mtimes sequential then merged last; N and nq 30/30 OK"
+ },
+ {
+  "round": "R3",
+  "role": "baseline_pq",
+  "file": "BASELINE_PQ_AUDIT.md",
+  "id": "F3",
+  "claimed_sev": "MED",
+  "text": "`baseline/tests_top10.py`, `pq/test_pq_top10.py`, `data/test_top10_data.py`: do tests test what they claim; vacuous? | Grep for `assert True`/`except...pass`/skip/xfail/empty loops; ran baseline suite (10 tests) and PQ suite (9 tests) from tmp copies (source untouched); ran data script in `export` + `lexical` modes from its own path (read-only) | Baseline 10/10 PASS, no vacuous patterns (no try/except at all; brute-force enum for exp metrics). PQ 9/9 PASS but 2 weak sub-assertions (F3a/F3b). Data GREEN (40108 + 8464 checks) but lexical protocol omits tie-order/nDCG/expHit checks (which is wher"
+ },
+ {
+  "round": "R3",
+  "role": "baseline_pq",
+  "file": "BASELINE_PQ_AUDIT.md",
+  "id": "F3a",
+  "claimed_sev": "LOW",
+  "text": "`pq/test_pq_top10.py` ll.105-118 \"gold-blindness\" sub-check | Read test body; `rank_top10(scores, arch)` takes no gold arg, `gold=[19]` is unused, assertion re-runs identical call | VACUOUS sub-assertion: passes trivially; determinism itself is still tested"
+ },
+ {
+  "round": "R3",
+  "role": "baseline_pq",
+  "file": "BASELINE_PQ_AUDIT.md",
+  "id": "F3b",
+  "claimed_sev": "MED",
+  "text": "`pq/test_pq_top10.py` ll.89-102 \"no training row may exactly equal a query row\" | Read test body; test asserts shape (8944,96), counts, first-row equality only; never compares any Xtr row against QC rows | Comment-code mismatch: disjointness NOT tested (shape/first-row only). No leak found by other means (F5), but the test does not prove it"
+ },
+ {
+  "round": "R3",
+  "role": "baseline_pq",
+  "file": "BASELINE_PQ_AUDIT.md",
+  "id": "F4",
+  "claimed_sev": "HIGH",
+  "text": "`data/run_lexical.py` ll.55-76 `expected_hit()` + stored `expected_hit_at_10` column + `tdd_lexical.log` expHit values | Read formula; averaged stored `expected_hit_at_10` vs `hit_at_10`/`recall_at_10` over both lexical files (705 rows each); gold-size distribution | WRONG (mislabeled): formula accumulates `gb` counts and divides by `\\ | gold\\ | ` = expected-Recall, not expected-Hit (cf. `metrics_top10.py:104` vs `:134`). Stored mean == recall mean to 1e-9 (bm25 0.4316, tfidf 0.4191); 54.8% queries multi-gold so not harmless relabeling. Headline Hit@10 (bm25 0.5418) unaffected"
+ },
+ {
+  "round": "R3",
+  "role": "baseline_pq",
+  "file": "BASELINE_PQ_AUDIT.md",
+  "id": "F5",
+  "claimed_sev": "MED",
+  "text": "`pq/` numbers reproduce; fair config? (training size vs codebook, seeds) | Re-averaged `per_query.jsonl` (705 rows) overall + per-archive vs `SUMMARY.json`; checked `centroids.npy` shape/bytes, 10 codes files, doc totals, seed/niter/threads in `run_pq.py`; spot rescore 1 query (LUT vs brute + ranking) | MATCH on numbers (all diffs 0.0). Config: single seed 20260915, niter 20, threads 1, no seed loop; 8,944 docs < faiss 9,984 guideline (~34.9 pts/centroid/subspace; self-reported). Trained on docs only by construction; full Xtr-vs-QC disjointness not directly tested (see F3b)"
+ },
+ {
+  "round": "R3",
+  "role": "baseline_pq",
+  "file": "BASELINE_PQ_AUDIT.md",
+  "id": "F6",
+  "claimed_sev": "LOW",
+  "text": "Cost/payload + cross-archive identity (RealTalk N/nq; LME sample; file sizes) | Unique-archive doc sum x12; file sizes; baseline-vs-PQ-vs-cache N/nq per RT archive; independent spot rescore (2 baseline queries x 2 arms; 1 PQ query) | MATCH: 510 archives, 252,838 docs x12 = 3,034,056 B as reported; per_query 21,951,870 B = ckpt total; RT N/nq 10/10 match; spot rescores 4/4 + PQ top10 MATCH, LUT-vs-brute 1.3e-15"
+ },
+ {
+  "round": "R3",
+  "role": "digest_brain",
+  "file": "DIGEST_BRAIN_AUDIT.md",
+  "id": "F1",
+  "claimed_sev": "LOW",
+  "text": "PerLTQA 30 vs 31 arch caches | Both scripts faithful, 0.3% diff, no number wrong"
+ },
+ {
+  "round": "R3",
+  "role": "digest_brain",
+  "file": "DIGEST_BRAIN_AUDIT.md",
+  "id": "F2",
+  "claimed_sev": "LOW",
+  "text": "Banding 341 vs 412 rare | Disclosed both rules, join hazard only"
+ },
+ {
+  "round": "R3",
+  "role": "digest_brain",
+  "file": "DIGEST_BRAIN_AUDIT.md",
+  "id": "F3",
+  "claimed_sev": "MED",
+  "text": "Brain uses coarse BM25 54.18 | Stale, verdict survives stronger"
+ },
+ {
+  "round": "R3",
+  "role": "digest_brain",
+  "file": "DIGEST_BRAIN_AUDIT.md",
+  "id": "F4",
+  "claimed_sev": "LOW",
+  "text": "Tie convention 46.68 vs 46.52 | Internally consistent"
+ },
+ {
+  "round": "R3",
+  "role": "digest_brain",
+  "file": "DIGEST_BRAIN_AUDIT.md",
+  "id": "F5",
+  "claimed_sev": "MED",
+  "text": "RT04 +7.04 \"falsifies\" | z=1.30 ns, rhetoric overstates"
+ },
+ {
+  "round": "R3",
+  "role": "digest_brain",
+  "file": "DIGEST_BRAIN_AUDIT.md",
+  "id": "F6",
+  "claimed_sev": "LOW",
+  "text": "NEW_VS_KNOWN.md missing? | Exists, recheck still true"
+ },
+ {
+  "round": "R3",
+  "role": "ideas_first",
+  "file": "IDEAS_FIRSTSTAGE_AUDIT.md",
+  "id": "F1",
+  "claimed_sev": "HIGH",
+  "text": "firststage REPORT.md latency table (lines 108-112) vs RESULTS.json timings | Compared every REPORT timing number to RESULTS.json values verbatim | MISMATCH on all 5 numbers (28-40%): REPORT CODE 0.99/1.90 vs RESULTS 1.37/2.59 ms; BM25 1.22/2.30 vs 1.70/3.20; RRF-marg 0.96/1.78 vs 1.33/2.45; UNION 0.08/0.11 vs 0.103/0.155; build 0.04 s vs 0.095 s"
+ },
+ {
+  "round": "R3",
+  "role": "ideas_first",
+  "file": "IDEAS_FIRSTSTAGE_AUDIT.md",
+  "id": "F2",
+  "claimed_sev": "LOW",
+  "text": "firststage REPORT.md BM25 index size 1,450,229 B (the round-2-flagged pickle number) | Independently rebuilt the BM25 index from data/*.json docs with stdlib pickle (same schema) + cross-read coordinator/cost_audit.py + cost_audit.json | Bit-exact match all 10 archives and totals (1,450,229 + 998,654 text). REPORT discloses the serialization explicitly; coordinator ACCEPTs with compact-varint alternative (670,511 B). Ratios ~13x/~21x are serialization-dependent (5.8x/14.5x under compact) \u2014 conclusion direction unchanged"
+ },
+ {
+  "round": "R3",
+  "role": "ideas_first",
+  "file": "IDEAS_FIRSTSTAGE_AUDIT.md",
+  "id": "F3",
+  "claimed_sev": "LOW",
+  "text": "firststage RESULTS.json + REPORT.md quality tables (pool Hit/recall/ceiling 6 M x 4 arms, own metrics, 2x2, gold dist) | Recomputed every aggregate from per_query.jsonl (705 rows); 23 REPORT spot-checks vs RESULTS.json | All match (pool max diff 1.4e-14; own 7.1e-15; 2x2 exact; gold dist exact incl. 319 single-gold, max 22). One bootstrap contrast (RRF-BM25 Hit@100) re-ran bit-exact incl. CI bounds"
+ },
+ {
+  "round": "R3",
+  "role": "ideas_first",
+  "file": "IDEAS_FIRSTSTAGE_AUDIT.md",
+  "id": "F4",
+  "claimed_sev": "LOW",
+  "text": "ablation RESULTS.json + REPORT.md (8 arm x scorer cells, contrasts, cost table) | Recomputed all 8 summary cells + by_archive n-sums from per_query.jsonl (5640 rows); 12 REPORT spot-checks; cost widths/build times vs RESULTS.json | All match (max diff 7.1e-15). Z widths FULL 23,422-33,257, NO_LSA -32 cols, NO_CHAR 7.7-9.9k, builds 9.4/11.0/3.5 s, 12 B/arm all as reported. LSA_ONLY blocked as documented"
+ },
+ {
+  "round": "R3",
+  "role": "ideas_first",
+  "file": "IDEAS_FIRSTSTAGE_AUDIT.md",
+  "id": "F5",
+  "claimed_sev": "LOW",
+  "text": "Pool construction gold-knowledge (highest-value check): firststage.py lines 294-301, 311-326; det_top10 tie rule | Code inspection + empirical: reconstructed all 4230 UNION pools from stored top-500 halves; recomputed all pool/own metrics from ids+gold; checked neither-counts, pool-size bounds, list integrity | CLEAN: 0 UNION reconstruction mismatches; 0 metric mismatches; pools miss gold on 270 (M=10) down to 10 (M=500) queries so gold cannot be in-pool by construction; union poolsize always <= M; all 2115 ranking lists valid permutations; tie rule (audit_baseline_lib.py:79-83, salt \"top10-r1"
+ },
+ {
+  "round": "R3",
+  "role": "ideas_first",
+  "file": "IDEAS_FIRSTSTAGE_AUDIT.md",
+  "id": "F6",
+  "claimed_sev": "LOW",
+  "text": "G6 FAIL disclosure (BM25 top10 704/705 vs audit/per_query_bm25_corrected.jsonl; RT01_q016 tie story) | Rescored RT01_q016 both summation orders from production pkl + data docs; re-ran set-order scoring under PYTHONHASHSEED=0/1/42 | Corroborated: fwd/rev orders differ by 1 ulp (8.9e-16) and flip the 10th slot (596 vs 249, neither gold); set-order tail is [249,605] under seeds 0/1 vs [605,249] under seed 42 \u2014 exactly as REPORT claims; gate stays FAIL in RESULTS.json, not redefined"
+ },
+ {
+  "round": "R3",
+  "role": "ideas_first",
+  "file": "IDEAS_FIRSTSTAGE_AUDIT.md",
+  "id": "F7",
+  "claimed_sev": "LOW",
+  "text": "Whether firststage conclusions (RRF fusion 81.28/66.15 recommendation) are quoted anywhere downstream | Scoped grep of decision_r1/ + coordinator/ for headline numbers, \"fusion\", \"RRF\", \"firststage\" | NOT quoted in any decision_r1 STOP/GO document (those discuss only the unrelated LME rerank-\u00a7E experiment). Only consumers: coordinator/ideas_audit_v2.json (ACCEPT, values match exactly) and rerank_ceiling.json (CODE/BM25 ceilings consistent). No decision rests on the fusion claim"
+ },
+ {
+  "round": "R3",
+  "role": "ideas_first",
+  "file": "IDEAS_FIRSTSTAGE_AUDIT.md",
+  "id": "F8",
+  "claimed_sev": "LOW",
+  "text": "RRF fusion integrity (k=60, full-ranking fusion, no gold) | Full independent rescore of all 705 queries from production pkls + data docs (CODE qscale, BM25 index traversal, RRF fuse, det tie rule), top-10 vs stored lists | 705/705 match on CODE, BM25, and RRF top-10 (0 mismatches). Fusion claim rests on verified rankings"
+ },
+ {
+  "round": "R3",
+  "role": "leak_perltqa",
+  "file": "LEAK_PERLTQA.md",
+  "id": "F1",
+  "claimed_sev": "CRITICAL",
+  "text": "PerLTQA Hit@10 honest | Inflated ~21-23 pp"
+ },
+ {
+  "round": "R3",
+  "role": "leak_perltqa",
+  "file": "LEAK_PERLTQA.md",
+  "id": "F2",
+  "claimed_sev": "HIGH",
+  "text": "Rebuild validity gate | Clean bit-for-bit pass"
+ },
+ {
+  "round": "R3",
+  "role": "leak_perltqa",
+  "file": "LEAK_PERLTQA.md",
+  "id": "F3",
+  "claimed_sev": "MED",
+  "text": "Leak vs archive size | Weak positive, n.s."
+ },
+ {
+  "round": "R3",
+  "role": "leak_perltqa",
+  "file": "LEAK_PERLTQA.md",
+  "id": "F4",
+  "claimed_sev": "LOW",
+  "text": "Contrast purity | Pure fitting effect"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F1",
+  "claimed_sev": "HIGH",
+  "text": "Pipeline fit scope, 12 files | Same eval-archive fit, all sets"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F2",
+  "claimed_sev": "HIGH",
+  "text": "qscale sigma source | Docs-only per archive, every arm"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F3",
+  "claimed_sev": "MED",
+  "text": "BM25 IDF scope + probe D1 | Same-corpus IDF; bg-IDF +0.99 pp"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F4",
+  "claimed_sev": "MED",
+  "text": "PQ codebook training set | 8944 eval docs pooled; Q excluded"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F5",
+  "claimed_sev": "MED",
+  "text": "ITQ rotation fit scope | Per-archive docs-only; 1 init"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F6",
+  "claimed_sev": "LOW",
+  "text": "PCA96 fit scope | Pooled 10-arch eval docs; Q mapped"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F7",
+  "claimed_sev": "LOW",
+  "text": "Median-threshold fit scope | Docs-only; MED arm only"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F8",
+  "claimed_sev": "LOW",
+  "text": "Any fit on queries/gold | None in 66/66 files"
+ },
+ {
+  "round": "R3",
+  "role": "leak_sweep",
+  "file": "LEAK_SWEEP.md",
+  "id": "F9",
+  "claimed_sev": "LOW",
+  "text": "Upstream builder origin | Eval-fit; gates prove identity only"
+ },
+ {
+  "round": "R3",
+  "role": "model_prov",
+  "file": "MODEL_PROVENANCE_AUDIT.md",
+  "id": "MP-01",
+  "claimed_sev": "LOW",
+  "text": "Model identity + provenance consistency (MODEL_SOURCE.json, MODEL_DOWNLOAD.json, weight_headers.txt, model/*) | sha256 re-hash of all 14 on-disk files vs MODEL_DOWNLOAD.json; safetensors header parse; README/headers cross-check | All 14 OK; model is perplexity-ai/pplx-embed-v1-0.6b @ 2c4d510d; header (310 F32 tensors, embed [151936,1024]) matches config.json"
+ },
+ {
+  "round": "R3",
+  "role": "model_prov",
+  "file": "MODEL_PROVENANCE_AUDIT.md",
+  "id": "MP-02",
+  "claimed_sev": "LOW",
+  "text": "model/st_quantize.py vs official_st_quantize.py deviation | `diff` + sha256; torch numeric probe scorer-vs-official (int8/binary/packed/pool, 5x1024 random + near-zero case) | Byte-identical (diff exit 0); int8==hard-quant exact, binary/packed exact, near-zero counterexample confirmed; no numeric deviation"
+ },
+ {
+  "round": "R3",
+  "role": "model_prov",
+  "file": "MODEL_PROVENANCE_AUDIT.md",
+  "id": "MP-03",
+  "claimed_sev": "MED",
+  "text": "\"Which model do the numbers use?\" \u2014 consistency of model use across experiments | grep for model refs in baseline/pq/data/semantic/coordinator; checked semantic outputs existence | NO published number touches model/: baseline/lexical/PQ use pre-existing caches+text; PPLX arm incomplete (no per_query/REPORT); reports correctly label PPLX NOT RUN"
+ },
+ {
+  "round": "R3",
+  "role": "model_prov",
+  "file": "MODEL_PROVENANCE_AUDIT.md",
+  "id": "MP-04",
+  "claimed_sev": "MED",
+  "text": "Mid-project model/scorer change invalidating comparisons | Diffed current semantic/ vs coordinator/semantic_before_fidelity_fix/; mtime timeline; sampled old-vs-new numeric drift | No MODEL switch (single revision, all loaders local_files_only to same dir). Scorer DID change mid-flight (float64->FP32 torch + resume-bug fix) but contained: no archive payload completed under old code; sampled drift 0/20480 int8, pool <=1.2e-7"
+ },
+ {
+  "round": "R3",
+  "role": "model_prov",
+  "file": "MODEL_PROVENANCE_AUDIT.md",
+  "id": "MP-05",
+  "claimed_sev": "MED",
+  "text": "Reproducibility: published numbers depending on artifacts absent from the publication zip | Full namelist scan of LLMZIP_TWELVE_BYTE_PILOT_2026-09-16.zip (821 entries) | Zip has NO model/ weights/tokenizer and NO semantic payloads; PRIMARY PPLX endpoint not regenerable offline. No published number depends on a missing artifact (vacuous: PPLX numbers don't exist); baseline/PQ re-aggregable from zipped per-query files but source caches absent"
+ },
+ {
+  "round": "R3",
+  "role": "model_prov",
+  "file": "MODEL_PROVENANCE_AUDIT.md",
+  "id": "MP-06",
+  "claimed_sev": "LOW",
+  "text": "Encoder cost accounting (progress.json weight_bytes) | Summed model/ bytes on disk vs reported 2400127479 | Reported value omits 1_Pooling/config.json (313 B); actual total 2400127792. Trivial, no conclusion affected"
+ },
+ {
+  "round": "R3",
+  "role": "model_prov",
+  "file": "MODEL_PROVENANCE_AUDIT.md",
+  "id": "MP-07",
+  "claimed_sev": "LOW",
+  "text": "Orphan HF module cache dir (37bb1b653c423126, config only, no modeling.py) | diff of both cached configs vs model/configuration.py | Both identical to disk; harmless transformers AutoConfig-resolution artifact; full dir (f8498d62c9f3cb3a) also identical"
+ },
+ {
+  "round": "R3",
+  "role": "semantic",
+  "file": "SEMANTIC_AUDIT.md",
+  "id": "S1",
+  "claimed_sev": "MED",
+  "text": "Payload RT01_docs.npz incomplete | numpy read of stored arrays | 615/662 complete, 47 zero rows"
+ },
+ {
+  "round": "R3",
+  "role": "semantic",
+  "file": "SEMANTIC_AUDIT.md",
+  "id": "S2",
+  "claimed_sev": "LOW",
+  "text": "No semantic score exists anywhere | ls of 4 expected outputs | All absent, never run"
+ },
+ {
+  "round": "R3",
+  "role": "semantic",
+  "file": "SEMANTIC_AUDIT.md",
+  "id": "S3",
+  "claimed_sev": "LOW",
+  "text": "No published claim uses semantic/ | grep reports + decisions | Only NOT RUN / ABANDONED refs"
+ },
+ {
+  "round": "R3",
+  "role": "semantic",
+  "file": "SEMANTIC_AUDIT.md",
+  "id": "S4",
+  "claimed_sev": "LOW",
+  "text": "Scorer + fidelity tests | reran copies in /tmp | 21 passed, 4 passed"
+ },
+ {
+  "round": "R3",
+  "role": "semantic",
+  "file": "SEMANTIC_AUDIT.md",
+  "id": "S5",
+  "claimed_sev": "LOW",
+  "text": "Stored derivations recompute | numpy recompute from payload | int8 0 mismatch, pack exact"
+ },
+ {
+  "round": "R3",
+  "role": "semantic",
+  "file": "SEMANTIC_AUDIT.md",
+  "id": "S6",
+  "claimed_sev": "LOW",
+  "text": "Digest \"4.3 texts/s\" figure | grep logs for source | UNVERIFIED, no log shows it"
+ },
+ {
+  "round": "R3",
+  "role": "semantic",
+  "file": "SEMANTIC_AUDIT.md",
+  "id": "S7",
+  "claimed_sev": "LOW",
+  "text": "PCA96 leakage question | code read + artifact check | Declared, docs-only, never run"
+ },
+ {
+  "round": "R3",
+  "role": "semantic",
+  "file": "SEMANTIC_AUDIT.md",
+  "id": "S8",
+  "claimed_sev": "LOW",
+  "text": "Fidelity fix vs payload staleness | diff + schema + mtimes | Post-fix writer, no staleness"
+ },
+ {
+  "round": "R4",
+  "role": "bench3_producer",
+  "file": "BENCH3_AUDIT.md",
+  "id": "B2",
+  "claimed_sev": "LOW",
+  "text": "Duplicate docs | exact-text scan, all archives | RT 1-8 fillers; PQ 0; neutral"
+ },
+ {
+  "round": "R4",
+  "role": "bench3_producer",
+  "file": "BENCH3_AUDIT.md",
+  "id": "B3",
+  "claimed_sev": "MED",
+  "text": "Exclusions (Chen Zhi + 288) | cache + raw recount | method-neutral; difficulty effect UNVERIFIED"
+ },
+ {
+  "round": "R4",
+  "role": "bench3_producer",
+  "file": "BENCH3_AUDIT.md",
+  "id": "B6",
+  "claimed_sev": "HIGH",
+  "text": "rt_validate \"100%\" string | artifact vs its own table | false string; numbers unaffected"
+ },
+ {
+  "round": "R4",
+  "role": "bench3_producer",
+  "file": "BENCH3_AUDIT.md",
+  "id": "B7",
+  "claimed_sev": "MED",
+  "text": "Dialogue fallback gold | split file + means | 40.5% whole-dialogue gold; disclosed, neutral"
+ },
+ {
+  "round": "R4",
+  "role": "bench3_producer",
+  "file": "BENCH3_AUDIT.md",
+  "id": "D1",
+  "claimed_sev": "MED",
+  "text": "RT vs PQ recipe parity | code diff + recompute | math identical; eval-arm defs diverge"
+ },
+ {
+  "round": "R4",
+  "role": "ladder_indep",
+  "file": "LADDER_INDEP.md",
+  "id": "L1",
+  "claimed_sev": "LOW",
+  "text": "k=96 identity gate | PASS: 0 diff bits, 10/10 archives"
+ },
+ {
+  "round": "R4",
+  "role": "ladder_indep",
+  "file": "LADDER_INDEP.md",
+  "id": "L2",
+  "claimed_sev": "LOW",
+  "text": "k=192/384 anchor match | PASS: all within 0.005pp"
+ },
+ {
+  "round": "R4",
+  "role": "ladder_indep",
+  "file": "LADDER_INDEP.md",
+  "id": "L3",
+  "claimed_sev": "HIGH",
+  "text": "INDEP ladder shape | Rises at every step, both metrics"
+ },
+ {
+  "round": "R4",
+  "role": "ladder_indep",
+  "file": "LADDER_INDEP.md",
+  "id": "L4",
+  "claimed_sev": "MED",
+  "text": "Rank-limit exposure | No failure; RT05/RT04 flagged"
+ },
+ {
+  "round": "R4",
+  "role": "ladder_indep",
+  "file": "LADDER_INDEP.md",
+  "id": "L5",
+  "claimed_sev": "LOW",
+  "text": "Coverage | 10/10 archives, all 3 widths"
+ }
+]

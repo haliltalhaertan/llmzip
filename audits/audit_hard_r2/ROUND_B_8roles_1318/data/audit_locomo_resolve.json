@@ -1,0 +1,94 @@
+{
+ "regen_kept_total": 1535,
+ "regen_per_arch_kept": {
+  "locomo_0": 150,
+  "locomo_1": 81,
+  "locomo_2": 152,
+  "locomo_3": 199,
+  "locomo_4": 178,
+  "locomo_5": 123,
+  "locomo_6": 150,
+  "locomo_7": 191,
+  "locomo_8": 156,
+  "locomo_9": 155
+ },
+ "regen_unres_qids": [
+  [
+   "locomo_9_qa69",
+   [
+    "D30:05"
+   ]
+  ]
+ ],
+ "regen_empty_qids": [
+  "locomo_0_qa30",
+  "locomo_0_qa46",
+  "locomo_9_qa39",
+  "locomo_9_qa42"
+ ],
+ "HIZ_excluded_by_reason": {
+  "no_evidence": 4,
+  "adversarial_category5": 446,
+  "invalid_or_unknown_evidence": 5
+ },
+ "HIZ_excluded_n": 455,
+ "HIZ_counts_per_archive": {
+  "L00": 49,
+  "L01": 24,
+  "L02": 41,
+  "L03": 63,
+  "L04": 65,
+  "L05": 35,
+  "L06": 41,
+  "L07": 48,
+  "L08": 40,
+  "L09": 49
+ },
+ "HIZ_kept_per_archive": "[{'id': 'L00', 'sample_id': 'conv-26', 'docs': 419, 'queries': 150}, {'id': 'L01', 'sample_id': 'conv-30', 'docs': 369, 'queries': 81}, {'id': 'L02', 'sample_id': 'conv-41', 'docs': 663, 'queries': 152}, {'id': 'L03', 'sample_id': 'conv-42', 'docs': 629, 'queries': 197}, {'id': 'L04', 'sample_id': 'conv-43', 'docs': 680, 'queries': 177}, {'id': 'L05', 'sample_id': 'conv-44', 'docs': 675, 'queries': 123}, {'id': 'L06', 'sample_id': 'conv-47', 'docs': 689, 'queries': 149}, {'id': 'L07', 'sample_id",
+ "LOCOMOjson_n": 1535,
+ "LOCOMOjson_skipped": 5,
+ "run_locomo_skip_logic": [
+  "n_q = n_skip = 0",
+  "n_skip += 1",
+  "\"queries_skipped_no_retrievable_gold\": n_skip,",
+  "f\"(atlanan {n_skip}), havuz~{out['pool_mean']:.0f}\\n\")"
+ ],
+ "HIZ_qpq_columns": [
+  "dataset",
+  "archive",
+  "qid",
+  "arm",
+  "n_docs",
+  "gold_count",
+  "hit3",
+  "recall3",
+  "hit10",
+  "recall10",
+  "hit100",
+  "recall100"
+ ],
+ "HIZ_qpq_rows": 65826,
+ "HIZ_qpq_distinct_q": 10971,
+ "regen_vs_hiz_arch_counts": {
+  "regen": {
+   "locomo_0": 150,
+   "locomo_1": 81,
+   "locomo_2": 152,
+   "locomo_3": 199,
+   "locomo_4": 178,
+   "locomo_5": 123,
+   "locomo_6": 150,
+   "locomo_7": 191,
+   "locomo_8": 156,
+   "locomo_9": 155
+  }
+ },
+ "provenance_keys": [
+  "source",
+  "sha256",
+  "git_blob_sha1",
+  "current_public_blob_sha1",
+  "match"
+ ],
+ "provenance_head": "{\"source\": \"07_drive_frozen.tar.gz.tar::drive/locomo10.json\", \"sha256\": \"79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4\", \"git_blob_sha1\": \"d95b872480b413d935821fdc3c84f8a8f5f29e73\", \"current_public_blob_sha1\": \"d95b872480b413d935821fdc3c84f8a8f5f29e73\", \"match\": true}"
+}

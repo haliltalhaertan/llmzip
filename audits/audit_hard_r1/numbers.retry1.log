@@ -1,0 +1,16 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/numbers (cwd default)
+muse: workspace trust: trusted source=run-flag
+Audit complete. Report: `/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/numbers/HARD_AUDIT_NUMBERS.md` (written incrementally; audit code + outputs alongside it).
+
+**Outcome: 101/101 rows MATCH (84 EXACT, 17 CLOSE, 0 MISMATCH). No numeric claim checked was refuted.**
+
+- **Ladder:** gates 0/858624 EXACT (=8944 docs×96); RT04+RT05 fresh SVD all 18 cells EXACT; full 10-archive re-aggregation reproduces LADDER.json to 6dp.
+- **T1:** all 4 BM25 variants EXACT with own tokenizer/BM25 (65.67/61.70/57.30/55.32), gap −10.354610 EXACT, n=705.
+- **T2:** 164256 rows EXACT; all 15 contrast estimates EXACT; all CIs within 0.02pp (tolerance 0.3pp) under own seed 777 plus 5-seed distributions — no seed flips any verdict; LME −0.33 / PerLTQA +0.33 / LoCoMo +1.07 confirmed; inversions 4/3/6 EXACT; float_raw32 44.16→57.76 and float_std 55.74→58.05 EXACT.
+- **T3:** all 8/8 small archives rebuilt (gold mappings EXACT, k=96 gates bit-exact, total 2217 queries); gate 0/276480, all 9 arms, const_dims@384=0, and all 192→384 deltas EXACT.
+
+**Two positive findings (severity-ranked in report):**
+1. MEDIUM/reproducibility — committed `t3_perltqa_kltn.py` cannot have produced `T3_PERLTQA_KLTN.json` (tuple→TfidfVectorizer `AttributeError` path plus 4-point schema mismatch). Numbers stand; producer does not match.
+2. MEDIUM/interpretation — sym (no sigma division; sign invariant to positive scaling) still falls −5.17pp 192→384, harder than qscale's −3.60pp. The rank-overflow story is causally incomplete.
+
+Also recorded: best-of-4 BM25 selection-bias caveat, hr float-correction corroboration (RT04 k96/float 66.20 beats sym 50.70), and pilot-gate governance boundary. All results labelled local exploratory pilot, not preregistered.

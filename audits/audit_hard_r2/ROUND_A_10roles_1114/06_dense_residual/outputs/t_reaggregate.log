@@ -1,0 +1,8 @@
+R8 PerLTQA n=8265 BASE=0.488944796163641 SIGN8=0.493268569120851 MAG8=0.493757734339849 FLOAT=0.551692074528852
+MAG8-BASE=0.481294pp MAG8-SIGN8=0.048917pp
+RANDOM8 seed-mean=0.488844772315186 best-global-seed-idx=0 best=0.489868517012778
+RANDOM8 per-query-max mean=0.505710910407099 (oracle selection; inflate vs best-global by 1.5842pp)
+row keys=['N', 'base_boundary_ties', 'base_sign', 'base_slots', 'char', 'float_exact', 'gold_size', 'mag8', 'oracle_best', 'oracle_worst', 'qid', 'random8', 'same_fullcode_as_query', 'section', 'sign_only8']
+B8 LME n=470 sym=0.542134 asym=0.506489 b8=0.482128 b8-asym=-0.024362
+B8 PerLTQA n=8265 sym=0.488945 asym=0.535251 b8=0.535834 b8-asym=0.000583
+B8 REALTALK n=705 sym=0.225535 asym=0.200596 b8=0.178456 b8-asym=-0.022140

@@ -1,0 +1,12 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/repro (cwd default)
+muse: workspace trust: trusted source=run-flag
+Done. Report written stepwise to the own dir: [HARD_AUDIT_REPRO.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/repro/HARD_AUDIT_REPRO.md) (329 lines). Nothing committed, no source/cache touched (`git status` clean), LME job untouched.
+
+What ran (isolated copies, outputs redirected, adaptations documented in-report):
+- T1: 20/20 cells bit-identical (diff 0.00e+00), C1 FAIL reproduces; plus my independent RT01 reimplementation matches exactly (61.1765).
+- T3 2-archive probe: 9/9 arms and 3/3 delta signs match published (sym −5.26, qscale −2.63, asym +1.44); fidelity gate 0/61056 bits; 0 constant dims, so the rank-overflow retraction replicates. Multi-seed (3 final-SVD seeds): direction robust on the cohort, but Kong Tingting alone flips sign — single-seed per-archive deltas need intervals.
+- Repo seal controls: 38/38 pass (unrelated area, only executable repo test artifact).
+
+Headline findings: package alone reproduces nothing (all scripts hard-code absolute paths outside it; no setup docs) — HIGH. The σ-division mechanism cannot explain the sym decline (sym has no σ; I verified sign-invariance 0/28128), so the causal story is partial — MEDIUM. The −10.35pp correction is prescribed programme-wide from a RealTalk-only measurement, and best-of-4 selection inflates headlines ~4pp (winner takes only 6/10 archives) — MEDIUM, verdict direction unaffected. T2's top-50 funnel vs full-corpus BM25 is undisclosed in DECISION_TESTS.md — MEDIUM. Gates and results share one commit (`8bcdef5`), so pre-registration is unverifiable.
+
+NOT RUN (marked as such): full 8-arch gate, T2 recomputation, ladder.py rerun, `t3_perltqa_kltn.py` end-to-end, F1/adapters/LME internals.

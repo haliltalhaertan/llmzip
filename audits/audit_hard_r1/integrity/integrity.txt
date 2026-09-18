@@ -1,0 +1,43 @@
+HARD AUDIT - ONZAMANLILIK VE BUTUNLUK. Kapilar onceden sabitlendi mi, gecmis temiz mi?
+1. ZAMAN DAMGALARI: decision_r1/cost/REFEREE.md (ve prompt'larin) mtime'i, decision_tests.py mtime'indan
+   once mi? Kapilar mi sonra oynanmis? git log ile degisiklikleri izle (her commit'te REFEREE.md degisti mi?).
+2. GIT: main 59b891e hicbir dal commit'inde mi? branch HEAD e672192 mi? git log -p ile geri cekilen bes iddianin
+   izini sur: c31719b (hatali iddia), a68fcdc (duzeltme), 8bcdef5 (T3 geri cekme). Duzeltmeler rapora islenmis mi,
+   yoksa sessizce mi degistirilmis? REPORT.md'nin eski ve yeni versiyonlarini git ile karsilastir.
+3. YAYIM BUTUNLUGU: temiz klon al (git clone --branch findings/top10-comparison-2026-09-15 <local path> /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/_clone),
+   FILE_MANIFEST.json'dan rastgele 30 dosyanin sha256'sini dogrula. ZIP icerigi ile worktree ayni mi?
+4. GERI CEKILMIS IDDIALAR: 5 tanesinin de kanitiyla birlikte FINAL_STATE.md + REPORT.md + git gecmisinde
+   durdugunu dogrula. Silinmis/yumuşatilmis bir geri cekme var mi? (sessiz duzeltme araniyor)
+CIKTI: HARD_AUDIT_INTEGRITY.md - her kontrol icin kanit (dosya, commit, hash) ile GEÇTI/KALDI/NOT RUN.
+
+ORTAK ARTIFACT HARITASI (WSL yollari)
+Yayimlanmis paket (SADECE OKU): /mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/
+  - FINAL_STATE.md, REPORT.md, DECISION_TESTS.md, LADDER_REALTALK.md
+  - coordinator/{decision_tests.py,DECISION_TESTS.json,decision_tests.log,ladder.py,LADDER.json,ladder2.log,
+    t3_perltqa_kltn.py,T3_PERLTQA_KLTN.json,cost_audit.py,audit_quant.py,repr_compute.py,...}
+  - decision_r1/{keep,kill,cost}/  (CASE_FOR.md, CASE_AGAINST.md, REFEREE.md, prompt'lar, loglar)
+  - lit_r2/{rate,quant,lexical}/, digest_r1/, math_r1/, ablation_r2/, ideas_r1/, incoming_20260916b/
+Git worktree (SADECE OKU, commit YASAK): /mnt/c/Users/MDP/dev/llmzip-work/_wt_top10
+  - dal: findings/top10-comparison-2026-09-15, HEAD e672192; main 59b891e
+Ham veri ve onbellekler: /mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/
+  - ablation_r2/lme/ARCHIVE_CACHE.jsonl (LME kanal ablasyonu devam ediyor - DOKUNMA)
+Gelen dis paket:
+  - /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/extracted/LLMZIP_GERCEK_12_24_48_BAYT_2026-09-16/
+  - /mnt/c/Users/MDP/dev/llmzip-work/incoming_20260916b/extracted/LLMZIP_FIKIR1_METIN_YENIDEN_SIRALAMA_2026-09-16/
+Bench onbellekleri: /mnt/c/Users/MDP/dev/llmzip-work/bench3/  (b3b_perltqa/cache_arch_eval.pkl, cache_q_eval.pkl)
+Python: $HOME/muse-work/ml-python (numpy/sklearn/faiss var; sentence_transformers YOK)
+KURAL: raporunu KENDI dizinine yaz (numbers/integrity/claims/repro). Yayim paketine YAZMA.
+KURAL: raporu ADIM ADIM yaz - dosyayi hemen olustur, her bolumu append et. Sonda yazarsan timeout her seyi goturur.
+KURAL: NO-ARTIFACT. Calistirmadigin kontrolu 'NOT RUN' olarak yaz. Uydurma sayi = en kotu basarisizlik.
+KURAL: Denetim kodu SENIN. Benim scriptlerimi okuyabilirsin ama sonucu kendi kodunla yeniden hesapla.
+
+
+MANDATORY AUDIT CORRECTIONS (override contrary directions above):
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+Write reports in English. Audit evidence, not a desired PASS or FAIL. All coordinator claims, including STOP, are untrusted hypotheses. A single alternative seed does not refute a population claim; give paired multi-seed distributions and uncertainty. File mtimes alone do NOT establish pre-registration. A hash snapshot detects changes, it does not prevent writes.
+Strict source protection: source repositories, caches, published artifacts and git refs are READ ONLY. Do not execute original scripts that write to hard-coded source paths. Copy into your own audit directory, redirect outputs, document every adaptation; if impossible report NOT RUN. Do not commit, push, upload, delete, repair production, or access credentials. Temporary experiments only in your own directory. Use PYTHONDONTWRITEBYTECODE=1. Stop each expensive probe after 180 seconds and preserve partial results. No remote offensive/security exploitation; code correctness and local benign fixtures only.
+The user asked for the WHOLE project, not just the recent pilot. Main repository: /mnt/c/Users/MDP/dev/llmzip. Research root: /mnt/c/Users/MDP/dev/llmzip-work. Inventory relevant directories and local/remote-tracking refs using read-only git commands. Read actual contracts and audit verdicts on their own branches with git show; no checkout or fetch required. Distinguish examined, sampled, and NOT REVIEWED scope. Do not claim exhaustive certification. Reserve final 5 minutes for a coverage ledger and severity-ranked report even if tests remain incomplete.
+Explicitly challenge: whether sym actually divides by sigma (sign is invariant to positive scaling); whether the rank-overflow correction establishes any causal explanation; whether rerank removes the importance of candidate recall; whether BM25 query scoring needs raw text; whether a RealTalk-only delta can be applied to all datasets; whether selecting the best of four BM25 settings on seen gold supports generalization; whether an unapproved STOP recommendation was misrepresented as project closure. Literature absence is not novelty proof. Do not inherit alleged numerical anchors without checking metric and cohort definitions.
+
+YOUR EXPANDED RESPONSIBILITY:
+Own WHOLE-PROJECT governance and branch coverage: enumerate refs, classify research eras/lines, read main ledger/state and primary audit verdicts, reconcile unmerged findings, seals/approval scopes, pending obligations, frozen versus exploratory work. Audit precommit chronology, manifest coverage and five retractions; do not treat modifiedTime as proof. Create PROJECT_COVERAGE.csv listing branch/line, evidence inspected, verdict, gaps. No clone unless needed; use read-only git show.

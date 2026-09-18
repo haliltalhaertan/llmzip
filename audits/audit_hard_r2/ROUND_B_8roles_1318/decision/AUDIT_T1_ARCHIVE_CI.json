@@ -1,0 +1,20 @@
+{
+ "48Bqscale_vs_textbook_hit10": {
+  "unweighted_mean_gap_pp": -3.75,
+  "query_weighted_gap_pp": -3.83,
+  "archive_bootstrap_ci": [
+   -5.67,
+   -2.06
+  ],
+  "n_archives": 10
+ },
+ "48Bqscale_vs_textbook_fr3": {
+  "unweighted_mean_gap_pp": -3.27,
+  "query_weighted_gap_pp": -3.26,
+  "archive_bootstrap_ci": [
+   -5.79,
+   -0.93
+  ],
+  "n_archives": 10
+ }
+}

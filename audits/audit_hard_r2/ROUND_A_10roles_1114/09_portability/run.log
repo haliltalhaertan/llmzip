@@ -1,0 +1,13 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability (cwd default)
+muse: workspace trust: trusted source=run-flag
+Portability audit complete. All deliverables are in `audit_hard_r2/09_portability/`, sources untouched (original `FILE_MANIFEST.json` sha `92286bb6…` identical before/after).
+
+Outcome: as-shipped, the package reproduces nothing (absolute `/mnt/c/…` paths in all four entry scripts, zero setup docs) — but the prior "nothing is portable" claim is refined by execution: **T1 is fully portable after a 3-line path-only patch (35/35 cells bit-identical vs published T1, C1 FAIL preserved)**; T2/T3/full-ladder are genuinely blocked by heavy inputs absent from the package. Do not claim everything fails — T1's inputs ship byte-identical inside the package.
+
+Key evidence (all real runs, package-only `cleanroom/`, 0 symlinks):
+- [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/REPORT.md) — 6 severity-ranked findings with file/line, test, result, limits
+- [COVERAGE.csv](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/COVERAGE.csv) — 15 rows; T2/T3 numerics, full-ladder, model arms, full-hash re-verify marked NOT RUN, never passes
+- [SETUP_GAPS.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/SETUP_GAPS.md) + [INPUT_INVENTORY.csv](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/09_portability/INPUT_INVENTORY.csv) — 13 rows: 3 IN_PACKAGE, 6 MISSING_HEAVY (T2 CSV 13.3 MB/164,256 rows; T3 ~37 MB + 7.6 MB caches, all sized, none claimed missing), 1 excluded-by-design (2.4 GB weights)
+- Manifest: 756-entry manifest is a stale mid-day snapshot covering none of the 70 decision-layer files (full list in `outputs/git_minus_manifest_full.txt`); Git itself is faithful (12/12 sample blobs byte-equal to workdir; 1/5 gzip round-trip verified). No top-10 ZIP exists locally.
+
+Limits: same-machine exercise (stranger failure via relative-path `FileNotFoundError` traces, not a second machine); T2/T3 numbers inherited, not recomputed. Whole-project lines outside the top-10 pilot (F1, KV, dense-MRL, storage, metrics, geometry, retrieval, governance) are outside this role's scope.

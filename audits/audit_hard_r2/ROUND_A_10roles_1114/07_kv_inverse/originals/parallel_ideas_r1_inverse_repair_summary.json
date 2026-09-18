@@ -1,0 +1,49 @@
+{
+ "status_D": "tested",
+ "status_C": "tested",
+ "parity_pass": "12/12",
+ "D2_success": "0/12",
+ "D3_success": "0/12",
+ "agg_parity_rel": {
+  "n": 12,
+  "median": 0.0,
+  "min": 0.0,
+  "max": 0.0
+ },
+ "agg_D2": {
+  "fevals": {
+   "n": 0,
+   "median": null,
+   "min": null,
+   "max": null
+  }
+ },
+ "wall_s": 59.008240042000125,
+ "peak_rss_mb": 1203.44140625,
+ "model": {
+  "n_layers": 30,
+  "d": 576,
+  "n_q": 9,
+  "n_kv": 3,
+  "head_dim": 64,
+  "kv_width": 192,
+  "native_dtype": "bfloat16",
+  "runtime_dtype": "torch.float32",
+  "k_proj_shape": [
+   192,
+   576
+  ],
+  "v_proj_shape": [
+   192,
+   576
+  ]
+ },
+ "env": {
+  "torch_version": "2.14.0+cpu",
+  "threads": 1,
+  "cmd": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 run_fixed.py",
+  "fix": "JVP (I+JB)->JB in inverse_lib_fixed.make_jvp_op + run_fixed segment op; budgets/tolerances/x0/layers/texts/segments unchanged; fevals now include verification eval"
+ },
+ "protocol": "/mnt/c/Users/MDP/dev/llmzip-work/parallel_ideas_r1/inverse_repair/PROTOCOL.md",
+ "note": "Exploratory pilot; fixtures are NOT a benchmark; timing exploratory (shared CPU)."
+}

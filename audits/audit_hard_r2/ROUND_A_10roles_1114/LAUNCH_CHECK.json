@@ -1,0 +1,72 @@
+[
+  {
+    "role": "01_metrics",
+    "exit": null,
+    "status_file": false,
+    "log_bytes": 141,
+    "prompt_error": false
+  },
+  {
+    "role": "02_itq",
+    "exit": null,
+    "status_file": true,
+    "log_bytes": 137,
+    "prompt_error": false
+  },
+  {
+    "role": "03_geometry",
+    "exit": null,
+    "status_file": true,
+    "log_bytes": 142,
+    "prompt_error": false
+  },
+  {
+    "role": "04_retrieval",
+    "exit": null,
+    "status_file": false,
+    "log_bytes": 143,
+    "prompt_error": false
+  },
+  {
+    "role": "05_f1",
+    "exit": null,
+    "status_file": true,
+    "log_bytes": 136,
+    "prompt_error": false
+  },
+  {
+    "role": "06_dense_residual",
+    "exit": null,
+    "status_file": true,
+    "log_bytes": 148,
+    "prompt_error": false
+  },
+  {
+    "role": "07_kv_inverse",
+    "exit": null,
+    "status_file": true,
+    "log_bytes": 144,
+    "prompt_error": false
+  },
+  {
+    "role": "08_storage_contracts",
+    "exit": null,
+    "status_file": true,
+    "log_bytes": 151,
+    "prompt_error": false
+  },
+  {
+    "role": "09_portability",
+    "exit": null,
+    "status_file": true,
+    "log_bytes": 145,
+    "prompt_error": false
+  },
+  {
+    "role": "10_governance_meta",
+    "exit": null,
+    "status_file": true,
+    "log_bytes": 149,
+    "prompt_error": false
+  }
+]

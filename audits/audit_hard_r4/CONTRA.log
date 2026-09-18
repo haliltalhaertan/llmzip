@@ -1,0 +1,6 @@
+olusturulan cift: 91
+islenen 91/91 | token in=84623 out=12404
+  C5_CONSISTENT                  42
+  C4_MINOR_AMBIGUITY             30
+  C2_AMBIGUOUS_TERM_MISLEADS     18
+  C3_NEEDS_QUALIFIER             1

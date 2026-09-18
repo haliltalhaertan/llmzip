@@ -1,0 +1,14 @@
+{
+ "qid": "001be529",
+ "N": 514,
+ "bg_docs": 4418,
+ "n_sibs": 9,
+ "gate_diff_bits": 0,
+ "gate_total_bits": 49344,
+ "gate_qc_diff_bits": 0,
+ "gate_max_abs": 2.2815013767107928e-12,
+ "TRANS_sym_hit10": 1.0,
+ "TRANS_qscale_hit10": 1.0,
+ "INDEP_sym_hit10": 0.0,
+ "INDEP_qscale_hit10": 0.0
+}

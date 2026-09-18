@@ -1,0 +1,2114 @@
+[
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 5,
+  "claim": "Branch `findings/top10-comparison-2026-09-15`. `main` untouched (`59b891e`), merge is the",
+  "context": "# llmzip twelve-byte retrieval pilot \u2014 final state, 2026-09-16\n\nBranch `findings/top10-comparison-2026-09-15`. `main` untouched (`59b891e`), merge is the\nowner's call. Every number below was re-derived by the coordinator from stored per-query\nids; production anchors reproduce to 0.0000 pp.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 6,
+  "claim": "owner's call. Every number below was re-derived by the coordinator from stored per-query",
+  "context": "\nBranch `findings/top10-comparison-2026-09-15`. `main` untouched (`59b891e`), merge is the\nowner's call. Every number below was re-derived by the coordinator from stored per-query\nids; production anchors reproduce to 0.0000 pp.\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 7,
+  "claim": "ids; production anchors reproduce to 0.0000 pp.",
+  "context": "Branch `findings/top10-comparison-2026-09-15`. `main` untouched (`59b891e`), merge is the\nowner's call. Every number below was re-derived by the coordinator from stored per-query\nids; production anchors reproduce to 0.0000 pp.\n\n## Verdict: STOP",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 17,
+  "claim": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |",
+  "context": "| gate | result |\n|---|---|\n| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |\n| C3 \u2014 code+rerank beats BM25 alone by \u22651 pp FR@3 | **FAIL** (1 of 3, on disputed-gold LoCoMo) |\n| S3 \u2014 corrected PerLTQA still declines on unstandardized arms | did not fire (`asym` rises) |",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 24,
+  "claim": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only",
+  "context": "\n**1. Our BM25 baseline was handicapped by more than our entire research gain.**\nThe strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only\nk1\u21920/b=0), not the 55.32 this programme always quoted \u2014 a **+10.35 pp** handicap, larger\nthan the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 25,
+  "claim": "k1\u21920/b=0), not the 55.32 this programme always quoted \u2014 a **+10.35 pp** handicap, larger",
+  "context": "**1. Our BM25 baseline was handicapped by more than our entire research gain.**\nThe strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only\nk1\u21920/b=0), not the 55.32 this programme always quoted \u2014 a **+10.35 pp** handicap, larger\nthan the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the\nclaimed 12 B by 16.03 pp.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 26,
+  "claim": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the",
+  "context": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only\nk1\u21920/b=0), not the 55.32 this programme always quoted \u2014 a **+10.35 pp** handicap, larger\nthan the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the\nclaimed 12 B by 16.03 pp.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 29,
+  "claim": "**2. A text reranker dissolves first-stage quality.** From 164,256 stored paired rows:",
+  "context": "claimed 12 B by 16.03 pp.\n\n**2. A text reranker dissolves first-stage quality.** From 164,256 stored paired rows:\non LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp\n*ahead* of our flagship. Post-rerank spread is 0.58 pp across first stages spanning",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 30,
+  "claim": "on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp",
+  "context": "\n**2. A text reranker dissolves first-stage quality.** From 164,256 stored paired rows:\non LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp\n*ahead* of our flagship. Post-rerank spread is 0.58 pp across first stages spanning\n11.58 pp before. Order inversions: 4/10, 3/10, 6/10 pairs. Our code's net contribution",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 31,
+  "claim": "*ahead* of our flagship. Post-rerank spread is 0.58 pp across first stages spanning",
+  "context": "**2. A text reranker dissolves first-stage quality.** From 164,256 stored paired rows:\non LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp\n*ahead* of our flagship. Post-rerank spread is 0.58 pp across first stages spanning\n11.58 pp before. Order inversions: 4/10, 3/10, 6/10 pairs. Our code's net contribution\nover plain BM25 alone: \u22120.33 / +0.33 / +1.07 pp.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 32,
+  "claim": "11.58 pp before. Order inversions: 4/10, 3/10, 6/10 pairs. Our code's net contribution",
+  "context": "on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp\n*ahead* of our flagship. Post-rerank spread is 0.58 pp across first stages spanning\n11.58 pp before. Order inversions: 4/10, 3/10, 6/10 pairs. Our code's net contribution\nover plain BM25 alone: \u22120.33 / +0.33 / +1.07 pp.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 33,
+  "claim": "over plain BM25 alone: \u22120.33 / +0.33 / +1.07 pp.",
+  "context": "*ahead* of our flagship. Post-rerank spread is 0.58 pp across first stages spanning\n11.58 pp before. Order inversions: 4/10, 3/10, 6/10 pairs. Our code's net contribution\nover plain BM25 alone: \u22120.33 / +0.33 / +1.07 pp.\n\n**3. Ladder shape is a scorer property, not a bit-budget law.** On RealTalk the ladder",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 36,
+  "claim": "rises monotonically (49.65 \u2192 55.32 \u2192 57.87). On PerLTQA the standardized arms fall at 384",
+  "context": "\n**3. Ladder shape is a scorer property, not a bit-budget law.** On RealTalk the ladder\nrises monotonically (49.65 \u2192 55.32 \u2192 57.87). On PerLTQA the standardized arms fall at 384\ndims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every\nconstant dimension (0 in all 8 small archives) and the decline **persisted** \u2014 so the",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 37,
+  "claim": "dims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every",
+  "context": "**3. Ladder shape is a scorer property, not a bit-budget law.** On RealTalk the ladder\nrises monotonically (49.65 \u2192 55.32 \u2192 57.87). On PerLTQA the standardized arms fall at 384\ndims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every\nconstant dimension (0 in all 8 small archives) and the decline **persisted** \u2014 so the\nrank-overflow cause I published was wrong. The real mechanism is dividing by the tiny \u03c3 of",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 38,
+  "claim": "constant dimension (0 in all 8 small archives) and the decline **persisted** \u2014 so the",
+  "context": "rises monotonically (49.65 \u2192 55.32 \u2192 57.87). On PerLTQA the standardized arms fall at 384\ndims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every\nconstant dimension (0 in all 8 small archives) and the decline **persisted** \u2014 so the\nrank-overflow cause I published was wrong. The real mechanism is dividing by the tiny \u03c3 of\ngenuine near-singular trailing directions.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 44,
+  "claim": "1. **ITQ does not beat a random rotation** here: \u22122.27 pp RealTalk, \u22120.13 PerLTQA. ITQ's",
+  "context": "## What is genuinely ours (nothing in the scanned literature covers these)\n\n1. **ITQ does not beat a random rotation** here: \u22122.27 pp RealTalk, \u22120.13 PerLTQA. ITQ's\n   home setting is dense image descriptors with Euclidean-neighbour ground truth; our\n   regime is per-archive TF-IDF/SVD sign codes with gold retrieval.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 47,
+  "claim": "2. **Rotation damage scales with archive size**: Pearson r = \u22120.78; small archives lose",
+  "context": "   home setting is dense image descriptors with Euclidean-neighbour ground truth; our\n   regime is per-archive TF-IDF/SVD sign codes with gold retrieval.\n2. **Rotation damage scales with archive size**: Pearson r = \u22120.78; small archives lose\n   6.56 pp, large ones 23.13 pp. This alone explains the cross-benchmark difference that we\n   had attributed to our axes being special.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 48,
+  "claim": "6.56 pp, large ones 23.13 pp. This alone explains the cross-benchmark difference that we",
+  "context": "   regime is per-archive TF-IDF/SVD sign codes with gold retrieval.\n2. **Rotation damage scales with archive size**: Pearson r = \u22120.78; small archives lose\n   6.56 pp, large ones 23.13 pp. This alone explains the cross-benchmark difference that we\n   had attributed to our axes being special.\n3. **Bit balance anti-correlates with retrieval.** Rotation makes bits more balanced",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 51,
+  "claim": "(per-bit 1-fraction range 0.309\u20130.658 \u2192 0.459\u20130.545) and retrieval worse. The",
+  "context": "   had attributed to our axes being special.\n3. **Bit balance anti-correlates with retrieval.** Rotation makes bits more balanced\n   (per-bit 1-fraction range 0.309\u20130.658 \u2192 0.459\u20130.545) and retrieval worse. The\n   literature treats balance as a design goal.\n4. **\u03c3-division collapses at high k** while unstandardized scoring keeps improving \u2014",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 58,
+  "claim": "~10 pp over the float source it quantizes (k=384: sym 54.18 vs float 43.69).",
+  "context": "   win. Applied to ourselves, it reversed the programme's headline.\n6. **`sign()` is not merely lossy here** \u2014 it acts as a per-axis normalizer and *adds*\n   ~10 pp over the float source it quantizes (k=384: sym 54.18 vs float 43.69).\n\n## Retractions (five, all preserved with the evidence that killed them)",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 63,
+  "claim": "no individual \u03c1\u1d62. Counterexample verified: 96 chosen coordinate axes give \u03c1=1.0000 to",
+  "context": "\n1. \"No better choice of 96 directions exists\" \u2014 `\u03a3\u03c1\u1d62 = k` fixes the *mean* at k/n and caps\n   no individual \u03c1\u1d62. Counterexample verified: 96 chosen coordinate axes give \u03c1=1.0000 to\n   those and 0.0000 to the rest, mean still 0.1920.\n2. \"12 bytes isn't enough, 48 is\" \u2014 dimensions are not bytes, and the evidence behind it",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 64,
+  "claim": "those and 0.0000 to the rest, mean still 0.1920.",
+  "context": "1. \"No better choice of 96 directions exists\" \u2014 `\u03a3\u03c1\u1d62 = k` fixes the *mean* at k/n and caps\n   no individual \u03c1\u1d62. Counterexample verified: 96 chosen coordinate axes give \u03c1=1.0000 to\n   those and 0.0000 to the rest, mean still 0.1920.\n2. \"12 bytes isn't enough, 48 is\" \u2014 dimensions are not bytes, and the evidence behind it\n   was defective.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 67,
+  "claim": "3. \"The SVD discards rare terms\" \u2014 rare (df=1) terms survive at 0.94\u00d7 a random-subspace",
+  "context": "2. \"12 bytes isn't enough, 48 is\" \u2014 dimensions are not bytes, and the evidence behind it\n   was defective.\n3. \"The SVD discards rare terms\" \u2014 rare (df=1) terms survive at 0.94\u00d7 a random-subspace\n   null; common terms at 3.79\u00d7. The SVD lifts common terms, it does not target rare ones.\n4. \"CODE wins the common band\" \u2014 degenerate: BM25 scores exactly zero on 97.8\u2013100% of that",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 68,
+  "claim": "null; common terms at 3.79\u00d7. The SVD lifts common terms, it does not target rare ones.",
+  "context": "   was defective.\n3. \"The SVD discards rare terms\" \u2014 rare (df=1) terms survive at 0.94\u00d7 a random-subspace\n   null; common terms at 3.79\u00d7. The SVD lifts common terms, it does not target rare ones.\n4. \"CODE wins the common band\" \u2014 degenerate: BM25 scores exactly zero on 97.8\u2013100% of that\n   bucket by construction, and both methods fail on ~93% of it.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 69,
+  "claim": "4. \"CODE wins the common band\" \u2014 degenerate: BM25 scores exactly zero on 97.8\u2013100% of that",
+  "context": "3. \"The SVD discards rare terms\" \u2014 rare (df=1) terms survive at 0.94\u00d7 a random-subspace\n   null; common terms at 3.79\u00d7. The SVD lifts common terms, it does not target rare ones.\n4. \"CODE wins the common band\" \u2014 degenerate: BM25 scores exactly zero on 97.8\u2013100% of that\n   bucket by construction, and both methods fail on ~93% of it.\n5. \"The PerLTQA decline is rank overflow\" \u2014 disproved by my own T3 test (0 constant dims,",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 74,
+  "claim": "Four were caught by external review; the fifth by my own test. All are recorded rather than",
+  "context": "   decline persists).\n\nFour were caught by external review; the fifth by my own test. All are recorded rather than\nedited away.\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 81,
+  "claim": "| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |",
+  "context": "| item | RealTalk |\n|---|---:|\n| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |\n| BM25 inverted index, varint delta-gap | 670,511 B (5.83\u00d7) |\n| index + raw text | 1,669,165 B |",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 82,
+  "claim": "| BM25 inverted index, varint delta-gap | 670,511 B (5.83\u00d7) |",
+  "context": "|---|---:|\n| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |\n| BM25 inverted index, varint delta-gap | 670,511 B (5.83\u00d7) |\n| index + raw text | 1,669,165 B |\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 85,
+  "claim": "A `pickle` dump of the same index inflates to 1,450,229 B \u2014 that number must not be quoted;",
+  "context": "| index + raw text | 1,669,165 B |\n\nA `pickle` dump of the same index inflates to 1,450,229 B \u2014 that number must not be quoted;\nthe 12.6\u00d7 headline it produced was an artifact. On LME the external package measured raw\ntext at 76\u00d7 the code and IDF dictionaries at 112\u00d7, with latency 14.9 \u2192 17.6 ms against",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 86,
+  "claim": "the 12.6\u00d7 headline it produced was an artifact. On LME the external package measured raw",
+  "context": "\nA `pickle` dump of the same index inflates to 1,450,229 B \u2014 that number must not be quoted;\nthe 12.6\u00d7 headline it produced was an artifact. On LME the external package measured raw\ntext at 76\u00d7 the code and IDF dictionaries at 112\u00d7, with latency 14.9 \u2192 17.6 ms against\n0.14 ms for a plain inverted index.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 87,
+  "claim": "text at 76\u00d7 the code and IDF dictionaries at 112\u00d7, with latency 14.9 \u2192 17.6 ms against",
+  "context": "A `pickle` dump of the same index inflates to 1,450,229 B \u2014 that number must not be quoted;\nthe 12.6\u00d7 headline it produced was an artifact. On LME the external package measured raw\ntext at 76\u00d7 the code and IDF dictionaries at 112\u00d7, with latency 14.9 \u2192 17.6 ms against\n0.14 ms for a plain inverted index.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 92,
+  "claim": "- **Blocking fidelity gate** before any arm was measured: PerLTQA 0 of 1,179,648 sign bits",
+  "context": "## Method guards used\n\n- **Blocking fidelity gate** before any arm was measured: PerLTQA 0 of 1,179,648 sign bits\n  differed; RealTalk ladder 0 of 858,624; T3 0 of 276,480.\n- **Zero-arms** (`IDF_p0`, `SHIFT_m0`) had to equal production exactly \u2014 they did, in 0 queries.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 93,
+  "claim": "differed; RealTalk ladder 0 of 858,624; T3 0 of 276,480.",
+  "context": "\n- **Blocking fidelity gate** before any arm was measured: PerLTQA 0 of 1,179,648 sign bits\n  differed; RealTalk ladder 0 of 858,624; T3 0 of 276,480.\n- **Zero-arms** (`IDF_p0`, `SHIFT_m0`) had to equal production exactly \u2014 they did, in 0 queries.\n- **Mandatory controls**: random rotation for ITQ, plain BM25 for every fusion claim,",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 95,
+  "claim": "- **Mandatory controls**: random rotation for ITQ, plain BM25 for every fusion claim,",
+  "context": "  differed; RealTalk ladder 0 of 858,624; T3 0 of 276,480.\n- **Zero-arms** (`IDF_p0`, `SHIFT_m0`) had to equal production exactly \u2014 they did, in 0 queries.\n- **Mandatory controls**: random rotation for ITQ, plain BM25 for every fusion claim,\n  \u03bb=0 for the penalty arm.\n- **Audit code written before workers finished**, anchors fixed in advance.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 98,
+  "claim": "- **Gates never loosened**: one worker hit a failing gate (BM25 top-10, 704/705 match, one",
+  "context": "  \u03bb=0 for the penalty arm.\n- **Audit code written before workers finished**, anchors fixed in advance.\n- **Gates never loosened**: one worker hit a failing gate (BM25 top-10, 704/705 match, one\n  3-way tie differing by 1 ulp) and left it FAIL with an explanation rather than adjusting it.\n- **The coordinator's first audit returned REJECT** \u2014 all three findings turned out to be",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 100,
+  "claim": "- **The coordinator's first audit returned REJECT** \u2014 all three findings turned out to be",
+  "context": "- **Gates never loosened**: one worker hit a failing gate (BM25 top-10, 704/705 match, one\n  3-way tie differing by 1 ulp) and left it FAIL with an explanation rather than adjusting it.\n- **The coordinator's first audit returned REJECT** \u2014 all three findings turned out to be\n  defects in the audit code itself, documented rather than hidden.\n- **Decision gates were written before the deciding tests ran** and were not moved afterwards.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 106,
+  "claim": "- LME channel ablation, 322/470 archives at time of writing. Already paid for; finish and",
+  "context": "## What remains open\n\n- LME channel ablation, 322/470 archives at time of writing. Already paid for; finish and\n  freeze. It does not gate the decision.\n- LoCoMo gold authority is contradictory (n=1531 vs 1535, 156 audited corrections never",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 108,
+  "claim": "- LoCoMo gold authority is contradictory (n=1531 vs 1535, 156 audited corrections never",
+  "context": "- LME channel ablation, 322/470 archives at time of writing. Already paid for; finish and\n  freeze. It does not gate the decision.\n- LoCoMo gold authority is contradictory (n=1531 vs 1535, 156 audited corrections never\n  applied). Every LoCoMo number is disputable.\n- RealTalk has 10 archives; its intervals are wide and everything on it is exploratory.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 109,
+  "claim": "applied). Every LoCoMo number is disputable.",
+  "context": "  freeze. It does not gate the decision.\n- LoCoMo gold authority is contradictory (n=1531 vs 1535, 156 audited corrections never\n  applied). Every LoCoMo number is disputable.\n- RealTalk has 10 archives; its intervals are wide and everything on it is exploratory.\n- No source was found reporting gold Hit@10 at K=10 from \u226412\u201316 B/doc codes. The",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 117,
+  "claim": "Every comparison here is against BM25, which needs an inverted index and raw text at query",
+  "context": "## One thing that would reopen this\n\nEvery comparison here is against BM25, which needs an inverted index and raw text at query\ntime. If a deployment genuinely cannot hold text or an index \u2014 bits only, sub-millisecond,\nno reranker \u2014 the comparator changes and the 12-byte question becomes live again. No such",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 118,
+  "claim": "time. If a deployment genuinely cannot hold text or an index \u2014 bits only, sub-millisecond,",
+  "context": "\nEvery comparison here is against BM25, which needs an inverted index and raw text at query\ntime. If a deployment genuinely cannot hold text or an index \u2014 bits only, sub-millisecond,\nno reranker \u2014 the comparator changes and the 12-byte question becomes live again. No such\ndeployment has been specified in this programme, and the reranked pipeline needs the text",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 131,
+  "claim": "coordinator/                 every audit and analysis the coordinator ran personally",
+  "context": "EXTERNAL_AUDIT3_RESPONSE.md  external audit + our retraction of the impossibility claim\nPUBLICATION_VERIFY.md        clean-clone readback and the CRLF artifact\ncoordinator/                 every audit and analysis the coordinator ran personally\ndecision_r1/{keep,kill,cost}/ the three-way decision debate, with agent prompts and logs\nlit_r2/{rate,quant,lexical}/ round-2 literature maps and ranked fetch queues",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 137,
+  "claim": "FILE_MANIFEST.json           sha256 of every original file",
+  "context": "math_r1/, ablation_r2/, ideas_r1/, baseline/, data/, pq/, audit/, inventory/\nincoming_20260916b/          external package audits (ladder/ideas/chat) + prompts\nFILE_MANIFEST.json           sha256 of every original file\n```\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "FINAL_STATE.md",
+  "line": 140,
+  "claim": "Excluded: `model/` (2.4 GB HF weights; sha256 + revision in `MODEL_DOWNLOAD.json`) and",
+  "context": "```\n\nExcluded: `model/` (2.4 GB HF weights; sha256 + revision in `MODEL_DOWNLOAD.json`) and\n`*.npz` intermediates. Files over 3 MB are gzipped; the manifest records the sha256 of the\noriginal uncompressed bytes.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 5,
+  "claim": "Round of 2026-09-16. Branch `findings/top10-comparison-2026-09-15`; `main` untouched.",
+  "context": "# Twelve-byte retrieval codes: where they work, where they fail, and what it honestly costs\n\nRound of 2026-09-16. Branch `findings/top10-comparison-2026-09-15`; `main` untouched.\n\nEvery number here was **re-derived by the coordinator** from stored per-query top-10 ids,",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 7,
+  "claim": "Every number here was **re-derived by the coordinator** from stored per-query top-10 ids,",
+  "context": "Round of 2026-09-16. Branch `findings/top10-comparison-2026-09-15`; `main` untouched.\n\nEvery number here was **re-derived by the coordinator** from stored per-query top-10 ids,\nnot copied from a worker's summary. Production anchors reproduce to 0.0000 pp. All\ncontrasts use a paired archive-clustered bootstrap, 20000 reps, seed 20260916.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 8,
+  "claim": "not copied from a worker's summary. Production anchors reproduce to 0.0000 pp. All",
+  "context": "\nEvery number here was **re-derived by the coordinator** from stored per-query top-10 ids,\nnot copied from a worker's summary. Production anchors reproduce to 0.0000 pp. All\ncontrasts use a paired archive-clustered bootstrap, 20000 reps, seed 20260916.\n\"SIG\" = the 95% interval excludes zero.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 9,
+  "claim": "contrasts use a paired archive-clustered bootstrap, 20000 reps, seed 20260916.",
+  "context": "Every number here was **re-derived by the coordinator** from stored per-query top-10 ids,\nnot copied from a worker's summary. Production anchors reproduce to 0.0000 pp. All\ncontrasts use a paired archive-clustered bootstrap, 20000 reps, seed 20260916.\n\"SIG\" = the 95% interval excludes zero.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 29,
+  "claim": "Quantization costs only **1.83 pp** (48.51 \u2192 46.68). But BM25 beats the *uncompressed*",
+  "context": "| PQ (equal budget control) | 33.05 | 12 B/doc |\n\nQuantization costs only **1.83 pp** (48.51 \u2192 46.68). But BM25 beats the *uncompressed*\nrepresentation by **5.67 pp**. So the bottleneck was never the 12-byte budget: it is the\n96-dimensional representation itself. Tuning bits cannot fix this, and this round",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 30,
+  "claim": "representation by **5.67 pp**. So the bottleneck was never the 12-byte budget: it is the",
+  "context": "\nQuantization costs only **1.83 pp** (48.51 \u2192 46.68). But BM25 beats the *uncompressed*\nrepresentation by **5.67 pp**. So the bottleneck was never the 12-byte budget: it is the\n96-dimensional representation itself. Tuning bits cannot fix this, and this round\nconfirmed that by trying and failing.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 38,
+  "claim": "Stratifying the 705 RealTalk queries by the IDF of the term shared between query and its",
+  "context": "## 2. The mechanism: what the projection throws away\n\nStratifying the 705 RealTalk queries by the IDF of the term shared between query and its\ngold document:\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 48,
+  "claim": "The entire deficit lives in the rare-term band (341/705 = 48.37%, the largest band but",
+  "context": "| **rare (\u22654)** | **341** | **70.67** | **85.04** | **+14.37** |\n\nThe entire deficit lives in the rare-term band (341/705 = 48.37%, the largest band but\n**not** a majority \u2014 an earlier draft wrongly called it one).\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 56,
+  "claim": "> **CORRECTED 2026-09-16 after external audit 3 \u2014 see `EXTERNAL_AUDIT3_RESPONSE.md`.**",
+  "context": "exactly the discriminative ones.\n\n> **CORRECTED 2026-09-16 after external audit 3 \u2014 see `EXTERNAL_AUDIT3_RESPONSE.md`.**\n> An earlier version of this report said the SVD *discards* rare terms, implying a\n> targeted defect a better 96-dimensional projection could fix. That framing was wrong.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 59,
+  "claim": "> Against a random-96-dim-subspace null, rare (df=1) terms survive at **0.94\u00d7 chance**",
+  "context": "> An earlier version of this report said the SVD *discards* rare terms, implying a\n> targeted defect a better 96-dimensional projection could fix. That framing was wrong.\n> Against a random-96-dim-subspace null, rare (df=1) terms survive at **0.94\u00d7 chance**\n> while common (df\u226550) terms survive at **3.79\u00d7 chance**. The SVD does not single rare\n> terms out; it lifts common ones above baseline and leaves rare ones at it.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 60,
+  "claim": "> while common (df\u226550) terms survive at **3.79\u00d7 chance**. The SVD does not single rare",
+  "context": "> targeted defect a better 96-dimensional projection could fix. That framing was wrong.\n> Against a random-96-dim-subspace null, rare (df=1) terms survive at **0.94\u00d7 chance**\n> while common (df\u226550) terms survive at **3.79\u00d7 chance**. The SVD does not single rare\n> terms out; it lifts common ones above baseline and leaves rare ones at it.\n> Coordinator-verified: a random 96-dim subspace retains a singleton column at 0.1934",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 62,
+  "claim": "> Coordinator-verified: a random 96-dim subspace retains a singleton column at 0.1934",
+  "context": "> while common (df\u226550) terms survive at **3.79\u00d7 chance**. The SVD does not single rare\n> terms out; it lifts common ones above baseline and leaves rare ones at it.\n> Coordinator-verified: a random 96-dim subspace retains a singleton column at 0.1934\n> versus k/n = 0.1920.\n>",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 68,
+  "claim": "> `rho_i`. Coordinator-verified counterexample: a 96-dim subspace spanned by 96 chosen",
+  "context": "> A further review pointed out that we over-read our own identity, and it is right.\n> `sum_i rho_i = k` constrains the *mean* to k/n; it does **not** cap any individual\n> `rho_i`. Coordinator-verified counterexample: a 96-dim subspace spanned by 96 chosen\n> coordinate axes gives those directions `rho = 1.0000` and all others `0.0000`, with the\n> mean still exactly 0.1920. Preserving 50 chosen directions fully gives",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 69,
+  "claim": "> coordinate axes gives those directions `rho = 1.0000` and all others `0.0000`, with the",
+  "context": "> `sum_i rho_i = k` constrains the *mean* to k/n; it does **not** cap any individual\n> `rho_i`. Coordinator-verified counterexample: a 96-dim subspace spanned by 96 chosen\n> coordinate axes gives those directions `rho = 1.0000` and all others `0.0000`, with the\n> mean still exactly 0.1920. Preserving 50 chosen directions fully gives\n> 1.000 / 0.102 / 0.192 (chosen / rest / mean).",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 70,
+  "claim": "> mean still exactly 0.1920. Preserving 50 chosen directions fully gives",
+  "context": "> `rho_i`. Coordinator-verified counterexample: a 96-dim subspace spanned by 96 chosen\n> coordinate axes gives those directions `rho = 1.0000` and all others `0.0000`, with the\n> mean still exactly 0.1920. Preserving 50 chosen directions fully gives\n> 1.000 / 0.102 / 0.192 (chosen / rest / mean).\n> So \"no other choice of 96 directions would do better on rare terms\" **does not follow**",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 71,
+  "claim": "> 1.000 / 0.102 / 0.192 (chosen / rest / mean).",
+  "context": "> coordinate axes gives those directions `rho = 1.0000` and all others `0.0000`, with the\n> mean still exactly 0.1920. Preserving 50 chosen directions fully gives\n> 1.000 / 0.102 / 0.192 (chosen / rest / mean).\n> So \"no other choice of 96 directions would do better on rare terms\" **does not follow**\n> and must not be quoted. Some directions can be protected \u2014 others pay for it. Whether",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 83,
+  "claim": "Verified numerically over 200 random matrices: max deviation **1.07e-14**. In a",
+  "context": "    rho_i = sum_{j<=k} U_ij^2,   and   sum_i rho_i = k   exactly.\n\nVerified numerically over 200 random matrices: max deviation **1.07e-14**. In a\n500-record archive at k=96, the *average* retention for such unique features is\n96/500 = 0.192. Keeping every unique detail at full strength is arithmetically",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 84,
+  "claim": "500-record archive at k=96, the *average* retention for such unique features is",
+  "context": "\nVerified numerically over 200 random matrices: max deviation **1.07e-14**. In a\n500-record archive at k=96, the *average* retention for such unique features is\n96/500 = 0.192. Keeping every unique detail at full strength is arithmetically\nimpossible, not an implementation defect.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 85,
+  "claim": "96/500 = 0.192. Keeping every unique detail at full strength is arithmetically",
+  "context": "Verified numerically over 200 random matrices: max deviation **1.07e-14**. In a\n500-record archive at k=96, the *average* retention for such unique features is\n96/500 = 0.192. Keeping every unique detail at full strength is arithmetically\nimpossible, not an implementation defect.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 88,
+  "claim": "**Limit on that claim (important).** This does *not* prove \"rare is always discarded.\"",
+  "context": "impossible, not an implementation defect.\n\n**Limit on that claim (important).** This does *not* prove \"rare is always discarded.\"\nA counterexample exists in which, holding term frequencies and k fixed and changing only\nthe co-occurrence structure, a rare feature flips from fully dropped to fully preserved.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 89,
+  "claim": "A counterexample exists in which, holding term frequencies and k fixed and changing only",
+  "context": "\n**Limit on that claim (important).** This does *not* prove \"rare is always discarded.\"\nA counterexample exists in which, holding term frequencies and k fixed and changing only\nthe co-occurrence structure, a rare feature flips from fully dropped to fully preserved.\nCo-occurrence structure matters, not rarity alone. Measured on 3 LME archives rebuilt",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 92,
+  "claim": "bit-exactly (1486 records), median word-feature reconstruction quality (1 = perfect,",
+  "context": "the co-occurrence structure, a rare feature flips from fully dropped to fully preserved.\nCo-occurrence structure matters, not rarity alone. Measured on 3 LME archives rebuilt\nbit-exactly (1486 records), median word-feature reconstruction quality (1 = perfect,\n0 = as bad as zeroing the column): df=1 features 0.153/0.179/0.189 versus df>20\nfeatures 0.531/0.547/0.536.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 93,
+  "claim": "0 = as bad as zeroing the column): df=1 features 0.153/0.179/0.189 versus df>20",
+  "context": "Co-occurrence structure matters, not rarity alone. Measured on 3 LME archives rebuilt\nbit-exactly (1486 records), median word-feature reconstruction quality (1 = perfect,\n0 = as bad as zeroing the column): df=1 features 0.153/0.179/0.189 versus df>20\nfeatures 0.531/0.547/0.536.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 109,
+  "claim": "**ITQ minus random rotation = \u22122.27 pp (RealTalk), \u22120.13 pp (PerLTQA).** ITQ's",
+  "context": "| median threshold | 49.22 | median threshold | 79.47 |\n\n**ITQ minus random rotation = \u22122.27 pp (RealTalk), \u22120.13 pp (PerLTQA).** ITQ's\noptimization bought nothing; *any* rotation does this damage. Without the random-rotation\ncontrol we would have concluded \"ITQ doesn't work here\"; with it we learned something",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 114,
+  "claim": "Verified on real data: `sign(C_ij / sigma_j) == sign(C_ij)` \u2014 0 of 63,552 document bits",
+  "context": "stronger and more general.\n\nVerified on real data: `sign(C_ij / sigma_j) == sign(C_ij)` \u2014 0 of 63,552 document bits\nand 0 of 8,160 query bits changed by per-axis rescaling. Only a rotation or a shifted\nthreshold can move a bit in this pipeline.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 115,
+  "claim": "and 0 of 8,160 query bits changed by per-axis rescaling. Only a rotation or a shifted",
+  "context": "\nVerified on real data: `sign(C_ij / sigma_j) == sign(C_ij)` \u2014 0 of 63,552 document bits\nand 0 of 8,160 query bits changed by per-axis rescaling. Only a rotation or a shifted\nthreshold can move a bit in this pipeline.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 118,
+  "claim": "**Why rotation hurts \u2014 the honest answer.** An earlier draft of this report claimed our",
+  "context": "threshold can move a bit in this pipeline.\n\n**Why rotation hurts \u2014 the honest answer.** An earlier draft of this report claimed our\nunbalanced axis-aligned bits are \"a feature.\" An adversarial review killed that\nexplanation with a simpler one, and the coordinator verified it:",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 120,
+  "claim": "explanation with a simpler one, and the coordinator verified it:",
+  "context": "**Why rotation hurts \u2014 the honest answer.** An earlier draft of this report claimed our\nunbalanced axis-aligned bits are \"a feature.\" An adversarial review killed that\nexplanation with a simpler one, and the coordinator verified it:\n\n| RealTalk archives | mean rotation damage |",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 124,
+  "claim": "| small (N<700), 5 archives | \u22126.56 pp |",
+  "context": "| RealTalk archives | mean rotation damage |\n|---|---:|\n| small (N<700), 5 archives | \u22126.56 pp |\n| large (N\u22651000), 5 archives | **\u221223.13 pp** |\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 125,
+  "claim": "| large (N\u22651000), 5 archives | **\u221223.13 pp** |",
+  "context": "|---|---:|\n| small (N<700), 5 archives | \u22126.56 pp |\n| large (N\u22651000), 5 archives | **\u221223.13 pp** |\n\nPearson r(archive size, damage) = **\u22120.78**. PerLTQA has *no* large archives (median 408",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 127,
+  "claim": "Pearson r(archive size, damage) = **\u22120.78**. PerLTQA has *no* large archives (median 408",
+  "context": "| large (N\u22651000), 5 archives | **\u221223.13 pp** |\n\nPearson r(archive size, damage) = **\u22120.78**. PerLTQA has *no* large archives (median 408\ndocs, max 546); RealTalk has five (1044\u20131548). The \u221217 pp vs \u22121 pp split between the two\nbenchmarks is explained by **archive size distribution**, with no appeal to our axes",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 128,
+  "claim": "docs, max 546); RealTalk has five (1044\u20131548). The \u221217 pp vs \u22121 pp split between the two",
+  "context": "\nPearson r(archive size, damage) = **\u22120.78**. PerLTQA has *no* large archives (median 408\ndocs, max 546); RealTalk has five (1044\u20131548). The \u221217 pp vs \u22121 pp split between the two\nbenchmarks is explained by **archive size distribution**, with no appeal to our axes\nbeing special. The simpler explanation wins.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 132,
+  "claim": "Bit balance, for the record: production mean fraction-of-1s 0.492 with per-bit range",
+  "context": "being special. The simpler explanation wins.\n\nBit balance, for the record: production mean fraction-of-1s 0.492 with per-bit range\n0.309\u20130.658; rotated arms 0.499 with range 0.459\u20130.545. Rotation makes bits *more*\nbalanced \u2014 textbook \"better\" \u2014 while retrieval collapses.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 133,
+  "claim": "0.309\u20130.658; rotated arms 0.499 with range 0.459\u20130.545. Rotation makes bits *more*",
+  "context": "\nBit balance, for the record: production mean fraction-of-1s 0.492 with per-bit range\n0.309\u20130.658; rotated arms 0.499 with range 0.459\u20130.545. Rotation makes bits *more*\nbalanced \u2014 textbook \"better\" \u2014 while retrieval collapses.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 136,
+  "claim": "**Cost.** The rotation matrix R is 96\u00d796 floats per archive: **3.43\u00d7** (RealTalk) and",
+  "context": "balanced \u2014 textbook \"better\" \u2014 while retrieval collapses.\n\n**Cost.** The rotation matrix R is 96\u00d796 floats per archive: **3.43\u00d7** (RealTalk) and\n**7.50\u00d7** (PerLTQA) the entire document payload it fails to improve.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 137,
+  "claim": "**7.50\u00d7** (PerLTQA) the entire document payload it fails to improve.",
+  "context": "\n**Cost.** The rotation matrix R is 96\u00d796 floats per archive: **3.43\u00d7** (RealTalk) and\n**7.50\u00d7** (PerLTQA) the entire document payload it fails to improve.\n\n**Scope, verified against the source.** The ITQ paper (Gong & Lazebnik, \"Iterative",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 139,
+  "claim": "**Scope, verified against the source.** The ITQ paper (Gong & Lazebnik, \"Iterative",
+  "context": "**7.50\u00d7** (PerLTQA) the entire document payload it fails to improve.\n\n**Scope, verified against the source.** The ITQ paper (Gong & Lazebnik, \"Iterative\nQuantization: A Procrustean Approach to Learning Binary Codes for Large-scale **Image**\nRetrieval\") evaluates dense visual descriptors with Euclidean neighbours as ground truth.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 148,
+  "claim": "Zero-arm identity verified first: `IDF_p0` and `SHIFT_m0` differ from production in",
+  "context": "### 3.2 Representation layer \u2014 real signals, and they reverse across benchmarks\n\nZero-arm identity verified first: `IDF_p0` and `SHIFT_m0` differ from production in\n**0 queries**. Without that check, every other arm would measure a reimplementation.\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 149,
+  "claim": "**0 queries**. Without that check, every other arm would measure a reimplementation.",
+  "context": "\nZero-arm identity verified first: `IDF_p0` and `SHIFT_m0` differ from production in\n**0 queries**. Without that check, every other arm would measure a reimplementation.\n\n**A. IDF^p reweighting of the word block.** RealTalk Hit@10: all arms ns. RealTalk FR@3",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 151,
+  "claim": "**A. IDF^p reweighting of the word block.** RealTalk Hit@10: all arms ns. RealTalk FR@3",
+  "context": "**0 queries**. Without that check, every other arm would measure a reimplementation.\n\n**A. IDF^p reweighting of the word block.** RealTalk Hit@10: all arms ns. RealTalk FR@3\noverall for IDF_p2: +2.61 pp, CI [\u22120.12, +5.30] \u2014 **not significant**. But the mechanism\ncheck, by band:",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 152,
+  "claim": "overall for IDF_p2: +2.61 pp, CI [\u22120.12, +5.30] \u2014 **not significant**. But the mechanism",
+  "context": "\n**A. IDF^p reweighting of the word block.** RealTalk Hit@10: all arms ns. RealTalk FR@3\noverall for IDF_p2: +2.61 pp, CI [\u22120.12, +5.30] \u2014 **not significant**. But the mechanism\ncheck, by band:\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 161,
+  "claim": "The gain sits **only** in the band the stated mechanism predicted, and replicates under a",
+  "context": "| **rare** | **412** | **+4.78 pp, CI [+0.69, +8.43] SIG** |\n\nThe gain sits **only** in the band the stated mechanism predicted, and replicates under a\nsecond tokenization rule (n=408: +4.83, CI [+0.70, +8.50]). In-band Hit@10 is +0.49 ns \u2014\nso ordering improves inside an unchanged pool.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 162,
+  "claim": "second tokenization rule (n=408: +4.83, CI [+0.70, +8.50]). In-band Hit@10 is +0.49 ns \u2014",
+  "context": "\nThe gain sits **only** in the band the stated mechanism predicted, and replicates under a\nsecond tokenization rule (n=408: +4.83, CI [+0.70, +8.50]). In-band Hit@10 is +0.49 ns \u2014\nso ordering improves inside an unchanged pool.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 167,
+  "claim": "hurts** PerLTQA: FR@3 \u22121.76, CI [\u22122.78, \u22120.74]; IDF_p1 \u22121.17 SIG. (iii) Leave-one-archive-out",
+  "context": "**Three caveats that must travel with this number.** (i) It is a subgroup contrast chosen\n*after* seeing results \u2014 the weakest form of evidence. (ii) The same arm **significantly\nhurts** PerLTQA: FR@3 \u22121.76, CI [\u22122.78, \u22120.74]; IDF_p1 \u22121.17 SIG. (iii) Leave-one-archive-out\nshows per-archive effects ranging \u22128.43 to +12.76 pp.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 168,
+  "claim": "shows per-archive effects ranging \u22128.43 to +12.76 pp.",
+  "context": "*after* seeing results \u2014 the weakest form of evidence. (ii) The same arm **significantly\nhurts** PerLTQA: FR@3 \u22121.76, CI [\u22122.78, \u22120.74]; IDF_p1 \u22121.17 SIG. (iii) Leave-one-archive-out\nshows per-archive effects ranging \u22128.43 to +12.76 pp.\n\n**B. Component shift (use components m+1..m+96 \u2014 a window shift, not truncation).**",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 171,
+  "claim": "PerLTQA SHIFT_m1 Hit@10 **+1.58, CI [+0.69, +2.47] SIG** (sym +1.35 SIG). RealTalk",
+  "context": "\n**B. Component shift (use components m+1..m+96 \u2014 a window shift, not truncation).**\nPerLTQA SHIFT_m1 Hit@10 **+1.58, CI [+0.69, +2.47] SIG** (sym +1.35 SIG). RealTalk\nSHIFT_m1 Hit@10 \u22120.28 ns, and sym FR@3 **\u22121.06 SIG (harmful)**. Opposite signs again.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 172,
+  "claim": "SHIFT_m1 Hit@10 \u22120.28 ns, and sym FR@3 **\u22121.06 SIG (harmful)**. Opposite signs again.",
+  "context": "**B. Component shift (use components m+1..m+96 \u2014 a window shift, not truncation).**\nPerLTQA SHIFT_m1 Hit@10 **+1.58, CI [+0.69, +2.47] SIG** (sym +1.35 SIG). RealTalk\nSHIFT_m1 Hit@10 \u22120.28 ns, and sym FR@3 **\u22121.06 SIG (harmful)**. Opposite signs again.\n\n### 3.3 Channel ablation \u2014 the sign reverses here too",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 184,
+  "claim": "PerLTQA. WORD_ONLY \u2014 the *simplest* arm \u2014 wins on PerLTQA and is 5.6\u00d7 faster to build",
+  "context": "\nThe char channel is significantly essential on RealTalk and significantly droppable on\nPerLTQA. WORD_ONLY \u2014 the *simplest* arm \u2014 wins on PerLTQA and is 5.6\u00d7 faster to build\n(28.1 s \u2192 5.0 s per archive). LSA_ONLY was not run: Z would have only 32 columns and the\nfixed SVD96 protocol requires 96. The worker declared this a blocker instead of",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 185,
+  "claim": "(28.1 s \u2192 5.0 s per archive). LSA_ONLY was not run: Z would have only 32 columns and the",
+  "context": "The char channel is significantly essential on RealTalk and significantly droppable on\nPerLTQA. WORD_ONLY \u2014 the *simplest* arm \u2014 wins on PerLTQA and is 5.6\u00d7 faster to build\n(28.1 s \u2192 5.0 s per archive). LSA_ONLY was not run: Z would have only 32 columns and the\nfixed SVD96 protocol requires 96. The worker declared this a blocker instead of\ninventing numbers. Correct behaviour; the prompt was at fault.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 192,
+  "claim": "96+0 = 49.65 | 80+16 = 33.33 | 64+32 = 34.61 | 48+48 = 33.48.",
+  "context": "\nSplitting 96 bits between SVD dims and a rare-term Bloom sketch:\n96+0 = 49.65 | 80+16 = 33.33 | 64+32 = 34.61 | 48+48 = 33.48.\nSVD-only truncation: 96 \u2192 45.39 (80) \u2192 40.85 (64) \u2192 36.45 (48).\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 193,
+  "claim": "SVD-only truncation: 96 \u2192 45.39 (80) \u2192 40.85 (64) \u2192 36.45 (48).",
+  "context": "Splitting 96 bits between SVD dims and a rare-term Bloom sketch:\n96+0 = 49.65 | 80+16 = 33.33 | 64+32 = 34.61 | 48+48 = 33.48.\nSVD-only truncation: 96 \u2192 45.39 (80) \u2192 40.85 (64) \u2192 36.45 (48).\n\n| split | truncation cost | extra fusion cost | truncation's share |",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 202,
+  "claim": "truncation explains only 26% of the damage; the rest was the fusion design. Also, a",
+  "context": "\n**Retraction.** An earlier claim that \"truncation is the sole cause\" was wrong. At 80/16\ntruncation explains only 26% of the damage; the rest was the fusion design. Also, a\n32-bit Bloom score yields ~5 distinct values per query, so it ranks almost entirely by\ntie-break \u2014 a bad sketch, not only a truncation problem.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 204,
+  "claim": "tie-break \u2014 a bad sketch, not only a truncation problem.",
+  "context": "truncation explains only 26% of the damage; the rest was the fusion design. Also, a\n32-bit Bloom score yields ~5 distinct values per query, so it ranks almost entirely by\ntie-break \u2014 a bad sketch, not only a truncation problem.\n\n---",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 210,
+  "claim": "RealTalk pool quality at 100 candidates: CODE 75.60 | BM25 78.16 | **RRF(k=60) 81.28**.",
+  "context": "## 4. First-stage retrieval: the largest measured gain, and it is not ours\n\nRealTalk pool quality at 100 candidates: CODE 75.60 | BM25 78.16 | **RRF(k=60) 81.28**.\nRRF \u2212 CODE = +5.67 pp, CI [+3.23, +8.20] SIG. RRF \u2212 BM25 = +3.12 SIG.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 211,
+  "claim": "RRF \u2212 CODE = +5.67 pp, CI [+3.23, +8.20] SIG. RRF \u2212 BM25 = +3.12 SIG.",
+  "context": "\nRealTalk pool quality at 100 candidates: CODE 75.60 | BM25 78.16 | **RRF(k=60) 81.28**.\nRRF \u2212 CODE = +5.67 pp, CI [+3.23, +8.20] SIG. RRF \u2212 BM25 = +3.12 SIG.\n\nComplementarity is real: at 100 candidates CODE alone finds 49 queries BM25 misses;",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 213,
+  "claim": "Complementarity is real: at 100 candidates CODE alone finds 49 queries BM25 misses;",
+  "context": "RRF \u2212 CODE = +5.67 pp, CI [+3.23, +8.20] SIG. RRF \u2212 BM25 = +3.12 SIG.\n\nComplementarity is real: at 100 candidates CODE alone finds 49 queries BM25 misses;\nBM25 alone finds 67 queries CODE misses.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 216,
+  "claim": "**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index",
+  "context": "BM25 alone finds 67 queries CODE misses.\n\n**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index\n**670,511 B** under varint delta-gap encoding. A `pickle` dump inflates the same index to\n1,450,229 B \u2014 **that number must not be quoted**; the earlier 12.6\u00d7 headline was a",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 217,
+  "claim": "**670,511 B** under varint delta-gap encoding. A `pickle` dump inflates the same index to",
+  "context": "\n**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index\n**670,511 B** under varint delta-gap encoding. A `pickle` dump inflates the same index to\n1,450,229 B \u2014 **that number must not be quoted**; the earlier 12.6\u00d7 headline was a\npickle artifact, the honest ratio is **5.83\u00d7**. Index + raw text: 1,669,165 B.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 218,
+  "claim": "1,450,229 B \u2014 **that number must not be quoted**; the earlier 12.6\u00d7 headline was a",
+  "context": "**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index\n**670,511 B** under varint delta-gap encoding. A `pickle` dump inflates the same index to\n1,450,229 B \u2014 **that number must not be quoted**; the earlier 12.6\u00d7 headline was a\npickle artifact, the honest ratio is **5.83\u00d7**. Index + raw text: 1,669,165 B.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 219,
+  "claim": "pickle artifact, the honest ratio is **5.83\u00d7**. Index + raw text: 1,669,165 B.",
+  "context": "**670,511 B** under varint delta-gap encoding. A `pickle` dump inflates the same index to\n1,450,229 B \u2014 **that number must not be quoted**; the earlier 12.6\u00d7 headline was a\npickle artifact, the honest ratio is **5.83\u00d7**. Index + raw text: 1,669,165 B.\n\n---",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 225,
+  "claim": "Oracle reranker over the pool we already retrieve (FR@3): PerLTQA 53.24 \u2192 76.52 @100",
+  "context": "## 5. The reranking ceiling is smaller than it looks\n\nOracle reranker over the pool we already retrieve (FR@3): PerLTQA 53.24 \u2192 76.52 @100\n(+23.3); LME 54.27 \u2192 92.62 (+38.4); RealTalk 22.41 \u2192 61.30 (+38.9).\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 226,
+  "claim": "(+23.3); LME 54.27 \u2192 92.62 (+38.4); RealTalk 22.41 \u2192 61.30 (+38.9).",
+  "context": "\nOracle reranker over the pool we already retrieve (FR@3): PerLTQA 53.24 \u2192 76.52 @100\n(+23.3); LME 54.27 \u2192 92.62 (+38.4); RealTalk 22.41 \u2192 61.30 (+38.9).\n\nThat looked like the biggest opportunity in the programme. It is not, and the",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 229,
+  "claim": "adversarial review is why. Decomposing the 705 RealTalk queries:",
+  "context": "\nThat looked like the biggest opportunity in the programme. It is not, and the\nadversarial review is why. Decomposing the 705 RealTalk queries:\n\n- 350 queries: CODE already hits @10.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 232,
+  "claim": "- 183: gold is inside the top-100 pool but not the top-10 \u2014 **reachable by a reranker**.",
+  "context": "\n- 350 queries: CODE already hits @10.\n- 183: gold is inside the top-100 pool but not the top-10 \u2014 **reachable by a reranker**.\n- 172: gold is **outside the top-100 entirely** \u2014 unreachable by *any* reranker.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 233,
+  "claim": "- 172: gold is **outside the top-100 entirely** \u2014 unreachable by *any* reranker.",
+  "context": "- 350 queries: CODE already hits @10.\n- 183: gold is inside the top-100 pool but not the top-10 \u2014 **reachable by a reranker**.\n- 172: gold is **outside the top-100 entirely** \u2014 unreachable by *any* reranker.\n\nOf the **328 queries both our scorers miss**, 170 (51.8%) have gold outside the top-100.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 235,
+  "claim": "Of the **328 queries both our scorers miss**, 170 (51.8%) have gold outside the top-100.",
+  "context": "- 172: gold is **outside the top-100 entirely** \u2014 unreachable by *any* reranker.\n\nOf the **328 queries both our scorers miss**, 170 (51.8%) have gold outside the top-100.\nSo roughly half the headline ceiling is unreachable in principle. Reranking addresses\nthe reachable portion only.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 239,
+  "claim": "Per band, the fraction both scorers miss: common 93.2% (n=133), mid 56.2% (n=153),",
+  "context": "the reachable portion only.\n\nPer band, the fraction both scorers miss: common 93.2% (n=133), mid 56.2% (n=153),\nrare 26.9% (n=412). Note what this does to a tempting consolation: CODE does beat BM25\nin the common band (20.98 vs 15.62), but **both methods fail on 93% of those queries** \u2014",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 240,
+  "claim": "rare 26.9% (n=412). Note what this does to a tempting consolation: CODE does beat BM25",
+  "context": "\nPer band, the fraction both scorers miss: common 93.2% (n=133), mid 56.2% (n=153),\nrare 26.9% (n=412). Note what this does to a tempting consolation: CODE does beat BM25\nin the common band (20.98 vs 15.62), but **both methods fail on 93% of those queries** \u2014\nbeing ahead where both are broken is not an advantage worth claiming.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 241,
+  "claim": "in the common band (20.98 vs 15.62), but **both methods fail on 93% of those queries** \u2014",
+  "context": "Per band, the fraction both scorers miss: common 93.2% (n=133), mid 56.2% (n=153),\nrare 26.9% (n=412). Note what this does to a tempting consolation: CODE does beat BM25\nin the common band (20.98 vs 15.62), but **both methods fail on 93% of those queries** \u2014\nbeing ahead where both are broken is not an advantage worth claiming.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 244,
+  "claim": "**Independent corroboration.** A separate effort (gpt-6-pro, 2026-09-16) ran the actual",
+  "context": "being ahead where both are broken is not an advantage worth claiming.\n\n**Independent corroboration.** A separate effort (gpt-6-pro, 2026-09-16) ran the actual\ntext-rerank experiment whose anchors match ours to 0.0000 (qscale FR@3: LME 54.27,\nPerLTQA 53.24, RealTalk 22.41), with ceiling values consistent with ours under fewer",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 245,
+  "claim": "text-rerank experiment whose anchors match ours to 0.0000 (qscale FR@3: LME 54.27,",
+  "context": "\n**Independent corroboration.** A separate effort (gpt-6-pro, 2026-09-16) ran the actual\ntext-rerank experiment whose anchors match ours to 0.0000 (qscale FR@3: LME 54.27,\nPerLTQA 53.24, RealTalk 22.41), with ceiling values consistent with ours under fewer\ncandidates. Their result, FR@3:",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 246,
+  "claim": "PerLTQA 53.24, RealTalk 22.41), with ceiling values consistent with ours under fewer",
+  "context": "**Independent corroboration.** A separate effort (gpt-6-pro, 2026-09-16) ran the actual\ntext-rerank experiment whose anchors match ours to 0.0000 (qscale FR@3: LME 54.27,\nPerLTQA 53.24, RealTalk 22.41), with ceiling values consistent with ours under fewer\ncandidates. Their result, FR@3:\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 256,
+  "claim": "reranking is available. Their memory accounting on LME (MB): packed codes + sigma 3.14;",
+  "context": "\nOn two of three datasets, the 12-byte code contributes nothing measurable once text\nreranking is available. Their memory accounting on LME (MB): packed codes + sigma 3.14;\nraw UTF-8 source 237.87 (**76\u00d7**); IDF dictionary objects 351.18 (**112\u00d7**). And latency\nrose: 14.9 ms \u2192 17.6 ms, against 0.14 ms for a plain inverted index.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 257,
+  "claim": "raw UTF-8 source 237.87 (**76\u00d7**); IDF dictionary objects 351.18 (**112\u00d7**). And latency",
+  "context": "On two of three datasets, the 12-byte code contributes nothing measurable once text\nreranking is available. Their memory accounting on LME (MB): packed codes + sigma 3.14;\nraw UTF-8 source 237.87 (**76\u00d7**); IDF dictionary objects 351.18 (**112\u00d7**). And latency\nrose: 14.9 ms \u2192 17.6 ms, against 0.14 ms for a plain inverted index.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 258,
+  "claim": "rose: 14.9 ms \u2192 17.6 ms, against 0.14 ms for a plain inverted index.",
+  "context": "reranking is available. Their memory accounting on LME (MB): packed codes + sigma 3.14;\nraw UTF-8 source 237.87 (**76\u00d7**); IDF dictionary objects 351.18 (**112\u00d7**). And latency\nrose: 14.9 ms \u2192 17.6 ms, against 0.14 ms for a plain inverted index.\n\n---",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 265,
+  "claim": "- The old `asym` arm helps PerLTQA but **loses** on LME (\u22123.56 pp FR@3).",
+  "context": "\n- Arbitrary quantile thresholds hurt badly (PerLTQA zero-threshold .76 vs q0.1 .31).\n- The old `asym` arm helps PerLTQA but **loses** on LME (\u22123.56 pp FR@3).\n- `qscale` is not new: identical results exist in `hit10/QSCALE.json`, in an external\n  gpt-6-pro package, and in a fresh rerun \u2014 all to 0.000 deviation. Verification is",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 267,
+  "claim": "gpt-6-pro package, and in a fresh rerun \u2014 all to 0.000 deviation. Verification is",
+  "context": "- The old `asym` arm helps PerLTQA but **loses** on LME (\u22123.56 pp FR@3).\n- `qscale` is not new: identical results exist in `hit10/QSCALE.json`, in an external\n  gpt-6-pro package, and in a fresh rerun \u2014 all to 0.000 deviation. Verification is\n  valuable; rediscovery is not.\n- The PPLX-0.6B semantic arm was abandoned: the encoder ran at ~4.3 texts/s (73 tok/s)",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 269,
+  "claim": "- The PPLX-0.6B semantic arm was abandoned: the encoder ran at ~4.3 texts/s (73 tok/s)",
+  "context": "  gpt-6-pro package, and in a fresh rerun \u2014 all to 0.000 deviation. Verification is\n  valuable; rediscovery is not.\n- The PPLX-0.6B semantic arm was abandoned: the encoder ran at ~4.3 texts/s (73 tok/s)\n  and the cause was never diagnosed. Weights verified (sha256 matches server, revision\n  `2c4d510dd4a732063c31a0f70193e35067b51fd8`) but no retrieval numbers were produced.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 270,
+  "claim": "and the cause was never diagnosed. Weights verified (sha256 matches server, revision",
+  "context": "  valuable; rediscovery is not.\n- The PPLX-0.6B semantic arm was abandoned: the encoder ran at ~4.3 texts/s (73 tok/s)\n  and the cause was never diagnosed. Weights verified (sha256 matches server, revision\n  `2c4d510dd4a732063c31a0f70193e35067b51fd8`) but no retrieval numbers were produced.\n- **No arm has ever won on both benchmarks simultaneously.** This is now a",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 272,
+  "claim": "- **No arm has ever won on both benchmarks simultaneously.** This is now a",
+  "context": "  and the cause was never diagnosed. Weights verified (sha256 matches server, revision\n  `2c4d510dd4a732063c31a0f70193e35067b51fd8`) but no retrieval numbers were produced.\n- **No arm has ever won on both benchmarks simultaneously.** This is now a\n  programme-level regularity across channel ablation, IDF power, component shift, and\n  the old asym arm \u2014 and it is unexplained. It is currently a better predictor of any",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 279,
+  "claim": "- LoCoMo gold authority is contradictory (n=1531 vs 1535; 156 audited corrections never",
+  "context": "## 7. Open, unresolved\n\n- LoCoMo gold authority is contradictory (n=1531 vs 1535; 156 audited corrections never\n  applied). Every LoCoMo number is disputable.\n- RealTalk has only 10 archives; its intervals are wide and everything on it is exploratory.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 280,
+  "claim": "applied). Every LoCoMo number is disputable.",
+  "context": "\n- LoCoMo gold authority is contradictory (n=1531 vs 1535; 156 audited corrections never\n  applied). Every LoCoMo number is disputable.\n- RealTalk has only 10 archives; its intervals are wide and everything on it is exploratory.\n- Literature search found **no source** reporting gold Hit@10 at K=10 from \u226412\u201316 B/doc",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 281,
+  "claim": "- RealTalk has only 10 archives; its intervals are wide and everything on it is exploratory.",
+  "context": "- LoCoMo gold authority is contradictory (n=1531 vs 1535; 156 audited corrections never\n  applied). Every LoCoMo number is disputable.\n- RealTalk has only 10 archives; its intervals are wide and everything on it is exploratory.\n- Literature search found **no source** reporting gold Hit@10 at K=10 from \u226412\u201316 B/doc\n  codes. The target is unmeasured in the literature \u2014 neither confirmed nor refuted.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 284,
+  "claim": "- A 2^96 counting bound is vacuous here (~900 docs/archive). The constraint is query-side",
+  "context": "- Literature search found **no source** reporting gold Hit@10 at K=10 from \u226412\u201316 B/doc\n  codes. The target is unmeasured in the literature \u2014 neither confirmed nor refuted.\n- A 2^96 counting bound is vacuous here (~900 docs/archive). The constraint is query-side\n  generalization through the same lossy 96-dim bottleneck, and we know of no applicable\n  theorem. Estimating I(code; gold) would be a research project, not a citation.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 288,
+  "claim": "RealTalk (both miss 328/705) \u2014 the gap is representational, not a ranking-order problem.",
+  "context": "  theorem. Estimating I(code; gold) would be a research project, not a citation.\n- An oracle that picks the better of our own two scorers per query saturates at ~55% on\n  RealTalk (both miss 328/705) \u2014 the gap is representational, not a ranking-order problem.\n\n## 8. What this round is worth",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 302,
+  "claim": "3. An **honest cost methodology**: varint vs pickle, auxiliary state charged at 76\u2013112\u00d7,",
+  "context": "   (random rotation) that turns \"ITQ failed\" into the stronger \"rotation itself is the\n   problem, and its damage scales with archive size.\"\n3. An **honest cost methodology**: varint vs pickle, auxiliary state charged at 76\u2013112\u00d7,\n   latency measured rather than assumed. Applied to ourselves first.\n4. A set of **retracted claims** (rare-band majority, truncation as sole cause, \"our axes",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 310,
+  "claim": "- **Blocking fidelity gate.** No arm was measured until the production representation was",
+  "context": "## 9. Methodological guards used this round\n\n- **Blocking fidelity gate.** No arm was measured until the production representation was\n  rebuilt bit-exactly from raw text. PerLTQA: 0 of 1,179,648 sign bits differed. LME:\n  0 differing bits across 92+ archives verified. A near-miss rebuild is not a licence to",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 311,
+  "claim": "rebuilt bit-exactly from raw text. PerLTQA: 0 of 1,179,648 sign bits differed. LME:",
+  "context": "\n- **Blocking fidelity gate.** No arm was measured until the production representation was\n  rebuilt bit-exactly from raw text. PerLTQA: 0 of 1,179,648 sign bits differed. LME:\n  0 differing bits across 92+ archives verified. A near-miss rebuild is not a licence to\n  report new arms \u2014 they would measure the reimplementation.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 312,
+  "claim": "0 differing bits across 92+ archives verified. A near-miss rebuild is not a licence to",
+  "context": "- **Blocking fidelity gate.** No arm was measured until the production representation was\n  rebuilt bit-exactly from raw text. PerLTQA: 0 of 1,179,648 sign bits differed. LME:\n  0 differing bits across 92+ archives verified. A near-miss rebuild is not a licence to\n  report new arms \u2014 they would measure the reimplementation.\n- **Zero-arms.** `IDF_p0`, `SHIFT_m0` must equal production exactly. They did (0 queries).",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 315,
+  "claim": "- **Mandatory controls.** Random rotation for ITQ; plain BM25 for every fusion claim.",
+  "context": "  report new arms \u2014 they would measure the reimplementation.\n- **Zero-arms.** `IDF_p0`, `SHIFT_m0` must equal production exactly. They did (0 queries).\n- **Mandatory controls.** Random rotation for ITQ; plain BM25 for every fusion claim.\n- **Audit code written before workers finished**, with anchors fixed in advance.\n- **Seeds pinned in the prompt** (LSA32=5101, SVD96=5204) after a prior run was",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 317,
+  "claim": "- **Seeds pinned in the prompt** (LSA32=5101, SVD96=5204) after a prior run was",
+  "context": "- **Mandatory controls.** Random rotation for ITQ; plain BM25 for every fusion claim.\n- **Audit code written before workers finished**, with anchors fixed in advance.\n- **Seeds pinned in the prompt** (LSA32=5101, SVD96=5204) after a prior run was\n  invalidated by a wrong seed (`BOTTLENECK.json` INVALID_SEED_DEFECT).\n- **No gate loosening.** Workers were instructed to STOP and report rather than adjust a",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 320,
+  "claim": "failing gate. One did exactly that (G6, BM25 top-10: 704/705 match, one 3-way tie",
+  "context": "  invalidated by a wrong seed (`BOTTLENECK.json` INVALID_SEED_DEFECT).\n- **No gate loosening.** Workers were instructed to STOP and report rather than adjust a\n  failing gate. One did exactly that (G6, BM25 top-10: 704/705 match, one 3-way tie\n  differing by 1 ulp) and left it as FAIL with an explanation.\n- **Coordinator audits are adversarial to the coordinator too.** The first audit run",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 323,
+  "claim": "returned REJECT with 3 findings; all three turned out to be defects in the audit code,",
+  "context": "  differing by 1 ulp) and left it as FAIL with an explanation.\n- **Coordinator audits are adversarial to the coordinator too.** The first audit run\n  returned REJECT with 3 findings; all three turned out to be defects in the audit code,\n  not the workers'. The corrected audit re-derives every metric from raw stored ids\n  (RealTalk+PerLTQA: 107,640 rows, 0 mismatches; RRF rebuilt from scratch, 705/705 identical).",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 324,
+  "claim": "not the workers'. The corrected audit re-derives every metric from raw stored ids",
+  "context": "- **Coordinator audits are adversarial to the coordinator too.** The first audit run\n  returned REJECT with 3 findings; all three turned out to be defects in the audit code,\n  not the workers'. The corrected audit re-derives every metric from raw stored ids\n  (RealTalk+PerLTQA: 107,640 rows, 0 mismatches; RRF rebuilt from scratch, 705/705 identical).\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 325,
+  "claim": "(RealTalk+PerLTQA: 107,640 rows, 0 mismatches; RRF rebuilt from scratch, 705/705 identical).",
+  "context": "  returned REJECT with 3 findings; all three turned out to be defects in the audit code,\n  not the workers'. The corrected audit re-derives every metric from raw stored ids\n  (RealTalk+PerLTQA: 107,640 rows, 0 mismatches; RRF rebuilt from scratch, 705/705 identical).\n\n## 10. Where things are",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 338,
+  "claim": "FILE_MANIFEST.json   sha256 of every original file (pre-gzip)",
+  "context": "inventory/       MASTER_LEDGER.md, DO_NOT_REPEAT.md, GAP_TO_100.md, DO_NOT_RESCAN.md\nincoming_20260916/   external gpt-6-pro package + our verification\nFILE_MANIFEST.json   sha256 of every original file (pre-gzip)\n```\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "REPORT.md",
+  "line": 341,
+  "claim": "Excluded from publication: `model/` (2.4 GB HF weights; sha256 + revision recorded in",
+  "context": "```\n\nExcluded from publication: `model/` (2.4 GB HF weights; sha256 + revision recorded in\n`MODEL_DOWNLOAD.json`) and `*.npz` intermediates. Files over 3 MB are gzipped; the\nmanifest records the sha256 of the original uncompressed bytes.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 6,
+  "claim": "- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks",
+  "context": "\nGates (referee's stopping rule, `decision_r1/cost/REFEREE.md`, written before any of this ran):\n- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks\n- **C3** best code+rerank beats BM25-alone by \u2265 +1.0 pp FR@3, CI excluding 0\n- **S3** PerLTQA corrected for k<n is still flat-or-falling on *unstandardized* arms \u21d2 real capacity law",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 7,
+  "claim": "- **C3** best code+rerank beats BM25-alone by \u2265 +1.0 pp FR@3, CI excluding 0",
+  "context": "Gates (referee's stopping rule, `decision_r1/cost/REFEREE.md`, written before any of this ran):\n- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks\n- **C3** best code+rerank beats BM25-alone by \u2265 +1.0 pp FR@3, CI excluding 0\n- **S3** PerLTQA corrected for k<n is still flat-or-falling on *unstandardized* arms \u21d2 real capacity law\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 17,
+  "claim": "Four BM25 variants on RealTalk, all scored with our own deterministic tie-break:",
+  "context": "## T1 \u2014 Fair baseline. **C1 FAILS, and the gap is far larger than we reported.**\n\nFour BM25 variants on RealTalk, all scored with our own deterministic tie-break:\n\n| BM25 variant | Hit@10 | FR@3 |",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 26,
+  "claim": "Against the strongest honest BM25 (65.67):",
+  "context": "| **frozen tokenizer, IDF-only** | **65.67** | **40.02** |\n\nAgainst the strongest honest BM25 (65.67):\n\n| code | Hit@10 | vs BM25 | FR@3 | vs BM25 |",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 34,
+  "claim": "The tokenizer+parameter choice is worth **+10.35 pp** to BM25 \u2014 larger than our entire",
+  "context": "| 48 B qscale | 57.87 | **\u22127.80** | 32.79 | \u22127.23 |\n\nThe tokenizer+parameter choice is worth **+10.35 pp** to BM25 \u2014 larger than our entire\n12\u219248 byte ladder gain (+8.22 pp). Every historical \"we beat BM25\" line in this programme\ncompared a tuned code against an untuned opponent. Quadrupling the byte budget does not",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 35,
+  "claim": "12\u219248 byte ladder gain (+8.22 pp). Every historical \"we beat BM25\" line in this programme",
+  "context": "\nThe tokenizer+parameter choice is worth **+10.35 pp** to BM25 \u2014 larger than our entire\n12\u219248 byte ladder gain (+8.22 pp). Every historical \"we beat BM25\" line in this programme\ncompared a tuned code against an untuned opponent. Quadrupling the byte budget does not\nclose even half the honest gap.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 41,
+  "claim": "Computed from 164,256 stored paired per-query rows in the incoming package; paired",
+  "context": "## T2 \u2014 Rerank dissolution. **C3 FAILS on the arm we care about.**\n\nComputed from 164,256 stored paired per-query rows in the incoming package; paired\narchive-clustered bootstrap, 20000 reps, seed 20260916.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 42,
+  "claim": "archive-clustered bootstrap, 20000 reps, seed 20260916.",
+  "context": "\nComputed from 164,256 stored paired per-query rows in the incoming package; paired\narchive-clustered bootstrap, 20000 reps, seed 20260916.\n\nOur code + BM25 rerank, versus plain BM25 alone:",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 64,
+  "claim": "`float_raw32` starts **11.58 pp behind** the leader and finishes **0.29 pp ahead** of our",
+  "context": "| **float_raw32** | **44.16** | **57.76** \u2190 worst before, second-best after |\n\n`float_raw32` starts **11.58 pp behind** the leader and finishes **0.29 pp ahead** of our\nflagship. Order inversions: LME 4/10 pairs, LoCoMo 3/10, PerLTQA 6/10. Post-rerank spread\non LME is 0.58 pp across first stages that span 11.58 pp before reranking.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 66,
+  "claim": "on LME is 0.58 pp across first stages that span 11.58 pp before reranking.",
+  "context": "`float_raw32` starts **11.58 pp behind** the leader and finishes **0.29 pp ahead** of our\nflagship. Order inversions: LME 4/10 pairs, LoCoMo 3/10, PerLTQA 6/10. Post-rerank spread\non LME is 0.58 pp across first stages that span 11.58 pp before reranking.\n\nOnce a text reranker is in the pipeline, first-stage quality is very nearly irrelevant.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 73,
+  "claim": "Fidelity gate: **0 differing bits of 276,480** against cached production C.",
+  "context": "## T3 \u2014 PerLTQA with k<n. **My rank-overflow explanation was WRONG.**\n\nFidelity gate: **0 differing bits of 276,480** against cached production C.\n\nEnforcing k_eff = min(k, n\u22121) on the 8 archives with n<384 (2,217 queries), the surplus",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 75,
+  "claim": "Enforcing k_eff = min(k, n\u22121) on the 8 archives with n<384 (2,217 queries), the surplus",
+  "context": "Fidelity gate: **0 differing bits of 276,480** against cached production C.\n\nEnforcing k_eff = min(k, n\u22121) on the 8 archives with n<384 (2,217 queries), the surplus\ndimensions are gone \u2014 `constant_dims@384 = 0` in every one of the 8 archives. The decline\nshould therefore have disappeared. It did not:",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 76,
+  "claim": "dimensions are gone \u2014 `constant_dims@384 = 0` in every one of the 8 archives. The decline",
+  "context": "\nEnforcing k_eff = min(k, n\u22121) on the 8 archives with n<384 (2,217 queries), the surplus\ndimensions are gone \u2014 `constant_dims@384 = 0` in every one of the 8 archives. The decline\nshould therefore have disappeared. It did not:\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 87,
+  "claim": "but nonzero, and dividing by it amplifies noise that `asym` never touches.",
+  "context": "So the decline is **not** rank overflow. It is real, and it is specific to dividing by \u03c3:\nwith k_eff \u2248 n\u22121 the trailing directions are genuine but nearly singular, their \u03c3 is tiny\nbut nonzero, and dividing by it amplifies noise that `asym` never touches.\n\n**This retracts my own explanation from `LADDER_REALTALK.md`.** The observation that",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 94,
+  "claim": "Note the practical consequence: the best PerLTQA arm here is `asym` at 384 dims (61.09 FR@3),",
+  "context": "counting disproves it directly.\n\nNote the practical consequence: the best PerLTQA arm here is `asym` at 384 dims (61.09 FR@3),\nwhich beats every standardized arm at every width. **We have been scoring with the wrong\nreadout at high k.**",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 95,
+  "claim": "which beats every standardized arm at every width. **We have been scoring with the wrong",
+  "context": "\nNote the practical consequence: the best PerLTQA arm here is `asym` at 384 dims (61.09 FR@3),\nwhich beats every standardized arm at every width. **We have been scoring with the wrong\nreadout at high k.**\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 102,
+  "claim": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |",
+  "context": "| gate | result |\n|---|---|\n| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |\n| C3 (code+rerank beats BM25 alone by \u22651 pp) | **FAIL** \u2014 1 of 3, on disputed-gold LoCoMo |\n| S3 (decline persists on unstandardized arms) | **does not fire** \u2014 `asym` rises (+0.30) |",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 104,
+  "claim": "| S3 (decline persists on unstandardized arms) | **does not fire** \u2014 `asym` rises (+0.30) |",
+  "context": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |\n| C3 (code+rerank beats BM25 alone by \u22651 pp) | **FAIL** \u2014 1 of 3, on disputed-gold LoCoMo |\n| S3 (decline persists on unstandardized arms) | **does not fire** \u2014 `asym` rises (+0.30) |\n\nC1 and C3 both fail. Under the rule as written, the verdict is **STOP the retrieval-",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 113,
+  "claim": "2. **`asym` beats every standardized arm at 384 dims on PerLTQA.** If any work continues, the",
+  "context": "1. **A fourth retraction, this one mine and caught by my own test**: rank overflow does not\n   explain the PerLTQA decline. Constant dims are zero under k<n and the decline persists.\n2. **`asym` beats every standardized arm at 384 dims on PerLTQA.** If any work continues, the\n   scorer is the lever, not the bit count \u2014 and this was visible in the incoming package's\n   own table before we ran anything.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 116,
+  "claim": "3. **The honest BM25 is 65.67, not 55.32.** Every comparison table in this programme's history",
+  "context": "   scorer is the lever, not the bit count \u2014 and this was visible in the incoming package's\n   own table before we ran anything.\n3. **The honest BM25 is 65.67, not 55.32.** Every comparison table in this programme's history\n   needs the \u221210.35 pp correction applied before it is quoted again.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "DECISION_TESTS.md",
+  "line": 117,
+  "claim": "needs the \u221210.35 pp correction applied before it is quoted again.",
+  "context": "   own table before we ran anything.\n3. **The honest BM25 is 65.67, not 55.32.** Every comparison table in this programme's history\n   needs the \u221210.35 pp correction applied before it is quoted again.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 6,
+  "claim": "858,624**. Anchors exact: k96 qscale Hit@10 49.6454 (frozen 49.6454, dev \u22120.0000);",
+  "context": "\n`coordinator/ladder.py` \u2192 `coordinator/LADDER.json`. Fidelity gate: **0 differing bits of\n858,624**. Anchors exact: k96 qscale Hit@10 49.6454 (frozen 49.6454, dev \u22120.0000);\nk96 sym 46.5248 (dev +0.0000); k96 qscale FR@3 22.4099 (frozen 22.41).\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 7,
+  "claim": "k96 sym 46.5248 (dev +0.0000); k96 qscale FR@3 22.4099 (frozen 22.41).",
+  "context": "`coordinator/ladder.py` \u2192 `coordinator/LADDER.json`. Fidelity gate: **0 differing bits of\n858,624**. Anchors exact: k96 qscale Hit@10 49.6454 (frozen 49.6454, dev \u22120.0000);\nk96 sym 46.5248 (dev +0.0000); k96 qscale FR@3 22.4099 (frozen 22.41).\n\n## The ladder rises monotonically on RealTalk",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 18,
+  "claim": "(52.98 \u2192 54.82 \u2192 51.87, the 192\u2192384 drop significant at CI [\u22123.87, \u22122.01]).",
+  "context": "\nNo decline at 48 B. This directly contradicts the incoming package's PerLTQA result\n(52.98 \u2192 54.82 \u2192 51.87, the 192\u2192384 drop significant at CI [\u22123.87, \u22122.01]).\n\n## Why the two disagree: rank overflow, not a bit-budget limit",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 23,
+  "claim": "verified it on their raw `QUALITY_LEVELS.csv`. PerLTQA FR@3, 96 \u2192 192 \u2192 384:",
+  "context": "\nA literature worker noticed the decline is **scorer-dependent**, and the coordinator\nverified it on their raw `QUALITY_LEVELS.csv`. PerLTQA FR@3, 96 \u2192 192 \u2192 384:\n\n| arm | standardized? | 96 | 192 | 384 | shape |",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 33,
+  "claim": "Same subspaces, same documents, same dimensions \u2014 only the readout differs. Every",
+  "context": "| **float_raw** | **no** | 55.03 | 58.55 | **60.43** | **monotone rise** |\n\nSame subspaces, same documents, same dimensions \u2014 only the readout differs. Every\nstandardized arm falls; neither unstandardized arm does. \"More dimensions is harmful\"\ncannot explain that.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 37,
+  "claim": "**The cause.** PerLTQA archives are small: median 407 documents, minimum 293, and",
+  "context": "cannot explain that.\n\n**The cause.** PerLTQA archives are small: median 407 documents, minimum 293, and\n**8 of 30 archives hold fewer than 384 documents**. A rank-384 decomposition of a\n293-document archive cannot produce 384 informative directions; the surplus dimensions",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 38,
+  "claim": "**8 of 30 archives hold fewer than 384 documents**. A rank-384 decomposition of a",
+  "context": "\n**The cause.** PerLTQA archives are small: median 407 documents, minimum 293, and\n**8 of 30 archives hold fewer than 384 documents**. A rank-384 decomposition of a\n293-document archive cannot produce 384 informative directions; the surplus dimensions\nare constant-filled (the ladder audit records effective ranks of 293\u2013381 while still",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 39,
+  "claim": "293-document archive cannot produce 384 informative directions; the surplus dimensions",
+  "context": "**The cause.** PerLTQA archives are small: median 407 documents, minimum 293, and\n**8 of 30 archives hold fewer than 384 documents**. A rank-384 decomposition of a\n293-document archive cannot produce 384 informative directions; the surplus dimensions\nare constant-filled (the ladder audit records effective ranks of 293\u2013381 while still\ncharging the full 48 bytes, covering 2,217 queries = 26.8% of PerLTQA).",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 40,
+  "claim": "are constant-filled (the ladder audit records effective ranks of 293\u2013381 while still",
+  "context": "**8 of 30 archives hold fewer than 384 documents**. A rank-384 decomposition of a\n293-document archive cannot produce 384 informative directions; the surplus dimensions\nare constant-filled (the ladder audit records effective ranks of 293\u2013381 while still\ncharging the full 48 bytes, covering 2,217 queries = 26.8% of PerLTQA).\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 41,
+  "claim": "charging the full 48 bytes, covering 2,217 queries = 26.8% of PerLTQA).",
+  "context": "293-document archive cannot produce 384 informative directions; the surplus dimensions\nare constant-filled (the ladder audit records effective ranks of 293\u2013381 while still\ncharging the full 48 bytes, covering 2,217 queries = 26.8% of PerLTQA).\n\nA constant dimension has standard deviation \u2248 0. `qscale` divides by that \u03c3 (floored at",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 44,
+  "claim": "1e-12), so the surplus dimensions inject enormous noise. `asym` and `float_raw` never",
+  "context": "\nA constant dimension has standard deviation \u2248 0. `qscale` divides by that \u03c3 (floored at\n1e-12), so the surplus dimensions inject enormous noise. `asym` and `float_raw` never\ndivide, so they are immune. That is the entire pattern.\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 47,
+  "claim": "RealTalk archives hold 410\u20131548 documents, so k < n holds at every rung \u2014 and the ladder",
+  "context": "divide, so they are immune. That is the entire pattern.\n\nRealTalk archives hold 410\u20131548 documents, so k < n holds at every rung \u2014 and the ladder\nrises. LoCoMo archives are large too, and its ladder also rises (35.11 \u2192 41.21 \u2192 44.15).\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 48,
+  "claim": "rises. LoCoMo archives are large too, and its ladder also rises (35.11 \u2192 41.21 \u2192 44.15).",
+  "context": "\nRealTalk archives hold 410\u20131548 documents, so k < n holds at every rung \u2014 and the ladder\nrises. LoCoMo archives are large too, and its ladder also rises (35.11 \u2192 41.21 \u2192 44.15).\n\n**Consequence.** \"Bits beyond 24 B do not help\" was measured under a defect, not a law.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 51,
+  "claim": "The honest rule is **k < n per archive**, and a fixed global k is the wrong design for a",
+  "context": "\n**Consequence.** \"Bits beyond 24 B do not help\" was measured under a defect, not a law.\nThe honest rule is **k < n per archive**, and a fixed global k is the wrong design for a\ncorpus of heterogeneous archive sizes. Any future ladder must set k = min(k_target, n\u22121)\nand report effective rank per archive.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 58,
+  "claim": "frozen word-channel tokenization (stopwords removed, `\\b\\w\\w+\\b`) is worth **+6.38 pp**",
+  "context": "\n**BM25 was handicapped here too, by more than the external audit found.** Giving BM25 the\nfrozen word-channel tokenization (stopwords removed, `\\b\\w\\w+\\b`) is worth **+6.38 pp**\nHit@10 on RealTalk (55.32 \u2192 61.70), against the ~3 pp the audit measured on PerLTQA and\nLoCoMo. At 48 B our code beats the coarse-tokenizer BM25 by +2.55 pp but **loses to the",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 59,
+  "claim": "Hit@10 on RealTalk (55.32 \u2192 61.70), against the ~3 pp the audit measured on PerLTQA and",
+  "context": "**BM25 was handicapped here too, by more than the external audit found.** Giving BM25 the\nfrozen word-channel tokenization (stopwords removed, `\\b\\w\\w+\\b`) is worth **+6.38 pp**\nHit@10 on RealTalk (55.32 \u2192 61.70), against the ~3 pp the audit measured on PerLTQA and\nLoCoMo. At 48 B our code beats the coarse-tokenizer BM25 by +2.55 pp but **loses to the\nfairly-tokenized BM25 by \u22123.83 pp**. Quoting the coarse baseline flatters us.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 60,
+  "claim": "LoCoMo. At 48 B our code beats the coarse-tokenizer BM25 by +2.55 pp but **loses to the",
+  "context": "frozen word-channel tokenization (stopwords removed, `\\b\\w\\w+\\b`) is worth **+6.38 pp**\nHit@10 on RealTalk (55.32 \u2192 61.70), against the ~3 pp the audit measured on PerLTQA and\nLoCoMo. At 48 B our code beats the coarse-tokenizer BM25 by +2.55 pp but **loses to the\nfairly-tokenized BM25 by \u22123.83 pp**. Quoting the coarse baseline flatters us.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 61,
+  "claim": "fairly-tokenized BM25 by \u22123.83 pp**. Quoting the coarse baseline flatters us.",
+  "context": "Hit@10 on RealTalk (55.32 \u2192 61.70), against the ~3 pp the audit measured on PerLTQA and\nLoCoMo. At 48 B our code beats the coarse-tokenizer BM25 by +2.55 pp but **loses to the\nfairly-tokenized BM25 by \u22123.83 pp**. Quoting the coarse baseline flatters us.\n\n**The channel mix costs more than the projection.** With no projection at all:",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 63,
+  "claim": "**The channel mix costs more than the projection.** With no projection at all:",
+  "context": "fairly-tokenized BM25 by \u22123.83 pp**. Quoting the coarse baseline flatters us.\n\n**The channel mix costs more than the projection.** With no projection at all:\nword-only 56.03 vs full Z 47.80 \u2014 the char and LSA channels together cost **8.23 pp** on\nRealTalk. This independently reproduces the external auditor's LoCoMo finding (char channel",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 64,
+  "claim": "word-only 56.03 vs full Z 47.80 \u2014 the char and LSA channels together cost **8.23 pp** on",
+  "context": "\n**The channel mix costs more than the projection.** With no projection at all:\nword-only 56.03 vs full Z 47.80 \u2014 the char and LSA channels together cost **8.23 pp** on\nRealTalk. This independently reproduces the external auditor's LoCoMo finding (char channel\n\u221212.25 pp in the rare bucket) on a benchmark they could not run. Our feature mix, not only",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 66,
+  "claim": "\u221212.25 pp in the rare bucket) on a benchmark they could not run. Our feature mix, not only",
+  "context": "word-only 56.03 vs full Z 47.80 \u2014 the char and LSA channels together cost **8.23 pp** on\nRealTalk. This independently reproduces the external auditor's LoCoMo finding (char channel\n\u221212.25 pp in the rare bucket) on a benchmark they could not run. Our feature mix, not only\nour compression, is losing points.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 71,
+  "claim": "The first run of this script died at the 3000 s timeout having written **nothing**: results",
+  "context": "## Method note \u2014 a failure worth recording\n\nThe first run of this script died at the 3000 s timeout having written **nothing**: results\nwere held in memory until the end, and `k=768` on RT06 (1548 docs) alone took 27 minutes.\nThis is the second time the same design fault cost a run in this programme (the LME",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 72,
+  "claim": "were held in memory until the end, and `k=768` on RT06 (1548 docs) alone took 27 minutes.",
+  "context": "\nThe first run of this script died at the 3000 s timeout having written **nothing**: results\nwere held in memory until the end, and `k=768` on RT06 (1548 docs) alone took 27 minutes.\nThis is the second time the same design fault cost a run in this programme (the LME\nablation worker did it first). The rerun caches each archive to `LADDER_CACHE.jsonl` as it",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 75,
+  "claim": "completes and dropped `k=768` \u2014 with the reason recorded in the script rather than the grid",
+  "context": "This is the second time the same design fault cost a run in this programme (the LME\nablation worker did it first). The rerun caches each archive to `LADDER_CACHE.jsonl` as it\ncompletes and dropped `k=768` \u2014 with the reason recorded in the script rather than the grid\nbeing changed silently. Total runtime after the fix: **124 s**.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "LADDER_REALTALK.md",
+  "line": 76,
+  "claim": "being changed silently. Total runtime after the fix: **124 s**.",
+  "context": "ablation worker did it first). The rerun caches each archive to `LADDER_CACHE.jsonl` as it\ncompletes and dropped `k=768` \u2014 with the reason recorded in the script rather than the grid\nbeing changed silently. Total runtime after the fix: **124 s**.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 6,
+  "claim": "(`audit3_*`), reproducing every published level exactly before attacking it. This file",
+  "context": "\nAn external reviewer audited the programme's claims with independently written code\n(`audit3_*`), reproducing every published level exactly before attacking it. This file\nrecords what the coordinator independently verified and which of our claims must change.\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 7,
+  "claim": "records what the coordinator independently verified and which of our claims must change.",
+  "context": "An external reviewer audited the programme's claims with independently written code\n(`audit3_*`), reproducing every published level exactly before attacking it. This file\nrecords what the coordinator independently verified and which of our claims must change.\n\n## The central correction: \"discard\" was the wrong word. It is a dimension budget.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 12,
+  "claim": "better choice of 96 directions could fix. The auditor supplied the control we never ran:",
+  "context": "\nWe reported that TruncatedSVD *discards* rare terms, implying a targeted defect that a\nbetter choice of 96 directions could fix. The auditor supplied the control we never ran:\n**a random 96-dimensional subspace null.**\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 23,
+  "claim": "Spearman(df, survival) = +0.46 for the SVD, +0.11 pooled for the random subspace \u2014 and",
+  "context": "| 50+ | 164 | 0.7513 | 0.1982 | 3.79\u00d7 |\n\nSpearman(df, survival) = +0.46 for the SVD, +0.11 pooled for the random subspace \u2014 and\nper-archive the random figure is +0.038 / \u22120.024 / \u22120.009, i.e. **zero**. The pooled\nvalue is a cross-archive artifact.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 24,
+  "claim": "per-archive the random figure is +0.038 / \u22120.024 / \u22120.009, i.e. **zero**. The pooled",
+  "context": "\nSpearman(df, survival) = +0.46 for the SVD, +0.11 pooled for the random subspace \u2014 and\nper-archive the random figure is +0.038 / \u22120.024 / \u22120.009, i.e. **zero**. The pooled\nvalue is a cross-archive artifact.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 28,
+  "claim": "k/n. Measured over 40 draws per size: n=410 \u2192 0.2409 (k/n=0.2341); n=500 \u2192 0.1875",
+  "context": "\n**Coordinator verification.** A random 96-dim subspace retains a generic direction at\nk/n. Measured over 40 draws per size: n=410 \u2192 0.2409 (k/n=0.2341); n=500 \u2192 0.1875\n(0.1920); n=662 \u2192 0.1458 (0.1450); n=1548 \u2192 0.0610 (0.0620). For a singleton column\n`e_i` \u2014 which is exactly what a df=1 term is \u2014 200 draws at n=500 give mean **0.1934**",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 29,
+  "claim": "(0.1920); n=662 \u2192 0.1458 (0.1450); n=1548 \u2192 0.0610 (0.0620). For a singleton column",
+  "context": "**Coordinator verification.** A random 96-dim subspace retains a generic direction at\nk/n. Measured over 40 draws per size: n=410 \u2192 0.2409 (k/n=0.2341); n=500 \u2192 0.1875\n(0.1920); n=662 \u2192 0.1458 (0.1450); n=1548 \u2192 0.0610 (0.0620). For a singleton column\n`e_i` \u2014 which is exactly what a df=1 term is \u2014 200 draws at n=500 give mean **0.1934**\nagainst k/n = **0.1920**.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 30,
+  "claim": "`e_i` \u2014 which is exactly what a df=1 term is \u2014 200 draws at n=500 give mean **0.1934**",
+  "context": "k/n. Measured over 40 draws per size: n=410 \u2192 0.2409 (k/n=0.2341); n=500 \u2192 0.1875\n(0.1920); n=662 \u2192 0.1458 (0.1450); n=1548 \u2192 0.0610 (0.0620). For a singleton column\n`e_i` \u2014 which is exactly what a df=1 term is \u2014 200 draws at n=500 give mean **0.1934**\nagainst k/n = **0.1920**.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 35,
+  "claim": "consequence \u2014 that k/n is the **baseline every direction gets**, so landing at 0.94\u00d7 of",
+  "context": "This is *our own leverage identity* seen from the other side: `sum_i rho_i = k` forces\nmean `rho = k/n`. We derived the identity and then failed to draw the obvious\nconsequence \u2014 that k/n is the **baseline every direction gets**, so landing at 0.94\u00d7 of\nit is not evidence of targeting.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 38,
+  "claim": "**Corrected statement.** The SVD preserves common terms **1.7\u20133.8\u00d7 better than chance**",
+  "context": "it is not evidence of targeting.\n\n**Corrected statement.** The SVD preserves common terms **1.7\u20133.8\u00d7 better than chance**\nwhile rare terms survive at **essentially exactly the chance rate** for any\n96-dimensional compression. Ninety-six directions cannot align with 95,119 singleton",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 40,
+  "claim": "96-dimensional compression. Ninety-six directions cannot align with 95,119 singleton",
+  "context": "**Corrected statement.** The SVD preserves common terms **1.7\u20133.8\u00d7 better than chance**\nwhile rare terms survive at **essentially exactly the chance rate** for any\n96-dimensional compression. Ninety-six directions cannot align with 95,119 singleton\ncolumns, and **no other choice of 96 directions would do better on them**. The constraint\nis the dimension budget, not the SVD objective.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 49,
+  "claim": "`run_svdloss.py` measured attenuation but never connected it to retrieval. The auditor",
+  "context": "## The evidence we never produced: the dimension ladder\n\n`run_svdloss.py` measured attenuation but never connected it to retrieval. The auditor\nran the removal experiment \u2014 same text, features, queries, gold, metric; only the\ntruncation changes. FR@3 in the rare-hinge bucket:",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 50,
+  "claim": "ran the removal experiment \u2014 same text, features, queries, gold, metric; only the",
+  "context": "\n`run_svdloss.py` measured attenuation but never connected it to retrieval. The auditor\nran the removal experiment \u2014 same text, features, queries, gold, metric; only the\ntruncation changes. FR@3 in the rare-hinge bucket:\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 58,
+  "claim": "Gap to BM25: LoCoMo \u221233.88 \u2192 \u221225.74 \u2192 \u221218.57 \u2192 \u221213.53 (all SIG). PerLTQA \u22126.98 SIG \u2192",
+  "context": "| PerLTQA (n=5,694) | 72.15 | 65.17 | 70.12 | 72.61 | **72.70** | 69.98 |\n\nGap to BM25: LoCoMo \u221233.88 \u2192 \u221225.74 \u2192 \u221218.57 \u2192 \u221213.53 (all SIG). PerLTQA \u22126.98 SIG \u2192\n\u22122.03 SIG \u2192 **+0.46 ns** \u2192 **+0.55 ns**.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 59,
+  "claim": "\u22122.03 SIG \u2192 **+0.46 ns** \u2192 **+0.55 ns**.",
+  "context": "\nGap to BM25: LoCoMo \u221233.88 \u2192 \u221225.74 \u2192 \u221218.57 \u2192 \u221213.53 (all SIG). PerLTQA \u22126.98 SIG \u2192\n\u22122.03 SIG \u2192 **+0.46 ns** \u2192 **+0.55 ns**.\n\n**Monotone in the dimension budget on both benchmarks. On PerLTQA the gap to BM25 closes",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 62,
+  "claim": "completely by 384 dimensions.** The mechanism survives \u2014 on evidence we did not produce.",
+  "context": "\n**Monotone in the dimension budget on both benchmarks. On PerLTQA the gap to BM25 closes\ncompletely by 384 dimensions.** The mechanism survives \u2014 on evidence we did not produce.\n\n## A second mechanism we missed entirely",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 66,
+  "claim": "On LoCoMo, the word channel with **no projection at all** reaches 57.42 against BM25's",
+  "context": "## A second mechanism we missed entirely\n\nOn LoCoMo, the word channel with **no projection at all** reaches 57.42 against BM25's\n58.70 (gap \u22121.28, ns), while the full Z reaches only 45.17. **The character n-gram\nchannel costs 12.25 pp in the rare bucket** \u2014 comparable to the entire 96\u2192full-rank",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 67,
+  "claim": "58.70 (gap \u22121.28, ns), while the full Z reaches only 45.17. **The character n-gram",
+  "context": "\nOn LoCoMo, the word channel with **no projection at all** reaches 57.42 against BM25's\n58.70 (gap \u22121.28, ns), while the full Z reaches only 45.17. **The character n-gram\nchannel costs 12.25 pp in the rare bucket** \u2014 comparable to the entire 96\u2192full-rank\nprojection effect (20.35 pp), and absent from our account.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 68,
+  "claim": "channel costs 12.25 pp in the rare bucket** \u2014 comparable to the entire 96\u2192full-rank",
+  "context": "On LoCoMo, the word channel with **no projection at all** reaches 57.42 against BM25's\n58.70 (gap \u22121.28, ns), while the full Z reaches only 45.17. **The character n-gram\nchannel costs 12.25 pp in the rare bucket** \u2014 comparable to the entire 96\u2192full-rank\nprojection effect (20.35 pp), and absent from our account.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 69,
+  "claim": "projection effect (20.35 pp), and absent from our account.",
+  "context": "58.70 (gap \u22121.28, ns), while the full Z reaches only 45.17. **The character n-gram\nchannel costs 12.25 pp in the rare bucket** \u2014 comparable to the entire 96\u2192full-rank\nprojection effect (20.35 pp), and absent from our account.\n\nDecomposing the LoCoMo rare-bucket gap: projection \u2248 60%, **feature mix \u2248 36%**, BM25's",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 72,
+  "claim": "scoring function +1.28 (ns). Our claim that the projection explains the whole deficit is",
+  "context": "\nDecomposing the LoCoMo rare-bucket gap: projection \u2248 60%, **feature mix \u2248 36%**, BM25's\nscoring function +1.28 (ns). Our claim that the projection explains the whole deficit is\nwrong on the benchmark where the deficit is largest. On PerLTQA (Chinese) the char\nchannel helps and the projection does explain everything \u2014 another sign reversal,",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 81,
+  "claim": "\"common\" bucket BM25 scores **exactly zero on every query** by construction (LoCoMo",
+  "context": "The bucket is defined by the df of the rarest term shared between question and gold \u2014\ncomputed with **BM25's own tokenizer over BM25's own document frequencies**. In the\n\"common\" bucket BM25 scores **exactly zero on every query** by construction (LoCoMo\n100%, PerLTQA 97.8%, LME 100%). So `sym \u2212 bm25` there is not a comparison; it is the\none-sample statement `sym > 0`, and its significance is automatic.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 82,
+  "claim": "100%, PerLTQA 97.8%, LME 100%). So `sym \u2212 bm25` there is not a comparison; it is the",
+  "context": "computed with **BM25's own tokenizer over BM25's own document frequencies**. In the\n\"common\" bucket BM25 scores **exactly zero on every query** by construction (LoCoMo\n100%, PerLTQA 97.8%, LME 100%). So `sym \u2212 bm25` there is not a comparison; it is the\none-sample statement `sym > 0`, and its significance is automatic.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 90,
+  "claim": "with gold in the rare bucket (LoCoMo 2.06 \u2192 4.73). It is a query-difficulty stratifier.",
+  "context": "\nThe bucket also confounds rarity with sheer overlap: questions share 2\u20133\u00d7 more terms\nwith gold in the rare bucket (LoCoMo 2.06 \u2192 4.73). It is a query-difficulty stratifier.\n\n**However:** the dimension ladder uses that same bucket definition throughout, so",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 99,
+  "claim": "removed, unigrams+bigrams) makes it **better**: +3.38 pp SIG on PerLTQA (29/30 archives),",
+  "context": "\nGiving BM25 the frozen word channel's own tokenization (`\\b\\w\\w+\\b`, English stopwords\nremoved, unigrams+bigrams) makes it **better**: +3.38 pp SIG on PerLTQA (29/30 archives),\n+3.29 pp SIG on LoCoMo (9/10), +0.14 ns on LME. Stopword removal alone accounts for\nalmost all of it. And textbook k1=1.2/b=0.75 is not a neutral default: k1\u21920, b=0 gives",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 100,
+  "claim": "+3.29 pp SIG on LoCoMo (9/10), +0.14 ns on LME. Stopword removal alone accounts for",
+  "context": "Giving BM25 the frozen word channel's own tokenization (`\\b\\w\\w+\\b`, English stopwords\nremoved, unigrams+bigrams) makes it **better**: +3.38 pp SIG on PerLTQA (29/30 archives),\n+3.29 pp SIG on LoCoMo (9/10), +0.14 ns on LME. Stopword removal alone accounts for\nalmost all of it. And textbook k1=1.2/b=0.75 is not a neutral default: k1\u21920, b=0 gives\n**42.11 on LoCoMo against 37.67**.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 101,
+  "claim": "almost all of it. And textbook k1=1.2/b=0.75 is not a neutral default: k1\u21920, b=0 gives",
+  "context": "removed, unigrams+bigrams) makes it **better**: +3.38 pp SIG on PerLTQA (29/30 archives),\n+3.29 pp SIG on LoCoMo (9/10), +0.14 ns on LME. Stopword removal alone accounts for\nalmost all of it. And textbook k1=1.2/b=0.75 is not a neutral default: k1\u21920, b=0 gives\n**42.11 on LoCoMo against 37.67**.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 104,
+  "claim": "Combined, the LoCoMo lexical baseline is \u226540.96, and our gap widens from \u221213.88 to",
+  "context": "**42.11 on LoCoMo against 37.67**.\n\nCombined, the LoCoMo lexical baseline is \u226540.96, and our gap widens from \u221213.88 to\nabout **\u221217.2**.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 109,
+  "claim": "`sym` carries heavy integer Hamming ties (untied on 65\u201377% of queries; BM25 99\u2013100%).",
+  "context": "## Ties: our LME row is mostly a tie artifact\n\n`sym` carries heavy integer Hamming ties (untied on 65\u201377% of queries; BM25 99\u2013100%).\nGranting `sym` its **best possible** tie-break:\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 118,
+  "claim": "Ties are worth 1.69\u20132.34 pp. C1 survives comfortably on PerLTQA and LoCoMo. **On",
+  "context": "| LoCoMo | 23.79 | 25.49 | 37.67 | \u221212.18 SIG |\n\nTies are worth 1.69\u20132.34 pp. C1 survives comfortably on PerLTQA and LoCoMo. **On\nLongMemEval most of the apparent BM25 advantage is `sym`'s ties** \u2014 that must be stated\nwhenever the LME row is quoted.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 132,
+  "claim": "213 MB on LongMemEval, not ~64 MB. The \"text is stored anyway\" defence only goes so far:",
+  "context": "| LoCoMo | 5,882 | 0.07 MB | 0.85 MB | 1.31 MB | 18.5\u00d7 | 1.54\u00d7 |\n\n213 MB on LongMemEval, not ~64 MB. The \"text is stored anyway\" defence only goes so far:\nthe index is 0.9\u20131.5\u00d7 the text *again*, so adopting BM25 roughly doubles the text-side\nfootprint. Our qualitative point stands and is **stronger** than we stated.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 133,
+  "claim": "the index is 0.9\u20131.5\u00d7 the text *again*, so adopting BM25 roughly doubles the text-side",
+  "context": "\n213 MB on LongMemEval, not ~64 MB. The \"text is stored anyway\" defence only goes so far:\nthe index is 0.9\u20131.5\u00d7 the text *again*, so adopting BM25 roughly doubles the text-side\nfootprint. Our qualitative point stands and is **stronger** than we stated.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 139,
+  "claim": "4.3e-13; LoCoMo bit-identical); shuffled-order control 0.502, so the test has power.",
+  "context": "\n- **Text alignment.** 18/18 archives reproduce cached `sign(C)` exactly (max |\u0394C| \u2264\n  4.3e-13; LoCoMo bit-identical); shuffled-order control 0.502, so the test has power.\n  Question text reproduces `qC` exactly on 1,294 PerLTQA questions (shifted-pairing\n  control 0.65\u20130.70). Our own guard (`len(texts) != C.shape[0]`) cannot detect a",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 140,
+  "claim": "Question text reproduces `qC` exactly on 1,294 PerLTQA questions (shifted-pairing",
+  "context": "- **Text alignment.** 18/18 archives reproduce cached `sign(C)` exactly (max |\u0394C| \u2264\n  4.3e-13; LoCoMo bit-identical); shuffled-order control 0.502, so the test has power.\n  Question text reproduces `qC` exactly on 1,294 PerLTQA questions (shifted-pairing\n  control 0.65\u20130.70). Our own guard (`len(texts) != C.shape[0]`) cannot detect a\n  permutation and was too weak \u2014 the result happens to hold anyway.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 141,
+  "claim": "control 0.65\u20130.70). Our own guard (`len(texts) != C.shape[0]`) cannot detect a",
+  "context": "  4.3e-13; LoCoMo bit-identical); shuffled-order control 0.502, so the test has power.\n  Question text reproduces `qC` exactly on 1,294 PerLTQA questions (shifted-pairing\n  control 0.65\u20130.70). Our own guard (`len(texts) != C.shape[0]`) cannot detect a\n  permutation and was too weak \u2014 the result happens to hold anyway.\n- **LoCoMo gold.** Applying the 156 audited corrections (92/1,534 queries change):",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 143,
+  "claim": "- **LoCoMo gold.** Applying the 156 audited corrections (92/1,534 queries change):",
+  "context": "  control 0.65\u20130.70). Our own guard (`len(texts) != C.shape[0]`) cannot detect a\n  permutation and was too weak \u2014 the result happens to hold anyway.\n- **LoCoMo gold.** Applying the 156 audited corrections (92/1,534 queries change):\n  \u221213.89 \u2192 \u221213.94, both SIG. The open obligation remains open but does not threaten it.\n- **Thin clusters.** Cluster bootstrap, jackknife-t and an exact sign test agree;",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 144,
+  "claim": "\u221213.89 \u2192 \u221213.94, both SIG. The open obligation remains open but does not threaten it.",
+  "context": "  permutation and was too weak \u2014 the result happens to hold anyway.\n- **LoCoMo gold.** Applying the 156 audited corrections (92/1,534 queries change):\n  \u221213.89 \u2192 \u221213.94, both SIG. The open obligation remains open but does not threaten it.\n- **Thin clusters.** Cluster bootstrap, jackknife-t and an exact sign test agree;\n  PerLTQA 0/30 and LoCoMo 0/10 archives favour the code.",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 145,
+  "claim": "- **Thin clusters.** Cluster bootstrap, jackknife-t and an exact sign test agree;",
+  "context": "- **LoCoMo gold.** Applying the 156 audited corrections (92/1,534 queries change):\n  \u221213.89 \u2192 \u221213.94, both SIG. The open obligation remains open but does not threaten it.\n- **Thin clusters.** Cluster bootstrap, jackknife-t and an exact sign test agree;\n  PerLTQA 0/30 and LoCoMo 0/10 archives favour the code.\n- **Bucket cuts.** Monotone across every cut from 0.005 to 0.20; Spearman(log df, delta)",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 147,
+  "claim": "- **Bucket cuts.** Monotone across every cut from 0.005 to 0.20; Spearman(log df, delta)",
+  "context": "- **Thin clusters.** Cluster bootstrap, jackknife-t and an exact sign test agree;\n  PerLTQA 0/30 and LoCoMo 0/10 archives favour the code.\n- **Bucket cuts.** Monotone across every cut from 0.005 to 0.20; Spearman(log df, delta)\n  +0.147 / +0.133 / +0.280.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 152,
+  "claim": "1. **\"The projection discards rare terms\" \u2192 OVERSTATED.** Rare terms survive at 0.94\u00d7 the",
+  "context": "## Corrections to our own published claims\n\n1. **\"The projection discards rare terms\" \u2192 OVERSTATED.** Rare terms survive at 0.94\u00d7 the\n   random-projection null. The SVD does not target them; it lifts common terms above\n   chance. The limit is the dimension budget and cannot be fixed by better directions.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 158,
+  "claim": "4. **Our BM25 baseline was handicapped** by tokenizer and parameter choices; the honest",
+  "context": "3. **\"CODE wins the common band\" \u2192 degenerate.** BM25 is zero there by construction and\n   both methods fail on ~93% of those queries.\n4. **Our BM25 baseline was handicapped** by tokenizer and parameter choices; the honest\n   gap is larger, not smaller.\n5. **BM25 index memory understated** (213 MB vs ~64 MB quoted on LongMemEval).",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 160,
+  "claim": "5. **BM25 index memory understated** (213 MB vs ~64 MB quoted on LongMemEval).",
+  "context": "4. **Our BM25 baseline was handicapped** by tokenizer and parameter choices; the honest\n   gap is larger, not smaller.\n5. **BM25 index memory understated** (213 MB vs ~64 MB quoted on LongMemEval).\n6. **`ndcg3_expected` defect confirmed** (frozen MAE 0.1292; corrected 0.00099) \u2014 but the\n   MAE is a property of the synthetic generator, not of the benchmarks; on real data the",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 161,
+  "claim": "6. **`ndcg3_expected` defect confirmed** (frozen MAE 0.1292; corrected 0.00099) \u2014 but the",
+  "context": "   gap is larger, not smaller.\n5. **BM25 index memory understated** (213 MB vs ~64 MB quoted on LongMemEval).\n6. **`ndcg3_expected` defect confirmed** (frozen MAE 0.1292; corrected 0.00099) \u2014 but the\n   MAE is a property of the synthetic generator, not of the benchmarks; on real data the\n   bias is +0.88 to +1.36 nDCG points on tied arms only, and exactly zero on float arms.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 163,
+  "claim": "bias is +0.88 to +1.36 nDCG points on tied arms only, and exactly zero on float arms.",
+  "context": "6. **`ndcg3_expected` defect confirmed** (frozen MAE 0.1292; corrected 0.00099) \u2014 but the\n   MAE is a property of the synthetic generator, not of the benchmarks; on real data the\n   bias is +0.88 to +1.36 nDCG points on tied arms only, and exactly zero on float arms.\n\n## What this changes about the programme's direction",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 176,
+  "claim": "The honest question is therefore no longer \"how do we make 96 bits smarter\" but \"what is",
+  "context": "- On LoCoMo, a third of the gap is the **feature mix**, which no extra dimension fixes.\n\nThe honest question is therefore no longer \"how do we make 96 bits smarter\" but \"what is\nthe right operating point on the bits-vs-quality curve, and is 12 bytes anywhere near\nit\". That reframes the programme's premise rather than advancing it.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 195,
+  "claim": "**Coordinator-verified counterexample.** A 96-dim subspace spanned by 96 chosen",
+  "context": "The identity fixes the **mean** at k/n. It places no cap on any individual `rho_i`.\n\n**Coordinator-verified counterexample.** A 96-dim subspace spanned by 96 chosen\ncoordinate axes:\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 202,
+  "claim": "Their 50-direction version reproduces exactly: preserved 1.000, rest 0.102, mean 0.192.",
+  "context": "    sum = 96.0000 = k,  mean = 0.1920 = k/n\n\nTheir 50-direction version reproduces exactly: preserved 1.000, rest 0.102, mean 0.192.\nSome directions can be protected in full; the cost is paid by others. Whether the\n*retrieval-useful* directions can be identified from documents alone is an **open",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 211,
+  "claim": "They also note that 95,119 singleton columns are not 95,119 independent directions \u2014",
+  "context": "impossibility proof. The reviewer's formulation is the correct one.\n\nThey also note that 95,119 singleton columns are not 95,119 independent directions \u2014\nseveral unique terms in the same record can share a direction over documents. Correct;\nthe \"96 directions vs 95,119 details\" phrasing was loose.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 213,
+  "claim": "the \"96 directions vs 95,119 details\" phrasing was loose.",
+  "context": "They also note that 95,119 singleton columns are not 95,119 independent directions \u2014\nseveral unique terms in the same record can share a direction over documents. Correct;\nthe \"96 directions vs 95,119 details\" phrasing was loose.\n\n## Also retracted: \"12 bytes isn't enough, 48 bytes is\"",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 219,
+  "claim": "1. **Dimensions are not bytes.** 384 *coordinates* equal 48 bytes only if they are stored",
+  "context": "Two conflations, both real:\n\n1. **Dimensions are not bytes.** 384 *coordinates* equal 48 bytes only if they are stored\n   as 384 **sign bits** and scored as such. At float32 the same 384 coordinates are\n   1,536 B/doc \u2014 32\u00d7 more. The audit's ladder does not state which scorer produced each",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 220,
+  "claim": "as 384 **sign bits** and scored as such. At float32 the same 384 coordinates are",
+  "context": "\n1. **Dimensions are not bytes.** 384 *coordinates* equal 48 bytes only if they are stored\n   as 384 **sign bits** and scored as such. At float32 the same 384 coordinates are\n   1,536 B/doc \u2014 32\u00d7 more. The audit's ladder does not state which scorer produced each\n   row, so \"384 dims closes the gap\" cannot be rewritten as \"48 bytes closes the gap\"",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 221,
+  "claim": "1,536 B/doc \u2014 32\u00d7 more. The audit's ladder does not state which scorer produced each",
+  "context": "1. **Dimensions are not bytes.** 384 *coordinates* equal 48 bytes only if they are stored\n   as 384 **sign bits** and scored as such. At float32 the same 384 coordinates are\n   1,536 B/doc \u2014 32\u00d7 more. The audit's ladder does not state which scorer produced each\n   row, so \"384 dims closes the gap\" cannot be rewritten as \"48 bytes closes the gap\"\n   without the sign-coded arm.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 222,
+  "claim": "row, so \"384 dims closes the gap\" cannot be rewritten as \"48 bytes closes the gap\"",
+  "context": "   as 384 **sign bits** and scored as such. At float32 the same 384 coordinates are\n   1,536 B/doc \u2014 32\u00d7 more. The audit's ladder does not state which scorer produced each\n   row, so \"384 dims closes the gap\" cannot be rewritten as \"48 bytes closes the gap\"\n   without the sign-coded arm.\n2. **Scope.** The PerLTQA row is the **rare-term bucket only**, not all queries. And",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 224,
+  "claim": "2. **Scope.** The PerLTQA row is the **rare-term bucket only**, not all queries. And",
+  "context": "   row, so \"384 dims closes the gap\" cannot be rewritten as \"48 bytes closes the gap\"\n   without the sign-coded arm.\n2. **Scope.** The PerLTQA row is the **rare-term bucket only**, not all queries. And\n   +0.46 ns is a failure to detect a difference, not a demonstration of equivalence, and\n   certainly not proof that 48 B is the minimum sufficient budget.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 225,
+  "claim": "+0.46 ns is a failure to detect a difference, not a demonstration of equivalence, and",
+  "context": "   without the sign-coded arm.\n2. **Scope.** The PerLTQA row is the **rare-term bucket only**, not all queries. And\n   +0.46 ns is a failure to detect a difference, not a demonstration of equivalence, and\n   certainly not proof that 48 B is the minimum sufficient budget.\n",
+  "has_number": true,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 229,
+  "claim": "scores 45.17 against BM25's 58.70, so the deficit there cannot be attributed to the",
+  "context": "\nTheir third point stands too: on LoCoMo the **unprojected** mixed representation still\nscores 45.17 against BM25's 58.70, so the deficit there cannot be attributed to the\ndimension budget alone.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 237,
+  "claim": "What the friendly-tie number legitimately shows is **sensitivity**: on LME the gap moves",
+  "context": "an artifact. They are right that an expectation-over-ties metric is unbiased and that a\ngold-aware tie-break is an oracle control \u2014 we should not call the expectation \"wrong\".\nWhat the friendly-tie number legitimately shows is **sensitivity**: on LME the gap moves\nfrom \u22122.79 to \u22120.45 under the most favourable tie-break, i.e. the LME conclusion is not\nrobust to tie convention. That is how it will be stated. PerLTQA (\u22126.14) and LoCoMo",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 238,
+  "claim": "from \u22122.79 to \u22120.45 under the most favourable tie-break, i.e. the LME conclusion is not",
+  "context": "gold-aware tie-break is an oracle control \u2014 we should not call the expectation \"wrong\".\nWhat the friendly-tie number legitimately shows is **sensitivity**: on LME the gap moves\nfrom \u22122.79 to \u22120.45 under the most favourable tie-break, i.e. the LME conclusion is not\nrobust to tie convention. That is how it will be stated. PerLTQA (\u22126.14) and LoCoMo\n(\u221212.18) survive even the friendliest ties.",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 239,
+  "claim": "robust to tie convention. That is how it will be stated. PerLTQA (\u22126.14) and LoCoMo",
+  "context": "What the friendly-tie number legitimately shows is **sensitivity**: on LME the gap moves\nfrom \u22122.79 to \u22120.45 under the most favourable tie-break, i.e. the LME conclusion is not\nrobust to tie convention. That is how it will be stated. PerLTQA (\u22126.14) and LoCoMo\n(\u221212.18) survive even the friendliest ties.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 240,
+  "claim": "(\u221212.18) survive even the friendliest ties.",
+  "context": "from \u22122.79 to \u22120.45 under the most favourable tie-break, i.e. the LME conclusion is not\nrobust to tie convention. That is how it will be stated. PerLTQA (\u22126.14) and LoCoMo\n(\u221212.18) survive even the friendliest ties.\n\nOn memory, the scope difference is noted: our earlier ~64 MB was the BM25 statistics",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 243,
+  "claim": "JSON total, while the 213 MB figure counts full postings (int32 docid + float32 weight)",
+  "context": "\nOn memory, the scope difference is noted: our earlier ~64 MB was the BM25 statistics\nJSON total, while the 213 MB figure counts full postings (int32 docid + float32 weight)\nplus vocabulary and idf. Both should be labelled by scope rather than compared directly.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 252,
+  "claim": "k in {96, 192, 384, 768}  x  { sym (sign bits, Hamming)",
+  "context": "for, and this is preserved:\n\n    k in {96, 192, 384, 768}  x  { sym (sign bits, Hamming)\n                                   qscale (same sign bits, numeric query)\n                                   float (no quantization) }",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 257,
+  "claim": "word-only and full-Z controls and BM25 under **both** the coarse and the frozen",
+  "context": "\nwith bytes/doc charged honestly per arm (sign = k/8 B; float = 4k B), plus unprojected\nword-only and full-Z controls and BM25 under **both** the coarse and the frozen\ntokenizer. Headline decisions will be taken on **all queries**, with the rare-term band\nreported as diagnosis only.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+  "line": 258,
+  "claim": "tokenizer. Headline decisions will be taken on **all queries**, with the rare-term band",
+  "context": "with bytes/doc charged honestly per arm (sign = k/8 B; float = 4k B), plus unprojected\nword-only and full-Z controls and BM25 under **both** the coarse and the frozen\ntokenizer. Headline decisions will be taken on **all queries**, with the rare-term band\nreported as diagnosis only.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 5,
+  "claim": "Branch `findings/top10-comparison-2026-09-15`, commit of this round.",
+  "context": "# Publication verification \u2014 2026-09-16\n\nBranch `findings/top10-comparison-2026-09-15`, commit of this round.\n`main` NOT touched (last verified `59b891efda7b6c06f44da7fa0ae4fe3c13f79a2e`).\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 6,
+  "claim": "`main` NOT touched (last verified `59b891efda7b6c06f44da7fa0ae4fe3c13f79a2e`).",
+  "context": "\nBranch `findings/top10-comparison-2026-09-15`, commit of this round.\n`main` NOT touched (last verified `59b891efda7b6c06f44da7fa0ae4fe3c13f79a2e`).\n\n## Clean-clone readback",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 11,
+  "claim": "`FILE_MANIFEST.json` (sha256 of every original file, computed before publication).",
+  "context": "\nA fresh `git clone --single-branch` of the published branch was checked against\n`FILE_MANIFEST.json` (sha256 of every original file, computed before publication).\n\n    manifest entries          756",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 22,
+  "claim": "The first readback reported 684 hash mismatches. Cause: git's `autocrlf` rewrote LF to",
+  "context": "### The 684-file scare, and what it actually was\n\nThe first readback reported 684 hash mismatches. Cause: git's `autocrlf` rewrote LF to\nCRLF on checkout, so a 4011-byte file returned as 4023 bytes \u2014 12 line endings changed,\ncontent identical (`a.replace(CRLF,LF) == b.replace(CRLF,LF)` \u2192 True). Recording this",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 23,
+  "claim": "CRLF on checkout, so a 4011-byte file returned as 4023 bytes \u2014 12 line endings changed,",
+  "context": "\nThe first readback reported 684 hash mismatches. Cause: git's `autocrlf` rewrote LF to\nCRLF on checkout, so a 4011-byte file returned as 4023 bytes \u2014 12 line endings changed,\ncontent identical (`a.replace(CRLF,LF) == b.replace(CRLF,LF)` \u2192 True). Recording this\nbecause a raw \"684 BAD\" line in a log is exactly the kind of thing that later gets",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 25,
+  "claim": "because a raw \"684 BAD\" line in a log is exactly the kind of thing that later gets",
+  "context": "CRLF on checkout, so a 4011-byte file returned as 4023 bytes \u2014 12 line endings changed,\ncontent identical (`a.replace(CRLF,LF) == b.replace(CRLF,LF)` \u2192 True). Recording this\nbecause a raw \"684 BAD\" line in a log is exactly the kind of thing that later gets\nmisread as data loss.\n",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 29,
+  "claim": "so future clones are byte-exact and the manifest verifies without normalization.",
+  "context": "\nFixed permanently by `.gitattributes` (`research_top10_comparison_2026_09_16/** -text`)\nso future clones are byte-exact and the manifest verifies without normalization.\n\n### The 3 \"bad\" files",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 42,
+  "claim": "All `.pytest_cache/` and `__pycache__/*.pyc`. Correctly ignored by git; no research",
+  "context": "### The 21 \"missing\" files\n\nAll `.pytest_cache/` and `__pycache__/*.pyc`. Correctly ignored by git; no research\ncontent. They are listed in the manifest only because the manifest walks the working\ndirectory indiscriminately.",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 43,
+  "claim": "content. They are listed in the manifest only because the manifest walks the working",
+  "context": "\nAll `.pytest_cache/` and `__pycache__/*.pyc`. Correctly ignored by git; no research\ncontent. They are listed in the manifest only because the manifest walks the working\ndirectory indiscriminately.\n",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 48,
+  "claim": "- `model/` \u2014 2.4 GB of HuggingFace `pplx-embed-v1-0.6B` weights. Excluded by size.",
+  "context": "## What is NOT in this publication\n\n- `model/` \u2014 2.4 GB of HuggingFace `pplx-embed-v1-0.6B` weights. Excluded by size.\n  Recoverable exactly: `MODEL_DOWNLOAD.json` records revision\n  `2c4d510dd4a732063c31a0f70193e35067b51fd8` and the sha256 of all 14 files",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 50,
+  "claim": "`2c4d510dd4a732063c31a0f70193e35067b51fd8` and the sha256 of all 14 files",
+  "context": "- `model/` \u2014 2.4 GB of HuggingFace `pplx-embed-v1-0.6B` weights. Excluded by size.\n  Recoverable exactly: `MODEL_DOWNLOAD.json` records revision\n  `2c4d510dd4a732063c31a0f70193e35067b51fd8` and the sha256 of all 14 files\n  (`model.safetensors` = `2c8d2f64f8268ccd5383b7f9bea8e660349aa6a151bd68a5a47f4c129f2a4974`,\n  matched against the server value at download time).",
+  "has_number": false,
+  "has_strong_word": true
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 57,
+  "claim": "Published size: 45.0 MB (from 2565.8 MB on disk).",
+  "context": "  uncompressed** bytes, and the readback decompresses before hashing.\n\nPublished size: 45.0 MB (from 2565.8 MB on disk).\n\n## Scope of this verification",
+  "has_number": true,
+  "has_strong_word": false
+ },
+ {
+  "doc": "PUBLICATION_VERIFY.md",
+  "line": 61,
+  "claim": "This confirms that what is on GitHub is what was on disk. It is **not** an independent",
+  "context": "## Scope of this verification\n\nThis confirms that what is on GitHub is what was on disk. It is **not** an independent\naudit of the research claims, and it is not a certification. The numbers in REPORT.md\nwere re-derived by the coordinator from stored per-query ids; that is self-audit by a",
+  "has_number": false,
+  "has_strong_word": true
+ }
+]

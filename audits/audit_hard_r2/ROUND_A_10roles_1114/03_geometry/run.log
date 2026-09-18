@@ -1,0 +1,12 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/03_geometry (cwd default)
+muse: workspace trust: trusted source=run-flag
+Audit complete. 7 findings in [REPORT.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/03_geometry/REPORT.md), all in the assigned `03_geometry` dir.
+
+Key results:
+
+- **Sigma cannot explain sym (confirmed theorem).** Per-axis division by positive sigma preserves every code bit exactly — probed elementwise plus Hamming equality, and the sigma>0 premise verified on all 10 cached RealTalk archives (min column std 0.0451, no zero columns). No noise-story replacement offered; mechanism stays open.
+- **Five scorers are pairwise distinct under identical ties.** New fixtures with explicit witnesses: sym vs asym disagree (query magnitude invisible to sym), sym vs qscale disagree, centered vs standardized cosine flip (0.894>0.447 becomes 0.111<0.994), qscale vs asym flip. All 20/20 probe checks pass (`evidence/probe_results.json`).
+- **Label error in the standardized-float correction.** Commit `75019912`'s direction stands, but its `FLOAT96_UNCENTERED` label is wrong: `lib_b8.py:198-203` runs plain cosine on cached C, and the cache is centered (column-mean max 4.95e-16, T9). The weak reference is centered-unstandardized; the HATA_YERI report's true-uncentered values confirm the distinction. Also found two different "asym" definitions across runners (open contract gap, effect size not run).
+- **Old math/E1 scope.** D1/D3/D4 witnesses re-verified exactly in Fractions; rank_cert package stays REQUEST_CHANGES (BULGU-1 PoC read, not executed; v3 passes frozen bar per coordinator). Model-H theorems intact, all benchmark transfers failed/inconclusive, E1 V2 joint metrics never run (caches missing) — no causal mechanism licensed.
+
+Totals: `COVERAGE.csv` 30 rows (20 reviewed, 2 sampled, 2 probe-verified, 6 NOT RUN, never presented as passes); 51 items including 21 executed checks. Out of scope: all other roles' lines (01–02, 04–10), any benchmark/model/literature verification. One environment note: `compute.sh` was unusable (lock path read-only), so kilobyte-scale probes ran directly under the same env/threads; no heavy jobs were run.

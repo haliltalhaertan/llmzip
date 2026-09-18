@@ -1,0 +1,113 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/stats (cwd default)
+muse: workspace trust: trusted source=run-flag
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+# Round-2 stats audit — statistical validity
+
+Role: statistical validity. Round-1 work (numbers/integrity/claims/repro) is not repeated; already-known issues (sigma-division, rerank overgeneralization, +10.35 RealTalk-only, hardcoded paths, LoCoMo 1531-vs-1535) are not re-reported as new, but are referenced where they condition a statistical claim.
+
+## 1. VERDICT (3 lines)
+
+STOP survives this audit: correction kills every pro-code "SIG" while the anti-code gaps are an order of magnitude larger than any noise scale I can construct. But the four headline numbers (-7.80, +10, -2.27, r=-0.78) were all published without the inference that justifies them, and for two headline claims the per-question data needed to compute a valid interval was never stored. Two CRITICAL findings (both missing-CI/missing-data, neither reversing STOP).
+
+## 2. Findings summary
+
+| ID | Severity | Bottom line |
+|----|----|----|
+| S1 | CRITICAL | T1 gaps: no CI, paired data discarded |
+| S2 | CRITICAL | Ladder/sign+10: no CI, no per-query store |
+| S3 | HIGH | ITQ-worse-than-random dies under correction |
+| S4 | HIGH | LoCoMo +1.07 borderline; story problem |
+| S5 | HIGH | No held-out set; all selection on test |
+| S6 | MED | S3 verdict rests on +0.30 with no CI |
+| S7 | MED | r=-0.78 replicates but overclaimed |
+| S8 | MED | Pattern: headlines lack inference |
+| S9 | LOW | Minor reporting inconsistencies |
+
+## 3. Per-finding detail
+
+### S1 — CRITICAL — the -7.80 headline has no interval and its paired data is gone
+
+Claim audited: DECISION_TESTS.md T1 / FINAL_STATE.md fact 1 — fair BM25 65.67 vs 48B code 57.87 = -7.80pp Hit@10 (also -16.03 at 12B, +10.35 handicap, +8.22 ladder gain), RealTalk n=705. No CI or test is reported anywhere for any of these.
+
+Check: read `coordinator/decision_tests.py` t1() (lines 103-192): it builds a per-question dict (`per_q`, lines 156-173) for all 4 BM25 variants, then writes only means to `DECISION_TESTS.json` (lines 175-192) — the paired outcomes are discarded. The code side reuses `LADDER.json` aggregates. I verified programmatically that the T1 section stores zero CIs, and surveyed all 13 per-question files in the package: none contains fair-BM25 (frozen/idf-only) outcomes or k192/k384 ladder outcomes. The closest file, `coordinator/why_bm25_per_query.jsonl` (keys: qid, archive_id, band, max_idf, code_hit, bm25_hit), uses the HANDICAPPED BM25 — `why_bm25_wins.py` lines 54-55 (coarse `WORD.findall` tokenizer) and ~111-120 (k1=1.5/b=0.75). So no paired test of the headline gap can be reconstructed from stored artifacts.
+
+Result: per the task rubric (missing per-question data for a headline claim = CRITICAL), this is CRITICAL. My crude unpaired binomial check gives gap -7.80, SE 2.58, approx 95% CI [-12.86,-2.74] — direction is robust, STOP does not hinge on it — but the project's own paired archive-clustered bootstrap (used everywhere else, `decision_tests.py` lines 45-54) was never run here, and T1 also picks the max of 4 BM25 variants (`best = max(...)`, line 179) with no selection correction. Commands: `recompute_headline.py` -> `headline_recompute.json`.
+
+### S2 — CRITICAL — ladder steps and "sign adds ~10pp" have no CIs; reproducible check fails to reject
+
+Claim audited: LADDER_REALTALK.md (+5.67 k96->k192, +2.55 k192->k384, n=705) and FINAL_STATE.md fact 6 (sym 54.18 vs float 43.69 at k=384 = +10.49pp).
+
+Check: `LADDER.json` stores aggregates only (hit10/fr3/bytes/n per arm); `LADDER_CACHE.jsonl` stores per-archive aggregates only (10 archives) — no per-question ladder data exists, so no query-level paired test is reproducible. Strongest reproducible check is an archive-level paired analysis (n=10) from the cache, run in `recompute_headline.py`.
+
+Result: k192-k96 step is robust (mean +5.68, paired-t p=0.008, Wilcoxon p=0.008, 8/10 archives). The k384-k192 step is NOT (mean +2.63, paired-t p=0.235, Wilcoxon p=0.30, 6/10 archives) — "rises monotonically" overstates the second step at the only clustering level the artifacts support. Sym-minus-float at k384: mean +10.76, paired-t p=0.063, Wilcoxon p=0.13, 6/10 archives favor sym; per-archive diffs (pp): -1.18, +2.86, -1.37, -5.63, -7.14, +33.78, +35.71, +21.43, +20.63, +8.47 — the "+10pp" is a large-archive phenomenon (all four N>=1000 archives strongly positive; 4/5 small archives negative). Caveat in the other direction: n=10 archives is low power, so these non-rejections do not prove nulls — but the project reported no test at all, and chose the level (queries, n=705) that maximizes apparent precision while clustering (10 archives) is the level its own bootstrap uses everywhere else.
+
+### S3 — HIGH — "ITQ significantly worse than random" evaporates under correction
+
+Claim audited: REPORT.md line 109, "-2.27pp RealTalk" with no CI.
+
+Check: the -2.27 equals ITQ (32.77) minus the 3-seed random MEAN (35.04) — a number whose CI is quoted nowhere. The worker file `math_r1/quant/REPORT.md` lines 74-76 gives the seed-specific contrasts: -2.41 [-4.74,-0.14], -2.55 [-4.73,-0.54], -1.84 [-3.70,-0.28]. Converted (SE-from-CI, normal approx): p≈0.040/0.017/0.035. Against a 3-test Bonferroni (alpha 0.0167) at most one is borderline; against any project-level family all die (`correction_analysis.py` -> `correction_table.json`, 86 contrasts). Note the top-level -2.27 matches none of the three worker numbers (-2.41/-2.55/-1.84) — mean-vs-seed-specific mixing, unexplained.
+
+Result: what survives correction is "rotation hurts" (RAND-FULL ≈ -14pp, p≈1e-5, survives the 267-combo family) — not "ITQ hurts MORE than random". The headline's stronger half is a p≈0.02-0.04 result quoted without any CI.
+
+### S4 — HIGH — LoCoMo "+1.07 SIG" survives the T2 family but nothing wider, and has a story problem
+
+Claim audited: DECISION_TESTS.md T2 — qscale96+rerank minus BM25 alone on LoCoMo: +1.07 [+0.44,+1.72] SIG, the only C3 pass of three.
+
+Check: recomputed from the stored CSV (`.../LLMZIP_FIKIR1_2026-09-16/results/text_rerank_per_query.csv`, n=1531, 10 clusters) with the project's own paired archive-clustered bootstrap (20000 reps, seed 20260916) at 95% and at the T2-family Bonferroni level (15 contrasts: 5 reranked arms x 3 datasets; level 99.667%): `recompute_rerank.py` -> `rerank_recompute.json`. Replication exact (+1.065, CI [0.44,1.72]).
+
+Result: at the T2 family it survives (Bonferroni CI [0.13,2.05] excludes zero; approx p=0.0011 vs alpha 0.0033). At family >= ~46 contrasts it dies (p=0.0011 vs 50-family alpha 0.0010). Project-wide (267 combos, alpha 0.00019) it dies comfortably. Fragility beyond correction: 10 clusters only, effect concentrated (L08 +3.08, L05 +2.30; L01 negative); LoCoMo gold disputed (known issue, not re-reported). Gate-definition sensitivity (new): the C3 PASS depends on restricting to the qscale arm. The best LoCoMo first stage is float_raw32_bm25 +2.32 (Bonferroni-surviving at every family) and PerLTQA float_raw32_bm25 +1.13 likewise passes C3's ≥1.0-and-SIG bar — both are UNCOMPRESSED 32-dim floats, not codes. So on a literal "best code+rerank" reading the gate passes on 2/3 datasets via arms that are not codes, while the actual 12-byte code fails 2/3. The verdict authors applied (qscale-only, FAIL 2/3) is the defensible one, but the report never states that the gate outcome flips if "best" means best.
+
+### S5 — HIGH — every configuration was selected on the test data; no held-out set exists
+
+Claim audited: task D — any train/dev/test split; selection effects.
+
+Check: package-wide grep for held-out/holdout/train_test_split/KFold/StratifiedKFold/cross_val over all `*.py`: zero hits. The only "leave-one-out" in the project is a leave-one-ARCHIVE sensitivity on the same test data (REPORT.md lines 167-168, effects -8.43 to +12.76pp — which itself shows archive instability). Selection instances found: (i) T1's "strongest honest BM25" is max-of-4 variants on the test metric (`decision_tests.py` line 179), no correction; (ii) per-benchmark winner-picking presented as findings (WORD_ONLY wins PerLTQA / char channel essential on RealTalk, REPORT.md lines 176-187); (iii) the IDF_p2 rare-band contrast (+4.78, p≈0.015, dies at every corrected family) was, to the project's credit, explicitly flagged post-hoc (`rare_band_decisive.json`: "selected AFTER seeing results; exploratory subgroup test") — but it still travels in REPORT.md §3.2A as a SIG result; (iv) REFEREE.md gates were prespecified (credit: C1/C3/S3 written before T1-T3 ran), yet every method choice inside the tests (which BM25 variants, which arm is "flagship", which bands) was made with test data in view.
+
+Result: no number in the four key docs is protected by any held-out evaluation. For STOP this cuts toward leniency (overtuned codes still lose), but every positive SIG claim in §3 (SHIFT_m1, WORD_ONLY, rare-band) is an uncorrected selected contrast — the correction table (S3/S4) kills or borderlines all of them.
+
+### S6 — MED — the S3 "does not fire" call rests on asym +0.30 with no CI
+
+Claim audited: DECISION_TESTS.md T3 — asym (unstandardized) 192->384 FR@3 +0.30 on the 8-archive subset (n=2217), hence S3 "does not fire".
+
+Check: `T3_PERLTQA_KLTN.json` stores arm aggregates only; no CI for any 192->384 delta (-3.60/-5.17/+0.30). Unpaired binomial benchmark: FR@3≈0.6, n=2217 → SE(diff)≈1.5pp, so +0.30 is z≈0.2, pure noise. "Asym does not decline" is supportable; "asym RISES" is not.
+
+Result: worse, the gate as written (S3 = "still flat-or-falling on UNSTANDARDIZED arms ⇒ real capacity law") arguably FIRES on a flat asym — "flat" satisfies "flat-or-falling" literally. The reported "does not fire" needs "rises", which the data cannot resolve from flat. Does not affect STOP (C1/C3 fail regardless), but the T3 verdict line is statistically sloppy in both directions.
+
+### S7 — MED — r=-0.78 replicates exactly, but is reported without n/p/CI and over-interpreted
+
+Claim audited: REPORT.md lines 122-130 / FINAL_STATE.md fact 2 — Pearson r(archive size, damage) = -0.78; small -6.56pp / large -23.13pp; size "alone explains" the cross-benchmark gap.
+
+Check: no script in the package computes this correlation (grep for pearson/correlat over `coordinator/` and `math_r1/quant/quant_math.py`: zero hits; `digest_r1/brain/check_pools.py` lines 19-48 computes only the per-archive deltas from a SINGLE seed, RAND_20260916). Recomputed independently from `top10_comparison_r1/math_r1/quant/per_query.jsonl` (RealTalk qscale FULL vs random): r=-0.7775, two-sided p=0.0081, n=10, Fisher 95% CI [-0.945,-0.290], Spearman -0.83 (p=0.003); leave-one-out r range [-0.814,-0.760] (no single point drives it); seed-robust across all 3 random seeds (r=-0.78/-0.81/-0.77) and ITQ (r=-0.85); small/large means replicate to the decimal (-6.56/-23.13). `recompute_rotation.py` -> `rotation_recompute.json`.
+
+Result: the NUMBER is solid; the reporting and interpretation are not. Never reported: n=10, p, CI, or that it was post-hoc. The <700 vs >=1000 dichotomy is drawn across an empty region (largest "small" N=662, smallest "large" N=1044 — zero archives between). RT04 contradicts the story (rotation HELPS it: +7.04pp single-seed, +5.16 3-seed mean, on every seed). Archive N is confounded with content — the project's own `lit_r2/quant/QUANT_MAP.md` lines 42-49 admits exactly this ("n may proxy for archive content... CONJECTURE"). "Alone explains" is therefore an overclaim: unexplained-regularity status (which QUANT_MAP verdict "OPEN" grants) is right; causal "alone explains" is not.
+
+### S8 — MED — systematic pattern: headline numbers lack inference; worker files have it
+
+Inventory for task A (n | CI? | status). "Beats" claims in the four docs: FINAL_STATE facts 1-3, REPORT §§1-5, DECISION_TESTS T1-T3, LADDER ladder/shape. Full table is in `comparison_count.json`/`correction_table.json` (86 contrasts); headline rows: T1 gaps (705 | none | appr. excl. 0 but unpaired); ladder steps (705 | none | step2 ns at archive level); sign+10 (705 | none | p≈0.06-0.13 archive-level); ITQ-random (705 | none at top; worker p .017-.04); rotation r (10 | none reported; p=.008 recomputed); T2 LME/PerLTQA nets (470/8265 | yes, ns | fine); T2 LoCoMo +1.07 (1531 | yes | borderline, S4); RRF-CODE +5.67 (705 | yes [+3.23,+8.20] | survives 50-family, dies at 267); T3 deltas (2217 | none | S6); PerLTQA decline 192->384 CI [-3.87,-2.01] (quoted in LADDER_REALTALK.md line 18 from incoming QUALITY_LEVELS.csv, n≈8265 | yes | robust, but superseded by T3's retraction of its cause); band gaps §2 (341 | none | huge, direction-safe); channel ablation cells (PerLTQA 8265/30cl, RealTalk 705/10cl | yes in worker REPORTs | FR@3 cells survive to 267, Hit@10 cells mostly die at 50-267 — see correction table).
+
+Result: the project DID bootstrap discipline at worker level (20000 reps, seed pinned, cluster-aware) but dropped it exactly where it mattered most — every number in FINAL_STATE's "three facts that decided it" except the T2 nets is quoted without an interval.
+
+### S9 — LOW — minor reporting inconsistencies (flagged, not charged)
+
+(i) REPORT §4 quotes "RRF-BM25 = +3.12 SIG" with no CI in text; the CI exists in `ideas_r1/firststage/RESULTS.json` contrasts ([+1.23,+4.92], SIG) — text-only omission. That JSON's own note warns "only 10 clusters → wide CIs, exploratory only". The triad is arithmetically exact (5.67 = 3.12 + 2.55) with BM25-CODE itself ns ([-1.17,+6.69]) — consistent, but shows how wide 10-cluster CIs are. (ii) Band definitions shift silently: REPORT §2 rare band n=341 (341/705) vs §3.2A rare n=412 — different stratifications (different tokenization/IDF rule), never flagged; cross-section band comparisons are apples-to-oranges. (iii) RRF fusion uses the handicapped coarse BM25 (k1=1.5/b=0.75, `firststage.py` arms; pool BM25 Hit@10 54.18-level), so the +3.12 flatters RRF vs the fair baseline. (iv) LME T2 used 470 clusters for 470 queries (pure query bootstrap, no clustering) while LoCoMo used 10 — the "archive-clustered" label means very different effective-n per dataset; LoCoMo CIs rest on ~10 independent units and PerLTQA's on 30.
+
+## 4. What I could NOT check and why
+
+- Query-level paired tests for T1/ladder/sign claims: impossible — the per-question files were never stored (S1/S2). Would need a rerun of `decision_tests.py::t1` and `ladder.py` with per-query persistence (read-only rule forbids generating into source trees; rerunning was out of scope).
+- LoCoMo gold dispute (1531 vs 1535, 156 unapplied corrections): taken as given; I used the stored CSV's n=1531. A ±4-query change cannot move +1.07 materially, but the 156 unapplied corrections could — that needs the audit source, not statistics.
+- LME channel ablation (322/470 archives at publication): incomplete input, excluded from verdicts here.
+- PerLTQA repr subset (`repr_results.json`: n=2967 of 8265, "is_subset"): the IDF/SHIFT PerLTQA contrasts rest on a subset; I used stored CIs as given and did not re-derive subset membership.
+- No internet: literature-novelty aspects of F2 (QUANT_MAP "OPEN") not checked; irrelevant to the numbers.
+- Sampling statement: I checked exhaustively the four key docs' headline comparisons and all 86 stored contrasts with CIs; I did NOT re-derive every one of the 267 ledger combos or re-run any bootstrap other than T2-LoCoMo and the closed-form recomputations above. Correction p-values are normal approximations from CI widths (conservative where pairing was ignored).
+
+## 5. Reproduction bundle (all inside the allowed write dir)
+
+- `recompute_rotation.py` -> `rotation_recompute.json` (task E)
+- `recompute_headline.py` -> `headline_recompute.json` (task C)
+- `recompute_rerank.py` -> `rerank_recompute.json` (task B/C prime target)
+- `count_comparisons.py` -> `comparison_count.json` (task B inventory)
+- `correction_analysis.py` -> `correction_table.json` (86 contrasts x 3 families)
+- This report: `STATS_AUDIT.md`
+- Key counts: ledger 817 rows; 267 distinct benchmark-x-arm combos; 753 with metrics; 13 per-question files; 14 SIG mentions in the four key docs; Bonferroni alphas: 0.0033 (15) / 0.0010 (50) / 0.00019 (267).
+- Read-only rule respected: no writes outside `/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/stats` (plus /tmp scratch for one throwaway check); all source reads only.

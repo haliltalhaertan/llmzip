@@ -1,0 +1,57 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r3/digest_brain (cwd default)
+muse: workspace trust: trusted source=run-flag
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+
+# DIGEST-BRAIN AUDIT (round 3, dark-corner role)
+
+Read-only audit. Nothing outside `audit_hard_r3/digest_brain/` was written. All probes used `python3` + numpy only, each bounded to minutes. Sampled or partial checks are labelled as such; everything else is a full re-derivation.
+
+## 1. VERDICT
+
+No published number or conclusion is wrong: every brain claim I re-ran reproduces exactly, every incoming_20260916b number that entered the decision brief re-aggregates exactly from raw shards, and the STOP verdict survives (the fair-BM25 correction only strengthens it). Two MED qualifications (stale coarse baseline in CRITIQUE sec 1a; overstated RT04 "falsification", z=1.30 ns) and three LOW label/cohort hazards follow. The brief's premise that NEW_VS_KNOWN.md is missing is false: the file exists and was read.
+
+## 2. FINDINGS
+
+| ID | Sev | Check | Result |
+|----|-----|-------|--------|
+| F1 | LOW | PerLTQA 30 vs 31 arch caches | Both scripts faithful, 0.3% diff, no number wrong |
+| F2 | LOW | Banding 341 vs 412 rare | Disclosed both rules, join hazard only |
+| F3 | MED | Brain uses coarse BM25 54.18 | Stale, verdict survives stronger |
+| F4 | LOW | Tie convention 46.68 vs 46.52 | Internally consistent |
+| F5 | MED | RT04 +7.04 "falsifies" | z=1.30 ns, rhetoric overstates |
+| F6 | LOW | NEW_VS_KNOWN.md missing? | Exists, recheck still true |
+| F7 | OK | incoming_20260916b verified? | Yes, re-aggregated exact |
+| F8 | OK | Contradictions with STOP? | None found |
+
+## 3. PER-FINDING DETAIL
+
+### A. Brain scripts — all numeric claims reproduce exactly
+
+Sources (read-only): `top10_comparison_r1/digest_r1/brain/check_{pools,bothmiss,decisive,corpora}.py` and `.json`; inputs `math_r1/{repr,quant}/per_query.jsonl`, `ideas_r1/firststage/per_query.jsonl`, `coordinator/cost_audit.json`, `data/RT*.json`, `bench3/runs/b3a_realtalk/rt_repr/RT*.pkl`, `bench3/runs/b3b_perltqa/cache_*`. My probes are in `/tmp/probe_*.py` (scratch); I never executed the brain scripts in place because they write their `.json` into the read-only tree.
+
+- Rotation per archive (qscale FULL vs RAND_20260916): all 10 rows reproduce to 2 decimals incl. RT04 +7.04 (n=71), small-arch mean −6.56, large-arch mean −23.13.
+- Oracle sym|qscale RealTalk FULL: n=705, sym 46.52, qscale 49.65, oracle 53.48, both-miss 328. check_bothmiss.json (705/328/46.52, bands 133/153/412/7, reachability in-100 158 / outside 170 / 0.518) cross-consistent with the oracle count.
+- CODE pool decomposition: 350/183/172/75.6. Bytes: 8944 docs, code 115008 B, compact index 670511 B, 75.0/186.6 B/doc, ratio 5.83. All match.
+- LOO on IDF_p2 rare-band FR@3: n_rare=412, mean +4.78, all 10 kept-diff rows reproduce (RT08 −8.43 confirmed).
+- Float-dot settler: RT01 spot re-score 51.76 vs stored 51.76 (PARTIAL; full 705-query 42.70 accepted on method-read + sample).
+- Corpora: RealTalk 8944/705/per-archive exact; RT05 vocab 2630/df1 1198 exact. PerLTQA text: 31 arch/12323 docs exactly as §C reports.
+
+### F1 (LOW): two PerLTQA snapshots blended in one argument
+
+check_corpora.py reads `cache_arch_eval.pkl` (30 archives, 12288 docs); check_decisive §C reads `cache_items.json` (31 archives, 12323 docs). CRITIQUE sec 1b takes sizes from the first and text stats from the second without noting the different cohorts (delta 1 archive / 35 docs / 0.3%). Both scripts are faithful to their inputs; FINDINGS_DIGEST's "30/12288" matches the eval cache. No published number wrong; state the two-cache fact when combining the stat blocks.
+
+### F2 (LOW): two banding rules (rare 341 vs 412)
+
+Brain rule gives 7/133/153/412; the digest stratification table gives 24/224/116/341. The digest discloses both rules and the defended claim (rare n=412, +4.78) uses the brain's rule — self-consistent. Hazard only: never join brain's both-miss-by-band with the digest's CODE-vs-BM25-by-band row-for-row.
+
+### F3 (MED): CRITIQUE sec 1a grades against coarse BM25
+
+"Float loses by 5.67pp" uses frozen coarse BM25 54.18; the decision round set fair BM25 at 61.70 (+6.38, brief §C). Under the fair baseline the deficit roughly doubles. Verdict survives a fortiori — but "5.67pp" is stale and must not be quoted against the fair baseline.
+
+### F4 (LOW): tie conventions (46.68 vs 46.52)
+
+Brain's compare block uses expected-tie 46.68 (HATA convention); frozen deterministic is 46.5248 (LADDER.json). Brain's oracle arithmetic closes internally. Never difference the two conventions; already-listed known issue class.
+
+### F5 (MED): RT04 +7.04 does not carry CRITIQUE's "falsifies" weight
+
+Paired query-level SE on RT04 (n=71) is 5.43pp → z=1.30, ns (RT01 −4.71 likewise noise). The group contrast survives clustering: small-arch mean −6.56 (SE ~3.8, n=5 archives

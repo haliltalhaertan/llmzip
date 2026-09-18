@@ -1,0 +1,3 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r3/leak_lme_locomo (cwd default)
+muse: workspace trust: trusted source=run-flag
+agent loop failed: model failed: API error 429 [request_id=6044973f-61d9-4dc1-a4ce-2b985916dd68]: Subscription quota exhausted. Your usage window resets at 2026-09-17T18:02:58Z. (rate_limit_error)

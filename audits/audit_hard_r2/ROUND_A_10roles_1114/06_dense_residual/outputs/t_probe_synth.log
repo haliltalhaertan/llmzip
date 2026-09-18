@@ -1,0 +1,29 @@
+T1 SIGN96 bits=96 min_bytes=12
+T1 R4 bits=100 min_bytes=13
+T1 R8 bits=104 min_bytes=13
+T1 R16 bits=112 min_bytes=14
+T1 residual8_pilot[96+8] bits=104 min_bytes=13
+T1 B8[88+8] bits=96 min_bytes=12
+T1 SIGN88 bits=88 min_bytes=11
+T1b residual8 pack roundtrip OK shape=(5, 13) bytes_per_doc=13 shared_axes=8B+thr64B=72B content
+T1c B8 pack OK shape=(5, 12) bytes_per_doc=12 shared=80B/archive (drop8+sel8+thr64)
+T2 MAG8 tie-only non-inversion OK on 6-doc synthetic (strict H order preserved)
+T2b SIGN_ONLY8 non-inversion OK
+T3 mag8_scores params=(packed, encoded_query, axis_map) (packed+encoded_query+axis_map; NO doc floats; query enters only via 8-axis quantized s8/m01 + packed signs)
+T3 asym_sign96_scores uses FULL float q: def asym_sign96_scores(C, q):
+    """A1: cosine(float q, pm1 doc signs), norm from code (=sqrt(96))."""
+    P = np.where
+T3 b8_scores uses FULL float q: def b8_scores(packed, st, q):
+    """A2: cosine(float q, decoded B8 reconstruction). Packed-only + state."""
+    return 
+T3 fixture asym float-q scores=[-0.2722, 0.2722] vs quantized-q scores=[0.3333, -0.3333] (differ => consumes float query precision)
+T3 sym Hamming=[1, 2] (code-only both sides)
+T5 residual8 select_axes source: def select_axes(C):
+    """Document-only variance axis selection (no query/gold input)."""
+    C = np.asarray(C, dtype=np.float64)
+    return np.lexsort((np.arange(C.shape[1]),
+                       
+T5 select_axes(C) only: doc-only fit confirmed by signature; thresholds median(abs(C)) doc-fitted, query never fit (encode_query takes stored thr)
+T5b B8 fit_archive(C) only: doc-only confirmed
+T6 96/768=0.1250 12/96=0.1250 isotropic null ~12.5% matches report 12.49-12.51% (k/n scaling)
+T6 loglog p=1.4590 (convention p=-slope, no division)

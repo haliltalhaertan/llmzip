@@ -1,0 +1,2095 @@
+[
+ {
+  "shared_term": "BM25",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 23,
+   "text": "BM25 (plain lexical, no learning) **54.18** inverted index"
+  },
+  "same_quantity": 0.38,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.66,
+  "severity": 2.22,
+  "severity_conf": 0.49,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.64,
+  "usage_in": 925,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "BM25",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 29,
+   "text": "Quantization costs only **1.83 pp** (48.51 \u2192 46.68). But BM25 beats the *uncompressed*"
+  },
+  "same_quantity": 0.28,
+  "numerically_incompatible": 0.22,
+  "reader_would_confuse": 0.68,
+  "severity": 2.45,
+  "severity_conf": 0.45,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.54,
+  "usage_in": 944,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "BM25",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 210,
+   "text": "RealTalk pool quality at 100 candidates: CODE 75.60 | BM25 78.16 | **RRF(k=60) 81.28**."
+  },
+  "same_quantity": 0.25,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.64,
+  "severity": 2.21,
+  "severity_conf": 0.53,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.56,
+  "usage_in": 953,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "BM25",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 211,
+   "text": "RRF \u2212 CODE = +5.67 pp, CI [+3.23, +8.20] SIG. RRF \u2212 BM25 = +3.12 SIG."
+  },
+  "same_quantity": 0.29,
+  "numerically_incompatible": 0.25,
+  "reader_would_confuse": 0.7,
+  "severity": 2.44,
+  "severity_conf": 0.44,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.62,
+  "usage_in": 948,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "BM25",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 213,
+   "text": "Complementarity is real: at 100 candidates CODE alone finds 49 queries BM25 misses;"
+  },
+  "same_quantity": 0.24,
+  "numerically_incompatible": 0.14,
+  "reader_would_confuse": 0.62,
+  "severity": 2.15,
+  "severity_conf": 0.53,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.43,
+  "usage_in": 932,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "BM25",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 216,
+   "text": "**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index"
+  },
+  "same_quantity": 0.19,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.63,
+  "severity": 2.16,
+  "severity_conf": 0.53,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.46,
+  "usage_in": 942,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "FR@3",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 167,
+   "text": "hurts** PerLTQA: FR@3 \u22121.76, CI [\u22122.78, \u22120.74]; IDF_p1 \u22121.17 SIG. (iii) Leave-one-archive-out"
+  },
+  "same_quantity": 0.32,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.56,
+  "severity": 1.91,
+  "severity_conf": 0.42,
+  "issue_kind": "consistent",
+  "kind_conf": 0.62,
+  "usage_in": 957,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "FR@3",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 172,
+   "text": "SHIFT_m1 Hit@10 \u22120.28 ns, and sym FR@3 **\u22121.06 SIG (harmful)**. Opposite signs again."
+  },
+  "same_quantity": 0.35,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.49,
+  "severity": 1.89,
+  "severity_conf": 0.4,
+  "issue_kind": "consistent",
+  "kind_conf": 0.68,
+  "usage_in": 943,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "FR@3",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 179,
+   "text": "NO_LSA 52.06 (+2.41 ns) 79.53 (FR@3 \u22121.23 **SIG harmful**)"
+  },
+  "same_quantity": 0.37,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.49,
+  "severity": 2.09,
+  "severity_conf": 0.46,
+  "issue_kind": "consistent",
+  "kind_conf": 0.51,
+  "usage_in": 942,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "FR@3",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 181,
+   "text": "WORD_ONLY 46.24 (\u22123.40 **SIG harmful**) **81.37 (+1.37 SIG, FR@3 +2.09 SIG)**"
+  },
+  "same_quantity": 0.38,
+  "numerically_incompatible": 0.2,
+  "reader_would_confuse": 0.53,
+  "severity": 2.12,
+  "severity_conf": 0.45,
+  "issue_kind": "consistent",
+  "kind_conf": 0.4,
+  "usage_in": 948,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "FR@3",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 225,
+   "text": "Oracle reranker over the pool we already retrieve (FR@3): PerLTQA 53.24 \u2192 76.52 @100"
+  },
+  "same_quantity": 0.3,
+  "numerically_incompatible": 0.14,
+  "reader_would_confuse": 0.53,
+  "severity": 1.9,
+  "severity_conf": 0.38,
+  "issue_kind": "consistent",
+  "kind_conf": 0.59,
+  "usage_in": 942,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "FR@3",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 245,
+   "text": "text-rerank experiment whose anchors match ours to 0.0000 (qscale FR@3: LME 54.27,"
+  },
+  "same_quantity": 0.33,
+  "numerically_incompatible": 0.15,
+  "reader_would_confuse": 0.53,
+  "severity": 2.06,
+  "severity_conf": 0.54,
+  "issue_kind": "consistent",
+  "kind_conf": 0.34,
+  "usage_in": 941,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "fair",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 6,
+   "text": "- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks"
+  },
+  "same_quantity": 0.56,
+  "numerically_incompatible": 0.22,
+  "reader_would_confuse": 0.76,
+  "severity": 2.3,
+  "severity_conf": 0.53,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.45,
+  "usage_in": 949,
+  "usage_out": 138,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "fair",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 102,
+   "text": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |"
+  },
+  "same_quantity": 0.62,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.75,
+  "severity": 2.02,
+  "severity_conf": 0.63,
+  "issue_kind": "consistent",
+  "kind_conf": 0.53,
+  "usage_in": 950,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "fair",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 61,
+   "text": "fairly-tokenized BM25 by \u22123.83 pp**. Quoting the coarse baseline flatters us."
+  },
+  "same_quantity": 0.23,
+  "numerically_incompatible": 0.25,
+  "reader_would_confuse": 0.7,
+  "severity": 2.6,
+  "severity_conf": 0.6,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.8,
+  "usage_in": 937,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "fair",
+  "A": {
+   "doc": "DECISION_TESTS.md",
+   "line": 6,
+   "text": "- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 61,
+   "text": "fairly-tokenized BM25 by \u22123.83 pp**. Quoting the coarse baseline flatters us."
+  },
+  "same_quantity": 0.24,
+  "numerically_incompatible": 0.23,
+  "reader_would_confuse": 0.69,
+  "severity": 2.64,
+  "severity_conf": 0.64,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.84,
+  "usage_in": 934,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "fair",
+  "A": {
+   "doc": "DECISION_TESTS.md",
+   "line": 102,
+   "text": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 61,
+   "text": "fairly-tokenized BM25 by \u22123.83 pp**. Quoting the coarse baseline flatters us."
+  },
+  "same_quantity": 0.32,
+  "numerically_incompatible": 0.28,
+  "reader_would_confuse": 0.7,
+  "severity": 2.5,
+  "severity_conf": 0.5,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.73,
+  "usage_in": 935,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "fair",
+  "A": {
+   "doc": "DECISION_TESTS.md",
+   "line": 6,
+   "text": "- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 102,
+   "text": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |"
+  },
+  "same_quantity": 0.49,
+  "numerically_incompatible": 0.52,
+  "reader_would_confuse": 0.74,
+  "severity": 2.33,
+  "severity_conf": 0.48,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.45,
+  "usage_in": 947,
+  "usage_out": 138,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "48 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 6,
+   "text": "- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks"
+  },
+  "same_quantity": 0.56,
+  "numerically_incompatible": 0.29,
+  "reader_would_confuse": 0.7,
+  "severity": 2.13,
+  "severity_conf": 0.35,
+  "issue_kind": "consistent",
+  "kind_conf": 0.38,
+  "usage_in": 951,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "48 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 35,
+   "text": "12\u219248 byte ladder gain (+8.22 pp). Every historical \"we beat BM25\" line in this programme"
+  },
+  "same_quantity": 0.44,
+  "numerically_incompatible": 0.3,
+  "reader_would_confuse": 0.72,
+  "severity": 2.71,
+  "severity_conf": 0.71,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.45,
+  "usage_in": 939,
+  "usage_out": 138,
+  "verdict": "C3_NEEDS_QUALIFIER"
+ },
+ {
+  "shared_term": "48 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 102,
+   "text": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |"
+  },
+  "same_quantity": 0.63,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.7,
+  "severity": 1.8,
+  "severity_conf": 0.37,
+  "issue_kind": "consistent",
+  "kind_conf": 0.8,
+  "usage_in": 952,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "48 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 41,
+   "text": "charging the full 48 bytes, covering 2,217 queries = 26.8% of PerLTQA)."
+  },
+  "same_quantity": 0.4,
+  "numerically_incompatible": 0.15,
+  "reader_would_confuse": 0.67,
+  "severity": 1.9,
+  "severity_conf": 0.37,
+  "issue_kind": "consistent",
+  "kind_conf": 0.34,
+  "usage_in": 939,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "48 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 60,
+   "text": "LoCoMo. At 48 B our code beats the coarse-tokenizer BM25 by +2.55 pp but **loses to the"
+  },
+  "same_quantity": 0.38,
+  "numerically_incompatible": 0.25,
+  "reader_would_confuse": 0.71,
+  "severity": 2.29,
+  "severity_conf": 0.48,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.53,
+  "usage_in": 944,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "48 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+   "line": 219,
+   "text": "1. **Dimensions are not bytes.** 384 *coordinates* equal 48 bytes only if they are stored"
+  },
+  "same_quantity": 0.31,
+  "numerically_incompatible": 0.21,
+  "reader_would_confuse": 0.64,
+  "severity": 2.43,
+  "severity_conf": 0.43,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.49,
+  "usage_in": 940,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "C1",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 6,
+   "text": "- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks"
+  },
+  "same_quantity": 0.65,
+  "numerically_incompatible": 0.26,
+  "reader_would_confuse": 0.71,
+  "severity": 2.0,
+  "severity_conf": 0.53,
+  "issue_kind": "consistent",
+  "kind_conf": 0.39,
+  "usage_in": 950,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "C1",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 102,
+   "text": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |"
+  },
+  "same_quantity": 0.65,
+  "numerically_incompatible": 0.16,
+  "reader_would_confuse": 0.7,
+  "severity": 1.84,
+  "severity_conf": 0.43,
+  "issue_kind": "consistent",
+  "kind_conf": 0.65,
+  "usage_in": 951,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "C1",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 17,
+   "text": "| C1 \u2014 some arm \u226448 B beats a fairly built BM25 by \u22652 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |"
+  },
+  "B": {
+   "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+   "line": 118,
+   "text": "Ties are worth 1.69\u20132.34 pp. C1 survives comfortably on PerLTQA and LoCoMo. **On"
+  },
+  "same_quantity": 0.29,
+  "numerically_incompatible": 0.49,
+  "reader_would_confuse": 0.78,
+  "severity": 2.77,
+  "severity_conf": 0.77,
+  "issue_kind": "direct_conflict",
+  "kind_conf": 0.49,
+  "usage_in": 944,
+  "usage_out": 137,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "C1",
+  "A": {
+   "doc": "DECISION_TESTS.md",
+   "line": 6,
+   "text": "- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks"
+  },
+  "B": {
+   "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+   "line": 118,
+   "text": "Ties are worth 1.69\u20132.34 pp. C1 survives comfortably on PerLTQA and LoCoMo. **On"
+  },
+  "same_quantity": 0.4,
+  "numerically_incompatible": 0.19,
+  "reader_would_confuse": 0.73,
+  "severity": 2.47,
+  "severity_conf": 0.47,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.62,
+  "usage_in": 941,
+  "usage_out": 138,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "C1",
+  "A": {
+   "doc": "DECISION_TESTS.md",
+   "line": 102,
+   "text": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |"
+  },
+  "B": {
+   "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+   "line": 118,
+   "text": "Ties are worth 1.69\u20132.34 pp. C1 survives comfortably on PerLTQA and LoCoMo. **On"
+  },
+  "same_quantity": 0.54,
+  "numerically_incompatible": 0.25,
+  "reader_would_confuse": 0.73,
+  "severity": 2.39,
+  "severity_conf": 0.39,
+  "issue_kind": "direct_conflict",
+  "kind_conf": 0.18,
+  "usage_in": 942,
+  "usage_out": 137,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "C1",
+  "A": {
+   "doc": "DECISION_TESTS.md",
+   "line": 6,
+   "text": "- **C1** some arm \u226448 B beats a *fairly built* BM25 by \u2265 +2.0 pp FR@3, CI excluding 0, on both benchmarks"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 102,
+   "text": "| C1 (beat fair BM25 by \u22652 pp, both benchmarks) | **FAIL** \u2014 behind by 7.80 pp at 48 B on RealTalk |"
+  },
+  "same_quantity": 0.72,
+  "numerically_incompatible": 0.58,
+  "reader_would_confuse": 0.71,
+  "severity": 1.91,
+  "severity_conf": 0.0,
+  "issue_kind": "direct_conflict",
+  "kind_conf": 0.41,
+  "usage_in": 948,
+  "usage_out": 137,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "Hit@10",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 162,
+   "text": "second tokenization rule (n=408: +4.83, CI [+0.70, +8.50]). In-band Hit@10 is +0.49 ns \u2014"
+  },
+  "same_quantity": 0.25,
+  "numerically_incompatible": 0.14,
+  "reader_would_confuse": 0.43,
+  "severity": 1.81,
+  "severity_conf": 0.43,
+  "issue_kind": "consistent",
+  "kind_conf": 0.49,
+  "usage_in": 936,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "Hit@10",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 171,
+   "text": "PerLTQA SHIFT_m1 Hit@10 **+1.58, CI [+0.69, +2.47] SIG** (sym +1.35 SIG). RealTalk"
+  },
+  "same_quantity": 0.19,
+  "numerically_incompatible": 0.11,
+  "reader_would_confuse": 0.37,
+  "severity": 1.53,
+  "severity_conf": 0.11,
+  "issue_kind": "consistent",
+  "kind_conf": 0.6,
+  "usage_in": 934,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "Hit@10",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 172,
+   "text": "SHIFT_m1 Hit@10 \u22120.28 ns, and sym FR@3 **\u22121.06 SIG (harmful)**. Opposite signs again."
+  },
+  "same_quantity": 0.3,
+  "numerically_incompatible": 0.11,
+  "reader_would_confuse": 0.35,
+  "severity": 1.43,
+  "severity_conf": 0.09,
+  "issue_kind": "consistent",
+  "kind_conf": 0.42,
+  "usage_in": 926,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "Hit@10",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 6,
+   "text": "858,624**. Anchors exact: k96 qscale Hit@10 49.6454 (frozen 49.6454, dev \u22120.0000);"
+  },
+  "same_quantity": 0.22,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.45,
+  "severity": 1.71,
+  "severity_conf": 0.15,
+  "issue_kind": "consistent",
+  "kind_conf": 0.53,
+  "usage_in": 945,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "Hit@10",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 59,
+   "text": "Hit@10 on RealTalk (55.32 \u2192 61.70), against the ~3 pp the audit measured on PerLTQA and"
+  },
+  "same_quantity": 0.36,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.49,
+  "severity": 1.82,
+  "severity_conf": 0.22,
+  "issue_kind": "consistent",
+  "kind_conf": 0.56,
+  "usage_in": 929,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "Hit@10",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 162,
+   "text": "second tokenization rule (n=408: +4.83, CI [+0.70, +8.50]). In-band Hit@10 is +0.49 ns \u2014"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 6,
+   "text": "858,624**. Anchors exact: k96 qscale Hit@10 49.6454 (frozen 49.6454, dev \u22120.0000);"
+  },
+  "same_quantity": 0.22,
+  "numerically_incompatible": 0.12,
+  "reader_would_confuse": 0.4,
+  "severity": 1.48,
+  "severity_conf": 0.23,
+  "issue_kind": "consistent",
+  "kind_conf": 0.5,
+  "usage_in": 962,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "honest",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 216,
+   "text": "**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index"
+  },
+  "same_quantity": 0.15,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.44,
+  "severity": 1.99,
+  "severity_conf": 0.43,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.44,
+  "usage_in": 923,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "honest",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 219,
+   "text": "pickle artifact, the honest ratio is **5.83\u00d7**. Index + raw text: 1,669,165 B."
+  },
+  "same_quantity": 0.08,
+  "numerically_incompatible": 0.12,
+  "reader_would_confuse": 0.4,
+  "severity": 2.15,
+  "severity_conf": 0.41,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.5,
+  "usage_in": 920,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "honest",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 302,
+   "text": "3. An **honest cost methodology**: varint vs pickle, auxiliary state charged at 76\u2013112\u00d7,"
+  },
+  "same_quantity": 0.07,
+  "numerically_incompatible": 0.09,
+  "reader_would_confuse": 0.25,
+  "severity": 1.53,
+  "severity_conf": 0.17,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.33,
+  "usage_in": 916,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "honest",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 26,
+   "text": "Against the strongest honest BM25 (65.67):"
+  },
+  "same_quantity": 0.8,
+  "numerically_incompatible": 0.07,
+  "reader_would_confuse": 0.72,
+  "severity": 1.61,
+  "severity_conf": 0.38,
+  "issue_kind": "consistent",
+  "kind_conf": 0.64,
+  "usage_in": 906,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "honest",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 24,
+   "text": "The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 116,
+   "text": "3. **The honest BM25 is 65.67, not 55.32.** Every comparison table in this programme's history"
+  },
+  "same_quantity": 0.76,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.71,
+  "severity": 2.06,
+  "severity_conf": 0.4,
+  "issue_kind": "consistent",
+  "kind_conf": 0.44,
+  "usage_in": 926,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "honest",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 216,
+   "text": "**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 26,
+   "text": "Against the strongest honest BM25 (65.67):"
+  },
+  "same_quantity": 0.14,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.46,
+  "severity": 2.11,
+  "severity_conf": 0.51,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.63,
+  "usage_in": 912,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "ladder",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 35,
+   "text": "12\u219248 byte ladder gain (+8.22 pp). Every historical \"we beat BM25\" line in this programme"
+  },
+  "same_quantity": 0.83,
+  "numerically_incompatible": 0.1,
+  "reader_would_confuse": 0.69,
+  "severity": 1.27,
+  "severity_conf": 0.0,
+  "issue_kind": "consistent",
+  "kind_conf": 0.89,
+  "usage_in": 928,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "ladder",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 40,
+   "text": "are constant-filled (the ladder audit records effective ranks of 293\u2013381 while still"
+  },
+  "same_quantity": 0.31,
+  "numerically_incompatible": 0.14,
+  "reader_would_confuse": 0.55,
+  "severity": 1.89,
+  "severity_conf": 0.48,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.47,
+  "usage_in": 921,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "ladder",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 47,
+   "text": "RealTalk archives hold 410\u20131548 documents, so k < n holds at every rung \u2014 and the ladder"
+  },
+  "same_quantity": 0.23,
+  "numerically_incompatible": 0.12,
+  "reader_would_confuse": 0.51,
+  "severity": 1.48,
+  "severity_conf": 0.28,
+  "issue_kind": "consistent",
+  "kind_conf": 0.38,
+  "usage_in": 928,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "ladder",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 48,
+   "text": "rises. LoCoMo archives are large too, and its ladder also rises (35.11 \u2192 41.21 \u2192 44.15)."
+  },
+  "same_quantity": 0.21,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.54,
+  "severity": 1.67,
+  "severity_conf": 0.45,
+  "issue_kind": "consistent",
+  "kind_conf": 0.63,
+  "usage_in": 937,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "ladder",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+   "line": 221,
+   "text": "1,536 B/doc \u2014 32\u00d7 more. The audit's ladder does not state which scorer produced each"
+  },
+  "same_quantity": 0.23,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.59,
+  "severity": 2.36,
+  "severity_conf": 0.55,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.72,
+  "usage_in": 928,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "ladder",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 93,
+   "text": "differed; RealTalk ladder 0 of 858,624; T3 0 of 276,480."
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 35,
+   "text": "12\u219248 byte ladder gain (+8.22 pp). Every historical \"we beat BM25\" line in this programme"
+  },
+  "same_quantity": 0.26,
+  "numerically_incompatible": 0.19,
+  "reader_would_confuse": 0.61,
+  "severity": 2.18,
+  "severity_conf": 0.52,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.3,
+  "usage_in": 925,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "byte",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "same_quantity": 0.44,
+  "numerically_incompatible": 0.14,
+  "reader_would_confuse": 0.52,
+  "severity": 1.29,
+  "severity_conf": 0.06,
+  "issue_kind": "consistent",
+  "kind_conf": 0.71,
+  "usage_in": 916,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "byte",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 30,
+   "text": "representation by **5.67 pp**. So the bottleneck was never the 12-byte budget: it is the"
+  },
+  "same_quantity": 0.42,
+  "numerically_incompatible": 0.21,
+  "reader_would_confuse": 0.56,
+  "severity": 2.03,
+  "severity_conf": 0.4,
+  "issue_kind": "consistent",
+  "kind_conf": 0.46,
+  "usage_in": 921,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "byte",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 35,
+   "text": "12\u219248 byte ladder gain (+8.22 pp). Every historical \"we beat BM25\" line in this programme"
+  },
+  "same_quantity": 0.79,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.67,
+  "severity": 1.47,
+  "severity_conf": 0.03,
+  "issue_kind": "consistent",
+  "kind_conf": 0.82,
+  "usage_in": 927,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "byte",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 41,
+   "text": "charging the full 48 bytes, covering 2,217 queries = 26.8% of PerLTQA)."
+  },
+  "same_quantity": 0.37,
+  "numerically_incompatible": 0.12,
+  "reader_would_confuse": 0.54,
+  "severity": 1.32,
+  "severity_conf": 0.0,
+  "issue_kind": "consistent",
+  "kind_conf": 0.64,
+  "usage_in": 927,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "byte",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+   "line": 219,
+   "text": "1. **Dimensions are not bytes.** 384 *coordinates* equal 48 bytes only if they are stored"
+  },
+  "same_quantity": 0.36,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.53,
+  "severity": 2.15,
+  "severity_conf": 0.44,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.29,
+  "usage_in": 928,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "byte",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 26,
+   "text": "than the whole 12\u219248 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the"
+  },
+  "B": {
+   "doc": "EXTERNAL_AUDIT3_RESPONSE.md",
+   "line": 222,
+   "text": "row, so \"384 dims closes the gap\" cannot be rewritten as \"48 bytes closes the gap\""
+  },
+  "same_quantity": 0.59,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.59,
+  "severity": 2.01,
+  "severity_conf": 0.01,
+  "issue_kind": "consistent",
+  "kind_conf": 0.33,
+  "usage_in": 926,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "float",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 30,
+   "text": "on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 25,
+   "text": "float_std (96 dims, **uncompressed**) 48.51 384 B/doc"
+  },
+  "same_quantity": 0.09,
+  "numerically_incompatible": 0.12,
+  "reader_would_confuse": 0.39,
+  "severity": 1.67,
+  "severity_conf": 0.31,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.36,
+  "usage_in": 912,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "float",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 30,
+   "text": "on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 136,
+   "text": "**Cost.** The rotation matrix R is 96\u00d796 floats per archive: **3.43\u00d7** (RealTalk) and"
+  },
+  "same_quantity": 0.07,
+  "numerically_incompatible": 0.09,
+  "reader_would_confuse": 0.23,
+  "severity": 1.11,
+  "severity_conf": 0.33,
+  "issue_kind": "unrelated",
+  "kind_conf": 0.38,
+  "usage_in": 921,
+  "usage_out": 137,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "float",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 30,
+   "text": "on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 62,
+   "text": "**float_raw32** **44.16** **57.76** \u2190 worst before, second-best after"
+  },
+  "same_quantity": 0.51,
+  "numerically_incompatible": 0.19,
+  "reader_would_confuse": 0.66,
+  "severity": 1.74,
+  "severity_conf": 0.18,
+  "issue_kind": "consistent",
+  "kind_conf": 0.59,
+  "usage_in": 920,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "float",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 30,
+   "text": "on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 64,
+   "text": "`float_raw32` starts **11.58 pp behind** the leader and finishes **0.29 pp ahead** of our"
+  },
+  "same_quantity": 0.73,
+  "numerically_incompatible": 0.21,
+  "reader_would_confuse": 0.72,
+  "severity": 2.03,
+  "severity_conf": 0.03,
+  "issue_kind": "consistent",
+  "kind_conf": 0.34,
+  "usage_in": 924,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "float",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 30,
+   "text": "on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 29,
+   "text": "float_std yes 56.24 57.78 54.49 peak, then fall"
+  },
+  "same_quantity": 0.13,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.55,
+  "severity": 1.96,
+  "severity_conf": 0.59,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.49,
+  "usage_in": 918,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "float",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 30,
+   "text": "on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 31,
+   "text": "**float_raw** **no** 55.03 58.55 **60.43** **monotone rise**"
+  },
+  "same_quantity": 0.13,
+  "numerically_incompatible": 0.16,
+  "reader_would_confuse": 0.56,
+  "severity": 1.83,
+  "severity_conf": 0.45,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.27,
+  "usage_in": 925,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "sym",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 37,
+   "text": "dims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 171,
+   "text": "PerLTQA SHIFT_m1 Hit@10 **+1.58, CI [+0.69, +2.47] SIG** (sym +1.35 SIG). RealTalk"
+  },
+  "same_quantity": 0.18,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.53,
+  "severity": 2.15,
+  "severity_conf": 0.65,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.34,
+  "usage_in": 935,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "sym",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 37,
+   "text": "dims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 172,
+   "text": "SHIFT_m1 Hit@10 \u22120.28 ns, and sym FR@3 **\u22121.06 SIG (harmful)**. Opposite signs again."
+  },
+  "same_quantity": 0.22,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.55,
+  "severity": 2.14,
+  "severity_conf": 0.69,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.48,
+  "usage_in": 927,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "sym",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 37,
+   "text": "dims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 265,
+   "text": "- The old `asym` arm helps PerLTQA but **loses** on LME (\u22123.56 pp FR@3)."
+  },
+  "same_quantity": 0.5,
+  "numerically_incompatible": 0.14,
+  "reader_would_confuse": 0.62,
+  "severity": 1.62,
+  "severity_conf": 0.32,
+  "issue_kind": "consistent",
+  "kind_conf": 0.59,
+  "usage_in": 922,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "sym",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 37,
+   "text": "dims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 82,
+   "text": "sym (standardized) 51.69 53.88 48.71 **\u22125.17**"
+  },
+  "same_quantity": 0.21,
+  "numerically_incompatible": 0.25,
+  "reader_would_confuse": 0.66,
+  "severity": 2.67,
+  "severity_conf": 0.67,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.8,
+  "usage_in": 926,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "sym",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 37,
+   "text": "dims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 83,
+   "text": "asym (**un**standardized) 57.09 60.79 61.09 **+0.30**"
+  },
+  "same_quantity": 0.66,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.65,
+  "severity": 1.23,
+  "severity_conf": 0.0,
+  "issue_kind": "consistent",
+  "kind_conf": 0.84,
+  "usage_in": 929,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "sym",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 37,
+   "text": "dims while unstandardized `asym` keeps rising (60.79 \u2192 61.09). Enforcing k<n removed every"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 94,
+   "text": "Note the practical consequence: the best PerLTQA arm here is `asym` at 384 dims (61.09 FR@3),"
+  },
+  "same_quantity": 0.59,
+  "numerically_incompatible": 0.11,
+  "reader_would_confuse": 0.57,
+  "severity": 1.2,
+  "severity_conf": 0.0,
+  "issue_kind": "consistent",
+  "kind_conf": 0.91,
+  "usage_in": 928,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "ITQ",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 44,
+   "text": "1. **ITQ does not beat a random rotation** here: \u22122.27 pp RealTalk, \u22120.13 PerLTQA. ITQ's"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 109,
+   "text": "**ITQ minus random rotation = \u22122.27 pp (RealTalk), \u22120.13 pp (PerLTQA).** ITQ's"
+  },
+  "same_quantity": 0.93,
+  "numerically_incompatible": 0.05,
+  "reader_would_confuse": 0.61,
+  "severity": 0.35,
+  "severity_conf": 0.65,
+  "issue_kind": "consistent",
+  "kind_conf": 0.98,
+  "usage_in": 928,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "sigma",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 81,
+   "text": "| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 114,
+   "text": "Verified on real data: `sign(C_ij / sigma_j) == sign(C_ij)` \u2014 0 of 63,552 document bits"
+  },
+  "same_quantity": 0.25,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.51,
+  "severity": 1.8,
+  "severity_conf": 0.51,
+  "issue_kind": "consistent",
+  "kind_conf": 0.33,
+  "usage_in": 918,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "sigma",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 81,
+   "text": "| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 216,
+   "text": "**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index"
+  },
+  "same_quantity": 0.77,
+  "numerically_incompatible": 0.07,
+  "reader_would_confuse": 0.69,
+  "severity": 1.38,
+  "severity_conf": 0.22,
+  "issue_kind": "consistent",
+  "kind_conf": 0.81,
+  "usage_in": 920,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "sigma",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 81,
+   "text": "| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 256,
+   "text": "reranking is available. Their memory accounting on LME (MB): packed codes + sigma 3.14;"
+  },
+  "same_quantity": 0.53,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.66,
+  "severity": 1.48,
+  "severity_conf": 0.27,
+  "issue_kind": "consistent",
+  "kind_conf": 0.52,
+  "usage_in": 910,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "sigma",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 114,
+   "text": "Verified on real data: `sign(C_ij / sigma_j) == sign(C_ij)` \u2014 0 of 63,552 document bits"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 216,
+   "text": "**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index"
+  },
+  "same_quantity": 0.31,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.51,
+  "severity": 1.79,
+  "severity_conf": 0.57,
+  "issue_kind": "consistent",
+  "kind_conf": 0.37,
+  "usage_in": 926,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "sigma",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 114,
+   "text": "Verified on real data: `sign(C_ij / sigma_j) == sign(C_ij)` \u2014 0 of 63,552 document bits"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 256,
+   "text": "reranking is available. Their memory accounting on LME (MB): packed codes + sigma 3.14;"
+  },
+  "same_quantity": 0.2,
+  "numerically_incompatible": 0.12,
+  "reader_would_confuse": 0.46,
+  "severity": 1.79,
+  "severity_conf": 0.54,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.26,
+  "usage_in": 916,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "sigma",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 216,
+   "text": "**Honest storage (RealTalk, 8944 docs).** Codes + sigma 115,008 B. BM25 inverted index"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 256,
+   "text": "reranking is available. Their memory accounting on LME (MB): packed codes + sigma 3.14;"
+  },
+  "same_quantity": 0.33,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.57,
+  "severity": 1.8,
+  "severity_conf": 0.45,
+  "issue_kind": "consistent",
+  "kind_conf": 0.48,
+  "usage_in": 918,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "12 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 81,
+   "text": "| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "same_quantity": 0.66,
+  "numerically_incompatible": 0.14,
+  "reader_would_confuse": 0.69,
+  "severity": 1.28,
+  "severity_conf": 0.25,
+  "issue_kind": "consistent",
+  "kind_conf": 0.79,
+  "usage_in": 908,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "12 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 81,
+   "text": "| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 27,
+   "text": "PQ (equal budget control) 33.05 12 B/doc"
+  },
+  "same_quantity": 0.53,
+  "numerically_incompatible": 0.15,
+  "reader_would_confuse": 0.66,
+  "severity": 1.72,
+  "severity_conf": 0.33,
+  "issue_kind": "consistent",
+  "kind_conf": 0.72,
+  "usage_in": 903,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "12 B",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 81,
+   "text": "| codes + sigma (12 B/doc \u00d7 8944) | 115,008 B |"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 30,
+   "text": "12 B qscale 49.65 **\u221216.03** 22.41 \u221217.61"
+  },
+  "same_quantity": 0.26,
+  "numerically_incompatible": 0.13,
+  "reader_would_confuse": 0.59,
+  "severity": 1.93,
+  "severity_conf": 0.52,
+  "issue_kind": "consistent",
+  "kind_conf": 0.3,
+  "usage_in": 923,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "12 B",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 30,
+   "text": "12 B qscale 49.65 **\u221216.03** 22.41 \u221217.61"
+  },
+  "same_quantity": 0.74,
+  "numerically_incompatible": 0.16,
+  "reader_would_confuse": 0.71,
+  "severity": 1.79,
+  "severity_conf": 0.36,
+  "issue_kind": "consistent",
+  "kind_conf": 0.76,
+  "usage_in": 917,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "12 B",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 27,
+   "text": "PQ (equal budget control) 33.05 12 B/doc"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 30,
+   "text": "12 B qscale 49.65 **\u221216.03** 22.41 \u221217.61"
+  },
+  "same_quantity": 0.28,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.66,
+  "severity": 2.26,
+  "severity_conf": 0.49,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.61,
+  "usage_in": 912,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "12 B",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 27,
+   "text": "PQ (equal budget control) 33.05 12 B/doc"
+  },
+  "same_quantity": 0.36,
+  "numerically_incompatible": 0.15,
+  "reader_would_confuse": 0.55,
+  "severity": 1.71,
+  "severity_conf": 0.23,
+  "issue_kind": "consistent",
+  "kind_conf": 0.77,
+  "usage_in": 897,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "gate",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 92,
+   "text": "- **Blocking fidelity gate** before any arm was measured: PerLTQA 0 of 1,179,648 sign bits"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 320,
+   "text": "failing gate. One did exactly that (G6, BM25 top-10: 704/705 match, one 3-way tie"
+  },
+  "same_quantity": 0.3,
+  "numerically_incompatible": 0.21,
+  "reader_would_confuse": 0.56,
+  "severity": 1.96,
+  "severity_conf": 0.53,
+  "issue_kind": "consistent",
+  "kind_conf": 0.51,
+  "usage_in": 924,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "gate",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 92,
+   "text": "- **Blocking fidelity gate** before any arm was measured: PerLTQA 0 of 1,179,648 sign bits"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 73,
+   "text": "Fidelity gate: **0 differing bits of 276,480** against cached production C."
+  },
+  "same_quantity": 0.26,
+  "numerically_incompatible": 0.15,
+  "reader_would_confuse": 0.66,
+  "severity": 1.75,
+  "severity_conf": 0.26,
+  "issue_kind": "consistent",
+  "kind_conf": 0.68,
+  "usage_in": 916,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "gate",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 98,
+   "text": "- **Gates never loosened**: one worker hit a failing gate (BM25 top-10, 704/705 match, one"
+  },
+  "B": {
+   "doc": "REPORT.md",
+   "line": 320,
+   "text": "failing gate. One did exactly that (G6, BM25 top-10: 704/705 match, one 3-way tie"
+  },
+  "same_quantity": 0.75,
+  "numerically_incompatible": 0.19,
+  "reader_would_confuse": 0.7,
+  "severity": 1.48,
+  "severity_conf": 0.24,
+  "issue_kind": "consistent",
+  "kind_conf": 0.7,
+  "usage_in": 930,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "gate",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 98,
+   "text": "- **Gates never loosened**: one worker hit a failing gate (BM25 top-10, 704/705 match, one"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 73,
+   "text": "Fidelity gate: **0 differing bits of 276,480** against cached production C."
+  },
+  "same_quantity": 0.08,
+  "numerically_incompatible": 0.11,
+  "reader_would_confuse": 0.41,
+  "severity": 1.49,
+  "severity_conf": 0.31,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.33,
+  "usage_in": 922,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "gate",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 320,
+   "text": "failing gate. One did exactly that (G6, BM25 top-10: 704/705 match, one 3-way tie"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 73,
+   "text": "Fidelity gate: **0 differing bits of 276,480** against cached production C."
+  },
+  "same_quantity": 0.07,
+  "numerically_incompatible": 0.12,
+  "reader_would_confuse": 0.4,
+  "severity": 1.48,
+  "severity_conf": 0.3,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.57,
+  "usage_in": 922,
+  "usage_out": 138,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "gate",
+  "A": {
+   "doc": "FINAL_STATE.md",
+   "line": 92,
+   "text": "- **Blocking fidelity gate** before any arm was measured: PerLTQA 0 of 1,179,648 sign bits"
+  },
+  "B": {
+   "doc": "FINAL_STATE.md",
+   "line": 98,
+   "text": "- **Gates never loosened**: one worker hit a failing gate (BM25 top-10, 704/705 match, one"
+  },
+  "same_quantity": 0.34,
+  "numerically_incompatible": 0.15,
+  "reader_would_confuse": 0.6,
+  "severity": 1.64,
+  "severity_conf": 0.27,
+  "issue_kind": "consistent",
+  "kind_conf": 0.86,
+  "usage_in": 924,
+  "usage_out": 135,
+  "verdict": "C5_CONSISTENT"
+ },
+ {
+  "shared_term": "qscale",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 30,
+   "text": "12 B qscale 49.65 **\u221216.03** 22.41 \u221217.61"
+  },
+  "same_quantity": 0.72,
+  "numerically_incompatible": 0.14,
+  "reader_would_confuse": 0.71,
+  "severity": 1.76,
+  "severity_conf": 0.22,
+  "issue_kind": "consistent",
+  "kind_conf": 0.92,
+  "usage_in": 917,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "qscale",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 81,
+   "text": "qscale (standardized) 56.38 57.71 54.11 **\u22123.60**"
+  },
+  "same_quantity": 0.23,
+  "numerically_incompatible": 0.24,
+  "reader_would_confuse": 0.68,
+  "severity": 2.58,
+  "severity_conf": 0.58,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.86,
+  "usage_in": 918,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "qscale",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 6,
+   "text": "858,624**. Anchors exact: k96 qscale Hit@10 49.6454 (frozen 49.6454, dev \u22120.0000);"
+  },
+  "same_quantity": 0.56,
+  "numerically_incompatible": 0.15,
+  "reader_would_confuse": 0.67,
+  "severity": 1.33,
+  "severity_conf": 0.29,
+  "issue_kind": "consistent",
+  "kind_conf": 0.88,
+  "usage_in": 936,
+  "usage_out": 135,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "qscale",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 7,
+   "text": "k96 sym 46.5248 (dev +0.0000); k96 qscale FR@3 22.4099 (frozen 22.41)."
+  },
+  "same_quantity": 0.27,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.63,
+  "severity": 1.87,
+  "severity_conf": 0.47,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.46,
+  "usage_in": 933,
+  "usage_out": 138,
+  "verdict": "C4_MINOR_AMBIGUITY"
+ },
+ {
+  "shared_term": "qscale",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 24,
+   "text": "qscale (our 12-byte code) 49.65 12 B/doc"
+  },
+  "B": {
+   "doc": "LADDER_REALTALK.md",
+   "line": 27,
+   "text": "qscale yes 52.98 54.82 51.87 peak, then fall"
+  },
+  "same_quantity": 0.28,
+  "numerically_incompatible": 0.18,
+  "reader_would_confuse": 0.65,
+  "severity": 2.12,
+  "severity_conf": 0.65,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.49,
+  "usage_in": 911,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ },
+ {
+  "shared_term": "qscale",
+  "A": {
+   "doc": "REPORT.md",
+   "line": 245,
+   "text": "text-rerank experiment whose anchors match ours to 0.0000 (qscale FR@3: LME 54.27,"
+  },
+  "B": {
+   "doc": "DECISION_TESTS.md",
+   "line": 30,
+   "text": "12 B qscale 49.65 **\u221216.03** 22.41 \u221217.61"
+  },
+  "same_quantity": 0.22,
+  "numerically_incompatible": 0.17,
+  "reader_would_confuse": 0.64,
+  "severity": 2.22,
+  "severity_conf": 0.63,
+  "issue_kind": "ambiguous_term",
+  "kind_conf": 0.71,
+  "usage_in": 930,
+  "usage_out": 138,
+  "verdict": "C2_AMBIGUOUS_TERM_MISLEADS"
+ }
+]

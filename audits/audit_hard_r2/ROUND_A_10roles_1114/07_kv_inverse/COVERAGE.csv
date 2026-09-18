@@ -1,0 +1,36 @@
+id,item,source_path,status,test_performed,observed_result
+K01,KV protocol scope/model/dtype/GQA anchors,parallel_ideas_r1/kv/PROTOCOL.md,reviewed,read + config cross-check,30 layers 3KVx64=192 FP32-exec/BF16-native confirmed; see K11
+K02,ridge predictor fit 90x64-64 lam1e-3 480 toks,parallel_ideas_r1/kv/run.py:fit_decoders+predict_odd,reviewed,code read + byte arithmetic,formula gives 1497600 B exactly; train-only IDs 0-5 per code
+K03,arms full/ridge/q4/zero/copy construction,parallel_ideas_r1/kv/run.py:run_case_arm+install_prefix,reviewed,code read,expanded full-float DynamicCache install; q4 dequantized before use
+K04,original NLL off-by-one bug,parallel_ideas_r1/kv/run.py:409-436,reviewed,code read + row recomputation,256/256 non-full dNLL changed max shift 24.875; original means negative withdrawn
+K05,repair shifted-v2 alignment + A1/A2 acceptance,parallel_ideas_r1/kv_repair/run.py,reviewed,rows verified 320/320 shifted-v2 unique keys,KL bit-identical 256/256 top1 0 mismatches; A1/A2 logs read not re-executed
+K06,poison gate v1 vs-full confounded,parallel_ideas_r1/kv/run.py:461-471,reviewed,code read,confound confirmed (mixes approx error); superseded
+K07,poison gate v2 ridge-vs-ridge + negative control,parallel_ideas_r1/kv_repair/run.py:558-572,reviewed,code read only NOT re-executed,deltas 3.1-15.8 consumed 8/8 per report; model re-run exceeds probe budget
+K08,q4 nibble packing reality,parallel_ideas_r1/kv/run.py:63-94,reviewed,code read + synthetic fixture S3,packing logic real; payload formula verified; on-disk 165863 B incl overhead
+K09,memory accounting N*=65 expanded-cache disclosure,parallel_ideas_r1/kv_repair/REPORT.md Memory,reviewed,arithmetic + on-disk sizes,65.0 equality confirmed; predictor.pt 1548427 B; no resident-savings claim stands
+K10,timing arm E + matched pair,parallel_ideas_r1/kv/run.py:485-512,reviewed,code read only NOT re-executed,original pair non-comparable as disclosed; matched pair exploratory
+K11,model config GQA/layers/dtype,parallel_ideas_r1/model/config.json,reviewed,direct read,30L 9Q/3KV d576 hd64 width192 native bfloat16
+K12,coordinator_kv CHECK + REPAIR_VERIFIED,parallel_ideas_r1/coordinator_kv/,reviewed,reaggregated rows independently,means match recomputation; alignment probe logic confirmed
+I01,inverse protocol parity gate + cohort,parallel_ideas_r1/inverse/PROTOCOL.md,reviewed,read,parity gate 1e-5 12/12 claimed; hook-truth fix for L29 disclosed
+I02,JVP identity double-count bug,parallel_ideas_r1/inverse/inverse_lib.py:160-178,reviewed,code read + synthetic fixture S1,(v+jv) on B(x)=x gives 2v exactly as coordinator probe [6 8]
+I03,segment op identical defect,parallel_ideas_r1/inverse/run.py:265 (via ERRATA),sampled,ERRATA + fixed-file diff read,fix mirrors single-block; line not opened directly
+I04,inner_ok finite-only vs convergence,parallel_ideas_r1/inverse/inverse_lib.py:181-235,reviewed,code read + synthetic fixture S2,1-iter 5x5 finite yet relres 0.46 >> 1e-5; label confirmed misleading
+I05,feval undercount 8 vs 9,parallel_ideas_r1/inverse_repair/PROTOCOL_DELTA.md,reviewed,read + replay row check,replay rows show fevals_charged 9; fix confirmed
+I06,D2/D3 bounded failure 0/12+0/4 repaired,parallel_ideas_r1/inverse_repair/per_case.jsonl,reviewed,row count 20 cases reread,L14 closest res 6.8e-4-3.3e-3 still >1e-5; GMRES 20/20 saturated
+I07,independent residual replay MATCH 12/12,parallel_ideas_r1/inverse_repair/replay_residual.json,reviewed,file read NOT re-executed,first-row match:true wrapper parity 0.0; segment x_hat unsaved so no segment replay
+I08,ledger encode/decode M1/M2 mutations,parallel_ideas_r1/inverse/inverse_lib.py:345-410,reviewed,code read + reconciled JSON,M1 bit-exact C1 M2 changes output per ledger_storage_reconciled.json 12/12
+I09,storage same-dtype vs mixed-dtype accounting,parallel_ideas_r1/inverse_repair/ledger_storage_reconciled.json,reviewed,file read + arithmetic,FP32 695040 vs 737280 headroom no-win; BF16-hypo exceeds by 49920; generic4bit stronger
+I10,original continuation hidden-injection not KV-only,parallel_ideas_r1/inverse/inverse_lib.py:439-478,reviewed,code read,full hidden replace at L14 + downstream recompute confirmed; PATCH||FULL direction confirmed
+I11,repair kv_continuation true KV-only parity,parallel_ideas_r1/inverse_repair/kv_continuation.py + .json,reviewed,code read + rows verified,parity bit-exact 4/4; BUT full-sequence recompute not stepwise cache
+I12,generic4bit scope mismatch all-24 vs prefix-16,parallel_ideas_r1/inverse_repair/kv_continuation.py:143-191,reviewed,code read,confirmed: src_for patches 16 ledger/noledger/direct4bit generic4bit quantizes full 24
+I13,coordinator_inverse CHECK DISPOSITION REPAIR_CLOSEOUT,parallel_ideas_r1/coordinator_inverse/,reviewed,read all four files,findings reproduced in this audit except model re-execution
+I14,chat-lit toy ledger/Newton limits,chat_literature_review_20260915/inverse/REPORT.md,reviewed,read-only no CSV re-parse,random-init MHA toys dense-Jacobian no-decode-metric; no transfer claim supported
+P01,published pilot KV/inverse substance,_wt_top10/.../CASE_FOR.md+LITERATURE_MAP.md,sampled,precise grep,only passing KV-cache mention; no KV/inverse experiment in pilot
+P02,git history contains KV/inverse code,main repo object store via git log -S,sampled,3 pickaxe identifiers,0 hits: local-research-only never merged
+P03,prior audit_hard_r1 KV/inverse coverage,audit_hard_r1/CONSOLIDATED_AUDIT.md+repro,reviewed,grep + read,explicitly lists KV/inverse as NOT REVIEWED; consistent with this role
+N01,model-loaded re-execution of any run.py/tests.py,parallel_ideas_r1/{kv inverse} + repairs,NOT RUN,none - exceeds 180s probe budget,requires local SmolLM2 load; rows/logs/code verified instead
+N02,timing re-measurement on CPU,all lines,NOT RUN,none,methodology code-reviewed only; contention caveat accepted
+N03,40x100 Newton probe (repair explicit non-follow),inverse line,NOT RUN,none,proposed by original report but not run by repair; failure is budget-scoped
+N04,BF16 numerics,all lines,NOT RUN,none,all numbers FP32-executed; BF16 columns arithmetic-only as disclosed
+N05,segment final-residual independent replay,inverse_repair (x_hat unsaved),NOT RUN,blocked,coordinator closeout confirms x_hat NOT saved; do not report 16/16 verified
+N06,chat-lit raw CSV re-parse (180+45 rows),chat_literature_review_20260915/input,NOT RUN,none,report's re-parsed medians accepted as read-only claims; toy scope undisputed

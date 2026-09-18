@@ -1,0 +1,36 @@
+item_id,area,claim_or_check,source_ref,method,result,verdict
+D01,denominator,"2x231606=463212 doubling arithmetic",denominator_integrity_v10.py:7-13; probe_denom.py,isolated re-execution on branch copy,PASS 2*231606==463212,REVIEWED-verified
+D02,denominator,"naive per-copy sum double-counts; logical dedups unique-by-archive",denominator_integrity_v10.py:229-252; probe_denom.py,isolated fixture 2 archives x2 copies,PASS naive=2400 logical=1200,REVIEWED-verified
+D03,denominator,inconsistent duplicates reject never silently dedup,denominator_integrity_v10.py:203-226; probe_denom.py,isolated conflicting-d_k fixture,PASS V10ValidationError,REVIEWED-verified
+D04,denominator,unknown copy and outside-roster archive reject,denominator_integrity_v10.py:215-224; probe_denom.py,isolated ghost-copy fixture,PASS both reject,REVIEWED-verified
+D05,denominator,"shape gate: zero/bool/empty d_k rejected",denominator_integrity_v10.py:185-200; probe_denom.py,isolated malformed fixtures,PASS all rejected,REVIEWED-verified
+D06,denominator,"no byte total offered; numerators never deduplicated",static_storage_preflight_v10.py:418-424; test test_no_byte_total_helpers; probe_denom.py,API surface inspection + committed-test read,PASS no byte-total helpers exist,REVIEWED-verified
+D07,denominator,summary labels pilot/exploratory/not-authoritative,denominator_integrity_v10.py:255-264; probe_denom.py,isolated call,PASS labels present,REVIEWED-verified
+D08,denominator,inlined pure math identical candidate vs integrated,denominator_integrity_v10.py vs static_storage_preflight_v10.py (9802b49),mechanical diff of 5 function bodies,PASS all 5 IDENTICAL,REVIEWED-verified
+D09,denominator,"SHA pins match frozen blobs (V9 gate a5c98065; V8 gate 68fbac5b)",9802b49 pins vs b300cbf/35b5058 blobs,git-show piped to sha256sum,PASS both PIN-OK,REVIEWED-verified
+D10,denominator,"940 DISTINCT copies E2E: logical 231606 naive 463212",V10_INTEGRATION_TEST_RECEIPT.md s3 (9802b49),receipt read only; live rerun NOT attempted (needs full pinned chain + temp plan set),receipt claims 12/12 OK; NOT independently rerun,NOT RUN
+D11,denominator,denominator suite 18 tests OK,V10_INTEGRATION_TEST_RECEIPT.md s2,receipt read only NOT rerun,receipt claims 18 OK,NOT RUN
+D12,denominator,"anchor constants 470 archives / N=231606",denominator_integrity_v10.py:40-41; static_storage_preflight_v10.py:62-63,constant read; anchor-blob re-derivation NOT done,constants present; blob content NOT re-verified,SAMPLED
+D13,copies,"contract note A: DISTINCT duplicate plan legitimate; same-id refused",V10_INTEGRATION_DISPOSITION.md sContract-note-A (9802b49),disposition + test read; same-id refusal test location NOT located,claim read but refusal path NOT verified,NOT RUN
+C01,concurrency,V9 sys.modules race reproduced (2 interference tests fail on V9),V10_RACE_REPRO.md (9802b49),repro-note read; live rerun NOT attempted (thread-timing harness + chain materialization),receipt claims v9 FAILED(2) / v10 13/13 x5 runs,NOT RUN
+C02,concurrency,hardened loader: scoped importer + _CHAIN_LOCK + frozen hashlib,static_storage_preflight_v10.py:182-256; consumption_gate_v10.py,code read (both copies in src/),mechanism present as described; live thread test NOT run,SAMPLED
+C03,concurrency,ambient-hashlib now IN MODEL and refused on integrated gate,V10_INTEGRATION_DISPOSITION.md sD; RECEIPT_V10.json (receipt),disposition+receipt read NOT rerun,claims integrated-v10 7/7 and old suite 7/7,NOT RUN
+C04,concurrency,security matrix MATRIX-AS-EXPECTED surprises empty,RECEIPT_V10.json via V10_INTEGRATION_TEST_RECEIPT.md s4,receipt read NOT rerun,verdict as claimed,NOT RUN
+C05,concurrency,frozen V7/V8/V9 suites still green under V10,V10_INTEGRATION_TEST_RECEIPT.md s1,receipt read NOT rerun,claims 8+7+7 OK,NOT RUN
+B01,byte-cost,"12 B/vector marginal ceiling vs ~88886 effective (re-fit shared projector, median)",PROJECTOR_REPORT_TR.md:53-74; PROJECTOR_BYTES.json (75b7e05),report read + table grep,marginal 12 vs median effective 88886 confirmed in text; re-fit NOT re-executed,SAMPLED
+B02,byte-cost,"12-vs-6 halving from denominator doubling (factor 2)",V10 disposition headline (9802b49); probe D01,arithmetic consequence of D01,halving factor confirmed arithmetically; no byte measurement run,REVIEWED-verified
+B03,byte-cost,shared state outside marginal ceiling but separately reported,L-088 via PROJECTOR_REPORT_TR.md:13-20,report read,marginal/effective split correctly labeled; NOT re-measured,SAMPLED
+R01,rank-cert,"BULGU-1 POC v2 certifies ISOLATED_TIES/-1; truth is VARIES",certify_v2.py (dbb3ee0); probe_rankcert.py,isolated re-execution + exact-comparator samples,PASS v2=-1 vs samples +1/+1/0/-1/-1 (bug reproduced),REVIEWED-verified
+R02,rank-cert,v3 certifies POC as ISOLATED_TIES/VARIES,certify_v3.py (dbb3ee0); probe_rankcert.py,isolated re-execution,PASS VARIES,REVIEWED-verified
+R03,rank-cert,v3 scale-invariant k=1/7/100/1000 on POC,certify_v3.py; probe_rankcert.py,isolated re-execution,PASS all identical,REVIEWED-verified
+R04,rank-cert,"v3 invalid-J (L==R L>R) refuses as UNRESOLVED",certify_v3.py; probe_rankcert.py,isolated re-execution,PASS both UNRESOLVED,REVIEWED-verified
+R05,rank-cert,"coordinator frozen bar: v2 5 safety FAIL / v3 0 safety 0 completeness FAIL",COORDINATOR_VERDICT_V3.md (dbb3ee0),verdict read; coordinator suite NOT rerun (688-case corpus run > budget as live rerun; receipts present),as claimed in verdict; NOT independently rerun,NOT RUN
+R06,rank-cert,coordinator independent oracle 684 cases 0 violations + scale sweep,COORDINATOR_VERDICT_V3.md; coord_check_v3.py,verdict+oracle-code read NOT executed,finite-sample check as claimed; generality NOT established by design,NOT RUN
+R07,rank-cert,"BULGU-5 closed by construction: v3 and validator import only fractions",certify_v3.py:46; cert_validator_v3.py:40 (dbb3ee0),top-level import grep on branch blobs,PASS only-fractions; no archived-code import,REVIEWED-verified
+R08,rank-cert,POC literals absent from v3 code paths,certify_v3.py full-blob grep for 70000/-200/10000,grep zero hits,absent as claimed,REVIEWED-verified
+R09,rank-cert,"BULGU-2/3/4/6/7/8 and F-01..F-07 remain OPEN; package REQUEST_CHANGES stands",FIX_DISPOSITION.md s5; COORDINATOR_VERDICT_V3.md (dbb3ee0),disposition read,explicitly OPEN per both documents,REVIEWED-verified
+R10,rank-cert,different-family independent review REMAINS OPEN,COORDINATOR_VERDICT_V3.md What-this-does-NOT-establish,verdict read,same-family-only independence acknowledged,REVIEWED-verified
+G01,governance,"governance repair PREPARED NOT ACCEPTED; nothing sealed/ratified",GOVERNANCE_REPAIR_README/commit 8ed1351 message,commit-message + manifest read; no merge,explicitly NOT ACCEPTED,REVIEWED-verified
+G02,governance,"L-096 carried by unmerged branch; not on main",main ledger 59b891e:2052-2053,ledger grep,PASS confirmed unmerged,REVIEWED-verified
+G03,governance,"no repair branch merged to main (rank v10 gov)",merge-base --is-ancestor vs 59b891e for dbb3ee0/9802b49/8ed1351,git ancestry check,PASS all three NOT-in-main,REVIEWED-verified
+G04,governance,rank branch ledger stale (L-097 absent; base predates main),git diff 59b891e..dbb3ee0 -- CONTINUITY_LEDGER.md,diff read,L-097 section missing on branch = stale base not malicious edit,SAMPLED

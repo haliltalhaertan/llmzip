@@ -1,0 +1,69 @@
+{
+ "checks": [
+  {
+   "name": "independent_truth_samples",
+   "pass": true,
+   "detail": {
+    "5/4": 1,
+    "3/2": 1,
+    "7/4": 0,
+    "5/2": -1,
+    "4": -1
+   }
+  },
+  {
+   "name": "v2_poc_verdict",
+   "pass": true,
+   "detail": {
+    "status": "ISOLATED_TIES",
+    "direction": -1
+   }
+  },
+  {
+   "name": "v3_poc_verdict",
+   "pass": true,
+   "detail": {
+    "status": "ISOLATED_TIES",
+    "direction": "VARIES"
+   }
+  },
+  {
+   "name": "v3_scale_invariance",
+   "pass": true,
+   "detail": {
+    "1": [
+     "ISOLATED_TIES",
+     "VARIES"
+    ],
+    "7": [
+     "ISOLATED_TIES",
+     "VARIES"
+    ],
+    "100": [
+     "ISOLATED_TIES",
+     "VARIES"
+    ],
+    "1000": [
+     "ISOLATED_TIES",
+     "VARIES"
+    ],
+    "all_identical": true
+   }
+  },
+  {
+   "name": "v3_invalid_J_robustness",
+   "pass": true,
+   "detail": {
+    "L==R": [
+     "UNRESOLVED",
+     null
+    ],
+    "L>R": [
+     "UNRESOLVED",
+     null
+    ]
+   }
+  }
+ ]
+}
+PASS 5/5

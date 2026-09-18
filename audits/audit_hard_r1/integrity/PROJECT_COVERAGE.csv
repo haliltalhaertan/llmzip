@@ -1,0 +1,18 @@
+branch_or_line,era,evidence_inspected,verdict,gaps
+main@59b891e (L097),v52-governance,"log -12; L097 body; diff 7501991 vs 59b891e; ls-tree top-level",SAMPLED-OK,"L096 carried on unmerged hr branch (documented in L097 body); pilot STOP never receipted (see below)"
+findings/top10-comparison-2026-09-15@e672192,twelve-byte-pilot,"full log; show --stat c31719b/a68fcdc/8bcdef5/e672192; git show REPORT/RESPONSE/LADDER/DECISION_TESTS at revisions; worktree reads; own-code hash checks 30+14",EXAMINED,"LADDER_REALTALK.md un-annotated after R5 (see report GAP); REPORT.md section 8 retraction list stale; LME ablation incomplete at publication"
+hr/standardized-float-correction-2026-09-16@7501991,twelve-byte-followup,"log -5; ancestor check vs main (UNMERGED); L097 body cites it by hash",SAMPLED-OK,"unmerged by design (L-094 pattern); content duplicated into main L097 rather than merged"
+hr/consolidation-2026-09-14@907750f (L096),governance,"log --grep L-096; L097 body notes carry",SAMPLED-OK,UNMERGED - consolidation pending; L096 not on main
+findings/f1-execution-2026-09-14@ccedd56,f1-execution,"log --oneline head (manifest + archive-count corrections noted)",SAMPLED-ONLY,"not deep-read; archive-count self-corrections (40c49b4/490716c superseded) not verified"
+findings/dense-mrl-parity-2026-09-14@36c7bf0,dense-mrl,"none (HEAD of main-repo checkout)",NOT REVIEWED,"current checkout branch; outside this audit's scope"
+findings/governance-repair-2026-09-14@8ed1351,governance,"commit subject only (PREPARED NOT ACCEPTED)",SAMPLED-ONLY,"acceptance status vs main ledger not traced"
+findings/rank-cert-repair-2026-09-14@dbb3ee0,rank-cert,"none",NOT REVIEWED,"outside scope; listed for coverage"
+hr/twelve-byte-budget-decision-2026-09-11,twelve-byte-prereg,"none (name only)",NOT REVIEWED,"prereg draft line not traced; L-092 notes unapproved prereg draft"
+draft/v52-twelve-byte-baseline-prereg-2026-09-10 + codex/twelve-byte-prereg-revision-2026-09-12,prereg,"none",NOT REVIEWED,"pre-registration lineage not audited (mtimes disclaimed as proof)"
+v52-task4f1-era branches (v2..v7 + preflights + audits),v52-execution,"none",NOT REVIEWED,"~40 refs; bulk listed for coverage only"
+v52-static-v10-era branches (integrated/denominator/concurrency/security-tests + publish-static),v52-static,"none",NOT REVIEWED,"outside scope; listed for coverage only"
+findings/audit4-postcheck-2026-09-17 (current checkout),current-audit,"none",NOT REVIEWED,"today's parallel audit; live branch not examined"
+remotes/origin/* (~130 refs: audit/* bench/* candidate/* claude/*),remote-tracking,"count only (173 total refs)",NOT REVIEWED,"no fetch performed (read-only rule); remote lines not reconciled"
+agents/* (ultra-commonmode/ultra-f1-repair/ultra-perltqa-mechanism),agent-work,"none",NOT REVIEWED,"outside scope"
+top10-worktree unpublished inputs (bench3 caches; incoming_20260916b externals; ARCHIVE_CACHE.jsonl),inputs-caches,"existence noted; ARCHIVE_CACHE untouched per rule",NOT REVIEWED,"LME ablation was in progress (322/470 at publication); no rerun per 180s/stop rules and read-only scope"
+MODEL_DOWNLOAD.json weights (2.4 GB model/),weights,"manifest exclusion note only",NOT RUN,"sha256+revision not verified (size/time); flagged not run per NO-ARTIFACT rule"

@@ -1,0 +1,31 @@
+id,item,source_ref,status,note
+G01,hr standardized-float correction doc,git:75019912 docs/v52/V52_STANDARDIZED_FLOAT_CORRECTION_2026-09-16.md,REVIEWED,direction stands; FLOAT96_UNCENTERED label wrong (see F4)
+G02,representation-geometry README + audit verdicts,git:75b7e057 research_representation_geometry_2026_09_13/README.md,REVIEWED,measurements PASS-obs; rank_cert BLOCKING preserved
+G03,norm_math proofs + witnesses,git:75b7e057 repairs/norm_math/proofs_exact.py WITNESSES.json CORRECTIONS_NORM_MATH_TR.md,REVIEWED,D1-D7 read; D1/D3/D4 re-verified exactly (T10a/b/c PASS)
+G04,BULGU-1 PoC script,git:75b7e057 AUDIT/poc_bulgu1.py,REVIEWED,read only; execution NOT RUN (needs worker modules)
+G05,v3 cert repair verdict,representation_geometry_fix/COORDINATOR_VERDICT_V3.md,REVIEWED,v3 passes frozen bar per coordinator; package REQUEST_CHANGES stands
+G06,E1 bridge report,origin/research/e1-sign-float-mechanism-2026-09-13 E1_BRIDGE_REPORT.md,REVIEWED,6/6 polarity concordance descriptive; tie-rate-only story refuted
+G07,E1 V2 synthetic receipt,origin/research/e1-sign-float-mechanism-v2-2026-09-13 E1_V2_TEST_RECEIPT.md,REVIEWED,synthetic metric check only; no benchmark outcomes
+G08,E1 mechanism checkpoint,origin/research/e1-lme-secondary-run-2026-09-13 E1_MECHANISM_CHECKPOINT.md,REVIEWED,V2 joint metrics NOT RUN (caches missing); P64 regime marker not cause
+G09,Model-H transfer audit (mapping),theory_benchmark_test_v1/audit_mapping/REPORT.md:0-3,REVIEWED,joint-scaling != Model-H parameter; monotonicity counterexample cited
+G10,Model-H transfer audit (real geometry),theory_benchmark_test_v1/audit_real_geometry/REPORT.md:0-2,REVIEWED,primaries quoted not recomputed; reciprocal identity quoted
+G11,theory benchmark plan + RT/LME reports,theory_benchmark_test_v1/PLAN.md realtalk/REPORT.md lme/REPORT.md,REVIEWED,gates PASS; LOW48 transfer negative/inconclusive per benchmark
+G12,baseline scorers + ties copy,_wt_top10/.../baseline/metrics_top10.py (scripts/metrics_top10_COPY.py),REVIEWED,sym/asym/raw/std/tie-break/expectation definitions pinned
+G13,baseline runner scorer wiring,_wt_top10/.../baseline/run_top10.py (scripts/run_top10_COPY.py),REVIEWED,score_one_query + deterministic top10 read
+G14,baseline REPORT arms section,_wt_top10/.../baseline/REPORT.md arms+zero-handling,REVIEWED,asym def differs from lib_b8 (see F3)
+G15,published REPORT float arms + SVD corrections,_wt_top10/.../REPORT.md:1-2 arms table + correction boxes,REVIEWED,float_std ceiling framing; leverage-score correction noted
+G16,quant REPORT sign-invariance + arms + ITQ tables,_wt_top10/.../math_r1/quant/REPORT.md,REVIEWED,sigma>0 premise sampled-verified on RT (G24)
+G17,quant scorer/sigma/centering code,_wt_top10/.../math_r1/quant/quant_math.py:161-171+239-246,REVIEWED,qscale def; C/QC centered; sigma ddof=0 floor 1e-12
+G18,repr_math builders (skim),_wt_top10/.../math_r1/repr/repr_math.py:83-120,SAMPLED,IDF/shift families; not load-bearing for this role
+G19,lib_b8 float scorers,llmzip-work/parallel_ideas_r1/b8/lib_b8.py:95-212,REVIEWED,float_raw plain cosine; float_std doc-fitted std 0->1; asym normalized variant
+G20,twelve-byte hit10 arm wiring,research_twelve_byte_pilot_2026_09_15/scripts/run_hit10.py:112-123,REVIEWED,float arm runs on cached (centered) C -> F4
+G21,HANDOFF float label + HATA_YERI correction,research_twelve_byte_pilot HANDOFF:48 via grep; incoming_20260916b transcripts:6062/6257 + HATA_YERI:154,SAMPLED,true-uncentered values quoted not recomputed
+G22,gapfill matched-protocol commit message,git:9993f95 (commit text),REVIEWED,sym~float_std ns under shared ties; numbers NOT recomputed
+G23,probe suite 20 checks,scripts/probe_geometry.py -> outputs/probe_stdout.txt evidence/probe_results.json,VERIFIED-PROBE,20/20 PASS (F1/F1b/F1c fixtures + T10 Fractions witnesses)
+G24,RealTalk sigma>0 scan (10 archives),scripts/sigma_scan.py -> outputs/sigma_scan.json evidence/sigma_scan.json,VERIFIED-PROBE,min col std 0.0451; no exact-zero columns
+G25,PerLTQA/LME sigma scan,bench caches for PQ/LME,NOT RUN,premise unverified beyond RealTalk
+G26,BULGU-1 PoC execution + v3 fuzz rerun,worker modules/frozen bar,NOT RUN,needs worker env; verdicts cited only
+G27,E1 V2 joint-geometry metrics,frozen C96/qC caches,NOT RUN,caches unavailable per checkpoint S8; refit forbidden
+G28,full-cohort statistic recomputation,any benchmark caches at scale,NOT RUN,explicitly out of probe budget
+G29,embedding/model/literature verification,model weights + primary lit sources,NOT RUN,no downloads; novelty NOT VERIFIED
+G30,asym-def numeric gap quantification,baseline vs lib_b8 asym defs,NOT RUN,contract gap noted (F3) without effect size

@@ -1,0 +1,77 @@
+{
+  "role": "06_dense_residual",
+  "labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "refs_before": "audit_hard_r2/REFS_BEFORE.txt",
+  "branches_read_via_git_show": [
+    "findings/dense-mrl-parity-2026-09-14 (commit 36c7bf0)",
+    "refs/remotes/origin/bench/sign96-micro-residual-2026-09-14 (commit 95ec9a1)",
+    "refs/remotes/origin/bench/sign96-nanobeir-sweep-2026-09-14 (commit ead53ec)",
+    "refs/remotes/origin/bench/sign96-heavy-retrieval-2026-09-14 (commit 94c5e7a)"
+  ],
+  "local_dirs_inventoried": [
+    "residual8_pilot_r1",
+    "parallel_ideas_r1 (asymmetric/b8/hit10)",
+    "next_route_round1",
+    "_wt_top10/research_top10_comparison_2026_09_16",
+    "top10_comparison_r1 (via published pilot refs)"
+  ],
+  "performed_tests": [
+    {
+      "id": "T1",
+      "what": "active-byte arithmetic + packbits roundtrips on copies",
+      "result": "PASS",
+      "log": "outputs/t_probe_synth.log"
+    },
+    {
+      "id": "T2",
+      "what": "lexicographic stride non-inversion (MAG8+SIGN_ONLY8) synthetic 6-doc",
+      "result": "PASS",
+      "log": "outputs/t_probe_synth.log"
+    },
+    {
+      "id": "T3",
+      "what": "query-scoring oracle inspection + float-vs-quantized fixture",
+      "result": "PASS asym/B8 consume full float q; residual8 8-axis quantized; no doc floats",
+      "log": "outputs/t_probe_synth.log"
+    },
+    {
+      "id": "T5",
+      "what": "fit-path leakage signatures (select_axes/fit_archive C-only)",
+      "result": "PASS",
+      "log": "outputs/t_probe_synth.log"
+    },
+    {
+      "id": "T6",
+      "what": "loglog p convention + 1/8 null arithmetic",
+      "result": "PASS",
+      "log": "outputs/t_probe_synth.log"
+    },
+    {
+      "id": "V1",
+      "what": "residual8 PerLTQA reaggregation 8265 rows",
+      "result": "VERIFIED digit-identical; MAG8-BASE +0.481294pp; per-query-max inflation +1.5842pp",
+      "log": "outputs/t_reaggregate.log"
+    },
+    {
+      "id": "V2",
+      "what": "B8 reaggregation 9440 rows",
+      "result": "VERIFIED to 6dp; B8-asym +0.000583/-0.024362/-0.022140",
+      "log": "outputs/t_reaggregate.log"
+    },
+    {
+      "id": "V3",
+      "what": "seed mapping idx0=62001 best-global",
+      "result": "VERIFIED",
+      "log": "outputs/t_reaggregate.log + copies/constants.json"
+    }
+  ],
+  "blockers": [
+    "compute.sh flock unavailable (RO fs); bounded direct single-thread runs used instead"
+  ],
+  "coverage": {
+    "total": 26,
+    "REVIEWED": 14,
+    "SAMPLED": 8,
+    "NOT RUN": 4
+  }
+}

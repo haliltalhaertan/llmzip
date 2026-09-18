@@ -1,0 +1,86 @@
+{
+ "datasets": {
+  "LME": {
+   "n_queries": 470,
+   "n_clusters": 470,
+   "cluster_size_min_med_max": [
+    1,
+    1,
+    1
+   ],
+   "cluster_unit": "query==archive (LME single-session rows: clustering is a no-op)",
+   "focal": "qscale96_bm25",
+   "level_mine": 57.69858156028369,
+   "level_pub": 57.69858156028369,
+   "level_diff_pp": 0.0,
+   "est_mine": -0.3297872340425531,
+   "est_pub": -0.3297872340425531,
+   "est_diff_pp": 0.0,
+   "ci_mine_2k_s777": [
+    -1.3936170212765957,
+    0.6063829787234042
+   ],
+   "ci_pub_20k_s20260916": [
+    -1.3829787234042552,
+    0.6170212765957447
+   ],
+   "sig_agrees": true,
+   "c3_agrees": true
+  },
+  "LoCoMo": {
+   "n_queries": 1531,
+   "n_clusters": 10,
+   "cluster_size_min_med_max": [
+    81,
+    155,
+    197
+   ],
+   "cluster_unit": "archive",
+   "focal": "qscale96_bm25",
+   "level_mine": 42.81117508064524,
+   "level_pub": 42.81117508064524,
+   "level_diff_pp": 0.0,
+   "est_mine": 1.065239943135974,
+   "est_pub": 1.065239943135974,
+   "est_diff_pp": 0.0,
+   "ci_mine_2k_s777": [
+    0.42774996707981505,
+    1.7279103215404945
+   ],
+   "ci_pub_20k_s20260916": [
+    0.43892185954500496,
+    1.7161824874235607
+   ],
+   "sig_agrees": true,
+   "c3_agrees": true
+  },
+  "PerLTQA": {
+   "n_queries": 8265,
+   "n_clusters": 30,
+   "cluster_size_min_med_max": [
+    202,
+    281,
+    409
+   ],
+   "cluster_unit": "archive",
+   "focal": "qscale96_bm25",
+   "level_mine": 57.45690688326509,
+   "level_pub": 57.45690688326509,
+   "level_diff_pp": 0.0,
+   "est_mine": 0.3283372322018634,
+   "est_pub": 0.3283372322018634,
+   "est_diff_pp": 0.0,
+   "ci_mine_2k_s777": [
+    -0.03316537975092011,
+    0.6711934221473097
+   ],
+   "ci_pub_20k_s20260916": [
+    -0.017179347053170296,
+    0.6705692573828946
+   ],
+   "sig_agrees": true,
+   "c3_agrees": true
+  }
+ },
+ "rowcount": 164256
+}

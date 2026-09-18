@@ -1,0 +1,401 @@
+{
+ "incoming_20260916b": {
+  "scanned": 3633,
+  "files_with_3plus": 168,
+  "top": [
+   [
+    "extracted/LLMZIP_HIZ_GENELLEME_2026-09-16/LLMZIP_HIZ_GENELLEME_2026-09-16/results/optimized_speed_per_archive.json",
+    135
+   ],
+   [
+    "extracted/LLMZIP_HIZ_GENELLEME_2026-09-16/LLMZIP_HIZ_GENELLEME_2026-09-16/results/speed_per_archive.json",
+    122
+   ],
+   [
+    "extracted/LLMZIP_BENCHMARK_2026-09-15/LLMZIP_BENCHMARK_2026-09-15/results/performance_per_archive.json",
+    67
+   ],
+   [
+    "extracted/LLMZIP_IKI_FIKIR_DENEY_PAKETI_2026-09-16/LLMZIP_IKI_FIKIR_2026-09-16/results/resource_raw_samples.csv",
+    54
+   ],
+   [
+    "extracted/LLMZIP_BENCHMARK_2026-09-15/LLMZIP_BENCHMARK_2026-09-15/results/optimized_comparison_per_archive.json",
+    50
+   ],
+   [
+    "extracted/LLMZIP_KISITLI_CEZA_PILOT_2026-09-16/LLMZIP_KISITLI_CEZA_PILOT_2026-09-16/results/shards/045/pairs.csv",
+    45
+   ]
+  ],
+  "distinct_nums": 143
+ },
+ "parallel_ideas_r1": {
+  "scanned": 1916,
+  "files_with_3plus": 35,
+  "top": [
+   [
+    "hit10/audit3/AUDIT3_FINDINGS.md",
+    40
+   ],
+   [
+    "hit10/audit4/AUDIT4_FINDINGS.md",
+    24
+   ],
+   [
+    "hit10/HANDOFF_2026-09-15.md",
+    18
+   ],
+   [
+    "hit10/HIT10.json",
+    14
+   ],
+   [
+    "hit10/AUDIT_BRIEF_3_2026-09-17.md",
+    13
+   ],
+   [
+    "hit10/WHERE_NEXT.json",
+    13
+   ]
+  ],
+  "distinct_nums": 75
+ },
+ "regen": {
+  "scanned": 492,
+  "files_with_3plus": 7,
+  "top": [
+   [
+    "lme/items/2698e78f.json",
+    14
+   ],
+   [
+    "lme/items/b320f3f8.json",
+    14
+   ],
+   [
+    "lme/items/gpt4_483dd43c.json",
+    14
+   ],
+   [
+    "lme/items/5a7937c8.json",
+    5
+   ],
+   [
+    "lme/items/07741c45.json",
+    3
+   ],
+   [
+    "lme/items/85fa3a3f.json",
+    3
+   ]
+  ],
+  "distinct_nums": 21
+ },
+ "bench3": {
+  "scanned": 70,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "review_transfer": {
+  "scanned": 535,
+  "files_with_3plus": 14,
+  "top": [
+   [
+    "EXTERNAL_LLM_REVIEW_AXIS_PILOT_ED3_2026-09-13/pilots/axis_attack_2026-09-12/round3/muse_sessions/d2/d2_details.json",
+    10
+   ],
+   [
+    "EXTERNAL_LLM_REVIEW_AXIS_PILOT_ED2_2026-09-13/pilots/axis_attack_2026-09-12/round2/wsl_details/r2a_per_q.json",
+    4
+   ],
+   [
+    "EXTERNAL_LLM_REVIEW_AXIS_PILOT_ED3_2026-09-13/pilots/axis_attack_2026-09-12/round2/wsl_details/r2a_per_q.json",
+    4
+   ],
+   [
+    "EXTERNAL_LLM_REVIEW_TASK1_2026-09-12/reports/muse_sessions/01a0970e-dbda-7d83-9168-eac4ecdb8653.json",
+    4
+   ],
+   [
+    "_ed3_lite_stage/EXTERNAL_LLM_REVIEW_AXIS_PILOT_ED3_LITE/pilots/axis_attack_2026-09-12/round2/wsl_details/r2a_per_q.json",
+    4
+   ],
+   [
+    "_lite_stage/EXTERNAL_LLM_REVIEW_AXIS_PILOT_ED2_LITE/pilots/axis_attack_2026-09-12/round2/wsl_details/r2a_per_q.json",
+    4
+   ]
+  ],
+  "distinct_nums": 19
+ },
+ "residual8_pilot_r1": {
+  "scanned": 127,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "hr-consolidation": {
+  "scanned": 300,
+  "files_with_3plus": 3,
+  "top": [
+   [
+    "docs/v52/task4c2/V52_T4C2_distance_geometry.csv",
+    30
+   ],
+   [
+    "docs/v52/task4c2/V52_T4C2_rank_geometry.csv",
+    4
+   ],
+   [
+    "docs/v52/task4c2/V52_T4C2_HEAD_RESEARCHER_HANDOFF.txt",
+    3
+   ]
+  ],
+  "distinct_nums": 34
+ },
+ "incoming_20260916": {
+  "scanned": 142,
+  "files_with_3plus": 13,
+  "top": [
+   [
+    "extracted/LLMZIP_HIZ_GENELLEME_2026-09-16/LLMZIP_HIZ_GENELLEME_2026-09-16/results/optimized_speed_per_archive.json",
+    135
+   ],
+   [
+    "extracted/LLMZIP_HIZ_GENELLEME_2026-09-16/LLMZIP_HIZ_GENELLEME_2026-09-16/results/speed_per_archive.json",
+    122
+   ],
+   [
+    "extracted/LLMZIP_BENCHMARK_2026-09-15/LLMZIP_BENCHMARK_2026-09-15/results/performance_per_archive.json",
+    67
+   ],
+   [
+    "extracted/LLMZIP_BENCHMARK_2026-09-15/LLMZIP_BENCHMARK_2026-09-15/results/optimized_comparison_per_archive.json",
+    50
+   ],
+   [
+    "Ara\u015ft\u0131rma De\u011ferlendirmesi-2026-09-16.md",
+    22
+   ],
+   [
+    "extracted/LLMZIP_DENETIM_INCELEMESI_2026-09-16/LLMZIP_DENETIM_INCELEMESI_2026-09-16/diagnosis_quality_reaggregated.csv",
+    11
+   ]
+  ],
+  "distinct_nums": 143
+ },
+ "agent_out": {
+  "scanned": 150,
+  "files_with_3plus": 7,
+  "top": [
+   [
+    "perltqa-levels/evidence/results.json",
+    6
+   ],
+   [
+    "scale-contradiction/evidence/results.json",
+    6
+   ],
+   [
+    "perltqa-levels/evidence/levels_summary.json",
+    5
+   ],
+   [
+    "perltqa-levels/LEVELS.md",
+    3
+   ],
+   [
+    "perltqa-levels/evidence/paired_archives.json",
+    3
+   ],
+   [
+    "scale-contradiction/evidence/A_pool_rows.json",
+    3
+   ]
+  ],
+  "distinct_nums": 21
+ },
+ "theory_benchmark_test_v1": {
+  "scanned": 135,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "scratch": {
+  "scanned": 118,
+  "files_with_3plus": 10,
+  "top": [
+   [
+    "lv/p1_copy_ns/task3/objective_history.csv",
+    22
+   ],
+   [
+    "lv/p1_copy_ns/RESULTS.json",
+    12
+   ],
+   [
+    "lv/p1_copy_ns/task1/V52_T4C3_native_heterogeneity.csv",
+    11
+   ],
+   [
+    "lv/p1_copy_ns/task3/RESULTS.json",
+    11
+   ],
+   [
+    "lv/p2_copy/itq_haar_objective_comparison_2026_09_12/source/RESULTS.json",
+    11
+   ],
+   [
+    "lv/p1_copy_ns/task2/ARCHIVE_COST_RATIOS.csv",
+    7
+   ]
+  ],
+  "distinct_nums": 43
+ },
+ "drive": {
+  "scanned": 57,
+  "files_with_3plus": 2,
+  "top": [
+   [
+    "V52_T4C3_native_heterogeneity.csv",
+    11
+   ],
+   [
+    "t4c3/V52_T4C3_native_heterogeneity.csv",
+    11
+   ]
+  ],
+  "distinct_nums": 11
+ },
+ "pilots": {
+  "scanned": 73,
+  "files_with_3plus": 3,
+  "top": [
+   [
+    "axis_attack_2026-09-12/round3/muse_sessions/d2/d2_details.json",
+    10
+   ],
+   [
+    "axis_attack_2026-09-12/round2/wsl_details/r2a_per_q.json",
+    4
+   ],
+   [
+    "axis_attack_2026-09-12/per_axis_v2.csv",
+    3
+   ]
+  ],
+  "distinct_nums": 15
+ },
+ "math_discovery_2026_09_13": {
+  "scanned": 55,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "race_2026-09-13": {
+  "scanned": 46,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "reports": {
+  "scanned": 47,
+  "files_with_3plus": 3,
+  "top": [
+   [
+    "01a0970e-dbda-7d83-9168-eac4ecdb8653.json",
+    4
+   ],
+   [
+    "muse_sessions/01a0970e-dbda-7d83-9168-eac4ecdb8653.json",
+    4
+   ],
+   [
+    "drive_inventory.csv",
+    3
+   ]
+  ],
+  "distinct_nums": 7
+ },
+ "next_route_round1": {
+  "scanned": 40,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "harness": {
+  "scanned": 15,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "audit_2026-09-13": {
+  "scanned": 14,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "representation_geometry_fix": {
+  "scanned": 8,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "prereg_race_2026-09-13": {
+  "scanned": 21,
+  "files_with_3plus": 0,
+  "top": [],
+  "distinct_nums": 0
+ },
+ "top10_literature_20260915": {
+  "scanned": 34,
+  "files_with_3plus": 3,
+  "top": [
+   [
+    "sources/pplx_full.txt",
+    13
+   ],
+   [
+    "sources/pplx_recovered.md",
+    8
+   ],
+   [
+    "sources/qwen.md",
+    7
+   ]
+  ],
+  "distinct_nums": 20
+ },
+ "chat_literature_review_20260915": {
+  "scanned": 77,
+  "files_with_3plus": 9,
+  "top": [
+   [
+    "literature/source_08.json",
+    12
+   ],
+   [
+    "literature/source_08.txt",
+    12
+   ],
+   [
+    "literature/source_05.json",
+    6
+   ],
+   [
+    "literature/source_05.txt",
+    6
+   ],
+   [
+    "conversation.txt",
+    5
+   ],
+   [
+    "input/Github llmzip G\u00fcncellemeleri-2026-09-15.md",
+    5
+   ]
+  ],
+  "distinct_nums": 24
+ }
+}

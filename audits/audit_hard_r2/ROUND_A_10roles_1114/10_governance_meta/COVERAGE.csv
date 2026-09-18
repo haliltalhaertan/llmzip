@@ -1,0 +1,19 @@
+check_id,object,evidence,status
+G01,REFS_BEFORE vs live refs,REFS_BEFORE.txt + git for-each-ref (182 total; 26 local heads all match),REVIEWED
+G02,HR twelve-byte budget decision (L-087),git show 89d3169 + docs/v52/V52_TWELVE_BYTE_BUDGET_HR_DECISION_2026-09-11.md head/tail,REVIEWED
+G03,hr standardized-float correction + L-097,git log 7501991 + ledger tail on main 59b891e,REVIEWED
+G04,L-096 consolidation,git log 907750f body,REVIEWED
+G05,pilot STOP verdict + FINAL_STATE gates,git show FINAL_STATE.md + commit 8bcdef5 body,REVIEWED
+G06,REFEREE.md + decision_tests.py timing,git log --diff-filter=A + name-only log; decision_tests.py:190-191,REVIEWED
+G07,postcheck commits 8f7beaa + 9993f95,commit bodies + --stat (append-only),REVIEWED
+G08,NOT PREREGISTERED labels,head -3 of REPORT/PROTOCOL/FINAL_STATE/REFEREE + code _label,REVIEWED
+G09,r1 numbers 101-row claim,HARD_AUDIT_NUMBERS.md TOTALS + COVERAGE LEDGER + token grep,REVIEWED
+G10,r1 ITQ-seed wording,au_c1_itq.py:29/41/85/91/111-124 + HARD_AUDIT_CLAIMS.md:50,REVIEWED
+G11,r1 cleanroom/portability wording,HARD_AUDIT_INTEGRITY.md:16/33-50/203-218 + CONSOLIDATED finding 9,REVIEWED
+G12,r1 CONSOLIDATED + RUN_SCOPE + prior PROJECT_COVERAGE (17 rows),full read head + row count,SAMPLED
+G13,research-line inventory (bench3/regen/incoming/parallel/residual/chat-lit),directory listings,SAMPLED
+G14,postcheck matched RealTalk numbers (9993f95 table),commit body read only,NOT RUN
+G15,prereg draft lineage (d2cfbaa/a73393a),names + L-092 note only,NOT RUN
+G16,F1/dense/KV/static/E1/T4F1-era/remote bodies,listed for coverage; owned by r2 roles 03-08,NOT RUN
+G17,literature primary sources,map/dir listing only; none opened,NOT RUN
+G18,model weights/caches (2.4GB model/ ARCHIVE_CACHE),manifest note only,NOT RUN

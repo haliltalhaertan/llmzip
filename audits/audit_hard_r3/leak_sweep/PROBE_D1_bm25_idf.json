@@ -1,0 +1,59 @@
+{
+ "n_queries": 705,
+ "hit10_per_archive_idf_pct": 54.184397163120565,
+ "hit10_pooled_idf_pct": 55.177304964539005,
+ "delta_pooled_minus_local_pp": 0.9929078014184397,
+ "per_archive": {
+  "RT01": {
+   "n": 85,
+   "hit_local": 44,
+   "hit_pooled": 45
+  },
+  "RT02": {
+   "n": 70,
+   "hit_local": 38,
+   "hit_pooled": 29
+  },
+  "RT03": {
+   "n": 73,
+   "hit_local": 50,
+   "hit_pooled": 48
+  },
+  "RT04": {
+   "n": 71,
+   "hit_local": 41,
+   "hit_pooled": 36
+  },
+  "RT05": {
+   "n": 70,
+   "hit_local": 45,
+   "hit_pooled": 41
+  },
+  "RT06": {
+   "n": 74,
+   "hit_local": 32,
+   "hit_pooled": 42
+  },
+  "RT07": {
+   "n": 70,
+   "hit_local": 48,
+   "hit_pooled": 51
+  },
+  "RT08": {
+   "n": 70,
+   "hit_local": 19,
+   "hit_pooled": 26
+  },
+  "RT09": {
+   "n": 63,
+   "hit_local": 38,
+   "hit_pooled": 41
+  },
+  "RT10": {
+   "n": 59,
+   "hit_local": 27,
+   "hit_pooled": 30
+  }
+ },
+ "note": "tie rule SHA256(top10-r1|aid|row); k1=1.5 b=0.75; pooled arm keeps per-archive TF/len, only df/idf+avglen are background"
+}

@@ -1,0 +1,502 @@
+{
+  "labels": [
+    "[LOCAL EXPLORATORY PILOT]",
+    "[NOT PREREGISTERED]",
+    "[NOT FOR CITATION]",
+    "[DISCLOSE-BEFORE-USE]"
+  ],
+  "task": "first-stage pool comparison for a reranking architecture (RealTalk only)",
+  "benchmark": "RealTalk",
+  "n": 705,
+  "n_archives": 10,
+  "archives": [
+    "RT01",
+    "RT02",
+    "RT03",
+    "RT04",
+    "RT05",
+    "RT06",
+    "RT07",
+    "RT08",
+    "RT09",
+    "RT10"
+  ],
+  "ms": [
+    10,
+    20,
+    50,
+    100,
+    200,
+    500
+  ],
+  "exclusions": {
+    "n_skipped": 23,
+    "reason": "empty gold_rows (pre-declared; matches data/exclusions.json exactly per gate G2)",
+    "skipped_qids": [
+      "RT06_q009",
+      "RT06_q072",
+      "RT08_q042",
+      "RT08_q043",
+      "RT09_q005",
+      "RT09_q011",
+      "RT09_q012",
+      "RT09_q014",
+      "RT09_q036",
+      "RT09_q037",
+      "RT09_q041",
+      "RT09_q042",
+      "RT10_q004",
+      "RT10_q005",
+      "RT10_q010",
+      "RT10_q016",
+      "RT10_q019",
+      "RT10_q046",
+      "RT10_q048",
+      "RT10_q049",
+      "RT10_q050",
+      "RT10_q051",
+      "RT10_q052"
+    ]
+  },
+  "gates": {
+    "G1_n_705": true,
+    "G2_exclusions_exact": true,
+    "G3_code_hit10": 49.645390070921984,
+    "G4_code_fr3": 22.409863310759164,
+    "G5_bm25_hit10": 54.184397163120565,
+    "G6_bm25_idexact": {
+      "status": "FAIL",
+      "mismatched_qids": [
+        "RT01_q016"
+      ],
+      "cause": "1-ulp float summation-order noise on a TRUE 3-way tie at the top10 cut (RT01_q016 rows 249/596/605 ~= 5.501322839570598; tie-hash order 605<249<596; neither 249 nor 596 is gold; zero metric impact). Reference convention `for t in set(q_tok)` is PYTHONHASHSEED-dependent (verified: seeds 0/1 pick {249,605}, seed 42 picks {605,249}), so bit-exact agreement with that file is ill-defined on ties. Primary uses deterministic sorted-term order (seed-independent).",
+      "sensitivity_max_pp": 0.0,
+      "sensitivity_nonzero_top10": [],
+      "n_sensitivity_aggregates": 58
+    },
+    "G7_code_hit100_ceil100": [
+      75.60283687943262,
+      61.30262524999366
+    ],
+    "G8_bm25_hit100_ceil100": [
+      78.15602836879432,
+      62.255137771737466
+    ],
+    "index_vs_naive_top500_agree": [
+      705,
+      705
+    ],
+    "index_vs_naive_top10_agree": [
+      705,
+      705
+    ]
+  },
+  "arms": {
+    "CODE": "qscale B@(q/sigma), 12-byte doc codes, sigma float64 per-archive doc-col std ddof=0 floor 1e-12",
+    "BM25": "k1=1.5 b=0.75 idf=log((N-df+0.5)/(df+0.5)+1), lower \\w+, per-archive DOCUMENTS-ONLY fit, index-traversal scoring",
+    "RRF": "1/(60+rank_code)+1/(60+rank_bm25), k=60 fixed pre-run, 1-indexed ranks, det tie rule",
+    "UNION": "top-(M/2)+top-(M/2) deduped pool; pool metrics only"
+  },
+  "own_no_reranker": {
+    "CODE": {
+      "hit10": 49.645390070921984,
+      "fr3": 22.409863310759164
+    },
+    "BM25": {
+      "hit10": 54.184397163120565,
+      "fr3": 33.07287130355439
+    },
+    "RRF": {
+      "hit10": 55.74468085106383,
+      "fr3": 31.453992546377762
+    }
+  },
+  "pool": {
+    "10": {
+      "CODE": {
+        "hit": 49.645390070921984,
+        "recall": 36.99902237864164,
+        "ceiling_fr3": 36.947800944441475
+      },
+      "BM25": {
+        "hit": 54.184397163120565,
+        "recall": 43.15994774169466,
+        "ceiling_fr3": 43.15994774169466
+      },
+      "RRF": {
+        "hit": 55.74468085106383,
+        "recall": 42.80145398958389,
+        "ceiling_fr3": 42.80145398958389
+      },
+      "UNION": {
+        "hit": 54.60992907801418,
+        "recall": 42.168278260663485,
+        "ceiling_fr3": 42.168278260663485
+      }
+    },
+    "20": {
+      "CODE": {
+        "hit": 58.156028368794324,
+        "recall": 44.462353767504936,
+        "ceiling_fr3": 44.287187719998464
+      },
+      "BM25": {
+        "hit": 64.39716312056738,
+        "recall": 50.632817267755684,
+        "ceiling_fr3": 50.438963839859696
+      },
+      "RRF": {
+        "hit": 62.12765957446808,
+        "recall": 49.28214744900075,
+        "ceiling_fr3": 49.010730135030244
+      },
+      "UNION": {
+        "hit": 61.702127659574465,
+        "recall": 48.29745759197048,
+        "ceiling_fr3": 48.23047571647796
+      }
+    },
+    "50": {
+      "CODE": {
+        "hit": 67.37588652482269,
+        "recall": 54.38336196174942,
+        "ceiling_fr3": 53.6994150969515
+      },
+      "BM25": {
+        "hit": 72.19858156028369,
+        "recall": 57.60057040111055,
+        "ceiling_fr3": 57.052895066201174
+      },
+      "RRF": {
+        "hit": 72.76595744680851,
+        "recall": 59.40191930946822,
+        "ceiling_fr3": 58.641027718789395
+      },
+      "UNION": {
+        "hit": 72.62411347517731,
+        "recall": 58.25926173064043,
+        "ceiling_fr3": 57.68670741340526
+      }
+    },
+    "100": {
+      "CODE": {
+        "hit": 75.60283687943262,
+        "recall": 62.373828672260935,
+        "ceiling_fr3": 61.30262524999366
+      },
+      "BM25": {
+        "hit": 78.15602836879432,
+        "recall": 63.03957069384247,
+        "ceiling_fr3": 62.255137771737466
+      },
+      "RRF": {
+        "hit": 81.27659574468085,
+        "recall": 67.38730032943194,
+        "ceiling_fr3": 66.14993682611099
+      },
+      "UNION": {
+        "hit": 78.72340425531915,
+        "recall": 64.7185585263775,
+        "ceiling_fr3": 63.65107006527203
+      }
+    },
+    "200": {
+      "CODE": {
+        "hit": 85.2482269503546,
+        "recall": 72.39778247086726,
+        "ceiling_fr3": 70.45041831136291
+      },
+      "BM25": {
+        "hit": 86.09929078014184,
+        "recall": 71.3868488271031,
+        "ceiling_fr3": 69.78987214689737
+      },
+      "RRF": {
+        "hit": 88.08510638297872,
+        "recall": 75.00461063088689,
+        "ceiling_fr3": 73.01364967582607
+      },
+      "UNION": {
+        "hit": 85.1063829787234,
+        "recall": 71.80936564112903,
+        "ceiling_fr3": 70.24203279782623
+      }
+    },
+    "500": {
+      "CODE": {
+        "hit": 95.177304964539,
+        "recall": 87.95275487552017,
+        "ceiling_fr3": 83.84499221657511
+      },
+      "BM25": {
+        "hit": 96.02836879432624,
+        "recall": 87.50050625292705,
+        "ceiling_fr3": 83.55691386466697
+      },
+      "RRF": {
+        "hit": 97.16312056737588,
+        "recall": 89.79340318026834,
+        "ceiling_fr3": 85.60993649215769
+      },
+      "UNION": {
+        "hit": 94.60992907801419,
+        "recall": 84.57502411418491,
+        "ceiling_fr3": 81.0695785049912
+      }
+    }
+  },
+  "complementarity_pool_hit": {
+    "10": {
+      "both": 297,
+      "code_only": 53,
+      "bm25_only": 85,
+      "neither": 270,
+      "n": 705,
+      "oracle_union_hit": 61.702127659574465,
+      "oracle_note": "gold-using upper bound, NOT a deployable method"
+    },
+    "20": {
+      "both": 368,
+      "code_only": 42,
+      "bm25_only": 86,
+      "neither": 209,
+      "n": 705,
+      "oracle_union_hit": 70.35460992907801,
+      "oracle_note": "gold-using upper bound, NOT a deployable method"
+    },
+    "50": {
+      "both": 429,
+      "code_only": 46,
+      "bm25_only": 80,
+      "neither": 150,
+      "n": 705,
+      "oracle_union_hit": 78.72340425531915,
+      "oracle_note": "gold-using upper bound, NOT a deployable method"
+    },
+    "100": {
+      "both": 484,
+      "code_only": 49,
+      "bm25_only": 67,
+      "neither": 105,
+      "n": 705,
+      "oracle_union_hit": 85.1063829787234,
+      "oracle_note": "gold-using upper bound, NOT a deployable method"
+    },
+    "200": {
+      "both": 552,
+      "code_only": 49,
+      "bm25_only": 55,
+      "neither": 49,
+      "n": 705,
+      "oracle_union_hit": 93.04964539007092,
+      "oracle_note": "gold-using upper bound, NOT a deployable method"
+    },
+    "500": {
+      "both": 653,
+      "code_only": 18,
+      "bm25_only": 24,
+      "neither": 10,
+      "n": 705,
+      "oracle_union_hit": 98.58156028368793,
+      "oracle_note": "gold-using upper bound, NOT a deployable method"
+    }
+  },
+  "gold_size_dist": {
+    "1": 319,
+    "2": 178,
+    "3": 92,
+    "4": 49,
+    "5": 24,
+    "6": 15,
+    "7": 7,
+    "8": 4,
+    "9": 7,
+    "10": 4,
+    "14": 1,
+    "17": 1,
+    "19": 2,
+    "21": 1,
+    "22": 1
+  },
+  "costs": {
+    "CODE": {
+      "bytes_per_doc": 12,
+      "total_docs": 8944,
+      "packed_bits_bytes": 107328,
+      "sigma": {
+        "per_archive_floats": 96,
+        "dtype": "float64",
+        "per_archive_bytes": 768,
+        "total_bytes": 7680
+      },
+      "total_bytes": 115008,
+      "needs_raw_text": false
+    },
+    "BM25": {
+      "serialization": "pickle.dumps(index, protocol=HIGHEST_PROTOCOL) of {N, postings: {term: {row: tf}}, idf, doc_lens, avglen} per archive",
+      "per_archive_index_bytes": {
+        "RT01": 140402,
+        "RT02": 143725,
+        "RT03": 136323,
+        "RT04": 133730,
+        "RT05": 140177,
+        "RT06": 151742,
+        "RT07": 160580,
+        "RT08": 134946,
+        "RT09": 148980,
+        "RT10": 159624
+      },
+      "total_index_bytes": 1450229,
+      "raw_text_utf8_bytes_per_archive": {
+        "RT01": 97839,
+        "RT02": 101005,
+        "RT03": 95570,
+        "RT04": 106365,
+        "RT05": 105956,
+        "RT06": 97609,
+        "RT07": 103565,
+        "RT08": 91668,
+        "RT09": 96053,
+        "RT10": 103024
+      },
+      "raw_text_utf8_bytes_total": 998654,
+      "needs_raw_text": true,
+      "note": "index bytes EXCLUDE the raw text, which BM25 also requires at query time (tokenize query only) and at index time; text bytes shown for the honest total"
+    }
+  },
+  "timings": {
+    "CODE_score_rank": {
+      "mean_ms": 1.3748461702125045,
+      "p50_ms": 1.3099999999894862,
+      "p95_ms": 2.5882599999818,
+      "n": 705
+    },
+    "BM25_index_score_rank": {
+      "mean_ms": 1.6966122893623472,
+      "p50_ms": 1.6108000000372158,
+      "p95_ms": 3.1978200000025936,
+      "n": 705
+    },
+    "RRF_end_to_end_rescore_fuse_rank": {
+      "mean_ms": 1.3316924326252948,
+      "p50_ms": 1.2535999999840897,
+      "p95_ms": 2.4549600000341343,
+      "n": 705
+    },
+    "UNION_marginal_dedupe_only": {
+      "mean_ms": 0.10342964964396459,
+      "p50_ms": 0.09420000003501627,
+      "p95_ms": 0.15498000001343826,
+      "n": 705
+    },
+    "index_build_total_s": 0.09532879899995805,
+    "timing_note": "CODE/BM25 timed as score+full-rank per query. RRF timed as fusion+rank MARGINAL only (base rankings reused); honest end-to-end RRF ~= CODE+BM25+fusion (~3.2 ms mean here). UNION is marginal dedupe of the two top-(M/2) lists only, given base rankings (M=10..500 loop). Single-threaded, same machine, wall time."
+  },
+  "contrasts": {
+    "BM25-CODE": {
+      "pool_hit100": {
+        "point_pp": 2.5531914893617023,
+        "ci95": [
+          -1.1698059581944549,
+          6.685633001422475
+        ],
+        "clusters": 10,
+        "better": 67,
+        "worse": 49,
+        "same": 589,
+        "ci_excludes_zero": false
+      },
+      "ceiling_fr3_100": {
+        "point_pp": 0.9525125217437976,
+        "ci95": [
+          -2.370636410246265,
+          4.072152108226952
+        ],
+        "clusters": 10,
+        "better": 95,
+        "worse": 101,
+        "same": 509,
+        "ci_excludes_zero": false
+      },
+      "note": "paired archive-clustered bootstrap, 20000 reps, seed 20260916; only 10 clusters -> wide CIs, exploratory only"
+    },
+    "RRF-CODE": {
+      "pool_hit100": {
+        "point_pp": 5.673758865248227,
+        "ci95": [
+          3.2347668657848576,
+          8.203731609004329
+        ],
+        "clusters": 10,
+        "better": 57,
+        "worse": 17,
+        "same": 631,
+        "ci_excludes_zero": true
+      },
+      "ceiling_fr3_100": {
+        "point_pp": 4.8473115761173196,
+        "ci95": [
+          2.963407377518054,
+          6.699832128331361
+        ],
+        "clusters": 10,
+        "better": 83,
+        "worse": 37,
+        "same": 585,
+        "ci_excludes_zero": true
+      },
+      "note": "paired archive-clustered bootstrap, 20000 reps, seed 20260916; only 10 clusters -> wide CIs, exploratory only"
+    },
+    "RRF-BM25": {
+      "pool_hit100": {
+        "point_pp": 3.120567375886525,
+        "ci95": [
+          1.2295081967213115,
+          4.915903182730433
+        ],
+        "clusters": 10,
+        "better": 33,
+        "worse": 11,
+        "same": 661,
+        "ci_excludes_zero": true
+      },
+      "ceiling_fr3_100": {
+        "point_pp": 3.8947990543735225,
+        "ci95": [
+          2.4408943203338382,
+          5.472756030751689
+        ],
+        "clusters": 10,
+        "better": 78,
+        "worse": 30,
+        "same": 597,
+        "ci_excludes_zero": true
+      },
+      "note": "paired archive-clustered bootstrap, 20000 reps, seed 20260916; only 10 clusters -> wide CIs, exploratory only"
+    },
+    "UNION-RRF_pool": {
+      "pool_hit100": {
+        "point_pp": -2.5531914893617023,
+        "ci95": [
+          -3.672316384180791,
+          -1.4408703584682732
+        ],
+        "clusters": 10,
+        "better": 2,
+        "worse": 20,
+        "same": 683,
+        "ci_excludes_zero": true
+      },
+      "note": "informational: pool-vs-ranking at M=100; UNION has no ranking"
+    }
+  },
+  "caveats": [
+    "RealTalk only (n=705). Never averaged across benchmarks.",
+    "Only 10 archive clusters -> all contrast CIs wide and exploratory.",
+    "Ceilings assume an ORACLE reranker with gold knowledge; real rerankers land far below. A high ceiling does NOT prove reachability.",
+    "ORACLE-UNION is a gold-using bound, NOT a deployable method.",
+    "RRF k=60 fixed before running (standard default), never tuned.",
+    "BM25 query times are for this Python index traversal; a production engine would be faster. CODE times are dense matvec + full sort."
+  ],
+  "elapsed_s": 14.155961275100708
+}

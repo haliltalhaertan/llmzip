@@ -1,0 +1,196 @@
+{
+ "T1_stores_any_CI": false,
+ "T1_code_arms": {
+  "hit10": 57.87234042553192,
+  "fr3": 32.79194143751814,
+  "vs_strongest_bm25_hit10_pp": -7.801418439716301,
+  "vs_strongest_bm25_fr3_pp": -7.231023776936439
+ },
+ "T1_strongest_bm25": {
+  "variant": "frozen_idfonly",
+  "hit10": 65.67375886524822,
+  "fr3": 40.02296521445458
+ },
+ "LADDER_arm_keys": [
+  "BM25_coarse/-",
+  "BM25_frozen/-",
+  "NOPROJ_FULL/float",
+  "NOPROJ_WORD/float",
+  "k192/float",
+  "k192/qscale",
+  "k192/sym",
+  "k384/float",
+  "k384/qscale",
+  "k384/sym",
+  "k96/float",
+  "k96/qscale",
+  "k96/sym"
+ ],
+ "LADDER_stores_per_query": false,
+ "per_question_BM25_candidates": {
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/coordinator/why_bm25_per_query.jsonl": {
+   "bytes": 87074,
+   "first_row_keys": [
+    "archive_id",
+    "band",
+    "bm25_hit",
+    "code_hit",
+    "max_idf",
+    "qid"
+   ]
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/coordinator/why_bm25_per_query.jsonl": {
+   "bytes": 87074,
+   "first_row_keys": [
+    "archive_id",
+    "band",
+    "bm25_hit",
+    "code_hit",
+    "max_idf",
+    "qid"
+   ]
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/audit/per_query_bm25_corrected.jsonl": {
+   "bytes": 485479,
+   "first_row_keys": [
+    "N",
+    "archive_id",
+    "arm",
+    "category",
+    "expected_hit_at_10_corrected",
+    "expected_hit_at_10_producer",
+    "gold",
+    "gold_size",
+    "hit_at_10",
+    "ndcg_at_10",
+    "qid",
+    "recall_at_10",
+    "source_file",
+    "tie",
+    "top10",
+    "top10_scores"
+   ]
+  },
+  "/mnt/c/Users/MDP/dev/llmzip-work/top10_comparison_r1/audit/per_query_bm25_corrected.jsonl": {
+   "bytes": 485479,
+   "first_row_keys": [
+    "N",
+    "archive_id",
+    "arm",
+    "category",
+    "expected_hit_at_10_corrected",
+    "expected_hit_at_10_producer",
+    "gold",
+    "gold_size",
+    "hit_at_10",
+    "ndcg_at_10",
+    "qid",
+    "recall_at_10",
+    "source_file",
+    "tie",
+    "top10",
+    "top10_scores"
+   ]
+  }
+ },
+ "H1_paired_data_exists": false,
+ "H1_note": "decision_tests.py t1() builds per_q dict for 4 BM25 variants but writes only means to DECISION_TESTS.json; code side reuses LADDER.json aggregates. No stored paired per-question file for frozen_idfonly-vs-k384 exists among candidates above (keys inspected).",
+ "H1_binomial_approx_unpaired": {
+  "se_code_pp": 1.86,
+  "se_bm25_pp": 1.79,
+  "gap_pp": -7.8,
+  "se_diff_pp": 2.58,
+  "approx_95CI": [
+   -12.86,
+   -2.74
+  ],
+  "warning": "UNPAIRED binomial; ignores pairing (conservative if positively correlated) and archive clustering (anti-conservative: RealTalk n=10 archives). NOT a substitute for the missing paired cluster bootstrap."
+ },
+ "LADDER_CACHE_archives": {
+  "RT01": 85,
+  "RT02": 70,
+  "RT03": 73,
+  "RT04": 71,
+  "RT05": 70,
+  "RT06": 74,
+  "RT07": 70,
+  "RT08": 70,
+  "RT09": 63,
+  "RT10": 59
+ },
+ "LADDER_CACHE_total_q": 705,
+ "H2_sym_minus_float_k384_hit10_archpaired": {
+  "mean_diff_pp": 10.76,
+  "sd_diff_pp": 16.02,
+  "se_diff_pp": 5.07,
+  "paired_t": 2.123,
+  "paired_t_p": 0.06273533039006399,
+  "wilcoxon_p": 0.130859375,
+  "n_archives_favoring_a": 6,
+  "per_archive_diff": [
+   -1.18,
+   2.86,
+   -1.37,
+   -5.63,
+   -7.14,
+   33.78,
+   35.71,
+   21.43,
+   20.63,
+   8.47
+  ]
+ },
+ "H2_overall_means": {
+  "sym": 54.184397163120565,
+  "float": 43.687943262411345
+ },
+ "H3_ladder_qscale_steps_archpaired_hit10": {
+  "k192_minus_k96": {
+   "mean_diff_pp": 5.68,
+   "sd_diff_pp": 5.32,
+   "se_diff_pp": 1.68,
+   "paired_t": 3.382,
+   "paired_t_p": 0.008107282605595206,
+   "wilcoxon_p": 0.0078125,
+   "n_archives_favoring_a": 8,
+   "per_archive_diff": [
+    0.0,
+    7.14,
+    2.74,
+    2.82,
+    1.43,
+    10.81,
+    12.86,
+    14.29,
+    4.76,
+    0.0
+   ]
+  },
+  "k384_minus_k192": {
+   "mean_diff_pp": 2.63,
+   "sd_diff_pp": 6.54,
+   "se_diff_pp": 2.07,
+   "paired_t": 1.273,
+   "paired_t_p": 0.23487992168158522,
+   "wilcoxon_p": 0.30078125,
+   "n_archives_favoring_a": 6,
+   "per_archive_diff": [
+    0.0,
+    -2.86,
+    -6.85,
+    4.23,
+    2.86,
+    10.81,
+    14.29,
+    -4.29,
+    4.76,
+    3.39
+   ]
+  }
+ },
+ "H3_overall_means": {
+  "k96/qscale": 49.645390070921984,
+  "k192/qscale": 55.319148936170215,
+  "k384/qscale": 57.87234042553192
+ }
+}

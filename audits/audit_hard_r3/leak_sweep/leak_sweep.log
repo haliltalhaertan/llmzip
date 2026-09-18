@@ -1,0 +1,85 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r3/leak_sweep (cwd default)
+muse: workspace trust: trusted source=run-flag
+# LEAK_SWEEP — round-3 project-wide leakage sweep
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+Adversarial auditor, round 3. Read-only on all source trees; writes only in `audit_hard_r3/leak_sweep/`. No number below is invented: every figure is quoted from a named file or measured by the saved probe.
+
+## 1. VERDICT (3 lines)
+
+Swept 66/66 `.py` files; the eval-corpus-fit recipe is project-wide (12 code files, all datasets) but no published number is overturned beyond round-2's known RealTalk-k96 collapse, so there is no new CRITICAL finding.
+New probe D1 (n=705): BM25 with background IDF scores 55.18 vs 54.18 per-archive (+0.99 pp) — the transduction asymmetry favours the codes, so the STOP verdict survives and is, if anything, understated.
+Zero fits on queries or gold anywhere; all leaks are docs-only index-time fits.
+
+## 2. Findings table
+
+| ID | Sev | Check | Result |
+|----|-----|-------|--------|
+| F1 | HIGH | Pipeline fit scope, 12 files | Same eval-archive fit, all sets |
+| F2 | HIGH | qscale sigma source | Docs-only per archive, every arm |
+| F3 | MED | BM25 IDF scope + probe D1 | Same-corpus IDF; bg-IDF +0.99 pp |
+| F4 | MED | PQ codebook training set | 8944 eval docs pooled; Q excluded |
+| F5 | MED | ITQ rotation fit scope | Per-archive docs-only; 1 init |
+| F6 | LOW | PCA96 fit scope | Pooled 10-arch eval docs; Q mapped |
+| F7 | LOW | Median-threshold fit scope | Docs-only; MED arm only |
+| F8 | LOW | Any fit on queries/gold | None in 66/66 files |
+| F9 | LOW | Upstream builder origin | Eval-fit; gates prove identity only |
+
+## 3. Per-finding detail
+
+### Sweep method
+
+- Enumerated every `.py` under `top10_comparison_r1/`: 66 files. Mechanical pattern scan produced 202 rows in `fit_inventory.csv` (this dir). Disclosed gap: scoring-time sigma helpers (`fit_std`/`sigma_docs`) lack `.fit(` and were caught by a second grep, audited manually (F2).
+- Deep-read (full file): all 9 special targets plus `repr_math.py`, `quant_math.py`, `run_pq.py`, `run_lexical.py`, `ladder.py`, `t3_perltqa_kltn.py`, `score_pplx.py`, `metrics_top10.py`, `audit_baseline_lib.py`, `why_bm25_wins.py`, `firststage.py` sections. Rest grep-verified clean. Classification is by-file (one recipe per file), stated as such.
+
+### F1 (HIGH): one transductive recipe, twelve instantiations, all datasets
+
+Every code-number builder fits word TFIDF(1,2) + char_wb TFIDF(3,5), LSA SVD, final SVD96, doc-mean mu on the evaluation corpus itself; queries only `.transform()` through fitted objects. Sites: `ablation_r2/lme/ablation.py:87-110`, `ablation_r2/perltqa/ablation.py:140-165`, `ablation_r2/perltqa/fidelity_gate.py:70-83`, `ablation_r2/perltqa/t3_ladder.py:148-173`, `ideas_r1/ablation/ablation.py:76-99`, `math_r1/quant/quant_math.py:234-247` and `:385-399`, `math_r1/repr/repr_math.py:83-93` and `:111-123`, `coordinator/ladder.py:111-132`, `coordinator/t3_perltqa_kltn.py:114-124`; upstream origin `bench3/runs/b3b_perltqa/step2_build.py:54-63`, `drive/v52_t4d_locomo_frozen_cross_benchmark.py:196-215`. Quantified collapse exists ONLY for RealTalk k=96 (round 2); other datasets/widths UNVERIFIED.
+
+### F2 (HIGH): qscale sigma is eval-docs-only in every scorer
+
+`sigma = std(C, axis=0)`, C the archive's own doc matrix, floor 1e-12, as `B @ (qC/sigma)`. Sites: `quant_math.py:161-162`, `repr_math.py:158-167`, `baseline/metrics_top10.py:47-51`, `audit/audit_baseline_lib.py:64-66`, `coordinator/ladder.py:150-152`, `t3_perltqa_kltn.py:65-67`, `ideas_r1/ablation.py:122-124`, `firststage.py:214-226`, `fidelity_gate.py:124-138`, `verify_incoming.py:31-39`. Touches every qscale number.
+
+### F3 (MED): BM25/TFIDF IDF is same-corpus — asymmetry favours codes
+
+IDF built from the scored archive's own docs. Scoring sites: `data/run_lexical.py:90-134`, `audit/audit_lexical_lib.py:116-159`, `coordinator/rerank_ceiling.py:63-79`, `split_failure_diag.py:51-56`, `why_bm25_wins.py:81-86`, `coordinator/ladder.py:79-109`, `firststage.py` per-archive index. Analysis-only: `quant_math.py:182-207`, `repr_fr3_mechanism.py:84-107`, `rare_band_decisive.py:30-62`. Probe D1 (auditor, read-only, 705 q): per-archive IDF 54.18 vs pooled IDF 55.18 (+0.99 pp) — saved as `PROBE_D1_bm25_idf.json`. Caveat: absolute differs from published fair-BM25 65.67 (different tokenizer); delta only. Codes gain ~28 pp from eval-fit vs BM25's ~0 pp, so the published gap flatters codes; STOP survives.
+
+### F4 (MED): PQ codebook trained on all 8944 eval docs pooled
+
+`pq/run_pq.py:199-210` (asserts 8944x96), `:222-226` (`pq.train`, M=12/nbits=8/seed 20260915). Queries explicitly excluded. Cross-archive scope. PQ arms only. Whether the 98,304-byte codebook counts in PQ byte claims: UNVERIFIED.
+
+### F5 (MED): ITQ per-archive docs-only; random controls clean
+
+`quant_math.py:140-158` (50 iters, seed 20260916), applied `:480-490`. Random rotations (`:133-138`, `:494-505`) use no data: legitimate. ITQ_C arm only.
+
+### F6 (LOW): PCA96 on pooled 10-archive eval-doc INT8
+
+`semantic/score_pplx.py:56-66`, identical `coordinator/semantic_before_fidelity_fix/score_pplx.py:53-63`; queries only projected. PPLX_PCA96_SIGN only. In-file docs-only declaration confirmed accurate.
+
+### F7 (LOW): median thresholds docs-only, one arm
+
+`quant_math.py:507-512` (MED), `:521-524` (diagnostics).
+
+### F8 (LOW, positive): no fit on queries or gold in 66/66 files
+
+`fit.*gold` grep found only true docs-only comments. Encoder (`encode_fast.py`, `pplx_scorer.py:35-40`) uses fixed weights and `>= 0` thresholds; `st_quantize.py`/`official_st_quantize.py` fixed tanh; 39 files zero fit-pattern hits.
+
+### F9 (LOW, context): fidelity gates prove identity, not honesty
+
+Bit-exact rebuild matches (`fidelity_gate.py:163-187`, `repr_compute.py:84-92`) authenticate the artifact as the transductive pipeline; not a leak clearance.
+
+### Ranked leaks by published numbers touched
+
+1. F1 pipeline family — all code Hit@10/FR@3 (RealTalk 46.52/49.65, PerLTQA 75.68/80.00, LME, ladders/ablations/arms). 2. F2 sigma — every qscale number. 3. F3 BM25-IDF — every BM25/TFIDF number incl. 65.67. 4. F4 PQ codebook — PQ arms. 5. F5 ITQ — ITQ_C arm. 6. F6 PCA96 — one arm. 7. F7 median — one arm. 8. F8/F9 — none.
+
+## 4. What could NOT be checked and why
+
+- Inductive-collapse size beyond RealTalk k=96: needs multi-hour sklearn rebuilds; probe budget (<15 min) forbade it. Need dataset/width-wise refits.
+- `_wt_top10/`, `audit_hard_r1/r2` trees: outside role scope/time-box.
+- Non-`.py` blobs (caches/payloads/JSON): sweep exhaustive over code (66/66 `.py`), not data; caches inherit F1 by construction.
+- PQ codebook byte-accounting; LoCoMo upstream builder (grep-only): UNVERIFIED.
+- D1 tokenizer mismatch (54.18 vs 65.67): delta-only claim; needs exact fair-BM25 tokenizer rerun.
+
+## Artifacts (this dir)
+
+`LEAK_SWEEP.md`, `fit_inventory.csv` (202 rows), `PROBE_D1_bm25_idf.json` (n=705). Probe scripts at `/tmp/probe_bm25_idf.py`, `/tmp/fit_inventory.py` (scratch). Source trees untouched.

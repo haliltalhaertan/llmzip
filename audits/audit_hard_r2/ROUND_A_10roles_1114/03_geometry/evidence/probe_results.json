@@ -1,0 +1,302 @@
+{
+ "labels": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "checks": {
+  "T1_sign_sigma_invariance": {
+   "pass": true,
+   "detail": "sign(C/sig)==sign(C) elementwise on F1 (sig>0 everywhere: [0.7179 0.7062 0.5928 0.5737])"
+  },
+  "T2_sym_rank_invariant_under_sigma": {
+   "pass": true,
+   "detail": "Hamming vectors equal: [-0.0, -0.0, -1.0, -4.0, -4.0, -2.0]"
+  },
+  "T3_float_moves_under_sigma": {
+   "pass": true,
+   "detail": "max|cos_c - cos_std| = 0.063639"
+  },
+  "T3bF1_coherent_top3_agrees": {
+   "pass": true,
+   "detail": "top3 centered [0, 1, 2] vs standardized [0, 1, 2] (coherent fixture need not separate arms)"
+  },
+  "T4_centering_flips_bits": {
+   "pass": true,
+   "detail": "6/24 bits differ between sign(Y) and sign(C); mu=[0.1917 0.1583 0.1833 0.15  ]"
+  },
+  "T5F1_coherent_top3_agrees": {
+   "pass": true,
+   "detail": "sym top3 [0, 1, 2] scores [-0.0, -0.0, -1.0] | asym top3 [0, 1, 2] (coherent fixture need not separate arms)"
+  },
+  "T6F1_coherent_top3_agrees": {
+   "pass": true,
+   "detail": "asym top3 [0, 1, 2] vs qscale top3 [0, 1, 2]"
+  },
+  "T6bF1_coherent_all_agree": {
+   "pass": true,
+   "detail": "36/36 ordered pairs share top3 on coherent F1 (separation lives in F1b)"
+  },
+  "T7a_sym_tie_exists": {
+   "pass": true,
+   "detail": "sym scores [-0.0, -0.0, -4.0, -2.0]"
+  },
+  "T7b_expected_hit_matches_MC": {
+   "pass": true,
+   "detail": "exact 1.0000 vs MC(40000) 1.0000"
+  },
+  "T5_sym_vs_asym_disagree_F1b": {
+   "pass": true,
+   "detail": "witness docs (0, 1) sym [-1.0, -2.0, -3.0, -2.0] asym [-1.35  1.45  1.35 -1.45]"
+  },
+  "T6F1b_qscale_asym_agree_here": {
+   "pass": true,
+   "detail": "F1b orders coincide (values differ: qscale [-29.4  29.8  29.4 -29.8] vs asym [-1.35  1.45  1.35 -1.45])"
+  },
+  "T3bF1b_float_orders_agree_here": {
+   "pass": true,
+   "detail": "F1b float_c [-0.0573  0.0954  0.0573 -0.0954] vs float_std [-0.49    0.4966  0.49   -0.4966] coincide in order (magnitudes differ)"
+  },
+  "T6b_sym_vs_qscale_disagree_F1b": {
+   "pass": true,
+   "detail": "witness docs (0, 1)"
+  },
+  "T3c_float_rank_flips_F1c": {
+   "pass": true,
+   "detail": "sigma=[7.071 0.51 ] witness docs (0, 1) float_c [ 0.8944  0.4472 -0.8944 -0.8455  0.8455] float_std [ 0.1427  0.9898 -0.1427  0.7193 -0.7193]"
+  },
+  "T6c_qscale_vs_asym_disagree_F1c": {
+   "pass": true,
+   "detail": "witness docs (2, 4) qscale [ 2.244   2.244   1.6783  1.6783 -1.6783] asym [ 2.1213  2.1213 -0.7071 -0.7071  0.7071]"
+  },
+  "T8_zero_variance_column": {
+   "pass": true,
+   "detail": "quant floor -> 1e-12; baseline -> 1"
+  },
+  "T10a_D1_witness": {
+   "pass": true,
+   "detail": "m=0 unit=True inF=True q.x=0 axes_inF=[False, False]"
+  },
+  "T10b_D3_rho_support": {
+   "pass": true,
+   "detail": "rho(e1)=0.5000 rho(c)=1.0000; rho=-0.3 impossible since min is +1/sqrt(d)"
+  },
+  "T10c_D4_closed_endpoint": {
+   "pass": true,
+   "detail": "q.e1 = 1/2 -> interval [0.5,1] closed"
+  }
+ },
+ "F1_table": {
+  "sym": {
+   "scores": [
+    -0.0,
+    -0.0,
+    -1.0,
+    -4.0,
+    -4.0,
+    -2.0
+   ],
+   "top3": [
+    0,
+    1,
+    2
+   ],
+   "exp_hit3": 1.0,
+   "det_hit3": 1.0
+  },
+  "asym_c": {
+   "scores": [
+    0.8416666666666666,
+    0.8416666666666666,
+    0.7083333333333333,
+    -0.8416666666666666,
+    -0.8416666666666666,
+    -0.5583333333333333
+   ],
+   "top3": [
+    0,
+    1,
+    2
+   ],
+   "exp_hit3": 1.0,
+   "det_hit3": 1.0
+  },
+  "qscale": {
+   "scores": [
+    2.4525388648311353,
+    2.4525388648311353,
+    2.0026816191387082,
+    -2.4525388648311353,
+    -2.4525388648311353,
+    -1.4797880147419942
+   ],
+   "top3": [
+    0,
+    1,
+    2
+   ],
+   "exp_hit3": 1.0,
+   "det_hit3": 1.0
+  },
+  "float_c": {
+   "scores": [
+    0.9982313218033566,
+    0.9878730853926775,
+    0.9801686399602245,
+    -0.904523930109333,
+    -0.904523930109333,
+    0.07667705212029233
+   ],
+   "top3": [
+    0,
+    1,
+    2
+   ],
+   "exp_hit3": 1.0,
+   "det_hit3": 1.0
+  },
+  "float_u": {
+   "scores": [
+    0.9986437190444345,
+    0.9919638279471473,
+    0.9867193244243527,
+    -0.6381748398580214,
+    -0.6381748398580214,
+    0.030059509937792345
+   ],
+   "top3": [
+    0,
+    1,
+    2
+   ],
+   "exp_hit3": 1.0,
+   "det_hit3": 1.0
+  },
+  "float_std": {
+   "scores": [
+    0.9977918130053322,
+    0.9849359264305333,
+    0.971921363275892,
+    -0.880141106475637,
+    -0.8794425225083059,
+    0.1403158496617627
+   ],
+   "top3": [
+    0,
+    1,
+    2
+   ],
+   "exp_hit3": 1.0,
+   "det_hit3": 1.0
+  }
+ },
+ "T7": {
+  "sym2": [
+   -0.0,
+   -0.0,
+   -4.0,
+   -2.0
+  ],
+  "exact": 1.0,
+  "mc": 1.0,
+  "n": 40000
+ },
+ "F1b": {
+  "sigma": [
+   0.1,
+   0.5,
+   0.5,
+   0.5
+  ],
+  "sym": [
+   -1.0,
+   -2.0,
+   -3.0,
+   -2.0
+  ],
+  "asym": [
+   -1.3499999999999999,
+   1.45,
+   1.3499999999999999,
+   -1.45
+  ],
+  "qscale": [
+   -29.400000000000002,
+   29.8,
+   29.400000000000002,
+   -29.8
+  ],
+  "float_c": [
+   -0.05725858189136218,
+   0.09543096981893696,
+   0.05725858189136218,
+   -0.09543096981893696
+  ],
+  "float_std": [
+   -0.48996733659963715,
+   0.49663355886629884,
+   0.48996733659963715,
+   -0.49663355886629884
+  ]
+ },
+ "F1c": {
+  "sigma": [
+   7.0710678118654755,
+   0.5099019513592785
+  ],
+  "sym": [
+   -0.0,
+   -0.0,
+   -1.0,
+   -1.0,
+   -1.0
+  ],
+  "asym": [
+   2.1213203435596424,
+   2.1213203435596424,
+   -0.7071067811865475,
+   -0.7071067811865475,
+   0.7071067811865475
+  ],
+  "qscale": [
+   2.244004063856459,
+   2.244004063856459,
+   1.6783186389072213,
+   1.6783186389072213,
+   -1.6783186389072213
+  ],
+  "float_c": [
+   0.8944271909999159,
+   0.4472135954999579,
+   -0.8944271909999159,
+   -0.8454889030309711,
+   0.8454889030309711
+  ],
+  "float_std": [
+   0.14274514194391819,
+   0.9897594780811199,
+   -0.14274514194391819,
+   0.7193096472215856,
+   -0.7193096472215856
+  ]
+ },
+ "T9_cache": {
+  "keys": [
+   "C",
+   "N",
+   "QC",
+   "cats",
+   "chat_no",
+   "conv_id",
+   "file",
+   "gold_rows",
+   "id_to_row",
+   "qa_diag",
+   "qids",
+   "questions"
+  ],
+  "C_shape": [
+   662,
+   96
+  ],
+  "colmean_abs_max": 4.947368463208779e-16,
+  "colmean_abs_med": 1.9155330225665345e-18,
+  "centered_like": true
+ }
+}

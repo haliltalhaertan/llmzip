@@ -1,0 +1,32 @@
+{
+  "random_suffix_seeds": [
+    62001,
+    62002,
+    62003,
+    62004,
+    62005,
+    62006,
+    62007,
+    62008,
+    62009,
+    62010,
+    62011,
+    62012,
+    62013,
+    62014,
+    62015,
+    62016,
+    62017,
+    62018,
+    62019,
+    62020
+  ],
+  "bootstrap_seed": 63001,
+  "bootstrap_replicates": 2000,
+  "extra_bits": 8,
+  "primary_k": 3,
+  "lexicographic_stride": 65,
+  "selected_axes": 8,
+  "logical_payload_bytes": 13,
+  "shared_content_bytes": 72
+}

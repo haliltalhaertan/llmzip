@@ -1,0 +1,81 @@
+{
+  "schema": "LLMZIP_AUDITEE_CORRECTION_V1",
+  "date": "2026-09-17",
+  "labels": [
+    "LOCAL EXPLORATORY PILOT",
+    "NOT PREREGISTERED",
+    "NOT FOR CITATION",
+    "DISCLOSE-BEFORE-USE"
+  ],
+  "written_by": "auditee",
+  "append_only": true,
+  "worker_or_coordinator_files_modified": 0,
+  "id": "C1-THIRD-DEFECT",
+  "status": "RETRACTED / AUDITEE-INHERITED ERROR",
+  "false_claim": "The C1 gate's any() over code arms is a third defect, because it passes if ANY arm clears the bar, a maximum over arms rather than a pre-specified one.",
+  "origin": {
+    "source": "git commit 9993f95",
+    "branch": "findings/audit4-postcheck-2026-09-17",
+    "author": "auditee",
+    "how": "read the abbreviated gate string at decision_tests.py:197 and did not read line 23, fourteen lines above it in the same file under the heading PRESPECIFIED GATES"
+  },
+  "refutation": {
+    "by": "BATCH1_COORDINATOR_REVIEW.md, 'Corrections to worker interpretations', item 2",
+    "verified_independently_by_auditee": true,
+    "contract_text": [
+      {
+        "ref": "top10_comparison_r1/coordinator/decision_tests.py:23",
+        "text": "C1 some arm <=48 B beats FAIR BM25 by >= +2.0 pp FR@3, CI excluding 0, on BOTH benchmarks"
+      },
+      {
+        "ref": "top10_comparison_r1/decision_r1/cost/REFEREE.md:178",
+        "text": "C1. Some code arm <=48 B/doc beats fair BM25 on FR@3 by >= +2.0 pp with 95% CI excluding zero on BOTH RealTalk AND PerLTQA-corrected."
+      },
+      {
+        "ref": "top10_comparison_r1/decision_r1/cost/REFEREE.md:180",
+        "text": "C2 opens with 'The same arm's Hit@10 lower CI ...', confirming the existential binds and is referred back to."
+      }
+    ]
+  },
+  "propagation": [
+    {
+      "where": "audit_hard_r2/10_governance_meta/evidence.json",
+      "check": "C1 gate implementation matches description",
+      "field": "result",
+      "quoted_clause": "any() = max-over-arms not prespecified arm; postcheck confirms + names third defect",
+      "clause_status": "RETRACTED",
+      "file_modified": false,
+      "contamination_path_recorded_in_source": "its own method field says 'cross-read postcheck 9993f95 body'",
+      "verdict_status": "DEFECT-CONFIRMED stands on other grounds"
+    }
+  ],
+  "not_retracted": [
+    {
+      "claim": "decision_tests.py:190-191 implements a point estimate only; the declared contract additionally requires a CI excluding zero and BOTH benchmarks",
+      "status": "STANDS",
+      "independent_evidence": "audit_hard_r2/01_metrics finding F1, fixture scripts/p1_fixtures.py F4: synthetic paired case, point +2.78 pp, CI [-8.06, +13.63]; code check PASS, documented check FAIL"
+    },
+    {
+      "claim": "the DEFECT-CONFIRMED verdict on the C1 gate",
+      "status": "STANDS",
+      "note": "correct on the two demonstrated grounds; only its reasoning clause is retracted"
+    },
+    {
+      "claim": "the shipped C1_gate_plus2pp_fr3 = false",
+      "status": "UNAFFECTED",
+      "note": "all six code-vs-strongest gaps are negative, so the point estimates already fail a necessary condition"
+    }
+  ],
+  "correct_residual_question": {
+    "framing": "quantifier scope, not existential selection",
+    "required": "EXISTS arm : (delta >= 2.0 AND CI excludes 0 AND on both benchmarks)",
+    "would_be_wrong": "(EXISTS arm : delta >= 2.0) AND (EXISTS arm : CI excludes 0) AND ... — different arms satisfying different conditions",
+    "current_code": "contains no conjunction at all, so this is a specification requirement for any future implementation, not a third observed defect"
+  },
+  "separate_real_observation_not_mine": {
+    "found_by": "audit_hard_r2/01_metrics finding F1",
+    "claim": "strongest_bm25 is selected on Hit@10 (max(...hit10), ~line 160) while the C1 gate is on FR@3",
+    "status": "same winner on current data, so unobserved risk rather than an observed flip"
+  },
+  "design_lesson": "An auditor read the auditee's commit message and adopted its reasoning without re-deriving it from source. Future rounds must treat auditee commit bodies as claims to test, never as evidence — the same rule the briefs already impose on prior audit reports."
+}

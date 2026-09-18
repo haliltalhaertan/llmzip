@@ -1,0 +1,41 @@
+== LME n=470 clusters=470 ==
+  asym96_bm25             -0.383 [ -1.447, +0.574] ns  C3=FAIL  repro_match=True
+  asym96_rrf60            -2.074 [ -4.497, +0.330] ns  C3=FAIL  (NEW: omitted by pilot gate)
+  float_raw32_bm25        -0.266 [ -1.170, +0.479] ns  C3=FAIL  repro_match=True
+  float_raw32_rrf60       -4.468 [ -7.078, -1.926] SIG C3=FAIL  (NEW: omitted by pilot gate)
+  float_std32_bm25        +0.018 [ -0.532, +0.461] ns  C3=FAIL  repro_match=True
+  float_std32_rrf60       +1.486 [ -0.567, +3.543] ns  C3=FAIL  (NEW: omitted by pilot gate)
+  hamming96_bm25          +0.202 [ -0.936, +1.298] ns  C3=FAIL  repro_match=True
+  hamming96_rrf60         +2.227 [ -0.082, +4.521] ns  C3=FAIL  (NEW: omitted by pilot gate)
+  qscale96_bm25           -0.330 [ -1.383, +0.617] ns  C3=FAIL  repro_match=True
+  qscale96_rrf60          +0.780 [ -1.514, +3.028] ns  C3=FAIL  (NEW: omitted by pilot gate)
+== LoCoMo n=1531 clusters=10 ==
+  asym96_bm25             +0.662 [ -0.129, +1.483] ns  C3=FAIL  repro_match=True
+  asym96_rrf60            -2.742 [ -5.045, -0.581] SIG C3=FAIL  (NEW: omitted by pilot gate)
+  float_raw32_bm25        +2.317 [ +1.351, +3.504] SIG C3=PASS  repro_match=True
+  float_raw32_rrf60       -1.206 [ -4.173, +1.634] ns  C3=FAIL  (NEW: omitted by pilot gate)
+  float_std32_bm25        +1.470 [ +0.990, +1.922] SIG C3=PASS  repro_match=True
+  float_std32_rrf60       +1.271 [ -0.720, +2.943] ns  C3=FAIL  (NEW: omitted by pilot gate)
+  hamming96_bm25          +0.428 [ -0.797, +1.538] ns  C3=FAIL  repro_match=True
+  hamming96_rrf60         -3.814 [ -5.303, -2.264] SIG C3=FAIL  (NEW: omitted by pilot gate)
+  qscale96_bm25           +1.065 [ +0.439, +1.716] SIG C3=PASS  repro_match=True
+  qscale96_rrf60          -1.361 [ -3.221, +0.379] ns  C3=FAIL  (NEW: omitted by pilot gate)
+== PerLTQA n=8265 clusters=30 ==
+  asym96_bm25             +0.379 [ -0.022, +0.760] ns  C3=FAIL  repro_match=True
+  asym96_rrf60            +1.485 [ +0.447, +2.475] SIG C3=PASS  (NEW: omitted by pilot gate)
+  float_raw32_bm25        +1.131 [ +0.845, +1.437] SIG C3=PASS  repro_match=True
+  float_raw32_rrf60       +2.797 [ +2.024, +3.604] SIG C3=PASS  (NEW: omitted by pilot gate)
+  float_std32_bm25        +0.287 [ +0.098, +0.472] SIG C3=FAIL  repro_match=True
+  float_std32_rrf60       +2.570 [ +1.826, +3.370] SIG C3=PASS  (NEW: omitted by pilot gate)
+  hamming96_bm25          +0.396 [ -0.005, +0.806] ns  C3=FAIL  repro_match=True
+  hamming96_rrf60         -0.415 [ -1.499, +0.682] ns  C3=FAIL  (NEW: omitted by pilot gate)
+  qscale96_bm25           +0.328 [ -0.017, +0.671] ns  C3=FAIL  repro_match=True
+  qscale96_rrf60          +0.831 [ -0.141, +1.826] ns  C3=FAIL  (NEW: omitted by pilot gate)
+WROTE rrf60_ci.json
+
+--- first-stage order under _rrf60 (from stored levels) ---
+Traceback (most recent call last):
+  File "/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/04_retrieval/probe_p2_rrf60ci.py", line 67, in <module>
+    seq = [rrf[m] for m in base_order]
+           ~~~^^^
+KeyError: 'BM25_full'

@@ -1,0 +1,309 @@
+{
+ "manifest_entries": 756,
+ "manifest_excluded": {
+  "model/": "2.4 GB HuggingFace pplx-embed-v1-0.6B weights; see MODEL_DOWNLOAD.json for sha256 + revision",
+  "*.npz": "regenerable binary intermediates"
+ },
+ "manifest_label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+ "manifest_note": "sha256 of the ORIGINAL uncompressed file; .gz entries are gzip of that exact byte stream",
+ "git_tracked_under_package": 800,
+ "workdir_files_excl_cache": 800,
+ "manifest_minus_git": [
+  "ablation_r2/perltqa/per_query.jsonl",
+  "baseline/.pytest_cache/.gitignore",
+  "baseline/.pytest_cache/CACHEDIR.TAG",
+  "baseline/.pytest_cache/README.md",
+  "baseline/.pytest_cache/v/cache/lastfailed",
+  "baseline/.pytest_cache/v/cache/nodeids",
+  "baseline/__pycache__/metrics_top10.cpython-314.pyc",
+  "baseline/__pycache__/run_top10.cpython-314.pyc",
+  "baseline/per_query_top10.jsonl",
+  "ideas_r1/firststage/per_query.jsonl",
+  "math_r1/quant/per_query.jsonl",
+  "math_r1/repr/per_query.jsonl",
+  "pq/.pytest_cache/.gitignore",
+  "pq/.pytest_cache/CACHEDIR.TAG",
+  "pq/.pytest_cache/README.md",
+  "pq/.pytest_cache/v/cache/lastfailed",
+  "pq/.pytest_cache/v/cache/nodeids",
+  "semantic/.pytest_cache/.gitignore",
+  "semantic/.pytest_cache/CACHEDIR.TAG",
+  "semantic/.pytest_cache/README.md",
+  "semantic/.pytest_cache/v/cache/lastfailed",
+  "semantic/.pytest_cache/v/cache/nodeids",
+  "semantic/__pycache__/encode_pplx.cpython-314.pyc",
+  "semantic/__pycache__/pplx_scorer.cpython-314.pyc",
+  "semantic/__pycache__/score_pplx.cpython-314.pyc",
+  "semantic/__pycache__/test_pplx_scorer.cpython-314.pyc"
+ ],
+ "manifest_minus_git_count": 26,
+ "git_minus_manifest_count": 70,
+ "git_minus_manifest_sample": [
+  "DECISION_TESTS.md",
+  "EXTERNAL_AUDIT3_RESPONSE.md",
+  "FILE_MANIFEST.json",
+  "FINAL_STATE.md",
+  "LADDER_REALTALK.md",
+  "PUBLICATION_VERIFY.md",
+  "REPORT.md",
+  "ablation_r2/perltqa/per_query.jsonl.gz",
+  "ablation_r2/perltqa/t3_ladder.py",
+  "baseline/per_query_top10.jsonl.gz",
+  "coordinator/DECISION_TESTS.json",
+  "coordinator/LADDER.json",
+  "coordinator/LADDER_CACHE.jsonl",
+  "coordinator/T3_PERLTQA_KLTN.json",
+  "coordinator/decision_tests.log",
+  "coordinator/decision_tests.py",
+  "coordinator/ladder.log",
+  "coordinator/ladder.py",
+  "coordinator/ladder2.log",
+  "coordinator/t3_perltqa_kltn.py",
+  "decision_r1/cost.log",
+  "decision_r1/cost.txt",
+  "decision_r1/cost/REFEREE.md",
+  "decision_r1/keep.log",
+  "decision_r1/keep.txt",
+  "decision_r1/keep/CASE_FOR.md",
+  "decision_r1/kill.log",
+  "decision_r1/kill.txt",
+  "decision_r1/kill/CASE_AGAINST.md",
+  "ideas_r1/firststage/per_query.jsonl.gz"
+ ],
+ "workdir_minus_git_count": 0,
+ "workdir_minus_git_sample": [],
+ "git_minus_workdir_count": 0,
+ "git_minus_workdir_sample": [],
+ "sample_rows": [
+  {
+   "path": "coordinator/decision_tests.py",
+   "in_manifest": false,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": null,
+     "workdir": "8979bf395f7b2cad68318f731d22118a156379525f3dbfdcd1aa6766a1e394d1",
+     "match": false
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 12052,
+     "workdir_bytes": 12052,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "coordinator/LADDER.json",
+   "in_manifest": false,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": null,
+     "workdir": "8785c39ec4f7d7037e71b0f26a6c6c6b87d02026962f3f8cef71f1e8d45da95e",
+     "match": false
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 1778,
+     "workdir_bytes": 1778,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "coordinator/DECISION_TESTS.json",
+   "in_manifest": false,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": null,
+     "workdir": "01cca1282e06da192480d85f750d61e9b755e45aac4151287a39723d055d68f3",
+     "match": false
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 9270,
+     "workdir_bytes": 9270,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "audit/audit_baseline_lib.py",
+   "in_manifest": true,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": "673cb430aa1b24f590b687550bdd58a71fd65696222c45e63779d3a6e26d6129",
+     "workdir": "673cb430aa1b24f590b687550bdd58a71fd65696222c45e63779d3a6e26d6129",
+     "match": true
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 4687,
+     "workdir_bytes": 4687,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "data/RT01.json",
+   "in_manifest": true,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": "d653e0f34b28335c463031eef253597de798f1f9b35179169e6ddbe0aec44e98",
+     "workdir": "d653e0f34b28335c463031eef253597de798f1f9b35179169e6ddbe0aec44e98",
+     "match": true
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 136993,
+     "workdir_bytes": 136993,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "data/RT10.json",
+   "in_manifest": true,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": "49239d159dd73ef9045c219150fe9f3bc2416a161be45445d24762113d99f467",
+     "workdir": "49239d159dd73ef9045c219150fe9f3bc2416a161be45445d24762113d99f467",
+     "match": true
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 162573,
+     "workdir_bytes": 162573,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "data/manifest.json",
+   "in_manifest": true,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": "0f8b952d621bc3f1b65a056ed8e12c63520ea84b994952393c2c512badf10342",
+     "workdir": "0f8b952d621bc3f1b65a056ed8e12c63520ea84b994952393c2c512badf10342",
+     "match": true
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 6990,
+     "workdir_bytes": 6990,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "coordinator/ladder.py",
+   "in_manifest": false,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": null,
+     "workdir": "634d7461a4e9e51825a45e1b649ad6abfed214a5ebd09ce41635d715c3889c69",
+     "match": false
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 11695,
+     "workdir_bytes": 11695,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "coordinator/t3_perltqa_kltn.py",
+   "in_manifest": false,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": null,
+     "workdir": "78d81e08ad733901c412f84844bcf4918b9dcf893e8c4e216ff1d3d95c734423",
+     "match": false
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 7469,
+     "workdir_bytes": 7469,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "ablation_r2/perltqa/t3_ladder.py",
+   "in_manifest": false,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": null,
+     "workdir": "d2ebf2c28a9c0d521541802455a50b29e961970b063e60740d39f8cc7d0cfd53",
+     "match": false
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 10767,
+     "workdir_bytes": 10767,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "PROTOCOL.md",
+   "in_manifest": true,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": "1fc57351805edaa917b680341714713dbda3f6ec8187bb70e22e85a70d4f806e",
+     "workdir": "1fc57351805edaa917b680341714713dbda3f6ec8187bb70e22e85a70d4f806e",
+     "match": true
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 4011,
+     "workdir_bytes": 4011,
+     "match": true
+    }
+   ]
+  },
+  {
+   "path": "REPORT.md",
+   "in_manifest": false,
+   "checks": [
+    {
+     "check": "workdir_sha_vs_manifest",
+     "manifest": null,
+     "workdir": "55fc3fbe67297019fae0eeb36611fdfdff68a3f7496cf60224cedf26c877b266",
+     "match": false
+    },
+    {
+     "check": "git_blob_vs_workdir_bytes",
+     "git_bytes": 18308,
+     "workdir_bytes": 18308,
+     "match": true
+    }
+   ]
+  }
+ ],
+ "sample_all_match": false,
+ "gzip_check": {
+  "manifest_path": "ablation_r2/perltqa/per_query.jsonl",
+  "stored": "ablation_r2/perltqa/per_query.jsonl.gz",
+  "manifest_sha": "90885a08f789a20b4a2e5e63383cff92807b46df7ffd80d8f71ebe26f046ba36",
+  "decompressed_sha": "90885a08f789a20b4a2e5e63383cff92807b46df7ffd80d8f71ebe26f046ba36",
+  "match": true,
+  "manifest_bytes": 16461495,
+  "decompressed_bytes": 16461495
+ },
+ "research_root_zips": [
+  "/mnt/c/Users/MDP/dev/llmzip-work/LLMZIP_TWELVE_BYTE_PILOT_2026-09-16.zip"
+ ],
+ "top10_zip_present": false
+}

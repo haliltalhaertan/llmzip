@@ -1,0 +1,106 @@
+{
+ "raw_denominator": {
+  "n_total": 705,
+  "n_valid": 705,
+  "per_archive": {
+   "RT01": {
+    "n_total": 85,
+    "n_valid": 85,
+    "n_docs": 662
+   },
+   "RT02": {
+    "n_total": 70,
+    "n_valid": 70,
+    "n_docs": 476
+   },
+   "RT03": {
+    "n_total": 73,
+    "n_valid": 73,
+    "n_docs": 453
+   },
+   "RT04": {
+    "n_total": 71,
+    "n_valid": 71,
+    "n_docs": 422
+   },
+   "RT05": {
+    "n_total": 70,
+    "n_valid": 70,
+    "n_docs": 410
+   },
+   "RT06": {
+    "n_total": 74,
+    "n_valid": 74,
+    "n_docs": 1548
+   },
+   "RT07": {
+    "n_total": 70,
+    "n_valid": 70,
+    "n_docs": 1511
+   },
+   "RT08": {
+    "n_total": 70,
+    "n_valid": 70,
+    "n_docs": 1162
+   },
+   "RT09": {
+    "n_total": 63,
+    "n_valid": 63,
+    "n_docs": 1044
+   },
+   "RT10": {
+    "n_total": 59,
+    "n_valid": 59,
+    "n_docs": 1256
+   }
+  },
+  "gold_size_dist_valid": {
+   "1": 319,
+   "2": 178,
+   "3": 92,
+   "4": 49,
+   "5": 24,
+   "6": 15,
+   "7": 7,
+   "8": 4,
+   "9": 7,
+   "10": 4,
+   "14": 1,
+   "17": 1,
+   "19": 2,
+   "21": 1,
+   "22": 1
+  },
+  "multi_gold_share": 0.5475177304964539
+ },
+ "exclusions_agree": {
+  "n_total": 728,
+  "n_valid": 705,
+  "n_excluded": 23,
+  "match_raw": false
+ },
+ "stored_aggregation": {
+  "bm25": {
+   "n": 705,
+   "hit10": 54.184397163120565,
+   "recall10": 43.15994774169466,
+   "note": "Recall@10 < Hit@10 whenever multi-gold queries are partially hit; same join, different estimand \u2014 see metric_divergence below"
+  }
+ },
+ "stored_n": 705,
+ "metric_divergence": {
+  "tokenizer_worth_hit10_pp": 10.354609929078002,
+  "tokenizer_worth_fr3_pp": 6.1176048869217965,
+  "strongest_variant_by_hit10": "frozen_idfonly",
+  "strongest_by_hit10_fr3": 40.02296521445458,
+  "fr3_rank_agrees_with_hit10_rank": true
+ },
+ "comparator_definitions": {
+  "PROTOCOL_BM25_k1_1.5_unicode_word": 54.184397163120565,
+  "decision_coarse_textbook_k1_1.2": 55.319148936170215,
+  "decision_frozen_textbook_k1_1.2": 61.702127659574465,
+  "decision_frozen_idfonly": 65.67375886524822,
+  "lexical_summary_expected_hit_eq_recall_bm25": true,
+  "lexical_summary_expected_hit_eq_recall_tfidf": true
+ }
+}

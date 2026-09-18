@@ -1,0 +1,23 @@
+item,status,count,evidence
+"protocol recovery: quant_math.py arms/ties/sigma/bootstrap contract",reviewed,1,quant_math_ORIG.py:1-859 + REPORT_ORIG.md
+"protocol recovery: FIDELITY_GATE.json G1/G2 refs",reviewed,1,FIDELITY_GATE_ORIG.json
+"protocol recovery: codex/v52-itq-haar-objective PLAN+objective+historical-finals scope",reviewed,1,"git show b06bc04: replay/PLAN.json + replay_objectives.py:55-57,88 + INDEPENDENT_REPLAY_REVIEW.md"
+"protocol recovery: published pilot copy equivalence",reviewed,1,"diff -q quant_math.py raw vs published: identical"
+"protocol recovery: prior audit flaw citations (ties + single ITQ fit)",reviewed,2,"audit_hard_r1/claims/au_c1_itq.py:11-15 + HARD_AUDIT_CLAIMS.md:29-32"
+"gate contract: det_top10/hrn/expected_hit + TIE_SALT",reviewed,1,audit_baseline_lib_ORIG.py:30+79-119
+"skill/gate contracts: PROTOCOL tie/metric intent + DECISION_TESTS C1/C3/S3 gates",sampled,2,"top10_comparison_r1/PROTOCOL.md:6 + published DECISION_TESTS.md:5-9"
+"P2 tie-equivalence fast_topk vs det_top10 (k=3,10)",reviewed,36,"probe_rt.log + probe_pq.log: 18+18 samples, 36/36 identical"
+"P2 FULL gate vs RESULTS_ORIG per-archive (hit10/fr3/exp x sym/qscale)",reviewed,90,"summary_rt.json + summary_pqsub5.json gate_maxdiff=0.000e+00; 60 RT + 30 PQ-subset exact"
+"P3 ITQ fits verified (loss decrease + orth<1e-10 + payload 12B)",reviewed,75,"itq_probe.py asserts; evidence_itq.json objective: 50 RT + 25 PQ-subset, all decreased"
+"P3 paired ITQ_s-RAND_s cohort contrasts (5 seeds x 2 scorers x 2 benches)",reviewed,20,evidence_itq.json benches rt+pqsub5 paired
+"P3 per-archive persisted rows (RT 10 arch x 11 arms x 2 scorers)",reviewed,220,per_archive_rows_rt.csv (wc -l 221 incl header)
+"P3 per-archive persisted rows (PQ subset 5 arch x 11 arms x 2 scorers)",reviewed,110,per_archive_rows_pqsub5.csv (wc -l 111 incl header)
+"P3 published single-fit contrast verification (ITQ16-FULL + ITQ16-RAND x3)",reviewed,4,"evidence_itq.json verify_vs_published; matches -16.88/-2.41/-2.55/-1.84"
+"objective identity frob/haar integer-ratio check",reviewed,75,report: max dev 1.5e-11 over 75 rows
+"MED arm re-test",NOT RUN,0,out of role scope; published values cited not re-run
+"PerLTQA full 30-archive cohort rerun",NOT RUN,25,"budget: 5-arch deterministic subset run; NO FULL COHORT claim"
+"bootstrap CIs (20000-rep paired archive-clustered)",NOT RUN,0,raw diffs + archive signs reported instead; no significance claimed
+"convergence beyond 50 ITQ iters",NOT RUN,0,would break protocol identity; noted as limit
+"text-rebuild G1 (frozen builder + SVD96)",NOT RUN,0,cache==rebuilt via 90/90 exact gate matches
+"literature review / novelty verdict",NOT RUN,0,no primary sources supplied; no novelty claim made
+"whole-project lines outside ITQ-vs-rotation (roles 01/03-10 subject matter)",NOT RUN,0,see REPORT.md scope statement

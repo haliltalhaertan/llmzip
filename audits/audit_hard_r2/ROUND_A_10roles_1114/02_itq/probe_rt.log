@@ -1,0 +1,23 @@
+[topk] verified equivalent on 18 samples
+[rt] RT01: nq=85 FULL sym=52.9412 qscale=56.4706 gate_ok
+[rt] RT02: nq=70 FULL sym=45.7143 qscale=47.1429 gate_ok
+[rt] RT03: nq=73 FULL sym=64.3836 qscale=73.9726 gate_ok
+[rt] RT04: nq=71 FULL sym=50.7042 qscale=53.5211 gate_ok
+[rt] RT05: nq=70 FULL sym=55.7143 qscale=60.0000 gate_ok
+[rt] RT06: nq=74 FULL sym=35.1351 qscale=29.7297 gate_ok
+[rt] RT07: nq=70 FULL sym=42.8571 qscale=41.4286 gate_ok
+[rt] RT08: nq=70 FULL sym=22.8571 qscale=30.0000 gate_ok
+[rt] RT09: nq=63 FULL sym=49.2063 qscale=53.9683 gate_ok
+[rt] RT10: nq=59 FULL sym=44.0678 qscale=49.1525 gate_ok
+[rt] wrote 220 rows gate_maxdiff=0.000e+00
+  seed 20260916 sym: ITQ=32.3404 RAND=32.1986 ITQ-RAND=+0.1418
+  seed 20260916 qscale: ITQ=32.7660 RAND=35.1773 ITQ-RAND=-2.4113
+  seed 20260917 sym: ITQ=32.4823 RAND=32.4823 ITQ-RAND=+0.0000
+  seed 20260917 qscale: ITQ=34.1844 RAND=35.3191 ITQ-RAND=-1.1348
+  seed 20260918 sym: ITQ=33.4752 RAND=33.0496 ITQ-RAND=+0.4255
+  seed 20260918 qscale: ITQ=34.4681 RAND=34.6099 ITQ-RAND=-0.1418
+  seed 7 sym: ITQ=32.0567 RAND=32.0567 ITQ-RAND=+0.0000
+  seed 7 qscale: ITQ=32.9078 RAND=34.3262 ITQ-RAND=-1.4184
+  seed 42 sym: ITQ=32.7660 RAND=33.9007 ITQ-RAND=-1.1348
+  seed 42 qscale: ITQ=33.9007 RAND=36.1702 ITQ-RAND=-2.2695
+wall=9.7s

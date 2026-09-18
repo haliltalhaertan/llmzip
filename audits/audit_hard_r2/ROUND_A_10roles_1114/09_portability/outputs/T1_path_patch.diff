@@ -1,0 +1,17 @@
+--- decision_tests_pkg.py (as-shipped)
++++ decision_tests_clean.py (cleanroom path-only)
+@@ -103,11 +103,11 @@
+ def t1():
+     """Fair-vs-coarse BM25 on RealTalk, against the already-measured ladder arms."""
+     ladder = json.load(open(os.path.join(HERE, "LADDER.json"), encoding="utf-8"))["arms"]
+-    RT = f"{W}/top10_comparison_r1/data"
++    RT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")  # CLEANROOM path-only: in-package data/
+     lib = importlib.util.module_from_spec(
+-        importlib.util.spec_from_file_location("lib", f"{W}/top10_comparison_r1/audit/audit_baseline_lib.py"))
++        importlib.util.spec_from_file_location("lib", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "audit", "audit_baseline_lib.py")))  # CLEANROOM path-only: in-package audit lib
+     importlib.util.spec_from_file_location(
+-        "lib", f"{W}/top10_comparison_r1/audit/audit_baseline_lib.py").loader.exec_module(lib)
++        "lib", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "audit", "audit_baseline_lib.py")).loader.exec_module(lib)  # CLEANROOM path-only
+ 
+     TOKEN = re.compile(r"[a-z0-9]+")
+     FROZEN = re.compile(r"\b\w\w+\b")

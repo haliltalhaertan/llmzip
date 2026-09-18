@@ -1,0 +1,37 @@
+===== RED RUN (before run.py existed) =====
+Traceback (most recent call last):
+  File "/mnt/c/Users/MDP/dev/llmzip-work/parallel_ideas_r1/kv/tests.py", line 19, in <module>
+    from run import (dequantize_4bit_packed, kl_full_given_arm, quantize_4bit_packed,
+                     ridge_fit_per_head, top1_agree, worst_case_pack_bytes)
+ModuleNotFoundError: No module named 'run'
+
+===== GREEN RUN, light (this session, after implementation) =====
+test_crossover_formula (__main__.TestAccounting.test_crossover_formula) ... ok
+test_predictor_bytes_formula (__main__.TestAccounting.test_predictor_bytes_formula) ... ok
+test_artifact_schema (__main__.TestHeavyIntegration.test_artifact_schema) ... skipped 'needs model (KV_HEAVY=1)'
+test_cache_keys_are_post_rope (__main__.TestHeavyIntegration.test_cache_keys_are_post_rope) ... skipped 'needs model (KV_HEAVY=1)'
+test_constant_row_no_nan (__main__.TestQ4Packing.test_constant_row_no_nan) ... ok
+test_pack_bytes_odd_width (__main__.TestQ4Packing.test_pack_bytes_odd_width) ... ok
+test_roundtrip_bounded (__main__.TestQ4Packing.test_roundtrip_bounded) ... ok
+test_intercept_unpenalized_shift (__main__.TestRidgeClosedForm.test_intercept_unpenalized_shift) ... ok
+test_recovers_linear_map (__main__.TestRidgeClosedForm.test_recovers_linear_map) ... ok
+test_M1_wrong_reference_mutation_detected (__main__.TestScoring.test_M1_wrong_reference_mutation_detected) ... ok
+test_M2_corrupt_reconstruction_increases_mse (__main__.TestScoring.test_M2_corrupt_reconstruction_increases_mse) ... ok
+test_kl_identical_is_zero (__main__.TestScoring.test_kl_identical_is_zero) ... ok
+test_kl_known_value (__main__.TestScoring.test_kl_known_value) ... ok
+test_top1_agree (__main__.TestScoring.test_top1_agree) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.008s
+
+OK (skipped=2)
+
+===== GREEN RUN, heavy KV_HEAVY=1 (includes RoPE + schema integration) =====
+test_kl_identical_is_zero (__main__.TestScoring.test_kl_identical_is_zero) ... ok
+test_kl_known_value (__main__.TestScoring.test_kl_known_value) ... ok
+test_top1_agree (__main__.TestScoring.test_top1_agree) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 6.900s
+
+OK

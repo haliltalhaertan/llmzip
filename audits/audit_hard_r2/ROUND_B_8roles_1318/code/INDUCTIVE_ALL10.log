@@ -1,0 +1,16 @@
+RT01 n=85 gate=0/63552 | TRANS sym=52.94 qs=56.47 | INDEP sym=21.18 qs=23.53
+RT02 n=70 gate=0/45696 | TRANS sym=45.71 qs=47.14 | INDEP sym=15.71 qs=15.71
+RT03 n=73 gate=0/43488 | TRANS sym=64.38 qs=73.97 | INDEP sym=10.96 qs=15.07
+RT04 n=71 gate=0/40512 | TRANS sym=50.70 qs=53.52 | INDEP sym=29.58 qs=29.58
+RT05 n=70 gate=0/39360 | TRANS sym=55.71 qs=60.00 | INDEP sym=18.57 qs=24.29
+RT06 n=74 gate=0/148608 | TRANS sym=35.14 qs=29.73 | INDEP sym=10.81 qs=13.51
+RT07 n=70 gate=0/145056 | TRANS sym=42.86 qs=41.43 | INDEP sym=14.29 qs=14.29
+RT08 n=70 gate=0/111552 | TRANS sym=22.86 qs=30.00 | INDEP sym=7.14 qs=5.71
+RT09 n=63 gate=0/100224 | TRANS sym=49.21 qs=53.97 | INDEP sym=25.40 qs=28.57
+RT10 n=59 gate=0/120576 | TRANS sym=44.07 qs=49.15 | INDEP sym=30.51 qs=32.20
+
+POOLED sym: TRANS=46.52 INDEP=18.16 optimism=+28.37 pp (n=705) archive-boot CI95 [21.76,35.03]
+
+POOLED qscale: TRANS=49.65 INDEP=20.00 optimism=+29.65 pp (n=705) archive-boot CI95 [23.06,37.07]
+
+yazildi: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r2/code/INDUCTIVE_ALL10.json

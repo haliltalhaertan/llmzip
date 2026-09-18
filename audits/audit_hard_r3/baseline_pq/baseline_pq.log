@@ -1,0 +1,110 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r3/baseline_pq (cwd default)
+muse: workspace trust: trusted source=run-flag
+# BASELINE/PQ AUDIT — round 3 (dark corners: per-query rows, checkpoints, tests, PQ config)
+
+[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]
+Role: `baseline/` + `pq/` internals. Read-only on all source trees; all probes ran with
+`python3` / `~/muse-work/ml-python`, no network. Scratch scripts live under the runtime
+temp dir (not in the repo); the only repo write is this file.
+
+## (1) VERDICT (3 lines)
+
+Baseline aggregates reproduce exactly from raw rows (48/48 cells, max diff 1.2e-14 from
+float summation order; REPORT 4dp rounding correct) and all 30 PerLTQA checkpoints union
+losslessly to the merged file with per-archive counts matching source caches 30/30.
+PQ aggregates also reproduce exactly (overall + 10/10 per-archive, diff 0.0), but the
+lexical worker's `expected_hit_at_10` column is mislabeled expected-Recall (formula bug,
+stored mean == recall mean exactly); headline Hit@10 numbers are unaffected.
+
+## (2) Findings table
+
+| ID | Sev | Claim / file audited | What I actually ran | Result |
+|----|-----|----------------------|---------------------|--------|
+| F1 | LOW | `baseline/REPORT.md` ll.85-110 aggregates (3 benches x 4 arms x 4 metrics) vs `per_query_top10.jsonl` (9440 rows) and `summary_top10.json` | Streamed all 9440 rows, re-averaged hit/recall/nDCG/expHit per bench+arm; compared to summary full-precision and REPORT 4dp; recomputed tie-at-cut fractions | MATCH: Hit diffs 0.0; recall/nDCG diffs <=1.2e-14 (summation order); all 4dp roundings correct; tie fractions round correctly (e.g. 0.703206->0.7032) |
+| F2 | LOW | 30 `ckpt_top10_perltqa_*.jsonl` vs merged `per_query_top10.jsonl` vs source caches (missing/dup/stale check) | Union of all 510 ckpt files (30 PerLTQA + 470 LME + 10 RealTalk) by qid; sorted-row sha256 of ckpt-union vs merged; per-file archive-purity + dup check; mtime order; per-archive N and nq vs `cache_arch_eval.pkl` / `cache_q_eval.pkl` | MATCH: union 9440 unique qids, 0 dups, 0 missing; sorted-hash equal (`538973ee...`); 1 archive/file; mtimes sequential then merged last; N and nq 30/30 OK |
+| F3 | MED | `baseline/tests_top10.py`, `pq/test_pq_top10.py`, `data/test_top10_data.py`: do tests test what they claim; vacuous? | Grep for `assert True`/`except...pass`/skip/xfail/empty loops; ran baseline suite (10 tests) and PQ suite (9 tests) from tmp copies (source untouched); ran data script in `export` + `lexical` modes from its own path (read-only) | Baseline 10/10 PASS, no vacuous patterns (no try/except at all; brute-force enum for exp metrics). PQ 9/9 PASS but 2 weak sub-assertions (F3a/F3b). Data GREEN (40108 + 8464 checks) but lexical protocol omits tie-order/nDCG/expHit checks (which is where F4 hid) |
+| F3a | LOW | `pq/test_pq_top10.py` ll.105-118 "gold-blindness" sub-check | Read test body; `rank_top10(scores, arch)` takes no gold arg, `gold=[19]` is unused, assertion re-runs identical call | VACUOUS sub-assertion: passes trivially; determinism itself is still tested |
+| F3b | MED | `pq/test_pq_top10.py` ll.89-102 "no training row may exactly equal a query row" | Read test body; test asserts shape (8944,96), counts, first-row equality only; never compares any Xtr row against QC rows | Comment-code mismatch: disjointness NOT tested (shape/first-row only). No leak found by other means (F5), but the test does not prove it |
+| F4 | HIGH | `data/run_lexical.py` ll.55-76 `expected_hit()` + stored `expected_hit_at_10` column + `tdd_lexical.log` expHit values | Read formula; averaged stored `expected_hit_at_10` vs `hit_at_10`/`recall_at_10` over both lexical files (705 rows each); gold-size distribution | WRONG (mislabeled): formula accumulates `gb` counts and divides by `\|gold\|` = expected-Recall, not expected-Hit (cf. `metrics_top10.py:104` vs `:134`). Stored mean == recall mean to 1e-9 (bm25 0.4316, tfidf 0.4191); 54.8% queries multi-gold so not harmless relabeling. Headline Hit@10 (bm25 0.5418) unaffected |
+| F5 | MED | `pq/` numbers reproduce; fair config? (training size vs codebook, seeds) | Re-averaged `per_query.jsonl` (705 rows) overall + per-archive vs `SUMMARY.json`; checked `centroids.npy` shape/bytes, 10 codes files, doc totals, seed/niter/threads in `run_pq.py`; spot rescore 1 query (LUT vs brute + ranking) | MATCH on numbers (all diffs 0.0). Config: single seed 20260915, niter 20, threads 1, no seed loop; 8,944 docs < faiss 9,984 guideline (~34.9 pts/centroid/subspace; self-reported). Trained on docs only by construction; full Xtr-vs-QC disjointness not directly tested (see F3b) |
+| F6 | LOW | Cost/payload + cross-archive identity (RealTalk N/nq; LME sample; file sizes) | Unique-archive doc sum x12; file sizes; baseline-vs-PQ-vs-cache N/nq per RT archive; independent spot rescore (2 baseline queries x 2 arms; 1 PQ query) | MATCH: 510 archives, 252,838 docs x12 = 3,034,056 B as reported; per_query 21,951,870 B = ckpt total; RT N/nq 10/10 match; spot rescores 4/4 + PQ top10 MATCH, LUT-vs-brute 1.3e-15 |
+
+Sev scale per brief: CRITICAL = a published number/conclusion is wrong. F4 is the only
+wrong-number finding; I rate it HIGH (not CRITICAL) because the error is confined to a
+tie-diagnostic column and log line — no headline Hit/Recall/nDCG or STOP verdict depends
+on it. Downgrade or upgrade on request.
+
+## (3) Per-finding detail
+
+### F1 — baseline aggregates recompute (MATCH)
+
+- Published: `top10_comparison_r1/baseline/REPORT.md` ll.85-110 (PerLTQA/LME/REALTALK tables),
+  full precision in `baseline/summary_top10.json` (`/PerLTQA|/LME|/REALTALK/sign96|float_raw|float_std|asym/hit10_mean|recall10_mean|ndcg10_mean|exp_hit10_mean`), short form in `baseline.log` ll.9-11. External re-citers: `ablation_r2/perltqa/RESULTS.json` (`hit10` 0.7568058076225045 = sign96-PerLTQA), `inventory/incoming/recheck_results.json` (reagg==summary to ~1e-16).
+- Raw: `baseline/per_query_top10.jsonl` (21,951,870 B, `wc -l` = 9440).
+- Command: streamed all rows with `python3` (stdlib only), summed `hit10/recall10/ndcg10/exp_hit10` per bench+arm, divided by n. Script kept as `/tmp/.../recompute_baseline.py` (scratch).
+- Observed (full-precision summary vs recomputed):
+  - PerLTQA sign96 0.7568058076 / 0.6181951629 / 0.4907000388 / 0.7576122963; float_raw 0.8081064731 / 0.7095400097 / 0.5821669394; float_std 0.8395644283 / 0.7023578350 / 0.5774647174; asym 0.8019358742 / 0.6759779286 / 0.5466035067 — diffs 0.0 on Hit/exp, <=1.2e-14 on recall/nDCG.
+  - LME sign96 0.8638297872 / 0.7625886525 / 0.5914441531 / exp 0.8607733874; float_std 0.8829787234 — same diff bounds.
+  - REALTALK sign96 0.4652482270 (REPORT 0.4652) / exp 0.4668085106 (0.4668); float_std 0.4851063830; asym 0.4354609929 — same bounds. Note the known REPORT-sec1 46.68-vs-46.52 mixing (already-known list) is the exp-vs-det gap, reproduced here exactly (0.4668 vs 0.4652).
+  - Tie-at-cut fractions recomputed: PerLTQA sign96 0.703206 / asym 0.000484 / floats 0.0; LME sign96 0.625532; REALTALK sign96 0.697872 / float 0.002837 / asym 0.004255 — all round to REPORT ll.113-116 values (0.7032, 0.0005, 0.6255, 0.6979, 0.0028, 0.0043).
+- Structural sample (all 9440 rows, read-only): every arm has exactly 10 unique ids in `[0,N)` and stored `hit10` equals recomputed hit from `gold` — 0 mismatches. (Full tie-order + 30-query rescore replay in `audit_top10.log` was NOT rerun end-to-end; see section 4. Independent 2-query rescore in F6 passed.)
+
+### F2 — PerLTQA checkpoints consistent (MATCH, no missing/dup/stale)
+
+- Files: `baseline/ckpt_top10_perltqa_00..29.jsonl` (30 files; e.g. 00=409 rows ... 29=323 rows; total 8265), `ckpt_top10_lme_000..469.jsonl` (470 x 1 row), `ckpt_top10_realtalk_00..09.jsonl` (85/70/73/71/70/74/70/70/63/59 = 705).
+- Commands (stdlib `python3`, read-only): per-file archive-purity/dup scan; qid-union over all 510 ckpts vs merged qids; sorted-by-qid sha256 of row bytes both sides; `stat` mtimes.
+- Observed:
+  - Each PerLTQA ckpt contains exactly 1 `archive_id` (00=Cai Xiuying ... 29=Zhu Xiaolong), 0 duplicate qids internally; cross-file union = 9440 unique qids, 0 duplicates, merged-minus-ckpt = 0, ckpt-minus-merged = 0.
+  - Sorted-row sha256 identical: `538973ee18446bea4f3a7af3c4e013232e864c56cdd31aab3d82d9e5f8455076` both sides; sample row (`PQ000_DLG_q000`) byte-identical. REPORT ll.129-130 claim ("checkpoints total identical 21,951,870 B, no fabricated rows") confirmed: `per_query` 21,951,870 B == ckpt byte total 21,951,870 B.
+  - mtimes strictly sequential 00->29 then merged file last — single-run order, no stale outlier.
+  - Counts vs dataset: per-archive doc-N matches `bench3/runs/b3b_perltqa/cache_arch_eval.pkl` `C.shape[0]` 30/30 (e.g. Cai Xiuying 459, Liang Xin 546); per-archive nq matches `cache_q_eval.pkl` char counts 30/30 (e.g. 409, 302, ..., 323; total 8265). So no missing/double-counted archive, and ckpt `N`/`nq` agree with the caches, not just with each other.
+
+### F3 — test suites: strong baseline/data, PQ has 2 weak sub-assertions
+
+- Files: `baseline/tests_top10.py` (10 tests), `baseline/audit_top10.py` (independent audit script), `pq/test_pq_top10.py` (9 tests), `data/test_top10_data.py` (export + lexical modes).
+- Vacuous-pattern grep (`assert True`, `1==1`, bare `pass` in except, skip/xfail): baseline tests — zero hits (no try/except at all; 26 asserts, all comparative). PQ — 4 `except ...: pass` hits, all in correct assert-raises pattern (`try: f(bad) except E: pass else: raise`), not swallowed. Data — `check()` raises on false; 1 `assert` keyword (rest via `check`).
+- Runs (read-only):
+  - Baseline: copied `tests_top10.py` + `metrics_top10.py` to scratch, `~/muse-work/ml-python -m pytest t_baseline_tests.py -p no:cacheprovider -q` -> **10 passed** (matches `tdd_log_02_green.txt`). Covers pack roundtrip/mutation, hash-not-row order, adversarial boundary tie, multi-gold nDCG, nonfinite-worst, brute-force enum for exp-Hit (20 trials N=6/K=3) and exp-Recall (10 trials) — the strongest tests in scope; they pin the exact hypergeometric formula.
+  - PQ: copied `run_pq.py` + test to scratch; first run 8 passed/1 failed only because `test_codebook_bytes_98304` resolves `centroids.npy` next to the test file (scratch lacked it) — after copying `centroids.npy` alongside: **9 passed** (matches `tdd_green.log` 9/9). Not a product failure; path artifact of my isolation.
+  - Data: `~/muse-work/ml-python .../data/test_top10_data.py export` -> `GREEN (export): 40108 checks passed`; `... lexical` -> `GREEN (lexical): 8464 checks passed`. (Must run from its own dir; a scratch copy fails on `HERE`-relative paths — again isolation artifact, not product failure.)
+- Gaps (see F3a/F3b; plus): `test_lexical_protocol` (`test_top10_data.py:160-183`) checks len-10/nodup/range/hit/recall but NOT score ordering, hash tie-order, nDCG, or `expected_hit_at_10` — the one column that is wrong (F4) is exactly the unchecked one.
+
+### F4 — lexical `expected_hit_at_10` is expected-Recall (WRONG number, HIGH)
+
+- File: `top10_comparison_r1/data/run_lexical.py:55-76`. The function buckets equal scores, then for full buckets `exp += gb`, for the boundary bucket `exp += (10-better)*gb/len(idx)`, and returns `exp/len(gset)`. That is the expected-Recall@10 formula (identical in structure to `baseline/metrics_top10.py:104-131` `expected_recall_at_k`), NOT expected-Hit@10 (which needs `1 - C(B-gb,take)/C(B,take)` per `metrics_top10.py:134-168`; PQ's `run_pq.py:145-175` has the correct form).
+- Stored effect: `data/per_query_bm25.jsonl` and `per_query_tfidf.jsonl` (705 rows each) carry the mislabeled column; `data/tdd_lexical.log` prints `bm25 ... expHit@10=0.4316` and `tfidf ... expHit@10=0.4191`.
+- Command: averaged stored `expected_hit_at_10` vs `hit_at_10`/`recall_at_10` over both files.
+- Observed: stored-exp mean == recall mean to <1e-9 on both arms (bm25 0.4316==0.4316 with hit 0.5418; tfidf 0.4191==0.4191 with hit 0.5291). Gold-size distribution from the same file: 319x1, 178x2, 92x3, ... (54.8% multi-gold), so the formulas genuinely differ — for single-gold queries they coincide, which likely masked the bug.
+- Impact boundary: headline lexical Hit@10/Recall/nDCG recompute correctly in-test (F3 GREEN); no STOP-verdict input uses lexical expHit. True expected-Hit values are UNVERIFIED (need full lexical score vectors; only top-10 scores are stored).
+
+### F5 — PQ numbers reproduce; config fairness
+
+- Published: `pq/REPORT.md` (Hit@10 0.3305, Recall 0.2439, nDCG 0.1734, expHit 0.3305; per-archive RT03 0.603 ... RT08 0.043) and `pq/SUMMARY.json` full precision.
+- Raw: `pq/per_query.jsonl` (`wc -l` = 705), `centroids.npy` (12,256,8 float32, 98,304 B), `RT01..RT10_codes.npz` ((662..1256,12) uint8; total 8,944 docs; payload 107,328 B).
+- Command: re-averaged all 705 rows overall + per-archive; compared floats exactly.
+- Observed: overall hit 0.3304964539 / recall 0.2439491163 / nDCG 0.1734321536 / exp 0.3304964539 — diffs **0.0** vs SUMMARY; per-archive 10/10 match (RT01 85@0.4235294118, RT02 70@0.3428571429, RT03 73@0.6027397260, RT04 71@0.5633802817, RT05 70@0.5571428571, RT06 74@0.0540540541, RT07 70@0.1428571429, RT08 70@0.0428571429, RT09 63@0.2698412698, RT10 59@0.2711864407). REPORT's rounded per-archive values (0.603/0.563/0.557/0.424/0.343/0.271/0.270/0.143/0.054/0.043) all correct. 39/705 queries have adjacent equal top-10 scores; REPORT's "4/705 cutoff ties; negligible" is a different (cutoff-specific) count — I did not verify the 4 (needs full score vectors), see section 4.
+- Config (`run_pq.py:19-28,222-226`): `ProductQuantizer(d=96,M=12,nbits=8)`, `cp.seed=20260915`, `cp.niter=20`, `omp_set_num_threads(1)`; no loop over seeds (grep `for.*seed` negative) — single training run, single seed, disclosed as "no tuning". Training matrix `build_training_matrix()` (`run_pq.py:186-210`) stacks L2-normalized `C` from all 10 archives (8,944 rows; 728 QC rows excluded by construction; asserts `(8944,96)`). 8,944 < faiss 9,984-point guideline (deficit 1,040; ~34.9 docs/centroid/subspace) — self-disclosed in REPORT with the faiss warning quoted. Codebook 98,304 B disclosed separately; amortized ~11.0 B/doc (effective ~23.0 B/doc) recomputed exactly. The known "codebook uncharged in byte headline" stays as-is; beyond it, no hidden payload found (codes exactly 12 B/doc).
+- Fairness note (judgment, not a number): PQ trains one global codebook on all 10 archives' docs while SIGN96 fits per-archive state; both reuse the same frozen FLOAT96 (with its transductive TFIDF+SVD pipeline — round-2 finding, RealTalk k=96 only, out of scope here). Single-seed PQ vs single-init ITQ (already-known) means PQ's seed variance is unmeasured — same caveat class as the known ITQ one, now confirmed for PQ.
+
+### F6 — payload/costs + cross-identity + spot rescore (MATCH)
+
+- Payload: 510 unique archives (30 PerLTQA + 470 LME + 10 RealTalk) from per-query rows; doc sum 252,838 x 12 = **3,034,056 B** = REPORT l.124. `state_*.npz` / std-overhead / timing breakdown not re-verified (see section 4).
+- Cross-identity RealTalk: baseline ckpt N == PQ codes N == cache N on all 10 archives (662/476/453/422/410/1548/1511/1162/1044/1256); valid-nq 85/70/73/71/70/74/70/70/63/59 agree baseline-vs-PQ; PQ gold spot (first 3 RT01 rows) == cache `gold_rows`.
+- Spot rescore (independent ranking code, `~/muse-work/ml-python`, read-only): baseline RT01_q000+q001 sign96 + float_raw top-10 == stored (4/4 MATCH); PQ first query LUT-vs-full-reconstruction max diff 1.3e-15 (tol 1e-5) and ranking == stored top10 (MATCH). SAMPLE only — not a full replay.
+
+## (4) What I could NOT check and why
+
+1. Full `audit_top10.py` end-to-end rerun (9440 structural + tie-order + 30-query cache rescore): bounded-time choice; I verified aggregates + structural-hit sample + 2-query rescore instead. The committed `audit_top10.log` claims 0/0/0 mismatches — consistent with but not independently re-proven by me. Needed: one ~5-15 min cache-rescore run (caches are present).
+2. PQ retrain reproducibility (seed variance, faiss-version sensitivity): `run_pipeline()` writes into `pq/` (forbidden to execute in place) and takes ~112 s + faiss nondeterminism questions; rerunning elsewhere risks path/SHA drift. Single-seed variance therefore UNVERIFIED — needs a 2-3-seed retrain in a scratch dir.
+3. True lexical expected-Hit@10 magnitudes: only top-10 scores are stored; full N-length score vectors are not persisted. Needs a `run_lexical.py` rescore or formula fix + rerun (data-owner scope).
+4. PQ REPORT "4/705 cutoff ties": my 39/705 counts any adjacent equal pair in stored top-10, a weaker proxy. Needs full score vectors from codes+centroids (doable per query, not run corpus-wide).
+5. LME cache cross-check beyond one sample row (`001be529`, N=514): 470 single-row ckpts union cleanly to 470 merged rows, but per-row N-vs-cache verified on sample only. Needs a 470-iteration cache loop.
+6. Cost/timing rows (fit 0.38 s, scoring 25.06 s, rank 81.88 s, RSS): not remeasured; wall-clock claims are environment-specific and untestable read-only.
+7. Other-dataset/width generality of round-2's inductive collapse: explicitly out of role (RealTalk k=96 only per brief).
+
+---
+Methods note: every number above comes from the listed files/commands in this session.
+Anything I could not derive is labeled UNVERIFIED above. No source file was modified
+(all runs read-only or on scratch copies; `git status`-visible write is this report only).
+
+Full report also written to `/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r3/baseline_pq/BASELINE_PQ_AUDIT.md`.

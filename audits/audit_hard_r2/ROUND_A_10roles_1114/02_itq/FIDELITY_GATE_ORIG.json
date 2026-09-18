@@ -1,0 +1,402 @@
+{
+  "_label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+  "stage": "FIDELITY_GATE (written BEFORE any new arm)",
+  "seeds": {
+    "LSA32_random_state": 5101,
+    "SVD96_random_state": 5204
+  },
+  "realtalk": {
+    "_label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+    "G1_differing_ge0_bits": 0,
+    "G1_total_bits": 858624,
+    "G1_differing_qc_signs": 0,
+    "G1_max_abs_C_diff": 0.0,
+    "G1_pass": true,
+    "per_archive": {
+      "RT01": {
+        "C_shape": [
+          662,
+          96
+        ],
+        "QC_shape": [
+          85,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 85,
+        "qc_rows_compared": 85
+      },
+      "RT02": {
+        "C_shape": [
+          476,
+          96
+        ],
+        "QC_shape": [
+          70,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 70,
+        "qc_rows_compared": 70
+      },
+      "RT03": {
+        "C_shape": [
+          453,
+          96
+        ],
+        "QC_shape": [
+          73,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 73,
+        "qc_rows_compared": 73
+      },
+      "RT04": {
+        "C_shape": [
+          422,
+          96
+        ],
+        "QC_shape": [
+          71,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 71,
+        "qc_rows_compared": 71
+      },
+      "RT05": {
+        "C_shape": [
+          410,
+          96
+        ],
+        "QC_shape": [
+          70,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 70,
+        "qc_rows_compared": 70
+      },
+      "RT06": {
+        "C_shape": [
+          1548,
+          96
+        ],
+        "QC_shape": [
+          74,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 76,
+        "qc_rows_compared": 74
+      },
+      "RT07": {
+        "C_shape": [
+          1511,
+          96
+        ],
+        "QC_shape": [
+          70,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 70,
+        "qc_rows_compared": 70
+      },
+      "RT08": {
+        "C_shape": [
+          1162,
+          96
+        ],
+        "QC_shape": [
+          70,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 72,
+        "qc_rows_compared": 70
+      },
+      "RT09": {
+        "C_shape": [
+          1044,
+          96
+        ],
+        "QC_shape": [
+          63,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 71,
+        "qc_rows_compared": 63
+      },
+      "RT10": {
+        "C_shape": [
+          1256,
+          96
+        ],
+        "QC_shape": [
+          59,
+          96
+        ],
+        "qc_sign_diff": 0,
+        "qc_rows_cached": 70,
+        "qc_rows_compared": 59
+      }
+    },
+    "G2_rebuilt": {
+      "sym": {
+        "hit10_pct": 46.52482269503546,
+        "fr3_pct": 22.867556005853874,
+        "hit3_pct": 30.070921985815602,
+        "exp_hit10_pct": 46.68085106382979,
+        "n": 705
+      },
+      "qscale": {
+        "hit10_pct": 49.645390070921984,
+        "fr3_pct": 22.409863310759164,
+        "hit3_pct": 29.50354609929078,
+        "exp_hit10_pct": 49.645390070921984,
+        "n": 705
+      }
+    },
+    "G2_cached_direct": {
+      "sym": {
+        "hit10_pct": 46.52482269503546,
+        "fr3_pct": 22.867556005853874,
+        "hit3_pct": 30.070921985815602,
+        "exp_hit10_pct": 46.68085106382979,
+        "n": 705
+      },
+      "qscale": {
+        "hit10_pct": 49.645390070921984,
+        "fr3_pct": 22.409863310759164,
+        "hit3_pct": 29.50354609929078,
+        "exp_hit10_pct": 49.645390070921984,
+        "n": 705
+      }
+    },
+    "G2_reference": {
+      "qscale_hit10": 49.6454,
+      "qscale_fr3": 22.41,
+      "sym_det_hit10": 46.5248,
+      "sym_exp_hit10": 46.6809
+    },
+    "G2_pass": true,
+    "n_queries": 705
+  },
+  "perltqa": {
+    "_label": "[LOCAL EXPLORATORY PILOT] [NOT PREREGISTERED] [NOT FOR CITATION] [DISCLOSE-BEFORE-USE]",
+    "G1_differing_bits": 0,
+    "G1_total_bits": 1179648,
+    "G1_max_abs_diff": 0.0,
+    "G1_pass": true,
+    "per_archive": {
+      "Cai Xiuying": {
+        "N": 459,
+        "differing_bits": 0,
+        "n_bits": 44064,
+        "max_abs_diff": 0.0
+      },
+      "Cao Lili": {
+        "N": 377,
+        "differing_bits": 0,
+        "n_bits": 36192,
+        "max_abs_diff": 0.0
+      },
+      "Feng Wei": {
+        "N": 422,
+        "differing_bits": 0,
+        "n_bits": 40512,
+        "max_abs_diff": 0.0
+      },
+      "Han Gang": {
+        "N": 448,
+        "differing_bits": 0,
+        "n_bits": 43008,
+        "max_abs_diff": 0.0
+      },
+      "He Feng": {
+        "N": 442,
+        "differing_bits": 0,
+        "n_bits": 42432,
+        "max_abs_diff": 0.0
+      },
+      "Huang Xin": {
+        "N": 418,
+        "differing_bits": 0,
+        "n_bits": 40128,
+        "max_abs_diff": 0.0
+      },
+      "Kong Tingting": {
+        "N": 293,
+        "differing_bits": 0,
+        "n_bits": 28128,
+        "max_abs_diff": 0.0
+      },
+      "Li Hua": {
+        "N": 422,
+        "differing_bits": 0,
+        "n_bits": 40512,
+        "max_abs_diff": 0.0
+      },
+      "Liang Xin": {
+        "N": 546,
+        "differing_bits": 0,
+        "n_bits": 52416,
+        "max_abs_diff": 0.0
+      },
+      "Lin Wen": {
+        "N": 392,
+        "differing_bits": 0,
+        "n_bits": 37632,
+        "max_abs_diff": 0.0
+      },
+      "Liu Liang": {
+        "N": 401,
+        "differing_bits": 0,
+        "n_bits": 38496,
+        "max_abs_diff": 0.0
+      },
+      "Lu Yun": {
+        "N": 392,
+        "differing_bits": 0,
+        "n_bits": 37632,
+        "max_abs_diff": 0.0
+      },
+      "Madan": {
+        "N": 381,
+        "differing_bits": 0,
+        "n_bits": 36576,
+        "max_abs_diff": 0.0
+      },
+      "Peng Jie": {
+        "N": 459,
+        "differing_bits": 0,
+        "n_bits": 44064,
+        "max_abs_diff": 0.0
+      },
+      "Qin Meng": {
+        "N": 402,
+        "differing_bits": 0,
+        "n_bits": 38592,
+        "max_abs_diff": 0.0
+      },
+      "Sun Xiaoming": {
+        "N": 406,
+        "differing_bits": 0,
+        "n_bits": 38976,
+        "max_abs_diff": 0.0
+      },
+      "Tayo": {
+        "N": 437,
+        "differing_bits": 0,
+        "n_bits": 41952,
+        "max_abs_diff": 0.0
+      },
+      "Wang Ming": {
+        "N": 408,
+        "differing_bits": 0,
+        "n_bits": 39168,
+        "max_abs_diff": 0.0
+      },
+      "Wang Xiaoming": {
+        "N": 438,
+        "differing_bits": 0,
+        "n_bits": 42048,
+        "max_abs_diff": 0.0
+      },
+      "Xia Tong": {
+        "N": 380,
+        "differing_bits": 0,
+        "n_bits": 36480,
+        "max_abs_diff": 0.0
+      },
+      "Xiao Ming": {
+        "N": 376,
+        "differing_bits": 0,
+        "n_bits": 36096,
+        "max_abs_diff": 0.0
+      },
+      "Xiong Fei": {
+        "N": 412,
+        "differing_bits": 0,
+        "n_bits": 39552,
+        "max_abs_diff": 0.0
+      },
+      "Xu Hui": {
+        "N": 359,
+        "differing_bits": 0,
+        "n_bits": 34464,
+        "max_abs_diff": 0.0
+      },
+      "Xu Jia": {
+        "N": 371,
+        "differing_bits": 0,
+        "n_bits": 35616,
+        "max_abs_diff": 0.0
+      },
+      "Yang Wei": {
+        "N": 416,
+        "differing_bits": 0,
+        "n_bits": 39936,
+        "max_abs_diff": 0.0
+      },
+      "Zhang Xiaohong": {
+        "N": 391,
+        "differing_bits": 0,
+        "n_bits": 37536,
+        "max_abs_diff": 0.0
+      },
+      "Zhao Li": {
+        "N": 491,
+        "differing_bits": 0,
+        "n_bits": 47136,
+        "max_abs_diff": 0.0
+      },
+      "Zheng Yong": {
+        "N": 385,
+        "differing_bits": 0,
+        "n_bits": 36960,
+        "max_abs_diff": 0.0
+      },
+      "Zhou Ting": {
+        "N": 421,
+        "differing_bits": 0,
+        "n_bits": 40416,
+        "max_abs_diff": 0.0
+      },
+      "Zhu Xiaolong": {
+        "N": 343,
+        "differing_bits": 0,
+        "n_bits": 32928,
+        "max_abs_diff": 0.0
+      }
+    },
+    "G2_cached_replay": {
+      "sym": {
+        "hit10_pct": 75.68058076225044,
+        "fr3_pct": 49.09189765283246,
+        "hit3_pct": 59.26194797338174,
+        "exp_hit10_pct": 75.76122962874324,
+        "n": 8265
+      },
+      "qscale": {
+        "hit10_pct": 80.0,
+        "fr3_pct": 53.23750070256421,
+        "hit3_pct": 64.24682395644284,
+        "exp_hit10_pct": 80.0,
+        "n": 8265
+      }
+    },
+    "G2_reference": {
+      "qscale_hit10": 80.0,
+      "qscale_fr3": 53.24,
+      "sym_det_hit10": 75.6806,
+      "sym_exp_hit10": 75.7612
+    },
+    "G2_pass": true,
+    "n_queries": 8265
+  },
+  "gate_pass": true
+}

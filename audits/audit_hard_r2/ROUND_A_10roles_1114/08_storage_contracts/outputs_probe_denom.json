@@ -1,0 +1,69 @@
+{
+ "checks": [
+  {
+   "name": "headline_arithmetic",
+   "pass": true,
+   "detail": {
+    "twice_231606": 463212,
+    "equals_463212": true,
+    "twelve_vs_six_factor": 2.0
+   }
+  },
+  {
+   "name": "duplicate_copy_dedup",
+   "pass": true,
+   "detail": {
+    "naive": 2400,
+    "logical": 1200,
+    "naive_is_double": true,
+    "logical_is_once": true,
+    "row_type": "LogicalDenominatorRow"
+   }
+  },
+  {
+   "name": "inconsistent_duplicate_rejects",
+   "pass": true,
+   "detail": {
+    "rejected": true
+   }
+  },
+  {
+   "name": "unknown_and_outside_roster_reject",
+   "pass": true,
+   "detail": {
+    "unknown_copy_rejects": true,
+    "outside_roster_rejects": true
+   }
+  },
+  {
+   "name": "shape_gate",
+   "pass": true,
+   "detail": {
+    "zero_d": "rejected-OK",
+    "bool_d": "rejected-OK",
+    "empty": "rejected-OK",
+    "empty_logical": "rejected-OK"
+   }
+  },
+  {
+   "name": "no_byte_total_api",
+   "pass": true,
+   "detail": {
+    "byte_named_api": [
+     "MAX_SOURCE_BYTES"
+    ],
+    "has_logical_total": true,
+    "has_naive": true
+   }
+  },
+  {
+   "name": "summary_labels",
+   "pass": true,
+   "detail": {
+    "has_pilot_label": true,
+    "says_not_authoritative": true
+   }
+  }
+ ]
+}
+PASS 7/7

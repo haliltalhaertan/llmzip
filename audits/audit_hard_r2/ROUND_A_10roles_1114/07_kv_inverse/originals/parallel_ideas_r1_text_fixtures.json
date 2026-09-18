@@ -1,0 +1,35 @@
+{
+  "status": "AUTHORED FEASIBILITY FIXTURES, NOT A LANGUAGE BENCHMARK",
+  "train_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "validation_ids": [
+    6,
+    7
+  ],
+  "test_ids": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "texts": [
+    "The train left the station before sunrise. Mira carried a blue notebook containing the dates and costs of her journeys. At the next stop she compared the timetable with the clock on the platform. A delayed connection meant she had to change her route, but the ticket remained valid for the afternoon service.",
+    "A small bakery records how much flour it uses each morning. On Monday the baker prepared bread for the nearby school. On Tuesday a restaurant ordered twice as many rolls. The baker checked the stock before accepting the order, because the delivery van would not arrive until the following day.",
+    "The river passes through a forest before reaching the town. During winter its banks are quiet, but heavy spring rain can flood the footpath. Volunteers measure the water level beside the old bridge and write each observation in a shared log. They compare the readings with the previous week before issuing a warning.",
+    "The software team found an error in a file reader. Empty records were being counted as valid entries. They wrote a failing test, changed the parser, and checked that older files still loaded correctly. The final report distinguished a repaired program from a corrected data set, since those were separate tasks.",
+    "A museum labels each object with a stable identifier. Two bowls may look similar while coming from different centuries. A visitor who asks about the red bowl needs more than a color match. The catalogue includes the material, excavation site, and restoration history so that staff can locate the right object.",
+    "The children planted beans in three containers near the window. Each container received the same amount of water but a different amount of light. They measured the stems every afternoon. After a week they compared the records, remembering that a single tall plant did not prove that every plant would grow the same way.",
+    "A librarian divided an old travel diary into short passages. The original page numbers were retained so readers could verify quotations. A search about mountain weather returned several passages, while a request for page twelve used the page index directly. The two search methods answered different kinds of questions.",
+    "A doctor reminded the patient to record symptoms and discuss unexpected changes at the next appointment. The patient kept the written instructions with the medicine packaging. When uncertain about a dose, they contacted the clinic rather than relying on a remembered number from a previous treatment.",
+    "An engineer inspected a water pump after its output began to fluctuate. The pressure gauge was working, but a filter had become clogged. Replacing the filter restored the flow. The engineer documented both the symptom and its cause so the next technician would not replace an expensive motor unnecessarily.",
+    "The debate club compared two explanations for a historical event. Both explanations matched some of the records, but they made different predictions about letters written later. The students looked for those letters before deciding which account was better supported. They kept a list of documents they could not access.",
+    "A traveler asked whether the ferry operated on Sundays. The clerk checked the current timetable and warned that storms could cancel the crossing. The traveler booked accommodation near the terminal with a flexible cancellation policy. A reliable plan needed both the usual schedule and a way to handle exceptions.",
+    "The research group compressed a collection of measurements. A smaller file was useful only if the important comparisons remained accurate. They measured storage, reconstruction error, and processing time separately. An improvement in one column did not automatically justify a worse result in another, so they reported the complete tradeoff."
+  ]
+}

@@ -1,0 +1,133 @@
+{
+ "ledger_rows": 817,
+ "distinct_benchmark_x_arm": 267,
+ "by_benchmark": {
+  "ALL": 5,
+  "PerLTQA": 42,
+  "REALTALK": 28,
+  "lme": 23,
+  "LME": 41,
+  "LoCoMo": 17,
+  "REALTALK-RT07": 3,
+  "realtalk": 23,
+  "LME-subset240": 6,
+  "perltqa": 23,
+  "REALTALK-RT05": 3,
+  "REALTALK-RT01": 3,
+  "REALTALK-RT03": 3,
+  "REALTALK-RT06": 3,
+  "REALTALK-RT10": 3,
+  "RealTalk": 18,
+  "fixture-SmolLM2-4texts": 5,
+  "REALTALK-RT08": 3,
+  "REALTALK-RT09": 3,
+  "PerLTQA-profile": 1,
+  "REALTALK-RT04": 3,
+  "REALTALK-RT02": 3,
+  "PerLTQA-social_relationship": 1,
+  "PerLTQA+LME+RT": 1,
+  "PerLTQA-events": 2,
+  "PerLTQA-dialogues": 1
+ },
+ "distinct_benchmark_x_arm_x_metric": 753,
+ "per_query_files_in_package": [
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/ablation_r2/perltqa/per_query.jsonl.gz",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/audit/per_query_bm25_corrected.jsonl",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/audit/per_query_corrected.jsonl",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/audit/per_query_tfidf_corrected.jsonl",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/baseline/per_query_top10.jsonl.gz",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/data/per_query.jsonl",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/data/per_query_bm25.jsonl",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/data/per_query_tfidf.jsonl",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/ideas_r1/ablation/per_query.jsonl",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/ideas_r1/firststage/per_query.jsonl.gz",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/math_r1/quant/per_query.jsonl.gz",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/math_r1/repr/per_query.jsonl.gz",
+  "/mnt/c/Users/MDP/dev/llmzip-work/_wt_top10/research_top10_comparison_2026_09_16/pq/per_query.jsonl"
+ ],
+ "SIG_mentions": [
+  {
+   "doc": "REPORT.md",
+   "context": "copied from a worker's summary. Production anchors reproduce to 0.0000 pp. All contrasts use a paired archive-clustered bootstrap, 20000 reps, seed 20260916. \"SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "check, by band: | band | n | diff | |---|---:|---:| | common | 133 | \u22120.75 ns | | mid | 153 | \u22120.20 ns | | **rare** | **412** | **+4.78 pp, CI [+0.69, +8.43] SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "st chosen *after* seeing results \u2014 the weakest form of evidence. (ii) The same arm **significantly hurts** PerLTQA: FR@3 \u22121.76, CI [\u22122.78, \u22120.74]; IDF_p1 \u22121.17 SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "ing \u22128.43 to +12.76 pp. **B. Component shift (use components m+1..m+96 \u2014 a window shift, not truncation).** PerLTQA SHIFT_m1 Hit@10 **+1.58, CI [+0.69, +2.47] SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "76 pp. **B. Component shift (use components m+1..m+96 \u2014 a window shift, not truncation).** PerLTQA SHIFT_m1 Hit@10 **+1.58, CI [+0.69, +2.47] SIG** (sym +1.35 SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "dow shift, not truncation).** PerLTQA SHIFT_m1 Hit@10 **+1.58, CI [+0.69, +2.47] SIG** (sym +1.35 SIG). RealTalk SHIFT_m1 Hit@10 \u22120.28 ns, and sym FR@3 **\u22121.06 SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "re too | arm | RealTalk Hit@10 (qscale) | PerLTQA Hit@10 (qscale) | |---|---:|---:| | FULL | 49.65 | 80.00 | | NO_LSA | 52.06 (+2.41 ns) | 79.53 (FR@3 \u22121.23 **SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "erLTQA Hit@10 (qscale) | |---|---:|---:| | FULL | 49.65 | 80.00 | | NO_LSA | 52.06 (+2.41 ns) | 79.53 (FR@3 \u22121.23 **SIG harmful**) | | NO_CHAR | 43.83 (\u22125.82 **SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "5 | 80.00 | | NO_LSA | 52.06 (+2.41 ns) | 79.53 (FR@3 \u22121.23 **SIG harmful**) | | NO_CHAR | 43.83 (\u22125.82 **SIG harmful**) | 80.83 | | WORD_ONLY | 46.24 (\u22123.40 **SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": ".41 ns) | 79.53 (FR@3 \u22121.23 **SIG harmful**) | | NO_CHAR | 43.83 (\u22125.82 **SIG harmful**) | 80.83 | | WORD_ONLY | 46.24 (\u22123.40 **SIG harmful**) | **81.37 (+1.37 SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "(FR@3 \u22121.23 **SIG harmful**) | | NO_CHAR | 43.83 (\u22125.82 **SIG harmful**) | 80.83 | | WORD_ONLY | 46.24 (\u22123.40 **SIG harmful**) | **81.37 (+1.37 SIG, FR@3 +2.09 SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "ured gain, and it is not ours RealTalk pool quality at 100 candidates: CODE 75.60 | BM25 78.16 | **RRF(k=60) 81.28**. RRF \u2212 CODE = +5.67 pp, CI [+3.23, +8.20] SIG"
+  },
+  {
+   "doc": "REPORT.md",
+   "context": "ours RealTalk pool quality at 100 candidates: CODE 75.60 | BM25 78.16 | **RRF(k=60) 81.28**. RRF \u2212 CODE = +5.67 pp, CI [+3.23, +8.20] SIG. RRF \u2212 BM25 = +3.12 SIG"
+  },
+  {
+   "doc": "DECISION_TESTS.md",
+   "context": "ct | |---|---|---| | LME | \u22120.33 pp [\u22121.38, +0.62] | ns \u2014 **FAIL** | | PerLTQA | +0.33 pp [\u22120.02, +0.67] | ns \u2014 **FAIL** | | LoCoMo | +1.07 pp [+0.44, +1.72] | SIG"
+  }
+ ],
+ "n_SIG_mentions": 14,
+ "corrected_alpha": {
+  "15": {
+   "bonferroni": 0.0033333333333333335,
+   "sidak": 0.0034137129465903193
+  },
+  "30": {
+   "bonferroni": 0.0016666666666666668,
+   "sidak": 0.0017083156444657188
+  },
+  "50": {
+   "bonferroni": 0.001,
+   "sidak": 0.001025339867232078
+  },
+  "100": {
+   "bonferroni": 0.0005,
+   "sidak": 0.0005128014162623096
+  },
+  "200": {
+   "bonferroni": 0.00025,
+   "sidak": 0.0002564335872234924
+  },
+  "817": {
+   "bonferroni": 6.119951040391677e-05,
+   "sidak": 6.278051929120565e-05
+  }
+ }
+}

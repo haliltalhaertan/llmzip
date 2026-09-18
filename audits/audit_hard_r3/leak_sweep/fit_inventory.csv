@@ -1,0 +1,203 @@
+file,line,excerpt
+ablation_r2/lme/ablation.py,45,from sklearn.decomposition import TruncatedSVD
+ablation_r2/lme/ablation.py,46,from sklearn.feature_extraction.text import TfidfVectorizer
+ablation_r2/lme/ablation.py,87,"wv = TfidfVectorizer(lowercase=True, ngram_range=(1, 2),"
+ablation_r2/lme/ablation.py,89,"cv = TfidfVectorizer(analyzer=""char_wb"", ngram_range=(3, 5), sublinear_tf=True)"
+ablation_r2/lme/ablation.py,90,Xw = normalize(wv.fit_transform(texts))
+ablation_r2/lme/ablation.py,91,Xc = normalize(cv.fit_transform(texts))
+ablation_r2/lme/ablation.py,95,"svd = TruncatedSVD(n_components=d, random_state=LSA_SEED)"
+ablation_r2/lme/ablation.py,96,Xl = normalize(svd.fit_transform(Xw))
+ablation_r2/lme/ablation.py,107,"s96 = TruncatedSVD(n_components=96, random_state=SVD_SEED)"
+ablation_r2/lme/ablation.py,109,Y = normalize(s96.fit_transform(Z))
+ablation_r2/lme/ablation.py,110,"mu = Y.mean(axis=0, keepdims=True)"
+ablation_r2/lme/ablation.py,363,boots = d[boot_idx].mean(axis=1)
+ablation_r2/perltqa/ablation.py,15,from sklearn.decomposition import TruncatedSVD
+ablation_r2/perltqa/ablation.py,16,from sklearn.feature_extraction.text import TfidfVectorizer
+ablation_r2/perltqa/ablation.py,140,"wv = TfidfVectorizer(lowercase=True, ngram_range=(1, 2), stop_words=""english"", sublinear_tf=True)"
+ablation_r2/perltqa/ablation.py,141,"cv = TfidfVectorizer(analyzer=""char_wb"", ngram_range=(3, 5), sublinear_tf=True)"
+ablation_r2/perltqa/ablation.py,142,Xw = normalize(wv.fit_transform(texts))
+ablation_r2/perltqa/ablation.py,143,Xc = normalize(cv.fit_transform(texts))
+ablation_r2/perltqa/ablation.py,145,"svd = TruncatedSVD(n_components=d, random_state=5101)"
+ablation_r2/perltqa/ablation.py,146,Xl = normalize(svd.fit_transform(Xw))
+ablation_r2/perltqa/ablation.py,163,"s96 = TruncatedSVD(n_components=96, random_state=5204)"
+ablation_r2/perltqa/ablation.py,164,Y = normalize(s96.fit_transform(Z))
+ablation_r2/perltqa/ablation.py,165,"mu = Y.mean(0, keepdims=True)"
+ablation_r2/perltqa/fidelity_gate.py,18,from sklearn.decomposition import TruncatedSVD
+ablation_r2/perltqa/fidelity_gate.py,19,from sklearn.feature_extraction.text import TfidfVectorizer
+ablation_r2/perltqa/fidelity_gate.py,71,"wv = TfidfVectorizer(lowercase=True, ngram_range=(1, 2), stop_words=""english"", sublinear_tf=True)"
+ablation_r2/perltqa/fidelity_gate.py,72,"cv = TfidfVectorizer(analyzer=""char_wb"", ngram_range=(3, 5), sublinear_tf=True)"
+ablation_r2/perltqa/fidelity_gate.py,73,Xw = normalize(wv.fit_transform(texts))
+ablation_r2/perltqa/fidelity_gate.py,74,Xc = normalize(cv.fit_transform(texts))
+ablation_r2/perltqa/fidelity_gate.py,76,"svd = TruncatedSVD(n_components=d, random_state=5101)"
+ablation_r2/perltqa/fidelity_gate.py,77,Xl = normalize(svd.fit_transform(Xw))
+ablation_r2/perltqa/fidelity_gate.py,79,"s96 = TruncatedSVD(n_components=96, random_state=SVD_SEED)"
+ablation_r2/perltqa/fidelity_gate.py,80,Y = normalize(s96.fit_transform(Z))
+ablation_r2/perltqa/fidelity_gate.py,81,"mu = Y.mean(0, keepdims=True)"
+ablation_r2/perltqa/t3_ladder.py,15,from sklearn.decomposition import TruncatedSVD
+ablation_r2/perltqa/t3_ladder.py,16,from sklearn.feature_extraction.text import TfidfVectorizer
+ablation_r2/perltqa/t3_ladder.py,148,"wv = TfidfVectorizer(lowercase=True, ngram_range=(1, 2), stop_words=""english"", sublinear_tf=True)"
+ablation_r2/perltqa/t3_ladder.py,149,"cv = TfidfVectorizer(analyzer=""char_wb"", ngram_range=(3, 5), sublinear_tf=True)"
+ablation_r2/perltqa/t3_ladder.py,150,Xw = normalize(wv.fit_transform(texts))
+ablation_r2/perltqa/t3_ladder.py,151,Xc = normalize(cv.fit_transform(texts))
+ablation_r2/perltqa/t3_ladder.py,153,"svd = TruncatedSVD(n_components=d, random_state=5101)"
+ablation_r2/perltqa/t3_ladder.py,154,Xl = normalize(svd.fit_transform(Xw))
+ablation_r2/perltqa/t3_ladder.py,171,"s2 = TruncatedSVD(n_components=k_eff, random_state=5204)"
+ablation_r2/perltqa/t3_ladder.py,172,Y = normalize(s2.fit_transform(Z))
+ablation_r2/perltqa/t3_ladder.py,173,"mu = Y.mean(axis=0, keepdims=True)"
+ablation_r2/perltqa/t3_ladder.py,183,"sigma = C.std(axis=0, ddof=0)"
+ablation_r2/perltqa/t3_ladder.py,185,"n_const = int(np.sum(C.std(axis=0, ddof=0) < 1e-12))"
+audit/audit_baseline.py,87,tie_frac = Counter()
+audit/audit_baseline.py,88,tie_n = Counter()
+audit/audit_lexical.py,138,from audit_lexical_lib import tfidf_scores
+audit/audit_lexical.py,139,"scores = tfidf_scores(docs_tok, qt)"
+audit/audit_lexical_lib.py,9,"Outputs: per_query_bm25_corrected.jsonl, per_query_tfidf_corrected.jsonl,"
+audit/audit_lexical_lib.py,116,"def bm25_scores(docs_tok, q_tok, avglen):"
+audit/audit_lexical_lib.py,118,df = Counter()
+audit/audit_lexical_lib.py,121,df[t] += 1
+audit/audit_lexical_lib.py,122,"idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0) for t, c in df.items()}"
+audit/audit_lexical_lib.py,133,tot += idf[t] * (f * (K1 + 1) / (f + norm))
+audit/audit_lexical_lib.py,138,"def tfidf_scores(docs_tok, q_tok):"
+audit/audit_lexical_lib.py,140,df = Counter()
+audit/audit_lexical_lib.py,143,df[t] += 1
+audit/audit_lexical_lib.py,144,"idf = {t: math.log((1 + N) / (1 + c)) + 1.0 for t, c in df.items()}"
+audit/audit_lexical_lib.py,153,w = c * idf[t]
+audit/audit_lexical_lib.py,156,num += w * (qtf[t] * idf[t])
+coordinator/cost_audit.py,55,"idf = {t: math.log((N - len(p) + 0.5) / (len(p) + 0.5) + 1.0) for t, p in postings.items()}"
+coordinator/decision_tests.py,33,from sklearn.decomposition import TruncatedSVD
+coordinator/decision_tests.py,127,class BM25:
+coordinator/decision_tests.py,139,self.idf = {w: math.log(1 + (self.N - len(pl) + .5) / (len(pl) + .5))
+coordinator/decision_tests.py,149,idf = self.idf[w]
+coordinator/ladder.py,37,from sklearn.decomposition import TruncatedSVD
+coordinator/ladder.py,79,class BM25:
+coordinator/ladder.py,94,self.idf = {}
+coordinator/ladder.py,97,self.idf[w] = math.log(1.0 + (self.N - df + 0.5) / (df + 0.5))
+coordinator/ladder.py,106,idf = self.idf[w]
+coordinator/ladder.py,125,"mu = Y.mean(axis=0, keepdims=True)"
+coordinator/ladder.py,128,"sv2 = TruncatedSVD(n_components=kk, random_state=frozen.SVD_SEED)"
+coordinator/ladder.py,129,Y = normalize(sv2.fit_transform(Z))
+coordinator/ladder.py,130,"mu = Y.mean(axis=0, keepdims=True)"
+coordinator/ladder.py,150,"sigma = C.std(axis=0, ddof=0)"
+coordinator/rare_band_decisive.py,45,df[w] += 1
+coordinator/rare_band_decisive.py,57,"best = max(best, math.log(N / df[w]))"
+coordinator/repr_fr3_mechanism.py,93,df[w] += 1
+coordinator/repr_fr3_mechanism.py,103,"best = max(best, math.log(N / df[w]))"
+coordinator/rerank_ceiling.py,63,"def bm25_scores(docs_tok, q_tok, avglen):"
+coordinator/rerank_ceiling.py,66,N = len(docs_tok); df = Counter()
+coordinator/rerank_ceiling.py,69,df[t] += 1
+coordinator/rerank_ceiling.py,70,"idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0) for t, c in df.items()}"
+coordinator/rerank_ceiling.py,77,f = tf[t]; s += idf[t] * (f * 2.5 / (f + norm))
+coordinator/semantic_before_fidelity_fix/score_pplx.py,53,"mean = Dall.mean(axis=0, keepdims=True)"
+coordinator/semantic_before_fidelity_fix/score_pplx.py,56,"pca = PCA(n_components=96, random_state=20260915)"
+coordinator/semantic_before_fidelity_fix/score_pplx.py,57,Z = pca.fit_transform(Xc)
+coordinator/split_failure_diag.py,51,df = Counter()
+coordinator/split_failure_diag.py,54,df[t] += 1
+coordinator/split_failure_diag.py,55,"idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0) for t, c in df.items()}"
+coordinator/t3_perltqa_kltn.py,31,from sklearn.decomposition import TruncatedSVD
+coordinator/t3_perltqa_kltn.py,65,"sigma = C.std(axis=0, ddof=0)"
+coordinator/t3_perltqa_kltn.py,116,"svd = TruncatedSVD(n_components=k_eff, random_state=5204)"
+coordinator/t3_perltqa_kltn.py,117,Y = normalize(svd.fit_transform(Z))
+coordinator/t3_perltqa_kltn.py,118,"mu = Y.mean(axis=0, keepdims=True)"
+coordinator/why_bm25_wins.py,13,TruncatedSVD keeps the directions of LARGEST VARIANCE. It is the optimal rank-96
+coordinator/why_bm25_wins.py,82,df = Counter()
+coordinator/why_bm25_wins.py,85,df[t] += 1
+coordinator/why_bm25_wins.py,86,"idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0) for t, c in df.items()}"
+coordinator/why_bm25_wins.py,118,f = tf[t]; sc += idf[t] * (f * 2.5 / (f + nrm))
+coordinator/why_bm25_wins.py,125,"mx = max([idf[t] for t in shared if t in idf], default=0.0)"
+data/run_lexical.py,89,"def bm25_scores(docs_tok, q_tok, avglen):"
+data/run_lexical.py,91,df = Counter()
+data/run_lexical.py,94,df[t] += 1
+data/run_lexical.py,95,idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0)
+data/run_lexical.py,108,s += idf[t] * (f * (K1 + 1) / (f + norm))
+data/run_lexical.py,113,"def tfidf_scores(docs_tok, q_tok):"
+data/run_lexical.py,115,df = Counter()
+data/run_lexical.py,118,df[t] += 1
+data/run_lexical.py,119,"idf = {t: math.log((1 + N) / (1 + c)) + 1.0 for t, c in df.items()}"
+data/run_lexical.py,128,w = c * idf[t]
+data/run_lexical.py,131,num += w * (qtf[t] * idf[t])
+data/run_lexical.py,143,"arms = {""bm25"": bm25_scores, ""tfidf"": tfidf_scores}"
+data/run_lexical.py,165,"scores = tfidf_scores(docs_tok, qt)"
+digest_r1/brain/check_bothmiss.py,32,df[w] += 1
+digest_r1/brain/check_bothmiss.py,42,"best = max(best, math.log(N / df[w]))"
+digest_r1/brain/check_corpora.py,47,df = Counter()
+digest_r1/brain/check_corpora.py,50,df[t] += 1
+digest_r1/brain/check_decisive.py,89,df[w] += 1
+digest_r1/brain/check_decisive.py,99,"best = max(best, math.log(N / df[w]))"
+ideas_r1/ablation/ablation.py,34,from sklearn.decomposition import TruncatedSVD
+ideas_r1/ablation/ablation.py,88,"s96 = TruncatedSVD(n_components=96, random_state=frozen.SVD_SEED)"
+ideas_r1/ablation/ablation.py,90,Y = normalize(s96.fit_transform(Z))
+ideas_r1/ablation/ablation.py,91,"mu = Y.mean(axis=0, keepdims=True)"
+ideas_r1/firststage/firststage.py,89,df = Counter()
+ideas_r1/firststage/firststage.py,95,df[t] = len(postings[t])
+ideas_r1/firststage/firststage.py,97,"idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0) for t, c in df.items()}"
+ideas_r1/firststage/firststage.py,103,"def bm25_scores_index(idx, q_tok, reverse=False):"
+ideas_r1/firststage/firststage.py,114,w = idf[t]
+ideas_r1/firststage/firststage.py,121,"def bm25_scores_naive(docs_tok, q_tok, avglen):"
+ideas_r1/firststage/firststage.py,124,df = Counter()
+ideas_r1/firststage/firststage.py,127,df[t] += 1
+ideas_r1/firststage/firststage.py,128,"idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0) for t, c in df.items()}"
+ideas_r1/firststage/firststage.py,137,tot += idf[t] * (f * (K1 + 1) / (f + norm))
+math_r1/quant/quant_math.py,44,from sklearn.decomposition import TruncatedSVD
+math_r1/quant/quant_math.py,45,from sklearn.feature_extraction.text import TfidfVectorizer
+math_r1/quant/quant_math.py,133,"def random_orthogonal(d, seed):"
+math_r1/quant/quant_math.py,140,"def fit_itq(C, n_iter=ITQ_ITERS, seed=ITQ_SEED):"
+math_r1/quant/quant_math.py,148,"R = random_orthogonal(C.shape[1], seed)"
+math_r1/quant/quant_math.py,182,"def idf_bands(doc_texts, queries):"
+math_r1/quant/quant_math.py,190,df = Counter()
+math_r1/quant/quant_math.py,193,df[t] += 1
+math_r1/quant/quant_math.py,194,"idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0) for t, c in df.items()}"
+math_r1/quant/quant_math.py,206,"mx = max([idf[t] for t in shared if t in idf], default=0.0)"
+math_r1/quant/quant_math.py,237,"s96 = TruncatedSVD(n_components=96, random_state=frozen.SVD_SEED)"
+math_r1/quant/quant_math.py,238,Y = normalize(s96.fit_transform(Z))
+math_r1/quant/quant_math.py,239,"mu = Y.mean(axis=0, keepdims=True)"
+math_r1/quant/quant_math.py,387,"wv = TfidfVectorizer(lowercase=True, ngram_range=(1, 2), stop_words=""english"","
+math_r1/quant/quant_math.py,389,"cv = TfidfVectorizer(analyzer=""char_wb"", ngram_range=(3, 5), sublinear_tf=True)"
+math_r1/quant/quant_math.py,390,Xw = normalize(wv.fit_transform(texts))
+math_r1/quant/quant_math.py,391,Xc = normalize(cv.fit_transform(texts))
+math_r1/quant/quant_math.py,393,"svd = TruncatedSVD(n_components=d, random_state=5101)"
+math_r1/quant/quant_math.py,394,Xl = normalize(svd.fit_transform(Xw))
+math_r1/quant/quant_math.py,396,"s96 = TruncatedSVD(n_components=96, random_state=5204)"
+math_r1/quant/quant_math.py,397,Y = normalize(s96.fit_transform(Z))
+math_r1/quant/quant_math.py,398,"mu = Y.mean(0, keepdims=True)"
+math_r1/quant/quant_math.py,480,"R, fit_s, l0, l1 = fit_itq(C)"
+math_r1/quant/quant_math.py,494,"Rr = random_orthogonal(96, s)"
+math_r1/quant/quant_math.py,507,"med = np.median(C, axis=0)"
+math_r1/quant/quant_math.py,522,"f = np.asarray(Db, dtype=bool).mean(axis=0)"
+math_r1/quant/quant_math.py,776,"bands[cl] = idf_bands(doctext[cl], qq[cl])"
+math_r1/repr/repr_math.py,5,Family A - IDF-power reweighting: multiply the WORD block's column j by idf_j^p
+math_r1/repr/repr_math.py,37,from sklearn.decomposition import TruncatedSVD
+math_r1/repr/repr_math.py,38,from sklearn.feature_extraction.text import TfidfVectorizer
+math_r1/repr/repr_math.py,85,"wv = TfidfVectorizer(lowercase=True, ngram_range=(1, 2), stop_words=""english"","
+math_r1/repr/repr_math.py,87,"cv = TfidfVectorizer(analyzer=""char_wb"", ngram_range=(3, 5), sublinear_tf=True)"
+math_r1/repr/repr_math.py,88,Xw = normalize(wv.fit_transform(texts))
+math_r1/repr/repr_math.py,89,Xc = normalize(cv.fit_transform(texts))
+math_r1/repr/repr_math.py,91,"svd = TruncatedSVD(n_components=d, random_state=LSA_SEED)"
+math_r1/repr/repr_math.py,92,Xl = normalize(svd.fit_transform(Xw))
+math_r1/repr/repr_math.py,113,"s = TruncatedSVD(n_components=96 + m, random_state=SVD_SEED)"
+math_r1/repr/repr_math.py,114,Y = normalize(s.fit_transform(Z))
+math_r1/repr/repr_math.py,117,"mu = Y.mean(axis=0, keepdims=True)"
+math_r1/repr/repr_math.py,282,"s96 = TruncatedSVD(n_components=96, random_state=SVD_SEED)"
+math_r1/repr/repr_math.py,283,Y = normalize(s96.fit_transform(Z))
+math_r1/repr/repr_math.py,284,"mu = Y.mean(axis=0, keepdims=True)"
+math_r1/repr/repr_math.py,354,"wv = TfidfVectorizer(lowercase=True, ngram_range=(1, 2), stop_words=""english"","
+math_r1/repr/repr_math.py,356,"cv = TfidfVectorizer(analyzer=""char_wb"", ngram_range=(3, 5), sublinear_tf=True)"
+math_r1/repr/repr_math.py,357,Xw = normalize(wv.fit_transform(texts))
+math_r1/repr/repr_math.py,358,Xc = normalize(cv.fit_transform(texts))
+math_r1/repr/repr_math.py,360,"svd = TruncatedSVD(n_components=d, random_state=LSA_SEED)"
+math_r1/repr/repr_math.py,361,Xl = normalize(svd.fit_transform(Xw))
+math_r1/repr/repr_math.py,363,"s96 = TruncatedSVD(n_components=96, random_state=SVD_SEED)"
+math_r1/repr/repr_math.py,364,Y = normalize(s96.fit_transform(Z))
+math_r1/repr/repr_math.py,365,"mu = Y.mean(0, keepdims=True)"
+math_r1/repr/repr_math.py,410,"def build_all_arms(Xl, Xw, Xc, Ql, Qw, Qc, idf_w):"
+math_r1/repr/repr_math.py,421,"Xwr, Qwr = reweight_word(Xw, Qw, idf_w, p)"
+math_r1/repr/repr_math.py,543,df = Counter()
+math_r1/repr/repr_math.py,546,df[t] += 1
+math_r1/repr/repr_math.py,547,"idf = {t: math.log((N - c + 0.5) / (c + 0.5) + 1.0) for t, c in df.items()}"
+math_r1/repr/repr_math.py,554,"mx = max([idf[t] for t in shared if t in idf], default=0.0)"
+math_r1/repr/repr_math.py,661,"arms, checks, zw = build_all_arms(Xl, Xw, Xc, Ql, Qw, Qc, R[""wv""].idf_)"
+math_r1/repr/repr_math.py,681,"arms, checks, zw = build_all_arms(Xl, Xw, Xc, Ql, Qw, Qc, R[""wv""].idf_)"
+pq/run_pq.py,3,"Faiss ProductQuantizer d=96 M=12 nbits=8, seed 20260915, niter 20,"
+pq/run_pq.py,222,"pq = faiss.ProductQuantizer(D, M, NBITS)"
+pq/run_pq.py,226,pq.train(Xtr32)
+semantic/score_pplx.py,59,"mean = Dall.mean(axis=0, keepdims=True)"
+semantic/score_pplx.py,62,"pca = PCA(n_components=96, random_state=20260915)"
+semantic/score_pplx.py,63,Z = pca.fit_transform(Xc)

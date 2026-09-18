@@ -1,0 +1,13 @@
+muse: workspace root: /mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/integrity (cwd default)
+muse: workspace trust: trusted source=run-flag
+Audit complete. All work is in your own directory; published package, worktree, and git refs were read-only throughout (no clone, no commits, only `log/show/rev-parse/merge-base` reads).
+
+Deliverables:
+- [HARD_AUDIT_INTEGRITY.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/integrity/HARD_AUDIT_INTEGRITY.md) — full evidence + verdict table (§0–§7)
+- [PROJECT_COVERAGE.csv](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/integrity/PROJECT_COVERAGE.csv) — 17 branch/line rows: verdict + gaps
+- [verify_manifest.py](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/integrity/verify_manifest.py), [verify_blobs.py](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/integrity/verify_blobs.py) — the audit's own seed-fixed check scripts
+
+Verdicts: chronology NOT PROVEN by timestamps (REFEREE.md 21:26 < decision_tests.py 21:30, but joint commit `8bcdef5` can't separate pre-fixation from joint authorship); `main=59b891e`, branch HEAD=`e672192`, all three named commits resolve and every REPORT.md edit rides in a correction-naming commit — PASS; manifest 30/30 + worktree-vs-blob 14/14 — PASS with scope note (manifest covers 0/756 decision-round files); all five retractions preserved — PASS with one GAP; governance SAMPLED (173 refs classified, no exhaustive certification); 2 of 7 explicit challenges stand as caveats.
+
+Severity-ranked findings: (1, Moderate) `LADDER_REALTALK.md` still asserts rank overflow as live cause with zero retraction pointers and repeats the dims-as-bytes table; (2, Moderate) manifest predates the decision round it is cited to protect; (3, Low-moderate) `sym = QB@B.T` involves no sigma division, so the tiny-sigma causal gloss can't mechanically cover sym's decline — sign is scale-invariant; (4, Low) stale retraction list in REPORT.md §8, seen-gold best-of-4 BM25 caveat, L096 carry pending (declared in L097), weights NOT RUN. No silent corrections and no in-repo STOP-as-closure misrepresentation were found — the STOP lives only on the unmerged exploratory branch and main never receipted it.
+One post-close note appended to [HARD_AUDIT_INTEGRITY.md](/mnt/c/Users/MDP/dev/llmzip-work/audit_hard_r1/integrity/HARD_AUDIT_INTEGRITY.md): the main checkout contains an untracked `AUDIT4_POST...` artifact from today's live parallel audit branch — not mine, and it changes none of the verdicts.

@@ -1,0 +1,26 @@
+{
+  "08_storage_contracts": {
+    "coverage_rows": 35,
+    "report_exists": true
+  },
+  "10_governance_meta": {
+    "coverage_rows": 18,
+    "report_exists": true
+  },
+  "06_dense_residual": {
+    "coverage_rows": 26,
+    "report_exists": true
+  },
+  "05_f1": {
+    "coverage_rows": 24,
+    "report_exists": true
+  },
+  "07_kv_inverse": {
+    "coverage_rows": 35,
+    "report_exists": true
+  },
+  "snapshot": {
+    "files": 879,
+    "changed_or_missing": []
+  }
+}

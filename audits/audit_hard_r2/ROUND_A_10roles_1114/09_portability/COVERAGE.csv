@@ -1,0 +1,16 @@
+area,item,status,evidence
+T1 cleanroom rerun (path-only adaptation),35/35 cells bit-identical vs published DECISION_TESTS.json T1,RAN,outputs/T1_cleanroom_compare.json; outputs/T1_cleanroom_T1.json; outputs/T1_path_patch.diff
+T1 as-shipped ambient behavior (reads /mnt/c absolute paths; succeeds on this machine only),T0 probe 3.6 s strongest=frozen_idfonly C1=FAIL,RAN,outputs/T0_ambient_T1.json
+T2 cleanroom blocker (no in-package CSV; remapped t2() FileNotFoundError; ambient 164256 rows sized),relative open + t2() trace + header/row count,RAN,outputs/T2_T3_blockers.json (t2)
+T3/ladder cleanroom blockers (4 opens FileNotFoundError; verbatim absolute lines; ambient sizes),4 opens + 3 script path-greps + 6 ambient stats,RAN,outputs/T2_T3_blockers.json (t3+deps)
+Input inventory (relative equivalents + missing heavy inputs),13 rows: 3 IN_PACKAGE / 6 MISSING_HEAVY / 2 OUTSIDE / 1 EXCLUDED / 1 WRITE-OUTSIDE,RAN,INPUT_INVENTORY.csv
+RT+lib identity package-vs-raw,10/10 RT JSONs + audit_baseline_lib.py sha-identical,RAN,REPORT.md Totals; INPUT_INVENTORY.csv rows 1-2
+Manifest vs workdir vs Git blobs,sets full (756/800/800) + 12-file sample 24 checks + 1/5 gzip round-trip,RAN (SAMPLED for hashes),outputs/manifest_verify.json; outputs/git_minus_manifest_full.txt
+Setup-gap documentation (no SETUP/REQUIREMENTS; dep floor; fix list),search + dep versions recorded,RAN,SETUP_GAPS.md
+T2 numeric recomputation (C3 verdicts per dataset),NOT RUN — inherited from published DECISION_TESTS.json,NOT RUN,evidence/DECISION_TESTS_published.json (reference only)
+T3 numeric re-probe (multi-archive direction/shape),NOT RUN this round — prior round 2-archive probe stands as execution evidence,NOT RUN,REPORT.md Limits (role 04/02 scope)
+Full-ladder rerun incl. k=768 and fidelity gate,NOT RUN (hours; documented 3000 s timeout in ladder.py:56-62),NOT RUN,SETUP_GAPS.md
+Model-weight arms (2.4 GB PPLX; no downloads per rules),NOT RUN — sha record in MODEL_DOWNLOAD.json only,NOT RUN,INPUT_INVENTORY.csv row 12
+Full 756-entry hash re-verification,NOT RUN — bounded 12-file sample + 1 gzip only,NOT RUN,outputs/manifest_verify.json
+Second-physical-machine replication,NOT RUN — stranger failure shown via relative opens + static paths,NOT RUN,REPORT.md Finding 1 Limits
+Whole-project lines outside pilot (F1/KV/dense-MRL/storage/metrics/geometry/retrieval/governance),NOT REVIEWED — other roles' scope,NOT REVIEWED,REPORT.md Scope section

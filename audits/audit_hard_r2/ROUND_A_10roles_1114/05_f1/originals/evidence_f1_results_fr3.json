@@ -1,0 +1,128 @@
+{
+ "summary": {
+  "LME": {
+   "n": 470,
+   "multi_gold_rate": 0.6297872340425532,
+   "sign_fr3": 0.5421335697399527,
+   "float_fr3": 0.44159574468085117,
+   "delta_pp": 10.053782505910158,
+   "frozen_delta_pp": 10.037943,
+   "delta_pp_diff": 0.015839505910157925,
+   "rho_strict": 0.1416251737011647,
+   "rho_tie": 0.14069387548880735,
+   "auditor_strict": 0.1417,
+   "auditor_tie": 0.1405,
+   "diff_strict": -7.48262988352899e-05,
+   "diff_tie": 0.00019387548880733796,
+   "rho_strict_MINGOLD_BUG": 0.09920150310037373,
+   "rho_tie_MINGOLD_BUG": 0.09863003060835299,
+   "bootstrap": {
+    "strict_gap": {
+     "label": "descriptive/post-hoc percentile interval",
+     "interval_95": [
+      0.056096289681040315,
+      0.2220675261036967
+     ],
+     "attempted": 2000,
+     "valid": 2000,
+     "invalid": 0,
+     "invalid_reasons": {}
+    },
+    "tie_gap": {
+     "label": "descriptive/post-hoc percentile interval",
+     "interval_95": [
+      0.05855490540473961,
+      0.2239146052415516
+     ],
+     "attempted": 2000,
+     "valid": 2000,
+     "invalid": 0,
+     "invalid_reasons": {}
+    }
+   }
+  },
+  "PERLTQA": {
+   "n": 8265,
+   "multi_gold_rate": 0.2809437386569873,
+   "sign_fr3": 0.4889447961636413,
+   "float_fr3": 0.551692074528852,
+   "delta_pp": -6.274727836521077,
+   "frozen_delta_pp": -6.275,
+   "delta_pp_diff": 0.0002721634789235594,
+   "rho_strict": 0.25413844391463014,
+   "rho_tie": 0.27982715404990666,
+   "auditor_strict": 0.2542,
+   "auditor_tie": 0.2798,
+   "diff_strict": -6.155608536984047e-05,
+   "diff_tie": 2.715404990666359e-05,
+   "rho_strict_MINGOLD_BUG": 0.2774184734053319,
+   "rho_tie_MINGOLD_BUG": 0.28506408072939843,
+   "bootstrap": {
+    "strict_gap": {
+     "label": "descriptive/post-hoc percentile interval",
+     "interval_95": [
+      0.22301765146726504,
+      0.28394486934444857
+     ],
+     "attempted": 2000,
+     "valid": 2000,
+     "invalid": 0,
+     "invalid_reasons": {}
+    },
+    "tie_gap": {
+     "label": "descriptive/post-hoc percentile interval",
+     "interval_95": [
+      0.2568461162536382,
+      0.30339779280930396
+     ],
+     "attempted": 2000,
+     "valid": 2000,
+     "invalid": 0,
+     "invalid_reasons": {}
+    }
+   }
+  },
+  "REALTALK": {
+   "n": 705,
+   "multi_gold_rate": 0.5475177304964539,
+   "sign_fr3": 0.2255348230702841,
+   "float_fr3": 0.1725340538106495,
+   "delta_pp": 5.3000769259634595,
+   "frozen_delta_pp": 5.2241,
+   "delta_pp_diff": 0.07597692596345951,
+   "rho_strict": 0.09793425648573494,
+   "rho_tie": 0.12307477776090332,
+   "auditor_strict": 0.0979,
+   "auditor_tie": 0.1228,
+   "diff_strict": 3.425648573493478e-05,
+   "diff_tie": 0.0002747777609033164,
+   "rho_strict_MINGOLD_BUG": 0.061255512317713624,
+   "rho_tie_MINGOLD_BUG": 0.08752108650096173,
+   "bootstrap": {
+    "strict_gap": {
+     "label": "descriptive/post-hoc percentile interval",
+     "interval_95": [
+      0.022058927143208437,
+      0.146075563622595
+     ],
+     "attempted": 2000,
+     "valid": 2000,
+     "invalid": 0,
+     "invalid_reasons": {}
+    },
+    "tie_gap": {
+     "label": "descriptive/post-hoc percentile interval",
+     "interval_95": [
+      0.06526179299979676,
+      0.17604946672149177
+     ],
+     "attempted": 2000,
+     "valid": 2000,
+     "invalid": 0,
+     "invalid_reasons": {}
+    }
+   }
+  }
+ },
+ "note": "LOCOMO not run: per-query float surface absent from committed caches"
+}
