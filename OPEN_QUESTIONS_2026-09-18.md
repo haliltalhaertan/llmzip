@@ -545,7 +545,46 @@ içerdiği 387 sorguda Jev her iki havuzda **aynı** performansı gösteriyor. S
 **+4,04 pp** tavan kazandırıyor.
 
 **Bu, yeniden açma koşulu (2)'nin doğrudan karşılanmasıdır:** kompakt kod BM25'in kaçırdığı
-tamamlayıcı adaylar getiriyor. Hibrit havuz + Jev ölçülmedi — **açık soru.**
+tamamlayıcı adaylar getiriyor.
+
+##### Ama sabit bütçede füzyon işe yaramıyor — **ÖLÇÜLDÜ, OLUMSUZ**
+
+`evidence_path`: `audit_hard_r4/FUSION_DEPTH.json`, `fusion_depth.py` (sıfır model çağrısı)
+
+Union tavanı 91,91 ama **ortalama 15,4 aday** demek — Jev maliyeti ~%50 artar. Asıl soru:
+`a+b=10` bütçesinde (tekrarsız, en fazla 10 aday) tavanın ne kadarı korunur?
+
+| sign96 | BM25 | ort. havuz | kapsam | union'dan |
+|---:|---:|---:|---:|---:|
+| 0 | 10 | 10,00 | 87,87 | −4,04 |
+| **1** | **9** | **9,15** | **88,30** | **−3,61** |
+| 2 | 8 | 8,42 | 88,30 | −3,61 |
+| 5 | 5 | 7,39 | 87,23 | −4,68 |
+| 10 | 0 | 10,00 | 86,38 | −5,53 |
+
+**En iyi sabit-bütçe füzyonu (sign1+bm25₉) yalnız +0,43 pp getiriyor** — tek başına BM25'in
+87,87'sine karşı 88,30. Union'ın +4,04 puanlık kazancının **yalnız %11'i** korunuyor.
+
+Sebep mekanik: tekrarsız birleştirme havuzu **küçültüyor** (ortalama 7,4–9,2 aday), çünkü iki
+yöntem büyük ölçüde aynı belgeleri buluyor. Derinlik kırpıldığında tamamlayıcı belgeler zaten
+listenin altında kalıyor.
+
+Daha geniş havuzlar kazancı geri getiriyor ama maliyetle birlikte:
+
+| yapılandırma | ort. havuz | kapsam |
+|---|---:|---:|
+| sign7+bm25₇ (cap 14) | 10,5 | 90,00 |
+| sign5+bm25₁₀ (cap 15) | 11,7 | 90,43 |
+| sign10+bm25₁₀ (cap 20) | 15,4 | **91,91** |
+
+**Sonuç:** tamamlayıcılık gerçek ama **ucuz değil**. +4 puanlık tavan kazancı için aday sayısını
+~%50 artırmak gerekiyor; sabit bütçede kazanç %11'e iniyor. Hibrit havuz + Jev ölçülmedi ve
+bu tabloya göre **öncelikli değil**.
+
+> **Metodolojik not:** İlk füzyon koşusu BM25 tavanını 87,23 verdi (diğer koşularda 87,87).
+> Sebep: `text_of` bu betikte metni 1200 karakterde **kesmiyordu**. Aynı deneyin iki farklı
+> sayısı — düzeltildi ve kaynağa not düşüldü. Paylaşılan yardımcı fonksiyonlar betikler arası
+> birebir aynı olmalı.
 
 Ulaşılamaz: 38 sorgu (%8,1) hiçbir havuzda gold içermiyor; hiçbir yeniden sıralayıcı bunları
 kurtaramaz.

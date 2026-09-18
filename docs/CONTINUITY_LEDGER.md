@@ -2390,3 +2390,37 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/H123_RESULTS
 status: H1 SUPPORTED; H2 REFUTED AND COORDINATOR CLAIM WITHDRAWN; H3 SUPPORTED; COMPLEMENTARITY
   MEASURED; NO FROZEN NUMBER CHANGED
 ```
+
+### L-105
+
+```text
+timestamp_utc: 2026-09-18T16:30:00Z
+actor_role: Continuity Lead recording a negative fusion result and one cross-script inconsistency
+predecessor_commit_or_tag: L-104 / 250cd02
+scope: Tests whether the measured complementarity (L-104) survives a FIXED candidate budget. Zero
+  model calls, pure arithmetic over stored rankings. No frozen number touched. Task 4F1 remains
+  SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+question: the union ceiling is 91.91 but costs ~15.4 candidates per query, roughly 50% more reranker
+  tokens. How much of that ceiling survives at a+b=10, deduplicated, capped at 10?
+result_negative: the best fixed-budget fusion is sign96 top-1 + BM25 top-9 at 88.30 coverage, only
+  +0.43 pp over BM25 alone (87.87). That retains just 11% of the union's +4.04 pp gain. Every other
+  split is worse: 5+5 gives 87.23, below BM25 alone. Mechanically, deduplicated merging SHRINKS the
+  pool to 7.4-9.2 candidates because the two methods largely retrieve the same documents; the
+  complementary documents sit low in each list and are cut when depth is trimmed.
+cost_curve: recovering the ceiling requires paying for it - sign7+bm25_7 (cap 14) reaches 90.00 at
+  10.5 candidates; sign5+bm25_10 (cap 15) reaches 90.43 at 11.7; full 10+10 reaches 91.91 at 15.4.
+interpretation: complementarity is REAL (L-104) but NOT CHEAP. The hybrid-pool-plus-reranker
+  experiment is therefore DEPRIORITISED: at constant token cost it buys 0.43 pp, and the gain only
+  appears when the candidate budget grows by about half. This closes the cheap version of reopen
+  condition (2); the expensive version remains available but unattractive.
+cross_script_inconsistency: the first fusion run reported a BM25 ceiling of 87.23 against 87.87 in
+  the matched-CI and rerank runs - the same experiment yielding two different numbers. Cause: this
+  script's text_of did NOT truncate candidate text at 1200 characters while the other two did, so
+  BM25 scored over longer documents. Fixed, with the reason written into the source. Rule recorded:
+  a helper shared across scripts in one experiment must be byte-identical, and a baseline that
+  shifts between scripts is a defect signal, not noise.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/FUSION_DEPTH.json and
+  fusion_depth.py.
+status: FIXED-BUDGET FUSION MEASURED AND NEGATIVE; TEXT-TRUNCATION INCONSISTENCY FIXED; NO FROZEN
+  NUMBER CHANGED
+```
