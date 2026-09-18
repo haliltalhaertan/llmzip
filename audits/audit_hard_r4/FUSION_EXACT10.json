@@ -1,0 +1,76 @@
+{
+ "n": 470,
+ "sign_depth": 10,
+ "bm25_depth": 20,
+ "note": "exactly-10 unique pools via backfill; zero model calls",
+ "baseline": {
+  "sign96_top10": 86.38,
+  "bm25_top10": 87.87,
+  "union_10_10": 91.91,
+  "union_mean_pool": 15.38
+ },
+ "exactly10": [
+  {
+   "rule": "quota 5/5 + backfill",
+   "coverage": 89.57,
+   "mean_pool": 10.0,
+   "vs_bm25": 1.7
+  },
+  {
+   "rule": "quota 3/7 + backfill",
+   "coverage": 89.57,
+   "mean_pool": 10.0,
+   "vs_bm25": 1.7
+  },
+  {
+   "rule": "quota 7/3 + backfill",
+   "coverage": 89.15,
+   "mean_pool": 10.0,
+   "vs_bm25": 1.28
+  },
+  {
+   "rule": "quota 2/8 + backfill",
+   "coverage": 88.94,
+   "mean_pool": 10.0,
+   "vs_bm25": 1.06
+  },
+  {
+   "rule": "alternating merge",
+   "coverage": 89.79,
+   "mean_pool": 10.0,
+   "vs_bm25": 1.91
+  },
+  {
+   "rule": "RRF k=60",
+   "coverage": 90.0,
+   "mean_pool": 10.0,
+   "vs_bm25": 2.13
+  },
+  {
+   "rule": "min-rank",
+   "coverage": 89.79,
+   "mean_pool": 10.0,
+   "vs_bm25": 1.91
+  }
+ ],
+ "sign_only_gold_rank": {
+  "n": 19,
+  "mean_rank": 4.53,
+  "rank_1_4": 9,
+  "rank_5_7": 7,
+  "rank_8_10": 3
+ },
+ "bm25_only_gold_rank": {
+  "n": 26,
+  "mean_rank": 4.23,
+  "rank_1_4": 15,
+  "rank_5_7": 6,
+  "rank_8_10": 5
+ },
+ "best_exactly10": {
+  "rule": "RRF k=60",
+  "coverage": 90.0,
+  "mean_pool": 10.0,
+  "vs_bm25": 2.13
+ }
+}
