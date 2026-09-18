@@ -2176,3 +2176,39 @@ kv_inverse_sharpened: per audit_hard_r2/ROUND_A_10roles_1114/07_kv_inverse/REPOR
 disposition: INVENTORY RECORDED. No line is reopened, no work is authorized, no priority is binding.
 status: OPEN-QUESTION INVENTORY AND FALSE-POSITIVE REGISTER RECORDED; NO FROZEN NUMBER CHANGED
 ```
+
+### L-100
+
+```text
+timestamp_utc: 2026-09-18T12:40:00Z
+actor_role: Continuity Lead recording a retraction inside the L-099 inventory, plus a standing rule
+predecessor_commit_or_tag: L-099 / ff31e71
+scope: A correction to OPEN_QUESTIONS_2026-09-18.md and a mandatory rule for future entries. No
+  experiment run, no frozen number touched. Task 4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION /
+  OUTCOME ACCESS FORBIDDEN.
+retraction: L-099's item E3 described "B1 (encoder/projector state reduction)" as a real line of this
+  project. IT IS NOT. In this repository B1 is the name of an INTEGRITY DEFECT in the 4F1 execution
+  candidates - "4F1 V2 audit: BLOCKED; synthetic B1/B2/B3 integrity defects reproduced", "B1, B2 and B3
+  were established repaired by the V4 audit" (START_HERE_V52_4F1.md; this ledger) - and those exercises
+  used auditor-authored synthetic fixtures, never real BEAM data. The figures attached to the
+  encoder-state reading (10.13 GB, 5.43 GB) return ZERO hits across main and 45 remote branches; they
+  came from external prose, not from this repository. E3 is withdrawn in place.
+legitimate_residue: the underlying question - can the encoder/projector state be reduced, and what is
+  the full-system Pareto - is real and was already recorded with its own evidence as C1 (true Pareto
+  frontier) and C3 (bits vs encoder state). Nothing of value is lost by the retraction.
+name_collision_class: this is the SECOND load-bearing name collision in the programme. The first, "C1"
+  meaning two different gates, shipped as a published error and was corrected on 2026-09-18 (correction
+  B7, EXTERNAL_AUDIT3_RESPONSE.md). Short identifiers carrying load-bearing claims must have their
+  definition grepped in the repository, not inferred from context.
+standing_rule: every entry in an open-questions or priority document now carries four mandatory fields -
+  evidence_path (file/commit, must be locatable in the repo), observed_fact (what was actually measured),
+  open_question (what was NOT measured), status (REAL / HYPOTHESIS / LITERATURE-ONLY / BLOCKED). An entry
+  with no status, or whose evidence_path cannot be found, does not enter the list. Quoting a
+  LITERATURE-ONLY entry as a project finding is prohibited. Recorded as section H of the document.
+governing_principle: LITERATURE CAN PRODUCE A HYPOTHESIS; ONLY THE REPOSITORY AND RAW OUTPUT CAN PRODUCE
+  A PROJECT FINDING. The programme's most expensive errors did not come from wrong arithmetic but from
+  fusing three adjacent true things into a fourth finding that was never measured. Two instances are now
+  on record: the non-existent spectral-grouping experiment (L-099 section G) and this B1 collision.
+disposition: RETRACTION APPLIED IN PLACE; RULE RECORDED. No line reopened, no work authorized.
+status: E3 WITHDRAWN; EVIDENCE-FIELD RULE ADOPTED; NO FROZEN NUMBER CHANGED
+```

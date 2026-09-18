@@ -211,10 +211,15 @@ sorgu-bağımsız, eşleşmiş bellek bütçesi, önemsiz son-pencere temel çiz
 baseline, kalite, tepe bellek, gecikme.
 **Maliyet:** yüksek.
 
-### E3. B1 (kodlayıcı/projektör durum azaltma)
-Matematiği klasik (dual/Gram/SVD yeniden faktörleme) — yenilik az. Asıl soru sayısal denklik
-ve sistem-durumu azaltma; yani C1/C3 ile aynı yere çıkıyor.
-**Cevaplanırsa:** gerçek darboğaza (kodlayıcı durumu) saldıran tek hat.
+### E3. ~~B1 (kodlayıcı/projektör durum azaltma)~~ — **GERİ ÇEKİLDİ 2026-09-18**
+
+> Bu madde, adı `B1` olan bir kodlayıcı-durum azaltma tekniği varmış gibi yazılmıştı.
+> **Böyle bir teknik bu depoda yok.** `B1`, 4F1 hattındaki bir bütünlük kusurunun adı; iddianın
+> sayıları (`10.13 GB`, `5.43 GB`) hiçbir dalda bulunamadı. Ayrıntı: bölüm G1.
+>
+> Altta yatan **meşru** soru — kodlayıcı/projektör durumu küçültülebilir mi, ve tam sistem
+> Pareto'su nedir — bu belgede zaten **C1** (gerçek Pareto sınırı) ve **C3** (bit mi kodlayıcı
+> durumu mu) olarak, kendi kanıtıyla kayıtlıdır. Oraya bakınız.
 
 ### E4. Depolama/rank sertifikası
 Doğrudan eş çalışma taramada çıkmadı. **Önce matematiksel tanımı netleşmeli** — şu an
@@ -240,19 +245,70 @@ Bir dış inceleme 2026-09-18'de 47 soruluk bir liste üretti. Listenin bir kıs
 hiç yapılmamış deneylerin mekanizmasını** soruyordu. Aynı tuzağa tekrar düşülmemesi için
 kayda geçiriliyor.
 
-Yöntem: her isim `main` üzerinde ve 40 uzak dalda `git grep` ile arandı.
+Yöntem: her isim `main` üzerinde ve 40+ uzak dalda `git grep` ile arandı.
 
 | İddia edilen bulgu | Gerçek durum |
 |---|---|
 | **Spectral grouping** (spektral vs rastgele üyelik) | **Hiçbir yerde yok** — `main`'de 0 dosya, hiçbir dalda 0 isabet. Böyle bir deney yapılmadı. Dış liste bunun üzerine **dört soru** kurmuş ve ikisini "en güçlü dar yenilik adayı" / "ana bilimsel katkıya dönüşebilir" diye etiketlemişti. **Var olmayan bir bulgunun mekanizması sorulamaz.** |
 | **NanoBEIR / BRIGHT / BIRCO "karma sonuçlarımız"** | Bu isimler yalnız `research_top10_comparison_2026_09_16/inventory/literature/` altındaki **literatür envanterinde** geçiyor — başkalarının çalışmalarının listesi. Bizim ölçümümüz değil. |
 | **Rank/storage certificate** | Kaynak uygulama yok; yalnız denetim metinlerinde kavram olarak anılıyor. Soru olarak bile henüz biçimlenmemiş (bkz. E4). |
+| **"B1 = kodlayıcı-durum azaltma, 10,13 GB → 5,43 GB"** | **AD ÇAKIŞMASI — aşağıya bakınız.** Bu depoda `B1`, 4F1 yürütme hattındaki bir **bütünlük kusurunun** adıdır (B1/B2/B3), kodlayıcı-durum azaltma tekniğinin değil. `5.43 GB` ve `10.13 GB` dizgileri hiçbir dalda **0 isabet** veriyor. |
 | KV / inverse hattı | **Gerçek** — kod ve denetim raporu mevcut (bkz. E2). |
 | Dense / residual hattı | **Gerçek** — `audit_hard_r2/ROUND_A_10roles_1114/06_dense_residual/` ve `bench/sign96-micro-residual-2026-09-14` dalı. |
 
+### G1. `B1` ad çakışması — bu listenin kendi hatası
+
+**Bu belgenin ilk sürümünde E3 maddesi "B1 (kodlayıcı/projektör durum azaltma)" diyordu.
+Yanlıştı ve kaynağı gösterilmemişti.** Doğrulama:
+
+- Depoda `B1`, **4F1 yürütme adaylarındaki bütünlük kusurlarının** adı: *"4F1 V2 audit: BLOCKED;
+  synthetic B1/B2/B3 integrity defects reproduced"*, *"B1, B2 and B3 were established repaired by
+  the V4 audit"* (`START_HERE_V52_4F1.md`, `docs/CONTINUITY_LEDGER.md`). Ayrıca defter, bu
+  alıştırmaların **sentetik fikstürlerle** yapıldığını, gerçek BEAM verisiyle hiç yapılmadığını
+  kaydediyor.
+- Kodlayıcı-durum azaltma anlamındaki `B1` iddiasının sayıları (`10.13 GB`, `5.43 GB`) **hiçbir
+  dalda bulunamadı**. Bu rakamlar bir dış değerlendirme metninden geldi, depodan değil.
+
+**Sonuç:** "B1 sonrası RAM/gecikme/Pareto" soruları, *adı B1 olan gerçek bir teknik varmış gibi*
+sorulamaz. Altta yatan gerçek soru — **kodlayıcı/projektör durumunun küçültülüp küçültülemeyeceği
+ve tam sistem Pareto'su** — meşrudur ve bu belgede zaten **C1 ve C3** olarak, kendi kanıtıyla
+kayıtlıdır. E3 maddesi bu yüzden geri çekildi.
+
+Aynı isim iki ayrı şeye verildiğinde, iki ayrı şey tek bulgu sanılıyor. Bu, yayın paketinde
+"C1" için de yaşandı (bkz. B7 düzeltmesi, `EXTERNAL_AUDIT3_RESPONSE.md`) — **bu programda
+tekrarlayan bir hata sınıfı.**
+
 **Ders:** bir soru listesi, dayandığı bulguların var olduğunu **varsayar**. Liste ne kadar
 ikna edici yazılırsa yazılsın, her maddenin kaynağı önce depoda aranmalıdır. Bu belgedeki her
-madde bu şekilde doğrulandı; kaynağı gösterilemeyen madde listeye alınmadı.
+madde bu şekilde doğrulandı; kaynağı gösterilemeyen madde listeye alınmadı veya geri çekildi.
+
+---
+
+## H. Bu listeye madde ekleme kuralı (zorunlu)
+
+Bölüm G'deki iki hata (spectral grouping, `B1` ad çakışması) aynı zincirden doğdu:
+*literatürde ilginç bir fikir görüldü → projede o fikrin bulgusu varmış gibi davranıldı.*
+Zinciri kesmek için bu listeye giren her madde dört alanı **zorunlu** taşır:
+
+| Alan | Anlamı |
+|---|---|
+| `evidence_path` | Bu soruyu doğuran dosya/commit — depoda gösterilebilir olmalı |
+| `observed_fact` | Gerçekten **ölçülmüş** olan ne |
+| `open_question` | **Ölçülmemiş** kısım ne |
+| `status` | `REAL` / `HYPOTHESIS` / `LITERATURE-ONLY` / `BLOCKED` |
+
+Ve üstündeki tek ilke:
+
+> **Literatür bir hipotez üretebilir; yalnızca depo ve ham çıktı bir proje bulgusu üretebilir.**
+
+`status` alanı olmayan veya `evidence_path`'i depoda bulunamayan madde listeye girmez.
+`LITERATURE-ONLY` bir maddenin proje bulgusu olarak alıntılanması yasaktır.
+
+**Neden bu kadar katı:** bu programın en pahalı hataları yanlış aritmetikten çıkmadı. Birbirine
+yakın üç doğru şeyin birleştirilip **hiç yapılmamış dördüncü bir "bulgu"** üretilmesinden çıktı.
+Spectral grouping tam olarak bunun örneğidir: ikili hashleme literatürü gerçek, spektral yöntemler
+gerçek, bizim gruplama kodumuz gerçek — ama "spektral vs rastgele gruplama deneyimiz" hiç
+var olmadı.
 
 ---
 
