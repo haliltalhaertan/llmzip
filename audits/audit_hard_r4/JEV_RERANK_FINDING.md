@@ -84,13 +84,48 @@ Doğru kapı, aynı yeniden sıralayıcı her iki havuza uygulandığında:
 - Yani bayt-başına karşılaştırmada durum bambaşka; toplam sistem durumu (kodlayıcı) hâlâ
   hesaba katılmadı.
 
+## EK (aynı gün): eşleşmiş güven aralığı ölçüldü
+
+`matched_ci.py`, yalnız iki karar kolunu (sign96, BM25) yeniden koştu ve soru-bazlı sonuçları
+**kalıcı sakladı**. n=470, 9.400 yargı, 0 hata, 443 s.
+
+| | tavan H@10 | Hit@1 | FR@3 |
+|---|---:|---:|---:|
+| sign96 + Jev | 86,38 | 66,60 | 70,37 |
+| BM25 + Jev | 87,87 | 68,51 | 72,48 |
+
+Eşleştirilmiş bootstrap, 20.000 tekrar, seed 20260918:
+
+| ölçüt | Δ | CI95 | sonuç |
+|---|---:|---|---|
+| FR@3 | **−2,10 pp** | **[−4,97, +0,70]** | sıfırı içeriyor → **ayırt edilemez** |
+| Hit@1 | −1,92 pp | [−5,53, +1,70] | sıfırı içeriyor → **ayırt edilemez** |
+
+**Karar:** `BM25+Jev` üstünlüğü bu veride **desteklenmiyor**. 12 baytlık işaret yükü, ters
+indeksle aynı istatistiksel kefeye giriyor — üstün değil, ölçülebilir şekilde geride de değil.
+
+### Yan bulgu: yeniden sıralayıcı deterministik değil
+
+Aynı girdiyle iki koşu farklı sonuç verdi. Aday havuzları **birebir aynı** olduğu (tavan H@10
+86,38 ve 87,87, iki koşuda da özdeş) için fark yalnızca Jev'in skorlarından gelebilir:
+
+| | koşu 1 | koşu 2 | fark |
+|---|---:|---:|---:|
+| sign96 FR@3 | 70,66 | 70,37 | −0,29 |
+| BM25 FR@3 | 71,87 | 72,48 | +0,61 |
+| **Δ** | **−1,21** | **−2,10** | 0,89 |
+
+Koşu-arası oynama (0,89 pp) CI genişliğinin (5,67 pp) **içinde** — yani tutarlı, ama
+tek bir koşunun nokta tahminini alıntılamanın neden yanlış olduğunun canlı kanıtı.
+**Bu hattın her sayısı aralıkla birlikte verilmelidir.**
+
 ## Sınırlar — bu bulgunun neyi kanıtlamadığı
 
-1. **−1,21 pp bir NOKTA TAHMİNİ.** Güven aralığı yok. Sebebi utandırıcı: BM25 kolunda
-   soru-bazlı sonuçlar hesaplanıp **saklanmadı** — bu, denetimlerin `decision_tests.py:156-191`
-   için bulup eleştirdiği kusurun birebir tekrarı. Her iki betik de düzeltildi
-   (`per_query` kalıcılığı eklendi), ama **bu tablodaki sayı düzeltme öncesi koşudan**.
-   Aralık istenirse yeniden koşulmalı.
+1. ~~**−1,21 pp bir NOKTA TAHMİNİ.**~~ **ÇÖZÜLDÜ** (yukarıdaki ek). Ama kusur kayda geçer:
+   ilk koşu soru-bazlı sonuçları hesaplayıp **attı** — denetimlerin `decision_tests.py:156-191`
+   için bulup eleştirdiği kusurun birebir tekrarı, bu kez pilot kodunda. Her iki betik
+   `per_query` kalıcılığı için düzeltildi. **Yukarıdaki ana tablodaki sayılar düzeltme öncesi
+   koşudandır**; karar veren sayılar ektedir.
 2. **Tek veri kümesi.** Yalnız LME. RealTalk/PerLTQA'da doğrulanmadı.
 3. **BM25 bu pilotta yeniden kuruldu** (textbook k1=1,2 b=0,75, frozen tokenizer) çünkü LME
    için BM25 top-10 kimlikleri saklanmamıştı. Hakem sözleşmesinin birincil yapılandırması
