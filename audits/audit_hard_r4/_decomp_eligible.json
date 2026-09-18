@@ -1,0 +1,930 @@
+[
+ {
+  "qid": "07b6f563",
+  "section": "single-session-preference",
+  "n_gold": 2,
+  "anchor": 390,
+  "missing": [
+   390
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "0977f2af",
+  "section": "knowledge-update",
+  "n_gold": 2,
+  "anchor": 432,
+  "missing": [
+   247
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "0a995998",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 218,
+  "missing": [
+   130
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "0bc8ad92",
+  "section": "temporal-reasoning",
+  "n_gold": 3,
+  "anchor": 97,
+  "missing": [
+   115,
+   258
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "129d1232",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 168,
+  "missing": [
+   367
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "157a136e",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 399,
+  "missing": [
+   473
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "1a8a66a6",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 12,
+  "missing": [
+   89
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "1cea1afa",
+  "section": "knowledge-update",
+  "n_gold": 2,
+  "anchor": 26,
+  "missing": [
+   26
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "1d4e3b97",
+  "section": "single-session-preference",
+  "n_gold": 2,
+  "anchor": 416,
+  "missing": [
+   416,
+   418
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "2311e44b",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 369,
+  "missing": [
+   449
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "2b8f3739",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 431,
+  "missing": [
+   98,
+   431
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "2c63a862",
+  "section": "temporal-reasoning",
+  "n_gold": 2,
+  "anchor": 397,
+  "missing": [
+   324,
+   397
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "2ce6a0f2",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 396,
+  "missing": [
+   67,
+   241,
+   376,
+   396
+  ],
+  "n_missing": 4
+ },
+ {
+  "qid": "2e6d26dc",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 31,
+  "missing": [
+   137,
+   209
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "35a27287",
+  "section": "single-session-preference",
+  "n_gold": 3,
+  "anchor": 409,
+  "missing": [
+   411
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "36b9f61e",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 138,
+  "missing": [
+   162,
+   344
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "3a704032",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 167,
+  "missing": [
+   8
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "3ba21379",
+  "section": "knowledge-update",
+  "n_gold": 2,
+  "anchor": 70,
+  "missing": [
+   56,
+   70
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "3c1045c8",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 267,
+  "missing": [
+   286
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "3fdac837",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 154,
+  "missing": [
+   389
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "41698283",
+  "section": "knowledge-update",
+  "n_gold": 2,
+  "anchor": 32,
+  "missing": [
+   464
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "46a3abf7",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 77,
+  "missing": [
+   77,
+   166,
+   364
+  ],
+  "n_missing": 3
+ },
+ {
+  "qid": "51c32626",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 80,
+  "missing": [
+   460
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "60472f9c",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 300,
+  "missing": [
+   300
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "61f8c8f8",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 297,
+  "missing": [
+   221
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "67e0d0f2",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 394,
+  "missing": [
+   65
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "6cb6f249",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 247,
+  "missing": [
+   247,
+   259
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "6d550036",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 74,
+  "missing": [
+   175,
+   263,
+   409
+  ],
+  "n_missing": 3
+ },
+ {
+  "qid": "7024f17c",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 228,
+  "missing": [
+   44
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "77eafa52",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 364,
+  "missing": [
+   12,
+   364
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "830ce83f",
+  "section": "knowledge-update",
+  "n_gold": 3,
+  "anchor": 342,
+  "missing": [
+   344,
+   479
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "91b15a6e",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 148,
+  "missing": [
+   312
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "945e3d21",
+  "section": "knowledge-update",
+  "n_gold": 2,
+  "anchor": 188,
+  "missing": [
+   45
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "9bbe84a2",
+  "section": "knowledge-update",
+  "n_gold": 2,
+  "anchor": 60,
+  "missing": [
+   139
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "9d25d4e0",
+  "section": "multi-session",
+  "n_gold": 5,
+  "anchor": 66,
+  "missing": [
+   332,
+   354
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "a08a253f",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 376,
+  "missing": [
+   307
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "a1cc6108",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 103,
+  "missing": [
+   221
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "a3332713",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 314,
+  "missing": [
+   381
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "a346bb18",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 12,
+  "missing": [
+   238
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "a3838d2b",
+  "section": "temporal-reasoning",
+  "n_gold": 6,
+  "anchor": 131,
+  "missing": [
+   248,
+   306,
+   340,
+   354,
+   378
+  ],
+  "n_missing": 5
+ },
+ {
+  "qid": "a9f6b44c",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 181,
+  "missing": [
+   137,
+   375,
+   381
+  ],
+  "n_missing": 3
+ },
+ {
+  "qid": "afdc33df",
+  "section": "single-session-preference",
+  "n_gold": 3,
+  "anchor": 75,
+  "missing": [
+   77
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "b46e15ed",
+  "section": "temporal-reasoning",
+  "n_gold": 5,
+  "anchor": 466,
+  "missing": [
+   70,
+   269,
+   454,
+   466
+  ],
+  "n_missing": 4
+ },
+ {
+  "qid": "ba358f49",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 59,
+  "missing": [
+   269
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "bc149d6b",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 91,
+  "missing": [
+   103
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "bf659f65",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 31,
+  "missing": [
+   328,
+   471
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "c4a1ceb8",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 31,
+  "missing": [
+   208,
+   312,
+   476
+  ],
+  "n_missing": 3
+ },
+ {
+  "qid": "d01c6aa8",
+  "section": "temporal-reasoning",
+  "n_gold": 2,
+  "anchor": 238,
+  "missing": [
+   31
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "d23cf73b",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 203,
+  "missing": [
+   464
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "d3ab962e",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 76,
+  "missing": [
+   76
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "d682f1a2",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 76,
+  "missing": [
+   283
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "d851d5ba",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 88,
+  "missing": [
+   138
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "dad224aa",
+  "section": "knowledge-update",
+  "n_gold": 2,
+  "anchor": 511,
+  "missing": [
+   26,
+   511
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "dd2973ad",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 249,
+  "missing": [
+   478
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "dfde3500",
+  "section": "knowledge-update",
+  "n_gold": 2,
+  "anchor": 153,
+  "missing": [
+   251
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "eac54adc",
+  "section": "temporal-reasoning",
+  "n_gold": 2,
+  "anchor": 0,
+  "missing": [
+   0
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "edced276",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 6,
+  "missing": [
+   192,
+   194
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "ef9cf60a",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 115,
+  "missing": [
+   496
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "efc3f7c2",
+  "section": "multi-session",
+  "n_gold": 2,
+  "anchor": 456,
+  "missing": [
+   248
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_15e38248",
+  "section": "multi-session",
+  "n_gold": 5,
+  "anchor": 336,
+  "missing": [
+   52,
+   290,
+   334
+  ],
+  "n_missing": 3
+ },
+ {
+  "qid": "gpt4_2ba83207",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 271,
+  "missing": [
+   400,
+   451
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "gpt4_2f56ae70",
+  "section": "temporal-reasoning",
+  "n_gold": 3,
+  "anchor": 238,
+  "missing": [
+   272,
+   364
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "gpt4_2f8be40d",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 92,
+  "missing": [
+   56,
+   424
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "gpt4_2f91af09",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 58,
+  "missing": [
+   379
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_31ff4165",
+  "section": "multi-session",
+  "n_gold": 6,
+  "anchor": 318,
+  "missing": [
+   140,
+   152,
+   154,
+   294,
+   433
+  ],
+  "n_missing": 5
+ },
+ {
+  "qid": "gpt4_372c3eed",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 36,
+  "missing": [
+   244
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_45189cb4",
+  "section": "temporal-reasoning",
+  "n_gold": 3,
+  "anchor": 16,
+  "missing": [
+   44
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_5501fe77",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 418,
+  "missing": [
+   460
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_59c863d7",
+  "section": "multi-session",
+  "n_gold": 5,
+  "anchor": 10,
+  "missing": [
+   10,
+   417,
+   443,
+   451
+  ],
+  "n_missing": 4
+ },
+ {
+  "qid": "gpt4_65aabe59",
+  "section": "temporal-reasoning",
+  "n_gold": 3,
+  "anchor": 196,
+  "missing": [
+   200
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_7abb270c",
+  "section": "temporal-reasoning",
+  "n_gold": 6,
+  "anchor": 61,
+  "missing": [
+   95,
+   141,
+   189,
+   302,
+   424
+  ],
+  "n_missing": 5
+ },
+ {
+  "qid": "gpt4_7fce9456",
+  "section": "multi-session",
+  "n_gold": 6,
+  "anchor": 246,
+  "missing": [
+   317,
+   329,
+   401,
+   403,
+   439
+  ],
+  "n_missing": 5
+ },
+ {
+  "qid": "gpt4_88806d6e",
+  "section": "temporal-reasoning",
+  "n_gold": 2,
+  "anchor": 92,
+  "missing": [
+   403
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_8c8961ae",
+  "section": "temporal-reasoning",
+  "n_gold": 2,
+  "anchor": 43,
+  "missing": [
+   205
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_93159ced",
+  "section": "temporal-reasoning",
+  "n_gold": 3,
+  "anchor": 4,
+  "missing": [
+   252
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_9a159967",
+  "section": "temporal-reasoning",
+  "n_gold": 3,
+  "anchor": 287,
+  "missing": [
+   59,
+   219,
+   287
+  ],
+  "n_missing": 3
+ },
+ {
+  "qid": "gpt4_a1b77f9c",
+  "section": "temporal-reasoning",
+  "n_gold": 6,
+  "anchor": 268,
+  "missing": [
+   417,
+   421
+  ],
+  "n_missing": 2
+ },
+ {
+  "qid": "gpt4_a56e767c",
+  "section": "multi-session",
+  "n_gold": 6,
+  "anchor": 321,
+  "missing": [
+   61,
+   65,
+   71,
+   291,
+   297
+  ],
+  "n_missing": 5
+ },
+ {
+  "qid": "gpt4_ab202e7f",
+  "section": "multi-session",
+  "n_gold": 5,
+  "anchor": 32,
+  "missing": [
+   280,
+   336,
+   445
+  ],
+  "n_missing": 3
+ },
+ {
+  "qid": "gpt4_b4a80587",
+  "section": "temporal-reasoning",
+  "n_gold": 2,
+  "anchor": 114,
+  "missing": [
+   114
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_c27434e8",
+  "section": "temporal-reasoning",
+  "n_gold": 2,
+  "anchor": 242,
+  "missing": [
+   157
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_d12ceb0e",
+  "section": "multi-session",
+  "n_gold": 3,
+  "anchor": 181,
+  "missing": [
+   57
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_d6585ce8",
+  "section": "temporal-reasoning",
+  "n_gold": 5,
+  "anchor": 170,
+  "missing": [
+   10,
+   219,
+   245,
+   481
+  ],
+  "n_missing": 4
+ },
+ {
+  "qid": "gpt4_d84a3211",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 117,
+  "missing": [
+   2,
+   105,
+   117,
+   481
+  ],
+  "n_missing": 4
+ },
+ {
+  "qid": "gpt4_e05b82a6",
+  "section": "multi-session",
+  "n_gold": 4,
+  "anchor": 48,
+  "missing": [
+   220
+  ],
+  "n_missing": 1
+ },
+ {
+  "qid": "gpt4_f420262c",
+  "section": "temporal-reasoning",
+  "n_gold": 5,
+  "anchor": 298,
+  "missing": [
+   190,
+   459
+  ],
+  "n_missing": 2
+ }
+]
