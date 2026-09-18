@@ -1,0 +1,61 @@
+{
+ "source": "MATCHED_CI.json per_query",
+ "n": 470,
+ "full_delta": -2.103,
+ "by_section": {
+  "single-session-preference": {
+   "n": 30,
+   "delta_fr3": -8.333
+  },
+  "temporal-reasoning": {
+   "n": 127,
+   "delta_fr3": -5.486
+  },
+  "single-session-user": {
+   "n": 64,
+   "delta_fr3": -4.688
+  },
+  "multi-session": {
+   "n": 121,
+   "delta_fr3": -1.584
+  },
+  "knowledge-update": {
+   "n": 72,
+   "delta_fr3": 2.083
+  },
+  "single-session-assistant": {
+   "n": 56,
+   "delta_fr3": 5.357
+  }
+ },
+ "file_order_slices": [
+  {
+   "range": "0-119",
+   "n": 120,
+   "delta": 4.375
+  },
+  {
+   "range": "120-239",
+   "n": 120,
+   "delta": -5.292
+  },
+  {
+   "range": "240-359",
+   "n": 120,
+   "delta": -2.958
+  },
+  {
+   "range": "360-469",
+   "n": 110,
+   "delta": -4.758
+  }
+ ],
+ "random120_ci95": [
+  -6.6,
+  2.72
+ ],
+ "first120_actual": 4.375,
+ "composition_only_prediction": -1.45,
+ "unexplained_within_section": 5.83,
+ "note": "Section mix explains only ~0.65 of the 6.48 pp gap; +5.83 pp is within-section and unexplained."
+}
