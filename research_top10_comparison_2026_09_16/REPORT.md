@@ -20,14 +20,24 @@ retrieval*. This round tested that claim hard enough to break parts of it.
 
 | RealTalk (n=705, Hit@10) | value | storage |
 |---|---:|---|
-| BM25 (plain lexical, no learning) | **54.18** | inverted index |
+| BM25 **coarse** (`\w+` tokenizer, k1=1.5/b=0.75 — *handicapped*, see note) | **54.18** | inverted index |
 | qscale (our 12-byte code) | 49.65 | 12 B/doc |
 | float_std (96 dims, **uncompressed**) | 48.51 | 384 B/doc |
-| sign96 | 46.68 | 12 B/doc |
-| PQ (equal budget control) | 33.05 | 12 B/doc |
+| sign96 (deterministic tie rule; 46.68 is the tie-averaged variant) | 46.52 | 12 B/doc |
+| PQ (equal budget control; 98,304 B codebook **not** counted here) | 33.05 | 12 B/doc |
 
-Quantization costs only **1.83 pp** (48.51 → 46.68). But BM25 beats the *uncompressed*
-representation by **5.67 pp**. So the bottleneck was never the 12-byte budget: it is the
+> **CORRECTION 2026-09-18 — "BM25" denotes four different configurations in this package.**
+> The 54.18 above is the **weakest, coarse-tokenizer** build. The fair builds measured in
+> `DECISION_TESTS.md` T1 score far higher on the same cohort:
+> coarse 55.32 (textbook k1=1.2), frozen 61.70 (referee-primary), frozen_idfonly 65.67
+> (best of four, selected on the evaluation data). **The decision gates use the fair
+> numbers, not 54.18.** Against the referee-primary 61.70 the 48 B code trails by
+> −3.83 pp Hit@10 / −3.26 pp FR@3 — not the −7.80 pp that the best-of-four comparison
+> produces. Never quote a bare "BM25" figure from this table; name the build.
+
+Quantization costs only **1.83 pp** (48.51 → 46.68). But even the handicapped BM25 beats
+the *uncompressed* representation by **5.67 pp**. So the bottleneck was never the 12-byte
+budget: it is the
 96-dimensional representation itself. Tuning bits cannot fix this, and this round
 confirmed that by trying and failing.
 

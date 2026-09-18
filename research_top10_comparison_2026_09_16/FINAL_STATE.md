@@ -55,7 +55,14 @@ genuine near-singular trailing directions.
 5. **Fair-baseline methodology**: give the competitor your own tokenizer before claiming a
    win. Applied to ourselves, it reversed the programme's headline.
 6. **`sign()` is not merely lossy here** — it acts as a per-axis normalizer and *adds*
-   ~10 pp over the float source it quantizes (k=384: sym 54.18 vs float 43.69).
+   ~10 pp over the **raw, unstandardized** float source it quantizes
+   (k=384: sym 54.18 vs raw float 43.69).
+   > **CORRECTION 2026-09-18 — this gain is reference-dependent, do not quote it bare.**
+   > Against *standardized* float the sign code does **not** win: `REPORT.md` §1 reports
+   > `float_std` at **48.51** vs `sign96` **46.68** on the same RealTalk cohort, i.e.
+   > sign is −1.83 pp *behind* that reference. The "+10 pp" holds only against raw float.
+   > Already recorded on `main` as ledger L097 (`59b891e`); it had not been carried into
+   > this file. Every future quotation must name the float reference it beats.
 
 ## Retractions (five, all preserved with the evidence that killed them)
 

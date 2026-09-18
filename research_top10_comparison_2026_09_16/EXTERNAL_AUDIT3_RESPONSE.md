@@ -115,9 +115,16 @@ Granting `sym` its **best possible** tie-break:
 | PerLTQA | 48.89 | 50.58 | 56.72 | −6.14 SIG |
 | LoCoMo | 23.79 | 25.49 | 37.67 | −12.18 SIG |
 
-Ties are worth 1.69–2.34 pp. C1 survives comfortably on PerLTQA and LoCoMo. **On
-LongMemEval most of the apparent BM25 advantage is `sym`'s ties** — that must be stated
-whenever the LME row is quoted.
+Ties are worth 1.69–2.34 pp. The external reviewer's objection does not survive on PerLTQA
+or LoCoMo. **On LongMemEval most of the apparent BM25 advantage is `sym`'s ties** — that
+must be stated whenever the LME row is quoted.
+
+> **CORRECTION 2026-09-18 — naming collision, fixed above.** The previous wording read
+> "C1 survives comfortably on PerLTQA and LoCoMo". That "C1" was the external reviewer's
+> first criticism, **not** the decision gate C1. The decision gate C1 **FAILS**
+> (`FINAL_STATE.md` §gates, `DECISION_TESTS.md`). The table directly above this line
+> shows PerLTQA −6.14 SIG and LoCoMo −12.18 SIG against BM25, so reading it as the gate
+> would invert the result. Reference the gate only as "gate C1"; never bare "C1" here.
 
 ## BM25 memory: our figure was too kind to BM25
 
