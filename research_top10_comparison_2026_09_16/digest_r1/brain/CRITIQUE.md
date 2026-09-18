@@ -184,10 +184,25 @@ units driving the bootstrap, a post-hoc 95% CI with lower bound +0.69 is
 exactly what the winner's curse produces. And note the power asymmetry the
 programme keeps ignoring: NOTHING on RealTalk (10 clusters, n=705) is well
 powered — every RT-first claim has CIs spanning zero — while PerLTQA's harms
-(IDF_p2 −1.76 SIG, WORD_ONLY +1.37 SIG, SHIFT_m1 +1.58 SIG, all 30 clusters)
-are the only well-powered results in the building. The rational Bayesian
+(IDF_p2 −1.76 SIG, WORD_ONLY +1.37 SIG, SHIFT_m1 +1.58 SIG) are the
+best-powered results in the building. The rational Bayesian
 update is to trust PerLTQA's significant harms over RealTalk's exploratory
 gains, i.e. to believe LESS of our own story, not more.
+
+> **CORRECTION 2026-09-18 — "all 30 clusters" was false; the argument above is
+> weaker than written.** Two of the three exhibits (IDF_p2 −1.76 and SHIFT_m1
+> +1.58) were computed on **10 of 30 PerLTQA archives — 2,967 of 8,265 questions**,
+> not on all 30. The stored contrasts say so themselves: `coordinator/repr_results.json`
+> and `coordinator/repr_fr3_mechanism.json` both carry `"clusters": 10`, and the
+> producing run died at 10/30 archives (`math_r1/repr.log` ends in SIGTERM; no
+> `RESULTS.json` was ever written). The numbers are correct **as subset contrasts**.
+> Only WORD_ONLY +1.37 is a separate full-cohort channel ablation (n=8265), and it
+> was not re-verified here.
+> Consequence: this paragraph's "only well-powered results" conclusion loses two of
+> its three exhibits and the winner's-curse caveat this document raises elsewhere
+> (§1d, "10 archive-clusters", "lower bound +0.69") applies to its own SHIFT_m1
+> exhibit. Status of both contrasts: **SUPPORTED_ON_SUBSET**, not SUPPORTED.
+> Secondary: SHIFT_m1 +1.58 is a *gain*, yet it is listed under "PerLTQA's harms".
 
 Graduation rule (proposed, to be adopted or explicitly rejected): no arm
 graduates from exploratory without (i) ONE prespecified contrast, (ii)

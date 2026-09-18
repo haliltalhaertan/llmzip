@@ -105,13 +105,23 @@ a fixed-budget pool halves both orderings instead of re-ranking them.
   RT06 151,742; RT07 160,580; RT08 134,946; RT09 148,980; RT10 159,624;
   **total 1,450,229 B** — measured, not estimated. BM25 ALSO needs the raw text
   kept: 998,654 B UTF-8 (all 8944 docs). Honest BM25 deployment total: 2,448,883 B.
-- Query time (wall, single-threaded, same machine, n=705): CODE score+full-rank
-  mean 0.99 ms / p95 1.90 ms; BM25 index-traversal score+full-rank mean 1.22 ms /
-  p95 2.30 ms; RRF fusion+rank marginal mean 0.96 ms / p95 1.78 ms (honest
-  end-to-end RRF ~= CODE+BM25+fusion, ~3.2 ms mean); UNION dedupe marginal
-  mean 0.08 ms / p95 0.11 ms given base rankings. Index build one-off 0.04 s.
+- Query time (wall, single-threaded, same machine, n=705) — **values below corrected
+  2026-09-18 to match `RESULTS.json`; the previously published figures were 28–40% low
+  and had no generating code (see correction note)**: CODE score+full-rank
+  mean 1.37 ms / p95 2.59 ms; BM25 index-traversal score+full-rank mean 1.70 ms /
+  p95 3.20 ms; RRF fusion+rank marginal mean 1.33 ms / p95 2.45 ms (honest
+  end-to-end RRF ~= CODE+BM25+fusion); UNION dedupe marginal
+  mean 0.103 ms / p95 0.155 ms given base rankings. Index build one-off 0.095 s.
   (This Python BM25 traversal is conservative; a production engine is faster —
   which only strengthens fusion's case on latency.)
+
+  > **CORRECTION 2026-09-18.** The figures published here until today (CODE 0.99/1.90,
+  > BM25 1.22/2.30, RRF 0.96/1.78, UNION 0.08/0.11, build 0.04 s) disagreed with this
+  > line's own source of truth, `RESULTS.json` `timings.*`, by 28–40%. No script in the
+  > package produces the old numbers; their provenance is unknown. The values above are
+  > read directly from `RESULTS.json`. The **quality** results in this report were
+  > independently recomputed from `per_query.jsonl` and match to 1.4e-14 — only the
+  > latency table was wrong.
 
 ## Contrasts (paired archive-clustered bootstrap, 20000 reps, seed 20260916)
 

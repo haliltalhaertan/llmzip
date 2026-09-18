@@ -50,11 +50,22 @@ no model downloads, no old TFIDF/SVD refit.
   for all 705×2 runs).
 - Tie rule (protocol, gold-unaware): descending score, ascending
   SHA256(`top10-r1|`+archive_id+`|`+row), ascending row. Exactly 10 IDs per
-  query, no duplicates (asserted). Expected-Hit@10 under uniform within-bucket
-  tiebreak is also stored per query as tie-sensitivity evidence.
+  query, no duplicates (asserted). A per-query tie-sensitivity column is also
+  stored (see correction below for what it actually contains).
 - Overall (n=705): BM25 Hit@10 0.5418, Recall@10 0.4316, nDCG@10 0.3428;
-  TFIDF Hit@10 0.5291, Recall@10 0.4191, nDCG@10 0.3166. Expected-Hit@10
-  equals Recall@10 to all digits (no boundary ties: float scores).
+  TFIDF Hit@10 0.5291, Recall@10 0.4191, nDCG@10 0.3166.
+
+  > **CORRECTION 2026-09-18 — two errors in the sentence that stood here.**
+  > It read: *"Expected-Hit@10 equals Recall@10 to all digits (no boundary ties:
+  > float scores)."* Both halves are wrong.
+  > (1) The stored `expected_hit_at_10` column equals Recall@10 because the producer
+  > `run_lexical.py:expected_hit()` computes expected **Recall**, not expected Hit —
+  > a naming/formula defect, not a coincidence of the data. See that function's
+  > docstring. (2) Boundary ties are **not** absent: the project's own audit counted
+  > tie-at-cut on 27 BM25 and 28 TFIDF queries.
+  > The three headline metrics above (Hit@10 / Recall@10 / nDCG@10) are computed by a
+  > different, correct path and are **unaffected** — independently re-derived from the
+  > stored per-query rows with `top_mismatch=0`.
 - Per archive (Hit@10 / Recall@10 / nDCG@10):
   - BM25: RT01 .5176/.4701/.3630, RT02 .5429/.4029/.2957, RT03 .6849/.5861/.4670,
     RT04 .5775/.4359/.3591, RT05 .6429/.4898/.4058, RT06 .4324/.3293/.2531,

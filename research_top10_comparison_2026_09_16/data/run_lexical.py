@@ -53,7 +53,24 @@ def rank_top10(scores, archive_id):
 
 
 def expected_hit(scores, gold):
-    """Exact expected Hit@10 under uniform within-bucket tiebreak (tie-sensitivity)."""
+    """MISNAMED — returns expected RECALL@10, not expected Hit@10.
+
+    CORRECTION 2026-09-18: the accumulator below sums the number of gold rows that
+    land in the top 10 (`gb`) and divides by `len(gset)`, i.e. the expected FRACTION
+    of gold retrieved = expected Recall@10. Expected Hit@10 is the probability that
+    AT LEAST ONE gold row lands in the top 10, which is not what this computes.
+    They coincide only for single-gold questions; 54.8% of RealTalk questions carry
+    multiple gold rows, so the two differ materially:
+        BM25  Hit@10 0.541844  vs  this function 0.431599 (== Recall@10 exactly)
+        TFIDF Hit@10 0.529078  vs  this function 0.419062 (== Recall@10 exactly)
+    Verified by re-averaging all 705 rows of per_query_{bm25,tfidf}.jsonl.
+
+    The stored column `expected_hit_at_10` in those files therefore holds expected
+    RECALL. Headline Hit@10 / Recall@10 / nDCG@10 are computed elsewhere and are
+    unaffected. The name and the column are kept as-is so stored files stay
+    byte-stable; consumers must read this docstring. A corrected implementation
+    exists at audit/audit_lexical_lib.py (per_query_*_corrected.jsonl).
+    """
     import math as _m
     s = [x if _m.isfinite(x) else float("-inf") for x in scores]
     gset = set(int(g) for g in gold)
