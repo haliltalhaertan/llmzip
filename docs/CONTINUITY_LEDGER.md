@@ -2896,3 +2896,50 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/SYSTEM_COST.
 status: MATCHED SYSTEM COST MEASURED; SIGN96 COSTLIER ON RAM, LATENCY AND BUILD; "12 BYTES"
   ROOT CAUSE QUANTIFIED AS ENCODER OMISSION; NO FROZEN NUMBER CHANGED
 ```
+
+### L-117
+
+```text
+timestamp_utc: 2026-09-19T00:30:00Z
+actor_role: Continuity Lead testing whether the query encoder can be made cheap
+predecessor_commit_or_tag: L-116 / a996d0f
+scope: Zero model calls. No frozen number touched. Task 4F1 remains SEALED / RUN BLOCKED / NO
+  AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+target: external review set the engineering goal - shrink the 5.1 MB / 2.85 ms encoder to about
+  100 KB / 0.2 ms WHILE PRESERVING QUALITY, which would invert the cost table against BM25.
+design_decision: changing the encoder changes the DOCUMENT codes too, so quality was re-measured
+  END TO END for every candidate rather than assuming it transfers. Raw retrieval, no reranking,
+  60 archives, k=96.
+speed_target_exceeded: hashing with a fixed random projection reaches 96 KB and 0.124 ms total
+  query time - smaller and faster than the hypothetical target, 27x smaller and 3.8x faster than
+  BM25 (2600.7 KB / 0.471 ms).
+quality_target_failed: Hit@10 falls from 81.67 (tfidf_svd) to 45.00 (hashing_rp), -36.67 pp. The
+  best cheap variant, hashing with global IDF weighting, reaches only 55.00 (-26.67 pp) at 2069 KB.
+  Zero-parameter direct hashing collapses to 6.67.
+hash_dimension_is_not_the_cause: swept 256/1024/4096/16384 buckets with and without IDF. Larger
+  dimensions do not help and mildly hurt; the ceiling stays near 55 Hit@10. IDF weighting is worth
+  about +10 pp but cannot close a 27-point gap.
+central_finding: the encoder's expense IS its value. The shared-SVD arm is decisive - amortising
+  one SVD across all archives cuts per-archive RAM to 310 KB but drops Hit@10 to 58.33, 23 points
+  below per-archive fitting, AND is SLOWER (6.57 ms) because the shared 20k vocabulary costs more
+  to apply than a small per-archive one. Amortisation buys RAM, not latency, and sells quality.
+consistent_with_prior: this mirrors the fixed-encoder collapse already measured on RealTalk at
+  k=96, 49.65 -> 20.00 (-29.65 pp). The same phenomenon now appears on the cost axis.
+formulation_narrowed: external review's summary "12-byte code is a successful data structure,
+  TF-IDF/SVD encoder is a failed cost structure" needs narrowing. The codes ARE successful
+  (5.7 KB, 0.103 ms, 4.6x faster than BM25 to scan). But the encoder is not merely a failed cost
+  structure - it is the component that PRODUCES the quality. Its cost and its value are the same
+  thing, which is why every attempt to cheapen it destroys what is being cheapened.
+reformulated_question: is there a way to obtain the corpus-adaptive SVD's quality contribution
+  WITHOUT its RAM and latency? Three paths measured and failed: random projection, hashing,
+  shared SVD. Untried: sparse or truncated SVD components, quantised encoder (float32 to int8),
+  incremental/streaming SVD, vocabulary restricted to the most informative terms. None of these
+  is a finding; they are merely untried.
+limits: 60 archives not 470; raw retrieval only, reranked behaviour unmeasured; the tfidf_svd arm
+  is a REBUILT encoder since the original was never stored, so its 81.67 is not directly
+  comparable to the published RealTalk numbers; single random seed; no held-out test set.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/CHEAP_ENCODER.json,
+  cheap_encoder.py, HASH_DIM_SWEEP.json; main CHEAP_ENCODER_RESULT_2026-09-18.md.
+status: CHEAP ENCODER SUBSTITUTES MEASURED AND REJECTED; SPEED TARGET MET, QUALITY TARGET FAILED;
+  ENCODER COST IDENTIFIED AS INSEPARABLE FROM ENCODER VALUE; NO FROZEN NUMBER CHANGED
+```
