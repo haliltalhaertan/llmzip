@@ -1,0 +1,58 @@
+{
+ "n_archives": 60,
+ "k": 96,
+ "model_calls": 0,
+ "note": "quality is re-measured END TO END for every candidate, because changing the encoder changes the DOCUMENT codes too. Raw retrieval, no reranking.",
+ "bm25_reference": {
+  "ram_kb": 2600.7,
+  "query_ms": 0.471,
+  "source": "SYSTEM_COST.json / L-116"
+ },
+ "arms": {
+  "tfidf_svd": {
+   "hit10": 81.67,
+   "fr3": 44.17,
+   "encoder_kb": 5143.1,
+   "encode_ms": 2.559,
+   "scan_ms": 0.103,
+   "total_query_ms": 2.663,
+   "build_s": 4.1528
+  },
+  "hashing_rp": {
+   "hit10": 45.0,
+   "fr3": 13.06,
+   "encoder_kb": 96.0,
+   "encode_ms": 0.028,
+   "scan_ms": 0.096,
+   "total_query_ms": 0.124,
+   "build_s": 0.0642
+  },
+  "hash_direct": {
+   "hit10": 6.67,
+   "fr3": 0.0,
+   "encoder_kb": 0.0,
+   "encode_ms": 0.021,
+   "scan_ms": 0.096,
+   "total_query_ms": 0.117,
+   "build_s": 0.0604
+  },
+  "shared_svd": {
+   "hit10": 58.33,
+   "fr3": 22.5,
+   "encoder_kb": 310.0,
+   "encode_ms": 6.572,
+   "scan_ms": 0.1,
+   "total_query_ms": 6.672,
+   "build_s": 0.0428
+  },
+  "hashing_rp_idf": {
+   "hit10": 55.0,
+   "fr3": 26.67,
+   "encoder_kb": 2068.6,
+   "encode_ms": 0.03,
+   "scan_ms": 0.094,
+   "total_query_ms": 0.125,
+   "build_s": 0.0683
+  }
+ }
+}

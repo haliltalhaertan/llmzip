@@ -1,0 +1,27 @@
+{
+ "model_calls": 0,
+ "n_archives": 60,
+ "k": 96,
+ "hypothesis": "256 hash buckets may be too few for the vocabulary",
+ "result": {
+  "256": {
+   "no_idf": 45.0,
+   "idf5k": 55.0
+  },
+  "1024": {
+   "no_idf": 40.0,
+   "idf5k": 51.67
+  },
+  "4096": {
+   "no_idf": 43.33,
+   "idf5k": 51.67
+  },
+  "16384": {
+   "no_idf": 38.33,
+   "idf5k": 20.83
+  }
+ },
+ "verdict": "REJECTED - larger hash dimension does not help and mildly hurts; ceiling ~55 Hit@10",
+ "idf_contribution_pp": 10.0,
+ "reference_tfidf_svd_hit10": 81.67
+}
