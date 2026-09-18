@@ -2719,3 +2719,52 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/MULTISTEP_PI
 status: QUERY-EXPANSION FORM OF MULTI-STEP RECALL MEASURED AND CLOSED; ORACLE ILLUSION EXPOSED;
   NO FROZEN NUMBER CHANGED
 ```
+
+### L-113
+
+```text
+timestamp_utc: 2026-09-18T22:00:00Z
+actor_role: Continuity Lead piloting question decomposition
+predecessor_commit_or_tag: L-112 / 26e8e71
+scope: One pilot, 344K tokens. No frozen number touched. Task 4F1 remains SEALED / RUN BLOCKED /
+  NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+narrow_question: on multi-gold LME queries, given the question plus the first reachable evidence,
+  can a follow-up query be produced that retrieves the MISSING second evidence? Metric:
+  missing-gold recall@10, deliberately stopping short of final answer generation.
+eligible_set: 86 queries selected at zero cost - multi-gold AND at least one gold reachable AND at
+  least one gold outside the top-10. 154 missing golds. Sections: multi-session 54,
+  temporal-reasoning 19, knowledge-update 9, preference 4.
+tooling_finding_first: the first pilot run returned "follow-up queries" like 0.63 and 0.61 -
+  numbers, not text. Cause: Jev/TypeSafe exposes ONLY judgment primitives (Noul yes/no, Choice
+  label, Score ordinal). It CANNOT generate free text. The literal proposal - "have Jev write a
+  follow-up query" - is therefore IMPOSSIBLE with this model; a generative LLM would be required.
+  Recorded as a scope finding, and the invalid run is kept as evidence rather than deleted.
+reformulated_as_selection: extract candidate terms from the anchor, ask Jev per term "is this the
+  unresolved link the question needs?", then search with the single highest-scoring term. This
+  differs from M2, which appends ALL high-IDF anchor terms blindly.
+result: baseline 4.65% any-hit / 3.49% recall; M2 blind lexical 22.09% / 14.96%; Jev-selected term
+  16.28% / 12.50%. Jev minus baseline +11.63 pp CI95 [+3.49,+19.77] SIGNIFICANT. Jev minus M2
+  -5.81 pp CI95 [-15.12,+3.49] INDISTINGUISHABLE.
+verdict: semantic selection genuinely works against the baseline but does NOT beat blind lexical
+  expansion, at a cost of 343,608 tokens for no measurable added value over the free method.
+apparent_contradiction_resolved: M2 gains +17.44 pp HERE while L-112 measured M2 at -6.43 pp
+  end-to-end. Same mechanism, opposite sign. The metrics and sets differ: this pilot measures only
+  the missing gold with the anchor excluded from scoring, on 86 hard cases; L-112 measures final
+  top-3 FR@3 over all 470. Verified on the SAME 86 queries: L-112 end-to-end goes 28.20 to 23.86,
+  i.e. -4.34 pp. So M2 really does help FIND the missing second evidence while DAMAGING the final
+  top-3 by evicting golds already found.
+lesson_reconfirmed: an intermediate-metric improvement is not an end-to-end improvement - and this
+  time the intermediate metric misleads POSITIVELY. Judged on recall@10 alone, M2 looks excellent.
+most_promising_remainder: the second round genuinely surfaces new golds (4.65% -> 22.09%). The
+  failure is in MERGING, not in finding - the second round's output overwrites the first round's.
+  A merge that keeps the two rounds in separate slots has not been tried.
+still_open: true question decomposition with a GENERATIVE model (not Jev); slot-preserving merge;
+  anchor-VECTOR neighbour search; conditional second round. The sign96 side stays unmeasurable
+  because the encoder was never stored.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/HINT_SELECTION_PILOT.json,
+  hint_selection_pilot.py, DECOMPOSITION_PILOT.json (invalid run, retained), _decomp_eligible.json;
+  main DECOMPOSITION_PILOT_RESULT_2026-09-18.md.
+status: DECOMPOSITION PILOTED; JEV CANNOT GENERATE TEXT (SCOPE FINDING); SEMANTIC SELECTION BEATS
+  BASELINE BUT NOT BLIND EXPANSION; MERGE IDENTIFIED AS THE REAL BOTTLENECK; NO FROZEN NUMBER
+  CHANGED
+```
