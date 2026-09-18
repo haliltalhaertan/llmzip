@@ -2943,3 +2943,50 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/CHEAP_ENCODE
 status: CHEAP ENCODER SUBSTITUTES MEASURED AND REJECTED; SPEED TARGET MET, QUALITY TARGET FAILED;
   ENCODER COST IDENTIFIED AS INSEPARABLE FROM ENCODER VALUE; NO FROZEN NUMBER CHANGED
 ```
+
+### L-118
+
+```text
+timestamp_utc: 2026-09-19T00:45:00Z
+actor_role: Continuity Lead testing geometry-preserving encoder compression
+predecessor_commit_or_tag: L-117 / ee51d02
+scope: Zero model calls. No frozen number touched. Task 4F1 remains SEALED / RUN BLOCKED / NO
+  AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+criteria_frozen_before_run: external review's three conditions were written into the script BEFORE
+  execution - Hit@10 within 3 pp of baseline, encoder RAM <= 100 KB, query encoding <= 0.25 ms, all
+  three required. This prevents the partial result being rewritten as success afterwards.
+design: unlike L-117's random projection and hashing, these three paths PRESERVE the learned SVD
+  geometry and compress only its representation - (A) int8 quantisation plus pruning, (B)
+  per-bit sparse hyperplanes, (C) learned word codebook, plus a B+C hybrid.
+result_none_passed: 11 arms, none met all three criteria. Best quality arms are C_codebook512 and
+  BC_hybrid at 72.00 Hit@10, 8 points below the 80.00 baseline. BC_hybrid is fastest at 0.359 ms
+  (7.8x faster than baseline). No arm reached 100 KB; the smallest was 706 KB.
+structural_limit_found: decomposing encoder RAM shows the vocabulary dictionary alone is 690.6 KB
+  against 4452.0 KB for the SVD matrix, on a median vocabulary of 5,936 terms. So even a ZERO-SIZE
+  SVD matrix fails the 100 KB criterion. All three compression paths target the SVD matrix, which
+  is the wrong component. A sub-100 KB encoder requires a DICTIONARY-FREE architecture, which was
+  not tested. The proposal's 44 KB estimate counted only the prototype table and omitted the
+  word-to-prototype map, which is the dominant cost.
+ranking_partly_confirms_proposal: the learned codebook (C) clearly beats L-117's random methods -
+  72.00 versus 45.00 for hashing - so "preserve the learned geometry" is directionally right.
+  Per-bit sparsification (B) alone fails badly: 32 terms gives 12.00, 64 gives 24.00, 128 gives
+  44.00, with bit-flip up to 33%. The answer to "does a bit really need thousands of words" is
+  apparently YES under bit-independent sparsification.
+sensitivity_finding: int8 quantisation flips only 0.95% of bits yet still costs 8 points of
+  Hit@10. The system is far more sensitive to bit flips than the flip rate suggests.
+intermediate_metric_misleads_again: bit-flip rate does not track final quality. A_int8 has the
+  lowest flip (0.95%) and the same Hit@10 drop as C_codebook512 (4.15% flip) while scoring BETTER
+  on FR@3 (43.33 vs 37.33); A_int8_prune90 at 5.28% flip collapses to 27.33 FR@3 while
+  C_codebook512 at 4.15% holds 37.33. Third confirmation of the L-112 lesson.
+limits: n=25 archives, so one archive moves Hit@10 by 4 points - this table indicates direction,
+  not verdict. Raw retrieval only. Baseline is a REBUILT encoder. RAM measured as live Python
+  objects, so the vocabulary limit is implementation-dependent; a compiled implementation would
+  store it far more compactly and the criterion itself would shift.
+still_open: a dictionary-free architecture combining hashed indexing with a learned codebook -
+  the only path that could clear the vocabulary bottleneck, and untested; vocabulary pruning to
+  the most informative terms and its quality price; more aggressive BC_hybrid variants.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/ENCODER_COMPRESS.json,
+  encoder_compress.py, ENCODER_RAM_DECOMPOSITION.json; main ENCODER_COMPRESS_RESULT_2026-09-19.md.
+status: THREE COMPRESSION PATHS MEASURED AGAINST PRE-FROZEN CRITERIA; NONE PASSED; VOCABULARY
+  IDENTIFIED AS THE STRUCTURAL BOTTLENECK; NO FROZEN NUMBER CHANGED
+```
