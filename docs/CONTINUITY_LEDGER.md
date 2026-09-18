@@ -2348,3 +2348,45 @@ evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/ - MATCHED_C
 status: EQUIVALENCE CLAIM WITHDRAWN; RUN VARIANCE QUANTIFIED; SUBSET DEPENDENCE RECORDED; NO FROZEN
   NUMBER CHANGED
 ```
+
+### L-104
+
+```text
+timestamp_utc: 2026-09-18T15:55:00Z
+actor_role: Continuity Lead recording a preregistered decomposition and one hypothesis refuted
+predecessor_commit_or_tag: L-103 / 1c3090b
+scope: Decomposes the 13.7 pp section heterogeneity in C5(b). ZERO new model calls - everything is
+  derived from stored per_query data. No frozen number touched. Task 4F1 remains SEALED / RUN
+  BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+preregistration: three hypotheses were FROZEN BEFORE the analysis, in an external review dated
+  2026-09-18, specifically to prevent post-hoc fishing across 470 queries. Only these three were
+  tested; no other feature was swept.
+H1_candidate_generation: STRONGLY SUPPORTED. Per-section delta FR@3 tracks the candidate-pool gap
+  almost exactly - section-level r = +0.982 (r2 = 0.96), query-level r = +0.720 (r2 = 0.52), with
+  identical rank order. Sections where sign96's Hit@10 trails BM25 are exactly the sections where
+  its final FR@3 trails.
+H2_lexical_overlap: REFUTED. Correlation between question-gold lexical overlap and delta is
+  +0.021 raw and -0.003 IDF-weighted; quartiles show no pattern (-1.99 / -5.03 / -0.71 / -0.70).
+  This refutes the COORDINATOR's own unverified sentence that "BM25 wins where lexical matching is
+  strong and the compact code wins where it is not". That sentence is WITHDRAWN. It was written
+  from plausibility, not measurement, and the data says the correlation is zero.
+H3_ceiling_equalised: STRONGLY SUPPORTED and the most consequential result. Partitioning by which
+  pool contains the gold: both 387 queries (82.3%) delta -0.08; sign-only 19 (4.0%) delta +61.40;
+  BM25-only 26 (5.5%) delta -81.73; neither 38 (8.1%) delta 0. On the 387 queries where both pools
+  contain the gold, sign96+Jev 82.45 vs BM25+Jev 82.53 - a difference of 0.08 pp. So 96% OF THE
+  OVERALL -2.10 pp GAP COMES FROM CANDIDATE GENERATION, NOT FROM RERANKING. Given the same
+  candidates, the reranker performs identically on both pools.
+complementarity_measured: sign96 ceiling 86.38, BM25 ceiling 87.87, UNION 91.91. Nineteen queries
+  have the gold only in the sign96 pool and 26 only in BM25's. A hybrid pool adds +4.04 pp of
+  ceiling over BM25 alone. This directly satisfies REOPEN CONDITION (2) recorded in L-101: the
+  compact code retrieves complementary candidates BM25 misses. Hybrid-pool + reranker is NOT
+  measured and is now an open question. Thirty-eight queries (8.1%) have the gold in neither pool
+  and no reranker can recover them.
+interpretation_boundary: H1 and H3 agree - the deciding factor is which documents reach the pool,
+  not how they are ordered afterwards. Improving the compact code's Hit@10, or unioning the pools,
+  is therefore the lever; further reranker work is not.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/H123_RESULTS.json and
+  h123_decompose.py, both derived from MATCHED_CI.json per_query.
+status: H1 SUPPORTED; H2 REFUTED AND COORDINATOR CLAIM WITHDRAWN; H3 SUPPORTED; COMPLEMENTARITY
+  MEASURED; NO FROZEN NUMBER CHANGED
+```

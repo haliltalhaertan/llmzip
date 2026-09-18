@@ -485,19 +485,70 @@ Rastgele 120'lik örnekler (2000 tekrar) ortalama −2,03, %95 aralığı **[−
 İlk-120'nin +4,38 değeri bu aralığın **dışında** → gerçek bir sıra etkisi, rastgele örnekleme
 dalgalanması değil.
 
-#### Kesim analizi: bölüm başına Δ çok değişiyor
+#### H1/H2/H3 — 13,7 pp heterojenlik parçalandı (sıfır yeni model çağrısı)
 
-| bölüm | n | Δ |
-|---|---:|---:|
-| single-session-preference | 30 | **−8,33** |
-| temporal-reasoning | 127 | −5,49 |
-| single-session-user | 64 | −4,69 |
-| multi-session | 121 | −1,58 |
-| knowledge-update | 72 | +2,08 |
-| single-session-assistant | 56 | **+5,36** |
+`evidence_path`: `audit_hard_r4/H123_RESULTS.json`, `h123_decompose.py`
 
-**sign96, soru tipine göre BM25'i geçiyor ya da kaybediyor** — aradaki fark 13,7 puan.
-Bu, "hangi rejimde hangi yöntem" sorusunun ilk somut kanıtı.
+**Hipotezler analizden ÖNCE donduruldu** (dış değerlendirme, 2026-09-18) — post-hoc tarama
+koruması. Yalnız bu üçü test edildi.
+
+##### H1 — bölüm etkisi aday havuzu farkıyla açıklanıyor: **GÜÇLÜ DESTEK**
+
+| bölüm | n | Δ FR@3 | sign H@10 | BM25 H@10 | havuz farkı |
+|---|---:|---:|---:|---:|---:|
+| single-session-preference | 30 | −8,33 | 50,00 | 56,67 | −6,67 |
+| temporal-reasoning | 127 | −5,49 | 81,89 | 85,04 | −3,15 |
+| single-session-user | 64 | −4,69 | 90,62 | 95,31 | −4,69 |
+| multi-session | 121 | −1,58 | 85,95 | 86,78 | −0,83 |
+| knowledge-update | 72 | +2,08 | 98,61 | 97,22 | +1,39 |
+| single-session-assistant | 56 | +5,36 | 96,43 | 92,86 | +3,57 |
+
+Korelasyon: bölüm düzeyi **r = +0,982** (r²=0,96), sorgu düzeyi **r = +0,720** (r²=0,52).
+Sıralama birebir aynı — **Δ tamamen havuz farkını takip ediyor.**
+
+##### H2 — sözlüksel örtüşme farkı açıklıyor: **REDDEDİLDİ**
+
+| ölçüm | r |
+|---|---:|
+| ham kelime örtüşmesi ↔ Δ | **+0,021** |
+| IDF-ağırlıklı örtüşme ↔ Δ | **−0,003** |
+
+Dörtlük dilimlerde de örüntü yok (Δ: −1,99 / −5,03 / −0,71 / −0,70).
+
+> **Koordinatörün hipotezi çürütüldü.** *"Sözlüksel eşleşmenin güçlü olduğu yerde BM25, olmadığı
+> yerde kompakt kod kazanıyor"* yazmıştım — **veri bunu desteklemiyor**, korelasyon sıfır.
+> Geri çekildi.
+
+##### H3 — her iki havuzda gold varken fark kayboluyor: **GÜÇLÜ DESTEK**
+
+| grup | n | % | Δ FR@3 |
+|---|---:|---:|---:|
+| her ikisinde | 387 | 82,3 | **−0,08** |
+| yalnız sign96'da | 19 | 4,0 | +61,40 |
+| yalnız BM25'te | 26 | 5,5 | −81,73 |
+| hiçbirinde | 38 | 8,1 | 0,00 |
+
+Tavan eşitlendiğinde: sign+Jev **82,45** vs BM25+Jev **82,53** → **Δ = −0,08 pp**.
+
+**Farkın %96'sı aday üretiminden geliyor, yeniden sıralamadan değil.** İki havuzun aynı belgeyi
+içerdiği 387 sorguda Jev her iki havuzda **aynı** performansı gösteriyor. Sorun Jev değil.
+
+##### Yan bulgu: gerçek tamamlayıcılık
+
+| havuz | tavan H@10 |
+|---|---:|
+| sign96 | 86,38 |
+| BM25 | 87,87 |
+| **birleşim (hibrit)** | **91,91** |
+
+19 sorguda gold **yalnız sign96'da**, 26 sorguda **yalnız BM25'te**. Hibrit havuz BM25 üzerine
+**+4,04 pp** tavan kazandırıyor.
+
+**Bu, yeniden açma koşulu (2)'nin doğrudan karşılanmasıdır:** kompakt kod BM25'in kaçırdığı
+tamamlayıcı adaylar getiriyor. Hibrit havuz + Jev ölçülmedi — **açık soru.**
+
+Ulaşılamaz: 38 sorgu (%8,1) hiçbir havuzda gold içermiyor; hiçbir yeniden sıralayıcı bunları
+kurtaramaz.
 
 > **Ama sıra etkisini bölüm karışımı AÇIKLAMIYOR.** Tam-veri bölüm Δ'ları ilk-120'nin bölüm
 > ağırlıklarıyla birleştirildiğinde tahmin **−1,45 pp**; gerçek değer **+4,38 pp**. Yani
