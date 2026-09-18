@@ -60,6 +60,44 @@ META = ("OPEN_QUESTIONS", "CONTINUITY_LEDGER", "TWELVE_BYTE_PILOT_README",
 PROSE = ("CHAT_TRANSCRIPT", "incoming_", "pasted_content", "EXTERNAL_REVIEW",
          "chat_literature_review", "HANDOFF")
 
+# ---- PROVENANCE SINIFLARI (guclu -> zayif) ------------------------------------
+# Bir grep isabeti VARLIK kanitidir ama otomatik olarak DENEY kaniti degildir.
+# Aksi halde "bir markdown'da geciyor, demek ki gercek" seklinde daha sofistike
+# bir yanlis pozitif uretiriz. Isabetin TURU siniflanmali.
+CLASS_ORDER = [
+    "PRIMARY_EVIDENCE",   # ham cikti / per-query sonuc / gercek hesap artefakti
+    "AUDIT_DERIVED",      # denetim raporu, ham ciktiya acik referansla
+    "PROJECT_PROSE",      # arastirma raporu / handoff / defter
+    "SUMMARY_PROSE",      # README / commit govdesi
+    "PROSE_ONLY",         # sohbet dokumu / baska LLM cevabi
+    "META_NEGATION",      # yoklugu belgeleyen meta dosya
+]
+
+def classify_hit(path: str) -> str:
+    """Bir dosya yolunu provenance sinifina esler. SADECE yol/uzanti bakilir."""
+    q = path.split(":", 1)[-1]           # 'origin/dal:yol' -> 'yol'
+    low = q.lower()
+    if _is_meta(q):
+        return "META_NEGATION"
+    if _is_prose(q):
+        return "PROSE_ONLY"
+    if low.endswith((".json", ".jsonl", ".csv", ".npy", ".npz", ".pkl", ".log")):
+        return "PRIMARY_EVIDENCE"
+    if low.endswith((".py", ".sh")):
+        return "PRIMARY_EVIDENCE"        # calistirilabilir uretici
+    if "/audits/" in low or low.startswith("audits/") or "audit_hard_r" in low:
+        return "AUDIT_DERIVED"
+    if low.endswith("readme.md") or "/readme" in low:
+        return "SUMMARY_PROSE"
+    return "PROJECT_PROSE"
+
+def best_class(paths):
+    seen = {classify_hit(p) for p in paths}
+    for c in CLASS_ORDER:
+        if c in seen:
+            return c
+    return "NONE"
+
 def _is_meta(path_line: str) -> bool:
     return any(m in path_line for m in META)
 
@@ -115,7 +153,8 @@ def repo_hits(term: str) -> dict:
     res = {"main_files": len(main), "prose_files": len(prose),
            "sample": (main or prose)[:3], "branch_hits": None,
            "meta_only": len(main_all) > 0 and not kept,
-           "prose_only": bool(prose) and not main}
+           "prose_only": bool(prose) and not main,
+           "all_hits": list(kept)}
     if not main:
         brs = run(["git", "for-each-ref", "--format=%(refname:short)", "refs/remotes/origin"])[:45]
         if brs:
@@ -125,6 +164,8 @@ def repo_hits(term: str) -> dict:
             res["prose_files"] += len(bb) - len(b)
             res["prose_only"]   = bool(res["prose_files"]) and not b
             res["sample"] = (b or bb)[:3]
+            res["all_hits"] += list(bb)
+    res["evidence_class"] = best_class(res.get("all_hits") or [])
     _cache[term] = res
     return res
 
@@ -182,20 +223,34 @@ async def judge(client, items):
 
 # ---------------------------------------------------------------- 4. KARAR (kod)
 def verdict(it) -> str:
+    """Karar KODDA. Model yalnizca 'asserts' ve 'kind' saglar.
+
+    Bir grep isabeti VARLIK kanitidir; deney kaniti olup olmadigini isabetin
+    SINIFI belirler. PRIMARY_EVIDENCE disindaki her sinif bir INCELEME KUYRUGU
+    durumudur, bilimsel hukum degildir.
+    """
     if "error" in it:
         return "ERROR"
-    hits = it["main_files"] + (it["branch_hits"] or 0)
+    hits    = it["main_files"] + (it["branch_hits"] or 0)
     asserts = it["asserts"] >= 0.60
+    cls     = it.get("evidence_class", "NONE")
+
     if it["kind"] == "marked_absent":
         return "OK_MARKED_ABSENT"
-    if hits == 0 and it.get("prose_only") and asserts:
-        return "PROVENANCE_PROSE_ONLY"     # yalniz sohbet/inceleme duzyazisinda -- olcum degil
-    if hits == 0 and asserts:
-        return "PROVENANCE_FAIL"           # iddia ediyor ama depoda hic yok
+    if not asserts:
+        return "OK_NOT_CLAIMED"            # zaten proje bulgusu diye iddia edilmiyor
     if hits == 0:
-        return "OK_NOT_CLAIMED"            # depoda yok ama zaten iddia edilmiyor
-    if hits and it["kind"] == "literature":
+        if it.get("prose_only") or cls == "PROSE_ONLY":
+            return "PROVENANCE_PROSE_ONLY" # yalniz sohbet/inceleme duzyazisinda
+        return "PROVENANCE_FAIL"           # depoda hic yok
+    if it["kind"] == "literature":
         return "OK_LITERATURE"
+    if cls == "PRIMARY_EVIDENCE":
+        return "OK_PRIMARY"                # ham cikti/uretici koda dayaniyor
+    if cls == "AUDIT_DERIVED":
+        return "REVIEW_AUDIT_DERIVED"      # yalniz denetim raporunda -- ham cikti bagi dogrulanmali
+    if cls in ("PROJECT_PROSE", "SUMMARY_PROSE"):
+        return "REVIEW_PROSE_GROUNDED"     # yalniz proje duzyazisinda -- artefakt bagi yok
     return "OK_GROUNDED"
 
 def sentences(text):

@@ -3,33 +3,9 @@ aday iddia: 46 | benzersiz terim: 38
   islenen 25/46
 
 --- SONUC ---
-  OK_GROUNDED              17
-  OK_NOT_CLAIMED           10
-  OK_LITERATURE            8
+  OK_NOT_CLAIMED           24
+  OK_PRIMARY               13
   OK_MARKED_ABSENT         6
-  PROVENANCE_FAIL          5
+  REVIEW_PROSE_GROUNDED    3
 
 model: {'jev-1.13.0'}
-
---- PROVENANCE_FAIL (5) ---
-
-[PILOT_README] term='The width ladder' asserts=0.86 hits=0
-  - **The width ladder.** More bits genuinely help, and this is the round's most durable result.
-
-[PILOT_README] term='the fitted encoder' asserts=0.81 hits=0
-  Not total system state: the query
-  path additionally needs the fitted encoder (both TF-IDF vocabularies and IDF tables, both SVD
-  matrices, the archive mean `mu`, and σ for the `qscale` arm).
-
-[PILOT_README] term='specific fixed-encoder' asserts=0.80 hits=0
-  **Scope:** RealTalk, `qscale`, the k∈{96,192,384} ladder, under the specific fixed-encoder
-  (INDEP) construction of audit round R4.
-
-[PILOT_README] term='fixed encoder' asserts=0.76 hits=0
-  Under a *fixed encoder fitted on other archives*, 96 → 192 → 384 bits gains **+19.86 pp** —
-  roughly twice the gain measured with a per-archive fit.
-
-[PILOT_README] term='fixing the encoder' asserts=0.72 hits=0
-  The correct framing is **corpus-adaptation dependence** — a real
-  and large portability limitation (fixing the encoder on other archives costs ~28–30 pp), but a
-  property of the deployment regime, n
