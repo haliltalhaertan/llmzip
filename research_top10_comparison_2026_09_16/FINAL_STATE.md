@@ -14,17 +14,32 @@ explanations.
 
 | gate | result |
 |---|---|
-| C1 — some arm ≤48 B beats a fairly built BM25 by ≥2 pp FR@3 on both benchmarks | **FAIL** (behind 7.80 pp at 48 B) |
+| C1 — some arm ≤48 B beats a fairly built BM25 by ≥2 pp FR@3 on both benchmarks | **FAIL** (behind 3.26 pp FR@3 at 48 B vs referee-primary BM25) |
 | C3 — code+rerank beats BM25 alone by ≥1 pp FR@3 | **FAIL** (1 of 3, on disputed-gold LoCoMo) |
 | S3 — corrected PerLTQA still declines on unstandardized arms | did not fire (`asym` rises) |
 
 ## The three facts that decided it
 
 **1. Our BM25 baseline was handicapped by more than our entire research gain.**
-The strongest honest BM25 on RealTalk scores 65.67 Hit@10 (frozen tokenizer, IDF-only
-k1→0/b=0), not the 55.32 this programme always quoted — a **+10.35 pp** handicap, larger
-than the whole 12→48 byte ladder gain (+8.22 pp). At 48 B/doc we trail by 7.80 pp; at the
-claimed 12 B by 16.03 pp.
+The referee-primary honest BM25 on RealTalk scores **61.70 Hit@10 / 36.05 FR@3** (frozen
+tokenizer, textbook k1=1.2/b=0.75), not the 55.32 this programme always quoted — a **+6.38 pp**
+tokenizer handicap. At 48 B/doc we trail the primary comparator by **3.83 pp Hit@10 / 3.26 pp
+FR@3**; at the claimed 12 B by 12.05 pp Hit@10.
+
+> **CORRECTION 2026-09-18 — the numbers in this paragraph were quoted against the wrong
+> baseline, and the gate row above carried the wrong metric.**
+> The previous text used 65.67 (a **+10.35 pp** handicap) and a **7.80 pp** deficit. 65.67 is the
+> `frozen_idfonly` k1→0/b=0 variant, chosen as the **maximum of four BM25 builds on the
+> evaluation cohort** (`coordinator/decision_tests.py:179`, `best = max(...)`). The governing
+> referee contract names textbook k1=1.2/b=0.75 as **primary** (`decision_r1/cost/REFEREE.md:63-64`,
+> `:75-76`, `:172`). Selecting the strongest rival post hoc on the test data roughly doubles the
+> reported gap.
+> Separately, C1 is an **FR@3** gate (`REFEREE.md:75-76`), but the gate row quoted 7.80, a
+> **Hit@10** figure. Both readings still FAIL, so the verdict is unchanged — but the numbers a
+> reader takes away were wrong in two independent ways.
+> 65.67 remains a valid measurement; quote it as a **post-selected sensitivity**, never as the
+> primary comparator.
+> Found by an external reviewer, 2026-09-18; verified against REFEREE.md and the code.
 
 **2. A text reranker dissolves first-stage quality.** From 164,256 stored paired rows:
 on LME, `float_raw32` starts 11.58 pp behind the leading first stage and finishes 0.29 pp
@@ -121,11 +136,23 @@ text at 76× the code and IDF dictionaries at 112×, with latency 14.9 → 17.6 
 
 ## One thing that would reopen this
 
-Every comparison here is against BM25, which needs an inverted index and raw text at query
-time. If a deployment genuinely cannot hold text or an index — bits only, sub-millisecond,
-no reranker — the comparator changes and the 12-byte question becomes live again. No such
-deployment has been specified in this programme, and the reranked pipeline needs the text
-anyway, which is what erases the storage premise.
+Every comparison here is against BM25, which needs an inverted index (postings, IDF, document
+lengths) at query time. If a deployment genuinely cannot hold an index — bits only,
+sub-millisecond, no reranker — the comparator changes and the 12-byte question becomes live
+again. No such deployment has been specified in this programme.
+
+> **CORRECTION 2026-09-18 — the previous wording was false and it was load-bearing.**
+> It read: BM25 "needs an inverted index **and raw text** at query time ... the reranked
+> pipeline needs the text anyway, which is what erases the storage premise."
+> First-stage BM25 does **not** read raw document text. `coordinator/decision_tests.py:142-152`
+> (`BM25.score`) touches only `self.post`, `self.idf`, `self.len` and the query tokens. Raw text
+> is needed for a text reranker or for display, not for BM25 scoring.
+> The asymmetry runs the other way as well: our own code arm needs a fitted query encoder at
+> query time (word + char TF-IDF vocabularies and IDF, both SVD component matrices, the archive
+> mean `mu`, and σ for qscale — `coordinator/ladder.py:111-132,150-152`), and none of that is
+> inside the 12/24/48 B figure. Charging retained text to BM25 while leaving the encoder off our
+> own side was not an apples-to-apples boundary.
+> Found by an external reviewer, 2026-09-18; verified against the code before this note was written.
 
 ## Layout
 

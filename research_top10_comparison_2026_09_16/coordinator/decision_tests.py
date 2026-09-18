@@ -3,9 +3,15 @@
 DECISION TESTS T1-T3. Gates fixed BEFORE running (referee's stopping rule, decision_r1/cost).
 
 T1  FAIR BASELINE. Re-run every code-vs-BM25 comparison on RealTalk with BM25 given OUR OWN
-    frozen tokenization (\\b\\w\\w+\\b, English stopwords, 1-2 grams) and with the k1->0,b=0
-    variant the external audit found matters. Question: which historical "we beat BM25"
-    claims survive? Uses the already-computed ladder arms; only BM25 is rebuilt.
+    frozen tokenization (\\b\\w\\w+\\b, English stopwords, UNIGRAMS ONLY -- see note) and with
+    the k1->0,b=0 variant the external audit found matters. Question: which historical
+    "we beat BM25" claims survive? Uses the already-computed ladder arms; only BM25 is rebuilt.
+
+    CORRECTION 2026-09-18: this docstring said "1-2 grams". The implementation at :113-126
+    emits unigrams only (FROZEN = re.compile(r"\\b\\w\\w+\\b"), no bigram construction), so the
+    frozen BM25 arm was never given bigrams. A separate bigram probe in the data audit did not
+    move the result materially, so the T1 conclusion stands; the prose was wrong, not the code.
+    Reported by an external reviewer, 2026-09-18.
 
 T2  RERANK DISSOLUTION. The premise-killer, computed from 164,256 stored paired rows in the
     incoming package (text_rerank_per_query.csv). Two questions, paired per query:

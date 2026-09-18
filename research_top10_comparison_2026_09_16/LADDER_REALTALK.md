@@ -2,6 +2,20 @@
 
 # The RealTalk byte ladder — and why PerLTQA's decline was an artifact
 
+> **RETRACTION 2026-09-18 — the title and §"Why the two disagree" below are WRONG and were
+> already disproved inside this package; this banner should have been added when the T3 test
+> ran.** The rank-overflow explanation was refuted by our own T3 test: enforcing k<n removed
+> every constant dimension and the PerLTQA decline **persisted** (qscale −3.60, sym −5.17;
+> `DECISION_TESTS.md` §T3). The decline is real and scorer-dependent, not an artifact of rank
+> overflow, so the title's claim is false.
+> A second, separate error in the same section: σ-division cannot be the mechanism either,
+> because the `sym` arm never divides by σ (`ablation_r2/perltqa/t3_ladder.py:186-188`) and
+> declines anyway, 53.88 → 48.71. **The causal mechanism is unresolved.** Everything below is
+> retained unedited as the record of what was believed; read the ladder tables, not the
+> explanation.
+> Flagged by an external reviewer, 2026-09-18, as a retracted claim still circulating without a
+> correction marker — the failure mode this programme has named repeatedly.
+
 `coordinator/ladder.py` → `coordinator/LADDER.json`. Fidelity gate: **0 differing bits of
 858,624**. Anchors exact: k96 qscale Hit@10 49.6454 (frozen 49.6454, dev −0.0000);
 k96 sym 46.5248 (dev +0.0000); k96 qscale FR@3 22.4099 (frozen 22.41).

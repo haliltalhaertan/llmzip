@@ -5,9 +5,21 @@
 Round of 2026-09-16. Branch `findings/top10-comparison-2026-09-15`; `main` untouched.
 
 Every number here was **re-derived by the coordinator** from stored per-query top-10 ids,
-not copied from a worker's summary. Production anchors reproduce to 0.0000 pp. All
-contrasts use a paired archive-clustered bootstrap, 20000 reps, seed 20260916.
+not copied from a worker's summary. Production anchors reproduce to 0.0000 pp.
 "SIG" = the 95% interval excludes zero.
+
+> **CORRECTION 2026-09-18 — the sentence "All contrasts use a paired archive-clustered
+> bootstrap" was false.** Many contrasts do (the T2 rerank table, the rare-band IDF result,
+> several ablations). The most prominent central numbers do **not**, and for two of them the
+> paired per-question data needed to build an interval was never persisted:
+> `coordinator/decision_tests.py:156-173` builds per-question outcomes for T1 and then writes
+> only means at `:175-191`; `coordinator/ladder.py` stores per-archive aggregates only.
+> Without an interval, the following are point estimates: the 48 B vs fair-BM25 gap, the
+> 12→24→48 B ladder steps, the sign-vs-float difference, the ITQ-vs-random difference,
+> r = −0.78, and the T3 steps. An archive-level bootstrap over the 10 surviving RealTalk
+> aggregates corroborates the direction of the headline gap (−3.83 Hit@10, CI [−5.67, −2.06]),
+> but that is a weaker substitute for the per-query evidence the code discarded.
+> Reported by an external reviewer, 2026-09-18; verified in the source before this note.
 
 ---
 
