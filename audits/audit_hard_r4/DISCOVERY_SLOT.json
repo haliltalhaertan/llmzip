@@ -1,0 +1,16 @@
+{
+ "model_calls": 0,
+ "n": 470,
+ "turn2_top1_is_anchor": {
+  "count": 470,
+  "pct": 100.0,
+  "consequence": "merge_1_2 is structurally identical to replace; verified 470/470 equal",
+  "cause": "expanding the query with the anchor's own terms makes the anchor rank first in its own expanded query"
+ },
+ "discovery_slot_precision": {
+  "turn2_new_candidate_is_gold_pct": 10.4,
+  "turn1_rank3_is_gold_pct": 15.1,
+  "verdict": "the discovery slot is 4.7 pp WORSE than the slot it displaces"
+ },
+ "why_preservation_cannot_win": "preserving turn-1 evidence removes M2's -6.43 pp damage but cannot create gain, because the third slot spent on discovery holds a gold only 10.4% of the time versus 15.1% for the turn-1 rank-3 it replaces"
+}
