@@ -1,0 +1,12 @@
+{
+ "model_calls": 0,
+ "n_archives": 25,
+ "median_vocab_terms": 5936,
+ "vocabulary_dict_kb": 690.6,
+ "svd_matrix_float32_kb": 4452.0,
+ "total_kb": 5142.6,
+ "vocabulary_share_pct": 13.4,
+ "structural_limit": "the 100 KB criterion is UNREACHABLE in this architecture: the vocabulary dictionary alone is 690.6 KB, so even a zero-size SVD matrix fails the criterion. All three compression paths target the SVD matrix, i.e. the wrong component.",
+ "implication": "a sub-100 KB encoder requires a DICTIONARY-FREE architecture. The 44 KB estimate in the proposal counted only the prototype table; the word-to-prototype map itself is the dominant cost.",
+ "caveat": "measured as live Python objects; a C/Rust implementation would store the vocabulary far more compactly, so this limit is implementation-dependent"
+}

@@ -1,0 +1,113 @@
+{
+ "n_archives": 25,
+ "k": 96,
+ "model_calls": 0,
+ "criteria_frozen_before_run": {
+  "max_hit10_drop_pp": 3.0,
+  "max_encoder_kb": 100.0,
+  "max_encode_ms": 0.25
+ },
+ "note": "criteria were frozen before the run. Quality measured END TO END because changing the encoder changes document codes. bit_flip is an intermediate metric, reported but not the decision metric (L-112 showed intermediate metrics can disagree in sign).",
+ "arms": {
+  "baseline_tfidf_svd": {
+   "hit10": 80.0,
+   "drop_pp": 0.0,
+   "fr3": 40.0,
+   "encoder_kb": 2916.1,
+   "encode_ms": 2.809,
+   "bit_flip_pct": 0.0,
+   "meets_all_criteria": false
+  },
+  "A_int8": {
+   "hit10": 72.0,
+   "drop_pp": 8.0,
+   "fr3": 43.33,
+   "encoder_kb": 2916.1,
+   "encode_ms": 1.209,
+   "bit_flip_pct": 0.95,
+   "meets_all_criteria": false
+  },
+  "A_int8_prune50": {
+   "hit10": 72.0,
+   "drop_pp": 8.0,
+   "fr3": 43.33,
+   "encoder_kb": 2260.0,
+   "encode_ms": 1.188,
+   "bit_flip_pct": 0.95,
+   "meets_all_criteria": false
+  },
+  "A_int8_prune90": {
+   "hit10": 72.0,
+   "drop_pp": 8.0,
+   "fr3": 27.33,
+   "encoder_kb": 1051.6,
+   "encode_ms": 1.043,
+   "bit_flip_pct": 5.28,
+   "meets_all_criteria": false
+  },
+  "A_int8_prune95": {
+   "hit10": 64.0,
+   "drop_pp": 16.0,
+   "fr3": 28.0,
+   "encoder_kb": 856.1,
+   "encode_ms": 1.006,
+   "bit_flip_pct": 10.92,
+   "meets_all_criteria": false
+  },
+  "B_sparse32": {
+   "hit10": 12.0,
+   "drop_pp": 68.0,
+   "fr3": 3.33,
+   "encoder_kb": 705.6,
+   "encode_ms": 1.016,
+   "bit_flip_pct": 33.09,
+   "meets_all_criteria": false
+  },
+  "B_sparse64": {
+   "hit10": 24.0,
+   "drop_pp": 56.0,
+   "fr3": 11.33,
+   "encoder_kb": 720.6,
+   "encode_ms": 0.979,
+   "bit_flip_pct": 26.66,
+   "meets_all_criteria": false
+  },
+  "B_sparse128": {
+   "hit10": 44.0,
+   "drop_pp": 36.0,
+   "fr3": 19.33,
+   "encoder_kb": 750.6,
+   "encode_ms": 0.947,
+   "bit_flip_pct": 19.92,
+   "meets_all_criteria": false
+  },
+  "C_codebook256": {
+   "hit10": 64.0,
+   "drop_pp": 16.0,
+   "fr3": 26.0,
+   "encoder_kb": 720.4,
+   "encode_ms": 0.795,
+   "bit_flip_pct": 8.52,
+   "meets_all_criteria": false
+  },
+  "C_codebook512": {
+   "hit10": 72.0,
+   "drop_pp": 8.0,
+   "fr3": 37.33,
+   "encoder_kb": 750.2,
+   "encode_ms": 0.763,
+   "bit_flip_pct": 4.15,
+   "meets_all_criteria": false
+  },
+  "BC_hybrid": {
+   "hit10": 72.0,
+   "drop_pp": 8.0,
+   "fr3": 34.0,
+   "encoder_kb": 735.4,
+   "encode_ms": 0.359,
+   "bit_flip_pct": 7.15,
+   "meets_all_criteria": false
+  }
+ },
+ "arms_meeting_all_three": []
+}
