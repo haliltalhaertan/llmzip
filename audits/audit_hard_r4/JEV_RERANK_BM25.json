@@ -1,0 +1,20 @@
+{
+ "model": "jev-1.13.0",
+ "arm": "BM25_textbook_frozen",
+ "k1": 1.2,
+ "b": 0.75,
+ "results": {
+  "cand_hit10": 87.87,
+  "base_hit1": 54.26,
+  "base_fr3": 59.93,
+  "jev_hit1": 66.6,
+  "jev_fr3": 71.87,
+  "n": 470,
+  "delta_hit1": 12.34,
+  "delta_fr3": 11.94
+ },
+ "tokens_in": 2371148,
+ "tokens_out": 94000,
+ "elapsed_s": 243.2,
+ "errors": 0
+}
