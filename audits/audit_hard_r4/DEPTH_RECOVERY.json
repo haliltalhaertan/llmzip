@@ -1,0 +1,969 @@
+{
+ "n": 38,
+ "curve": {
+  "10": {
+   "any_opt": 0,
+   "any_pes": 0,
+   "all_opt": 0,
+   "all_pes": 0
+  },
+  "20": {
+   "any_opt": 7,
+   "any_pes": 6,
+   "all_opt": 4,
+   "all_pes": 4
+  },
+  "30": {
+   "any_opt": 18,
+   "any_pes": 13,
+   "all_opt": 11,
+   "all_pes": 6
+  },
+  "50": {
+   "any_opt": 27,
+   "any_pes": 18,
+   "all_opt": 20,
+   "all_pes": 11
+  },
+  "75": {
+   "any_opt": 33,
+   "any_pes": 22,
+   "all_opt": 28,
+   "all_pes": 14
+  },
+  "100": {
+   "any_opt": 34,
+   "any_pes": 25,
+   "all_opt": 32,
+   "all_pes": 15
+  },
+  "200": {
+   "any_opt": 35,
+   "any_pes": 29,
+   "all_opt": 35,
+   "all_pes": 22
+  }
+ },
+ "note": "any = at least one gold reachable; all = every gold reachable (FR@3 needs all for full credit)",
+ "multi_gold": 19,
+ "single_gold": 19,
+ "taxonomy": {
+  "deep_retrieval_rank_le_100": 22,
+  "structural_zero_overlap_multi": 8,
+  "zero_overlap_any": 20
+ },
+ "cross_tab": {
+  "zero_overlap_multi": 8,
+  "zero_overlap_single": 12,
+  "overlap_multi": 11,
+  "overlap_single": 7
+ },
+ "per_query": [
+  {
+   "qid": "06878be2",
+   "section": "single-session-preference",
+   "n_gold": 3,
+   "any_opt": 42,
+   "any_pes": 61,
+   "all_opt": 101,
+   "all_pes": 119,
+   "max_overlap": 0.222,
+   "per_gold": [
+    {
+     "gold": 320,
+     "best_opt": 42,
+     "best_pes": 61,
+     "overlap": 0.2222222222222222
+    },
+    {
+     "gold": 328,
+     "best_opt": 71,
+     "best_pes": 71,
+     "overlap": 0.2222222222222222
+    },
+    {
+     "gold": 334,
+     "best_opt": 101,
+     "best_pes": 119,
+     "overlap": 0.1111111111111111
+    }
+   ]
+  },
+  {
+   "qid": "06f04340",
+   "section": "single-session-preference",
+   "n_gold": 1,
+   "any_opt": 53,
+   "any_pes": 169,
+   "all_opt": 53,
+   "all_pes": 169,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 141,
+     "best_opt": 53,
+     "best_pes": 169,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "09d032c9",
+   "section": "single-session-preference",
+   "n_gold": 1,
+   "any_opt": 220,
+   "any_pes": 476,
+   "all_opt": 220,
+   "all_pes": 476,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 294,
+     "best_opt": 220,
+     "best_pes": 476,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "0a34ad58",
+   "section": "single-session-preference",
+   "n_gold": 2,
+   "any_opt": 229,
+   "any_pes": 343,
+   "all_opt": 229,
+   "all_pes": 382,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 134,
+     "best_opt": 229,
+     "best_pes": 343,
+     "overlap": 0.0
+    },
+    {
+     "gold": 138,
+     "best_opt": 229,
+     "best_pes": 382,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "0edc2aef",
+   "section": "single-session-preference",
+   "n_gold": 1,
+   "any_opt": 244,
+   "any_pes": 314,
+   "all_opt": 244,
+   "all_pes": 314,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 390,
+     "best_opt": 244,
+     "best_pes": 314,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "1a1907b4",
+   "section": "single-session-preference",
+   "n_gold": 1,
+   "any_opt": 60,
+   "any_pes": 84,
+   "all_opt": 60,
+   "all_pes": 84,
+   "max_overlap": 0.071,
+   "per_gold": [
+    {
+     "gold": 60,
+     "best_opt": 60,
+     "best_pes": 84,
+     "overlap": 0.07142857142857142
+    }
+   ]
+  },
+  {
+   "qid": "25e5aa4f",
+   "section": "single-session-user",
+   "n_gold": 1,
+   "any_opt": 25,
+   "any_pes": 291,
+   "all_opt": 25,
+   "all_pes": 291,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 389,
+     "best_opt": 25,
+     "best_pes": 291,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "2788b940",
+   "section": "multi-session",
+   "n_gold": 5,
+   "any_opt": 11,
+   "any_pes": 12,
+   "all_opt": 80,
+   "all_pes": 162,
+   "max_overlap": 0.167,
+   "per_gold": [
+    {
+     "gold": 8,
+     "best_opt": 15,
+     "best_pes": 15,
+     "overlap": 0.16666666666666666
+    },
+    {
+     "gold": 10,
+     "best_opt": 80,
+     "best_pes": 162,
+     "overlap": 0.0
+    },
+    {
+     "gold": 380,
+     "best_opt": 11,
+     "best_pes": 16,
+     "overlap": 0.16666666666666666
+    },
+    {
+     "gold": 405,
+     "best_opt": 11,
+     "best_pes": 12,
+     "overlap": 0.16666666666666666
+    },
+    {
+     "gold": 431,
+     "best_opt": 70,
+     "best_pes": 88,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "2ebe6c92",
+   "section": "temporal-reasoning",
+   "n_gold": 2,
+   "any_opt": 24,
+   "any_pes": 25,
+   "all_opt": 33,
+   "all_pes": 34,
+   "max_overlap": 0.2,
+   "per_gold": [
+    {
+     "gold": 63,
+     "best_opt": 33,
+     "best_pes": 34,
+     "overlap": 0.2
+    },
+    {
+     "gold": 435,
+     "best_opt": 24,
+     "best_pes": 25,
+     "overlap": 0.2
+    }
+   ]
+  },
+  {
+   "qid": "38146c39",
+   "section": "single-session-preference",
+   "n_gold": 1,
+   "any_opt": 30,
+   "any_pes": 31,
+   "all_opt": 30,
+   "all_pes": 31,
+   "max_overlap": 0.25,
+   "per_gold": [
+    {
+     "gold": 364,
+     "best_opt": 30,
+     "best_pes": 31,
+     "overlap": 0.25
+    }
+   ]
+  },
+  {
+   "qid": "71017277",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 36,
+   "any_pes": 333,
+   "all_opt": 36,
+   "all_pes": 333,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 349,
+     "best_opt": 36,
+     "best_pes": 333,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "80ec1f4f",
+   "section": "multi-session",
+   "n_gold": 2,
+   "any_opt": 49,
+   "any_pes": 74,
+   "all_opt": 94,
+   "all_pes": 175,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 278,
+     "best_opt": 94,
+     "best_pes": 175,
+     "overlap": 0.0
+    },
+    {
+     "gold": 330,
+     "best_opt": 49,
+     "best_pes": 74,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "88432d0a",
+   "section": "multi-session",
+   "n_gold": 4,
+   "any_opt": 24,
+   "any_pes": 24,
+   "all_opt": 72,
+   "all_pes": 417,
+   "max_overlap": 0.143,
+   "per_gold": [
+    {
+     "gold": 98,
+     "best_opt": 72,
+     "best_pes": 417,
+     "overlap": 0.0
+    },
+    {
+     "gold": 239,
+     "best_opt": 72,
+     "best_pes": 160,
+     "overlap": 0.0
+    },
+    {
+     "gold": 395,
+     "best_opt": 24,
+     "best_pes": 24,
+     "overlap": 0.14285714285714285
+    },
+    {
+     "gold": 417,
+     "best_opt": 72,
+     "best_pes": 213,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "8e91e7d9",
+   "section": "multi-session",
+   "n_gold": 2,
+   "any_opt": 28,
+   "any_pes": 132,
+   "all_opt": 28,
+   "all_pes": 478,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 197,
+     "best_opt": 28,
+     "best_pes": 478,
+     "overlap": 0.0
+    },
+    {
+     "gold": 225,
+     "best_opt": 28,
+     "best_pes": 132,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "92a0aa75",
+   "section": "multi-session",
+   "n_gold": 2,
+   "any_opt": 77,
+   "any_pes": 78,
+   "all_opt": 101,
+   "all_pes": 101,
+   "max_overlap": 0.2,
+   "per_gold": [
+    {
+     "gold": 312,
+     "best_opt": 77,
+     "best_pes": 78,
+     "overlap": 0.2
+    },
+    {
+     "gold": 358,
+     "best_opt": 101,
+     "best_pes": 101,
+     "overlap": 0.2
+    }
+   ]
+  },
+  {
+   "qid": "95228167",
+   "section": "single-session-preference",
+   "n_gold": 1,
+   "any_opt": 22,
+   "any_pes": 29,
+   "all_opt": 22,
+   "all_pes": 29,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 268,
+     "best_opt": 22,
+     "best_pes": 29,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "9a707b82",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 13,
+   "any_pes": 13,
+   "all_opt": 13,
+   "all_pes": 13,
+   "max_overlap": 0.143,
+   "per_gold": [
+    {
+     "gold": 143,
+     "best_opt": 13,
+     "best_pes": 13,
+     "overlap": 0.14285714285714285
+    }
+   ]
+  },
+  {
+   "qid": "c18a7dc8",
+   "section": "multi-session",
+   "n_gold": 2,
+   "any_opt": 70,
+   "any_pes": 256,
+   "all_opt": 70,
+   "all_pes": 347,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 265,
+     "best_opt": 70,
+     "best_pes": 256,
+     "overlap": 0.0
+    },
+    {
+     "gold": 341,
+     "best_opt": 70,
+     "best_pes": 347,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "c4f10528",
+   "section": "single-session-assistant",
+   "n_gold": 1,
+   "any_opt": 13,
+   "any_pes": 13,
+   "all_opt": 13,
+   "all_pes": 13,
+   "max_overlap": 0.2,
+   "per_gold": [
+    {
+     "gold": 423,
+     "best_opt": 13,
+     "best_pes": 13,
+     "overlap": 0.2
+    }
+   ]
+  },
+  {
+   "qid": "d6233ab6",
+   "section": "single-session-preference",
+   "n_gold": 2,
+   "any_opt": 22,
+   "any_pes": 22,
+   "all_opt": 24,
+   "all_pes": 24,
+   "max_overlap": 0.154,
+   "per_gold": [
+    {
+     "gold": 113,
+     "best_opt": 24,
+     "best_pes": 24,
+     "overlap": 0.15384615384615385
+    },
+    {
+     "gold": 117,
+     "best_opt": 22,
+     "best_pes": 22,
+     "overlap": 0.15384615384615385
+    }
+   ]
+  },
+  {
+   "qid": "e3038f8c",
+   "section": "multi-session",
+   "n_gold": 4,
+   "any_opt": 19,
+   "any_pes": 22,
+   "all_opt": 57,
+   "all_pes": 57,
+   "max_overlap": 0.25,
+   "per_gold": [
+    {
+     "gold": 71,
+     "best_opt": 57,
+     "best_pes": 57,
+     "overlap": 0.25
+    },
+    {
+     "gold": 85,
+     "best_opt": 19,
+     "best_pes": 24,
+     "overlap": 0.25
+    },
+    {
+     "gold": 97,
+     "best_opt": 22,
+     "best_pes": 22,
+     "overlap": 0.25
+    },
+    {
+     "gold": 145,
+     "best_opt": 41,
+     "best_pes": 41,
+     "overlap": 0.25
+    }
+   ]
+  },
+  {
+   "qid": "eac54add",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 44,
+   "any_pes": 255,
+   "all_opt": 44,
+   "all_pes": 255,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 387,
+     "best_opt": 44,
+     "best_pes": 255,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "eeda8a6d",
+   "section": "multi-session",
+   "n_gold": 2,
+   "any_opt": 26,
+   "any_pes": 26,
+   "all_opt": 87,
+   "all_pes": 111,
+   "max_overlap": 0.2,
+   "per_gold": [
+    {
+     "gold": 90,
+     "best_opt": 87,
+     "best_pes": 111,
+     "overlap": 0.0
+    },
+    {
+     "gold": 377,
+     "best_opt": 26,
+     "best_pes": 26,
+     "overlap": 0.2
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_194be4b3",
+   "section": "multi-session",
+   "n_gold": 4,
+   "any_opt": 65,
+   "any_pes": 131,
+   "all_opt": 65,
+   "all_pes": 412,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 6,
+     "best_opt": 65,
+     "best_pes": 163,
+     "overlap": 0.0
+    },
+    {
+     "gold": 60,
+     "best_opt": 65,
+     "best_pes": 412,
+     "overlap": 0.0
+    },
+    {
+     "gold": 101,
+     "best_opt": 65,
+     "best_pes": 328,
+     "overlap": 0.0
+    },
+    {
+     "gold": 355,
+     "best_opt": 65,
+     "best_pes": 131,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_1e4a8aec",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 39,
+   "any_pes": 51,
+   "all_opt": 39,
+   "all_pes": 51,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 455,
+     "best_opt": 39,
+     "best_pes": 51,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_4929293b",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 107,
+   "any_pes": 346,
+   "all_opt": 107,
+   "all_pes": 346,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 447,
+     "best_opt": 107,
+     "best_pes": 346,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_59149c78",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 41,
+   "any_pes": 41,
+   "all_opt": 41,
+   "all_pes": 41,
+   "max_overlap": 0.111,
+   "per_gold": [
+    {
+     "gold": 281,
+     "best_opt": 41,
+     "best_pes": 41,
+     "overlap": 0.1111111111111111
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_68e94288",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 42,
+   "any_pes": 230,
+   "all_opt": 42,
+   "all_pes": 230,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 321,
+     "best_opt": 42,
+     "best_pes": 230,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_731e37d7",
+   "section": "multi-session",
+   "n_gold": 4,
+   "any_opt": 21,
+   "any_pes": 21,
+   "all_opt": 67,
+   "all_pes": 355,
+   "max_overlap": 0.222,
+   "per_gold": [
+    {
+     "gold": 201,
+     "best_opt": 67,
+     "best_pes": 124,
+     "overlap": 0.0
+    },
+    {
+     "gold": 211,
+     "best_opt": 21,
+     "best_pes": 21,
+     "overlap": 0.2222222222222222
+    },
+    {
+     "gold": 245,
+     "best_opt": 67,
+     "best_pes": 355,
+     "overlap": 0.0
+    },
+    {
+     "gold": 257,
+     "best_opt": 67,
+     "best_pes": 308,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_7f6b06db",
+   "section": "temporal-reasoning",
+   "n_gold": 3,
+   "any_opt": 15,
+   "any_pes": 15,
+   "all_opt": 38,
+   "all_pes": 167,
+   "max_overlap": 0.125,
+   "per_gold": [
+    {
+     "gold": 326,
+     "best_opt": 15,
+     "best_pes": 15,
+     "overlap": 0.125
+    },
+    {
+     "gold": 416,
+     "best_opt": 38,
+     "best_pes": 167,
+     "overlap": 0.0
+    },
+    {
+     "gold": 453,
+     "best_opt": 34,
+     "best_pes": 51,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_8279ba03",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 35,
+   "any_pes": 42,
+   "all_opt": 35,
+   "all_pes": 42,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 398,
+     "best_opt": 35,
+     "best_pes": 42,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_d6585ce9",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 49,
+   "any_pes": 62,
+   "all_opt": 49,
+   "all_pes": 62,
+   "max_overlap": 0.2,
+   "per_gold": [
+    {
+     "gold": 176,
+     "best_opt": 49,
+     "best_pes": 62,
+     "overlap": 0.2
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_e061b84f",
+   "section": "temporal-reasoning",
+   "n_gold": 3,
+   "any_opt": 66,
+   "any_pes": 87,
+   "all_opt": 86,
+   "all_pes": 410,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 188,
+     "best_opt": 86,
+     "best_pes": 275,
+     "overlap": 0.0
+    },
+    {
+     "gold": 214,
+     "best_opt": 86,
+     "best_pes": 410,
+     "overlap": 0.0
+    },
+    {
+     "gold": 292,
+     "best_opt": 66,
+     "best_pes": 87,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_e061b84g",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 26,
+   "any_pes": 41,
+   "all_opt": 26,
+   "all_pes": 41,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 354,
+     "best_opt": 26,
+     "best_pes": 41,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_ec93e27f",
+   "section": "temporal-reasoning",
+   "n_gold": 2,
+   "any_opt": 11,
+   "any_pes": 18,
+   "all_opt": 18,
+   "all_pes": 19,
+   "max_overlap": 0.125,
+   "per_gold": [
+    {
+     "gold": 125,
+     "best_opt": 18,
+     "best_pes": 18,
+     "overlap": 0.125
+    },
+    {
+     "gold": 309,
+     "best_opt": 11,
+     "best_pes": 19,
+     "overlap": 0.125
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_f2262a51",
+   "section": "multi-session",
+   "n_gold": 5,
+   "any_opt": 67,
+   "any_pes": 126,
+   "all_opt": 67,
+   "all_pes": 472,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 24,
+     "best_opt": 67,
+     "best_pes": 126,
+     "overlap": 0.0
+    },
+    {
+     "gold": 60,
+     "best_opt": 67,
+     "best_pes": 382,
+     "overlap": 0.0
+    },
+    {
+     "gold": 64,
+     "best_opt": 67,
+     "best_pes": 462,
+     "overlap": 0.0
+    },
+    {
+     "gold": 156,
+     "best_opt": 67,
+     "best_pes": 472,
+     "overlap": 0.0
+    },
+    {
+     "gold": 160,
+     "best_opt": 67,
+     "best_pes": 436,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_f420262d",
+   "section": "temporal-reasoning",
+   "n_gold": 3,
+   "any_opt": 26,
+   "any_pes": 35,
+   "all_opt": 30,
+   "all_pes": 454,
+   "max_overlap": 0.0,
+   "per_gold": [
+    {
+     "gold": 304,
+     "best_opt": 26,
+     "best_pes": 35,
+     "overlap": 0.0
+    },
+    {
+     "gold": 364,
+     "best_opt": 30,
+     "best_pes": 454,
+     "overlap": 0.0
+    },
+    {
+     "gold": 368,
+     "best_opt": 30,
+     "best_pes": 454,
+     "overlap": 0.0
+    }
+   ]
+  },
+  {
+   "qid": "gpt4_fa19884d",
+   "section": "temporal-reasoning",
+   "n_gold": 1,
+   "any_opt": 15,
+   "any_pes": 15,
+   "all_opt": 15,
+   "all_pes": 15,
+   "max_overlap": 0.2,
+   "per_gold": [
+    {
+     "gold": 374,
+     "best_opt": 15,
+     "best_pes": 15,
+     "overlap": 0.2
+    }
+   ]
+  }
+ ]
+}
