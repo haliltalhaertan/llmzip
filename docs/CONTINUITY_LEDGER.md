@@ -2304,3 +2304,47 @@ disposition: C5 STATUS UPDATED. The closed twelve-byte line is NOT reopened; wha
 status: PILOT RUN AND RECORDED; MECHANISM SUPPORTED; MATCHED COMPARISON INDISTINGUISHABLE; NO FROZEN
   NUMBER CHANGED
 ```
+
+### L-103
+
+```text
+timestamp_utc: 2026-09-18T15:10:00Z
+actor_role: Continuity Lead recording an uncertainty audit and retracting one coordinator phrase
+predecessor_commit_or_tag: L-102 / eda83ba
+scope: Strengthens the C5(b) record. No new retrieval experiment, no frozen number touched.
+  Task 4F1 remains SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN.
+retraction_of_wording: the coordinator wrote that sign96+Jev and BM25+Jev "land in the same
+  statistical bracket". WITHDRAWN. A CI spanning zero shows superiority was NOT ESTABLISHED; it does
+  not establish EQUIVALENCE, which requires a prespecified margin. Computed from the stored
+  per_query data with no extra API calls: equivalence fails at +-1, +-2 and +-3 pp and holds only at
+  +-5 pp; the minimum margin the data supports is +-4.97 pp, far wider than any sensible retrieval
+  margin. 92.9% of the bootstrap distribution lies below zero, so the trend favours BM25.
+four_part_status: SUPPORTED - semantic reranking materially improves sign96 ranking on LME.
+  NOT ESTABLISHED - BM25+Jev superior to sign96+Jev. NOT ESTABLISHED - the two are equivalent.
+  OPEN - matched total RAM / CPU / latency / token-cost trade-off.
+run_variance_measured: run_variance.py, fixed 120-query subset, 4 independent repetitions,
+  4.99M tokens, 458 s. Run-to-run SD of the delta = 0.413 pp. The arms are not equally stable:
+  sign96 SD 0.139 vs BM25 SD 0.417, three times noisier, mechanically because the sign96 pool is
+  stored and fixed while the BM25 pool is rebuilt each run and its ties can resolve differently.
+  Total uncertainty sqrt(query^2 + run^2) = sqrt(1.441^2 + 0.413^2) = 1.499 pp, widening the
+  interval by only 4%: corrected CI95 about [-5.04, +0.83]. The conclusion is unchanged.
+subset_dependence_discovered: the 120-query subset gives delta = +5.18 pp, the OPPOSITE SIGN to the
+  full run's -2.10 pp. This is NOT model noise: the same 120 queries drawn from the full run's own
+  per_query data also give +4.38 pp. The subset genuinely behaves differently, and those queries are
+  front-loaded in file order. Consequences recorded: -2.10 pp is valid for FULL LME only; no
+  subset-selected number from this line may be reported as a dataset result, which would repeat the
+  programme's already-corrected "10 of 30 archives presented as the whole benchmark" error. It also
+  raises a real question - on which question types does sign96 lead? - suggesting the next step may
+  be a cut analysis rather than more quality optimisation.
+research_question_shifted: quality cannot decide this. The deciding question is now a MATCHED SYSTEM
+  COST AUDIT: near-comparable retrieval quality, how much RAM / CPU / latency does the sign96 system
+  save against BM25? If the query encoder state or scan cost matches BM25, the 12-byte payload has no
+  product advantage. This is reopen condition (1) and remains unmeasured.
+line_status_nuance: reading the twelve-byte line as "lost to BM25, finished" is now incomplete. It is
+  closed as a STANDALONE FINAL RANKER. As a compact CANDIDATE GENERATOR ahead of a semantic reranker
+  it has a measured, non-trivial regime. That is a role change, not a reopening.
+evidence: branch audit/hard-rounds-2026-09-18, audits/audit_hard_r4/ - MATCHED_CI.json,
+  RUN_VARIANCE.json, run_variance.py, matched_ci.py, JEV_RERANK_FINDING.md and run logs.
+status: EQUIVALENCE CLAIM WITHDRAWN; RUN VARIANCE QUANTIFIED; SUBSET DEPENDENCE RECORDED; NO FROZEN
+  NUMBER CHANGED
+```

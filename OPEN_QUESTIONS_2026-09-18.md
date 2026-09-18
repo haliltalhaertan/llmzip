@@ -380,7 +380,7 @@ koyamıyor (H@1 43,83 → **66,81**).
 (`asym96_bm25` −0,38; `qscale96_bm25` −0,33; `float_raw32_bm25` −0,27). Sözlüksel sonucu
 semantik olana genellemek **yanlıştı** ve bu genelleme geri çekildi.
 
-#### (b) Eşleşmiş sistem karşılaştırması — **STATISTICALLY INDISTINGUISHABLE**
+#### (b) Eşleşmiş sistem karşılaştırması — **SUPERIORITY NOT ESTABLISHED; EQUIVALENCE ALSO NOT ESTABLISHED**
 
 `evidence_path`: `audit_hard_r4/MATCHED_CI.json`, `matched_ci.py` (denetim dalı)
 
@@ -394,17 +394,34 @@ soru-bazlı sonuçlar **kalıcı saklandı** (n=470, 9.400 yargı, 0 hata).
 
 Eşleştirilmiş bootstrap (20.000 tekrar, seed 20260918):
 
-| ölçüt | Δ | CI95 | sonuç |
-|---|---:|---|---|
-| FR@3 | **−2,10 pp** | **[−4,97, +0,70]** | sıfırı içeriyor → **ayırt edilemez** |
-| Hit@1 | −1,92 pp | [−5,53, +1,70] | sıfırı içeriyor → **ayırt edilemez** |
+| ölçüt | Δ | CI95 |
+|---|---:|---|
+| FR@3 | **−2,10 pp** | **[−4,97, +0,70]** |
+| Hit@1 | −1,92 pp | [−5,53, +1,70] |
 
-**`BM25+Jev` üstünlüğü bu veride desteklenmiyor.** 12 baytlık işaret yükü, ters indeksle aynı
-istatistiksel kefeye giriyor: üstün değil, ölçülebilir şekilde geride de değil.
+**İki ayrı olumsuz sonuç — karıştırılmamalı:**
 
-`open_question`: Fark **yön olarak** BM25 lehine ama aralık sıfırı kapsıyor; ayırt etmek için
-daha büyük n veya ek veri kümesi gerekir. Karar bu haliyle **RAM/CPU/gecikme** eksenine kayar —
-yani yeniden açma koşulu (1), ki ölçülmedi.
+1. **`BM25+Jev` üstünlüğü GÖSTERİLEMEDİ.** Aralık sıfırı kapsıyor.
+2. **Eşdeğerlik de GÖSTERİLEMEDİ.** Bu, önceden belirlenmiş bir eşdeğerlik marjı gerektirir.
+   Mevcut veriyle hesaplandı (`per_query`'den, ek API çağrısı olmadan):
+
+   | marj | eşdeğerlik |
+   |---|---|
+   | ±1 pp | gösterilemez |
+   | ±2 pp | **gösterilemez** |
+   | ±3 pp | gösterilemez |
+   | ±5 pp | gösterilir |
+
+   Eşdeğerlik iddiası için gereken minimum marj **±4,97 pp** — makul bir getirim marjından
+   çok geniş. Bootstrap dağılımının **%92,9'u sıfırın altında**, yani eğilim BM25 lehine.
+
+> **Dil uyarısı:** Bu sonuç için "aynı kefede" / "eşdeğer" denmez. Doğru ifade:
+> *"bu deneyde BM25+Jev'in ölçülebilir üstünlüğü gösterilemedi; eşdeğerlik de gösterilmedi."*
+> Koordinatör bir kez "aynı istatistiksel kefeye giriyor" yazdı; bu **geri çekildi**.
+
+`open_question`: Kalite ekseninde karar verilemiyor → soru **sistem maliyetine** kayıyor:
+aynı getirim kalitesi civarında, sign96 sistemi BM25'e kıyasla ne kadar RAM/CPU/gecikme
+tasarrufu sağlıyor? Bu, yeniden açma koşulu (1) ve **ölçülmedi**.
 
 #### Yeniden sıralayıcı deterministik değil
 
@@ -417,8 +434,52 @@ her iki koşuda özdeş), dolayısıyla fark yalnız Jev skorlarından:
 | BM25 FR@3 | 71,87 | 72,48 |
 | **Δ** | **−1,21** | **−2,10** |
 
-Oynama (0,89 pp) CI genişliğinin (5,67 pp) içinde — tutarlı, ama **tek koşunun nokta tahminini
-alıntılamak yanlıştır**. Bu hattın her sayısı aralıkla verilmelidir.
+**Metodolojik sonuç:** Mevcut bootstrap yalnız **sorgu örnekleme** belirsizliğini ölçüyor;
+Jev'in koşudan koşuya stokastikliğini içermiyor. Yayın düzeyi bir sonuç için:
+
+> toplam belirsizlik = sorgu varyasyonu + model koşu varyasyonu
+
+#### Koşu varyansı ölçüldü — `run_variance.py`, sabit 120 soru, 4 bağımsız tekrar
+
+`evidence_path`: `audit_hard_r4/RUN_VARIANCE.json`
+
+| tekrar | sign96 FR@3 | BM25 FR@3 | Δ |
+|---|---:|---:|---:|
+| 1 | 73,32 | 68,25 | +5,07 |
+| 2 | 73,32 | 68,53 | +4,79 |
+| 3 | 73,32 | 67,56 | +5,76 |
+| 4 | 73,04 | 67,94 | +5,10 |
+
+**Koşu-arası SD = 0,413 pp.** Kollar eşit kararsız değil: `sign96` SD 0,139 — `BM25` SD 0,417,
+yani **üç kat daha oynak**. Sebebi mekanik: sign96 havuzu saklanmış ve sabit; BM25 havuzu her
+koşuda yeniden kuruluyor, dolayısıyla sıralama bağları farklı çözülebiliyor.
+
+Toplam belirsizlik:
+
+| bileşen | SD |
+|---|---:|
+| sorgu örnekleme (n=470 bootstrap) | 1,441 pp |
+| model koşu varyasyonu | 0,413 pp |
+| **toplam** √(q²+r²) | **1,499 pp** |
+
+Koşu varyansı aralığı yalnız **%4** genişletiyor: düzeltilmiş CI95 ≈ **[−5,04, +0,83]**
+(ham [−4,97, +0,70]). **Sonuç değişmiyor** — üstünlük de eşdeğerlik de gösterilemiyor.
+
+#### Önemli: sonuç veri altkümesine güçlü biçimde bağlı
+
+Varyans koşusu ilk 120 soruda **Δ = +5,18 pp** verdi — tam koşudaki **−2,10**'un **tersi işaret**.
+
+Bu model kararsızlığı **değil**: aynı 120 soru tam koşunun kendi verisinden çekildiğinde de
+**+4,38 pp** çıkıyor. Yani altkümenin kendisi farklı davranıyor; LME içinde sign96'nın BM25'i
+geçtiği sorular var ve bunlar dosya sırasında öne yığılmış.
+
+**Sonuçları:**
+- Tek bir altkümeden çıkan sonuç bu hat için **genellenemez**;
+- `−2,10 pp` yalnızca **LME'nin tamamı** için geçerlidir;
+- Alt-küme seçilerek raporlanan herhangi bir sayı, bu programın daha önce düzelttiği
+  "10/30 arşiv sonucunu tüm veri kümesi gibi sunmak" hatasının aynısı olur.
+- Ayrıca **gerçek bir açık soru** doğuruyor: hangi soru tipinde sign96 öne geçiyor?
+  Bu, bir sonraki adımın kalite değil **kesim analizi** olabileceğini gösteriyor.
 
 #### Ölçülen maliyet (kol başına, düzeltilmiş)
 
