@@ -127,6 +127,7 @@ unchanged by this round.
 | Start here | `research_top10_comparison_2026_09_16/FINAL_STATE.md` |
 | Audit evidence | branch `audit/hard-rounds-2026-09-18`, `audits/` |
 | Correction ledger | `audits/CORRECTION_LEDGER_2026-09-17.md` |
+| Open questions (all lines) | [`OPEN_QUESTIONS_2026-09-18.md`](OPEN_QUESTIONS_2026-09-18.md) |
 | External review prompt | `audits/EXTERNAL_REVIEW_PROMPT_2026-09-18.md` |
 
 Everything in this round carries

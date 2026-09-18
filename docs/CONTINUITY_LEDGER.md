@@ -2129,3 +2129,50 @@ outcome_boundary: Task 4F1 SEALED / RUN BLOCKED / NO AUTHORIZATION / OUTCOME ACC
   Unchanged by this entry.
 status: LANDING AND FOURTEEN CORRECTIONS RECORDED; NO FROZEN NUMBER CHANGED
 ```
+
+### L-099
+
+```text
+timestamp_utc: 2026-09-18T12:10:00Z
+actor_role: Continuity Lead recording an inventory; every item traced to source before listing
+predecessor_commit_or_tag: L-098 / 7e67333
+scope: An INVENTORY of open questions across all lines, plus a false-positive register. No experiment
+  was run, no frozen number touched, no sealed surface read. Task 4F1 remains SEALED / RUN BLOCKED /
+  NO AUTHORIZATION / OUTCOME ACCESS FORBIDDEN, unchanged by this entry.
+artifact: OPEN_QUESTIONS_2026-09-18.md at repository root, linked from README and from
+  TWELVE_BYTE_PILOT_README.md.
+method: items were extracted by grep from the publication package, the four audit rounds and this
+  ledger - NOT written from memory. Each item states where it is recorded as open. Any candidate whose
+  source could not be located in the repository was excluded and recorded in section G instead.
+contents: A. debts that gate already-published numbers (LoCoMo gold authority, per-question persistence
+  for T1/ladder, C3's missing equal-budget control, the 322/470 LME channel ablation). B. genuinely open
+  mechanism questions, narrowed by a literature scan. C. system/deployment questions. D. the methodology
+  gap (no held-out split exists anywhere). E. other lines: 4F1, KV/inverse, B1, storage certificate.
+  F. lines recommended for no further spend. G. false-positive register.
+unifying_hypothesis: recorded as B0, taken from an external review because it subsumes this ledger's own
+  B1+B3+C4: does an archive's spectral geometry determine which width, scorer and transform strategy
+  succeed in compact binary retrieval? If true, the valuable result of this line is not "12-byte
+  retrieval" but "archive spectral geometry -> optimal compact retrieval design". RECORDED AS A
+  HYPOTHESIS TO TEST, NOT AS A FINDING.
+literature_caveats: the scan's two central sources (arXiv 2605.17524 coordinate heterogeneity; arXiv
+  2605.02171 QuIVer) share a first author, Wenxuan Xiao, and the former cites the latter - they are NOT
+  independent corroboration as the scan presented them. Both are scoped to InfoNCE-trained contrastive
+  embeddings; our representation is TF-IDF -> LSA -> SVD, so the theory supplies variables to measure,
+  not an established explanation. Both caveats verified against arXiv on 2026-09-18.
+false_positives_registered: an external 47-question list built four questions on a "spectral grouping"
+  experiment that DOES NOT EXIST in this repository (0 files on main, 0 hits across 40 remote branches),
+  labelling two of them "strongest narrow novelty candidate" and "could become the main scientific
+  contribution". NanoBEIR / BRIGHT / BIRCO were cited as our mixed results; they appear only in our
+  literature inventory of other people's work. Rank/storage certificate has no source implementation.
+  KV/inverse and dense/residual are real. Lesson recorded: a question list ASSUMES its findings exist;
+  locate each in the repository before adopting it.
+kv_inverse_sharpened: per audit_hard_r2/ROUND_A_10roles_1114/07_kv_inverse/REPORT.md F5, genuine
+  DynamicCache consumption is proven (by code reading, re-execution NOT RUN) only for the KV-predictor
+  line; the inverse ledger's kv_continuation.py does a full-sequence recompute with no stepwise cache
+  stepping, and its generic-4bit comparator is unmatched (24 positions quantized vs 16 patched), so
+  comparative claims are withheld. The report states no resident memory savings are demonstrated
+  anywhere. The open question is therefore whether the corrected mathematics runs on a real stepwise
+  DynamicCache AND yields measurable resident savings - not merely whether the byte arithmetic is right.
+disposition: INVENTORY RECORDED. No line is reopened, no work is authorized, no priority is binding.
+status: OPEN-QUESTION INVENTORY AND FALSE-POSITIVE REGISTER RECORDED; NO FROZEN NUMBER CHANGED
+```
