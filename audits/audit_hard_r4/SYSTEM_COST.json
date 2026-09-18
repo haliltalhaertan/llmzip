@@ -1,0 +1,790 @@
+{
+ "n_archives": 40,
+ "median_docs": 483.5,
+ "reps": 5,
+ "model_calls": 0,
+ "bm25": {
+  "build_s": 0.0327,
+  "ram_kb": 2600.7,
+  "query_ms": 0.471
+ },
+ "sign96": {
+  "build_s": 0.4938,
+  "encoder_ram_kb": 5136.1,
+  "code_ram_kb": 5.7,
+  "total_ram_kb": 5141.9,
+  "query_ms": 2.943,
+  "scan_only_ms": 0.103,
+  "encode_ms": 2.847
+ },
+ "encoder_note": "the sign96 encoder was NEVER stored in this repo, so it is rebuilt here and its cost is counted explicitly. The original '12 bytes' claim omitted exactly this component.",
+ "per_archive": [
+  {
+   "qid": "001be529",
+   "N": 514,
+   "bm25": {
+    "build_s": 0.036113600013777614,
+    "ram_bytes": 2818828,
+    "query_ms": 0.3344799857586622
+   },
+   "sign96": {
+    "build_s": 3.0197779999580234,
+    "encoder_ram_bytes": 5680494,
+    "code_ram_bytes": 6168,
+    "total_ram_bytes": 5686662,
+    "query_ms": 3.6727000027894974,
+    "scan_only_ms": 0.1165200024843216,
+    "encode_ms": 3.556180000305176,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "00ca467f",
+   "N": 486,
+   "bm25": {
+    "build_s": 0.04132650000974536,
+    "ram_bytes": 2651253,
+    "query_ms": 0.3658999688923359
+   },
+   "sign96": {
+    "build_s": 0.4944046000018716,
+    "encoder_ram_bytes": 5239647,
+    "code_ram_bytes": 5832,
+    "total_ram_bytes": 5245479,
+    "query_ms": 3.243120014667511,
+    "scan_only_ms": 0.11008000001311302,
+    "encode_ms": 3.133040014654398,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0100672e",
+   "N": 486,
+   "bm25": {
+    "build_s": 0.03785620001144707,
+    "ram_bytes": 2757489,
+    "query_ms": 0.4286800045520067
+   },
+   "sign96": {
+    "build_s": 0.6891159999649972,
+    "encoder_ram_bytes": 5365052,
+    "code_ram_bytes": 5832,
+    "total_ram_bytes": 5370884,
+    "query_ms": 3.396600019186735,
+    "scan_only_ms": 0.1193000003695488,
+    "encode_ms": 3.2773000188171864,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "01493427",
+   "N": 487,
+   "bm25": {
+    "build_s": 0.03846310009248555,
+    "ram_bytes": 2737499,
+    "query_ms": 0.6361200008541346
+   },
+   "sign96": {
+    "build_s": 0.4961780998855829,
+    "encoder_ram_bytes": 5176736,
+    "code_ram_bytes": 5844,
+    "total_ram_bytes": 5182580,
+    "query_ms": 3.171639982610941,
+    "scan_only_ms": 0.09483997710049152,
+    "encode_ms": 3.0768000055104494,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "031748ae",
+   "N": 494,
+   "bm25": {
+    "build_s": 0.035499999998137355,
+    "ram_bytes": 2753996,
+    "query_ms": 1.2566599994897842
+   },
+   "sign96": {
+    "build_s": 0.5679154000245035,
+    "encoder_ram_bytes": 5398822,
+    "code_ram_bytes": 5928,
+    "total_ram_bytes": 5404750,
+    "query_ms": 3.4676000010222197,
+    "scan_only_ms": 0.11422000825405121,
+    "encode_ms": 3.3533799927681684,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "06878be2",
+   "N": 443,
+   "bm25": {
+    "build_s": 0.03609840013086796,
+    "ram_bytes": 2591714,
+    "query_ms": 0.7981000002473593
+   },
+   "sign96": {
+    "build_s": 0.47970549995079637,
+    "encoder_ram_bytes": 5480340,
+    "code_ram_bytes": 5316,
+    "total_ram_bytes": 5485656,
+    "query_ms": 3.2478200271725655,
+    "scan_only_ms": 0.09441999718546867,
+    "encode_ms": 3.153400029987097,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "06db6396",
+   "N": 479,
+   "bm25": {
+    "build_s": 0.034390199929475784,
+    "ram_bytes": 2592086,
+    "query_ms": 0.41727996431291103
+   },
+   "sign96": {
+    "build_s": 0.4865723999682814,
+    "encoder_ram_bytes": 5018245,
+    "code_ram_bytes": 5748,
+    "total_ram_bytes": 5023993,
+    "query_ms": 2.928740018978715,
+    "scan_only_ms": 0.10331999510526657,
+    "encode_ms": 2.8254200238734484,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "06f04340",
+   "N": 503,
+   "bm25": {
+    "build_s": 0.0351158999837935,
+    "ram_bytes": 2742513,
+    "query_ms": 0.38111996836960316
+   },
+   "sign96": {
+    "build_s": 0.5361830999609083,
+    "encoder_ram_bytes": 5594038,
+    "code_ram_bytes": 6036,
+    "total_ram_bytes": 5600074,
+    "query_ms": 3.8116200361400843,
+    "scan_only_ms": 0.11800001375377178,
+    "encode_ms": 3.693620022386313,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "07741c44",
+   "N": 513,
+   "bm25": {
+    "build_s": 0.04079720005393028,
+    "ram_bytes": 2782581,
+    "query_ms": 0.36212000995874405
+   },
+   "sign96": {
+    "build_s": 0.5222990999463946,
+    "encoder_ram_bytes": 5264473,
+    "code_ram_bytes": 6156,
+    "total_ram_bytes": 5270629,
+    "query_ms": 3.261139988899231,
+    "scan_only_ms": 0.11884002014994621,
+    "encode_ms": 3.1422999687492847,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "07741c45",
+   "N": 527,
+   "bm25": {
+    "build_s": 0.03781090001575649,
+    "ram_bytes": 2693037,
+    "query_ms": 0.3351399675011635
+   },
+   "sign96": {
+    "build_s": 0.4895764000248164,
+    "encoder_ram_bytes": 5415904,
+    "code_ram_bytes": 6324,
+    "total_ram_bytes": 5422228,
+    "query_ms": 3.3352400176227093,
+    "scan_only_ms": 0.11425996199250221,
+    "encode_ms": 3.220980055630207,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "078150f1",
+   "N": 551,
+   "bm25": {
+    "build_s": 0.035321000032126904,
+    "ram_bytes": 2704161,
+    "query_ms": 0.6861599627882242
+   },
+   "sign96": {
+    "build_s": 0.5256952999625355,
+    "encoder_ram_bytes": 5347993,
+    "code_ram_bytes": 6612,
+    "total_ram_bytes": 5354605,
+    "query_ms": 3.559560002759099,
+    "scan_only_ms": 0.1374400220811367,
+    "encode_ms": 3.4221199806779623,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "07b6f563",
+   "N": 524,
+   "bm25": {
+    "build_s": 0.04032490006648004,
+    "ram_bytes": 2833134,
+    "query_ms": 0.7178599946200848
+   },
+   "sign96": {
+    "build_s": 0.49981430009938776,
+    "encoder_ram_bytes": 5469183,
+    "code_ram_bytes": 6288,
+    "total_ram_bytes": 5475471,
+    "query_ms": 3.3670200034976006,
+    "scan_only_ms": 0.12007998302578926,
+    "encode_ms": 3.2469400204718117,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0862e8bf",
+   "N": 490,
+   "bm25": {
+    "build_s": 0.03470350010320544,
+    "ram_bytes": 2499838,
+    "query_ms": 0.248780008405447
+   },
+   "sign96": {
+    "build_s": 0.474994600052014,
+    "encoder_ram_bytes": 5294796,
+    "code_ram_bytes": 5880,
+    "total_ram_bytes": 5300676,
+    "query_ms": 2.9972400050610304,
+    "scan_only_ms": 0.10248003527522087,
+    "encode_ms": 2.8947599697858095,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "08e075c7",
+   "N": 484,
+   "bm25": {
+    "build_s": 0.03375219996087253,
+    "ram_bytes": 2614247,
+    "query_ms": 0.5439599975943565
+   },
+   "sign96": {
+    "build_s": 0.4621937000192702,
+    "encoder_ram_bytes": 5097970,
+    "code_ram_bytes": 5808,
+    "total_ram_bytes": 5103778,
+    "query_ms": 3.1413800083100796,
+    "scan_only_ms": 0.1157000195235014,
+    "encode_ms": 3.025679988786578,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "08f4fc43",
+   "N": 480,
+   "bm25": {
+    "build_s": 0.03667179984040558,
+    "ram_bytes": 2712627,
+    "query_ms": 0.7816600147634745
+   },
+   "sign96": {
+    "build_s": 0.4322762000374496,
+    "encoder_ram_bytes": 5627149,
+    "code_ram_bytes": 5760,
+    "total_ram_bytes": 5632909,
+    "query_ms": 3.4710599575191736,
+    "scan_only_ms": 0.10274001397192478,
+    "encode_ms": 3.368319943547249,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0977f2af",
+   "N": 484,
+   "bm25": {
+    "build_s": 0.032044699881225824,
+    "ram_bytes": 2702787,
+    "query_ms": 0.45584002509713173
+   },
+   "sign96": {
+    "build_s": 0.49249089998193085,
+    "encoder_ram_bytes": 5182871,
+    "code_ram_bytes": 5808,
+    "total_ram_bytes": 5188679,
+    "query_ms": 2.931499993428588,
+    "scan_only_ms": 0.09930003434419632,
+    "encode_ms": 2.8321999590843916,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "099778bb",
+   "N": 466,
+   "bm25": {
+    "build_s": 0.030978000024333596,
+    "ram_bytes": 2653585,
+    "query_ms": 0.3003000281751156
+   },
+   "sign96": {
+    "build_s": 0.5666968999430537,
+    "encoder_ram_bytes": 5266265,
+    "code_ram_bytes": 5592,
+    "total_ram_bytes": 5271857,
+    "query_ms": 3.601860022172332,
+    "scan_only_ms": 0.2135199960321188,
+    "encode_ms": 3.388340026140213,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "09ba9854",
+   "N": 479,
+   "bm25": {
+    "build_s": 0.03238710016012192,
+    "ram_bytes": 2576498,
+    "query_ms": 0.47045997343957424
+   },
+   "sign96": {
+    "build_s": 0.4964879001490772,
+    "encoder_ram_bytes": 5242951,
+    "code_ram_bytes": 5748,
+    "total_ram_bytes": 5248699,
+    "query_ms": 3.1220399774610996,
+    "scan_only_ms": 0.10279999114573002,
+    "encode_ms": 3.0192399863153696,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "09d032c9",
+   "N": 481,
+   "bm25": {
+    "build_s": 0.03300620010122657,
+    "ram_bytes": 2607968,
+    "query_ms": 0.6345400121062994
+   },
+   "sign96": {
+    "build_s": 0.46164720016531646,
+    "encoder_ram_bytes": 5213684,
+    "code_ram_bytes": 5772,
+    "total_ram_bytes": 5219456,
+    "query_ms": 2.7623800095170736,
+    "scan_only_ms": 0.09864000603556633,
+    "encode_ms": 2.6637400034815077,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0a34ad58",
+   "N": 485,
+   "bm25": {
+    "build_s": 0.03106780000962317,
+    "ram_bytes": 2736933,
+    "query_ms": 0.5521200131624937
+   },
+   "sign96": {
+    "build_s": 0.5069024001713842,
+    "encoder_ram_bytes": 5254193,
+    "code_ram_bytes": 5820,
+    "total_ram_bytes": 5260013,
+    "query_ms": 2.7298000175505877,
+    "scan_only_ms": 0.0906399916857481,
+    "encode_ms": 2.6391600258648396,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0a995998",
+   "N": 484,
+   "bm25": {
+    "build_s": 0.030484299873933196,
+    "ram_bytes": 2682344,
+    "query_ms": 0.5051400046795607
+   },
+   "sign96": {
+    "build_s": 0.43286700011231005,
+    "encoder_ram_bytes": 5024427,
+    "code_ram_bytes": 5808,
+    "total_ram_bytes": 5030235,
+    "query_ms": 2.796499989926815,
+    "scan_only_ms": 0.10756002739071846,
+    "encode_ms": 2.6889399625360966,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0bb5a684",
+   "N": 463,
+   "bm25": {
+    "build_s": 0.029376700054854155,
+    "ram_bytes": 2582774,
+    "query_ms": 0.5476200021803379
+   },
+   "sign96": {
+    "build_s": 0.43440840020775795,
+    "encoder_ram_bytes": 5207186,
+    "code_ram_bytes": 5556,
+    "total_ram_bytes": 5212742,
+    "query_ms": 2.8652400244027376,
+    "scan_only_ms": 0.10609999299049377,
+    "encode_ms": 2.759140031412244,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0bc8ad92",
+   "N": 443,
+   "bm25": {
+    "build_s": 0.030118499882519245,
+    "ram_bytes": 2578330,
+    "query_ms": 0.3694599959999323
+   },
+   "sign96": {
+    "build_s": 0.5502039999701083,
+    "encoder_ram_bytes": 5402239,
+    "code_ram_bytes": 5316,
+    "total_ram_bytes": 5407555,
+    "query_ms": 3.399519994854927,
+    "scan_only_ms": 0.10303999297320843,
+    "encode_ms": 3.296480001881718,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0bc8ad93",
+   "N": 486,
+   "bm25": {
+    "build_s": 0.033590100007131696,
+    "ram_bytes": 2725611,
+    "query_ms": 0.4072600044310093
+   },
+   "sign96": {
+    "build_s": 0.5127748001832515,
+    "encoder_ram_bytes": 5509798,
+    "code_ram_bytes": 5832,
+    "total_ram_bytes": 5515630,
+    "query_ms": 2.728939987719059,
+    "scan_only_ms": 0.09645996615290642,
+    "encode_ms": 2.6324800215661526,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0db4c65d",
+   "N": 462,
+   "bm25": {
+    "build_s": 0.028610399924218655,
+    "ram_bytes": 2638903,
+    "query_ms": 0.8838399779051542
+   },
+   "sign96": {
+    "build_s": 0.4932921000290662,
+    "encoder_ram_bytes": 5175002,
+    "code_ram_bytes": 5544,
+    "total_ram_bytes": 5180546,
+    "query_ms": 2.6810199953615665,
+    "scan_only_ms": 0.08632000535726547,
+    "encode_ms": 2.594699990004301,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0ddfec37",
+   "N": 483,
+   "bm25": {
+    "build_s": 0.03078869986347854,
+    "ram_bytes": 2672638,
+    "query_ms": 0.4323799628764391
+   },
+   "sign96": {
+    "build_s": 0.5146858000662178,
+    "encoder_ram_bytes": 5321109,
+    "code_ram_bytes": 5796,
+    "total_ram_bytes": 5326905,
+    "query_ms": 2.857480011880398,
+    "scan_only_ms": 0.0895800068974495,
+    "encode_ms": 2.7679000049829483,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0e4e4c46",
+   "N": 481,
+   "bm25": {
+    "build_s": 0.030689700040966272,
+    "ram_bytes": 2674648,
+    "query_ms": 0.26557999663054943
+   },
+   "sign96": {
+    "build_s": 0.4730779000092298,
+    "encoder_ram_bytes": 5281495,
+    "code_ram_bytes": 5772,
+    "total_ram_bytes": 5287267,
+    "query_ms": 2.854499965906143,
+    "scan_only_ms": 0.1021800097078085,
+    "encode_ms": 2.7523199561983347,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0e5e2d1a",
+   "N": 450,
+   "bm25": {
+    "build_s": 0.029723600018769503,
+    "ram_bytes": 2563446,
+    "query_ms": 1.0654000099748373
+   },
+   "sign96": {
+    "build_s": 0.49665199988521636,
+    "encoder_ram_bytes": 5050372,
+    "code_ram_bytes": 5400,
+    "total_ram_bytes": 5055772,
+    "query_ms": 2.8189000207930803,
+    "scan_only_ms": 0.0842999666929245,
+    "encode_ms": 2.734600054100156,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0ea62687",
+   "N": 460,
+   "bm25": {
+    "build_s": 0.029685699846595526,
+    "ram_bytes": 2630005,
+    "query_ms": 0.6049999967217445
+   },
+   "sign96": {
+    "build_s": 0.48642189987003803,
+    "encoder_ram_bytes": 5157794,
+    "code_ram_bytes": 5520,
+    "total_ram_bytes": 5163314,
+    "query_ms": 2.9448400251567364,
+    "scan_only_ms": 0.08999998681247234,
+    "encode_ms": 2.854840038344264,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0edc2aef",
+   "N": 475,
+   "bm25": {
+    "build_s": 0.0315028999466449,
+    "ram_bytes": 2597138,
+    "query_ms": 0.46764002181589603
+   },
+   "sign96": {
+    "build_s": 0.45356259983964264,
+    "encoder_ram_bytes": 4976739,
+    "code_ram_bytes": 5700,
+    "total_ram_bytes": 4982439,
+    "query_ms": 2.7163399849087,
+    "scan_only_ms": 0.10080002248287201,
+    "encode_ms": 2.615539962425828,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "0f05491a",
+   "N": 489,
+   "bm25": {
+    "build_s": 0.030105500016361475,
+    "ram_bytes": 2645906,
+    "query_ms": 0.5073799751698971
+   },
+   "sign96": {
+    "build_s": 0.4378750000614673,
+    "encoder_ram_bytes": 5183112,
+    "code_ram_bytes": 5868,
+    "total_ram_bytes": 5188980,
+    "query_ms": 3.2004599925130606,
+    "scan_only_ms": 0.122079998254776,
+    "encode_ms": 3.0783799942582846,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "10d9b85a",
+   "N": 466,
+   "bm25": {
+    "build_s": 0.03712989995256066,
+    "ram_bytes": 2639291,
+    "query_ms": 0.47208000905811787
+   },
+   "sign96": {
+    "build_s": 0.4346425000112504,
+    "encoder_ram_bytes": 5075147,
+    "code_ram_bytes": 5592,
+    "total_ram_bytes": 5080739,
+    "query_ms": 2.9227000195533037,
+    "scan_only_ms": 0.10013999417424202,
+    "encode_ms": 2.8225600253790617,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "10e09553",
+   "N": 472,
+   "bm25": {
+    "build_s": 0.0313748000189662,
+    "ram_bytes": 2640001,
+    "query_ms": 0.5627600010484457
+   },
+   "sign96": {
+    "build_s": 0.5153846999164671,
+    "encoder_ram_bytes": 5268367,
+    "code_ram_bytes": 5664,
+    "total_ram_bytes": 5274031,
+    "query_ms": 2.6529999915510416,
+    "scan_only_ms": 0.10365997441112995,
+    "encode_ms": 2.5493400171399117,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "118b2229",
+   "N": 485,
+   "bm25": {
+    "build_s": 0.029460899997502565,
+    "ram_bytes": 2687647,
+    "query_ms": 0.2677199896425009
+   },
+   "sign96": {
+    "build_s": 0.4422341000754386,
+    "encoder_ram_bytes": 5383892,
+    "code_ram_bytes": 5820,
+    "total_ram_bytes": 5389712,
+    "query_ms": 2.9409199953079224,
+    "scan_only_ms": 0.1020999625325203,
+    "encode_ms": 2.838820032775402,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "1192316e",
+   "N": 467,
+   "bm25": {
+    "build_s": 0.032432799926027656,
+    "ram_bytes": 2689893,
+    "query_ms": 0.4515599925071001
+   },
+   "sign96": {
+    "build_s": 0.4980593998916447,
+    "encoder_ram_bytes": 5070841,
+    "code_ram_bytes": 5604,
+    "total_ram_bytes": 5076445,
+    "query_ms": 2.9194400180131197,
+    "scan_only_ms": 0.10152002796530724,
+    "encode_ms": 2.817919990047813,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "129d1232",
+   "N": 451,
+   "bm25": {
+    "build_s": 0.029621500056236982,
+    "ram_bytes": 2565421,
+    "query_ms": 0.4228800069540739
+   },
+   "sign96": {
+    "build_s": 0.4742016999516636,
+    "encoder_ram_bytes": 5195161,
+    "code_ram_bytes": 5412,
+    "total_ram_bytes": 5200573,
+    "query_ms": 2.8488400392234325,
+    "scan_only_ms": 0.08791997097432613,
+    "encode_ms": 2.7609200682491064,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "1568498a",
+   "N": 478,
+   "bm25": {
+    "build_s": 0.029064300004392862,
+    "ram_bytes": 2575417,
+    "query_ms": 0.5550200119614601
+   },
+   "sign96": {
+    "build_s": 0.42921760003082454,
+    "encoder_ram_bytes": 5066242,
+    "code_ram_bytes": 5736,
+    "total_ram_bytes": 5071978,
+    "query_ms": 2.7401800267398357,
+    "scan_only_ms": 0.09039998985826969,
+    "encode_ms": 2.649780036881566,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "15745da0",
+   "N": 474,
+   "bm25": {
+    "build_s": 0.0393970999866724,
+    "ram_bytes": 2619569,
+    "query_ms": 0.6027800031006336
+   },
+   "sign96": {
+    "build_s": 0.4496772000566125,
+    "encoder_ram_bytes": 5103804,
+    "code_ram_bytes": 5688,
+    "total_ram_bytes": 5109492,
+    "query_ms": 2.687240019440651,
+    "scan_only_ms": 0.09280000813305378,
+    "encode_ms": 2.594440011307597,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "157a136e",
+   "N": 503,
+   "bm25": {
+    "build_s": 0.03135679988190532,
+    "ram_bytes": 2748138,
+    "query_ms": 0.2904199995100498
+   },
+   "sign96": {
+    "build_s": 0.512739600148052,
+    "encoder_ram_bytes": 5279221,
+    "code_ram_bytes": 6036,
+    "total_ram_bytes": 5285257,
+    "query_ms": 3.1203000340610743,
+    "scan_only_ms": 0.11370000429451466,
+    "encode_ms": 3.006600029766559,
+    "svd_components": 96
+   }
+  },
+  {
+   "qid": "16c90bf4",
+   "N": 509,
+   "bm25": {
+    "build_s": 0.03468219982460141,
+    "ram_bytes": 2789062,
+    "query_ms": 1.0431999806314707
+   },
+   "sign96": {
+    "build_s": 0.5347071001306176,
+    "encoder_ram_bytes": 5473745,
+    "code_ram_bytes": 6108,
+    "total_ram_bytes": 5479853,
+    "query_ms": 2.7569000143557787,
+    "scan_only_ms": 0.08942000567913055,
+    "encode_ms": 2.667480008676648,
+    "svd_components": 96
+   }
+  }
+ ],
+ "ratios": {
+  "ram_sign96_over_bm25": 1.98,
+  "ram_codes_only_over_bm25": 0.002,
+  "query_sign96_over_bm25": 6.25,
+  "scan_only_over_bm25": 0.219,
+  "build_sign96_over_bm25": 15.1
+ }
+}
