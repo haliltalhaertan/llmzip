@@ -1,0 +1,521 @@
+{
+ "n": 30,
+ "exact_bucket_agreement": 26,
+ "A1_stays_A1": "13/15",
+ "A5_stays_A5": "13/15",
+ "tokens_in": 45610,
+ "tokens_out": 4272,
+ "errors": 0,
+ "rows": [
+  {
+   "path": "drive/audit_layer/errors_conv_0.json",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.54,
+    "makes_claims": 0.58,
+    "could_contradict": 0.71,
+    "audit_value": 2.03,
+    "audit_value_conf": 0.35,
+    "file_role": "result_data",
+    "role_conf": 0.63,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1341,
+   "tout": 142
+  },
+  {
+   "path": "agent_out/coord-baseline/whitening_significance.py",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.73,
+    "makes_claims": 0.65,
+    "could_contradict": 0.73,
+    "audit_value": 2.44,
+    "audit_value_conf": 0.44,
+    "file_role": "analysis_code",
+    "role_conf": 0.94,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1341,
+   "tout": 142
+  },
+  {
+   "path": "drive/t4c3/V52_T4C3_tie_diagnostics.csv",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.67,
+    "makes_claims": 0.07,
+    "could_contradict": 0.71,
+    "audit_value": 2.22,
+    "audit_value_conf": 0.22,
+    "file_role": "result_data",
+    "role_conf": 0.98,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1947,
+   "tout": 142
+  },
+  {
+   "path": "agent_out/coord-baseline/k_and_ties.py",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.72,
+    "makes_claims": 0.87,
+    "could_contradict": 0.76,
+    "audit_value": 2.38,
+    "audit_value_conf": 0.38,
+    "file_role": "analysis_code",
+    "role_conf": 0.89,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1311,
+   "tout": 142
+  },
+  {
+   "path": "agent_out/coord-baseline/v55_transfer.json",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.76,
+    "makes_claims": 0.2,
+    "could_contradict": 0.76,
+    "audit_value": 2.1,
+    "audit_value_conf": 0.1,
+    "file_role": "result_data",
+    "role_conf": 0.94,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 2105,
+   "tout": 142
+  },
+  {
+   "path": "theory_benchmark_test_v1/lme/per_query.jsonl",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A4_WORTH_A_LOOK",
+   "scores": {
+    "feeds_published": 0.83,
+    "makes_claims": 0.06,
+    "could_contradict": 0.74,
+    "audit_value": 1.96,
+    "audit_value_conf": 0.0,
+    "file_role": "result_data",
+    "role_conf": 1.0,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1680,
+   "tout": 142
+  },
+  {
+   "path": "verify_top10/audit_v52_t4f0_codex_2026_08_31/estimand_summary.json",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.73,
+    "makes_claims": 0.58,
+    "could_contradict": 0.62,
+    "audit_value": 2.21,
+    "audit_value_conf": 0.21,
+    "file_role": "result_data",
+    "role_conf": 0.58,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1485,
+   "tout": 142
+  },
+  {
+   "path": "pilots/axis_attack_2026-09-12/round3/deney1_lme_details.json",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.43,
+    "makes_claims": 0.14,
+    "could_contradict": 0.75,
+    "audit_value": 2.17,
+    "audit_value_conf": 0.37,
+    "file_role": "result_data",
+    "role_conf": 0.38,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1933,
+   "tout": 142
+  },
+  {
+   "path": "drive/t4c3/V52_T4C3_question_level.csv",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A4_WORTH_A_LOOK",
+   "scores": {
+    "feeds_published": 0.63,
+    "makes_claims": 0.06,
+    "could_contradict": 0.68,
+    "audit_value": 1.98,
+    "audit_value_conf": 0.38,
+    "file_role": "result_data",
+    "role_conf": 0.98,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1919,
+   "tout": 142
+  },
+  {
+   "path": "pilots/axis_attack_2026-09-12/diagnostics.json",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.59,
+    "makes_claims": 0.16,
+    "could_contradict": 0.7,
+    "audit_value": 2.07,
+    "audit_value_conf": 0.36,
+    "file_role": "result_data",
+    "role_conf": 0.92,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1876,
+   "tout": 142
+  },
+  {
+   "path": "drive/audit_layer/errors_conv_9.json",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.51,
+    "makes_claims": 0.81,
+    "could_contradict": 0.69,
+    "audit_value": 2.16,
+    "audit_value_conf": 0.4,
+    "file_role": "result_data",
+    "role_conf": 0.68,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1336,
+   "tout": 142
+  },
+  {
+   "path": "agent_out/coord-baseline/alpha_sections.py",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.65,
+    "makes_claims": 0.74,
+    "could_contradict": 0.75,
+    "audit_value": 2.55,
+    "audit_value_conf": 0.55,
+    "file_role": "analysis_code",
+    "role_conf": 0.74,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1289,
+   "tout": 142
+  },
+  {
+   "path": "theory_benchmark_test_v1/audit_locomo_provenance/COORDINATOR_REVIEW.md",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.63,
+    "makes_claims": 0.98,
+    "could_contradict": 0.74,
+    "audit_value": 2.65,
+    "audit_value_conf": 0.65,
+    "file_role": "report",
+    "role_conf": 0.99,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1287,
+   "tout": 141
+  },
+  {
+   "path": "verify_top10/audit_v52_t4f0_codex_2026_08_31/question_census.csv",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.44,
+    "makes_claims": 0.09,
+    "could_contradict": 0.61,
+    "audit_value": 2.12,
+    "audit_value_conf": 0.12,
+    "file_role": "result_data",
+    "role_conf": 0.92,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1541,
+   "tout": 142
+  },
+  {
+   "path": "agent_out/coord-baseline/lit_replication.py",
+   "old": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "new": "A1_POSSIBLE_HIDDEN_CONTRADICTION",
+   "scores": {
+    "feeds_published": 0.56,
+    "makes_claims": 0.9,
+    "could_contradict": 0.74,
+    "audit_value": 2.64,
+    "audit_value_conf": 0.64,
+    "file_role": "analysis_code",
+    "role_conf": 0.43,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1257,
+   "tout": 142
+  },
+  {
+   "path": "incoming_20260916b/extracted/LLMZIP_BENCHMARK_2026-09-15/LLMZIP_BENCHMARK_2026-09-15/results/environment.json",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.23,
+    "makes_claims": 0.04,
+    "could_contradict": 0.65,
+    "audit_value": 0.42,
+    "audit_value_conf": 0.58,
+    "file_role": "config_or_meta",
+    "role_conf": 0.99,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1358,
+   "tout": 143
+  },
+  {
+   "path": "theory_benchmark_test_v1/perltqa/ckpt_02_Feng_Wei.jsonl",
+   "old": "A5_SKIP",
+   "new": "A4_WORTH_A_LOOK",
+   "scores": {
+    "feeds_published": 0.76,
+    "makes_claims": 0.06,
+    "could_contradict": 0.7,
+    "audit_value": 1.53,
+    "audit_value_conf": 0.08,
+    "file_role": "result_data",
+    "role_conf": 0.98,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1742,
+   "tout": 142
+  },
+  {
+   "path": "hr-consolidation/audit_v52_t4f0_codex_2026_08_31/representation_10M_A.json",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.53,
+    "makes_claims": 0.24,
+    "could_contradict": 0.72,
+    "audit_value": 1.17,
+    "audit_value_conf": 0.18,
+    "file_role": "config_or_meta",
+    "role_conf": 0.88,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1469,
+   "tout": 143
+  },
+  {
+   "path": "incoming_20260916/extracted/LLMZIP_BENCHMARK_2026-09-15/LLMZIP_BENCHMARK_2026-09-15/scripts/performance.py",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.7,
+    "makes_claims": 0.09,
+    "could_contradict": 0.64,
+    "audit_value": 1.49,
+    "audit_value_conf": 0.27,
+    "file_role": "producer_code",
+    "role_conf": 0.99,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1458,
+   "tout": 142
+  },
+  {
+   "path": "hr-consolidation/audit_v52_t4f0_codex_2026_08_31/anomaly_summary.json",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.31,
+    "makes_claims": 0.55,
+    "could_contradict": 0.5,
+    "audit_value": 0.94,
+    "audit_value_conf": 0.06,
+    "file_role": "result_data",
+    "role_conf": 0.6,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1082,
+   "tout": 142
+  },
+  {
+   "path": "review_transfer/_ed3_lite_stage/EXTERNAL_LLM_REVIEW_AXIS_PILOT_ED3_LITE/pilots/axis_attack_2026-09-12/round2/verify_round2.py",
+   "old": "A5_SKIP",
+   "new": "A4_WORTH_A_LOOK",
+   "scores": {
+    "feeds_published": 0.36,
+    "makes_claims": 0.7,
+    "could_contradict": 0.66,
+    "audit_value": 1.54,
+    "audit_value_conf": 0.26,
+    "file_role": "analysis_code",
+    "role_conf": 0.87,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1373,
+   "tout": 142
+  },
+  {
+   "path": "parallel_ideas_r1/asymmetric/ckpt_lme_008.jsonl",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.66,
+    "makes_claims": 0.07,
+    "could_contradict": 0.64,
+    "audit_value": 1.38,
+    "audit_value_conf": 0.25,
+    "file_role": "result_data",
+    "role_conf": 0.95,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1118,
+   "tout": 142
+  },
+  {
+   "path": "verify_ok/audit_v52_t4f0_codex_2026_08_31/duplicate_message_ids.csv",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.4,
+    "makes_claims": 0.07,
+    "could_contradict": 0.51,
+    "audit_value": 0.86,
+    "audit_value_conf": 0.14,
+    "file_role": "result_data",
+    "role_conf": 0.58,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1943,
+   "tout": 142
+  },
+  {
+   "path": "verify_top10/audit_v52_t4f0_codex_2026_08_31/representation_1M_B.json",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.55,
+    "makes_claims": 0.2,
+    "could_contradict": 0.69,
+    "audit_value": 1.14,
+    "audit_value_conf": 0.0,
+    "file_role": "config_or_meta",
+    "role_conf": 0.82,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1463,
+   "tout": 143
+  },
+  {
+   "path": "incoming_20260916/extracted/LLMZIP_BENCHMARK_2026-09-15/LLMZIP_BENCHMARK_2026-09-15/results/environment.json",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.23,
+    "makes_claims": 0.04,
+    "could_contradict": 0.65,
+    "audit_value": 0.42,
+    "audit_value_conf": 0.58,
+    "file_role": "config_or_meta",
+    "role_conf": 0.99,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1357,
+   "tout": 143
+  },
+  {
+   "path": "reports/muse_sessions/01a0970e-db02-7a51-a1d5-637b52ec93e4.json",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.37,
+    "makes_claims": 0.17,
+    "could_contradict": 0.74,
+    "audit_value": 1.1,
+    "audit_value_conf": 0.0,
+    "file_role": "log_or_scratch",
+    "role_conf": 0.98,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1461,
+   "tout": 145
+  },
+  {
+   "path": "scratch/list_zips.py",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.15,
+    "makes_claims": 0.04,
+    "could_contradict": 0.42,
+    "audit_value": 0.27,
+    "audit_value_conf": 0.73,
+    "file_role": "log_or_scratch",
+    "role_conf": 0.74,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1292,
+   "tout": 145
+  },
+  {
+   "path": "regen/lme/items/0ddfec37.json",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.3,
+    "makes_claims": 0.17,
+    "could_contradict": 0.63,
+    "audit_value": 1.42,
+    "audit_value_conf": 0.1,
+    "file_role": "result_data",
+    "role_conf": 0.77,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1927,
+   "tout": 142
+  },
+  {
+   "path": "review_transfer/_ed3_lite_stage/EXTERNAL_LLM_REVIEW_AXIS_PILOT_ED3_LITE/pilots/axis_attack_2026-09-12/pilot_diagnostics.py",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.35,
+    "makes_claims": 0.4,
+    "could_contradict": 0.69,
+    "audit_value": 1.15,
+    "audit_value_conf": 0.03,
+    "file_role": "analysis_code",
+    "role_conf": 0.98,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1387,
+   "tout": 142
+  },
+  {
+   "path": "scratch/lv/p1_copy_ns/itq_feasibility_synthetic.py",
+   "old": "A5_SKIP",
+   "new": "A5_SKIP",
+   "scores": {
+    "feeds_published": 0.15,
+    "makes_claims": 0.23,
+    "could_contradict": 0.54,
+    "audit_value": 0.97,
+    "audit_value_conf": 0.38,
+    "file_role": "log_or_scratch",
+    "role_conf": 0.55,
+    "model_used": "jev-1.13.0"
+   },
+   "tin": 1532,
+   "tout": 145
+  }
+ ]
+}
